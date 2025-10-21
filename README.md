@@ -1,1 +1,1 @@
-Deploy-ready Bible Buddy v122.7 — generated 2025-10-21T03:09:02.928198Z
+Drop the admin/ folder into your repo root and redeploy on Render.
