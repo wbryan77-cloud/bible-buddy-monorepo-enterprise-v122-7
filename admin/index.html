@@ -1,46 +1,82 @@
+
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Admin • Bible Buddy v122.7</title>
-    <style>
-      body { font-family: system-ui; max-width: 960px; margin: 28px auto; }
-      nav button { margin-right: 8px; padding: 6px 10px; }
-      pre { background:#f6f6f6; padding:12px; border-radius:6px; overflow:auto; }
-    </style>
-  </head>
-  <body>
-    <h1>Admin Dashboard — v122.7</h1>
-    <nav>
-      <button onclick="setTab('phases')">Testing Phases</button>
-      <button onclick="setTab('scripture')">Scripture Report</button>
-      <button onclick="setTab('renewal')">First-Day Renewal</button>
-      <button onclick="setTab('settings')">Settings</button>
-    </nav>
-    <div id="view"></div>
-
-    <script>
-      async function setTab(tab) {
-        const v = document.getElementById("view");
-        if (tab === "scripture") {
-          const r = await fetch("/api/reports/scripture-alignment");
-          const j = await r.json();
-          v.innerHTML = "<h3>Scripture Alignment Report</h3><pre>" +
-            JSON.stringify(j, null, 2) + "</pre>";
-        } else if (tab === "renewal") {
-          const r = await fetch("/api/reports/first-day-renewal?compare=true");
-          const j = await r.json();
-          v.innerHTML = "<h3>First-Day Renewal (Compare Weeks)</h3><pre>" +
-            JSON.stringify(j, null, 2) + "</pre>";
-        } else if (tab === "settings") {
-          v.innerHTML = "<h3>Settings</h3><p>Sabbath quiet mode is ON. " +
-            "Sunday Renewal messages go out at 08:00.</p>";
-        } else {
-          v.innerHTML = "<h3>Testing Phases</h3><p>Phase 1 is active. " +
-            "AI will guide Phases 2–4 as metrics show readiness.</p>";
-        }
+<head>
+  <meta charset="utf-8"/>
+  <title>Admin • Bible Buddy v122.8</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body{font-family:system-ui;max-width:1000px;margin:24px auto;padding:0 12px}
+    nav button{margin-right:8px;padding:6px 12px;border-radius:8px;border:1px solid #ddd;background:#f7f7f7;cursor:pointer}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:16px 0}
+    .card{border:1px solid #e5e5e5;border-radius:10px;padding:12px;background:#fff}
+    pre{background:#f8f9fb;padding:10px;border-radius:8px;overflow:auto}
+  </style>
+</head>
+<body>
+  <h1>Admin Dashboard — v122.8</h1>
+  <nav>
+    <button onclick="setTab('overview')">Phase Overview</button>
+    <button onclick="setTab('scripture')">Scripture Report</button>
+    <button onclick="setTab('renewal')">First-Day Renewal</button>
+    <button onclick="setTab('settings')">Settings</button>
+  </nav>
+  <div id="view"></div>
+  <script>
+    async function setTab(tab){
+      const v=document.getElementById('view');
+      if(tab==='scripture'){
+        const r=await fetch('/api/reports/scripture-alignment'); const j=await r.json();
+        v.innerHTML=`
+          <div class="cards">
+            <div class="card"><h3>Totals</h3>
+              <p>Approved: <b>${j.totals.approved}</b><br/>Pending: <b>${j.totals.pending}</b><br/>Sent back: <b>${j.totals.sent_back}</b></p>
+            </div>
+            <div class="card"><h3>Top Verses</h3>
+              <ul>${j.topVerses.map(x=>`<li>${x.ref} — <i>${x.topic}</i> (${Math.round(x.score*100)}%)</li>`).join('')}</ul>
+            </div>
+            <div class="card"><h3>AI Notes</h3><ul>${j.aiNotes.map(n=>`<li>${n}</li>`).join('')}</ul></div>
+          </div>
+          <h3>Raw JSON</h3><pre>${JSON.stringify(j,null,2)}</pre>`;
+      } else if(tab==='renewal'){
+        const r=await fetch('/api/reports/first-day-renewal?compare=true'); const j=await r.json();
+        v.innerHTML=`
+          <div class="cards">
+            <div class="card"><h3>This Week</h3>
+              <p>Continued: <b>${j.thisWeek.continued}</b><br/>Paused: <b>${j.thisWeek.paused}</b><br/>No Response: <b>${j.thisWeek.noResponse}</b></p>
+            </div>
+            <div class="card"><h3>Last Week</h3>
+              <p>Continued: <b>${j.lastWeek.continued}</b><br/>Paused: <b>${j.lastWeek.paused}</b><br/>No Response: <b>${j.lastWeek.noResponse}</b></p>
+            </div>
+            <div class="card"><h3>AI Note</h3><p>${j.aiNote||'—'}</p></div>
+          </div>
+          <canvas id="renewalChart" height="120"></canvas>
+          <h3>Raw JSON</h3><pre>${JSON.stringify(j,null,2)}</pre>`;
+        const ctx=document.getElementById('renewalChart');
+        new Chart(ctx,{type:'bar',data:{labels:['Continued','Paused','No Response'],
+          datasets:[{label:'This Week',data:[j.thisWeek.continued,j.thisWeek.paused,j.thisWeek.noResponse]},
+                    {label:'Last Week',data:[j.lastWeek.continued,j.lastWeek.paused,j.lastWeek.noResponse]}]},
+          options:{responsive:true}});
+      } else if(tab==='settings'){
+        const s=await (await fetch('/status')).json();
+        v.innerHTML=`<h3>Settings</h3>
+          <p>Sabbath quiet mode: <b>${s.sabbathQuiet?'ON':'OFF'}</b> • Sunday Renewal at <b>${s.sundayRenewal}</b> • Timezone: <b>${s.tz}</b></p>`;
+      } else {
+        const r=await fetch('/api/phase/summary'); const j=await r.json();
+        v.innerHTML=`
+          <div class="cards">
+            <div class="card"><h3>Active Phase</h3><p><b>Phase ${j.phase}</b></p></div>
+            <div class="card"><h3>Readiness</h3>
+              <p>Engagement: <b>${Math.round(j.metrics.engagement*100)}%</b><br/>
+              Scripture Accuracy: <b>${Math.round(j.metrics.scriptureAccuracy*100)}%</b><br/>
+              Positivity: <b>${Math.round(j.metrics.feedbackPositivity*100)}%</b></p>
+            </div>
+            <div class="card"><h3>AI Guidance</h3><p>${j.guidance}</p></div>
+          </div>
+          <h3>Raw JSON</h3><pre>${JSON.stringify(j,null,2)}</pre>`;
       }
-      setTab("phases");
-    </script>
-  </body>
+    }
+    setTab('overview');
+  </script>
+</body>
 </html>
