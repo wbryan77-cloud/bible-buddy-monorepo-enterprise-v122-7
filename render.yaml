@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: bible-buddy-unified
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    rootDir: ./
