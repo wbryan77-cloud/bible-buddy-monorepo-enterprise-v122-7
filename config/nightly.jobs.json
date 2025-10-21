@@ -1,0 +1,21 @@
+{
+  "timezone": "America/Chicago",
+  "jobs": [
+    {
+      "id": "six-day-review",
+      "time": "15:00",
+      "byDay": [
+        "FR"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "sunday-renewal",
+      "time": "08:00",
+      "byDay": [
+        "SU"
+      ],
+      "enabled": true
+    }
+  ]
+}
