@@ -1,0 +1,1 @@
+Hi {{salutation}}, moving to Phase 2. Continue with us? Reply YES/NO.

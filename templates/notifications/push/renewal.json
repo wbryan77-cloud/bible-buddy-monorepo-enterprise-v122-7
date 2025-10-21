@@ -1,0 +1,16 @@
+{
+  "title": "A New Week Begins \ud83c\udf05",
+  "body": "Grace and peace, {{salutation}}. Ready to continue {{topic}}?",
+  "actions": [
+    {
+      "title": "Continue",
+      "action": "continue",
+      "url": "{{continueLink}}"
+    },
+    {
+      "title": "Pause",
+      "action": "pause",
+      "url": "{{pauseLink}}"
+    }
+  ]
+}
