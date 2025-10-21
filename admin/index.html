@@ -1,1 +1,46 @@
-<h1>Admin Dashboard — v122.7</h1><p>Phase 1 active. AI will guide Phases 2–4.</p>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin • Bible Buddy v122.7</title>
+    <style>
+      body { font-family: system-ui; max-width: 960px; margin: 28px auto; }
+      nav button { margin-right: 8px; padding: 6px 10px; }
+      pre { background:#f6f6f6; padding:12px; border-radius:6px; overflow:auto; }
+    </style>
+  </head>
+  <body>
+    <h1>Admin Dashboard — v122.7</h1>
+    <nav>
+      <button onclick="setTab('phases')">Testing Phases</button>
+      <button onclick="setTab('scripture')">Scripture Report</button>
+      <button onclick="setTab('renewal')">First-Day Renewal</button>
+      <button onclick="setTab('settings')">Settings</button>
+    </nav>
+    <div id="view"></div>
+
+    <script>
+      async function setTab(tab) {
+        const v = document.getElementById("view");
+        if (tab === "scripture") {
+          const r = await fetch("/api/reports/scripture-alignment");
+          const j = await r.json();
+          v.innerHTML = "<h3>Scripture Alignment Report</h3><pre>" +
+            JSON.stringify(j, null, 2) + "</pre>";
+        } else if (tab === "renewal") {
+          const r = await fetch("/api/reports/first-day-renewal?compare=true");
+          const j = await r.json();
+          v.innerHTML = "<h3>First-Day Renewal (Compare Weeks)</h3><pre>" +
+            JSON.stringify(j, null, 2) + "</pre>";
+        } else if (tab === "settings") {
+          v.innerHTML = "<h3>Settings</h3><p>Sabbath quiet mode is ON. " +
+            "Sunday Renewal messages go out at 08:00.</p>";
+        } else {
+          v.innerHTML = "<h3>Testing Phases</h3><p>Phase 1 is active. " +
+            "AI will guide Phases 2–4 as metrics show readiness.</p>";
+        }
+      }
+      setTab("phases");
+    </script>
+  </body>
+</html>
