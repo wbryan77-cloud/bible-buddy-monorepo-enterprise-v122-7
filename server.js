@@ -1,16 +1,18 @@
+// server.js — CommonJS compatible setup for Render
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const multer = require('multer'); // ✅ keep only this one
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import dotenv from 'dotenv';
-import cookieParser from 'cookie-parser';
-import fs from 'fs';
-import { parse } from 'csv-parse/sync';
+const multer = require('multer');
+const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser');
+const { parse } = require('csv-parse/sync');
 
-import { PHASE_SCRIPTS } from './lib/coach/scripts.js';
+const { nextCoachStep, summarizeForAdmin, suggestionsFromQA } = require('./lib/coach/engine.js');
+const { createStore } = require('./lib/persist/memory.js');
+const { createPrisma } = require('./lib/persist/prisma.js');
+const { createQueue } = require('./lib/queue/queue.js');
+const { sendSmsTwilio } = require('./lib/providers/sms/twilio.js');
+const { checkPrecept, syncAll } = require('./lib/precept/engine.js');
 import { nextCoachStep, summarizeForAdmin, suggestionsFromQA } from './lib/coach/engine.js';
 import { createStore as createMem } from './lib/persist/memory.js';
 import { createStore as createPrisma } from './lib/persist/prisma.js';
