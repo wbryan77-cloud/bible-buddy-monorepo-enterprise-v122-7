@@ -1,9 +1,48 @@
+
 services:
   - type: web
-    name: bible-buddy-unified
+    name: bible-buddy
     env: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm install && npx prisma migrate deploy
     startCommand: node server.js
-    rootDir: ./
     autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_PASSWORD
+        value: change-me
+      - key: PHASE_AUTOSTART
+        value: "1"
+      - key: AI_DEPLOYMENT_AGENT
+        value: enabled
+      - key: TIMEZONE
+        value: America/Chicago
+      - key: PERSISTENCE
+        value: MEMORY
+      - key: POSTGRES_PRISMA
+        value: enabled
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: EMAIL_PROVIDER
+        value: resend
+      - key: RESEND_API_KEY
+        sync: false
+      - key: SMS_PROVIDER
+        value: twilio
+      - key: TWILIO_SID
+        sync: false
+      - key: TWILIO_TOKEN
+        sync: false
+      - key: TWILIO_FROM
+        sync: false
+      - key: SABBATH_QUIET
+        value: "true"
+      - key: SUNDAY_RENEWAL_TIME
+        value: "08:00"
+      - key: QUEUE_RATE_PER_MINUTE
+        value: "60"
+      - key: QUEUE_MAX_RETRIES
+        value: "5"

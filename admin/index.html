@@ -1,1 +1,161 @@
-<!doctype html><html><head><meta charset='utf-8'><title>Admin v122.9.1</title><link rel='stylesheet' href='/admin/theme.css'><script src='https://cdn.jsdelivr.net/npm/chart.js'></script></head><body><h1>Admin Dashboard — v122.9.1</h1><nav><button onclick="location.href='/status'">Status</button></nav><script type='module' src='/admin/js/dashboard.js'></script></body></html>
+
+<!doctype html><meta charset="utf-8"><title>Admin • v122.10.11</title>
+<link rel="stylesheet" href="/admin/theme.css">
+<div id="guard" class="banner warn">Checking connections…</div>
+<nav class="header">
+  <div>
+    <button class="tab" data-tab="coach">AI Coach</button>
+    <button class="tab" data-tab="actions">Actions</button>
+    <button class="tab" data-tab="mapping">Mapping</button>
+    <button class="tab" data-tab="export">Export</button>
+    <button class="tab" data-tab="providers">Providers</button>
+    <button class="tab" data-tab="insights">Insights</button>
+    <button class="tab" data-tab="persistence">Persistence</button>
+  </div>
+  <label class="toggle"><input type="checkbox" id="dark"> Studio Theme</label>
+</nav>
+<section id="app">Loading…</section>
+<script type="module">
+const app=document.getElementById('app');
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>render(b.dataset.tab));
+const dark=document.getElementById('dark'); dark.onchange=()=>{ document.documentElement.style.setProperty('--bg', dark.checked?'#0b1324':'#fff'); document.documentElement.style.setProperty('--fg', dark.checked?'#eef2ff':'#0b1324'); };
+
+async function j(u,o){const r=await fetch(u,o); if(!r.ok) throw new Error(await r.text()); const ct=r.headers.get('content-type')||''; return ct.includes('json')?r.json():r.text();}
+function downloadFile(filename, content, type='text/csv'){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([content],{type})); a.download=filename; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),5000); }
+
+// Guardrails banner
+async function banner(){
+  try{
+    const p = await j('/api/persistence');
+    const s = await j('/api/providers/status');
+    const el = document.getElementById('guard');
+    let msgs=[]; let cls='ok';
+    if(p.mode!=='POSTGRES' || !p.connected){ msgs.push('Memory mode — add Postgres (DATABASE_URL) for durable data.'); cls='warn'; }
+    if(s.queue.mode!=='redis'){ msgs.push('Queue in memory — add REDIS_URL for retries/backoff.'); cls= cls==='ok' ? 'warn' : cls; }
+    if(!s.email.ready){ msgs.push('Email provider not configured (RESEND_API_KEY).'); cls='warn'; }
+    if(!s.sms.ready){ msgs.push('SMS provider not configured (TWILIO_*).'); cls='warn'; }
+    if(p.mode==='POSTGRES' && p.connected && s.queue.mode==='redis'){ if(s.email.ready || s.sms.ready){ msgs=['All systems connected ✓']; cls='ok'; } }
+    el.className='banner '+cls;
+    el.textContent = msgs.join(' ');
+  }catch(e){
+    const el = document.getElementById('guard'); el.className='banner error'; el.textContent='Cannot reach APIs — verify service running.';
+  }
+}
+banner();
+
+async function render(tab){
+  if(tab==='coach'){
+    const [next,sum]=await Promise.all([j('/api/coach/next'), j('/api/coach/summary')]);
+    app.innerHTML=`
+      <div class="card"><h3>Highlights</h3>
+        <ul>${sum.highlights.map(h=>`<li><b>${h.topic}:</b> ${h.answer}</li>`).join('')||'<li>—</li>'}</ul>
+        <p><small>Engagement: answers ${sum.engagement.answers}, actions ${sum.engagement.actions}</small></p>
+      </div>
+      <div class="card"><h3>Questions</h3>${
+        next.map((q,i)=>`<div class="card"><b>${q.topic}</b><div>${q.question}</div><textarea id="a${i}" rows="3"></textarea><div><small>${q.followup}</small></div><button data-i="${i}">Save Answer</button></div>`).join('')
+      }</div>`;
+    document.querySelectorAll('button[data-i]').forEach(b=>b.onclick=async()=>{
+      const i=b.dataset.i; const answer=document.getElementById('a'+i).value;
+      await fetch('/api/coach/answer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:next[i].topic,question:next[i].question,answer})});
+      alert('Saved.'); banner();
+    });
+  } else if(tab==='actions'){
+    const sug=await j('/api/coach/suggestions');
+    app.innerHTML = `
+      <div class="card"><h3>Suggested actions</h3>${
+        sug.length?('<ul>'+sug.map(s=>'<li>'+s.type+' '+(s.ref||s.tone||'')+' '+(s.toTheme||'')+'</li>').join('')+'</ul>'):'<i>None yet</i>'}
+        <p>${sug.map((s,i)=>'<button data-i="'+i+'">Apply '+s.type+'</button>').join(' ')}</p>
+        <button id="advance">Advance Phase</button>
+      </div>`;
+    document.querySelectorAll('button[data-i]').forEach(b=>b.onclick=async()=>{
+      const i=parseInt(b.dataset.i,10); const body=sug[i];
+      await fetch('/api/actions/apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      alert('Applied: '+body.type); banner();
+    });
+    document.getElementById('advance').onclick=async()=>{ await fetch('/api/actions/advance-phase',{method:'POST'}); alert('Phase advanced (if eligible).'); banner(); };
+  } else if(tab==='mapping'){
+    const map = await j('/api/mapping');
+    app.innerHTML = `
+      <div class="grid">
+        <div class="card"><h3>Current mapping</h3><pre id="cur">${JSON.stringify(map,null,2)}</pre>
+          <p><a class="btn" href="/api/mapping/export.csv" download>Download Mapping CSV</a>
+             <button id="write">Write & Download CSV</button>
+          </p>
+        </div>
+        <div class="card"><h3>Upload mapping</h3>
+          <form id="up" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".json,.csv" required />
+            <button>Upload</button>
+          </form>
+        </div>
+        <div class="card"><h3>Suggestions</h3>
+          <button id="run">Run Suggestions</button>
+          <div id="sugs"></div>
+          <button id="preview" style="display:none">Preview Diff</button>
+          <button id="apply" style="display:none">Apply to mapping</button>
+        </div>
+      </div>`;
+    document.getElementById('write').onclick=async()=>{
+      const r=await fetch('/api/mapping/write-csv',{method:'POST'});
+      if(!r.ok){ alert(await r.text()); return; }
+      const resp = await fetch('/api/mapping/export.csv'); const csv = await resp.text();
+      downloadFile('verse_mapping.csv', csv); alert('CSV written and downloaded.');
+    };
+    const up=document.getElementById('up');
+    up.onsubmit=async(e)=>{e.preventDefault(); const fd=new FormData(up); const r=await fetch('/api/mapping/upload',{method:'POST',body:fd}); if(!r.ok){alert(await r.text());return;} alert('Mapping updated.'); render('mapping'); banner(); };
+    let cachedS=[];
+    document.getElementById('run').onclick=async()=>{
+      const s = await j('/api/mapping/suggest'); cachedS=s;
+      document.getElementById('sugs').innerHTML = s.length?('<ul>'+s.map(x=>'<li>'+x.type+' '+(x.ref||'')+' '+(x.toTheme||'')+'</li>').join('')+'</ul>'):'<i>No suggestions.</i>';
+      document.getElementById('preview').style.display = s.length?'inline-block':'none';
+      document.getElementById('apply').style.display = s.length?'inline-block':'none';
+    };
+    document.getElementById('preview').onclick=async()=>{
+      const d = await j('/api/mapping/preview-diff',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(cachedS)});
+      const rows = d.add||[];
+      document.getElementById('sugs').innerHTML = rows.length?('<table class="table"><tr><th>Ref</th><th>From</th><th>To</th></tr>'+rows.map(r=>`<tr><td>${r.ref}</td><td class="diff-del">${r.from}</td><td class="diff-add">${r.to}</td></tr>`).join('')+'</table>'):'<i>No changes.</i>';
+    };
+    document.getElementById('apply').onclick=async()=>{
+      const r=await fetch('/api/mapping/apply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(cachedS)});
+      if(!r.ok){ alert(await r.text()); return; }
+      const out=await r.json();
+      const resp = await fetch('/api/mapping/export.csv');
+      const csv = await resp.text();
+      downloadFile('verse_mapping.csv', csv);
+      alert('Applied '+out.applied+' change(s). CSV downloaded.');
+      render('mapping'); banner();
+    };
+  } else if(tab==='export'){
+    app.innerHTML = `
+      <div class="card"><h3>Exports</h3>
+        <p><a class="btn" href="/api/export/qa.csv" download>Download Q&A CSV</a>
+        <a class="btn" href="/api/export/actions.csv" download>Download Actions CSV</a></p>
+      </div>`;
+  } else if(tab==='providers'){
+    const st = await j('/api/providers/status');
+    app.innerHTML = `
+      <div class="card"><h3>Providers</h3>
+        <p><b>Email:</b> ${st.email.provider} ${st.email.ready?'✓ ready':'(stub)'}<br/>
+           <b>SMS:</b> ${st.sms.provider} ${st.sms.ready?'✓ ready':'(stub)'}<br/>
+           <b>Queue:</b> ${st.queue.mode}</p>
+        <p><button id="tmail">Send Test Email</button>
+           <button id="tsms">Send Test SMS</button>
+           <button id="psync">Re-run Precept Sync</button></p>
+        <div class="card"><h4>Recent Sends</h4><pre>${JSON.stringify(st.recentSends||[],null,2)}</pre></div>
+      </div>`;
+    document.getElementById('tmail').onclick=async()=>{ await fetch('/api/providers/test-email',{method:'POST'}); alert('Queued test email.'); render('providers'); banner(); };
+    document.getElementById('tsms').onclick=async()=>{ await fetch('/api/providers/test-sms',{method:'POST'}); alert('Queued test SMS.'); render('providers'); banner(); };
+    document.getElementById('psync').onclick=async()=>{ await fetch('/api/precept/sync-all',{method:'POST'}); alert('Precept sync queued.'); };
+  } else if(tab==='insights'){
+    const x = await j('/api/insights');
+    app.innerHTML = `<div class="card"><h3>Insights</h3><pre>${JSON.stringify(x,null,2)}</pre></div>`;
+  } else if(tab==='persistence'){
+    const p = await j('/api/persistence');
+    app.innerHTML = `<div class="card"><h3>Persistence</h3>
+      <p>Status: <b>${p.mode}</b> ${p.connected?'✓ Connected':'(memory mode)'} </p>
+      <p><a class="btn" href="/api/admin/export-db">Export Snapshot (.zip)</a></p>
+    </div>`;
+  } else { app.innerHTML='<p>Select a tab.</p>'; }
+}
+render('coach');
+</script>

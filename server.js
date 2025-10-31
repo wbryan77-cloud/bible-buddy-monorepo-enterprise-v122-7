@@ -3,100 +3,193 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import cron from 'node-cron';
 import cookieParser from 'cookie-parser';
-import { createStore } from './lib/memory/adapter.js';
-import { preprocessAndExtract } from './lib/ocr/index.js';
+import fs from 'fs';
+import multer from 'multer';
+import { parse } from 'csv-parse/sync';
+
+import { PHASE_SCRIPTS } from './lib/coach/scripts.js';
+import { nextCoachStep, summarizeForAdmin, suggestionsFromQA } from './lib/coach/engine.js';
+import { createStore as createMem } from './lib/persist/memory.js';
+import { createStore as createPrisma } from './lib/persist/prisma.js';
+import { createQueue } from './lib/queue/queue.js';
+import { sendEmailResend } from './lib/providers/email/resend.js';
+import { sendSmsTwilio } from './lib/providers/sms/twilio.js';
+import { checkPrecept, syncAll as preceptSyncAll } from './lib/precept/engine.js';
 
 dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-app.use(express.json({ limit:'2mb' }));
+app.use(express.json({limit:'5mb'}));
 app.use(cookieParser());
 
-const store = createStore();
+const USE_PRISMA = (process.env.PERSISTENCE||'MEMORY').toUpperCase()==='POSTGRES' && process.env.POSTGRES_PRISMA==='enabled';
+const store = await (USE_PRISMA? createPrisma(): createMem());
 
-const phaseAuto = process.env.PHASE_AUTOSTART === '1';
-const agentEnabled = (process.env.AI_DEPLOYMENT_AGENT || '').toLowerCase() === 'enabled';
-const sabbathQuiet = (process.env.SABBATH_QUIET || 'true').toLowerCase() === 'true';
-const tz = process.env.TIMEZONE || 'UTC';
-const sundayRenewal = process.env.SUNDAY_RENEWAL_TIME || '08:00';
-const adminPassword = process.env.ADMIN_PASSWORD || '';
-const ocrEnabled = (process.env.OCR_ENABLED || 'true').toLowerCase() === 'true';
-
-function requireAdmin(req,res,next){
-  if (!adminPassword) return next();
-  const token = req.cookies['bb_admin'];
-  if (token === adminPassword) return next();
-  if (req.path.startsWith('/admin/login') || req.path === '/admin/login.html') return next();
-  return res.redirect('/admin/login.html');
-}
-
-app.use('/', express.static(path.join(__dirname, 'public')));
-app.use('/admin', requireAdmin, express.static(path.join(__dirname, 'admin')));
-app.use('/templates', express.static(path.join(__dirname, 'templates')));
-
-app.get('/health', (_req, res)=>res.json({ ok:true, version:'122.9', service:'unified' }));
-app.get('/status', (_req, res)=>res.json({ phaseAutoStart:phaseAuto, aiDeploymentAgent:agentEnabled, sabbathQuiet, sundayRenewal, tz, ocrEnabled }));
-
-let activityLog = [];
-function logActivity(msg){ const e={ts:new Date().toISOString(),msg}; activityLog.unshift(e); activityLog = activityLog.slice(0,500); }
-app.get('/api/activity', (_req,res)=> res.json(activityLog));
+// Queue
+const sendQueue = createQueue('sendQueue', async (job)=>{
+  const d=job.data||job;
+  if(d.type==='email'){
+    const r = await sendEmailResend({to:d.to, subject:d.subject, html:d.html});
+    await store.logSend({channel:'email', to:d.to, subject:d.subject, status:r.ok?'ok':'fail', detail:r.stub?'stub':'sent'});
+  }else if(d.type==='sms'){
+    const r = await sendSmsTwilio({to:d.to, body:d.body});
+    await store.logSend({channel:'sms', to:d.to, subject:'', status:r.ok?'ok':'fail', detail:r.stub?'stub':'sent'});
+  }else if(d.type==='precept'){
+    const out = checkPrecept(d.ref);
+    await store.logSend({channel:'precept', to:d.ref, subject:'', status:'ok', detail:JSON.stringify(out)});
+  }
+});
 
 let phase = 1;
-let metrics = { engagement: 0.72, scriptureAccuracy: 0.91, feedbackPositivity: 0.86 };
+let metrics = { engagement: 0.76, scriptureAccuracy: 0.91, feedbackPositivity: 0.86 };
 
-app.get('/api/phase/summary', (_req, res)=>{
-  const readyForNext = metrics.engagement > 0.7 && metrics.scriptureAccuracy > 0.9;
-  res.json({
-    phase, metrics, readyForNext,
-    guidance: readyForNext ? 'Momentum is healthy. Consider enabling Phase 2 (wider testers).' : 'Stay in Phase 1. Keep gathering scripture feedback and clarity.',
-    nextChecks: ['Friday Six-Day Review', 'Sunday First-Day Renewal']
-  });
-});
-app.post('/api/phase/advance', (_req, res)=>{ if (phase < 4) phase += 1; logActivity(`[AI/Admin] Phase advanced to ${phase}`); res.json({ ok:true, phase }); });
+// Static
+app.use('/', express.static(path.join(__dirname,'public')));
+app.use('/admin', express.static(path.join(__dirname,'admin')));
 
-app.get('/api/reports/scripture-alignment', (_req,res)=>{
-  res.json({generatedAt:new Date().toISOString(), totals:{approved:12,pending:2,sent_back:1},
-    topVerses:[{ref:'Philippians 4:6-7',topic:'Peace',score:0.92},{ref:'James 1:5',topic:'Wisdom',score:0.88},{ref:'Hebrews 4:12',topic:'Word of God',score:0.84}],
-    aiNotes:['Consider moving one verse to Discipline','Add short reflection for gratitude theme']});
-});
-app.get('/api/reports/first-day-renewal', (req,res)=>{
-  const compare = req.query.compare === 'true';
-  const thisWeek = { continued: 35, paused: 5, noResponse: 2, totalSent: 42 };
-  const lastWeek = { continued: 30, paused: 7, noResponse: 5, totalSent: 42 };
-  const delta = { continued: thisWeek.continued - lastWeek.continued, paused: lastWeek.paused - thisWeek.paused };
-  res.json({ generatedAt: new Date().toISOString(), compare, thisWeek, lastWeek, delta, aiNote: 'Participation rose; emphasize encouragement and perseverance.' });
-});
+// Health
+app.get('/health', async (_req,res)=>res.json({ ok:true, version:'122.10.11', mode: USE_PRISMA?'POSTGRES':'MEMORY', queue: await sendQueue.status() }));
 
-app.get('/api/templates', (_req,res)=>{
-  res.json([
-    { id:'p1_invite_email', type:'email', title:'Phase 1 Invite — Doctrine Review', path:'/templates/emails/p1_invite.html' },
-    { id:'p2_rollover_sms', type:'sms', title:'Phase 2 Rollover SMS', path:'/templates/sms/p2_rollover.txt' },
-    { id:'renewal_push', type:'push', title:'First-Day Renewal Push', path:'/templates/notifications/push/renewal.json' }
-  ]);
-});
+// Coach
+app.get('/api/coach/next', (_req,res)=>{ res.json(nextCoachStep({ phase, metrics, unanswered:0, lastTopic:null })); });
+app.post('/api/coach/answer', async (req,res)=>{ const { topic, question, answer } = req.body||{}; await store.saveQA({ topic, question, answer, ts:new Date() }); if(/(gentle|direct|playful)/i.test(answer||'')) metrics.engagement=Math.min(1,metrics.engagement+0.01); if(/misapplied|replace|verse/i.test(answer||'')) metrics.scriptureAccuracy=Math.min(1,metrics.scriptureAccuracy+0.01); res.json({ok:true}); });
+app.get('/api/coach/suggestions', async (_req,res)=>{ res.json(suggestionsFromQA(await store.listQA())); });
+app.get('/api/coach/summary', async (_req,res)=>{ res.json(summarizeForAdmin(await store.listQA(), await store.listJournal(), await store.listActions(), await store.engagement())); });
 
-app.post('/api/stewardship/scan', (req,res)=>{
-  const { barcode='0000000000000', ingredients='water,salt' } = req.body || {};
-  const flags = []; const verses = ['1 Corinthians 6:19-20','Philippians 4:6-7'];
-  res.json({ ok:true, barcode, ingredients, flags, verses });
+// Actions
+app.post('/api/actions/apply', async (req,res)=>{
+  const act=req.body||{};
+  if (act.type==='move_verse'){ await store.saveAction({type:'move_verse', ref:act.ref||'John 3:16', toTheme:act.toTheme||'peace', ts:new Date()}); metrics.scriptureAccuracy=Math.min(1,metrics.scriptureAccuracy+0.01); }
+  else if (act.type==='set_tone'){ await store.saveAction({type:'set_tone', tone:act.tone||'gentle', ts:new Date()}); metrics.engagement=Math.min(1, metrics.engagement+0.02); }
+  else if (act.type==='advance_phase'){ if(phase<4){ phase+=1; await store.saveAction({type:'advance_phase', to:phase, ts:new Date()}); } }
+  else return res.status(400).json({ok:false, error:'Unknown action'});
+  res.json({ok:true});
 });
-app.post('/api/stewardship/ocr', (req,res)=>{
-  const result = preprocessAndExtract(req.body?.imageBase64 || '');
-  res.json(result);
-});
+app.post('/api/actions/advance-phase', async (_req,res)=>{ if(phase<4){ phase+=1; await store.saveAction({type:'advance_phase', to:phase, ts:new Date()}); } res.json({ok:true, phase}); });
 
-function startAgent(){
-  if(!agentEnabled) return;
-  logActivity('AI Deployment Agent active.');
-  cron.schedule('0 15 * * 5', ()=>{ if (sabbathQuiet){ logActivity('Friday Six-Day Review generated.'); } }, { timezone: tz });
-  const [h,m] = sundayRenewal.split(':').map(x=>parseInt(x,10)); const expr = `${m||0} ${h||8} * * 0`;
-  cron.schedule(expr, ()=>{ logActivity('Sunday First-Day Renewal messages sent.'); }, { timezone: tz });
-  if (phaseAuto) logActivity('Phase 1 Testing started on boot. Phases 2–4 enabled.');
+// CSV exports
+function toCSV(rows){
+  if(!rows.length) return 'no,data\n';
+  const keys=[...new Set(rows.flatMap(r=>Object.keys(r)))];
+  const header=keys.join(',');
+  const esc=v=>(''+(v??'')).replace(/"/g,'""');
+  const lines = rows.map(r=>keys.map(k=>`"${esc(r[k])}"`).join(','));
+  return [header, ...lines].join('\n');
 }
-startAgent();
+app.get('/api/export/qa.csv', async (_req,res)=>{
+  const rows = await store.listQA();
+  const csv = toCSV(rows);
+  res.set('Content-Type','text/csv'); res.set('Content-Disposition','attachment; filename="coach_qa.csv"'); res.send(csv);
+});
+app.get('/api/export/actions.csv', async (_req,res)=>{
+  const rows = await store.listActions();
+  const csv = toCSV(rows);
+  res.set('Content-Type','text/csv'); res.set('Content-Disposition','attachment; filename="coach_actions.csv"'); res.send(csv);
+});
+
+// Mapping
+const mapPath = path.join(__dirname,'data','verse_mapping.json');
+function readMap(){ try{ return JSON.parse(fs.readFileSync(mapPath,'utf-8')); } catch(e){ return {misapplied:{},themes:[]}; } }
+function writeMap(obj){ fs.mkdirSync(path.dirname(mapPath), {recursive:true}); fs.writeFileSync(mapPath, JSON.stringify(obj,null,2)); }
+app.get('/api/mapping', (_req,res)=>res.json(readMap()));
+
+import multer from 'multer';
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 2*1024*1024 } });
+import { parse } from 'csv-parse/sync';
+app.post('/api/mapping/upload', upload.single('file'), (req,res)=>{
+  if(!req.file) return res.status(400).send('No file uploaded.');
+  const name = req.file.originalname.toLowerCase();
+  let mapping = { misapplied:{}, themes:[] };
+  try{
+    if(name.endsWith('.json')){
+      mapping = JSON.parse(req.file.buffer.toString('utf-8'));
+    }else if(name.endsWith('.csv')){
+      const rows = parse(req.file.buffer.toString('utf-8'), { columns:true, skip_empty_lines:true });
+      for(const r of rows){ const ref=(r.ref||r.reference||'').trim(); const toTheme=(r.toTheme||r.theme||'').trim(); if(ref && toTheme){ mapping.misapplied[ref]=toTheme; } }
+      mapping.themes = mapping.themes?.length?mapping.themes:['peace','gratitude','discipline','hope','faith'];
+    }else return res.status(400).send('Unsupported file type.');
+  }catch(e){ return res.status(400).send('Parse error: '+e.message); }
+  writeMap(mapping); res.json({ ok:true, counts:{ misapplied:Object.keys(mapping.misapplied||{}).length, themes:(mapping.themes||[]).length } });
+});
+
+app.get('/api/mapping/export.csv', (_req,res)=>{
+  const m=readMap(); const rows=Object.entries(m.misapplied||{}).map(([ref,toTheme])=>({ref,toTheme}));
+  const csv = (rows.length? 'ref,toTheme\n'+rows.map(r=>`${r.ref},${r.toTheme}`).join('\n') : 'ref,toTheme\n');
+  res.set('Content-Type','text/csv'); res.set('Content-Disposition','attachment; filename="verse_mapping.csv"'); res.send(csv);
+});
+
+app.post('/api/mapping/write-csv', (_req,res)=>{
+  const m=readMap(); const rows=Object.entries(m.misapplied||{}).map(([ref,toTheme])=>({ref,toTheme}));
+  const csv = (rows.length? 'ref,toTheme\n'+rows.map(r=>`${r.ref},${r.toTheme}`).join('\n') : 'ref,toTheme\n');
+  const csvPath = path.join(__dirname,'data','verse_mapping.csv');
+  fs.mkdirSync(path.dirname(csvPath), {recursive:true});
+  fs.writeFileSync(csvPath, csv);
+  res.json({ ok:true, path:'/data/verse_mapping.csv', count: rows.length });
+});
+
+app.post('/api/mapping/preview-diff', (req,res)=>{
+  const sugg=req.body||[]; const before=readMap(); const add=[];
+  for(const s of sugg){ if(s.type==='move_verse' && s.ref){ const to=s.toTheme||before.misapplied[s.ref]; if(before.misapplied[s.ref]!==to) add.push({ref:s.ref, from: before.misapplied[s.ref]||'(none)', to}); } }
+  res.json({ add });
+});
+
+app.post('/api/mapping/apply', (req,res)=>{
+  const sugg=req.body; if(!Array.isArray(sugg)) return res.status(400).send('Expect array.';
+  const before=readMap(); const after=JSON.parse(JSON.stringify(before)); let applied=0;
+  for(const s of sugg){ if(s.type==='move_verse' && s.ref && s.toTheme){ after.misapplied[s.ref]=s.toTheme; applied++; } }
+  writeMap(after);
+  res.json({ ok:true, applied, beforeCount:Object.keys(before.misapplied||{}).length, afterCount:Object.keys(after.misapplied||{}).length });
+});
+
+// Providers status + tests
+app.get('/api/providers/status', async (_req,res)=>{
+  const st = {
+    email: { provider: process.env.EMAIL_PROVIDER||'resend', ready: !!process.env.RESEND_API_KEY },
+    sms:   { provider: process.env.SMS_PROVIDER||'twilio', ready: !!(process.env.TWILIO_SID && process.env.TWILIO_TOKEN && process.env.TWILIO_FROM) },
+    queue: await sendQueue.status(),
+    recentSends: await store.recentSends()
+  };
+  res.json(st);
+});
+app.post('/api/providers/test-email', async (_req,res)=>{
+  await sendQueue.add('email', { type:'email', to:'you@example.com', subject:'Bible Buddy Test', html:'<h3>It works</h3>' });
+  res.json({ ok:true });
+});
+app.post('/api/providers/test-sms', async (_req,res)=>{
+  await sendQueue.add('sms', { type:'sms', to:'+15555555555', body:'Bible Buddy test SMS' });
+  res.json({ ok:true });
+});
+
+// Precept advisor endpoints
+app.get('/api/precept/check', async (req,res)=>{
+  const ref = req.query.ref||'John 3:16';
+  const out = checkPrecept(ref);
+  res.json({ ref, suggestions: out });
+});
+app.post('/api/precept/sync-all', async (_req,res)=>{
+  const mapping = readMap();
+  const result = preceptSyncAll(mapping);
+  for(const r of result){ await sendQueue.add('precept', { type:'precept', ref:r.ref }); }
+  res.json({ ok:true, queued: result.length });
+});
+
+// Insights + Persistence
+app.get('/api/insights', async (_req,res)=>{
+  const qa = await store.listQA(); const actions = await store.listActions();
+  const byTopic = {}; for(const q of qa){ byTopic[q.topic]= (byTopic[q.topic]||0)+1; }
+  const actionTypes = {}; for(const a of actions){ actionTypes[a.type]= (actionTypes[a.type]||0)+1; }
+  res.json({ questionsByTopic: byTopic, actionsByType: actionTypes });
+});
+app.get('/api/persistence', async (_req,res)=>{
+  res.json({ mode: USE_PRISMA?'POSTGRES':'MEMORY', connected: USE_PRISMA });
+});
+app.get('/api/admin/export-db', async (_req,res)=>{
+  const qa = await store.listQA(); const actions=await store.listActions(); const sends=await store.recentSends();
+  const payload = { exportedAt: new Date().toISOString(), qa, actions, sends };
+  res.set('Content-Type','application/json'); res.set('Content-Disposition','attachment; filename="snapshot.json"'); res.send(JSON.stringify(payload,null,2));
+});
 
 const port = process.env.PORT || 3000;
-app.listen(port, ()=> console.log(`[Unified] Bible Buddy v122.9 listening on :${port}`));
+app.listen(port, ()=>console.log('Bible Buddy v122.10.11 on :' + port));

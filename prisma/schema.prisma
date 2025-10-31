@@ -1,0 +1,57 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CoachQA {
+  id       Int      @id @default(autoincrement())
+  topic    String
+  question String
+  answer   String?
+  ts       DateTime @default(now())
+}
+
+model CoachAction {
+  id       Int      @id @default(autoincrement())
+  type     String
+  ref      String?
+  tone     String?
+  toTheme  String?
+  toPhase  Int?
+  ts       DateTime @default(now())
+}
+
+model CoachJournal {
+  id   Int      @id @default(autoincrement())
+  note String
+  ts   DateTime @default(now())
+}
+
+model SendLog {
+  id      Int      @id @default(autoincrement())
+  channel String
+  toAddr  String?
+  subject String?
+  status  String
+  detail  String?
+  ts      DateTime @default(now())
+}
+
+model VerseMapping {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  valueJson String
+  ts        DateTime @default(now())
+}
+
+model PreceptLog {
+  id          Int      @id @default(autoincrement())
+  ref         String
+  suggestions String
+  ts          DateTime @default(now())
+}
