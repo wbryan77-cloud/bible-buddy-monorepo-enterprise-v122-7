@@ -13,13 +13,6 @@ const { createPrisma } = require('./lib/persist/prisma.js');
 const { createQueue } = require('./lib/queue/queue.js');
 const { sendSmsTwilio } = require('./lib/providers/sms/twilio.js');
 const { checkPrecept, syncAll } = require('./lib/precept/engine.js');
-import { nextCoachStep, summarizeForAdmin, suggestionsFromQA } from './lib/coach/engine.js';
-import { createStore as createMem } from './lib/persist/memory.js';
-import { createStore as createPrisma } from './lib/persist/prisma.js';
-import { createQueue } from './lib/queue/queue.js';
-import { sendEmailResend } from './lib/providers/email/resend.js';
-import { sendSmsTwilio } from './lib/providers/sms/twilio.js';
-import { checkPrecept, syncAll as preceptSyncAll } from './lib/precept/engine.js';
 
 dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
