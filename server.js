@@ -1,11 +1,13 @@
-
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
+const multer = require('multer'); // ✅ keep only this one
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import fs from 'fs';
-import multer from 'multer';
 import { parse } from 'csv-parse/sync';
 
 import { PHASE_SCRIPTS } from './lib/coach/scripts.js';
