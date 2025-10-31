@@ -15,8 +15,7 @@ const { sendSmsTwilio } = require('./lib/providers/sms/twilio.js');
 const { checkPrecept, syncAll } = require('./lib/precept/engine.js');
 
 dotenv.config();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 const app = express();
 app.use(express.json({limit:'5mb'}));
 app.use(cookieParser());
