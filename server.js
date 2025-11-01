@@ -91,7 +91,6 @@ function readMap(){ try{ return JSON.parse(fs.readFileSync(mapPath,'utf-8')); } 
 function writeMap(obj){ fs.mkdirSync(path.dirname(mapPath), {recursive:true}); fs.writeFileSync(mapPath, JSON.stringify(obj,null,2)); }
 app.get('/api/mapping', (_req,res)=>res.json(readMap()));
 
-import multer from 'multer';
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 2*1024*1024 } });
 import { parse } from 'csv-parse/sync';
 app.post('/api/mapping/upload', upload.single('file'), (req,res)=>{
