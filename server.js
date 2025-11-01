@@ -154,7 +154,38 @@ app.post('/api/mapping/preview-diff', (req, res) => {
     after
   });
 });
+// Apply accepted mapping suggestions (write to verse_mapping.json)
+app.post('/api/mapping/apply', (req, res) => {
+  const sugg = req.body;
+  if (!Array.isArray(sugg)) {
+    return res.status(400).send('Expect array.');
+  }
 
+  const before = readMap();
+  const after  = JSON.parse(JSON.stringify(before));
+  let applied = 0;
+
+  for (const s of sugg) {
+    if (s.type === 'move_verse' && s.ref && s.toTheme) {
+      after.themes[s.toTheme] = after.themes[s.toTheme] || [];
+      if (!after.themes[s.toTheme].includes(s.ref)) {
+        after.themes[s.toTheme].push(s.ref);
+      }
+      if (after.misapplied && after.misapplied[s.ref]) {
+        delete after.misapplied[s.ref];
+      }
+      applied++;
+    }
+  }
+
+  writeMap(after);
+  return res.json({
+    ok: true,
+    applied,
+    beforeCount: Object.keys(before.misapplied || {}).length,
+    afterCount:  Object.keys(after.misapplied  || {}).length,
+  });
+});
 // Apply accepted mapping suggestions (write to verse_mapping.json)
 app.post('/api/mapping/apply', (req, res) => {
   const sugg = Array.isArray(req.body) ? req.body : [];
