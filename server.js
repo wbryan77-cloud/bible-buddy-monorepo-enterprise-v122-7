@@ -123,14 +123,65 @@ app.post('/api/mapping/write-csv', (_req,res)=>{
   fs.writeFileSync(csvPath, csv);
   res.json({ ok:true, path:'/data/verse_mapping.csv', count: rows.length });
 });
+// Preview mapping diff (before/after) given a list of suggestions
+app.post('/api/mapping/preview-diff', (req, res) => {
+  const sugg = Array.isArray(req.body) ? req.body : [];
+  const before = readMap();
+  const after = JSON.parse(JSON.stringify(before));
+  let add = 0;
 
-app.post('/api/mapping/preview-diff', (req,res)=>{
-  const sugg=req.body||[]; const before=readMap(); const add=[];
-  for(const s of sugg){ if(s.type==='move_verse' && s.ref){ const to=s.toTheme||before.misapplied[s.ref]; if(before.misapplied[s.ref]!==to) add.push({ref:s.ref, from: before.misapplied[s.ref]||'(none)', to}); } }
-  res.json({ add });
+  for (const s of sugg) {
+    if (s.type === 'move_verse' && s.ref && s.toTheme) {
+      if (!after.themes[s.toTheme]) after.themes[s.toTheme] = [];
+      // remove ref from all themes
+      for (const t of Object.keys(after.themes)) {
+        after.themes[t] = after.themes[t].filter(r => r !== s.ref);
+      }
+      // add to target
+      after.themes[s.toTheme].push(s.ref);
+      // clear misapplied flag
+      if (after.misapplied && after.misapplied[s.ref]) delete after.misapplied[s.ref];
+      add++;
+    }
+  }
+
+  return res.json({
+    ok: true,
+    add,
+    beforeCount: Object.keys(before.misapplied || {}).length,
+    afterCount: Object.keys(after.misapplied || {}).length,
+    before,
+    after
+  });
 });
 
-app.post('/api/mapping/apply', (req,res)=>{
+// Apply accepted mapping suggestions (write to verse_mapping.json)
+app.post('/api/mapping/apply', (req, res) => {
+  const sugg = Array.isArray(req.body) ? req.body : [];
+  if (sugg.length === 0) {
+    return res.status(400).json({ ok: false, error: 'Expect array of suggestions' });
+  }
+
+  const before = readMap();
+  const after = JSON.parse(JSON.stringify(before));
+  let applied = 0;
+
+  for (const s of sugg) {
+    if (s.type === 'move_verse' && s.ref && s.toTheme) {
+      if (!after.themes[s.toTheme]) after.themes[s.toTheme] = [];
+      for (const t of Object.keys(after.themes)) {
+        after.themes[t] = after.themes[t].filter(r => r !== s.ref);
+      }
+      after.themes[s.toTheme].push(s.ref);
+      if (after.misapplied && after.misapplied[s.ref]) delete after.misapplied[s.ref];
+      applied++;
+    }
+  }
+
+  writeMap(after);
+  return res.json({ ok: true, applied });
+});
+
   const sugg=req.body; if(!Array.isArray(sugg)) return res.status(400).send('Expect array.';
   const before=readMap(); const after=JSON.parse(JSON.stringify(before)); let applied=0;
   for(const s of sugg){ if(s.type==='move_verse' && s.ref && s.toTheme){ after.misapplied[s.ref]=s.toTheme; applied++; } }
