@@ -92,7 +92,7 @@ function writeMap(obj){ fs.mkdirSync(path.dirname(mapPath), {recursive:true}); f
 app.get('/api/mapping', (_req,res)=>res.json(readMap()));
 
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 2*1024*1024 } });
-import { parse } from 'csv-parse/sync';
+
 app.post('/api/mapping/upload', upload.single('file'), (req,res)=>{
   if(!req.file) return res.status(400).send('No file uploaded.');
   const name = req.file.originalname.toLowerCase();
