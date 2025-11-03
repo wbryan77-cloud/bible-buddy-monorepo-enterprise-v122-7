@@ -30,6 +30,7 @@ const USE_PRISMA =
 let store;
 async function makeStore() {
   store = USE_PRISMA ? await createPrisma() : createMem();
+  
 }
 
 // ----------------------------------------------------------------------------
