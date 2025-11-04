@@ -460,3 +460,7 @@ init().catch(err => {
   console.error('Startup error:', err);
   process.exit(1);
 });
+// Health check endpoint for Render
+app.get('/api/health', (req, res) => {
+  res.json({ ok: true });
+});
