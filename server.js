@@ -434,7 +434,26 @@ app.post('/api/selftest/run', async (req, res) => {
     res.status(500).json({ ok: false, error: (e && e.message) || String(e), results: SELFTEST.results });
   }
 });
-
+// Root route - homepage
+app.get('/', (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>Bible Buddy</title>
+        <style>
+          body { font-family: Arial; text-align: center; margin-top: 100px; background-color: #f5f5f5; color: #333; }
+          h1 { font-size: 2.5em; color: #2c3e50; }
+          p { font-size: 1.2em; color: #555; }
+        </style>
+      </head>
+      <body>
+        <h1>🙏 Bible Buddy is Live ✅</h1>
+        <p>Welcome to your deployed app on Render.</p>
+        <p><a href="/api/health">Check Health</a></p>
+      </body>
+    </html>
+  `);
+});
 app.get('/api/selftest/status', (_req, res) => res.json(SELFTEST));
 
 // ----------------------------------------------------------------------------
