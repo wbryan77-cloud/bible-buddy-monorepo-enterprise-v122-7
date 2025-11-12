@@ -288,6 +288,30 @@ async function init() {
     }
   });
 }
+// ===== AI Chat API =====
+const { chat } = require('./lib/ai/index.js');
+
+// in-memory conversation store (per process)
+const MEMORY = { sessions: {} };
+function getSession(id = 'default') {
+  if (!MEMORY.sessions[id]) MEMORY.sessions[id] = [];
+  return MEMORY.sessions[id];
+}
+
+app.post('/api/ai/chat', async (req, res) => {
+  try {
+    const { sessionId = 'default', user } = req.body || {};
+    const messages = getSession(sessionId);
+    messages.push({ role: 'user', content: String(user || '').trim() });
+
+    const out = await chat(messages);
+    messages.push({ role: 'assistant', content: out.text });
+
+    res.json({ ok: true, reply: out.text });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
 init().catch(err => { console.error('Startup error:', err); process.exit(1); });
 
 module.exports = app;
