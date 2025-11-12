@@ -8,7 +8,58 @@ const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const axios = require('axios'); // used by Self-Test
 dotenv.config();
+// --- AI Coach helpers ---
+const COACH_NAME = 'Bible Buddy Coach';
 
+function summarizeProviders(p) {
+  // p looks like: { email:{provider, ready}, sms:{provider,ready}, queue:{mode} }
+  const parts = [];
+  if (p?.email) parts.push(`Email: ${p.email.provider} (${p.email.ready ? 'ready' : 'missing keys'})`);
+  if (p?.sms) parts.push(`SMS: ${p.sms.provider} (${p.sms.ready ? 'ready' : 'missing keys'})`);
+  if (p?.queue) parts.push(`Queue: ${p.queue.mode}`);
+  return parts.join(' • ');
+}
+
+async function gatherStatus(base) {
+  // Base is like SELF_BASE_URL or http://localhost:PORT
+  const out = { ok: true, version: process.env.APP_VERSION || 'v122.x', checks: {} };
+  try {
+    const h = await axios.get(`${base}/api/health`).then(r => r.data).catch(() => ({ ok:false }));
+    out.checks.health = h;
+  } catch { out.checks.health = { ok:false }; }
+
+  try {
+    const prov = await axios.get(`${base}/api/providers/status`).then(r => r.data).catch(() => null);
+    out.checks.providers = prov;
+  } catch { out.checks.providers = null; }
+
+  // You can extend here (queue depth endpoint, DB ping, etc.)
+  return out;
+}
+
+function coachAdvice(status) {
+  const adv = [];
+  // Health
+  if (!status?.checks?.health?.ok) {
+    adv.push('Health check is failing. Confirm service is listening on the Render-assigned PORT and that /api/health returns {ok:true}.');
+  } else {
+    adv.push('Core service is responding ✅');
+  }
+  // Providers
+  const p = status?.checks?.providers;
+  if (!p) {
+    adv.push('Provider status endpoint not reachable. Ensure `/api/providers/status` route exists.');
+  } else {
+    if (!p.email?.ready) adv.push('Email provider keys missing. Add RESEND_API_KEY (or switch provider) in Render → Environment.');
+    if (!p.sms?.ready) adv.push('SMS provider keys missing. Add TWILIO_SID and TWILIO_TOKEN in Render → Environment.');
+    adv.push(`Providers summary: ${summarizeProviders(p)}.`);
+  }
+  // Queue hint
+  adv.push('Queue is running in memory mode by default. Set QUEUE_MODE=redis and REDIS_URL in Render to enable durable jobs (optional).');
+  // Admin link
+  adv.push('Use Admin → “Run Self-Test” to validate end-to-end. If it fails, click the row to see the error detail.');
+  return adv;
+}
 // ===== Libs =====
 const multer = require('multer');
 const { parse } = require('csv-parse/sync');
@@ -141,6 +192,64 @@ app.get('/admin', (_req, res) => {
 // ===== Health =====
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true, version: APP_VERSION, time: new Date().toISOString() });
+});
+// ===== AI Coach API =====
+app.get('/api/coach/status', async (req, res) => {
+  try {
+    const base = process.env.SELF_BASE_URL || `https://` + req.headers.host;
+    const s = await gatherStatus(base);
+    const adviceList = coachAdvice(s);
+    res.json({
+      ok: true,
+      coach: COACH_NAME,
+      status: s,
+      advice: adviceList,
+      time: new Date().toISOString()
+    });
+  } catch (err) {
+    res.status(500).json({
+      ok: false,
+      error: err?.message || 'Unknown error',
+      coach: COACH_NAME
+    });
+  }
+});
+// ===== Admin Coach UI =====
+app.get('/admin/coach', (req, res) => {
+  const pass = req.query.pass;
+  if (!pass || pass !== process.env.ADMIN_PASSCODE)
+    return res.status(403).send('Forbidden: Invalid admin passcode');
+
+  res.send(`
+    <html>
+      <head>
+        <title>AI Coach – Bible Buddy</title>
+        <style>
+          body { font-family: sans-serif; max-width: 900px; margin: 40px auto; }
+          .card { padding: 20px; border: 1px solid #ccc; margin-bottom: 20px; }
+          h2 { margin-top: 0; }
+          pre { background:#f0f0f0; padding:10px; white-space:pre-wrap; }
+          button { padding:10px 16px; cursor:pointer; }
+        </style>
+      </head>
+      <body>
+        <h1>📘 Bible Buddy – AI Deployment Coach</h1>
+        <button onclick="load()">Refresh Status</button>
+        <div id="out" class="card">Loading…</div>
+        <script>
+          async function load() {
+            const r = await fetch('/api/coach/status');
+            const j = await r.json();
+            document.getElementById('out').innerHTML =
+              '<h2>Status</h2><pre>' + JSON.stringify(j.status, null, 2) +
+              '</pre><h2>Coach Advice</h2><pre>' +
+              j.advice.join('\\n') + '</pre>';
+          }
+          load();
+        </script>
+      </body>
+    </html>
+  `);
 });
 // Pretty route for /chat → serves public/chat.html
 app.get('/chat', (_req, res) => {
