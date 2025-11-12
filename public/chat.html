@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Bible Buddy – Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; }
+    #log { border:1px solid #ddd; padding:12px; border-radius:8px; min-height:200px; margin-bottom:12px; white-space:pre-wrap }
+    input,button { padding:10px; font-size:16px; }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>🗣️ Bible Buddy – AI Chat (Test)</h2>
+  <div id="log"></div>
+  <input id="msg" placeholder="Type a message..." style="width:70%"/>
+  <button id="send">Send</button>
+
+  <script>
+    const log = document.getElementById('log');
+    const input = document.getElementById('msg');
+    const sendBtn = document.getElementById('send');
+
+    function add(role, text) {
+      const who = role === 'user' ? 'You' : 'Buddy';
+      log.textContent += `\n${who}: ${text}`;
+      log.scrollTop = log.scrollHeight;
+    }
+
+    async function send() {
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      add('user', text);
+      const res = await fetch('/api/ai/chat', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ sessionId:'tester', user:text })
+      });
+      const json = await res.json();
+      add('assistant', json.reply || '(no reply)');
+    }
+
+    sendBtn.onclick = send;
+    input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') send(); });
+  </script>
+</body>
+</html>
