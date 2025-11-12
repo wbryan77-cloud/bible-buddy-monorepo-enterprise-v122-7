@@ -142,7 +142,10 @@ app.get('/admin', (_req, res) => {
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true, version: APP_VERSION, time: new Date().toISOString() });
 });
-
+// Pretty route for /chat → serves public/chat.html
+app.get('/chat', (_req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'chat.html'));
+});
 // ===== Providers status (stubs; we show “ready” when keys exist) =====
 app.get('/api/providers/status', (_req, res) => {
   res.json({
