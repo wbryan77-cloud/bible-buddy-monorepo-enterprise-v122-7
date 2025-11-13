@@ -1,49 +1,241 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8"/>
-  <title>Bible Buddy – Chat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <style>
-    body { font-family: system-ui, sans-serif; margin: 24px; }
-    #log { border:1px solid #ddd; padding:12px; border-radius:8px; min-height:200px; margin-bottom:12px; white-space:pre-wrap }
-    input,button { padding:10px; font-size:16px; }
-    button { cursor: pointer; }
-  </style>
-</head>
-<body>
-  <h2>🗣️ Bible Buddy – AI Chat (Test)</h2>
-  <div id="log"></div>
-  <input id="msg" placeholder="Type a message..." style="width:70%"/>
-  <button id="send">Send</button>
+  <head>
+    <meta charset="utf-8" />
+    <title>Bible Buddy – Tester Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        margin: 0;
+        background: #f5f5f7;
+        color: #111827;
+      }
+      .shell {
+        max-width: 640px;
+        margin: 0 auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        padding: 16px 16px 8px;
+        background: #111827;
+        color: #f9fafb;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      header p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        opacity: 0.9;
+      }
+      .avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        background: #f59e0b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+      main {
+        flex: 1;
+        padding: 12px 16px 80px;
+        overflow-y: auto;
+      }
+      .bubble-row {
+        display: flex;
+        margin-bottom: 8px;
+      }
+      .bubble-row.me {
+        justify-content: flex-end;
+      }
+      .bubble {
+        max-width: 80%;
+        padding: 8px 10px;
+        border-radius: 12px;
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: pre-wrap;
+      }
+      .bubble.me {
+        background: #2563eb;
+        color: #f9fafb;
+        border-bottom-right-radius: 2px;
+      }
+      .bubble.bot {
+        background: #e5e7eb;
+        color: #111827;
+        border-bottom-left-radius: 2px;
+      }
+      .suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 8px 0 12px;
+      }
+      .suggestions button {
+        font-size: 11px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        border: 1px solid #d1d5db;
+        background: #f9fafb;
+        cursor: pointer;
+      }
+      footer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-top: 1px solid #e5e7eb;
+        background: #f9fafb;
+        padding: 8px;
+      }
+      .input-row {
+        max-width: 640px;
+        margin: 0 auto;
+        display: flex;
+        gap: 6px;
+      }
+      input[type="text"] {
+        flex: 1;
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+      }
+      button.send {
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: none;
+        background: #16a34a;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      button.send[disabled] {
+        opacity: 0.6;
+        cursor: default;
+      }
+      .status {
+        font-size: 11px;
+        color: #6b7280;
+        margin-top: 4px;
+        text-align: right;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <h1>
+          <span class="avatar">📖</span>
+          <span>Bible Buddy – Tester Chat</span>
+        </h1>
+        <p>
+          I’m your AI testing companion. Let’s gently walk through Bible Buddy
+          together.
+        </p>
+      </header>
+      <main id="log">
+        <div class="bubble-row">
+          <div class="bubble bot">
+            👋 Hey there, I’m Bible Buddy. I’ll help guide testing and gently
+            coach you as we try things out.\n\nToday, what would you most like
+            to test?\n\n• Talking through a verse or topic\n• Trying a sample
+            devotional flow\n• Seeing how I remember context within a
+            conversation\n• Or something else that’s on your heart?
+          </div>
+        </div>
+        <div class="suggestions">
+          <button data-msg="Let’s test a short devotional flow.">
+            Test a devotional flow
+          </button>
+          <button data-msg="Help me test how you handle follow-up questions.">
+            Test follow-up questions
+          </button>
+          <button data-msg="Help me design a test plan for early users.">
+            Create a test plan
+          </button>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <div class="input-row">
+        <input
+          id="message"
+          type="text"
+          placeholder="Type your message to Bible Buddy…"
+        />
+        <button id="send" class="send">Send</button>
+      </div>
+      <div class="status" id="status"></div>
+    </footer>
 
-  <script>
-    const log = document.getElementById('log');
-    const input = document.getElementById('msg');
-    const sendBtn = document.getElementById('send');
+    <script>
+      const log = document.getElementById("log");
+      const input = document.getElementById("message");
+      const sendBtn = document.getElementById("send");
+      const statusEl = document.getElementById("status");
 
-    function add(role, text) {
-      const who = role === 'user' ? 'You' : 'Buddy';
-      log.textContent += `\n${who}: ${text}`;
-      log.scrollTop = log.scrollHeight;
-    }
+      function addBubble(text, who) {
+        const row = document.createElement("div");
+        row.className = "bubble-row" + (who === "me" ? " me" : "");
+        const b = document.createElement("div");
+        b.className = "bubble " + (who === "me" ? "me" : "bot");
+        b.textContent = text;
+        row.appendChild(b);
+        log.appendChild(row);
+        log.scrollTop = log.scrollHeight;
+      }
 
-    async function send() {
-      const text = input.value.trim();
-      if (!text) return;
-      input.value = '';
-      add('user', text);
-      const res = await fetch('/api/ai/chat', {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ sessionId:'tester', user:text })
-      });
-      const json = await res.json();
-      add('assistant', json.reply || '(no reply)');
-    }
+      async function sendMessage(text) {
+        if (!text.trim()) return;
+        addBubble(text, "me");
+        input.value = "";
+        statusEl.textContent = "Bible Buddy is thinking…";
+        sendBtn.disabled = true;
 
-    sendBtn.onclick = send;
-    input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') send(); });
-  </script>
-</body>
+        try {
+          const res = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: text }),
+          });
+          if (!res.ok) throw new Error("Request failed: " + res.status);
+          const data = await res.json();
+          addBubble(data.reply || "(No reply received)", "bot");
+        } catch (err) {
+          console.error(err);
+          addBubble(
+            "Hmm, something went wrong reaching my brain. You can check /admin or /admin/coach for more details.",
+            "bot"
+          );
+        } finally {
+          sendBtn.disabled = false;
+          statusEl.textContent = "";
+        }
+      }
+
+      sendBtn.onclick = () => sendMessage(input.value);
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") sendMessage(input.value);
+      });
+
+      document.querySelectorAll(".suggestions button").forEach((btn) => {
+        btn.addEventListener("click", () => sendMessage(btn.dataset.msg));
+      });
+    </script>
+  </body>
 </html>
