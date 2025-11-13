@@ -287,8 +287,58 @@ app.get('/admin/coach', (req, res) => {
   `);
 });
 // Pretty route for /chat → serves public/chat.html
+// ===== Tester Chat UI + AI Chat API =====
+
+// Make sure /public is served (safe to call even if defined earlier)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Simple tester chat page – uses public/chat.html
 app.get('/chat', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'chat.html'));
+});
+
+// AI chat helper (OpenAI wrapper lives here)
+const { chat } = require('./lib/ai/index.js');
+
+// In-memory conversation store (per process)
+const MEMORY = { sessions: {} };
+
+function getSession(id = 'default') {
+  if (!MEMORY.sessions[id]) {
+    // Start each new session with our system prompt
+    MEMORY.sessions[id] = [
+      { role: 'system', content: BIBLE_BUDDY_SYSTEM_PROMPT },
+    ];
+  }
+  return MEMORY.sessions[id];
+}
+
+app.post('/api/ai/chat', async (req, res) => {
+  try {
+    const { sessionId = 'default', user } = req.body || {};
+    const text = String(user || '').trim();
+
+    if (!text) {
+      return res.status(400).json({ ok: false, error: 'Empty message' });
+    }
+
+    const messages = getSession(sessionId);
+
+    // user message
+    messages.push({ role: 'user', content: text });
+
+    // call OpenAI (via ./lib/ai/index.js)
+    const out = await chat(messages);
+
+    // remember assistant reply for context
+    messages.push({ role: 'assistant', content: out.text });
+
+    // send reply back to the browser
+    res.json({ ok: true, reply: out.text });
+  } catch (e) {
+    console.error('AI chat error:', e);
+    res.status(500).json({ ok: false, error: e.message || 'Server error' });
+  }
 });
 // ===== Providers status (stubs; we show “ready” when keys exist) =====
 app.get('/api/providers/status', (_req, res) => {
