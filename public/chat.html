@@ -1,238 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>📖 Bible Buddy – Tester Chat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      background: #f4f4f7;
-      color: #222;
-      display: flex;
-      justify-content: center;
-    }
-    .page {
-      width: 100%;
-      max-width: 640px;
-      min-height: 100vh;
-      background: #ffffff;
-      padding: 16px 16px 88px;
-      position: relative;
-    }
-    h1 {
-      font-size: 1.5rem;
-      margin: 0 0 4px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      justify-content: center;
-      text-align: center;
-    }
-    h1 span.icon {
-      font-size: 1.8rem;
-    }
-    .subtitle {
-      text-align: center;
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 12px;
-    }
-    #log {
-      border-radius: 12px;
-      background: #f8f8fc;
-      padding: 8px;
-      max-height: calc(100vh - 210px);
-      overflow-y: auto;
-      border: 1px solid #e0e0f0;
-    }
-    .msg {
-      margin: 8px 0;
-      display: flex;
-    }
-    .msg.me {
-      justify-content: flex-end;
-    }
-    .bubble {
-      padding: 8px 12px;
-      border-radius: 14px;
-      max-width: 85%;
-      font-size: 0.95rem;
-      line-height: 1.4;
-      white-space: pre-wrap;
-    }
-    .msg.me .bubble {
-      background: #e0f0ff;
-      color: #123a5f;
-      border-bottom-right-radius: 2px;
-    }
-    .msg.bot .bubble {
-      background: #ffffff;
-      border: 1px solid #ddd;
-      color: #222;
-      border-bottom-left-radius: 2px;
-    }
-    .input-bar {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: #ffffff;
-      border-top: 1px solid #ddd;
-      padding: 8px;
-      display: flex;
-      justify-content: center;
-    }
-    .input-inner {
-      max-width: 640px;
-      width: 100%;
-      display: flex;
-      gap: 8px;
-    }
-    #text {
-      flex: 1;
-      border-radius: 999px;
-      border: 1px solid #ccc;
-      padding: 8px 12px;
-      font-size: 0.95rem;
-    }
-    #send {
-      border-radius: 999px;
-      border: none;
-      padding: 8px 14px;
-      font-size: 0.95rem;
-      background: #4b7cff;
-      color: #fff;
-      cursor: pointer;
-    }
-    #send:disabled {
-      opacity: 0.5;
-      cursor: default;
-    }
-    .status {
-      font-size: 0.8rem;
-      color: #777;
-      margin: 4px 2px 0;
-      text-align: right;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📖 Bible Buddy – Tester Chat</title>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #log {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+      white-space: pre-wrap;
+      min-height: 180px;
+    }
+
+    .choices {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #ececec;
+      cursor: pointer;
+      margin-right: 6px;
+    }
+
+    button:hover {
+      background: #ddd;
+    }
+
+    #row {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 3px solid #ccc;
+      border-top-color: black;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-left: 6px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="page">
-    <h1>
-      <span class="icon">📖</span>
-      <span>Bible Buddy – Tester Chat</span>
-    </h1>
-    <div class="subtitle">
-      I’m your AI testing companion. Let’s gently walk through Bible Buddy together.
-    </div>
 
-    <div id="log"></div>
-    <div class="status" id="status">Ready.</div>
+<h1>📖 Bible Buddy – Tester Chat</h1>
 
-    <div class="input-bar">
-      <form class="input-inner" id="chat-form">
-        <input
-          id="text"
-          type="text"
-          autocomplete="off"
-          placeholder="Type a message to Bible Buddy…"
-        />
-        <button id="send" type="submit">Send</button>
-      </form>
-    </div>
-  </div>
+<div id="log">
+  <strong>Welcome tester!</strong><br><br>
+  I’m your AI testing companion. Let’s gently walk through Bible Buddy together.<br><br>
+  👋 Hey there, I’m Bible Buddy. I’ll help guide testing and gently coach you as we try things out.<br><br>
 
-  <script>
-    const logEl = document.getElementById('log');
-    const formEl = document.getElementById('chat-form');
-    const textEl = document.getElementById('text');
-    const sendBtn = document.getElementById('send');
-    const statusEl = document.getElementById('status');
+  Today, what would you most like to test?<br>
+  • Talking through a verse or topic<br>
+  • Trying a sample devotional flow<br>
+  • Seeing how I remember context within a conversation<br>
+  • Or something else that’s on your heart?<br><br>
 
-    function scrollToBottom() {
-      logEl.scrollTop = logEl.scrollHeight;
-    }
+  <strong>Ready.</strong>
+</div>
 
-    function addMessage(role, text) {
-      const row = document.createElement('div');
-      row.className = 'msg ' + (role === 'user' ? 'me' : 'bot');
+<div class="choices">
+  <button onclick="quick('Test a devotional flow')">Test a devotional flow</button>
+  <button onclick="quick('Test follow-up questions')">Test follow-up questions</button>
+  <button onclick="quick('Create a test plan')">Create a test plan</button>
+</div>
 
-      const bubble = document.createElement('div');
-      bubble.className = 'bubble';
-      bubble.innerHTML = String(text || '').replace(/\n/g, '<br>');
+<div id="row">
+  <input id="msg" placeholder="Type your message…" />
+  <button onclick="send()">Send</button>
+</div>
 
-      row.appendChild(bubble);
-      logEl.appendChild(row);
-      scrollToBottom();
-    }
+<script>
+  const log = document.getElementById("log");
+  const msg = document.getElementById("msg");
 
-    async function sendToBuddy(rawText) {
-      const text = (rawText || '').trim();
-      if (!text) return;
+  function add(text, from = "assistant") {
+    log.innerHTML += `<br><br><strong>${from === "user" ? "You" : "Bible Buddy"}:</strong><br>${text}`;
+    log.scrollTop = log.scrollHeight;
+  }
 
-      // show your message immediately
-      addMessage('user', text);
-      textEl.value = '';
-      textEl.focus();
+  function quick(text) {
+    msg.value = text;
+    send();
+  }
 
-      sendBtn.disabled = true;
-      statusEl.textContent = 'Bible Buddy is thinking…';
+  async function send() {
+    const text = msg.value.trim();
+    if (!text) return;
 
-      try {
-        const res = await fetch('/api/ai/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ user: text })
-        });
+    add(text, "user");
+    msg.value = "";
 
-        if (!res.ok) {
-          throw new Error('Server returned ' + res.status);
-        }
+    add(`<span class="spinner"></span> Thinking…`);
 
-        const data = await res.json();
-        if (!data.ok) {
-          throw new Error(data.error || 'Unknown error');
-        }
+    const res = await fetch("/api/ai/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user: text })
+    });
 
-        addMessage('assistant', data.reply || '(no reply)');
-        statusEl.textContent = 'Ready.';
-      } catch (err) {
-        console.error(err);
-        addMessage(
-          'assistant',
-          'Hmm, something went wrong talking to the server. ' +
-          'Please try again in a moment or refresh the page.'
-        );
-        statusEl.textContent = 'Error: ' + (err.message || 'Unknown');
-      } finally {
-        sendBtn.disabled = false;
-      }
-    }
+    const data = await res.json();
 
-    function handleSubmit(e) {
-      if (e) e.preventDefault();
-      sendToBuddy(textEl.value);
-    }
+    // remove spinner
+    log.innerHTML = log.innerHTML.replace(/<span class="spinner"><\/span> Thinking…/, "");
 
-    // hook both the form *and* the button, just in case
-    formEl.addEventListener('submit', handleSubmit);
-    sendBtn.addEventListener('click', handleSubmit);
+    if (data.ok) {
+      add(data.reply);
+    } else {
+      add("⚠️ Error: " + data.error);
+    }
+  }
+</script>
 
-    // Single intro message (no double intro)
-    addMessage(
-      'assistant',
-      '👋 Hey there, I’m Bible Buddy. I’ll help guide testing and gently ' +
-      'coach you as we try things out.\n\n' +
-      'Today, what would you most like to test?\n' +
-      '• Talking through a verse or topic\n' +
-      '• Trying a sample devotional flow\n' +
-      '• Seeing how I remember context within a conversation\n' +
-      '• Or something else that’s on your heart?'
-    );
-  </script>
 </body>
 </html>
