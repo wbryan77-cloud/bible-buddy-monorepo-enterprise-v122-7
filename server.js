@@ -486,7 +486,6 @@ async function init() {
   });
 }
 // ===== AI Chat API =====
-const { chat } = require('./lib/ai/index.js');
 
 // in-memory conversation store (per process)
 const MEMORY = { sessions: {} };
