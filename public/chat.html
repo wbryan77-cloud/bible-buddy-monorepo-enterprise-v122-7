@@ -182,7 +182,7 @@
         Test follow-up questions
       </button>
       <button type="button" data-quick="Help me test how you remember context across a conversation.">
-        Test memory & context
+        Test memory &amp; context
       </button>
       <button type="button" data-quick="Help me create a simple test plan for my first users.">
         Create a test plan
@@ -236,6 +236,7 @@
           return;
         }
 
+        // show user bubble immediately
         addMessage('user', text);
         textEl.value = '';
         textEl.focus();
