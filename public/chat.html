@@ -1,305 +1,447 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Bible Buddy – Tester Chat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+// server.js — IndieMade Admin + AI Governance Mini-Server (simple, self-contained)
+//
+// What this gives you:
+// - Admin pages:
+//   /admin/rbac    -> RBAC editor with diff and backup
+//   /admin/activity -> Activity log (AI actions, undo, etc.)
+//   /admin/dismisses -> Dismissed suggestions
+// - Data stored in ./data/activity.json, dismisses.json, rbac.json
+// - API endpoints you can call from your front-end or AI workers:
+//
+//   GET  /rbac            -> get RBAC matrix
+//   POST /rbac            -> save RBAC matrix
+//   GET  /export/activity -> CSV of activity.json
+//   GET  /export/dismisses -> CSV of dismisses.json
+//   GET  /export/merged   -> CSV of both activity + dismisses
+//
+//   POST /runbook/suggested_action -> apply a suggested action (creates undo token, logs activity)
+//   POST /runbook/undo_action      -> undo a previous action by token
+//   POST /runbook/dismiss          -> record a dismissal with reason
+//
+// You can later wire these into your AI helper and dashboards.
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      background: #f7f6f4;
-      color: #111827;
-    }
+const fs = require('fs');
+const path = require('path');
+const express = require('express');
 
-    .page {
-      max-width: 720px;
-      margin: 0 auto;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 16px 16px 80px;
-    }
+const app = express();
+app.use(express.json());
 
-    header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
+// ---------- Helpers: JSON "DB" files ----------
 
-    header .avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #e5edff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-    }
+const DATA_DIR = path.join(__dirname, 'data');
+const ACTIVITY_PATH = path.join(DATA_DIR, 'activity.json');
+const DISMISSES_PATH = path.join(DATA_DIR, 'dismisses.json');
+const RBAC_PATH = path.join(DATA_DIR, 'rbac.json');
+const UNDO_PATH = path.join(DATA_DIR, 'undo_tokens.json');
 
-    header .titles h1 {
-      margin: 0;
-      font-size: 1.6rem;
-    }
+// Ensure data directory and base files exist
+if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+if (!fs.existsSync(ACTIVITY_PATH)) fs.writeFileSync(ACTIVITY_PATH, '[]');
+if (!fs.existsSync(DISMISSES_PATH)) fs.writeFileSync(DISMSES_PATH = DISMISSES_PATH, '[]');
+if (!fs.existsSync(RBAC_PATH)) {
+  fs.writeFileSync(
+    RBAC_PATH,
+    JSON.stringify(
+      {
+        default: {
+          super_admin: ['admin@example.com']
+        }
+      },
+      null,
+      2
+    )
+  );
+}
+if (!fs.existsSync(UNDO_PATH)) fs.writeFileSync(UNDO_PATH, '{}');
 
-    header .titles p {
-      margin: 4px 0 0;
-      font-size: 0.9rem;
-      color: #4b5563;
-    }
+function loadJson(p, fallback) {
+  try {
+    if (!fs.existsSync(p)) return fallback;
+    return JSON.parse(fs.readFileSync(p, 'utf-8'));
+  } catch (e) {
+    console.warn('Error reading', p, e.message);
+    return fallback;
+  }
+}
 
-    .log {
-      flex: 1;
-      margin-top: 8px;
-      padding: 8px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
-      overflow-y: auto;
-    }
+function saveJson(p, obj) {
+  fs.writeFileSync(p, JSON.stringify(obj, null, 2));
+}
 
-    .msg {
-      display: flex;
-      margin: 6px 0;
-    }
+// ---------- Admin HTML pages (served inline) ----------
 
-    .msg.user {
-      justify-content: flex-end;
-    }
-
-    .bubble {
-      max-width: 85%;
-      padding: 8px 12px;
-      border-radius: 16px;
-      font-size: 0.95rem;
-      line-height: 1.4;
-      white-space: pre-wrap;
-    }
-
-    .msg.user .bubble {
-      background: #dbeafe;
-      color: #111827;
-      border-bottom-right-radius: 4px;
-    }
-
-    .msg.bot .bubble {
-      background: #f3f4f6;
-      color: #111827;
-      border-bottom-left-radius: 4px;
-    }
-
-    .status {
-      margin-top: 6px;
-      font-size: 0.8rem;
-      color: #6b7280;
-      text-align: right;
-    }
-
-    .quick-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
-    }
-
-    .quick-actions button {
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      padding: 6px 10px;
-      font-size: 0.8rem;
-      background: #f9fafb;
-      cursor: pointer;
-    }
-
-    .quick-actions button:hover {
-      background: #eef2ff;
-    }
-
-    .input-bar {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 8px 12px 16px;
-      background: linear-gradient(to top, #f7f6f4 60%, rgba(247,246,244,0.7));
-    }
-
-    .input-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      display: flex;
-      gap: 8px;
-    }
-
-    #text {
-      flex: 1;
-      padding: 9px 10px;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      font-size: 0.95rem;
-    }
-
-    #send {
-      border-radius: 999px;
-      border: none;
-      padding: 9px 18px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      background: #4b6bfb;
-      color: #ffffff;
-      cursor: pointer;
-    }
-
-    #send:disabled {
-      opacity: 0.6;
-      cursor: default;
-    }
-  </style>
+// 1) RBAC editor with diff + backup
+app.get('/admin/rbac.html', (_req, res) => {
+  res.type('html').send(`<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/><title>RBAC Editor</title>
+<style>
+body{font-family:system-ui,Arial;padding:20px;background:#f7f9fc}
+.card{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px;max-width:900px}
+textarea{width:100%;height:260px;font-family:monospace}
+button{padding:6px 12px;border-radius:6px;margin-top:10px;margin-right:8px;cursor:pointer}
+#status{margin-top:8px;font-weight:bold}
+#diff{margin-top:12px;font-size:13px;white-space:pre-wrap;background:#f9fafb;border-radius:8px;padding:8px;border:1px solid #e5e7eb}
+</style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="avatar">📖</div>
-      <div class="titles">
-        <h1>Bible Buddy – Tester Chat</h1>
-        <p>I’m your AI testing companion. Let’s gently walk through Bible Buddy together.</p>
-      </div>
-    </header>
+<h1>Per-Tenant RBAC Editor (v1.16.31)</h1>
+<div class="card">
+  <button onclick="downloadJSON()">Download JSON Backup</button><br/><br/>
+  <textarea id="rbac"></textarea><br/>
+  <button onclick="preview()">Preview Changes</button>
+  <button onclick="save()">Confirm Save</button>
+  <div id="status"></div>
+  <div id="diff"></div>
+</div>
+<script>
+let originalObj = {};
 
-    <div id="log" class="log"></div>
-
-    <div class="quick-actions">
-      <button type="button" data-quick="Let’s test a short devotional flow.">
-        Test devotional flow
-      </button>
-      <button type="button" data-quick="Help me test follow-up questions around a Bible verse.">
-        Test follow-up questions
-      </button>
-      <button type="button" data-quick="Help me test how you remember context across a conversation.">
-        Test memory &amp; context
-      </button>
-      <button type="button" data-quick="Help me create a simple test plan for my first users.">
-        Create a test plan
-      </button>
-    </div>
-
-    <div class="status" id="status">Ready.</div>
-  </div>
-
-  <div class="input-bar">
-    <form id="chat-form" class="input-inner" autocomplete="off">
-      <input
-        id="text"
-        type="text"
-        placeholder="Type a message to Bible Buddy…"
-        autocomplete="off"
-      />
-      <button id="send" type="submit">Send</button>
-    </form>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const logEl = document.getElementById('log');
-      const formEl = document.getElementById('chat-form');
-      const textEl = document.getElementById('text');
-      const sendBtn = document.getElementById('send');
-      const statusEl = document.getElementById('status');
-      const quickButtons = document.querySelectorAll('[data-quick]');
-
-      function scrollToBottom() {
-        logEl.scrollTop = logEl.scrollHeight;
-      }
-
-      function addMessage(role, text) {
-        const row = document.createElement('div');
-        row.className = 'msg ' + (role === 'user' ? 'user' : 'bot');
-
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        bubble.innerHTML = String(text || '').replace(/\n/g, '<br>');
-
-        row.appendChild(bubble);
-        logEl.appendChild(row);
-        scrollToBottom();
-      }
-
-      async function sendToBuddy(rawText) {
-        const text = String(rawText || '').trim();
-        if (!text) {
-          return;
-        }
-
-        // show user bubble immediately
-        addMessage('user', text);
-        textEl.value = '';
-        textEl.focus();
-
-        sendBtn.disabled = true;
-        statusEl.textContent = 'Bible Buddy is thinking…';
-
-        try {
-          const res = await fetch('/api/ai/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ user: text })
-          });
-
-          if (!res.ok) {
-            throw new Error('Server returned status ' + res.status);
-          }
-
-          const data = await res.json();
-          if (!data.ok) {
-            throw new Error(data.error || 'Unknown error');
-          }
-
-          addMessage('assistant', data.reply || '(no reply)');
-          statusEl.textContent = 'Ready.';
-        } catch (err) {
-          console.error(err);
-          addMessage(
-            'assistant',
-            "Hmm, something went wrong talking to the server.\n\n" +
-            "Details: " + (err.message || 'Unknown error.')
-          );
-          statusEl.textContent = 'Error: ' + (err.message || 'Unknown');
-        } finally {
-          sendBtn.disabled = false;
-        }
-      }
-
-      function handleSubmit(e) {
-        e.preventDefault();
-        sendToBuddy(textEl.value);
-      }
-
-      formEl.addEventListener('submit', handleSubmit);
-
-      quickButtons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          const msg = btn.getAttribute('data-quick') || '';
-          sendToBuddy(msg);
-        });
-      });
-
-      // Single initial assistant message (no duplicate intro)
-      addMessage(
-        'assistant',
-        "👋 Hey there, I’m Bible Buddy. I’ll help guide testing and gently coach you as we try things out.\n\n" +
-        "Today, what would you most like to test?\n" +
-        "• Talking through a verse or topic\n" +
-        "• Trying a sample devotional flow\n" +
-        "• Seeing how I remember context within a conversation\n" +
-        "• Or something else that’s on your heart?"
-      );
+async function load(){
+  const j = await fetch('/rbac').then(r=>r.json());
+  originalObj = j;
+  document.getElementById('rbac').value = JSON.stringify(j,null,2);
+}
+function validateJSON(val){
+  try { JSON.parse(val); return true; } catch(e){ return false; }
+}
+function diffObjects(oldObj, newObj){
+  const lines = [];
+  const allTenants = new Set([...Object.keys(oldObj||{}), ...Object.keys(newObj||{})]);
+  allTenants.forEach(t=>{
+    const oT = oldObj[t] || {};
+    const nT = newObj[t] || {};
+    if (!oldObj[t]) lines.push(\`+ Tenant added: \${t}\`);
+    if (!newObj[t]) lines.push(\`- Tenant removed: \${t}\`);
+    const allRoles = new Set([...Object.keys(oT), ...Object.keys(nT)]);
+    allRoles.forEach(r=>{
+      const oR = new Set(oT[r] || []);
+      const nR = new Set(nT[r] || []);
+      if (!oT[r]) lines.push(\`  + Role added on \${t}: \${r}\`);
+      if (!nT[r]) lines.push(\`  - Role removed from \${t}: \${r}\`);
+      const added = [...nR].filter(x=>!oR.has(x));
+      const removed = [...oR].filter(x=>!nR.has(x));
+      added.forEach(u=>lines.push(\`    + \${u} added to \${t}.\${r}\`));
+      removed.forEach(u=>lines.push(\`    - \${u} removed from \${t}.\${r}\`));
     });
-  </script>
+  });
+  return lines.length ? lines.join('\\n') : 'No changes.';
+}
+async function preview(){
+  const val = document.getElementById('rbac').value;
+  const diffEl = document.getElementById('diff');
+  const status = document.getElementById('status');
+  if(!validateJSON(val)){
+    status.textContent='❌ Invalid JSON';
+    status.style.color='red';
+    diffEl.textContent='';
+    return;
+  }
+  const newObj = JSON.parse(val);
+  const diffText = diffObjects(originalObj, newObj);
+  diffEl.textContent = diffText;
+  status.textContent='Preview generated (review before saving).';
+  status.style.color='#111827';
+}
+async function save(){
+  const val = document.getElementById('rbac').value;
+  const status = document.getElementById('status');
+  const diffEl = document.getElementById('diff');
+  if(!validateJSON(val)){
+    status.textContent='❌ Invalid JSON';
+    status.style.color='red';
+    return;
+  }
+  await fetch('/rbac',{method:'POST',headers:{'Content-Type':'application/json'},body:val});
+  status.textContent='✅ Saved';
+  status.style.color='green';
+  originalObj = JSON.parse(val);
+  diffEl.textContent='';
+}
+function downloadJSON(){
+  const blob = new Blob([document.getElementById('rbac').value],{type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'rbac-backup.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+load();
+</script>
 </body>
-</html>
+</html>`);
+});
+
+// 2) Activity log admin page
+app.get('/admin/activity.html', (_req, res) => {
+  res.type('html').send(`<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/><title>Activity Log</title>
+<style>
+body{font-family:system-ui,Arial;padding:20px}
+pre{background:#f9fafb;border-radius:8px;padding:10px;border:1px solid #e5e7eb}
+button,a{margin-right:8px;margin-bottom:8px}
+</style>
+</head>
+<body>
+<h1>Activity Log</h1>
+<a href="/export/activity">Export CSV</a>
+<a href="/export/merged">Export Merged CSV</a>
+<button onclick="downloadJSON()">Download JSON</button>
+<pre id="out"></pre>
+<script>
+async function load(){
+  const rows = await fetch('/data/activity.json').then(r=>r.json());
+  document.getElementById('out').textContent=JSON.stringify(rows,null,2);
+}
+function downloadJSON(){
+  fetch('/data/activity.json').then(r=>r.text()).then(txt=>{
+    const blob = new Blob([txt],{type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href=url; a.download='activity.json'; a.click();
+    URL.revokeObjectURL(url);
+  });
+}
+load();
+</script>
+</body>
+</html>`);
+});
+
+// 3) Dismisses admin page
+app.get('/admin/dismisses.html', (_req, res) => {
+  res.type('html').send(`<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/><title>Dismissed Suggestions</title>
+<style>
+body{font-family:system-ui,Arial;padding:20px}
+pre{background:#f9fafb;border-radius:8px;padding:10px;border:1px solid #e5e7eb}
+button,a{margin-right:8px;margin-bottom:8px}
+</style>
+</head>
+<body>
+<h1>Dismissed Suggestions</h1>
+<a href="/export/dismisses">Export CSV</a>
+<a href="/export/merged">Export Merged CSV</a>
+<button onclick="downloadJSON()">Download JSON</button>
+<pre id="out"></pre>
+<script>
+async function load(){
+  const rows = await fetch('/data/dismisses.json').then(r=>r.json());
+  document.getElementById('out').textContent=JSON.stringify(rows,null,2);
+}
+function downloadJSON(){
+  fetch('/data/dismisses.json').then(r=>r.text()).then(txt=>{
+    const blob = new Blob([txt],{type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href=url; a.download='dismisses.json'; a.click();
+    URL.revokeObjectURL(url);
+  });
+}
+load();
+</script>
+</body>
+</html>`);
+});
+
+// ---------- API: RBAC ----------
+
+app.get('/rbac', (_req, res) => {
+  const rbac = loadJson(RBAC_PATH, {});
+  res.json(rbac);
+});
+
+app.post('/rbac', (req, res) => {
+  const body = req.body || {};
+  saveJson(RBAC_PATH, body);
+  res.json({ ok: true });
+});
+
+// ---------- API: Activity / Dismisses CSV export ----------
+
+function exportCsvFromArray(rows, res, name) {
+  if (!Array.isArray(rows)) rows = [];
+  const keys = [...new Set(rows.flatMap(r => Object.keys(r || {})))];
+  const header = keys.join(',');
+  const lines = rows.map(r =>
+    keys
+      .map(k => {
+        const v = r && r[k] != null ? String(r[k]) : '';
+        // naive CSV escape
+        if (v.includes(',') || v.includes('"') || v.includes('\n')) {
+          return '"' + v.replace(/"/g, '""') + '"';
+        }
+        return v;
+      })
+      .join(',')
+  );
+  const csv = [header, ...lines].join('\n');
+  res.header('Content-Type', 'text/csv');
+  res.attachment(name);
+  res.send(csv);
+}
+
+app.get('/export/activity', (_req, res) => {
+  const rows = loadJson(ACTIVITY_PATH, []);
+  exportCsvFromArray(rows, res, 'activity.csv');
+});
+
+app.get('/export/dismisses', (_req, res) => {
+  const rows = loadJson(DISMISSES_PATH, []);
+  exportCsvFromArray(rows, res, 'dismisses.csv');
+});
+
+app.get('/export/merged', (_req, res) => {
+  const activity = loadJson(ACTIVITY_PATH, []).map(r => ({ ...r, type: 'activity' }));
+  const dismisses = loadJson(DISMISSES_PATH, []).map(r => ({ ...r, type: 'dismiss' }));
+  const rows = [...activity, ...dismisses];
+  exportCsvFromArray(rows, res, 'merged.csv');
+});
+
+// ---------- API: Suggested Actions (Apply / Undo / Dismiss) ----------
+
+function loadUndo() {
+  return loadJson(UNDO_PATH, {});
+}
+function saveUndo(data) {
+  saveJson(UNDO_PATH, data);
+}
+
+function mapSuggestedAction({ label, tenant, theme }) {
+  if (/spike risk/i.test(label)) {
+    return { type: 'ratelimit:raise', label: `Raise RPS for ${theme}`, value: theme, tenant };
+  }
+  if (/volatile/i.test(label)) {
+    return { type: 'runbook:investigate', label: `Investigate volatility in ${theme}`, value: theme, tenant };
+  }
+  return { type: 'notify:review', label: `Review ${theme}`, value: theme, tenant };
+}
+
+// Apply suggested action
+app.post('/runbook/suggested_action', (req, res) => {
+  try {
+    const { label, tenant = 'default', theme } = req.body || {};
+    if (!label || !theme) return res.status(400).json({ error: 'label and theme required' });
+
+    const action = mapSuggestedAction({ label, tenant, theme });
+    const undo = loadUndo();
+
+    const token = Math.random().toString(16).slice(2) + Math.random().toString(16).slice(2);
+    const undoWindowSec = Number(process.env.SUGGESTED_UNDO_SEC || 60);
+    const expiresAt = Date.now() + undoWindowSec * 1000;
+
+    undo[token] = { action, expiresAt };
+    saveUndo(undo);
+
+    const activity = loadJson(ACTIVITY_PATH, []);
+    activity.push({
+      timestamp: new Date().toISOString(),
+      tenant,
+      theme,
+      label,
+      action: action.label,
+      type: action.type,
+      undoToken: token,
+      undoExpiresAt: new Date(expiresAt).toISOString()
+    });
+    saveJson(ACTIVITY_PATH, activity);
+
+    res.json({ token, undo_expires_at: new Date(expiresAt).toISOString(), action });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+// Undo action
+app.post('/runbook/undo_action', (req, res) => {
+  try {
+    const { token } = req.body || {};
+    if (!token) return res.status(400).json({ error: 'token required' });
+    const undo = loadUndo();
+    const entry = undo[token];
+    if (!entry) return res.status(400).json({ error: 'Invalid or expired token' });
+    if (Date.now() > entry.expiresAt) {
+      delete undo[token];
+      saveUndo(undo);
+      return res.status(400).json({ error: 'Undo window expired' });
+    }
+
+    // here you would actually revert the effect of entry.action
+    delete undo[token];
+    saveUndo(undo);
+
+    const activity = loadJson(ACTIVITY_PATH, []);
+    activity.push({
+      timestamp: new Date().toISOString(),
+      tenant: entry.action.tenant,
+      theme: entry.action.value,
+      label: `UNDO ${entry.action.label}`,
+      action: 'UNDO',
+      type: entry.action.type
+    });
+    saveJson(ACTIVITY_PATH, activity);
+
+    res.json({ undone: true });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+// Dismiss suggestion with reason
+app.post('/runbook/dismiss', (req, res) => {
+  try {
+    const { tenant = 'default', theme, label, reason = 'Other', note = '' } = req.body || {};
+    const dismisses = loadJson(DISMISSES_PATH, []);
+    const entry = {
+      timestamp: new Date().toISOString(),
+      tenant,
+      theme,
+      label,
+      reason,
+      note
+    };
+    dismisses.push(entry);
+    saveJson(DISMISSES_PATH, dismisses);
+
+    const activity = loadJson(ACTIVITY_PATH, []);
+    activity.push({
+      timestamp: entry.timestamp,
+      tenant,
+      theme,
+      label: `DISMISS ${label}`,
+      action: 'DISMISS',
+      type: 'dismiss',
+      reason,
+      note
+    });
+    saveJson(ACTIVITY_PATH, activity);
+
+    res.json({ dismissed: true });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+// ---------- Health + 404 ----------
+
+app.get('/health', (_req, res) => {
+  res.json({ ok: true, status: 'IndieMade admin server running (v1.16.31 mini)' });
+});
+
+app.use((req, res) => {
+  res.status(404).json({ error: 'Not found', path: req.path });
+});
+
+// ---------- Start server ----------
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ IndieMade admin server listening on http://localhost:${PORT}`);
+  console.log(`   RBAC:       http://localhost:${PORT}/admin/rbac.html`);
+  console.log(`   Activity:   http://localhost:${PORT}/admin/activity.html`);
+  console.log(`   Dismisses:  http://localhost:${PORT}/admin/dismisses.html`);
+});
