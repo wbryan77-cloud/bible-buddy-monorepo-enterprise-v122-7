@@ -660,7 +660,22 @@ app.get('/admin/coach', (_req, res) => {
 </body>
 </html>`);
 });
+// ===== Admin Dashboard + API =====
 
+// Serve Admin UI (HTML/JS/CSS from /admin/ui)
+app.use('/admin', express.static(path.join(__dirname, 'admin', 'ui')));
+
+// Serve /data JSON files so Admin UI can read logs
+app.use('/data', express.static(path.join(__dirname, 'data')));
+
+try {
+  // Load admin router (activity, dismisses, rbac, selftest, undo, providers)
+  const adminRouter = require('./admin/routes');
+  app.use('/admin/api', adminRouter);
+  console.log('Admin routes loaded');
+} catch (e) {
+  console.warn('WARNING: Admin routes failed to load:', e.message);
+}
 // ===== Boot =====
 async function init() {
   const port = process.env.PORT || 3000;
