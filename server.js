@@ -676,6 +676,15 @@ try {
 } catch (e) {
   console.warn('WARNING: Admin routes failed to load:', e.message);
 }
+// ===== AI API (Tester + Admin Helper) =====
+try {
+  const aiRouter = require('./ai/routes');
+  app.use('/api/ai', aiRouter);        // Tester / user AI endpoints
+  app.use('/admin/api/ai', aiRouter);  // Admin helper endpoint (namespaced inside)
+  console.log('AI routes loaded');
+} catch (e) {
+  console.warn('WARNING: AI routes failed to load:', e.message);
+}
 // ===== Boot =====
 async function init() {
   const port = process.env.PORT || 3000;
