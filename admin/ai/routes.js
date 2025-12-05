@@ -44,7 +44,6 @@ async function callOpenAIChat({ system, messages }) {
     throw new Error('OPENAI_API_KEY is not set');
   }
 
-  // Node 18+ has fetch globally
   const res = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -52,7 +51,7 @@ async function callOpenAIChat({ system, messages }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'gpt-4.1-mini', // good balance of cost/quality
+      model: 'gpt-4.1-mini',
       messages: [
         { role: 'system', content: system },
         ...messages,
@@ -84,7 +83,6 @@ router.post('/tester-chat', express.json(), async (req, res) => {
     const log = loadJson(TESTER_LOG_PATH, []);
     const now = new Date().toISOString();
 
-    // Basic context from last few messages (you can extend to threaded sessions later)
     const lastFew = log
       .filter((r) => r.sessionId === sessionId)
       .slice(-6);
@@ -116,7 +114,6 @@ Keep responses concise but helpful. Offer a next step or reflection question whe
       ],
     });
 
-    // Log this interaction
     log.push({
       t: now,
       sessionId: sessionId || null,
@@ -134,7 +131,7 @@ Keep responses concise but helpful. Offer a next step or reflection question whe
   }
 });
 
-// ---------- Tester "Image" helper (phase 1: description-based) ----------
+// ---------- Tester "Image" helper ----------
 
 router.post('/tester-image', express.json({ limit: '5mb' }), async (req, res) => {
   try {
@@ -177,7 +174,6 @@ based on the description.
       messages: [{ role: 'user', content: userText }],
     });
 
-    // Log the "image" event (we store base64 only in test phase; later you could move this to S3)
     log.push({
       t: now,
       kind: 'tester-image',
@@ -251,11 +247,7 @@ ${insights.slice(-5).map(i => '- ' + (i.summary || '')).join('\n')}
     try {
       parsed = JSON.parse(raw);
     } catch {
-      // If model didn't return valid JSON, wrap as summary only
-      parsed = {
-        summary: raw,
-        actions: [],
-      };
+      parsed = { summary: raw, actions: [] };
     }
 
     const record = {
