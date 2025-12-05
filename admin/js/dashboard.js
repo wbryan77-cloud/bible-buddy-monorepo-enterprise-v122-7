@@ -58,13 +58,11 @@ async function loadDashboard() {
     lastSelftest = selftest;
     lastProviders = providers;
 
-    // Version
     if (elVersion) {
       elVersion.textContent =
         selftest.version || 'v122.x (version not reported)';
     }
 
-    // Health
     if (elHealthChip && elHealthBody) {
       const state = selftest.health === 'ok' ? 'ok' : 'warn';
       setChip(elHealthChip, state);
@@ -74,7 +72,6 @@ async function loadDashboard() {
           : selftest.health || 'Health status not reported.';
     }
 
-    // Providers
     if (elProvidersChip && elProvidersBody) {
       const detail = providers.detail || '';
       const lower = detail.toLowerCase();
@@ -84,7 +81,6 @@ async function loadDashboard() {
       elProvidersBody.textContent = detail || 'No provider details.';
     }
 
-    // Queue (from selftest.queue)
     if (elQueueChip && elQueueBody) {
       const q = selftest.queue || { ok: true, detail: 'count=1' };
       const state = q.ok ? 'ok' : 'warn';
@@ -92,7 +88,6 @@ async function loadDashboard() {
       elQueueBody.textContent = q.detail || 'No queue details.';
     }
 
-    // After cards load, call AI helper
     await loadAiHelper();
   } catch (e) {
     console.error('Dashboard load error', e);
