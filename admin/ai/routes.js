@@ -1,8 +1,8 @@
 // ai/routes.js
 // Central AI router for Bible Buddy:
-// - /api/ai/tester-chat     → Bible Buddy for testers (text chat)
-// - /api/ai/tester-image    → Describe notes/plans from images (phase 1: description-based)
-// - /admin/api/ai/helper    → Admin AI helper (dashboard guidance)
+// - POST /api/ai/tester-chat     → Bible Buddy for testers (text chat)
+// - POST /api/ai/tester-image    → describe notes/plans from images (via description or optional image)
+// - POST /admin/api/ai/helper    → Admin AI helper (summaries + next steps)
 
 const express = require('express');
 const fs = require('fs');
@@ -10,7 +10,6 @@ const path = require('path');
 
 const router = express.Router();
 
-// Where we keep simple JSON logs so AI can "learn" later
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const TESTER_LOG_PATH = path.join(DATA_DIR, 'tester_log.json');
 const INSIGHTS_PATH = path.join(DATA_DIR, 'ai_insights.json');
@@ -20,7 +19,6 @@ function ensureFiles() {
   if (!fs.existsSync(TESTER_LOG_PATH)) fs.writeFileSync(TESTER_LOG_PATH, '[]');
   if (!fs.existsSync(INSIGHTS_PATH)) fs.writeFileSync(INSIGHTS_PATH, '[]');
 }
-
 ensureFiles();
 
 function loadJson(p, fallback) {
@@ -36,8 +34,8 @@ function saveJson(p, data) {
   fs.writeFileSync(p, JSON.stringify(data, null, 2));
 }
 
-// ---------- OpenAI helper ----------
-
+// ---- OpenAI helper ----
+// Requires OPENAI_API_KEY in Render → Environment
 async function callOpenAIChat({ system, messages }) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -71,8 +69,7 @@ async function callOpenAIChat({ system, messages }) {
   return content || '';
 }
 
-// ---------- Tester Chat (text) ----------
-
+// ---- Tester Chat ----
 router.post('/tester-chat', express.json(), async (req, res) => {
   try {
     const { sessionId, userId, message } = req.body || {};
@@ -101,7 +98,6 @@ Goals:
 - Help organize notes into clear sections (title, scripture, 3–4 main points, application, prayer).
 - Encourage the tester gently; suggest ways to make their plan clearer or more impactful.
 - Always stay kind, non-judgmental, and supportive.
-- If they mention an image or upload, you can refer to it conceptually, but only rely on the text provided.
 
 Keep responses concise but helpful. Offer a next step or reflection question when appropriate.
     `.trim();
@@ -131,8 +127,7 @@ Keep responses concise but helpful. Offer a next step or reflection question whe
   }
 });
 
-// ---------- Tester "Image" helper ----------
-
+// ---- Tester "Image" helper ----
 router.post('/tester-image', express.json({ limit: '5mb' }), async (req, res) => {
   try {
     const { sessionId, userId, description, imageName, imageDataBase64 } = req.body || {};
@@ -193,8 +188,7 @@ based on the description.
   }
 });
 
-// ---------- Admin AI Helper ----------
-
+// ---- Admin AI Helper ----
 router.post('/helper', express.json(), async (req, res) => {
   try {
     const { selftest, providers } = req.body || {};
@@ -243,7 +237,7 @@ ${insights.slice(-5).map(i => '- ' + (i.summary || '')).join('\n')}
       messages: [{ role: 'user', content: context }],
     });
 
-    let parsed = null;
+    let parsed;
     try {
       parsed = JSON.parse(raw);
     } catch {
@@ -257,7 +251,6 @@ ${insights.slice(-5).map(i => '- ' + (i.summary || '')).join('\n')}
       summary: parsed.summary || '',
       actions: parsed.actions || [],
     };
-
     insights.push(record);
     saveJson(INSIGHTS_PATH, insights);
 
