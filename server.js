@@ -110,7 +110,7 @@ app.get('/admin/api/providers', (req, res) => {
 // ===== AI Router (Tester + Admin Helper) =====
 
 try {
-  const aiRouter = require('./ai/routes');
+  const aiRouter = require('./admin/ai/routes');
   app.use('/api/ai', aiRouter);
   app.use('/admin/api/ai', aiRouter);
   console.log('AI routes loaded');
