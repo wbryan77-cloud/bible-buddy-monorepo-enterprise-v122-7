@@ -166,17 +166,23 @@
       font-size: 14px;
     }
     .chat-input-row button {
-      padding: 7px 14px;
+      padding: 7px 11px;
       border-radius: 999px;
       border: none;
       background: var(--accent);
       color: white;
       cursor: pointer;
       font-size: 14px;
+      white-space: nowrap;
     }
     .chat-input-row button:disabled {
       opacity: 0.5;
       cursor: default;
+    }
+    .chat-input-row .voice-tip {
+      font-size: 11px;
+      color: #6b7280;
+      margin-left: 4px;
     }
 
     .panel-inner {
@@ -271,7 +277,9 @@
         <div id="chatLog" class="chat-log"></div>
         <div class="chat-input-row">
           <input id="chatInput" type="text" placeholder="Ask Bible Buddy anything about your notes or plans..." />
+          <button id="voiceBtn" type="button">🎤</button>
           <button id="chatSend">Send</button>
+          <span class="voice-tip" id="voiceTip"></span>
         </div>
       </div>
 
