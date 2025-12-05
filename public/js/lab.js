@@ -1,7 +1,9 @@
 // public/js/lab.js
-// Front-end for Bible Buddy Lab (tester):
+// Bible Buddy Lab (tester):
 // - Chat tab: /api/ai/tester-chat
 // - Image tab: /api/ai/tester-image (description + optional base64 image)
+// - Voice input (where supported) via Web Speech API
+// - Text-to-speech for AI replies (where supported)
 
 (function () {
   const sessionId = 'tester-' + Math.random().toString(16).slice(2);
@@ -24,6 +26,8 @@
   const chatLog = document.getElementById('chatLog');
   const chatInput = document.getElementById('chatInput');
   const chatSend = document.getElementById('chatSend');
+  const voiceBtn = document.getElementById('voiceBtn');
+  const voiceTip = document.getElementById('voiceTip');
 
   function appendMessage(text, who) {
     const div = document.createElement('div');
@@ -31,8 +35,26 @@
     div.textContent = text;
     chatLog.appendChild(div);
     chatLog.scrollTop = chatLog.scrollHeight;
+
+    if (who === 'ai') {
+      speak(text);
+    }
   }
 
+  // ---------- Text-to-speech ----------
+  let ttsSupported = typeof window !== 'undefined' && 'speechSynthesis' in window;
+
+  function speak(text) {
+    if (!ttsSupported || !text) return;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 1.0;
+    utter.pitch = 1.0;
+    utter.lang = 'en-US';
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utter);
+  }
+
+  // ---------- Send chat ----------
   async function sendChat() {
     const text = chatInput.value.trim();
     if (!text) return;
@@ -77,10 +99,71 @@
     });
   }
 
-  // Start with a greeting
+  // Initial greeting
   appendMessage('Hi! I’m Bible Buddy. Tell me about your notes or plans and I’ll help you shape them.', 'ai');
 
-  // Image tab
+  // ---------- Voice input ----------
+  const SpeechRecognition =
+    typeof window !== 'undefined'
+      ? (window.SpeechRecognition || window.webkitSpeechRecognition)
+      : null;
+
+  let recognition = null;
+  let listening = false;
+
+  if (SpeechRecognition) {
+    recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onstart = () => {
+      listening = true;
+      if (voiceBtn) voiceBtn.textContent = '■';
+      if (voiceTip) voiceTip.textContent = 'Listening…';
+    };
+    recognition.onend = () => {
+      listening = false;
+      if (voiceBtn) voiceBtn.textContent = '🎤';
+      if (voiceTip) voiceTip.textContent = '';
+    };
+    recognition.onerror = () => {
+      listening = false;
+      if (voiceBtn) voiceBtn.textContent = '🎤';
+      if (voiceTip) voiceTip.textContent = 'Voice error – try again.';
+    };
+    recognition.onresult = (e) => {
+      const result = e.results[0][0].transcript;
+      if (chatInput) {
+        chatInput.value = result;
+      }
+      sendChat();
+    };
+
+    if (voiceBtn) {
+      voiceBtn.addEventListener('click', () => {
+        if (!recognition) return;
+        if (!listening) {
+          recognition.start();
+        } else {
+          recognition.stop();
+        }
+      });
+    }
+    if (voiceTip) {
+      voiceTip.textContent = 'Tap 🎤 to speak';
+    }
+  } else {
+    // Voice not supported
+    if (voiceBtn) {
+      voiceBtn.style.display = 'none';
+    }
+    if (voiceTip) {
+      voiceTip.textContent = 'Voice not supported in this browser';
+    }
+  }
+
+  // ---------- Image tab ----------
   const dropZone = document.getElementById('dropZone');
   const fileInput = document.getElementById('fileInput');
   const descInput = document.getElementById('imageDescription');
