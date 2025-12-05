@@ -1,15 +1,12 @@
 // server.js – Bible Buddy Unified, Render-ready, Node 18+
 //
-// This version keeps things simple and clean:
-//
 // - Serves static files from /public and /admin
 // - Provides JSON APIs for self-test + providers
 // - Mounts AI routes for:
 //      * /api/ai/tester-chat
 //      * /api/ai/tester-image
 //      * /admin/api/ai/helper
-//
-// All HTML lives in files under /public and /admin.
+// - Exposes /api/health for Render health checks
 
 const express = require('express');
 const path = require('path');
@@ -26,15 +23,12 @@ app.use(express.json({ limit: '5mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 // ===== Static assets =====
-// Public site (user-facing)
 const PUBLIC_DIR = path.join(__dirname, 'public');
 app.use(express.static(PUBLIC_DIR));
 
-// Admin static (dashboard, JS, CSS)
 const ADMIN_DIR = path.join(__dirname, 'admin');
 app.use('/admin', express.static(ADMIN_DIR));
 
-// Data (JSON logs, etc.)
 const DATA_DIR = path.join(__dirname, 'data');
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 app.use('/data', express.static(DATA_DIR));
@@ -75,7 +69,19 @@ function buildSelfTestPayload() {
   };
 }
 
-// ===== JSON APIs for health & providers =====
+// ===== Health check for Render =====
+//
+// Render is calling /api/health (per your screenshot).
+// We return 200 OK with a simple JSON payload.
+app.get('/api/health', (req, res) => {
+  res.json({
+    ok: true,
+    version: APP_VERSION,
+    time: new Date().toISOString(),
+  });
+});
+
+// ===== JSON APIs for health & providers (for the dashboard) =====
 
 // Legacy selftest endpoint
 app.get('/selftest', (req, res) => {
@@ -105,8 +111,8 @@ app.get('/admin/api/providers', (req, res) => {
 
 try {
   const aiRouter = require('./ai/routes');
-  app.use('/api/ai', aiRouter);       // tester chat + image
-  app.use('/admin/api/ai', aiRouter); // admin helper
+  app.use('/api/ai', aiRouter);
+  app.use('/admin/api/ai', aiRouter);
   console.log('AI routes loaded');
 } catch (e) {
   console.warn('WARNING: AI routes failed to load:', e.message);
@@ -124,7 +130,7 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.join(ADMIN_DIR, 'index.html'));
 });
 
-// Tester Lab (both /lab and /lab.html)
+// Tester Lab
 app.get(['/lab', '/lab.html'], (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'lab.html'));
 });
