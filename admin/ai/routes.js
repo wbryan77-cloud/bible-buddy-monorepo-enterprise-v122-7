@@ -1,267 +1,325 @@
-// ai/routes.js
-// Central AI router for Bible Buddy:
-// - POST /api/ai/tester-chat     → Bible Buddy for testers (text chat)
-// - POST /api/ai/tester-image    → describe notes/plans from images (via description or optional image)
-// - POST /admin/api/ai/helper    → Admin AI helper (summaries + next steps)
+// admin/ai/routes.js
+// Central AI router for Bible Buddy
+// - /admin/ai/tester-chat   → Bible Buddy for testers (text chat)
+// - /admin/ai/picture-plan  → Describe notes/plans from images (phase 1: description-based)
+// - /admin/ai/helper        → Admin AI helper (dashboard guidance)
 
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
+const axios = require('axios');
 
 const router = express.Router();
 
-const DATA_DIR = path.join(__dirname, '..', 'data');
+// ===== AI config =====
+
+// Your OpenAI API key and model
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
+// default to gpt-4.1-mini; you can override in Render env with OPENAI_MODEL
+const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4.1-mini';
+
+// Simple guard: if no key, we’ll return a friendly error instead of crashing
+function ensureKey() {
+  if (!OPENAI_API_KEY) {
+    const err = new Error('OPENAI_API_KEY is not set');
+    err.code = 'NO_API_KEY';
+    throw err;
+  }
+}
+
+// ===== Data files where AI can “learn” tester patterns =====
+
+const DATA_DIR = path.join(__dirname, '..', '..', 'data');
 const TESTER_LOG_PATH = path.join(DATA_DIR, 'tester_log.json');
-const INSIGHTS_PATH = path.join(DATA_DIR, 'ai_insights.json');
+const INSIGHTS_PATH = path.join(DATA_DIR, 'insights.json');
 
 function ensureFiles() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   if (!fs.existsSync(TESTER_LOG_PATH)) fs.writeFileSync(TESTER_LOG_PATH, '[]');
   if (!fs.existsSync(INSIGHTS_PATH)) fs.writeFileSync(INSIGHTS_PATH, '[]');
 }
-ensureFiles();
 
 function loadJson(p, fallback) {
   try {
     if (!fs.existsSync(p)) return fallback;
     return JSON.parse(fs.readFileSync(p, 'utf8'));
-  } catch {
+  } catch (e) {
+    console.warn('Failed to read JSON', p, e.message);
     return fallback;
   }
 }
 
 function saveJson(p, data) {
-  fs.writeFileSync(p, JSON.stringify(data, null, 2));
-}
-
-// ---- OpenAI helper ----
-// Requires OPENAI_API_KEY in Render → Environment
-async function callOpenAIChat({ system, messages }) {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    throw new Error('OPENAI_API_KEY is not set');
-  }
-
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      model: 'gpt-4.1-mini',
-      messages: [
-        { role: 'system', content: system },
-        ...messages,
-      ],
-      temperature: 0.4,
-    }),
-  });
-
-  if (!res.ok) {
-    const txt = await res.text();
-    throw new Error(`OpenAI error: ${res.status} ${txt}`);
-  }
-
-  const json = await res.json();
-  const choice = json.choices && json.choices[0];
-  const content = choice && choice.message && choice.message.content;
-  return content || '';
-}
-
-// ---- Tester Chat ----
-router.post('/tester-chat', express.json(), async (req, res) => {
   try {
-    const { sessionId, userId, message } = req.body || {};
-    if (!message) {
-      return res.status(400).json({ error: 'message is required' });
+    fs.writeFileSync(p, JSON.stringify(data, null, 2));
+  } catch (e) {
+    console.error('Failed to write JSON', p, e.message);
+  }
+}
+
+ensureFiles();
+
+// ===== Helper: call OpenAI Responses API =====
+
+async function callOpenAIChat(systemPrompt, userMessage, extraContext) {
+  ensureKey();
+
+  const body = {
+    model: OPENAI_MODEL,
+    input: [
+      {
+        role: 'system',
+        content: [
+          {
+            type: 'input_text',
+            text: systemPrompt
+          }
+        ]
+      },
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'input_text',
+            text: userMessage
+          }
+        ]
+      }
+    ],
+    // You can tweak this later if you want longer/shorter answers
+    max_output_tokens: 800,
+    metadata: extraContext || {}
+  };
+
+  try {
+    const resp = await axios.post('https://api.openai.com/v1/responses', body, {
+      headers: {
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      timeout: 30000
+    });
+
+    const output = resp.data;
+    // New Responses API: text is in output.output[0].content[0].text
+    const first = output.output && output.output[0];
+    const firstContent = first && first.content && first.content[0];
+    const text = firstContent && firstContent.text
+      ? firstContent.text
+      : JSON.stringify(output);
+
+    return { text, raw: output };
+  } catch (e) {
+    // Try to surface a helpful error
+    if (e.response && e.response.data && e.response.data.error) {
+      const apiErr = e.response.data.error;
+      if (e.response.status === 429 || apiErr.type === 'insufficient_quota') {
+        return {
+          text:
+            'Bible Buddy hit an OpenAI usage limit. Please check your plan/credits on the OpenAI dashboard, then try again.',
+          raw: apiErr
+        };
+      }
+      return {
+        text:
+          `OpenAI error: ${apiErr.message || apiErr.type || 'Unknown error'}.`,
+        raw: apiErr
+      };
     }
 
-    const log = loadJson(TESTER_LOG_PATH, []);
-    const now = new Date().toISOString();
+    console.error('OpenAI call failed:', e.message);
+    return {
+      text:
+        'Sorry, Bible Buddy had trouble reaching the AI service. Please try again in a moment.',
+      raw: { message: e.message }
+    };
+  }
+}
 
-    const lastFew = log
-      .filter((r) => r.sessionId === sessionId)
-      .slice(-6);
+// ===== 1) Tester chat endpoint =====
+//
+// Frontend: Bible Buddy Lab chat box calls POST /admin/ai/tester-chat
+// Body: { message: "text the tester typed" }
 
-    const historyMessages = lastFew.flatMap((r) => [
-      { role: 'user', content: r.userMessage || '' },
-      { role: 'assistant', content: r.aiReply || '' },
-    ]);
+router.post('/tester-chat', async (req, res) => {
+  const message = (req.body && req.body.message) || '';
 
-    const systemPrompt = `
-You are "Bible Buddy", a warm, encouraging Christian assistant helping testers
-shape and improve their Bible study notes, plans, and ideas.
+  if (!message.trim()) {
+    return res.json({
+      ok: false,
+      reply: 'Please type something for Bible Buddy to respond to 🙂',
+      error: 'EMPTY_MESSAGE'
+    });
+  }
+
+  const systemPrompt = `
+You are "Bible Buddy" – an AI devotional coach and test guide for a Christian Bible app.
 
 Goals:
-- Keep everything aligned with Christian faith, scripture, and love.
-- Help organize notes into clear sections (title, scripture, 3–4 main points, application, prayer).
-- Encourage the tester gently; suggest ways to make their plan clearer or more impactful.
-- Always stay kind, non-judgmental, and supportive.
+- Encourage and support testers as they share notes and plans.
+- Help them structure simple devotionals, Bible study plans, and reflections.
+- Always stay aligned with Scripture, kindness, and clarity.
+- Never give medical, legal, or financial advice.
 
-Keep responses concise but helpful. Offer a next step or reflection question when appropriate.
-    `.trim();
+Conversation style:
+- Warm, encouraging, and clear.
+- Ask short follow-up questions when helpful.
+- Suggest simple next steps (e.g., "Would you like an outline with title, Scripture, points, and prayer?").
+  `.trim();
 
-    const content = await callOpenAIChat({
-      system: systemPrompt,
-      messages: [
-        ...historyMessages,
-        { role: 'user', content: message },
-      ],
-    });
+  const context = {
+    endpoint: 'tester-chat',
+    timestamp: new Date().toISOString()
+  };
 
-    log.push({
-      t: now,
-      sessionId: sessionId || null,
-      userId: userId || null,
-      userMessage: message,
-      aiReply: content,
-      kind: 'tester-chat',
-    });
-    saveJson(TESTER_LOG_PATH, log);
+  const { text, raw } = await callOpenAIChat(systemPrompt, message, context);
 
-    res.json({ reply: content });
-  } catch (e) {
-    console.error('tester-chat error', e);
-    res.status(500).json({ error: e.message || 'tester-chat failed' });
-  }
+  // Log this exchange so the Admin can review patterns later
+  const log = loadJson(TESTER_LOG_PATH, []);
+  log.push({
+    time: new Date().toISOString(),
+    type: 'chat',
+    message,
+    reply: text
+  });
+  saveJson(TESTER_LOG_PATH, log);
+
+  return res.json({
+    ok: true,
+    reply: text,
+    model: OPENAI_MODEL,
+    meta: {
+      finish_reason:
+        raw && raw.output && raw.output[0] && raw.output[0].stop_reason
+          ? raw.output[0].stop_reason
+          : null
+    }
+  });
 });
 
-// ---- Tester "Image" helper ----
-router.post('/tester-image', express.json({ limit: '5mb' }), async (req, res) => {
-  try {
-    const { sessionId, userId, description, imageName, imageDataBase64 } = req.body || {};
+// ===== 2) Picture → Plan endpoint =====
+//
+// For now this uses the tester's description + a simple note that an image was supplied.
+// You can later upgrade this to real image understanding using the Vision APIs.
 
-    if (!description && !imageDataBase64) {
-      return res.status(400).json({
-        error: 'description or imageDataBase64 is required (for now we primarily use description).',
-      });
-    }
+router.post('/picture-plan', async (req, res) => {
+  const description = (req.body && req.body.description) || '';
+  const hasImage = !!(req.body && req.body.imageMeta);
 
-    const log = loadJson(TESTER_LOG_PATH, []);
-    const now = new Date().toISOString();
-
-    const systemPrompt = `
-You are "Bible Buddy", helping a tester turn rough notes or images of plans
-into structured, clear Bible study or sermon outlines.
-
-The tester may upload an image of handwritten notes or slides, and they will provide
-a short description of what the image contains. Use that description to:
-
-- Extract the key ideas.
-- Suggest a clean structure: Title, Scripture(s), Main points (3–4), Application, Prayer.
-- Suggest improvements: clarity, flow, adding scripture, making it more practical.
-
-Respond with clear headings and bullet points.
-    `.trim();
-
-    const userText = `
-Tester description of their image/notes:
-
-"${description || '(no description)'}"
-
-If imageDataBase64 is present, assume it roughly matches this description and do your best
-based on the description.
-    `;
-
-    const content = await callOpenAIChat({
-      system: systemPrompt,
-      messages: [{ role: 'user', content: userText }],
+  if (!description.trim() && !hasImage) {
+    return res.json({
+      ok: false,
+      outline:
+        'Please upload a picture or type a short description of your notes, and I will help turn it into a simple Bible plan.',
+      error: 'NO_INPUT'
     });
-
-    log.push({
-      t: now,
-      kind: 'tester-image',
-      sessionId: sessionId || null,
-      userId: userId || null,
-      description: description || null,
-      imageName: imageName || null,
-      imageDataBase64: imageDataBase64 ? '(stored for now)' : null,
-      aiReply: content,
-    });
-    saveJson(TESTER_LOG_PATH, log);
-
-    res.json({ reply: content });
-  } catch (e) {
-    console.error('tester-image error', e);
-    res.status(500).json({ error: e.message || 'tester-image failed' });
   }
+
+  const userText = `
+Here is what the tester shared:
+
+Description: ${description || '(no text description provided)'}
+Image attached: ${hasImage ? 'yes' : 'no (text only)'}
+
+Please suggest a short, clear Bible-based plan or devotional outline they could build from.
+  `.trim();
+
+  const systemPrompt = `
+You are "Bible Buddy" helping testers turn raw notes or pictures into a simple Bible-based plan.
+
+When you answer, use this structure:
+1) Title
+2) Scripture(s)
+3) 3–5 simple points
+4) A short reflection question
+5) A short closing prayer
+
+Keep it friendly and encouraging.
+  `.trim();
+
+  const context = {
+    endpoint: 'picture-plan',
+    timestamp: new Date().toISOString()
+  };
+
+  const { text } = await callOpenAIChat(systemPrompt, userText, context);
+
+  // Log
+  const log = loadJson(TESTER_LOG_PATH, []);
+  log.push({
+    time: new Date().toISOString(),
+    type: 'picture-plan',
+    description,
+    hasImage,
+    outline: text
+  });
+  saveJson(TESTER_LOG_PATH, log);
+
+  return res.json({
+    ok: true,
+    outline: text,
+    model: OPENAI_MODEL
+  });
 });
 
-// ---- Admin AI Helper ----
-router.post('/helper', express.json(), async (req, res) => {
-  try {
-    const { selftest, providers } = req.body || {};
+// ===== 3) Admin helper endpoint =====
+//
+// Admin dashboard calls POST /admin/ai/helper with a small status snapshot.
+// We turn that into simple guidance.
 
-    const insights = loadJson(INSIGHTS_PATH, []);
-    const now = new Date().toISOString();
+router.post('/helper', async (req, res) => {
+  const snapshot = req.body || {};
 
-    const systemPrompt = `
-You are the Admin AI helper for the Bible Buddy app.
-
-You receive:
-- A self-test result (health, version, queue).
-- A provider summary (email/SMS/queue).
-- Optionally, you may have past insight summaries.
-
-Your job:
-- Explain in plain, concise language what the current status is.
-- Identify the top 3–5 recommended next steps for the admin.
-- Keep suggestions practical, non-technical if possible, with clear reasons.
-- If providers are missing keys (Resend/Twilio), call that out as a priority.
-- If everything is OK, suggest product/testing steps instead of technical work.
-
-Return JSON in this shape:
-{
-  "summary": "short paragraph",
-  "actions": [
-    "First recommended action...",
-    "Second recommended action..."
-  ]
-}
-    `.trim();
-
-    const context = `
-Current selftest:
-${JSON.stringify(selftest || {}, null, 2)}
-
-Current providers:
-${JSON.stringify(providers || {}, null, 2)}
-
-Recent past insights (summaries only):
-${insights.slice(-5).map(i => '- ' + (i.summary || '')).join('\n')}
-    `;
-
-    const raw = await callOpenAIChat({
-      system: systemPrompt,
-      messages: [{ role: 'user', content: context }],
+  // If no API key, just show a graceful hint on the dashboard
+  if (!OPENAI_API_KEY) {
+    return res.json({
+      ok: false,
+      advice:
+        'To enable AI guidance here, add your OPENAI_API_KEY in Render → Environment, then refresh this page.',
+      error: 'NO_API_KEY'
     });
-
-    let parsed;
-    try {
-      parsed = JSON.parse(raw);
-    } catch {
-      parsed = { summary: raw, actions: [] };
-    }
-
-    const record = {
-      t: now,
-      selftest: selftest || null,
-      providers: providers || null,
-      summary: parsed.summary || '',
-      actions: parsed.actions || [],
-    };
-    insights.push(record);
-    saveJson(INSIGHTS_PATH, insights);
-
-    res.json({
-      summary: parsed.summary || '',
-      actions: parsed.actions || [],
-    });
-  } catch (e) {
-    console.error('admin helper error', e);
-    res.status(500).json({ error: e.message || 'admin helper failed' });
   }
+
+  const statusText = JSON.stringify(snapshot, null, 2);
+
+  const systemPrompt = `
+You are the "Bible Buddy Admin Guide" – a friendly assistant helping the product owner understand tester activity and next steps.
+
+- Be concise (2–5 bullet points).
+- Highlight any obvious configuration issues (like missing keys).
+- Suggest 1–3 simple actions they can take this week to improve the app.
+- Keep the tone encouraging, not alarming.
+  `.trim();
+
+  const userMessage = `
+Here is the current status snapshot from the Admin dashboard:
+
+${statusText}
+
+Please give short, practical guidance.
+  `.trim();
+
+  const context = {
+    endpoint: 'admin-helper',
+    timestamp: new Date().toISOString()
+  };
+
+  const { text } = await callOpenAIChat(systemPrompt, userMessage, context);
+
+  // Save as an "insight" for future reference
+  const insights = loadJson(INSIGHTS_PATH, []);
+  insights.push({
+    time: new Date().toISOString(),
+    snapshot,
+    advice: text
+  });
+  saveJson(INSIGHTS_PATH, insights);
+
+  return res.json({
+    ok: true,
+    advice: text,
+    model: OPENAI_MODEL
+  });
 });
 
 module.exports = router;
