@@ -1,309 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Bible Buddy Lab (Tester)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg-gradient: linear-gradient(135deg, #1e3a8a, #7c3aed);
-      --card-bg: #ffffff;
-      --accent: #2563eb;
-    }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-gradient);
-      color: #0f172a;
-      min-height: 100vh;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-    }
-    .shell {
-      background: rgba(255,255,255,0.98);
-      margin: 24px;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(15,23,42,0.25);
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
-      max-width: 1200px;
-      width: 100%;
-    }
-    .left {
-      flex: 0 0 320px;
-      background: radial-gradient(circle at top left, #bfdbfe, #e0e7ff);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-right: 1px solid #e5e7eb;
-    }
-    .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 999px;
-      background: conic-gradient(from 200deg, #facc15, #22c55e, #38bdf8, #8b5cf6, #f97316);
-      padding: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
-    }
-    .avatar-inner {
-      width: 88px;
-      height: 88px;
-      border-radius: 999px;
-      background: #f9fafb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      color: #1f2937;
-    }
-    .left h1 {
-      margin: 8px 0 4px;
-      font-size: 22px;
-    }
-    .left p {
-      margin: 4px 0;
-      font-size: 14px;
-      text-align: center;
-      color: #374151;
-    }
-    .tag {
-      margin-top: 8px;
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(37,99,235,0.08);
-      color: #1d4ed8;
-    }
-    .left-footer {
-      margin-top: auto;
-      font-size: 12px;
-      color: #6b7280;
-      text-align: center;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bible Buddy Lab</title>
 
-    .right {
-      flex: 1 1 auto;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      background: #f3f4f6;
-    }
-    .tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    .tab {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-size: 13px;
-      color: #4b5563;
-      background: transparent;
-    }
-    .tab.active {
-      border-color: #2563eb;
-      background: #dbeafe;
-      color: #1d4ed8;
-      font-weight: 600;
-    }
-    .panel {
-      flex: 1 1 auto;
-      background: #ffffff;
-      border-radius: 14px;
-      box-shadow: 0 1px 3px rgba(15,23,42,0.15);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-    .chat-log {
-      flex: 1 1 auto;
-      padding: 12px 16px;
-      overflow-y: auto;
-      background: #f9fafb;
-    }
-    .msg {
-      margin-bottom: 10px;
-      max-width: 80%;
-      padding: 8px 10px;
-      border-radius: 10px;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    .msg.user {
-      margin-left: auto;
-      background: #2563eb;
-      color: #f9fafb;
-      border-bottom-right-radius: 2px;
-    }
-    .msg.ai {
-      margin-right: auto;
-      background: #e5e7eb;
-      color: #111827;
-      border-bottom-left-radius: 2px;
-    }
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 0;
+    }
 
-    .chat-input-row {
-      padding: 10px 12px;
-      border-top: 1px solid #e5e7eb;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      background: #ffffff;
-    }
-    .chat-input-row input {
-      flex: 1 1 auto;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      font-size: 14px;
-    }
-    .chat-input-row button {
-      padding: 7px 11px;
-      border-radius: 999px;
-      border: none;
-      background: var(--accent);
-      color: white;
-      cursor: pointer;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-    .chat-input-row button:disabled {
-      opacity: 0.5;
-      cursor: default;
-    }
-    .chat-input-row .voice-tip {
-      font-size: 11px;
-      color: #6b7280;
-      margin-left: 4px;
-    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
 
-    .panel-inner {
-      padding: 14px 16px 12px;
-      overflow-y: auto;
-    }
-    .panel-inner h2 {
-      margin-top: 0;
-      font-size: 16px;
-    }
-    .drop-zone {
-      border: 2px dashed #9ca3af;
-      border-radius: 10px;
-      padding: 16px;
-      text-align: center;
-      background: #f9fafb;
-      cursor: pointer;
-      font-size: 14px;
-      color: #4b5563;
-      margin-bottom: 10px;
-    }
-    .drop-zone.dragover {
-      border-color: #2563eb;
-      background: #eff6ff;
-    }
-    .panel-inner textarea {
-      width: 100%;
-      min-height: 80px;
-      border-radius: 8px;
-      border: 1px solid #d1d5db;
-      padding: 8px;
-      font-size: 14px;
-      resize: vertical;
-    }
-    .panel-inner button {
-      margin-top: 8px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      border: none;
-      background: var(--accent);
-      color: white;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .panel-inner button:disabled {
-      opacity: 0.5;
-      cursor: default;
-    }
-    .panel-inner pre {
-      margin-top: 10px;
-      padding: 8px;
-      background: #f3f4f6;
-      border-radius: 8px;
-      font-size: 13px;
-      white-space: pre-wrap;
-    }
+    h1 {
+      margin-top: 0;
+      font-size: 30px;
+      color: #333;
+      text-align: center;
+    }
 
-    @media (max-width: 900px) {
-      .shell {
-        flex-direction: column;
-      }
-      .left {
-        flex: 0 0 auto;
-        border-right: none;
-        border-bottom: 1px solid #e5e7eb;
-      }
-    }
-  </style>
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .tab {
+      padding: 12px 20px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid #4a6cf7;
+      color: #4a6cf7;
+    }
+
+    .chat-box {
+      height: 320px;
+      overflow-y: auto;
+      background: #fafafa;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    .bubble {
+      max-width: 80%;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      line-height: 1.4;
+      white-space: pre-line;
+    }
+
+    .user {
+      background: #d5e3ff;
+      margin-left: auto;
+    }
+
+    .assistant {
+      background: #eee;
+      margin-right: auto;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 12px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #4a6cf7;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #3a56ca;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .error-box {
+      background: #ffe5e5;
+      color: #a40000;
+      padding: 10px 15px;
+      border: 1px solid #ffb3b3;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .dropzone {
+      width: 100%;
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      padding: 25px;
+      background: #fafafa;
+      text-align: center;
+      color: #555;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-  <div class="shell">
-    <div class="left">
-      <div class="avatar">
-        <div class="avatar-inner">BB</div>
-      </div>
-      <h1>Bible Buddy Lab</h1>
-      <p>Tester mode: upload notes, share plans, and let Bible Buddy help structure, improve, and deepen them.</p>
-      <div class="tag">AI-guided · Early access</div>
-      <div class="left-footer">
-        As you and other testers use this, Bible Buddy will learn what helps most and suggest better flows over time.
-      </div>
-    </div>
+  <div class="container">
+    <h1>Bible Buddy Lab</h1>
+    <p style="text-align:center;">Early-access testing. Bible Buddy learns as you and others use it.</p>
 
-    <div class="right">
-      <div class="tabs">
-        <button class="tab active" data-tab="chat">Chat</button>
-        <button class="tab" data-tab="image">Picture → Plan</button>
-      </div>
+    <!-- Tabs -->
+    <div class="tabs">
+      <div id="tab-chat" class="tab active">Chat</div>
+      <div id="tab-picture" class="tab">Picture ➜ Plan</div>
+    </div>
 
-      <!-- Chat panel -->
-      <div class="panel" data-panel="chat">
-        <div id="chatLog" class="chat-log"></div>
-        <div class="chat-input-row">
-          <input id="chatInput" type="text" placeholder="Ask Bible Buddy anything about your notes or plans..." />
-          <button id="voiceBtn" type="button">🎤</button>
-          <button id="chatSend">Send</button>
-          <span class="voice-tip" id="voiceTip"></span>
-        </div>
-      </div>
+    <!-- CHAT MODE -->
+    <div id="chat-mode">
+      <div id="chat-box" class="chat-box"></div>
 
-      <!-- Image panel -->
-      <div class="panel" data-panel="image" style="display:none;">
-        <div class="panel-inner">
-          <h2>Turn a picture of your notes into a plan</h2>
-          <div id="dropZone" class="drop-zone">
-            Drop an image here, or click to choose one.
-          </div>
-          <input id="fileInput" type="file" accept="image/*" style="display:none;" />
+      <div class="input-row">
+        <input id="chat-input" type="text" placeholder="Ask Bible Buddy anything…" />
+        <button onclick="sendChat()">Send</button>
+      </div>
+    </div>
 
-          <p style="font-size:13px; color:#4b5563; margin-top:6px;">
-            For now, Bible Buddy will use your short description plus the image to suggest a structured outline.
-          </p>
-          <textarea id="imageDescription" placeholder="Describe what your notes or whiteboard contain (e.g., 'sermon on forgiveness, 3 points, some scriptures I scribbled')"></textarea>
-          <button id="imageSend">Ask Bible Buddy</button>
+    <!-- PICTURE MODE -->
+    <div id="picture-mode" class="hidden">
+      <div id="error-box" class="error-box hidden"></div>
 
-          <pre id="imageResult" style="display:none;"></pre>
-        </div>
-      </div>
-    </div>
-  </div>
+      <div id="dropzone" class="dropzone" onclick="selectImage()">
+        Drop an image here or click to choose a file
+      </div>
 
-  <script src="/js/lab.js"></script>
+      <input id="file-input" type="file" accept="image/*" class="hidden" />
+
+      <div class="input-row">
+        <input id="picture-desc" type="text" placeholder="Describe the notes or whiteboard content…" />
+        <button onclick="sendPicture()">Ask Bible Buddy</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // TAB SWITCHING
+    const tabChat = document.getElementById("tab-chat");
+    const tabPicture = document.getElementById("tab-picture");
+    const chatMode = document.getElementById("chat-mode");
+    const pictureMode = document.getElementById("picture-mode");
+
+    tabChat.onclick = () => {
+      tabChat.classList.add("active");
+      tabPicture.classList.remove("active");
+      chatMode.classList.remove("hidden");
+      pictureMode.classList.add("hidden");
+    };
+
+    tabPicture.onclick = () => {
+      tabPicture.classList.add("active");
+      tabChat.classList.remove("active");
+      pictureMode.classList.remove("hidden");
+      chatMode.classList.add("hidden");
+    };
+
+    // CHAT
+    const chatBox = document.getElementById("chat-box");
+
+    function addBubble(text, sender) {
+      const div = document.createElement("div");
+      div.classList.add("bubble", sender);
+      div.textContent = text;
+      chatBox.appendChild(div);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    async function sendChat() {
+      const input = document.getElementById("chat-input");
+      const text = input.value.trim();
+      if (!text) return;
+
+      addBubble(text, "user");
+      input.value = "";
+
+      const response = await fetch("/api/ai/tester-chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text }),
+      });
+
+      const data = await response.json();
+
+      if (data.error) {
+        addBubble("❌ Error: " + data.error, "assistant");
+      } else {
+        addBubble(data.reply, "assistant");
+      }
+    }
+
+    // PICTURE MODE
+    function selectImage() {
+      document.getElementById("file-input").click();
+    }
+
+    async function sendPicture() {
+      const file = document.getElementById("file-input").files[0];
+      const desc = document.getElementById("picture-desc").value.trim();
+      const errorBox = document.getElementById("error-box");
+
+      if (!file) {
+        errorBox.textContent = "Please upload an image first.";
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      errorBox.classList.add("hidden");
+
+      const form = new FormData();
+      form.append("image", file);
+      form.append("description", desc);
+
+      const res = await fetch("/api/ai/tester-image-plan", {
+        method: "POST",
+        body: form,
+      });
+
+      const data = await res.json();
+
+      if (data.error) {
+        errorBox.textContent = "❌ " + data.error;
+        errorBox.classList.remove("hidden");
+      } else {
+        addBubble("📸 Picture → Plan:\n" + data.plan, "assistant");
+      }
+    }
+  </script>
 </body>
 </html>
