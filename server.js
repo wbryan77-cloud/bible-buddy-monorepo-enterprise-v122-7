@@ -117,7 +117,7 @@ try {
 } catch (e) {
   console.warn('WARNING: AI routes failed to load:', e.message);
 }
-// ===== Project Brain & Admin Assistant =====
+// ===== Project Brain & Admin Assistant & Buddy & Content Helper =====
 try {
   const adminAssistantRouter = require('./routes/adminAssistant');
   app.use('/admin', adminAssistantRouter);
@@ -125,9 +125,11 @@ try {
   const buddyRouter = require('./routes/buddy');
   app.use('/buddy', buddyRouter);
 
-  console.log('Project Brain + Admin Assistant + Buddy routes loaded!');
+  app.use('/admin/content', express.json(), contentHelperRouter);
+
+  console.log('Project Brain + Admin Assistant + Buddy + Content routes loaded!');
 } catch (err) {
-  console.warn('WARNING: Project Brain / Assistant routes failed:', err.message);
+  console.warn('WARNING: Brain routes failed:', err.message);
 }
 
 // ===== Explicit routes for main pages =====
