@@ -1,812 +1,868 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, initial-scale=1"
-    />
-    <title>Bible Buddy Lab</title>
-
-    <style>
-      :root {
-        --bg: #f3f4f6;
-        --card-bg: #ffffff;
-        --primary: #2563eb;
-        --primary-soft: #e0ebff;
-        --accent: #16a34a;
-        --text-main: #111827;
-        --text-muted: #6b7280;
-        --border-subtle: #e5e7eb;
-        --radius-lg: 16px;
-        --radius-md: 10px;
-        --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, sans-serif;
-        background: radial-gradient(circle at top, #e0ecff 0, #f3f4f6 45%, #f9fafb 100%);
-        color: var(--text-main);
-      }
-
-      .page {
-        max-width: 1080px;
-        margin: 24px auto 40px;
-        padding: 0 16px;
-      }
-
-      .hero-card {
-        background: linear-gradient(135deg, #e0edff, #f9fafb);
-        border-radius: 28px;
-        padding: 20px 20px 18px;
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        box-shadow: var(--shadow-soft);
-        margin-bottom: 16px;
-      }
-
-      .hero-logo {
-        width: 40px;
-        height: 40px;
-        border-radius: 999px;
-        background: #1d4ed8;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        flex-shrink: 0;
-      }
-
-      .hero-text {
-        flex: 1;
-      }
-
-      .hero-title {
-        font-size: 22px;
-        font-weight: 700;
-        margin: 0 0 4px;
-      }
-
-      .hero-subtitle {
-        font-size: 13px;
-        color: var(--text-muted);
-        margin: 0;
-      }
-
-      .hero-badges {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 6px;
-      }
-
-      .badge-pill {
-        font-size: 11px;
-        padding: 4px 10px;
-        border-radius: 999px;
-        background: #ecfdf3;
-        color: #166534;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .badge-pill-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 999px;
-        background: #22c55e;
-      }
-
-      .badge-pill-secondary {
-        background: #eef2ff;
-        color: #4338ca;
-      }
-
-      .layout-main {
-        display: grid;
-        grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-        gap: 18px;
-        margin-top: 8px;
-      }
-
-      .card {
-        background: var(--card-bg);
-        border-radius: var(--radius-lg);
-        padding: 16px 18px 18px;
-        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-        border: 1px solid rgba(148, 163, 184, 0.2);
-      }
-
-      .card h2 {
-        margin: 0 0 6px;
-        font-size: 17px;
-      }
-
-      .card h3 {
-        margin: 12px 0 6px;
-        font-size: 14px;
-      }
-
-      .eyebrow {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--text-muted);
-        margin-bottom: 4px;
-      }
-
-      .muted {
-        font-size: 13px;
-        color: var(--text-muted);
-      }
-
-      .mode-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 4px;
-        font-size: 11px;
-        color: var(--text-muted);
-      }
-
-      .mode-row strong {
-        color: var(--text-main);
-      }
-
-      .bible-search-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-top: 8px;
-        font-size: 13px;
-        color: var(--text-main);
-      }
-
-      .bible-search-label span {
-        font-weight: 600;
-      }
-
-      .tabs {
-        display: inline-flex;
-        border-radius: 999px;
-        padding: 3px;
-        background: #e5e7eb;
-        margin-top: 10px;
-      }
-
-      .tab-btn {
-        border: none;
-        background: transparent;
-        padding: 6px 14px;
-        border-radius: 999px;
-        font-size: 12px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        cursor: pointer;
-        color: #4b5563;
-      }
-
-      .tab-btn span.emoji {
-        font-size: 13px;
-      }
-
-      .tab-btn.active {
-        background: #ffffff;
-        color: #111827;
-        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.1);
-      }
-
-      .tab-panels {
-        margin-top: 12px;
-      }
-
-      .panel {
-        display: none;
-      }
-
-      .panel.active {
-        display: block;
-      }
-
-      .field-label {
-        font-size: 12px;
-        font-weight: 600;
-        margin: 10px 0 4px;
-      }
-
-      .text-input,
-      .textarea,
-      .select {
-        width: 100%;
-        border-radius: 999px;
-        border: 1px solid var(--border-subtle);
-        padding: 8px 12px;
-        font-size: 13px;
-        outline: none;
-        transition: box-shadow 0.12s ease, border-color 0.12s ease;
-      }
-
-      .textarea {
-        border-radius: 12px;
-        resize: vertical;
-        min-height: 80px;
-      }
-
-      .text-input:focus,
-      .textarea:focus,
-      .select:focus {
-        border-color: var(--primary);
-        box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
-      }
-
-      .file-drop {
-        border: 1px dashed #cbd5f5;
-        border-radius: 16px;
-        padding: 12px;
-        text-align: center;
-        background: #f9fafb;
-        font-size: 12px;
-        color: var(--text-muted);
-        margin-bottom: 8px;
-      }
-
-      .file-drop input[type="file"] {
-        display: block;
-        margin: 6px auto 0;
-      }
-
-      .primary-btn {
-        border: none;
-        border-radius: 999px;
-        padding: 9px 16px;
-        font-size: 13px;
-        font-weight: 600;
-        background: var(--primary);
-        color: #ffffff;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
-        margin-top: 8px;
-      }
-
-      .primary-btn:disabled {
-        opacity: 0.6;
-        cursor: default;
-        box-shadow: none;
-      }
-
-      .secondary-btn {
-        border-radius: 999px;
-        border: 1px solid var(--border-subtle);
-        background: #f3f4f6;
-        padding: 7px 14px;
-        font-size: 12px;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .secondary-btn span.emoji {
-        font-size: 14px;
-      }
-
-      .status-row {
-        margin-top: 10px;
-        font-size: 11px;
-        color: var(--text-muted);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .status-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .status-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: #22c55e;
-      }
-
-      .status-text {
-        font-size: 11px;
-      }
-
-      .status-error {
-        color: #b91c1c;
-      }
-
-      .chat-bubble-wrap {
-        margin-top: 10px;
-        padding: 10px 10px 4px;
-        border-radius: 12px;
-        background: #f9fafb;
-        border: 1px dashed #e5e7eb;
-        max-height: 230px;
-        overflow-y: auto;
-        font-size: 13px;
-      }
-
-      .chat-msg {
-        margin-bottom: 6px;
-      }
-
-      .chat-msg strong {
-        font-size: 12px;
-      }
-
-      .chat-msg.you {
-        text-align: right;
-      }
-
-      .chat-msg.you strong {
-        color: #1d4ed8;
-      }
-
-      .chat-msg.bb strong {
-        color: #16a34a;
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 11px;
-        border-radius: 999px;
-        padding: 4px 9px;
-        background: #f9fafb;
-        border: 1px solid #e5e7eb;
-        margin-top: 10px;
-      }
-
-      .list-tight {
-        padding-left: 18px;
-        margin: 4px 0 0;
-        font-size: 13px;
-        color: var(--text-muted);
-      }
-
-      .list-tight li {
-        margin-bottom: 4px;
-      }
-
-      @media (max-width: 880px) {
-        .layout-main {
-          grid-template-columns: minmax(0, 1fr);
-        }
-
-        .hero-card {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .hero-badges {
-          align-items: flex-start;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="page">
-      <!-- HERO HEADER -->
-      <header class="hero-card">
-        <div class="hero-logo">BB</div>
-        <div class="hero-text">
-          <div class="hero-title">Bible Buddy Lab</div>
-          <p class="hero-subtitle">
-            Early-access tester space for your Christian devotional companion.
-          </p>
-        </div>
-        <div class="hero-badges">
-          <div class="badge-pill">
-            <span class="badge-pill-dot"></span>
-            <span>Tester mode · guided by AI</span>
-          </div>
-          <div class="badge-pill badge-pill-secondary">
-            Standard mode · gpt-4.1-mini
-          </div>
-        </div>
-      </header>
-
-      <main class="layout-main">
-        <!-- LEFT COLUMN: MAIN INTERACTION -->
-        <section class="card">
-          <div class="eyebrow">Plan · reflect · pray</div>
-          <h2>Plan, reflect, and pray with Bible Buddy</h2>
-          <p class="muted">
-            Share a note, question, or rough idea. Bible Buddy will help turn it
-            into a devotional, study plan, or reflection.
-          </p>
-
-          <div class="mode-row">
-            <span class="bible-search-label">
-              📖 <span>Bible search · precept upon precept</span>
-            </span>
-            <span>Pro mode later via <code>BB_MODEL_TIER=pro</code></span>
-          </div>
-
-          <!-- TABS -->
-          <div class="tabs" role="tablist" aria-label="Mode">
-            <button
-              class="tab-btn active"
-              id="tab-chat"
-              data-target="panel-chat"
-              type="button"
-            >
-              <span class="emoji">💬</span> Chat
-            </button>
-            <button
-              class="tab-btn"
-              id="tab-picture"
-              data-target="panel-picture"
-              type="button"
-            >
-              <span class="emoji">🖼️</span> Picture → Plan
-            </button>
-          </div>
-
-          <div class="tab-panels">
-            <!-- CHAT PANEL -->
-            <section
-              id="panel-chat"
-              class="panel active"
-              aria-labelledby="tab-chat"
-            >
-              <p class="muted" style="margin-top: 10px">
-                Tip: Start simple — e.g. <em>“Help me outline a devotional on
-                hope, using Scripture precept upon precept.”</em>
-              </p>
-
-              <label class="field-label" for="chat-input">
-                Conversation with Bible Buddy
-              </label>
-              <textarea
-                id="chat-input"
-                class="textarea"
-                rows="3"
-                placeholder="Tell Bible Buddy what you’d like help with (verse, topic, or situation)…"
-              ></textarea>
-
-              <div
-                style="
-                  display: flex;
-                  gap: 8px;
-                  margin-top: 6px;
-                  flex-wrap: wrap;
-                "
-              >
-                <button
-                  id="chat-send"
-                  class="primary-btn"
-                  type="button"
-                >
-                  ✨ <span>Send to Bible Buddy</span>
-                </button>
-
-                <button
-                  id="voice-btn"
-                  class="secondary-btn"
-                  type="button"
-                >
-                  <span class="emoji">🎙️</span>
-                  <span>Tap to speak</span>
-                </button>
-              </div>
-
-              <div class="status-row">
-                <div class="status-pill">
-                  <span class="status-dot" id="status-dot"></span>
-                  <span class="status-text" id="status-text">
-                    READY · Bible Buddy is listening.
-                  </span>
-                </div>
-                <span id="error-text" class="status-text status-error"></span>
-              </div>
-
-              <div class="chat-bubble-wrap" id="chat-history">
-                <div class="chat-msg bb">
-                  <strong>Bible Buddy</strong> · I’m here to help you walk
-                  through Scripture, line upon line and precept upon precept.
-                  Tell me what you’re studying today.
-                </div>
-              </div>
-            </section>
-
-            <!-- PICTURE → PLAN PANEL -->
-            <section
-              id="panel-picture"
-              class="panel"
-              aria-labelledby="tab-picture"
-            >
-              <h3 style="margin-top: 10px; font-size: 14px">
-                Turn a picture of your notes into a plan
-              </h3>
-              <p class="muted" style="margin-top: 2px">
-                For example: a page of sermon notes, a whiteboard snapshot, or a
-                rough mind map.
-              </p>
-
-              <div class="file-drop">
-                Drop a photo or screenshot of your notes here, or choose a file.
-                <input
-                  id="image-input"
-                  type="file"
-                  accept="image/*"
-                />
-                <div
-                  id="image-selected"
-                  style="margin-top: 4px; font-size: 11px"
-                ></div>
-              </div>
-
-              <label class="field-label" for="picture-description">
-                Describe what your notes contain
-              </label>
-              <textarea
-                id="picture-description"
-                class="textarea"
-                rows="4"
-                placeholder="Tell Bible Buddy what the picture is about (themes, Scriptures, questions)…"
-              ></textarea>
-
-              <p class="muted" style="font-size: 11px; margin-top: 4px">
-                In this early version, Bible Buddy focuses mainly on your
-                description. Any selected image name may be logged so we can add
-                full image understanding later.
-              </p>
-
-              <button
-                id="picture-send"
-                class="primary-btn"
-                type="button"
-              >
-                ✨ <span>Ask Bible Buddy to structure it</span>
-              </button>
-
-              <p class="muted" style="font-size: 11px; margin-top: 4px">
-                Bible Buddy will suggest a clean outline (weeks, sessions, or
-                sections) built around Scripture, precept upon precept.
-              </p>
-            </section>
-          </div>
-        </section>
-
-        <!-- RIGHT COLUMN: GUIDANCE CARDS -->
-        <section class="card">
-          <div class="eyebrow">How to use this Lab</div>
-          <h2 style="font-size: 16px; margin-bottom: 6px">
-            Think of this as your “workshop” with Bible Buddy.
-          </h2>
-          <p class="muted">
-            You experiment, and the AI learns what works for real testers.
-          </p>
-
-          <h3>Good first things to try</h3>
-          <ul class="list-tight">
-            <li>
-              Outline a single devotional on a verse you love (add cross-references).
-            </li>
-            <li>
-              Plan a 3–5 day mini-series for a Bible study group.
-            </li>
-            <li>
-              Turn messy sermon notes into a clear, Scripture-anchored outline.
-            </li>
-            <li>
-              Ask for reflection questions plus a short closing prayer.
-            </li>
-          </ul>
-
-          <h3>Bible Buddy focuses on</h3>
-          <ul class="list-tight">
-            <li>Scripture-rooted encouragement and clarity.</li>
-            <li>Helping you organize thoughts into steps, not replacing you.</li>
-            <li>Staying kind, gentle, and grounded in God’s Word.</li>
-          </ul>
-
-          <h3>Tester notes for Admin</h3>
-          <p class="muted" style="margin-bottom: 4px">What to look for:</p>
-          <ul class="list-tight">
-            <li>Did Bible Buddy understand your request?</li>
-            <li>Was the outline or answer actually useful to you?</li>
-            <li>Did anything feel confusing, too slow, or “off”?</li>
-          </ul>
-          <p class="muted" style="margin-top: 6px; font-size: 11px">
-            Add thoughts in your “Tester notes” area so Admin can see patterns
-            and improve the experience over time.
-          </p>
-
-          <div class="pill">
-            <span>ℹ️</span>
-            <span style="font-size: 11px">
-              Bible Buddy is for devotional guidance and encouragement only, not
-              professional, medical, or legal advice.
-            </span>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <script>
-      // --- Tab switching ---
-      const tabButtons = document.querySelectorAll(".tab-btn");
-      const panels = document.querySelectorAll(".panel");
-
-      tabButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          tabButtons.forEach((b) => b.classList.remove("active"));
-          panels.forEach((p) => p.classList.remove("active"));
-
-          btn.classList.add("active");
-          const target = btn.getAttribute("data-target");
-          document.getElementById(target).classList.add("active");
-        });
-      });
-
-      // --- Chat logic ---
-      const chatInput = document.getElementById("chat-input");
-      const chatSend = document.getElementById("chat-send");
-      const chatHistory = document.getElementById("chat-history");
-      const statusDot = document.getElementById("status-dot");
-      const statusText = document.getElementById("status-text");
-      const errorText = document.getElementById("error-text");
-
-      function setStatus(message, isBusy = false, isError = false) {
-        statusText.textContent = message;
-        errorText.textContent = isError ? message : "";
-        statusDot.style.backgroundColor = isBusy
-          ? "#facc15"
-          : isError
-          ? "#ef4444"
-          : "#22c55e";
-      }
-
-      function appendMessage(who, text) {
-        const div = document.createElement("div");
-        div.className =
-          "chat-msg " + (who === "You" ? "you" : "bb");
-        div.innerHTML = "<strong>" + who + "</strong> · " + text;
-        chatHistory.appendChild(div);
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-      }
-
-      async function sendChat(kind) {
-        const message =
-          kind === "chat"
-            ? chatInput.value.trim()
-            : document
-                .getElementById("picture-description")
-                .value.trim();
-
-        if (!message) return;
-
-        appendMessage("You", message);
-        if (kind === "chat") chatInput.value = "";
-        setStatus("Thinking with Scripture…", true, false);
-
-        try {
-          const res = await fetch("/api/ai/tester-chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              mode: kind === "chat" ? "bible-chat" : "picture-plan",
-              message,
-              source: "lab",
-            }),
-          });
-
-          if (!res.ok) {
-            throw new Error("HTTP " + res.status);
-          }
-
-          const data = await res.json();
-          const reply =
-            data.reply ||
-            data.text ||
-            JSON.stringify(data);
-          appendMessage("Bible Buddy", reply);
-          setStatus("READY · Bible Buddy is listening.", false, false);
-        } catch (err) {
-          console.error(err);
-          setStatus(
-            "Error talking to Bible Buddy. Please try again.",
-            false,
-            true
-          );
-        }
-      }
-
-      chatSend.addEventListener("click", () => sendChat("chat"));
-
-      // --- Picture → Plan logic ---
-      const imgInput = document.getElementById("image-input");
-      const imgLabel = document.getElementById("image-selected");
-      const pictureSend = document.getElementById("picture-send");
-
-      imgInput.addEventListener("change", () => {
-        if (imgInput.files && imgInput.files[0]) {
-          imgLabel.textContent = "Selected: " + imgInput.files[0].name;
-        } else {
-          imgLabel.textContent = "";
-        }
-      });
-
-      pictureSend.addEventListener("click", () => sendChat("picture"));
-
-      // --- Voice input via Web Speech API (where available) ---
-      const voiceBtn = document.getElementById("voice-btn");
-      let recognition = null;
-      let listening = false;
-
-      if (
-        "SpeechRecognition" in window ||
-        "webkitSpeechRecognition" in window
-      ) {
-        const SR =
-          window.SpeechRecognition ||
-          window.webkitSpeechRecognition;
-        recognition = new SR();
-        recognition.lang = "en-US";
-        recognition.interimResults = false;
-
-        recognition.onstart = () => {
-          listening = true;
-          voiceBtn.querySelector("span:nth-child(2)").textContent =
-            "Listening… tap to stop";
-          setStatus("Listening…", true, false);
-        };
-
-        recognition.onend = () => {
-          listening = false;
-          voiceBtn.querySelector("span:nth-child(2)").textContent =
-            "Tap to speak";
-          setStatus(
-            "READY · Bible Buddy is listening.",
-            false,
-            false
-          );
-        };
-
-        recognition.onresult = (event) => {
-          const transcript =
-            event.results[0][0].transcript;
-          chatInput.value = transcript;
-          chatInput.focus();
-        };
-      } else {
-        voiceBtn.disabled = true;
-        voiceBtn.querySelector("span:nth-child(2)").textContent =
-          "Voice not supported in this browser";
-      }
-
-      voiceBtn.addEventListener("click", () => {
-        if (!recognition) return;
-        if (!listening) {
-          recognition.start();
-        } else {
-          recognition.stop();
-        }
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bible Buddy Lab</title>
+  <style>
+    :root {
+      --bg: #f4f5fb;
+      --card-bg: #ffffff;
+      --accent: #2f6bff;
+      --accent-soft: #e3ecff;
+      --accent-soft-2: #f4f7ff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-soft: #e5e7eb;
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, #e0ebff 0, #f7f7fb 40%, #f4f5fb 100%);
+      color: var(--text-main);
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .lab-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .lab-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #2f6bff, #7c3aed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+      flex-shrink: 0;
+    }
+
+    .lab-title-block h1 {
+      font-size: 26px;
+      margin: 0 0 4px;
+    }
+
+    .lab-title-block p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .lab-mode-pill {
+      margin-left: auto;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: #ecfdf5;
+      color: #047857;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #a7f3d0;
+      white-space: nowrap;
+    }
+
+    .lab-mode-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    /* Layout */
+    .lab-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 880px) {
+      .lab-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .lab-mode-pill {
+        display: none;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px 16px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .card-header-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .card-header-line h2 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .card-header-line span {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .card-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .card-subtitle strong {
+      color: var(--text-main);
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .bible-search-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft-2);
+      border: 1px solid var(--border-soft);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .bible-search-pill span {
+      font-weight: 500;
+    }
+
+    .mode-label {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .mode-label strong {
+      color: var(--text-main);
+    }
+
+    /* Tabs */
+    .tab-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: var(--radius-pill);
+      border: 0;
+      background: #eef0f7;
+      color: var(--text-muted);
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+    }
+
+    .tab-button span.icon {
+      font-size: 15px;
+    }
+
+    .tab-button.active {
+      background: linear-gradient(135deg, #2f6bff, #7c3aed);
+      color: #f9fafb;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+    }
+
+    .tab-button:not(.active):hover {
+      background: #e2e5f2;
+    }
+
+    .hint-line {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* Form areas */
+    .form-section {
+      margin-bottom: 12px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    textarea,
+    input[type="text"] {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid #d1d5db;
+      padding: 10px 11px;
+      font-size: 14px;
+      resize: vertical;
+      min-height: 70px;
+      font-family: inherit;
+    }
+
+    textarea:focus,
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent-soft);
+    }
+
+    .file-drop {
+      border-radius: var(--radius-md);
+      border: 1px dashed #c4c6d5;
+      background: #f9fafb;
+      padding: 12px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .file-drop input[type="file"] {
+      display: block;
+      margin: 8px auto 0;
+      font-size: 12px;
+    }
+
+    .file-note {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .file-selected {
+      margin-top: 4px;
+      font-size: 11px;
+      color: var(--text-main);
+    }
+
+    .controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .primary-button {
+      border-radius: var(--radius-pill);
+      border: none;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(135deg, #2f6bff, #7c3aed);
+      color: #f9fafb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+    }
+
+    .primary-button:disabled {
+      opacity: 0.65;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .ghost-button {
+      border-radius: var(--radius-pill);
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      padding: 8px 13px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .ghost-button:hover {
+      background: #eef0f7;
+    }
+
+    .voice-button {
+      border-radius: var(--radius-pill);
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      padding: 7px 12px;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .voice-button[data-state="recording"] {
+      border-color: #f97316;
+      background: #fff7ed;
+      color: #9a3412;
+    }
+
+    .status-pill {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .status-pill strong {
+      color: #16a34a;
+    }
+
+    .status-pill.error strong {
+      color: #b91c1c;
+    }
+
+    /* Conversation box */
+    .conversation-box {
+      margin-top: 10px;
+      border-radius: var(--radius-md);
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      padding: 10px 11px;
+      font-size: 13px;
+      max-height: 240px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    .conversation-box .placeholder {
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    .meta-line {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Right column content */
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .section-body {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .section-body p {
+      margin: 0 0 6px;
+    }
+
+    .section-body ul {
+      padding-left: 18px;
+      margin: 4px 0 0;
+    }
+
+    .section-body li {
+      margin-bottom: 4px;
+    }
+
+    .pill-muted {
+      display: inline-block;
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: #f3f4f6;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .tester-notes {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .tester-notes strong {
+      color: var(--text-main);
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+      .lab-header {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      .lab-title-block h1 {
+        font-size: 22px;
+      }
+      .card {
+        padding: 16px 14px 14px;
+      }
+      .conversation-box {
+        max-height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="lab-header">
+      <div class="lab-avatar">BB</div>
+      <div class="lab-title-block">
+        <h1>Bible Buddy Lab</h1>
+        <p>Early-access tester space for your Christian devotional companion.</p>
+      </div>
+      <div class="lab-mode-pill">
+        <div class="lab-mode-dot"></div>
+        <span>Tester mode · guided by AI</span>
+      </div>
+    </header>
+
+    <div class="lab-layout">
+      <!-- LEFT COLUMN: MAIN INTERACTION -->
+      <section class="card">
+        <div class="card-header-line">
+          <h2>Plan, reflect, and pray with Bible Buddy</h2>
+          <span>Standard mode · <strong>gpt-4.1-mini</strong></span>
+        </div>
+        <p class="card-subtitle">
+          Share a note, question, or rough idea. Bible Buddy will help turn it into a
+          <strong>devotional, study plan, or reflection.</strong>
+        </p>
+
+        <div class="badge-row">
+          <div class="bible-search-pill">
+            📖 <span>Bible search · precept upon precept</span>
+          </div>
+          <div class="mode-label">
+            Pro mode later via env: <code>BB_MODEL_TIER=pro</code>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tab-row">
+          <button id="tab-chat" class="tab-button active" type="button">
+            <span class="icon">💬</span> <span>Chat</span>
+          </button>
+          <button id="tab-picture" class="tab-button" type="button">
+            <span class="icon">🖼️</span> <span>Picture → Plan</span>
+          </button>
+        </div>
+        <div class="hint-line">
+          Tip: Start simple – e.g. <em>“Help me outline a devotional on hope.”</em>
+        </div>
+
+        <!-- Chat / Picture forms share the same send button -->
+        <form id="lab-form">
+          <!-- hidden mode field so backend knows what we’re doing -->
+          <input type="hidden" id="mode" name="mode" value="chat" />
+
+          <!-- Chat mode -->
+          <div id="chat-mode" class="form-section">
+            <label for="chat-input" class="form-label">
+              Conversation with Bible Buddy
+            </label>
+            <textarea
+              id="chat-input"
+              name="chat"
+              placeholder="Tell Bible Buddy what you’d like help with (verse, topic, or situation)…"
+            ></textarea>
+          </div>
+
+          <!-- Picture → Plan mode -->
+          <div id="picture-mode" class="form-section" style="display: none;">
+            <label class="form-label">Turn a picture of your notes into a plan</label>
+            <div class="file-drop">
+              <div>Drop a photo or screenshot of your notes here, or choose a file.</div>
+              <input type="file" id="image-input" accept="image/*" />
+              <div class="file-note">
+                In this version, your picture is <strong>logged but not yet read</strong>. Bible Buddy uses
+                your description below to structure the plan. Later we can layer in full
+                image-reading once the backend is ready.
+              </div>
+              <div id="file-selected" class="file-selected" style="display:none;"></div>
+            </div>
+
+            <label for="picture-notes" class="form-label">
+              Describe what your notes contain
+            </label>
+            <textarea
+              id="picture-notes"
+              placeholder="Example: “Notes about wilderness → tribulation → wilderness → peace, plus 28 scriptures from Matthew, Daniel, Revelation, Isaiah…”"
+            ></textarea>
+          </div>
+
+          <div class="controls-row">
+            <button id="send-btn" class="primary-button" type="submit">
+              ✨ <span id="send-label">Send to Bible Buddy</span>
+            </button>
+
+            <button id="clear-btn" class="ghost-button" type="button">
+              ⟳ Clear
+            </button>
+
+            <button id="voice-btn" class="voice-button" type="button">
+              🎙 Tap to speak
+            </button>
+
+            <button id="speak-reply-btn" class="voice-button" type="button">
+              🔊 Read reply
+            </button>
+
+            <div id="status-pill" class="status-pill">
+              <strong>READY</strong> · Bible Buddy is listening.
+            </div>
+          </div>
+        </form>
+
+        <div class="conversation-box" id="conversation-box">
+          <div class="placeholder">
+            Bible Buddy’s replies will appear here. Scripture-rooted, gentle, and organized
+            into steps. You can also paste verses and ask for “line upon line, precept upon
+            precept” connections.
+          </div>
+        </div>
+
+        <div class="meta-line" id="meta-line">
+          Using: Standard model (gpt-4.1-mini). Bible search behavior is handled on the server
+          so we can later upgrade models and add richer Bible APIs without changing this page.
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: GUIDANCE / NOTES -->
+      <section class="card">
+        <h2 class="section-title">How to use this Lab</h2>
+        <div class="section-body">
+          <p>
+            Think of this as your <strong>“workshop”</strong> with Bible Buddy. You
+            experiment, and the AI learns what works for real testers.
+          </p>
+
+          <div class="pill-muted">Good first things to try</div>
+          <ul>
+            <li>Outline a single devotional on a verse you love.</li>
+            <li>Plan a 3–5 day mini-series for a Bible study group.</li>
+            <li>Turn messy sermon notes into a clear outline.</li>
+            <li>Ask for reflection questions + a short closing prayer.</li>
+          </ul>
+
+          <div style="height: 10px;"></div>
+
+          <div class="pill-muted">Bible Buddy focuses on</div>
+          <ul>
+            <li>Scripture-rooted encouragement and clarity.</li>
+            <li>Helping you organize thoughts into steps, not replacing you.</li>
+            <li>Staying kind, gentle, and grounded in God’s Word.</li>
+          </ul>
+
+          <div class="tester-notes">
+            <strong>Tester notes for Admin</strong><br />
+            What to look for:
+            <ul>
+              <li>Did Bible Buddy understand your request?</li>
+              <li>Was the outline or answer actually useful to you?</li>
+              <li>Did anything feel confusing, too slow, or “off”?</li>
+            </ul>
+            Add thoughts in <em>“Tester notes”</em> (future field) so Admin can see patterns
+            and improve the experience over time.
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // ---------- TAB SWITCHING ----------
+    const tabChat = document.getElementById('tab-chat');
+    const tabPicture = document.getElementById('tab-picture');
+    const chatMode = document.getElementById('chat-mode');
+    const pictureMode = document.getElementById('picture-mode');
+    const modeInput = document.getElementById('mode');
+    const sendLabel = document.getElementById('send-label');
+
+    function setMode(newMode) {
+      modeInput.value = newMode;
+      if (newMode === 'chat') {
+        tabChat.classList.add('active');
+        tabPicture.classList.remove('active');
+        chatMode.style.display = '';
+        pictureMode.style.display = 'none';
+        sendLabel.textContent = 'Send to Bible Buddy';
+      } else {
+        tabPicture.classList.add('active');
+        tabChat.classList.remove('active');
+        chatMode.style.display = 'none';
+        pictureMode.style.display = '';
+        sendLabel.textContent = 'Ask Bible Buddy to structure it';
+      }
+    }
+
+    tabChat.addEventListener('click', () => setMode('chat'));
+    tabPicture.addEventListener('click', () => setMode('picture-plan'));
+
+    // ---------- FILE DISPLAY ----------
+    const imageInput = document.getElementById('image-input');
+    const fileSelected = document.getElementById('file-selected');
+    let selectedImageName = null;
+
+    if (imageInput) {
+      imageInput.addEventListener('change', () => {
+        if (imageInput.files && imageInput.files[0]) {
+          selectedImageName = imageInput.files[0].name;
+          fileSelected.textContent = 'Selected: ' + selectedImageName;
+          fileSelected.style.display = 'block';
+        } else {
+          selectedImageName = null;
+          fileSelected.style.display = 'none';
+        }
+      });
+    }
+
+    // ---------- STATUS / CONVERSATION ----------
+    const form = document.getElementById('lab-form');
+    const chatInput = document.getElementById('chat-input');
+    const pictureNotes = document.getElementById('picture-notes');
+    const conversationBox = document.getElementById('conversation-box');
+    const statusPill = document.getElementById('status-pill');
+    const sendBtn = document.getElementById('send-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    const speakReplyBtn = document.getElementById('speak-reply-btn');
+    let lastReplyText = '';
+
+    function setStatus(text, kind = 'ok') {
+      statusPill.textContent = '';
+      const strong = document.createElement('strong');
+      strong.textContent = kind === 'error' ? 'ERROR' : kind === 'thinking' ? 'THINKING' : 'READY';
+      statusPill.classList.toggle('error', kind === 'error');
+      statusPill.appendChild(strong);
+      statusPill.appendChild(document.createTextNode(' · ' + text));
+    }
+
+    function setConversation(text, append = false) {
+      if (!append) {
+        conversationBox.innerHTML = '';
+      }
+      const div = document.createElement('div');
+      div.textContent = text;
+      conversationBox.appendChild(div);
+      conversationBox.scrollTop = conversationBox.scrollHeight;
+    }
+
+    clearBtn.addEventListener('click', () => {
+      chatInput.value = '';
+      if (pictureNotes) pictureNotes.value = '';
+      setConversation(
+        'Cleared. Share a verse, topic, or upload notes and ask Bible Buddy for a structured devotional, “precept upon precept.”'
+      );
+      lastReplyText = '';
+      setStatus('Bible Buddy is listening.');
+    });
+
+    // ---------- FORM SUBMIT (CALL BACKEND) ----------
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const mode = modeInput.value;
+      const question =
+        mode === 'chat'
+          ? (chatInput.value || '').trim()
+          : (pictureNotes.value || '').trim();
+
+      if (!question) {
+        alert('Please enter what you’d like help with first.');
+        return;
+      }
+
+      sendBtn.disabled = true;
+      setStatus('Bible Buddy is thinking…', 'thinking');
+      setConversation('You: ' + question + '\n\nBible Buddy is thinking…');
+
+      try {
+        const payload = {
+          mode,
+          text: question,
+          imageName: selectedImageName || null
+        };
+
+        // IMPORTANT: keep this path as whatever your backend already uses.
+        // If your working route was different (e.g. /api/ai/tester-chat),
+        // change the URL below to match THAT.
+        const res = await fetch('/admin/ai/tester-chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const errText = await res.text();
+          setConversation(
+            'There was a problem talking to Bible Buddy.\n\nDetails: ' + errText
+          );
+          setStatus('There was an error from the server.', 'error');
+          sendBtn.disabled = false;
+          return;
+        }
+
+        const data = await res.json();
+        const reply =
+          data.reply || data.message || data.output || data.text || 'No reply found.';
+
+        lastReplyText = reply;
+        setConversation('You: ' + question + '\n\nBible Buddy:\n' + reply);
+        setStatus('Bible Buddy is listening.');
+        speakReply(reply);
+      } catch (err) {
+        console.error(err);
+        setConversation(
+          'There was a network error talking to Bible Buddy. Please try again in a moment.'
+        );
+        setStatus('Network error. Check connection and try again.', 'error');
+      } finally {
+        sendBtn.disabled = false;
+      }
+    });
+
+    // ---------- VOICE INPUT (SPEECH-TO-TEXT) ----------
+    const voiceBtn = document.getElementById('voice-btn');
+    let recognition = null;
+    let recognizing = false;
+
+    function setupRecognition() {
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        return null;
+      }
+      const recog = new SpeechRecognition();
+      recog.lang = 'en-US';
+      recog.interimResults = false;
+      recog.maxAlternatives = 1;
+      return recog;
+    }
+
+    recognition = setupRecognition();
+
+    if (!recognition) {
+      voiceBtn.addEventListener('click', () => {
+        alert(
+          'Voice input is not supported in this browser. On iPhone, this may be limited inside in-app browsers. You can still type your request.'
+        );
+      });
+    } else {
+      recognition.addEventListener('result', (event) => {
+        const transcript = event.results[0][0].transcript;
+        const mode = modeInput.value;
+        if (mode === 'chat') {
+          chatInput.value = (chatInput.value ? chatInput.value + ' ' : '') + transcript;
+        } else if (pictureNotes) {
+          pictureNotes.value =
+            (pictureNotes.value ? pictureNotes.value + ' ' : '') + transcript;
+        }
+      });
+
+      recognition.addEventListener('end', () => {
+        recognizing = false;
+        voiceBtn.dataset.state = 'idle';
+        voiceBtn.textContent = '🎙 Tap to speak';
+        setStatus('Bible Buddy is listening.');
+      });
+
+      recognition.addEventListener('error', (event) => {
+        console.error('Speech recognition error', event.error);
+        recognizing = false;
+        voiceBtn.dataset.state = 'idle';
+        voiceBtn.textContent = '🎙 Tap to speak';
+        setStatus('Voice error – you can still type your request.', 'error');
+      });
+
+      voiceBtn.addEventListener('click', () => {
+        if (!recognition) return;
+        if (recognizing) {
+          recognition.stop();
+          return;
+        }
+        try {
+          recognition.start();
+          recognizing = true;
+          voiceBtn.dataset.state = 'recording';
+          voiceBtn.textContent = '🎙 Listening… tap to stop';
+          setStatus('Listening for your voice…', 'thinking');
+        } catch (err) {
+          console.error(err);
+          setStatus('Could not start voice input.', 'error');
+        }
+      });
+    }
+
+    // ---------- TEXT-TO-SPEECH (BIBLE BUDDY SPEAKS) ----------
+    function speakReply(text) {
+      if (!('speechSynthesis' in window)) {
+        return;
+      }
+      if (!text) return;
+
+      try {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+        utterance.volume = 1.0;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+      } catch (err) {
+        console.error('TTS error', err);
+      }
+    }
+
+    speakReplyBtn.addEventListener('click', () => {
+      if (!lastReplyText) {
+        alert('No reply to read yet. Ask Bible Buddy something first.');
+        return;
+      }
+      speakReply(lastReplyText);
+    });
+  </script>
+</body>
 </html>
