@@ -117,6 +117,18 @@ try {
 } catch (e) {
   console.warn('WARNING: AI routes failed to load:', e.message);
 }
+// ===== Project Brain & Admin Assistant =====
+try {
+  const adminAssistantRouter = require('./routes/adminAssistant');
+  app.use('/admin', adminAssistantRouter);
+
+  const buddyRouter = require('./routes/buddy');
+  app.use('/buddy', buddyRouter);
+
+  console.log('Project Brain + Admin Assistant + Buddy routes loaded!');
+} catch (err) {
+  console.warn('WARNING: Project Brain / Assistant routes failed:', err.message);
+}
 
 // ===== Explicit routes for main pages =====
 
