@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Phase 1 – Core Bible Buddy",
+    "description": "KJV core, Bible Buddy chat, Holy Days & Deut 28 basics. Internal and close testers.",
+    "status": "RUNNING"
+  },
+  {
+    "name": "Phase 2 – Health & Therapy Companion",
+    "description": "Add health metrics (watch, sleep, food scanning) plus therapy-style support and journaling.",
+    "status": "PLANNED"
+  },
+  {
+    "name": "Phase 3 – Sermon Builder & Advanced Study",
+    "description": "Sermon builder, advanced study tools, and public beta rollout.",
+    "status": "PLANNED"
+  }
+]
