@@ -1,12 +1,13 @@
-// server.js – Bible Buddy Unified, Render-ready, Node 18+
-//
-// - Serves static files from /public and /admin
-// - Provides JSON APIs for self-test + providers
-// - Mounts AI routes for:
-//      * /api/ai/tester-chat
-//      * /api/ai/tester-image
-//      * /admin/api/ai/helper
-// - Exposes /api/health for Render health checks
+// server.js — Bible Buddy unified, Render-ready, Node 18+
+
+// Serves static files from /public and /admin
+// Provides JSON APIs for self-test + providers
+// Mounts AI routes for:
+//   /api/ai/tester-chat
+//   /api/ai/tester-image
+//   /admin/api/ai/helper
+// Adds Analyze Note API at /api/analyze
+// Exposes /api/health for Render health checks
 
 const express = require('express');
 const path = require('path');
@@ -16,7 +17,7 @@ require('dotenv').config();
 const app = express();
 
 // ===== App metadata =====
-const APP_VERSION = 'v122.10.11 (Unified)';
+const APP_VERSION = 'v122.10.11 (unified + analyze)';
 
 // ===== Basic middleware =====
 app.use(express.json({ limit: '5mb' }));
@@ -24,39 +25,45 @@ app.use(express.urlencoded({ extended: true }));
 
 // ===== Static assets =====
 const PUBLIC_DIR = path.join(__dirname, 'public');
-app.use(express.static(PUBLIC_DIR));
-
 const ADMIN_DIR = path.join(__dirname, 'admin');
+const DATA_DIR = path.join(__dirname, 'data');
+
+app.use(express.static(PUBLIC_DIR));
 app.use('/admin', express.static(ADMIN_DIR));
 
-const DATA_DIR = path.join(__dirname, 'data');
-if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
 app.use('/data', express.static(DATA_DIR));
 
 // ===== Helper functions for self-test / providers =====
-
-function computeProvidersStatus() {
+function computeProviderStatus() {
   const hasResend = !!process.env.RESEND_API_KEY;
   const hasTwilioSid = !!process.env.TWILIO_ACCOUNT_SID;
   const hasTwilioToken = !!process.env.TWILIO_AUTH_TOKEN;
 
-  const emailStr = hasResend ? 'Email: resend (configured)' : 'Email: resend (missing keys)';
-  const smsStr =
-    hasTwilioSid && hasTwilioToken
-      ? 'SMS: twilio (configured)'
-      : 'SMS: twilio (missing keys)';
-  const queueStr = 'Queue: memory';
+  const emailStr = hasResend
+    ? 'Email: Resend (configured)'
+    : 'Email: Resend (missing keys)';
+
+  const smsStr = hasTwilioSid && hasTwilioToken
+    ? 'SMS: Twilio (configured)'
+    : 'SMS: Twilio (missing keys)';
 
   return {
-    ok: hasResend && hasTwilioSid && hasTwilioToken,
-    detail: `${emailStr} · ${smsStr} · ${queueStr}`,
+    email: emailStr,
+    sms: smsStr,
+    detail: {
+      email: emailStr,
+      sms: smsStr,
+    },
   };
 }
 
 function buildSelfTestPayload() {
   const now = new Date().toISOString();
-  const providers = computeProvidersStatus();
-  const queue = { ok: true, detail: 'count=1' };
+  const providers = computeProviderStatus();
+  const queue = { ok: true, detail: 'count≈1' };
 
   return {
     health: {
@@ -70,14 +77,12 @@ function buildSelfTestPayload() {
 }
 
 // ===== Health check for Render =====
-//
-// Render is calling /api/health (per your screenshot).
-// We return 200 OK with a simple JSON payload.
 app.get('/api/health', (req, res) => {
+  const base = buildSelfTestPayload();
   res.json({
-    ok: true,
+    ok: base.health.ok,
     version: APP_VERSION,
-    time: new Date().toISOString(),
+    time: base.health.time,
   });
 });
 
@@ -101,10 +106,16 @@ app.get('/admin/api/selftest', (req, res) => {
 
 // Admin dashboard providers
 app.get('/admin/api/providers', (req, res) => {
-  const providers = computeProvidersStatus();
+  const providers = computeProviderStatus();
   res.json({
     detail: providers.detail,
   });
+});
+
+// Optional: API selftest mirror
+app.get('/api/selftest', (req, res) => {
+  const payload = buildSelfTestPayload();
+  res.json(payload);
 });
 
 // ===== AI Router (Tester + Admin Helper) =====
@@ -117,7 +128,13 @@ try {
 }
 
 // ===== Analyze Note API (Lab) =====
-app.use('/api/analyze', analyzeRouter);
+try {
+  const analyzeRouter = require('./routes/analyze');
+  app.use('/api/analyze', analyzeRouter);
+  console.log('Analyze routes loaded!');
+} catch (e) {
+  console.warn('WARNING: Analyze routes failed to load:', e.message);
+}
 
 // ===== Attach Project Brain & Admin Assistant & Buddy & Content Helper =====
 try {
@@ -137,22 +154,22 @@ try {
 
 // ===== Explicit routes for main pages =====
 
-// Root → main index.html from public
+// Root ➝ main index.html from public
 app.get('/', (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
-// Admin root → admin dashboard HTML
+// Admin root ➝ admin dashboard HTML
 app.get('/admin', (req, res) => {
   res.sendFile(path.join(ADMIN_DIR, 'index.html'));
 });
 
 // Tester Lab
-app.get(['/lab', '/lab.html'], (req, res) => {
+app.get('/lab', (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'lab.html'));
 });
 
-// Fallback 404
+// ===== Fallback 404 =====
 app.use((req, res) => {
   res.status(404).send('Not found');
 });
