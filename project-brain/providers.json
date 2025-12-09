@@ -21,6 +21,6 @@
     "type": "API_PROVIDER",
     "baseUrl": "https://your-health-api-url-here",
     "envKeys": ["HEALTH_API_KEY"],
-    "notes": "Pulls steps, sleep, and other metrics for consented users."
+    "notes": "Pulls steps, sleep, and health metrics for consenting users."
   }
 ]
