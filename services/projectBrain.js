@@ -1,3 +1,6 @@
+// services/projectBrain.js
+// Central "Brain" snapshot loader for Bible Buddy.
+
 const fs = require('fs');
 const path = require('path');
 
