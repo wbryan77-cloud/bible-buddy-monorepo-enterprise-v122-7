@@ -1,0 +1,26 @@
+[
+  {
+    "key": "BIBLE_TEXT",
+    "name": "Bible Text API",
+    "type": "API_PROVIDER",
+    "baseUrl": "https://your-bible-api-url-here",
+    "envKeys": ["BIBLE_API_KEY"],
+    "notes": "Used for verse lookup and search when KJV DB is not enough."
+  },
+  {
+    "key": "FOOD_SCAN",
+    "name": "Food Scan API",
+    "type": "API_PROVIDER",
+    "baseUrl": "https://your-food-api-url-here",
+    "envKeys": ["FOOD_API_KEY"],
+    "notes": "Barcode scan → nutrition and ingredient info."
+  },
+  {
+    "key": "HEALTH_METRICS",
+    "name": "Health Metrics API",
+    "type": "API_PROVIDER",
+    "baseUrl": "https://your-health-api-url-here",
+    "envKeys": ["HEALTH_API_KEY"],
+    "notes": "Pulls steps, sleep, and other metrics for consented users."
+  }
+]
