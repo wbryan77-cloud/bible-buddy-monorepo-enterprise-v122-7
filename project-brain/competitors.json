@@ -1,0 +1,72 @@
+[
+  {
+    "key": "BIBLE_APP_STREAKS",
+    "kind": "BIBLE_APP",
+    "name": "Bible app with streaks & verse-of-the-day",
+    "features": [
+      "Daily KJV verse of the day notifications",
+      "Reading streaks with gentle, non-guilty reminders",
+      "Bookmarks and highlights for verses"
+    ]
+  },
+  {
+    "key": "BIBLE_APP_DEEP_STUDY",
+    "kind": "BIBLE_APP",
+    "name": "Deep study Bible app",
+    "features": [
+      "Strong search and cross-references",
+      "Commentary and original-word lookups",
+      "Thematic reading plans (faith, healing, etc.)"
+    ]
+  },
+  {
+    "key": "THERAPY_APP_CHECKINS",
+    "kind": "THERAPY_APP",
+    "name": "Therapy-style check-in app",
+    "features": [
+      "Daily mood check-ins with simple scales",
+      "Guided journaling prompts to reflect on the day",
+      "Crisis or emergency resources, plus encouragement"
+    ]
+  },
+  {
+    "key": "HEALTH_APP_HABITS",
+    "kind": "HEALTH_APP",
+    "name": "Health habit coach app",
+    "features": [
+      "Steps and movement tracking via phone/watch",
+      "Sleep tracking and simple sleep tips",
+      "Small daily habit goals with progress charts"
+    ]
+  },
+  {
+    "key": "API_BIBLE_TEXT",
+    "kind": "API_PROVIDER",
+    "name": "Bible Text API (KJV capable)",
+    "features": [
+      "Fetch verses by book/chapter/verse",
+      "Search for keywords and phrases",
+      "Cross-reference results"
+    ]
+  },
+  {
+    "key": "API_FOOD_SCAN",
+    "kind": "API_PROVIDER",
+    "name": "Food scan / nutrition API",
+    "features": [
+      "Barcode lookup for food items",
+      "Nutrition and ingredient data",
+      "Warnings for harmful or flagged ingredients"
+    ]
+  },
+  {
+    "key": "API_HEALTH_METRICS",
+    "kind": "API_PROVIDER",
+    "name": "Health metrics connector",
+    "features": [
+      "Pulls steps and activity from watch/phone",
+      "Sleep time and quality",
+      "Heart-rate and activity summary"
+    ]
+  }
+]
