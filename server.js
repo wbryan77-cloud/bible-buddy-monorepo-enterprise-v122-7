@@ -108,26 +108,26 @@ app.get('/admin/api/providers', (req, res) => {
 });
 
 // ===== AI Router (Tester + Admin Helper) =====
-
 try {
   const aiRouter = require('./admin/ai/routes');
   app.use('/api/ai', aiRouter);
-  app.use('/admin/api/ai', aiRouter);
-  console.log('AI routes loaded');
+  console.log('AI routes loaded!');
 } catch (e) {
   console.warn('WARNING: AI routes failed to load:', e.message);
 }
 
-app.use('/api/analyze', require('./routes/analyze'));
+// ===== Analyze Note API (Lab) =====
+app.use('/api/analyze', analyzeRouter);
 
-// ===== Project Brain & Admin Assistant & Buddy & Content Helper =====
+// ===== Attach Project Brain & Admin Assistant & Buddy & Content Helper =====
 try {
   const adminAssistantRouter = require('./routes/adminAssistant');
-  app.use('/admin', adminAssistantRouter);
+  app.use('/admin/assistant', adminAssistantRouter);
 
   const buddyRouter = require('./routes/buddy');
   app.use('/buddy', buddyRouter);
 
+  const contentHelperRouter = require('./routes/contentHelper');
   app.use('/admin/content', express.json(), contentHelperRouter);
 
   console.log('Project Brain + Admin Assistant + Buddy + Content routes loaded!');
