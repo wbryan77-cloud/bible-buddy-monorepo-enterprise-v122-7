@@ -1,876 +1,739 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bible Buddy Lab</title>
-    <style>
-      :root {
-        --bg: #f5f7fb;
-        --card-bg: #ffffff;
-        --accent: #2563eb;
-        --accent-soft: #e0edff;
-        --accent-strong: #1d4ed8;
-        --danger: #b91c1c;
-        --text-main: #111827;
-        --text-muted: #6b7280;
-        --border-subtle: #e5e7eb;
-        --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
-        --radius-lg: 20px;
-        --radius-pill: 999px;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bible Buddy Lab</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, #eef2ff 0, #f9fafb 45%, #ffffff 100%);
+      color: #111827;
+    }
+
+    .app-shell {
+      max-width: 1100px;
+      margin: 24px auto 40px;
+      padding: 0 16px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    header h1 {
+      font-size: 26px;
+      margin: 0;
+    }
+
+    header p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: #e5f3ff;
+      color: #0369a1;
+      border: 1px solid #bfdbfe;
+    }
+
+    .pill span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
       }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-          "Segoe UI", sans-serif;
-        background: radial-gradient(circle at top, #e0ecff 0, #f9fafb 55%);
-        color: var(--text-main);
-      }
-
-      .page {
-        min-height: 100vh;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 24px 12px 36px;
-      }
-
-      .shell {
-        width: 100%;
-        max-width: 1080px;
-        background: linear-gradient(135deg, #eef2ff 0, #ffffff 40%, #f9fafb 100%);
-        border-radius: 28px;
-        box-shadow: var(--shadow-soft);
-        padding: 20px;
-      }
-
-      @media (min-width: 768px) {
-        .shell {
-          padding: 24px 24px 28px;
-        }
-      }
-
-      .header-row {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 18px;
-      }
-
-      .header-main {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        flex: 1;
-      }
-
-      .app-avatar {
-        width: 36px;
-        height: 36px;
-        border-radius: 14px;
-        background: radial-gradient(circle at 20% 0, #93c5fd 0, #1d4ed8 60%);
-        color: #fff;
-        font-weight: 700;
-        font-size: 17px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 12px 24px rgba(37, 99, 235, 0.4);
-      }
-
-      .title-block h1 {
-        font-size: 20px;
-        margin: 0;
-      }
-
-      .title-block p {
-        margin: 2px 0 0;
-        font-size: 13px;
-        color: var(--text-muted);
-      }
-
-      .mode-pill {
-        border-radius: var(--radius-pill);
-        background: #ecfdf5;
-        color: #047857;
-        padding: 6px 10px;
-        font-size: 11px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        white-space: nowrap;
-      }
-
-      .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: #22c55e;
-        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
-      }
-
-      .mode-pill span {
-        max-width: 140px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      @media (max-width: 640px) {
-        .header-row {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 8px;
-        }
-        .mode-pill span {
-          max-width: none;
-        }
-      }
-
-      .main-grid {
-        display: grid;
-        gap: 18px;
-      }
-
-      @media (min-width: 900px) {
-        .main-grid {
-          grid-template-columns: 2fr 1.25fr;
-        }
-      }
-
-      .card {
-        background: var(--card-bg);
-        border-radius: var(--radius-lg);
-        padding: 16px 16px 18px;
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-        border: 1px solid rgba(148, 163, 184, 0.22);
-      }
-
-      .card-header-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 12px;
-      }
-
-      .card-title {
-        font-size: 16px;
-        font-weight: 600;
-      }
-
-      .card-subtitle {
-        font-size: 12px;
-        color: var(--text-muted);
-        margin-top: 3px;
-      }
-
-      .model-label {
-        font-size: 11px;
-        color: var(--text-muted);
-        padding: 4px 9px;
-        border-radius: 999px;
-        background: #eff6ff;
-        border: 1px solid #dbeafe;
-        white-space: nowrap;
-      }
-
-      .tab-row {
-        display: inline-flex;
-        padding: 3px;
-        border-radius: 999px;
-        background: #e5edff;
-        gap: 4px;
-        margin-bottom: 8px;
-      }
-
-      .tab-btn {
-        border: none;
-        padding: 5px 11px;
-        border-radius: 999px;
-        font-size: 12px;
-        background: transparent;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        color: #1f2933;
-      }
-
-      .tab-btn.active {
-        background: #ffffff;
-        color: var(--accent-strong);
-        box-shadow: 0 10px 18px rgba(99, 102, 241, 0.28);
-      }
-
-      .tab-btn span.icon {
-        font-size: 14px;
-      }
-
-      .tip-pill {
-        font-size: 11px;
-        color: var(--text-muted);
-        padding: 4px 9px;
-        border-radius: 999px;
-        background: #f3f4ff;
-        max-width: 180px;
-      }
-
-      @media (max-width: 640px) {
-        .card-header-row {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .tip-pill {
-          max-width: none;
-        }
-      }
-
-      .field-label {
-        font-size: 12px;
-        font-weight: 500;
-        color: var(--text-muted);
-        margin-bottom: 4px;
-      }
-
-      textarea,
-      input[type="text"] {
-        width: 100%;
-        border-radius: 12px;
-        border: 1px solid var(--border-subtle);
-        padding: 9px 10px;
-        font-size: 13px;
-        resize: vertical;
-        min-height: 46px;
-        font-family: inherit;
-      }
-
-      textarea:focus,
-      input[type="text"]:focus {
-        outline: 2px solid var(--accent-soft);
-        border-color: var(--accent-strong);
-      }
-
-      textarea.small {
-        min-height: 60px;
-      }
-
-      textarea.tall {
-        min-height: 120px;
-      }
-
-      .input-row {
-        display: flex;
-        gap: 8px;
-        align-items: flex-end;
-        margin-top: 6px;
-      }
-
-      .input-row .field {
-        flex: 1;
-      }
-
-      .btn-primary {
-        border: none;
-        border-radius: 999px;
-        padding: 9px 18px;
-        background: linear-gradient(135deg, #2563eb, #4f46e5);
-        color: #fff;
-        font-size: 13px;
-        font-weight: 600;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        box-shadow: 0 12px 25px rgba(37, 99, 235, 0.5);
-        white-space: nowrap;
-      }
-
-      .btn-primary:disabled {
-        opacity: 0.6;
-        cursor: default;
-        box-shadow: none;
-      }
-
-      .btn-secondary {
-        border-radius: 999px;
-        border: 1px solid var(--border-subtle);
-        background: #f9fafb;
-        padding: 7px 14px;
-        font-size: 12px;
-        cursor: pointer;
-      }
-
-      .pill-row {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
-
-      .voice-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 11px;
-        color: var(--text-muted);
-      }
-
-      .mic-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 999px;
-        border: 2px solid var(--accent-strong);
-      }
-
-      .mic-dot.active {
-        background: #ef4444;
-        border-color: #ef4444;
-        box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.35);
-      }
-
-      .response-box {
-        margin-top: 10px;
-        border-radius: 14px;
-        background: #f9fafb;
-        border: 1px solid #e5e7eb;
-        padding: 10px 12px;
-        font-size: 13px;
-        color: #111827;
-        max-height: 260px;
-        overflow-y: auto;
-        white-space: pre-wrap;
-      }
-
-      .status-line {
-        margin-top: 8px;
-        font-size: 11px;
-        color: var(--text-muted);
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .status-dot {
-        width: 9px;
-        height: 9px;
-        border-radius: 999px;
-        background: #22c55e;
-      }
-
-      .status-dot.error {
-        background: var(--danger);
-      }
-
-      .side-card-section-title {
-        font-size: 12px;
-        font-weight: 600;
-        margin-bottom: 6px;
-      }
-
-      .bullet-list {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-        font-size: 12px;
-        color: var(--text-muted);
-      }
-
-      .bullet-list li {
-        padding-left: 16px;
-        position: relative;
-        margin-bottom: 4px;
-      }
-
-      .bullet-list li::before {
-        content: "•";
-        position: absolute;
-        left: 3px;
-        color: #4b5563;
-      }
-
-      .side-note {
-        font-size: 11px;
-        color: var(--text-muted);
-        margin-top: 10px;
-        line-height: 1.4;
-      }
-
-      .two-up {
-        display: grid;
-        grid-template-columns: 1.1fr 1fr;
-        gap: 10px;
-      }
-
-      @media (max-width: 900px) {
-        .two-up {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .badge-soft {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        padding: 4px 8px;
-        border-radius: 999px;
-        font-size: 11px;
-        background: #fefce8;
-        color: #92400e;
-        border: 1px solid #facc15;
-        margin-bottom: 6px;
-      }
-
-      .badge-soft .dot-amber {
-        width: 7px;
-        height: 7px;
-        border-radius: 999px;
-        background: #f59e0b;
-      }
-
-      .error-text {
-        font-size: 11px;
-        color: var(--danger);
-        margin-top: 6px;
-        white-space: normal;
-        word-break: break-word;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <div class="shell">
-        <div class="header-row">
-          <div class="header-main">
-            <div class="app-avatar">BB</div>
-            <div class="title-block">
-              <h1>Bible Buddy Lab</h1>
-              <p>Early-access tester space for your Christian devotional companion.</p>
-            </div>
-          </div>
-          <div class="mode-pill">
-            <div class="dot"></div>
-            <span id="testerModeLabel">Tester mode · guided by AI</span>
-          </div>
-        </div>
-
-        <div class="main-grid">
-          <!-- LEFT SIDE: main interaction -->
-          <div class="card">
-            <div class="card-header-row">
-              <div>
-                <div class="card-title">Plan, reflect, and pray with Bible Buddy</div>
-                <div class="card-subtitle">
-                  Share a note, question, or rough idea. Bible Buddy will help turn it into a
-                  devotional, study plan, or reflection.
-                </div>
-              </div>
-              <div class="model-label" id="modelLabel">
-                Standard mode · gpt-4.1-mini
-              </div>
-            </div>
-
-            <div class="card-section">
-              <div class="tab-row" role="tablist">
-                <button
-                  class="tab-btn active"
-                  id="chatTabBtn"
-                  type="button"
-                  onclick="switchTab('chat')"
-                >
-                  <span class="icon">💬</span>
-                  <span>Chat</span>
-                </button>
-                <button
-                  class="tab-btn"
-                  id="pictureTabBtn"
-                  type="button"
-                  onclick="switchTab('picture')"
-                >
-                  <span class="icon">🖼️</span>
-                  <span>Picture → Plan</span>
-                </button>
-              </div>
-              <div class="tip-pill">
-                Tip: Start simple – e.g. “Help me outline a devotional on hope.”
-              </div>
-            </div>
-
-            <!-- CHAT MODE -->
-            <div id="chatPanel">
-              <div class="field-label">Conversation with Bible Buddy</div>
-              <div class="input-row">
-                <div class="field">
-                  <textarea
-                    id="chatInput"
-                    class="small"
-                    placeholder="Tell Bible Buddy what you’d like help with today (a verse, topic, or situation)…"
-                  ></textarea>
-                </div>
-                <button id="chatSendBtn" class="btn-primary" type="button" onclick="sendChat()">
-                  <span>Send to Bible Buddy</span>
-                </button>
-              </div>
-
-              <div class="pill-row" style="margin-top: 8px">
-                <div class="voice-pill">
-                  <div id="micDot" class="mic-dot"></div>
-                  <button
-                    id="voiceBtn"
-                    type="button"
-                    class="btn-secondary"
-                    onclick="toggleVoice()"
-                  >
-                    Tap to speak
-                  </button>
-                </div>
-              </div>
-
-              <div id="chatResponse" class="response-box" aria-live="polite">
-                Waiting for your first message…
-              </div>
-              <div class="status-line" id="chatStatusLine">
-                <div class="status-dot"></div>
-                <span>READY · Bible Buddy is listening.</span>
-              </div>
-              <div class="side-note">
-                Important: Bible Buddy is for devotional guidance and encouragement only, not
-                professional, medical, or legal advice. In tester mode, responses may change as the
-                system learns what’s most helpful.
-              </div>
-            </div>
-
-            <!-- PICTURE MODE -->
-            <div id="picturePanel" style="display: none; margin-top: 6px">
-              <div class="two-up">
-                <div>
-                  <div class="field-label">Turn a picture of your notes into a plan</div>
-                  <div
-                    style="
-                      border-radius: 14px;
-                      border: 1px dashed #cbd5e1;
-                      background: #f8fafc;
-                      padding: 10px;
-                      font-size: 12px;
-                    "
-                  >
-                    <div style="margin-bottom: 7px; font-weight: 500">
-                      Drop a photo or screenshot of your notes here, or choose a file.
-                    </div>
-                    <input
-                      id="imageInput"
-                      type="file"
-                      accept="image/*"
-                      style="font-size: 12px"
-                      onchange="handleFileChange(event)"
-                    />
-                    <div id="imageSelectedLabel" style="margin-top: 4px; color: #6b7280">
-                      No image selected yet.
-                    </div>
-                    <div style="margin-top: 6px; color: #9ca3af; font-size: 11px">
-                      For now, Bible Buddy will rely mainly on your written description below. Image
-                      processing comes in a later phase.
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="field-label">Describe what your notes contain</div>
-                  <textarea
-                    id="pictureDescription"
-                    class="tall"
-                    placeholder="Example: “This photo lists 28 scriptures about wilderness, tribulation, and peace. Please organize them into a 4-week study outline with daily readings and key themes.”"
-                  ></textarea>
-                </div>
-              </div>
-
-              <div class="input-row" style="margin-top: 10px">
-                <button
-                  id="pictureSendBtn"
-                  class="btn-primary"
-                  type="button"
-                  onclick="sendPicturePlan()"
-                >
-                  ✨ Ask Bible Buddy to structure it
-                </button>
-                <button
-                  type="button"
-                  class="btn-secondary"
-                  onclick="clearPictureFields()"
-                >
-                  Clear
-                </button>
-              </div>
-
-              <div id="pictureError" class="error-text" style="display: none"></div>
-
-              <div id="pictureResponse" class="response-box" style="margin-top: 10px">
-                Bible Buddy will suggest a clean outline (weeks, sessions, or sections) you can
-                refine later.
-              </div>
-              <div class="status-line" id="pictureStatusLine">
-                <div class="status-dot"></div>
-                <span>
-                  DONE · Review this outline and tweak it for your group or study.
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- RIGHT SIDE: guidance / tester notes -->
-          <div class="card" style="display: flex; flex-direction: column; gap: 12px">
-            <div>
-              <div class="side-card-section-title">How to use this Lab</div>
-              <p class="side-note" style="margin-top: 4px">
-                Think of this as your “workshop” with Bible Buddy. You experiment, and the AI
-                learns what works for real testers.
-              </p>
-              <ul class="bullet-list" style="margin-top: 8px">
-                <li>Outline a single devotional on a verse you love.</li>
-                <li>Plan a 3–5 day mini-series for a Bible study group.</li>
-                <li>Turn messy sermon notes into a clear outline.</li>
-                <li>Ask for reflection questions + a short closing prayer.</li>
-              </ul>
-            </div>
-
-            <div>
-              <div class="side-card-section-title">Bible Buddy focuses on</div>
-              <ul class="bullet-list">
-                <li>Scripture-rooted encouragement and clarity.</li>
-                <li>Helping you organize thoughts into steps, not replacing you.</li>
-                <li>Staying kind, gentle, and grounded in God’s Word.</li>
-              </ul>
-            </div>
-
-            <div>
-              <div class="side-card-section-title">Tester notes for Admin</div>
-              <div class="badge-soft">
-                <div class="dot-amber"></div>
-                <span>WHAT TO LOOK FOR</span>
-              </div>
-              <ul class="bullet-list">
-                <li>Did Bible Buddy understand your request?</li>
-                <li>Was the outline or answer actually useful to you?</li>
-                <li>Did anything feel confusing, too slow, or “off”?</li>
-              </ul>
-              <p class="side-note">
-                Add thoughts in “Tester notes” so Admin can see patterns and improve the experience
-                over time.
-              </p>
-            </div>
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .card h3 {
+      margin: 12px 0 6px;
+      font-size: 15px;
+    }
+
+    .subtext {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    .mode-label {
+      font-size: 13px;
+      color: #4b5563;
+      text-align: right;
+    }
+
+    .mode-label strong {
+      color: #111827;
+    }
+
+    .chip-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      font-size: 12px;
+      color: #1d4ed8;
+    }
+
+    .tab-row {
+      display: inline-flex;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      margin: 14px 0 10px;
+    }
+
+    .tab {
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab.active {
+      background: white;
+      box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.6), 0 6px 16px rgba(15, 23, 42, 0.15);
+    }
+
+    .tab-emoji {
+      font-size: 14px;
+    }
+
+    .tip-line {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+
+    textarea,
+    input[type="text"] {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      padding: 9px 11px;
+      font-size: 14px;
+      font-family: inherit;
+      resize: vertical;
+      min-height: 52px;
+    }
+
+    textarea:focus,
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.3);
+    }
+
+    .field-row {
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    .field-label {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 9px 18px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #4f46e5, #2563eb);
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: wait;
+      box-shadow: none;
+    }
+
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 8px 14px;
+      border: none;
+      cursor: pointer;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 13px;
+    }
+
+    .btn-secondary:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    .mic-btn {
+      border-radius: 999px;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mic-btn.listening {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .status-line {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #059669;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-line.error {
+      color: #b91c1c;
+    }
+
+    .dot-status {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .dot-status.error {
+      background: #ef4444;
+    }
+
+    .output-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px dashed #e5e7eb;
+      font-size: 13px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .output-box.empty {
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    .pill-note {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    .upload-box {
+      margin-top: 8px;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px dashed #c7d2fe;
+      background: #eff6ff;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .upload-box input[type="file"] {
+      margin-top: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 8px 0 0;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .small-heading {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-shell">
+    <header>
+      <div class="avatar">BB</div>
+      <div style="flex:1">
+        <h1>Bible Buddy Lab</h1>
+        <p>Early-access tester space for your Christian devotional companion.</p>
+        <div class="pill-row">
+          <div class="pill">
+            <span class="dot"></span>
+            <span>Tester mode · guided by AI</span>
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
-    <script>
-      let activeTab = "chat";
-      let recognition = null;
-      let listening = false;
-      let currentModelLabel = "Standard mode · gpt-4.1-mini";
+    <main class="layout">
+      <!-- LEFT / MAIN COLUMN -->
+      <section class="card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+          <div>
+            <h2>Plan, reflect, and pray with Bible Buddy</h2>
+            <p class="subtext">
+              Share a note, question, or rough idea. Bible Buddy will help turn it into a devotional,
+              study plan, or reflection.
+            </p>
+          </div>
+          <div class="mode-label">
+            <div>Standard mode · <strong>gpt-4.1-mini</strong></div>
+            <div style="font-size:11px; color:#9ca3af;">
+              (Pro mode via env: <code>BB_MODEL_TIER=pro</code>)
+            </div>
+          </div>
+        </div>
 
-      function switchTab(tab) {
-        activeTab = tab;
-        document.getElementById("chatTabBtn").classList.toggle("active", tab === "chat");
-        document.getElementById("pictureTabBtn").classList.toggle("active", tab === "picture");
-        document.getElementById("chatPanel").style.display = tab === "chat" ? "block" : "none";
-        document.getElementById("picturePanel").style.display = tab === "picture" ? "block" : "none";
+        <div class="chip-row">
+          <span>📖 Bible search · precept upon precept</span>
+        </div>
+
+        <div class="tab-row" aria-label="Primary mode">
+          <button class="tab active" type="button" id="tabChat">
+            <span class="tab-emoji">💬</span> Chat
+          </button>
+          <button class="tab" type="button" id="tabPicturePlan">
+            <span class="tab-emoji">🖼️</span> Picture → Plan
+          </button>
+        </div>
+
+        <p class="tip-line">
+          Tip: Start simple – e.g. “Help me outline a devotional on hope.”
+        </p>
+
+        <!-- CHAT PANEL -->
+        <div id="panelChat">
+          <div class="field-row">
+            <label class="field-label" for="chatInput">
+              Conversation with Bible Buddy
+            </label>
+            <textarea id="chatInput" placeholder="Tell Bible Buddy what you’d like help with (verse, topic, or situation)…"></textarea>
+          </div>
+
+          <div class="button-row">
+            <button class="btn-primary" id="chatSendBtn" type="button">
+              ✨ Send to Bible Buddy
+            </button>
+            <button class="mic-btn" id="chatMicBtn" type="button">
+              🎙️ Tap to speak
+            </button>
+          </div>
+
+          <div id="chatStatus" class="status-line">
+            <span class="dot-status"></span>
+            <span>READY · Bible Buddy is listening.</span>
+          </div>
+
+          <div id="chatOutput" class="output-box empty">
+            Bible Buddy’s replies will appear here.
+          </div>
+        </div>
+
+        <!-- PICTURE → PLAN PANEL -->
+        <div id="panelPicturePlan" style="display:none;">
+          <div class="field-row">
+            <span class="field-label">Turn a picture of your notes into a plan</span>
+            <div class="upload-box">
+              Drop a photo or screenshot of your notes here, or choose a file.
+              <br />
+              <small class="subtext">
+                For example: a whiteboard photo, sermon notes, or a rough mind map.
+              </small>
+              <input type="file" id="planImage" accept="image/*" />
+              <div class="pill-note">
+                In this version, Bible Buddy logs the photo for future learning,
+                but only uses your written description to build the outline.
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <label class="field-label" for="planDescription">
+              Describe what your notes contain
+            </label>
+            <textarea id="planDescription" placeholder="Explain what’s on the page and what you want Bible Buddy to help you do (e.g. organize scriptures about wilderness → tribulation → peace, line upon line, precept upon precept)…"></textarea>
+          </div>
+
+          <div class="button-row">
+            <button class="btn-primary" id="planSendBtn" type="button">
+              ✨ Ask Bible Buddy to structure it
+            </button>
+            <button class="btn-secondary" id="planClearBtn" type="button">
+              Clear
+            </button>
+          </div>
+
+          <div id="planStatus" class="status-line">
+            <span class="dot-status"></span>
+            <span>READY · Bible Buddy will use your description and log the photo meta for later.</span>
+          </div>
+
+          <div id="planOutput" class="output-box empty">
+            Bible Buddy will suggest a clean outline (weeks, sessions, or sections) you can refine later.
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT / SIDEBAR -->
+      <aside class="card">
+        <h2>How to use this Lab</h2>
+        <p class="subtext" style="margin-bottom:8px;">
+          Think of this as your “workshop” with Bible Buddy. You experiment, and the AI learns what works for
+          real testers.
+        </p>
+
+        <h3>Good first things to try</h3>
+        <ul>
+          <li>Outline a single devotional on a verse you love.</li>
+          <li>Plan a 3–5 day mini-series for a Bible study group.</li>
+          <li>Turn messy sermon notes into a clear outline.</li>
+          <li>Ask for reflection questions + a short closing prayer.</li>
+        </ul>
+
+        <h3 style="margin-top:14px;">Bible Buddy focuses on</h3>
+        <ul>
+          <li>Scripture-rooted encouragement and clarity.</li>
+          <li>Helping you organize thoughts into steps, not replacing you.</li>
+          <li>Staying kind, gentle, and grounded in God’s Word.</li>
+        </ul>
+
+        <h3 style="margin-top:14px;">Tester notes for Admin</h3>
+        <p class="small-heading">WHAT TO LOOK FOR</p>
+        <ul>
+          <li>Did Bible Buddy understand your request?</li>
+          <li>Was the outline or answer actually useful to you?</li>
+          <li>Did anything feel confusing, too slow, or “off”?</li>
+        </ul>
+        <p class="subtext" style="margin-top:6px;">
+          Add thoughts in “Tester notes” so Admin can see patterns and improve the experience over time.
+        </p>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // ----- Simple env-based model label hook (optional future use) -----
+    (function () {
+      if (window.BB_MODEL_LABEL) {
+        const el = document.querySelector('.mode-label div:first-child');
+        if (el) el.innerText = window.BB_MODEL_LABEL;
+      }
+    })();
+
+    // ----- Tab switching -----
+    const tabChat = document.getElementById('tabChat');
+    const tabPicturePlan = document.getElementById('tabPicturePlan');
+    const panelChat = document.getElementById('panelChat');
+    const panelPicturePlan = document.getElementById('panelPicturePlan');
+
+    tabChat.addEventListener('click', () => {
+      tabChat.classList.add('active');
+      tabPicturePlan.classList.remove('active');
+      panelChat.style.display = '';
+      panelPicturePlan.style.display = 'none';
+    });
+
+    tabPicturePlan.addEventListener('click', () => {
+      tabPicturePlan.classList.add('active');
+      tabChat.classList.remove('active');
+      panelPicturePlan.style.display = '';
+      panelChat.style.display = 'none';
+    });
+
+    // ----- Chat with Bible Buddy (precept-upon-precept mode) -----
+    const chatInput = document.getElementById('chatInput');
+    const chatSendBtn = document.getElementById('chatSendBtn');
+    const chatOutput = document.getElementById('chatOutput');
+    const chatStatus = document.getElementById('chatStatus');
+
+    function setChatStatus(ok, text) {
+      chatStatus.classList.toggle('error', !ok);
+      const dot = chatStatus.querySelector('.dot-status');
+      dot.classList.toggle('error', !ok);
+      chatStatus.querySelector('span:nth-child(2)').textContent = text;
+    }
+
+    async function sendChat() {
+      const message = chatInput.value.trim();
+      if (!message) {
+        setChatStatus(false, 'Please tell Bible Buddy what you need help with first.');
+        return;
       }
 
-      function setModelLabel(label) {
-        currentModelLabel = label || currentModelLabel;
-        document.getElementById("modelLabel").textContent = currentModelLabel;
+      chatSendBtn.disabled = true;
+      setChatStatus(true, 'Thinking with Scripture…');
+      chatOutput.classList.remove('empty');
+      chatOutput.textContent = 'Bible Buddy is searching Scripture and preparing a response…';
+
+      try {
+        const res = await fetch('/admin/ai/tester-chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message,
+            mode: 'bible-precept'
+          })
+        });
+
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(text || ('Request failed: ' + res.status));
+        }
+
+        const data = await res.json();
+        const reply =
+          data.reply ||
+          data.text ||
+          'Bible Buddy is still learning. No reply text was returned from the server.';
+
+        chatOutput.classList.remove('empty');
+        chatOutput.textContent = reply;
+        setChatStatus(true, 'READY · Bible Buddy is listening.');
+      } catch (err) {
+        console.error(err);
+        chatOutput.classList.remove('empty');
+        chatOutput.textContent =
+          'Sorry, something went wrong talking to Bible Buddy.\n\nDetails: ' +
+          (err.message || String(err));
+        setChatStatus(false, 'Error talking to Bible Buddy. Try again in a moment.');
+      } finally {
+        chatSendBtn.disabled = false;
+      }
+    }
+
+    chatSendBtn.addEventListener('click', sendChat);
+
+    // ----- Voice input for chat -----
+    const chatMicBtn = document.getElementById('chatMicBtn');
+    let recognition = null;
+    let listening = false;
+
+    function setupSpeech() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        chatMicBtn.disabled = true;
+        chatMicBtn.textContent = '🎙️ Voice not supported on this browser';
+        return;
+      }
+      recognition = new SpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.addEventListener('result', (event) => {
+        const text = event.results[0][0].transcript;
+        chatInput.value = (chatInput.value ? chatInput.value + ' ' : '') + text;
+      });
+
+      recognition.addEventListener('end', () => {
+        listening = false;
+        chatMicBtn.classList.remove('listening');
+        chatMicBtn.textContent = '🎙️ Tap to speak';
+      });
+    }
+
+    chatMicBtn.addEventListener('click', () => {
+      if (!recognition) {
+        setupSpeech();
+      }
+      if (!recognition) return;
+
+      if (listening) {
+        recognition.stop();
+        return;
       }
 
-      function setStatus(id, text, isError) {
-        const line = document.getElementById(id);
-        if (!line) return;
-        line.querySelector("span").textContent = text;
-        const dot = line.querySelector(".status-dot");
-        if (!dot) return;
-        dot.classList.toggle("error", !!isError);
+      listening = true;
+      chatMicBtn.classList.add('listening');
+      chatMicBtn.textContent = '🛑 Listening… tap to stop';
+      recognition.start();
+    });
+
+    setupSpeech();
+
+    // ----- Picture → Plan -----
+    const planImage = document.getElementById('planImage');
+    const planDescription = document.getElementById('planDescription');
+    const planSendBtn = document.getElementById('planSendBtn');
+    const planClearBtn = document.getElementById('planClearBtn');
+    const planStatus = document.getElementById('planStatus');
+    const planOutput = document.getElementById('planOutput');
+
+    function setPlanStatus(ok, text) {
+      planStatus.classList.toggle('error', !ok);
+      const dot = planStatus.querySelector('.dot-status');
+      dot.classList.toggle('error', !ok);
+      planStatus.querySelector('span:nth-child(2)').textContent = text;
+    }
+
+    function clearPlan() {
+      planImage.value = '';
+      planDescription.value = '';
+      planOutput.classList.add('empty');
+      planOutput.textContent = 'Bible Buddy will suggest a clean outline (weeks, sessions, or sections) you can refine later.';
+      setPlanStatus(true, 'READY · Bible Buddy will use your description and log the photo meta for later.');
+    }
+
+    planClearBtn.addEventListener('click', clearPlan);
+
+    async function sendPlan() {
+      const desc = planDescription.value.trim();
+      if (!desc) {
+        setPlanStatus(false, 'Please describe what the picture contains so Bible Buddy can help.');
+        return;
       }
 
-      async function sendChat() {
-        const input = document.getElementById("chatInput");
-        const btn = document.getElementById("chatSendBtn");
-        const box = document.getElementById("chatResponse");
-        const text = input.value.trim();
-        if (!text) {
-          input.focus();
-          return;
+      const file = planImage.files && planImage.files[0];
+      const imageName = file ? file.name : null;
+
+      planSendBtn.disabled = true;
+      setPlanStatus(true, 'Thinking through your notes…');
+      planOutput.classList.remove('empty');
+      planOutput.textContent = 'Bible Buddy is reviewing your description and preparing a structured outline…';
+
+      try {
+        const res = await fetch('/admin/ai/tester-image', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            description: desc,
+            imageName,
+            hasImage: !!imageName
+          })
+        });
+
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(text || ('Request failed: ' + res.status));
         }
-        btn.disabled = true;
-        setStatus("chatStatusLine", "Thinking with Bible Buddy…", false);
-        try {
-          const res = await fetch("/admin/ai/tester-chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: text }),
-          });
-          if (!res.ok) {
-            throw new Error("Server error " + res.status);
-          }
-          const data = await res.json();
-          if (data.modeLabel) setModelLabel(data.modeLabel);
-          box.textContent = data.reply || "(No reply received.)";
-          setStatus("chatStatusLine", "READY · Try your next question.", false);
-        } catch (err) {
-          console.error(err);
-          box.textContent =
-            "There was a problem talking to Bible Buddy. Please try again in a moment.";
-          setStatus(
-            "chatStatusLine",
-            "Error talking to Bible Buddy. Check AI key / quota in Admin.",
-            true
-          );
-        } finally {
-          btn.disabled = false;
-        }
+
+        const data = await res.json();
+
+        const outline =
+          data.outline ||
+          data.reply ||
+          data.text ||
+          'Bible Buddy logged your photo metadata and description, but no outline text was returned.';
+
+        planOutput.classList.remove('empty');
+        planOutput.textContent = outline;
+
+        const note = imageName
+          ? `DONE · Outline ready. Image “${imageName}” was logged for future vision upgrades.`
+          : 'DONE · Outline ready from your description. Add a photo next time if you’d like Bible Buddy to remember it.';
+
+        setPlanStatus(true, note);
+      } catch (err) {
+        console.error(err);
+        planOutput.classList.remove('empty');
+        planOutput.textContent =
+          'Sorry, something went wrong turning your picture + description into a plan.\n\nDetails: ' +
+          (err.message || String(err));
+        setPlanStatus(false, 'Error talking to Bible Buddy. Try again in a moment.');
+      } finally {
+        planSendBtn.disabled = false;
       }
+    }
 
-      function handleFileChange(event) {
-        const file = event.target.files[0];
-        const label = document.getElementById("imageSelectedLabel");
-        if (file) {
-          label.textContent = "Selected: " + file.name;
-        } else {
-          label.textContent = "No image selected yet.";
-        }
-      }
-
-      function clearPictureFields() {
-        document.getElementById("imageInput").value = "";
-        document.getElementById("imageSelectedLabel").textContent = "No image selected yet.";
-        document.getElementById("pictureDescription").value = "";
-        document.getElementById("pictureError").style.display = "none";
-        document.getElementById("pictureResponse").textContent =
-          "Bible Buddy will suggest a clean outline (weeks, sessions, or sections) you can refine later.";
-        setStatus(
-          "pictureStatusLine",
-          "DONE · Review this outline and tweak it for your group or study.",
-          false
-        );
-      }
-
-      async function sendPicturePlan() {
-        const descEl = document.getElementById("pictureDescription");
-        const errEl = document.getElementById("pictureError");
-        const btn = document.getElementById("pictureSendBtn");
-        const outEl = document.getElementById("pictureResponse");
-        const fileInput = document.getElementById("imageInput");
-
-        const description = descEl.value.trim();
-        const file = fileInput.files[0];
-
-        if (!description) {
-          errEl.textContent =
-            "Please describe what your notes contain so Bible Buddy has something to work with.";
-          errEl.style.display = "block";
-          descEl.focus();
-          return;
-        }
-
-        errEl.style.display = "none";
-        btn.disabled = true;
-        setStatus("pictureStatusLine", "Structuring your plan with Bible Buddy…", false);
-
-        try {
-          // For v1 we send text + filename only (no image bytes yet).
-          const payload = {
-            description,
-            imageFilename: file ? file.name : null,
-          };
-
-          const res = await fetch("/admin/ai/picture-plan", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-
-          if (!res.ok) {
-            throw new Error("Server error " + res.status);
-          }
-
-          const data = await res.json();
-          if (data.modeLabel) setModelLabel(data.modeLabel);
-          if (data.outline) {
-            outEl.textContent = data.outline;
-            setStatus(
-              "pictureStatusLine",
-              "DONE · Review this outline and tweak it for your group or study.",
-              false
-            );
-          } else {
-            outEl.textContent = "Bible Buddy couldn’t build a plan from that yet.";
-            setStatus(
-              "pictureStatusLine",
-              "Bible Buddy couldn’t build a plan. Try adding more detail.",
-              true
-            );
-          }
-        } catch (err) {
-          console.error(err);
-          outEl.textContent =
-            "There was a problem asking Bible Buddy to structure this. Please try again in a moment.";
-          setStatus(
-            "pictureStatusLine",
-            "Error talking to Bible Buddy. Check AI key / quota in Admin.",
-            true
-          );
-        } finally {
-          btn.disabled = false;
-        }
-      }
-
-      function toggleVoice() {
-        const btn = document.getElementById("voiceBtn");
-        const mic = document.getElementById("micDot");
-
-        if (!("webkitSpeechRecognition" in window || "SpeechRecognition" in window)) {
-          alert("Voice input is not supported in this browser. Try the latest Chrome or Edge.");
-          return;
-        }
-
-        const SpeechRecognition =
-          window.SpeechRecognition || window.webkitSpeechRecognition;
-
-        if (!recognition) {
-          recognition = new SpeechRecognition();
-          recognition.lang = "en-US";
-          recognition.interimResults = false;
-          recognition.maxAlternatives = 1;
-
-          recognition.onresult = (event) => {
-            const transcript = event.results[0][0].transcript;
-            const input = document.getElementById("chatInput");
-            input.value = transcript;
-            sendChat();
-          };
-
-          recognition.onend = () => {
-            listening = false;
-            mic.classList.remove("active");
-            btn.textContent = "Tap to speak";
-          };
-        }
-
-        if (!listening) {
-          listening = true;
-          mic.classList.add("active");
-          btn.textContent = "Listening… tap to stop";
-          recognition.start();
-        } else {
-          listening = false;
-          mic.classList.remove("active");
-          btn.textContent = "Tap to speak";
-          recognition.stop();
-        }
-      }
-    </script>
-  </body>
+    planSendBtn.addEventListener('click', sendPlan);
+  </script>
+</body>
 </html>
