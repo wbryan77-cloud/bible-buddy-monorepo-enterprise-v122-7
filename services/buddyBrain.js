@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const OpenAI = require('openai');
 const { getSnapshot } = require('./projectBrain');
+const { getRecentInsightsForUser } = require('./contentInsight'); // <--- add this
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -42,7 +43,11 @@ function getRecentSessions(userId, limit) {
  * mode: "BIBLE" | "THERAPY" | "HEALTH" | "SERMON"
  * personaKey: "GENTLE_COACH" | "BIBLE_TEACHER" | "CONTEXT_GUIDE"
  */
-async function runBuddy({ userId, mode, personaKey, message }) {
+/**
+ * mode: "BIBLE" | "THERAPY" | "HEALTH" | "SERMON"
+ * personaKey: "GENTLE_COACH" | "BIBLE_TEACHER" | "CONTEXT_GUIDE"
+ */
+async function runBuddy(userId, mode, personaKey, message) {
   const snapshot = getSnapshot();
   const { modules, phases, competitors, avatars } = snapshot;
 
@@ -51,62 +56,20 @@ async function runBuddy({ userId, mode, personaKey, message }) {
     avatars.find((a) => a.key === 'GENTLE_COACH') ||
     { displayName: 'Companion', systemPrompt: '' };
 
+  // Recent chat history with this user
   const recentSessions = getRecentSessions(userId, 10);
+
+  // 🔥 NEW: recent tester/pastor/user insights (notes + images + AI paraphrases)
+  const recentInsights = getRecentInsightsForUser(userId, 10);
 
   const systemPrompt = `
 You are Bible Buddy's "${persona.displayName}" persona for mode "${mode}".
 
 You know:
-- Modules (KJV core, Holy Days Lev 23, Deut 28, Bible Buddy AI, Therapy & Health, Sermon Builder, Testing Phases, Avatars).
+- Modules (KJV core, Holy Days Lev 23, Deut 28, Bible Buddy AI, Therapy & Health,
+  Sermon Builder, Testing Phases, Avatars).
 - Phases (Phase 1 core, Phase 2 health/therapy, Phase 3 sermons).
 - Competitor patterns:
-  - Bible apps with streaks & verse-of-the-day
-  - Deep study Bible tools with cross references
-  - Therapy apps with daily check-ins and journaling
-  - Health apps with simple habits and watch/sleep tracking
-
-Persona instructions:
-${persona.systemPrompt}
-
-Mode rules:
-- BIBLE: Use KJV scripture only. Explain line upon line, precept upon precept, with kindness.
-- THERAPY: Be gentle and supportive. You are NOT a medical or mental health professional. Encourage real help for serious issues.
-- HEALTH: Suggest small, safe, non-medical habits (sleep, steps, food choices). No diagnoses.
-- SERMON: Help outline KJV-based messages for teaching or preaching, with theme, scriptures, and applications.
-
-Always:
-- Take into account the recent chat history with this user so you don't repeat yourself too much.
-- Keep answers simple and user-friendly.
-`;
-
-  const payload = {
-    userId,
-    mode,
-    message,
-    recentSessions
-  };
-
-  const completion = await client.chat.completions.create({
-    model: 'gpt-4.1-mini',
-    temperature: 0.4,
-    messages: [
-      { role: 'system', content: systemPrompt },
-      { role: 'user', content: JSON.stringify(payload, null, 2) }
-    ]
-  });
-
-  const reply = completion.choices[0].message.content || '';
-
-  appendSession({
-    userId,
-    mode,
-    personaKey,
-    message,
-    reply,
-    ts: new Date().toISOString()
-  });
-
-  return reply;
-}
+  - Bible
 
 module.exports = { runBuddy };
