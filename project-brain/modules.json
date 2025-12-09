@@ -1,0 +1,58 @@
+[
+  {
+    "key": "KJV_CORE",
+    "name": "KJV Core Bible Engine",
+    "description": "KJV text + search + reference engine that powers Bible Buddy.",
+    "status": "DONE",
+    "area": "BIBLE"
+  },
+  {
+    "key": "HOLY_DAYS_LEV_23",
+    "name": "Holy Days (Leviticus 23)",
+    "description": "Feasts and holy days with scriptures and explanations for teaching and remembrance.",
+    "status": "IN_PROGRESS",
+    "area": "BIBLE"
+  },
+  {
+    "key": "DEUT_28_MODULE",
+    "name": "Deuteronomy 28 Module",
+    "description": "Blessings and curses with careful, non-harmful commentary and cross-references.",
+    "status": "IN_PROGRESS",
+    "area": "BIBLE"
+  },
+  {
+    "key": "BIBLE_BUDDY_AI",
+    "name": "Bible Buddy AI",
+    "description": "Line-upon-line KJV companion that learns from the user and pulls scripture, prior chats, and project context.",
+    "status": "IN_PROGRESS",
+    "area": "BIBLE"
+  },
+  {
+    "key": "THERAPY_HEALTH",
+    "name": "Therapy & Health Companion",
+    "description": "Gentle reflective support plus health guidance using watch data, sleep, and food scans. Not a doctor or therapist.",
+    "status": "PLANNED",
+    "area": "HEALTH"
+  },
+  {
+    "key": "SERMON_BUILDER",
+    "name": "Sermon Builder / Teaching Companion",
+    "description": "Helps pastors, teachers and preachers build KJV-based outlines, scriptures and applications.",
+    "status": "PLANNED",
+    "area": "SERMON"
+  },
+  {
+    "key": "TESTING_PHASES",
+    "name": "Test Phases 1–3",
+    "description": "Phase 1 (core Bible Buddy), Phase 2 (health + therapy), Phase 3 (sermon builder & advanced tools).",
+    "status": "IN_PROGRESS",
+    "area": "SYSTEM"
+  },
+  {
+    "key": "AVATARS_PERSONAS",
+    "name": "Bible Buddy Avatars",
+    "description": "Different Buddy personalities: gentle coach, Bible teacher, context guide, etc.",
+    "status": "IN_PROGRESS",
+    "area": "UX"
+  }
+]
