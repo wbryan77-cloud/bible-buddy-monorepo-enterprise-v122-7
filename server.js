@@ -117,6 +117,9 @@ try {
 } catch (e) {
   console.warn('WARNING: AI routes failed to load:', e.message);
 }
+
+app.use('/api/analyze', require('./routes/analyze'));
+
 // ===== Project Brain & Admin Assistant & Buddy & Content Helper =====
 try {
   const adminAssistantRouter = require('./routes/adminAssistant');
