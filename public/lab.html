@@ -897,6 +897,59 @@ async function analyzeNote() {
   const data = await res.json();
   document.getElementById('noteResult').textContent = data.reply || "No result.";
 }
+  // Analyze Note → Suggest Verses (talks to /api/analyze)
+(function () {
+  const noteInput  = document.getElementById('analyze-note-input');
+  const analyzeBtn = document.getElementById('analyze-note-button');
+  const resultBox  = document.getElementById('analyze-result');
+
+  // If the elements aren't on this page, quietly skip
+  if (!noteInput || !analyzeBtn || !resultBox) {
+    console.warn('Analyze Note elements not found on this page.');
+    return;
+  }
+
+  analyzeBtn.addEventListener('click', async () => {
+    const note = noteInput.value.trim();
+    if (!note) {
+      alert('Please paste a note or sermon text first.');
+      return;
+    }
+
+    analyzeBtn.disabled = true;
+    const oldLabel = analyzeBtn.textContent;
+    analyzeBtn.textContent = 'Analyzing...';
+    resultBox.textContent = 'Bible Buddy is thinking…';
+
+    try {
+      const res = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userId: 'demo',         // later: real tester id
+          note,
+          chosenVerses: [],       // later: use verses they already picked
+          tags: ['lab']           // marks this as lab/test feedback
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        resultBox.textContent =
+          'Error from /api/analyze: ' + res.status + '\n' + txt;
+        return;
+      }
+
+      const data = await res.json();
+      resultBox.textContent = JSON.stringify(data, null, 2);
+    } catch (err) {
+      resultBox.textContent = 'Network or server error: ' + err.message;
+    } finally {
+      analyzeBtn.disabled = false;
+      analyzeBtn.textContent = oldLabel;
+    }
+  });
+})();
 </script>
 
 </body>
