@@ -897,7 +897,7 @@ async function analyzeNote() {
   const data = await res.json();
   document.getElementById('noteResult').textContent = data.reply || "No result.";
 }
-  // Analyze Note → Suggest Verses (talks to /api/analyze)
+ // Analyze Note → Suggest Verses (talks to /api/analyze)
 (function () {
   const noteInput  = document.getElementById('analyze-note-input');
   const analyzeBtn = document.getElementById('analyze-note-button');
@@ -905,9 +905,11 @@ async function analyzeNote() {
 
   // If the elements aren't on this page, quietly skip
   if (!noteInput || !analyzeBtn || !resultBox) {
-    console.warn('Analyze Note elements not found on this page.');
+    console.warn('[Lab] Analyze block not found – skipping wire-up.');
     return;
   }
+
+  console.log('[Lab] Analyze block found – wiring click handler.');
 
   analyzeBtn.addEventListener('click', async () => {
     const note = noteInput.value.trim();
@@ -916,9 +918,9 @@ async function analyzeNote() {
       return;
     }
 
-    analyzeBtn.disabled = true;
     const oldLabel = analyzeBtn.textContent;
-    analyzeBtn.textContent = 'Analyzing...';
+    analyzeBtn.disabled = true;
+    analyzeBtn.textContent = 'Analyzing…';
     resultBox.textContent = 'Bible Buddy is thinking…';
 
     try {
@@ -926,23 +928,33 @@ async function analyzeNote() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          userId: 'demo',         // later: real tester id
+          userId: 'demo',     // simple demo id for now
           note,
-          chosenVerses: [],       // later: use verses they already picked
-          tags: ['lab']           // marks this as lab/test feedback
+          chosenVerses: [],   // later: verses they already picked
+          tags: ['lab']       // marks this as a lab/test run
         })
       });
 
       if (!res.ok) {
-        const txt = await res.text();
+        const txt = await res.text().catch(() => '');
         resultBox.textContent =
-          'Error from /api/analyze: ' + res.status + '\n' + txt;
+          `Error from /api/analyze (${res.status}):\n` + txt;
         return;
       }
 
-      const data = await res.json();
+      let data;
+      try {
+        data = await res.json();
+      } catch (e) {
+        resultBox.textContent =
+          'Got a non-JSON response back from /api/analyze.';
+        return;
+      }
+
+      // For now, show the full JSON nicely formatted
       resultBox.textContent = JSON.stringify(data, null, 2);
     } catch (err) {
+      console.error('[Lab] Analyze error', err);
       resultBox.textContent = 'Network or server error: ' + err.message;
     } finally {
       analyzeBtn.disabled = false;
