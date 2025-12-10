@@ -1,12 +1,11 @@
 // services/contentInsight.js
 // Bible Buddy Content Insight Engine
 //
-// - analyzes notes / outlines / ideas from testers, pastors, teachers, users
-// - (optionally) looks at image URLs (slides, whiteboards, screenshots)
-// - suggests KJV verses line upon line, precept upon precept
-// - adds AI study-paraphrases that try to reflect Hebrew/Greek sense
-//   (clearly marked as "AI paraphrase, not scripture")
-// - logs insights so Buddy + Admin can learn from them before full launch
+// • Analyzes notes / outlines / ideas from testers, pastors, teachers, users
+// • Optionally looks at image URLs (slides, whiteboards, screenshots)
+// • Suggests KJV verses line upon line, precept upon precept
+// • Adds clearly marked “AI paraphrase (not scripture)” text that may reflect Hebrew/Greek sense
+// • Logs insights so Buddy & Admin can learn from them before full launch
 
 const fs = require('fs');
 const path = require('path');
@@ -15,41 +14,53 @@ const { getSnapshot } = require('./projectBrain');
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-const INSIGHTS_LOG = path.join(__dirname, '..', 'data', 'content-insights.jsonl');
+// Where we store insight records (one JSON object per line)
+const DATA_DIR = path.join(__dirname, '..', 'data');
+const INSIGHTS_LOG = path.join(DATA_DIR, 'content-insights.jsonl');
 
-// ensure data dir exists
+// Ensure /data exists
 try {
-  fs.mkdirSync(path.join(__dirname, '..', 'data'));
-} catch (_) {}
-
-/**
- * Append an insight record to the JSONL log.
- */
-function logInsight(entry) {
-  const line = JSON.stringify(entry) + '\n';
-  fs.appendFile(INSIGHTS_LOG, line, (err) => {
-    if (err) console.error('Error logging content insight:', err.message);
-  });
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+} catch (e) {
+  console.warn('WARNING: could not ensure data directory for insights:', e.message);
 }
 
-/**
- * Read recent insights for a user (for Buddy auto-learning).
- */
-function getRecentInsightsForUser(userId, limit) {
+// Append an insight record to the JSONL log.
+function logInsight(entry) {
   try {
+    const line = JSON.stringify(entry) + '\n';
+    fs.appendFileSync(INSIGHTS_LOG, line, 'utf8');
+  } catch (err) {
+    console.error('Error logging content insight:', err.message);
+  }
+}
+
+// Read recent insights for a user (for Buddy auto-learning / admin view).
+function getRecentInsightsForUser(userId, limit = 10) {
+  try {
+    if (!fs.existsSync(INSIGHTS_LOG)) return [];
     const text = fs.readFileSync(INSIGHTS_LOG, 'utf8');
     const lines = text.trim().split('\n').reverse();
     const out = [];
+
     for (const line of lines) {
       if (!line) continue;
-      const entry = JSON.parse(line);
-      if (entry.userId === userId) {
-        out.push(entry);
-        if (out.length >= limit) break;
+      let entry;
+      try {
+        entry = JSON.parse(line);
+      } catch {
+        continue;
       }
+      if (entry.userId !== userId) continue;
+      out.push(entry);
+      if (out.length >= limit) break;
     }
+
     return out.reverse();
-  } catch (_) {
+  } catch (err) {
+    console.error('Error reading content insights:', err.message);
     return [];
   }
 }
@@ -57,13 +68,12 @@ function getRecentInsightsForUser(userId, limit) {
 /**
  * Analyze a text note / outline / idea.
  *
- * @param {Object} params
- * @param {string} params.userId
- * @param {string} params.note
- * @param {string[]} [params.chosenVerses]
- * @param {string[]} [params.tags] e.g. ["tester","pastor","phase1","sermon"]
+ * @param {string} userId
+ * @param {string} note           The raw note text
+ * @param {string[]} chosenVerses Verses the user already has in mind (optional)
+ * @param {string[]} tags         Any extra tags like ["tester","pastor","phase2"]
  */
-async function analyzeNote({ userId, note, chosenVerses = [], tags = [] }) {
+async function analyzeNote(userId, note, chosenVerses = [], tags = []) {
   const snapshot = getSnapshot();
   const { modules, phases, competitors, providers } = snapshot;
 
@@ -71,57 +81,67 @@ async function analyzeNote({ userId, note, chosenVerses = [], tags = [] }) {
 You are the CONTENT HELPER for the Bible Buddy app.
 
 You help testers, pastors, teachers, and regular users refine ideas
-"line upon line, precept upon precept".
+“line upon line, precept upon precept” using KJV scripture as the base.
 
-You know:
-- Modules: KJV_CORE, HOLY_DAYS_LEV_23, DEUT_28_MODULE, BIBLE_BUDDY_AI,
-  THERAPY_HEALTH, SERMON_BUILDER, TESTING_PHASES, AVATARS_PERSONAS.
-- Phases: Phase 1 (Core Bible Buddy), Phase 2 (Health & Therapy),
-  Phase 3 (Sermon Builder).
-- Competitor patterns: bible apps (streaks, deep study), therapy apps
-  (check-ins, journaling), health apps (habits, watch/sleep).
+Project context:
+- Modules (KJV core, Holy Days Lev 23, Deut 28, Bible Buddy AI, Therapy & Health, Sermon Builder, Testing Phases).
+- Phases: Phase 1 (Core Bible Buddy), Phase 2 (Health + Therapy), Phase 3 (Sermons).
+- Competitor patterns:
+  • Bible apps (streaks, deep study, theme plans)
+  • Therapy apps (daily check-ins, journaling, CBT-style prompts)
+  • Health apps (habits, watch/sleep, nutrition)
 - Providers: Bible text API, food scan API, health metrics API (if configured).
 
 The note may come from:
-- a tester giving feedback,
-- a pastor/teacher planning a sermon or Bible study,
-- or a user writing a reflection (sermon, therapy, or health-related).
+- A pastor/teacher planning a sermon or Bible study,
+- A user writing a devotional, reflection, or study note,
+- A health / therapy angle that still needs to stay grounded in scripture.
 
 Your job:
 - Read the note carefully.
-- If tags include "pastor" or "teacher", treat this as SERMON or teaching prep.
-- If tags include "tester", also think about how the app could better serve this use case.
-- Respect that KJV is the official translation we quote.
-- If the user supplied chosenVerses, say whether they fit well or suggest better-aligned alternatives.
-- Recommend 3–10 KJV passages (book chapter:verse or small ranges) that best support the idea.
-- For some of those passages, provide an "AI paraphrase" that tries to reflect the
-  sense of the underlying Hebrew/Aramaic/Greek based on mainstream scholarship.
-  These paraphrases must be clearly labeled as "AI paraphrase, not scripture"
-  and must never claim to be more pure or more authoritative than the KJV text.
-- Keep suggestions "line upon line, precept upon precept" – do not rip verses out of context.
-- Be gentle and balanced when dealing with sensitive passages (like Deuteronomy 28).
+- If the author is a “pastor” or “teacher”, treat this as SERMON or teaching prep.
+- Use the KJV Bible as the *only* scripture text. 
+- Where helpful, you may include short “AI paraphrase (not scripture)” lines to reflect
+  the sense of underlying Hebrew/Aramaic/Greek. These paraphrases:
+    • MUST be clearly labelled “AI paraphrase (not scripture)”
+    • MUST not claim to be more pure, more original, or more authoritative than KJV.
+- Suggest better KJV verses if the user’s chosenVerses don’t fit, but explain why.
+- Try to keep things in context — do not rip verses out of context, especially passages
+  like Deuteronomy 28.
+- Be gentle and balanced when dealing with sensitive topics (mental health, suffering, etc.).
 
 Output in strict JSON with this structure:
+
 {
-  "summary": "...short summary of what the note is about...",
-  "fitAssessment": "...how well chosenVerses fit (if any)...",
+  "summary": "Short summary of what the note is about...",
+  "fitAssessment": "How well the current idea or chosen verses fit (if any)...",
   "recommendedVerses": [
-    { "reference": "Book 1:1-3", "reason": "Why this fits" }
+    {
+      "reference": "Book 1:1-3",
+      "reason": "Why this fits the idea..."
+    }
   ],
   "aiParaphrases": [
     {
-      "reference": "Book 1:1-3",
-      "paraphrase": "AI paraphrase, not scripture: ...",
-      "note": "Brief comment on key Hebrew/Greek ideas if relevant."
+      "reference": "Book 11:3",
+      "paraphrase": "AI paraphrase (not scripture)..."
     }
   ],
-  "appFeedbackQuestions": [
-    "...short question to ask the tester/pastor about how Bible Buddy can improve...",
-    "..."
+  "structureSuggestions": [
+    "Suggestion on how to order or improve the outline...",
+    "Another small, practical suggestion..."
   ],
-  "notes": "...extra advice on tone, structure, or missing ideas..."
+  "hebrewGreekNotes": [
+    "Optional brief comment on key word/phrase (clearly non-authoritative)..."
+  ],
+  "appFeedbackQuestions": [
+    "One short question to ask this tester or pastor about how Bible Buddy can improve..."
+  ],
+  "notes": [
+    "Any extra gentle coaching, reminders about context, etc."
+  ]
 }
-`;
+`.trim();
 
   const userPayload = {
     userId,
@@ -131,24 +151,33 @@ Output in strict JSON with this structure:
     modules,
     phases,
     competitors,
-    providers
+    providers,
   };
 
-  const completion = await client.chat.completions.create({
-    model: 'gpt-4.1-mini',
-    temperature: 0.3,
-    messages: [
-      { role: 'system', content: systemPrompt },
-      { role: 'user', content: JSON.stringify(userPayload, null, 2) }
-    ]
-  });
-
-  const content = completion.choices[0].message.content || '';
   let json;
   try {
-    json = JSON.parse(content);
-  } catch (_e) {
-    json = { raw: content };
+    const completion = await client.chat.completions.create({
+      model: 'gpt-4.1-mini',
+      temperature: 0.3,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: JSON.stringify(userPayload, null, 2) },
+      ],
+    });
+
+    const raw = completion.choices[0].message.content || '';
+    try {
+      json = JSON.parse(raw);
+    } catch {
+      // If the model responded with text instead of JSON, wrap it.
+      json = { summary: raw, raw };
+    }
+  } catch (err) {
+    console.error('Error calling OpenAI in analyzeNote:', err.message);
+    json = {
+      error: 'analyzeNote_openai_error',
+      message: err.message,
+    };
   }
 
   const insightRecord = {
@@ -158,20 +187,20 @@ Output in strict JSON with this structure:
     note,
     chosenVerses,
     tags,
-    result: json
+    result: json,
   };
 
   logInsight(insightRecord);
-
   return json;
 }
 
 /**
  * Analyze an image + optional text note.
- * - imageUrl should be a publicly accessible URL (upload handled by client).
- * - used by testers/pastors to send whiteboard photos, slide decks, etc.
+ *
+ * imageUrl should be a publicly accessible URL (uploaded by client).
+ * Used by testers/pastors to send whiteboard photos, sermon outlines, app screenshots, etc.
  */
-async function analyzeImage({ userId, imageUrl, note = '', tags = [] }) {
+async function analyzeImage(userId, imageUrl, note = '', tags = []) {
   const snapshot = getSnapshot();
   const { modules } = snapshot;
 
@@ -181,60 +210,71 @@ You are the CONTENT HELPER for Bible Buddy, looking at an image and optional not
 The image may contain slides, whiteboard notes, sermon outlines, or app screenshots
 from testers, pastors, teachers, or users.
 
-Your goals:
+Your job:
 - Briefly describe what you see.
 - Extract the main Bible ideas or themes.
-- Recommend 3–8 KJV passages that support those themes line upon line, precept upon precept.
-- For some of those passages, also provide "AI paraphrases" that attempt to reflect
-  the sense of the underlying Hebrew/Aramaic/Greek, clearly labeled
-  as "AI paraphrase, not scripture".
-- If tags include "tester", also suggest 1–3 short questions we could ask them about
-  how well Bible Buddy is helping (or not helping).
+- Suggest 3–6 KJV passages that support those themes line upon line, precept upon precept.
+- Optionally add clearly-labelled “AI paraphrase (not scripture)” paraphrases that try to
+  reflect Hebrew/Greek ideas behind the text, ALWAYS marked “AI paraphrase (not scripture)”.
+- Keep everything gentle and grounded in KJV scripture.
 
 Output in strict JSON:
+
 {
-  "description": "...what you see...",
-  "ideas": ["...", "..."],
+  "description": "What you see...",
+  "ideas": ["Idea 1", "Idea 2"],
   "recommendedVerses": [
-    { "reference": "Book 1:1-3", "reason": "..." }
+    { "reference": "Book 1:1-3", "reason": "Why this fits..." }
   ],
   "aiParaphrases": [
-    {
-      "reference": "Book 1:1-3",
-      "paraphrase": "AI paraphrase, not scripture: ...",
-      "note": "Optional brief comment."
-    }
+    { "reference": "Book 11:3", "paraphrase": "AI paraphrase (not scripture)..." }
   ],
   "testerQuestions": [
-    "...optional question about the app experience...",
-    "..."
+    "Optional question we could ask this tester about the app or content..."
   ]
 }
-`;
+`.trim();
 
   const messages = [
     { role: 'system', content: systemPrompt },
     {
       role: 'user',
       content: [
-        { type: 'text', text: note || 'Please analyze this image for Bible Buddy.' },
-        { type: 'image_url', image_url: { url: imageUrl } }
-      ]
-    }
+        {
+          type: 'text',
+          text:
+            (note || '') +
+            '\n\nModules context: ' +
+            (modules ? Object.keys(modules).join(', ') : 'n/a'),
+        },
+        {
+          type: 'image_url',
+          image_url: { url: imageUrl },
+        },
+      ],
+    },
   ];
 
-  const completion = await client.chat.completions.create({
-    model: 'gpt-4.1', // multimodal with vision
-    temperature: 0.3,
-    messages
-  });
-
-  const content = completion.choices[0].message.content || '';
   let json;
   try {
-    json = JSON.parse(content);
-  } catch (_e) {
-    json = { raw: content };
+    const completion = await client.chat.completions.create({
+      model: 'gpt-4.1-mini',
+      temperature: 0.3,
+      messages,
+    });
+
+    const raw = completion.choices[0].message.content || '';
+    try {
+      json = JSON.parse(raw);
+    } catch {
+      json = { description: raw, raw };
+    }
+  } catch (err) {
+    console.error('Error calling OpenAI in analyzeImage:', err.message);
+    json = {
+      error: 'analyzeImage_openai_error',
+      message: err.message,
+    };
   }
 
   const insightRecord = {
@@ -244,16 +284,15 @@ Output in strict JSON:
     imageUrl,
     note,
     tags,
-    result: json
+    result: json,
   };
 
   logInsight(insightRecord);
-
   return json;
 }
 
 module.exports = {
   analyzeNote,
   analyzeImage,
-  getRecentInsightsForUser
+  getRecentInsightsForUser,
 };
