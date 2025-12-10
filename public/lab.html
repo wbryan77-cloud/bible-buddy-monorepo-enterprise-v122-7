@@ -897,72 +897,93 @@ async function analyzeNote() {
   const data = await res.json();
   document.getElementById('noteResult').textContent = data.reply || "No result.";
 }
- // Analyze Note → Suggest Verses (talks to /api/analyze)
-(function () {
-  const noteInput  = document.getElementById('analyze-note-input');
-  const analyzeBtn = document.getElementById('analyze-note-button');
-  const resultBox  = document.getElementById('analyze-result');
+    <!-- Analyze Note → Suggest Verses -->
+    <div class="card" style="margin-top: 20px; padding: 16px;">
+      <h3>Analyze Note → Suggest Verses</h3>
 
-  // If the elements aren't on this page, quietly skip
-  if (!noteInput || !analyzeBtn || !resultBox) {
-    console.warn('[Lab] Analyze block not found – skipping wire-up.');
-    return;
-  }
+      <textarea
+        id="analyze-note-input"
+        placeholder="Paste your note or sermon text here..."
+        style="width: 100%; height: 120px; margin-bottom: 12px;"
+      ></textarea>
 
-  console.log('[Lab] Analyze block found – wiring click handler.');
+      <button
+        id="analyze-note-button"
+        class="primary-button"
+        type="button"
+      >
+        Analyze &amp; Suggest Verses
+      </button>
 
-  analyzeBtn.addEventListener('click', async () => {
-    const note = noteInput.value.trim();
-    if (!note) {
-      alert('Please paste a note or sermon text first.');
-      return;
-    }
+      <pre
+        id="analyze-result"
+        style="margin-top: 12px; white-space: pre-wrap;"
+      ></pre>
+    </div>
 
-    const oldLabel = analyzeBtn.textContent;
-    analyzeBtn.disabled = true;
-    analyzeBtn.textContent = 'Analyzing…';
-    resultBox.textContent = 'Bible Buddy is thinking…';
+    <script>
+      // Analyze Note → Suggest Verses (talks to /api/analyze/note)
+      (function () {
+        const noteInput  = document.getElementById('analyze-note-input');
+        const analyzeBtn = document.getElementById('analyze-note-button');
+        const resultBox  = document.getElementById('analyze-result');
 
-    try {
-      const res = await fetch('/api/analyze', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userId: 'demo',     // simple demo id for now
-          note,
-          chosenVerses: [],   // later: verses they already picked
-          tags: ['lab']       // marks this as a lab/test run
-        })
-      });
+        // Safety check – if elements aren't on page, just skip
+        if (!noteInput || !analyzeBtn || !resultBox) {
+          console.warn('Analyze Note elements not found on this page.');
+          return;
+        }
 
-      if (!res.ok) {
-        const txt = await res.text().catch(() => '');
-        resultBox.textContent =
-          `Error from /api/analyze (${res.status}):\n` + txt;
-        return;
-      }
+        analyzeBtn.addEventListener('click', async () => {
+          const note = noteInput.value.trim();
+          if (!note) {
+            alert('Please paste a note or sermon text first.');
+            return;
+          }
 
-      let data;
-      try {
-        data = await res.json();
-      } catch (e) {
-        resultBox.textContent =
-          'Got a non-JSON response back from /api/analyze.';
-        return;
-      }
+          // Show immediate feedback
+          analyzeBtn.disabled = true;
+          const oldLabel = analyzeBtn.textContent;
+          analyzeBtn.textContent = 'Analyzing…';
+          resultBox.textContent = 'Bible Buddy is thinking…';
 
-      // For now, show the full JSON nicely formatted
-      resultBox.textContent = JSON.stringify(data, null, 2);
-    } catch (err) {
-      console.error('[Lab] Analyze error', err);
-      resultBox.textContent = 'Network or server error: ' + err.message;
-    } finally {
-      analyzeBtn.disabled = false;
-      analyzeBtn.textContent = oldLabel;
-    }
-  });
-})();
-</script>
+          try {
+            const res = await fetch('/api/analyze/note', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                userId: 'demo-lab-1',   // placeholder user
+                note,
+                chosenVerses: [],       // later we can pass picked verses
+                tags: ['lab']           // mark as lab/test feedback
+              })
+            });
 
-</body>
+            if (!res.ok) {
+              const txt = await res.text();
+              resultBox.textContent =
+                'Error from /api/analyze/note: ' +
+                res.status + ' ' + (txt || '');
+              return;
+            }
+
+            const data  = await res.json();
+            const reply =
+              data.reply ||
+              data.message ||
+              JSON.stringify(data, null, 2);
+
+            resultBox.textContent = reply;
+          } catch (err) {
+            console.error(err);
+            resultBox.textContent =
+              'Network or server error: ' + err.message;
+          } finally {
+            analyzeBtn.disabled = false;
+            analyzeBtn.textContent = oldLabel;
+          }
+        });
+      })();
+    </script>
+  </body>
 </html>
