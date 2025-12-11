@@ -164,6 +164,29 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.join(ADMIN_DIR, 'index.html'));
 });
 
+// ------------------------------
+// Analyze Note → Suggest Verses
+// ------------------------------
+app.post('/api/analyze/note', async (req, res) => {
+  try {
+    const { note, userId, chosenVerses, tags } = req.body;
+
+    if (!note || note.trim() === "") {
+      return res.status(400).json({ error: "No note text provided." });
+    }
+
+    // Call OpenAI or your model here:
+    const outline = `Here is how you might preach about this topic:\n\n${note}`;
+
+    return res.json({
+      reply: outline
+    });
+
+  } catch (err) {
+    console.error('Analyze Note error:', err);
+    return res.status(500).json({ error: "Server error analyzing note." });
+  }
+});
 // Tester Lab
 app.get('/lab', (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'lab.html'));
