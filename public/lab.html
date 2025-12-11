@@ -865,99 +865,21 @@
      });
 });
 </script>
-
-<!-- ——— Analyze Note → Suggest Verses ——— -->
-<div class="card" style="margin-top: 20px; padding: 16px;">
-    <h3>Analyze Note → Suggest Verses</h3>
-
-    <textarea
-        id="analyze-note-input"
-        placeholder="Paste your note or sermon text here..."
-        style="width:100%; height:120px; margin-bottom: 12px;">
-    </textarea>
-
-    <button id="analyze-note-btn" class="primary-button">
-        Analyze & Suggest Verses
-    </button>
-
-    <pre id="analyze-result"
-         style="margin-top: 12px; white-space: pre-wrap;">
-    </pre>
-</div>
-
-<script>
-(function() {
-    const noteInput  = document.getElementById('analyze-note-input');
-    const analyzeBtn = document.getElementById('analyze-note-btn');
-    const resultBox  = document.getElementById('analyze-result');
-
-    if (!noteInput || !analyzeBtn || !resultBox) {
-        console.warn("Analyze Note elements not found in lab.html");
-        return;
-    }
-
-    analyzeBtn.addEventListener('click', async () => {
-        const note = (noteInput.value || '').trim();
-
-        if (!note) {
-            alert("Please paste a note or sermon text first.");
-            return;
-        }
-
-        // Immediate visual feedback
-        const oldLabel = analyzeBtn.textContent;
-        analyzeBtn.textContent = "Analyzing…";
-        analyzeBtn.disabled = true;
-        resultBox.textContent = "Bible Buddy is thinking…";
-
-        try {
-            const res = await fetch('/api/analyze/note', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    userid: "demo-lab",
-                    note,
-                    chosenVerses: [],
-                    tags: ['lab']  // marks this as Lab tester request
-                })
-            });
-
-            if (!res.ok) {
-                const txt = await res.text();
-                resultBox.textContent = "Error from /api/analyze/note:\n"
-                    + res.status + " - " + txt;
-                return;
-            }
-
-            const data = await res.json();
-            resultBox.textContent = JSON.stringify(data, null, 2);
-
-        } catch (err) {
-            resultBox.textContent = "Network or server error:\n" + err.message;
-        } finally {
-            analyzeBtn.disabled = false;
-            analyzeBtn.textContent = oldLabel;
-        }
-    });
-})();
-</script>
   
 <!-- Analyze Note + Suggest Verses -->
 <div class="card" style="margin-top:20px; padding:16px;">
   <h3>Analyze Note + Suggest Verses</h3>
 
-  <textarea id="analyze-note-input"
+  <textarea id="analyze-note-input"></textarea> 
     placeholder="Paste your note or sermon text here..."
     style="width:100%; height:120px; margin-bottom:12px;">
   </textarea>
 
-  <button id="analyze-note-btn" class="primary-button" type="button">
+  <button id="analyze-note-btn"> class="primary-button" type="button">
     Analyze & Suggest Verses
   </button>
 
-  <pre id="analyze-result"
+  <pre id="analyze-result"></pre>
     style="margin-top:12px; white-space:pre-wrap;">
   </pre>
 </div>
