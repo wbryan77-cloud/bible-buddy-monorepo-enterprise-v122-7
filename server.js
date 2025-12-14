@@ -199,15 +199,16 @@ app.post('/api/analyze/note', async (req, res) => {
               'Keep everything rooted in Scripture and sound Christian teaching.',
           },
           {
-            role: 'user',
-            content:
-              `Sermon note:\n"""${note}"""\n\n` +
-              'Return:\n' +
-              '1) A clear outline with headings + bullet points\n' +
-              '2) 3–5 Bible verse references that fit the theme\n' +
-              '3) 1–2 reflection questions\n' +
-              '4) A short closing prayer',
-          },
+       {
+  role: "user",
+  content:
+    "Sermon note:\n\n" + note + "\n\n" +
+    "Please respond with:\n" +
+    "1) A clear sermon outline with headings and bullet points\n" +
+    "2) 3–5 Bible verses (references only) that support the message\n" +
+    "3) 2–3 reflection questions for personal or group study\n" +
+    "4) A short closing prayer rooted in Scripture"
+}
         ],
       }),
     });
