@@ -165,40 +165,70 @@ app.get('/admin', (req, res) => {
 });
 
 // ------------------------------
-// Analyze Note → Suggest Verses
-// ------------------------------
+// Analyze Note + Suggest Verses
 app.post('/api/analyze/note', async (req, res) => {
-  try {
-    const { note, userId, chosenVerses, tags } = req.body;
+  try {
+    const { note, userId, chosenVerses, tags } = req.body;
 
-    if (!note || note.trim() === "") {
-      return res.status(400).json({ error: "No note text provided." });
-    }
+    if (!note || note.trim() === '') {
+      return res.status(400).json({ error: 'No note text provided.' });
+    }
 
-    // Call OpenAI or your model here:
-    const outline = `Here is how you might preach about this topic:\n\n${note}`;
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      console.error('Missing OPENAI_API_KEY env var');
+      return res.status(500).json({ error: 'AI not configured on server.' });
+    }
 
-    return res.json({
-      reply: outline
-    });
+    // Call OpenAI: gpt-4.1-mini
+    const aiRes = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: 'gpt-4.1-mini',
+        messages: [
+          {
+            role: 'system',
+            content:
+              'You are Bible Buddy, a gentle Christian devotional helper. ' +
+              'You help pastors and believers outline a short sermon or devotional, ' +
+              'and you suggest 3–5 relevant Bible verses (with references). ' +
+              'Keep everything rooted in Scripture and orthodox Christian teaching.',
+          },
+          {
+            role: 'user',
+            content:
+              `Here is a rough sermon note:\n\n` +
+              `"""${note}"""\n\n` +
+              '1) Give a clear outline for a short sermon or devotional (with headings and bullets).\n' +
+              '2) Suggest 3–5 Bible verses with references that fit this theme.\n' +
+              '3) End with 1–2 reflection questions and a short closing prayer.'
+          }
+        ],
+        temperature: 0.5,
+      }),
+    });
 
-  } catch (err) {
-    console.error('Analyze Note error:', err);
-    return res.status(500).json({ error: "Server error analyzing note." });
-  }
-});
-// Tester Lab
-app.get('/lab', (req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'lab.html'));
-});
+    if (!aiRes.ok) {
+      const txt = await aiRes.text();
+      console.error('OpenAI error:', aiRes.status, txt);
+      return res.status(500).json({
+        error: 'Error from AI service.',
+        detail: txt,
+      });
+    }
 
-// ===== Fallback 404 =====
-app.use((req, res) => {
-  res.status(404).send('Not found');
-});
+    const aiData = await aiRes.json();
+    const outline =
+      aiData.choices?.[0]?.message?.content?.trim() ||
+      'Bible Buddy could not generate an outline. Please try again.';
 
-// ===== Boot =====
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log('Bible Buddy listening on port', PORT, 'version', APP_VERSION);
+    return res.json({ reply: outline });
+  } catch (err) {
+    console.error('Analyze Note error:', err);
+    return res.status(500).json({ error: 'Server error analyzing note.' });
+  }
 });
