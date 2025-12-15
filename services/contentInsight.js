@@ -12,8 +12,6 @@ const path = require('path');
 const openai = require("./openaiClient");
 const { getSnapshot } = require('./projectBrain');
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
 // Where we store insight records (one JSON object per line)
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const INSIGHTS_LOG = path.join(DATA_DIR, 'content-insights.jsonl');
@@ -74,6 +72,19 @@ function getRecentInsightsForUser(userId, limit = 10) {
  * @param {string[]} tags         Any extra tags like ["tester","pastor","phase2"]
  */
 async function analyzeNote(userId, note, chosenVerses = [], tags = []) {
+
+  // ✅ SAFETY CHECK — ADD HERE (around line 77)
+  if (!openai) {
+    return {
+      outline: "AI is warming up. Please try again in a moment.",
+      verses: [],
+      reflectionQuestions: [],
+      prayer: "",
+    };
+  }
+
+  const snapshot = getSnapshot();
+  const { modules, phases, competitors, providers } = snapshot;
   const snapshot = getSnapshot();
   const { modules, phases, competitors, providers } = snapshot;
 
@@ -201,6 +212,19 @@ Output in strict JSON with this structure:
  * Used by testers/pastors to send whiteboard photos, sermon outlines, app screenshots, etc.
  */
 async function analyzeImage(userId, imageUrl, note = '', tags = []) {
+
+  // ✅ SAFETY CHECK — ADD HERE (around line 77)
+  if (!openai) {
+    return {
+      outline: "AI is warming up. Please try again in a moment.",
+      verses: [],
+      reflectionQuestions: [],
+      prayer: "",
+    };
+  }
+
+  const snapshot = getSnapshot();
+  const { modules, phases, competitors, providers } = snapshot;
   const snapshot = getSnapshot();
   const { modules } = snapshot;
 
