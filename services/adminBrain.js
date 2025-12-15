@@ -1,9 +1,13 @@
-const OpenAI = require('openai');
-const { getSnapshot } = require('./projectBrain');
-
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = require("./openaiClient");
+const { getSnapshot } = require("./projectBrain");
 
 async function getAdminAnswer(question) {
+
+  // ✅ ADD THIS BLOCK
+if (!openai) {
+  return "AI is warming up. Please try again shortly.";
+}
+
   const snapshot = getSnapshot();
   const { modules, phases, competitors, providers } = snapshot;
 
@@ -28,7 +32,7 @@ Goals:
 - Keep your answer in clear bullet points with moduleKeys and rough complexity (LOW/MEDIUM/HIGH).
 `;
 
-  const completion = await client.chat.completions.create({
+  const completion = await openai.chat.completions.create({
     model: 'gpt-4.1-mini',
     temperature: 0.25,
     messages: [
