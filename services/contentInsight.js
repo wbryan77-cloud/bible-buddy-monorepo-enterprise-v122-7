@@ -9,7 +9,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const OpenAI = require('openai');
+const openai = require("./openaiClient");
 const { getSnapshot } = require('./projectBrain');
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
