@@ -52,7 +52,7 @@ async function runBuddy(userId, mode, personaKey, message) {
   }
 
   const snapshot = getSnapshot();
-  ...
+  
   const { modules, phases, competitors, avatars } = snapshot;
 
   const persona =
