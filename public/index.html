@@ -1,1 +1,507 @@
-<h1>🙌 Bible Buddy — v122.10.11 (Unified)</h1><p><a href='/admin/'>Open Admin</a> • <a href='/health'>Health</a></p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bible Buddy — Living Companion</title>
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: rgba(255,255,255,0.08);
+      --panel-strong: rgba(255,255,255,0.13);
+      --text: #f7f3e8;
+      --muted: #b9c2d0;
+      --gold: #e8c76b;
+      --blue: #3db7ff;
+      --blue-soft: #78d9ff;
+      --danger: #ff7a7a;
+      --ok: #8cf2c2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(61,183,255,0.25), transparent 32%),
+        radial-gradient(circle at 80% 10%, rgba(232,199,107,0.13), transparent 28%),
+        linear-gradient(140deg, #050914 0%, #08111f 45%, #101724 100%);
+    }
+
+    .app {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 28px 18px 90px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .mini-orb {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 35% 30%, #eaffff, var(--blue-soft) 26%, var(--blue) 58%, #1437ff 100%);
+      box-shadow: 0 0 30px rgba(61,183,255,0.75);
+    }
+
+    h1, h2, p { margin-top: 0; }
+    h1 { font-size: clamp(28px, 5vw, 56px); line-height: 1; letter-spacing: -0.05em; margin-bottom: 14px; }
+    h2 { font-size: 20px; margin-bottom: 10px; }
+    p { color: var(--muted); line-height: 1.6; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(232,199,107,0.12);
+      color: #ffe6a3;
+      font-size: 13px;
+      border: 1px solid rgba(232,199,107,0.24);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.25);
+      backdrop-filter: blur(18px);
+    }
+
+    .orb-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      min-height: 520px;
+    }
+
+    .orb-stage {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      display: grid;
+      place-items: center;
+      margin: 18px auto 24px;
+    }
+
+    .orb-ring,
+    .orb-ring.two,
+    .orb-ring.three {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(120,217,255,0.28);
+      animation: breathe 4s ease-in-out infinite;
+    }
+
+    .orb-ring.two { inset: 22px; animation-duration: 3.1s; animation-delay: -0.8s; }
+    .orb-ring.three { inset: 46px; animation-duration: 5.2s; animation-delay: -1.3s; }
+
+    .orb {
+      width: 146px;
+      height: 146px;
+      border-radius: 999px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 34% 26%, rgba(255,255,255,0.95) 0 7%, transparent 19%),
+        radial-gradient(circle at 62% 70%, rgba(232,199,107,0.5), transparent 28%),
+        radial-gradient(circle at 45% 42%, #9cecff, #36b8ff 35%, #234cff 72%, #0b1650 100%);
+      box-shadow:
+        0 0 40px rgba(61,183,255,0.9),
+        0 0 90px rgba(61,183,255,0.42),
+        inset 0 0 28px rgba(255,255,255,0.28);
+      animation: orbIdle 5s ease-in-out infinite;
+    }
+
+    .orb::before,
+    .orb::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.45);
+      filter: blur(1px);
+      animation: particleFlow 5s linear infinite;
+    }
+    .orb::before { width: 10px; height: 10px; left: 30px; top: 80px; }
+    .orb::after { width: 6px; height: 6px; left: 102px; top: 42px; animation-delay: -1.8s; }
+
+    .wave {
+      position: absolute;
+      bottom: 42px;
+      display: flex;
+      gap: 5px;
+      opacity: 0;
+    }
+
+    .wave span {
+      display: block;
+      width: 5px;
+      height: 16px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.9);
+      animation: wave 0.8s ease-in-out infinite;
+    }
+
+    .wave span:nth-child(2) { animation-delay: 0.1s; }
+    .wave span:nth-child(3) { animation-delay: 0.2s; }
+    .wave span:nth-child(4) { animation-delay: 0.3s; }
+    .wave span:nth-child(5) { animation-delay: 0.4s; }
+
+    .orb-stage[data-state="listening"] .orb { animation: listening 1.6s ease-in-out infinite; }
+    .orb-stage[data-state="thinking"] .orb { animation: thinking 1.2s linear infinite; }
+    .orb-stage[data-state="speaking"] .orb { animation: speaking 0.95s ease-in-out infinite; }
+    .orb-stage[data-state="praying"] .orb { box-shadow: 0 0 40px rgba(232,199,107,0.95), 0 0 110px rgba(232,199,107,0.38); }
+    .orb-stage[data-state="speaking"] .wave { opacity: 1; }
+
+    .status {
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .chat {
+      display: flex;
+      flex-direction: column;
+      min-height: 520px;
+    }
+
+    .messages {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: auto;
+      padding-right: 4px;
+      margin-bottom: 16px;
+    }
+
+    .msg {
+      padding: 13px 15px;
+      border-radius: 18px;
+      max-width: 88%;
+      white-space: pre-wrap;
+      line-height: 1.48;
+    }
+
+    .msg.buddy {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+      align-self: flex-start;
+    }
+
+    .msg.user {
+      background: rgba(61,183,255,0.18);
+      border: 1px solid rgba(61,183,255,0.2);
+      align-self: flex-end;
+    }
+
+    .scripture {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      color: #ffe6a3;
+      font-size: 13px;
+    }
+
+    .composer {
+      display: flex;
+      gap: 10px;
+    }
+
+    input, select, button, textarea {
+      font: inherit;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.09);
+      color: var(--text);
+      outline: none;
+    }
+
+    button {
+      border: 0;
+      border-radius: 16px;
+      padding: 12px 15px;
+      color: #07101d;
+      background: linear-gradient(135deg, #fff1b8, var(--gold));
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    button.secondary {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: var(--text);
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .quick-grid button {
+      font-size: 13px;
+      min-height: 48px;
+    }
+
+    .settings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .setting-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 22px;
+      padding: 16px;
+    }
+
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .toggle {
+      width: 48px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.13);
+      position: relative;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .toggle::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 3px;
+      left: 4px;
+      border-radius: 999px;
+      background: white;
+      transition: 0.2s;
+    }
+
+    .toggle.on { background: rgba(140,242,194,0.35); }
+    .toggle.on::after { left: 22px; background: var(--ok); }
+
+    .fineprint {
+      font-size: 12px;
+      color: rgba(255,255,255,0.62);
+      margin-top: 18px;
+    }
+
+    @keyframes breathe { 0%, 100% { transform: scale(0.95); opacity: 0.35; } 50% { transform: scale(1.06); opacity: 0.75; } }
+    @keyframes orbIdle { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-6px) scale(1.02); } }
+    @keyframes listening { 0%,100% { transform: scale(1); filter: saturate(1); } 50% { transform: scale(0.96); filter: saturate(1.3); } }
+    @keyframes thinking { from { transform: rotate(0deg) scale(1.01); } to { transform: rotate(360deg) scale(1.01); } }
+    @keyframes speaking { 0%,100% { transform: scale(1); } 35% { transform: scale(1.08, 0.95); } 70% { transform: scale(0.96, 1.05); } }
+    @keyframes particleFlow { from { transform: translate(0,0) scale(1); opacity: 0.2; } 50% { opacity: 0.8; } to { transform: translate(22px,-48px) scale(0.7); opacity: 0.05; } }
+    @keyframes wave { 0%,100% { transform: scaleY(0.45); } 50% { transform: scaleY(1.55); } }
+
+    @media (max-width: 850px) {
+      .hero, .settings { grid-template-columns: 1fr; }
+      .orb-wrap, .chat { min-height: auto; }
+      .quick-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand">
+        <div class="mini-orb" aria-hidden="true"></div>
+        <div>
+          <strong>Bible Buddy</strong><br />
+          <span style="color: var(--muted); font-size: 13px;">Adaptive spiritual companion</span>
+        </div>
+      </div>
+      <a class="pill" href="/admin/">Admin Console</a>
+    </header>
+
+    <section class="hero">
+      <div class="card orb-wrap">
+        <span class="pill">Bible-first • opt-in • companion-led</span>
+        <h1>Meet Buddy where life actually happens.</h1>
+        <p>Tap the orb to talk, pray, reflect, or read. Buddy listens first, adapts gently, and stays grounded in the lessons and truth of the Bible.</p>
+
+        <div id="orbStage" class="orb-stage" data-state="idle" aria-live="polite">
+          <div class="orb-ring"></div>
+          <div class="orb-ring two"></div>
+          <div class="orb-ring three"></div>
+          <div class="orb">
+            <div class="wave"><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="status" id="orbStatus">Idle — calm presence</div>
+        <p id="orbCaption">I’m here when you want to talk. You control how often I check in.</p>
+
+        <div class="quick-grid">
+          <button onclick="quickAsk('I just want to talk for a minute. Please listen first.')">Talk</button>
+          <button onclick="quickAsk('Can you pray with me in a gentle way?')">Pray</button>
+          <button onclick="quickAsk('Give me one Scripture for today, but keep it simple.')">Daily Verse</button>
+          <button class="secondary" onclick="quickAsk('Help me reflect on my day without being pushy.')">Reflect</button>
+          <button class="secondary" onclick="quickAsk('I want to study the Bible more deeply. Where should I start?')">Study</button>
+          <button class="secondary" onclick="quickAsk('Help me think about wellness as stewardship, not medical advice.')">Stewardship</button>
+        </div>
+      </div>
+
+      <div class="card chat">
+        <h2>Companion Chat</h2>
+        <p>Real backend route: <code>/buddy/chat</code>. The orb changes state based on Buddy’s response.</p>
+        <div class="messages" id="messages">
+          <div class="msg buddy">Hey, I’m here. Want to talk, pray, read, or just take a quiet moment?</div>
+        </div>
+        <form class="composer" onsubmit="sendMessage(event)">
+          <input id="messageInput" placeholder="Tell Buddy what’s on your heart…" autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+        <p class="fineprint">Buddy is not a therapist, doctor, pastor, or emergency service. It can support reflection, prayer, and Scripture-grounded encouragement. In crisis or danger, contact emergency services or 988 in the U.S.</p>
+      </div>
+    </section>
+
+    <section class="settings">
+      <div class="setting-card">
+        <h2>Companion Presence</h2>
+        <p>Future mobile builds can add widgets, shortcuts, notification actions, and home-screen entry points where iOS/Android allow.</p>
+        <div class="toggle-row"><span>Orb companion</span><div class="toggle on" onclick="toggle(this)"></div></div>
+        <div class="toggle-row"><span>Gentle check-ins</span><div class="toggle" onclick="toggle(this)"></div></div>
+      </div>
+      <div class="setting-card">
+        <h2>Voice / Camera</h2>
+        <p>Mic/camera features must be opt-in and session-based. No always-watching. Facial/emotional signals should be processed carefully and transparently.</p>
+        <div class="toggle-row"><span>Voice sessions</span><div class="toggle" onclick="toggle(this)"></div></div>
+        <div class="toggle-row"><span>Expression coaching</span><div class="toggle" onclick="toggle(this)"></div></div>
+      </div>
+      <div class="setting-card">
+        <h2>Health / Watch</h2>
+        <p>Apple HealthKit and Android Health Connect can support wellness insights with permission. This is not medical diagnosis or emergency monitoring.</p>
+        <div class="toggle-row"><span>Wellness insights</span><div class="toggle" onclick="toggle(this)"></div></div>
+        <div class="toggle-row"><span>Watch sync</span><div class="toggle" onclick="toggle(this)"></div></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const orbStage = document.getElementById('orbStage');
+    const orbStatus = document.getElementById('orbStatus');
+    const orbCaption = document.getElementById('orbCaption');
+    const messages = document.getElementById('messages');
+    const input = document.getElementById('messageInput');
+
+    const labels = {
+      idle: ['Idle — calm presence', 'I’m here when you want to talk.'],
+      listening: ['Listening — I’m with you', 'Take your time. I’m listening first.'],
+      thinking: ['Thinking — finding a grounded response', 'I’m considering your words carefully.'],
+      speaking: ['Speaking — gentle response', 'Here is what I’m hearing.'],
+      praying: ['Praying — quiet support', 'Let’s slow down together.'],
+      notification: ['Gentle nudge', 'Only when you choose it.']
+    };
+
+    function setOrb(state) {
+      const safe = labels[state] ? state : 'idle';
+      orbStage.dataset.state = safe;
+      orbStatus.textContent = labels[safe][0];
+      orbCaption.textContent = labels[safe][1];
+    }
+
+    function addMessage(kind, text, scripture = []) {
+      const div = document.createElement('div');
+      div.className = `msg ${kind}`;
+      div.textContent = text;
+      if (scripture && scripture.length) {
+        const s = document.createElement('div');
+        s.className = 'scripture';
+        s.textContent = scripture.map(v => `${v.reference}${v.text ? ': ' + v.text : ''}`).join('\n');
+        div.appendChild(s);
+      }
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function toggle(el) {
+      el.classList.toggle('on');
+    }
+
+    function quickAsk(text) {
+      input.value = text;
+      sendMessage(new Event('submit'));
+    }
+
+    async function sendMessage(event) {
+      event.preventDefault();
+      const message = input.value.trim();
+      if (!message) return;
+
+      addMessage('user', message);
+      input.value = '';
+      setOrb('listening');
+
+      window.setTimeout(() => setOrb('thinking'), 420);
+
+      try {
+        const res = await fetch('/buddy/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userId: 'demo-user',
+            mode: 'COMPANION',
+            personaKey: 'ADAPTIVE_COMPANION',
+            message
+          })
+        });
+
+        const data = await res.json();
+        const payload = data.reply && typeof data.reply === 'object' ? data.reply : data;
+        setOrb(payload.orb_state || 'speaking');
+        addMessage('buddy', payload.reply || 'I’m here with you. Tell me a little more.', payload.scripture || []);
+        window.setTimeout(() => setOrb('idle'), 4200);
+      } catch (error) {
+        setOrb('idle');
+        addMessage('buddy', 'I had trouble connecting just now, but I’m still here. Please try again in a moment.');
+      }
+    }
+  </script>
+</body>
+</html>
