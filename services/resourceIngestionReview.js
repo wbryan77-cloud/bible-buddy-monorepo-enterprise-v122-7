@@ -21,6 +21,7 @@ function buildResourceIngestionReview(input = {}) {
       'line_upon_line_review',
       'historical_context_review',
       'question_generation_for_reviewer',
+      'alignment_severity_scoring',
       'admin_or_reviewer_review',
       'approval_or_rejection',
       'future_knowledge_ingestion',
@@ -59,6 +60,52 @@ function buildResourceIngestionReview(input = {}) {
         'This historical note appears relevant, but it needs review before being used as teaching support.',
       ],
     },
+    alignmentSeverity: {
+      addable: {
+        level: 1,
+        label: 'Addable supporting precept',
+        meaning: 'The reviewer supplied a reference or line of thought that appears to support the lesson and can be considered for addition after review.',
+        action: 'suggest_addition_for_reviewer_confirmation',
+      },
+      needsSupport: {
+        level: 2,
+        label: 'Needs more support',
+        meaning: 'The idea may fit, but needs clearer references, stronger source context, or reviewer explanation before use.',
+        action: 'ask_reviewer_clarifying_questions_and_send_to_admin_queue',
+      },
+      uncertainHistory: {
+        level: 3,
+        label: 'Historical/context uncertainty',
+        meaning: 'The historical claim may be useful, but source origin, timing, or connection needs human review.',
+        action: 'flag_for_history_context_review',
+      },
+      conflictOrUnsupported: {
+        level: 4,
+        label: 'Conflict or unsupported claim',
+        meaning: 'The reference, interpretation, or history does not clearly align with the supplied source material or needs correction.',
+        action: 'do_not_ingest_send_to_admin_with_reasoning',
+      },
+      highRiskTeaching: {
+        level: 5,
+        label: 'High review priority',
+        meaning: 'The material could significantly affect teaching, doctrine, safety, or user trust and must be reviewed before use.',
+        action: 'lock_from_ingestion_until_human_approval',
+      },
+    },
+    adminReviewPacket: {
+      include: [
+        'resource_summary',
+        'detected_references',
+        'suggested_related_references',
+        'reviewer_claim',
+        'ai_reasoning_summary',
+        'historical_context_questions',
+        'severity_level',
+        'recommended_action',
+        'human_review_required',
+      ],
+      purpose: 'Help admin quickly understand what was added, what was uncertain, what may not align, and why the item was flagged.',
+    },
     aiReviewOutputs: {
       summary: true,
       scriptureReferencesDetected: true,
@@ -67,6 +114,7 @@ function buildResourceIngestionReview(input = {}) {
       possibleConcernFlags: true,
       reviewerQuestions: true,
       approvalRecommendation: 'human_review_required',
+      severityScoring: true,
     },
     testerAndAdminSignals: [
       'resource_needs_reference_support',
@@ -75,6 +123,8 @@ function buildResourceIngestionReview(input = {}) {
       'resource_has_possible_commentary_confusion',
       'resource_ready_for_human_review',
       'resource_rejected_or_disabled',
+      'resource_has_addable_precept',
+      'resource_locked_pending_review',
     ],
     moderationRules: [
       'Track source origin.',
