@@ -27,6 +27,7 @@ const buildAvatarEmbodiment = optionalRequire('./osAvatarEmbodiment', 'buildAvat
 const buildWearableOrchestration = optionalRequire('./osWearableOrchestration', 'buildWearableOrchestration', noopLayer('wearable_orchestration'));
 const buildEdgeProcessing = optionalRequire('./osEdgeProcessing', 'buildEdgeProcessing', noopLayer('edge_processing'));
 const buildRelationalEvolution = optionalRequire('./osRelationalEvolution', 'buildRelationalEvolution', noopLayer('relational_evolution'));
+const buildResilienceOps = optionalRequire('./osResilienceOps', 'buildResilienceOps', noopLayer('resilience_ops'));
 
 function safePermissions(input = {}) {
   return input.permissions || {};
@@ -115,6 +116,7 @@ function buildLivingOS(input = {}) {
       wearableOrchestration: buildWearableOrchestration(input),
       edgeProcessing: buildEdgeProcessing(input),
       relationalEvolution: buildRelationalEvolution(input),
+      resilienceOps: buildResilienceOps(input),
       calendar: buildCalendarTravelAssist({
         permissions: permissions.calendar || {},
         event: input.calendarEvent,
@@ -142,6 +144,7 @@ function buildLivingOS(input = {}) {
       noFabrication: true,
       scriptureGrounded: true,
       adminOversightForNewIntegrations: true,
+      failSoftArchitecture: true,
     },
   };
 }
