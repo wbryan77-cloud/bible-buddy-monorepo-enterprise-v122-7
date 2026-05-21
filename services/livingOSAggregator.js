@@ -20,6 +20,13 @@ const buildDistributedEcosystem = optionalRequire('./distributedEcosystem', 'bui
 const buildCalendarTravelAssist = optionalRequire('./osCalendarTravel', 'buildCalendarTravelAssist', noopLayer('calendar'));
 const buildWorkspaceDocumentAssist = optionalRequire('./osWorkspaceDocs', 'buildWorkspaceDocumentAssist', noopLayer('documents'));
 const buildEmailMeetingAssist = optionalRequire('./osEmailMeeting', 'buildEmailMeetingAssist', noopLayer('email_meetings'));
+const buildAmbientOSState = optionalRequire('./osAmbientState', 'buildAmbientOSState', noopLayer('ambient_os'));
+const buildLongMemoryGraph = optionalRequire('./osLongMemoryGraph', 'buildLongMemoryGraph', noopLayer('long_memory_graph'));
+const buildRealtimeTranslation = optionalRequire('./osRealtimeTranslation', 'buildRealtimeTranslation', noopLayer('realtime_translation'));
+const buildAvatarEmbodiment = optionalRequire('./osAvatarEmbodiment', 'buildAvatarEmbodiment', noopLayer('avatar_embodiment'));
+const buildWearableOrchestration = optionalRequire('./osWearableOrchestration', 'buildWearableOrchestration', noopLayer('wearable_orchestration'));
+const buildEdgeProcessing = optionalRequire('./osEdgeProcessing', 'buildEdgeProcessing', noopLayer('edge_processing'));
+const buildRelationalEvolution = optionalRequire('./osRelationalEvolution', 'buildRelationalEvolution', noopLayer('relational_evolution'));
 
 function safePermissions(input = {}) {
   return input.permissions || {};
@@ -95,12 +102,19 @@ function buildLivingOS(input = {}) {
       relational: buildRelationalPresence(input),
       autonomous: buildAutonomousPlan(input),
       ecosystem: buildDistributedEcosystem(input),
+      ambientOS: buildAmbientOSState(input),
+      longMemoryGraph: buildLongMemoryGraph(input),
       realtime: buildRealtimeLayer(input),
+      realtimeTranslation: buildRealtimeTranslation(input),
       wellness: buildWellnessLayer(input),
       memory: buildMemoryLayer(input),
       language: buildLanguageLayer(input),
       opportunity: buildOpportunityLayer(input),
       relationship: buildRelationshipLayer(input),
+      avatarEmbodiment: buildAvatarEmbodiment(input),
+      wearableOrchestration: buildWearableOrchestration(input),
+      edgeProcessing: buildEdgeProcessing(input),
+      relationalEvolution: buildRelationalEvolution(input),
       calendar: buildCalendarTravelAssist({
         permissions: permissions.calendar || {},
         event: input.calendarEvent,
