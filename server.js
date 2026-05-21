@@ -1,13 +1,4 @@
-// server.js — Bible Buddy unified, Render-ready, Node 18+
-
-// Serves static files from /public and /admin
-// Provides JSON APIs for self-test + providers
-// Mounts AI routes for:
-//   /api/ai/tester-chat
-//   /api/ai/tester-image
-//   /admin/api/ai/helper
-// Adds Analyze Note API at /api/analyze
-// Exposes /api/health for Render health checks
+// server.js — Bible Buddy unified, Render-ready, Node 20+
 
 const express = require('express');
 const path = require('path');
@@ -15,215 +6,163 @@ const fs = require('fs');
 require('dotenv').config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+const APP_VERSION = 'v122.13.0 (realtime foundation)';
 
-// ===== App metadata =====
-const APP_VERSION = 'v122.10.11 (unified + analyze)';
-
-// ===== Basic middleware =====
-app.use(express.json({ limit: '5mb' }));
+app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// ===== Static assets =====
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const ADMIN_DIR = path.join(__dirname, 'admin');
 const DATA_DIR = path.join(__dirname, 'data');
 
+fs.mkdirSync(DATA_DIR, { recursive: true });
+
 app.use(express.static(PUBLIC_DIR));
 app.use('/admin', express.static(ADMIN_DIR));
-
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-}
 app.use('/data', express.static(DATA_DIR));
 
-// ===== Helper functions for self-test / providers =====
 function computeProviderStatus() {
+  const hasOpenAI = !!process.env.OPENAI_API_KEY;
   const hasResend = !!process.env.RESEND_API_KEY;
   const hasTwilioSid = !!process.env.TWILIO_ACCOUNT_SID;
   const hasTwilioToken = !!process.env.TWILIO_AUTH_TOKEN;
 
-  const emailStr = hasResend
-    ? 'Email: Resend (configured)'
-    : 'Email: Resend (missing keys)';
-
-  const smsStr = hasTwilioSid && hasTwilioToken
-    ? 'SMS: Twilio (configured)'
-    : 'SMS: Twilio (missing keys)';
-
   return {
-    email: emailStr,
-    sms: smsStr,
+    openai: hasOpenAI ? 'OpenAI: configured' : 'OpenAI: missing OPENAI_API_KEY',
+    email: hasResend ? 'Email: Resend configured' : 'Email: Resend missing keys',
+    sms: hasTwilioSid && hasTwilioToken ? 'SMS: Twilio configured' : 'SMS: Twilio missing keys',
     detail: {
-      email: emailStr,
-      sms: smsStr,
+      openai: hasOpenAI ? 'configured' : 'missing',
+      email: hasResend ? 'configured' : 'missing',
+      sms: hasTwilioSid && hasTwilioToken ? 'configured' : 'missing',
     },
   };
 }
 
 function buildSelfTestPayload() {
-  const now = new Date().toISOString();
-  const providers = computeProviderStatus();
-  const queue = { ok: true, detail: 'count≈1' };
-
   return {
     health: {
       ok: true,
       version: APP_VERSION,
-      time: now,
+      time: new Date().toISOString(),
     },
-    providers,
-    queue,
+    providers: computeProviderStatus(),
+    queue: { ok: true, detail: 'not configured for production queue yet' },
   };
 }
 
-// ===== Health check for Render =====
+function mountRoute(label, mountPath, requirePath) {
+  try {
+    const router = require(requirePath);
+    app.use(mountPath, router);
+    console.log(`${label} loaded at ${mountPath}`);
+  } catch (error) {
+    console.warn(`WARNING: ${label} failed to load:`, error.message);
+  }
+}
+
 app.get('/api/health', (req, res) => {
   const base = buildSelfTestPayload();
-  res.json({
-    ok: base.health.ok,
-    version: APP_VERSION,
-    time: base.health.time,
-  });
+  res.json({ ok: true, version: base.health.version, time: base.health.time });
 });
 
-// ===== JSON APIs for health & providers (for the dashboard) =====
+app.get('/health', (req, res) => {
+  res.json(buildSelfTestPayload());
+});
 
-// Legacy selftest endpoint
 app.get('/selftest', (req, res) => {
-  const payload = buildSelfTestPayload();
-  res.json(payload);
+  res.json(buildSelfTestPayload());
 });
 
-// Admin dashboard selftest
+app.get('/api/selftest', (req, res) => {
+  res.json(buildSelfTestPayload());
+});
+
 app.get('/admin/api/selftest', (req, res) => {
   const base = buildSelfTestPayload();
-  res.json({
-    version: APP_VERSION,
-    health: base.health.ok ? 'ok' : 'fail',
-    queue: base.queue,
-  });
+  res.json({ version: APP_VERSION, health: 'ok', queue: base.queue });
 });
 
-// Admin dashboard providers
 app.get('/admin/api/providers', (req, res) => {
-  const providers = computeProviderStatus();
-  res.json({
-    detail: providers.detail,
-  });
+  res.json({ detail: computeProviderStatus().detail });
 });
 
-// Optional: API selftest mirror
-app.get('/api/selftest', (req, res) => {
-  const payload = buildSelfTestPayload();
-  res.json(payload);
+// Core routes. Optional modules fail soft so one broken feature does not crash Render.
+mountRoute('AI tester routes', '/api/ai', './admin/ai/routes');
+mountRoute('Analyze routes', '/api/analyze', './routes/analyze');
+mountRoute('Admin assistant routes', '/admin/assistant', './routes/adminAssistant');
+mountRoute('Buddy routes', '/buddy', './routes/buddy');
+mountRoute('Content helper routes', '/admin/content', './routes/contentHelper');
+mountRoute('Realtime voice routes', '/api/realtime', './routes/realtime');
+mountRoute('Health signal routes', '/api/health/signals', './routes/healthSignals');
+mountRoute('Learning signal routes', '/api/learning', './routes/learningSignals');
+
+// Simple fallback analyze endpoint if routes/analyze is unavailable.
+app.post('/api/analyze/note', async (req, res) => {
+  try {
+    const note = String(req.body?.note || '').trim();
+    if (!note) return res.status(400).json({ error: 'No note text provided.' });
+
+    if (!process.env.OPENAI_API_KEY) {
+      return res.status(500).json({ error: 'AI not configured on server.' });
+    }
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
+        temperature: 0.5,
+        messages: [
+          {
+            role: 'system',
+            content:
+              'You are Bible Buddy, a gentle Scripture-grounded companion. Distinguish Scripture from explanation and never invent Bible verses.',
+          },
+          {
+            role: 'user',
+            content:
+              `Note:\n\n${note}\n\nCreate a clear devotional outline, suggest 3-5 Bible references, and end with reflection questions and a short prayer.`,
+          },
+        ],
+      }),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      console.error('OpenAI analyze error:', response.status, text);
+      return res.status(500).json({ error: 'AI service error.' });
+    }
+
+    const data = await response.json();
+    res.json({ reply: data?.choices?.[0]?.message?.content || 'No response generated.' });
+  } catch (error) {
+    console.error('Analyze Note fallback error:', error);
+    res.status(500).json({ error: 'Server error analyzing note.' });
+  }
 });
 
-// ===== AI Router (Tester + Admin Helper) =====
-try {
-  const aiRouter = require('./admin/ai/routes');
-  app.use('/api/ai', aiRouter);
-  console.log('AI routes loaded!');
-} catch (e) {
-  console.warn('WARNING: AI routes failed to load:', e.message);
-}
-
-// ===== Analyze Note API (Lab) =====
-try {
-  const analyzeRouter = require('./routes/analyze');
-  app.use('/api/analyze', analyzeRouter);
-  console.log('Analyze routes loaded!');
-} catch (e) {
-  console.warn('WARNING: Analyze routes failed to load:', e.message);
-}
-
-// ===== Attach Project Brain & Admin Assistant & Buddy & Content Helper =====
-try {
-  const adminAssistantRouter = require('./routes/adminAssistant');
-  app.use('/admin/assistant', adminAssistantRouter);
-
-  const buddyRouter = require('./routes/buddy');
-  app.use('/buddy', buddyRouter);
-
-  const contentHelperRouter = require('./routes/contentHelper');
-  app.use('/admin/content', express.json(), contentHelperRouter);
-
-  console.log('Project Brain + Admin Assistant + Buddy + Content routes loaded!');
-} catch (err) {
-  console.warn('WARNING: Brain routes failed:', err.message);
-}
-
-// ===== Explicit routes for main pages =====
-
-// Root ➝ main index.html from public
 app.get('/', (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
-// Admin root ➝ admin dashboard HTML
 app.get('/admin', (req, res) => {
   res.sendFile(path.join(ADMIN_DIR, 'index.html'));
 });
 
-// ------------------------------
-// Analyze Note + Suggest Verses
-app.post('/api/analyze/note', async (req, res) => {
-  try {
-    const { note } = req.body;
+app.use((req, res) => {
+  res.status(404).json({ ok: false, error: 'Not found', path: req.path });
+});
 
-    if (!note || !note.trim()) {
-      return res.status(400).json({ error: 'No note text provided.' });
-    }
+app.use((error, req, res, next) => {
+  console.error('Unhandled server error:', error);
+  res.status(500).json({ ok: false, error: 'Internal server error' });
+});
 
-    const apiKey = process.env.OPENAI_API_KEY;
-    if (!apiKey) {
-      console.error('Missing OPENAI_API_KEY env var');
-      return res.status(500).json({ error: 'AI not configured on server.' });
-    }
-
-    const aiRes = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: 'gpt-4.1-mini',
-        temperature: 0.5,
-        messages: [
-          {
-            role: 'system',
-            content:
-              'You are Bible Buddy, a gentle Christian devotional and sermon assistant. ' +
-              'You help organize sermon ideas, suggest relevant Bible verses, and keep responses ' +
-              'grounded in Scripture and orthodox Christian teaching.',
-          },
-          {
-            role: 'user',
-            content:
-              `Sermon or devotional note:\n\n"${note}"\n\n` +
-              'Please:\n' +
-              '1. Create a clear sermon or devotional outline.\n' +
-              '2. Suggest 3–5 Bible verses with references.\n' +
-              '3. End with reflection questions and a short closing prayer.',
-          },
-        ],
-      }),
-    });
-
-    if (!aiRes.ok) {
-      const txt = await aiRes.text();
-      console.error('OpenAI error:', aiRes.status, txt);
-      return res.status(500).json({ error: 'AI service error.' });
-    }
-
-    const aiData = await aiRes.json();
-    const reply =
-      aiData?.choices?.[0]?.message?.content ||
-      'No response generated. Please try again.';
-
-    res.json({ reply });
-  } catch (err) {
-    console.error('Analyze Note error:', err);
-    res.status(500).json({ error: 'Server error analyzing note.' });
-  }
+app.listen(PORT, () => {
+  console.log(`Bible Buddy ${APP_VERSION} listening on port ${PORT}`);
 });
