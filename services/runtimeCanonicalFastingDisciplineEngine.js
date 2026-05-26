@@ -1,0 +1,1 @@
+const { buildScripturePrayerGuidance } = require('./runtime
