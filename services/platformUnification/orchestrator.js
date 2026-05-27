@@ -35,8 +35,9 @@ require('./adapters/worshipAdapter');
 require('./adapters/prayerAdapter');
 require('./adapters/missionsAdapter');
 require('./adapters/stewardshipAdapter');
+require('./adapters/ethicsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.1';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.2';
 
 const SYSTEM_REGISTRY = [
   {
@@ -190,6 +191,10 @@ function compileDiscipleshipPlan(signal, system, continuityState) {
     gentleStep = 'Continue with one gentle stewardship and temple-care step rooted in wisdom and consistency.';
   }
 
+  if (signal.sourceSystem === 'ethics') {
+    gentleStep = 'Continue with gentle discernment, integrity, and Scripture-rooted wisdom.';
+  }
+
   return {
     summary: signal.text || 'No user-facing text supplied yet.',
     primarySystem: system ? system.key : 'unassigned',
@@ -308,9 +313,9 @@ function getPlatformUnificationStatus() {
     diagnostics,
     healthMetrics,
     nextBatchRecommendation: [
-      'Implement ethics adapter foundation.',
       'Add unified runtime orchestration registry.',
       'Implement analytics adapter foundation.',
+      'Add graph continuity scoring.',
     ],
   };
 }
