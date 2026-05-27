@@ -20,8 +20,9 @@ require('./adapters/covenantTimelineAdapter');
 require('./adapters/discipleshipAdapter');
 require('./adapters/worshipAdapter');
 require('./adapters/prayerAdapter');
+require('./adapters/missionsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.6';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.7';
 
 const SYSTEM_REGISTRY = [
   {
@@ -167,6 +168,10 @@ function compileDiscipleshipPlan(signal, system, continuityState) {
     gentleStep = 'Continue with gentle prayer continuity, reflection, and pastoral sensitivity.';
   }
 
+  if (signal.sourceSystem === 'missions') {
+    gentleStep = 'Continue with one gentle service or outreach step rooted in mercy and discipleship.';
+  }
+
   return {
     summary: signal.text || 'No user-facing text supplied yet.',
     primarySystem: system ? system.key : 'unassigned',
@@ -235,9 +240,9 @@ function getPlatformUnificationStatus() {
     adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
     nextBatchRecommendation: [
-      'Connect missions systems through a read-only adapter.',
       'Add orchestration diagnostics endpoint.',
       'Implement stewardship adapter foundation.',
+      'Begin kingdom knowledge graph runtime contracts.',
     ],
   };
 }
