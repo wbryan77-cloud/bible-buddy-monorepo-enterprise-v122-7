@@ -9,8 +9,9 @@ const {
 // Register connected adapter families.
 require('./adapters/covenantTimelineAdapter');
 require('./adapters/discipleshipAdapter');
+require('./adapters/worshipAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.2';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.3';
 
 const SYSTEM_REGISTRY = [
   {
@@ -167,9 +168,15 @@ function buildDoctrineIntegrityChecklist(signal) {
 }
 
 function compileDiscipleshipPlan(signal, system) {
-  const gentleStep = signal.metadata?.goal
-    ? `Continue toward formation goal: ${signal.metadata.goal}`
-    : 'Continue with one gentle next step rooted in Scripture and continuity.';
+  let gentleStep = 'Continue with one gentle next step rooted in Scripture and continuity.';
+
+  if (signal.metadata?.goal) {
+    gentleStep = `Continue toward formation goal: ${signal.metadata.goal}`;
+  }
+
+  if (signal.sourceSystem === 'worship' && signal.metadata?.worshipTheme) {
+    gentleStep = `Remain centered on worship theme: ${signal.metadata.worshipTheme}`;
+  }
 
   return {
     summary: signal.text || 'No user-facing text supplied yet.',
@@ -234,9 +241,9 @@ function getPlatformUnificationStatus() {
     adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
     nextBatchRecommendation: [
-      'Connect worship systems through a read-only adapter.',
       'Connect prayer systems through a read-only adapter.',
       'Add continuity state contracts.',
+      'Add doctrine middleware enforcement hooks.',
     ],
   };
 }
