@@ -6,10 +6,11 @@ const {
   normalizeWithAdapter,
 } = require('./adapters/registry');
 
-// Register first connected adapter family.
+// Register connected adapter families.
 require('./adapters/covenantTimelineAdapter');
+require('./adapters/discipleshipAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.1';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.2';
 
 const SYSTEM_REGISTRY = [
   {
@@ -132,6 +133,7 @@ function normalizeSignal(signal = {}) {
     scriptureRefs: Array.isArray(signal.scriptureRefs) ? signal.scriptureRefs : [],
     tags: Array.isArray(signal.tags) ? signal.tags : [],
     createdAt: signal.createdAt || new Date().toISOString(),
+    metadata: signal.metadata || {},
   };
 }
 
@@ -165,13 +167,17 @@ function buildDoctrineIntegrityChecklist(signal) {
 }
 
 function compileDiscipleshipPlan(signal, system) {
+  const gentleStep = signal.metadata?.goal
+    ? `Continue toward formation goal: ${signal.metadata.goal}`
+    : 'Continue with one gentle next step rooted in Scripture and continuity.';
+
   return {
     summary: signal.text || 'No user-facing text supplied yet.',
     primarySystem: system ? system.key : 'unassigned',
     nextSteps: [
       'Identify the biblical theme and continuity stage.',
       'Attach Scripture references and context checks before generating devotional or teaching output.',
-      'Compile one gentle next action rather than many disconnected feature suggestions.',
+      gentleStep,
     ],
     outputChannels: ['companion', 'admin-review', 'discipleship-plan'],
   };
@@ -228,9 +234,9 @@ function getPlatformUnificationStatus() {
     adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
     nextBatchRecommendation: [
-      'Connect discipleship systems through a read-only adapter.',
       'Connect worship systems through a read-only adapter.',
-      'Keep all adapters additive and non-destructive.',
+      'Connect prayer systems through a read-only adapter.',
+      'Add continuity state contracts.',
     ],
   };
 }
