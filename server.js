@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const APP_VERSION = 'v122.13.0 (realtime foundation)';
+const APP_VERSION = 'v122.14.0 (platform unification foundation)';
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -97,6 +97,7 @@ mountRoute('Content helper routes', '/admin/content', './routes/contentHelper');
 mountRoute('Realtime voice routes', '/api/realtime', './routes/realtime');
 mountRoute('Health signal routes', '/api/health/signals', './routes/healthSignals');
 mountRoute('Learning signal routes', '/api/learning', './routes/learningSignals');
+mountRoute('Platform unification routes', '/api/platform-unification', './routes/platformUnification');
 
 // Simple fallback analyze endpoint if routes/analyze is unavailable.
 app.post('/api/analyze/note', async (req, res) => {
