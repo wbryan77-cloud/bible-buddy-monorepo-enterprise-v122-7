@@ -11,13 +11,17 @@ const {
   updateContinuityState,
 } = require('./continuity/continuityStateContract');
 
+const {
+  evaluateDoctrine,
+} = require('./doctrine/doctrineMiddleware');
+
 // Register connected adapter families.
 require('./adapters/covenantTimelineAdapter');
 require('./adapters/discipleshipAdapter');
 require('./adapters/worshipAdapter');
 require('./adapters/prayerAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.5';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.6';
 
 const SYSTEM_REGISTRY = [
   {
@@ -115,7 +119,7 @@ const PIPELINE_STAGES = [
     key: 'doctrineIntegrityPipeline',
     label: 'Doctrine Integrity Pipeline',
     purpose: 'Requires Scripture distinction, context checks, humility language, and no fabricated verses.',
-    status: 'guardrail-ready',
+    status: 'foundation-connected',
   },
   {
     key: 'unifiedDiscipleshipCompiler',
@@ -146,31 +150,6 @@ function normalizeSignal(signal = {}) {
 
 function resolveSystem(signal) {
   return SYSTEM_REGISTRY.find((system) => system.key === signal.sourceSystem) || null;
-}
-
-function buildDoctrineIntegrityChecklist(signal) {
-  return [
-    {
-      key: 'scripture_distinction',
-      pass: true,
-      note: 'Output must separate Bible references from application, paraphrase, coaching, and commentary.',
-    },
-    {
-      key: 'no_fabricated_verses',
-      pass: true,
-      note: 'Verse wording must be retrieved from trusted Bible text sources before display as Scripture.',
-    },
-    {
-      key: 'context_required',
-      pass: signal.scriptureRefs.length > 0 || signal.tags.includes('needs-scripture'),
-      note: 'When Scripture is central, attach context checks before final user-facing output.',
-    },
-    {
-      key: 'pastoral_sensitivity',
-      pass: true,
-      note: 'Sensitive topics must use gentle language, avoid coercion, and recommend human help when appropriate.',
-    },
-  ];
 }
 
 function compileDiscipleshipPlan(signal, system, continuityState) {
@@ -223,12 +202,13 @@ function orchestratePlatformSignal(rawSignal = {}) {
     : normalizeSignal(rawSignal);
 
   const system = resolveSystem(signal);
-  const doctrineChecklist = buildDoctrineIntegrityChecklist(signal);
 
   const continuityState = updateContinuityState(
     rawSignal.continuityState || createEmptyContinuityState(),
     signal
   );
+
+  const doctrineIntegrity = evaluateDoctrine(signal);
 
   return {
     ok: true,
@@ -239,10 +219,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     resolvedSystem: system,
     continuityState,
     pipeline: PIPELINE_STAGES,
-    doctrineIntegrity: {
-      status: doctrineChecklist.every((item) => item.pass) ? 'ready' : 'needs-review',
-      checklist: doctrineChecklist,
-    },
+    doctrineIntegrity,
     discipleshipPlan: compileDiscipleshipPlan(signal, system, continuityState),
     compressedMemory: compressRuntimeMemory(signal, system),
   };
@@ -258,9 +235,9 @@ function getPlatformUnificationStatus() {
     adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
     nextBatchRecommendation: [
-      'Add doctrine middleware enforcement hooks.',
       'Connect missions systems through a read-only adapter.',
       'Add orchestration diagnostics endpoint.',
+      'Implement stewardship adapter foundation.',
     ],
   };
 }
