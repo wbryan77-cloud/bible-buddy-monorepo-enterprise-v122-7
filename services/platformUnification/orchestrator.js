@@ -20,6 +20,10 @@ const {
 } = require('./diagnostics/orchestrationDiagnostics');
 
 const {
+  generateOrchestrationHealthMetrics,
+} = require('./metrics/orchestrationHealthMetrics');
+
+const {
   createKnowledgeGraphState,
   integrateSignalIntoKnowledgeGraph,
 } = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
@@ -32,7 +36,7 @@ require('./adapters/prayerAdapter');
 require('./adapters/missionsAdapter');
 require('./adapters/stewardshipAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.0';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.1';
 
 const SYSTEM_REGISTRY = [
   {
@@ -242,6 +246,14 @@ function orchestratePlatformSignal(rawSignal = {}) {
     doctrineIntegrity,
   });
 
+  const healthMetrics = generateOrchestrationHealthMetrics({
+    adapters: listAdapters(),
+    pipeline: PIPELINE_STAGES,
+    continuityState,
+    doctrineIntegrity,
+    knowledgeGraph,
+  });
+
   return {
     ok: true,
     version: PLATFORM_UNIFICATION_VERSION,
@@ -254,22 +266,35 @@ function orchestratePlatformSignal(rawSignal = {}) {
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
     diagnostics,
+    healthMetrics,
     discipleshipPlan: compileDiscipleshipPlan(signal, system, continuityState),
     compressedMemory: compressRuntimeMemory(signal, system),
   };
 }
 
 function getPlatformUnificationStatus() {
+  const continuityState = createEmptyContinuityState();
+
+  const doctrineIntegrity = {
+    status: 'ready',
+    requiresReview: false,
+    flags: [],
+  };
+
   const diagnostics = generateOrchestrationDiagnostics({
     version: PLATFORM_UNIFICATION_VERSION,
     adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
-    continuityState: createEmptyContinuityState(),
-    doctrineIntegrity: {
-      status: 'ready',
-      requiresReview: false,
-      flags: [],
-    },
+    continuityState,
+    doctrineIntegrity,
+  });
+
+  const healthMetrics = generateOrchestrationHealthMetrics({
+    adapters: listAdapters(),
+    pipeline: PIPELINE_STAGES,
+    continuityState,
+    doctrineIntegrity,
+    knowledgeGraph: createKnowledgeGraphState(),
   });
 
   return {
@@ -281,10 +306,11 @@ function getPlatformUnificationStatus() {
     adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
     diagnostics,
+    healthMetrics,
     nextBatchRecommendation: [
-      'Add orchestration health metrics.',
       'Implement ethics adapter foundation.',
       'Add unified runtime orchestration registry.',
+      'Implement analytics adapter foundation.',
     ],
   };
 }
