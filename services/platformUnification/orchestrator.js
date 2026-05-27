@@ -19,6 +19,11 @@ const {
   generateOrchestrationDiagnostics,
 } = require('./diagnostics/orchestrationDiagnostics');
 
+const {
+  createKnowledgeGraphState,
+  integrateSignalIntoKnowledgeGraph,
+} = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
+
 // Register connected adapter families.
 require('./adapters/covenantTimelineAdapter');
 require('./adapters/discipleshipAdapter');
@@ -27,7 +32,7 @@ require('./adapters/prayerAdapter');
 require('./adapters/missionsAdapter');
 require('./adapters/stewardshipAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.9';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.0';
 
 const SYSTEM_REGISTRY = [
   {
@@ -113,7 +118,7 @@ const PIPELINE_STAGES = [
     key: 'kingdomKnowledgeGraph',
     label: 'Kingdom Knowledge Graph',
     purpose: 'Links Scripture, themes, covenant anchors, doctrines, practices, and user-safe learning nodes.',
-    status: 'contract-ready',
+    status: 'foundation-connected',
   },
   {
     key: 'continuityRuleEngine',
@@ -224,6 +229,11 @@ function orchestratePlatformSignal(rawSignal = {}) {
 
   const doctrineIntegrity = evaluateDoctrine(signal);
 
+  const knowledgeGraph = integrateSignalIntoKnowledgeGraph(
+    rawSignal.knowledgeGraph || createKnowledgeGraphState(),
+    signal
+  );
+
   const diagnostics = generateOrchestrationDiagnostics({
     version: PLATFORM_UNIFICATION_VERSION,
     adapters: listAdapters(),
@@ -240,6 +250,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     signal,
     resolvedSystem: system,
     continuityState,
+    knowledgeGraph,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
     diagnostics,
@@ -271,9 +282,9 @@ function getPlatformUnificationStatus() {
     pipeline: PIPELINE_STAGES,
     diagnostics,
     nextBatchRecommendation: [
-      'Begin kingdom knowledge graph runtime contracts.',
       'Add orchestration health metrics.',
       'Implement ethics adapter foundation.',
+      'Add unified runtime orchestration registry.',
     ],
   };
 }
