@@ -32,6 +32,10 @@ const {
   integrateSignalIntoKnowledgeGraph,
 } = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
 
+const {
+  generateGraphContinuityScoring,
+} = require('./knowledgeGraph/graphContinuityScoring');
+
 // Register connected adapter families.
 require('./adapters/covenantTimelineAdapter');
 require('./adapters/discipleshipAdapter');
@@ -42,7 +46,7 @@ require('./adapters/stewardshipAdapter');
 require('./adapters/ethicsAdapter');
 require('./adapters/analyticsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.4';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.5';
 
 const SYSTEM_REGISTRY = [
   {
@@ -268,6 +272,12 @@ function orchestratePlatformSignal(rawSignal = {}) {
     knowledgeGraph,
   });
 
+  const graphContinuity = generateGraphContinuityScoring({
+    knowledgeGraph,
+    continuityState,
+    doctrineIntegrity,
+  });
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -283,6 +293,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     resolvedSystem: system,
     continuityState,
     knowledgeGraph,
+    graphContinuity,
     runtimeRegistry,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
@@ -302,6 +313,8 @@ function getPlatformUnificationStatus() {
     flags: [],
   };
 
+  const knowledgeGraph = createKnowledgeGraphState();
+
   const diagnostics = generateOrchestrationDiagnostics({
     version: PLATFORM_UNIFICATION_VERSION,
     adapters: listAdapters(),
@@ -315,7 +328,13 @@ function getPlatformUnificationStatus() {
     pipeline: PIPELINE_STAGES,
     continuityState,
     doctrineIntegrity,
-    knowledgeGraph: createKnowledgeGraphState(),
+    knowledgeGraph,
+  });
+
+  const graphContinuity = generateGraphContinuityScoring({
+    knowledgeGraph,
+    continuityState,
+    doctrineIntegrity,
   });
 
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
@@ -335,10 +354,11 @@ function getPlatformUnificationStatus() {
     pipeline: PIPELINE_STAGES,
     diagnostics,
     healthMetrics,
+    graphContinuity,
     nextBatchRecommendation: [
-      'Add graph continuity scoring.',
       'Add orchestration runtime event contracts.',
       'Add orchestration lifecycle hooks.',
+      'Add canonical orchestration execution policies.',
     ],
   };
 }
