@@ -10,8 +10,9 @@ const {
 require('./adapters/covenantTimelineAdapter');
 require('./adapters/discipleshipAdapter');
 require('./adapters/worshipAdapter');
+require('./adapters/prayerAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.3';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.4';
 
 const SYSTEM_REGISTRY = [
   {
@@ -178,6 +179,10 @@ function compileDiscipleshipPlan(signal, system) {
     gentleStep = `Remain centered on worship theme: ${signal.metadata.worshipTheme}`;
   }
 
+  if (signal.sourceSystem === 'prayer') {
+    gentleStep = 'Continue with gentle prayer continuity, reflection, and pastoral sensitivity.';
+  }
+
   return {
     summary: signal.text || 'No user-facing text supplied yet.',
     primarySystem: system ? system.key : 'unassigned',
@@ -241,9 +246,9 @@ function getPlatformUnificationStatus() {
     adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
     nextBatchRecommendation: [
-      'Connect prayer systems through a read-only adapter.',
       'Add continuity state contracts.',
       'Add doctrine middleware enforcement hooks.',
+      'Connect missions systems through a read-only adapter.',
     ],
   };
 }
