@@ -40,8 +40,9 @@ require('./adapters/prayerAdapter');
 require('./adapters/missionsAdapter');
 require('./adapters/stewardshipAdapter');
 require('./adapters/ethicsAdapter');
+require('./adapters/analyticsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.3';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.4';
 
 const SYSTEM_REGISTRY = [
   {
@@ -199,6 +200,10 @@ function compileDiscipleshipPlan(signal, system, continuityState) {
     gentleStep = 'Continue with gentle discernment, integrity, and Scripture-rooted wisdom.';
   }
 
+  if (signal.sourceSystem === 'analytics') {
+    gentleStep = 'Continue monitoring orchestration health, learning continuity, and safe runtime visibility.';
+  }
+
   return {
     summary: signal.text || 'No user-facing text supplied yet.',
     primarySystem: system ? system.key : 'unassigned',
@@ -331,9 +336,9 @@ function getPlatformUnificationStatus() {
     diagnostics,
     healthMetrics,
     nextBatchRecommendation: [
-      'Implement analytics adapter foundation.',
       'Add graph continuity scoring.',
       'Add orchestration runtime event contracts.',
+      'Add orchestration lifecycle hooks.',
     ],
   };
 }
