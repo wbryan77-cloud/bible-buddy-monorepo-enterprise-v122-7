@@ -1,13 +1,15 @@
 // services/platformUnification/orchestrator.js
 // Platform Unification Phase — canonical orchestration foundation
-//
-// This module consolidates Bible Buddy's existing feature families into a single
-// read-only orchestration contract. It does not replace the covenant,
-// discipleship, worship, missions, prayer, revival, apologetics, stewardship,
-// ethics, or analytics systems. Instead, it gives them a shared runtime language
-// so future batches can plug each system into one canonical flow.
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1';
+const {
+  listAdapters,
+  normalizeWithAdapter,
+} = require('./adapters/registry');
+
+// Register first connected adapter family.
+require('./adapters/covenantTimelineAdapter');
+
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.1';
 
 const SYSTEM_REGISTRY = [
   {
@@ -188,7 +190,14 @@ function compressRuntimeMemory(signal, system) {
 }
 
 function orchestratePlatformSignal(rawSignal = {}) {
-  const signal = normalizeSignal(rawSignal);
+  const adapted = rawSignal.sourceSystem
+    ? normalizeWithAdapter(rawSignal.sourceSystem, rawSignal)
+    : null;
+
+  const signal = adapted?.ok
+    ? normalizeSignal(adapted.signal)
+    : normalizeSignal(rawSignal);
+
   const system = resolveSystem(signal);
   const doctrineChecklist = buildDoctrineIntegrityChecklist(signal);
 
@@ -196,6 +205,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     ok: true,
     version: PLATFORM_UNIFICATION_VERSION,
     receivedAt: new Date().toISOString(),
+    adapters: listAdapters(),
     signal,
     resolvedSystem: system,
     pipeline: PIPELINE_STAGES,
@@ -215,11 +225,12 @@ function getPlatformUnificationStatus() {
     phase: 'Platform Unification Phase',
     posture: 'architecture consolidation and orchestration',
     systems: SYSTEM_REGISTRY,
+    adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
     nextBatchRecommendation: [
-      'Wire existing feature modules into sourceSystem adapters one family at a time.',
-      'Add knowledge graph node persistence after the route contract is stable.',
-      'Add admin UI visibility after runtime responses are confirmed on Render.',
+      'Connect discipleship systems through a read-only adapter.',
+      'Connect worship systems through a read-only adapter.',
+      'Keep all adapters additive and non-destructive.',
     ],
   };
 }
