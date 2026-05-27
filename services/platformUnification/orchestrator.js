@@ -28,6 +28,10 @@ const {
 } = require('./runtime/unifiedRuntimeRegistry');
 
 const {
+  buildCanonicalRuntimeEvents,
+} = require('./runtime/orchestrationRuntimeEventContracts');
+
+const {
   createKnowledgeGraphState,
   integrateSignalIntoKnowledgeGraph,
 } = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
@@ -46,7 +50,7 @@ require('./adapters/stewardshipAdapter');
 require('./adapters/ethicsAdapter');
 require('./adapters/analyticsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.5';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.6';
 
 const SYSTEM_REGISTRY = [
   {
@@ -278,6 +282,13 @@ function orchestratePlatformSignal(rawSignal = {}) {
     doctrineIntegrity,
   });
 
+  const runtimeEvents = buildCanonicalRuntimeEvents({
+    signal,
+    continuityState,
+    doctrineIntegrity,
+    knowledgeGraph,
+  });
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -294,6 +305,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     continuityState,
     knowledgeGraph,
     graphContinuity,
+    runtimeEvents,
     runtimeRegistry,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
@@ -337,6 +349,13 @@ function getPlatformUnificationStatus() {
     doctrineIntegrity,
   });
 
+  const runtimeEvents = buildCanonicalRuntimeEvents({
+    signal: {},
+    continuityState,
+    doctrineIntegrity,
+    knowledgeGraph,
+  });
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -351,14 +370,15 @@ function getPlatformUnificationStatus() {
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
     runtimeRegistry,
+    runtimeEvents,
     pipeline: PIPELINE_STAGES,
     diagnostics,
     healthMetrics,
     graphContinuity,
     nextBatchRecommendation: [
-      'Add orchestration runtime event contracts.',
       'Add orchestration lifecycle hooks.',
       'Add canonical orchestration execution policies.',
+      'Add runtime orchestration stabilization policies.',
     ],
   };
 }
