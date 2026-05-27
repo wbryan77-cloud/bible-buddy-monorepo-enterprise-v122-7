@@ -6,13 +6,18 @@ const {
   normalizeWithAdapter,
 } = require('./adapters/registry');
 
+const {
+  createEmptyContinuityState,
+  updateContinuityState,
+} = require('./continuity/continuityStateContract');
+
 // Register connected adapter families.
 require('./adapters/covenantTimelineAdapter');
 require('./adapters/discipleshipAdapter');
 require('./adapters/worshipAdapter');
 require('./adapters/prayerAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.4';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.5';
 
 const SYSTEM_REGISTRY = [
   {
@@ -104,7 +109,7 @@ const PIPELINE_STAGES = [
     key: 'continuityRuleEngine',
     label: 'Continuity Rule Engine',
     purpose: 'Prevents disconnected feature jumps by keeping user journeys ordered and explainable.',
-    status: 'contract-ready',
+    status: 'foundation-connected',
   },
   {
     key: 'doctrineIntegrityPipeline',
@@ -122,7 +127,7 @@ const PIPELINE_STAGES = [
     key: 'runtimeMemoryCompressionLayer',
     label: 'Runtime Memory Compression Layer',
     purpose: 'Compresses memory into safe, useful, non-pushy continuity summaries with consent boundaries.',
-    status: 'contract-ready',
+    status: 'foundation-connected',
   },
 ];
 
@@ -168,7 +173,7 @@ function buildDoctrineIntegrityChecklist(signal) {
   ];
 }
 
-function compileDiscipleshipPlan(signal, system) {
+function compileDiscipleshipPlan(signal, system, continuityState) {
   let gentleStep = 'Continue with one gentle next step rooted in Scripture and continuity.';
 
   if (signal.metadata?.goal) {
@@ -186,6 +191,7 @@ function compileDiscipleshipPlan(signal, system) {
   return {
     summary: signal.text || 'No user-facing text supplied yet.',
     primarySystem: system ? system.key : 'unassigned',
+    continuityStage: continuityState.activeStage,
     nextSteps: [
       'Identify the biblical theme and continuity stage.',
       'Attach Scripture references and context checks before generating devotional or teaching output.',
@@ -219,6 +225,11 @@ function orchestratePlatformSignal(rawSignal = {}) {
   const system = resolveSystem(signal);
   const doctrineChecklist = buildDoctrineIntegrityChecklist(signal);
 
+  const continuityState = updateContinuityState(
+    rawSignal.continuityState || createEmptyContinuityState(),
+    signal
+  );
+
   return {
     ok: true,
     version: PLATFORM_UNIFICATION_VERSION,
@@ -226,12 +237,13 @@ function orchestratePlatformSignal(rawSignal = {}) {
     adapters: listAdapters(),
     signal,
     resolvedSystem: system,
+    continuityState,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity: {
       status: doctrineChecklist.every((item) => item.pass) ? 'ready' : 'needs-review',
       checklist: doctrineChecklist,
     },
-    discipleshipPlan: compileDiscipleshipPlan(signal, system),
+    discipleshipPlan: compileDiscipleshipPlan(signal, system, continuityState),
     compressedMemory: compressRuntimeMemory(signal, system),
   };
 }
@@ -246,9 +258,9 @@ function getPlatformUnificationStatus() {
     adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
     nextBatchRecommendation: [
-      'Add continuity state contracts.',
       'Add doctrine middleware enforcement hooks.',
       'Connect missions systems through a read-only adapter.',
+      'Add orchestration diagnostics endpoint.',
     ],
   };
 }
