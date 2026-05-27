@@ -24,6 +24,10 @@ const {
 } = require('./metrics/orchestrationHealthMetrics');
 
 const {
+  buildUnifiedRuntimeRegistry,
+} = require('./runtime/unifiedRuntimeRegistry');
+
+const {
   createKnowledgeGraphState,
   integrateSignalIntoKnowledgeGraph,
 } = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
@@ -37,7 +41,7 @@ require('./adapters/missionsAdapter');
 require('./adapters/stewardshipAdapter');
 require('./adapters/ethicsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.2';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.3';
 
 const SYSTEM_REGISTRY = [
   {
@@ -259,6 +263,12 @@ function orchestratePlatformSignal(rawSignal = {}) {
     knowledgeGraph,
   });
 
+  const runtimeRegistry = buildUnifiedRuntimeRegistry({
+    systems: SYSTEM_REGISTRY,
+    adapters: listAdapters(),
+    pipeline: PIPELINE_STAGES,
+  });
+
   return {
     ok: true,
     version: PLATFORM_UNIFICATION_VERSION,
@@ -268,6 +278,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     resolvedSystem: system,
     continuityState,
     knowledgeGraph,
+    runtimeRegistry,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
     diagnostics,
@@ -302,6 +313,12 @@ function getPlatformUnificationStatus() {
     knowledgeGraph: createKnowledgeGraphState(),
   });
 
+  const runtimeRegistry = buildUnifiedRuntimeRegistry({
+    systems: SYSTEM_REGISTRY,
+    adapters: listAdapters(),
+    pipeline: PIPELINE_STAGES,
+  });
+
   return {
     ok: true,
     version: PLATFORM_UNIFICATION_VERSION,
@@ -309,13 +326,14 @@ function getPlatformUnificationStatus() {
     posture: 'architecture consolidation and orchestration',
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
+    runtimeRegistry,
     pipeline: PIPELINE_STAGES,
     diagnostics,
     healthMetrics,
     nextBatchRecommendation: [
-      'Add unified runtime orchestration registry.',
       'Implement analytics adapter foundation.',
       'Add graph continuity scoring.',
+      'Add orchestration runtime event contracts.',
     ],
   };
 }
