@@ -15,6 +15,10 @@ const {
   evaluateDoctrine,
 } = require('./doctrine/doctrineMiddleware');
 
+const {
+  generateOrchestrationDiagnostics,
+} = require('./diagnostics/orchestrationDiagnostics');
+
 // Register connected adapter families.
 require('./adapters/covenantTimelineAdapter');
 require('./adapters/discipleshipAdapter');
@@ -22,7 +26,7 @@ require('./adapters/worshipAdapter');
 require('./adapters/prayerAdapter');
 require('./adapters/missionsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.7';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v1.8';
 
 const SYSTEM_REGISTRY = [
   {
@@ -215,6 +219,14 @@ function orchestratePlatformSignal(rawSignal = {}) {
 
   const doctrineIntegrity = evaluateDoctrine(signal);
 
+  const diagnostics = generateOrchestrationDiagnostics({
+    version: PLATFORM_UNIFICATION_VERSION,
+    adapters: listAdapters(),
+    pipeline: PIPELINE_STAGES,
+    continuityState,
+    doctrineIntegrity,
+  });
+
   return {
     ok: true,
     version: PLATFORM_UNIFICATION_VERSION,
@@ -225,12 +237,25 @@ function orchestratePlatformSignal(rawSignal = {}) {
     continuityState,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
+    diagnostics,
     discipleshipPlan: compileDiscipleshipPlan(signal, system, continuityState),
     compressedMemory: compressRuntimeMemory(signal, system),
   };
 }
 
 function getPlatformUnificationStatus() {
+  const diagnostics = generateOrchestrationDiagnostics({
+    version: PLATFORM_UNIFICATION_VERSION,
+    adapters: listAdapters(),
+    pipeline: PIPELINE_STAGES,
+    continuityState: createEmptyContinuityState(),
+    doctrineIntegrity: {
+      status: 'ready',
+      requiresReview: false,
+      flags: [],
+    },
+  });
+
   return {
     ok: true,
     version: PLATFORM_UNIFICATION_VERSION,
@@ -239,10 +264,11 @@ function getPlatformUnificationStatus() {
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
     pipeline: PIPELINE_STAGES,
+    diagnostics,
     nextBatchRecommendation: [
-      'Add orchestration diagnostics endpoint.',
       'Implement stewardship adapter foundation.',
       'Begin kingdom knowledge graph runtime contracts.',
+      'Add orchestration health metrics.',
     ],
   };
 }
