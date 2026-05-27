@@ -40,6 +40,10 @@ const {
 } = require('./runtime/canonicalExecutionPolicies');
 
 const {
+  buildRuntimeStabilizationPolicies,
+} = require('./runtime/runtimeStabilizationPolicies');
+
+const {
   createKnowledgeGraphState,
   integrateSignalIntoKnowledgeGraph,
 } = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
@@ -58,7 +62,7 @@ require('./adapters/stewardshipAdapter');
 require('./adapters/ethicsAdapter');
 require('./adapters/analyticsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.8';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.9';
 
 const SYSTEM_REGISTRY = [
   {
@@ -301,6 +305,8 @@ function orchestratePlatformSignal(rawSignal = {}) {
 
   const executionPolicies = buildCanonicalExecutionPolicies();
 
+  const stabilizationPolicies = buildRuntimeStabilizationPolicies();
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -320,6 +326,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     runtimeEvents,
     lifecycleHooks,
     executionPolicies,
+    stabilizationPolicies,
     runtimeRegistry,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
@@ -374,6 +381,8 @@ function getPlatformUnificationStatus() {
 
   const executionPolicies = buildCanonicalExecutionPolicies();
 
+  const stabilizationPolicies = buildRuntimeStabilizationPolicies();
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -391,14 +400,15 @@ function getPlatformUnificationStatus() {
     runtimeEvents,
     lifecycleHooks,
     executionPolicies,
+    stabilizationPolicies,
     pipeline: PIPELINE_STAGES,
     diagnostics,
     healthMetrics,
     graphContinuity,
     nextBatchRecommendation: [
-      'Add runtime orchestration stabilization policies.',
       'Add continuity-aware orchestration throttling.',
       'Add orchestration runtime recovery contracts.',
+      'Add orchestration safety boundary enforcement.',
     ],
   };
 }
