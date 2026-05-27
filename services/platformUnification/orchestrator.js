@@ -36,6 +36,10 @@ const {
 } = require('./runtime/orchestrationLifecycleHooks');
 
 const {
+  buildCanonicalExecutionPolicies,
+} = require('./runtime/canonicalExecutionPolicies');
+
+const {
   createKnowledgeGraphState,
   integrateSignalIntoKnowledgeGraph,
 } = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
@@ -54,7 +58,7 @@ require('./adapters/stewardshipAdapter');
 require('./adapters/ethicsAdapter');
 require('./adapters/analyticsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.7';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.8';
 
 const SYSTEM_REGISTRY = [
   {
@@ -295,6 +299,8 @@ function orchestratePlatformSignal(rawSignal = {}) {
 
   const lifecycleHooks = buildCanonicalLifecycleHooks();
 
+  const executionPolicies = buildCanonicalExecutionPolicies();
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -313,6 +319,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     graphContinuity,
     runtimeEvents,
     lifecycleHooks,
+    executionPolicies,
     runtimeRegistry,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
@@ -365,6 +372,8 @@ function getPlatformUnificationStatus() {
 
   const lifecycleHooks = buildCanonicalLifecycleHooks();
 
+  const executionPolicies = buildCanonicalExecutionPolicies();
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -381,14 +390,15 @@ function getPlatformUnificationStatus() {
     runtimeRegistry,
     runtimeEvents,
     lifecycleHooks,
+    executionPolicies,
     pipeline: PIPELINE_STAGES,
     diagnostics,
     healthMetrics,
     graphContinuity,
     nextBatchRecommendation: [
-      'Add canonical orchestration execution policies.',
       'Add runtime orchestration stabilization policies.',
       'Add continuity-aware orchestration throttling.',
+      'Add orchestration runtime recovery contracts.',
     ],
   };
 }
