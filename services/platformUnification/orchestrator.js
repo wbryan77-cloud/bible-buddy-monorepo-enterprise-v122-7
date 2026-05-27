@@ -44,6 +44,10 @@ const {
 } = require('./runtime/runtimeStabilizationPolicies');
 
 const {
+  generateContinuityAwareThrottling,
+} = require('./runtime/continuityAwareThrottling');
+
+const {
   createKnowledgeGraphState,
   integrateSignalIntoKnowledgeGraph,
 } = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
@@ -62,7 +66,7 @@ require('./adapters/stewardshipAdapter');
 require('./adapters/ethicsAdapter');
 require('./adapters/analyticsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v2.9';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v3.0';
 
 const SYSTEM_REGISTRY = [
   {
@@ -307,6 +311,13 @@ function orchestratePlatformSignal(rawSignal = {}) {
 
   const stabilizationPolicies = buildRuntimeStabilizationPolicies();
 
+  const continuityAwareThrottling =
+    generateContinuityAwareThrottling({
+      continuityState,
+      doctrineIntegrity,
+      knowledgeGraph,
+    });
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -327,6 +338,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     lifecycleHooks,
     executionPolicies,
     stabilizationPolicies,
+    continuityAwareThrottling,
     runtimeRegistry,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
@@ -383,6 +395,13 @@ function getPlatformUnificationStatus() {
 
   const stabilizationPolicies = buildRuntimeStabilizationPolicies();
 
+  const continuityAwareThrottling =
+    generateContinuityAwareThrottling({
+      continuityState,
+      doctrineIntegrity,
+      knowledgeGraph,
+    });
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -401,14 +420,15 @@ function getPlatformUnificationStatus() {
     lifecycleHooks,
     executionPolicies,
     stabilizationPolicies,
+    continuityAwareThrottling,
     pipeline: PIPELINE_STAGES,
     diagnostics,
     healthMetrics,
     graphContinuity,
     nextBatchRecommendation: [
-      'Add continuity-aware orchestration throttling.',
       'Add orchestration runtime recovery contracts.',
       'Add orchestration safety boundary enforcement.',
+      'Add canonical orchestration fail-safe protections.',
     ],
   };
 }
