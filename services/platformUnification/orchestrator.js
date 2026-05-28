@@ -52,6 +52,14 @@ const {
 } = require('./runtime/runtimeRecoveryContracts');
 
 const {
+  buildOrchestrationSafetyBoundaries,
+} = require('./runtime/orchestrationSafetyBoundaryEnforcement');
+
+const {
+  buildCanonicalFailSafeProtections,
+} = require('./runtime/canonicalFailSafeProtections');
+
+const {
   createKnowledgeGraphState,
   integrateSignalIntoKnowledgeGraph,
 } = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
@@ -70,7 +78,7 @@ require('./adapters/stewardshipAdapter');
 require('./adapters/ethicsAdapter');
 require('./adapters/analyticsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v3.1';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v3.3';
 
 const SYSTEM_REGISTRY = [
   {
@@ -325,6 +333,12 @@ function orchestratePlatformSignal(rawSignal = {}) {
   const runtimeRecoveryContracts =
     buildRuntimeRecoveryContracts();
 
+  const orchestrationSafetyBoundaries =
+    buildOrchestrationSafetyBoundaries();
+
+  const canonicalFailSafeProtections =
+    buildCanonicalFailSafeProtections();
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -347,6 +361,8 @@ function orchestratePlatformSignal(rawSignal = {}) {
     stabilizationPolicies,
     continuityAwareThrottling,
     runtimeRecoveryContracts,
+    orchestrationSafetyBoundaries,
+    canonicalFailSafeProtections,
     runtimeRegistry,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
@@ -413,6 +429,12 @@ function getPlatformUnificationStatus() {
   const runtimeRecoveryContracts =
     buildRuntimeRecoveryContracts();
 
+  const orchestrationSafetyBoundaries =
+    buildOrchestrationSafetyBoundaries();
+
+  const canonicalFailSafeProtections =
+    buildCanonicalFailSafeProtections();
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -433,14 +455,16 @@ function getPlatformUnificationStatus() {
     stabilizationPolicies,
     continuityAwareThrottling,
     runtimeRecoveryContracts,
+    orchestrationSafetyBoundaries,
+    canonicalFailSafeProtections,
     pipeline: PIPELINE_STAGES,
     diagnostics,
     healthMetrics,
     graphContinuity,
     nextBatchRecommendation: [
-      'Add orchestration safety boundary enforcement.',
-      'Add canonical orchestration fail-safe protections.',
       'Add runtime orchestration degradation recovery.',
+      'Add adaptive orchestration resilience coordination.',
+      'Add orchestration integrity preservation contracts.',
     ],
   };
 }
