@@ -48,6 +48,10 @@ const {
 } = require('./runtime/continuityAwareThrottling');
 
 const {
+  buildRuntimeRecoveryContracts,
+} = require('./runtime/runtimeRecoveryContracts');
+
+const {
   createKnowledgeGraphState,
   integrateSignalIntoKnowledgeGraph,
 } = require('./knowledgeGraph/kingdomKnowledgeGraphContract');
@@ -66,7 +70,7 @@ require('./adapters/stewardshipAdapter');
 require('./adapters/ethicsAdapter');
 require('./adapters/analyticsAdapter');
 
-const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v3.0';
+const PLATFORM_UNIFICATION_VERSION = 'platform-unification.v3.1';
 
 const SYSTEM_REGISTRY = [
   {
@@ -318,6 +322,9 @@ function orchestratePlatformSignal(rawSignal = {}) {
       knowledgeGraph,
     });
 
+  const runtimeRecoveryContracts =
+    buildRuntimeRecoveryContracts();
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -339,6 +346,7 @@ function orchestratePlatformSignal(rawSignal = {}) {
     executionPolicies,
     stabilizationPolicies,
     continuityAwareThrottling,
+    runtimeRecoveryContracts,
     runtimeRegistry,
     pipeline: PIPELINE_STAGES,
     doctrineIntegrity,
@@ -402,6 +410,9 @@ function getPlatformUnificationStatus() {
       knowledgeGraph,
     });
 
+  const runtimeRecoveryContracts =
+    buildRuntimeRecoveryContracts();
+
   const runtimeRegistry = buildUnifiedRuntimeRegistry({
     systems: SYSTEM_REGISTRY,
     adapters: listAdapters(),
@@ -421,14 +432,15 @@ function getPlatformUnificationStatus() {
     executionPolicies,
     stabilizationPolicies,
     continuityAwareThrottling,
+    runtimeRecoveryContracts,
     pipeline: PIPELINE_STAGES,
     diagnostics,
     healthMetrics,
     graphContinuity,
     nextBatchRecommendation: [
-      'Add orchestration runtime recovery contracts.',
       'Add orchestration safety boundary enforcement.',
       'Add canonical orchestration fail-safe protections.',
+      'Add runtime orchestration degradation recovery.',
     ],
   };
 }
