@@ -13,7 +13,7 @@ function detectSourceTopic(message = '') {
     return 'sabbath';
   }
 
-  if (hasAny(text, ['feast day', 'feast days', 'high sabbath', 'leviticus 23', 'passover', 'tabernacles', 'pentecost'])) {
+  if (hasAny(text, ['feast day', 'feast days', 'high sabbath', 'leviticus 23', 'passover', 'tabernacles', 'pentecost', 'unleavened bread'])) {
     return 'feast_days';
   }
 
@@ -21,7 +21,7 @@ function detectSourceTopic(message = '') {
     return 'traditions';
   }
 
-  if (hasAny(text, ['three days and three nights', 'resurrection timeline', 'matthew 12:40', 'matthew 28', 'first day of the week'])) {
+  if (hasAny(text, ['resurrection', 'three days and three nights', 'resurrection timeline', 'matthew 12:40', 'matthew 28', 'first day of the week'])) {
     return 'resurrection_timeline';
   }
 

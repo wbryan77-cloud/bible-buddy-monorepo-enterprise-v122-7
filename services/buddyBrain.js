@@ -6,6 +6,8 @@ const {
   buildRuntimeInstructions,
   scoreCompanionQuality,
 } = require('./runtimeOrchestrator');
+const { runDoctrineRuntimePipeline } = require('./doctrineRuntimePipeline');
+const { orchestrateBuddyRuntime } = require('./retrievalFirstBuddyOrchestrator');
 
 let getSnapshot = () => ({ modules: [], phases: [], competitors: [], avatars: [] });
 let getRecentInsightsForUser = () => [];
@@ -350,6 +352,81 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
     appendSession({ userId, mode, personaKey, message, reply: crisisReply.reply, structured: crisisReply, safety, runtime: runtimeContext, quality });
     appendQualityEvent({ userId, mode, issues: quality.issues, score: quality.score, safety });
     return crisisReply;
+  }
+
+  const doctrineResult = runDoctrineRuntimePipeline({ message });
+  if (doctrineResult?.intercepted) {
+    let structured = {
+      ...doctrineResult.reply,
+      safety_level: safety.level,
+      memory_used: true,
+      runtime: {
+        ...(doctrineResult.reply.runtime || {}),
+        emotion: runtimeContext.emotion,
+        intent: runtimeContext.intent,
+        doctrineTopic: doctrineResult.topic,
+      },
+    };
+
+    try {
+      const refs = (structured.scripture || []).map((s) => s.reference || s);
+      const chain = await orchestrateBuddyRuntime({
+        topic: doctrineResult.topic,
+        scripture: refs,
+      });
+      structured.runtime = {
+        ...structured.runtime,
+        scriptureChain: chain,
+      };
+    } catch (err) {
+      console.warn('Scripture chain enrichment failed:', err.message);
+    }
+
+    const quality =
+      structured.quality ||
+      scoreCompanionQuality({
+        message,
+        reply: structured.reply,
+        runtimeContext,
+      });
+    structured.quality = quality;
+
+    appendSession({
+      userId,
+      mode,
+      personaKey,
+      message,
+      reply: structured.reply,
+      structured,
+      safety,
+      runtime: runtimeContext,
+      quality,
+    });
+    appendQualityEvent({
+      userId,
+      mode,
+      emotion: runtimeContext.emotion,
+      intent: runtimeContext.intent,
+      issues: quality.issues || [],
+      score: quality.score,
+    });
+    if (profile?.memoryEnabled !== false) {
+      updateUserMemory({ userId, message, structured, runtimeContext });
+    }
+
+    recordCompanionEvent({
+      type: 'runtime_orchestration',
+      userId,
+      mode,
+      durationMs: Date.now() - startedAt,
+      latencyMs: Date.now() - startedAt,
+      orbState: structured.orb_state,
+      safetyLevel: structured.safety_level,
+      feature: 'doctrine_intercept',
+      language: 'en',
+    });
+
+    return structured;
   }
 
   if (!openai) {
