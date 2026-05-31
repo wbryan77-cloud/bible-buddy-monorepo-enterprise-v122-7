@@ -1,5 +1,7 @@
+const { stripInternalRuntimeLabels } = require('./runtimeLabelStripper');
+
 function sanitizeDoctrineResponse(reply = '') {
-  let output = String(reply);
+  let output = stripInternalRuntimeLabels(String(reply));
 
   const replacements = [
     {

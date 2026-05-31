@@ -25,14 +25,23 @@ function writeStore(store) {
   }
 }
 
-function saveStudySession({ userId, topic, references = [], notes = '' }) {
+function saveStudySession({
+  userId,
+  topic,
+  references = [],
+  studyStep = null,
+  studyProgress = null,
+  userQuestion = null,
+}) {
   const store = readStore();
   const sessions = store[userId] || [];
 
   sessions.push({
-    topic,
-    references,
-    notes,
+    topic: topic || null,
+    references: Array.isArray(references) ? references : [],
+    studyStep: studyStep || null,
+    studyProgress: studyProgress || null,
+    userQuestion: userQuestion ? String(userQuestion).slice(0, 500) : null,
     createdAt: new Date().toISOString(),
   });
 

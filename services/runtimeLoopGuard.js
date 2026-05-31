@@ -1,12 +1,15 @@
 const BLOCKED_PHRASES = [
-  'let’s slow this down together',
+  "let's slow this down together",
   'lets slow this down together',
   'one simple next step',
-  'name what is weighing on you most'
+  'name what is weighing on you most',
 ];
 
 function normalize(text = '') {
-  return String(text || '').toLowerCase().trim();
+  return String(text || '')
+    .toLowerCase()
+    .replace(/[\u2018\u2019]/g, "'")
+    .trim();
 }
 
 function suppressLoopLanguage(reply = '') {

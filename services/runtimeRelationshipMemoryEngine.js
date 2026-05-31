@@ -1,8 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const { classifyImportance, IMPORTANCE_TIER, isEphemeralQuestion } = require('./memoryTruthfulness');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const RELATIONSHIP_FILE = path.join(DATA_DIR, 'runtime-relationship-memory.json');
+
+const MAX_STORED = 500;
+const RETENTION_LIMIT = 80;
 
 try {
   fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -25,29 +29,85 @@ function writeStore(store) {
   }
 }
 
+function countCategoryFrequency(memories = [], category = '', issue = '') {
+  const norm = String(issue || '').toLowerCase().trim();
+  return memories.filter(
+    (item) =>
+      item.category === category &&
+      (!norm || String(item.issue || item.detail || '').toLowerCase().includes(norm))
+  ).length;
+}
+
+function applyMemoryRetention(memories = [], limit = RETENTION_LIMIT) {
+  const ranked = memories.map((item) => ({
+    ...item,
+    tier: classifyImportance(item.category, item.importance, item.detail || item.issue),
+  }));
+
+  const high = ranked.filter((m) => m.tier === IMPORTANCE_TIER.HIGH);
+  const medium = ranked.filter((m) => m.tier === IMPORTANCE_TIER.MEDIUM);
+  const low = ranked.filter((m) => m.tier === IMPORTANCE_TIER.LOW);
+
+  const highCap = Math.min(high.length, Math.ceil(limit * 0.5));
+  const mediumCap = Math.min(medium.length, Math.ceil(limit * 0.35));
+  const lowCap = Math.max(0, Math.min(low.length, limit - highCap - mediumCap));
+
+  return [
+    ...high.slice(-highCap),
+    ...medium.slice(-mediumCap),
+    ...low.slice(-lowCap),
+  ].map(({ tier, ...item }) => item);
+}
+
 function saveRelationshipMemory({
   userId,
   category,
   detail,
+  issue = null,
   importance = 'normal',
+  frequency = 1,
 }) {
   const store = readStore();
   const memories = store[userId] || [];
+  const issueText = issue || detail;
+  const priorCount = countCategoryFrequency(memories, category, issueText);
+
+  let resolvedCategory = category;
+  let resolvedImportance = importance;
+
+  if (isEphemeralQuestion(detail || issueText)) {
+    resolvedCategory = 'ephemeral_questions';
+    resolvedImportance = 'low';
+  } else if (category === 'important_people') {
+    resolvedImportance = 'high';
+  } else if (category === 'ongoing_goals' && /major|life|career|family|health|house|job/.test(String(detail))) {
+    resolvedImportance = 'high';
+  } else if (['grief_events', 'prayer_requests', 'health_concerns'].includes(category)) {
+    resolvedImportance = 'high';
+  }
 
   memories.push({
-    category,
-    detail,
-    importance,
+    category: resolvedCategory,
+    detail: String(detail || issueText || '').slice(0, 220),
+    issue: issueText ? String(issueText).slice(0, 120) : null,
+    importance: resolvedImportance,
+    frequency: priorCount + 1,
     createdAt: new Date().toISOString(),
   });
 
-  store[userId] = memories.slice(-500);
+  store[userId] = applyMemoryRetention(memories).slice(-MAX_STORED);
   writeStore(store);
 }
 
 function getRelationshipMemory(userId, limit = 25) {
   const store = readStore();
   return (store[userId] || []).slice(-limit);
+}
+
+function getRelationshipMemoryByCategory(userId, category, limit = 10) {
+  return getRelationshipMemory(userId, 100)
+    .filter((item) => item.category === category)
+    .slice(-limit);
 }
 
 function buildRelationshipContext(userId) {
@@ -57,8 +117,7 @@ function buildRelationshipContext(userId) {
     if (!acc[item.category]) {
       acc[item.category] = [];
     }
-
-    acc[item.category].push(item.detail);
+    acc[item.category].push(item.detail || item.issue);
     return acc;
   }, {});
 
@@ -66,9 +125,10 @@ function buildRelationshipContext(userId) {
     scriptureFirst: true,
     relationshipContinuityEnabled: true,
     groupedMemory: grouped,
+    healthConcerns: memories.filter((item) => item.category === 'health_concerns'),
     importantThemes: memories
       .filter((item) => item.importance === 'high')
-      .map((item) => item.detail),
+      .map((item) => item.detail || item.issue),
     continuityEnabled: true,
   };
 }
@@ -76,5 +136,6 @@ function buildRelationshipContext(userId) {
 module.exports = {
   saveRelationshipMemory,
   getRelationshipMemory,
+  getRelationshipMemoryByCategory,
   buildRelationshipContext,
 };

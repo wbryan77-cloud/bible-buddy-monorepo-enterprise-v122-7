@@ -251,10 +251,15 @@
         statusEl.textContent = 'Bible Buddy is thinking…';
 
         try {
-          const res = await fetch('/api/ai/chat', {
+          const res = await fetch('/buddy/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ user: text })
+            body: JSON.stringify({
+              userId: 'chat-html-user',
+              mode: 'COMPANION',
+              personaKey: 'ADAPTIVE_COMPANION',
+              message: text
+            })
           });
 
           if (!res.ok) {
@@ -266,7 +271,8 @@
             throw new Error(data.error || 'Unknown error');
           }
 
-          addMessage('assistant', data.reply || '(no reply)');
+          const payload = data.reply && typeof data.reply === 'object' ? data.reply : data;
+          addMessage('assistant', payload.reply || '(no reply)');
           statusEl.textContent = 'Ready.';
         } catch (err) {
           console.error('AI chat error:', err);

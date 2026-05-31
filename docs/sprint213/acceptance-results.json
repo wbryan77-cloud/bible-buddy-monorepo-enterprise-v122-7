@@ -1,0 +1,173 @@
+{
+  "timestamp": "2026-05-31T01:36:50.543Z",
+  "route": "POST /buddy/chat",
+  "userPrefix": "s213-1780191409684",
+  "results": [
+    {
+      "name": "TEST 1 — Lost friend",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "I'm really sorry for your loss. I'm glad you brought this here — we can take it gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries th",
+      "scriptureCount": 4,
+      "runtimeIntent": "emotional_support",
+      "intercept": null
+    },
+    {
+      "name": "TEST 2 — Knee pain",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "I hear you sharing about knee pain. Let's take this gently — I'm not a doctor, but we can bring this before the Lord together.\n\nYou've mentioned carrying grief after a loss. It makes sense that this weighs on you.\n\nPsalm",
+      "scriptureCount": 3,
+      "runtimeIntent": "health_support",
+      "intercept": null
+    },
+    {
+      "name": "TEST 3 — Job opportunity",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "You've mentioned knee pain recently and carrying grief after a loss. It makes sense that you're feeling worn down.\n\nThank you for sharing about your job opportunity. I will hold that gently — we can return to it whenever",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 4 — Sabbath definition",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "Let's stay close to the text.\n\nLet's build this carefully from Scripture.\n\nGenesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the bi",
+      "scriptureCount": 5,
+      "runtimeIntent": "doctrinal_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 5 — Sabbath history",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "You're asking the historical side now, not just the Sabbath command itself.\n\nLet's separate Scripture from history carefully. Scripture first, then history.\n\nScripture identifies the seventh day as the Sabbath in Genesis",
+      "scriptureCount": 2,
+      "runtimeIntent": "sabbath_history",
+      "intercept": "sabbath_history_companion"
+    },
+    {
+      "name": "TEST 6 — Prayer",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "I'm glad you asked to pray. Let's bring this before the Lord together.\n\nFather, we bring this need before You for me. You see what we cannot fully see. Please draw near with comfort, wisdom, and peace. Hold those who are",
+      "scriptureCount": 3,
+      "runtimeIntent": "prayer",
+      "intercept": null
+    },
+    {
+      "name": "TEST 7 — Memory recall",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "You mentioned recently that your knee pain has been on your mind.\n- Health: knee pain.\n- You shared about grief after a loss.\nOpen topics I am tracking gently: grief, knee pain.\nActive life journey: grief (1 step recorde",
+      "scriptureCount": 0,
+      "runtimeIntent": "memory_recall",
+      "intercept": null
+    },
+    {
+      "name": "TEST 8 — Kingdom",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "Let's explore that together from Scripture.\n\nIsaiah 2:1-4 establishes the matter, and Micah 4:1-5 confirms it alongside Scripture. 2 Samuel 7:12-16 carries the theme forward across the biblical witness.\n\nWitness path: Is",
+      "scriptureCount": 5,
+      "runtimeIntent": "study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 9 — Continue study",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "Last time we were studying Sabbath through Acts 13:42-44. The next step is Hebrews 4:9. Would you like to continue there?\n\nYou've been walking a study journey through Sabbath, Feast Days, Kingdom. Would you like to conti",
+      "scriptureCount": 2,
+      "runtimeIntent": "continue_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 10 — Follow-up understanding",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "You're right — I answered the Sabbath definition again, but you were asking who changed it historically and why. Let me answer that directly.\n\nLet's separate Scripture from history carefully. Scripture first, then histor",
+      "scriptureCount": 2,
+      "runtimeIntent": "sabbath_history",
+      "intercept": "sabbath_history_companion"
+    },
+    {
+      "name": "TEST 11 — Sabbath journey",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "Last time we were studying Sabbath through Acts 13:42-44. The next step is Hebrews 4:9. Would you like to continue there?\n\nYou've been walking a study journey through Sabbath, Feast Days, Kingdom. Would you like to conti",
+      "scriptureCount": 2,
+      "runtimeIntent": "continue_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 12 — Kingdom journey",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "Last time we were studying the Kingdom of God through Matthew 5:5. The next step is Matthew 6:10. Would you like to continue there?\n\nYou've been walking a study journey through Kingdom, Messiah, Resurrection. Would you l",
+      "scriptureCount": 2,
+      "runtimeIntent": "continue_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 13 — Feast journey",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "Last time we were studying Feast Days through Acts 20:6. Would you like to continue from there?\n\nYou've been walking a study journey through Sabbath, Feast Days, Kingdom.",
+      "scriptureCount": 1,
+      "runtimeIntent": "continue_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 14 — Resume after topic switch",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "Last time we were studying Sabbath through Acts 13:42-44. The next step is Hebrews 4:9. Would you like to continue there?\n\nYou've been walking a study journey through Sabbath, Feast Days, Kingdom. Would you like to conti",
+      "scriptureCount": 2,
+      "runtimeIntent": "continue_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 15 — Completion / next study",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "You've been studying Kingdom. Here is how this connects in Scripture:\n\nKingdom connects to Messiah as the promised ruler, to covenant promises through David, and forward to resurrection and the New Jerusalem.\n\nNext in yo",
+      "scriptureCount": 4,
+      "runtimeIntent": "study_connection",
+      "intercept": null
+    }
+  ],
+  "scores": {
+    "Memory": 62,
+    "Warmth": 50,
+    "Scripture Grounding": 40,
+    "Accuracy": 92,
+    "Natural Conversation": 90,
+    "Listening": 68,
+    "Organic Flow": 90,
+    "Follow-Up Understanding": 72,
+    "Continue Study": 75,
+    "Historical Routing": 55,
+    "Reflection Before Teaching": 80
+  },
+  "acceptanceScore": 70,
+  "passed": 15,
+  "total": 15
+}

@@ -1,3 +1,5 @@
+// DEPRECATED for live buddy path (Sprint 2.12A): proactive daily plans are not wired to runBuddy.
+// Relational presence profiles are read via companionDeliveryLayer / companionRelationshipOrchestrator.
 const fs = require('fs');
 const path = require('path');
 const { buildRelationalPresence, getProfile } = require('./relationalPresence');

@@ -8,38 +8,27 @@ try {
   fs.mkdirSync(DATA_DIR, { recursive: true });
 } catch (_) {}
 
+const { getScriptureChain } = require('./scriptureChainExpansion');
+
 const SCRIPTURE_CONNECTIONS = {
-  sabbath: [
-    'Genesis 2:1-3',
-    'Exodus 20:8-11',
-    'Isaiah 58:13-14',
-    'Mark 2:27-28',
-    'Hebrews 4:9'
-  ],
-  dietary_law: [
-    'Leviticus 11',
-    'Deuteronomy 14',
-    'Isaiah 66:15-17',
-    'Daniel 1:8'
-  ],
-  feast_days: [
-    'Leviticus 23',
-    'Zechariah 14:16',
-    'Luke 22:15-20',
-    'John 7:37-39'
-  ],
+  sabbath: getScriptureChain('sabbath'),
+  dietaryLaw: getScriptureChain('dietaryLaw'),
+  dietary_law: getScriptureChain('dietaryLaw'),
+  feast_days: getScriptureChain('feastDays'),
+  traditions: getScriptureChain('traditions'),
+  resurrection_timeline: getScriptureChain('resurrection'),
   kingdom: [
     'Daniel 2:44',
     'Isaiah 9:6-7',
     'Matthew 6:10',
-    'Revelation 11:15'
+    'Revelation 11:15',
   ],
   law: [
     'Ecclesiastes 12:13',
     'Matthew 5:17-19',
     'Romans 3:31',
-    '1 John 2:3-4'
-  ]
+    '1 John 2:3-4',
+  ],
 };
 
 function readStore() {
@@ -60,10 +49,13 @@ function writeStore(store) {
 }
 
 function buildLineUponLineTraversal(topic = '') {
-  const normalized = String(topic || '').toLowerCase();
+  const normalized = String(topic || '').toLowerCase().replace(/_/g, '');
 
   const traversal = Object.entries(SCRIPTURE_CONNECTIONS)
-    .filter(([key]) => normalized.includes(key) || key.includes(normalized))
+    .filter(([key]) => {
+      const keyNorm = key.replace(/_/g, '');
+      return normalized.includes(keyNorm) || keyNorm.includes(normalized);
+    })
     .flatMap(([, verses]) => verses);
 
   return [...new Set(traversal)];

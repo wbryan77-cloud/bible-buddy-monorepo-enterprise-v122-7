@@ -111,8 +111,13 @@ function buildStudyFallback(context) {
   };
 }
 
+function getTopicReferences(topicKey = '') {
+  return TOPIC_REFERENCES[topicKey] || [];
+}
+
 module.exports = {
   getStudyContext,
   saveStudyContext,
   buildStudyFallback,
+  getTopicReferences,
 };

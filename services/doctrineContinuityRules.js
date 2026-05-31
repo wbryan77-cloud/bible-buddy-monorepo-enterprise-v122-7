@@ -40,6 +40,35 @@ const CONTINUITY_RULES = {
       'tradition overrides scripture',
       'church tradition is equal to scripture'
     ]
+  },
+  feast_days: {
+    foundation: [
+      'Leviticus 23',
+      'Acts 2',
+      '1 Corinthians 5:7-8',
+      'Zechariah 14:16'
+    ],
+    forbiddenPhrases: [
+      'feasts were abolished',
+      'passover was replaced by easter',
+      'holy days no longer matter',
+      'leviticus 23 is obsolete'
+    ]
+  },
+  resurrection_timeline: {
+    foundation: [
+      'Matthew 12:40',
+      'Daniel 9:27',
+      'Matthew 28:1-6',
+      'Mark 16:1-6',
+      'Luke 24:1-6',
+      'John 20:1-8'
+    ],
+    forbiddenPhrases: [
+      'three days means any part of three days',
+      'sunday replaced the sabbath because of the resurrection',
+      'daniel 9:27 has no messianic reference'
+    ]
   }
 };
 

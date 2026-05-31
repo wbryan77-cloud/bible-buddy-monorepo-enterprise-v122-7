@@ -1,8 +1,13 @@
-const { getContinuityMemory, saveContinuityMemory } = require('./continuityMemoryRuntime');
-const { savePersonalityContinuity, getPersonalityContinuity } = require('./runtimePersonalityContinuity');
+const fs = require('fs');
+const path = require('path');
 const { saveReplayRecord } = require('./runtimeReplayQA');
 const { saveRegressionRecord, calculateContinuityScore } = require('./continuityRegressionRuntime');
 const { saveRuntimeProvenance } = require('./scriptureHistoryProvenanceRuntime');
+
+// DEPRECATED for live buddy path (Sprint 2.12A): buddyBrain uses companionRelationshipOrchestrator
+// and direct continuity/personality writes instead. Kept for structuredCompanionRuntime and QA tooling.
+const { getContinuityMemory, saveContinuityMemory } = require('./continuityMemoryRuntime');
+const { savePersonalityContinuity, getPersonalityContinuity } = require('./runtimePersonalityContinuity');
 
 function buildMemoryBridgeContext({ userId, message, references = [] }) {
   const continuity = getContinuityMemory(userId);

@@ -23,6 +23,8 @@ function isDoctrineTopic(message = '') {
     'resurrection timeline',
     'three days and three nights',
     'matthew 12:40',
+    'daniel 9:27',
+    'midst of the week',
     'genesis to revelation',
     'line upon line',
     'precept upon precept'

@@ -1,3 +1,5 @@
+const { SCRIPTURE_CHAINS } = require('./scriptureChainExpansion');
+
 function detectEmotion(message = '') {
   const text = String(message).toLowerCase();
   const checks = [
@@ -66,13 +68,7 @@ function buildRuntimeContext({ message, mode, profile, recentSessions = [], rece
     intent,
     loopRisk,
     doctrinalMode: intent === 'doctrinal_study',
-    scriptureChains: {
-      sabbath: ['Genesis 2:2-3', 'Exodus 20:8-11', 'Isaiah 58:13-14', 'Luke 4:16', 'Acts 17:2', 'Hebrews 4:9'],
-      dietaryLaw: ['Leviticus 11', 'Deuteronomy 14', 'Daniel 1', 'Acts 10:14', 'Acts 10:28', 'Acts 11:1-18', 'Isaiah 66:17'],
-      feastDays: ['Leviticus 23', 'Zechariah 14:16', 'Acts 2', '1 Corinthians 5:7-8'],
-      resurrection: ['Matthew 12:40', 'Matthew 28:1-6', 'Mark 16:1-6', 'Luke 24:1-6', 'John 20:1-8'],
-      traditions: ['Jeremiah 10:1-4', 'Mark 7:6-13', 'Colossians 2:8']
-    },
+    scriptureChains: SCRIPTURE_CHAINS,
     memory: {
       enabled: profile.memoryEnabled !== false,
       recentSessions,

@@ -30,6 +30,8 @@ function detectTopic(message = '') {
     lower.includes('resurrection') ||
     lower.includes('three days and three nights') ||
     lower.includes('matthew 12:40') ||
+    lower.includes('daniel 9:27') ||
+    lower.includes('midst of the week') ||
     lower.includes('resurrection timeline') ||
     lower.includes('first day of the week')
   ) {

@@ -1,11 +1,14 @@
 function suppressFallbackLoops(reply = '') {
-  const lower = String(reply).toLowerCase();
+  const lower = String(reply)
+    .toLowerCase()
+    .replace(/[\u2018\u2019]/g, "'");
 
   const blockedPatterns = [
-    'let’s slow this down together',
+    "let's slow this down together",
+    'lets slow this down together',
     'would you like to explore',
     'tell me what is weighing on you',
-    'name what is weighing on you most'
+    'name what is weighing on you most',
   ];
 
   for (const pattern of blockedPatterns) {

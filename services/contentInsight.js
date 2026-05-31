@@ -85,8 +85,6 @@ async function analyzeNote(userId, note, chosenVerses = [], tags = []) {
 
   const snapshot = getSnapshot();
   const { modules, phases, competitors, providers } = snapshot;
-  const snapshot = getSnapshot();
-  const { modules, phases, competitors, providers } = snapshot;
 
   const systemPrompt = `
 You are the CONTENT HELPER for the Bible Buddy app.
@@ -223,8 +221,6 @@ async function analyzeImage(userId, imageUrl, note = '', tags = []) {
     };
   }
 
-  const snapshot = getSnapshot();
-  const { modules, phases, competitors, providers } = snapshot;
   const snapshot = getSnapshot();
   const { modules } = snapshot;
 

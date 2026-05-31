@@ -1,3 +1,5 @@
+// DEPRECATED for live buddy path (Sprint 2.12A): runBuddy in buddyBrain is the live orchestrator.
+// This module remains for alternate structured runtime entry points and internal tooling.
 const { buildRuntimeContinuityOrchestration } = require('./runtimeContinuityOrchestrator');
 const { buildRelationalPromptContext } = require('./runtimePersonalityContinuity');
 const { buildScriptureOnlyResponse } = require('./scriptureOnlyRuntime');

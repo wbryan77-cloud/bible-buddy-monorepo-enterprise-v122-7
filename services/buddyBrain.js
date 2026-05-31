@@ -8,6 +8,45 @@ const {
 } = require('./runtimeOrchestrator');
 const { runDoctrineRuntimePipeline } = require('./doctrineRuntimePipeline');
 const { orchestrateBuddyRuntime } = require('./retrievalFirstBuddyOrchestrator');
+const { presentCompanionDoctrine } = require('./companionDoctrinePresenter');
+const { saveConversationState, buildConversationStateContext } = require('./runtimeConversationStateEngine');
+const { saveContinuityMemory } = require('./continuityMemoryRuntime');
+const { savePrayerContinuity, buildPrayerContinuityContext } = require('./runtimePrayerContinuityEngine');
+const { getStudyContext, saveStudyContext } = require('./studyContinuityRuntime');
+const { recordCompanionLearning, buildLearningContext } = require('./companionLearningLayer');
+const {
+  buildMemoryReadContext,
+  readMemorySummaries,
+} = require('./memoryRecallEngine');
+const { suppressFallbackLoops } = require('./fallbackLoopSuppressor');
+const { hasGenericLoop, suppressLoopLanguage } = require('./runtimeLoopGuard');
+const { classifyContinueStudyIntent, buildContinueStudyResponse } = require('./continueStudyIntent');
+const { persistRelationshipMemoryFromInteraction } = require('./relationshipMemoryBridge');
+const { classifyEmotionalSupport, buildEmotionalSupportResponse } = require('./griefCompanionResponse');
+const { detectRegistryStudyTopic, presentRegistryStudyResponse } = require('./registryStudyPresenter');
+const { buildPersonalizedFallback } = require('./personalizedFallback');
+const { buildCompanionNextSteps } = require('./companionNextSteps');
+const {
+  classifyRelationshipRecallQuery,
+  searchRelationshipRecall,
+} = require('./relationshipRecallEngine');
+const { savePersonalityContinuity } = require('./runtimePersonalityContinuity');
+const { appendPrayerFollowUp } = require('./prayerContinuityFollowup');
+const {
+  persistCompanionRelationshipState,
+  buildCompanionRelationshipContext,
+  enrichResponseWithRelationshipIntelligence,
+} = require('./companionRelationshipOrchestrator');
+const { classifyHealthCompanion, buildHealthSupportResponse } = require('./healthCompanionResponse');
+const { classifyPrayerIntent, buildPrayerCompanionResponse } = require('./prayerCompanionResponse');
+const {
+  classifyStudyConnectionQuery,
+  buildStudyConnectionResponse,
+} = require('./studyConnectionIntent');
+const { polishCompanionReply } = require('./companionReplyPolish');
+const { resolveSabbathCompanionIntent } = require('./sabbathIntentRouter');
+const { buildSabbathHistoryResponse } = require('./sabbathHistoryCompanion');
+const { containsInternalRuntimeLabels } = require('./runtimeLabelStripper');
 
 let getSnapshot = () => ({ modules: [], phases: [], competitors: [], avatars: [] });
 let getRecentInsightsForUser = () => [];
@@ -35,6 +74,7 @@ const DATA_DIR = path.join(__dirname, '..', 'data');
 const LOG_FILE = path.join(DATA_DIR, 'buddy-sessions.jsonl');
 const MEMORY_FILE = path.join(DATA_DIR, 'buddy-memory.json');
 const QA_FILE = path.join(DATA_DIR, 'buddy-quality-events.jsonl');
+const RECENT_SESSION_CACHE = new Map();
 
 try {
   fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -59,6 +99,20 @@ function appendJsonl(file, entry) {
 
 function appendSession(entry) {
   appendJsonl(LOG_FILE, entry);
+  const cached = RECENT_SESSION_CACHE.get(entry.userId) || [];
+  cached.push({
+    mode: entry.mode,
+    message: entry.message,
+    reply: entry.reply,
+    safety: entry.safety,
+    runtime: {
+      ...(entry.runtime || {}),
+      ...(entry.structured?.runtime || {}),
+    },
+    quality: entry.quality,
+    createdAt: entry.createdAt || new Date().toISOString(),
+  });
+  RECENT_SESSION_CACHE.set(entry.userId, cached.slice(-12));
 }
 
 function appendQualityEvent(entry) {
@@ -66,6 +120,11 @@ function appendQualityEvent(entry) {
 }
 
 function getRecentSessions(userId, limit = 8) {
+  const cached = RECENT_SESSION_CACHE.get(userId);
+  if (cached?.length) {
+    return cached.slice(-limit);
+  }
+
   try {
     if (!fs.existsSync(LOG_FILE)) return [];
     const text = fs.readFileSync(LOG_FILE, 'utf8');
@@ -79,7 +138,10 @@ function getRecentSessions(userId, limit = 8) {
           message: entry.message,
           reply: entry.reply,
           safety: entry.safety,
-          runtime: entry.runtime,
+          runtime: {
+            ...(entry.runtime || {}),
+            ...(entry.structured?.runtime || {}),
+          },
           quality: entry.quality,
           createdAt: entry.createdAt,
         });
@@ -169,7 +231,35 @@ function classifySafety(message = '') {
     'sad',
     'heartbroken',
     'hurt',
+    'grieving',
+    'mourning',
+    'passed away',
+    'my heart hurts',
+    'need peace',
+    'need strength',
+    'need rest',
+    'exhausted',
+    'weary',
   ];
+
+  const griefTerms = [
+    'lost a friend',
+    'lost my friend',
+    'lost my mother',
+    'lost my father',
+    'lost my child',
+    'lost my spouse',
+    'funeral',
+    'someone died',
+  ];
+
+  if (griefTerms.some((term) => lower.includes(term)) || /\blost my\b/.test(lower)) {
+    return { level: 'emotional_support', reason: 'grief or loss language detected' };
+  }
+
+  if (/\bdied\b/.test(lower) && /\b(friend|mother|father|child|spouse|parent|loved one)\b/.test(lower)) {
+    return { level: 'emotional_support', reason: 'loss language detected' };
+  }
 
   if (crisisTerms.some((term) => lower.includes(term))) {
     return { level: 'crisis', reason: 'self-harm or crisis language detected' };
@@ -242,7 +332,199 @@ Return JSON only using this shape:
 `.trim();
 }
 
-function fallbackReply({ message, safety }) {
+const FALLBACK_LOOP_PHRASE = 'slow this down together';
+
+function buildAlternateFallbackReply({ message, safety, recentSessions = [], userId, runtimeContext = {}, profile = {} }) {
+  return buildPersonalizedFallback({
+    userId,
+    message,
+    safety,
+    recentSessions,
+    runtimeContext,
+    profile,
+  });
+}
+
+function applyFallbackLoopGuard({ reply, runtimeContext, recentSessions, message, safety, userId }) {
+  const structured = { ...reply };
+  const loopRisk = runtimeContext?.loopRisk?.fallbackLoop;
+  const genericLoop = hasGenericLoop(structured.reply);
+  const suppression = suppressFallbackLoops(structured.reply);
+
+  if (!loopRisk && !genericLoop && !suppression.suppressed && !containsInternalRuntimeLabels(structured.reply)) {
+    return structured;
+  }
+
+  if (suppression.suppressed || loopRisk || genericLoop || containsInternalRuntimeLabels(structured.reply)) {
+    const alternate = buildAlternateFallbackReply({
+      message,
+      safety,
+      recentSessions,
+      userId: userId || runtimeContext?.userId,
+      runtimeContext,
+      profile: runtimeContext?.profile || {},
+    });
+    structured.reply = alternate.reply;
+    structured.scripture = alternate.scripture;
+    structured.mode = alternate.mode;
+    structured.memory_used = alternate.memory_used;
+    structured.next_steps = alternate.next_steps;
+    structured.admin_flags = [...new Set([...(structured.admin_flags || []), ...(alternate.admin_flags || [])])];
+    structured.runtime = {
+      ...(structured.runtime || {}),
+      fallbackLoopSuppressed: true,
+      blockedPhrase: suppression.blocked || FALLBACK_LOOP_PHRASE,
+    };
+    return structured;
+  }
+
+  structured.reply = suppressLoopLanguage(structured.reply);
+  return structured;
+}
+
+function persistBuddyMemory({
+  userId,
+  message,
+  structured,
+  runtimeContext,
+  profile,
+  doctrineTopic = null,
+}) {
+  if (profile?.memoryEnabled === false) return;
+
+  saveConversationState({
+    userId,
+    mode: structured.mode || runtimeContext?.intent || 'companion',
+    currentTopic: doctrineTopic || runtimeContext?.intent || '',
+    unresolvedTopics: [],
+    lastScriptures: (structured.scripture || []).map((item) => item.reference || item).filter(Boolean),
+  });
+
+  saveContinuityMemory({ userId, message, response: structured });
+
+  if (runtimeContext?.intent === 'prayer' || /\b(pray|prayer)\b/i.test(message)) {
+    savePrayerContinuity({
+      userId,
+      topic: runtimeContext?.intent === 'prayer' ? 'prayer' : 'general',
+      prayerRequest: String(message || '').slice(0, 500),
+      scriptures: (structured.scripture || []).map((item) => item.reference || item).filter(Boolean),
+    });
+  }
+
+  const studyContext = getStudyContext({ userId, message });
+  if (studyContext.enabled) {
+    saveStudyContext({ userId, message, response: structured, context: studyContext });
+  }
+
+  recordCompanionLearning({
+    userId,
+    message,
+    structured,
+    runtimeContext,
+    doctrineTopic,
+  });
+
+  persistRelationshipMemoryFromInteraction({
+    userId,
+    message,
+    runtimeContext,
+    doctrineTopic,
+    structured,
+  });
+
+  savePersonalityContinuity({ userId, message });
+
+  persistCompanionRelationshipState({
+    userId,
+    message,
+    structured,
+    runtimeContext,
+    doctrineTopic,
+  });
+}
+
+function enrichRuntimeContextWithMemory({ runtimeContext, userId, profile }) {
+  if (profile?.memoryEnabled === false) {
+    return runtimeContext;
+  }
+
+  const memoryRead = buildMemoryReadContext(userId);
+  const learning = buildLearningContext(userId);
+
+  const relationshipIntelligence = buildCompanionRelationshipContext(userId);
+
+  return {
+    ...runtimeContext,
+    memory: {
+      ...(runtimeContext.memory || {}),
+      enabled: true,
+      summaries: memoryRead.summaries,
+      continuity: memoryRead.continuity,
+      relationship: memoryRead.relationship,
+      conversation: buildConversationStateContext(userId),
+      prayer: buildPrayerContinuityContext(userId),
+      studySessions: memoryRead.studySessions,
+      learning,
+      recentSummaries: readMemorySummaries(userId).slice(-5),
+      relationshipIntelligence,
+      openLoops: relationshipIntelligence.openLoops,
+      emotionalArc: relationshipIntelligence.emotionalArc,
+      studyJourney: relationshipIntelligence.studyJourney,
+      timeline: relationshipIntelligence.timeline,
+    },
+  };
+}
+
+function buildMemoryRecallStructured({ userId, message, recall, runtimeContext, safety }) {
+  const recallResult = searchRelationshipRecall({
+    userId,
+    message,
+    recallType: recall.recallType,
+    timeWindow: recall.timeWindow,
+  });
+
+  let reply = recallResult.reply;
+  if (recall.recallType === 'relationship_status') {
+    reply = appendPrayerFollowUp({ userId, reply, includeFollowUp: recallResult.memoryAvailable });
+  }
+
+  return {
+    reply,
+    scripture: [],
+    mode: 'companion',
+    confidence: recallResult.memoryAvailable ? 'medium' : 'low',
+    memory_used: recallResult.memoryAvailable,
+    suggested_settings_change: null,
+    orb_state: 'speaking',
+    safety_level: safety.level,
+    next_steps: recallResult.memoryAvailable
+      ? ['Continue from a stored memory.', 'Pray through an active concern.', 'Turn to a related Scripture.']
+      : ['Start a fresh Scripture study.', 'Share what is on your heart today.'],
+    admin_flags: recallResult.memoryAvailable ? ['memory_recall', 'relationship_recall'] : ['memory_unavailable'],
+    runtime: {
+      emotion: runtimeContext.emotion,
+      intent: 'memory_recall',
+      memoryRecall: {
+        timeWindow: recallResult.timeWindow,
+        requestedWindow: recall.timeWindow,
+        hitCount: recallResult.hits?.length || 0,
+        memoryAvailable: recallResult.memoryAvailable,
+        recallType: recall.recallType,
+        presenceUsed: recallResult.presenceUsed,
+        confidenceBlock: recallResult.confidenceBlock,
+      },
+    },
+  };
+}
+
+function fallbackReply({
+  message,
+  safety,
+  userId = 'anonymous',
+  recentSessions = [],
+  runtimeContext = {},
+  profile = {},
+}) {
   if (safety.level === 'crisis') {
     return {
       reply:
@@ -259,19 +541,32 @@ function fallbackReply({ message, safety }) {
     };
   }
 
-  return {
-    reply:
-      "I’m here with you. Let’s slow this down together. One simple next step is to name what is weighing on you most, then we can either pray through it, find a Scripture that fits it, or make a small plan for today.",
-    scripture: [{ reference: 'Psalm 46:1', text: 'God is our refuge and strength, a very present help in trouble.', reason: 'steadying reminder' }],
-    mode: 'companion',
-    confidence: 'medium',
-    memory_used: false,
-    suggested_settings_change: null,
-    orb_state: 'speaking',
-    safety_level: safety.level,
-    next_steps: ['Name the main burden.', 'Choose prayer, Scripture, or a practical plan.'],
-    admin_flags: [],
-  };
+  const factualHistory =
+    /\bhistorical (references|evidence|context)\b/i.test(String(message)) ||
+    /\bwho changed\b/i.test(String(message)) ||
+    /\bwhy sunday\b/i.test(String(message));
+
+  if (factualHistory) {
+    const sabbathIntent = resolveSabbathCompanionIntent({ message, recentSessions });
+    if (sabbathIntent.intent === 'history' || sabbathIntent.recentSabbathContext) {
+      return buildSabbathHistoryResponse({
+        userId,
+        message,
+        recentSessions,
+        runtimeContext,
+        profile,
+      });
+    }
+  }
+
+  return buildPersonalizedFallback({
+    userId,
+    message,
+    safety,
+    recentSessions,
+    runtimeContext,
+    profile,
+  });
 }
 
 function normalizeInput(inputOrUserId, modeArg, personaKeyArg, messageArg) {
@@ -329,6 +624,104 @@ function normalizeStructured(parsed, fallback, safety, runtimeContext, quality) 
   };
 }
 
+function finalizeBuddyResponse({
+  structured,
+  userId,
+  mode,
+  personaKey,
+  message,
+  safety,
+  runtimeContext,
+  profile,
+  doctrineTopic = null,
+  qualityOverride = null,
+}) {
+  const quality =
+    qualityOverride ||
+    structured.quality ||
+    scoreCompanionQuality({ message, reply: structured.reply, runtimeContext });
+  structured.quality = quality;
+
+  if (profile?.memoryEnabled !== false && structured.mode !== 'crisis') {
+    const skipJourney = ['continue_study', 'study_connection', 'memory_recall'].includes(
+      structured.runtime?.intent
+    );
+    const enriched = enrichResponseWithRelationshipIntelligence({
+      userId,
+      reply: structured.reply,
+      message,
+      runtimeContext,
+      includeReflection:
+        !structured.runtime?.doctrineTopic &&
+        structured.mode !== 'study' &&
+        !['health_support', 'prayer', 'memory_recall', 'emotional_support'].includes(
+          structured.runtime?.intent
+        ),
+      includeLoopRevisit: structured.runtime?.intent !== 'memory_recall',
+      includeStudyJourney:
+        !skipJourney && (structured.mode === 'study' || !!doctrineTopic),
+      doctrineTopic,
+    });
+    structured.reply = polishCompanionReply(enriched.reply);
+    structured.runtime = {
+      ...(structured.runtime || {}),
+      relationshipIntelligence: enriched.relationshipContext,
+      reflectionUsed: enriched.reflectionUsed,
+    };
+  } else {
+    structured.reply = polishCompanionReply(structured.reply);
+  }
+
+  if (!structured.runtime?.companionNextSteps) {
+    const nextStepsBundle = buildCompanionNextSteps({
+      userId,
+      message,
+      runtimeContext,
+      mode: structured.mode,
+    });
+    if (nextStepsBundle.gentleSuggestion && !String(structured.reply).includes(nextStepsBundle.gentleSuggestion.slice(0, 24))) {
+      structured.runtime = {
+        ...(structured.runtime || {}),
+        companionNextSteps: nextStepsBundle,
+      };
+    }
+  }
+
+  appendSession({
+    userId,
+    mode,
+    personaKey,
+    message,
+    reply: structured.reply,
+    structured,
+    safety,
+    runtime: runtimeContext,
+    quality,
+  });
+  appendQualityEvent({
+    userId,
+    mode,
+    emotion: runtimeContext.emotion,
+    intent: structured.runtime?.intent || runtimeContext.intent,
+    issues: quality.issues || [],
+    score: quality.score,
+  });
+
+  if (profile?.memoryEnabled !== false && structured.mode !== 'crisis') {
+    updateUserMemory({ userId, message, structured, runtimeContext });
+  }
+  persistBuddyMemory({
+    userId,
+    message,
+    structured,
+    runtimeContext,
+    profile,
+    doctrineTopic,
+  });
+
+  return structured;
+}
+
 async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
   const startedAt = Date.now();
   const { userId, mode, personaKey, message } = normalizeInput(inputOrUserId, modeArg, personaKeyArg, messageArg);
@@ -342,7 +735,10 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
   const recentSessions = getRecentSessions(userId, 8);
   const recentInsights = getRecentInsightsForUser(userId, 8);
   const snapshot = getSnapshot();
-  const runtimeContext = buildRuntimeContext({ message, mode, profile, recentSessions, recentInsights, safety });
+  let runtimeContext = buildRuntimeContext({ message, mode, profile, recentSessions, recentInsights, safety });
+  runtimeContext = enrichRuntimeContextWithMemory({ runtimeContext, userId, profile });
+  runtimeContext.userId = userId;
+  runtimeContext.profile = profile;
 
   if (safety.level === 'crisis') {
     const crisisReply = fallbackReply({ message, safety });
@@ -351,7 +747,191 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
     crisisReply.runtime = { emotion: runtimeContext.emotion, intent: runtimeContext.intent };
     appendSession({ userId, mode, personaKey, message, reply: crisisReply.reply, structured: crisisReply, safety, runtime: runtimeContext, quality });
     appendQualityEvent({ userId, mode, issues: quality.issues, score: quality.score, safety });
+    persistBuddyMemory({ userId, message, structured: crisisReply, runtimeContext, profile });
     return crisisReply;
+  }
+
+  const continueStudy = classifyContinueStudyIntent(message, userId);
+  if (continueStudy.isContinueStudy && profile?.memoryEnabled !== false) {
+    let continueReply = buildContinueStudyResponse({ userId, message });
+    continueReply.safety_level = safety.level;
+    continueReply = finalizeBuddyResponse({
+      structured: continueReply,
+      userId,
+      mode,
+      personaKey,
+      message,
+      safety,
+      runtimeContext,
+      profile,
+    });
+    return continueReply;
+  }
+
+  const studyConnection = classifyStudyConnectionQuery(message);
+  if (studyConnection.isStudyConnection && profile?.memoryEnabled !== false) {
+    const connectionReply = buildStudyConnectionResponse({
+      userId,
+      message,
+      runtimeContext,
+      profile,
+    });
+    if (connectionReply) {
+      connectionReply.safety_level = safety.level;
+      return finalizeBuddyResponse({
+        structured: connectionReply,
+        userId,
+        mode,
+        personaKey,
+        message,
+        safety,
+        runtimeContext,
+        profile,
+        doctrineTopic: connectionReply.runtime?.studyConnection?.topic || null,
+      });
+    }
+  }
+
+  const recall = classifyRelationshipRecallQuery(message);
+  if (recall.isRecallQuery && profile?.memoryEnabled !== false) {
+    const recallReply = buildMemoryRecallStructured({
+      userId,
+      message,
+      recall,
+      runtimeContext,
+      safety,
+    });
+    const quality = scoreCompanionQuality({
+      message,
+      reply: recallReply.reply,
+      runtimeContext,
+    });
+    recallReply.quality = quality;
+    recallReply.reply = polishCompanionReply(recallReply.reply);
+
+    appendSession({
+      userId,
+      mode,
+      personaKey,
+      message,
+      reply: recallReply.reply,
+      structured: recallReply,
+      safety,
+      runtime: runtimeContext,
+      quality,
+    });
+    appendQualityEvent({
+      userId,
+      mode,
+      emotion: runtimeContext.emotion,
+      intent: 'memory_recall',
+      issues: quality.issues || [],
+      score: quality.score,
+    });
+    updateUserMemory({ userId, message, structured: recallReply, runtimeContext });
+    persistBuddyMemory({ userId, message, structured: recallReply, runtimeContext, profile });
+    return recallReply;
+  }
+
+  const health = classifyHealthCompanion(message);
+  if (health.isHealthSupport) {
+    let healthReply = buildHealthSupportResponse({
+      userId,
+      message,
+      runtimeContext,
+      profile,
+      health: health.health,
+    });
+    healthReply = finalizeBuddyResponse({
+      structured: healthReply,
+      userId,
+      mode,
+      personaKey,
+      message,
+      safety,
+      runtimeContext,
+      profile,
+    });
+    return healthReply;
+  }
+
+  const prayer = classifyPrayerIntent(message);
+  if (prayer.isPrayerRequest) {
+    let prayerReply = buildPrayerCompanionResponse({
+      userId,
+      message,
+      runtimeContext,
+      profile,
+    });
+    prayerReply = finalizeBuddyResponse({
+      structured: prayerReply,
+      userId,
+      mode,
+      personaKey,
+      message,
+      safety,
+      runtimeContext,
+      profile,
+    });
+    return prayerReply;
+  }
+
+  const emotional = classifyEmotionalSupport(message, userId);
+  if (emotional.isEmotionalSupport) {
+    let emotionalReply = buildEmotionalSupportResponse({
+      userId,
+      message,
+      runtimeContext,
+      supportType: emotional.supportType,
+      profile,
+      isFollowUp: emotional.isFollowUp,
+    });
+    emotionalReply = finalizeBuddyResponse({
+      structured: emotionalReply,
+      userId,
+      mode,
+      personaKey,
+      message,
+      safety: { level: 'emotional_support' },
+      runtimeContext,
+      profile,
+    });
+    return emotionalReply;
+  }
+
+  const sabbathIntent = resolveSabbathCompanionIntent({ message, recentSessions });
+  if (sabbathIntent.intent === 'history' || sabbathIntent.intent === 'correction') {
+    let sabbathHistoryReply = buildSabbathHistoryResponse({
+      userId,
+      message,
+      recentSessions,
+      correction: sabbathIntent.correction,
+      runtimeContext,
+      profile,
+    });
+    sabbathHistoryReply = finalizeBuddyResponse({
+      structured: sabbathHistoryReply,
+      userId,
+      mode,
+      personaKey,
+      message,
+      safety,
+      runtimeContext,
+      profile,
+      doctrineTopic: 'sabbath',
+    });
+    recordCompanionEvent({
+      type: 'runtime_orchestration',
+      userId,
+      mode,
+      durationMs: Date.now() - startedAt,
+      latencyMs: Date.now() - startedAt,
+      orbState: sabbathHistoryReply.orb_state,
+      safetyLevel: sabbathHistoryReply.safety_level,
+      feature: 'sabbath_history_companion',
+      language: 'en',
+    });
+    return sabbathHistoryReply;
   }
 
   const doctrineResult = runDoctrineRuntimePipeline({ message });
@@ -373,6 +953,7 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
       const chain = await orchestrateBuddyRuntime({
         topic: doctrineResult.topic,
         scripture: refs,
+        message,
       });
       structured.runtime = {
         ...structured.runtime,
@@ -390,6 +971,34 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
         runtimeContext,
       });
     structured.quality = quality;
+
+    structured = presentCompanionDoctrine({
+      structured,
+      userId,
+      message,
+      runtimeContext,
+      profile,
+      safety,
+      doctrineTopic: doctrineResult.topic,
+    });
+
+    if (profile?.memoryEnabled !== false) {
+      const enriched = enrichResponseWithRelationshipIntelligence({
+        userId,
+        reply: structured.reply,
+        message,
+        runtimeContext,
+        includeReflection: false,
+        includeLoopRevisit: true,
+        includeStudyJourney: false,
+        doctrineTopic: doctrineResult.topic,
+      });
+      structured.reply = enriched.reply;
+      structured.runtime = {
+        ...structured.runtime,
+        relationshipIntelligence: enriched.relationshipContext,
+      };
+    }
 
     appendSession({
       userId,
@@ -413,6 +1022,14 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
     if (profile?.memoryEnabled !== false) {
       updateUserMemory({ userId, message, structured, runtimeContext });
     }
+    persistBuddyMemory({
+      userId,
+      message,
+      structured,
+      runtimeContext,
+      profile,
+      doctrineTopic: doctrineResult.topic,
+    });
 
     recordCompanionEvent({
       type: 'runtime_orchestration',
@@ -429,12 +1046,77 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
     return structured;
   }
 
+  const registryKey = detectRegistryStudyTopic(message);
+  if (registryKey) {
+    let registryReply = presentRegistryStudyResponse({
+      userId,
+      message,
+      registryKey,
+      runtimeContext,
+      profile,
+    });
+    if (registryReply) {
+      registryReply.safety_level = safety.level;
+      registryReply = finalizeBuddyResponse({
+        structured: registryReply,
+        userId,
+        mode,
+        personaKey,
+        message,
+        safety,
+        runtimeContext,
+        profile,
+        doctrineTopic: registryKey,
+      });
+      recordCompanionEvent({
+        type: 'runtime_orchestration',
+        userId,
+        mode,
+        durationMs: Date.now() - startedAt,
+        latencyMs: Date.now() - startedAt,
+        orbState: registryReply.orb_state,
+        safetyLevel: registryReply.safety_level,
+        feature: 'registry_study_presenter',
+        language: 'en',
+      });
+      return registryReply;
+    }
+  }
+
   if (!openai) {
-    const reply = fallbackReply({ message, safety });
-    const quality = scoreCompanionQuality({ message, reply: reply.reply, runtimeContext });
-    reply.quality = quality;
-    reply.runtime = { emotion: runtimeContext.emotion, intent: runtimeContext.intent };
-    appendSession({ userId, mode, personaKey, message, reply: reply.reply, structured: reply, safety, runtime: runtimeContext, quality });
+    let reply = buildPersonalizedFallback({
+      userId,
+      message,
+      safety,
+      recentSessions,
+      runtimeContext,
+      profile,
+    });
+    reply = applyFallbackLoopGuard({
+      reply,
+      runtimeContext,
+      recentSessions,
+      message,
+      safety,
+      userId,
+    });
+    reply.quality = scoreCompanionQuality({ message, reply: reply.reply, runtimeContext });
+    reply.runtime = { ...(reply.runtime || {}), emotion: runtimeContext.emotion, intent: runtimeContext.intent };
+    if (profile?.memoryEnabled !== false) {
+      const enriched = enrichResponseWithRelationshipIntelligence({
+        userId,
+        reply: reply.reply,
+        message,
+        runtimeContext,
+        includeReflection: false,
+        includeLoopRevisit: true,
+      });
+      reply.reply = enriched.reply;
+      reply.runtime.relationshipIntelligence = enriched.relationshipContext;
+    }
+    appendSession({ userId, mode, personaKey, message, reply: reply.reply, structured: reply, safety, runtime: runtimeContext, quality: reply.quality });
+    updateUserMemory({ userId, message, structured: reply, runtimeContext });
+    persistBuddyMemory({ userId, message, structured: reply, runtimeContext, profile });
     return reply;
   }
 
@@ -471,19 +1153,58 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
     });
 
     const raw = completion?.choices?.[0]?.message?.content || '';
-    const fallback = fallbackReply({ message, safety });
+    let fallback = fallbackReply({ message, safety, userId, recentSessions, runtimeContext, profile });
+    fallback = applyFallbackLoopGuard({
+      reply: fallback,
+      runtimeContext,
+      recentSessions,
+      message,
+      safety,
+      userId,
+    });
     const parsed = safeJsonParse(raw) || fallback;
     const provisionalReply = parsed.reply || fallback.reply;
     const quality = scoreCompanionQuality({ message, reply: provisionalReply, runtimeContext });
-    const structured = normalizeStructured(parsed, fallback, safety, runtimeContext, quality);
+    let structured = normalizeStructured(parsed, fallback, safety, runtimeContext, quality);
+    structured = applyFallbackLoopGuard({
+      reply: structured,
+      runtimeContext,
+      recentSessions,
+      message,
+      safety,
+      userId,
+    });
 
     if (!quality.passed) {
       structured.admin_flags = [...new Set([...(structured.admin_flags || []), 'low_quality_response', ...quality.issues])];
     }
 
+    if (profile?.memoryEnabled !== false) {
+      const enriched = enrichResponseWithRelationshipIntelligence({
+        userId,
+        reply: structured.reply,
+        message,
+        runtimeContext,
+        includeReflection: true,
+        includeLoopRevisit: true,
+        includeStudyJourney: false,
+      });
+      structured.reply = polishCompanionReply(enriched.reply);
+      structured.runtime = {
+        ...(structured.runtime || {}),
+        relationshipIntelligence: enriched.relationshipContext,
+        openaiPathEnriched: true,
+      };
+    } else {
+      structured.reply = polishCompanionReply(structured.reply);
+    }
+
     appendSession({ userId, mode, personaKey, message, reply: structured.reply, structured, safety, runtime: runtimeContext, quality });
     appendQualityEvent({ userId, mode, emotion: runtimeContext.emotion, intent: runtimeContext.intent, issues: quality.issues, score: quality.score });
-    updateUserMemory({ userId, message, structured, runtimeContext });
+    if (profile?.memoryEnabled !== false) {
+      updateUserMemory({ userId, message, structured, runtimeContext });
+    }
+    persistBuddyMemory({ userId, message, structured, runtimeContext, profile });
 
     recordCompanionEvent({
       type: 'runtime_orchestration',
@@ -500,12 +1221,22 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
     return structured;
   } catch (e) {
     console.error('BuddyBrain OpenAI error:', e?.message || e);
-    const reply = fallbackReply({ message, safety });
+    let reply = fallbackReply({ message, safety, userId, recentSessions, runtimeContext, profile });
+    reply = applyFallbackLoopGuard({
+      reply,
+      runtimeContext,
+      recentSessions,
+      message,
+      safety,
+      userId,
+    });
     const quality = scoreCompanionQuality({ message, reply: reply.reply, runtimeContext });
     reply.quality = quality;
-    reply.runtime = { emotion: runtimeContext.emotion, intent: runtimeContext.intent };
+    reply.runtime = { ...(reply.runtime || {}), emotion: runtimeContext.emotion, intent: runtimeContext.intent };
     appendSession({ userId, mode, personaKey, message, reply: reply.reply, structured: reply, safety, runtime: runtimeContext, quality });
     appendQualityEvent({ userId, mode, issues: ['openai_error'], score: quality.score, error: e?.message || String(e) });
+    updateUserMemory({ userId, message, structured: reply, runtimeContext });
+    persistBuddyMemory({ userId, message, structured: reply, runtimeContext, profile });
     return reply;
   }
 }
@@ -514,4 +1245,7 @@ module.exports = {
   runBuddy,
   classifySafety,
   getUserCompanionProfile,
+  applyFallbackLoopGuard,
+  persistBuddyMemory,
+  buildMemoryRecallStructured,
 };

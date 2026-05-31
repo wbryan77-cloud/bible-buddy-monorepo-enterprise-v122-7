@@ -33,7 +33,7 @@ function detectContinuityTags(message = '') {
   if (lower.includes('pray') || lower.includes('prayer')) tags.push('prayer');
   if (lower.includes('study') || lower.includes('scripture') || lower.includes('verse')) tags.push('study');
   if (lower.includes('sad') || lower.includes('hurt') || lower.includes('overwhelmed')) tags.push('emotional');
-  if (lower.includes('health') || lower.includes('wellness')) tags.push('wellness');
+  if (lower.includes('health') || lower.includes('wellness') || lower.includes('knee') || lower.includes('pain') || lower.includes('fatigue')) tags.push('wellness');
   if (lower.includes('family') || lower.includes('marriage')) tags.push('family');
 
   return [...new Set(tags)];
