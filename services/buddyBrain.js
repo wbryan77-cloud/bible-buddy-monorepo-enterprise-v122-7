@@ -46,6 +46,7 @@ const {
 const { polishCompanionReply } = require('./companionReplyPolish');
 const { resolveSabbathCompanionIntent } = require('./sabbathIntentRouter');
 const { buildSabbathHistoryResponse } = require('./sabbathHistoryCompanion');
+const { resolveQuestionIntent } = require('./questionIntentResolver');
 const { containsInternalRuntimeLabels } = require('./runtimeLabelStripper');
 
 let getSnapshot = () => ({ modules: [], phases: [], competitors: [], avatars: [] });
@@ -548,11 +549,12 @@ function fallbackReply({
 
   if (factualHistory) {
     const sabbathIntent = resolveSabbathCompanionIntent({ message, recentSessions });
-    if (sabbathIntent.intent === 'history' || sabbathIntent.recentSabbathContext) {
+    if (sabbathIntent.intent === 'history_deep' || sabbathIntent.intent === 'history' || sabbathIntent.recentSabbathContext) {
       return buildSabbathHistoryResponse({
         userId,
         message,
         recentSessions,
+        correction: sabbathIntent.correction,
         runtimeContext,
         profile,
       });
@@ -643,36 +645,43 @@ function finalizeBuddyResponse({
   structured.quality = quality;
 
   if (profile?.memoryEnabled !== false && structured.mode !== 'crisis') {
-    const skipJourney = ['continue_study', 'study_connection', 'memory_recall'].includes(
-      structured.runtime?.intent
-    );
-    const enriched = enrichResponseWithRelationshipIntelligence({
-      userId,
-      reply: structured.reply,
-      message,
-      runtimeContext,
-      includeReflection:
-        !structured.runtime?.doctrineTopic &&
-        structured.mode !== 'study' &&
-        !['health_support', 'prayer', 'memory_recall', 'emotional_support'].includes(
-          structured.runtime?.intent
-        ),
-      includeLoopRevisit: structured.runtime?.intent !== 'memory_recall',
-      includeStudyJourney:
-        !skipJourney && (structured.mode === 'study' || !!doctrineTopic),
-      doctrineTopic,
-    });
-    structured.reply = polishCompanionReply(enriched.reply);
-    structured.runtime = {
-      ...(structured.runtime || {}),
-      relationshipIntelligence: enriched.relationshipContext,
-      reflectionUsed: enriched.reflectionUsed,
-    };
+    const skipEnrichment =
+      structured.runtime?.intent === 'sabbath_history' ||
+      structured.runtime?.companionPresentation?.skipRelationshipEnrichment;
+    const skipJourney =
+      skipEnrichment ||
+      ['continue_study', 'study_connection', 'memory_recall'].includes(structured.runtime?.intent);
+
+    if (skipEnrichment) {
+      structured.reply = polishCompanionReply(structured.reply);
+    } else {
+      const enriched = enrichResponseWithRelationshipIntelligence({
+        userId,
+        reply: structured.reply,
+        message,
+        runtimeContext,
+        includeReflection:
+          !structured.runtime?.doctrineTopic &&
+          structured.mode !== 'study' &&
+          !['health_support', 'prayer', 'memory_recall', 'emotional_support'].includes(
+            structured.runtime?.intent
+          ),
+        includeLoopRevisit: structured.runtime?.intent !== 'memory_recall',
+        includeStudyJourney: !skipJourney && (structured.mode === 'study' || !!doctrineTopic),
+        doctrineTopic,
+      });
+      structured.reply = polishCompanionReply(enriched.reply);
+      structured.runtime = {
+        ...(structured.runtime || {}),
+        relationshipIntelligence: enriched.relationshipContext,
+        reflectionUsed: enriched.reflectionUsed,
+      };
+    }
   } else {
     structured.reply = polishCompanionReply(structured.reply);
   }
 
-  if (!structured.runtime?.companionNextSteps) {
+  if (!structured.runtime?.companionNextSteps && structured.runtime?.intent !== 'sabbath_history') {
     const nextStepsBundle = buildCompanionNextSteps({
       userId,
       message,
@@ -739,6 +748,9 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
   runtimeContext = enrichRuntimeContextWithMemory({ runtimeContext, userId, profile });
   runtimeContext.userId = userId;
   runtimeContext.profile = profile;
+
+  const questionIntent = resolveQuestionIntent({ message, recentSessions });
+  runtimeContext.questionIntent = questionIntent;
 
   if (safety.level === 'crisis') {
     const crisisReply = fallbackReply({ message, safety });
@@ -900,14 +912,21 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
   }
 
   const sabbathIntent = resolveSabbathCompanionIntent({ message, recentSessions });
-  if (sabbathIntent.intent === 'history' || sabbathIntent.intent === 'correction') {
+  const routeSabbathHistory =
+    questionIntent.isSabbathHistory ||
+    sabbathIntent.intent === 'history_deep' ||
+    sabbathIntent.intent === 'history' ||
+    sabbathIntent.intent === 'correction';
+
+  if (routeSabbathHistory && questionIntent.questionType !== 'comparison') {
     let sabbathHistoryReply = buildSabbathHistoryResponse({
       userId,
       message,
       recentSessions,
-      correction: sabbathIntent.correction,
+      correction: sabbathIntent.correction || questionIntent.questionType === 'correction',
       runtimeContext,
       profile,
+      questionIntent,
     });
     sabbathHistoryReply = finalizeBuddyResponse({
       structured: sabbathHistoryReply,
@@ -918,7 +937,6 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
       safety,
       runtimeContext,
       profile,
-      doctrineTopic: 'sabbath',
     });
     recordCompanionEvent({
       type: 'runtime_orchestration',
@@ -934,17 +952,18 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
     return sabbathHistoryReply;
   }
 
-  const doctrineResult = runDoctrineRuntimePipeline({ message });
+  const doctrineResult = runDoctrineRuntimePipeline({ message, questionIntent });
   if (doctrineResult?.intercepted) {
     let structured = {
       ...doctrineResult.reply,
       safety_level: safety.level,
-      memory_used: true,
+      memory_used: false,
       runtime: {
         ...(doctrineResult.reply.runtime || {}),
         emotion: runtimeContext.emotion,
         intent: runtimeContext.intent,
         doctrineTopic: doctrineResult.topic,
+        questionIntent,
       },
     };
 
@@ -980,6 +999,9 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
       profile,
       safety,
       doctrineTopic: doctrineResult.topic,
+      answerFirstMode: questionIntent.questionType === 'definition' || questionIntent.questionType === 'comparison',
+      suppressStudyPrompts: questionIntent.shouldSuppressStudyPrompts,
+      suppressMemory: questionIntent.isHistoricalQuestion,
     });
 
     if (profile?.memoryEnabled !== false) {

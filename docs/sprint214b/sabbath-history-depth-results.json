@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-05-31T05:39:32.417Z",
+  "sprint": "2.14B",
+  "results": [
+    {
+      "name": "TEST 1 — Who changed Sabbath",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou are asking who changed Sabbath observance from Saturday to Sunday — and whether that change came from Scripture or from later human authority.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the f",
+      "intercept": "sabbath_history_companion",
+      "intent": "sabbath_history"
+    },
+    {
+      "name": "TEST 2 — Rome and Catholic Church",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — historically, Roman civil authority (Constantine, AD 321) and later Roman chu",
+      "intercept": "sabbath_history_companion",
+      "intent": "sabbath_history"
+    },
+    {
+      "name": "TEST 3 — Catholic Church performed change",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — historically, Roman civil authority (Constantine, AD 321) and later Roman chu",
+      "intercept": "sabbath_history_companion",
+      "intent": "sabbath_history"
+    },
+    {
+      "name": "TEST 4 — Historical evidence",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou want the historical evidence for how Sunday observance became common — not a repeat of the Sabbath definition.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play a major role in changing common Christian observance fro",
+      "intercept": "sabbath_history_companion",
+      "intent": "sabbath_history"
+    },
+    {
+      "name": "TEST 5 — Follow-up correction",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you — that wasn't your question. Let me answer what you actually asked, with Scripture first and history second.\n\nYou're right — I drifted back to the Sabbath definition. You asked a direct historical question, and I'll answer that now.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority pl",
+      "intercept": "sabbath_history_companion",
+      "intent": "sabbath_history"
+    }
+  ],
+  "scoring": {
+    "scores": {
+      "directness": 97,
+      "historicalSpecificity": 97,
+      "scriptureFirst": 97,
+      "naturalConversation": 96,
+      "noIrrelevantPrompts": 97,
+      "noMemoryBleed": 97,
+      "noRepetition": 97
+    },
+    "overall": 97
+  },
+  "passed": 5,
+  "total": 5
+}

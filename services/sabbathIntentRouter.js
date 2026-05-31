@@ -1,8 +1,10 @@
 const SABBATH_HISTORY_PATTERNS = [
   /\bwho changed (the )?sabbath\b/i,
+  /\bwho changed\b.*\b(sabbath|saturday|sunday)\b/i,
   /\bwhy (do )?(some|people|christians|many)\b.*\bsunday\b/i,
   /\bwhy\b.*\bsunday\b/i,
   /\bchanged (to|the)?\s*sunday\b/i,
+  /\bchanged (the )?sabbath\b/i,
   /\bhistorical (references|evidence|context|record)\b/i,
   /\bgive me (the )?historical\b/i,
   /\bconstantine\b/i,
@@ -14,6 +16,31 @@ const SABBATH_HISTORY_PATTERNS = [
   /\bhistory of (the )?sabbath\b/i,
   /\bwhen did (the )?sabbath change\b/i,
   /\bwho moved (the )?sabbath\b/i,
+  /\bsaturday to sunday\b/i,
+  /\bsat to sun(day)?\b/i,
+  /\bsunday law\b/i,
+  /\bperform the change\b/i,
+  /\bchurch changed\b/i,
+];
+
+const SABBATH_HISTORY_DEEP_PATTERNS = [
+  /\brome\b/i,
+  /\broman empire\b/i,
+  /\broman catholic\b/i,
+  /\bcatholic church\b/i,
+  /\bchurch authority\b/i,
+  /\bwho changed\b/i,
+  /\bwhy sunday\b/i,
+  /\bwhy\b.*\bworship\b.*\bsunday\b/i,
+  /\bconstantine\b/i,
+  /\blaodicea\b/i,
+  /\bhistorical evidence\b/i,
+  /\bgive me (the )?historical\b/i,
+  /\bchanged sabbath\b/i,
+  /\bsunday observance\b/i,
+  /\bperform the change\b/i,
+  /\bdid rome\b/i,
+  /\bdid the roman catholic\b/i,
 ];
 
 const SABBATH_DEFINITION_PATTERNS = [
@@ -68,15 +95,27 @@ function isSabbathCorrectionIntent(message = '') {
   return CORRECTION_PATTERNS.some((pattern) => pattern.test(String(message)));
 }
 
-function isSabbathHistoryIntent(message = '', recentSessions = []) {
+function isSabbathHistoryDeepIntent(message = '', recentSessions = []) {
   const text = String(message || '');
   if (SABBATH_HISTORY_PATTERNS.some((pattern) => pattern.test(text))) {
     return true;
   }
+  if (SABBATH_HISTORY_DEEP_PATTERNS.some((pattern) => pattern.test(text))) {
+    if (hasRecentSabbathContext(recentSessions) || /\b(sabbath|sunday|saturday)\b/i.test(text)) {
+      return true;
+    }
+  }
   if (hasRecentSabbathContext(recentSessions) && SABBATH_CONTEXT_FOLLOWUP_PATTERNS.some((p) => p.test(text))) {
     return true;
   }
+  if (hasRecentSabbathContext(recentSessions) && SABBATH_HISTORY_DEEP_PATTERNS.some((p) => p.test(text))) {
+    return true;
+  }
   return false;
+}
+
+function isSabbathHistoryIntent(message = '', recentSessions = []) {
+  return isSabbathHistoryDeepIntent(message, recentSessions);
 }
 
 function isSabbathDefinitionIntent(message = '') {
@@ -95,9 +134,9 @@ function resolveSabbathCompanionIntent({ message = '', recentSessions = [] } = {
   const correction = isSabbathCorrectionIntent(text);
   const recentSabbath = hasRecentSabbathContext(recentSessions);
 
-  if (correction && (recentSabbath || /\b(historically|who changed|historical)\b/i.test(text))) {
+  if (correction && (recentSabbath || /\b(historically|who changed|historical|rome|roman|catholic)\b/i.test(text))) {
     return {
-      intent: 'correction',
+      intent: 'history_deep',
       topic: 'sabbath',
       correction: true,
       historyFollowUp: true,
@@ -105,9 +144,9 @@ function resolveSabbathCompanionIntent({ message = '', recentSessions = [] } = {
     };
   }
 
-  if (isSabbathHistoryIntent(text, recentSessions)) {
+  if (isSabbathHistoryDeepIntent(text, recentSessions)) {
     return {
-      intent: 'history',
+      intent: 'history_deep',
       topic: 'sabbath',
       correction: false,
       historyFollowUp: true,
@@ -137,9 +176,11 @@ function resolveSabbathCompanionIntent({ message = '', recentSessions = [] } = {
 module.exports = {
   resolveSabbathCompanionIntent,
   isSabbathHistoryIntent,
+  isSabbathHistoryDeepIntent,
   isSabbathDefinitionIntent,
   isSabbathCorrectionIntent,
   hasRecentSabbathContext,
   SABBATH_HISTORY_PATTERNS,
+  SABBATH_HISTORY_DEEP_PATTERNS,
   CORRECTION_PATTERNS,
 };

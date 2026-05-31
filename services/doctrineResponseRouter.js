@@ -1,12 +1,12 @@
 const { buildSourceGroundedReply } = require('./sourceGroundedResponder');
-const { isDoctrineTopic } = require('./doctrineGuard');
+const { isDoctrineTopic, shouldInterceptDoctrine } = require('./doctrineGuard');
 
-function routeDoctrineResponse(message = '') {
-  if (!isDoctrineTopic(message)) {
+function routeDoctrineResponse(message = '', questionIntent = null) {
+  if (!shouldInterceptDoctrine(message, questionIntent)) {
     return null;
   }
 
-  return buildSourceGroundedReply({ message });
+  return buildSourceGroundedReply({ message, questionIntent });
 }
 
 module.exports = {

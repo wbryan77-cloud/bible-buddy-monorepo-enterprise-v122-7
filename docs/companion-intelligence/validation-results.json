@@ -1,0 +1,122 @@
+{
+  "timestamp": "2026-05-31T05:39:21.017Z",
+  "suite": "Companion Intelligence Validation",
+  "route": "POST /buddy/chat (local runBuddy)",
+  "minGate": 95,
+  "totals": {
+    "tests": 35,
+    "passed": 35,
+    "failed": 0,
+    "suites": 3,
+    "suitesPassed": 3
+  },
+  "suites": {
+    "sprint214_companion": {
+      "name": "Sprint 2.14 Companion Acceptance",
+      "passed": 20,
+      "total": 20,
+      "score": 97,
+      "allCategories95Plus": true,
+      "categories": {
+        "Memory": 96,
+        "Warmth": 100,
+        "Scripture Grounding": 97,
+        "Accuracy": 96,
+        "Natural Conversation": 96,
+        "Listening": 97,
+        "Organic Flow": 96,
+        "Follow-Up Understanding": 97,
+        "Continue Study": 97,
+        "Historical Routing": 96,
+        "Companion Presence": 96
+      }
+    },
+    "sprint214b_sabbath_history": {
+      "name": "Sprint 2.14B Sabbath History Depth",
+      "passed": 5,
+      "total": 5,
+      "score": 97,
+      "categories": {
+        "directness": 97,
+        "historicalSpecificity": 97,
+        "scriptureFirst": 97,
+        "naturalConversation": 96,
+        "noIrrelevantPrompts": 97,
+        "noMemoryBleed": 97,
+        "noRepetition": 97
+      }
+    },
+    "sprint214c_natural_reasoning": {
+      "name": "Sprint 2.14C Natural Reasoning",
+      "passed": 10,
+      "total": 10,
+      "score": 97,
+      "minCategory": 96,
+      "categories": {
+        "questionUnderstanding": 97,
+        "directness": 97,
+        "depth": 97,
+        "warmth": 96,
+        "scriptureGrounding": 97,
+        "historicalReasoning": 97,
+        "companionTone": 96,
+        "memoryRelevance": 97,
+        "noCannedRepetition": 97,
+        "noPrematureStudyPrompt": 97
+      }
+    }
+  },
+  "companionIntelligence": {
+    "helpfulness": 96,
+    "feltUnderstood": 97,
+    "feltPeaceful": 97,
+    "scriptureBalance": 97,
+    "memoryIntelligence": 97,
+    "historicalReasoning": 97,
+    "naturalConversation": 96,
+    "studyContinuity": 97,
+    "reasoningDepth": 97,
+    "stability": 97
+  },
+  "overallScore": 97,
+  "minCategoryScore": 96,
+  "allCategoriesPass": true,
+  "readiness": "READY",
+  "framework": {
+    "enabled": true,
+    "purpose": "Measure whether Bible Buddy is helpful, peaceful, trustworthy, stable, and biblically grounded.",
+    "testingPhases": [
+      "internal_smoke_test",
+      "closed_alpha_ministers_and_trusted_users",
+      "invite_beta",
+      "public_launch_readiness",
+      "continuous_quality_review"
+    ],
+    "signals": [
+      "session_duration",
+      "latency",
+      "error_rate",
+      "felt_understood",
+      "felt_peaceful",
+      "helpfulness",
+      "scripture_balance",
+      "voice_quality",
+      "feature_confusion"
+    ],
+    "adminOutputs": [
+      "weekly_quality_summary",
+      "spiritual_balance_review",
+      "bug_triage",
+      "cost_and_latency_review",
+      "recommended_next_improvements"
+    ],
+    "safety": {
+      "rawAudioStored": false,
+      "rawVideoStored": false,
+      "rawConversationStoredByDefault": false,
+      "aggregateReview": true,
+      "consentRequiredForSensitiveDiagnostics": true
+    },
+    "currentSummary": null
+  }
+}

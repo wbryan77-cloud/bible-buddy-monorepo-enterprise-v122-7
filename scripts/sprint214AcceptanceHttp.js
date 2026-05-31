@@ -8,7 +8,6 @@ const { runBuddy } = require('../services/buddyBrain');
 const fs = require('fs');
 const path = require('path');
 
-const USER_PREFIX = `s214-${Date.now()}`;
 const OUT_DIR = path.join(__dirname, '..', 'docs', 'sprint214');
 
 function normalizePayload(reply) {
@@ -188,7 +187,8 @@ function computeScores(ctx) {
   return scores;
 }
 
-async function runSuite() {
+async function runSuite(options = {}) {
+  const USER_PREFIX = options.userPrefix || `s214-${Date.now()}-${process.pid}`;
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const server = await startServer();
   const results = [];
@@ -441,20 +441,26 @@ async function runSuite() {
     };
 
     fs.writeFileSync(path.join(OUT_DIR, 'acceptance-results.json'), JSON.stringify(out, null, 2));
-    console.log(JSON.stringify(out, null, 2));
+    if (!options.quiet) {
+      console.log(JSON.stringify(out, null, 2));
+    }
     return out;
   } finally {
     server.close();
   }
 }
 
-runSuite()
-  .then((out) => {
-    console.error(`\nSprint 2.14 Acceptance: ${out.passed}/${out.total} passed | Score: ${out.acceptanceScore}`);
-    console.error(`95+ all categories: ${out.allCategories95Plus}`);
-    if (out.passed < out.total) process.exit(1);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+if (require.main === module) {
+  runSuite()
+    .then((out) => {
+      console.error(`\nSprint 2.14 Acceptance: ${out.passed}/${out.total} passed | Score: ${out.acceptanceScore}`);
+      console.error(`95+ all categories: ${out.allCategories95Plus}`);
+      if (out.passed < out.total) process.exit(1);
+    })
+    .catch((err) => {
+      console.error(err);
+      process.exit(1);
+    });
+}
+
+module.exports = { runSuite, createBuddyServer, postChat, evaluateTest, computeScores };

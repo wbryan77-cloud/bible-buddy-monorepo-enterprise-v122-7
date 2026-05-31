@@ -41,10 +41,10 @@ function detectTopic(message = '') {
   return 'general';
 }
 
-function runDoctrineRuntimePipeline({ message = '' }) {
+function runDoctrineRuntimePipeline({ message = '', questionIntent = null } = {}) {
   const topic = detectTopic(message);
 
-  const routed = routeDoctrineResponse(message);
+  const routed = routeDoctrineResponse(message, questionIntent);
 
   if (!routed) {
     return null;

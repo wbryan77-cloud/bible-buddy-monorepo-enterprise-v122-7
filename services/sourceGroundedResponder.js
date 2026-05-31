@@ -1,3 +1,5 @@
+const { getBoundariesForTopic } = require('./doctrineBoundaries');
+
 function hasAny(text, terms) {
   return terms.some((term) => text.includes(term));
 }
@@ -9,7 +11,7 @@ function detectSourceTopic(message = '') {
     return 'dietary_law';
   }
 
-  if (hasAny(text, ['sabbath', 'seventh day', 'sunday worship', 'fourth commandment'])) {
+  if (hasAny(text, ['sabbath', 'seventh day', 'sunday worship', 'fourth commandment', 'sunday observance'])) {
     return 'sabbath';
   }
 
@@ -28,40 +30,113 @@ function detectSourceTopic(message = '') {
   return null;
 }
 
-function basePayload(topic, reply, scripture, nextSteps = []) {
+function basePayload(topic, reply, scripture, nextSteps = [], extraRuntime = {}) {
   return {
     reply,
     scripture,
     mode: 'study',
     confidence: 'high',
-    memory_used: true,
+    memory_used: false,
     suggested_settings_change: null,
     orb_state: 'speaking',
     safety_level: 'standard',
     next_steps: nextSteps,
     admin_flags: ['source_grounded_guardrail_used'],
-    runtime: { topic, deterministic: true },
+    runtime: { topic, adaptive: true, ...extraRuntime },
     quality: { score: 96, issues: [], passed: true },
   };
+}
+
+function companionOpening(questionType = 'definition', topic = '') {
+  if (questionType === 'comparison') {
+    return "I hear what you're asking — you want the difference spelled out clearly, with Scripture first.";
+  }
+  if (topic === 'sabbath') {
+    return "That's a thoughtful question. Let's answer it directly from Scripture.";
+  }
+  return "Let's stay close to the text and answer your question directly.";
+}
+
+function sabbathReply({ questionType = 'definition', message = '' } = {}) {
+  const opening = companionOpening(questionType, 'sabbath');
+
+  if (questionType === 'comparison' || /\bdifference between\b/i.test(message)) {
+    const reply = [
+      opening,
+      '',
+      'Direct answer:',
+      'The biblical Sabbath is the seventh day — set apart by God in Genesis 2:2-3 and commanded in Exodus 20:8-11. Sunday observance, as commonly practiced in much of Christianity, developed later through historical church and civil practice — not through a biblical command changing the Sabbath day.',
+      '',
+      'Scripture foundation:',
+      'Genesis 2:2-3 — God blessed and sanctified the seventh day.',
+      'Exodus 20:8-11 — the fourth commandment identifies the seventh day as the Sabbath of the LORD your God.',
+      'Isaiah 58:13-14 — the Sabbath is connected to delight and honoring the LORD.',
+      '',
+      'Historical context, secondary to Scripture:',
+      'Sunday became a common day of rest and worship through early first-day gatherings, Constantine\'s AD 321 Sunday law, the Council of Laodicea (circa AD 364), and later Roman Catholic liturgical authority. That history explains how Sunday observance spread — it does not replace what Scripture says about the seventh-day Sabbath.',
+      '',
+      'History can explain how practice changed, but history cannot override Scripture.',
+    ].join('\n');
+
+    return basePayload(
+      'sabbath',
+      reply,
+      [
+        { reference: 'Genesis 2:2-3', text: '', reason: 'seventh day blessed and sanctified' },
+        { reference: 'Exodus 20:8-11', text: '', reason: 'fourth commandment' },
+        { reference: 'Isaiah 58:13-14', text: '', reason: 'Sabbath delight and honor' },
+      ],
+      ['Compare Genesis 2:2-3 and Exodus 20:8-11 side by side.']
+    );
+  }
+
+  const reply = [
+    opening,
+    '',
+    'Direct answer:',
+    'The Sabbath is the seventh day — the day God rested, blessed, and set apart. Scripture identifies it in Genesis 2:2-3 and commands it in Exodus 20:8-11 as the Sabbath of the LORD your God.',
+    '',
+    'Scripture foundation:',
+    'Genesis 2:2-3 — God rested on the seventh day and blessed it.',
+    'Exodus 20:8-11 — Remember the Sabbath day; the seventh day is the Sabbath of the LORD your God.',
+    'Isaiah 58:13-14 — call the Sabbath a delight and honor the LORD.',
+    'Luke 4:16 — Yeshua kept the Sabbath as His custom.',
+    'Hebrews 4:9 — a Sabbath rest remains for the people of God.',
+    '',
+    'Scripture identifies the seventh day as the Sabbath and does not record God changing the Sabbath to Sunday.',
+  ].join('\n');
+
+  return basePayload(
+    'sabbath',
+    reply,
+    [
+      { reference: 'Genesis 2:2-3', text: '', reason: 'seventh day blessed and sanctified' },
+      { reference: 'Exodus 20:8-11', text: '', reason: 'fourth commandment' },
+      { reference: 'Isaiah 58:13-14', text: '', reason: 'Sabbath delight and honor' },
+      { reference: 'Luke 4:16', text: '', reason: 'Yeshua kept the Sabbath' },
+      { reference: 'Hebrews 4:9', text: '', reason: 'Sabbath rest remains' },
+    ],
+    ['Read Genesis 2:2-3 and Exodus 20:8-11 together.']
+  );
 }
 
 function dietaryLawReply() {
   return basePayload(
     'dietary_law',
     [
-      'Source-grounded answer:',
+      "Let's answer this directly from Scripture.",
       '',
-      'The Bible gives the clean and unclean distinction in Leviticus 11 and Deuteronomy 14. Peter’s vision should be read with Peter’s own explanation, not separated from it.',
+      "The Bible gives the clean and unclean distinction in Leviticus 11 and Deuteronomy 14. Peter's vision should be read with Peter's own explanation, not separated from it.",
       '',
       'Line upon line:',
       '1. Leviticus 11 and Deuteronomy 14 define clean and unclean animals.',
-      '2. Daniel 1 shows Daniel refusing the king’s food and choosing pulse and water.',
-      '3. Acts 10:14 shows Peter saying, “Not so, Lord; for I have never eaten any thing that is common or unclean.”',
-      '4. Acts 10:28 gives Peter’s own explanation: God showed him not to call any man common or unclean.',
-      '5. Acts 11:1-18 repeats Peter rehearsing the matter to the brethren.',
-      '6. Isaiah 66:17 should be included in a full continuity study because it mentions swine’s flesh, the abomination, and the mouse.',
+      "2. Daniel 1 shows Daniel refusing the king's food and choosing pulse and water.",
+      '3. Acts 10:14 — Peter: "Not so, Lord; for I have never eaten any thing that is common or unclean."',
+      "4. Acts 10:28 — Peter's explanation: God showed him not to call any man common or unclean.",
+      '5. Acts 11:1-18 — Peter rehearses the matter to the brethren.',
+      "6. Isaiah 66:17 — continuity passage involving swine's flesh and the mouse.",
       '',
-      'Therefore Acts 10 should not be presented by itself as a direct permission statement to eat unclean animals. The text itself records Peter explaining the vision as dealing with people and Gentile inclusion.',
+      'Acts 10 should not be presented alone as permission to eat unclean animals. Peter explains the vision as dealing with people and Gentile inclusion.',
     ].join('\n'),
     [
       { reference: 'Leviticus 11', text: '', reason: 'clean and unclean animal distinction' },
@@ -76,37 +151,13 @@ function dietaryLawReply() {
   );
 }
 
-function sabbathReply() {
-  return basePayload(
-    'sabbath',
-    [
-      'That is a good question. Let us walk it from Scripture first.',
-      '',
-      'Scripture explicitly identifies the seventh day as the Sabbath. Genesis 2:2-3 says God blessed and sanctified the seventh day. Exodus 20:8-11 commands the Sabbath and identifies the seventh day as the Sabbath of the LORD thy God.',
-      '',
-      'Line upon line study path: Genesis 2:2-3, Exodus 20:8-11, Isaiah 58:13-14, Luke 4:16, Acts 13:42-44, Acts 17:2, Hebrews 4:9.',
-      '',
-      'If you want the historical side — who changed observance to Sunday and why — ask that directly and we can keep Scripture first while looking at history separately.',
-    ].join('\n'),
-    [
-      { reference: 'Genesis 2:2-3', text: '', reason: 'seventh day blessed and sanctified' },
-      { reference: 'Exodus 20:8-11', text: '', reason: 'fourth commandment' },
-      { reference: 'Isaiah 58:13-14', text: '', reason: 'Sabbath delight and honor' },
-      { reference: 'Luke 4:16', text: '', reason: 'Jesus customarily in synagogue on the Sabbath' },
-      { reference: 'Acts 17:2', text: '', reason: 'Paul reasoning on Sabbath days' },
-      { reference: 'Hebrews 4:9', text: '', reason: 'Sabbath-rest language for the people of God' },
-    ],
-    ['Compare explicit Sabbath passages first, then discuss later history separately.']
-  );
-}
-
 function feastDaysReply() {
   return basePayload(
     'feast_days',
     [
-      'Source-grounded answer:',
+      "Let's answer from Scripture first.",
       '',
-      'Leviticus 23 is the core chapter for the LORD’s appointed feasts and holy convocations. A Bible-first answer should begin with that chapter before discussing later religious holidays.',
+      "Leviticus 23 is the core chapter for the LORD's appointed feasts and holy convocations. A Bible-first answer begins there before discussing later religious holidays.",
       '',
       'Continuity study path: Leviticus 23, Acts 2, 1 Corinthians 5:7-8, and Zechariah 14:16.',
       '',
@@ -126,13 +177,13 @@ function traditionsReply() {
   return basePayload(
     'traditions',
     [
-      'Source-grounded answer:',
+      "Let's answer your question directly.",
       '',
-      'A Bible-first answer should first ask: where is this practice commanded in Scripture? If it is not explicitly commanded, that should be clearly stated before discussing history.',
+      'First: where is this practice commanded in Scripture? If it is not explicitly commanded, that should be stated clearly before discussing history.',
       '',
-      'Relevant passages for testing traditions include Jeremiah 10:1-4, Mark 7:6-13, and Colossians 2:8. These passages warn about learning vain customs, making commandments void through tradition, and being spoiled through philosophy and traditions of men.',
+      'Relevant passages: Jeremiah 10:1-4, Mark 7:6-13, and Colossians 2:8 — warnings about vain customs, tradition making commandments void, and traditions of men.',
       '',
-      'Historical origins may be discussed after the biblical test, but they must be labeled as history, not Scripture.',
+      'Historical origins may be discussed after the biblical test, but must be labeled as history, not Scripture.',
     ].join('\n'),
     [
       { reference: 'Jeremiah 10:1-4', text: '', reason: 'warning about customs of the people' },
@@ -147,53 +198,28 @@ function resurrectionReply() {
   return basePayload(
     'resurrection_timeline',
     [
-      'Source-grounded answer:',
+      "Let's read Scripture line upon line before stating any chronology.",
       '',
-      'Scripture should be read line upon line before any chronology is stated. The following passages anchor a resurrection-timeline study:',
-      '',
-      '1. Matthew 12:40 — the Son of man would be three days and three nights in the heart of the earth.',
+      'Anchor passages:',
+      '1. Matthew 12:40 — three days and three nights in the heart of the earth.',
       '2. Daniel 9:27 — in the midst of the week he shall cause the sacrifice and the oblation to cease.',
-      '3. Matthew 28:1-6 — the women came as it began to dawn toward the first day of the week; the angel said, “He is not here: for he is risen.”',
-      '4. Mark 16:1-6 — resurrection account.',
-      '5. Luke 24:1-6 — resurrection account.',
-      '6. John 20:1-8 — resurrection account.',
-      '',
-      'Continuity Study Path',
-      '',
-      'Daniel 9:27',
-      'Matthew 12:40',
-      'Matthew 28:1-6',
-      'Mark 16:1-6',
-      'Luke 24:1-6',
-      'John 20:1-8',
+      '3. Matthew 28:1-6 — women came toward dawn on the first day of the week; He was already risen.',
+      '4. Mark 16:1-6, Luke 24:1-6, John 20:1-8 — resurrection accounts.',
       '',
       'What these passages state explicitly:',
+      '• Daniel 9:27 places a decisive event in the middle of the week in prophetic Scripture.',
+      '• Matthew 12:40 requires three days and three nights, not a partial count.',
+      '• Matthew 28:1-6 records Christ already risen when the women arrived at dawn.',
       '',
-      '• Daniel 9:27 states “in the midst of the week he shall cause the sacrifice and the oblation to cease.” This wording places a decisive event in the middle of the week in prophetic Scripture.',
-      '• Matthew 12:40 states the Son of man would be “three days and three nights in the heart of the earth.” Any timeline must account for three days and three nights, not a partial count.',
-      '• Matthew 28:1-6 records that when the women arrived toward dawn on the first day of the week, Christ was already risen. The text does not place the resurrection at their arrival; it records He was already risen when they came.',
+      'Chronology (tested against the passages above):',
+      'Wednesday afternoon — Crucifixion',
+      'Before sunset — Burial',
+      'Thursday — Day 1 / Night 1',
+      'Friday — Day 2 / Night 2',
+      'Saturday — Day 3 / Night 3',
+      'Before dawn toward the first day of the week — Already risen (Matthew 28:1-6)',
       '',
-      'Chronology (tested against the passages above)',
-      '',
-      'Wednesday afternoon:',
-      'Crucifixion',
-      '',
-      'Before sunset:',
-      'Burial',
-      '',
-      'Thursday:',
-      'Day 1 / Night 1',
-      '',
-      'Friday:',
-      'Day 2 / Night 2',
-      '',
-      'Saturday:',
-      'Day 3 / Night 3',
-      '',
-      'Before dawn toward the first day of the week:',
-      'Already risen when the women arrive (Matthew 28:1-6; Mark 16:1-6; Luke 24:1-6; John 20:1-8)',
-      '',
-      'This chronology is presented as a Scripture-first reading tied to the cited passages. It does not rely on church tradition, denominational authority, or post-biblical custom. Where the exact hour of resurrection is not stated, that limit should be acknowledged rather than filled in from later tradition.',
+      'This chronology is Scripture-first. Where the exact hour is not stated, that limit should be acknowledged rather than filled from later tradition.',
     ].join('\n'),
     [
       { reference: 'Daniel 9:27', text: '', reason: 'in the midst of the week; sacrifice and oblation cease' },
@@ -205,19 +231,27 @@ function resurrectionReply() {
     ],
     [
       'Read Daniel 9:27, Matthew 12:40, and all four resurrection accounts together before forming a chronology.',
-      'Distinguish what each passage states explicitly from interpretive conclusions.',
     ]
   );
 }
 
-function buildSourceGroundedReply({ message }) {
+function buildSourceGroundedReply({ message, questionIntent = null } = {}) {
   const topic = detectSourceTopic(message);
+  if (!topic) return null;
+
+  const questionType = questionIntent?.questionType || 'definition';
+
   if (topic === 'dietary_law') return dietaryLawReply();
-  if (topic === 'sabbath') return sabbathReply();
+  if (topic === 'sabbath') return sabbathReply({ questionType, message });
   if (topic === 'feast_days') return feastDaysReply();
   if (topic === 'traditions') return traditionsReply();
   if (topic === 'resurrection_timeline') return resurrectionReply();
   return null;
 }
 
-module.exports = { buildSourceGroundedReply, detectSourceTopic };
+module.exports = {
+  buildSourceGroundedReply,
+  detectSourceTopic,
+  sabbathReply,
+  getBoundariesForTopic,
+};

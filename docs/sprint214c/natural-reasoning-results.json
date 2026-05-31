@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-05-31T05:39:35.254Z",
+  "sprint": "2.14C",
+  "results": [
+    {
+      "name": "TEST 1 — What is the Sabbath?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nThat's a thoughtful question. Let's answer it directly from Scripture.\n\nDirect answer:\nThe Sabbath is the seventh day — the day God re",
+      "intent": "doctrinal_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 2 — Who changed Sabbath",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou are asking who changed Sabbath observance from Saturday to Sunday — and whether that change came from Scripture or from later human authority.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandment identifies the seventh",
+      "intent": "sabbath_history",
+      "intercept": "sabbath_history_companion"
+    },
+    {
+      "name": "TEST 3 — Rome/Catholic change",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — historically, Roman civil authority (Constantine, AD 321) and later Roman church authority (Council of Laodicea and s",
+      "intent": "sabbath_history",
+      "intercept": "sabbath_history_companion"
+    },
+    {
+      "name": "TEST 4 — Historical evidence",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou want the historical evidence for how Sunday observance became common — not a repeat of the Sabbath definition.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play a major role in changing common Christian observance from Sabbath to Sunday?\" the historical ans",
+      "intent": "sabbath_history",
+      "intercept": "sabbath_history_companion"
+    },
+    {
+      "name": "TEST 5 — Correction",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you — that wasn't your question. Let me answer what you actually asked, with Scripture first and history second.\n\nYou're right — I drifted back to the Sabbath definition. You asked a direct historical question, and I'll answer that now.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play a major role in changing common Chris",
+      "intent": "sabbath_history",
+      "intercept": "sabbath_history_companion"
+    },
+    {
+      "name": "TEST 6 — Why Sunday",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear what you're asking — not what the Sabbath is, but why many people keep Sunday instead.\n\nYou are asking why many Christians worship on Sunday rather than the biblical seventh-day Sabbath.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandment identifies the seventh day as the Sabbath of ",
+      "intent": "sabbath_history",
+      "intercept": "sabbath_history_companion"
+    },
+    {
+      "name": "TEST 7 — Comparison",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nI hear what you're asking — you want the difference spelled out clearly, with Scripture first.\n\nDirect answer:\nThe biblical Sabbath is",
+      "intent": "doctrinal_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 8 — Prayer",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I'm here with you. We can pray together, open a Scripture that fits what you're carrying, or take one small step for today — whichever would help most right now.",
+      "intent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 9 — Grief",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I'm really sorry for your loss. I'm glad you brought this here — we can take it gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a comforting passage, or simply talk through",
+      "intent": "emotional_support",
+      "intercept": null
+    },
+    {
+      "name": "TEST 10 — Continue study",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "You mentioned recently that we have been studying sabbath together.\n\nYou've been studying Sabbath frequently. Last time we studied sabbath around Acts 13:42-44, Acts 17:2. Would you like to pick up there?\n\nYou've been walking a study journey through Sabbath, Feast Days, Kingdom. Would you like to continue into Feast Days?\n\nIf it would help, we could continue",
+      "intent": "doctrinal_study",
+      "intercept": null
+    }
+  ],
+  "scoring": {
+    "scores": {
+      "questionUnderstanding": 97,
+      "directness": 97,
+      "depth": 97,
+      "warmth": 96,
+      "scriptureGrounding": 97,
+      "historicalReasoning": 97,
+      "companionTone": 96,
+      "memoryRelevance": 97,
+      "noCannedRepetition": 97,
+      "noPrematureStudyPrompt": 97
+    },
+    "overall": 97
+  },
+  "passed": 10,
+  "total": 10
+}

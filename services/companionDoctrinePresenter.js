@@ -244,8 +244,23 @@ function presentCompanionDoctrine({
   profile = {},
   safety = {},
   doctrineTopic = '',
+  answerFirstMode = false,
+  suppressStudyPrompts = false,
+  suppressMemory = false,
 }) {
+  const questionIntent = runtimeContext?.questionIntent || null;
+  const shouldSuppressStudy =
+    suppressStudyPrompts ||
+    questionIntent?.shouldSuppressStudyPrompts ||
+    answerFirstMode;
+  const shouldSuppressMemorySurface =
+    suppressMemory ||
+    answerFirstMode ||
+    questionIntent?.isHistoricalQuestion ||
+    structured.runtime?.intent === 'sabbath_history';
+
   const memoryEnabled = profile?.memoryEnabled !== false;
+  const surfaceMemory = memoryEnabled && !shouldSuppressMemorySurface;
   const rawDoctrineBody = String(structured.reply || '').trim();
   const chainMeta =
     structured.runtime?.scriptureChain && typeof structured.runtime.scriptureChain === 'object'
@@ -270,7 +285,7 @@ function presentCompanionDoctrine({
   );
 
   const delivery = resolveDeliveryMode({ userId, profile });
-  const memorySurface = memoryEnabled ? getRelevantMemoryForSurfacing({ userId, message }) : { line: null };
+  const memorySurface = surfaceMemory ? getRelevantMemoryForSurfacing({ userId, message }) : { line: null };
   const nextStepsBundle = buildCompanionNextSteps({
     userId,
     message,
@@ -280,17 +295,20 @@ function presentCompanionDoctrine({
 
   const parts = [];
 
-  const opening = pickOpening(message, doctrineTopic, userId);
-  parts.push(opening);
+  if (!answerFirstMode) {
+    const opening = pickOpening(message, doctrineTopic, userId);
+    parts.push(opening);
+  }
 
-  if (memoryEnabled) {
+  if (surfaceMemory) {
     const companionReflection = buildCompanionReflection({ userId, message, runtimeContext });
-    if (companionReflection.reflection && !DUPLICATE_INTRO_PATTERN.test(opening)) {
+    const openingText = parts[0] || '';
+    if (companionReflection.reflection && !DUPLICATE_INTRO_PATTERN.test(openingText)) {
       parts.push(companionReflection.reflection);
     } else if (memorySurface.line && !DUPLICATE_INTRO_PATTERN.test(String(memorySurface.line))) {
       parts.push(memorySurface.line);
     }
-  } else if (memorySurface.line) {
+  } else if (memorySurface.line && !shouldSuppressMemorySurface) {
     parts.push(memorySurface.line);
   }
 
@@ -304,7 +322,7 @@ function presentCompanionDoctrine({
     parts.push(support);
   }
 
-  if (memoryEnabled) {
+  if (surfaceMemory) {
     try {
       const presence = buildCompanionPresence({
         userId,
@@ -320,8 +338,11 @@ function presentCompanionDoctrine({
     } catch (_) {}
   }
 
-  if (!witness.block && !witness.connection && !DUPLICATE_INTRO_PATTERN.test(opening)) {
-    parts.push(TRANSITION);
+  if (!witness.block && !witness.connection && !answerFirstMode) {
+    const openingText = parts[0] || '';
+    if (!DUPLICATE_INTRO_PATTERN.test(openingText)) {
+      parts.push(TRANSITION);
+    }
   }
 
   if (witness.block) {
@@ -336,7 +357,7 @@ function presentCompanionDoctrine({
     parts.push(historical.formattedBlock);
   }
 
-  if (memoryEnabled) {
+  if (surfaceMemory) {
     const reflection = pickTopicAwareReflection({ userId, message, doctrineTopic });
     if (reflection) parts.push(reflection);
   }
@@ -344,7 +365,7 @@ function presentCompanionDoctrine({
   const followup = pickTopicAwareFollowup({ userId, message, doctrineTopic });
   if (followup) {
     parts.push(followup);
-  } else {
+  } else if (!shouldSuppressStudy) {
     parts.push('Would you like to compare related passages?');
   }
 
@@ -358,30 +379,33 @@ function presentCompanionDoctrine({
     chainMeta,
   });
 
-  const continueOffer = buildContinueStudyOffer({ userId, doctrineTopic });
-  const studyJourney = getStudyJourneyContext({ userId, doctrineTopic });
-  if (studyJourney.enabled && studyJourney.phrase) {
-    parts.push(studyJourney.phrase);
-  } else if (continueOffer?.phrase) {
-    parts.push(continueOffer.phrase);
-  }
+  const continueOffer = shouldSuppressStudy ? null : buildContinueStudyOffer({ userId, doctrineTopic });
+  const studyJourney = shouldSuppressStudy ? { enabled: false } : getStudyJourneyContext({ userId, doctrineTopic });
 
-  if (studyMode.genesisToRevelationPath?.length) {
-    const pathRefs = trimPathForDelivery(studyMode.genesisToRevelationPath, delivery);
-    parts.push('\nGenesis-to-Revelation Study Path:');
+  if (!shouldSuppressStudy) {
+    if (studyJourney.enabled && studyJourney.phrase) {
+      parts.push(studyJourney.phrase);
+    } else if (continueOffer?.phrase) {
+      parts.push(continueOffer.phrase);
+    }
+
+    if (studyMode.genesisToRevelationPath?.length) {
+      const pathRefs = trimPathForDelivery(studyMode.genesisToRevelationPath, delivery);
+      parts.push('\nGenesis-to-Revelation Study Path:');
+      parts.push(
+        pathRefs
+          .map((ref, index) => `${index + 1}. ${ref}`)
+          .join('\n')
+      );
+    }
+
     parts.push(
-      pathRefs
-        .map((ref, index) => `${index + 1}. ${ref}`)
-        .join('\n')
+      `\n${studyMode.invitation}\n${studyMode.continuation}\n` +
+        studyMode.steps.map((s) => `- ${s}`).join('\n')
     );
   }
 
-  parts.push(
-    `\n${studyMode.invitation}\n${studyMode.continuation}\n` +
-      studyMode.steps.map((s) => `- ${s}`).join('\n')
-  );
-
-  if (nextStepsBundle.gentleSuggestion) {
+  if (!shouldSuppressStudy && nextStepsBundle.gentleSuggestion) {
     parts.push(nextStepsBundle.gentleSuggestion);
   }
 
