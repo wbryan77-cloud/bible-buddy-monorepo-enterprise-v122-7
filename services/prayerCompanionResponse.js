@@ -65,6 +65,7 @@ function buildPrayerCompanionResponse({
   message = '',
   runtimeContext = {},
   profile = {},
+  suppressStudyPrompts = false,
 }) {
   const delivery = resolveDeliveryMode({ userId, profile });
   const subject = extractPrayerSubject(message);
@@ -104,7 +105,7 @@ function buildPrayerCompanionResponse({
     parts.push('When you are ready, we can follow up on how this prayer concern is going.');
   }
 
-  if (nextStepsBundle.gentleSuggestion) {
+  if (nextStepsBundle.gentleSuggestion && !suppressStudyPrompts) {
     parts.push(nextStepsBundle.gentleSuggestion);
   }
 

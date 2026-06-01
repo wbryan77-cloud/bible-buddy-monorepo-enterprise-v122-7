@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-06-01T22:47:24.925Z",
+  "sprint": "2.14D",
+  "results": [
+    {
+      "name": "H1 — Did Rome change the Sabbath?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Roman civil authority and later Roman church authority played a major role in shifting common Christian observance toward Sunday.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:",
+      "intent": "sabbath_history",
+      "activeTopic": "sabbath",
+      "followUp": false
+    },
+    {
+      "name": "H2 — Was the pope involved?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — later papal and Roman church authority helped preserve and normalize Sunday o",
+      "intent": "sabbath_history",
+      "activeTopic": "sabbath",
+      "followUp": false
+    },
+    {
+      "name": "H3 — What evidence exists?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandmen",
+      "intent": "sabbath_history",
+      "activeTopic": "sabbath",
+      "followUp": true
+    },
+    {
+      "name": "H4 — Why did they do it?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou are asking who changed Sabbath observance from Saturday to Sunday — and whether that change came from Scripture or from later human authority.\n\nDirect answer:\nScripture does not name a person who changed the Sabbath. Historically, the shift towar",
+      "intent": "sabbath_history",
+      "activeTopic": "sabbath",
+      "followUp": true
+    },
+    {
+      "name": "H5 — That wasn't my question.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you — that wasn't your question. Let me answer what you actually asked, with Scripture first and history second.\n\nYou're right — I drifted back to the Sabbath definition. You asked a direct historical question, and I'll answer that now.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority pl",
+      "intent": "sabbath_history",
+      "activeTopic": "sabbath",
+      "followUp": true
+    },
+    {
+      "name": "I1 — I lost my friend.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I'm really sorry for your loss. Tell me about her if you want — we can take this gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a c",
+      "intent": "emotional_support",
+      "activeTopic": "grief",
+      "followUp": false
+    },
+    {
+      "name": "I2 — How do I help her daughters?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you — it's still weighing on you. That kind of grief doesn't lift quickly, and it makes sense that it's still bothering you.\n\nYou mentioned recently that you have been walking through grief after a loss.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries",
+      "intent": "emotional_support",
+      "activeTopic": "grief",
+      "followUp": true
+    },
+    {
+      "name": "I3 — Should I call them?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you — it's still weighing on you. That kind of grief doesn't lift quickly, and it makes sense that it's still bothering you.\n\nYou mentioned recently that you have been walking through grief after a loss.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries",
+      "intent": "emotional_support",
+      "activeTopic": "grief",
+      "followUp": true
+    }
+  ],
+  "scoring": {
+    "scores": {
+      "conversationContinuity": 98,
+      "followUpUnderstanding": 97,
+      "correctionHandling": 97,
+      "memoryRelevance": 97,
+      "topicPersistence": 98,
+      "naturalConversation": 96
+    },
+    "overall": 97
+  },
+  "passed": 8,
+  "total": 8
+}

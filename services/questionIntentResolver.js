@@ -65,6 +65,23 @@ const PRAYER_PATTERNS = [
   /\bi need prayer\b/i,
 ];
 
+const HEALTH_PATTERNS = [
+  /\bmy knees hurt\b/i,
+  /\bknee(s)? (hurt|pain|ache)\b/i,
+  /\b(hurt|pain|ache|sore)\b/i,
+  /\bhealth concern\b/i,
+  /\bnot feeling well\b/i,
+  /\bcan'?t sleep\b/i,
+];
+
+const DISCERNMENT_PATTERNS = [
+  /\bjob opportunity\b/i,
+  /\bnew job\b/i,
+  /\bshould i (take|accept|apply)\b/i,
+  /\bdon'?t know if i should\b/i,
+  /\bpush or wait\b/i,
+];
+
 const GRIEF_PATTERNS = [
   /\blost a friend\b/i,
   /\blost my (friend|loved one|parent|child|spouse)\b/i,
@@ -99,7 +116,9 @@ function detectQuestionType(message = '', topic = null, recentSessions = []) {
   if (CORRECTION_PATTERNS.some((p) => p.test(text))) return 'correction';
   if (STUDY_CONTINUATION_PATTERNS.some((p) => p.test(text))) return 'study_continuation';
   if (PRAYER_PATTERNS.some((p) => p.test(text))) return 'prayer';
-  if (GRIEF_PATTERNS.some((p) => p.test(text))) return 'personal_help';
+  if (GRIEF_PATTERNS.some((p) => p.test(text))) return 'grief';
+  if (HEALTH_PATTERNS.some((p) => p.test(text))) return 'health';
+  if (DISCERNMENT_PATTERNS.some((p) => p.test(text))) return 'discernment';
 
   if (EVIDENCE_PATTERNS.some((p) => p.test(text))) {
     return 'evidence_request';
@@ -119,6 +138,10 @@ function detectQuestionType(message = '', topic = null, recentSessions = []) {
 
   if (DEFINITION_PATTERNS.some((p) => p.test(text))) {
     return 'definition';
+  }
+
+  if (/\b(feel lost|don'?t know what god wants|help me think|what should i do with my life)\b/i.test(text)) {
+    return 'open_question';
   }
 
   // Follow-up evidence/history without explicit keywords
@@ -201,13 +224,22 @@ function resolveQuestionIntent({ message = '', recentSessions = [] } = {}) {
     'historical_causation',
     'historical_confirmation',
     'evidence_request',
+    'historical_follow_up',
+    'history',
   ].includes(questionType);
 
+  const isCorrection = questionType === 'correction' || isCorrectionMode(text);
+  const isFrustrated = emotionalTone === 'frustrated' || emotionalTone === 'correcting';
+
   const shouldSkipDoctrineIntercept =
-    questionType === 'correction' ||
+    isCorrection ||
     questionType === 'prayer' ||
+    questionType === 'grief' ||
+    questionType === 'health' ||
     questionType === 'personal_help' ||
     questionType === 'study_continuation' ||
+    questionType === 'discernment' ||
+    questionType === 'open_question' ||
     isHistoricalQuestion ||
     (topic === 'sabbath' && isHistoricalQuestion);
 
@@ -216,14 +248,20 @@ function resolveQuestionIntent({ message = '', recentSessions = [] } = {}) {
     (questionType === 'definition' && emotionalTone === 'neutral' && !isHistoricalQuestion);
 
   const shouldSuppressStudyPrompts =
-    questionType === 'correction' ||
-    emotionalTone === 'frustrated' ||
-    emotionalTone === 'correcting' ||
+    isCorrection ||
+    isFrustrated ||
     isHistoricalQuestion ||
-    questionType === 'evidence_request';
+    questionType === 'evidence_request' ||
+    ['grief', 'health', 'discernment', 'open_question'].includes(questionType);
+
+  const subtopic =
+    topic === 'sabbath' && (isHistoricalQuestion || questionType === 'historical_follow_up')
+      ? 'sabbath_history'
+      : null;
 
   return {
     topic,
+    subtopic,
     previousTopic,
     questionType,
     emotionalTone,
@@ -234,6 +272,15 @@ function resolveQuestionIntent({ message = '', recentSessions = [] } = {}) {
     shouldOfferStudyContinuation,
     shouldSuppressStudyPrompts,
     isHistoricalQuestion,
+    isFollowUp: false,
+    isCorrection,
+    isFrustrated,
+    isHistoryRequest: isHistoricalQuestion,
+    isEvidenceRequest: questionType === 'evidence_request',
+    isPersonalSupport: ['grief', 'health', 'personal_help'].includes(questionType),
+    isPrayer: questionType === 'prayer',
+    isStudyRequest: questionType === 'study_continuation',
+    isNewTopic: false,
     isSabbathHistory:
       topic === 'sabbath' &&
       (isHistoricalQuestion || questionType === 'comparison' || questionType === 'correction'),
@@ -244,12 +291,117 @@ function resolveQuestionIntent({ message = '', recentSessions = [] } = {}) {
   };
 }
 
+// Follow-up phrases that continue the active thread rather than starting a new topic.
+const FOLLOW_UP_PATTERNS = [
+  /^\s*(yes|yeah|no)\b.*\bbut\b/i,
+  /^\s*but\b/i,
+  /^\s*(and|so|then)\b/i,
+  /^\s*why\b/i,
+  /^\s*how\b/i,
+  /^\s*who\b/i,
+  /^\s*when\b/i,
+  /^\s*where\b/i,
+  /^\s*what about\b/i,
+  /\bwhat evidence\b/i,
+  /\bwhat about (the )?(pope|rome|constantine|laodicea|council|history)\b/i,
+  /\b(was|were|did|does|is|do)\b.*\b(pope|rome|roman|catholic|church|constantine|laodicea|they|it|that|involved)\b/i,
+  /\bexplain (that|this|it|more)\b/i,
+  /\btell me more\b/i,
+  /\bmore (detail|about that|on that|evidence)\b/i,
+  /\bgo on\b/i,
+  /\bcontinue\b/i,
+  /\bwhat do you mean\b/i,
+  /\bhelp (me|her|him|them)\b/i,
+  /\bshould i\b/i,
+  /\bwhat (should|can|do) i\b/i,
+];
+
+const CORRECTION_MODE_PATTERNS = [
+  /\banswer my question\b/i,
+  /\bthat'?s not my question\b/i,
+  /\bthat is not my question\b/i,
+  /\bthat was not my question\b/i,
+  /\bthat wasn'?t my question\b/i,
+  /\blisten\b/i,
+  /\byou'?re not answering\b/i,
+  /\byou are not answering\b/i,
+  /\bthat isn'?t what i asked\b/i,
+  /\bthat is not what i asked\b/i,
+  /\bnot what i asked\b/i,
+  /\byou didn'?t answer\b/i,
+  /\bwhy won'?t you answer\b/i,
+  /\bi'?m not asking about that\b/i,
+  /\byou are not listening\b/i,
+  /\byou'?re not listening\b/i,
+  /\bi'?m not asking about my knee\b/i,
+];
+
+function isCorrectionMode(message = '') {
+  return CORRECTION_MODE_PATTERNS.some((p) => p.test(String(message || '')));
+}
+
+/**
+ * Resolve whether the current message is a follow-up to the active conversation.
+ * When it is, the active topic is inherited rather than starting a new topic.
+ */
+function resolveFollowUpQuestion({ message = '', activeConversation = null } = {}) {
+  const text = String(message || '').trim();
+  const correction = isCorrectionMode(text);
+
+  // A new explicit topic in the message wins over inheritance.
+  const explicitTopic = detectTopicFromMessage(text);
+
+  const matchesFollowUp = FOLLOW_UP_PATTERNS.some((p) => p.test(text));
+  const isShort = text.split(/\s+/).filter(Boolean).length <= 8;
+  const hasActiveTopic = !!(activeConversation && activeConversation.isActive && activeConversation.topic);
+
+  // Correction always inherits the active topic.
+  if (correction && hasActiveTopic) {
+    return {
+      isFollowUp: true,
+      correction: true,
+      questionType: 'correction',
+      inheritedTopic: activeConversation.topic,
+      reason: 'correction',
+    };
+  }
+
+  if (hasActiveTopic && !explicitTopic && (matchesFollowUp || isShort)) {
+    const inherited = activeConversation.topic;
+    let followType = 'follow_up';
+    if (inherited === 'sabbath') followType = 'historical_follow_up';
+    else if (inherited === 'grief') followType = 'grief';
+    else if (inherited === 'health') followType = 'health';
+    else if (inherited === 'discernment') followType = 'discernment';
+
+    return {
+      isFollowUp: true,
+      correction: false,
+      questionType: followType,
+      inheritedTopic: inherited,
+      reason: matchesFollowUp ? 'follow_up_phrase' : 'short_continuation',
+    };
+  }
+
+  return {
+    isFollowUp: false,
+    correction,
+    questionType: correction ? 'correction' : null,
+    inheritedTopic: null,
+    reason: null,
+  };
+}
+
 module.exports = {
   resolveQuestionIntent,
+  resolveFollowUpQuestion,
+  isCorrectionMode,
   detectQuestionType,
   detectEmotionalTone,
   detectRequestedDepth,
   findPriorQuestion,
+  FOLLOW_UP_PATTERNS,
+  CORRECTION_MODE_PATTERNS,
   CORRECTION_PATTERNS,
   STUDY_CONTINUATION_PATTERNS,
 };

@@ -122,6 +122,7 @@ function buildEmotionalSupportResponse({
   supportType = 'grief',
   profile = {},
   isFollowUp = false,
+  suppressStudyPrompts = false,
 }) {
   const delivery = resolveDeliveryMode({ userId, profile });
   const scriptures = supportType === 'rest' ? REST_SCRIPTURES : GRIEF_SCRIPTURES;
@@ -131,7 +132,11 @@ function buildEmotionalSupportResponse({
     chainMeta: { genesisToRevelationPath: scriptures.map((s) => s.reference) },
   });
 
-  const memorySurface = getRelevantMemoryForSurfacing({ userId, message });
+  const memorySurface = getRelevantMemoryForSurfacing({
+    userId,
+    message,
+    currentTopic: supportType === 'rest' ? null : 'grief',
+  });
   const nextStepsBundle = buildCompanionNextSteps({
     userId,
     message,
@@ -146,8 +151,7 @@ function buildEmotionalSupportResponse({
     opening =
       "I hear you — it's still weighing on you. That kind of grief doesn't lift quickly, and it makes sense that it's still bothering you.";
   } else {
-    opening =
-      "I'm really sorry for your loss. I'm glad you brought this here — we can take it gently, one step at a time.";
+    opening = "I'm really sorry for your loss. Tell me about her if you want — we can take this gently, one step at a time.";
   }
 
   const witnessLines =
@@ -174,7 +178,9 @@ function buildEmotionalSupportResponse({
     parts.push('Would you like a brief prayer for rest, or a moment with a gentle passage?');
   }
 
-  if (nextStepsBundle.gentleSuggestion) parts.push(nextStepsBundle.gentleSuggestion);
+  if (!suppressStudyPrompts && nextStepsBundle.gentleSuggestion && !/Feast|continue studying|Genesis-to-Revelation/i.test(nextStepsBundle.gentleSuggestion)) {
+    parts.push(nextStepsBundle.gentleSuggestion);
+  }
 
   const reply = applyDeliveryToReply({ reply: parts.filter(Boolean).join('\n\n'), delivery });
   const enrichedScripture = trimScriptureForDelivery(

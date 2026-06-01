@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-31T05:39:32.417Z",
+  "timestamp": "2026-06-01T22:47:33.721Z",
   "sprint": "2.14B",
   "results": [
     {
@@ -14,7 +14,7 @@
       "name": "TEST 2 — Rome and Catholic Church",
       "passed": true,
       "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — historically, Roman civil authority (Constantine, AD 321) and later Roman chu",
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — later papal and Roman church authority helped preserve and normalize Sunday o",
       "intercept": "sabbath_history_companion",
       "intent": "sabbath_history"
     },
@@ -22,7 +22,7 @@
       "name": "TEST 3 — Catholic Church performed change",
       "passed": true,
       "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — historically, Roman civil authority (Constantine, AD 321) and later Roman chu",
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — later papal and Roman church authority helped preserve and normalize Sunday o",
       "intercept": "sabbath_history_companion",
       "intent": "sabbath_history"
     },

@@ -41,6 +41,7 @@ function buildHealthSupportResponse({
   runtimeContext = {},
   profile = {},
   health = {},
+  suppressStudyPrompts = false,
 }) {
   const delivery = resolveDeliveryMode({ userId, profile });
   const issue = health.issue || 'this health concern';
@@ -51,7 +52,7 @@ function buildHealthSupportResponse({
   });
 
   const isRecurring = /\b(again|still|today)\b/i.test(message) && /knee|pain|hurt|ache/i.test(message);
-  const memorySurface = getRelevantMemoryForSurfacing({ userId, message });
+  const memorySurface = getRelevantMemoryForSurfacing({ userId, message, currentTopic: 'health' });
   const nextStepsBundle = buildCompanionNextSteps({
     userId,
     message,
@@ -59,8 +60,12 @@ function buildHealthSupportResponse({
     mode: 'wellness',
   });
 
+  const isFirstMention = !isRecurring && !/\b(week|days|month|while|ongoing)\b/i.test(message);
   let opening;
-  if (isRecurring && /knee/i.test(message + issue)) {
+  if (isFirstMention && /knee|hurt|pain|ache/i.test(message + issue)) {
+    opening =
+      "I'm sorry you're dealing with that. How long has it been hurting — just today, or has this been going on for a while?";
+  } else if (isRecurring && /knee/i.test(message + issue)) {
     opening =
       "I hear you — your knees are hurting again today. That matters, and I'm glad you told me. Let's take this gently — I'm not a doctor, but we can bring this before the Lord together.";
   } else if (isRecurring) {
@@ -87,7 +92,7 @@ function buildHealthSupportResponse({
     'If you would like, we can pray for strength and peace, sit with a gentle passage, or take one small step for today — no pressure.'
   );
 
-  if (nextStepsBundle.gentleSuggestion && !/grief|loss/i.test(nextStepsBundle.gentleSuggestion)) {
+  if (!suppressStudyPrompts && nextStepsBundle.gentleSuggestion && !/grief|loss|Feast|continue studying/i.test(nextStepsBundle.gentleSuggestion)) {
     parts.push(nextStepsBundle.gentleSuggestion);
   }
 

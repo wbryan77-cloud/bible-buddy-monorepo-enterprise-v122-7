@@ -30,7 +30,16 @@ function formatTopic(topic = '') {
   return TOPIC_LABELS[topic] || String(topic || '').replace(/_/g, ' ');
 }
 
-function buildPersonalizedFallback({ userId, message = '', safety = {}, recentSessions = [], runtimeContext = {}, profile = {} }) {
+function buildPersonalizedFallback({
+  userId,
+  message = '',
+  safety = {},
+  recentSessions = [],
+  runtimeContext = {},
+  profile = {},
+  suppressStudyPrompts = false,
+  suppressMemory = false,
+}) {
   const learning = buildLearningContext(userId);
   const delivery = resolveDeliveryMode({ userId, profile });
   const memorySurface = getRelevantMemoryForSurfacing({ userId, message });
@@ -47,10 +56,10 @@ function buildPersonalizedFallback({ userId, message = '', safety = {}, recentSe
   let memory_used = false;
   const reflection = buildCompanionReflection({ userId, message, runtimeContext });
 
-  if (reflection.reflection) {
+  if (reflection.reflection && !suppressMemory) {
     parts.push(reflection.reflection);
     memory_used = true;
-  } else if (memorySurface.line) {
+  } else if (memorySurface.line && !suppressMemory) {
     parts.push(memorySurface.line);
     memory_used = true;
   }
@@ -63,28 +72,28 @@ function buildPersonalizedFallback({ userId, message = '', safety = {}, recentSe
     memory_used = true;
   }
 
-  if (studyLabel && favoriteTopic === 'sabbath') {
+  if (!suppressMemory && studyLabel && favoriteTopic === 'sabbath') {
     const offer = buildContinueStudyOffer({ userId, doctrineTopic: 'sabbath' });
     parts.push(
       `You've been studying ${studyLabel} frequently. ${offer.phrase || 'Would you like to continue the Sabbath study path?'}`
     );
     memory_used = true;
-  } else if (studyLabel && prayerTopic) {
+  } else if (!suppressMemory && studyLabel && prayerTopic) {
     parts.push(
       `You've been studying ${studyLabel} and asking for guidance around ${prayerTopic}. We can continue that study, pray through what you're carrying, or look at a Scripture for strength.`
     );
     memory_used = true;
-  } else if (studyLabel) {
+  } else if (!suppressMemory && studyLabel) {
     parts.push(
       `You've been studying ${studyLabel}. We can continue that study, pray through what you're carrying, or look at a Scripture for strength.`
     );
     memory_used = true;
-  } else if (prayerTopic || learning.prayerTopics?.length) {
+  } else if (!suppressMemory && (prayerTopic || learning.prayerTopics?.length)) {
     parts.push(
       `I remember you've been carrying concerns around ${prayerTopic || learning.prayerTopics[0]}. We can pray together, turn to Scripture, or take one gentle step for today.`
     );
     memory_used = true;
-  } else if (lastSession?.message) {
+  } else if (!suppressMemory && lastSession?.message) {
     parts.push(
       `When we last spoke you mentioned "${String(lastSession.message).slice(0, 100)}..." — would you like to pick that back up, turn to Scripture, or pray through it?`
     );
@@ -100,12 +109,12 @@ function buildPersonalizedFallback({ userId, message = '', safety = {}, recentSe
   }
 
   const studyJourney = getStudyJourneyContext({ userId });
-  if (studyJourney.enabled && studyJourney.phrase && /study|sabbath|kingdom|continue/i.test(lower)) {
+  if (!suppressStudyPrompts && studyJourney.enabled && studyJourney.phrase && /study|sabbath|kingdom|continue/i.test(lower)) {
     parts.push(studyJourney.phrase);
     memory_used = true;
   }
 
-  if (nextStepsBundle.gentleSuggestion) {
+  if (!suppressStudyPrompts && nextStepsBundle.gentleSuggestion) {
     parts.push(nextStepsBundle.gentleSuggestion);
   }
 

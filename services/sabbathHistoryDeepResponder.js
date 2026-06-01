@@ -46,13 +46,17 @@ function detectQuestionFocus(message = '') {
     /\broman catholic\b/i.test(lower) ||
     /\bcatholic church\b/i.test(lower) ||
     /\bchurch authority\b/i.test(lower) ||
-    /\bperform the change\b/i.test(lower);
+    /\bperform the change\b/i.test(lower) ||
+    /\bpope\b/i.test(lower) ||
+    /\bpapa(l|cy)\b/i.test(lower) ||
+    /\bvatican\b/i.test(lower);
 
   const asksWhoChanged =
     /\bwho changed\b/i.test(lower) ||
     /\bchanged (the )?sabbath\b/i.test(lower) ||
     /\bsaturday to sunday\b/i.test(lower) ||
-    /\bsat to sun(day)?\b/i.test(lower);
+    /\bsat to sun(day)?\b/i.test(lower) ||
+    /\bwhy did (they|rome|the church|he|the pope)\b/i.test(lower);
 
   const asksWhySunday =
     /\bwhy\b.*\bsunday\b/i.test(lower) ||
@@ -114,11 +118,12 @@ function buildAcknowledgment(message = '', correction = false, focus = {}) {
 }
 
 function buildDirectConclusion(focus = {}) {
-  if (focus.asksCatholic || focus.asksRome) {
+  if (focus.asksCatholic || focus.asksRome || /\bpope\b/i.test(String(focus._message || ''))) {
     return [
       'Direct answer:',
-      'Yes — historically, Roman civil authority (Constantine, AD 321) and later Roman church authority (Council of Laodicea and subsequent canon/liturgical tradition) played a major role in establishing Sunday as the common day of rest and worship.',
-      'But the Bible answer remains: God did not record a command changing the seventh-day Sabbath to Sunday.',
+      'Yes — later papal and Roman church authority helped preserve and normalize Sunday observance across much of Western Christianity.',
+      'But history does not show one single pope personally changing God\'s Sabbath command by himself. The shift happened through Roman civil law (Constantine, AD 321), councils (Laodicea, circa AD 364), bishops, canon law, and church tradition over time.',
+      'Scripture itself does not record God changing the seventh-day Sabbath to Sunday.',
     ].join('\n');
   }
 
@@ -147,6 +152,7 @@ function buildSabbathHistoryDeepResponse({
   questionIntent = null,
 } = {}) {
   const focus = detectQuestionFocus(message);
+  focus._message = message;
   const hasPriorSabbathTurn = (recentSessions || []).some((s) =>
     /sabbath|seventh day|who changed|historical/i.test(String(s?.message || '') + String(s?.reply || ''))
   );

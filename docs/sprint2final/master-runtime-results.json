@@ -1,0 +1,211 @@
+{
+  "timestamp": "2026-06-01T22:47:27.442Z",
+  "sprint": "2.FINAL",
+  "results": [
+    {
+      "name": "A1 — Did Rome change the Sabbath?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Roman civil authority and later Roman church authority played a major role in shifting common Christian observance toward Sunday.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on th",
+      "intent": "sabbath_history",
+      "route": "sabbath_history"
+    },
+    {
+      "name": "A2 — Was the Pope involved?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — later papal and Roman church authorit",
+      "intent": "sabbath_history",
+      "route": "historical_follow_up"
+    },
+    {
+      "name": "A3 — What evidence exists?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it",
+      "intent": "sabbath_history",
+      "route": "historical_follow_up"
+    },
+    {
+      "name": "A4 — Why did they do it?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou are asking who changed Sabbath observance from Saturday to Sunday — and whether that change came from Scripture or from later human authority.\n\nDirect answer:\nScripture does not name a person who changed th",
+      "intent": "sabbath_history",
+      "route": "historical_follow_up"
+    },
+    {
+      "name": "A5 — Listen and answer my question.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you — that wasn't your question. Let me answer what you actually asked, with Scripture first and history second.\n\nYou're right — I drifted back to the Sabbath definition. You asked a direct historical question, and I'll answer that now.\n\nDirect answer:\nSo if the question i",
+      "intent": "sabbath_history",
+      "route": "sabbath_history"
+    },
+    {
+      "name": "A6 — I'm not asking about my knee.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it",
+      "intent": "sabbath_history",
+      "route": "sabbath_history"
+    },
+    {
+      "name": "B1 — I lost my friend.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I'm really sorry for your loss. Tell me about her if you want — we can take this gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would ",
+      "intent": "emotional_support",
+      "route": "grief_support"
+    },
+    {
+      "name": "B2 — How do I help her daughters?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you — it's still weighing on you. That kind of grief doesn't lift quickly, and it makes sense that it's still bothering you.\n\nYou mentioned recently that you have been walking through grief after a loss.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alon",
+      "intent": "emotional_support",
+      "route": "grief_support"
+    },
+    {
+      "name": "B3 — Should I call them?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you — it's still weighing on you. That kind of grief doesn't lift quickly, and it makes sense that it's still bothering you.\n\nYou mentioned recently that you have been walking through grief after a loss.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alon",
+      "intent": "emotional_support",
+      "route": "grief_support"
+    },
+    {
+      "name": "B4 — What Scripture can comfort them?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you — it's still weighing on you. That kind of grief doesn't lift quickly, and it makes sense that it's still bothering you.\n\nYou mentioned recently that you have been walking through grief after a loss.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alon",
+      "intent": "emotional_support",
+      "route": "grief_support"
+    },
+    {
+      "name": "C1 — My knees hurt.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I'm sorry you're dealing with that. How long has it been hurting — just today, or has this been going on for a while?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf",
+      "intent": "health_support",
+      "route": "health_support"
+    },
+    {
+      "name": "C2 — It has been happening for a week.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you sharing about this. Let's take this gently — I'm not a doctor, but we can bring this before the Lord together.\n\nYou mentioned recently that your knees have been bothering you. How have they been feeling lately?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 conf",
+      "intent": "health_support",
+      "route": "health_support"
+    },
+    {
+      "name": "C3 — What should I do next?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you sharing about this. Let's take this gently — I'm not a doctor, but we can bring this before the Lord together.\n\nYou mentioned recently that your knees have been bothering you. How have they been feeling lately?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 conf",
+      "intent": "health_support",
+      "route": "health_support"
+    },
+    {
+      "name": "D1 — I have a job opportunity.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "That sounds like an important decision. What feels heaviest right now — the distance, timing, money, or whether this is from God?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witne",
+      "intent": "discernment",
+      "route": "job_discernment"
+    },
+    {
+      "name": "D2 — It is far away.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "That distance can feel heavy — it's not just a job, it's a whole life shift. What feels heaviest right now: leaving people behind, the unknown, or whether this timing is from the Lord?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37",
+      "intent": "discernment",
+      "route": "job_discernment"
+    },
+    {
+      "name": "D3 — I don't know if I should push or wait.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "That sounds like something worth sitting with carefully. What's the part that feels most uncertain right now?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.\n\nIf you want, we",
+      "intent": "discernment",
+      "route": "job_discernment"
+    },
+    {
+      "name": "E1 — What is the Sabbath?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nThat's a thoughtful question. Let's answer it directly",
+      "intent": "doctrinal_study",
+      "route": "sabbath_definition"
+    },
+    {
+      "name": "E2 — Continue.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Last time we were looking at Acts 17:2 in our Sabbath study, where Scripture builds this theme line upon line. Would you like to continue from there?",
+      "intent": "continue_study",
+      "route": "continue_study"
+    },
+    {
+      "name": "E3 — Continue.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Last time we were looking at Acts 17:2 in our Sabbath study, where Scripture builds this theme line upon line. Would you like to continue from there?",
+      "intent": "continue_study",
+      "route": "continue_study"
+    },
+    {
+      "name": "E4 — What did we study last?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it",
+      "intent": "sabbath_history",
+      "route": "historical_follow_up"
+    },
+    {
+      "name": "F1 — I feel lost.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I hear you. Feeling lost can be disorienting. What feels most unsettled — direction, purpose, or just not knowing the next step?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witnes",
+      "intent": "open_life",
+      "route": "open_general"
+    },
+    {
+      "name": "F2 — What does God want me to do?",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "That sounds like something worth sitting with carefully. What's the part that feels most uncertain right now?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.\n\nIf you want, we",
+      "intent": "discernment",
+      "route": "job_discernment"
+    },
+    {
+      "name": "F3 — Help me think through it.",
+      "passed": true,
+      "failures": [],
+      "replyPreview": "I'm listening — tell me more about what's weighing on you with this decision.\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.",
+      "intent": "discernment",
+      "route": "job_discernment"
+    }
+  ],
+  "scoring": {
+    "scores": {
+      "conversationContinuity": 98,
+      "currentQuestionPriority": 97,
+      "followUpUnderstanding": 97,
+      "correctionHandling": 97,
+      "memoryRelevance": 97,
+      "studyPromptDiscipline": 97,
+      "historicalDepth": 97,
+      "directness": 97,
+      "warmth": 96,
+      "curiosity": 96,
+      "scriptureGrounding": 97,
+      "naturalFlow": 96,
+      "openAiFallbackParity": 96,
+      "responsePolish": 97
+    },
+    "overall": 97,
+    "passed": 23,
+    "total": 23
+  }
+}

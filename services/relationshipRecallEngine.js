@@ -480,16 +480,58 @@ function filterHitsForMessage(hits = [], message = '') {
   });
 }
 
-function getRelevantMemoryForSurfacing({ userId, message = '', maxItems = 3 }) {
-  const hits = filterHitsForMessage(
+// Map active-conversation topic families to the memory categories that are
+// relevant to that topic. Memory only surfaces when it matches the current topic.
+const TOPIC_CATEGORY_RELEVANCE = {
+  health: ['health_concerns'],
+  grief: ['grief_events'],
+  prayer: ['prayer_requests'],
+  sabbath: ['favorite_study_topics'],
+  feast_days: ['favorite_study_topics'],
+  dietary_law: ['favorite_study_topics'],
+  traditions: ['favorite_study_topics'],
+  resurrection_timeline: ['favorite_study_topics'],
+  kingdom: ['favorite_study_topics'],
+};
+
+function scoreMemoryRelevance(hit, currentTopic) {
+  if (!currentTopic) return 100;
+  const allowed = TOPIC_CATEGORY_RELEVANCE[currentTopic];
+  if (!allowed) return 100; // unknown topic — no topic-based suppression
+  const category = hit.category || (hit.source === 'study' ? 'favorite_study_topics' : null);
+  if (allowed.includes(category)) return 100;
+  if (hit.source === 'study' && allowed.includes('favorite_study_topics')) return 100;
+  if (hit.source === 'prayer' && allowed.includes('prayer_requests')) return 100;
+  return 0;
+}
+
+function getRelevantMemoryForSurfacing({
+  userId,
+  message = '',
+  maxItems = 3,
+  currentTopic = null,
+  minRelevance = 80,
+}) {
+  let hits = filterHitsForMessage(
     collectRelationshipMemoryHits({ userId, recallType: 'relationship_status' }),
     message
   );
+
+  // Active-conversation topic filter: memory may only surface if it is relevant
+  // to the current topic (relevance >= minRelevance).
+  if (currentTopic) {
+    hits = hits.filter((hit) => scoreMemoryRelevance(hit, currentTopic) >= minRelevance);
+    if (!hits.length) {
+      return { line: null, hits: [], confidenceBlock: null, suppressed: true };
+    }
+  }
+
   const line = buildMemoryPresenceLine(hits.slice(0, maxItems + 2), 'relationship_status', message);
   return {
     line,
     hits: hits.slice(0, maxItems),
     confidenceBlock: buildMemoryConfidenceBlock(hits.slice(0, maxItems)),
+    suppressed: false,
   };
 }
 

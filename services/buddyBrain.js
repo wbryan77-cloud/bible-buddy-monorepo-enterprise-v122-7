@@ -46,7 +46,12 @@ const {
 const { polishCompanionReply } = require('./companionReplyPolish');
 const { resolveSabbathCompanionIntent } = require('./sabbathIntentRouter');
 const { buildSabbathHistoryResponse } = require('./sabbathHistoryCompanion');
-const { resolveQuestionIntent } = require('./questionIntentResolver');
+const { resolveQuestionIntent, resolveFollowUpQuestion } = require('./questionIntentResolver');
+const { detectTopicFromMessage } = require('./doctrineBoundaries');
+const {
+  getActiveConversation,
+  updateActiveConversation,
+} = require('./activeConversationManager');
 const { containsInternalRuntimeLabels } = require('./runtimeLabelStripper');
 
 let getSnapshot = () => ({ modules: [], phases: [], competitors: [], avatars: [] });
@@ -542,25 +547,6 @@ function fallbackReply({
     };
   }
 
-  const factualHistory =
-    /\bhistorical (references|evidence|context)\b/i.test(String(message)) ||
-    /\bwho changed\b/i.test(String(message)) ||
-    /\bwhy sunday\b/i.test(String(message));
-
-  if (factualHistory) {
-    const sabbathIntent = resolveSabbathCompanionIntent({ message, recentSessions });
-    if (sabbathIntent.intent === 'history_deep' || sabbathIntent.intent === 'history' || sabbathIntent.recentSabbathContext) {
-      return buildSabbathHistoryResponse({
-        userId,
-        message,
-        recentSessions,
-        correction: sabbathIntent.correction,
-        runtimeContext,
-        profile,
-      });
-    }
-  }
-
   return buildPersonalizedFallback({
     userId,
     message,
@@ -644,8 +630,13 @@ function finalizeBuddyResponse({
     scoreCompanionQuality({ message, reply: structured.reply, runtimeContext });
   structured.quality = quality;
 
+  // Active-conversation lock (Sprint 2.14D): follow-up/correction turns suppress
+  // memory, study, and enrichment so Buddy stays on the live thread.
+  const activeConversationLock = !!structured.runtime?.activeConversationLock;
+
   if (profile?.memoryEnabled !== false && structured.mode !== 'crisis') {
     const skipEnrichment =
+      activeConversationLock ||
       structured.runtime?.intent === 'sabbath_history' ||
       structured.runtime?.companionPresentation?.skipRelationshipEnrichment;
     const skipJourney =
@@ -681,7 +672,12 @@ function finalizeBuddyResponse({
     structured.reply = polishCompanionReply(structured.reply);
   }
 
-  if (!structured.runtime?.companionNextSteps && structured.runtime?.intent !== 'sabbath_history') {
+  if (
+    !activeConversationLock &&
+    !structured.runtime?.companionPresentation?.skipStudyPrompts &&
+    !structured.runtime?.companionNextSteps &&
+    structured.runtime?.intent !== 'sabbath_history'
+  ) {
     const nextStepsBundle = buildCompanionNextSteps({
       userId,
       message,
@@ -728,47 +724,122 @@ function finalizeBuddyResponse({
     doctrineTopic,
   });
 
+  recordActiveConversationTurn({ userId, message, structured, doctrineTopic, runtimeContext });
+
   return structured;
 }
 
-async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
-  const startedAt = Date.now();
-  const { userId, mode, personaKey, message } = normalizeInput(inputOrUserId, modeArg, personaKeyArg, messageArg);
+// Derive the live conversation topic from a finalized reply and persist it.
+function recordActiveConversationTurn({ userId, message, structured, doctrineTopic = null, runtimeContext = {} }) {
+  if (!userId) return;
+  const intent = structured.runtime?.intent || runtimeContext.intent || null;
+  const sabbathTopic = structured.runtime?.sabbathIntent?.topic;
+  const supportType = structured.runtime?.supportType;
 
-  if (!message || !String(message).trim()) {
-    return fallbackReply({ message, safety: { level: 'standard' } });
-  }
+  let topic = null;
+  if (intent === 'sabbath_history' || sabbathTopic === 'sabbath') topic = 'sabbath';
+  else if (intent === 'emotional_support') topic = supportType === 'rest' ? 'grief' : 'grief';
+  else if (intent === 'health_support') topic = 'health';
+  else if (intent === 'prayer') topic = 'prayer';
+  else if (intent === 'discernment' || structured.runtime?.masterRoute === 'job_discernment') topic = 'discernment';
+  else if (doctrineTopic) topic = doctrineTopic;
+  else if (intent === 'memory_recall') topic = null; // recall should not anchor the thread
+  else if (structured.runtime?.studyConnection?.topic) topic = structured.runtime.studyConnection.topic;
 
-  const safety = classifySafety(message);
-  const profile = getUserCompanionProfile(userId);
-  const recentSessions = getRecentSessions(userId, 8);
-  const recentInsights = getRecentInsightsForUser(userId, 8);
-  const snapshot = getSnapshot();
-  let runtimeContext = buildRuntimeContext({ message, mode, profile, recentSessions, recentInsights, safety });
-  runtimeContext = enrichRuntimeContextWithMemory({ runtimeContext, userId, profile });
-  runtimeContext.userId = userId;
-  runtimeContext.profile = profile;
+  if (!topic) return;
 
-  const questionIntent = resolveQuestionIntent({ message, recentSessions });
-  runtimeContext.questionIntent = questionIntent;
+  try {
+    updateActiveConversation({
+      userId,
+      topic,
+      questionType: runtimeContext.questionIntent?.questionType || structured.runtime?.questionIntent?.questionType || null,
+      depth: runtimeContext.questionIntent?.requestedDepth || 'standard',
+      message,
+      answerTopic: topic,
+    });
+  } catch (_) {}
+}
 
-  if (safety.level === 'crisis') {
-    const crisisReply = fallbackReply({ message, safety });
-    const quality = scoreCompanionQuality({ message, reply: crisisReply.reply, runtimeContext });
-    crisisReply.quality = quality;
-    crisisReply.runtime = { emotion: runtimeContext.emotion, intent: runtimeContext.intent };
-    appendSession({ userId, mode, personaKey, message, reply: crisisReply.reply, structured: crisisReply, safety, runtime: runtimeContext, quality });
-    appendQualityEvent({ userId, mode, issues: quality.issues, score: quality.score, safety });
-    persistBuddyMemory({ userId, message, structured: crisisReply, runtimeContext, profile });
-    return crisisReply;
-  }
+// Detect whether the current message independently signals a *different*
+// concrete topic than the active conversation. If so, it is a topic switch
+// (not a follow-up) and must be allowed through normal routing.
+function messageStartsNewTopic(message = '', activeTopic = null) {
+  if (!activeTopic) return false;
 
-  const continueStudy = classifyContinueStudyIntent(message, userId);
-  if (continueStudy.isContinueStudy && profile?.memoryEnabled !== false) {
-    let continueReply = buildContinueStudyResponse({ userId, message });
-    continueReply.safety_level = safety.level;
-    continueReply = finalizeBuddyResponse({
-      structured: continueReply,
+  const family = normalizeConversationTopic;
+  const active = activeTopic;
+
+  if (active !== 'health' && classifyHealthCompanion(message).isHealthSupport) return true;
+
+  const emotional = classifyEmotionalSupport(message);
+  if (active !== 'grief' && emotional.isEmotionalSupport && !emotional.isFollowUp) return true;
+
+  if (active !== 'prayer' && classifyPrayerIntent(message).isPrayerRequest) return true;
+
+  const explicit = detectTopicFromMessage(message);
+  if (explicit && family(explicit) !== family(active)) return true;
+
+  return false;
+}
+
+function normalizeConversationTopic(topic = '') {
+  const t = String(topic || '').toLowerCase();
+  if (t === 'sabbath_history') return 'sabbath';
+  return t;
+}
+
+// Sprint 2.14D Part C/F/G: route a follow-up/correction to the active topic's
+// handler, locking out memory bleed, study prompts, and premature enrichment.
+function dispatchActiveConversationFollowUp({
+  userId,
+  mode,
+  personaKey,
+  message,
+  safety,
+  runtimeContext,
+  profile,
+  recentSessions,
+  questionIntent,
+  followUp,
+  startedAt,
+}) {
+  const topic = followUp.inheritedTopic;
+  const isCorrection = followUp.correction === true;
+
+  // Reflect the follow-up/correction on the question intent so downstream
+  // presenters suppress study prompts and memory.
+  runtimeContext.questionIntent = {
+    ...questionIntent,
+    questionType: isCorrection ? 'correction' : 'follow_up',
+    shouldSuppressStudyPrompts: true,
+    isFollowUp: true,
+  };
+
+  const lockRuntime = (structured, intent) => {
+    structured.runtime = {
+      ...(structured.runtime || {}),
+      intent: structured.runtime?.intent || intent,
+      activeConversationLock: true,
+      followUp: true,
+      correction: isCorrection,
+      activeTopic: topic,
+    };
+    return structured;
+  };
+
+  if (topic === 'sabbath') {
+    let reply = buildSabbathHistoryResponse({
+      userId,
+      message,
+      recentSessions,
+      correction: isCorrection,
+      runtimeContext,
+      profile,
+      questionIntent: runtimeContext.questionIntent,
+    });
+    reply = lockRuntime(reply, 'sabbath_history');
+    return finalizeBuddyResponse({
+      structured: reply,
       userId,
       mode,
       personaKey,
@@ -777,129 +848,20 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
       runtimeContext,
       profile,
     });
-    return continueReply;
   }
 
-  const studyConnection = classifyStudyConnectionQuery(message);
-  if (studyConnection.isStudyConnection && profile?.memoryEnabled !== false) {
-    const connectionReply = buildStudyConnectionResponse({
+  if (topic === 'grief') {
+    let reply = buildEmotionalSupportResponse({
       userId,
       message,
       runtimeContext,
+      supportType: 'grief',
       profile,
+      isFollowUp: true,
     });
-    if (connectionReply) {
-      connectionReply.safety_level = safety.level;
-      return finalizeBuddyResponse({
-        structured: connectionReply,
-        userId,
-        mode,
-        personaKey,
-        message,
-        safety,
-        runtimeContext,
-        profile,
-        doctrineTopic: connectionReply.runtime?.studyConnection?.topic || null,
-      });
-    }
-  }
-
-  const recall = classifyRelationshipRecallQuery(message);
-  if (recall.isRecallQuery && profile?.memoryEnabled !== false) {
-    const recallReply = buildMemoryRecallStructured({
-      userId,
-      message,
-      recall,
-      runtimeContext,
-      safety,
-    });
-    const quality = scoreCompanionQuality({
-      message,
-      reply: recallReply.reply,
-      runtimeContext,
-    });
-    recallReply.quality = quality;
-    recallReply.reply = polishCompanionReply(recallReply.reply);
-
-    appendSession({
-      userId,
-      mode,
-      personaKey,
-      message,
-      reply: recallReply.reply,
-      structured: recallReply,
-      safety,
-      runtime: runtimeContext,
-      quality,
-    });
-    appendQualityEvent({
-      userId,
-      mode,
-      emotion: runtimeContext.emotion,
-      intent: 'memory_recall',
-      issues: quality.issues || [],
-      score: quality.score,
-    });
-    updateUserMemory({ userId, message, structured: recallReply, runtimeContext });
-    persistBuddyMemory({ userId, message, structured: recallReply, runtimeContext, profile });
-    return recallReply;
-  }
-
-  const health = classifyHealthCompanion(message);
-  if (health.isHealthSupport) {
-    let healthReply = buildHealthSupportResponse({
-      userId,
-      message,
-      runtimeContext,
-      profile,
-      health: health.health,
-    });
-    healthReply = finalizeBuddyResponse({
-      structured: healthReply,
-      userId,
-      mode,
-      personaKey,
-      message,
-      safety,
-      runtimeContext,
-      profile,
-    });
-    return healthReply;
-  }
-
-  const prayer = classifyPrayerIntent(message);
-  if (prayer.isPrayerRequest) {
-    let prayerReply = buildPrayerCompanionResponse({
-      userId,
-      message,
-      runtimeContext,
-      profile,
-    });
-    prayerReply = finalizeBuddyResponse({
-      structured: prayerReply,
-      userId,
-      mode,
-      personaKey,
-      message,
-      safety,
-      runtimeContext,
-      profile,
-    });
-    return prayerReply;
-  }
-
-  const emotional = classifyEmotionalSupport(message, userId);
-  if (emotional.isEmotionalSupport) {
-    let emotionalReply = buildEmotionalSupportResponse({
-      userId,
-      message,
-      runtimeContext,
-      supportType: emotional.supportType,
-      profile,
-      isFollowUp: emotional.isFollowUp,
-    });
-    emotionalReply = finalizeBuddyResponse({
-      structured: emotionalReply,
+    reply = lockRuntime(reply, 'emotional_support');
+    return finalizeBuddyResponse({
+      structured: reply,
       userId,
       mode,
       personaKey,
@@ -908,28 +870,20 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
       runtimeContext,
       profile,
     });
-    return emotionalReply;
   }
 
-  const sabbathIntent = resolveSabbathCompanionIntent({ message, recentSessions });
-  const routeSabbathHistory =
-    questionIntent.isSabbathHistory ||
-    sabbathIntent.intent === 'history_deep' ||
-    sabbathIntent.intent === 'history' ||
-    sabbathIntent.intent === 'correction';
-
-  if (routeSabbathHistory && questionIntent.questionType !== 'comparison') {
-    let sabbathHistoryReply = buildSabbathHistoryResponse({
+  if (topic === 'health') {
+    const healthConcern = classifyHealthCompanion(message);
+    let reply = buildHealthSupportResponse({
       userId,
       message,
-      recentSessions,
-      correction: sabbathIntent.correction || questionIntent.questionType === 'correction',
       runtimeContext,
       profile,
-      questionIntent,
+      health: healthConcern.health || { issue: 'this' },
     });
-    sabbathHistoryReply = finalizeBuddyResponse({
-      structured: sabbathHistoryReply,
+    reply = lockRuntime(reply, 'health_support');
+    return finalizeBuddyResponse({
+      structured: reply,
       userId,
       mode,
       personaKey,
@@ -938,329 +892,57 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
       runtimeContext,
       profile,
     });
-    recordCompanionEvent({
-      type: 'runtime_orchestration',
-      userId,
-      mode,
-      durationMs: Date.now() - startedAt,
-      latencyMs: Date.now() - startedAt,
-      orbState: sabbathHistoryReply.orb_state,
-      safetyLevel: sabbathHistoryReply.safety_level,
-      feature: 'sabbath_history_companion',
-      language: 'en',
-    });
-    return sabbathHistoryReply;
   }
 
-  const doctrineResult = runDoctrineRuntimePipeline({ message, questionIntent });
-  if (doctrineResult?.intercepted) {
-    let structured = {
-      ...doctrineResult.reply,
-      safety_level: safety.level,
-      memory_used: false,
-      runtime: {
-        ...(doctrineResult.reply.runtime || {}),
-        emotion: runtimeContext.emotion,
-        intent: runtimeContext.intent,
-        doctrineTopic: doctrineResult.topic,
-        questionIntent,
-      },
-    };
-
-    try {
-      const refs = (structured.scripture || []).map((s) => s.reference || s);
-      const chain = await orchestrateBuddyRuntime({
-        topic: doctrineResult.topic,
-        scripture: refs,
-        message,
-      });
-      structured.runtime = {
-        ...structured.runtime,
-        scriptureChain: chain,
-      };
-    } catch (err) {
-      console.warn('Scripture chain enrichment failed:', err.message);
-    }
-
-    const quality =
-      structured.quality ||
-      scoreCompanionQuality({
-        message,
-        reply: structured.reply,
-        runtimeContext,
-      });
-    structured.quality = quality;
-
-    structured = presentCompanionDoctrine({
-      structured,
+  if (topic === 'prayer') {
+    let reply = buildPrayerCompanionResponse({
       userId,
       message,
       runtimeContext,
       profile,
-      safety,
-      doctrineTopic: doctrineResult.topic,
-      answerFirstMode: questionIntent.questionType === 'definition' || questionIntent.questionType === 'comparison',
-      suppressStudyPrompts: questionIntent.shouldSuppressStudyPrompts,
-      suppressMemory: questionIntent.isHistoricalQuestion,
     });
-
-    if (profile?.memoryEnabled !== false) {
-      const enriched = enrichResponseWithRelationshipIntelligence({
-        userId,
-        reply: structured.reply,
-        message,
-        runtimeContext,
-        includeReflection: false,
-        includeLoopRevisit: true,
-        includeStudyJourney: false,
-        doctrineTopic: doctrineResult.topic,
-      });
-      structured.reply = enriched.reply;
-      structured.runtime = {
-        ...structured.runtime,
-        relationshipIntelligence: enriched.relationshipContext,
-      };
-    }
-
-    appendSession({
+    reply = lockRuntime(reply, 'prayer');
+    return finalizeBuddyResponse({
+      structured: reply,
       userId,
       mode,
       personaKey,
       message,
-      reply: structured.reply,
-      structured,
       safety,
-      runtime: runtimeContext,
-      quality,
-    });
-    appendQualityEvent({
-      userId,
-      mode,
-      emotion: runtimeContext.emotion,
-      intent: runtimeContext.intent,
-      issues: quality.issues || [],
-      score: quality.score,
-    });
-    if (profile?.memoryEnabled !== false) {
-      updateUserMemory({ userId, message, structured, runtimeContext });
-    }
-    persistBuddyMemory({
-      userId,
-      message,
-      structured,
-      runtimeContext,
-      profile,
-      doctrineTopic: doctrineResult.topic,
-    });
-
-    recordCompanionEvent({
-      type: 'runtime_orchestration',
-      userId,
-      mode,
-      durationMs: Date.now() - startedAt,
-      latencyMs: Date.now() - startedAt,
-      orbState: structured.orb_state,
-      safetyLevel: structured.safety_level,
-      feature: 'doctrine_intercept',
-      language: 'en',
-    });
-
-    return structured;
-  }
-
-  const registryKey = detectRegistryStudyTopic(message);
-  if (registryKey) {
-    let registryReply = presentRegistryStudyResponse({
-      userId,
-      message,
-      registryKey,
       runtimeContext,
       profile,
     });
-    if (registryReply) {
-      registryReply.safety_level = safety.level;
-      registryReply = finalizeBuddyResponse({
-        structured: registryReply,
-        userId,
-        mode,
-        personaKey,
-        message,
-        safety,
-        runtimeContext,
-        profile,
-        doctrineTopic: registryKey,
-      });
-      recordCompanionEvent({
-        type: 'runtime_orchestration',
-        userId,
-        mode,
-        durationMs: Date.now() - startedAt,
-        latencyMs: Date.now() - startedAt,
-        orbState: registryReply.orb_state,
-        safetyLevel: registryReply.safety_level,
-        feature: 'registry_study_presenter',
-        language: 'en',
-      });
-      return registryReply;
-    }
   }
 
-  if (!openai) {
-    let reply = buildPersonalizedFallback({
-      userId,
-      message,
-      safety,
-      recentSessions,
-      runtimeContext,
-      profile,
-    });
-    reply = applyFallbackLoopGuard({
-      reply,
-      runtimeContext,
-      recentSessions,
-      message,
-      safety,
-      userId,
-    });
-    reply.quality = scoreCompanionQuality({ message, reply: reply.reply, runtimeContext });
-    reply.runtime = { ...(reply.runtime || {}), emotion: runtimeContext.emotion, intent: runtimeContext.intent };
-    if (profile?.memoryEnabled !== false) {
-      const enriched = enrichResponseWithRelationshipIntelligence({
-        userId,
-        reply: reply.reply,
-        message,
-        runtimeContext,
-        includeReflection: false,
-        includeLoopRevisit: true,
-      });
-      reply.reply = enriched.reply;
-      reply.runtime.relationshipIntelligence = enriched.relationshipContext;
-    }
-    appendSession({ userId, mode, personaKey, message, reply: reply.reply, structured: reply, safety, runtime: runtimeContext, quality: reply.quality });
-    updateUserMemory({ userId, message, structured: reply, runtimeContext });
-    persistBuddyMemory({ userId, message, structured: reply, runtimeContext, profile });
-    return reply;
-  }
+  return null;
+}
 
-  const runtimeInstructions = buildRuntimeInstructions(runtimeContext);
-  const systemPrompt = buildSystemPrompt({ mode, personaKey, profile, runtimeInstructions });
-
-  try {
-    const completion = await openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
-      temperature: 0.72,
-      response_format: { type: 'json_object' },
-      messages: [
-        { role: 'system', content: systemPrompt },
-        {
-          role: 'user',
-          content: JSON.stringify(
-            {
-              message,
-              userId,
-              mode,
-              personaKey,
-              safety,
-              companionProfile: profile,
-              runtimeContext,
-              recentSessions,
-              recentInsights,
-              projectSnapshot: snapshot,
-            },
-            null,
-            2
-          ),
-        },
-      ],
-    });
-
-    const raw = completion?.choices?.[0]?.message?.content || '';
-    let fallback = fallbackReply({ message, safety, userId, recentSessions, runtimeContext, profile });
-    fallback = applyFallbackLoopGuard({
-      reply: fallback,
-      runtimeContext,
-      recentSessions,
-      message,
-      safety,
-      userId,
-    });
-    const parsed = safeJsonParse(raw) || fallback;
-    const provisionalReply = parsed.reply || fallback.reply;
-    const quality = scoreCompanionQuality({ message, reply: provisionalReply, runtimeContext });
-    let structured = normalizeStructured(parsed, fallback, safety, runtimeContext, quality);
-    structured = applyFallbackLoopGuard({
-      reply: structured,
-      runtimeContext,
-      recentSessions,
-      message,
-      safety,
-      userId,
-    });
-
-    if (!quality.passed) {
-      structured.admin_flags = [...new Set([...(structured.admin_flags || []), 'low_quality_response', ...quality.issues])];
-    }
-
-    if (profile?.memoryEnabled !== false) {
-      const enriched = enrichResponseWithRelationshipIntelligence({
-        userId,
-        reply: structured.reply,
-        message,
-        runtimeContext,
-        includeReflection: true,
-        includeLoopRevisit: true,
-        includeStudyJourney: false,
-      });
-      structured.reply = polishCompanionReply(enriched.reply);
-      structured.runtime = {
-        ...(structured.runtime || {}),
-        relationshipIntelligence: enriched.relationshipContext,
-        openaiPathEnriched: true,
-      };
-    } else {
-      structured.reply = polishCompanionReply(structured.reply);
-    }
-
-    appendSession({ userId, mode, personaKey, message, reply: structured.reply, structured, safety, runtime: runtimeContext, quality });
-    appendQualityEvent({ userId, mode, emotion: runtimeContext.emotion, intent: runtimeContext.intent, issues: quality.issues, score: quality.score });
-    if (profile?.memoryEnabled !== false) {
-      updateUserMemory({ userId, message, structured, runtimeContext });
-    }
-    persistBuddyMemory({ userId, message, structured, runtimeContext, profile });
-
-    recordCompanionEvent({
-      type: 'runtime_orchestration',
-      userId,
-      mode,
-      durationMs: Date.now() - startedAt,
-      latencyMs: Date.now() - startedAt,
-      orbState: structured.orb_state,
-      safetyLevel: structured.safety_level,
-      feature: 'buddy_runtime_orchestrator',
-      language: 'en',
-    });
-
-    return structured;
-  } catch (e) {
-    console.error('BuddyBrain OpenAI error:', e?.message || e);
-    let reply = fallbackReply({ message, safety, userId, recentSessions, runtimeContext, profile });
-    reply = applyFallbackLoopGuard({
-      reply,
-      runtimeContext,
-      recentSessions,
-      message,
-      safety,
-      userId,
-    });
-    const quality = scoreCompanionQuality({ message, reply: reply.reply, runtimeContext });
-    reply.quality = quality;
-    reply.runtime = { ...(reply.runtime || {}), emotion: runtimeContext.emotion, intent: runtimeContext.intent };
-    appendSession({ userId, mode, personaKey, message, reply: reply.reply, structured: reply, safety, runtime: runtimeContext, quality });
-    appendQualityEvent({ userId, mode, issues: ['openai_error'], score: quality.score, error: e?.message || String(e) });
-    updateUserMemory({ userId, message, structured: reply, runtimeContext });
-    persistBuddyMemory({ userId, message, structured: reply, runtimeContext, profile });
-    return reply;
-  }
+async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
+  const { runMasterBuddyRuntime } = require('./masterBuddyRuntime');
+  return runMasterBuddyRuntime(
+    {
+      normalizeInput,
+      getUserCompanionProfile,
+      getRecentSessions,
+      enrichRuntimeContextWithMemory,
+      classifySafety,
+      fallbackReply,
+      finalizeBuddyResponse,
+      buildMemoryRecallStructured,
+      applyFallbackLoopGuard,
+      persistBuddyMemory,
+      appendSession,
+      appendQualityEvent,
+      updateUserMemory,
+      buildSystemPrompt,
+      safeJsonParse,
+      normalizeStructured,
+    },
+    inputOrUserId,
+    modeArg,
+    personaKeyArg,
+    messageArg
+  );
 }
 
 module.exports = {

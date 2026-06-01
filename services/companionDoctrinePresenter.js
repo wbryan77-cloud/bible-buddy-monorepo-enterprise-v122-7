@@ -285,7 +285,9 @@ function presentCompanionDoctrine({
   );
 
   const delivery = resolveDeliveryMode({ userId, profile });
-  const memorySurface = surfaceMemory ? getRelevantMemoryForSurfacing({ userId, message }) : { line: null };
+  const memorySurface = surfaceMemory
+    ? getRelevantMemoryForSurfacing({ userId, message, currentTopic: doctrineTopic || null })
+    : { line: null };
   const nextStepsBundle = buildCompanionNextSteps({
     userId,
     message,
