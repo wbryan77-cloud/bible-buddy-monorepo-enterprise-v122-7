@@ -13,6 +13,27 @@ const { hasGenericLoop } = require('./runtimeLoopGuard');
 const { buildCompanionReflection } = require('./companionReflectionLayer');
 const { getStudyJourneyContext } = require('./studyJourneyEngine');
 const { detectOpenLoop } = require('./openLoopsEngine');
+const { isStudyFallbackDisabled } = require('./ownershipAntiOverrideGuard');
+
+function buildMinimalOwnershipFallback({ message = '', safety = {} }) {
+  const lower = String(message || '').toLowerCase();
+  return {
+    reply:
+      lower.includes('?') && lower.length > 10
+        ? "I'm here to answer from Scripture directly. I couldn't reach the composer just now — please try your question again in a moment."
+        : "I'm here with you. Tell me what you'd like help with, and I'll answer from Scripture as directly as I can.",
+    scripture: [],
+    mode: 'companion',
+    confidence: 'low',
+    memory_used: false,
+    suggested_settings_change: null,
+    orb_state: 'speaking',
+    safety_level: safety.level || 'standard',
+    next_steps: [],
+    admin_flags: ['minimal_ownership_fallback'],
+    runtime: { minimalOwnershipFallback: true, personalizedFallback: false },
+  };
+}
 
 const TOPIC_LABELS = {
   sabbath: 'Sabbath',
@@ -40,6 +61,10 @@ function buildPersonalizedFallback({
   suppressStudyPrompts = false,
   suppressMemory = false,
 }) {
+  if (isStudyFallbackDisabled()) {
+    return buildMinimalOwnershipFallback({ message, safety });
+  }
+
   const learning = buildLearningContext(userId);
   const delivery = resolveDeliveryMode({ userId, profile });
   const memorySurface = getRelevantMemoryForSurfacing({ userId, message });
@@ -72,18 +97,23 @@ function buildPersonalizedFallback({
     memory_used = true;
   }
 
-  if (!suppressMemory && studyLabel && favoriteTopic === 'sabbath') {
+  const suppressStudySpeaker =
+    suppressStudyPrompts ||
+    process.env.BUDDY_DISABLE_STUDY_FALLBACK === '1' ||
+    process.env.BUDDY_TEMPLATE_PROSE === '0';
+
+  if (!suppressStudySpeaker && !suppressMemory && studyLabel && favoriteTopic === 'sabbath') {
     const offer = buildContinueStudyOffer({ userId, doctrineTopic: 'sabbath' });
     parts.push(
       `You've been studying ${studyLabel} frequently. ${offer.phrase || 'Would you like to continue the Sabbath study path?'}`
     );
     memory_used = true;
-  } else if (!suppressMemory && studyLabel && prayerTopic) {
+  } else if (!suppressStudySpeaker && !suppressMemory && studyLabel && prayerTopic) {
     parts.push(
       `You've been studying ${studyLabel} and asking for guidance around ${prayerTopic}. We can continue that study, pray through what you're carrying, or look at a Scripture for strength.`
     );
     memory_used = true;
-  } else if (!suppressMemory && studyLabel) {
+  } else if (!suppressStudySpeaker && !suppressMemory && studyLabel && studyLabel !== 'general') {
     parts.push(
       `You've been studying ${studyLabel}. We can continue that study, pray through what you're carrying, or look at a Scripture for strength.`
     );
@@ -125,16 +155,19 @@ function buildPersonalizedFallback({
     summaryLine: delivery.isLight && memory_used ? summaryLine : null,
   });
 
-  const scripture = trimScriptureForDelivery(
-    [
-      {
-        reference: 'Psalm 46:1',
-        text: 'God is our refuge and strength, a very present help in trouble.',
-        reason: 'steadying reminder',
-      },
-    ],
-    delivery
-  );
+  const scripture =
+    suppressStudySpeaker || process.env.BUDDY_TEMPLATE_PROSE === '0'
+      ? []
+      : trimScriptureForDelivery(
+          [
+            {
+              reference: 'Psalm 46:1',
+              text: 'God is our refuge and strength, a very present help in trouble.',
+              reason: 'steadying reminder',
+            },
+          ],
+          delivery
+        );
 
   const structured = {
     reply,

@@ -99,6 +99,65 @@ const FRUSTRATION_PATTERNS = [
   /\bagain\b/i,
 ];
 
+const META_QUESTION_PATTERNS = [
+  /\bwhy are you saying\b/i,
+  /\bwhy are you using the word\b/i,
+  /\bwhy are you using (the )?wording\b/i,
+  /\bwhy did you call it\b/i,
+  /\bwhy do you call it\b/i,
+  /\bwhy do you call\b/i,
+  /\bwhy didn'?t you say\b/i,
+  /\byour wording\b/i,
+  /\bthe technical name\b/i,
+  /\bi'?m asking about your wording\b/i,
+  /\bi am asking about your wording\b/i,
+  /\bi'?m not asking about history\b/i,
+  /\bi am not asking about history\b/i,
+  /\bi'?m not asking about the shift\b/i,
+  /\bi am not asking about the shift\b/i,
+  /\bi'?m asking why you worded it that way\b/i,
+  /\bi am asking why you worded it that way\b/i,
+  /\bwhy you worded it that way\b/i,
+  /\basking about (your )?wording\b/i,
+  /\bwhy are you using (the word|church|roman)\b/i,
+  /\bwhy are you saying (roman|church|catholic)\b/i,
+  /\bnot asking about (history|the shift|sabbath history)\b/i,
+  /\bi'?m asking about wording\b/i,
+];
+
+const CORRECTION_ESCALATION_PATTERNS = [
+  /\byou'?re not answering\b/i,
+  /\byou are not answering\b/i,
+  /\blisten\b/i,
+  /\bthat'?s not my question\b/i,
+  /\bthat is not my question\b/i,
+  /\bi'?m asking about wording\b/i,
+  /\bi am asking about wording\b/i,
+  /\bwhy are you not answering my question\b/i,
+  /\bare you not listening\b/i,
+  /\byou are not listening\b/i,
+];
+
+function isMetaAboutPreviousAnswer(message = '') {
+  return META_QUESTION_PATTERNS.some((p) => p.test(String(message || '')));
+}
+
+function countRecentCorrections(recentSessions = [], activeConversation = null) {
+  let count = activeConversation?.correctionCount || 0;
+  for (const session of recentSessions || []) {
+    const msg = String(session?.message || '');
+    if (CORRECTION_ESCALATION_PATTERNS.some((p) => p.test(msg))) count += 1;
+    else if (CORRECTION_PATTERNS.some((p) => p.test(msg))) count += 1;
+  }
+  return count;
+}
+
+function shouldEscalateCorrection(message = '', recentSessions = [], activeConversation = null) {
+  const isEscalationPhrase = CORRECTION_ESCALATION_PATTERNS.some((p) => p.test(String(message || '')));
+  const priorCorrections = countRecentCorrections(recentSessions, activeConversation);
+  return isEscalationPhrase && priorCorrections >= 1;
+}
+
 function detectEmotionalTone(message = '', recentSessions = []) {
   const text = String(message || '');
   if (GRIEF_PATTERNS.some((p) => p.test(text))) return 'grief';
@@ -113,6 +172,7 @@ function detectEmotionalTone(message = '', recentSessions = []) {
 function detectQuestionType(message = '', topic = null, recentSessions = []) {
   const text = String(message || '');
 
+  if (isMetaAboutPreviousAnswer(text)) return 'meta_about_previous_answer';
   if (CORRECTION_PATTERNS.some((p) => p.test(text))) return 'correction';
   if (STUDY_CONTINUATION_PATTERNS.some((p) => p.test(text))) return 'study_continuation';
   if (PRAYER_PATTERNS.some((p) => p.test(text))) return 'prayer';
@@ -187,10 +247,11 @@ function findPriorQuestion(recentSessions = []) {
   return null;
 }
 
-function resolveQuestionIntent({ message = '', recentSessions = [] } = {}) {
+function resolveQuestionIntent({ message = '', recentSessions = [], activeConversation = null } = {}) {
   const text = String(message || '').trim();
   let topic = detectTopicFromMessage(text);
   const previousTopic = detectTopicFromSessions(recentSessions);
+  const activeTopic = activeConversation?.topic || null;
 
   if (!topic && previousTopic) {
     topic = previousTopic;
@@ -205,11 +266,22 @@ function resolveQuestionIntent({ message = '', recentSessions = [] } = {}) {
   }
 
   let questionType = detectQuestionType(text, topic, recentSessions);
+  if (questionType === 'general' && isCorrectionMode(text)) {
+    questionType = 'correction';
+  }
   const emotionalTone = detectEmotionalTone(text, recentSessions);
   const requestedDepth = detectRequestedDepth(text, questionType);
 
+  const isMetaQuestion = questionType === 'meta_about_previous_answer';
+  const correctionEscalated = shouldEscalateCorrection(text, recentSessions, activeConversation);
+  const strictAnswerMode = correctionEscalated || (activeConversation?.strictAnswerMode && isMetaQuestion);
+
+  if (isMetaQuestion) {
+    topic = activeTopic || topic || previousTopic;
+  }
+
   let reanswerPrior = null;
-  if (questionType === 'correction') {
+  if (questionType === 'correction' && !isMetaQuestion) {
     reanswerPrior = findPriorQuestion(recentSessions);
     if (reanswerPrior) {
       topic = reanswerPrior.topic || topic;
@@ -232,6 +304,7 @@ function resolveQuestionIntent({ message = '', recentSessions = [] } = {}) {
   const isFrustrated = emotionalTone === 'frustrated' || emotionalTone === 'correcting';
 
   const shouldSkipDoctrineIntercept =
+    isMetaQuestion ||
     isCorrection ||
     questionType === 'prayer' ||
     questionType === 'grief' ||
@@ -248,16 +321,24 @@ function resolveQuestionIntent({ message = '', recentSessions = [] } = {}) {
     (questionType === 'definition' && emotionalTone === 'neutral' && !isHistoricalQuestion);
 
   const shouldSuppressStudyPrompts =
+    isMetaQuestion ||
+    strictAnswerMode ||
     isCorrection ||
     isFrustrated ||
     isHistoricalQuestion ||
     questionType === 'evidence_request' ||
     ['grief', 'health', 'discernment', 'open_question'].includes(questionType);
 
-  const subtopic =
-    topic === 'sabbath' && (isHistoricalQuestion || questionType === 'historical_follow_up')
+  const subtopic = isMetaQuestion
+    ? 'wording'
+    : topic === 'sabbath' && (isHistoricalQuestion || questionType === 'historical_follow_up')
       ? 'sabbath_history'
       : null;
+
+  const memoryAllowed = !isMetaQuestion && !strictAnswerMode && !isCorrection && !isFrustrated;
+  const studyPromptAllowed = !shouldSuppressStudyPrompts;
+  const historyAllowed = isMetaQuestion ? 'only_if_needed' : isHistoricalQuestion;
+  const doctrineTemplateAllowed = !isMetaQuestion && !strictAnswerMode;
 
   return {
     topic,
@@ -271,23 +352,32 @@ function resolveQuestionIntent({ message = '', recentSessions = [] } = {}) {
     shouldSkipDoctrineIntercept,
     shouldOfferStudyContinuation,
     shouldSuppressStudyPrompts,
-    isHistoricalQuestion,
+    isHistoricalQuestion: isMetaQuestion ? false : isHistoricalQuestion,
     isFollowUp: false,
     isCorrection,
     isFrustrated,
-    isHistoryRequest: isHistoricalQuestion,
+    isMetaQuestion,
+    strictAnswerMode,
+    correctionEscalated,
+    memoryAllowed,
+    studyPromptAllowed,
+    historyAllowed,
+    doctrineTemplateAllowed,
+    isHistoryRequest: isMetaQuestion ? false : isHistoricalQuestion,
     isEvidenceRequest: questionType === 'evidence_request',
     isPersonalSupport: ['grief', 'health', 'personal_help'].includes(questionType),
     isPrayer: questionType === 'prayer',
     isStudyRequest: questionType === 'study_continuation',
     isNewTopic: false,
     isSabbathHistory:
+      !isMetaQuestion &&
       topic === 'sabbath' &&
       (isHistoricalQuestion || questionType === 'comparison' || questionType === 'correction'),
     isSabbathDefinition:
       topic === 'sabbath' &&
       questionType === 'definition' &&
-      !isHistoricalQuestion,
+      !isHistoricalQuestion &&
+      !isMetaQuestion,
   };
 }
 
@@ -329,8 +419,10 @@ const CORRECTION_MODE_PATTERNS = [
   /\bthat is not what i asked\b/i,
   /\bnot what i asked\b/i,
   /\byou didn'?t answer\b/i,
-  /\bwhy won'?t you answer\b/i,
-  /\bi'?m not asking about that\b/i,
+  /\bwhy are you not answering my question\b/i,
+  /\bwhy won'?t you answer my question\b/i,
+  /\bare you not listening\b/i,
+  /\byou are not listening\b/i,
   /\byou are not listening\b/i,
   /\byou'?re not listening\b/i,
   /\bi'?m not asking about my knee\b/i,
@@ -347,6 +439,18 @@ function isCorrectionMode(message = '') {
 function resolveFollowUpQuestion({ message = '', activeConversation = null } = {}) {
   const text = String(message || '').trim();
   const correction = isCorrectionMode(text);
+  const metaQuestion = isMetaAboutPreviousAnswer(text);
+
+  // Meta-questions inherit active topic for context but must NOT route as history.
+  if (metaQuestion && activeConversation?.topic) {
+    return {
+      isFollowUp: true,
+      correction: false,
+      questionType: 'meta_about_previous_answer',
+      inheritedTopic: activeConversation.topic,
+      reason: 'meta_wording',
+    };
+  }
 
   // A new explicit topic in the message wins over inheritance.
   const explicitTopic = detectTopicFromMessage(text);
@@ -396,6 +500,9 @@ module.exports = {
   resolveQuestionIntent,
   resolveFollowUpQuestion,
   isCorrectionMode,
+  isMetaAboutPreviousAnswer,
+  shouldEscalateCorrection,
+  countRecentCorrections,
   detectQuestionType,
   detectEmotionalTone,
   detectRequestedDepth,
@@ -403,5 +510,7 @@ module.exports = {
   FOLLOW_UP_PATTERNS,
   CORRECTION_MODE_PATTERNS,
   CORRECTION_PATTERNS,
+  META_QUESTION_PATTERNS,
+  CORRECTION_ESCALATION_PATTERNS,
   STUDY_CONTINUATION_PATTERNS,
 };

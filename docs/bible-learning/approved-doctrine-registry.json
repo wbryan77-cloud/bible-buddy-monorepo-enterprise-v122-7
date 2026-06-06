@@ -1,0 +1,140 @@
+{
+  "version": "1.0.0",
+  "approvedAt": "2026-06-01",
+  "framework": "bible_first_openai_authored",
+  "freezePolicy": {
+    "status": "approved_frozen",
+    "discoveryMayStrengthen": true,
+    "discoveryMayNotRemove": true,
+    "discoveryMayNotDowngrade": true,
+    "discoveryMayNotReopenForApproval": true,
+    "discoveryMayNotAlterBibleFirstConclusionAutomatically": true,
+    "discoveryMayNotReplaceApprovedDoctrine": true,
+    "discoveryMayNotModifyFinalAnswersAutomatically": true,
+    "adminReviewRequiredForAnyModification": true,
+    "gapDetectionRestrictions": {
+      "forbiddenPrompts": [
+        "Should this doctrine be approved?",
+        "Should this doctrine be removed?",
+        "Should this doctrine be reconsidered?"
+      ],
+      "allowedOutputs": [
+        "additional_supporting_evidence",
+        "additional_concordance_support",
+        "additional_original_language_support",
+        "continuity_chain_discoveries",
+        "potential_contradiction_alerts",
+        "confidence_adjustments_for_review"
+      ],
+      "newDoctrineCandidatesOnly": "administrator_review_as_unclassified"
+    }
+  },
+  "openAiAuthorshipProtection": {
+    "finalAnswerAuthor": "openai",
+    "evidenceCardsTeachOpenAi": true,
+    "concordanceTeachOpenAi": true,
+    "discoveryFindingsTeachAdministrators": true,
+    "doctrineValidatorChecksAnswers": true,
+    "forbiddenResponseAuthors": [
+      "discovery_engine",
+      "concordance_engine",
+      "study_system",
+      "evidence_system",
+      "template_responder"
+    ]
+  },
+  "approvedTopics": [
+    {
+      "topicKey": "sabbath",
+      "cardId": "sabbath",
+      "title": "The Seventh-Day Sabbath",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "dietary_law",
+      "cardId": "dietaryLaw",
+      "title": "Dietary Law / Clean and Unclean",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "acts_10_clarification",
+      "cardId": "dietaryLaw",
+      "title": "Acts 10 Clarification (People/Gentiles Context)",
+      "status": "approved_frozen",
+      "parentTopic": "dietary_law",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "isaiah_66_17",
+      "cardId": "dietaryLaw",
+      "title": "Isaiah 66:17 Swine and Abomination",
+      "status": "approved_frozen",
+      "parentTopic": "dietary_law",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "heavens",
+      "cardId": "heavens",
+      "title": "Heaven / Third Heaven / Layered Heavens",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "death_state",
+      "cardId": "deathState",
+      "title": "Death State / Sleep / Not in Heaven at Death",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "messiah_logos",
+      "cardId": "messiahLogos",
+      "title": "Logos / Word of God / Jesus in Old Testament",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "law_commandments",
+      "cardId": "lawCommandments",
+      "title": "Law and Commandments",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "feasts",
+      "cardId": "feasts",
+      "title": "Biblical Feast Days / High Sabbaths",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "traditions",
+      "cardId": "traditions",
+      "title": "Traditions (Christmas, Easter, Good Friday / Easter Sunday Chronology)",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-01",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    }
+  ]
+}

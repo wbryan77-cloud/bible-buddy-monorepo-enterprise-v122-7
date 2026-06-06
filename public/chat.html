@@ -238,6 +238,19 @@
         scrollToBottom();
       }
 
+      function getOrCreateUserId() {
+        try {
+          var id = localStorage.getItem('buddyChatUserId');
+          if (!id) {
+            id = 'chat-user-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+            localStorage.setItem('buddyChatUserId', id);
+          }
+          return id;
+        } catch (_) {
+          return 'chat-user-' + Date.now();
+        }
+      }
+
       async function sendToBuddy(rawText) {
         const text = String(rawText || '').trim();
         if (!text) return;
@@ -255,7 +268,7 @@
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              userId: 'chat-html-user',
+              userId: getOrCreateUserId(),
               mode: 'COMPANION',
               personaKey: 'ADAPTIVE_COMPANION',
               message: text

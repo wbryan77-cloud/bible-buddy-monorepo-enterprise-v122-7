@@ -1,0 +1,147 @@
+{
+  "version": "1.0.0",
+  "description": "Sample original-language relationship chains — confidence scored. Feeds discovery reinforcement only; does not modify approved cards automatically.",
+  "chains": [
+    {
+      "chainId": "hebrew_shabbath_continuity",
+      "topic": "sabbath",
+      "approved": true,
+      "confidenceScore": 0.9,
+      "nodes": [
+        {
+          "type": "hebrew_word",
+          "strongsId": "H7676",
+          "lemma": "שַׁבָּת",
+          "transliteration": "shabbath",
+          "gloss": "Sabbath",
+          "confidence": 0.95
+        },
+        {
+          "type": "root",
+          "strongsId": "H7673",
+          "lemma": "שָׁבַת",
+          "transliteration": "shabath",
+          "gloss": "cease, rest",
+          "confidence": 0.88
+        },
+        {
+          "type": "occurrence_cluster",
+          "references": ["Exodus 20:8", "Exodus 31:13", "Isaiah 58:13"],
+          "doctrinalTheme": "sabbath_command_and_delight",
+          "confidence": 0.92
+        },
+        {
+          "type": "greek_parallel",
+          "strongsId": "G4521",
+          "lemma": "σάββατον",
+          "transliteration": "sabbaton",
+          "gloss": "Sabbath",
+          "references": ["Luke 4:16", "Acts 17:2"],
+          "confidence": 0.87
+        },
+        {
+          "type": "revelation_continuity",
+          "reference": "Revelation 14:12",
+          "theme": "commandments_of_god_and_faith_of_jesus",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "chainId": "hebrew_tame_chazir_dietary",
+      "topic": "dietary_law",
+      "approved": true,
+      "confidenceScore": 0.91,
+      "nodes": [
+        {
+          "type": "hebrew_word",
+          "strongsId": "H2931",
+          "lemma": "טָמֵא",
+          "transliteration": "tame",
+          "gloss": "unclean",
+          "confidence": 0.94
+        },
+        {
+          "type": "hebrew_word",
+          "strongsId": "H2386",
+          "lemma": "חֲזִיר",
+          "transliteration": "chazir",
+          "gloss": "swine",
+          "confidence": 0.96
+        },
+        {
+          "type": "occurrence_cluster",
+          "references": ["Leviticus 11:7", "Deuteronomy 14:8", "Isaiah 66:17"],
+          "doctrinalTheme": "swine_unclean",
+          "confidence": 0.95
+        },
+        {
+          "type": "greek_usage",
+          "strongsId": "G169",
+          "lemma": "ἀκάθαρτος",
+          "transliteration": "akathartos",
+          "gloss": "unclean",
+          "references": ["Acts 10:14"],
+          "note": "Peter's vision — examine Acts 11 explanation before food-permission reading",
+          "confidence": 0.82
+        }
+      ]
+    },
+    {
+      "chainId": "greek_logos_messiah",
+      "topic": "messiah_logos",
+      "approved": true,
+      "confidenceScore": 0.93,
+      "nodes": [
+        {
+          "type": "greek_word",
+          "strongsId": "G3056",
+          "lemma": "λόγος",
+          "transliteration": "logos",
+          "gloss": "Word",
+          "confidence": 0.97
+        },
+        {
+          "type": "occurrence_cluster",
+          "references": ["John 1:1", "John 1:14", "1 John 1:1"],
+          "doctrinalTheme": "word_made_flesh",
+          "confidence": 0.96
+        },
+        {
+          "type": "hebrew_parallel_theme",
+          "reference": "Genesis 1:1",
+          "theme": "creation_by_word_of_god",
+          "confidence": 0.78
+        },
+        {
+          "type": "revelation_continuity",
+          "reference": "Revelation 19:13",
+          "theme": "name_word_of_god",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "chainId": "greek_ouranos_heavens",
+      "topic": "heavens",
+      "approved": true,
+      "confidenceScore": 0.85,
+      "nodes": [
+        {
+          "type": "greek_word",
+          "strongsId": "G3772",
+          "lemma": "οὐρανός",
+          "transliteration": "ouranos",
+          "gloss": "heaven",
+          "confidence": 0.9
+        },
+        {
+          "type": "occurrence_cluster",
+          "references": ["Matthew 6:9", "2 Corinthians 12:2", "Revelation 21:1"],
+          "doctrinalTheme": "layered_heavens_and_new_heaven",
+          "confidence": 0.86
+        }
+      ]
+    }
+  ]
+}

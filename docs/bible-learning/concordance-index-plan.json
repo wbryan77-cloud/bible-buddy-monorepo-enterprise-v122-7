@@ -1,0 +1,154 @@
+{
+  "version": "1.0.0",
+  "status": "approved_foundation",
+  "approvedAt": "2026-06-01",
+  "purpose": "Concordance resources are approved learning assets. Index strengthens Evidence Cards and discovery — never authors final prose.",
+  "approvedSources": [
+    "Strongs Concordance",
+    "Hebrew word entries",
+    "Greek word entries",
+    "Root word relationships",
+    "Transliteration mappings",
+    "Definitions",
+    "Usage patterns",
+    "Verse occurrence mappings",
+    "Related English renderings",
+    "Original-language metadata"
+  ],
+  "engineCapabilities": {
+    "may": [
+      "strengthen_scripture_relationships",
+      "strengthen_evidence_cards",
+      "identify_word_continuity_across_scripture",
+      "identify_genesis_to_revelation_themes",
+      "identify_recurring_doctrinal_concepts",
+      "improve_confidence_scoring",
+      "improve_scripture_witness_discovery",
+      "improve_cross_reference_discovery",
+      "improve_doctrine_gap_discovery"
+    ],
+    "mayNot": [
+      "author_final_prose",
+      "override_scripture",
+      "override_openai",
+      "override_current_user_intent",
+      "create_doctrine_automatically",
+      "modify_approved_doctrine_automatically"
+    ]
+  },
+  "ingestionPhases": [
+    {
+      "phase": "1A",
+      "name": "foundation_index",
+      "status": "implemented",
+      "deliverable": "services/concordanceFoundation.js + seed index entries"
+    },
+    {
+      "phase": "1B",
+      "name": "strongs_hebrew_bulk",
+      "status": "planned",
+      "deliverable": "data/concordance/hebrew-strongs.json"
+    },
+    {
+      "phase": "1C",
+      "name": "strongs_greek_bulk",
+      "status": "planned",
+      "deliverable": "data/concordance/greek-strongs.json"
+    },
+    {
+      "phase": "2",
+      "name": "cross_reference_graph",
+      "status": "planned",
+      "deliverable": "data/concordance/cross-reference.json"
+    }
+  ],
+  "indexSchema": {
+    "entry": {
+      "strongsId": "H7676 | G4521",
+      "lemma": "original lemma",
+      "transliteration": "shabbath | sabbaton",
+      "language": "hebrew | greek",
+      "root": "optional root strongs id",
+      "gloss": "English gloss",
+      "definition": "concise definition",
+      "occurrences": ["book chapter:verse refs"],
+      "relatedRenderings": ["Sabbath", "rest"],
+      "doctrinalThemes": ["sabbath"],
+      "linkedTopics": ["sabbath"]
+    }
+  },
+  "seedEntries": [
+    {
+      "strongsId": "H7676",
+      "lemma": "שַׁבָּת",
+      "transliteration": "shabbath",
+      "language": "hebrew",
+      "gloss": "Sabbath",
+      "definition": "Intermission, cessation; the seventh day rest.",
+      "occurrences": ["Exodus 20:8", "Exodus 31:13", "Isaiah 58:13"],
+      "relatedRenderings": ["Sabbath", "rest"],
+      "doctrinalThemes": ["sabbath"],
+      "linkedTopics": ["sabbath"]
+    },
+    {
+      "strongsId": "H2889",
+      "lemma": "טָהוֹר",
+      "transliteration": "tahor",
+      "language": "hebrew",
+      "gloss": "clean",
+      "definition": "Clean, pure; ceremonially clean.",
+      "occurrences": ["Leviticus 11:3", "Leviticus 11:47"],
+      "relatedRenderings": ["clean", "pure"],
+      "doctrinalThemes": ["dietary_law", "clean_unclean"],
+      "linkedTopics": ["dietary_law"]
+    },
+    {
+      "strongsId": "H2931",
+      "lemma": "טָמֵא",
+      "transliteration": "tame",
+      "language": "hebrew",
+      "gloss": "unclean",
+      "definition": "Unclean, impure; ceremonially unclean.",
+      "occurrences": ["Leviticus 11:4", "Leviticus 11:47", "Isaiah 66:17"],
+      "relatedRenderings": ["unclean", "defiled"],
+      "doctrinalThemes": ["dietary_law", "clean_unclean"],
+      "linkedTopics": ["dietary_law"]
+    },
+    {
+      "strongsId": "H2386",
+      "lemma": "חֲזִיר",
+      "transliteration": "chazir",
+      "language": "hebrew",
+      "gloss": "swine",
+      "definition": "Swine, pig; listed among unclean animals.",
+      "occurrences": ["Leviticus 11:7", "Deuteronomy 14:8", "Isaiah 66:17"],
+      "relatedRenderings": ["swine", "pig", "pork"],
+      "doctrinalThemes": ["dietary_law"],
+      "linkedTopics": ["dietary_law"]
+    },
+    {
+      "strongsId": "G3056",
+      "lemma": "λόγος",
+      "transliteration": "logos",
+      "language": "greek",
+      "gloss": "word",
+      "definition": "Word, speech, divine expression; John 1 Logos.",
+      "occurrences": ["John 1:1", "John 1:14", "Hebrews 1:1-3"],
+      "relatedRenderings": ["Word", "Logos"],
+      "doctrinalThemes": ["messiah_logos"],
+      "linkedTopics": ["messiah_logos"]
+    },
+    {
+      "strongsId": "G3772",
+      "lemma": "οὐρανός",
+      "transliteration": "ouranos",
+      "language": "greek",
+      "gloss": "heaven",
+      "definition": "Heaven, sky; used for layered heavens in Scripture.",
+      "occurrences": ["Matthew 6:9", "2 Corinthians 12:2", "Revelation 21:1"],
+      "relatedRenderings": ["heaven", "heavens", "sky"],
+      "doctrinalThemes": ["heavens"],
+      "linkedTopics": ["heavens"]
+    }
+  ]
+}

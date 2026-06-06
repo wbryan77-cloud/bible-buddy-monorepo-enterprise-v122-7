@@ -1,0 +1,16 @@
+# Local runtime / session state (beta stabilization — do not commit)
+data/
+
+# Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/

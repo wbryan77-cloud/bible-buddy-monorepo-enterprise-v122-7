@@ -3,13 +3,25 @@ services:
   - type: web
     name: bible-buddy
     env: node
-    plan: free
+    plan: standard
     buildCommand: npm install && npx prisma migrate deploy
     startCommand: node server.js
     autoDeploy: true
     envVars:
       - key: NODE_ENV
         value: production
+      - key: BUDDY_RUNTIME
+        value: legacy
+      - key: BUDDY_TEMPLATE_PROSE
+        value: "0"
+      - key: BUDDY_DISABLE_STUDY_FALLBACK
+        value: "1"
+      - key: BUDDY_DEBUG
+        value: "1"
+      - key: BUDDY_LIVE_TRACE
+        value: "1"
+      - key: OPENAI_API_KEY
+        sync: false
       - key: ADMIN_PASSWORD
         value: change-me
       - key: PHASE_AUTOSTART

@@ -53,6 +53,7 @@ const {
   updateActiveConversation,
 } = require('./activeConversationManager');
 const { containsInternalRuntimeLabels } = require('./runtimeLabelStripper');
+const { isStudyFallbackDisabled } = require('./ownershipAntiOverrideGuard');
 
 let getSnapshot = () => ({ modules: [], phases: [], competitors: [], avatars: [] });
 let getRecentInsightsForUser = () => [];
@@ -133,7 +134,20 @@ function getRecentSessions(userId, limit = 8) {
 
   try {
     if (!fs.existsSync(LOG_FILE)) return [];
-    const text = fs.readFileSync(LOG_FILE, 'utf8');
+    const stat = fs.statSync(LOG_FILE);
+    const maxBytes = 512 * 1024;
+    let text = '';
+    if (stat.size > maxBytes) {
+      const fd = fs.openSync(LOG_FILE, 'r');
+      const buf = Buffer.alloc(maxBytes);
+      fs.readSync(fd, buf, 0, maxBytes, stat.size - maxBytes);
+      fs.closeSync(fd);
+      text = buf.toString('utf8');
+      const firstNl = text.indexOf('\n');
+      if (firstNl >= 0) text = text.slice(firstNl + 1);
+    } else {
+      text = fs.readFileSync(LOG_FILE, 'utf8');
+    }
     const lines = text.trim().split('\n').filter(Boolean).reverse();
     const out = [];
     for (const line of lines) {
@@ -341,6 +355,19 @@ Return JSON only using this shape:
 const FALLBACK_LOOP_PHRASE = 'slow this down together';
 
 function buildAlternateFallbackReply({ message, safety, recentSessions = [], userId, runtimeContext = {}, profile = {} }) {
+  if (isStudyFallbackDisabled()) {
+    return {
+      reply:
+        "I'm here with you. Tell me what you'd like help with, and I'll answer from Scripture as directly as I can.",
+      scripture: [],
+      mode: 'companion',
+      confidence: 'low',
+      memory_used: false,
+      safety_level: safety.level,
+      admin_flags: ['minimal_ownership_fallback'],
+      runtime: { minimalOwnershipFallback: true },
+    };
+  }
   return buildPersonalizedFallback({
     userId,
     message,
@@ -362,6 +389,11 @@ function applyFallbackLoopGuard({ reply, runtimeContext, recentSessions, message
   }
 
   if (suppression.suppressed || loopRisk || genericLoop || containsInternalRuntimeLabels(structured.reply)) {
+    if (isStudyFallbackDisabled()) {
+      structured.reply = suppressLoopLanguage(structured.reply);
+      structured.admin_flags = [...new Set([...(structured.admin_flags || []), 'ownership_no_fallback_swap'])];
+      return structured;
+    }
     const alternate = buildAlternateFallbackReply({
       message,
       safety,
@@ -547,6 +579,23 @@ function fallbackReply({
     };
   }
 
+  if (isStudyFallbackDisabled()) {
+    return {
+      reply:
+        "I'm here with you. Tell me what you'd like help with, and I'll answer from Scripture as directly as I can.",
+      scripture: [],
+      mode: 'companion',
+      confidence: 'low',
+      memory_used: false,
+      suggested_settings_change: null,
+      orb_state: 'speaking',
+      safety_level: safety.level,
+      next_steps: [],
+      admin_flags: ['minimal_ownership_fallback'],
+      runtime: { minimalOwnershipFallback: true },
+    };
+  }
+
   return buildPersonalizedFallback({
     userId,
     message,
@@ -554,13 +603,19 @@ function fallbackReply({
     recentSessions,
     runtimeContext,
     profile,
+    suppressStudyPrompts: true,
+    suppressMemory: true,
   });
 }
 
 function normalizeInput(inputOrUserId, modeArg, personaKeyArg, messageArg) {
   if (typeof inputOrUserId === 'object' && inputOrUserId !== null) {
+    const testerId = inputOrUserId.testerId || inputOrUserId.userId || 'anonymous';
     return {
-      userId: inputOrUserId.userId || 'anonymous',
+      userId: testerId,
+      testerId,
+      sessionId: inputOrUserId.sessionId || null,
+      cohort: inputOrUserId.cohort || null,
       mode: inputOrUserId.mode || 'COMPANION',
       personaKey: inputOrUserId.personaKey || 'ADAPTIVE_COMPANION',
       message: inputOrUserId.message || '',
@@ -569,6 +624,9 @@ function normalizeInput(inputOrUserId, modeArg, personaKeyArg, messageArg) {
 
   return {
     userId: inputOrUserId || 'anonymous',
+    testerId: inputOrUserId || 'anonymous',
+    sessionId: null,
+    cohort: null,
     mode: modeArg || 'COMPANION',
     personaKey: personaKeyArg || 'ADAPTIVE_COMPANION',
     message: messageArg || '',
@@ -623,6 +681,9 @@ function finalizeBuddyResponse({
   profile,
   doctrineTopic = null,
   qualityOverride = null,
+  testerId = null,
+  sessionId = null,
+  cohort = null,
 }) {
   const quality =
     qualityOverride ||
@@ -633,9 +694,11 @@ function finalizeBuddyResponse({
   // Active-conversation lock (Sprint 2.14D): follow-up/correction turns suppress
   // memory, study, and enrichment so Buddy stays on the live thread.
   const activeConversationLock = !!structured.runtime?.activeConversationLock;
+  const hardCutover = process.env.BUDDY_TEMPLATE_PROSE !== '1';
 
   if (profile?.memoryEnabled !== false && structured.mode !== 'crisis') {
     const skipEnrichment =
+      hardCutover ||
       activeConversationLock ||
       structured.runtime?.intent === 'sabbath_history' ||
       structured.runtime?.companionPresentation?.skipRelationshipEnrichment;
@@ -673,6 +736,7 @@ function finalizeBuddyResponse({
   }
 
   if (
+    !hardCutover &&
     !activeConversationLock &&
     !structured.runtime?.companionPresentation?.skipStudyPrompts &&
     !structured.runtime?.companionNextSteps &&
@@ -694,6 +758,9 @@ function finalizeBuddyResponse({
 
   appendSession({
     userId,
+    testerId: testerId || userId,
+    sessionId: sessionId || null,
+    cohort: cohort || null,
     mode,
     personaKey,
     message,
@@ -918,37 +985,44 @@ function dispatchActiveConversationFollowUp({
 }
 
 async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
-  const { runMasterBuddyRuntime } = require('./masterBuddyRuntime');
-  return runMasterBuddyRuntime(
-    {
-      normalizeInput,
-      getUserCompanionProfile,
-      getRecentSessions,
-      enrichRuntimeContextWithMemory,
-      classifySafety,
-      fallbackReply,
-      finalizeBuddyResponse,
-      buildMemoryRecallStructured,
-      applyFallbackLoopGuard,
-      persistBuddyMemory,
-      appendSession,
-      appendQualityEvent,
-      updateUserMemory,
-      buildSystemPrompt,
-      safeJsonParse,
-      normalizeStructured,
-    },
-    inputOrUserId,
-    modeArg,
-    personaKeyArg,
-    messageArg
-  );
+  const H = {
+    normalizeInput,
+    getUserCompanionProfile,
+    getRecentSessions,
+    enrichRuntimeContextWithMemory,
+    classifySafety,
+    fallbackReply,
+    finalizeBuddyResponse,
+    buildMemoryRecallStructured,
+    applyFallbackLoopGuard,
+    persistBuddyMemory,
+    appendSession,
+    appendQualityEvent,
+    updateUserMemory,
+    buildSystemPrompt,
+    safeJsonParse,
+    normalizeStructured,
+  };
+
+  if (process.env.BUDDY_OPENAI_FIRST === '0' || String(process.env.BUDDY_RUNTIME || '').toLowerCase() === 'reason_first') {
+    console.warn(
+      'WARN: BUDDY_OPENAI_FIRST=0 and BUDDY_RUNTIME=reason_first are disabled by hard cutover — using openAiFirstCompanionRuntime.'
+    );
+  }
+
+  const { runOpenAiFirstCompanionRuntime } = require('./openAiFirstCompanionRuntime');
+  return runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, personaKeyArg, messageArg);
 }
 
 module.exports = {
   runBuddy,
   classifySafety,
   getUserCompanionProfile,
+  getRecentSessions,
+  enrichRuntimeContextWithMemory,
+  buildSystemPrompt,
+  safeJsonParse,
+  normalizeStructured,
   applyFallbackLoopGuard,
   persistBuddyMemory,
   buildMemoryRecallStructured,

@@ -20,7 +20,7 @@ fs.mkdirSync(DATA_DIR, { recursive: true });
 
 app.use(express.static(PUBLIC_DIR));
 app.use('/admin', express.static(ADMIN_DIR));
-app.use('/data', express.static(DATA_DIR));
+// PII lives under data/ (sessions, feedback). Do not expose via public static file serving.
 
 function computeProviderStatus() {
   const hasOpenAI = !!process.env.OPENAI_API_KEY;
@@ -97,6 +97,7 @@ mountRoute('Content helper routes', '/admin/content', './routes/contentHelper');
 mountRoute('Realtime voice routes', '/api/realtime', './routes/realtime');
 mountRoute('Health signal routes', '/api/health/signals', './routes/healthSignals');
 mountRoute('Learning signal routes', '/api/learning', './routes/learningSignals');
+mountRoute('Beta routes', '/api/beta', './routes/beta');
 mountRoute('Platform unification routes', '/api/platform-unification', './routes/platformUnification');
 
 // Simple fallback analyze endpoint if routes/analyze is unavailable.
@@ -155,6 +156,14 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.join(ADMIN_DIR, 'index.html'));
 });
 
+app.get('/beta', (req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR, 'beta.html'));
+});
+
+app.get('/admin/beta-review', (req, res) => {
+  res.sendFile(path.join(ADMIN_DIR, 'beta-review.html'));
+});
+
 app.use((req, res) => {
   res.status(404).json({ ok: false, error: 'Not found', path: req.path });
 });
@@ -164,6 +173,9 @@ app.use((error, req, res, next) => {
   res.status(500).json({ ok: false, error: 'Internal server error' });
 });
 
+const { logStartupDiagnostics } = require('./services/buddyRuntimeConfig');
+
 app.listen(PORT, () => {
   console.log(`Bible Buddy ${APP_VERSION} listening on port ${PORT}`);
+  logStartupDiagnostics();
 });

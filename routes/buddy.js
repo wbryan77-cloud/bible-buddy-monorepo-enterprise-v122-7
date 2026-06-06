@@ -1,12 +1,14 @@
 const express = require('express');
 const { runBuddy } = require('../services/buddyBrain');
+const { isCoreRestorationDebugEnabled } = require('../services/coreRestorationDebug');
+const { buildLiveRequestTrace, logLiveRequestTrace } = require('../services/liveRequestTrace');
 
 const router = express.Router();
 
 function normalizePayload(reply) {
   if (reply && typeof reply === 'object') return reply;
   return {
-    reply: String(reply || 'I’m here with you. Tell me a little more.'),
+    reply: String(reply || "I'm having trouble reaching the AI service right now. Please try again in a moment."),
     scripture: [],
     mode: 'companion',
     confidence: 'medium',
@@ -17,21 +19,45 @@ function normalizePayload(reply) {
   };
 }
 
+async function handleBuddyChat({ body, res }) {
+  const testerId = body.testerId || body.userId || 'anonymous';
+  const userId = testerId;
+  const sessionId = body.sessionId || null;
+  const cohort = body.cohort || null;
+  const mode = body.mode || 'COMPANION';
+  const personaKey = body.personaKey || 'ADAPTIVE_COMPANION';
+  const message = body.message || '';
+
+  if (!message) {
+    res.status(400).json({ ok: false, error: 'message is required' });
+    return;
+  }
+
+  const started = Date.now();
+  const reply = await runBuddy({ userId, testerId, sessionId, cohort, mode, personaKey, message });
+  const trace = buildLiveRequestTrace({
+    message,
+    reply,
+    httpStatus: 200,
+    latencyMs: Date.now() - started,
+  });
+  logLiveRequestTrace(trace);
+  reply.liveRequestTrace = trace;
+
+  const payload = normalizePayload(reply);
+  if (isCoreRestorationDebugEnabled()) {
+    payload.coreDebug = reply.coreDebug || reply.runtime?.coreDebug || null;
+  }
+  if (process.env.BUDDY_LIVE_TRACE === '1') {
+    payload.liveRequestTrace = reply.liveRequestTrace;
+  }
+  res.status(200).json({ ok: true, reply: payload });
+}
+
 // POST /buddy/chat  -> main Bible Buddy endpoint for the app
 router.post('/chat', async (req, res) => {
   try {
-    const body = req.body || {};
-    const userId = body.userId || 'anonymous';
-    const mode = body.mode || 'COMPANION';
-    const personaKey = body.personaKey || 'ADAPTIVE_COMPANION';
-    const message = body.message || '';
-
-    if (!message) {
-      return res.status(400).json({ ok: false, error: 'message is required' });
-    }
-
-    const reply = await runBuddy({ userId, mode, personaKey, message });
-    res.json({ ok: true, reply: normalizePayload(reply) });
+    await handleBuddyChat({ body: req.body || {}, res });
   } catch (e) {
     console.error('Buddy error:', e);
     res.status(500).json({ ok: false, error: e.message });
@@ -39,11 +65,13 @@ router.post('/chat', async (req, res) => {
 });
 
 // POST /buddy/stream -> streaming text fallback for realtime-like UI
-// Uses Server-Sent Events style chunks so the orb can react while text arrives.
 router.post('/stream', async (req, res) => {
   try {
     const body = req.body || {};
-    const userId = body.userId || 'anonymous';
+    const testerId = body.testerId || body.userId || 'anonymous';
+    const userId = testerId;
+    const sessionId = body.sessionId || null;
+    const cohort = body.cohort || null;
     const mode = body.mode || 'COMPANION';
     const personaKey = body.personaKey || 'ADAPTIVE_COMPANION';
     const message = body.message || '';
@@ -67,7 +95,12 @@ router.post('/stream', async (req, res) => {
 
     send('state', { orb_state: 'thinking', message: 'Buddy is thinking...' });
 
-    const reply = normalizePayload(await runBuddy({ userId, mode, personaKey, message }));
+    const started = Date.now();
+    const raw = await runBuddy({ userId, testerId, sessionId, cohort, mode, personaKey, message });
+    const trace = buildLiveRequestTrace({ message, reply: raw, httpStatus: 200, latencyMs: Date.now() - started });
+    logLiveRequestTrace(trace);
+
+    const reply = normalizePayload(raw);
     const text = reply.reply || '';
     const words = text.split(/(\s+)/).filter(Boolean);
 
@@ -78,10 +111,17 @@ router.post('/stream', async (req, res) => {
       await new Promise((resolve) => setTimeout(resolve, 22));
     }
 
-    send('done', {
+    const donePayload = {
       ...reply,
       orb_state: reply.orb_state || 'speaking',
-    });
+    };
+    if (isCoreRestorationDebugEnabled()) {
+      donePayload.coreDebug = raw.coreDebug || raw.runtime?.coreDebug || null;
+    }
+    if (process.env.BUDDY_LIVE_TRACE === '1') {
+      donePayload.liveRequestTrace = trace;
+    }
+    send('done', donePayload);
     res.end();
   } catch (e) {
     console.error('Buddy stream error:', e);

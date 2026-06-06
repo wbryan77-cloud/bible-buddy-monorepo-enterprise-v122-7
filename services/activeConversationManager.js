@@ -85,6 +85,8 @@ function updateActiveConversation({
   allowStudyPrompt = null,
   correctionMode = false,
   frustrationMode = false,
+  strictAnswerMode = false,
+  correctionCount = null,
 } = {}) {
   if (!userId) return null;
   const state = readState();
@@ -93,10 +95,28 @@ function updateActiveConversation({
   const sameThread = prev && normalizeTopicFamily(prev.topic) === family;
 
   const isCorrection = correctionMode || questionType === 'correction';
+  const isMetaWording = questionType === 'meta_about_previous_answer';
   const isHistorical =
-    ['historical_causation', 'historical_confirmation', 'evidence_request', 'historical_follow_up', 'follow_up', 'history'].includes(
+    !isMetaWording &&
+    (['historical_causation', 'historical_confirmation', 'evidence_request', 'historical_follow_up', 'follow_up', 'history'].includes(
       questionType
-    ) || family === 'sabbath';
+    ) || family === 'sabbath');
+
+  const nextCorrectionCount = isCorrection
+    ? (prev?.correctionCount || 0) + 1
+    : correctionCount !== null
+      ? correctionCount
+      : isMetaWording
+        ? prev?.correctionCount || 0
+        : sameThread
+          ? prev?.correctionCount || 0
+          : 0;
+
+  const nextStrictAnswerMode =
+    strictAnswerMode ||
+    (nextCorrectionCount >= 2) ||
+    isMetaWording ||
+    prev?.strictAnswerMode && (isCorrection || isMetaWording);
 
   const entry = {
     topic: family,
@@ -118,18 +138,22 @@ function updateActiveConversation({
     lockUntilResolved:
       lockUntilResolved ||
       isCorrection ||
+      nextStrictAnswerMode ||
+      isMetaWording ||
       frustrationMode ||
       (sameThread && prev?.lockUntilResolved && isHistorical),
     allowMemorySurfacing:
       allowMemorySurfacing !== null
         ? allowMemorySurfacing
-        : !isCorrection && !frustrationMode && !isHistorical && family !== 'sabbath',
+        : !isCorrection && !frustrationMode && !nextStrictAnswerMode && !isMetaWording && !isHistorical && family !== 'sabbath',
     allowStudyPrompt:
       allowStudyPrompt !== null
         ? allowStudyPrompt
-        : !isCorrection && !frustrationMode && !isHistorical && !sameThread,
-    correctionMode: isCorrection,
+        : !isCorrection && !frustrationMode && !nextStrictAnswerMode && !isMetaWording && !isHistorical && !sameThread,
+    correctionMode: isCorrection || nextStrictAnswerMode,
     frustrationMode: frustrationMode || prev?.frustrationMode || false,
+    strictAnswerMode: nextStrictAnswerMode,
+    correctionCount: nextCorrectionCount,
   };
   entry.conversationAge = Date.now() - entry.startedAtMs;
 

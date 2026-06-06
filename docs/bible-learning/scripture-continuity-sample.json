@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "description": "Sample Scripture continuity chains — confidence scored. Discovery may strengthen approved cards; may not alter them automatically.",
+  "canonFlow": ["Genesis", "Exodus", "Prophets", "Gospels", "Acts", "Epistles", "Revelation"],
+  "chains": [
+    {
+      "chainId": "sabbath_genesis_to_revelation",
+      "topic": "sabbath",
+      "approved": true,
+      "confidenceScore": 0.92,
+      "nodes": [
+        { "era": "Genesis", "reference": "Genesis 2:2-3", "theme": "creation_rest", "confidence": 0.95 },
+        { "era": "Exodus", "reference": "Exodus 20:8-11", "theme": "fourth_commandment", "confidence": 0.98 },
+        { "era": "Prophets", "reference": "Isaiah 58:13-14", "theme": "delight_in_sabbath", "confidence": 0.9 },
+        { "era": "Gospels", "reference": "Luke 4:16", "theme": "jesus_sabbath_custom", "confidence": 0.88 },
+        { "era": "Acts", "reference": "Acts 17:2", "theme": "apostolic_sabbath_pattern", "confidence": 0.85 },
+        { "era": "Epistles", "reference": "Hebrews 4:9", "theme": "sabbath_rest_remains", "confidence": 0.87 },
+        { "era": "Revelation", "reference": "Revelation 14:12", "theme": "commandment_keeping_saints", "confidence": 0.8 }
+      ]
+    },
+    {
+      "chainId": "dietary_law_genesis_to_revelation",
+      "topic": "dietary_law",
+      "approved": true,
+      "confidenceScore": 0.89,
+      "nodes": [
+        { "era": "Exodus", "reference": "Leviticus 11", "theme": "clean_unclean_distinction", "confidence": 0.96 },
+        { "era": "Exodus", "reference": "Deuteronomy 14", "theme": "clean_unclean_restatement", "confidence": 0.96 },
+        { "era": "Prophets", "reference": "Daniel 1:8", "theme": "refusal_of_unclean", "confidence": 0.88 },
+        { "era": "Prophets", "reference": "Isaiah 66:17", "theme": "swine_and_abomination", "confidence": 0.9 },
+        { "era": "Acts", "reference": "Acts 10:28", "theme": "gentiles_not_unclean_people", "confidence": 0.85 },
+        { "era": "Acts", "reference": "Acts 11:1-18", "theme": "peter_explains_vision", "confidence": 0.88 }
+      ]
+    },
+    {
+      "chainId": "messiah_logos_genesis_to_revelation",
+      "topic": "messiah_logos",
+      "approved": true,
+      "confidenceScore": 0.91,
+      "nodes": [
+        { "era": "Genesis", "reference": "Genesis 1:1", "theme": "creation_through_word", "confidence": 0.82 },
+        { "era": "Prophets", "reference": "Isaiah 9:6", "theme": "mighty_god_messiah", "confidence": 0.9 },
+        { "era": "Gospels", "reference": "John 1:1-14", "theme": "logos_made_flesh", "confidence": 0.97 },
+        { "era": "Epistles", "reference": "Colossians 1:15-17", "theme": "image_of_invisible_god", "confidence": 0.93 },
+        { "era": "Revelation", "reference": "Revelation 19:11-16", "theme": "word_of_god_king", "confidence": 0.9 }
+      ]
+    },
+    {
+      "chainId": "death_state_genesis_to_revelation",
+      "topic": "death_state",
+      "approved": true,
+      "confidenceScore": 0.86,
+      "nodes": [
+        { "era": "Genesis", "reference": "Genesis 2:7", "theme": "breath_of_life", "confidence": 0.9 },
+        { "era": "Wisdom", "reference": "Ecclesiastes 9:5", "theme": "dead_know_not_anything", "confidence": 0.92 },
+        { "era": "Gospels", "reference": "John 11:11-14", "theme": "lazarus_sleep", "confidence": 0.9 },
+        { "era": "Epistles", "reference": "1 Thessalonians 4:13-16", "theme": "sleep_until_trumpet", "confidence": 0.91 },
+        { "era": "Revelation", "reference": "Revelation 20:4-6", "theme": "first_resurrection", "confidence": 0.85 }
+      ]
+    },
+    {
+      "chainId": "feasts_genesis_to_revelation",
+      "topic": "feasts",
+      "approved": true,
+      "confidenceScore": 0.88,
+      "nodes": [
+        { "era": "Exodus", "reference": "Leviticus 23", "theme": "feasts_of_the_lord", "confidence": 0.97 },
+        { "era": "Gospels", "reference": "Luke 22:14-20", "theme": "passover_with_disciples", "confidence": 0.92 },
+        { "era": "Acts", "reference": "Acts 2:1-4", "theme": "pentecost_fulfillment", "confidence": 0.9 },
+        { "era": "Prophets", "reference": "Zechariah 14:16-19", "theme": "nations_keep_feasts", "confidence": 0.85 }
+      ]
+    }
+  ]
+}
