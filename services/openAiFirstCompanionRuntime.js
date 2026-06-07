@@ -22,7 +22,7 @@ const {
 const { validateOwnershipReply } = require('./ownershipAntiOverrideGuard');
 const { evaluateDirectness } = require('./directnessGuard');
 const { detectForbiddenProse, stripForbiddenProse } = require('./forbiddenProseGuard');
-const { validateScripturePolicy } = require('./scripturePolicyValidator');
+const { validateBibleOnlyAuthority } = require('./bibleOnlyAuthorityValidator');
 const { logRequestMemory } = require('./requestMemoryLogger');
 
 function polishFinalReply(reply = '') {
@@ -122,7 +122,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     runtimeContext,
     evidencePack,
     coreRestoration: true,
-    maxAttempts: 2,
+    maxAttempts: 1,
   });
   openaiAttempts += composed.attempts || (composed.openaiCalled ? 1 : 0);
 
@@ -132,6 +132,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   let fallbackUsed = false;
   let errorMessage = composed.apiError || null;
   let regenerated = false;
+  let guards = null;
   const currentIntent = evidencePack.currentIntent || 'unclear';
   const historyAllowed = !!evidencePack.historyAllowed;
 
@@ -171,26 +172,26 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
         historyAllowed,
       });
       const forbidden = detectForbiddenProse(structured.reply);
-      const scripturePolicy = validateScripturePolicy({
+      const bibleOnlyAuthority = validateBibleOnlyAuthority({
         reply: structured.reply,
         evidencePack,
         historyAllowed,
         message,
       });
-      return { ownership, directness, forbidden, scripturePolicy };
+      return { ownership, directness, forbidden, bibleOnlyAuthority };
     };
 
-    let guards = runGuards();
+    guards = runGuards();
     const needsRegen =
       !regenerated &&
       (!guards.ownership.passed ||
         !guards.directness.passed ||
         guards.forbidden.detected ||
-        !guards.scripturePolicy.passed);
+        !guards.bibleOnlyAuthority.passed);
 
     if (needsRegen) {
       const regenInstruction =
-        guards.scripturePolicy.regenHint ||
+        guards.bibleOnlyAuthority.regenHint ||
         guards.directness.regenInstruction ||
         guards.ownership.regenInstruction ||
         'Answer the latest user question directly. Use evidence silently. Do not use template language, study continuation, prior-topic continuation, or history unless asked.';
@@ -332,6 +333,8 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     correctionRepair: directnessFinal.correctionRepair,
     regenerated,
     openaiAttempts,
+    evidenceUsed: validation?.evidenceUsed ?? guards?.bibleOnlyAuthority?.evidenceUsed,
+    bibleOnlyAuthorityPassed: validation?.bibleOnlyAuthority?.passed,
   });
 
   structured.quality = scoreCompanionQuality({ message, reply: structured.reply, runtimeContext });

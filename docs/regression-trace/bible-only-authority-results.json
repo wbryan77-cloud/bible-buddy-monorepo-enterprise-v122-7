@@ -1,0 +1,739 @@
+{
+  "ranAt": "2026-06-07T15:20:04.540Z",
+  "openAiKeyPresent": false,
+  "memory": {
+    "startRssMB": 68,
+    "endRssMB": 167,
+    "deltaMB": 99
+  },
+  "tests": [
+    {
+      "id": "bo_01",
+      "message": "What is the third heaven?",
+      "expectCards": [
+        "heavens"
+      ],
+      "expectCatalog": [
+        "threeHeavens"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "definition",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "heavens",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": true,
+      "catalogKeys": [
+        "threeHeavens"
+      ],
+      "cardIds": [
+        "heavens"
+      ],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 57,
+      "rssMB": 129
+    },
+    {
+      "id": "bo_02",
+      "message": "Does the Bible say believers go to the third heaven?",
+      "expectCards": [
+        "heavens"
+      ],
+      "forbidThirdHeavenDest": true,
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "direct_yes_no",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "heavens",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": true,
+      "catalogKeys": [
+        "threeHeavens"
+      ],
+      "cardIds": [
+        "heavens"
+      ],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 12,
+      "rssMB": 141
+    },
+    {
+      "id": "bo_03",
+      "message": "Where does Jesus say no man has ascended to heaven?",
+      "expectCards": [
+        "heavens"
+      ],
+      "mustMention": [
+        "john 3:13"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "doctrine_explanation",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": false,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": null,
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": true,
+      "catalogKeys": [
+        "threeHeavens"
+      ],
+      "cardIds": [
+        "heavens"
+      ],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 2,
+      "rssMB": 143
+    },
+    {
+      "id": "bo_04",
+      "message": "Jesus said where I go ye cannot come. What does that mean?",
+      "expectCards": [
+        "kingdom"
+      ],
+      "mustMention": [
+        "john"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "meaning_word_study",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "kingdom",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": true,
+      "catalogKeys": [
+        "kingdomComesToEarth"
+      ],
+      "cardIds": [
+        "kingdom"
+      ],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 0,
+      "rssMB": 143
+    },
+    {
+      "id": "bo_05",
+      "message": "What does Thy Kingdom Come mean?",
+      "expectCards": [
+        "kingdom"
+      ],
+      "mustMention": [
+        "matthew 6"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "meaning_word_study",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "kingdom",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": true,
+      "catalogKeys": [
+        "kingdomComesToEarth"
+      ],
+      "cardIds": [
+        "kingdom"
+      ],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 5,
+      "rssMB": 148
+    },
+    {
+      "id": "bo_06",
+      "message": "Does Revelation teach that God's kingdom comes to earth?",
+      "expectCards": [
+        "kingdom"
+      ],
+      "mustMention": [
+        "revelation"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "direct_yes_no",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "kingdom",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": true,
+      "catalogKeys": [
+        "kingdomComesToEarth"
+      ],
+      "cardIds": [
+        "kingdom"
+      ],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 1,
+      "rssMB": 149
+    },
+    {
+      "id": "bo_07",
+      "message": "Are believers going to heaven or is the kingdom coming to earth?",
+      "expectCards": [
+        "heavens",
+        "kingdom"
+      ],
+      "forbidThirdHeavenDest": true,
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "direct_yes_no",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": false,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": null,
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 2,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": true,
+      "catalogKeys": [
+        "threeHeavens",
+        "kingdomComesToEarth"
+      ],
+      "cardIds": [
+        "heavens",
+        "kingdom"
+      ],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 1,
+      "rssMB": 150
+    },
+    {
+      "id": "bo_08",
+      "message": "Explain heaven line upon line from Scripture only.",
+      "expectCards": [
+        "heavens"
+      ],
+      "bibleOnly": true,
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "doctrine_explanation",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": false,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": null,
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 2,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": true,
+      "catalogKeys": [
+        "threeHeavens",
+        "kingdomComesToEarth"
+      ],
+      "cardIds": [
+        "heavens",
+        "kingdom"
+      ],
+      "bibleOnlyMode": true,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 1,
+      "rssMB": 151
+    },
+    {
+      "id": "bo_09",
+      "message": "Give me Bible only. No traditions.",
+      "expectCards": [
+        "heavens"
+      ],
+      "bibleOnly": true,
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "unclear",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": false,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": null,
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 2,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": true,
+      "catalogKeys": [
+        "threeHeavens",
+        "kingdomComesToEarth"
+      ],
+      "cardIds": [
+        "heavens",
+        "kingdom"
+      ],
+      "bibleOnlyMode": true,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 0,
+      "rssMB": 151
+    },
+    {
+      "id": "bo_10",
+      "message": "What does Logos mean in John 1:1?",
+      "expectCards": [
+        "messiahLogos"
+      ],
+      "companionOk": true,
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "meaning_word_study",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": false,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "messiah_logos",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": false,
+      "catalogKeys": [],
+      "cardIds": [
+        "messiahLogos"
+      ],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 16,
+      "rssMB": 167
+    },
+    {
+      "id": "bo_11",
+      "message": "Today has been a rough day. I had to let go of someone I love.",
+      "companionOk": true,
+      "forbidDoctrineDump": false,
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "emotional_companion",
+        "historyAllowed": false,
+        "evidenceCardsUsed": false,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": false,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": null,
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 0,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": false,
+      "catalogKeys": [],
+      "cardIds": [],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": 19,
+      "rssMB": 174
+    },
+    {
+      "id": "bo_12",
+      "message": "My mother has Alzheimer's and I feel overwhelmed.",
+      "companionOk": true,
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "emotional_companion",
+        "historyAllowed": false,
+        "evidenceCardsUsed": false,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": null,
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 0,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "catalogWired": false,
+      "catalogKeys": [],
+      "cardIds": [],
+      "bibleOnlyMode": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryDeltaMB": -9,
+      "rssMB": 167
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "total": 12,
+    "allPass": false,
+    "connectionErrors": 0
+  }
+}

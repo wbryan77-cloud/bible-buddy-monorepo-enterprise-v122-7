@@ -31,16 +31,24 @@ const TOPIC_TO_CARD = {
   isaiah_66_17: 'dietaryLaw',
 };
 
+const CARD_PRIORITY = ['heavens', 'kingdom', 'deathState', 'messiahLogos', 'sabbath', 'dietaryLaw'];
+
 const MESSAGE_PATTERNS = [
   { cardId: 'sabbath', re: /\bsabbath\b/i },
   { cardId: 'dietaryLaw', re: /\b(pork|swine|shrimp|unclean|dietary|acts\s*10|isaiah\s*66)\b/i },
-  { cardId: 'heavens', re: /\b(heaven|heavens|third heaven|firmament|no man hath ascended)\b/i },
+  {
+    cardId: 'heavens',
+    re: /\b(heaven|heavens|third heaven|firmament|no man hath ascended|line upon line)\b/i,
+  },
   {
     cardId: 'kingdom',
-    re: /\b(kingdom|thy kingdom come|new jerusalem|kingdom come|kingdom of heaven|where i go ye cannot come|where i go you cannot come|revelation 21)\b/i,
+    re: /\b(kingdom|thy kingdom come|new jerusalem|kingdom come|kingdom of heaven|where i go ye cannot come|where i go you cannot come|revelation 21|believers? going to heaven|going to heaven or)\b/i,
   },
   { cardId: 'deathState', re: /\b(die|death|soul|grave|sleep)\b/i },
-  { cardId: 'messiahLogos', re: /\b(logos|word of god|yahweh|jehovah|jesus).*(old testament|god)|god.*old testament\b/i },
+  {
+    cardId: 'messiahLogos',
+    re: /\b(logos|word of god|yahweh|jehovah|jesus).*(old testament|god)|god.*old testament|logos mean|john 1:1\b/i,
+  },
   { cardId: 'lawCommandments', re: /\b(commandments?|ten commandments|law (still|abolished)|matthew 5:17)\b/i },
   { cardId: 'feasts', re: /\b(feast|feasts|leviticus 23|high sabbath|passover|pentecost|tabernacles)\b/i },
   { cardId: 'traditions', re: /\b(easter|christmas|good friday|tradition)\b/i },
@@ -60,6 +68,15 @@ function getAllApprovedCards() {
   return Object.keys(CARD_MODULES).map((id) => cloneFrozenCard(CARD_MODULES[id]));
 }
 
+function isDoctrineHeavyMessage(message = '') {
+  const lower = String(message || '').toLowerCase();
+  return (
+    /\b(bible only|scripture only|no tradition|line upon line|third heaven|kingdom come|thy kingdom)\b/i.test(
+      lower
+    ) || /\b(heaven|heavens|kingdom)\b/i.test(lower)
+  );
+}
+
 function resolveCardIds(topic = '', message = '') {
   const ids = new Set();
   const cardFromTopic = topic && TOPIC_TO_CARD[topic];
@@ -70,11 +87,22 @@ function resolveCardIds(topic = '', message = '') {
     if (re.test(lower)) ids.add(cardId);
   }
 
-  if (/\b(die|death|soul|grave|sleep)\b/i.test(lower) && /\b(heaven|when we die|after death)\b/i.test(lower)) {
+  if (/\b(die|death|soul|grave|sleep|absent from the body|2 corinthians 5)\b/i.test(lower)) {
     ids.add('deathState');
   }
+  if (/\b(heaven|heavens|third heaven)\b/i.test(lower)) ids.add('heavens');
+  if (/\b(kingdom|thy kingdom|new jerusalem|revelation 21)\b/i.test(lower)) ids.add('kingdom');
+  if (/\b(bible only|scripture only|no tradition|without tradition)\b/i.test(lower)) {
+    ids.add('heavens');
+    ids.add('kingdom');
+  }
 
-  return [...ids].slice(0, 2);
+  const maxCards = isDoctrineHeavyMessage(message) ? 3 : 2;
+  const ordered = [...ids].sort(
+    (a, b) => (CARD_PRIORITY.indexOf(a) === -1 ? 99 : CARD_PRIORITY.indexOf(a)) -
+      (CARD_PRIORITY.indexOf(b) === -1 ? 99 : CARD_PRIORITY.indexOf(b))
+  );
+  return ordered.slice(0, maxCards);
 }
 
 /**
@@ -105,11 +133,14 @@ function buildEvidenceCardPayload(cards = [], reinforcement = []) {
       approved: true,
       status: c.status,
       questionTypes: c.questionTypes,
+      approvedCatalogChainKey: c.approvedCatalogChainKey || null,
       references: {
         primary: c.primaryScriptures,
         supporting: c.supportingScriptures,
       },
+      cautionScriptures: c.cautionScriptures || [],
       cautionPassages: c.cautionPassages,
+      bindingRules: c.bindingRules || [],
       commonMisreadings: c.commonMisreadings,
       bibleFirstConclusion: c.bibleFirstConclusion,
       historySecondaryNotes: c.historySecondaryNotes,
@@ -118,6 +149,7 @@ function buildEvidenceCardPayload(cards = [], reinforcement = []) {
     })),
     reinforcement,
     authorship: 'evidence_only_not_final_prose',
+    binding: 'doctrine_claims_must_trace_to_these_references',
   };
 }
 

@@ -48,23 +48,30 @@ function buildDoctrineEvidenceSnippets(topic = '', message = '') {
     });
   }
 
-  if (/\b(heaven|heavens|third heaven|firmament|no man hath ascended)\b/.test(lower)) {
+  if (/\b(heaven|heavens|third heaven|firmament|no man hath ascended|line upon line)\b/.test(lower)) {
     snippets.push({
       topic: 'heavens',
       references: [
         'Genesis 1:1',
         'Genesis 1:6-8',
         'Genesis 1:14-17',
+        'Deuteronomy 10:14',
         'John 3:13',
+        'John 13:33',
         '2 Corinthians 12:2',
-        'Acts 1:9-11',
+        'Matthew 6:9-10',
+        'Revelation 5:10',
+        'Revelation 21:1-3',
       ],
       facts: [
         'Scripture uses heaven/heavens in layered ways — firmament/sky, celestial region, and Paul’s third heaven',
-        'Genesis 1:6-8 firmament; Genesis 1:14-17 sun/moon/stars in heaven',
         'John 3:13 — no man hath ascended up to heaven but the Son of Man',
-        '2 Corinthians 12:2 — Paul caught up to third heaven (vision); not proof believers go there',
-        'Do not teach believers go to the third heaven unless Scripture explicitly proves it',
+        '2 Corinthians 12:2 names third heaven — Paul’s vision; NOT alone proof believers’ destination is third heaven',
+        '2 Corinthians 5:8 caution only — not standalone heaven-at-death proof',
+        'If not in evidence: say Scripture does not state that directly',
+      ],
+      bindingRules: [
+        'Do not teach believers go to third heaven without direct Scripture proof',
       ],
     });
   }

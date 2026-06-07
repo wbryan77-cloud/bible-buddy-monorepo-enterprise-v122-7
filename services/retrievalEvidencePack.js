@@ -43,6 +43,14 @@ const {
   buildIntentEvidenceConstraints,
   buildIntentComposerGuidance,
 } = require('./currentMessageIntent');
+const { buildApprovedCatalogEvidence } = require('./approvedCatalogEvidence');
+const { slimMemorySlice } = require('./evidencePackSlimmer');
+
+function detectBibleOnlyMode(message = '') {
+  return /\b(bible only|scripture only|from scripture only|no tradition|without tradition|line upon line from scripture)\b/i.test(
+    String(message || '')
+  );
+}
 
 const TOPIC_TO_CHAIN = {
   sabbath: 'sabbath',
@@ -472,11 +480,21 @@ function buildRetrievalEvidencePack({
     suppressDoctrineChain: suppressDoctrine && !companionTopic,
   });
 
+  const bibleOnlyMode = detectBibleOnlyMode(message);
   const doctrineSnippets = buildDoctrineEvidenceSnippets(topic, message);
   const evidenceCards = retrieveEvidenceCards({ topic, message });
+  const cardTopics = evidenceCards.map((c) => c.topic);
+  const approvedCatalogEvidence = buildApprovedCatalogEvidence({ topic, message, cardTopics });
   const reinforcement = discoverScriptureRelationships(evidenceCards);
   const evidenceCardPayload = buildEvidenceCardPayload(evidenceCards, reinforcement);
   const concordanceHints = buildConcordanceComposerHints(evidenceCards);
+  const evidenceAuthority = {
+    bibleOnlyMode,
+    bindingInstruction:
+      'Doctrinal claims must trace to retrieved Scripture evidence. If not supported, say: Scripture does not state that directly.',
+    catalogWired: approvedCatalogEvidence.wired,
+    catalogKeys: approvedCatalogEvidence.catalogKeys,
+  };
   const answerGuidance = buildAnswerGuidance(message, {
     practicalSabbathHow,
     explicitHistorical,
@@ -512,8 +530,11 @@ function buildRetrievalEvidencePack({
       isCorrection: understanding.isCorrection,
     },
     topic,
-    memory,
+    memory: slimMemorySlice(memory),
     scripture,
+    bibleOnlyMode,
+    evidenceAuthority,
+    approvedCatalogEvidence,
     history: includeHistory
       ? { included: true, focus: detectQuestionFocus(message), ...parseHistoricalFacts() }
       : {
@@ -535,6 +556,8 @@ function buildRetrievalEvidencePack({
       snippets: doctrineSnippets,
       evidenceCards: evidenceCardPayload,
       concordanceHints,
+      approvedCatalogEvidence,
+      evidenceAuthority,
     },
     evidenceCards: evidenceCardPayload,
     discoveryReinforcement: reinforcement,

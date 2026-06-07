@@ -18,6 +18,7 @@ const {
 const { extractEmotionalCenter, isEcpEnabled } = require('./emotionalCenter');
 const { validateEmotionalCenter } = require('./emotionalCenterValidator');
 const { detectDangerousFallbackSpeaker } = require('./coreResponseGuards');
+const { slimEvidencePackForComposer } = require('./evidencePackSlimmer');
 
 const SPECIFICITY_HINT =
   'Prefer specific details from the thread over general summaries. Use the user\'s wording where natural — not as a fixed opening template.';
@@ -55,6 +56,21 @@ COMPANION TONE (prompt guidance only — you still author the final reply):
 - Bring Scripture gently when it helps; do not stack verses mechanically.
 - Avoid therapy claims, diagnosis labels, or stock empathy openers.
 - When the user shares pain, acknowledge it in one concrete line, then Scripture.
+`.trim();
+
+const BIBLE_ONLY_AUTHORITY_INSTRUCTION = `
+BIBLE-ONLY AUTHORITY (binding for doctrine questions):
+- Every doctrinal claim must be traceable to retrieved Scripture evidence in this payload — not your general religious training.
+- If a claim is NOT supported by retrieved KJV Scripture evidence, say: "Scripture does not state that directly."
+- Do NOT import common Christian tradition, popular afterlife teaching, or assumptions not in the evidence pack.
+- Follow bindingRules on each Evidence Card and teachingOrder in approvedCatalogEvidence.chains.
+- 2 Corinthians 12:2 proves the phrase "third heaven" exists — does NOT alone prove believers' final destination is the third heaven.
+- John 3:13: no man hath ascended up to heaven except the Son of man.
+- John 13:33: whither I go, ye cannot come.
+- Matthew 6:10: thy kingdom come… in earth.
+- Revelation 5:10: reign on the earth. Revelation 21:1-3: New Jerusalem comes down; God with men.
+- 2 Corinthians 5:8 is caution only — never standalone proof of immediate heaven-at-death.
+- When user requests Bible only / no traditions: use ONLY approved evidence — no church tradition framing.
 `.trim();
 
 const CORE_RESTORATION_INSTRUCTION = `
@@ -108,36 +124,35 @@ function buildComposerSystemPrompt({
     buildSystemPrompt({ mode, personaKey, profile, runtimeInstructions })
   );
   const goldenBlock = buildGoldenExamplesAppendix({ message: userMessage });
-  const evidenceSlice = {
-    understanding: evidencePack.understanding,
-    activeConversation: evidencePack.activeConversation,
-    threadLocal: evidencePack.threadLocal,
-    correctionLedger: evidencePack.correctionLedger,
-    companionThreadContext: evidencePack.companionThreadContext,
-    memory: evidencePack.memory,
-    scripture: evidencePack.scripture,
-    history: evidencePack.history,
-    studyState: evidencePack.studyState,
-    companionContext: evidencePack.companionContext,
-    doctrine: evidencePack.doctrine,
-    evidenceCards: evidencePack.evidenceCards,
-    discoveryReinforcement: evidencePack.discoveryReinforcement,
-    answerGuidance: evidencePack.answerGuidance,
-    currentIntent: evidencePack.currentIntent,
-    intentComposerGuidance: evidencePack.intentComposerGuidance,
-    historyAllowed: evidencePack.historyAllowed,
-  };
+  const evidenceSlice = coreRestoration
+    ? slimEvidencePackForComposer(evidencePack)
+    : {
+        understanding: evidencePack.understanding,
+        activeConversation: evidencePack.activeConversation,
+        threadLocal: evidencePack.threadLocal,
+        correctionLedger: evidencePack.correctionLedger,
+        companionThreadContext: evidencePack.companionThreadContext,
+        memory: evidencePack.memory,
+        scripture: evidencePack.scripture,
+        history: evidencePack.history,
+        studyState: evidencePack.studyState,
+        companionContext: evidencePack.companionContext,
+        doctrine: evidencePack.doctrine,
+        evidenceCards: evidencePack.evidenceCards,
+        discoveryReinforcement: evidencePack.discoveryReinforcement,
+        answerGuidance: evidencePack.answerGuidance,
+        currentIntent: evidencePack.currentIntent,
+        intentComposerGuidance: evidencePack.intentComposerGuidance,
+        historyAllowed: evidencePack.historyAllowed,
+      };
 
   const goldenSection = goldenBlock && !coreRestoration ? `${goldenBlock}\n\n` : '';
   let composerBlock = isEcpEnabled() && !coreRestoration ? buildEcpComposerInstruction() : COMPOSER_INSTRUCTION;
   if (coreRestoration) {
-    composerBlock = `${COMPOSER_INSTRUCTION}\n\n${CORE_RESTORATION_INSTRUCTION}\n\n${COMPANION_TONE_INSTRUCTION}`;
+    composerBlock = `${COMPOSER_INSTRUCTION}\n\n${BIBLE_ONLY_AUTHORITY_INSTRUCTION}\n\n${CORE_RESTORATION_INSTRUCTION}\n\n${COMPANION_TONE_INSTRUCTION}`;
   }
-  return `${base}\n\n${goldenSection}${composerBlock}\n\nEvidence pack (facts only):\n${JSON.stringify(
-    evidenceSlice,
-    null,
-    2
-  )}`;
+  const evidenceJson = JSON.stringify(evidenceSlice);
+  return `${base}\n\n${goldenSection}${composerBlock}\n\nEvidence pack (binding facts — doctrine must trace here):\n${evidenceJson}`;
 }
 
 async function callOpenAI({ systemPrompt, userPayload, temperature = 0.72 }) {
@@ -178,7 +193,7 @@ async function composeReasonFirstReply({
   coreRestoration = false,
   regenInstruction = null,
 } = {}) {
-  const attemptCap = coreRestoration ? Math.min(maxAttempts, regenInstruction ? 1 : 2) : maxAttempts;
+  const attemptCap = coreRestoration ? 1 : maxAttempts;
   const historyBlock = (evidencePack.conversationHistory || [])
     .map((t) => `Turn ${t.turn} user: ${t.user}\nTurn ${t.turn} assistant: ${t.assistant}`)
     .join('\n\n');

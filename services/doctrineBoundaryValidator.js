@@ -11,7 +11,7 @@ const {
   formatRecommendationsForTrace,
 } = require('./listeningSpecificityValidator');
 const { validateOwnershipReply } = require('./ownershipAntiOverrideGuard');
-const { validateScripturePolicy } = require('./scripturePolicyValidator');
+const { validateBibleOnlyAuthority } = require('./bibleOnlyAuthorityValidator');
 
 const WITNESS_MARKERS = [
   /establishes the matter/i,
@@ -89,7 +89,7 @@ function validateReasonFirstReply({ reply = '', evidencePack = {}, historyAllowe
     openaiCalled: true,
     fallbackUsed: false,
   });
-  const scripturePolicy = validateScripturePolicy({
+  const bibleOnlyAuthority = validateBibleOnlyAuthority({
     reply,
     evidencePack,
     historyAllowed: historyAllowed || !!evidencePack.historyAllowed,
@@ -101,19 +101,19 @@ function validateReasonFirstReply({ reply = '', evidencePack = {}, historyAllowe
     ...(correctionHard.issues || []),
     ...(historyTemplate.issues || []),
     ...(ownership.passed ? [] : ownership.issues.filter((i) => i !== 'low_question_match')),
-    ...scripturePolicy.issues,
+    ...bibleOnlyAuthority.issues,
   ];
   const passed =
     doctrine.passed &&
     correctionHard.passed &&
     historyTemplate.passed &&
     ownership.passed &&
-    scripturePolicy.passed;
+    bibleOnlyAuthority.passed;
 
   let regenHint = null;
   if (!passed) {
-    if (scripturePolicy.regenHint && !scripturePolicy.passed) {
-      regenHint = scripturePolicy.regenHint;
+    if (bibleOnlyAuthority.regenHint && !bibleOnlyAuthority.passed) {
+      regenHint = bibleOnlyAuthority.regenHint;
     } else if (ownership.regenInstruction && !ownership.passed) {
       regenHint = ownership.regenInstruction;
     } else if (!correctionHard.passed && correctionHard.issues?.length) {
@@ -137,12 +137,13 @@ function validateReasonFirstReply({ reply = '', evidencePack = {}, historyAllowe
       softOnly: true,
     },
     ownership,
-    scripturePolicy,
+    bibleOnlyAuthority,
     issues: hardIssues,
     softRecommendations,
     doctrineValidationResult: passed ? 'pass' : 'fail',
     regenHint,
-    adminFindings: scripturePolicy.adminFindings,
+    adminFindings: bibleOnlyAuthority.adminFindings,
+    evidenceUsed: bibleOnlyAuthority.evidenceUsed,
   };
 }
 
