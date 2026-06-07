@@ -8,6 +8,7 @@ const CARD_MODULES = {
   sabbath: require('./sabbath.card'),
   dietaryLaw: require('./dietaryLaw.card'),
   heavens: require('./heavens.card'),
+  kingdom: require('./kingdom.card'),
   deathState: require('./deathState.card'),
   messiahLogos: require('./messiahLogos.card'),
   lawCommandments: require('./lawCommandments.card'),
@@ -19,6 +20,7 @@ const TOPIC_TO_CARD = {
   sabbath: 'sabbath',
   dietary_law: 'dietaryLaw',
   heavens: 'heavens',
+  kingdom: 'kingdom',
   death_state: 'deathState',
   messiah_logos: 'messiahLogos',
   law_commandments: 'lawCommandments',
@@ -32,7 +34,11 @@ const TOPIC_TO_CARD = {
 const MESSAGE_PATTERNS = [
   { cardId: 'sabbath', re: /\bsabbath\b/i },
   { cardId: 'dietaryLaw', re: /\b(pork|swine|shrimp|unclean|dietary|acts\s*10|isaiah\s*66)\b/i },
-  { cardId: 'heavens', re: /\b(heaven|heavens|third heaven)\b/i },
+  { cardId: 'heavens', re: /\b(heaven|heavens|third heaven|firmament|no man hath ascended)\b/i },
+  {
+    cardId: 'kingdom',
+    re: /\b(kingdom|thy kingdom come|new jerusalem|kingdom come|kingdom of heaven|where i go ye cannot come|where i go you cannot come|revelation 21)\b/i,
+  },
   { cardId: 'deathState', re: /\b(die|death|soul|grave|sleep)\b/i },
   { cardId: 'messiahLogos', re: /\b(logos|word of god|yahweh|jehovah|jesus).*(old testament|god)|god.*old testament\b/i },
   { cardId: 'lawCommandments', re: /\b(commandments?|ten commandments|law (still|abolished)|matthew 5:17)\b/i },

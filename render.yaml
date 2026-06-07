@@ -17,9 +17,9 @@ services:
       - key: BUDDY_DISABLE_STUDY_FALLBACK
         value: "1"
       - key: BUDDY_DEBUG
-        value: "1"
+        value: "0"
       - key: BUDDY_LIVE_TRACE
-        value: "1"
+        value: "0"
       - key: OPENAI_API_KEY
         sync: false
       - key: ADMIN_PASSWORD

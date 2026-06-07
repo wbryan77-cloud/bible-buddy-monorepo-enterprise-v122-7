@@ -492,14 +492,31 @@
           })
         });
 
+        if (!res.ok) {
+          throw new Error('Server returned status ' + res.status);
+        }
+
         const data = await res.json();
+        if (!data.ok) {
+          throw new Error(data.error || 'Unknown server error');
+        }
+
         const payload = data.reply && typeof data.reply === 'object' ? data.reply : data;
+        const replyText = payload.reply;
+        if (!replyText || (typeof replyText === 'string' && !replyText.trim())) {
+          throw new Error('Empty reply from server');
+        }
+
         setOrb(payload.orb_state || 'speaking');
-        addMessage('buddy', payload.reply || 'I’m here with you. Tell me a little more.', payload.scripture || []);
+        addMessage('buddy', replyText, payload.scripture || []);
         window.setTimeout(() => setOrb('idle'), 4200);
       } catch (error) {
         setOrb('idle');
-        addMessage('buddy', 'I had trouble connecting just now, but I’m still here. Please try again in a moment.');
+        const detail = error && error.message ? error.message : 'Unknown error';
+        addMessage(
+          'buddy',
+          "I'm having trouble reaching the AI service right now. Please try again in a moment.\n\n(" + detail + ')'
+        );
       }
     }
   </script>

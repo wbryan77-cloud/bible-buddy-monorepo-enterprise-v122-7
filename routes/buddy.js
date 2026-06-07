@@ -1,9 +1,22 @@
+const crypto = require('crypto');
 const express = require('express');
 const { runBuddy } = require('../services/buddyBrain');
 const { isCoreRestorationDebugEnabled } = require('../services/coreRestorationDebug');
 const { buildLiveRequestTrace, logLiveRequestTrace } = require('../services/liveRequestTrace');
+const { logLiveResponseCapture } = require('../services/liveResponseCapture');
 
 const router = express.Router();
+
+function emitBuddyChatJson(res, { requestId, userId, message, httpStatus, body }) {
+  logLiveResponseCapture({
+    requestId,
+    userId,
+    message,
+    httpStatus,
+    responseBody: body,
+  });
+  res.status(httpStatus).json(body);
+}
 
 function normalizePayload(reply) {
   if (reply && typeof reply === 'object') return reply;
@@ -19,7 +32,7 @@ function normalizePayload(reply) {
   };
 }
 
-async function handleBuddyChat({ body, res }) {
+async function handleBuddyChat({ body, res, requestId }) {
   const testerId = body.testerId || body.userId || 'anonymous';
   const userId = testerId;
   const sessionId = body.sessionId || null;
@@ -29,7 +42,13 @@ async function handleBuddyChat({ body, res }) {
   const message = body.message || '';
 
   if (!message) {
-    res.status(400).json({ ok: false, error: 'message is required' });
+    emitBuddyChatJson(res, {
+      requestId,
+      userId,
+      message,
+      httpStatus: 400,
+      body: { ok: false, error: 'message is required' },
+    });
     return;
   }
 
@@ -41,8 +60,10 @@ async function handleBuddyChat({ body, res }) {
     httpStatus: 200,
     latencyMs: Date.now() - started,
   });
-  logLiveRequestTrace(trace);
-  reply.liveRequestTrace = trace;
+  if (process.env.BUDDY_LIVE_TRACE === '1') {
+    logLiveRequestTrace(trace);
+    reply.liveRequestTrace = trace;
+  }
 
   const payload = normalizePayload(reply);
   if (isCoreRestorationDebugEnabled()) {
@@ -51,16 +72,32 @@ async function handleBuddyChat({ body, res }) {
   if (process.env.BUDDY_LIVE_TRACE === '1') {
     payload.liveRequestTrace = reply.liveRequestTrace;
   }
-  res.status(200).json({ ok: true, reply: payload });
+  emitBuddyChatJson(res, {
+    requestId,
+    userId,
+    message,
+    httpStatus: 200,
+    body: { ok: true, reply: payload },
+  });
 }
 
 // POST /buddy/chat  -> main Bible Buddy endpoint for the app
 router.post('/chat', async (req, res) => {
+  const requestId = req.headers['x-request-id'] || crypto.randomUUID();
+  const body = req.body || {};
+  const userId = body.testerId || body.userId || 'anonymous';
+  const message = body.message || '';
   try {
-    await handleBuddyChat({ body: req.body || {}, res });
+    await handleBuddyChat({ body, res, requestId });
   } catch (e) {
     console.error('Buddy error:', e);
-    res.status(500).json({ ok: false, error: e.message });
+    emitBuddyChatJson(res, {
+      requestId,
+      userId,
+      message,
+      httpStatus: 500,
+      body: { ok: false, error: e.message },
+    });
   }
 });
 
@@ -98,7 +135,9 @@ router.post('/stream', async (req, res) => {
     const started = Date.now();
     const raw = await runBuddy({ userId, testerId, sessionId, cohort, mode, personaKey, message });
     const trace = buildLiveRequestTrace({ message, reply: raw, httpStatus: 200, latencyMs: Date.now() - started });
-    logLiveRequestTrace(trace);
+    if (process.env.BUDDY_LIVE_TRACE === '1') {
+      logLiveRequestTrace(trace);
+    }
 
     const reply = normalizePayload(raw);
     const text = reply.reply || '';

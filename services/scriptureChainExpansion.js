@@ -6,6 +6,8 @@ const EXPANSION_TO_CATALOG_KEY = {
   feastDays: 'feastDaysHighSabbaths',
   traditions: 'traditionsOfMen',
   resurrection: 'resurrectionTimeline',
+  heavensLayers: 'heavensLayers',
+  kingdomOnEarth: 'kingdomOnEarth',
 };
 
 const SCRIPTURE_CHAINS = Object.fromEntries(

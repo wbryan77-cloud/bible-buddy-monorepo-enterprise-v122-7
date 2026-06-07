@@ -1,0 +1,48 @@
+module.exports = {
+  topic: 'kingdom',
+  cardId: 'kingdom',
+  approved: true,
+  status: 'approved_frozen',
+  questionTypes: [
+    'kingdom_on_earth',
+    'thy_kingdom_come',
+    'new_jerusalem',
+    'second_coming',
+    'revelation_21',
+    'cannot_come_yet',
+  ],
+  primaryScriptures: [
+    'Matthew 6:9-10',
+    'John 14:3',
+    'Acts 1:9-11',
+    'Revelation 5:10',
+    'Revelation 11:15',
+    'Revelation 21:1-3',
+  ],
+  supportingScriptures: [
+    'Daniel 2:44-45',
+    'Daniel 7:13-14',
+    'Luke 1:30-33',
+    'John 7:33-34',
+    'John 8:21',
+    'John 13:33',
+    'Revelation 20:1-6',
+  ],
+  cautionPassages: [
+    'Do not teach believers relocate to heaven now as settled final hope without Scripture chain',
+    'John 7:33-34 / 8:21 / 13:33 — where I go ye cannot come (present separation; not third-heaven relocation)',
+    'John 14:3 — I will come again; gather unto myself',
+    'Revelation 21:1-3 — tabernacle of God is with men on earth',
+  ],
+  commonMisreadings: [
+    'Treating “mansions in heaven” as believers’ immediate destination instead of Christ’s return and kingdom on earth',
+    'Skipping Matthew 6:10 “thy kingdom come… in earth” when teaching kingdom hope',
+    'Teaching New Jerusalem only as a place believers go away to, without Revelation 21 coming down',
+  ],
+  bibleFirstConclusion:
+    'Scripture frames the kingdom prayer as thy kingdom come on earth; Christ comes again; Revelation describes the holy city coming down and God dwelling with men.',
+  historySecondaryNotes: [],
+  confidence: 'high',
+  conflictRisk: 'medium',
+  lastReviewed: '2026-06-06',
+};

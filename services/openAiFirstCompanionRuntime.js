@@ -22,6 +22,8 @@ const {
 const { validateOwnershipReply } = require('./ownershipAntiOverrideGuard');
 const { evaluateDirectness } = require('./directnessGuard');
 const { detectForbiddenProse, stripForbiddenProse } = require('./forbiddenProseGuard');
+const { validateScripturePolicy } = require('./scripturePolicyValidator');
+const { logRequestMemory } = require('./requestMemoryLogger');
 
 function polishFinalReply(reply = '') {
   return polishCompanionReply(sanitizeDoctrineResponse(stripInternalRuntimeLabels(String(reply || ''))));
@@ -107,6 +109,9 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   });
   evidencePack.userMessage = message;
 
+  const turnStarted = Date.now();
+  let openaiAttempts = 0;
+
   let composed = await composeReasonFirstReply({
     userId,
     mode,
@@ -117,8 +122,9 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     runtimeContext,
     evidencePack,
     coreRestoration: true,
-    maxAttempts: 4,
+    maxAttempts: 2,
   });
+  openaiAttempts += composed.attempts || (composed.openaiCalled ? 1 : 0);
 
   let structured = composed.structured;
   let openaiCalled = !!composed.openaiCalled;
@@ -165,15 +171,26 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
         historyAllowed,
       });
       const forbidden = detectForbiddenProse(structured.reply);
-      return { ownership, directness, forbidden };
+      const scripturePolicy = validateScripturePolicy({
+        reply: structured.reply,
+        evidencePack,
+        historyAllowed,
+        message,
+      });
+      return { ownership, directness, forbidden, scripturePolicy };
     };
 
     let guards = runGuards();
     const needsRegen =
-      !guards.ownership.passed || !guards.directness.passed || guards.forbidden.detected;
+      !regenerated &&
+      (!guards.ownership.passed ||
+        !guards.directness.passed ||
+        guards.forbidden.detected ||
+        !guards.scripturePolicy.passed);
 
     if (needsRegen) {
       const regenInstruction =
+        guards.scripturePolicy.regenHint ||
         guards.directness.regenInstruction ||
         guards.ownership.regenInstruction ||
         'Answer the latest user question directly. Use evidence silently. Do not use template language, study continuation, prior-topic continuation, or history unless asked.';
@@ -196,9 +213,10 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
           },
         },
         coreRestoration: true,
-        maxAttempts: 2,
+        maxAttempts: 1,
         regenInstruction,
       });
+      openaiAttempts += composed.attempts || (composed.openaiCalled ? 1 : 0);
 
       if (composed.openaiCalled) {
         structured = composed.structured;
@@ -313,9 +331,27 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     answerMatchesLatestQuestion: directnessFinal.answerMatchesLatestQuestion,
     correctionRepair: directnessFinal.correctionRepair,
     regenerated,
+    openaiAttempts,
   });
 
   structured.quality = scoreCompanionQuality({ message, reply: structured.reply, runtimeContext });
+
+  let evidencePackApproxBytes = 0;
+  try {
+    evidencePackApproxBytes = Buffer.byteLength(JSON.stringify(evidencePack), 'utf8');
+  } catch (_) {
+    evidencePackApproxBytes = 0;
+  }
+
+  logRequestMemory({
+    userId,
+    message,
+    openaiCalled,
+    regenerated,
+    openaiAttempts,
+    evidencePackApproxBytes,
+    latencyMs: Date.now() - turnStarted,
+  });
 
   return H.finalizeBuddyResponse({
     structured,

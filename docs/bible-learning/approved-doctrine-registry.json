@@ -87,7 +87,16 @@
       "cardId": "heavens",
       "title": "Heaven / Third Heaven / Layered Heavens",
       "status": "approved_frozen",
-      "lastReviewed": "2026-06-01",
+      "lastReviewed": "2026-06-06",
+      "approvedBy": "doctrine_audit",
+      "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "kingdom",
+      "cardId": "kingdom",
+      "title": "Kingdom on Earth / Thy Kingdom Come / New Jerusalem",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-06",
       "approvedBy": "doctrine_audit",
       "bibleFirstConclusionLocked": true
     },

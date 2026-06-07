@@ -74,6 +74,35 @@ const BIBLE_TOPIC_CATALOG = {
     scriptureChain: ['Daniel 7:13-14', 'Zechariah 14:1-9', 'Matthew 24:29-31', '1 Corinthians 15:51-54', '1 Thessalonians 4:13-18', 'Revelation 11:15', 'Revelation 19:11-21', 'Revelation 20:1-6'],
     parallelThemes: ['son_of_man', 'last_trump', 'kingdom_of_world_becomes_christ', 'reign_with_christ'],
   },
+  heavensLayers: {
+    title: 'Layered Heavens / Third Heaven',
+    scriptureChain: [
+      'Genesis 1:1',
+      'Genesis 1:6-8',
+      'Genesis 1:14-17',
+      'Deuteronomy 10:14',
+      'John 3:13',
+      'John 7:33-34',
+      'John 8:21',
+      'John 13:33',
+      '2 Corinthians 12:2',
+      'Acts 1:9-11',
+    ],
+    parallelThemes: ['firmament', 'celestial_heavens', 'third_heaven', 'no_man_ascended'],
+  },
+  kingdomOnEarth: {
+    title: 'Kingdom Comes to Earth / New Jerusalem',
+    scriptureChain: [
+      'Matthew 6:9-10',
+      'John 14:3',
+      'Acts 1:9-11',
+      'Revelation 5:10',
+      'Revelation 11:15',
+      'Revelation 20:1-6',
+      'Revelation 21:1-3',
+    ],
+    parallelThemes: ['thy_kingdom_come', 'kingdom_on_earth', 'new_jerusalem_comes_down', 'christ_returns'],
+  },
 };
 
 module.exports = { BIBLE_TOPIC_CATALOG };

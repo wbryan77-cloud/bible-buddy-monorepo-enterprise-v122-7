@@ -48,6 +48,15 @@ Do not paste retrieved evidence verbatim. Do not add unsolicited study prompts.
 ${SPECIFICITY_HINT}
 `.trim();
 
+const COMPANION_TONE_INSTRUCTION = `
+COMPANION TONE (prompt guidance only — you still author the final reply):
+- Listen first; reflect the user's burden or question briefly before teaching.
+- Stay warm and natural — not generic worldly advice, not a cold Q&A bot.
+- Bring Scripture gently when it helps; do not stack verses mechanically.
+- Avoid therapy claims, diagnosis labels, or stock empathy openers.
+- When the user shares pain, acknowledge it in one concrete line, then Scripture.
+`.trim();
+
 const CORE_RESTORATION_INSTRUCTION = `
 CORE RESTORATION (required):
 - You author the final reply. Evidence is facts only — never paste "establishes the matter / confirms it alongside Scripture" triplet blocks.
@@ -63,6 +72,9 @@ CORE RESTORATION (required):
 - For "how many" questions: state the count or biblical answer in the first sentence.
 - For "can you search the Bible": answer honestly about Scripture evidence retrieval (not internet search).
 - Approved Evidence Cards are frozen doctrine baseline — teach from them; never paste bibleFirstConclusion verbatim; discovery reinforcement is admin-review only.
+- Use KJV references when citing Scripture; do not quote NIV/ESV/NLT-style wording.
+- Heavens/kingdom: distinguish layered heavens (Gen 1); Paul's third heaven (2 Cor 12:2) is his vision — do not teach believers go to third heaven without proof.
+- Kingdom hope: Matthew 6:10 on earth; Christ comes again (John 14:3, Acts 1:11); New Jerusalem comes down (Rev 21:1-3).
 `.trim();
 
 const ECP_INSTRUCTION = `
@@ -119,7 +131,7 @@ function buildComposerSystemPrompt({
   const goldenSection = goldenBlock && !coreRestoration ? `${goldenBlock}\n\n` : '';
   let composerBlock = isEcpEnabled() && !coreRestoration ? buildEcpComposerInstruction() : COMPOSER_INSTRUCTION;
   if (coreRestoration) {
-    composerBlock = `${COMPOSER_INSTRUCTION}\n\n${CORE_RESTORATION_INSTRUCTION}`;
+    composerBlock = `${COMPOSER_INSTRUCTION}\n\n${CORE_RESTORATION_INSTRUCTION}\n\n${COMPANION_TONE_INSTRUCTION}`;
   }
   return `${base}\n\n${goldenSection}${composerBlock}\n\nEvidence pack (facts only):\n${JSON.stringify(
     evidenceSlice,
@@ -162,10 +174,11 @@ async function composeReasonFirstReply({
   profile,
   runtimeContext,
   evidencePack,
-  maxAttempts = 3,
+  maxAttempts = 2,
   coreRestoration = false,
   regenInstruction = null,
 } = {}) {
+  const attemptCap = coreRestoration ? Math.min(maxAttempts, regenInstruction ? 1 : 2) : maxAttempts;
   const historyBlock = (evidencePack.conversationHistory || [])
     .map((t) => `Turn ${t.turn} user: ${t.user}\nTurn ${t.turn} assistant: ${t.assistant}`)
     .join('\n\n');
@@ -227,8 +240,10 @@ async function composeReasonFirstReply({
   let lastValidation = null;
   let ecValidation = { passed: true, skipped: true };
   let structured = null;
+  let attemptsUsed = 0;
 
-  for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+  for (let attempt = 0; attempt < attemptCap; attempt += 1) {
+    attemptsUsed = attempt + 1;
     const result = await callOpenAI({
       systemPrompt,
       userPayload: { ...userPayload, regenInstruction: userPayload.regenInstruction },
@@ -248,7 +263,7 @@ async function composeReasonFirstReply({
         openaiCalled: false,
         apiError: result.error,
         validation: { passed: false, doctrineValidationResult: 'skipped', issues: [result.error] },
-        attempts: attempt + 1,
+        attempts: attemptsUsed,
       };
     }
 
@@ -265,7 +280,11 @@ async function composeReasonFirstReply({
       ...evidencePack,
       userMessage: message,
     };
-    lastValidation = validateReasonFirstReply({ reply: structured.reply, evidencePack: packForValidation });
+    lastValidation = validateReasonFirstReply({
+      reply: structured.reply,
+      evidencePack: packForValidation,
+      historyAllowed: !!evidencePack.historyAllowed,
+    });
 
     ecValidation = { passed: true, skipped: true, metrics: null };
     if (isEcpEnabled() && emotionalCenter.emotionalCenter) {
@@ -311,7 +330,7 @@ async function composeReasonFirstReply({
     ...(structured.runtime || {}),
     masterRoute,
     openaiCalled: true,
-    composerAttempts: maxAttempts,
+    composerAttempts: attemptsUsed,
     ecpEnabled: isEcpEnabled(),
     emotionalCenter,
     ecPreservationMetrics: ecMetrics,
@@ -326,7 +345,7 @@ async function composeReasonFirstReply({
     structured,
     openaiCalled: true,
     validation: lastValidation,
-    attempts: maxAttempts,
+    attempts: attemptsUsed,
     apiError: null,
   };
 }

@@ -51,6 +51,8 @@ const TOPIC_TO_CHAIN = {
   feast_days: 'feastDays',
   traditions: 'traditions',
   resurrection_timeline: 'resurrection',
+  heavens: 'heavensLayers',
+  kingdom: 'kingdomOnEarth',
 };
 
 const CATALOG_KEY_MAP = {
@@ -58,6 +60,8 @@ const CATALOG_KEY_MAP = {
   dietary_law: 'dietaryLaw',
   dietaryLaw: 'dietaryLaw',
   feast_days: 'feastDaysHighSabbaths',
+  heavens: 'heavensLayers',
+  kingdom: 'kingdomOnEarth',
   traditions: 'traditionsOfMen',
   resurrection_timeline: 'resurrectionTimeline',
 };

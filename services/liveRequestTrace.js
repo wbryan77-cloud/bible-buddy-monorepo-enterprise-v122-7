@@ -90,7 +90,12 @@ function buildLiveRequestTrace({ message = '', reply = {}, httpStatus = 200, lat
   return trace;
 }
 
+function isLiveRequestTraceEnabled() {
+  return String(process.env.BUDDY_LIVE_TRACE || '').toLowerCase() === '1';
+}
+
 function logLiveRequestTrace(trace) {
+  if (!isLiveRequestTraceEnabled()) return;
   try {
     fs.mkdirSync(path.dirname(TRACE_PATH), { recursive: true });
     fs.appendFileSync(TRACE_PATH, `${JSON.stringify(trace)}\n`);
@@ -105,6 +110,7 @@ function logLiveRequestTrace(trace) {
 
 module.exports = {
   buildLiveRequestTrace,
+  isLiveRequestTraceEnabled,
   logLiveRequestTrace,
   TRACE_PATH,
   STUDY_RE,

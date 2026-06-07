@@ -11,6 +11,7 @@ const {
   formatRecommendationsForTrace,
 } = require('./listeningSpecificityValidator');
 const { validateOwnershipReply } = require('./ownershipAntiOverrideGuard');
+const { validateScripturePolicy } = require('./scripturePolicyValidator');
 
 const WITNESS_MARKERS = [
   /establishes the matter/i,
@@ -76,7 +77,7 @@ function validateHistoryTemplateOnMeta({ reply = '', evidencePack = {} } = {}) {
   return { passed: issues.length === 0, issues, skipped: false };
 }
 
-function validateReasonFirstReply({ reply = '', evidencePack = {} } = {}) {
+function validateReasonFirstReply({ reply = '', evidencePack = {}, historyAllowed = false } = {}) {
   const doctrine = validateDoctrineBoundaries(reply);
   const correctionHard = validateCorrectionHardFailures(reply, evidencePack);
   const historyTemplate = validateHistoryTemplateOnMeta({ reply, evidencePack });
@@ -88,18 +89,32 @@ function validateReasonFirstReply({ reply = '', evidencePack = {} } = {}) {
     openaiCalled: true,
     fallbackUsed: false,
   });
+  const scripturePolicy = validateScripturePolicy({
+    reply,
+    evidencePack,
+    historyAllowed: historyAllowed || !!evidencePack.historyAllowed,
+    message: evidencePack.userMessage || '',
+  });
 
   const hardIssues = [
     ...doctrine.issues,
     ...(correctionHard.issues || []),
     ...(historyTemplate.issues || []),
     ...(ownership.passed ? [] : ownership.issues.filter((i) => i !== 'low_question_match')),
+    ...scripturePolicy.issues,
   ];
-  const passed = doctrine.passed && correctionHard.passed && historyTemplate.passed && ownership.passed;
+  const passed =
+    doctrine.passed &&
+    correctionHard.passed &&
+    historyTemplate.passed &&
+    ownership.passed &&
+    scripturePolicy.passed;
 
   let regenHint = null;
   if (!passed) {
-    if (ownership.regenInstruction && !ownership.passed) {
+    if (scripturePolicy.regenHint && !scripturePolicy.passed) {
+      regenHint = scripturePolicy.regenHint;
+    } else if (ownership.regenInstruction && !ownership.passed) {
       regenHint = ownership.regenInstruction;
     } else if (!correctionHard.passed && correctionHard.issues?.length) {
       regenHint = buildCorrectionRegenHint(correctionHard.issues, evidencePack);
@@ -122,10 +137,12 @@ function validateReasonFirstReply({ reply = '', evidencePack = {} } = {}) {
       softOnly: true,
     },
     ownership,
+    scripturePolicy,
     issues: hardIssues,
     softRecommendations,
     doctrineValidationResult: passed ? 'pass' : 'fail',
     regenHint,
+    adminFindings: scripturePolicy.adminFindings,
   };
 }
 

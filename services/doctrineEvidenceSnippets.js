@@ -48,14 +48,51 @@ function buildDoctrineEvidenceSnippets(topic = '', message = '') {
     });
   }
 
-  if (/\b(heaven|heavens|third heaven)\b/.test(lower)) {
+  if (/\b(heaven|heavens|third heaven|firmament|no man hath ascended)\b/.test(lower)) {
     snippets.push({
       topic: 'heavens',
-      references: ['Genesis 1:1', '2 Corinthians 12:2', 'Deuteronomy 10:14', 'Psalm 148:1-4'],
+      references: [
+        'Genesis 1:1',
+        'Genesis 1:6-8',
+        'Genesis 1:14-17',
+        'John 3:13',
+        '2 Corinthians 12:2',
+        'Acts 1:9-11',
+      ],
       facts: [
-        'Answer how many / which heavens the user asked about first',
-        '2 Corinthians 12:2 mentions a third heaven',
-        'Deuteronomy 10:14 speaks of heaven and heaven of heavens',
+        'Scripture uses heaven/heavens in layered ways — firmament/sky, celestial region, and Paul’s third heaven',
+        'Genesis 1:6-8 firmament; Genesis 1:14-17 sun/moon/stars in heaven',
+        'John 3:13 — no man hath ascended up to heaven but the Son of Man',
+        '2 Corinthians 12:2 — Paul caught up to third heaven (vision); not proof believers go there',
+        'Do not teach believers go to the third heaven unless Scripture explicitly proves it',
+      ],
+    });
+  }
+
+  if (
+    /\b(kingdom|thy kingdom come|new jerusalem|where i go ye cannot come|where i go you cannot come|revelation 21)\b/.test(
+      lower
+    )
+  ) {
+    snippets.push({
+      topic: 'kingdom',
+      references: [
+        'Matthew 6:9-10',
+        'John 7:33-34',
+        'John 8:21',
+        'John 13:33',
+        'John 14:3',
+        'Acts 1:9-11',
+        'Revelation 5:10',
+        'Revelation 11:15',
+        'Revelation 21:1-3',
+      ],
+      facts: [
+        'Matthew 6:10 — thy kingdom come, thy will be done in earth',
+        'John 7/8/13 — where I go ye cannot come (present separation before glorification)',
+        'John 14:3 — I will come again, and receive you unto myself',
+        'Revelation 21:1-3 — holy city comes down; tabernacle of God is with men',
+        'Final hope: Christ’s return and kingdom on earth — not unsupported third-heaven relocation',
       ],
     });
   }

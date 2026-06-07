@@ -69,6 +69,36 @@
         { "era": "Acts", "reference": "Acts 2:1-4", "theme": "pentecost_fulfillment", "confidence": 0.9 },
         { "era": "Prophets", "reference": "Zechariah 14:16-19", "theme": "nations_keep_feasts", "confidence": 0.85 }
       ]
+    },
+    {
+      "chainId": "heavens_layers_genesis_to_revelation",
+      "topic": "heavens",
+      "approved": true,
+      "confidenceScore": 0.9,
+      "nodes": [
+        { "era": "Genesis", "reference": "Genesis 1:1", "theme": "heavens_created", "confidence": 0.95 },
+        { "era": "Genesis", "reference": "Genesis 1:6-8", "theme": "firmament_heaven", "confidence": 0.94 },
+        { "era": "Genesis", "reference": "Genesis 1:14-17", "theme": "celestial_heavens", "confidence": 0.93 },
+        { "era": "Gospels", "reference": "John 3:13", "theme": "no_man_ascended", "confidence": 0.92 },
+        { "era": "Epistles", "reference": "2 Corinthians 12:2", "theme": "third_heaven_vision", "confidence": 0.91 },
+        { "era": "Gospels", "reference": "John 14:3", "theme": "come_again_receive", "confidence": 0.9 },
+        { "era": "Acts", "reference": "Acts 1:9-11", "theme": "ascension_and_return", "confidence": 0.9 }
+      ]
+    },
+    {
+      "chainId": "kingdom_on_earth_genesis_to_revelation",
+      "topic": "kingdom",
+      "approved": true,
+      "confidenceScore": 0.91,
+      "nodes": [
+        { "era": "Gospels", "reference": "Matthew 6:9-10", "theme": "thy_kingdom_come_on_earth", "confidence": 0.97 },
+        { "era": "Gospels", "reference": "John 14:3", "theme": "come_again_receive", "confidence": 0.92 },
+        { "era": "Acts", "reference": "Acts 1:9-11", "theme": "same_manner_return", "confidence": 0.91 },
+        { "era": "Revelation", "reference": "Revelation 5:10", "theme": "reign_on_earth", "confidence": 0.93 },
+        { "era": "Revelation", "reference": "Revelation 11:15", "theme": "kingdom_of_world", "confidence": 0.9 },
+        { "era": "Revelation", "reference": "Revelation 20:1-6", "theme": "thousand_years_reign", "confidence": 0.88 },
+        { "era": "Revelation", "reference": "Revelation 21:1-3", "theme": "new_jerusalem_with_men", "confidence": 0.95 }
+      ]
     }
   ]
 }
