@@ -38,6 +38,8 @@ const TOPIC_FAMILY = {
   prayer: 'prayer',
   feast_days: 'feast_days',
   dietary_law: 'dietary_law',
+  acts_10: 'acts_10',
+  death_state: 'death_state',
   traditions: 'traditions',
   resurrection_timeline: 'resurrection_timeline',
   kingdom: 'kingdom',

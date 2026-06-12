@@ -55,16 +55,19 @@ function logLiveResponseCapture({
 } = {}) {
   if (!isLiveResponseCaptureEnabled()) return null;
   ensureDataDir();
+  const { appendJsonlSafe } = require('./safeJsonlWriter');
   const record = {
     timestamp,
     requestId: requestId || crypto.randomUUID(),
     userId: userId || null,
-    message: message || '',
+    message: String(message || '').slice(0, 200),
     httpStatus,
-    responseBody,
     shape: buildShapeValidation(responseBody),
+    replyPreview: String(
+      responseBody?.reply?.reply || responseBody?.reply || '',
+    ).slice(0, 200),
   };
-  fs.appendFileSync(CAPTURE_PATH, `${JSON.stringify(record)}\n`, 'utf8');
+  appendJsonlSafe(CAPTURE_PATH, record);
   return record;
 }
 

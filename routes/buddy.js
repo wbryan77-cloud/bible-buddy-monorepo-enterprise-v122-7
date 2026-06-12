@@ -4,6 +4,8 @@ const { runBuddy } = require('../services/buddyBrain');
 const { isCoreRestorationDebugEnabled } = require('../services/coreRestorationDebug');
 const { buildLiveRequestTrace, logLiveRequestTrace } = require('../services/liveRequestTrace');
 const { logLiveResponseCapture } = require('../services/liveResponseCapture');
+const { applyDoctrineErrorFirewall } = require('../services/doctrineErrorFirewall');
+const { withBuddyChatGuarantee } = require('../services/responseGuarantee');
 
 const router = express.Router();
 
@@ -21,7 +23,7 @@ function emitBuddyChatJson(res, { requestId, userId, message, httpStatus, body }
 function normalizePayload(reply) {
   if (reply && typeof reply === 'object') return reply;
   return {
-    reply: String(reply || "I'm having trouble reaching the AI service right now. Please try again in a moment."),
+    reply: String(reply || 'I may have lost the thread in this session, but I can continue from the last approved Bible topic if you tell me the topic.'),
     scripture: [],
     mode: 'companion',
     confidence: 'medium',
@@ -53,7 +55,11 @@ async function handleBuddyChat({ body, res, requestId }) {
   }
 
   const started = Date.now();
-  const reply = await runBuddy({ userId, testerId, sessionId, cohort, mode, personaKey, message });
+  const guaranteed = await withBuddyChatGuarantee(
+    () => runBuddy({ userId, testerId, sessionId, cohort, mode, personaKey, message }),
+    { userId, message },
+  );
+  const reply = guaranteed.reply || {};
   const trace = buildLiveRequestTrace({
     message,
     reply,
@@ -65,7 +71,12 @@ async function handleBuddyChat({ body, res, requestId }) {
     reply.liveRequestTrace = trace;
   }
 
-  const payload = normalizePayload(reply);
+  let payload = normalizePayload(reply);
+  payload = applyDoctrineErrorFirewall(payload, {
+    userId,
+    topic: reply?.runtime?.doctrineTopic,
+    strictDoctrine: !!reply?.runtime?.doctrineTopic || reply?.doctrineFinalAuthority,
+  });
   if (isCoreRestorationDebugEnabled()) {
     payload.coreDebug = reply.coreDebug || reply.runtime?.coreDebug || null;
   }
@@ -96,7 +107,10 @@ router.post('/chat', async (req, res) => {
       userId,
       message,
       httpStatus: 500,
-      body: { ok: false, error: e.message },
+      body: {
+        ok: false,
+        error: 'Something interrupted this conversation. Please try your question again.',
+      },
     });
   }
 });
@@ -133,7 +147,11 @@ router.post('/stream', async (req, res) => {
     send('state', { orb_state: 'thinking', message: 'Buddy is thinking...' });
 
     const started = Date.now();
-    const raw = await runBuddy({ userId, testerId, sessionId, cohort, mode, personaKey, message });
+    const guaranteed = await withBuddyChatGuarantee(
+      () => runBuddy({ userId, testerId, sessionId, cohort, mode, personaKey, message }),
+      { userId, message },
+    );
+    const raw = guaranteed.reply || {};
     const trace = buildLiveRequestTrace({ message, reply: raw, httpStatus: 200, latencyMs: Date.now() - started });
     if (process.env.BUDDY_LIVE_TRACE === '1') {
       logLiveRequestTrace(trace);
@@ -150,10 +168,17 @@ router.post('/stream', async (req, res) => {
       await new Promise((resolve) => setTimeout(resolve, 22));
     }
 
-    const donePayload = {
-      ...reply,
-      orb_state: reply.orb_state || 'speaking',
-    };
+    let donePayload = applyDoctrineErrorFirewall(
+      {
+        ...reply,
+        orb_state: reply.orb_state || 'speaking',
+      },
+      {
+        userId,
+        topic: raw?.runtime?.doctrineTopic,
+        strictDoctrine: !!raw?.runtime?.doctrineTopic || raw?.doctrineFinalAuthority,
+      },
+    );
     if (isCoreRestorationDebugEnabled()) {
       donePayload.coreDebug = raw.coreDebug || raw.runtime?.coreDebug || null;
     }
@@ -165,7 +190,9 @@ router.post('/stream', async (req, res) => {
   } catch (e) {
     console.error('Buddy stream error:', e);
     try {
-      res.write(`event: error\ndata: ${JSON.stringify({ error: e.message })}\n\n`);
+      res.write(
+        `event: error\ndata: ${JSON.stringify({ error: 'Something interrupted this conversation. Please try again.' })}\n\n`,
+      );
       res.end();
     } catch (_) {}
   }

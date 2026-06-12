@@ -1,0 +1,1390 @@
+# Phase 4F Combined Stability Regression Report
+
+Generated: 2026-06-12T01:21:22.515Z
+Duration: 47.9s
+Timeout budget per request: 55000ms
+
+## 1_acts10_initial_x25
+- [PASS] acts10 exact 1
+- [PASS] no openai 1
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 1
+- [PASS] acts10 exact 2
+- [PASS] no openai 2
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 2
+- [PASS] acts10 exact 3
+- [PASS] no openai 3
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 3
+- [PASS] acts10 exact 4
+- [PASS] no openai 4
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 4
+- [PASS] acts10 exact 5
+- [PASS] no openai 5
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 5
+- [PASS] acts10 exact 6
+- [PASS] no openai 6
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 6
+- [PASS] acts10 exact 7
+- [PASS] no openai 7
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 7
+- [PASS] acts10 exact 8
+- [PASS] no openai 8
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 8
+- [PASS] acts10 exact 9
+- [PASS] no openai 9
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 9
+- [PASS] acts10 exact 10
+- [PASS] no openai 10
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 10
+- [PASS] acts10 exact 11
+- [PASS] no openai 11
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 11
+- [PASS] acts10 exact 12
+- [PASS] no openai 12
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 12
+- [PASS] acts10 exact 13
+- [PASS] no openai 13
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 13
+- [PASS] acts10 exact 14
+- [PASS] no openai 14
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 14
+- [PASS] acts10 exact 15
+- [PASS] no openai 15
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 15
+- [PASS] acts10 exact 16
+- [PASS] no openai 16
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 16
+- [PASS] acts10 exact 17
+- [PASS] no openai 17
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 17
+- [PASS] acts10 exact 18
+- [PASS] no openai 18
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 18
+- [PASS] acts10 exact 19
+- [PASS] no openai 19
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 19
+- [PASS] acts10 exact 20
+- [PASS] no openai 20
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 20
+- [PASS] acts10 exact 21
+- [PASS] no openai 21
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 21
+- [PASS] acts10 exact 22
+- [PASS] no openai 22
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 22
+- [PASS] acts10 exact 23
+- [PASS] no openai 23
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 23
+- [PASS] acts10 exact 24
+- [PASS] no openai 24
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 24
+- [PASS] acts10 exact 25
+- [PASS] no openai 25
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] no hedge 25
+
+## 2_acts10_corrections_x25
+- [PASS] corr ack 1
+- [PASS] no openai corr 1
+- [PASS] no bad user text
+- [PASS] corr ack 2
+- [PASS] no openai corr 2
+- [PASS] no bad user text
+- [PASS] corr ack 3
+- [PASS] no openai corr 3
+- [PASS] no bad user text
+- [PASS] corr ack 4
+- [PASS] no openai corr 4
+- [PASS] no bad user text
+- [PASS] corr ack 5
+- [PASS] no openai corr 5
+- [PASS] no bad user text
+- [PASS] corr ack 6
+- [PASS] no openai corr 6
+- [PASS] no bad user text
+- [PASS] corr ack 7
+- [PASS] no openai corr 7
+- [PASS] no bad user text
+- [PASS] corr ack 8
+- [PASS] no openai corr 8
+- [PASS] no bad user text
+- [PASS] corr ack 9
+- [PASS] no openai corr 9
+- [PASS] no bad user text
+- [PASS] corr ack 10
+- [PASS] no openai corr 10
+- [PASS] no bad user text
+- [PASS] corr ack 11
+- [PASS] no openai corr 11
+- [PASS] no bad user text
+- [PASS] corr ack 12
+- [PASS] no openai corr 12
+- [PASS] no bad user text
+- [PASS] corr ack 13
+- [PASS] no openai corr 13
+- [PASS] no bad user text
+- [PASS] corr ack 14
+- [PASS] no openai corr 14
+- [PASS] no bad user text
+- [PASS] corr ack 15
+- [PASS] no openai corr 15
+- [PASS] no bad user text
+- [PASS] corr ack 16
+- [PASS] no openai corr 16
+- [PASS] no bad user text
+- [PASS] corr ack 17
+- [PASS] no openai corr 17
+- [PASS] no bad user text
+- [PASS] corr ack 18
+- [PASS] no openai corr 18
+- [PASS] no bad user text
+- [PASS] corr ack 19
+- [PASS] no openai corr 19
+- [PASS] no bad user text
+- [PASS] corr ack 20
+- [PASS] no openai corr 20
+- [PASS] no bad user text
+- [PASS] corr ack 21
+- [PASS] no openai corr 21
+- [PASS] no bad user text
+- [PASS] corr ack 22
+- [PASS] no openai corr 22
+- [PASS] no bad user text
+- [PASS] corr ack 23
+- [PASS] no openai corr 23
+- [PASS] no bad user text
+- [PASS] corr ack 24
+- [PASS] no openai corr 24
+- [PASS] no bad user text
+- [PASS] corr ack 25
+- [PASS] no openai corr 25
+- [PASS] no bad user text
+
+## 3_acts10_continuation_x25
+- [PASS] cont no openai 1
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 2
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 3
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 4
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 5
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 6
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 7
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 8
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 9
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 10
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 11
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 12
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 13
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 14
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 15
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 16
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 17
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 18
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 19
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 20
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 21
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 22
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 23
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 24
+- [PASS] no bad user text
+- [PASS] no leak
+- [PASS] cont no openai 25
+- [PASS] no bad user text
+- [PASS] no leak
+
+## 4_death_initial_x25
+- [PASS] death no openai 1
+- [PASS] no drift 1
+- [PASS] no bad user text
+- [PASS] death no openai 2
+- [PASS] no drift 2
+- [PASS] no bad user text
+- [PASS] death no openai 3
+- [PASS] no drift 3
+- [PASS] no bad user text
+- [PASS] death no openai 4
+- [PASS] no drift 4
+- [PASS] no bad user text
+- [PASS] death no openai 5
+- [PASS] no drift 5
+- [PASS] no bad user text
+- [PASS] death no openai 6
+- [PASS] no drift 6
+- [PASS] no bad user text
+- [PASS] death no openai 7
+- [PASS] no drift 7
+- [PASS] no bad user text
+- [PASS] death no openai 8
+- [PASS] no drift 8
+- [PASS] no bad user text
+- [PASS] death no openai 9
+- [PASS] no drift 9
+- [PASS] no bad user text
+- [PASS] death no openai 10
+- [PASS] no drift 10
+- [PASS] no bad user text
+- [PASS] death no openai 11
+- [PASS] no drift 11
+- [PASS] no bad user text
+- [PASS] death no openai 12
+- [PASS] no drift 12
+- [PASS] no bad user text
+- [PASS] death no openai 13
+- [PASS] no drift 13
+- [PASS] no bad user text
+- [PASS] death no openai 14
+- [PASS] no drift 14
+- [PASS] no bad user text
+- [PASS] death no openai 15
+- [PASS] no drift 15
+- [PASS] no bad user text
+- [PASS] death no openai 16
+- [PASS] no drift 16
+- [PASS] no bad user text
+- [PASS] death no openai 17
+- [PASS] no drift 17
+- [PASS] no bad user text
+- [PASS] death no openai 18
+- [PASS] no drift 18
+- [PASS] no bad user text
+- [PASS] death no openai 19
+- [PASS] no drift 19
+- [PASS] no bad user text
+- [PASS] death no openai 20
+- [PASS] no drift 20
+- [PASS] no bad user text
+- [PASS] death no openai 21
+- [PASS] no drift 21
+- [PASS] no bad user text
+- [PASS] death no openai 22
+- [PASS] no drift 22
+- [PASS] no bad user text
+- [PASS] death no openai 23
+- [PASS] no drift 23
+- [PASS] no bad user text
+- [PASS] death no openai 24
+- [PASS] no drift 24
+- [PASS] no bad user text
+- [PASS] death no openai 25
+- [PASS] no drift 25
+- [PASS] no bad user text
+
+## 5_death_continuation_x25
+- [PASS] death cont 1
+- [PASS] no bad user text
+- [PASS] death cont 2
+- [PASS] no bad user text
+- [PASS] death cont 3
+- [PASS] no bad user text
+- [PASS] death cont 4
+- [PASS] no bad user text
+- [PASS] death cont 5
+- [PASS] no bad user text
+- [PASS] death cont 6
+- [PASS] no bad user text
+- [PASS] death cont 7
+- [PASS] no bad user text
+- [PASS] death cont 8
+- [PASS] no bad user text
+- [PASS] death cont 9
+- [PASS] no bad user text
+- [PASS] death cont 10
+- [PASS] no bad user text
+- [PASS] death cont 11
+- [PASS] no bad user text
+- [PASS] death cont 12
+- [PASS] no bad user text
+- [PASS] death cont 13
+- [PASS] no bad user text
+- [PASS] death cont 14
+- [PASS] no bad user text
+- [PASS] death cont 15
+- [PASS] no bad user text
+- [PASS] death cont 16
+- [PASS] no bad user text
+- [PASS] death cont 17
+- [PASS] no bad user text
+- [PASS] death cont 18
+- [PASS] no bad user text
+- [PASS] death cont 19
+- [PASS] no bad user text
+- [PASS] death cont 20
+- [PASS] no bad user text
+- [PASS] death cont 21
+- [PASS] no bad user text
+- [PASS] death cont 22
+- [PASS] no bad user text
+- [PASS] death cont 23
+- [PASS] no bad user text
+- [PASS] death cont 24
+- [PASS] no bad user text
+- [PASS] death cont 25
+- [PASS] no bad user text
+
+## 6_dietary_x25
+- [PASS] dietary 1
+- [PASS] diet no openai 1
+- [PASS] no bad user text
+- [PASS] dietary 2
+- [PASS] diet no openai 2
+- [PASS] no bad user text
+- [PASS] dietary 3
+- [PASS] diet no openai 3
+- [PASS] no bad user text
+- [PASS] dietary 4
+- [PASS] diet no openai 4
+- [PASS] no bad user text
+- [PASS] dietary 5
+- [PASS] diet no openai 5
+- [PASS] no bad user text
+- [PASS] dietary 6
+- [PASS] diet no openai 6
+- [PASS] no bad user text
+- [PASS] dietary 7
+- [PASS] diet no openai 7
+- [PASS] no bad user text
+- [PASS] dietary 8
+- [PASS] diet no openai 8
+- [PASS] no bad user text
+- [PASS] dietary 9
+- [PASS] diet no openai 9
+- [PASS] no bad user text
+- [PASS] dietary 10
+- [PASS] diet no openai 10
+- [PASS] no bad user text
+- [PASS] dietary 11
+- [PASS] diet no openai 11
+- [PASS] no bad user text
+- [PASS] dietary 12
+- [PASS] diet no openai 12
+- [PASS] no bad user text
+- [PASS] dietary 13
+- [PASS] diet no openai 13
+- [PASS] no bad user text
+- [PASS] dietary 14
+- [PASS] diet no openai 14
+- [PASS] no bad user text
+- [PASS] dietary 15
+- [PASS] diet no openai 15
+- [PASS] no bad user text
+- [PASS] dietary 16
+- [PASS] diet no openai 16
+- [PASS] no bad user text
+- [PASS] dietary 17
+- [PASS] diet no openai 17
+- [PASS] no bad user text
+- [PASS] dietary 18
+- [PASS] diet no openai 18
+- [PASS] no bad user text
+- [PASS] dietary 19
+- [PASS] diet no openai 19
+- [PASS] no bad user text
+- [PASS] dietary 20
+- [PASS] diet no openai 20
+- [PASS] no bad user text
+- [PASS] dietary 21
+- [PASS] diet no openai 21
+- [PASS] no bad user text
+- [PASS] dietary 22
+- [PASS] diet no openai 22
+- [PASS] no bad user text
+- [PASS] dietary 23
+- [PASS] diet no openai 23
+- [PASS] no bad user text
+- [PASS] dietary 24
+- [PASS] diet no openai 24
+- [PASS] no bad user text
+- [PASS] dietary 25
+- [PASS] diet no openai 25
+- [PASS] no bad user text
+
+## 7_mixed_x50
+- [PASS] mix no openai 1
+- [PASS] no bad user text
+- [PASS] nonblank 1
+- [PASS] mix no openai 2
+- [PASS] no bad user text
+- [PASS] nonblank 2
+- [PASS] mix no openai 3
+- [PASS] no bad user text
+- [PASS] nonblank 3
+- [PASS] mix no openai 4
+- [PASS] no bad user text
+- [PASS] nonblank 4
+- [PASS] mix no openai 5
+- [PASS] no bad user text
+- [PASS] nonblank 5
+- [PASS] mix no openai 6
+- [PASS] no bad user text
+- [PASS] nonblank 6
+- [PASS] mix no openai 7
+- [PASS] no bad user text
+- [PASS] nonblank 7
+- [PASS] mix no openai 8
+- [PASS] no bad user text
+- [PASS] nonblank 8
+- [PASS] mix no openai 9
+- [PASS] no bad user text
+- [PASS] nonblank 9
+- [PASS] mix no openai 10
+- [PASS] no bad user text
+- [PASS] nonblank 10
+- [PASS] mix no openai 11
+- [PASS] no bad user text
+- [PASS] nonblank 11
+- [PASS] mix no openai 12
+- [PASS] no bad user text
+- [PASS] nonblank 12
+- [PASS] mix no openai 13
+- [PASS] no bad user text
+- [PASS] nonblank 13
+- [PASS] mix no openai 14
+- [PASS] no bad user text
+- [PASS] nonblank 14
+- [PASS] mix no openai 15
+- [PASS] no bad user text
+- [PASS] nonblank 15
+- [PASS] mix no openai 16
+- [PASS] no bad user text
+- [PASS] nonblank 16
+- [PASS] mix no openai 17
+- [PASS] no bad user text
+- [PASS] nonblank 17
+- [PASS] mix no openai 18
+- [PASS] no bad user text
+- [PASS] nonblank 18
+- [PASS] mix no openai 19
+- [PASS] no bad user text
+- [PASS] nonblank 19
+- [PASS] mix no openai 20
+- [PASS] no bad user text
+- [PASS] nonblank 20
+- [PASS] mix no openai 21
+- [PASS] no bad user text
+- [PASS] nonblank 21
+- [PASS] mix no openai 22
+- [PASS] no bad user text
+- [PASS] nonblank 22
+- [PASS] mix no openai 23
+- [PASS] no bad user text
+- [PASS] nonblank 23
+- [PASS] mix no openai 24
+- [PASS] no bad user text
+- [PASS] nonblank 24
+- [PASS] mix no openai 25
+- [PASS] no bad user text
+- [PASS] nonblank 25
+- [PASS] mix no openai 26
+- [PASS] no bad user text
+- [PASS] nonblank 26
+- [PASS] mix no openai 27
+- [PASS] no bad user text
+- [PASS] nonblank 27
+- [PASS] mix no openai 28
+- [PASS] no bad user text
+- [PASS] nonblank 28
+- [PASS] mix no openai 29
+- [PASS] no bad user text
+- [PASS] nonblank 29
+- [PASS] mix no openai 30
+- [PASS] no bad user text
+- [PASS] nonblank 30
+- [PASS] mix no openai 31
+- [PASS] no bad user text
+- [PASS] nonblank 31
+- [PASS] mix no openai 32
+- [PASS] no bad user text
+- [PASS] nonblank 32
+- [PASS] mix no openai 33
+- [PASS] no bad user text
+- [PASS] nonblank 33
+- [PASS] mix no openai 34
+- [PASS] no bad user text
+- [PASS] nonblank 34
+- [PASS] mix no openai 35
+- [PASS] no bad user text
+- [PASS] nonblank 35
+- [PASS] mix no openai 36
+- [PASS] no bad user text
+- [PASS] nonblank 36
+- [PASS] mix no openai 37
+- [PASS] no bad user text
+- [PASS] nonblank 37
+- [PASS] mix no openai 38
+- [PASS] no bad user text
+- [PASS] nonblank 38
+- [PASS] mix no openai 39
+- [PASS] no bad user text
+- [PASS] nonblank 39
+- [PASS] mix no openai 40
+- [PASS] no bad user text
+- [PASS] nonblank 40
+- [PASS] mix no openai 41
+- [PASS] no bad user text
+- [PASS] nonblank 41
+- [PASS] mix no openai 42
+- [PASS] no bad user text
+- [PASS] nonblank 42
+- [PASS] mix no openai 43
+- [PASS] no bad user text
+- [PASS] nonblank 43
+- [PASS] mix no openai 44
+- [PASS] no bad user text
+- [PASS] nonblank 44
+- [PASS] mix no openai 45
+- [PASS] no bad user text
+- [PASS] nonblank 45
+- [PASS] mix no openai 46
+- [PASS] no bad user text
+- [PASS] nonblank 46
+- [PASS] mix no openai 47
+- [PASS] no bad user text
+- [PASS] nonblank 47
+- [PASS] mix no openai 48
+- [PASS] no bad user text
+- [PASS] nonblank 48
+- [PASS] mix no openai 49
+- [PASS] no bad user text
+- [PASS] nonblank 49
+- [PASS] mix no openai 50
+- [PASS] no bad user text
+- [PASS] nonblank 50
+
+## 8_memory_x50
+- [PASS] mem 1
+- [PASS] mem no openai 1
+- [PASS] mem 2
+- [PASS] mem no openai 2
+- [PASS] mem 3
+- [PASS] mem no openai 3
+- [PASS] mem 4
+- [PASS] mem no openai 4
+- [PASS] mem 5
+- [PASS] mem no openai 5
+- [PASS] mem 6
+- [PASS] mem no openai 6
+- [PASS] mem 7
+- [PASS] mem no openai 7
+- [PASS] mem 8
+- [PASS] mem no openai 8
+- [PASS] mem 9
+- [PASS] mem no openai 9
+- [PASS] mem 10
+- [PASS] mem no openai 10
+- [PASS] mem 11
+- [PASS] mem no openai 11
+- [PASS] mem 12
+- [PASS] mem no openai 12
+- [PASS] mem 13
+- [PASS] mem no openai 13
+- [PASS] mem 14
+- [PASS] mem no openai 14
+- [PASS] mem 15
+- [PASS] mem no openai 15
+- [PASS] mem 16
+- [PASS] mem no openai 16
+- [PASS] mem 17
+- [PASS] mem no openai 17
+- [PASS] mem 18
+- [PASS] mem no openai 18
+- [PASS] mem 19
+- [PASS] mem no openai 19
+- [PASS] mem 20
+- [PASS] mem no openai 20
+- [PASS] mem 21
+- [PASS] mem no openai 21
+- [PASS] mem 22
+- [PASS] mem no openai 22
+- [PASS] mem 23
+- [PASS] mem no openai 23
+- [PASS] mem 24
+- [PASS] mem no openai 24
+- [PASS] mem 25
+- [PASS] mem no openai 25
+- [PASS] mem 26
+- [PASS] mem no openai 26
+- [PASS] mem 27
+- [PASS] mem no openai 27
+- [PASS] mem 28
+- [PASS] mem no openai 28
+- [PASS] mem 29
+- [PASS] mem no openai 29
+- [PASS] mem 30
+- [PASS] mem no openai 30
+- [PASS] mem 31
+- [PASS] mem no openai 31
+- [PASS] mem 32
+- [PASS] mem no openai 32
+- [PASS] mem 33
+- [PASS] mem no openai 33
+- [PASS] mem 34
+- [PASS] mem no openai 34
+- [PASS] mem 35
+- [PASS] mem no openai 35
+- [PASS] mem 36
+- [PASS] mem no openai 36
+- [PASS] mem 37
+- [PASS] mem no openai 37
+- [PASS] mem 38
+- [PASS] mem no openai 38
+- [PASS] mem 39
+- [PASS] mem no openai 39
+- [PASS] mem 40
+- [PASS] mem no openai 40
+- [PASS] mem 41
+- [PASS] mem no openai 41
+- [PASS] mem 42
+- [PASS] mem no openai 42
+- [PASS] mem 43
+- [PASS] mem no openai 43
+- [PASS] mem 44
+- [PASS] mem no openai 44
+- [PASS] mem 45
+- [PASS] mem no openai 45
+- [PASS] mem 46
+- [PASS] mem no openai 46
+- [PASS] mem 47
+- [PASS] mem no openai 47
+- [PASS] mem 48
+- [PASS] mem no openai 48
+- [PASS] mem 49
+- [PASS] mem no openai 49
+- [PASS] mem 50
+- [PASS] mem no openai 50
+
+## 9_before_that_x25
+- [PASS] before 1
+- [PASS] before no openai 1
+- [PASS] before 2
+- [PASS] before no openai 2
+- [PASS] before 3
+- [PASS] before no openai 3
+- [PASS] before 4
+- [PASS] before no openai 4
+- [PASS] before 5
+- [PASS] before no openai 5
+- [PASS] before 6
+- [PASS] before no openai 6
+- [PASS] before 7
+- [PASS] before no openai 7
+- [PASS] before 8
+- [PASS] before no openai 8
+- [PASS] before 9
+- [PASS] before no openai 9
+- [PASS] before 10
+- [PASS] before no openai 10
+- [PASS] before 11
+- [PASS] before no openai 11
+- [PASS] before 12
+- [PASS] before no openai 12
+- [PASS] before 13
+- [PASS] before no openai 13
+- [PASS] before 14
+- [PASS] before no openai 14
+- [PASS] before 15
+- [PASS] before no openai 15
+- [PASS] before 16
+- [PASS] before no openai 16
+- [PASS] before 17
+- [PASS] before no openai 17
+- [PASS] before 18
+- [PASS] before no openai 18
+- [PASS] before 19
+- [PASS] before no openai 19
+- [PASS] before 20
+- [PASS] before no openai 20
+- [PASS] before 21
+- [PASS] before no openai 21
+- [PASS] before 22
+- [PASS] before no openai 22
+- [PASS] before 23
+- [PASS] before no openai 23
+- [PASS] before 24
+- [PASS] before no openai 24
+- [PASS] before 25
+- [PASS] before no openai 25
+
+## 10_openai_disabled_strict_x50
+- [PASS] noai reply 1
+- [PASS] noai blocked 1
+- [PASS] no bad user text
+- [PASS] noai reply 2
+- [PASS] noai blocked 2
+- [PASS] no bad user text
+- [PASS] noai reply 3
+- [PASS] noai blocked 3
+- [PASS] no bad user text
+- [PASS] noai reply 4
+- [PASS] noai blocked 4
+- [PASS] no bad user text
+- [PASS] noai reply 5
+- [PASS] noai blocked 5
+- [PASS] no bad user text
+- [PASS] noai reply 6
+- [PASS] noai blocked 6
+- [PASS] no bad user text
+- [PASS] noai reply 7
+- [PASS] noai blocked 7
+- [PASS] no bad user text
+- [PASS] noai reply 8
+- [PASS] noai blocked 8
+- [PASS] no bad user text
+- [PASS] noai reply 9
+- [PASS] noai blocked 9
+- [PASS] no bad user text
+- [PASS] noai reply 10
+- [PASS] noai blocked 10
+- [PASS] no bad user text
+- [PASS] noai reply 11
+- [PASS] noai blocked 11
+- [PASS] no bad user text
+- [PASS] noai reply 12
+- [PASS] noai blocked 12
+- [PASS] no bad user text
+- [PASS] noai reply 13
+- [PASS] noai blocked 13
+- [PASS] no bad user text
+- [PASS] noai reply 14
+- [PASS] noai blocked 14
+- [PASS] no bad user text
+- [PASS] noai reply 15
+- [PASS] noai blocked 15
+- [PASS] no bad user text
+- [PASS] noai reply 16
+- [PASS] noai blocked 16
+- [PASS] no bad user text
+- [PASS] noai reply 17
+- [PASS] noai blocked 17
+- [PASS] no bad user text
+- [PASS] noai reply 18
+- [PASS] noai blocked 18
+- [PASS] no bad user text
+- [PASS] noai reply 19
+- [PASS] noai blocked 19
+- [PASS] no bad user text
+- [PASS] noai reply 20
+- [PASS] noai blocked 20
+- [PASS] no bad user text
+- [PASS] noai reply 21
+- [PASS] noai blocked 21
+- [PASS] no bad user text
+- [PASS] noai reply 22
+- [PASS] noai blocked 22
+- [PASS] no bad user text
+- [PASS] noai reply 23
+- [PASS] noai blocked 23
+- [PASS] no bad user text
+- [PASS] noai reply 24
+- [PASS] noai blocked 24
+- [PASS] no bad user text
+- [PASS] noai reply 25
+- [PASS] noai blocked 25
+- [PASS] no bad user text
+- [PASS] noai reply 26
+- [PASS] noai blocked 26
+- [PASS] no bad user text
+- [PASS] noai reply 27
+- [PASS] noai blocked 27
+- [PASS] no bad user text
+- [PASS] noai reply 28
+- [PASS] noai blocked 28
+- [PASS] no bad user text
+- [PASS] noai reply 29
+- [PASS] noai blocked 29
+- [PASS] no bad user text
+- [PASS] noai reply 30
+- [PASS] noai blocked 30
+- [PASS] no bad user text
+- [PASS] noai reply 31
+- [PASS] noai blocked 31
+- [PASS] no bad user text
+- [PASS] noai reply 32
+- [PASS] noai blocked 32
+- [PASS] no bad user text
+- [PASS] noai reply 33
+- [PASS] noai blocked 33
+- [PASS] no bad user text
+- [PASS] noai reply 34
+- [PASS] noai blocked 34
+- [PASS] no bad user text
+- [PASS] noai reply 35
+- [PASS] noai blocked 35
+- [PASS] no bad user text
+- [PASS] noai reply 36
+- [PASS] noai blocked 36
+- [PASS] no bad user text
+- [PASS] noai reply 37
+- [PASS] noai blocked 37
+- [PASS] no bad user text
+- [PASS] noai reply 38
+- [PASS] noai blocked 38
+- [PASS] no bad user text
+- [PASS] noai reply 39
+- [PASS] noai blocked 39
+- [PASS] no bad user text
+- [PASS] noai reply 40
+- [PASS] noai blocked 40
+- [PASS] no bad user text
+- [PASS] noai reply 41
+- [PASS] noai blocked 41
+- [PASS] no bad user text
+- [PASS] noai reply 42
+- [PASS] noai blocked 42
+- [PASS] no bad user text
+- [PASS] noai reply 43
+- [PASS] noai blocked 43
+- [PASS] no bad user text
+- [PASS] noai reply 44
+- [PASS] noai blocked 44
+- [PASS] no bad user text
+- [PASS] noai reply 45
+- [PASS] noai blocked 45
+- [PASS] no bad user text
+- [PASS] noai reply 46
+- [PASS] noai blocked 46
+- [PASS] no bad user text
+- [PASS] noai reply 47
+- [PASS] noai blocked 47
+- [PASS] no bad user text
+- [PASS] noai reply 48
+- [PASS] noai blocked 48
+- [PASS] no bad user text
+- [PASS] noai reply 49
+- [PASS] noai blocked 49
+- [PASS] no bad user text
+- [PASS] noai reply 50
+- [PASS] noai blocked 50
+- [PASS] no bad user text
+
+## 11_companion_disabled_openai_x25
+- [PASS] comp reply 1
+- [PASS] no bad user text
+- [PASS] comp reply 2
+- [PASS] no bad user text
+- [PASS] comp reply 3
+- [PASS] no bad user text
+- [PASS] comp reply 4
+- [PASS] no bad user text
+- [PASS] comp reply 5
+- [PASS] no bad user text
+- [PASS] comp reply 6
+- [PASS] no bad user text
+- [PASS] comp reply 7
+- [PASS] no bad user text
+- [PASS] comp reply 8
+- [PASS] no bad user text
+- [PASS] comp reply 9
+- [PASS] no bad user text
+- [PASS] comp reply 10
+- [PASS] no bad user text
+- [PASS] comp reply 11
+- [PASS] no bad user text
+- [PASS] comp reply 12
+- [PASS] no bad user text
+- [PASS] comp reply 13
+- [PASS] no bad user text
+- [PASS] comp reply 14
+- [PASS] no bad user text
+- [PASS] comp reply 15
+- [PASS] no bad user text
+- [PASS] comp reply 16
+- [PASS] no bad user text
+- [PASS] comp reply 17
+- [PASS] no bad user text
+- [PASS] comp reply 18
+- [PASS] no bad user text
+- [PASS] comp reply 19
+- [PASS] no bad user text
+- [PASS] comp reply 20
+- [PASS] no bad user text
+- [PASS] comp reply 21
+- [PASS] no bad user text
+- [PASS] comp reply 22
+- [PASS] no bad user text
+- [PASS] comp reply 23
+- [PASS] no bad user text
+- [PASS] comp reply 24
+- [PASS] no bad user text
+- [PASS] comp reply 25
+- [PASS] no bad user text
+
+## 12_forced_error_x25
+- [PASS] guarantee ok 1
+- [PASS] guarantee reply 1
+- [PASS] no bad user text
+- [PASS] guarantee ok 2
+- [PASS] guarantee reply 2
+- [PASS] no bad user text
+- [PASS] guarantee ok 3
+- [PASS] guarantee reply 3
+- [PASS] no bad user text
+- [PASS] guarantee ok 4
+- [PASS] guarantee reply 4
+- [PASS] no bad user text
+- [PASS] guarantee ok 5
+- [PASS] guarantee reply 5
+- [PASS] no bad user text
+- [PASS] guarantee ok 6
+- [PASS] guarantee reply 6
+- [PASS] no bad user text
+- [PASS] guarantee ok 7
+- [PASS] guarantee reply 7
+- [PASS] no bad user text
+- [PASS] guarantee ok 8
+- [PASS] guarantee reply 8
+- [PASS] no bad user text
+- [PASS] guarantee ok 9
+- [PASS] guarantee reply 9
+- [PASS] no bad user text
+- [PASS] guarantee ok 10
+- [PASS] guarantee reply 10
+- [PASS] no bad user text
+- [PASS] guarantee ok 11
+- [PASS] guarantee reply 11
+- [PASS] no bad user text
+- [PASS] guarantee ok 12
+- [PASS] guarantee reply 12
+- [PASS] no bad user text
+- [PASS] guarantee ok 13
+- [PASS] guarantee reply 13
+- [PASS] no bad user text
+- [PASS] guarantee ok 14
+- [PASS] guarantee reply 14
+- [PASS] no bad user text
+- [PASS] guarantee ok 15
+- [PASS] guarantee reply 15
+- [PASS] no bad user text
+- [PASS] guarantee ok 16
+- [PASS] guarantee reply 16
+- [PASS] no bad user text
+- [PASS] guarantee ok 17
+- [PASS] guarantee reply 17
+- [PASS] no bad user text
+- [PASS] guarantee ok 18
+- [PASS] guarantee reply 18
+- [PASS] no bad user text
+- [PASS] guarantee ok 19
+- [PASS] guarantee reply 19
+- [PASS] no bad user text
+- [PASS] guarantee ok 20
+- [PASS] guarantee reply 20
+- [PASS] no bad user text
+- [PASS] guarantee ok 21
+- [PASS] guarantee reply 21
+- [PASS] no bad user text
+- [PASS] guarantee ok 22
+- [PASS] guarantee reply 22
+- [PASS] no bad user text
+- [PASS] guarantee ok 23
+- [PASS] guarantee reply 23
+- [PASS] no bad user text
+- [PASS] guarantee ok 24
+- [PASS] guarantee reply 24
+- [PASS] no bad user text
+- [PASS] guarantee ok 25
+- [PASS] guarantee reply 25
+- [PASS] no bad user text
+
+## 13_pressure_x100
+- [PASS] pressure nonblank 1
+- [PASS] no bad user text
+- [PASS] pressure no openai 1
+- [PASS] pressure nonblank 2
+- [PASS] no bad user text
+- [PASS] pressure no openai 2
+- [PASS] pressure nonblank 3
+- [PASS] no bad user text
+- [PASS] pressure no openai 3
+- [PASS] pressure nonblank 4
+- [PASS] no bad user text
+- [PASS] pressure no openai 4
+- [PASS] pressure nonblank 5
+- [PASS] no bad user text
+- [PASS] pressure no openai 5
+- [PASS] pressure nonblank 6
+- [PASS] no bad user text
+- [PASS] pressure no openai 6
+- [PASS] pressure nonblank 7
+- [PASS] no bad user text
+- [PASS] pressure no openai 7
+- [PASS] pressure nonblank 8
+- [PASS] no bad user text
+- [PASS] pressure no openai 8
+- [PASS] pressure nonblank 9
+- [PASS] no bad user text
+- [PASS] pressure no openai 9
+- [PASS] pressure nonblank 10
+- [PASS] no bad user text
+- [PASS] pressure no openai 10
+- [PASS] pressure nonblank 11
+- [PASS] no bad user text
+- [PASS] pressure no openai 11
+- [PASS] pressure nonblank 12
+- [PASS] no bad user text
+- [PASS] pressure no openai 12
+- [PASS] pressure nonblank 13
+- [PASS] no bad user text
+- [PASS] pressure no openai 13
+- [PASS] pressure nonblank 14
+- [PASS] no bad user text
+- [PASS] pressure no openai 14
+- [PASS] pressure nonblank 15
+- [PASS] no bad user text
+- [PASS] pressure no openai 15
+- [PASS] pressure nonblank 16
+- [PASS] no bad user text
+- [PASS] pressure no openai 16
+- [PASS] pressure nonblank 17
+- [PASS] no bad user text
+- [PASS] pressure no openai 17
+- [PASS] pressure nonblank 18
+- [PASS] no bad user text
+- [PASS] pressure no openai 18
+- [PASS] pressure nonblank 19
+- [PASS] no bad user text
+- [PASS] pressure no openai 19
+- [PASS] pressure nonblank 20
+- [PASS] no bad user text
+- [PASS] pressure no openai 20
+- [PASS] pressure nonblank 21
+- [PASS] no bad user text
+- [PASS] pressure no openai 21
+- [PASS] pressure nonblank 22
+- [PASS] no bad user text
+- [PASS] pressure no openai 22
+- [PASS] pressure nonblank 23
+- [PASS] no bad user text
+- [PASS] pressure no openai 23
+- [PASS] pressure nonblank 24
+- [PASS] no bad user text
+- [PASS] pressure no openai 24
+- [PASS] pressure nonblank 25
+- [PASS] no bad user text
+- [PASS] pressure no openai 25
+- [PASS] pressure nonblank 26
+- [PASS] no bad user text
+- [PASS] pressure no openai 26
+- [PASS] pressure nonblank 27
+- [PASS] no bad user text
+- [PASS] pressure no openai 27
+- [PASS] pressure nonblank 28
+- [PASS] no bad user text
+- [PASS] pressure no openai 28
+- [PASS] pressure nonblank 29
+- [PASS] no bad user text
+- [PASS] pressure no openai 29
+- [PASS] pressure nonblank 30
+- [PASS] no bad user text
+- [PASS] pressure no openai 30
+- [PASS] pressure nonblank 31
+- [PASS] no bad user text
+- [PASS] pressure no openai 31
+- [PASS] pressure nonblank 32
+- [PASS] no bad user text
+- [PASS] pressure no openai 32
+- [PASS] pressure nonblank 33
+- [PASS] no bad user text
+- [PASS] pressure no openai 33
+- [PASS] pressure nonblank 34
+- [PASS] no bad user text
+- [PASS] pressure no openai 34
+- [PASS] pressure nonblank 35
+- [PASS] no bad user text
+- [PASS] pressure no openai 35
+- [PASS] pressure nonblank 36
+- [PASS] no bad user text
+- [PASS] pressure no openai 36
+- [PASS] pressure nonblank 37
+- [PASS] no bad user text
+- [PASS] pressure no openai 37
+- [PASS] pressure nonblank 38
+- [PASS] no bad user text
+- [PASS] pressure no openai 38
+- [PASS] pressure nonblank 39
+- [PASS] no bad user text
+- [PASS] pressure no openai 39
+- [PASS] pressure nonblank 40
+- [PASS] no bad user text
+- [PASS] pressure no openai 40
+- [PASS] pressure nonblank 41
+- [PASS] no bad user text
+- [PASS] pressure no openai 41
+- [PASS] pressure nonblank 42
+- [PASS] no bad user text
+- [PASS] pressure no openai 42
+- [PASS] pressure nonblank 43
+- [PASS] no bad user text
+- [PASS] pressure no openai 43
+- [PASS] pressure nonblank 44
+- [PASS] no bad user text
+- [PASS] pressure no openai 44
+- [PASS] pressure nonblank 45
+- [PASS] no bad user text
+- [PASS] pressure no openai 45
+- [PASS] pressure nonblank 46
+- [PASS] no bad user text
+- [PASS] pressure no openai 46
+- [PASS] pressure nonblank 47
+- [PASS] no bad user text
+- [PASS] pressure no openai 47
+- [PASS] pressure nonblank 48
+- [PASS] no bad user text
+- [PASS] pressure no openai 48
+- [PASS] pressure nonblank 49
+- [PASS] no bad user text
+- [PASS] pressure no openai 49
+- [PASS] pressure nonblank 50
+- [PASS] no bad user text
+- [PASS] pressure no openai 50
+- [PASS] pressure nonblank 51
+- [PASS] no bad user text
+- [PASS] pressure no openai 51
+- [PASS] pressure nonblank 52
+- [PASS] no bad user text
+- [PASS] pressure no openai 52
+- [PASS] pressure nonblank 53
+- [PASS] no bad user text
+- [PASS] pressure no openai 53
+- [PASS] pressure nonblank 54
+- [PASS] no bad user text
+- [PASS] pressure no openai 54
+- [PASS] pressure nonblank 55
+- [PASS] no bad user text
+- [PASS] pressure no openai 55
+- [PASS] pressure nonblank 56
+- [PASS] no bad user text
+- [PASS] pressure no openai 56
+- [PASS] pressure nonblank 57
+- [PASS] no bad user text
+- [PASS] pressure no openai 57
+- [PASS] pressure nonblank 58
+- [PASS] no bad user text
+- [PASS] pressure no openai 58
+- [PASS] pressure nonblank 59
+- [PASS] no bad user text
+- [PASS] pressure no openai 59
+- [PASS] pressure nonblank 60
+- [PASS] no bad user text
+- [PASS] pressure no openai 60
+- [PASS] pressure nonblank 61
+- [PASS] no bad user text
+- [PASS] pressure no openai 61
+- [PASS] pressure nonblank 62
+- [PASS] no bad user text
+- [PASS] pressure no openai 62
+- [PASS] pressure nonblank 63
+- [PASS] no bad user text
+- [PASS] pressure no openai 63
+- [PASS] pressure nonblank 64
+- [PASS] no bad user text
+- [PASS] pressure no openai 64
+- [PASS] pressure nonblank 65
+- [PASS] no bad user text
+- [PASS] pressure no openai 65
+- [PASS] pressure nonblank 66
+- [PASS] no bad user text
+- [PASS] pressure no openai 66
+- [PASS] pressure nonblank 67
+- [PASS] no bad user text
+- [PASS] pressure no openai 67
+- [PASS] pressure nonblank 68
+- [PASS] no bad user text
+- [PASS] pressure no openai 68
+- [PASS] pressure nonblank 69
+- [PASS] no bad user text
+- [PASS] pressure no openai 69
+- [PASS] pressure nonblank 70
+- [PASS] no bad user text
+- [PASS] pressure no openai 70
+- [PASS] pressure nonblank 71
+- [PASS] no bad user text
+- [PASS] pressure no openai 71
+- [PASS] pressure nonblank 72
+- [PASS] no bad user text
+- [PASS] pressure no openai 72
+- [PASS] pressure nonblank 73
+- [PASS] no bad user text
+- [PASS] pressure no openai 73
+- [PASS] pressure nonblank 74
+- [PASS] no bad user text
+- [PASS] pressure no openai 74
+- [PASS] pressure nonblank 75
+- [PASS] no bad user text
+- [PASS] pressure no openai 75
+- [PASS] pressure nonblank 76
+- [PASS] no bad user text
+- [PASS] pressure no openai 76
+- [PASS] pressure nonblank 77
+- [PASS] no bad user text
+- [PASS] pressure no openai 77
+- [PASS] pressure nonblank 78
+- [PASS] no bad user text
+- [PASS] pressure no openai 78
+- [PASS] pressure nonblank 79
+- [PASS] no bad user text
+- [PASS] pressure no openai 79
+- [PASS] pressure nonblank 80
+- [PASS] no bad user text
+- [PASS] pressure no openai 80
+- [PASS] pressure nonblank 81
+- [PASS] no bad user text
+- [PASS] pressure no openai 81
+- [PASS] pressure nonblank 82
+- [PASS] no bad user text
+- [PASS] pressure no openai 82
+- [PASS] pressure nonblank 83
+- [PASS] no bad user text
+- [PASS] pressure no openai 83
+- [PASS] pressure nonblank 84
+- [PASS] no bad user text
+- [PASS] pressure no openai 84
+- [PASS] pressure nonblank 85
+- [PASS] no bad user text
+- [PASS] pressure no openai 85
+- [PASS] pressure nonblank 86
+- [PASS] no bad user text
+- [PASS] pressure no openai 86
+- [PASS] pressure nonblank 87
+- [PASS] no bad user text
+- [PASS] pressure no openai 87
+- [PASS] pressure nonblank 88
+- [PASS] no bad user text
+- [PASS] pressure no openai 88
+- [PASS] pressure nonblank 89
+- [PASS] no bad user text
+- [PASS] pressure no openai 89
+- [PASS] pressure nonblank 90
+- [PASS] no bad user text
+- [PASS] pressure no openai 90
+- [PASS] pressure nonblank 91
+- [PASS] no bad user text
+- [PASS] pressure no openai 91
+- [PASS] pressure nonblank 92
+- [PASS] no bad user text
+- [PASS] pressure no openai 92
+- [PASS] pressure nonblank 93
+- [PASS] no bad user text
+- [PASS] pressure no openai 93
+- [PASS] pressure nonblank 94
+- [PASS] no bad user text
+- [PASS] pressure no openai 94
+- [PASS] pressure nonblank 95
+- [PASS] no bad user text
+- [PASS] pressure no openai 95
+- [PASS] pressure nonblank 96
+- [PASS] no bad user text
+- [PASS] pressure no openai 96
+- [PASS] pressure nonblank 97
+- [PASS] no bad user text
+- [PASS] pressure no openai 97
+- [PASS] pressure nonblank 98
+- [PASS] no bad user text
+- [PASS] pressure no openai 98
+- [PASS] pressure nonblank 99
+- [PASS] no bad user text
+- [PASS] pressure no openai 99
+- [PASS] pressure nonblank 100
+- [PASS] no bad user text
+- [PASS] pressure no openai 100
+
+## 14_heap_growth
+- [PASS] heap growth 47.8MB < 80MB
+- [PASS] health snapshot
+
+## Summary
+- Checks: 1352/1352
+- Phase 4F: PASS
+- Safe to deploy: YES (after manual smoke)

@@ -93,12 +93,21 @@ mountRoute('AI tester routes', '/api/ai', './admin/ai/routes');
 mountRoute('Analyze routes', '/api/analyze', './routes/analyze');
 mountRoute('Admin assistant routes', '/admin/assistant', './routes/adminAssistant');
 mountRoute('Buddy routes', '/buddy', './routes/buddy');
+mountRoute('Runtime health routes', '/api', './routes/runtimeHealth');
+
+try {
+  const { scheduleStateTtlCleanup } = require('./services/stateTtlCleanup');
+  scheduleStateTtlCleanup();
+} catch (e) {
+  console.warn('State TTL cleanup not scheduled:', e.message);
+}
 mountRoute('Content helper routes', '/admin/content', './routes/contentHelper');
 mountRoute('Realtime voice routes', '/api/realtime', './routes/realtime');
 mountRoute('Health signal routes', '/api/health/signals', './routes/healthSignals');
 mountRoute('Learning signal routes', '/api/learning', './routes/learningSignals');
 mountRoute('Beta routes', '/api/beta', './routes/beta');
 mountRoute('Platform unification routes', '/api/platform-unification', './routes/platformUnification');
+mountRoute('Bible Authority admin routes', '/admin/api/bible-authority', './routes/bibleAuthorityAdmin');
 
 // Simple fallback analyze endpoint if routes/analyze is unavailable.
 app.post('/api/analyze/note', async (req, res) => {
@@ -162,6 +171,10 @@ app.get('/beta', (req, res) => {
 
 app.get('/admin/beta-review', (req, res) => {
   res.sendFile(path.join(ADMIN_DIR, 'beta-review.html'));
+});
+
+app.get('/admin/bible-authority', (req, res) => {
+  res.sendFile(path.join(ADMIN_DIR, 'bible-authority.html'));
 });
 
 app.use((req, res) => {

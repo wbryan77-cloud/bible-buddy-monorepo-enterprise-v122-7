@@ -82,6 +82,25 @@ const LOG_FILE = path.join(DATA_DIR, 'buddy-sessions.jsonl');
 const MEMORY_FILE = path.join(DATA_DIR, 'buddy-memory.json');
 const QA_FILE = path.join(DATA_DIR, 'buddy-quality-events.jsonl');
 const RECENT_SESSION_CACHE = new Map();
+const MAX_SESSION_TURNS = Number(process.env.BIBLEBUDDY_MAX_SESSION_TURNS || 30);
+const MAX_SESSION_CACHE_USERS = Number(process.env.BIBLEBUDDY_MAX_SESSION_CACHE_USERS || 200);
+
+function trimRecentSessionCache() {
+  if (RECENT_SESSION_CACHE.size <= MAX_SESSION_CACHE_USERS) {
+    return { trimmed: 0, size: RECENT_SESSION_CACHE.size };
+  }
+  const keys = [...RECENT_SESSION_CACHE.keys()];
+  let trimmed = 0;
+  while (RECENT_SESSION_CACHE.size > MAX_SESSION_CACHE_USERS && keys.length) {
+    RECENT_SESSION_CACHE.delete(keys.shift());
+    trimmed += 1;
+  }
+  return { trimmed, size: RECENT_SESSION_CACHE.size };
+}
+
+function getRecentSessionCacheSize() {
+  return RECENT_SESSION_CACHE.size;
+}
 
 try {
   fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -98,28 +117,45 @@ const DEFAULT_COMPANION_PROFILE = {
 };
 
 function appendJsonl(file, entry) {
-  const line = JSON.stringify({ ...entry, createdAt: new Date().toISOString() }) + '\n';
-  fs.appendFile(file, line, (err) => {
-    if (err) console.error(`Error writing ${path.basename(file)}:`, err.message);
-  });
+  try {
+    const { appendJsonlSafe } = require('./safeJsonlWriter');
+    appendJsonlSafe(file, { ...entry, createdAt: new Date().toISOString() });
+  } catch (e) {
+    console.warn(`Error writing ${path.basename(file)}:`, e.message);
+  }
 }
 
 function appendSession(entry) {
+  try {
+    const { isInternalSystemMessage } = require('./doctrineErrorFirewall');
+    if (isInternalSystemMessage(entry.message)) {
+      entry.runtime = { ...(entry.runtime || {}), systemEchoFiltered: true };
+      entry.message = '[continuation]';
+    }
+  } catch (_) {
+    /* non-fatal */
+  }
   appendJsonl(LOG_FILE, entry);
   const cached = RECENT_SESSION_CACHE.get(entry.userId) || [];
   cached.push({
     mode: entry.mode,
-    message: entry.message,
-    reply: entry.reply,
+    message: String(entry.message || '').slice(0, 300),
+    reply: String(entry.reply || '').slice(0, 400),
     safety: entry.safety,
-    runtime: {
-      ...(entry.runtime || {}),
-      ...(entry.structured?.runtime || {}),
-    },
-    quality: entry.quality,
+    runtime: entry.structured?.runtime
+      ? {
+          masterRoute: entry.structured.runtime.masterRoute,
+          openAiCalled: entry.structured.runtime.openAiCalled,
+          doctrineTopic: entry.structured.runtime.doctrineTopic,
+        }
+      : entry.runtime
+        ? { intent: entry.runtime.intent, emotion: entry.runtime.emotion }
+        : undefined,
+    quality: entry.quality ? { score: entry.quality.score } : undefined,
     createdAt: entry.createdAt || new Date().toISOString(),
   });
-  RECENT_SESSION_CACHE.set(entry.userId, cached.slice(-12));
+  RECENT_SESSION_CACHE.set(entry.userId, cached.slice(-MAX_SESSION_TURNS));
+  trimRecentSessionCache();
 }
 
 function appendQualityEvent(entry) {
@@ -223,7 +259,7 @@ function updateUserMemory({ userId, message, structured, runtimeContext }) {
     },
     lastEmotion: summary.emotion,
     lastIntent: summary.intent,
-    summaries: summaries.slice(-30),
+    summaries: summaries.slice(-MAX_SESSION_TURNS),
     updatedAt: new Date().toISOString(),
   };
 
@@ -651,6 +687,8 @@ function normalizeStructured(parsed, fallback, safety, runtimeContext, quality) 
   return {
     reply: parsed?.reply || fallback.reply,
     scripture: Array.isArray(parsed?.scripture) ? parsed.scripture : [],
+    claims: Array.isArray(parsed?.claims) ? parsed.claims : [],
+    doctrineConclusion: parsed?.doctrineConclusion || null,
     mode: parsed?.mode || runtimeContext?.intent || 'companion',
     confidence: parsed?.confidence || 'medium',
     memory_used: !!parsed?.memory_used,
@@ -756,6 +794,22 @@ function finalizeBuddyResponse({
     }
   }
 
+  const slimStructured = {
+    mode: structured.mode,
+    confidence: structured.confidence,
+    memory_used: structured.memory_used,
+    safety_level: structured.safety_level,
+    admin_flags: structured.admin_flags,
+    runtime: structured.runtime
+      ? {
+          masterRoute: structured.runtime.masterRoute,
+          openAiCalled: structured.runtime.openAiCalled,
+          doctrineTopic: structured.runtime.doctrineTopic,
+          doctrineWitnessContinuation: structured.runtime.doctrineWitnessContinuation,
+        }
+      : undefined,
+  };
+
   appendSession({
     userId,
     testerId: testerId || userId,
@@ -765,10 +819,12 @@ function finalizeBuddyResponse({
     personaKey,
     message,
     reply: structured.reply,
-    structured,
-    safety,
-    runtime: runtimeContext,
-    quality,
+    structured: slimStructured,
+    safety: safety ? { level: safety.level } : undefined,
+    runtime: runtimeContext
+      ? { intent: runtimeContext.intent, emotion: runtimeContext.emotion }
+      : undefined,
+    quality: quality ? { score: quality.score } : undefined,
   });
   appendQualityEvent({
     userId,
@@ -1026,4 +1082,6 @@ module.exports = {
   applyFallbackLoopGuard,
   persistBuddyMemory,
   buildMemoryRecallStructured,
+  trimRecentSessionCache,
+  getRecentSessionCacheSize,
 };

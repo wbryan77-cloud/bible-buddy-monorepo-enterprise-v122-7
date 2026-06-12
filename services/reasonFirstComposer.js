@@ -19,6 +19,12 @@ const { extractEmotionalCenter, isEcpEnabled } = require('./emotionalCenter');
 const { validateEmotionalCenter } = require('./emotionalCenterValidator');
 const { detectDangerousFallbackSpeaker } = require('./coreResponseGuards');
 const { slimEvidencePackForComposer } = require('./evidencePackSlimmer');
+const { normalizeClaims, extractDoctrineConclusion } = require('./claimNormalizer');
+const { buildDoctrineConclusion } = require('./doctrineConclusionBuilder');
+const { validateClaimToScripture } = require('./claimToScriptureValidator');
+const { buildDoctrineStrictComposerInstruction } = require('./doctrineAuthorityContract');
+const { buildFinalityComposerInstruction } = require('./doctrineFinalityMode');
+const { buildCorrectionPromptAppendix } = require('./doctrineCorrectionMemory');
 
 const SPECIFICITY_HINT =
   'Prefer specific details from the thread over general summaries. Use the user\'s wording where natural — not as a fixed opening template.';
@@ -71,6 +77,19 @@ BIBLE-ONLY AUTHORITY (binding for doctrine questions):
 - Revelation 5:10: reign on the earth. Revelation 21:1-3: New Jerusalem comes down; God with men.
 - 2 Corinthians 5:8 is caution only — never standalone proof of immediate heaven-at-death.
 - When user requests Bible only / no traditions: use ONLY approved evidence — no church tradition framing.
+`.trim();
+
+const CLAIM_EXTRACTION_INSTRUCTION = `
+CLAIM EXTRACTION (required JSON fields for doctrine questions):
+Return JSON with: reply, claims[], doctrineConclusion, confidence, memory_used.
+Each claim object: { claimId, claim, type, supportingScriptures, confidence, derivedFrom }.
+- type: doctrine | pastoral | procedural | clarification
+- List every doctrinal assertion you make as a separate doctrine claim.
+- supportingScriptures: KJV refs from the evidence pack that support that specific claim.
+- derivedFrom: evidence_card:<cardId> | catalog:<key> | user_question | inference
+- doctrineConclusion: one-sentence summary of your main doctrine answer.
+- claims[] is metadata for validation; only reply is user-facing prose.
+- If a doctrine claim is not supported by evidence, do not state it — or say: "Scripture does not state that directly."
 `.trim();
 
 const CORE_RESTORATION_INSTRUCTION = `
@@ -149,19 +168,40 @@ function buildComposerSystemPrompt({
   const goldenSection = goldenBlock && !coreRestoration ? `${goldenBlock}\n\n` : '';
   let composerBlock = isEcpEnabled() && !coreRestoration ? buildEcpComposerInstruction() : COMPOSER_INSTRUCTION;
   if (coreRestoration) {
-    composerBlock = `${COMPOSER_INSTRUCTION}\n\n${BIBLE_ONLY_AUTHORITY_INSTRUCTION}\n\n${CORE_RESTORATION_INSTRUCTION}\n\n${COMPANION_TONE_INSTRUCTION}`;
+    composerBlock = `${COMPOSER_INSTRUCTION}\n\n${BIBLE_ONLY_AUTHORITY_INSTRUCTION}\n\n${CLAIM_EXTRACTION_INSTRUCTION}\n\n${CORE_RESTORATION_INSTRUCTION}\n\n${COMPANION_TONE_INSTRUCTION}`;
+  }
+  const doctrineStrictBlock = buildDoctrineStrictComposerInstruction(evidencePack);
+  if (doctrineStrictBlock) {
+    composerBlock = `${composerBlock}\n\n${doctrineStrictBlock}`;
+  }
+  const finalityBlock = buildFinalityComposerInstruction(evidencePack);
+  if (finalityBlock) {
+    composerBlock = `${composerBlock}\n\n${finalityBlock}`;
+  }
+  const correctionTopic = evidencePack.doctrineStrict?.strictTopic;
+  if (correctionTopic && evidencePack.userId) {
+    const correctionBlock = buildCorrectionPromptAppendix(evidencePack.userId, correctionTopic);
+    if (correctionBlock) composerBlock = `${composerBlock}\n\n${correctionBlock}`;
   }
   const evidenceJson = JSON.stringify(evidenceSlice);
   return `${base}\n\n${goldenSection}${composerBlock}\n\nEvidence pack (binding facts — doctrine must trace here):\n${evidenceJson}`;
 }
 
+function isOpenAiDisabled() {
+  return process.env.BIBLEBUDDY_DISABLE_OPENAI === '1';
+}
+
 async function callOpenAI({ systemPrompt, userPayload, temperature = 0.72 }) {
+  if (isOpenAiDisabled()) {
+    return { ok: false, error: 'openai_disabled', raw: null };
+  }
   if (!openai) {
     return { ok: false, error: 'openai_unavailable', raw: null };
   }
 
+  const timeoutMs = Number(process.env.OPENAI_TIMEOUT_MS || 45000);
   try {
-    const completion = await openai.chat.completions.create({
+    const completionPromise = openai.chat.completions.create({
       model: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
       temperature,
       response_format: { type: 'json_object' },
@@ -170,10 +210,15 @@ async function callOpenAI({ systemPrompt, userPayload, temperature = 0.72 }) {
         { role: 'user', content: JSON.stringify(userPayload, null, 2) },
       ],
     });
+    const timeoutPromise = new Promise((_, reject) => {
+      setTimeout(() => reject(new Error('openai_timeout')), timeoutMs);
+    });
+    const completion = await Promise.race([completionPromise, timeoutPromise]);
     const raw = completion?.choices?.[0]?.message?.content || '';
     return { ok: true, raw, error: null };
   } catch (e) {
-    return { ok: false, error: String(e?.message || e), raw: null };
+    const err = String(e?.message || e);
+    return { ok: false, error: err.includes('timeout') ? 'openai_timeout' : err, raw: null };
   }
 }
 
@@ -291,6 +336,32 @@ async function composeReasonFirstReply({
       {}
     );
 
+    if (evidencePack.doctrineStrict?.enabled) {
+      structured.directAnswer = parsed.directAnswer || structured.directAnswer || null;
+      structured.finalAnswer = parsed.finalAnswer || structured.finalAnswer || null;
+      structured.scriptureWitnesses = parsed.scriptureWitnesses || structured.scriptureWitnesses || [];
+      structured.cautionHandled = parsed.cautionHandled ?? structured.cautionHandled;
+      structured.unsupportedClaimsRejected = parsed.unsupportedClaimsRejected || structured.unsupportedClaimsRejected || [];
+      const doctrineReply = parsed.finalAnswer || parsed.directAnswer || parsed.reply;
+      if (doctrineReply) structured.reply = doctrineReply;
+    }
+
+    const rawClaimsList = parsed.claims || structured.claims;
+    const usedOpenAiClaims =
+      Array.isArray(rawClaimsList) && rawClaimsList.some((c) => String(c?.claim || c?.text || '').trim());
+    const packForClaims = { ...evidencePack, userMessage: message };
+    const claims = normalizeClaims(rawClaimsList, {
+      reply: structured.reply,
+      scripture: structured.scripture || parsed.scripture || [],
+      evidencePack: packForClaims,
+    });
+    structured.claims = claims;
+    structured.doctrineConclusion =
+      usedOpenAiClaims && parsed.doctrineConclusion
+        ? String(parsed.doctrineConclusion).trim()
+        : buildDoctrineConclusion(claims, { reply: structured.reply }) ||
+          extractDoctrineConclusion(parsed, claims);
+
     const packForValidation = {
       ...evidencePack,
       userMessage: message,
@@ -309,13 +380,30 @@ async function composeReasonFirstReply({
       });
     }
 
+    const claimValidation = coreRestoration
+      ? validateClaimToScripture({
+          reply: structured.reply,
+          claims: structured.claims,
+          evidencePack: packForValidation,
+          message,
+        })
+      : { passed: true, skipped: true };
+
+    structured.claimValidation = claimValidation;
+
     const danger = detectDangerousFallbackSpeaker(structured.reply);
-    const composePassed = lastValidation.passed && ecValidation.passed && !danger.detected;
+    const composePassed =
+      lastValidation.passed && ecValidation.passed && !danger.detected && claimValidation.passed;
     if (composePassed) break;
 
     if (danger.detected) {
       userPayload.regenInstruction =
         'Remove study-loop phrases ("You\'ve been studying", "continue that study") and witness triplet blocks. Answer the user\'s exact question first from evidence.';
+    } else if (!claimValidation.passed && claimValidation.regenHint) {
+      userPayload.regenInstruction = `${claimValidation.regenHint} Failed claims: ${[
+        ...(claimValidation.unsupportedClaims || []),
+        ...(claimValidation.contradictedClaims || []),
+      ].join('; ')}`;
     } else {
       userPayload.regenInstruction =
         ecValidation.regenHint ||
@@ -352,6 +440,7 @@ async function composeReasonFirstReply({
     goldenExamplesEnabled: isGoldenExamplesEnabled(),
     goldenExampleIds: goldenExamples.map((e) => e.id),
     validation: lastValidation,
+    claimValidation: structured.claimValidation,
     ecValidation: isEcpEnabled() ? ecValidation : undefined,
     listeningRecommendations: lastValidation?.listening?.recommendationMessages || [],
   };
