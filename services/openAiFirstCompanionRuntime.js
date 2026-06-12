@@ -34,8 +34,14 @@ const { logDoctrineStrictFailure } = require('./phase4c1RuntimeDiagnostics');
 const {
   syncUsedWitnessesFromReply,
 } = require('./doctrineWitnessInventory');
-const { setActiveDoctrineConversation } = require('./doctrineConversationState');
+const { setActiveDoctrineConversation, recordUserTurn } = require('./doctrineConversationState');
 const { containsMemoryDenial, buildDoctrineMemoryRecallReply } = require('./doctrineLivePathHandlers');
+const {
+  planCompanionDoctrineRouting,
+  applyDoctrineRoutingSideEffects,
+  buildCompanionLaneFallbackReply,
+  buildRoutingContext,
+} = require('./companionDoctrineRouter');
 const { validateFinalityReply, stripFinalityViolations } = require('./doctrineFinalityMode');
 const { applyDoctrineErrorFirewall, mapInternalErrorToUserMessage } = require('./doctrineErrorFirewall');
 const { applyDoctrineFinalityPipeline } = require('./doctrineFinalityContract');
@@ -72,6 +78,68 @@ function polishFinalReply(reply = '') {
   return polishCompanionReply(sanitizeDoctrineResponse(stripInternalRuntimeLabels(String(reply || ''))));
 }
 
+function returnCompanionLaneStructured(H, ctx) {
+  const {
+    structured,
+    userId,
+    mode,
+    personaKey,
+    message,
+    safety,
+    runtimeContext,
+    profile,
+    testerId,
+    sessionId,
+    cohort,
+    route,
+    routePlan,
+  } = ctx;
+
+  recordUserTurn(userId, message, 'companion');
+
+  let out = structured;
+  out.reply = polishFinalReply(out.reply);
+  out.quality = scoreCompanionQuality({ message, reply: out.reply, runtimeContext });
+  out.runtime = {
+    ...(out.runtime || {}),
+    masterRoute: route || 'companion_lane',
+    openAiCalled: !!out.runtime?.openAiCalled,
+    buddyRuntime: 'core_openai_first',
+    companionLane: true,
+    companionIntent: routePlan?.intent || 'companion_general',
+    doctrineTopic: null,
+  };
+
+  attachDebug(out, {
+    runtimeUsed: 'core_openai_first',
+    openaiCalled: !!out.runtime?.openAiCalled,
+    finalAnswerAuthor: out.runtime?.openAiCalled ? 'openai' : 'companion_release',
+    fallbackUsed: false,
+    templateUsed: false,
+    responderUsed: !!out.runtime?.openAiCalled,
+    routeUsed: route || 'companion_lane',
+    doctrineValidatorUsed: false,
+    scriptureEvidenceUsed: !!(out.scripture?.length),
+    activeTopicUsedAsContextOnly: false,
+    currentIntent: routePlan?.intent || runtimeContext?.intent || 'companion',
+    historyAllowed: true,
+  });
+
+  return H.finalizeBuddyResponse({
+    structured: out,
+    userId,
+    mode,
+    personaKey,
+    message,
+    safety,
+    runtimeContext,
+    profile,
+    testerId,
+    sessionId,
+    cohort,
+  });
+}
+
 function returnStrictDoctrineStructured(H, ctx) {
   const {
     structured,
@@ -89,6 +157,8 @@ function returnStrictDoctrineStructured(H, ctx) {
     topic,
     route,
   } = ctx;
+
+  recordUserTurn(userId, message, 'strict_doctrine');
 
   let out = structured;
   out.reply = polishFinalReply(out.reply);
@@ -212,6 +282,46 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   evidencePack.userMessage = message;
   evidencePack.userId = userId;
 
+  const routePlan = planCompanionDoctrineRouting({
+    userId,
+    message,
+    recentSessions,
+    runtimeContext,
+  });
+  applyDoctrineRoutingSideEffects(userId, routePlan, message);
+
+  if (routePlan.immediateCompanionReply && routePlan.companionReleaseReply) {
+    return returnCompanionLaneStructured(H, {
+      structured: {
+        reply: routePlan.companionReleaseReply,
+        scripture: [],
+        mode: 'companion',
+        confidence: 'high',
+        memory_used: routePlan.intent === 'memory_recall',
+        safety_level: safety?.level || 'standard',
+        admin_flags: ['companion_doctrine_release', `companion_intent_${routePlan.intent}`],
+        runtime: {
+          emotion: runtimeContext?.emotion,
+          intent: routePlan.intent,
+          masterRoute: 'companion_doctrine_release',
+          openAiCalled: false,
+        },
+      },
+      userId,
+      mode,
+      personaKey,
+      message,
+      safety,
+      runtimeContext,
+      profile,
+      testerId,
+      sessionId,
+      cohort,
+      route: 'companion_doctrine_release',
+      routePlan,
+    });
+  }
+
   const strictGate = runStrictDoctrineGate({
     userId,
     message,
@@ -219,6 +329,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     recentSessions,
     safety,
     runtimeContext,
+    routePlan,
   });
   if (strictGate.handled) {
     logPhase4d1CircuitBreaker({
@@ -245,12 +356,12 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     });
   }
 
-  if (mustBlockOpenAi(evidencePack, userId, message)) {
+  if (mustBlockOpenAi(evidencePack, userId, message, routePlan)) {
     logPhase4eLivePathError({
       userId,
       message,
       reason: 'strict_gate_miss_forced_retry',
-      topic: evidencePack.doctrineStrict?.strictTopic,
+      topic: routePlan.strictTopic || evidencePack.doctrineStrict?.strictTopic,
     });
     const retryGate = runStrictDoctrineGate({
       userId,
@@ -259,6 +370,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
       recentSessions,
       safety,
       runtimeContext,
+      routePlan,
     });
     if (retryGate.handled) {
       return returnStrictDoctrineStructured(H, {
@@ -285,13 +397,16 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   let doctrineStrictValidation = null;
   let doctrineStrictSafeUsed = false;
 
-  if (mustBlockOpenAi(evidencePack, userId, message)) {
+  if (mustBlockOpenAi(evidencePack, userId, message, routePlan)) {
     logPhase4eLivePathError({ userId, message, reason: 'openai_blocked_strict_doctrine' });
     const { buildFinalAuthorityAnswer, buildFinalAuthorityStructured } = require('./doctrineFinalAuthorityEngine');
-    const topic = evidencePack.doctrineStrict?.strictTopic || require('./doctrineConversationState').getActiveDoctrineTopic(userId);
+    const topic = routePlan.strictTopic || evidencePack.doctrineStrict?.strictTopic;
+    if (!topic) {
+      /* companion lane — do not resurrect stale active topic */
+    } else {
     const authority = buildFinalAuthorityAnswer({
       topic,
-      contract: evidencePack.doctrineStrict?.contract,
+      contract: evidencePack.doctrineStrict?.contract || require('./doctrineAuthorityContract').BASE_CONTRACTS[topic],
       userId,
       message,
     });
@@ -339,6 +454,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
       topic,
       route: 'doctrine_strict_safe_openai_block',
     });
+    }
   }
 
   let composed = await composeReasonFirstReply({
@@ -398,21 +514,46 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
       });
     } else {
       fallbackUsed = true;
-      finalAnswerAuthor = 'connection_error';
-      structured = buildConnectionErrorReply({
-        error: errorMessage || composed.validation?.issues?.[0] || 'openai_unavailable',
-        safety,
-      });
-      structured.reply = mapInternalErrorToUserMessage(errorMessage, { strictDoctrine: false });
+      const companionFallback =
+        routePlan.lane === 'companion'
+          ? buildCompanionLaneFallbackReply(message, buildRoutingContext(userId, { runtimeContext, recentSessions }))
+          : null;
+      if (companionFallback?.reply) {
+        finalAnswerAuthor = 'companion_lane_fallback';
+        structured = {
+          reply: companionFallback.reply,
+          scripture: companionFallback.scripture || [],
+          mode: 'companion',
+          confidence: 'medium',
+          memory_used: false,
+          safety_level: safety?.level || 'standard',
+          admin_flags: ['companion_lane_fallback', `companion_intent_${routePlan.intent || 'companion'}`],
+          runtime: {
+            masterRoute: 'companion_lane_fallback',
+            openAiCalled: false,
+            buddyRuntime: 'core_openai_first',
+            companionLane: true,
+            companionIntent: routePlan.intent || 'companion_general',
+          },
+        };
+        recordUserTurn(userId, message, 'companion');
+      } else {
+        finalAnswerAuthor = 'connection_error';
+        structured = buildConnectionErrorReply({
+          error: errorMessage || composed.validation?.issues?.[0] || 'openai_unavailable',
+          safety,
+        });
+        structured.reply = mapInternalErrorToUserMessage(errorMessage, { strictDoctrine: false });
+        structured.runtime = {
+          ...(structured.runtime || {}),
+          buddyRuntime: 'core_openai_first',
+          companionPresentation: {
+            skipRelationshipEnrichment: true,
+            skipStudyPrompts: true,
+          },
+        };
+      }
       structured.quality = scoreCompanionQuality({ message, reply: structured.reply, runtimeContext });
-      structured.runtime = {
-        ...(structured.runtime || {}),
-        buddyRuntime: 'core_openai_first',
-        companionPresentation: {
-          skipRelationshipEnrichment: true,
-          skipStudyPrompts: true,
-        },
-      };
     }
   } else {
     structured.reply = polishFinalReply(structured.reply);
@@ -433,11 +574,9 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
       });
 
       if (!doctrineStrictValidation.passed && !doctrineStrictRegenerated) {
-        if (mustBlockOpenAi(evidencePack, userId, message)) {
+        if (mustBlockOpenAi(evidencePack, userId, message, routePlan)) {
           const { buildFinalAuthorityAnswer, buildFinalAuthorityStructured } = require('./doctrineFinalAuthorityEngine');
-          const blockTopic =
-            evidencePack.doctrineStrict.strictTopic ||
-            require('./doctrineConversationState').getActiveDoctrineTopic(userId);
+          const blockTopic = routePlan.strictTopic || evidencePack.doctrineStrict.strictTopic;
           const blockAuthority = buildFinalAuthorityAnswer({
             topic: blockTopic,
             contract: evidencePack.doctrineStrict.contract,

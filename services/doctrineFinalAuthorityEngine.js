@@ -79,7 +79,7 @@ function buildActs10FinalAnswer() {
     'Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean. Acts 10 is about people/Gentiles, not permission to eat unclean foods.';
   return {
     finalConclusion: exactConclusion,
-    reply: `${exactConclusion} Acts 10:14 shows Peter refusing unclean food. Acts 10:34-35 shows God is no respecter of persons. Acts 11:1-18 records Peter explaining the vision to the church.`,
+    reply: `Absolutely — staying with the Bible text: ${exactConclusion} Acts 10:14 shows Peter refusing unclean food. Acts 10:34-35 shows God is no respecter of persons. Acts 11:1-18 records Peter explaining the vision to the church.`,
     scriptureWitnesses: ['Acts 10:14', 'Acts 10:28', 'Acts 10:34-35', 'Acts 11:1-18'],
     requiredWording:
       'Acts 10 is about people/Gentiles. Peter explains that in Acts 10:28.',
@@ -93,7 +93,7 @@ function buildDietaryLawFinalAnswer() {
     'Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles, not permission to eat unclean foods.';
   return {
     finalConclusion: exactConclusion,
-    reply: `${exactConclusion} Leviticus 11 and Deuteronomy 14 distinguish clean and unclean animals. Daniel 1:8-16 shows faithful refusal of unclean food. Acts 10:14 shows Peter refusing unclean food. Acts 10:28 explains the vision concerned people, not food permission. Isaiah 66:17 treats eating swine’s flesh seriously in judgment.`,
+    reply: `Yes — staying with Scripture, pork and shellfish remain unclean. ${exactConclusion} Leviticus 11 and Deuteronomy 14 distinguish clean and unclean animals. Daniel 1:8-16 shows faithful refusal of unclean food. Acts 10:14 shows Peter refusing unclean food. Acts 10:28 explains the vision concerned people, not food permission. Isaiah 66:17 treats eating swine’s flesh seriously in judgment.`,
     scriptureWitnesses: [
       'Leviticus 11',
       'Deuteronomy 14',

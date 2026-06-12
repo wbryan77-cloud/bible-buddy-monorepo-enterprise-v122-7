@@ -59,6 +59,13 @@ function defaultUserState() {
     correctionPreferences: [],
     witnessExhausted: false,
     lastUpdatedAt: null,
+    activeDoctrineUpdatedAt: null,
+    lastAnsweredTopic: null,
+    lastLane: 'companion',
+    lastStrictDoctrineTopic: null,
+    releaseRequested: false,
+    nonDoctrineTurnCount: 0,
+    doctrineSuspended: false,
   };
 }
 
@@ -111,6 +118,7 @@ function setActiveDoctrineConversation({
       ? serializeContract(BASE_CONTRACTS[topic])
       : null;
   const topicChanged = prev.activeDoctrineTopic && prev.activeDoctrineTopic !== topic;
+  const now = new Date().toISOString();
   return updateDoctrineConversationState(userId, {
     activeDoctrineTopic: topic,
     previousDoctrineTopic: topicChanged ? prev.activeDoctrineTopic : prev.previousDoctrineTopic,
@@ -124,6 +132,45 @@ function setActiveDoctrineConversation({
     lastApprovedWitness: lastWitness ?? prev.lastApprovedWitness,
     witnessExhausted: topicChanged ? false : witnessExhausted,
     correctionPreferences: prev.correctionPreferences || [],
+    activeDoctrineUpdatedAt: now,
+    lastAnsweredTopic: topic,
+    lastLane: 'strict_doctrine',
+    lastStrictDoctrineTopic: topic,
+    releaseRequested: false,
+    nonDoctrineTurnCount: 0,
+    doctrineSuspended: false,
+  });
+}
+
+function recordUserTurn(userId, message = '', lane = 'companion') {
+  const prev = getDoctrineConversationState(userId);
+  const m = String(message || '').trim();
+  const patch = {
+    lastUserQuestion: m || prev.lastUserQuestion,
+    lastLane: lane,
+    lastUpdatedAt: new Date().toISOString(),
+  };
+  if (lane === 'companion') {
+    patch.nonDoctrineTurnCount = (prev.nonDoctrineTurnCount || 0) + 1;
+  } else if (lane === 'strict_doctrine') {
+    patch.nonDoctrineTurnCount = 0;
+    patch.doctrineSuspended = false;
+  }
+  return updateDoctrineConversationState(userId, patch);
+}
+
+function releaseDoctrineTopic(userId, reason = 'release', options = {}) {
+  const prev = getDoctrineConversationState(userId);
+  const blockContinuation = options.blockContinuation !== false;
+  return updateDoctrineConversationState(userId, {
+    activeDoctrineTopic: null,
+    activeStrictContract: null,
+    activeContract: null,
+    doctrineSuspended: true,
+    releaseRequested: blockContinuation,
+    lastLane: 'companion',
+    nonDoctrineTurnCount: prev.nonDoctrineTurnCount || 0,
+    releaseReason: String(reason).slice(0, 80),
   });
 }
 
@@ -185,4 +232,6 @@ module.exports = {
   serializeContract,
   topicDisplayLabel,
   addCorrectionPreference,
+  recordUserTurn,
+  releaseDoctrineTopic,
 };

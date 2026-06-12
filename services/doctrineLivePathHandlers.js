@@ -23,6 +23,11 @@ const {
 } = require('./doctrineCorrectionMemory');
 const { isInternalSystemMessage } = require('./doctrineErrorFirewall');
 const { BASE_CONTRACTS } = require('./doctrineAuthorityContract');
+const {
+  classifyCurrentTurnIntent,
+  shouldRouteToCompanion,
+  buildRoutingContext,
+} = require('./companionDoctrineRouter');
 
 const MEMORY_RECALL_PATTERNS = [
   /\bcan you remember what we (were talking about|discussed)\b/i,
@@ -190,11 +195,37 @@ function tryDoctrineLivePathHandlers({
   recentSessions,
   safety,
   runtimeContext,
+  routePlan = null,
 }) {
   const { normalizedMessage, isSystemEcho } = normalizeIncomingMessage(message);
   const effectiveMessage = isSystemEcho ? 'show me another verse' : normalizedMessage;
+  const routingContext = buildRoutingContext(userId, { runtimeContext, recentSessions });
 
-  if (isDoctrineMemoryRecallRequest(effectiveMessage)) {
+  if (routePlan?.lane === 'companion' || shouldRouteToCompanion(effectiveMessage, routingContext)) {
+    return { handled: false };
+  }
+
+  const intent = routePlan?.intent || classifyCurrentTurnIntent(effectiveMessage, routingContext);
+  if (intent === 'memory_recall' && routePlan?.lane !== 'strict_doctrine') {
+    return { handled: false };
+  }
+
+  if (isBeforeThatRecall(effectiveMessage)) {
+    const recall = buildDoctrineMemoryRecallReply(userId, effectiveMessage);
+    return {
+      handled: true,
+      structured: buildDoctrineHandlerStructured({
+        handlerResult: recall,
+        message,
+        safety,
+        runtimeContext,
+        topic: recall.topic,
+        route: 'doctrine_before_that_recall',
+      }),
+    };
+  }
+
+  if (isDoctrineMemoryRecallRequest(effectiveMessage) && intent !== 'doctrine_continuation') {
     const recall = buildDoctrineMemoryRecallReply(userId, effectiveMessage);
     return {
       handled: true,
@@ -209,7 +240,10 @@ function tryDoctrineLivePathHandlers({
     };
   }
 
-  if (isDoctrineCorrectionChallenge(effectiveMessage)) {
+  if (
+    isDoctrineCorrectionChallenge(effectiveMessage) &&
+    (intent === 'doctrine_correction' || routePlan?.lane === 'strict_doctrine')
+  ) {
     const correction = handleDoctrineCorrectionChallenge({ userId, message: effectiveMessage, recentSessions });
     if (correction) {
       const topic = getActiveDoctrineTopic(userId) || 'acts_10';
@@ -234,7 +268,10 @@ function tryDoctrineLivePathHandlers({
     }
   }
 
-  if (isDoctrineContinuationRequest(effectiveMessage)) {
+  if (
+    isDoctrineContinuationRequest(effectiveMessage) &&
+    (intent === 'doctrine_continuation' || routePlan?.useActiveDoctrineTopic)
+  ) {
     const witnessResult = handleWitnessContinuation({
       userId,
       message: effectiveMessage,

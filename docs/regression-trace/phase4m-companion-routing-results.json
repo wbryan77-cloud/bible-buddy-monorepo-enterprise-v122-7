@@ -1,0 +1,301 @@
+{
+  "at": "2026-06-12T07:39:01.451Z",
+  "user": "phase4m-1781249939150",
+  "passed": 15,
+  "total": 15,
+  "metrics": {
+    "errors": 0,
+    "timeouts": 0,
+    "memoryPressureLevel": "normal",
+    "strictDoctrineCalls": 4,
+    "strictDoctrineOpenAiBlocked": 4,
+    "openAiCalls": 0
+  },
+  "metricsOk": true,
+  "failed": [],
+  "results": [
+    {
+      "id": "A1_acts_10",
+      "message": "Acts 10",
+      "preview": "Absolutely — staying with the Bible text: Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean. Acts 10 is about people/Gentiles, not permi",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "acts 10 doctrine answer"
+        },
+        {
+          "pass": true,
+          "label": "strictDoctrineCalls increments"
+        },
+        {
+          "pass": true,
+          "label": "openAiCalls 0 for strict doctrine"
+        },
+        {
+          "pass": true,
+          "label": "activeDoctrineTopic acts_10"
+        }
+      ]
+    },
+    {
+      "id": "A2_bad_day",
+      "message": "I had a bad day today.",
+      "preview": "I'm sorry today was hard. I'm here with you. Want to tell me what happened?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "warm companion response"
+        },
+        {
+          "pass": true,
+          "label": "must not mention Acts 10/Peter"
+        },
+        {
+          "pass": true,
+          "label": "strictDoctrineCalls must not increment"
+        },
+        {
+          "pass": true,
+          "label": "activeDoctrineTopic cleared or suspended"
+        }
+      ]
+    },
+    {
+      "id": "A3_not_peter",
+      "message": "I'm not talking about Peter.",
+      "preview": "You're right. I should not keep repeating the last Bible topic. What are you asking about now?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "apology/listening response"
+        },
+        {
+          "pass": true,
+          "label": "must not repeat Acts 10"
+        },
+        {
+          "pass": true,
+          "label": "activeDoctrineTopic cleared"
+        }
+      ]
+    },
+    {
+      "id": "A4_not_listening",
+      "message": "why are you not listening?",
+      "preview": "You're right to call that out. I was stuck on the last Bible topic instead of listening to your new message. I'm with you now. What do you want me to answer?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "apology/listening response"
+        },
+        {
+          "pass": true,
+          "label": "must not repeat Acts 10"
+        }
+      ]
+    },
+    {
+      "id": "B5_pork",
+      "message": "What about eating pork",
+      "preview": "Yes — staying with Scripture, pork and shellfish remain unclean. Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "dietary_law answer"
+        },
+        {
+          "pass": true,
+          "label": "activeDoctrineTopic dietary_law"
+        }
+      ]
+    },
+    {
+      "id": "B6_fornication",
+      "message": "Can we have sex without marriage?",
+      "preview": "Scripture honors marriage and warns against fornication — sexual union outside marriage. Paul urges believers to flee fornication in 1 Corinthians 6:18. What part of this would you",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "must not mention pork/shellfish/Acts 10/Isaiah 66"
+        },
+        {
+          "pass": true,
+          "label": "not dietary law template"
+        },
+        {
+          "pass": true,
+          "label": "companion or Bible retrieval about marriage/fornication"
+        },
+        {
+          "pass": true,
+          "label": "old dietary topic cleared"
+        }
+      ]
+    },
+    {
+      "id": "B7_fornication_followup",
+      "message": "I'm asking about fornication",
+      "preview": "Scripture honors marriage and warns against fornication — sexual union outside marriage. Paul urges believers to flee fornication in 1 Corinthians 6:18. What part of this would you",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "no pork/shellfish/Acts 10 repetition"
+        },
+        {
+          "pass": true,
+          "label": "answer fornication not dietary"
+        }
+      ]
+    },
+    {
+      "id": "B8_commandments",
+      "message": "what are the 10 commandments",
+      "preview": "The ten commandments are recorded in Exodus 20 and Deuteronomy 5. Which commandment would you like to explore together?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "must not repeat dietary law"
+        },
+        {
+          "pass": true,
+          "label": "answer commandments or Bible retrieval"
+        }
+      ]
+    },
+    {
+      "id": "B9_stop",
+      "message": "stop",
+      "preview": "I hear you. I'll stop that topic. What do you want to talk about now?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "stop release reply"
+        },
+        {
+          "pass": true,
+          "label": "activeDoctrineTopic cleared"
+        }
+      ]
+    },
+    {
+      "id": "B10_memory",
+      "message": "Do you remember my last question?",
+      "preview": "Your last question was: \"stop.\" What would you like to explore next?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "mentions stop or last question"
+        },
+        {
+          "pass": true,
+          "label": "must not repeat dietary_law"
+        }
+      ]
+    },
+    {
+      "id": "C11_death",
+      "message": "Tell me about death",
+      "preview": "Brother, Scripture teaches that the dead know nothing and are described as asleep until resurrection. Ecclesiastes 9:5 says the dead know not any thing. Psalm 146:4 says a man’s th",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "death_state answer"
+        },
+        {
+          "pass": true,
+          "label": "activeDoctrineTopic death_state"
+        }
+      ]
+    },
+    {
+      "id": "C12_continuation",
+      "message": "show me another verse",
+      "preview": "Here is another approved Scripture witness on this topic. Jesus called Lazarus’ death sleep in John 11:11-14.",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "death_state continuation"
+        },
+        {
+          "pass": true,
+          "label": "no OpenAI doctrine authoring"
+        }
+      ]
+    },
+    {
+      "id": "C13_stop",
+      "message": "stop",
+      "preview": "I hear you. I'll stop that topic. What do you want to talk about now?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "clears death_state"
+        }
+      ]
+    },
+    {
+      "id": "C14_orphan_continuation",
+      "message": "show me another verse",
+      "preview": "Which Bible topic would you like me to continue? I don't have one active right now — what do you want to explore?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "asks which topic to continue"
+        },
+        {
+          "pass": true,
+          "label": "must not repeat death_state"
+        }
+      ]
+    },
+    {
+      "id": "D15_tired",
+      "message": "I am tired and discouraged",
+      "preview": "I'm sorry you're feeling worn down. I'm here with you. What's been weighing on you lately?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "warm companion response"
+        },
+        {
+          "pass": true,
+          "label": "no strict doctrine template"
+        },
+        {
+          "pass": true,
+          "label": "no strict doctrine on emotional turn"
+        }
+      ]
+    }
+  ]
+}

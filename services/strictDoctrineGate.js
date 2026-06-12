@@ -1,5 +1,6 @@
 /**
- * Phase 4E — Hard gate: strict doctrine never reaches OpenAI.
+ * Phase 4E/4M — Hard gate: strict doctrine never reaches OpenAI.
+ * Current user message wins — active topic is context, not command.
  */
 
 const { BASE_CONTRACTS, attachDoctrineStrictContract } = require('./doctrineAuthorityContract');
@@ -18,8 +19,12 @@ const {
   logPhase4eOpenAiBypass,
   logPhase4eMemoryStateTrace,
 } = require('./phase4eRuntimeDiagnostics');
-const { isSessionBoundStrictTurn } = require('./doctrineTopicDetector');
 const { recordStrictDoctrineBypass } = require('./runtimeHealthMonitor');
+const {
+  planCompanionDoctrineRouting,
+  applyDoctrineRoutingSideEffects,
+  shouldUseActiveDoctrineTopic,
+} = require('./companionDoctrineRouter');
 
 function forceStrictOnPack(evidencePack, topic, meta = {}) {
   const contract = BASE_CONTRACTS[topic];
@@ -40,16 +45,29 @@ function forceStrictOnPack(evidencePack, topic, meta = {}) {
   return true;
 }
 
-function ensureStrictDoctrineOnPack(evidencePack, userId, message = '') {
-  const active = userId ? getActiveDoctrineTopic(userId) : null;
-  if (active && BASE_CONTRACTS[active] && isSessionBoundStrictTurn(message)) {
-    forceStrictOnPack(evidencePack, active, { fromActiveSession: true, sessionBoundTurn: true });
+function ensureStrictDoctrineOnPack(evidencePack, userId, message = '', routePlan = null) {
+  const plan =
+    routePlan ||
+    planCompanionDoctrineRouting({
+      userId,
+      message,
+    });
+
+  if (plan.lane !== 'strict_doctrine' || !plan.strictTopic) {
+    evidencePack.doctrineStrict = { enabled: false };
+    return false;
+  }
+
+  const topic = plan.strictTopic;
+  if (BASE_CONTRACTS[topic]) {
+    forceStrictOnPack(evidencePack, topic, {
+      fromRouter: true,
+      sessionBoundTurn: plan.useActiveDoctrineTopic,
+    });
     return true;
   }
+
   attachDoctrineStrictContract(evidencePack);
-  if (!evidencePack.doctrineStrict?.enabled && userId && active && BASE_CONTRACTS[active]) {
-    forceStrictOnPack(evidencePack, active, { fromActiveSession: true });
-  }
   return evidencePack.doctrineStrict?.enabled || false;
 }
 
@@ -104,12 +122,29 @@ function runStrictDoctrineGate({
   recentSessions,
   safety,
   runtimeContext,
+  routePlan: routePlanInput = null,
 }) {
-  const strictEnabled = ensureStrictDoctrineOnPack(evidencePack, userId, message);
+  const routePlan =
+    routePlanInput ||
+    planCompanionDoctrineRouting({
+      userId,
+      message,
+      recentSessions,
+      runtimeContext,
+    });
+
+  applyDoctrineRoutingSideEffects(userId, routePlan, message);
+
+  if (routePlan.lane !== 'strict_doctrine') {
+    evidencePack.doctrineStrict = { enabled: false };
+    return { handled: false, routePlan };
+  }
+
+  const strictEnabled = ensureStrictDoctrineOnPack(evidencePack, userId, message, routePlan);
   const activeTopic = evidencePack.doctrineStrict?.strictTopic || getActiveDoctrineTopic(userId);
 
   if (!strictEnabled && !activeTopic) {
-    return { handled: false };
+    return { handled: false, routePlan };
   }
 
   if (isStrictDoctrineChallenge(message)) {
@@ -132,6 +167,7 @@ function runStrictDoctrineGate({
       handled: true,
       structured: finalizeStrictStructured(structured, 'acts_10', userId, message, 'strict_doctrine_challenge_rejection'),
       topic: 'acts_10',
+      routePlan,
     };
   }
 
@@ -142,6 +178,7 @@ function runStrictDoctrineGate({
     recentSessions,
     safety,
     runtimeContext,
+    routePlan,
   });
   if (livePath.handled) {
     return {
@@ -154,6 +191,7 @@ function runStrictDoctrineGate({
         livePath.structured.runtime?.masterRoute,
       ),
       topic: livePath.structured.runtime?.doctrineTopic || activeTopic,
+      routePlan,
     };
   }
 
@@ -169,10 +207,18 @@ function runStrictDoctrineGate({
       handled: true,
       structured: finalizeStrictStructured(structured, finalAuth.topic, userId, message, 'doctrine_final_authority'),
       topic: finalAuth.topic,
+      routePlan,
     };
   }
 
-  if (evidencePack.doctrineStrict?.enabled && !isInitialDoctrineQuestion(message)) {
+  if (
+    evidencePack.doctrineStrict?.enabled &&
+    !isInitialDoctrineQuestion(message) &&
+    shouldUseActiveDoctrineTopic(message, {
+      activeDoctrineTopic: activeTopic,
+      ...getDoctrineConversationState(userId),
+    })
+  ) {
     const witnessResult = handleWitnessContinuation({
       userId,
       message,
@@ -193,34 +239,27 @@ function runStrictDoctrineGate({
         handled: true,
         structured: finalizeStrictStructured(structured, topic, userId, message, 'doctrine_witness_inventory'),
         topic,
+        routePlan,
       };
     }
   }
 
-  if (evidencePack.doctrineStrict?.enabled || (activeTopic && isStrictFinalTopic(activeTopic))) {
-    const topic = evidencePack.doctrineStrict?.strictTopic || activeTopic;
-    const authority = buildFinalAuthorityAnswer({
-      topic,
-      contract: evidencePack.doctrineStrict?.contract || BASE_CONTRACTS[topic],
+  return { handled: false, routePlan };
+}
+
+function mustBlockOpenAi(evidencePack, userId, message = '', routePlan = null) {
+  const plan =
+    routePlan ||
+    planCompanionDoctrineRouting({
       userId,
       message,
     });
-    if (authority) {
-      const structured = buildFinalAuthorityStructured(authority, runtimeContext, safety);
-      return {
-        handled: true,
-        structured: finalizeStrictStructured(structured, topic, userId, message, 'doctrine_final_authority_fallback'),
-        topic,
-      };
-    }
+  if (plan.lane !== 'strict_doctrine') {
+    evidencePack.doctrineStrict = { enabled: false };
+    return false;
   }
-
-  return { handled: false };
-}
-
-function mustBlockOpenAi(evidencePack, userId, message = '') {
-  ensureStrictDoctrineOnPack(evidencePack, userId, message);
-  return evidencePack.doctrineStrict?.enabled || !!getActiveDoctrineTopic(userId);
+  ensureStrictDoctrineOnPack(evidencePack, userId, message, plan);
+  return evidencePack.doctrineStrict?.enabled || false;
 }
 
 module.exports = {
