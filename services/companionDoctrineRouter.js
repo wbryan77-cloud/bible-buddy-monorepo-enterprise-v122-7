@@ -4,6 +4,13 @@
 
 const { detectStrictTopicFromMessage } = require('./doctrineTopicDetector');
 const {
+  detectBibleConcept,
+  hasExplicitConcept,
+  detectConceptFromContinuation,
+  CONTINUATION_PHRASE_RE,
+} = require('./bibleConceptConcordance');
+const { isCorrectionMessage, buildCorrectionAcknowledgment } = require('./userCorrectionMemory');
+const {
   getDoctrineConversationState,
   getActiveDoctrineTopic,
   releaseDoctrineTopic,
@@ -26,6 +33,8 @@ const DEFAULT_NON_DOCTRINE_RELEASE_TURNS = Number(
   process.env.BIBLEBUDDY_DOCTRINE_RELEASE_TURNS || 1,
 );
 
+const BEFORE_THAT_PATTERNS = [/\bbefore that\b/i, /\bwhat did we discuss before\b/i];
+
 const DOCTRINE_CONTINUATION_PATTERNS = [
   /\bshow me another (verse|witness|scripture|passage)\b/i,
   /\bgive me another (verse|witness|scripture|passage)\b/i,
@@ -34,13 +43,16 @@ const DOCTRINE_CONTINUATION_PATTERNS = [
   /\bprove it\b/i,
   /\bexplain that verse\b/i,
   /\bwhat about that verse\b/i,
-  /\bbefore that\b/i,
   /\bwhy did you say that\b/i,
   /\bwhy (are you|did you) say\b/i,
   /^continue$/i,
   /\bcontinue (that|this|the)\b/i,
   /\bgive me more\b/i,
 ];
+
+function isBeforeThatRecall(message = '') {
+  return BEFORE_THAT_PATTERNS.some((re) => re.test(String(message)));
+}
 
 const STOP_RELEASE_PATTERNS = [
   /^stop\.?$/i,
@@ -71,6 +83,11 @@ const EMOTIONAL_SUPPORT_PATTERNS = [
   /\bnot talking about\b/i,
   /\bi am not talking about\b/i,
   /\bi'm not talking about\b/i,
+  /\blove life\b/i,
+  /\blife is crashing\b/i,
+  /\bwhy won't you answer\b/i,
+  /\bwhy won'?t you answer\b/i,
+  /\bwhy are you not answering\b/i,
 ];
 
 const MEMORY_RECALL_PATTERNS = [
@@ -102,6 +119,11 @@ function buildRoutingContext(userId, extra = {}) {
     lastStrictDoctrineTopic: state.lastStrictDoctrineTopic || null,
     releaseRequested: !!state.releaseRequested,
     nonDoctrineTurnCount: state.nonDoctrineTurnCount || 0,
+    activeBibleConcept: state.activeBibleConcept || null,
+    lastBibleConcept: state.lastBibleConcept || state.activeBibleConcept || null,
+    usedConceptWitnesses: state.usedConceptWitnesses || [],
+    lastPendingQuestion: state.lastPendingQuestion || null,
+    previousDoctrineTopic: state.previousDoctrineTopic || null,
     ...extra,
   };
 }
@@ -111,8 +133,16 @@ function classifyCurrentTurnIntent(message = '', context = {}) {
   if (!m) return 'unclear';
 
   if (matchesAny(m, STOP_RELEASE_PATTERNS)) return 'stop_release';
+  if (isCorrectionMessage(m)) return 'user_correction';
   if (matchesAny(m, EMOTIONAL_SUPPORT_PATTERNS)) return 'emotional_support';
   if (matchesAny(m, MEMORY_RECALL_PATTERNS)) return 'memory_recall';
+  if (isBeforeThatRecall(m)) return 'before_that_recall';
+
+  const bibleConcept = detectBibleConcept(m);
+  const conceptContinuation = detectConceptFromContinuation(m);
+
+  if (conceptContinuation) return 'bible_concept_continuation';
+  if (bibleConcept && CONTINUATION_PHRASE_RE.test(m)) return 'bible_concept_continuation';
 
   const messageTopic = detectStrictTopicFromMessage(m);
   if (messageTopic && STRICT_DOCTRINE_TOPICS.includes(messageTopic)) {
@@ -122,10 +152,21 @@ function classifyCurrentTurnIntent(message = '', context = {}) {
     return 'strict_doctrine_direct';
   }
 
-  if (shouldUseActiveDoctrineTopic(m, context)) {
+  if (bibleConcept && bibleConcept.strictTopic) {
+    const strictMapped = bibleConcept.strictTopic;
+    if (STRICT_DOCTRINE_TOPICS.includes(strictMapped)) {
+      if (shouldUseActiveDoctrineTopic(m, context)) return 'doctrine_continuation';
+      return 'strict_doctrine_direct';
+    }
+  }
+
+  if (bibleConcept) return 'bible_concept_direct';
+
+  if (shouldUseActiveDoctrineTopic(m, context) || shouldUseActiveBibleConcept(m, context)) {
     if (/\bwhy (are you|did you) say\b/i.test(m) || /\bstop saying\b/i.test(m)) {
       return 'doctrine_correction';
     }
+    if (shouldUseActiveBibleConcept(m, context)) return 'bible_concept_continuation';
     return 'doctrine_continuation';
   }
 
@@ -142,6 +183,16 @@ function classifyCurrentTurnIntent(message = '', context = {}) {
 
   if (m.length < 4) return 'unclear';
   return 'companion_general';
+}
+
+function shouldUseActiveBibleConcept(message = '', context = {}) {
+  const m = normalizeMessage(message);
+  if (!context.activeBibleConcept && !context.lastBibleConcept) return false;
+  if (detectBibleConcept(m)) return false;
+  if (matchesAny(m, STOP_RELEASE_PATTERNS)) return false;
+  if (matchesAny(m, EMOTIONAL_SUPPORT_PATTERNS)) return false;
+  if (matchesAny(m, MEMORY_RECALL_PATTERNS)) return false;
+  return CONTINUATION_PHRASE_RE.test(m);
 }
 
 function getContinuationDoctrineTopic(context = {}) {
@@ -170,7 +221,10 @@ function shouldUseActiveDoctrineTopic(message = '', context = {}) {
 function shouldReleaseDoctrineTopic(message = '', context = {}) {
   const intent = classifyCurrentTurnIntent(message, context);
   if (intent === 'strict_doctrine_direct') return false;
+  if (intent === 'bible_concept_direct' || intent === 'bible_concept_continuation') return false;
+  if (intent === 'user_correction') return false;
   if (intent === 'doctrine_continuation' || intent === 'doctrine_correction') return false;
+  if (intent === 'before_that_recall') return false;
   if (intent === 'stop_release' || intent === 'emotional_support') return true;
   if (intent === 'memory_recall') return true;
   if (intent === 'new_topic') return true;
@@ -211,6 +265,7 @@ function shouldSwitchDoctrineTopic(message = '', context = {}) {
 
 function shouldRouteToCompanion(message = '', context = {}) {
   const intent = classifyCurrentTurnIntent(message, context);
+  if (intent === 'bible_concept_direct' || intent === 'bible_concept_continuation') return false;
   if (intent === 'strict_doctrine_direct') {
     const m = normalizeMessage(message);
     const topic = detectStrictTopicFromMessage(m);
@@ -220,6 +275,7 @@ function shouldRouteToCompanion(message = '', context = {}) {
     if (shouldUseActiveDoctrineTopic(message, context)) return false;
     return !detectStrictTopicFromMessage(normalizeMessage(message));
   }
+  if (intent === 'before_that_recall') return false;
   return [
     'stop_release',
     'emotional_support',
@@ -237,6 +293,9 @@ function buildCompanionReleaseReply(message = '', context = {}) {
   if (intent === 'stop_release') {
     return "I hear you. I'll stop that topic. What do you want to talk about now?";
   }
+  if (intent === 'user_correction' || isCorrectionMessage(message)) {
+    return buildCorrectionAcknowledgment(message);
+  }
   if (/\bbad day\b/i.test(m) || /\b(hard|rough|bad|awful) day\b/i.test(m)) {
     return "I'm sorry today was hard. I'm here with you. Want to tell me what happened?";
   }
@@ -245,6 +304,13 @@ function buildCompanionReleaseReply(message = '', context = {}) {
   }
   if (/\bnot listening\b/i.test(m) || /\banswer my question\b/i.test(m)) {
     return "You're right to call that out. I was stuck on the last Bible topic instead of listening to your new message. I'm with you now. What do you want me to answer?";
+  }
+  if (/\bwhy won'?t you answer\b/i.test(m) || /\bwhy are you not answering\b/i.test(m)) {
+    const pending = context.lastPendingQuestion || context.lastUserQuestion;
+    if (pending && !/^(stop|why)/i.test(pending)) {
+      return `You're right — I should have answered more directly. Your last question was about "${String(pending).slice(0, 120)}." I'm with you now — what would you like me to clarify?`;
+    }
+    return "You're right to call that out. I'm here and listening. What do you want me to answer directly from Scripture?";
   }
   if (intent === 'memory_recall') {
     const lastQ = context.lastUserQuestion || 'your last message';
@@ -267,7 +333,16 @@ function buildCompanionReleaseReply(message = '', context = {}) {
   if (/\btired\b/i.test(m) && /\bdiscouraged\b/i.test(m)) {
     return "I'm sorry you're feeling worn down. I'm here with you. What's been weighing on you lately?";
   }
-  if (matchesAny(normalizeMessage(message), DOCTRINE_CONTINUATION_PATTERNS) && !context.activeDoctrineTopic) {
+  if (/\blove life\b/i.test(m) && /\bcrash/i.test(m)) {
+    return "I'm sorry. That kind of hurt can feel heavy. I'm here with you. What happened today that made it feel like it's crashing? One Scripture that may steady the heart is Psalm 34:18 — the LORD is nigh unto them that are of a broken heart.";
+  }
+  const bareContinuation =
+    matchesAny(normalizeMessage(message), DOCTRINE_CONTINUATION_PATTERNS) &&
+    !isBeforeThatRecall(message) &&
+    !detectStrictTopicFromMessage(normalizeMessage(message)) &&
+    !hasExplicitConcept(message) &&
+    !detectBibleConcept(normalizeMessage(message));
+  if (bareContinuation && !context.activeDoctrineTopic && !context.activeBibleConcept) {
     return "Which Bible topic would you like me to continue? I don't have one active right now — what do you want to explore?";
   }
   return null;
@@ -278,20 +353,55 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
   const intent = classifyCurrentTurnIntent(message, context);
   const m = normalizeMessage(message);
   const messageTopic = detectStrictTopicFromMessage(m);
+  const bibleConcept = detectBibleConcept(m) || detectConceptFromContinuation(m);
   const clearDoctrine = shouldReleaseDoctrineTopic(message, context);
   const useActive = shouldUseActiveDoctrineTopic(message, context);
+  const useActiveConcept = shouldUseActiveBibleConcept(message, context);
   const companionReleaseReply = buildCompanionReleaseReply(message, context);
 
   let lane = 'companion';
   let strictTopic = null;
+  let bibleConceptId = bibleConcept?.id || null;
 
-  if (intent === 'stop_release' || intent === 'emotional_support') {
+  if (intent === 'user_correction') {
+    lane = 'companion';
+  } else if (intent === 'stop_release' || intent === 'emotional_support') {
     lane = 'companion';
   } else if (intent === 'memory_recall') {
     lane = 'companion';
+  } else if (intent === 'before_that_recall') {
+    lane = 'strict_doctrine';
+    strictTopic =
+      context.previousDoctrineTopic ||
+      context.lastStrictDoctrineTopic ||
+      context.lastAnsweredTopic ||
+      null;
   } else if (intent === 'strict_doctrine_direct' && messageTopic) {
     lane = 'strict_doctrine';
     strictTopic = messageTopic;
+    bibleConceptId = null;
+  } else if (
+    intent === 'strict_doctrine_direct' &&
+    bibleConcept?.strictTopic &&
+    STRICT_DOCTRINE_TOPICS.includes(bibleConcept.strictTopic)
+  ) {
+    lane = 'strict_doctrine';
+    strictTopic = bibleConcept.strictTopic;
+    bibleConceptId = null;
+  } else if (intent === 'bible_concept_direct' && bibleConcept) {
+    lane = bibleConcept.strictTopic ? 'strict_doctrine' : 'bible_wide';
+    strictTopic = bibleConcept.strictTopic || null;
+    bibleConceptId = bibleConcept.id;
+  } else if (intent === 'bible_concept_continuation' && bibleConcept) {
+    lane = bibleConcept.strictTopic && !CONTINUATION_PHRASE_RE.test(m) ? 'strict_doctrine' : 'bible_wide';
+    strictTopic = bibleConcept.strictTopic || null;
+    bibleConceptId = bibleConcept.id;
+  } else if (
+    (intent === 'bible_concept_continuation' || useActiveConcept) &&
+    context.activeBibleConcept
+  ) {
+    lane = 'bible_wide';
+    bibleConceptId = context.activeBibleConcept;
   } else if (
     (intent === 'doctrine_continuation' || intent === 'doctrine_correction') &&
     useActive
@@ -305,18 +415,21 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
     lane = 'companion';
   }
 
-  if (shouldRouteToCompanion(message, context) && lane !== 'strict_doctrine') {
+  if (shouldRouteToCompanion(message, context) && lane !== 'strict_doctrine' && lane !== 'bible_wide') {
     lane = 'companion';
     strictTopic = null;
+    bibleConceptId = null;
   }
 
   return {
     intent,
     lane,
     strictTopic,
+    bibleConceptId,
     clearDoctrine,
     releaseReason: intent,
     useActiveDoctrineTopic: useActive,
+    useActiveBibleConcept: useActiveConcept,
     companionReleaseReply:
       lane === 'companion' && companionReleaseReply ? companionReleaseReply : null,
     immediateCompanionReply:
@@ -324,7 +437,12 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
       (intent === 'stop_release' ||
         intent === 'emotional_support' ||
         intent === 'memory_recall' ||
-        (matchesAny(m, DOCTRINE_CONTINUATION_PATTERNS) && !context.activeDoctrineTopic)),
+        intent === 'user_correction' ||
+        (matchesAny(m, DOCTRINE_CONTINUATION_PATTERNS) &&
+          !context.activeDoctrineTopic &&
+          !context.activeBibleConcept &&
+          !messageTopic &&
+          !bibleConcept)),
   };
 }
 
@@ -344,38 +462,17 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
   const m = normalizeMessage(message).toLowerCase();
   if (!m) return null;
 
-  if (
-    /\bfornication\b/i.test(m) ||
-    /\bsex without marriage\b/i.test(m) ||
-    /\bcan we have sex\b/i.test(m) ||
-    /\badultery\b/i.test(m)
-  ) {
+  const { buildBibleWideAnswer } = require('./bibleWideReasoningEngine');
+  const { getUserAnswerPreferences } = require('./userCorrectionMemory');
+  const conceptAnswer = buildBibleWideAnswer({
+    message,
+    userId: context.userId,
+    userPreferences: getUserAnswerPreferences(context.userId),
+  });
+  if (conceptAnswer) {
     return {
-      reply:
-        'Scripture honors marriage and warns against fornication — sexual union outside marriage. Paul urges believers to flee fornication in 1 Corinthians 6:18. What part of this would you like to look at in the Bible?',
-      scripture: [
-        { reference: '1 Corinthians 6:18', theme: 'fornication' },
-        { reference: 'Hebrews 13:4', theme: 'marriage' },
-      ],
-    };
-  }
-
-  if (/\b10 commandments\b/i.test(m) || /\bten commandments\b/i.test(m)) {
-    return {
-      reply:
-        'The ten commandments are recorded in Exodus 20 and Deuteronomy 5. Which commandment would you like to explore together?',
-      scripture: [
-        { reference: 'Exodus 20', theme: 'law_commandments' },
-        { reference: 'Deuteronomy 5', theme: 'law_commandments' },
-      ],
-    };
-  }
-
-  if (/\bcommandments\b/i.test(m)) {
-    return {
-      reply:
-        'Scripture records God’s commandments in Exodus 20 and Deuteronomy 5. What commandment or passage do you want to start with?',
-      scripture: [{ reference: 'Exodus 20', theme: 'law_commandments' }],
+      reply: conceptAnswer.reply,
+      scripture: conceptAnswer.scripture || [],
     };
   }
 

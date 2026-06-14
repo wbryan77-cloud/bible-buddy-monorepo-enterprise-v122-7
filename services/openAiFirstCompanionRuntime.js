@@ -26,6 +26,7 @@ const { validateBibleOnlyAuthority } = require('./bibleOnlyAuthorityValidator');
 const { logRequestMemory } = require('./requestMemoryLogger');
 const { normalizeClaims } = require('./claimNormalizer');
 const { validateClaimToScripture, applyClaimDegradation } = require('./claimToScriptureValidator');
+const { formatDirectDoctrineReply } = require('./directAnswerFormatter');
 const { buildDoctrineAnswerTrace, writeDoctrineAnswerTrace } = require('./doctrineAnswerTrace');
 const { attachDoctrineStrictContract } = require('./doctrineAuthorityContract');
 const { validateDoctrineStrictReply } = require('./doctrineStrictValidator');
@@ -42,6 +43,11 @@ const {
   buildCompanionLaneFallbackReply,
   buildRoutingContext,
 } = require('./companionDoctrineRouter');
+const {
+  recordUserCorrection,
+  getUserAnswerPreferences,
+} = require('./userCorrectionMemory');
+const { runBibleCompanionOrchestrator } = require('./bibleCompanionOrchestrator');
 const { validateFinalityReply, stripFinalityViolations } = require('./doctrineFinalityMode');
 const { applyDoctrineErrorFirewall, mapInternalErrorToUserMessage } = require('./doctrineErrorFirewall');
 const { applyDoctrineFinalityPipeline } = require('./doctrineFinalityContract');
@@ -74,8 +80,84 @@ function mergeDoctrineStrictSafeStructured(structured, safe, evidencePack) {
   };
 }
 
-function polishFinalReply(reply = '') {
-  return polishCompanionReply(sanitizeDoctrineResponse(stripInternalRuntimeLabels(String(reply || ''))));
+function polishFinalReply(reply = '', polishCtx = {}) {
+  let text = stripInternalRuntimeLabels(String(reply || ''));
+  const prefs = polishCtx.userPreferences || getUserAnswerPreferences(polishCtx.userId);
+  text = formatDirectDoctrineReply(text, polishCtx.message || '', {
+    topic: polishCtx.topic,
+    scripture: polishCtx.scripture || [],
+    userId: polishCtx.userId,
+    userPreferences: prefs,
+    polarity: polishCtx.polarity,
+  });
+  return polishCompanionReply(sanitizeDoctrineResponse(text));
+}
+
+function returnBibleWideStructured(H, ctx) {
+  const {
+    structured,
+    userId,
+    mode,
+    personaKey,
+    message,
+    safety,
+    runtimeContext,
+    profile,
+    testerId,
+    sessionId,
+    cohort,
+    route,
+    concept,
+  } = ctx;
+
+  recordUserTurn(userId, message, 'bible_wide');
+
+  let out = structured;
+  out.reply = polishFinalReply(out.reply, {
+    message,
+    topic: concept,
+    scripture: out.scripture,
+    userId,
+    userPreferences: getUserAnswerPreferences(userId),
+  });
+  out.quality = scoreCompanionQuality({ message, reply: out.reply, runtimeContext });
+  out.runtime = {
+    ...(out.runtime || {}),
+    masterRoute: route || out.runtime?.masterRoute || 'bible_wide_reasoning',
+    openAiCalled: false,
+    buddyRuntime: 'core_openai_first',
+    bibleWideReasoning: true,
+    bibleConcept: concept,
+  };
+
+  attachDebug(out, {
+    runtimeUsed: 'core_openai_first',
+    openaiCalled: false,
+    finalAnswerAuthor: 'bible_wide_reasoning',
+    fallbackUsed: false,
+    templateUsed: false,
+    responderUsed: false,
+    routeUsed: route || 'bible_wide_reasoning',
+    doctrineValidatorUsed: false,
+    scriptureEvidenceUsed: !!(out.scripture?.length),
+    activeTopicUsedAsContextOnly: false,
+    currentIntent: runtimeContext?.intent || 'study',
+    historyAllowed: true,
+  });
+
+  return H.finalizeBuddyResponse({
+    structured: out,
+    userId,
+    mode,
+    personaKey,
+    message,
+    safety,
+    runtimeContext,
+    profile,
+    testerId,
+    sessionId,
+    cohort,
+  });
 }
 
 function returnCompanionLaneStructured(H, ctx) {
@@ -98,7 +180,12 @@ function returnCompanionLaneStructured(H, ctx) {
   recordUserTurn(userId, message, 'companion');
 
   let out = structured;
-  out.reply = polishFinalReply(out.reply);
+  out.reply = polishFinalReply(out.reply, {
+    message,
+    scripture: out.scripture,
+    userId,
+    userPreferences: getUserAnswerPreferences(userId),
+  });
   out.quality = scoreCompanionQuality({ message, reply: out.reply, runtimeContext });
   out.runtime = {
     ...(out.runtime || {}),
@@ -161,7 +248,13 @@ function returnStrictDoctrineStructured(H, ctx) {
   recordUserTurn(userId, message, 'strict_doctrine');
 
   let out = structured;
-  out.reply = polishFinalReply(out.reply);
+  out.reply = polishFinalReply(out.reply, {
+    message,
+    topic,
+    scripture: out.scripture,
+    userId,
+    userPreferences: getUserAnswerPreferences(userId),
+  });
   out = applyDoctrineFinalityPipeline({
     structured: out,
     topic,
@@ -282,79 +375,48 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   evidencePack.userMessage = message;
   evidencePack.userId = userId;
 
-  const routePlan = planCompanionDoctrineRouting({
+  const orchestratorResult = runBibleCompanionOrchestrator({
+    H,
     userId,
     message,
-    recentSessions,
-    runtimeContext,
-  });
-  applyDoctrineRoutingSideEffects(userId, routePlan, message);
-
-  if (routePlan.immediateCompanionReply && routePlan.companionReleaseReply) {
-    return returnCompanionLaneStructured(H, {
-      structured: {
-        reply: routePlan.companionReleaseReply,
-        scripture: [],
-        mode: 'companion',
-        confidence: 'high',
-        memory_used: routePlan.intent === 'memory_recall',
-        safety_level: safety?.level || 'standard',
-        admin_flags: ['companion_doctrine_release', `companion_intent_${routePlan.intent}`],
-        runtime: {
-          emotion: runtimeContext?.emotion,
-          intent: routePlan.intent,
-          masterRoute: 'companion_doctrine_release',
-          openAiCalled: false,
-        },
-      },
-      userId,
-      mode,
-      personaKey,
-      message,
-      safety,
-      runtimeContext,
-      profile,
-      testerId,
-      sessionId,
-      cohort,
-      route: 'companion_doctrine_release',
-      routePlan,
-    });
-  }
-
-  const strictGate = runStrictDoctrineGate({
-    userId,
-    message,
-    evidencePack,
-    recentSessions,
+    mode,
+    personaKey,
     safety,
     runtimeContext,
-    routePlan,
+    profile,
+    testerId,
+    sessionId,
+    cohort,
+    evidencePack,
+    recentSessions,
   });
-  if (strictGate.handled) {
-    logPhase4d1CircuitBreaker({
-      userId,
-      message,
-      topic: strictGate.topic,
-      route: strictGate.structured?.runtime?.masterRoute,
-    });
-    return returnStrictDoctrineStructured(H, {
-      structured: strictGate.structured,
-      userId,
-      mode,
-      personaKey,
-      message,
-      safety,
-      runtimeContext,
-      profile,
-      testerId,
-      sessionId,
-      cohort,
-      evidencePack,
-      topic: strictGate.topic,
-      route: strictGate.structured?.runtime?.masterRoute,
-    });
+
+  if (orchestratorResult.handled) {
+    const ctx = orchestratorResult.ctx;
+    if (orchestratorResult.dispatch === 'strict') {
+      logPhase4d1CircuitBreaker({
+        userId,
+        message,
+        topic: ctx.topic,
+        route: ctx.route,
+      });
+      return returnStrictDoctrineStructured(H, ctx);
+    }
+    if (orchestratorResult.dispatch === 'bible_wide') {
+      return returnBibleWideStructured(H, ctx);
+    }
+    if (orchestratorResult.dispatch === 'companion') {
+      return returnCompanionLaneStructured(H, ctx);
+    }
   }
+
+  const routePlan = orchestratorResult.routePlan ||
+    planCompanionDoctrineRouting({
+      userId,
+      message,
+      recentSessions,
+      runtimeContext,
+    });
 
   if (mustBlockOpenAi(evidencePack, userId, message, routePlan)) {
     logPhase4eLivePathError({
