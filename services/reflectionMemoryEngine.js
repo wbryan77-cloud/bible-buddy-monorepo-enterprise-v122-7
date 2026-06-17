@@ -1,5 +1,5 @@
 /**
- * Phase 5A — Reflection memory: learn corrections without doctrine mutation.
+ * Phase 5A / 5E — Reflection memory: learn corrections without doctrine mutation.
  */
 
 const fs = require('fs');
@@ -7,8 +7,19 @@ const path = require('path');
 const { recordUserCorrection, getUserAnswerPreferences } = require('./userCorrectionMemory');
 
 const MEMORY_PATH = path.join(__dirname, '..', 'data', 'reflection-memory.json');
+const CANDIDATES_PATH = path.join(
+  __dirname,
+  '..',
+  'docs',
+  'bible-learning',
+  'concept-growth-candidates.json',
+);
 const MAX_RECORDS_PER_USER = Number(process.env.BIBLEBUDDY_REFLECTION_MAX_PER_USER || 40);
+const MAX_CANDIDATES = Number(process.env.BIBLEBUDDY_BNC_CANDIDATES_MAX || 200);
 const SESSION_TTL_MS = Number(process.env.BIBLEBUDDY_REFLECTION_SESSION_TTL_MS || 86400000);
+
+const LEARNING_PHRASE_RE =
+  /\b(remember that|put (it|this) in your database|when others ask|for others|you got it|don't answer it that way|that is not what i asked|i wasn't asking about|can you remember that when others)\b/i;
 
 const MEMORY_TYPES = [
   'answer_style_preference',
@@ -17,7 +28,11 @@ const MEMORY_TYPES = [
   'pending_question',
   'correction_rule',
   'companion_preference',
+  'concept_learning_candidate',
 ];
+
+const LEARNING_ACK =
+  'Yes. I can save that as a learning candidate for review so Buddy can answer that wording better later. I will not automatically change doctrine authority without review.';
 
 function loadAll() {
   try {
@@ -30,21 +45,39 @@ function loadAll() {
   return { users: {}, globalCandidates: [] };
 }
 
+function loadCandidates() {
+  try {
+    if (fs.existsSync(CANDIDATES_PATH)) {
+      return JSON.parse(fs.readFileSync(CANDIDATES_PATH, 'utf8'));
+    }
+  } catch {
+    /* fresh */
+  }
+  return { candidates: [], updatedAt: null };
+}
+
 function saveAll(state) {
   const dir = path.dirname(MEMORY_PATH);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(MEMORY_PATH, JSON.stringify(state, null, 2), 'utf8');
 }
 
+function saveCandidates(data) {
+  const dir = path.dirname(CANDIDATES_PATH);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  data.updatedAt = new Date().toISOString();
+  data.candidates = (data.candidates || []).slice(-MAX_CANDIDATES);
+  fs.writeFileSync(CANDIDATES_PATH, JSON.stringify(data, null, 2), 'utf8');
+}
+
 function pruneUserRecords(records = []) {
   const now = Date.now();
-  const kept = records
+  return records
     .filter((r) => {
       if (!r.expiresAt) return true;
       return new Date(r.expiresAt).getTime() > now;
     })
     .slice(-MAX_RECORDS_PER_USER);
-  return kept;
 }
 
 function recordReflection(userId, entry = {}) {
@@ -88,6 +121,45 @@ function recordReflection(userId, entry = {}) {
   return record;
 }
 
+function recordConceptLearningCandidate({
+  phrase = '',
+  proposedConcept = null,
+  correction = '',
+  refs = [],
+  source = 'user_message',
+  status = 'pending_review',
+  userId = '',
+} = {}) {
+  const data = loadCandidates();
+  const entry = {
+    phrase: String(phrase).slice(0, 200),
+    proposedConcept,
+    correction: String(correction).slice(0, 300),
+    refs: (refs || []).slice(0, 10),
+    source,
+    status,
+    userId: userId ? 'set' : '',
+    loggedAt: new Date().toISOString(),
+  };
+  const dup = data.candidates.some(
+    (c) => c.phrase === entry.phrase && c.proposedConcept === entry.proposedConcept,
+  );
+  if (!dup) {
+    data.candidates.push(entry);
+    saveCandidates(data);
+  }
+  if (userId) {
+    recordReflection(userId, {
+      type: 'concept_learning_candidate',
+      label: 'bnc_learning_candidate',
+      userMessage: phrase,
+      conceptId: proposedConcept,
+      sessionOnly: false,
+    });
+  }
+  return entry;
+}
+
 function ingestUserMessage(userId, message = '') {
   const correction = recordUserCorrection(userId, message);
   if (correction) {
@@ -107,6 +179,16 @@ function ingestUserMessage(userId, message = '') {
       sessionOnly: false,
     });
   }
+  if (LEARNING_PHRASE_RE.test(message)) {
+    recordConceptLearningCandidate({
+      phrase: message,
+      proposedConcept: null,
+      correction: message,
+      source: 'user_remember_phrase',
+      userId,
+    });
+    return { correction, preferences: getUserAnswerPreferences(userId), learningCandidate: true, learningAck: LEARNING_ACK };
+  }
   return { correction, preferences: getUserAnswerPreferences(userId) };
 }
 
@@ -117,6 +199,7 @@ function getReflectionState(userId) {
     records: pruneUserRecords(user.records || []),
     preferences: getUserAnswerPreferences(userId),
     globalCandidates: (state.globalCandidates || []).slice(-20),
+    growthCandidates: (loadCandidates().candidates || []).slice(-20),
   };
 }
 
@@ -143,10 +226,14 @@ function recordRoutingFailure(userId, message = '', reason = '') {
 module.exports = {
   MEMORY_TYPES,
   MEMORY_PATH,
+  CANDIDATES_PATH,
+  LEARNING_ACK,
   ingestUserMessage,
   recordReflection,
   recordPendingQuestion,
   recordRoutingFailure,
+  recordConceptLearningCandidate,
   getReflectionState,
   getUserAnswerPreferences,
+  loadGrowthCandidates: loadCandidates,
 };

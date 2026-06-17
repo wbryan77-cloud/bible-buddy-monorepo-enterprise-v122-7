@@ -54,6 +54,11 @@ const {
 } = require('./activeConversationManager');
 const { containsInternalRuntimeLabels } = require('./runtimeLabelStripper');
 const { isStudyFallbackDisabled } = require('./ownershipAntiOverrideGuard');
+const { getDoctrineConversationState } = require('./doctrineConversationState');
+const { buildConversationAnchor } = require('./conversationAnchorEngine');
+const { detectHumanNeed } = require('./humanNeedDetector');
+const { finalizeLiveResponse } = require('./liveResponseOwner');
+const { buildRouteOwnershipTrace, logRouteOwnership } = require('./liveRequestTrace');
 
 let getSnapshot = () => ({ modules: [], phases: [], competitors: [], avatars: [] });
 let getRecentInsightsForUser = () => [];
@@ -771,6 +776,47 @@ function finalizeBuddyResponse({
     }
   } else {
     structured.reply = polishCompanionReply(structured.reply);
+  }
+
+  try {
+    let doctrineState = getDoctrineConversationState(userId);
+    if (/\balpha test|alpha testing|test plan\b/i.test(message)) {
+      const { updateDoctrineConversationState } = require('./doctrineConversationState');
+      updateDoctrineConversationState(userId, {
+        sessionMemory: { ...(doctrineState.sessionMemory || {}), alphaTestingContext: true },
+      });
+      doctrineState = getDoctrineConversationState(userId);
+    }
+    const anchor = buildConversationAnchor({ userId, message, state: doctrineState });
+    const humanNeed = detectHumanNeed(message, anchor, doctrineState);
+    const draftRoute = structured.runtime?.masterRoute || null;
+    const draftOrchestratorLane = structured.runtime?.orchestratorLane || null;
+    structured = finalizeLiveResponse({
+      draft: structured,
+      message,
+      userId,
+      sessionId,
+      state: doctrineState,
+      anchor,
+      humanNeed,
+      relationshipContext: structured.runtime?.relationshipSummary || {},
+    });
+    const routeOwnership = buildRouteOwnershipTrace({
+      message,
+      structured,
+      humanNeed,
+      anchor,
+      doctrineState,
+      draftRoute,
+      draftOrchestratorLane,
+    });
+    structured.runtime = {
+      ...(structured.runtime || {}),
+      routeOwnership,
+    };
+    logRouteOwnership(routeOwnership);
+  } catch (liveOwnerErr) {
+    console.warn('liveResponseOwner finalize skipped:', liveOwnerErr.message);
   }
 
   if (

@@ -40,8 +40,21 @@ const metrics = {
   openAiDisabled: process.env.BIBLEBUDDY_DISABLE_OPENAI === '1',
   recentErrors: [],
   recentTimeouts: [],
+  recentFallbacks: [],
+  contractClarifiers: 0,
+  alphaActiveTesters: 0,
+  alphaSessionsToday: 0,
+  alphaFeedbackCount: 0,
+  alphaFlaggedDoctrineIssues: 0,
+  alphaFallbackCount: 0,
+  alphaAverageLatency: 0,
+  alphaNotificationQueueCount: 0,
+  alphaCaptureCount: 0,
 };
 
+let alphaLatencySum = 0;
+let alphaLatencyCount = 0;
+const alphaSessionsTodaySet = new Set();
 let latencySum = 0;
 let latencyCount = 0;
 
@@ -198,6 +211,91 @@ function recordStrictDoctrineBypass(userId = '') {
   persistSnapshot();
 }
 
+function recordAlphaCapture({ testerId = '', sessionId = '', latencyMs = 0, fallback = false, error = null } = {}) {
+  metrics.alphaCaptureCount += 1;
+  metrics.alphaActiveTesters = Math.max(metrics.alphaActiveTesters, countAlphaTesters());
+  if (sessionId) alphaSessionsTodaySet.add(`${testerId}:${sessionId}`);
+  metrics.alphaSessionsToday = alphaSessionsTodaySet.size;
+  if (latencyMs > 0) {
+    alphaLatencySum += latencyMs;
+    alphaLatencyCount += 1;
+    metrics.alphaAverageLatency = Math.round(alphaLatencySum / alphaLatencyCount);
+  }
+  if (fallback) metrics.alphaFallbackCount += 1;
+  if (error) metrics.alphaFlaggedDoctrineIssues += 1;
+  persistSnapshot();
+}
+
+function recordAlphaFeedback({ tag = '', testerId = '' } = {}) {
+  metrics.alphaFeedbackCount += 1;
+  if (tag === 'wrong_doctrine') metrics.alphaFlaggedDoctrineIssues += 1;
+  persistSnapshot();
+}
+
+function setAlphaNotificationQueueCount(count = 0) {
+  metrics.alphaNotificationQueueCount = count;
+  persistSnapshot();
+}
+
+function countAlphaTesters() {
+  try {
+    const { listTesters } = require('./alphaTesterManager');
+    return listTesters().length;
+  } catch {
+    return 0;
+  }
+}
+
+function recordContractHandled({
+  userId = '',
+  category = '',
+  route = '',
+} = {}) {
+  metrics.contractClarifiers += 1;
+  metrics.recentFallbacks = [
+    ...metrics.recentFallbacks,
+    {
+      at: new Date().toISOString(),
+      type: 'contract_clarifier',
+      category: String(category).slice(0, 40),
+      route: String(route).slice(0, 60),
+      userId: userId ? 'set' : '',
+    },
+  ].slice(-MAX_RECENT_ERRORS);
+  persistSnapshot();
+}
+
+function recordRouteFallback({
+  error = '',
+  errorCode = 'RUNTIME_ERROR',
+  routeOwner = '',
+  userId = '',
+  message = '',
+} = {}) {
+  metrics.errors += 1;
+  metrics.fallbackCount += 1;
+  metrics.recentFallbacks = [
+    ...metrics.recentFallbacks,
+    {
+      at: new Date().toISOString(),
+      type: 'route_fallback',
+      errorCode,
+      routeOwner: String(routeOwner).slice(0, 80),
+      userId: userId ? 'set' : '',
+    },
+  ].slice(-MAX_RECENT_ERRORS);
+  pushRecentError({
+    at: new Date().toISOString(),
+    type: 'route_fallback',
+    errorCode,
+    routeOwner: String(routeOwner).slice(0, 160),
+    error: String(error).slice(0, 200),
+    userId: userId ? 'set' : '',
+    messagePreview: String(message).slice(0, 80),
+  });
+  persistSnapshot();
+}
+
 function getRuntimeHealthSnapshot() {
   metrics.uptimeMs = Date.now() - startedAt;
   sampleMemory();
@@ -242,6 +340,11 @@ function persistSnapshot() {
 module.exports = {
   recordRequestOutcome,
   recordStrictDoctrineBypass,
+  recordRouteFallback,
+  recordContractHandled,
+  recordAlphaCapture,
+  recordAlphaFeedback,
+  setAlphaNotificationQueueCount,
   getRuntimeHealthSnapshot,
   persistSnapshot,
   handleMemoryPressure,

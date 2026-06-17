@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alpha Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/admin/theme.css" />
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; background: #f3f4f6; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .card { background: #fff; padding: 12px; border-radius: 8px; }
+    .card h3 { margin: 0 0 8px; font-size: 0.9rem; color: #6b7280; }
+    .card .val { font-size: 1.5rem; font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; background: #fff; margin-top: 16px; }
+    th, td { padding: 8px; border-bottom: 1px solid #eee; text-align: left; }
+    input, button { font: inherit; padding: 8px; margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <h1>Alpha Testing Dashboard</h1>
+  <label>Admin token</label>
+  <input type="password" id="token" placeholder="ALPHA_ADMIN_TOKEN" style="width:280px;" />
+  <button id="loadBtn">Load summary</button>
+  <button id="aggregateBtn">Run issue aggregation</button>
+  <a href="/admin/api/alpha/export/json" id="exportJson">Export JSON</a>
+  <div class="grid" id="metrics"></div>
+  <h2>Top topics</h2>
+  <table id="topics"><thead><tr><th>Topic</th><th>Count</th></tr></thead><tbody></tbody></table>
+  <h2>Feedback tags</h2>
+  <table id="tags"><thead><tr><th>Tag</th><th>Count</th></tr></thead><tbody></tbody></table>
+  <pre id="aggregateOut"></pre>
+  <script>
+    function authHeaders() {
+      const t = document.getElementById('token').value;
+      return t ? { Authorization: 'Bearer ' + t } : {};
+    }
+    document.getElementById('loadBtn').onclick = async () => {
+      const r = await fetch('/admin/api/alpha/summary', { headers: authHeaders() });
+      const j = await r.json();
+      if (!j.ok) { alert(j.error); return; }
+      const m = document.getElementById('metrics');
+      m.innerHTML = [
+        ['Active testers', j.testers.active],
+        ['Turns captured', j.conversations.totalTurns],
+        ['Turns today', j.conversations.today],
+        ['Avg turns/tester', j.conversations.averageTurnsPerTester],
+        ['RSS MB', j.health.rssMB],
+        ['Errors', j.health.errors],
+        ['Fallbacks', j.health.fallbackCount],
+        ['OpenAI calls', j.health.openAiCalls],
+        ['Strict doctrine', j.health.strictDoctrineCalls],
+        ['Alpha feedback', j.health.alpha.feedbackCount],
+      ].map(([k,v]) => '<div class="card"><h3>'+k+'</h3><div class="val">'+v+'</div></div>').join('');
+      const tb = document.querySelector('#topics tbody');
+      tb.innerHTML = (j.topTopics||[]).map((t) => '<tr><td>'+t.topic+'</td><td>'+t.count+'</td></tr>').join('');
+      const tg = document.querySelector('#tags tbody');
+      tg.innerHTML = Object.entries(j.feedbackTags||{}).map(([k,v]) => '<tr><td>'+k+'</td><td>'+v+'</td></tr>').join('');
+    };
+    document.getElementById('aggregateBtn').onclick = async () => {
+      const r = await fetch('/admin/api/alpha/aggregate-issues', { method: 'POST', headers: authHeaders() });
+      const j = await r.json();
+      document.getElementById('aggregateOut').textContent = JSON.stringify(j, null, 2);
+    };
+  </script>
+</body>
+</html>

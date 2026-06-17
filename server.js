@@ -96,6 +96,22 @@ mountRoute('Buddy routes', '/buddy', './routes/buddy');
 mountRoute('Runtime health routes', '/api', './routes/runtimeHealth');
 
 try {
+  const { verifyBuddyLivePathModules } = require('./services/buddyLivePathVerifier');
+  const livePath = verifyBuddyLivePathModules();
+  if (!livePath.ok) {
+    console.error(
+      'CRITICAL: Buddy live path module verification FAILED — missing:',
+      livePath.missingModules.join(', '),
+    );
+    console.error('Companion Chat will return responseGuarantee fallback until these files are deployed.');
+  } else {
+    console.log('Buddy live path verified:', livePath.routeOwner);
+  }
+} catch (e) {
+  console.warn('Buddy live path verification skipped:', e.message);
+}
+
+try {
   const { scheduleStateTtlCleanup } = require('./services/stateTtlCleanup');
   scheduleStateTtlCleanup();
 } catch (e) {
@@ -106,6 +122,8 @@ mountRoute('Realtime voice routes', '/api/realtime', './routes/realtime');
 mountRoute('Health signal routes', '/api/health/signals', './routes/healthSignals');
 mountRoute('Learning signal routes', '/api/learning', './routes/learningSignals');
 mountRoute('Beta routes', '/api/beta', './routes/beta');
+mountRoute('Alpha test routes', '/api/alpha', './routes/alphaTest');
+mountRoute('Alpha admin routes', '/admin/api/alpha', './routes/alphaAdmin');
 mountRoute('Platform unification routes', '/api/platform-unification', './routes/platformUnification');
 mountRoute('Bible Authority admin routes', '/admin/api/bible-authority', './routes/bibleAuthorityAdmin');
 
@@ -167,6 +185,18 @@ app.get('/admin', (req, res) => {
 
 app.get('/beta', (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'beta.html'));
+});
+
+app.get('/alpha', (req, res) => {
+  res.sendFile(path.join(ADMIN_DIR, 'alpha-test.html'));
+});
+
+app.get('/admin/alpha-test', (req, res) => {
+  res.sendFile(path.join(ADMIN_DIR, 'alpha-test.html'));
+});
+
+app.get('/admin/alpha-dashboard', (req, res) => {
+  res.sendFile(path.join(ADMIN_DIR, 'alpha-dashboard.html'));
 });
 
 app.get('/admin/beta-review', (req, res) => {

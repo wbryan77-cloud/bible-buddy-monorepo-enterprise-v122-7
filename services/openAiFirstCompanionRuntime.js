@@ -57,6 +57,148 @@ const {
   logPhase4d1CircuitBreaker,
   logPhase4d1OpenAiTimeout,
 } = require('./phase4d1RuntimeDiagnostics');
+const { buildConversationAnchor } = require('./conversationAnchorEngine');
+const { detectHumanNeed } = require('./humanNeedDetector');
+const { getDoctrineConversationState } = require('./doctrineConversationState');
+const { getRelationshipContext } = require('./relationshipMemoryEngine');
+const { buildIdentityReply } = require('./companionIdentityEngine');
+const { buildPrayerCompanionResponse } = require('./prayerCompanionEngine');
+const { buildPracticalWisdomResponse } = require('./practicalWisdomEngine');
+const { buildPresenceResponse } = require('./companionPresenceEngine');
+const { detectSemanticConcept } = require('./bibleSemanticConceptNormalizer');
+const {
+  buildCorrectionAckReply,
+} = require('./singleCompanionContract');
+
+const PROTECTED_COMPANION_NEEDS = new Set([
+  'app_identity',
+  'prayer',
+  'practical_words_to_say',
+  'memory_recall',
+  'memory_update',
+  'correction_repair',
+  'emotional_support',
+  'anxiety_support',
+  'conflict_guidance',
+  'temptation_boundary',
+  'one_anchor_verse',
+  'next_steps',
+]);
+
+function annotateLiveTruthReturn(structured, liveTruthTrace, selectedReturn, message) {
+  if (liveTruthTrace) {
+    structured.runtime = { ...(structured.runtime || {}), liveTruthTrace };
+  }
+  console.log(
+    '[LIVE_TRUTH_RETURN]',
+    JSON.stringify({
+      message,
+      selectedReturn,
+      replyPreview: String(structured?.reply || '').slice(0, 200),
+      route: structured?.runtime?.masterRoute || null,
+      doctrineTopic: structured?.runtime?.doctrineTopic || null,
+      humanNeed: liveTruthTrace?.orchestratorHumanNeed || null,
+    }),
+  );
+  return structured;
+}
+
+function applyProtectedCompanionReroute(orchestratorResult, humanNeed, { userId, message, safety }) {
+  const doctrineState = getDoctrineConversationState(userId);
+  const relContext = getRelationshipContext({ userId });
+  const mergedState = { ...doctrineState, ...relContext };
+  const anchor = buildConversationAnchor({ userId, message, state: mergedState });
+  const conceptMatch = detectSemanticConcept(message, mergedState);
+  const stableConcept =
+    mergedState.sessionMemory?.activeConcept ||
+    mergedState.lastAnsweredConcept ||
+    anchor.currentDoctrineConcept ||
+    conceptMatch?.id;
+
+  let reply = '';
+  let scripture = [];
+  let masterRoute = 'companion_protected_reroute';
+
+  if (humanNeed === 'app_identity') {
+    const identity = buildIdentityReply(message);
+    reply = identity.reply;
+    masterRoute = identity.masterRoute || 'app_identity';
+  } else if (humanNeed === 'prayer') {
+    const prayer = buildPrayerCompanionResponse({ message, anchor });
+    reply = prayer.reply;
+    scripture = prayer.scripture || [];
+    masterRoute = prayer.masterRoute || 'prayer_companion';
+  } else if (
+    humanNeed === 'practical_words_to_say' ||
+    humanNeed === 'conflict_guidance' ||
+    humanNeed === 'next_steps' ||
+    humanNeed === 'one_anchor_verse'
+  ) {
+    const wisdom = buildPracticalWisdomResponse({
+      message,
+      anchor,
+      state: mergedState,
+      conceptId: stableConcept,
+    });
+    if (wisdom) {
+      reply = wisdom.reply;
+      scripture = wisdom.scripture || [];
+      masterRoute = wisdom.masterRoute || 'practical_wisdom';
+    }
+  } else if (
+    humanNeed === 'emotional_support' ||
+    humanNeed === 'anxiety_support' ||
+    humanNeed === 'temptation_boundary'
+  ) {
+    const presence = buildPresenceResponse({ message, anchor, state: mergedState });
+    if (presence) {
+      reply = presence.reply;
+      scripture = presence.scripture || [];
+      masterRoute = presence.masterRoute || 'companion_presence';
+    }
+  } else if (humanNeed === 'correction_repair') {
+    const corr = buildCorrectionAckReply(userId, message);
+    reply = corr.reply;
+    scripture = corr.scripture || [];
+    masterRoute = 'correction_repair';
+  } else {
+    const existing = orchestratorResult.ctx?.structured?.reply;
+    if (existing && !/which book, topic, or passage/i.test(existing)) {
+      orchestratorResult.dispatch = 'companion';
+      orchestratorResult.ctx = { ...orchestratorResult.ctx, humanNeed };
+      return orchestratorResult;
+    }
+  }
+
+  if (!reply) {
+    orchestratorResult.dispatch = 'companion';
+    return orchestratorResult;
+  }
+
+  orchestratorResult.dispatch = 'companion';
+  orchestratorResult.ctx = {
+    ...orchestratorResult.ctx,
+    humanNeed,
+    route: masterRoute,
+    structured: {
+      reply,
+      scripture,
+      mode: 'companion',
+      confidence: 'high',
+      memory_used: true,
+      safety_level: safety?.level || 'standard',
+      admin_flags: ['phase5m4_protected_reroute', `protected_${humanNeed}`],
+      runtime: {
+        masterRoute,
+        openAiCalled: false,
+        orchestratorLane: humanNeed,
+        phase5M4ProtectedReroute: true,
+        doctrineTopic: null,
+      },
+    },
+  };
+  return orchestratorResult;
+}
 
 function buildDoctrineStrictRegenHint(validation = {}) {
   const parts = (validation.violations || []).map((v) => v.detail || v.code);
@@ -145,6 +287,8 @@ function returnBibleWideStructured(H, ctx) {
     historyAllowed: true,
   });
 
+  annotateLiveTruthReturn(out, ctx.liveTruthTrace, 'bible_wide', message);
+
   return H.finalizeBuddyResponse({
     structured: out,
     userId,
@@ -212,6 +356,8 @@ function returnCompanionLaneStructured(H, ctx) {
     historyAllowed: true,
   });
 
+  annotateLiveTruthReturn(out, ctx.liveTruthTrace, 'companion', message);
+
   return H.finalizeBuddyResponse({
     structured: out,
     userId,
@@ -278,6 +424,8 @@ function returnStrictDoctrineStructured(H, ctx) {
     currentIntent: evidencePack.currentIntent || 'study',
     historyAllowed: !!evidencePack.historyAllowed,
   });
+
+  annotateLiveTruthReturn(out, ctx.liveTruthTrace, 'strict', message);
 
   return H.finalizeBuddyResponse({
     structured: out,
@@ -347,6 +495,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
       currentIntent: 'crisis',
       historyAllowed: false,
     });
+    annotateLiveTruthReturn(crisisReply, null, 'fallback', message);
     return H.finalizeBuddyResponse({
       structured: crisisReply,
       userId,
@@ -391,9 +540,66 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     recentSessions,
   });
 
-  if (orchestratorResult.handled) {
-    const ctx = orchestratorResult.ctx;
-    if (orchestratorResult.dispatch === 'strict') {
+  const liveTruthTrace = {
+    at: new Date().toISOString(),
+    message,
+    userId,
+    runtimeContextIntent: runtimeContext?.intent || null,
+    orchestratorHandled: !!orchestratorResult?.handled,
+    orchestratorDispatch: orchestratorResult?.dispatch || null,
+    orchestratorMasterRoute:
+      orchestratorResult?.ctx?.route ||
+      orchestratorResult?.ctx?.structured?.runtime?.masterRoute ||
+      null,
+    orchestratorHumanNeed:
+      orchestratorResult?.ctx?.humanNeed ||
+      orchestratorResult?.ctx?.reasoningPlan?.humanNeed ||
+      orchestratorResult?.reasoningPlan?.humanNeed ||
+      null,
+    orchestratorReplyPreview: String(
+      orchestratorResult?.ctx?.structured?.reply || orchestratorResult?.ctx?.reply || '',
+    ).slice(0, 180),
+  };
+
+  console.log('[LIVE_TRUTH_ORCHESTRATOR]', JSON.stringify(liveTruthTrace));
+
+  let resolvedOrchestratorResult = orchestratorResult;
+  const detectedHumanNeed =
+    orchestratorResult?.ctx?.humanNeed ||
+    orchestratorResult?.ctx?.reasoningPlan?.humanNeed ||
+    orchestratorResult?.reasoningPlan?.humanNeed ||
+    null;
+
+  if (
+    resolvedOrchestratorResult.handled &&
+    PROTECTED_COMPANION_NEEDS.has(detectedHumanNeed) &&
+    resolvedOrchestratorResult.dispatch !== 'companion'
+  ) {
+    console.warn(
+      '[LIVE_TRUTH_PROTECTED_INTENT_REROUTE]',
+      JSON.stringify({
+        message,
+        detectedHumanNeed,
+        originalDispatch: resolvedOrchestratorResult.dispatch,
+        forcedDispatch: 'companion',
+      }),
+    );
+    resolvedOrchestratorResult = applyProtectedCompanionReroute(
+      resolvedOrchestratorResult,
+      detectedHumanNeed,
+      { userId, message, safety },
+    );
+    liveTruthTrace.orchestratorDispatch = 'companion';
+    liveTruthTrace.orchestratorProtectedReroute = true;
+    liveTruthTrace.orchestratorHumanNeed = detectedHumanNeed;
+    liveTruthTrace.orchestratorReplyPreview = String(
+      resolvedOrchestratorResult?.ctx?.structured?.reply || '',
+    ).slice(0, 180);
+  }
+
+  if (resolvedOrchestratorResult.handled) {
+    const ctx = { ...resolvedOrchestratorResult.ctx, liveTruthTrace };
+    if (resolvedOrchestratorResult.dispatch === 'strict') {
       logPhase4d1CircuitBreaker({
         userId,
         message,
@@ -402,15 +608,15 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
       });
       return returnStrictDoctrineStructured(H, ctx);
     }
-    if (orchestratorResult.dispatch === 'bible_wide') {
+    if (resolvedOrchestratorResult.dispatch === 'bible_wide') {
       return returnBibleWideStructured(H, ctx);
     }
-    if (orchestratorResult.dispatch === 'companion') {
+    if (resolvedOrchestratorResult.dispatch === 'companion') {
       return returnCompanionLaneStructured(H, ctx);
     }
   }
 
-  const routePlan = orchestratorResult.routePlan ||
+  const routePlan = resolvedOrchestratorResult.routePlan ||
     planCompanionDoctrineRouting({
       userId,
       message,
@@ -449,6 +655,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
         cohort,
         evidencePack,
         topic: retryGate.topic,
+        liveTruthTrace,
       });
     }
   }
@@ -488,6 +695,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
         evidencePack,
         topic,
         route: 'doctrine_final_authority_openai_block',
+        liveTruthTrace,
       });
     }
     const safe = buildDoctrineStrictSafeAnswer({
@@ -515,6 +723,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
       evidencePack,
       topic,
       route: 'doctrine_strict_safe_openai_block',
+      liveTruthTrace,
     });
     }
   }
@@ -909,7 +1118,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   structured.runtime = {
     ...(structured.runtime || {}),
     buddyRuntime: 'core_openai_first',
-    masterRoute: structured.runtime?.masterRoute || (openaiCalled ? 'core_openai_compose' : 'core_connection_error'),
+    masterRoute: structured.runtime?.masterRoute || (openaiCalled ? 'core_openai_compose' : 'companion_lane_fallback'),
     openAiCalled: openaiCalled,
     evidenceTopic: evidencePack.topic,
     effectiveTopic: evidencePack.effectiveTopic,
@@ -1014,6 +1223,9 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     topic: evidencePack.doctrineStrict?.strictTopic || evidencePack.topic,
     strictDoctrine: evidencePack.doctrineStrict?.enabled || false,
   });
+
+  const openAiReturnKind = fallbackUsed && !openaiCalled ? 'fallback' : 'openai';
+  annotateLiveTruthReturn(structured, liveTruthTrace, openAiReturnKind, message);
 
   return H.finalizeBuddyResponse({
     structured,

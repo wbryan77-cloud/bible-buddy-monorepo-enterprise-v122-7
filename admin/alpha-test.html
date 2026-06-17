@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BibleBuddy Alpha Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/admin/theme.css" />
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; background: #f3f4f6; color: #111; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 16px 16px 80px; }
+    .card { background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    h1 { margin: 0 0 8px; font-size: 1.4rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 600; margin: 8px 0 4px; }
+    input, select, textarea { width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 8px; font: inherit; }
+    button { background: #1d4ed8; color: #fff; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; font: inherit; }
+    button.secondary { background: #e5e7eb; color: #111; }
+    .hidden { display: none !important; }
+    .log { min-height: 240px; max-height: 50vh; overflow-y: auto; background: #fafafa; border-radius: 8px; padding: 8px; }
+    .msg { margin: 8px 0; }
+    .msg.user .bubble { background: #dbeafe; margin-left: auto; max-width: 85%; padding: 8px 12px; border-radius: 12px; }
+    .msg.bot .bubble { background: #f3f4f6; max-width: 85%; padding: 8px 12px; border-radius: 12px; white-space: pre-wrap; }
+    .feedback-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .feedback-row button { font-size: 0.8rem; padding: 6px 8px; }
+    .composer { display: flex; gap: 8px; margin-top: 10px; }
+    .composer input { flex: 1; }
+    .notice { font-size: 0.85rem; color: #4b5563; line-height: 1.45; }
+    .check { margin: 8px 0; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div id="onboardPanel" class="card">
+      <h1>BibleBuddy Alpha Test</h1>
+      <p class="notice">Experimental alpha — not public-ready. Conversations may be reviewed for quality and safety. Avoid highly sensitive personal details.</p>
+      <div id="inviteError" class="hidden" style="color:#b91c1c;"></div>
+      <label>Name</label>
+      <input id="name" />
+      <label>Email or phone (optional)</label>
+      <input id="emailOrPhone" />
+      <label>Age range</label>
+      <select id="ageRange"></select>
+      <label>Role / relationship to project</label>
+      <input id="role" placeholder="friend, family, church member..." />
+      <label>Device type</label>
+      <input id="deviceType" placeholder="iPhone, Android, desktop..." />
+      <label>Time zone</label>
+      <input id="timeZone" placeholder="America/New_York" />
+      <label>Bible familiarity</label>
+      <select id="bibleFamiliarity"></select>
+      <label>Test focus</label>
+      <select id="testFocus"></select>
+      <label>Notification preference</label>
+      <select id="notificationPreference"></select>
+      <div class="check"><input type="checkbox" id="consent" /> I consent to testing and understand conversations may be reviewed to improve the app.</div>
+      <div class="check"><input type="checkbox" id="nda" /> I agree to keep this alpha test confidential and will not share the app link or screenshots publicly.</div>
+      <p class="notice">BibleBuddy is not a pastor, therapist, doctor, or legal advisor. Scripture answers are for study and support.</p>
+      <button type="button" id="startBtn">Start test session</button>
+    </div>
+
+    <div id="chatPanel" class="hidden">
+      <div class="card">
+        <h1>Alpha chat</h1>
+        <p class="notice" id="testerMeta"></p>
+        <div class="log" id="log"></div>
+        <div class="composer">
+          <input id="messageInput" placeholder="Ask BibleBuddy..." />
+          <button type="button" id="sendBtn">Send</button>
+        </div>
+        <p class="notice">Quick feedback on Buddy's last reply:</p>
+        <div class="feedback-row" id="feedbackTags"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const inviteToken = params.get('token') || '';
+    let testerId = '';
+    let sessionId = 'sess-' + Date.now();
+    let lastMessageId = '';
+
+    const TAGS = [
+      { tag: 'helpful', label: '👍 helpful' },
+      { tag: 'not_helpful', label: '👎 not helpful' },
+      { tag: 'wrong_doctrine', label: '⚠️ wrong Scripture' },
+      { tag: 'didnt_listen', label: '💬 didn’t listen' },
+      { tag: 'too_robotic', label: '🧊 too robotic' },
+      { tag: 'felt_supportive', label: '❤️ supportive' },
+      { tag: 'bug_glitch', label: '🐞 bug' },
+    ];
+
+    async function loadInvite() {
+      if (!inviteToken) {
+        document.getElementById('inviteError').textContent = 'Missing invite token in URL.';
+        document.getElementById('inviteError').classList.remove('hidden');
+        return;
+      }
+      const r = await fetch('/api/alpha/invite/' + encodeURIComponent(inviteToken));
+      const j = await r.json();
+      if (!j.ok) {
+        document.getElementById('inviteError').textContent = j.error || 'Invalid invite';
+        document.getElementById('inviteError').classList.remove('hidden');
+        return;
+      }
+      const fill = (id, opts) => {
+        const el = document.getElementById(id);
+        el.innerHTML = opts.map((o) => '<option value="' + o + '">' + o.replace(/_/g, ' ') + '</option>').join('');
+      };
+      fill('ageRange', j.options.ageRanges);
+      fill('bibleFamiliarity', j.options.bibleFamiliarity);
+      fill('testFocus', j.options.testFocus);
+      fill('notificationPreference', j.options.notificationPrefs);
+      if (j.used && j.tester) {
+        testerId = j.tester.testerId;
+        showChat(j.tester.name || j.tester.testerId);
+      }
+    }
+
+    function showChat(name) {
+      document.getElementById('onboardPanel').classList.add('hidden');
+      document.getElementById('chatPanel').classList.remove('hidden');
+      document.getElementById('testerMeta').textContent = 'Tester: ' + name + ' · Session ' + sessionId;
+      const fb = document.getElementById('feedbackTags');
+      fb.innerHTML = TAGS.map((t) => '<button type="button" class="secondary" data-tag="' + t.tag + '">' + t.label + '</button>').join('');
+      fb.querySelectorAll('button').forEach((btn) => btn.addEventListener('click', () => sendFeedback(btn.dataset.tag)));
+    }
+
+    function addMsg(role, text) {
+      const log = document.getElementById('log');
+      const div = document.createElement('div');
+      div.className = 'msg ' + role;
+      div.innerHTML = '<div class="bubble">' + text.replace(/</g, '&lt;') + '</div>';
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    async function sendFeedback(tag) {
+      if (!testerId || !lastMessageId) return;
+      await fetch('/api/alpha/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ testerId, sessionId, messageId: lastMessageId, tag }),
+      });
+      addMsg('bot', '[Feedback recorded: ' + tag + ']');
+    }
+
+    document.getElementById('startBtn').addEventListener('click', async () => {
+      if (!document.getElementById('consent').checked || !document.getElementById('nda').checked) {
+        alert('Please accept consent and confidentiality agreement.');
+        return;
+      }
+      const body = {
+        inviteToken,
+        name: document.getElementById('name').value,
+        emailOrPhone: document.getElementById('emailOrPhone').value,
+        ageRange: document.getElementById('ageRange').value,
+        role: document.getElementById('role').value,
+        deviceType: document.getElementById('deviceType').value,
+        timeZone: document.getElementById('timeZone').value,
+        bibleFamiliarity: document.getElementById('bibleFamiliarity').value,
+        testFocus: document.getElementById('testFocus').value,
+        notificationPreference: document.getElementById('notificationPreference').value,
+        consentAccepted: true,
+        ndaAccepted: true,
+      };
+      const r = await fetch('/api/alpha/onboard', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const j = await r.json();
+      if (!j.ok) { alert(j.error || 'Onboarding failed'); return; }
+      testerId = j.testerId;
+      await fetch('/api/alpha/session/start', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ testerId, sessionId }) });
+      showChat(j.tester?.name || testerId);
+    });
+
+    document.getElementById('sendBtn').addEventListener('click', async () => {
+      const message = document.getElementById('messageInput').value.trim();
+      if (!message || !testerId) return;
+      document.getElementById('messageInput').value = '';
+      addMsg('user', message);
+      lastMessageId = 'msg-' + Date.now();
+      const r = await fetch('/buddy/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-request-id': lastMessageId },
+        body: JSON.stringify({ testerId, userId: testerId, sessionId, message, mode: 'COMPANION' }),
+      });
+      const j = await r.json();
+      const reply = j.reply?.reply || j.error || 'No response';
+      addMsg('bot', reply);
+    });
+
+    loadInvite();
+  </script>
+</body>
+</html>

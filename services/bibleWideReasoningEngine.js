@@ -1,20 +1,28 @@
 /**
- * Phase 4O — Bible-wide line-upon-line answer builder for concepts beyond frozen strict templates.
+ * Phase 4O / 5E — Bible-wide line-upon-line answer builder.
  */
 
 const {
-  detectBibleConcept,
   detectConceptFromContinuation,
-  getConceptWitnesses,
-  getConceptById,
   CONTINUATION_PHRASE_RE,
 } = require('./bibleConceptConcordance');
+const {
+  getGraphNode,
+  getGraphWitnesses,
+} = require('./bibleConceptGraph');
+const { detectSemanticConcept } = require('./bibleSemanticConceptNormalizer');
+const { resolveFollowUpContext } = require('./followUpContextResolver');
 const {
   getDoctrineConversationState,
   updateDoctrineConversationState,
 } = require('./doctrineConversationState');
 const { formatDirectDoctrineReply } = require('./directAnswerFormatter');
 const { applyUserAnswerPreferences, getUserAnswerPreferences } = require('./userCorrectionMemory');
+const { validateBncAnswer } = require('./bncSafetyValidator');
+
+function getConceptById(id) {
+  return getGraphNode(id);
+}
 
 function buildDirectAnswerPolarity(message = '', concept = null) {
   if (!concept) return null;
@@ -22,7 +30,7 @@ function buildDirectAnswerPolarity(message = '', concept = null) {
 }
 
 function selectDirectWitnesses(concept, limit = 3, exclude = []) {
-  const c = typeof concept === 'string' ? getConceptById(concept) : concept;
+  const c = typeof concept === 'string' ? getGraphNode(concept) : concept;
   if (!c) return [];
   const excludeSet = new Set(exclude.map((r) => String(r).toLowerCase()));
   const pool = [...(c.directWitnesses || []), ...(c.supportingWitnesses || [])];
@@ -35,15 +43,8 @@ function selectDirectWitnesses(concept, limit = 3, exclude = []) {
   return selected;
 }
 
-function selectSupportingWitnesses(concept, exclude = []) {
-  const c = typeof concept === 'string' ? getConceptById(concept) : concept;
-  if (!c) return [];
-  const excludeSet = new Set(exclude.map((r) => String(r).toLowerCase()));
-  return (c.supportingWitnesses || []).filter((r) => !excludeSet.has(r.toLowerCase()));
-}
-
 function buildLineUponLineExplanation(concept, witnesses = []) {
-  const c = typeof concept === 'string' ? getConceptById(concept) : concept;
+  const c = typeof concept === 'string' ? getGraphNode(concept) : concept;
   if (!c) return '';
   const refs = witnesses.length ? witnesses : selectDirectWitnesses(c, 3);
   if (!refs.length) return c.directAnswer || '';
@@ -55,6 +56,7 @@ function getConceptState(userId) {
   const state = getDoctrineConversationState(userId);
   return {
     activeBibleConcept: state.activeBibleConcept || null,
+    lastAnsweredConcept: state.lastAnsweredConcept || state.activeBibleConcept || null,
     usedConceptWitnesses: state.usedConceptWitnesses || [],
     lastPendingQuestion: state.lastPendingQuestion || null,
   };
@@ -64,6 +66,7 @@ function setActiveBibleConcept(userId, conceptId, userMessage = '', witnesses = 
   return updateDoctrineConversationState(userId, {
     activeBibleConcept: conceptId,
     lastBibleConcept: conceptId,
+    lastAnsweredConcept: conceptId,
     activeDoctrineTopic: null,
     activeStrictContract: null,
     activeContract: null,
@@ -76,15 +79,30 @@ function setActiveBibleConcept(userId, conceptId, userMessage = '', witnesses = 
 }
 
 function resolveConceptForMessage(message = '', userId = '') {
+  const state = getDoctrineConversationState(userId);
+  const context = {
+    activeBibleConcept: state.activeBibleConcept,
+    lastAnsweredConcept: state.lastAnsweredConcept || state.activeBibleConcept,
+    lastBibleConcept: state.lastBibleConcept,
+  };
+
+  const followUp = resolveFollowUpContext(message, context);
+  if (followUp?.isActorQuestion) {
+    return { actorFollowUp: followUp };
+  }
+  if (followUp?.conceptId) {
+    const node = getGraphNode(followUp.conceptId);
+    if (node) return node;
+  }
+
   const fromContinuation = detectConceptFromContinuation(message);
   if (fromContinuation) return fromContinuation;
 
-  const direct = detectBibleConcept(message);
-  if (direct) return direct;
+  const semantic = detectSemanticConcept(message, context);
+  if (semantic) return semantic;
 
-  const state = getConceptState(userId);
   if (CONTINUATION_PHRASE_RE.test(message) && state.activeBibleConcept) {
-    return getConceptById(state.activeBibleConcept);
+    return getGraphNode(state.activeBibleConcept);
   }
 
   return null;
@@ -98,7 +116,19 @@ function buildBibleWideAnswer({
   conversationState = null,
   isContinuation = false,
 } = {}) {
-  const concept = conceptInput || resolveConceptForMessage(message, userId);
+  let concept = conceptInput || resolveConceptForMessage(message, userId);
+  if (concept?.actorFollowUp) {
+    const af = concept.actorFollowUp;
+    return {
+      reply: af.reply,
+      scripture: af.scripture || [],
+      concept: af.conceptId,
+      strictTopic: null,
+      polarity: null,
+      witnesses: (af.scripture || []).map((s) => s.reference),
+      masterRoute: af.masterRoute || 'bnc_followup_actor',
+    };
+  }
   if (!concept) return null;
 
   const prefs = userPreferences || getUserAnswerPreferences(userId);
@@ -108,9 +138,7 @@ function buildBibleWideAnswer({
   let witnesses;
   if (isContinuation || CONTINUATION_PHRASE_RE.test(message)) {
     witnesses = selectDirectWitnesses(concept, 3, used);
-    if (!witnesses.length) {
-      witnesses = selectDirectWitnesses(concept, 3, []);
-    }
+    if (!witnesses.length) witnesses = selectDirectWitnesses(concept, 3, []);
   } else {
     witnesses = selectDirectWitnesses(concept, 3);
   }
@@ -143,6 +171,14 @@ function buildBibleWideAnswer({
     polarity,
   });
 
+  const validated = validateBncAnswer({
+    reply,
+    concept,
+    witnesses,
+    source: 'bible_wide',
+  });
+  reply = validated.reply;
+
   const scripture = witnesses.map((r) => ({ reference: r, theme: concept.id }));
   const allUsed = [...used, ...witnesses];
 
@@ -170,7 +206,7 @@ function buildBibleWideStructured(answer, runtimeContext = {}, safety = {}) {
     confidence: 'high',
     memory_used: false,
     safety_level: safety?.level || 'standard',
-    admin_flags: ['bible_wide_reasoning', `concept_${answer.concept}`],
+    admin_flags: ['bible_wide_reasoning', `concept_${answer.concept}`, 'bnc_phase5e'],
     runtime: {
       emotion: runtimeContext?.emotion,
       intent: runtimeContext?.intent || 'study',
@@ -179,6 +215,8 @@ function buildBibleWideStructured(answer, runtimeContext = {}, safety = {}) {
       buddyRuntime: 'core_openai_first',
       bibleConcept: answer.concept,
       doctrineTopic: answer.strictTopic || null,
+      phase5A: true,
+      bncConcept: answer.concept,
     },
   };
 }
@@ -186,11 +224,11 @@ function buildBibleWideStructured(answer, runtimeContext = {}, safety = {}) {
 module.exports = {
   buildBibleWideAnswer,
   selectDirectWitnesses,
-  selectSupportingWitnesses,
   buildDirectAnswerPolarity,
   buildLineUponLineExplanation,
   resolveConceptForMessage,
   setActiveBibleConcept,
   getConceptState,
   buildBibleWideStructured,
+  getConceptById,
 };

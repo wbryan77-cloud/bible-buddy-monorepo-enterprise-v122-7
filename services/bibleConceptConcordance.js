@@ -88,6 +88,8 @@ const CONCEPTS = {
       /\bmore scriptures?\b.*\b(man staying on earth|kingdom coming)\b/i,
       /\bkingdom coming\b/i,
       /\bthy kingdom come\b/i,
+      /\bis heaven coming to earth\b/i,
+      /\bheaven coming to earth\b/i,
     ],
     directWitnesses: [
       'Matthew 6:10',

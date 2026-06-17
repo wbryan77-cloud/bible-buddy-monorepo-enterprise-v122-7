@@ -210,6 +210,51 @@
       line-height: 1.48;
     }
 
+    .msg.buddy.thinking .mini-orb-inline {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 35% 30%, #eaffff, var(--blue-soft) 26%, var(--blue) 58%, #1437ff 100%);
+      box-shadow: 0 0 16px rgba(61,183,255,0.6);
+      animation: thinking 1.2s linear infinite;
+      flex-shrink: 0;
+    }
+    .msg.buddy.thinking {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .chat-footer {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      align-items: center;
+    }
+    .chat-footer a, .prompt-chip {
+      color: var(--blue-soft);
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: 1px solid rgba(61,183,255,0.25);
+      border-radius: 999px;
+      padding: 6px 12px;
+    }
+    .chat-footer a:hover, .prompt-chip:hover { text-decoration: underline; }
+    .reading-plan-link {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: var(--blue-soft);
+      text-decoration: none;
+    }
+    .reading-plan-link:hover { text-decoration: underline; }
+
     .msg.buddy {
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.1);
@@ -385,6 +430,7 @@
           <button class="secondary" onclick="quickAsk('I want to study the Bible more deeply. Where should I start?')">Study</button>
           <button class="secondary" onclick="quickAsk('Help me think about wellness as stewardship, not medical advice.')">Stewardship</button>
         </div>
+        <a class="reading-plan-link" href="#reading-plan" id="readingPlanLink">Start a one-year Bible reading plan</a>
       </div>
 
       <div class="card chat">
@@ -398,6 +444,12 @@
           <button type="submit">Send</button>
         </form>
         <p class="fineprint">Buddy is not a therapist, doctor, pastor, or emergency service. It can support reflection, prayer, and Scripture-grounded encouragement. In crisis or danger, contact emergency services or 988 in the U.S.</p>
+        <div class="chat-footer">
+          <button type="button" class="prompt-chip" onclick="quickAsk('Can you pray with me?')">Pray with me</button>
+          <button type="button" class="prompt-chip" onclick="quickAsk('Give me a verse to hold onto today.')">Give me a verse</button>
+          <button type="button" class="prompt-chip" onclick="quickAsk('Help me explain this to my family.')">Help me explain this</button>
+          <a href="#reading-plan" id="footerReadingPlanLink">Start a one-year Bible reading plan</a>
+        </div>
       </div>
     </section>
 
@@ -447,6 +499,7 @@
     }
 
     function addMessage(kind, text, scripture = []) {
+      removeThinkingBubble();
       const div = document.createElement('div');
       div.className = `msg ${kind}`;
       div.textContent = text;
@@ -469,6 +522,30 @@
       sendMessage(new Event('submit'));
     }
 
+    function showThinkingBubble() {
+      removeThinkingBubble();
+      const div = document.createElement('div');
+      div.className = 'msg buddy thinking';
+      div.id = 'thinkingBubble';
+      div.innerHTML = '<div class="mini-orb-inline" aria-hidden="true"></div><span>Buddy is thinking…</span>';
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function removeThinkingBubble() {
+      const el = document.getElementById('thinkingBubble');
+      if (el) el.remove();
+    }
+
+    document.getElementById('readingPlanLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      quickAsk('Help me start a one-year Bible reading plan. Where should I begin?');
+    });
+    document.getElementById('footerReadingPlanLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      quickAsk('Help me start a one-year Bible reading plan. Where should I begin?');
+    });
+
     async function sendMessage(event) {
       event.preventDefault();
       const message = input.value.trim();
@@ -478,7 +555,10 @@
       input.value = '';
       setOrb('listening');
 
-      window.setTimeout(() => setOrb('thinking'), 420);
+      window.setTimeout(() => {
+        setOrb('thinking');
+        showThinkingBubble();
+      }, 420);
 
       try {
         const res = await fetch('/buddy/chat', {
@@ -511,6 +591,7 @@
         addMessage('buddy', replyText, payload.scripture || []);
         window.setTimeout(() => setOrb('idle'), 4200);
       } catch (error) {
+        removeThinkingBubble();
         setOrb('idle');
         const detail = error && error.message ? error.message : 'Unknown error';
         addMessage(

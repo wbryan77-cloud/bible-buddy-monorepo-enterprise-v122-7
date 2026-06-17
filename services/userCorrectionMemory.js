@@ -10,6 +10,26 @@ const MEMORY_PATH = path.join(__dirname, '..', 'data', 'user-correction-memory.j
 
 const CORRECTION_PATTERNS = [
   {
+    re: /\bwhy are you still saying yes\b/i,
+    preference: { forbidYesOpener: true, requireNoForForbidden: true, yesNoDirect: true },
+    label: 'why_still_saying_yes',
+  },
+  {
+    re: /\bdon'?t (ever )?do (it|that) again\b/i,
+    preference: { forbidYesOpener: true, requireNoForForbidden: true },
+    label: 'dont_do_that_again',
+  },
+  {
+    re: /\bdon'?t say yes before a question\b/i,
+    preference: { forbidYesOpener: true, requireNoForForbidden: true },
+    label: 'no_yes_before_question',
+  },
+  {
+    re: /\byou didn'?t learn\b/i,
+    preference: { forbidYesOpener: true, requireNoForForbidden: true },
+    label: 'didnt_learn',
+  },
+  {
     re: /\bstop saying yes\b.*\bsay no\b/i,
     preference: { forbidYesOpener: true, requireNoForForbidden: true, yesNoDirect: true },
     label: 'stop_saying_yes_say_no',
@@ -23,6 +43,11 @@ const CORRECTION_PATTERNS = [
     re: /\bsay no and\b/i,
     preference: { forbidYesOpener: true, requireNoForForbidden: true, yesNoDirect: true },
     label: 'say_no_and_explanation',
+  },
+  {
+    re: /\b(remember that i|i like) direct answers?\b/i,
+    preference: { yesNoDirect: true, directAnswerFirst: true },
+    label: 'direct_answers_first',
   },
   {
     re: /\banswer yes or no\b/i,
@@ -66,8 +91,11 @@ const DEFAULT_PREFERENCES = {
   requireNoForForbidden: false,
   yesNoDirect: false,
   listenFirst: false,
-  forbidPhrases: [],
-  forbidParableDoctrineProof: false,
+  forbidPhrases: ['primarily', 'mainly', 'largely', 'interpretations vary', 'traditions vary'],
+  forbidParableDoctrineProof: true,
+  directAnswerFirst: true,
+  giveTwoThreeScriptures: true,
+  companionWarmth: true,
 };
 
 function loadMemory() {
@@ -190,11 +218,30 @@ function isCorrectionMessage(message = '') {
   return CORRECTION_PATTERNS.some((p) => p.re.test(String(message || '')));
 }
 
+function clearUserPreferences(userId) {
+  if (!userId) return false;
+  const mem = loadMemory();
+  if (!mem.users[userId]) {
+    mem.users[userId] = { preferences: { ...DEFAULT_PREFERENCES }, corrections: [] };
+  }
+  mem.users[userId].preferences = {
+    ...DEFAULT_PREFERENCES,
+    directAnswerFirst: false,
+    yesNoDirect: false,
+    forbidYesOpener: false,
+    requireNoForForbidden: false,
+  };
+  mem.users[userId].corrections = [];
+  saveMemory(mem);
+  return true;
+}
+
 module.exports = {
   recordUserCorrection,
   getUserAnswerPreferences,
   applyUserAnswerPreferences,
   buildCorrectionAcknowledgment,
   isCorrectionMessage,
+  clearUserPreferences,
   CORRECTION_PATTERNS,
 };

@@ -6,7 +6,15 @@ const { applyDoctrineErrorFirewall, USER_SAFE_RETRIEVAL_MESSAGE } = require('./d
 const { getActiveDoctrineTopic } = require('./doctrineConversationState');
 const { buildFinalAuthorityAnswer, buildFinalAuthorityStructured } = require('./doctrineFinalAuthorityEngine');
 const { BASE_CONTRACTS } = require('./doctrineAuthorityContract');
-const { recordRequestOutcome, handleMemoryPressure, sampleMemory } = require('./runtimeHealthMonitor');
+const {
+  recordRequestOutcome,
+  recordRouteFallback,
+  handleMemoryPressure,
+  sampleMemory,
+} = require('./runtimeHealthMonitor');
+
+const ROUTE_OWNER =
+  'POST /buddy/chat → routes/buddy.js → withBuddyChatGuarantee → runBuddy → openAiFirstCompanionRuntime → bibleCompanionOrchestrator';
 
 const DEFAULT_TIMEOUT_MS = Number(process.env.BIBLEBUDDY_CHAT_TIMEOUT_MS || 55000);
 const COMPANION_SAFE_FALLBACK =
@@ -37,9 +45,27 @@ function buildStrictDoctrineEmergencyReply(userId, message = '') {
   return { ok: true, reply: payload };
 }
 
-function buildCompanionEmergencyReply(userId) {
+function classifyChatError(errMsg = '') {
+  if (errMsg.includes('chat_timeout')) return 'CHAT_TIMEOUT';
+  if (/cannot find module/i.test(errMsg)) return 'MODULE_LOAD_ERROR';
+  return 'RUNTIME_ERROR';
+}
+
+function buildCompanionEmergencyReply(userId, context = {}) {
+  const errorCode = context.errorCode || 'RUNTIME_ERROR';
   const payload = applyDoctrineErrorFirewall(
-    { reply: COMPANION_SAFE_FALLBACK, mode: 'companion', confidence: 'medium' },
+    {
+      reply: COMPANION_SAFE_FALLBACK,
+      mode: 'companion',
+      confidence: 'medium',
+      runtime: {
+        masterRoute: 'response_guarantee_fallback',
+        fallbackErrorCode: errorCode,
+        routeOwner: ROUTE_OWNER,
+        openAiCalled: false,
+        buddyRuntime: 'response_guarantee',
+      },
+    },
     { userId, strictDoctrine: false },
   );
   return { ok: true, reply: payload };
@@ -70,30 +96,43 @@ async function withBuddyChatGuarantee(handler, context = {}) {
   handleMemoryPressure();
   try {
     const result = await withTimeout(handler(), timeoutMs);
+    const firewalled = applyDoctrineErrorFirewall(result, {
+      userId,
+      strictDoctrine: !!result?.runtime?.doctrineTopic,
+    });
     recordRequestOutcome({
       userId,
       latencyMs: Date.now() - started,
       ok: true,
-      route: result?.runtime?.masterRoute,
-      strictDoctrine: !!result?.runtime?.doctrineTopic,
-      openAiCalled: !!result?.runtime?.openAiCalled,
+      route: firewalled?.runtime?.masterRoute,
+      strictDoctrine: !!firewalled?.runtime?.doctrineTopic,
+      openAiCalled: !!firewalled?.runtime?.openAiCalled,
     });
-    return { ok: true, reply: result };
+    return { ok: true, reply: firewalled };
   } catch (e) {
     const errMsg = String(e?.message || e);
-    console.error('[responseGuarantee] chat error:', errMsg);
+    const errorCode = classifyChatError(errMsg);
+    console.error('[responseGuarantee] chat error:', errorCode, errMsg);
+    recordRouteFallback({
+      error: errMsg,
+      errorCode,
+      routeOwner: ROUTE_OWNER,
+      userId,
+      message,
+    });
     recordRequestOutcome({
       userId,
       latencyMs: Date.now() - started,
       ok: false,
       error: errMsg,
+      route: 'response_guarantee_fallback',
       timeout: errMsg.includes('chat_timeout'),
     });
     const active = getActiveDoctrineTopic(userId);
     if (active) {
       return buildStrictDoctrineEmergencyReply(userId, message);
     }
-    return buildCompanionEmergencyReply(userId);
+    return buildCompanionEmergencyReply(userId, { errorCode });
   }
 }
 

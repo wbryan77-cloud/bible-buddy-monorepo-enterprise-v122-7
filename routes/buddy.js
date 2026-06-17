@@ -6,6 +6,8 @@ const { buildLiveRequestTrace, logLiveRequestTrace } = require('../services/live
 const { logLiveResponseCapture } = require('../services/liveResponseCapture');
 const { applyDoctrineErrorFirewall } = require('../services/doctrineErrorFirewall');
 const { withBuddyChatGuarantee } = require('../services/responseGuarantee');
+const { captureAlphaTurn } = require('../services/alphaConversationCapture');
+const { isActiveAlphaTester } = require('../services/alphaTesterManager');
 
 const router = express.Router();
 
@@ -82,6 +84,21 @@ async function handleBuddyChat({ body, res, requestId }) {
   }
   if (process.env.BUDDY_LIVE_TRACE === '1') {
     payload.liveRequestTrace = reply.liveRequestTrace;
+  }
+  const latencyMs = Date.now() - started;
+  if (isActiveAlphaTester(testerId)) {
+    try {
+      captureAlphaTurn({
+        testerId,
+        sessionId,
+        message,
+        reply: payload,
+        latencyMs,
+        messageId: requestId,
+      });
+    } catch (captureErr) {
+      console.warn('[alphaCapture] skipped:', captureErr.message);
+    }
   }
   emitBuddyChatJson(res, {
     requestId,
