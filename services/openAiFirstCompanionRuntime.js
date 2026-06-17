@@ -597,6 +597,18 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     ).slice(0, 180);
   }
 
+  const routePlanForTrace =
+    resolvedOrchestratorResult.routePlan ||
+    planCompanionDoctrineRouting({
+      userId,
+      message,
+      recentSessions,
+      runtimeContext,
+    });
+  liveTruthTrace.routePlanHumanNeed =
+    routePlanForTrace?.humanNeed || liveTruthTrace.orchestratorHumanNeed || null;
+  liveTruthTrace.protectedHumanNeed = !!routePlanForTrace?.protectedHumanNeed;
+
   if (resolvedOrchestratorResult.handled) {
     const ctx = { ...resolvedOrchestratorResult.ctx, liveTruthTrace };
     if (resolvedOrchestratorResult.dispatch === 'strict') {
@@ -616,15 +628,15 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     }
   }
 
-  const routePlan = resolvedOrchestratorResult.routePlan ||
-    planCompanionDoctrineRouting({
-      userId,
-      message,
-      recentSessions,
-      runtimeContext,
-    });
+  const routePlan = resolvedOrchestratorResult.routePlan || routePlanForTrace;
 
-  if (mustBlockOpenAi(evidencePack, userId, message, routePlan)) {
+  liveTruthTrace.routePlanHumanNeed = routePlan?.humanNeed || liveTruthTrace.orchestratorHumanNeed || null;
+  liveTruthTrace.protectedHumanNeed = !!routePlan?.protectedHumanNeed;
+
+  const shouldTryStrictOpenAiBlock = () =>
+    !routePlan?.protectedHumanNeed && mustBlockOpenAi(evidencePack, userId, message, routePlan);
+
+  if (shouldTryStrictOpenAiBlock()) {
     logPhase4eLivePathError({
       userId,
       message,
@@ -666,7 +678,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   let doctrineStrictValidation = null;
   let doctrineStrictSafeUsed = false;
 
-  if (mustBlockOpenAi(evidencePack, userId, message, routePlan)) {
+  if (shouldTryStrictOpenAiBlock()) {
     logPhase4eLivePathError({ userId, message, reason: 'openai_blocked_strict_doctrine' });
     const { buildFinalAuthorityAnswer, buildFinalAuthorityStructured } = require('./doctrineFinalAuthorityEngine');
     const topic = routePlan.strictTopic || evidencePack.doctrineStrict?.strictTopic;
@@ -845,7 +857,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
       });
 
       if (!doctrineStrictValidation.passed && !doctrineStrictRegenerated) {
-        if (mustBlockOpenAi(evidencePack, userId, message, routePlan)) {
+        if (shouldTryStrictOpenAiBlock()) {
           const { buildFinalAuthorityAnswer, buildFinalAuthorityStructured } = require('./doctrineFinalAuthorityEngine');
           const blockTopic = routePlan.strictTopic || evidencePack.doctrineStrict.strictTopic;
           const blockAuthority = buildFinalAuthorityAnswer({

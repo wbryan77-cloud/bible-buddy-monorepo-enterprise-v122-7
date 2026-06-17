@@ -133,6 +133,11 @@ function runStrictDoctrineGate({
       runtimeContext,
     });
 
+  if (routePlan.protectedHumanNeed || routePlan.lane === 'companion') {
+    evidencePack.doctrineStrict = { enabled: false };
+    return { handled: false, routePlan };
+  }
+
   applyDoctrineRoutingSideEffects(userId, routePlan, message);
 
   if (routePlan.lane !== 'strict_doctrine') {

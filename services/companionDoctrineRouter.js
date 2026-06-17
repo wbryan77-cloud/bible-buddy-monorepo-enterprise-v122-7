@@ -9,6 +9,8 @@ const {
   detectConceptFromContinuation,
   CONTINUATION_PHRASE_RE,
 } = require('./bibleConceptConcordance');
+const { detectSemanticConcept, shouldClearStaleTopic } = require('./bibleSemanticConceptNormalizer');
+const { mapTopicToConceptId } = require('./followUpContextResolver');
 const { isCorrectionMessage, buildCorrectionAcknowledgment } = require('./userCorrectionMemory');
 const {
   getDoctrineConversationState,
@@ -16,6 +18,7 @@ const {
   releaseDoctrineTopic,
   TOPIC_LABELS,
 } = require('./doctrineConversationState');
+const { detectHumanNeed } = require('./humanNeedDetector');
 
 const STRICT_DOCTRINE_TOPICS = [
   'acts_10',
@@ -115,7 +118,6 @@ function buildRoutingContext(userId, extra = {}) {
     activeDoctrineTopic: state.activeDoctrineTopic || null,
     lastUserQuestion: state.lastUserQuestion || null,
     lastAnsweredTopic: state.lastAnsweredTopic || state.activeDoctrineTopic || null,
-    lastLane: state.lastLane || 'companion',
     lastStrictDoctrineTopic: state.lastStrictDoctrineTopic || null,
     releaseRequested: !!state.releaseRequested,
     nonDoctrineTurnCount: state.nonDoctrineTurnCount || 0,
@@ -123,7 +125,9 @@ function buildRoutingContext(userId, extra = {}) {
     lastBibleConcept: state.lastBibleConcept || state.activeBibleConcept || null,
     usedConceptWitnesses: state.usedConceptWitnesses || [],
     lastPendingQuestion: state.lastPendingQuestion || null,
+    lastAnsweredConcept: state.lastAnsweredConcept || state.activeBibleConcept || null,
     previousDoctrineTopic: state.previousDoctrineTopic || null,
+    topicHistory: state.topicHistory || [],
     ...extra,
   };
 }
@@ -138,7 +142,12 @@ function classifyCurrentTurnIntent(message = '', context = {}) {
   if (matchesAny(m, MEMORY_RECALL_PATTERNS)) return 'memory_recall';
   if (isBeforeThatRecall(m)) return 'before_that_recall';
 
-  const bibleConcept = detectBibleConcept(m);
+  const semanticConcept = detectSemanticConcept(m, context);
+  if (semanticConcept && !semanticConcept.strictTopic) {
+    return 'bible_concept_direct';
+  }
+
+  const bibleConcept = semanticConcept || detectBibleConcept(m);
   const conceptContinuation = detectConceptFromContinuation(m);
 
   if (conceptContinuation) return 'bible_concept_continuation';
@@ -185,6 +194,26 @@ function classifyCurrentTurnIntent(message = '', context = {}) {
   return 'companion_general';
 }
 
+const HUMAN_NEED_COMPANION_INTENTS = new Set([
+  'app_identity',
+  'prayer',
+  'practical_words_to_say',
+  'memory_recall',
+  'memory_update',
+  'correction_repair',
+  'emotional_support',
+  'anxiety_support',
+  'conflict_guidance',
+  'temptation_boundary',
+  'one_anchor_verse',
+  'next_steps',
+  'grief_comfort',
+]);
+
+function isProtectedHumanNeed(humanNeed) {
+  return HUMAN_NEED_COMPANION_INTENTS.has(humanNeed);
+}
+
 function shouldUseActiveBibleConcept(message = '', context = {}) {
   const m = normalizeMessage(message);
   if (!context.activeBibleConcept && !context.lastBibleConcept) return false;
@@ -220,6 +249,9 @@ function shouldUseActiveDoctrineTopic(message = '', context = {}) {
 
 function shouldReleaseDoctrineTopic(message = '', context = {}) {
   const intent = classifyCurrentTurnIntent(message, context);
+  if (shouldClearStaleTopic(message, context.activeDoctrineTopic || context.activeBibleConcept, context)) {
+    return true;
+  }
   if (intent === 'strict_doctrine_direct') return false;
   if (intent === 'bible_concept_direct' || intent === 'bible_concept_continuation') return false;
   if (intent === 'user_correction') return false;
@@ -343,6 +375,12 @@ function buildCompanionReleaseReply(message = '', context = {}) {
     !hasExplicitConcept(message) &&
     !detectBibleConcept(normalizeMessage(message));
   if (bareContinuation && !context.activeDoctrineTopic && !context.activeBibleConcept) {
+    const mapped = context.releaseRequested
+      ? null
+      : context.lastAnsweredConcept ||
+        mapTopicToConceptId(context.lastAnsweredTopic) ||
+        mapTopicToConceptId(context.lastStrictDoctrineTopic);
+    if (mapped) return null;
     return "Which Bible topic would you like me to continue? I don't have one active right now — what do you want to explore?";
   }
   return null;
@@ -350,6 +388,7 @@ function buildCompanionReleaseReply(message = '', context = {}) {
 
 function planCompanionDoctrineRouting({ userId, message, recentSessions = [], runtimeContext = {} } = {}) {
   const context = buildRoutingContext(userId, { runtimeContext, recentSessions });
+  const humanNeed = detectHumanNeed(message, {}, context);
   const intent = classifyCurrentTurnIntent(message, context);
   const m = normalizeMessage(message);
   const messageTopic = detectStrictTopicFromMessage(m);
@@ -358,6 +397,23 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
   const useActive = shouldUseActiveDoctrineTopic(message, context);
   const useActiveConcept = shouldUseActiveBibleConcept(message, context);
   const companionReleaseReply = buildCompanionReleaseReply(message, context);
+
+  if (isProtectedHumanNeed(humanNeed)) {
+    return {
+      intent,
+      humanNeed,
+      lane: 'companion',
+      strictTopic: null,
+      bibleConceptId: null,
+      clearDoctrine: shouldReleaseDoctrineTopic(message, context),
+      releaseReason: humanNeed,
+      useActiveDoctrineTopic: false,
+      useActiveBibleConcept: false,
+      companionReleaseReply: null,
+      immediateCompanionReply: false,
+      protectedHumanNeed: true,
+    };
+  }
 
   let lane = 'companion';
   let strictTopic = null;
@@ -371,10 +427,10 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
     lane = 'companion';
   } else if (intent === 'before_that_recall') {
     lane = 'strict_doctrine';
+    const hist = context.topicHistory || [];
     strictTopic =
       context.previousDoctrineTopic ||
-      context.lastStrictDoctrineTopic ||
-      context.lastAnsweredTopic ||
+      (hist.length >= 2 ? hist[hist.length - 2] : hist.length ? hist[hist.length - 1] : null) ||
       null;
   } else if (intent === 'strict_doctrine_direct' && messageTopic) {
     lane = 'strict_doctrine';
@@ -423,6 +479,7 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
 
   return {
     intent,
+    humanNeed,
     lane,
     strictTopic,
     bibleConceptId,
@@ -443,6 +500,7 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
           !context.activeBibleConcept &&
           !messageTopic &&
           !bibleConcept)),
+    protectedHumanNeed: false,
   };
 }
 
@@ -497,4 +555,6 @@ module.exports = {
   applyDoctrineRoutingSideEffects,
   buildCompanionLaneFallbackReply,
   DIETARY_LEAK_TERMS,
+  HUMAN_NEED_COMPANION_INTENTS,
+  isProtectedHumanNeed,
 };
