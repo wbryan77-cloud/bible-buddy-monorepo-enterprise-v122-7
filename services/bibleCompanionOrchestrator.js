@@ -29,7 +29,6 @@ const { formatDirectDoctrineReply, DENIAL_RE } = require('./directAnswerFormatte
 const {
   recordUserTurn,
   getDoctrineConversationState,
-  updateTurnMemory,
   finalizeStopRelease,
   updateDoctrineConversationState,
 } = require('./doctrineConversationState');
@@ -158,7 +157,7 @@ function recordAnswerTurnMemory(userId, message, structured = {}) {
         : concept === 'kingdom'
           ? 'kingdom_on_earth'
           : concept;
-  updateTurnMemory(userId, {
+  require('./doctrineConversationState').updateTurnMemory(userId, {
     lastUserQuestion: message,
     lastAnsweredConcept: mapped,
     lastRefsShown: refs.slice(0, 5),
