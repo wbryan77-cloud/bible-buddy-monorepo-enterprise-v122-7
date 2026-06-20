@@ -7,7 +7,6 @@ const path = require('path');
 const {
   getDoctrineConversationState,
   updateDoctrineConversationState,
-  updateTurnMemory,
 } = require('./doctrineConversationState');
 const {
   recordRelationshipSignal,
@@ -77,7 +76,7 @@ function recordTurnMemory({ userId, context = {}, answer = {} } = {}) {
   recordRelationshipSignal({ userId, message: context.message || '', state });
 
   const refs = (answer.scripture || []).map((s) => s.reference || s).filter(Boolean);
-  updateTurnMemory(userId, {
+  require('./doctrineConversationState').updateTurnMemory(userId, {
     lastUserQuestion: context.message || '',
     lastAnsweredConcept: context.priorTopic || answer.conceptId || null,
     lastRefsShown: refs.slice(0, 5),
