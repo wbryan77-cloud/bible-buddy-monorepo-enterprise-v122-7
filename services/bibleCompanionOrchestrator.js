@@ -157,11 +157,15 @@ function recordAnswerTurnMemory(userId, message, structured = {}) {
         : concept === 'kingdom'
           ? 'kingdom_on_earth'
           : concept;
-  require('./doctrineConversationState').updateTurnMemory(userId, {
-    lastUserQuestion: message,
+  updateDoctrineConversationState(userId, {
+    turnMemory: {
+      ...(getDoctrineConversationState(userId).turnMemory || {}),
+      lastUserQuestion: message,
+      lastAnsweredConcept: mapped,
+      lastRefsShown: refs.slice(0, 5),
+      lastAnswerSummary: String(structured.reply || '').slice(0, 200),
+    },
     lastAnsweredConcept: mapped,
-    lastRefsShown: refs.slice(0, 5),
-    lastAnswerSummary: String(structured.reply || '').slice(0, 200),
   });
   if (mapped) {
     updateDoctrineConversationState(userId, {

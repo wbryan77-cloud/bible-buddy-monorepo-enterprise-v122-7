@@ -76,11 +76,15 @@ function recordTurnMemory({ userId, context = {}, answer = {} } = {}) {
   recordRelationshipSignal({ userId, message: context.message || '', state });
 
   const refs = (answer.scripture || []).map((s) => s.reference || s).filter(Boolean);
-  require('./doctrineConversationState').updateTurnMemory(userId, {
-    lastUserQuestion: context.message || '',
-    lastAnsweredConcept: context.priorTopic || answer.conceptId || null,
-    lastRefsShown: refs.slice(0, 5),
-    lastAnswerSummary: String(answer.reply || '').slice(0, 200),
+  updateDoctrineConversationState(userId, {
+    turnMemory: {
+      ...(state.turnMemory || {}),
+      lastUserQuestion: context.message || '',
+      lastAnsweredConcept: context.priorTopic || answer.conceptId || null,
+      lastRefsShown: refs.slice(0, 5),
+      lastAnswerSummary: String(answer.reply || '').slice(0, 200),
+    },
+    lastAnsweredConcept: context.priorTopic || answer.conceptId || state.lastAnsweredConcept,
   });
 
   const sessionPatch = {
