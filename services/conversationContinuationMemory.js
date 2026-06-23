@@ -1,6 +1,6 @@
 /**
- * Phase 5P — Conversation State Owner
- * Owns short follow-ups before doctrine/no-glitch routing.
+ * Phase 5O — Conversation Continuation Memory
+ * Single purpose: continue the current conversation before rerouting.
  */
 
 const {
@@ -23,18 +23,12 @@ function getContinuationMemory(userId) {
 function saveContinuationMemory(userId, { message = '', answer = {}, humanNeed = null, route = null } = {}) {
   if (!userId || !answer?.reply) return null;
   const state = getDoctrineConversationState(userId);
-
   const memory = {
     lastUserMessage: message,
     lastReply: String(answer.reply || '').slice(0, 1200),
-    lastReplySummary: String(answer.reply || '').slice(0, 300),
+    lastReplySummary: String(answer.reply || '').slice(0, 260),
     lastScripture: answer.scripture || [],
-    lastHumanNeed:
-      humanNeed ||
-      answer.runtime?.liveTruthTrace?.orchestratorHumanNeed ||
-      answer.runtime?.contractDecision?.humanNeed ||
-      answer.runtime?.companionIntent ||
-      null,
+    lastHumanNeed: humanNeed || answer.runtime?.liveTruthTrace?.orchestratorHumanNeed || answer.runtime?.contractDecision?.humanNeed || null,
     lastRoute: route || answer.runtime?.masterRoute || null,
     lastDoctrineTopic: answer.runtime?.doctrineTopic || null,
     updatedAt: new Date().toISOString(),
@@ -42,26 +36,24 @@ function saveContinuationMemory(userId, { message = '', answer = {}, humanNeed =
 
   updateDoctrineConversationState(userId, {
     conversationMemory: memory,
-    sessionMemory: {
-      ...(state.sessionMemory || {}),
-      conversationMemory: memory,
-    },
+    sessionMemory: { ...(state.sessionMemory || {}), conversationMemory: memory },
   });
-
   return memory;
 }
 
 function buildContinuationReply({ userId, message = '' } = {}) {
   const memory = getContinuationMemory(userId);
+  if (!memory) return null;
+
   const m = String(message || '').trim().toLowerCase();
-  const need = memory?.lastHumanNeed;
-  const route = memory?.lastRoute || '';
+  const need = memory.lastHumanNeed;
+  const route = memory.lastRoute || '';
 
   if (/^stop\.?$/.test(m)) {
     return {
       reply: "I hear you. I’ll stop that topic. What do you want to talk about now?",
       scripture: [],
-      masterRoute: 'phase5p_stop_release',
+      masterRoute: 'phase5o_stop_release',
       clearState: true,
     };
   }
@@ -74,7 +66,7 @@ function buildContinuationReply({ userId, message = '' } = {}) {
         { reference: 'James 1:5', theme: 'wisdom' },
         { reference: 'Psalm 51:10', theme: 'clean heart' },
       ],
-      masterRoute: 'phase5p_continuation_prayer',
+      masterRoute: 'phase5o_continuation_prayer',
     };
   }
 
@@ -82,7 +74,7 @@ function buildContinuationReply({ userId, message = '' } = {}) {
     return {
       reply: "I hear you. This is about a real-life decision, not a Bible topic menu. Tell me the decision you’re facing, what choices are in front of you, and what feels heavy about it. Then we can slow it down and look for the wise next step.",
       scripture: [{ reference: 'James 1:5', theme: 'wisdom' }],
-      masterRoute: 'phase5p_continuation_life_decision',
+      masterRoute: 'phase5o_continuation_life_decision',
     };
   }
 
@@ -91,16 +83,14 @@ function buildContinuationReply({ userId, message = '' } = {}) {
       return {
         reply: "BibleBuddy helps in a few simple ways: you can ask Bible questions, ask for prayer, talk through something hard, or ask for help applying Scripture to a real situation. For Bible teaching, the goal is line upon line and precept upon precept — using Scripture as the authority, not man’s tradition. For life situations, Buddy should listen first, understand what you mean, and then respond with care.",
         scripture: [],
-        masterRoute: 'phase5p_continuation_app_identity',
+        masterRoute: 'phase5o_continuation_app_identity',
       };
     }
 
     return {
-      reply: memory?.lastReplySummary
-        ? `${memory.lastReplySummary} Tell me which part you want me to go deeper on, and I’ll continue from there instead of changing the subject.`
-        : "I can continue, but tell me what part you want me to go deeper on.",
-      scripture: memory?.lastScripture || [],
-      masterRoute: memory?.lastDoctrineTopic ? 'phase5p_continuation_doctrine' : 'phase5p_continuation_general',
+      reply: `${memory.lastReplySummary} Tell me which part you want me to go deeper on, and I’ll continue from there instead of changing the subject.`,
+      scripture: memory.lastScripture || [],
+      masterRoute: memory.lastDoctrineTopic ? 'phase5o_continuation_doctrine' : 'phase5o_continuation_general',
     };
   }
 

@@ -36,7 +36,6 @@ const {
   syncUsedWitnessesFromReply,
 } = require('./doctrineWitnessInventory');
 const { setActiveDoctrineConversation, recordUserTurn } = require('./doctrineConversationState');
-const { saveContinuationMemory } = require('./conversationContinuationMemory');
 const { containsMemoryDenial, buildDoctrineMemoryRecallReply } = require('./doctrineLivePathHandlers');
 const {
   planCompanionDoctrineRouting,
@@ -272,10 +271,6 @@ function returnBibleWideStructured(H, ctx) {
     bibleWideReasoning: true,
     bibleConcept: concept,
   };
-
-  saveContinuationMemory(userId, { message, answer: out, humanNeed: routePlan?.humanNeed || out.runtime?.companionIntent, route: out.runtime?.masterRoute });
-
-  saveContinuationMemory(userId, { message, answer: out, humanNeed: topic || concept, route: out.runtime?.masterRoute });
 
   attachDebug(out, {
     runtimeUsed: 'core_openai_first',
