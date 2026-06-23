@@ -1,4 +1,6 @@
-/**
+const fs = require('fs');
+
+fs.writeFileSync('services/conversationContinuationMemory.js', `/**
  * Phase 5P — Conversation State Owner
  * Owns short follow-ups before doctrine/no-glitch routing.
  */
@@ -9,7 +11,7 @@ const {
 } = require('./doctrineConversationState');
 
 const CONTINUATION_RE =
-  /^(tell me more|more|go deeper|explain more|continue|what do you mean|why|how so|decision|better|better prayer|deeper prayer|prayer as i asked|stop)\.?$/i;
+  /^(tell me more|more|go deeper|explain more|continue|what do you mean|why|how so|decision|better|better prayer|deeper prayer|prayer as i asked|stop)\\.?$/i;
 
 function isContinuationTurn(message = '') {
   return CONTINUATION_RE.test(String(message || '').trim());
@@ -57,7 +59,7 @@ function buildContinuationReply({ userId, message = '' } = {}) {
   const need = memory?.lastHumanNeed;
   const route = memory?.lastRoute || '';
 
-  if (/^stop\.?$/.test(m)) {
+  if (/^stop\\.?$/.test(m)) {
     return {
       reply: "I hear you. I’ll stop that topic. What do you want to talk about now?",
       scripture: [],
@@ -78,7 +80,7 @@ function buildContinuationReply({ userId, message = '' } = {}) {
     };
   }
 
-  if (/^decision\.?$/.test(m) || /decision/.test(m)) {
+  if (/^decision\\.?$/.test(m) || /decision/.test(m)) {
     return {
       reply: "I hear you. This is about a real-life decision, not a Bible topic menu. Tell me the decision you’re facing, what choices are in front of you, and what feels heavy about it. Then we can slow it down and look for the wise next step.",
       scripture: [{ reference: 'James 1:5', theme: 'wisdom' }],
@@ -97,7 +99,7 @@ function buildContinuationReply({ userId, message = '' } = {}) {
 
     return {
       reply: memory?.lastReplySummary
-        ? `${memory.lastReplySummary} Tell me which part you want me to go deeper on, and I’ll continue from there instead of changing the subject.`
+        ? \`\${memory.lastReplySummary} Tell me which part you want me to go deeper on, and I’ll continue from there instead of changing the subject.\`
         : "I can continue, but tell me what part you want me to go deeper on.",
       scripture: memory?.lastScripture || [],
       masterRoute: memory?.lastDoctrineTopic ? 'phase5p_continuation_doctrine' : 'phase5p_continuation_general',
@@ -113,3 +115,108 @@ module.exports = {
   saveContinuationMemory,
   buildContinuationReply,
 };
+`);
+
+let runtime = fs.readFileSync('services/openAiFirstCompanionRuntime.js', 'utf8');
+
+if (!runtime.includes("conversationContinuationMemory")) {
+  runtime = runtime.replace(
+    "const { setActiveDoctrineConversation, recordUserTurn } = require('./doctrineConversationState');",
+    "const { setActiveDoctrineConversation, recordUserTurn } = require('./doctrineConversationState');\nconst { saveContinuationMemory } = require('./conversationContinuationMemory');"
+  );
+}
+
+runtime = runtime.replace(
+"  attachDebug(out, {",
+"  saveContinuationMemory(userId, { message, answer: out, humanNeed: routePlan?.humanNeed || out.runtime?.companionIntent, route: out.runtime?.masterRoute });\n\n  attachDebug(out, {"
+);
+
+runtime = runtime.replace(
+"  attachDebug(out, {",
+"  saveContinuationMemory(userId, { message, answer: out, humanNeed: topic || concept, route: out.runtime?.masterRoute });\n\n  attachDebug(out, {"
+);
+
+fs.writeFileSync('services/openAiFirstCompanionRuntime.js', runtime);
+
+let orch = fs.readFileSync('services/bibleCompanionOrchestrator.js', 'utf8');
+
+if (!orch.includes("conversationContinuationMemory")) {
+  orch = orch.replace(
+    "const { detectHumanNeed } = require('./humanNeedDetector');",
+    `const { detectHumanNeed } = require('./humanNeedDetector');
+const {
+  isContinuationTurn,
+  saveContinuationMemory,
+  buildContinuationReply,
+} = require('./conversationContinuationMemory');`
+  );
+}
+
+const continuationBlock = `
+  if (isContinuationTurn(message)) {
+    const continuation = buildContinuationReply({ userId, message });
+    if (continuation?.reply) {
+      if (continuation.clearState && typeof clearStopReleaseStateSafely === 'function') {
+        clearStopReleaseStateSafely(userId);
+      }
+
+      const structured = verifyOrchestratorOutput({
+        reply: continuation.reply,
+        scripture: continuation.scripture || [],
+        mode: 'companion',
+        confidence: 'high',
+        memory_used: true,
+        safety_level: safety?.level || 'standard',
+        admin_flags: ['phase5p_conversation_state_owner'],
+        runtime: {
+          masterRoute: continuation.masterRoute,
+          openAiCalled: false,
+          orchestratorLane: 'conversation_state_owner',
+          phase5P: true,
+          conversationContinuation: true,
+        },
+      }, { message });
+
+      saveContinuationMemory(userId, {
+        message,
+        answer: structured,
+        humanNeed: 'continuation',
+        route: continuation.masterRoute,
+      });
+
+      recordUserTurn(userId, message, 'companion');
+
+      return {
+        handled: true,
+        dispatch: 'companion',
+        reasoningPlan: { answerLane: 'conversation_state_owner', phase5P: true },
+        ctx: {
+          structured,
+          userId,
+          mode,
+          personaKey,
+          message,
+          safety,
+          runtimeContext,
+          profile,
+          testerId,
+          sessionId,
+          cohort,
+          route: continuation.masterRoute,
+        },
+      };
+    }
+  }
+
+`;
+
+if (!orch.includes("phase5p_conversation_state_owner")) {
+  const idx = orch.indexOf("runNoGlitchPreflight(userId, message, safety, runtimeContext)");
+  if (idx === -1) throw new Error("Could not find runNoGlitchPreflight call");
+  const lineStart = orch.lastIndexOf("\n", idx) + 1;
+  orch = orch.slice(0, lineStart) + continuationBlock + orch.slice(lineStart);
+}
+
+fs.writeFileSync('services/bibleCompanionOrchestrator.js', orch);
+
+console.log('Phase 5P Conversation State Owner applied.');
