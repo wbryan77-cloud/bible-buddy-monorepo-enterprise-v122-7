@@ -681,6 +681,62 @@ function runBibleCompanionOrchestrator({
     };
   }
 
+
+  // Conversation Owner: short follow-ups must resolve before no-glitch/doctrine/OpenAI routing.
+  if (isContinuationTurn(message)) {
+    const continuation = buildContinuationReply({ userId, message });
+    if (continuation?.reply) {
+      if (continuation.clearState && typeof clearStopReleaseStateSafely === 'function') {
+        clearStopReleaseStateSafely(userId);
+      }
+
+      const structured = verifyOrchestratorOutput({
+        reply: continuation.reply,
+        scripture: continuation.scripture || [],
+        mode: 'companion',
+        confidence: 'high',
+        memory_used: true,
+        safety_level: safety?.level || 'standard',
+        admin_flags: ['conversation_owner'],
+        runtime: {
+          masterRoute: continuation.masterRoute,
+          openAiCalled: false,
+          orchestratorLane: 'conversation_owner',
+          conversationOwner: true,
+        },
+      }, { message });
+
+      saveContinuationMemory(userId, {
+        message,
+        answer: structured,
+        humanNeed: 'continuation',
+        route: continuation.masterRoute,
+      });
+
+      recordUserTurn(userId, message, 'companion');
+
+      return {
+        handled: true,
+        dispatch: 'companion',
+        reasoningPlan: { answerLane: 'conversation_owner', conversationOwner: true },
+        ctx: {
+          structured,
+          userId,
+          mode,
+          personaKey,
+          message,
+          safety,
+          runtimeContext,
+          profile,
+          testerId,
+          sessionId,
+          cohort,
+          route: continuation.masterRoute,
+        },
+      };
+    }
+  }
+
   const preflight = runNoGlitchPreflight(userId, message, safety, runtimeContext);
   if (preflight.handled) {
     recordUserTurn(userId, message, 'companion');
