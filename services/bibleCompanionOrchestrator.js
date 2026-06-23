@@ -60,6 +60,11 @@ const {
 const { buildCompanionResponse } = require('./companionResponseBuilder');
 const { buildConversationAnchor, updateAnchorFromTurn } = require('./conversationAnchorEngine');
 const { detectHumanNeed } = require('./humanNeedDetector');
+const {
+  isContinuationTurn,
+  saveContinuationMemory,
+  buildContinuationReply,
+} = require('./conversationContinuationMemory');
 const { buildCuriosityFollowUp } = require('./companionCuriosityEngine');
 const { buildPracticalWisdomResponse } = require('./practicalWisdomEngine');
 const { buildPrayerCompanionResponse } = require('./prayerCompanionEngine');
@@ -198,6 +203,29 @@ function buildContractStructured(safeReply, message, safety, runtimeContext, con
   });
 }
 
+
+function clearStopReleaseStateSafely(userId) {
+  const prev = getDoctrineConversationState(userId);
+  return updateDoctrineConversationState(userId, {
+    activeDoctrineTopic: null,
+    activeStrictContract: null,
+    activeContract: null,
+    activeBibleConcept: null,
+    lastAnsweredConcept: null,
+    lastAnsweredTopic: null,
+    lastStrictDoctrineTopic: null,
+    usedConceptWitnesses: [],
+    releaseRequested: false,
+    doctrineSuspended: false,
+    sessionMemory: {
+      ...(prev.sessionMemory || {}),
+      activeConcept: null,
+      pendingQuestion: null,
+    },
+    releaseReason: 'stop_acknowledged',
+  });
+}
+
 function runNoGlitchPreflight(userId, message, safety, runtimeContext) {
   const state = getDoctrineConversationState(userId);
   const wordSense = detectWordSense(message, state);
@@ -211,7 +239,7 @@ function runNoGlitchPreflight(userId, message, safety, runtimeContext) {
   if (safeReply) {
     recordContractHandled({ userId, category: contract.category, route: safeReply.masterRoute });
     if (contract.category === 'stop_release' || safeReply.clearState) {
-      finalizeStopRelease(userId);
+      clearStopReleaseStateSafely(userId);
     }
     return {
       handled: true,
@@ -688,6 +716,62 @@ function runBibleCompanionOrchestrator({
   }
   const conversationAnchor = buildConversationAnchor({ userId, message, state: mergedState });
   const humanNeed = detectHumanNeed(message, conversationAnchor, mergedState);
+
+  if (isContinuationTurn(message)) {
+    const continuation = buildContinuationReply({ userId, message });
+    if (continuation?.reply) {
+      if (continuation.clearState && typeof clearStopReleaseStateSafely === 'function') {
+        clearStopReleaseStateSafely(userId);
+      }
+
+      const structured = verifyOrchestratorOutput({
+        reply: continuation.reply,
+        scripture: continuation.scripture || [],
+        mode: 'companion',
+        confidence: 'high',
+        memory_used: true,
+        safety_level: safety?.level || 'standard',
+        admin_flags: ['phase5o_continuation_memory'],
+        runtime: {
+          masterRoute: continuation.masterRoute,
+          openAiCalled: false,
+          orchestratorLane: 'conversation_continuation',
+          phase5O: true,
+          conversationContinuation: true,
+        },
+      }, { message });
+
+      saveContinuationMemory(userId, {
+        message,
+        answer: structured,
+        humanNeed: humanNeed || 'continuation',
+        route: continuation.masterRoute,
+      });
+
+      recordUserTurn(userId, message, 'companion');
+
+      return {
+        handled: true,
+        dispatch: 'companion',
+        reasoningPlan: { answerLane: 'conversation_continuation', phase5O: true, humanNeed },
+        ctx: {
+          structured,
+          userId,
+          mode,
+          personaKey,
+          message,
+          safety,
+          runtimeContext,
+          profile,
+          testerId,
+          sessionId,
+          cohort,
+          route: continuation.masterRoute,
+        },
+      };
+    }
+  }
+
   const conceptMatchEarly = detectSemanticConcept(message, mergedState);
 
   const depthStructured = runPhase5KDepthLane({

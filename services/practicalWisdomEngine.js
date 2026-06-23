@@ -13,18 +13,17 @@ function resolvePracticalConceptId(conceptId, anchor = {}, state = {}) {
   const sm = state.sessionMemory || {};
   const candidates = [
     conceptId,
+    anchor.currentDoctrineConcept,
     sm.activeConcept,
     state.lastAnsweredConcept,
-    anchor.currentDoctrineConcept,
     anchor.currentTopic,
-    'dietary_pork_unclean',
   ];
   for (const c of candidates) {
     if (!c) continue;
     if (/^(ten_commandments|prayer_comfort|abomination_desolation)$/i.test(c)) continue;
     return c;
   }
-  return 'dietary_pork_unclean';
+  return null;
 }
 
 function buildPracticalWisdomResponse({ message = '', anchor = {}, conceptId = null, state = {} } = {}) {
@@ -37,6 +36,13 @@ function buildPracticalWisdomResponse({ message = '', anchor = {}, conceptId = n
     anchor.currentPracticalNeed === 'gentle_explanation';
 
   if (wantsFamilyWording) {
+    if (!id) {
+      return {
+        reply: "I hear you. What is the situation with your son? Tell me what happened and what you want him to understand, and I’ll help you say it with truth, love, and wisdom.",
+        scripture: [],
+        masterRoute: 'phase5n_practical_context_needed',
+      };
+    }
     const fam = buildFamilyExplanation({ concept: id });
     if (fam) {
       const wording =

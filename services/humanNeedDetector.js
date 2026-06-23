@@ -5,7 +5,7 @@
 const { classifyCompanionIntent } = require('./companionIntentIntelligence');
 
 const APP_IDENTITY_RE =
-  /\b(what is (the )?purpose of this app|what is this app|are you trying to convert|why are you here|what do you do|are you (just )?quoting bible|closed.?minded)\b/i;
+  /\b(what is (the )?purpose of this app|what is this app|what does (the )?app do|what does this app do|what can this app do|how does this app work|are you trying to convert|why are you here|what do you do|are you (just )?quoting bible|closed.?minded)\b/i;
 
 function detectHumanNeed(message = '', anchor = {}, state = {}) {
   const m = String(message || '').trim();
@@ -18,11 +18,11 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
   if (/\b(why are you still saying yes|don'?t ever do|you didn'?t learn|don'?t say yes before)\b/i.test(m)) {
     return 'correction_repair';
   }
-  if (/\b(what do i do about it|and then what do i do)\b/i.test(m)) return 'next_steps';
+  if (/\b(what do i do about it|and then what do i do|decision|not about the bible|life decision)\b/i.test(m)) return 'next_steps';
   if (/\b(what we were talking about|about what we talked)\b/i.test(m) && (state.lastAnsweredConcept || state.sessionMemory?.activeConcept)) {
     return 'practical_words_to_say';
   }
-  if (/\b(pray with me|can you pray|let's pray|pray for me|deeper prayer|give me a deeper prayer)\b/i.test(m)) return 'prayer';
+  if (/\b(pray with me|can you pray|let's pray|pray for me|deeper prayer|better prayer|beeter prayer|give me a deeper prayer|prayer as i asked)\b/i.test(m)) return 'prayer';
   if (/\bwhat verse should i remember|give me a verse\b/i.test(m)) return 'one_anchor_verse';
   if (/\bhow (do|should|can) i explain|how do i tell|what should i say|help me talk to|how should i respond\b/i.test(m)) {
     return 'practical_words_to_say';
@@ -42,7 +42,7 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
   if (intent.category === 'doctrine_answer') return 'doctrine_answer';
   if (intent.category === 'clarification_needed') return 'clarification';
   if (anchor.currentPracticalNeed) return 'practical_words_to_say';
-  return 'doctrine_answer';
+  return 'conversation';
 }
 
 module.exports = {
