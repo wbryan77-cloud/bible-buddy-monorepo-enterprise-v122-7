@@ -5,7 +5,6 @@
  */
 
 const { getContinuationMemory } = require('./conversationContinuationMemory');
-
 const REVISION_RE =
   /\b(better|deeper|expand|more scriptures|more detail|try again|explain further|go deeper|longer prayer|clarify|clarification|rewrite|reword)\b/i;
 
@@ -14,7 +13,7 @@ function detectRevisionRequest(message = '', memory = null) {
   if (!m || !memory) return false;
   if (REVISION_RE.test(m)) return true;
 
-  const shortWords = m.split(/\/).filter(Boolean).length <= 5;
+  const shortWords = m.split(/\s+/).filter(Boolean).length <= 5;
   if (shortWords && /\b(more|why|how so|again|deeper|better)\b/i.test(m)) return true;
 
   return false;
