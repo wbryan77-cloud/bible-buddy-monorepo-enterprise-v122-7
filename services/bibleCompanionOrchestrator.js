@@ -60,6 +60,7 @@ const {
 const { buildCompanionResponse } = require('./companionResponseBuilder');
 const { buildConversationAnchor, updateAnchorFromTurn } = require('./conversationAnchorEngine');
 const { detectHumanNeed } = require('./humanNeedDetector');
+const { buildRevisionReply } = require('./responseRevisionOwner');
 const {
   isContinuationTurn,
   saveContinuationMemory,
@@ -681,6 +682,63 @@ function runBibleCompanionOrchestrator({
     };
   }
 
+
+
+  // Phase 5Q: Response Revision Owner.
+  // If user asks for a better/deeper/more detailed version of the previous answer,
+  // revise the prior answer before no-glitch, doctrine, BibleWide, pending question, or OpenAI can steal the turn.
+  const revision = buildRevisionReply({ userId, message });
+  if (revision?.reply) {
+    const structured = verifyOrchestratorOutput({
+      reply: revision.reply,
+      scripture: revision.scripture || [],
+      mode: 'companion',
+      confidence: 'high',
+      memory_used: true,
+      safety_level: safety?.level || 'standard',
+      admin_flags: ['response_revision_owner'],
+      runtime: {
+        masterRoute: revision.route,
+        openAiCalled: false,
+        orchestratorLane: 'response_revision_owner',
+        responseRevisionOwner: true,
+        revisionType: revision.revisionType,
+      },
+    }, { message });
+
+    saveContinuationMemory(userId, {
+      message,
+      answer: structured,
+      humanNeed: revision.revisionType,
+      route: revision.route,
+    });
+
+    recordUserTurn(userId, message, 'companion');
+
+    return {
+      handled: true,
+      dispatch: 'companion',
+      reasoningPlan: {
+        answerLane: 'response_revision_owner',
+        responseRevisionOwner: true,
+        revisionType: revision.revisionType,
+      },
+      ctx: {
+        structured,
+        userId,
+        mode,
+        personaKey,
+        message,
+        safety,
+        runtimeContext,
+        profile,
+        testerId,
+        sessionId,
+        cohort,
+        route: revision.route,
+      },
+    };
+  }
 
   // Conversation Owner: short follow-ups must resolve before no-glitch/doctrine/OpenAI routing.
   if (isContinuationTurn(message)) {
