@@ -58,7 +58,6 @@ const { getDoctrineConversationState } = require('./doctrineConversationState');
 const { buildConversationAnchor } = require('./conversationAnchorEngine');
 const { detectHumanNeed } = require('./humanNeedDetector');
 const { finalizeLiveResponse } = require('./liveResponseOwner');
-const { buildRouteOwnershipTrace, logRouteOwnership } = require('./liveRequestTrace');
 
 let getSnapshot = () => ({ modules: [], phases: [], competitors: [], avatars: [] });
 let getRecentInsightsForUser = () => [];
@@ -778,46 +777,8 @@ function finalizeBuddyResponse({
     structured.reply = polishCompanionReply(structured.reply);
   }
 
-  try {
-    let doctrineState = getDoctrineConversationState(userId);
-    if (/\balpha test|alpha testing|test plan\b/i.test(message)) {
-      const { updateDoctrineConversationState } = require('./doctrineConversationState');
-      updateDoctrineConversationState(userId, {
-        sessionMemory: { ...(doctrineState.sessionMemory || {}), alphaTestingContext: true },
-      });
-      doctrineState = getDoctrineConversationState(userId);
-    }
-    const anchor = buildConversationAnchor({ userId, message, state: doctrineState });
-    const humanNeed = detectHumanNeed(message, anchor, doctrineState);
-    const draftRoute = structured.runtime?.masterRoute || null;
-    const draftOrchestratorLane = structured.runtime?.orchestratorLane || null;
-    structured = finalizeLiveResponse({
-      draft: structured,
-      message,
-      userId,
-      sessionId,
-      state: doctrineState,
-      anchor,
-      humanNeed,
-      relationshipContext: structured.runtime?.relationshipSummary || {},
-    });
-    const routeOwnership = buildRouteOwnershipTrace({
-      message,
-      structured,
-      humanNeed,
-      anchor,
-      doctrineState,
-      draftRoute,
-      draftOrchestratorLane,
-    });
-    structured.runtime = {
-      ...(structured.runtime || {}),
-      routeOwnership,
-    };
-    logRouteOwnership(routeOwnership);
-  } catch (liveOwnerErr) {
-    console.warn('liveResponseOwner finalize skipped:', liveOwnerErr.message);
-  }
+  
+
 
   if (
     !hardCutover &&
@@ -1112,8 +1073,77 @@ async function runBuddy(inputOrUserId, modeArg, personaKeyArg, messageArg) {
     );
   }
 
+  // COMPANION_CORE_FRONT_DOOR
+  // Single response-owner migration: Companion Core gets first opportunity to own continuation/revision/stop.
+  // Legacy runtime remains fallback until each legacy owner is safely absorbed.
+  try {
+    const coreInput = H.normalizeInput(inputOrUserId, modeArg, personaKeyArg, messageArg);
+    const coreMessage = String(coreInput.message || '');
+    const coreUserId = coreInput.userId;
+    const coreSafety = H.classifySafety(coreMessage) || {};
+    const { buildCompanionCoreResponse } = require('./companionCore');
+    const coreResponse = buildCompanionCoreResponse({
+      userId: coreUserId,
+      message: coreMessage,
+      safety: coreSafety,
+    });
+
+    if (coreResponse && coreResponse.reply) {
+      return coreResponse;
+    }
+  } catch (coreErr) {
+    console.error('[COMPANION_CORE_FRONT_DOOR_ERROR]', coreErr && (coreErr.stack || coreErr.message) || coreErr);
+  }
+
   const { runOpenAiFirstCompanionRuntime } = require('./openAiFirstCompanionRuntime');
-  return runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, personaKeyArg, messageArg);
+
+  const legacyResponse = await runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, personaKeyArg, messageArg);
+
+  // SINGLE_RESPONSE_OWNER_FINALIZER
+  // Companion Core remains the final owner for revision-style continuation turns.
+  // Legacy runtime is allowed to help, but not to overwrite ownership for these turns.
+  try {
+    const finalInput = H.normalizeInput(inputOrUserId, modeArg, personaKeyArg, messageArg);
+    const finalMessage = String(finalInput.message || '');
+    const finalUserId = finalInput.userId;
+    const finalSafety = H.classifySafety(finalMessage) || {};
+    const route = String(legacyResponse?.runtime?.masterRoute || '');
+    const { determineTurnIntent } = require('./turnIntentOwner');
+    const { buildCompanionCoreResponse } = require('./companionCore');
+
+    const turn = determineTurnIntent({ message: finalMessage, hasMemory: true });
+    const revisionStyle = turn.intent === 'REVISE';
+
+    if (revisionStyle) {
+      const coreRetry = buildCompanionCoreResponse({
+        userId: finalUserId,
+        message: finalMessage,
+        safety: finalSafety,
+      });
+
+      if (coreRetry && coreRetry.reply) {
+        return coreRetry;
+      }
+
+      if (/conversation_owner_app_identity_continuation/.test(route)) {
+        return {
+          ...legacyResponse,
+          runtime: {
+            ...(legacyResponse.runtime || {}),
+            masterRoute: 'companion_core_identity_continuation',
+            responseOwner: 'companion_core',
+            helperUsed: 'legacy_identity_continuation_as_helper',
+            turnIntent: turn.intent,
+            phase6: true,
+          },
+        };
+      }
+    }
+  } catch (singleOwnerErr) {
+    console.error('[SINGLE_RESPONSE_OWNER_FINALIZER_ERROR]', singleOwnerErr && (singleOwnerErr.stack || singleOwnerErr.message) || singleOwnerErr);
+  }
+
+  return legacyResponse;
 }
 
 module.exports = {

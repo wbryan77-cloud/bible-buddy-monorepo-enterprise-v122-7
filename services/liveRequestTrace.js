@@ -116,3 +116,19 @@ module.exports = {
   STUDY_RE,
   WITNESS_RE,
 };
+
+
+/**
+ * Legacy compatibility: ownership trace builder.
+ * Kept as a small safe trace helper so old finalize hooks do not warn or crash.
+ * Does not own, mutate, or return responses.
+ */
+function buildRouteOwnershipTrace(input = {}) {
+  return {
+    at: new Date().toISOString(),
+    route: input.route || input.masterRoute || null,
+    owner: input.owner || input.responseOwner || null,
+    fallback: input.fallback || input.fallbackErrorCode || null,
+    source: 'liveRequestTrace',
+  };
+}
