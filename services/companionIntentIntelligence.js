@@ -123,6 +123,270 @@ function detectNextLikelyNeed({ concept = null, emotionalState = '' } = {}) {
 }
 
 function classifyCompanionIntent({ message = '', state = {}, concept = null } = {}) {
+  const m = String(message || '').trim();
+  const conceptMatch = concept || detectSemanticConcept(m, state);
+  const stateCst conceptId = stateConceptId || conceptMatch?.id || null;
+
+  if (!m) {
+    return { category: 'clarification_needed', conceptId: null, practicalType: null, priority: 9 };
+  }
+
+  if (STOP_RE.test(m)) {
+    return { category: 'stop_release', conceptId: null, practicalType: null, priority: 1 };
+  }
+
+  if (detectPrayerNeed(m)) {
+    return { category: 'prayer_request', conceptId: 'prayer_with_user', practicalType: 'prayer', priority: 2 };
+  }
+
+  if (detectEmotionalNeed(m) && !detectPracticalNeed(m, state)) {
+    return {
+      category: 'emotional_support',
+      conceptId: conceptId || 'overwhelmed_comfort',
+      practicalType: null,
+      priority: 3,
+    };
+  }
+
+  if (BOUNDARY_TELL_RE.test(m) || (/\bhow do i tell (her|him)\b/i.test(m) && isDatingOrSexualContext(state))) {
+    return {
+      category: 'boundary_script',
+      conceptId: conceptId || 'fornication_sexual_sin',
+      practicalType: 'boundary_script',
+    m) || (NERVOUS_BARE_RE.test(m) && (state.familyConversationContext || state.sessionMemory?.familyContext))) {
+    return {
+      category: 'emotional_support',
+      conceptId,
+      practicalType: 'nervous_family',
+      priority: 3,
+      blockClarification: true,
+    };
+  }
+
+  if (FAMILY_EXPLAIN_RE.test(m) && hasEstablishedTopic(state)) {
+    return {
+      category: 'family_explanation',
+      conceptId: conceptId || 'dietary_pork_unclean',
+      practicalType: 'family_explanation',
+      priority: 5,
+      blockClarification: true,
+    };
+  }
+
+  if (FAMILY_DISAGREE_RE.test(m)) {
+    return {
+      category: 'family_explanation',
+      conceptId: conceptId || 'dietary_pork_unclean',
+      practicalType: 'family_disagreement',
+      priority: 5,
+      blockClarification: true,
+    };
+  }
+
+  if (VERSE_REMEMBER_RE.test(m)) {
+    return {
+      category: 'verse_to_remember'y\??$/i.test(m) && hasEstablishedTopic(state)) {
+    return {
+      category: 'doctrine_answer',
+      conceptId,
+      practicalType: 'why_followup',
+      priority: 6,
+      isContinuation: true,
+      reestablishWitness: true,
+    };
+  }
+
+  if (SEXUAL_PRESSURE_RE.test(m) && !hasEstablishedTopic(state)) {
+    return {
+      category: 'doctrine_answer',
+      conceptId: 'fornication_sexual_sin',
+      practicalType: null,
+      priority: 6,
+      isNewDoctrine: true,
+    };
+  }
+
+  if (CONTINUATION_PHRASE_RE.test(m) && hasEstablishedTopic(state) && !detectSemanticConcept(m, state)) {
+    return {
+      category: 'more_scripture',
+      conceptId,
+      practicalType: null,
+      priority: 7,
+      isContinuation: true,
+    };
+  }
+
+  if (PREFERENCE_RE.test(m)) {
+    return { category: 'memory_preference', conceptId: null, practicalType: null, priority: 8 };
+  }
+
+  if (Lype: null, priority: 8 };
+  }
+
+  if (isPendingQuestionChallenge(m) || /\bwhy won'?t you answer\b/i.test(m)) {
+    return { category: 'correction', conceptId, practicalType: null, priority: 8 };
+  }
+
+  if (detectTeachingNeed(m, conceptMatch) || isWitnessReestablishment(m)) {
+    return {
+      category: 'doctrine_answer',
+      conceptId: conceptMatch?.id || conceptId,
+      practicalType: null,
+      priority: 6,
+      isNewDoctrine: !hasEstablishedTopic(state),
+      reestablishWitness: isWitnessReestablishment(m),
+    };
+  }
+
+  if (!hasEstablishedTopic(state) && m.length < 20 && !conceptMatch) {
+    return { category: 'clarification_needed', conceptId: null, practicalType: null, priority: 9 };
+  }
+
+  if (conceptMatch) {
+    return {
+      category: 'doctrine_answer',
+      conceptId: conceptMatch.id,
+      practicalType: null,
+      priority: 6,
+      isContinuation: hasEstablishedTopic(state),
+    9,
+    isContinuation: false,
+  };
+} = {}) {
+  const m = String(message || '').trim();
+  const conceptMatch = concept || detectSemanticConcept(m, state);
+  const stateConceptId = resolveCononceptId || conceptMatch?.id || null;
+
+  if (!m) {
+    return { category: 'clarification_needed', conceptId: null, practicalType: null, priority: 9 };
+  }
+
+  if (STOP_RE.test(m)) {
+    return { category: 'stop_release', conceptId: null, practicalType: null, priority: 1 };
+  }
+
+  if (detectPrayerNeed(m)) {
+    return { category: 'prayer_request', conceptId: 'prayer_with_user', practicalType: 'prayer', priority: 2 };
+  }
+
+  if (detectEmotionalNeed(m) && !detectPracticalNeed(m, state)) {
+    return {
+      category: 'emotional_support',
+      conceptId: conceptId || 'overwhelmed_comfort',
+      practicalType: null,
+      priority: 3,
+    };
+  }
+
+  if (BOUNDARY_TELL_RE.test(m) || (/\bhow do i tell (her|him)\b/i.test(m) && isDatingOrSexualContext(state))) {
+    return {
+      category: 'boundary_script',
+      conceptId: conceptId || 'fornication_sexual_sin',
+      practicalType: 'boundary_script',
+      priority: 4,
+  E.test(m) && (state.familyConversationContext || state.sessionMemory?.familyContext))) {
+    return {
+      category: 'emotional_support',
+      conceptId,
+      practicalType: 'nervous_family',
+      priority: 3,
+      blockClarification: true,
+    };
+  }
+
+  if (FAMILY_EXPLAIN_RE.test(m) && hasEstablishedTopic(state)) {
+    return {
+      category: 'family_explanation',
+      conceptId: conceptId || 'dietary_pork_unclean',
+      practicalType: 'family_explanation',
+      priority: 5,
+      blockClarification: true,
+    };
+  }
+
+  if (FAMILY_DISAGREE_RE.test(m)) {
+    return {
+      category: 'family_explanation',
+      conceptId: conceptId || 'dietary_pork_unclean',
+      practicalType: 'family_disagreement',
+      priority: 5,
+      blockClarification: true,
+    };
+  }
+
+  if (VERSE_REMEMBER_RE.test(m)) {
+    return {
+      category: 'verse_to_remember',
+      conceptasEstablishedTopic(state)) {
+    return {
+      category: 'doctrine_answer',
+      conceptId,
+      practicalType: 'why_followup',
+      priority: 6,
+      isContinuation: true,
+      reestablishWitness: true,
+    };
+  }
+
+  if (SEXUAL_PRESSURE_RE.test(m) && !hasEstablishedTopic(state)) {
+    return {
+      category: 'doctrine_answer',
+      conceptId: 'fornication_sexual_sin',
+      practicalType: null,
+      priority: 6,
+      isNewDoctrine: true,
+    };
+  }
+
+  if (CONTINUATION_PHRASE_RE.test(m) && hasEstablishedTopic(state) && !detectSemanticConcept(m, state)) {
+    return {
+      category: 'more_scripture',
+      conceptId,
+      practicalType: null,
+      priority: 7,
+      isContinuation: true,
+    };
+  }
+
+  if (PREFERENCE_RE.test(m)) {
+    return { category: 'memory_preference', conceptId: null, practicalType: null, priority: 8 };
+  }
+
+  if (LEARNING_RE.test(m) ||8 };
+  }
+
+  if (isPendingQuestionChallenge(m) || /\bwhy won'?t you answer\b/i.test(m)) {
+    return { category: 'correction', conceptId, practicalType: null, priority: 8 };
+  }
+
+  if (detectTeachingNeed(m, conceptMatch) || isWitnessReestablishment(m)) {
+    return {
+      category: 'doctrine_answer',
+      conceptId: conceptMatch?.id || conceptId,
+      practicalType: null,
+      priority: 6,
+      isNewDoctrine: !hasEstablishedTopic(state),
+      reestablishWitness: isWitnessReestablishment(m),
+    };
+  }
+
+  if (!hasEstablishedTopic(state) && m.length < 20 && !conceptMatch) {
+    return { category: 'clarification_needed', conceptId: null, practicalType: null, priority: 9 };
+  }
+
+  if (conceptMatch) {
+    return {
+      category: 'doctrine_answer',
+      conceptId: conceptMatch.id,
+      practicalType: null,
+      priority: 6,
+      isContinuation: hasEstablishedTopic(state),
+    };
+  }
+
+  return : false,
+  };
+} = {}) {
   const m = String(message || '').trim();
   const conceptMatch = concept || detectSemanticConcept(m, state);
   const conceptId = resolveConceptFromState(state) || conceptMatch?.id || null;
