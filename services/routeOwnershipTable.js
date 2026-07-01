@@ -1,3 +1,4 @@
+const { CANONICAL_INTENTS } = require('./canonicalIntentMap');
 /**
  * Sprint 2.FINAL — Route Ownership Table
  * Every intent has exactly one owner with explicit memory/study/history permissions.
