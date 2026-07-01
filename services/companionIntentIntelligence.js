@@ -125,7 +125,7 @@ function detectNextLikelyNeed({ concept = null, emotionalState = '' } = {}) {
 function classifyCompanionIntent({ message = '', state = {}, concept = null } = {}) {
   const m = String(message || '').trim();
   const conceptMatch = concept || detectSemanticConcept(m, state);
-  const stateCst conceptId = stateConceptId || conceptMatch?.id || null;
+  const conceptId = stateConceptId || conceptMatch?.id || null;
 
   if (!m) {
     return { category: 'clarification_needed', conceptId: null, practicalType: null, priority: 9 };
@@ -284,7 +284,7 @@ function classifyCompanionIntent({ message = '', state = {}, concept = null } = 
       conceptId: conceptId || 'fornication_sexual_sin',
       practicalType: 'boundary_script',
       priority: 4,
-  E.test(m) && (state.familyConversationContext || state.sessionMemory?.familyContext))) {
+  EMOTIONAL_RE.test(m) && (state.familyConversationContext || state.sessionMemory?.familyContext))) {
     return {
       category: 'emotional_support',
       conceptId,
