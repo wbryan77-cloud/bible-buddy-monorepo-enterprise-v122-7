@@ -87,8 +87,14 @@ function buildContinuationReply({ userId, message = '' } = {}) {
       };
     }
 
+    const summary =
+      memory.lastReplySummary ||
+      (memory.lastReply ? String(memory.lastReply).slice(0, 260).trim() : '');
+
     return {
-      reply: `${memory.lastReplySummary} Tell me which part you want me to go deeper on, and I’ll continue from there instead of changing the subject.`,
+      reply: summary
+        ? `${summary} Tell me which part you want me to go deeper on, and I’ll continue from there instead of changing the subject.`
+        : 'I can continue, but tell me what part you want me to go deeper on.',
       scripture: memory.lastScripture || [],
       masterRoute: memory.lastDoctrineTopic ? 'phase5o_continuation_doctrine' : 'phase5o_continuation_general',
     };
