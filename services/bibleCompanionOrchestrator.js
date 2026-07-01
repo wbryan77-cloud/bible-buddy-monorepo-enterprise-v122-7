@@ -226,62 +226,6 @@ function clearStopReleaseStateSafely(userId) {
   });
 }
 
-
-  if (isContinuationTurn(message)) {
-    const continuation = buildContinuationReply({ userId, message });
-    if (continuation?.reply) {
-      if (continuation.clearState && typeof clearStopReleaseStateSafely === 'function') {
-        clearStopReleaseStateSafely(userId);
-      }
-
-      const structured = verifyOrchestratorOutput({
-        reply: continuation.reply,
-        scripture: continuation.scripture || [],
-        mode: 'companion',
-        confidence: 'high',
-        memory_used: true,
-        safety_level: safety?.level || 'standard',
-        admin_flags: ['phase5p_conversation_state_owner'],
-        runtime: {
-          masterRoute: continuation.masterRoute,
-          openAiCalled: false,
-          orchestratorLane: 'conversation_state_owner',
-          phase5P: true,
-          conversationContinuation: true,
-        },
-      }, { message });
-
-      saveContinuationMemory(userId, {
-        message,
-        answer: structured,
-        humanNeed: 'continuation',
-        route: continuation.masterRoute,
-      });
-
-      recordUserTurn(userId, message, 'companion');
-
-      return {
-        handled: true,
-        dispatch: 'companion',
-        reasoningPlan: { answerLane: 'conversation_state_owner', phase5P: true },
-        ctx: {
-          structured,
-          userId,
-          mode,
-          personaKey,
-          message,
-          safety,
-          runtimeContext,
-          profile,
-          testerId,
-          sessionId,
-          cohort,
-          route: continuation.masterRoute,
-        },
-      };
-    }
-  }
-
 function runNoGlitchPreflight(userId, message, safety, runtimeContext) {
   const state = getDoctrineConversationState(userId);
   const wordSense = detectWordSense(message, state);
