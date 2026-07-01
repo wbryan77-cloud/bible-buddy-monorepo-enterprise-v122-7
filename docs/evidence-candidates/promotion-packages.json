@@ -1,0 +1,533 @@
+{
+  "phase": "2J-D",
+  "generatedAt": "2026-06-08T22:53:37.920Z",
+  "description": "Promotion packages — regression validated, not applied.",
+  "packages": [
+    {
+      "candidateId": "g2r_0002",
+      "pilotId": "sdp_0002",
+      "promotionType": "approve_support_edge",
+      "target": {
+        "cardId": "deathState",
+        "topic": "death_state",
+        "scriptures": [
+          "John 11:11-14",
+          "Ecclesiastes 9:5",
+          "1 Thessalonians 4:13-16"
+        ]
+      },
+      "source": "phase2i_stress_gap",
+      "topic": "death_state",
+      "question": "What is the state of the dead according to Scripture?",
+      "scripturesCited": [
+        "John 11:11-14",
+        "Ecclesiastes 9:5",
+        "1 Thessalonians 4:13-16"
+      ],
+      "candidateConclusion": "Sleep in death until resurrection (catalog chain candidate)",
+      "supportScore": 98,
+      "reviewStatus": "regression_passed",
+      "regressionRequired": true,
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "autoApplied": false,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Staged for promotion pending regression + human approval (score 98)",
+      "regression": {
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "A",
+            "supportGraphMatch": "john11_death_as_sleep",
+            "wouldImprove": true,
+            "issues": []
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 1,
+              "B": 0,
+              "C": 0,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 8,
+            "rssMB": 60
+          }
+        },
+        "promotionReadinessScore": 100,
+        "regressionPassed": true,
+        "promotionAllowed": true
+      },
+      "promotionAllowed": true
+    },
+    {
+      "candidateId": "g2r_0044",
+      "pilotId": "sdp_0047",
+      "promotionType": "approve_support_edge",
+      "target": {
+        "cardId": "messiahLogos",
+        "topic": "messiah_logos",
+        "scriptures": [
+          "John 1:1-14"
+        ]
+      },
+      "source": "Pilot YouTube metadata placeholder",
+      "topic": "messiah_logos",
+      "question": "What does Logos mean in John 1?",
+      "scripturesCited": [
+        "John 1:1-14"
+      ],
+      "candidateConclusion": "Metadata-only capture — transcript text NOT ingested in pilot",
+      "supportScore": 97,
+      "reviewStatus": "regression_passed",
+      "regressionRequired": true,
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "autoApplied": false,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Staged for promotion pending regression + human approval (score 97)",
+      "regression": {
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "C",
+            "supportGraphMatch": null,
+            "wouldImprove": false,
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 0,
+              "B": 0,
+              "C": 1,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 60
+          }
+        },
+        "promotionReadinessScore": 100,
+        "regressionPassed": true,
+        "promotionAllowed": true
+      },
+      "promotionAllowed": true
+    },
+    {
+      "candidateId": "g2r_0011",
+      "pilotId": "sdp_0011",
+      "promotionType": "approve_support_edge",
+      "target": {
+        "cardId": "sabbath",
+        "topic": "sabbath",
+        "scriptures": [
+          "Exodus 20:8-11"
+        ]
+      },
+      "source": "phase2i_class_c:doc_15",
+      "topic": "sabbath",
+      "question": "What does holy mean in the Sabbath commandment?",
+      "scripturesCited": [
+        "Exodus 20:8-11"
+      ],
+      "candidateConclusion": "It commands the Sabbath to be kept holy by resting as God rested at creation.",
+      "supportScore": 96,
+      "reviewStatus": "regression_passed",
+      "regressionRequired": true,
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "autoApplied": false,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Staged for promotion pending regression + human approval (score 96)",
+      "regression": {
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "C",
+            "supportGraphMatch": null,
+            "wouldImprove": false,
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 0,
+              "B": 0,
+              "C": 1,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 61
+          }
+        },
+        "promotionReadinessScore": 100,
+        "regressionPassed": true,
+        "promotionAllowed": true
+      },
+      "promotionAllowed": true
+    },
+    {
+      "candidateId": "g2r_0030",
+      "pilotId": "sdp_0031",
+      "promotionType": "approve_support_edge",
+      "target": {
+        "cardId": "sabbath",
+        "topic": "sabbath",
+        "scriptures": [
+          "Hebrews 4:9"
+        ]
+      },
+      "source": "phase2i_class_c:chl_15",
+      "topic": "sabbath",
+      "question": "Hebrews 4 means we do not need the seventh day anymore.",
+      "scripturesCited": [
+        "Hebrews 4:9"
+      ],
+      "candidateConclusion": "This verse indicates a promised rest for believers, which is often interpreted as spiritual rest in Christ.",
+      "supportScore": 96,
+      "reviewStatus": "regression_passed",
+      "regressionRequired": true,
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "autoApplied": false,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Staged for promotion pending regression + human approval (score 96)",
+      "regression": {
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "C",
+            "supportGraphMatch": null,
+            "wouldImprove": false,
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 0,
+              "B": 0,
+              "C": 1,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 61
+          }
+        },
+        "promotionReadinessScore": 100,
+        "regressionPassed": true,
+        "promotionAllowed": true
+      },
+      "promotionAllowed": true
+    },
+    {
+      "candidateId": "g2r_0001",
+      "pilotId": "sdp_0001",
+      "promotionType": "approve_card_ref",
+      "target": {
+        "cardId": "sabbath",
+        "missingRefs": [
+          "Acts 13:42-44"
+        ],
+        "field": "supportingScriptures"
+      },
+      "source": "phase2i_stress_gap",
+      "topic": "sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "scripturesCited": [
+        "Isaiah 58:13-14",
+        "Acts 17:2",
+        "Acts 13:42-44"
+      ],
+      "candidateConclusion": "Sabbath observance pattern from creation through apostolic era (candidate chain extension)",
+      "supportScore": 71,
+      "reviewStatus": "regression_passed",
+      "regressionRequired": true,
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "autoApplied": false,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Staged for card-ref promotion (Acts 13 / missing-ref cluster, score 71)",
+      "regression": {
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "C",
+            "supportGraphMatch": null,
+            "wouldImprove": false,
+            "issues": [
+              "unsupported_citation"
+            ]
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 0,
+              "B": 0,
+              "C": 1,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 61
+          }
+        },
+        "promotionReadinessScore": 100,
+        "regressionPassed": true,
+        "promotionAllowed": true
+      },
+      "promotionAllowed": true
+    },
+    {
+      "candidateId": "g2r_0010",
+      "pilotId": "sdp_0010",
+      "promotionType": "approve_card_ref",
+      "target": {
+        "cardId": "sabbath",
+        "missingRefs": [
+          "Acts 13:42-44"
+        ],
+        "field": "supportingScriptures"
+      },
+      "source": "phase2i_class_c:doc_13",
+      "topic": "sabbath",
+      "question": "What is a Sabbath day according to Scripture?",
+      "scripturesCited": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "candidateConclusion": "Jesus Himself observed the Sabbath regularly (Luke 4:16), and the early believers met on the Sabbath as well (Acts 13:42-44; Acts 17:2).",
+      "supportScore": 62,
+      "reviewStatus": "regression_passed",
+      "regressionRequired": true,
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "autoApplied": false,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Staged for card-ref promotion (Acts 13 / missing-ref cluster, score 62)",
+      "regression": {
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "C",
+            "supportGraphMatch": null,
+            "wouldImprove": false,
+            "issues": [
+              "unsupported_citation"
+            ]
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 0,
+              "B": 0,
+              "C": 1,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 61
+          }
+        },
+        "promotionReadinessScore": 100,
+        "regressionPassed": true,
+        "promotionAllowed": true
+      },
+      "promotionAllowed": true
+    },
+    {
+      "candidateId": "g2r_0036",
+      "pilotId": "sdp_0037",
+      "promotionType": "approve_card_ref",
+      "target": {
+        "cardId": "sabbath",
+        "missingRefs": [
+          "Acts 13:42-44"
+        ],
+        "field": "supportingScriptures"
+      },
+      "source": "phase2i_class_c:chain_sabbath_5",
+      "topic": "sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "scripturesCited": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "candidateConclusion": "Jesus Himself observed the Sabbath by attending synagogue and teaching (Luke 4:16), and the early believers continued this practice (Acts 13:42-44, Acts 17:2).",
+      "supportScore": 62,
+      "reviewStatus": "regression_passed",
+      "regressionRequired": true,
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "autoApplied": false,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Staged for card-ref promotion (Acts 13 / missing-ref cluster, score 62)",
+      "regression": {
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "C",
+            "supportGraphMatch": null,
+            "wouldImprove": false,
+            "issues": [
+              "unsupported_citation"
+            ]
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 0,
+              "B": 0,
+              "C": 1,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 61
+          }
+        },
+        "promotionReadinessScore": 100,
+        "regressionPassed": true,
+        "promotionAllowed": true
+      },
+      "promotionAllowed": true
+    }
+  ]
+}

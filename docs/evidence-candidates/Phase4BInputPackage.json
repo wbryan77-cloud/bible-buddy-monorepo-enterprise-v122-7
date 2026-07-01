@@ -1,0 +1,42 @@
+{
+  "ranAt": "2026-06-10T06:57:31.209Z",
+  "phase": "4B.handoff",
+  "entryPoint": "services/sandboxBibleAuthorityRetriever.js",
+  "runnerScript": "scripts/runBibleAuthorityPhase4A.js",
+  "corpusRoot": "docs/evidence-candidates",
+  "sandboxOnly": true,
+  "artifacts": {
+    "corpusIndex": "docs/evidence-candidates/Phase3CorpusSnapshot.json",
+    "traceabilityIndex": "docs/evidence-candidates/scripture-traceability-index.json",
+    "continuityIndex": "docs/evidence-candidates/genesis-to-revelation-continuity-index.json",
+    "inheritanceMap": "docs/evidence-candidates/topic-inheritance-map.json",
+    "relationshipGraph": "docs/evidence-candidates/relationship-graph.json",
+    "observedRelationshipLibrary": "docs/evidence-candidates/ObservedRelationshipLibrary.json",
+    "candidateRelationshipLibrary": "docs/evidence-candidates/CandidateRelationshipLibrary.json",
+    "scriptureChainLibrary": "docs/evidence-candidates/scripture-chain-library.json",
+    "vineNetwork": "docs/evidence-candidates/ScriptureVineNetwork.json",
+    "questionSupportIndex": "docs/evidence-candidates/question-coverage-index.json",
+    "enrichment": "docs/evidence-candidates/bible-wide-scripture-enrichment.json",
+    "kjvFreezeSupport": "docs/evidence-candidates/kjv-traceability-freeze-support.json",
+    "reviewQueue": "docs/evidence-candidates/review-queue-finalization.json",
+    "freezeManifest": "docs/evidence-candidates/Phase3CorpusFreezeManifest.json",
+    "implementationInputs": "docs/evidence-candidates/Phase4ImplementationInputs.json",
+    "sandboxResults": "docs/evidence-candidates/phase4a-sandbox/sandbox-test-results.json",
+    "governanceRegistry": "docs/evidence-candidates/Phase4A3GovernanceApprovalRegistry.json",
+    "certificationAudit": "docs/evidence-candidates/Phase4A3CorpusCertificationAudit.json"
+  },
+  "constraints": {
+    "noProductionDeployment": true,
+    "noLivePromptChanges": true,
+    "noDoctrineApproval": true,
+    "noDoctrineGeneration": true,
+    "noEvidenceCardChanges": true,
+    "noGraphDeployment": true,
+    "noCorpusMutation": true,
+    "noRelationshipPromotion": true,
+    "noVineNodeActivation": true
+  },
+  "phase4ADetermination": "READY_FOR_PHASE_4B",
+  "phase4A3Authorization": "AUTHORIZED",
+  "finalDetermination": "AUTHORIZED FOR PHASE 4B"
+}

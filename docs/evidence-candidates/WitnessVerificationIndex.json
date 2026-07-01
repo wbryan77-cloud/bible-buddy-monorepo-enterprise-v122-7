@@ -1,0 +1,507 @@
+{
+  "ranAt": "2026-06-10T04:19:07.139Z",
+  "witnesses": [
+    {
+      "topic": "wednesday_night_qa",
+      "witnessCount": 1298,
+      "independentSourceCount": 98,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "isaiah",
+      "witnessCount": 590,
+      "independentSourceCount": 27,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker",
+        "pdf_human_review",
+        "phase3r_recovered"
+      ],
+      "sourceDiversityScore": 3,
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "samuel",
+      "witnessCount": 184,
+      "independentSourceCount": 9,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker",
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 2,
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "jacob_israel_twelve_tribes",
+      "witnessCount": 92,
+      "independentSourceCount": 2,
+      "continuityStrength": "Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker",
+        "pdf_human_review",
+        "missing_entry_resolution",
+        "phase3r_recovered",
+        "gap_closure_semantic"
+      ],
+      "sourceDiversityScore": 5,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "john",
+      "witnessCount": 70,
+      "independentSourceCount": 4,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker",
+        "pdf_human_review",
+        "phase3r_recovered"
+      ],
+      "sourceDiversityScore": 3,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "sabbath",
+      "witnessCount": 66,
+      "independentSourceCount": 2,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker",
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 2,
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "joshua",
+      "witnessCount": 65,
+      "independentSourceCount": 2,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker",
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 2,
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "kingdom_of_god",
+      "witnessCount": 56,
+      "independentSourceCount": 2,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "feasts",
+      "witnessCount": 49,
+      "independentSourceCount": 5,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker",
+        "pdf_human_review",
+        "gap_closure_semantic"
+      ],
+      "sourceDiversityScore": 3,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "spirit_of_god",
+      "witnessCount": 44,
+      "independentSourceCount": 2,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "messiah_logos",
+      "witnessCount": 38,
+      "independentSourceCount": 1,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "jeremiah",
+      "witnessCount": 38,
+      "independentSourceCount": 2,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "millennial_kingdom_kingdom_on_earth",
+      "witnessCount": 31,
+      "independentSourceCount": 1,
+      "continuityStrength": "Strong",
+      "sourceDiversity": [
+        "claude_youtube_worker"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "ezekiel",
+      "witnessCount": 28,
+      "independentSourceCount": 2,
+      "continuityStrength": "Strong",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "ham",
+      "witnessCount": 25,
+      "independentSourceCount": 1,
+      "continuityStrength": "Moderate",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "lake_of_fire",
+      "witnessCount": 22,
+      "independentSourceCount": 1,
+      "continuityStrength": "Moderate",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "daniel",
+      "witnessCount": 21,
+      "independentSourceCount": 1,
+      "continuityStrength": "Strong",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "peter",
+      "witnessCount": 21,
+      "independentSourceCount": 1,
+      "continuityStrength": "Strong",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "word_of_god",
+      "witnessCount": 20,
+      "independentSourceCount": 2,
+      "continuityStrength": "Very Strong",
+      "sourceDiversity": [
+        "pdf_human_review",
+        "gap_closure_semantic"
+      ],
+      "sourceDiversityScore": 2,
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "little_leaven_daily_readings",
+      "witnessCount": 17,
+      "independentSourceCount": 1,
+      "continuityStrength": "Strong",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "book_of_life",
+      "witnessCount": 16,
+      "independentSourceCount": 2,
+      "continuityStrength": "Strong",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "content_with_what_you",
+      "witnessCount": 14,
+      "independentSourceCount": 1,
+      "continuityStrength": "Moderate",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "abib_fresh_beginning_revelation",
+      "witnessCount": 10,
+      "independentSourceCount": 1,
+      "continuityStrength": "Moderate",
+      "sourceDiversity": [
+        "pdf_human_review"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Torah",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "research_ecclesiastes_1213",
+      "witnessCount": 1,
+      "independentSourceCount": 1,
+      "continuityStrength": "Weak",
+      "sourceDiversity": [
+        "phase3r_recovered"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Writings"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "lessons_hebrews",
+      "witnessCount": 1,
+      "independentSourceCount": 1,
+      "continuityStrength": "Weak",
+      "sourceDiversity": [
+        "phase3r_recovered"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Epistles"
+      ],
+      "traceable": true
+    },
+    {
+      "topic": "iog_jess_templo_sus",
+      "witnessCount": 1,
+      "independentSourceCount": 1,
+      "continuityStrength": "Weak",
+      "sourceDiversity": [
+        "spanish_iog_3u"
+      ],
+      "sourceDiversityScore": 1,
+      "sectionsPresent": [
+        "Latter Prophets"
+      ],
+      "traceable": true
+    }
+  ]
+}

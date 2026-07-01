@@ -1,0 +1,205 @@
+{
+  "at": "2026-06-16T00:25:49.759Z",
+  "passed": 11,
+  "total": 11,
+  "memoryOk": true,
+  "results": [
+    {
+      "id": "1_pork",
+      "preview": "No. Staying with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture distinguishes cl",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "starts No"
+        },
+        {
+          "pass": true,
+          "label": "Leviticus 11"
+        },
+        {
+          "pass": true,
+          "label": "Deuteronomy 14"
+        },
+        {
+          "pass": true,
+          "label": "no Yes-pork bug"
+        }
+      ]
+    },
+    {
+      "id": "2_correction_memory",
+      "preview": "No. Staying with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture distinguishes cl",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "correction applied"
+        },
+        {
+          "pass": true,
+          "label": "no Yes after correction"
+        }
+      ]
+    },
+    {
+      "id": "3_fornication",
+      "preview": "No. Staying with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonia",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "starts No"
+        },
+        {
+          "pass": true,
+          "label": "2+ refs"
+        },
+        {
+          "pass": true,
+          "label": "fornication refs"
+        }
+      ]
+    },
+    {
+      "id": "4_fornication_verse",
+      "preview": "No. Scripture calls sexual relations outside marriage fornication and commands believers to flee it. Scripture witnesses: 1 Corinthians 6:18, 1 Thessalonians 4:3-5. what to say.",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "no which topic"
+        },
+        {
+          "pass": true,
+          "label": "fornication witness"
+        }
+      ]
+    },
+    {
+      "id": "5_pending_kingdom",
+      "preview": "I hear you. You're right — let me answer directly. Yes — Scripture points to God’s kingdom coming to earth, not man permanently escaping earth. Matthew 6:10 says God’s will is to be done in earth as in heaven. Revelation",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "answers pending kingdom"
+        },
+        {
+          "pass": true,
+          "label": "acknowledges frustration"
+        }
+      ]
+    },
+    {
+      "id": "6_emotional",
+      "preview": "I'm sorry. That kind of heartbreak can feel heavy. I'm here with you. What happened today that made it feel like it's crashing? One Scripture that may steady the heart is Psalm 34:18 — the LORD is nig",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "warm companion"
+        },
+        {
+          "pass": true,
+          "label": "optional scripture"
+        },
+        {
+          "pass": true,
+          "label": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "7_acts10",
+      "preview": "Absolutely — staying with the Bible text: Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean. Acts 10 is about people/Gentiles, not permission to eat unclean",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "Acts 10 answer"
+        },
+        {
+          "pass": true,
+          "label": "no OpenAI doctrine"
+        },
+        {
+          "pass": true,
+          "label": "Acts witnesses"
+        }
+      ]
+    },
+    {
+      "id": "8_bad_day_after_acts",
+      "preview": "I'm sorry today was hard. I'm here with you. Want to tell me what happened? Psalm 34:18 — the LORD is nigh unto them that are of a broken heart.",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "companion"
+        },
+        {
+          "pass": true,
+          "label": "no Acts 10 repeat"
+        }
+      ]
+    },
+    {
+      "id": "9_stop_then_verse",
+      "preview": "I can do that. Which Bible topic would you like more Scriptures about — the Sabbath, the Kingdom, clean foods, death, or something else?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "asks topic after stop"
+        },
+        {
+          "pass": true,
+          "label": "active cleared"
+        }
+      ]
+    },
+    {
+      "id": "10_unknown_clarify",
+      "preview": "I want to answer from Scripture directly. Could you tell me a little more — which book, topic, or passage you mean? I’ll stay with the Bible text line upon line.",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "clarifying question"
+        },
+        {
+          "pass": true,
+          "label": "no validator leak on clarify"
+        }
+      ]
+    },
+    {
+      "id": "11_no_validator_leak",
+      "preview": "No. Staying with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonia",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "no Scripture does not state leak"
+        },
+        {
+          "pass": true,
+          "label": "2+ witnesses"
+        }
+      ]
+    }
+  ],
+  "failed": []
+}

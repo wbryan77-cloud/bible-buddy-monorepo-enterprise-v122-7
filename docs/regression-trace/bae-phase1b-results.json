@@ -1,0 +1,474 @@
+{
+  "ranAt": "2026-06-07T21:07:52.474Z",
+  "phase": "1b",
+  "openAiKeyPresent": false,
+  "fixtureValidation": {
+    "passed": 9,
+    "total": 9,
+    "allPass": true
+  },
+  "memory": {
+    "startRssMB": 68,
+    "endRssMB": 170,
+    "peakRssMB": 170,
+    "avgRssMB": 145,
+    "deltaMB": 102
+  },
+  "stability": {
+    "maxOpenaiAttempts": 0,
+    "regenCount": 0,
+    "claimDegradedCount": 0,
+    "baeTraceDefault": true,
+    "buddyDebugOff": true
+  },
+  "liveTests": [
+    {
+      "question": "Can I eat pork?",
+      "id": "pork",
+      "retrievedEvidence": {
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "scriptureRefs": [
+          "Leviticus 11:1-47",
+          "Deuteronomy 14:1-21",
+          "Daniel 1:8-16",
+          "Acts 10:14",
+          "Acts 10:28",
+          "Acts 11:1-18",
+          "Isaiah 66:17"
+        ],
+        "effectiveTopic": "dietary_law",
+        "bindingRuleCount": 0
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 71,
+        "heapUsedMB": 15,
+        "heapTotalMB": 21
+      },
+      "memoryAfter": {
+        "rssMB": 131,
+        "heapUsedMB": 28,
+        "heapTotalMB": 42
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "Does Acts 10 make pork clean?",
+      "id": "acts10",
+      "retrievedEvidence": {
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "scriptureRefs": [
+          "Leviticus 11:1-47",
+          "Deuteronomy 14:1-21",
+          "Daniel 1:8-16",
+          "Acts 10:14",
+          "Acts 10:28",
+          "Acts 11:1-18",
+          "Isaiah 66:17"
+        ],
+        "effectiveTopic": "dietary_law",
+        "bindingRuleCount": 0
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 131,
+        "heapUsedMB": 31,
+        "heapTotalMB": 44
+      },
+      "memoryAfter": {
+        "rssMB": 140,
+        "heapUsedMB": 17,
+        "heapTotalMB": 41
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "What is the third heaven?",
+      "id": "third_heaven",
+      "retrievedEvidence": {
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "scriptureRefs": [
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Deuteronomy 10:14",
+          "John 3:13",
+          "John 7:33-34",
+          "John 8:21",
+          "John 13:33",
+          "2 Corinthians 12:2",
+          "Acts 1:9-11"
+        ],
+        "effectiveTopic": "heavens",
+        "bindingRuleCount": 5
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 140,
+        "heapUsedMB": 19,
+        "heapTotalMB": 44
+      },
+      "memoryAfter": {
+        "rssMB": 144,
+        "heapUsedMB": 31,
+        "heapTotalMB": 52
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "What is the kingdom of God?",
+      "id": "kingdom",
+      "retrievedEvidence": {
+        "cardIds": [
+          "kingdom"
+        ],
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "scriptureRefs": [
+          "Matthew 6:9-10",
+          "John 14:3",
+          "Acts 1:9-11",
+          "Revelation 5:10",
+          "Revelation 11:15",
+          "Revelation 20:1-6",
+          "Revelation 21:1-3"
+        ],
+        "effectiveTopic": "kingdom",
+        "bindingRuleCount": 6
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 144,
+        "heapUsedMB": 33,
+        "heapTotalMB": 55
+      },
+      "memoryAfter": {
+        "rssMB": 147,
+        "heapUsedMB": 22,
+        "heapTotalMB": 48
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "What happens when we die?",
+      "id": "death",
+      "retrievedEvidence": {
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefs": [
+          "Matthew 12:40",
+          "Matthew 27:57-66",
+          "Matthew 28:1-6",
+          "Mark 16:1-6",
+          "Luke 24:1-6",
+          "John 20:1-8"
+        ],
+        "effectiveTopic": "death_state",
+        "bindingRuleCount": 0
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 147,
+        "heapUsedMB": 25,
+        "heapTotalMB": 51
+      },
+      "memoryAfter": {
+        "rssMB": 149,
+        "heapUsedMB": 35,
+        "heapTotalMB": 69
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "What does Scripture teach about resurrection?",
+      "id": "resurrection",
+      "retrievedEvidence": {
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefs": [
+          "Matthew 12:40",
+          "Matthew 27:57-66",
+          "Matthew 28:1-6",
+          "Mark 16:1-6",
+          "Luke 24:1-6",
+          "John 20:1-8"
+        ],
+        "effectiveTopic": "resurrection_timeline",
+        "bindingRuleCount": 0
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 147,
+        "heapUsedMB": 15,
+        "heapTotalMB": 40
+      },
+      "memoryAfter": {
+        "rssMB": 148,
+        "heapUsedMB": 29,
+        "heapTotalMB": 52
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "How do we keep the Sabbath holy?",
+      "id": "sabbath",
+      "retrievedEvidence": {
+        "cardIds": [
+          "sabbath"
+        ],
+        "catalogKeys": [],
+        "scriptureRefs": [
+          "Genesis 2:2-3",
+          "Exodus 20:8-11",
+          "Leviticus 23:1-3",
+          "Isaiah 58:13-14",
+          "Luke 4:16",
+          "Acts 13:42-44",
+          "Acts 17:2",
+          "Hebrews 4:9"
+        ],
+        "effectiveTopic": "sabbath",
+        "bindingRuleCount": 0
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 148,
+        "heapUsedMB": 31,
+        "heapTotalMB": 55
+      },
+      "memoryAfter": {
+        "rssMB": 148,
+        "heapUsedMB": 17,
+        "heapTotalMB": 44
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "What feasts does Scripture command?",
+      "id": "holy_days",
+      "retrievedEvidence": {
+        "cardIds": [
+          "feasts"
+        ],
+        "catalogKeys": [],
+        "scriptureRefs": [
+          "Leviticus 23:1-44",
+          "Numbers 28:1-31",
+          "Numbers 29:1-40",
+          "Acts 2:1-4",
+          "1 Corinthians 5:7-8",
+          "Zechariah 14:16-19"
+        ],
+        "effectiveTopic": "feasts",
+        "bindingRuleCount": 0
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 148,
+        "heapUsedMB": 20,
+        "heapTotalMB": 46
+      },
+      "memoryAfter": {
+        "rssMB": 148,
+        "heapUsedMB": 26,
+        "heapTotalMB": 54
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "What does Logos mean in John 1:1?",
+      "id": "logos",
+      "retrievedEvidence": {
+        "cardIds": [
+          "messiahLogos"
+        ],
+        "catalogKeys": [],
+        "scriptureRefs": [],
+        "effectiveTopic": "messiah_logos",
+        "bindingRuleCount": 0
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 148,
+        "heapUsedMB": 29,
+        "heapTotalMB": 61
+      },
+      "memoryAfter": {
+        "rssMB": 148,
+        "heapUsedMB": 31,
+        "heapTotalMB": 55
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "What does holy mean?",
+      "id": "holy",
+      "retrievedEvidence": {
+        "cardIds": [],
+        "catalogKeys": [],
+        "scriptureRefs": [],
+        "effectiveTopic": null,
+        "bindingRuleCount": 0
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 148,
+        "heapUsedMB": 34,
+        "heapTotalMB": 62
+      },
+      "memoryAfter": {
+        "rssMB": 152,
+        "heapUsedMB": 48,
+        "heapTotalMB": 72
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "Where does the Bible say no man has ascended to heaven?",
+      "id": "no_ascended",
+      "retrievedEvidence": {
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "scriptureRefs": [
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Deuteronomy 10:14",
+          "John 3:13",
+          "John 7:33-34",
+          "John 8:21",
+          "John 13:33",
+          "2 Corinthians 12:2",
+          "Acts 1:9-11"
+        ],
+        "effectiveTopic": "heavens",
+        "bindingRuleCount": 5
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 155,
+        "heapUsedMB": 51,
+        "heapTotalMB": 75
+      },
+      "memoryAfter": {
+        "rssMB": 162,
+        "heapUsedMB": 19,
+        "heapTotalMB": 58
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    },
+    {
+      "question": "What did Jesus mean where I go ye cannot come?",
+      "id": "cannot_come",
+      "retrievedEvidence": {
+        "cardIds": [
+          "kingdom"
+        ],
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "scriptureRefs": [
+          "Matthew 6:9-10",
+          "John 14:3",
+          "Acts 1:9-11",
+          "Revelation 5:10",
+          "Revelation 11:15",
+          "Revelation 20:1-6",
+          "Revelation 21:1-3"
+        ],
+        "effectiveTopic": "kingdom",
+        "bindingRuleCount": 6
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "memoryBefore": {
+        "rssMB": 162,
+        "heapUsedMB": 21,
+        "heapTotalMB": 61
+      },
+      "memoryAfter": {
+        "rssMB": 170,
+        "heapUsedMB": 39,
+        "heapTotalMB": 91
+      },
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "regenerated": false
+    }
+  ],
+  "summary": {
+    "fixtureAllPass": true,
+    "livePassed": 0,
+    "liveTotal": 12,
+    "allPass": false
+  }
+}

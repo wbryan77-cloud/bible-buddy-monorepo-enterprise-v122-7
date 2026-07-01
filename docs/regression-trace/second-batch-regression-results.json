@@ -1,0 +1,86 @@
+{
+  "ranAt": "2026-06-09T03:35:02.889Z",
+  "phase": "2M",
+  "regressionPassed": true,
+  "ownership": {
+    "passed": true,
+    "violations": []
+  },
+  "memory": {
+    "passed": true,
+    "deltaMB": 0,
+    "rssMB": 142
+  },
+  "supportGraph": {
+    "passed": true,
+    "edgeCount": 49,
+    "batchEdgePresent": true,
+    "ex31EdgeId": "ex31_sabbath_sign_covenant_batch2m"
+  },
+  "claimTraceability": {
+    "passed": true,
+    "rowCount": 1,
+    "sampleClassification": "A"
+  },
+  "approvalGate": {
+    "passed": true,
+    "results": [
+      {
+        "candidateId": "rec_0003",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100
+      },
+      {
+        "candidateId": "rec_0100",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100
+      },
+      {
+        "candidateId": "rec_0001",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100
+      },
+      {
+        "candidateId": "rec_0022",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100
+      },
+      {
+        "candidateId": "rec_0063",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100
+      },
+      {
+        "candidateId": "rec_0099",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100
+      }
+    ]
+  },
+  "stress": {
+    "available": true,
+    "totalTurns": 125,
+    "degradedTurns": 0,
+    "degradationRate": 0,
+    "approvalRate": 100,
+    "classCounts": {
+      "A": 0,
+      "B": 0,
+      "C": 125,
+      "D": 0
+    },
+    "graphParticipationPct": 0
+  },
+  "classABCD": {
+    "A": 0,
+    "B": 0,
+    "C": 125,
+    "D": 0
+  },
+  "approvalRate": 100,
+  "degradationRate": 0,
+  "degradationImproved": true,
+  "baselineDegradationPct": 0,
+  "graphParticipationPct": 0,
+  "openaiErrors": "live_stress_not_run_missing_key"
+}

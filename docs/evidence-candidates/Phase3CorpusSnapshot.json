@@ -1,0 +1,29 @@
+{
+  "ranAt": "2026-06-10T07:48:10.398Z",
+  "phase": "3W.3-freeze-baseline",
+  "loaded": true,
+  "missingFiles": [],
+  "packCount": 28,
+  "chainCount": 8,
+  "observedCount": 4732,
+  "candidateCount": 10,
+  "vineNodeCount": 54,
+  "reviewQueueSize": 32,
+  "freezeStatus": "prepared",
+  "artifactPaths": {
+    "traceabilityIndex": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/scripture-traceability-index.json",
+    "chainLibrary": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/scripture-chain-library.json",
+    "relationshipGraph": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/relationship-graph.json",
+    "observedLibrary": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/ObservedRelationshipLibrary.json",
+    "candidateLibrary": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/CandidateRelationshipLibrary.json",
+    "continuityIndex": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/genesis-to-revelation-continuity-index.json",
+    "inheritanceMap": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/topic-inheritance-map.json",
+    "questionCoverage": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/question-coverage-index.json",
+    "vineNetwork": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/ScriptureVineNetwork.json",
+    "enrichment": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/bible-wide-scripture-enrichment.json",
+    "deepPacks": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/deep-recovered-packs.json",
+    "kjvFreezeSupport": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/kjv-traceability-freeze-support.json",
+    "freezeAudit": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/corpus-freeze-audit.json",
+    "reviewQueue": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/review-queue-finalization.json"
+  }
+}

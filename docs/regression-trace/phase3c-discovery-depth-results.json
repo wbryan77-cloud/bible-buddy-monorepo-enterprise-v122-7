@@ -1,0 +1,2323 @@
+{
+  "phase": "3C",
+  "ranAt": "2026-06-09T05:47:52.920Z",
+  "phase3aRanAt": "2026-06-09T05:17:41.417Z",
+  "depthAudit": {
+    "perSource": [
+      {
+        "sourceId": "phase2i_stress",
+        "sourceName": "Phase 2I Conversation Stress Test",
+        "sourceType": "stress_test",
+        "discoveryPath": "phase2i_stress",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 125,
+        "deduplicatedWithinSource": 121,
+        "retainedInPhase3a": 121,
+        "discardedQuestions": 4,
+        "retentionPct": 96.8,
+        "estimatedCorpusQuestions": 125,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "Internal stress test — fully loaded"
+      },
+      {
+        "sourceId": "2J-H",
+        "sourceName": "Previously processed unified candidates",
+        "sourceType": "previous_discovery",
+        "discoveryPath": "unified_candidates",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 67,
+        "deduplicatedWithinSource": 67,
+        "retainedInPhase3a": 67,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 60,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "Prior discovery candidate packages"
+      },
+      {
+        "sourceId": "2J-J",
+        "sourceName": "Previously processed unified candidates",
+        "sourceType": "previous_discovery",
+        "discoveryPath": "unified_candidates",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 53,
+        "deduplicatedWithinSource": 53,
+        "retainedInPhase3a": 53,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 60,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "Prior discovery candidate packages"
+      },
+      {
+        "sourceId": "class_c_extraction",
+        "sourceName": "Phase 2J-A Class C extraction",
+        "sourceType": "derived_stress",
+        "discoveryPath": "class_c_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 46,
+        "deduplicatedWithinSource": 26,
+        "retainedInPhase3a": 26,
+        "discardedQuestions": 20,
+        "retentionPct": 56.5,
+        "estimatedCorpusQuestions": 47,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "Phase 2J-A Class C stress extraction"
+      },
+      {
+        "sourceId": "iog_qa_archive",
+        "sourceName": "Israel of God Q&A Archive",
+        "sourceType": "iog_qa_archive",
+        "discoveryPath": "bulk_registry",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 12,
+        "rawQuestionsFound": 12,
+        "deduplicatedWithinSource": 12,
+        "retainedInPhase3a": 12,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 400,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "IOG public Q&A archive — metadata registry holds sample; full archive estimated hundreds of sessions"
+      },
+      {
+        "sourceId": "public_teaching_archive_001",
+        "sourceName": "Public Teaching Archive — Admin Attested",
+        "sourceType": "public_teaching_archive",
+        "discoveryPath": "licensed_transcript",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 6,
+        "deduplicatedWithinSource": 6,
+        "retainedInPhase3a": 6,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 80,
+        "estimatedCorpusLessons": 15,
+        "volumeNote": "Licensed transcript batches — partial load"
+      },
+      {
+        "sourceId": "iog_qa_expanded",
+        "sourceName": "IOG Q&A Archives — Expanded Registry",
+        "sourceType": "iog_qa_archive",
+        "discoveryPath": "expanded_registry",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 4,
+        "rawQuestionsFound": 4,
+        "deduplicatedWithinSource": 4,
+        "retainedInPhase3a": 4,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 4,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "iog_qa_archive_full",
+        "sourceName": "Israel of God Q&A Archives",
+        "sourceType": "iog_qa_archive",
+        "discoveryPath": "corpus_expansion",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 4,
+        "rawQuestionsFound": 4,
+        "deduplicatedWithinSource": 4,
+        "retainedInPhase3a": 4,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 40,
+        "estimatedCorpusLessons": 5,
+        "volumeNote": "Corpus expansion registry entries"
+      },
+      {
+        "sourceId": "phase2i_stress_gap",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 4,
+        "deduplicatedWithinSource": 4,
+        "retainedInPhase3a": 4,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 4,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "iog_lesson_archive",
+        "sourceName": "Israel of God Lesson Archives",
+        "sourceType": "iog_lesson_archive",
+        "discoveryPath": "bulk_registry",
+        "lessonsProcessed": 3,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 3,
+        "retainedInPhase3a": 3,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 150,
+        "estimatedCorpusLessons": 80,
+        "volumeNote": "IOG lesson archive — metadata holds 3 lessons; full catalog estimated dozens to hundreds"
+      },
+      {
+        "sourceId": "public_qa_pages",
+        "sourceName": "Public Written Q&A Pages",
+        "sourceType": "public_qa_page",
+        "discoveryPath": "bulk_registry",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 3,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 3,
+        "retainedInPhase3a": 3,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 30,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "Public web Q&A pages"
+      },
+      {
+        "sourceId": "public_qa_expanded",
+        "sourceName": "Public Written Q&A — Expanded",
+        "sourceType": "public_qa_page",
+        "discoveryPath": "expanded_registry",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 3,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 3,
+        "retainedInPhase3a": 3,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 3,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "iog_lesson_archive_full",
+        "sourceName": "Israel of God Lesson Archives",
+        "sourceType": "iog_lesson_archive",
+        "discoveryPath": "corpus_expansion",
+        "lessonsProcessed": 3,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 3,
+        "retainedInPhase3a": 3,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 40,
+        "estimatedCorpusLessons": 5,
+        "volumeNote": "Corpus expansion registry entries"
+      },
+      {
+        "sourceId": "scripture_focused_discovery",
+        "sourceName": "Additional Scripture-Focused Sources",
+        "sourceType": "scripture_focused",
+        "discoveryPath": "corpus_expansion",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 3,
+        "retainedInPhase3a": 3,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 40,
+        "estimatedCorpusLessons": 5,
+        "volumeNote": "Corpus expansion registry entries"
+      },
+      {
+        "sourceId": "phase2i_class_c:mix_02",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 2,
+        "retentionPct": 33.3,
+        "estimatedCorpusQuestions": 3,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:mix_16",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 2,
+        "retentionPct": 33.3,
+        "estimatedCorpusQuestions": 3,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:chain_death_5",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 2,
+        "retentionPct": 33.3,
+        "estimatedCorpusQuestions": 3,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:chain_kingdom_5",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 2,
+        "retentionPct": 33.3,
+        "estimatedCorpusQuestions": 3,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:chain_grief_logos_5",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 3,
+        "deduplicatedWithinSource": 2,
+        "retainedInPhase3a": 2,
+        "discardedQuestions": 1,
+        "retentionPct": 66.7,
+        "estimatedCorpusQuestions": 3,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "iog_public_content",
+        "sourceName": "Official IOG Public Content",
+        "sourceType": "iog_public_content",
+        "discoveryPath": "bulk_registry",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 2,
+        "deduplicatedWithinSource": 2,
+        "retainedInPhase3a": 2,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 50,
+        "estimatedCorpusLessons": 10,
+        "volumeNote": "Public written materials subset"
+      },
+      {
+        "sourceId": "iog_licensed_qa_001",
+        "sourceName": "IOG Q&A — Licensed Transcript Batch 1",
+        "sourceType": "iog_qa_archive",
+        "discoveryPath": "licensed_transcript",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 2,
+        "rawQuestionsFound": 2,
+        "deduplicatedWithinSource": 2,
+        "retainedInPhase3a": 2,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 80,
+        "estimatedCorpusLessons": 15,
+        "volumeNote": "Licensed transcript batches — partial load"
+      },
+      {
+        "sourceId": "official_transcript_001",
+        "sourceName": "Official Licensed Transcript",
+        "sourceType": "official_transcript",
+        "discoveryPath": "licensed_transcript",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 2,
+        "deduplicatedWithinSource": 2,
+        "retainedInPhase3a": 2,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 80,
+        "estimatedCorpusLessons": 15,
+        "volumeNote": "Licensed transcript batches — partial load"
+      },
+      {
+        "sourceId": "official_public_lesson_pages",
+        "sourceName": "Official Public Lesson Pages",
+        "sourceType": "official_lesson_page",
+        "discoveryPath": "corpus_expansion",
+        "lessonsProcessed": 2,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 2,
+        "deduplicatedWithinSource": 2,
+        "retainedInPhase3a": 2,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 40,
+        "estimatedCorpusLessons": 5,
+        "volumeNote": "Corpus expansion registry entries"
+      },
+      {
+        "sourceId": "phase2i_class_c:doc_13",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 2,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 1,
+        "retentionPct": 50,
+        "estimatedCorpusQuestions": 2,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:emo_09",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 2,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 1,
+        "retentionPct": 50,
+        "estimatedCorpusQuestions": 2,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:mix_05",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 2,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 1,
+        "retentionPct": 50,
+        "estimatedCorpusQuestions": 2,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:mix_14",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 2,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 1,
+        "retentionPct": 50,
+        "estimatedCorpusQuestions": 2,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:chain_sabbath_5",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 2,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 1,
+        "retentionPct": 50,
+        "estimatedCorpusQuestions": 2,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "youtube_metadata_registry",
+        "sourceName": "YouTube Metadata Registry",
+        "sourceType": "youtube_metadata",
+        "discoveryPath": "bulk_registry",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 200,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "YouTube metadata backlog — licensed captures not ingested"
+      },
+      {
+        "sourceId": "manual_admin_notes",
+        "sourceName": "Manual Admin Notes",
+        "sourceType": "manual_notes",
+        "discoveryPath": "bulk_registry",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "iog_licensed_lesson_001",
+        "sourceName": "IOG Lesson — Licensed Transcript",
+        "sourceType": "iog_lesson_archive",
+        "discoveryPath": "licensed_transcript",
+        "lessonsProcessed": 1,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 80,
+        "estimatedCorpusLessons": 15,
+        "volumeNote": "Licensed transcript batches — partial load"
+      },
+      {
+        "sourceId": "user_provided_transcript_001",
+        "sourceName": "User-Provided Transcript — Admin Verified",
+        "sourceType": "user_provided_transcript",
+        "discoveryPath": "licensed_transcript",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 80,
+        "estimatedCorpusLessons": 15,
+        "volumeNote": "Licensed transcript batches — partial load"
+      },
+      {
+        "sourceId": "pilot_admin_pilot_note_—_sabbath_acts_pattern",
+        "sourceName": "Admin pilot note — Sabbath Acts pattern",
+        "sourceType": "manual_notes",
+        "discoveryPath": "pilot_manual",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "pilot_pilot_youtube_metadata_placeholder",
+        "sourceName": "Pilot YouTube metadata placeholder",
+        "sourceType": "youtube_transcript_metadata",
+        "discoveryPath": "pilot_manual",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2h_live_gap",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_pastoral_gap",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "user_conversation_stress",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:doc_01",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:doc_15",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:doc_20",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:mix_03",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:mix_07",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:mix_22",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:mix_24",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:chl_12",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:chl_15",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "phase2i_class_c:chl_16",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "stress_test_class_c",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "Admin pilot note — Sabbath Acts pattern",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "manual_notes",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      },
+      {
+        "sourceId": "Pilot YouTube metadata placeholder",
+        "sourceName": "Genesis-Revelation discovery extraction",
+        "sourceType": "youtube_transcript_metadata",
+        "discoveryPath": "g2r_extraction",
+        "lessonsProcessed": 0,
+        "qaSessionsProcessed": 0,
+        "rawQuestionsFound": 1,
+        "deduplicatedWithinSource": 1,
+        "retainedInPhase3a": 1,
+        "discardedQuestions": 0,
+        "retentionPct": 100,
+        "estimatedCorpusQuestions": 1,
+        "estimatedCorpusLessons": 0,
+        "volumeNote": "No external volume estimate"
+      }
+    ],
+    "totals": {
+      "totalRawQuestions": 389,
+      "totalDeduplicatedWithinSource": 351,
+      "totalPhase3aQuestions": 167,
+      "totalDiscardedFromRaw": 38,
+      "percentageRetainedFromRaw": 42.9,
+      "percentageRetainedFromUnique": 47.6
+    }
+  },
+  "collapseAudit": {
+    "topicSummaries": [
+      {
+        "topic": "death_state",
+        "displayName": "Death State",
+        "questionCount": 29,
+        "sourceCount": 5,
+        "sampleQuestions": [
+          "What happens when a person dies?",
+          "Do believers go to heaven when they die?",
+          "What is the first resurrection?",
+          "State of the dead line upon line",
+          "What happens when we die?"
+        ],
+        "sources": [
+          "iog_qa_archive",
+          "2J-H",
+          "iog_lesson_archive",
+          "2J-J",
+          "phase2i_class_c:mix_05"
+        ]
+      },
+      {
+        "topic": "sabbath",
+        "displayName": "Sabbath",
+        "questionCount": 24,
+        "sourceCount": 5,
+        "sampleQuestions": [
+          "Why do you keep the seventh-day Sabbath?",
+          "Did the Sabbath change to Sunday?",
+          "What does Hebrews 4:9 mean about Sabbath rest?",
+          "Sabbath from Genesis to Revelation",
+          "What is the Sabbath day according to Scripture?"
+        ],
+        "sources": [
+          "2J-H",
+          "iog_lesson_archive",
+          "2J-J",
+          "phase2i_stress:chl_22",
+          "iog_licensed_qa_001"
+        ]
+      },
+      {
+        "topic": "emotional",
+        "displayName": "Emotional",
+        "questionCount": 22,
+        "sourceCount": 21,
+        "sampleQuestions": [
+          "I lost someone I love.",
+          "I feel abandoned by God.",
+          "I am angry with God.",
+          "Today has been a rough day. I had to let go of someone I love.",
+          "My mother has Alzheimer's and I feel overwhelmed."
+        ],
+        "sources": [
+          "phase2i_stress:emo_01",
+          "phase2i_stress:emo_02",
+          "phase2i_stress:emo_03",
+          "phase2i_stress:emo_04",
+          "phase2i_stress:emo_05",
+          "phase2i_stress:emo_06",
+          "phase2i_stress:emo_07",
+          "phase2i_stress:emo_08",
+          "phase2i_stress:emo_11",
+          "phase2i_stress:emo_12",
+          "phase2i_stress:emo_13",
+          "phase2i_stress:emo_15",
+          "phase2i_stress:emo_16",
+          "phase2i_stress:emo_17",
+          "phase2i_stress:emo_18",
+          "phase2i_stress:emo_20",
+          "phase2i_stress:emo_22",
+          "phase2i_stress:emo_23",
+          "phase2i_stress:emo_24",
+          "phase2i_class_c:chain_grief_logos_5",
+          "phase2i_stress:chain_grief_logos_5"
+        ]
+      },
+      {
+        "topic": "dietary_law",
+        "displayName": "Dietary Law",
+        "questionCount": 18,
+        "sourceCount": 4,
+        "sampleQuestions": [
+          "Is pork clean according to Scripture?",
+          "Does Acts 10 permit eating unclean animals?",
+          "Clean and unclean foods in Scripture",
+          "Can I eat pork?",
+          "Does Acts 10 make pork clean?"
+        ],
+        "sources": [
+          "2J-H",
+          "iog_lesson_archive",
+          "phase2i_stress_gap",
+          "phase2i_class_c:chl_16"
+        ]
+      },
+      {
+        "topic": "kingdom",
+        "displayName": "Kingdom",
+        "questionCount": 13,
+        "sourceCount": 6,
+        "sampleQuestions": [
+          "Where is the kingdom of God?",
+          "What is the kingdom of God?",
+          "What does Thy Kingdom Come mean?",
+          "Does Revelation teach the kingdom comes to earth?",
+          "Are believers going to heaven or is the kingdom coming to earth?"
+        ],
+        "sources": [
+          "2J-H",
+          "phase2i_stress:doc_18",
+          "2J-J",
+          "phase2i_stress:chl_06",
+          "phase2i_stress:chl_20",
+          "phase2i_stress:chain_kingdom_5"
+        ]
+      },
+      {
+        "topic": "heavens",
+        "displayName": "Heavens",
+        "questionCount": 10,
+        "sourceCount": 2,
+        "sampleQuestions": [
+          "What are the three heavens in Scripture?",
+          "What is the third heaven?",
+          "Where does Jesus say no man has ascended to heaven?",
+          "How many heavens are talked about in the Bible?",
+          "What is the third heaven Paul mentions?"
+        ],
+        "sources": [
+          "2J-H",
+          "phase2i_stress:doc_24"
+        ]
+      },
+      {
+        "topic": "open_topic",
+        "displayName": "Open Topic",
+        "questionCount": 10,
+        "sourceCount": 4,
+        "sampleQuestions": [
+          "What is the unpardonable sin?",
+          "What is the seal of God?",
+          "Who is Michael the archangel?",
+          "What is the great tribulation?",
+          "Faith and works in James and Paul"
+        ],
+        "sources": [
+          "iog_qa_archive_full",
+          "iog_lesson_archive_full",
+          "official_public_lesson_pages",
+          "scripture_focused_discovery"
+        ]
+      },
+      {
+        "topic": "mixed",
+        "displayName": "Mixed",
+        "questionCount": 8,
+        "sourceCount": 7,
+        "sampleQuestions": [
+          "I feel abandoned. Does Scripture say God leaves us?",
+          "I am angry. What does the Bible say about anger?",
+          "How do I honor God with my diet?",
+          "How do I pray when I am angry with God?",
+          "Where is he now according to Scripture?"
+        ],
+        "sources": [
+          "phase2i_class_c:mix_07",
+          "phase2i_stress:mix_09",
+          "phase2i_stress:mix_10",
+          "phase2i_stress:mix_21",
+          "phase2i_class_c:chain_death_5",
+          "phase2i_stress:chain_death_5",
+          "phase2i_stress:chain_sabbath_5"
+        ]
+      },
+      {
+        "topic": "holiness",
+        "displayName": "Holiness",
+        "questionCount": 6,
+        "sourceCount": 6,
+        "sampleQuestions": [
+          "What does holy mean in the Bible?",
+          "What does holy mean?",
+          "What does it mean to be holy as God is holy?",
+          "Why does God allow pain if He is holy?",
+          "What does holy mean? I want to live right."
+        ],
+        "sources": [
+          "iog_qa_archive",
+          "2J-J",
+          "phase2i_stress:doc_25",
+          "phase2i_class_c:mix_16",
+          "phase2i_class_c:mix_24",
+          "scripture_focused_discovery"
+        ]
+      },
+      {
+        "topic": "messiah_logos",
+        "displayName": "Messiah Logos",
+        "questionCount": 4,
+        "sourceCount": 2,
+        "sampleQuestions": [
+          "Who is the Logos in John 1?",
+          "What does Logos mean in John 1?",
+          "What does Logos mean in John 1:1?",
+          "Please help me understand Logos. I am confused and sad."
+        ],
+        "sources": [
+          "2J-H",
+          "2J-J"
+        ]
+      },
+      {
+        "topic": "challenge",
+        "displayName": "Challenge",
+        "questionCount": 4,
+        "sourceCount": 3,
+        "sampleQuestions": [
+          "Matthew 6:10 is only a prayer, not about earth.",
+          "John 3:13 does not apply to believers today.",
+          "So Leviticus does not apply anymore?",
+          "Give me a clear yes or no from Scripture."
+        ],
+        "sources": [
+          "phase2i_stress:chl_14",
+          "phase2i_stress:chl_23",
+          "phase2i_stress:chain_pork_5"
+        ]
+      },
+      {
+        "topic": "health",
+        "displayName": "Health",
+        "questionCount": 3,
+        "sourceCount": 3,
+        "sampleQuestions": [
+          "I am anxious about my health.",
+          "My child is sick and I am afraid.",
+          "How do I trust God when life hurts?"
+        ],
+        "sources": [
+          "phase2i_stress:emo_19",
+          "phase2i_stress:emo_21",
+          "phase2i_stress:emo_25"
+        ]
+      },
+      {
+        "topic": "prayer",
+        "displayName": "Prayer",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "Please pray for my family."
+        ],
+        "sources": [
+          "phase2i_stress:emo_10"
+        ]
+      },
+      {
+        "topic": "grief",
+        "displayName": "Grief",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "I miss my father who passed away."
+        ],
+        "sources": [
+          "phase2i_stress:emo_14"
+        ]
+      },
+      {
+        "topic": "doctrine",
+        "displayName": "Doctrine",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "How does John 13:33 fit with all this?"
+        ],
+        "sources": [
+          "phase2i_class_c:chain_kingdom_5"
+        ]
+      },
+      {
+        "topic": "baptism",
+        "displayName": "Baptism",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "What does baptism mean in Scripture?"
+        ],
+        "sources": [
+          "public_teaching_archive_001"
+        ]
+      },
+      {
+        "topic": "pray_jesus",
+        "displayName": "Pray Jesus",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "How should we pray according to Jesus?"
+        ],
+        "sources": [
+          "public_teaching_archive_001"
+        ]
+      },
+      {
+        "topic": "abrahamic_covenant",
+        "displayName": "Abrahamic Covenant",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "What is the Abrahamic covenant?"
+        ],
+        "sources": [
+          "public_teaching_archive_001"
+        ]
+      },
+      {
+        "topic": "revelation_teach_mark",
+        "displayName": "Revelation Teach Mark",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "What does Revelation teach about the mark of the beast?"
+        ],
+        "sources": [
+          "public_teaching_archive_001"
+        ]
+      },
+      {
+        "topic": "christians_tithe",
+        "displayName": "Christians Tithe",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "Should Christians tithe?"
+        ],
+        "sources": [
+          "public_teaching_archive_001"
+        ]
+      },
+      {
+        "topic": "who_144000_revelation",
+        "displayName": "Who 144000 Revelation",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "Who are the 144,000 in Revelation?"
+        ],
+        "sources": [
+          "public_teaching_archive_001"
+        ]
+      },
+      {
+        "topic": "marriage",
+        "displayName": "Marriage",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "What does the Bible say about marriage?"
+        ],
+        "sources": [
+          "user_provided_transcript_001"
+        ]
+      },
+      {
+        "topic": "genesis_teach_literal",
+        "displayName": "Genesis Teach Literal",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "Does Genesis teach a literal six-day creation?"
+        ],
+        "sources": [
+          "official_transcript_001"
+        ]
+      },
+      {
+        "topic": "purpose_noahs_flood",
+        "displayName": "Purpose Noahs Flood",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "What was the purpose of Noah's flood?"
+        ],
+        "sources": [
+          "official_transcript_001"
+        ]
+      },
+      {
+        "topic": "ten_commandments_still",
+        "displayName": "Ten Commandments Still",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "Are the ten commandments still binding?"
+        ],
+        "sources": [
+          "iog_qa_expanded"
+        ]
+      },
+      {
+        "topic": "faith_without_works",
+        "displayName": "Faith Without Works",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "What is faith without works?"
+        ],
+        "sources": [
+          "public_qa_expanded"
+        ]
+      },
+      {
+        "topic": "fear_god",
+        "displayName": "Fear God",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "Should we fear God?"
+        ],
+        "sources": [
+          "public_qa_expanded"
+        ]
+      },
+      {
+        "topic": "feasts",
+        "displayName": "Feasts",
+        "questionCount": 1,
+        "sourceCount": 1,
+        "sampleQuestions": [
+          "What are the biblical feast days?"
+        ],
+        "sources": [
+          "official_public_lesson_pages"
+        ]
+      }
+    ],
+    "collapseCandidates": [
+      {
+        "subtopic": "Two Witnesses",
+        "matchCount": 3,
+        "assignedTopics": [
+          "open_topic"
+        ],
+        "possiblyCollapsed": true,
+        "sampleQuestions": [
+          {
+            "question": "Who are the two witnesses in Revelation?",
+            "topic": "open_topic",
+            "source": "scripture_focused_discovery"
+          },
+          {
+            "question": "Who are the two witnesses in Revelation?",
+            "topic": "open_topic",
+            "source": "2J-J"
+          },
+          {
+            "question": "Who are the two witnesses in Revelation?",
+            "topic": "open_topic",
+            "source": "scripture_focused_discovery"
+          }
+        ]
+      },
+      {
+        "subtopic": "Mark of the Beast",
+        "matchCount": 3,
+        "assignedTopics": [
+          "open_topic",
+          "revelation_teach_mark"
+        ],
+        "possiblyCollapsed": true,
+        "sampleQuestions": [
+          {
+            "question": "What does Revelation teach about the mark of the beast?",
+            "topic": "open_topic",
+            "source": "public_teaching_archive_001"
+          },
+          {
+            "question": "What does Revelation teach about the mark of the beast?",
+            "topic": "revelation_teach_mark",
+            "source": "2J-J"
+          },
+          {
+            "question": "What does Revelation teach about the mark of the beast?",
+            "topic": "revelation_teach_mark",
+            "source": "public_teaching_archive_001"
+          }
+        ]
+      },
+      {
+        "subtopic": "144,000",
+        "matchCount": 3,
+        "assignedTopics": [
+          "open_topic",
+          "who_144000_revelation"
+        ],
+        "possiblyCollapsed": true,
+        "sampleQuestions": [
+          {
+            "question": "Who are the 144,000 in Revelation?",
+            "topic": "open_topic",
+            "source": "public_teaching_archive_001"
+          },
+          {
+            "question": "Who are the 144,000 in Revelation?",
+            "topic": "who_144000_revelation",
+            "source": "2J-J"
+          },
+          {
+            "question": "Who are the 144,000 in Revelation?",
+            "topic": "who_144000_revelation",
+            "source": "public_teaching_archive_001"
+          }
+        ]
+      },
+      {
+        "subtopic": "Michael the Archangel",
+        "matchCount": 4,
+        "assignedTopics": [
+          "open_topic"
+        ],
+        "possiblyCollapsed": true,
+        "sampleQuestions": [
+          {
+            "question": "Who is Michael the archangel?",
+            "topic": "open_topic",
+            "source": "iog_qa_expanded"
+          },
+          {
+            "question": "Who is Michael the archangel?",
+            "topic": "open_topic",
+            "source": "iog_qa_archive_full"
+          },
+          {
+            "question": "Who is Michael the archangel?",
+            "topic": "open_topic",
+            "source": "2J-J"
+          },
+          {
+            "question": "Who is Michael the archangel?",
+            "topic": "open_topic",
+            "source": "iog_qa_archive_full"
+          }
+        ]
+      },
+      {
+        "subtopic": "Great Tribulation",
+        "matchCount": 4,
+        "assignedTopics": [
+          "open_topic"
+        ],
+        "possiblyCollapsed": true,
+        "sampleQuestions": [
+          {
+            "question": "What is the great tribulation?",
+            "topic": "open_topic",
+            "source": "public_qa_expanded"
+          },
+          {
+            "question": "What is the great tribulation?",
+            "topic": "open_topic",
+            "source": "iog_qa_archive_full"
+          },
+          {
+            "question": "What is the great tribulation?",
+            "topic": "open_topic",
+            "source": "2J-J"
+          },
+          {
+            "question": "What is the great tribulation?",
+            "topic": "open_topic",
+            "source": "iog_qa_archive_full"
+          }
+        ]
+      }
+    ],
+    "openOrMixedCount": 18,
+    "keywordOnlyTopicCount": 5,
+    "topicKeywordMapSize": 28
+  },
+  "missingAudit": {
+    "people": [
+      {
+        "key": "adam",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "noah",
+        "rawMatches": 3,
+        "phase3aMatches": 3,
+        "withScripture": 2,
+        "status": "discovered",
+        "sampleQuestions": [
+          {
+            "question": "What was the purpose of Noah's flood?",
+            "topic": "open_topic",
+            "source": "official_transcript_001"
+          },
+          {
+            "question": "What was the purpose of Noah's flood?",
+            "topic": "purpose_noahs_flood",
+            "source": "2J-J"
+          },
+          {
+            "question": "What was the purpose of Noah's flood?",
+            "topic": "purpose_noahs_flood",
+            "source": "official_transcript_001"
+          }
+        ]
+      },
+      {
+        "key": "abraham",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "isaac",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "jacob",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "joseph",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "moses",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "joshua",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "david",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "solomon",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "saul",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "samson",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "elijah",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "elisha",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      }
+    ],
+    "prophecy": [
+      {
+        "key": "two_witnesses",
+        "rawMatches": 3,
+        "phase3aMatches": 3,
+        "withScripture": 2,
+        "status": "discovered",
+        "sampleQuestions": [
+          {
+            "question": "Who are the two witnesses in Revelation?",
+            "topic": "open_topic",
+            "source": "scripture_focused_discovery"
+          },
+          {
+            "question": "Who are the two witnesses in Revelation?",
+            "topic": "open_topic",
+            "source": "2J-J"
+          },
+          {
+            "question": "Who are the two witnesses in Revelation?",
+            "topic": "open_topic",
+            "source": "scripture_focused_discovery"
+          }
+        ]
+      },
+      {
+        "key": "great_tribulation",
+        "rawMatches": 4,
+        "phase3aMatches": 4,
+        "withScripture": 2,
+        "status": "discovered",
+        "sampleQuestions": [
+          {
+            "question": "What is the great tribulation?",
+            "topic": "open_topic",
+            "source": "public_qa_expanded"
+          },
+          {
+            "question": "What is the great tribulation?",
+            "topic": "open_topic",
+            "source": "iog_qa_archive_full"
+          },
+          {
+            "question": "What is the great tribulation?",
+            "topic": "open_topic",
+            "source": "2J-J"
+          }
+        ]
+      },
+      {
+        "key": "abomination_of_desolation",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "mark_of_the_beast",
+        "rawMatches": 3,
+        "phase3aMatches": 3,
+        "withScripture": 2,
+        "status": "discovered",
+        "sampleQuestions": [
+          {
+            "question": "What does Revelation teach about the mark of the beast?",
+            "topic": "open_topic",
+            "source": "public_teaching_archive_001"
+          },
+          {
+            "question": "What does Revelation teach about the mark of the beast?",
+            "topic": "revelation_teach_mark",
+            "source": "2J-J"
+          },
+          {
+            "question": "What does Revelation teach about the mark of the beast?",
+            "topic": "revelation_teach_mark",
+            "source": "public_teaching_archive_001"
+          }
+        ]
+      },
+      {
+        "key": "144000",
+        "rawMatches": 3,
+        "phase3aMatches": 3,
+        "withScripture": 2,
+        "status": "discovered",
+        "sampleQuestions": [
+          {
+            "question": "Who are the 144,000 in Revelation?",
+            "topic": "open_topic",
+            "source": "public_teaching_archive_001"
+          },
+          {
+            "question": "Who are the 144,000 in Revelation?",
+            "topic": "who_144000_revelation",
+            "source": "2J-J"
+          },
+          {
+            "question": "Who are the 144,000 in Revelation?",
+            "topic": "who_144000_revelation",
+            "source": "public_teaching_archive_001"
+          }
+        ]
+      },
+      {
+        "key": "new_jerusalem",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      }
+    ],
+    "doctrine": [
+      {
+        "key": "baptism",
+        "rawMatches": 3,
+        "phase3aMatches": 3,
+        "withScripture": 2,
+        "status": "discovered",
+        "sampleQuestions": [
+          {
+            "question": "What does baptism mean in Scripture?",
+            "topic": "open_topic",
+            "source": "public_teaching_archive_001"
+          },
+          {
+            "question": "What does baptism mean in Scripture?",
+            "topic": "baptism",
+            "source": "2J-J"
+          },
+          {
+            "question": "What does baptism mean in Scripture?",
+            "topic": "baptism",
+            "source": "public_teaching_archive_001"
+          }
+        ]
+      },
+      {
+        "key": "marriage",
+        "rawMatches": 5,
+        "phase3aMatches": 5,
+        "withScripture": 2,
+        "status": "discovered",
+        "sampleQuestions": [
+          {
+            "question": "What does the Bible say about marriage?",
+            "topic": "open_topic",
+            "source": "user_provided_transcript_001"
+          },
+          {
+            "question": "My marriage is falling apart.",
+            "topic": "emotional",
+            "source": "phase2i_stress"
+          },
+          {
+            "question": "What does the Bible say about marriage?",
+            "topic": "marriage",
+            "source": "2J-J"
+          }
+        ]
+      },
+      {
+        "key": "divorce",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "covenants",
+        "rawMatches": 6,
+        "phase3aMatches": 6,
+        "withScripture": 4,
+        "status": "discovered",
+        "sampleQuestions": [
+          {
+            "question": "What is the Abrahamic covenant?",
+            "topic": "open_topic",
+            "source": "public_teaching_archive_001"
+          },
+          {
+            "question": "What is the new covenant?",
+            "topic": "open_topic",
+            "source": "official_public_lesson_pages"
+          },
+          {
+            "question": "What is the Abrahamic covenant?",
+            "topic": "abrahamic_covenant",
+            "source": "2J-J"
+          }
+        ]
+      },
+      {
+        "key": "priesthood",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "resurrection",
+        "rawMatches": 24,
+        "phase3aMatches": 24,
+        "withScripture": 8,
+        "status": "discovered",
+        "sampleQuestions": [
+          {
+            "question": "What is the first resurrection?",
+            "topic": "death_state",
+            "source": "iog_qa_archive"
+          },
+          {
+            "question": "What does Scripture teach about resurrection?",
+            "topic": "resurrection_timeline",
+            "source": "phase2i_stress"
+          },
+          {
+            "question": "My spouse died. Will I see them at resurrection?",
+            "topic": "resurrection_timeline",
+            "source": "phase2i_stress"
+          }
+        ]
+      },
+      {
+        "key": "angels",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "satan",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      },
+      {
+        "key": "lake_of_fire",
+        "rawMatches": 0,
+        "phase3aMatches": 0,
+        "withScripture": 0,
+        "status": "missing",
+        "sampleQuestions": []
+      }
+    ],
+    "summary": {
+      "people": {
+        "discovered": 1,
+        "partial": 0,
+        "missing": 13
+      },
+      "prophecy": {
+        "discovered": 4,
+        "partial": 0,
+        "missing": 2
+      },
+      "doctrine": {
+        "discovered": 4,
+        "partial": 0,
+        "missing": 5
+      }
+    }
+  },
+  "coverageAudit": {
+    "perSource": [
+      {
+        "sourceId": "iog_qa_archive",
+        "sourceName": "Israel of God Q&A Archive",
+        "platform": "website",
+        "copyrightStatus": "metadata_only_pending_license",
+        "processingAllowed": false,
+        "registryEntryCount": 12,
+        "processedVolume": 12,
+        "estimatedContentVolume": 400,
+        "percentageProcessed": 3,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "iog_qa_archive_full",
+        "sourceName": "Israel of God Q&A Archives",
+        "platform": "iog_qa_archive",
+        "copyrightStatus": "metadata_only_pending_license",
+        "processingAllowed": false,
+        "registryEntryCount": 4,
+        "processedVolume": 4,
+        "estimatedContentVolume": 400,
+        "percentageProcessed": 1,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "youtube_metadata_registry",
+        "sourceName": "YouTube Metadata Registry",
+        "platform": "youtube",
+        "copyrightStatus": "metadata_only",
+        "processingAllowed": false,
+        "registryEntryCount": 1,
+        "processedVolume": 1,
+        "estimatedContentVolume": 200,
+        "percentageProcessed": 0.5,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "iog_lesson_archive",
+        "sourceName": "Israel of God Lesson Archives",
+        "platform": "website",
+        "copyrightStatus": "metadata_only_pending_license",
+        "processingAllowed": false,
+        "registryEntryCount": 3,
+        "processedVolume": 3,
+        "estimatedContentVolume": 150,
+        "percentageProcessed": 2,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "iog_lesson_archive_full",
+        "sourceName": "Israel of God Lesson Archives",
+        "platform": "iog_lesson_archive",
+        "copyrightStatus": "metadata_only_pending_license",
+        "processingAllowed": false,
+        "registryEntryCount": 3,
+        "processedVolume": 3,
+        "estimatedContentVolume": 150,
+        "percentageProcessed": 2,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "phase2i_stress",
+        "sourceName": "Phase 2I Conversation Stress Test",
+        "platform": "internal",
+        "copyrightStatus": "internal",
+        "processingAllowed": true,
+        "registryEntryCount": 0,
+        "processedVolume": 125,
+        "estimatedContentVolume": 125,
+        "percentageProcessed": 100,
+        "discoveryMode": "registry_plus_transcript"
+      },
+      {
+        "sourceId": "phase3a_unified_candidates",
+        "sourceName": "Previously Processed Unified Candidates",
+        "platform": "internal",
+        "copyrightStatus": "internal",
+        "processingAllowed": false,
+        "registryEntryCount": 120,
+        "processedVolume": 120,
+        "estimatedContentVolume": 120,
+        "percentageProcessed": 100,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "official_transcript_registry",
+        "sourceName": "Official Transcript Registry",
+        "platform": "transcript",
+        "copyrightStatus": "pending_admin_license",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 100,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "iog_public_content",
+        "sourceName": "Official IOG Public Content",
+        "platform": "website",
+        "copyrightStatus": "public_metadata_only",
+        "processingAllowed": false,
+        "registryEntryCount": 2,
+        "processedVolume": 2,
+        "estimatedContentVolume": 50,
+        "percentageProcessed": 4,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "user_provided_transcripts",
+        "sourceName": "User-Provided Transcripts",
+        "platform": "user_upload",
+        "copyrightStatus": "user_attested",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 50,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "public_qa_pages",
+        "sourceName": "Public Written Q&A Pages",
+        "platform": "web",
+        "copyrightStatus": "public_metadata_only",
+        "processingAllowed": false,
+        "registryEntryCount": 3,
+        "processedVolume": 3,
+        "estimatedContentVolume": 30,
+        "percentageProcessed": 10,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "phase3a_transcripts",
+        "sourceName": "Expanded Discovery Transcripts",
+        "platform": "transcript",
+        "copyrightStatus": "licensed_where_allowed",
+        "processingAllowed": true,
+        "registryEntryCount": 12,
+        "processedVolume": 12,
+        "estimatedContentVolume": 12,
+        "percentageProcessed": 100,
+        "discoveryMode": "registry_plus_transcript"
+      },
+      {
+        "sourceId": "phase3a_expanded_registry",
+        "sourceName": "Expanded Discovery Source Registry",
+        "platform": "metadata",
+        "copyrightStatus": "mixed",
+        "registryEntryCount": 7,
+        "processedVolume": 7,
+        "estimatedContentVolume": 7,
+        "percentageProcessed": 100,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "scripture_focused_discovery",
+        "sourceName": "Additional Scripture-Focused Sources",
+        "platform": "scripture_discovery",
+        "copyrightStatus": "admin_attested",
+        "processingAllowed": true,
+        "registryEntryCount": 3,
+        "processedVolume": 3,
+        "estimatedContentVolume": 3,
+        "percentageProcessed": 100,
+        "discoveryMode": "registry_plus_transcript"
+      },
+      {
+        "sourceId": "official_public_lesson_pages",
+        "sourceName": "Official Public Lesson Pages",
+        "platform": "official_lesson_page",
+        "copyrightStatus": "public_metadata_only",
+        "processingAllowed": false,
+        "registryEntryCount": 2,
+        "processedVolume": 2,
+        "estimatedContentVolume": 2,
+        "percentageProcessed": 100,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "manual_admin_notes",
+        "sourceName": "Manual Admin Notes",
+        "platform": "manual",
+        "copyrightStatus": "admin_attested",
+        "processingAllowed": false,
+        "registryEntryCount": 1,
+        "processedVolume": 1,
+        "estimatedContentVolume": 1,
+        "percentageProcessed": 100,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "Admin pilot note — Sabbath Acts pattern",
+        "sourceName": "Admin pilot note — Sabbath Acts pattern",
+        "platform": "manual_notes",
+        "copyrightStatus": "admin_attested",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 1,
+        "estimatedContentVolume": 1,
+        "percentageProcessed": 100,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "Pilot YouTube metadata placeholder",
+        "sourceName": "Pilot YouTube metadata placeholder",
+        "platform": "youtube_transcript_metadata",
+        "copyrightStatus": "metadata_only",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 1,
+        "estimatedContentVolume": 1,
+        "percentageProcessed": 100,
+        "discoveryMode": "registry_loaded_only"
+      },
+      {
+        "sourceId": "IOG Q&A — Licensed Transcript Batch 1",
+        "sourceName": "IOG Q&A — Licensed Transcript Batch 1",
+        "platform": "iog_qa_archive",
+        "copyrightStatus": "admin_licensed",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "IOG Lesson — Licensed Transcript",
+        "sourceName": "IOG Lesson — Licensed Transcript",
+        "platform": "iog_lesson_archive",
+        "copyrightStatus": "admin_licensed",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "Public Teaching Archive — Admin Attested",
+        "sourceName": "Public Teaching Archive — Admin Attested",
+        "platform": "public_teaching_archive",
+        "copyrightStatus": "public_attested",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "User-Provided Transcript — Admin Verified",
+        "sourceName": "User-Provided Transcript — Admin Verified",
+        "platform": "user_provided_transcript",
+        "copyrightStatus": "user_attested",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "Official Licensed Transcript",
+        "sourceName": "Official Licensed Transcript",
+        "platform": "official_transcript",
+        "copyrightStatus": "official_licensed",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "Israel of God Q&A Archive",
+        "sourceName": "Israel of God Q&A Archive",
+        "platform": "website",
+        "copyrightStatus": "metadata_only_pending_license",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "Israel of God Lesson Archives",
+        "sourceName": "Israel of God Lesson Archives",
+        "platform": "website",
+        "copyrightStatus": "metadata_only_pending_license",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "Official IOG Public Content",
+        "sourceName": "Official IOG Public Content",
+        "platform": "website",
+        "copyrightStatus": "public_metadata_only",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "YouTube Metadata Registry",
+        "sourceName": "YouTube Metadata Registry",
+        "platform": "youtube",
+        "copyrightStatus": "metadata_only",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "Official Transcript Registry",
+        "sourceName": "Official Transcript Registry",
+        "platform": "transcript",
+        "copyrightStatus": "pending_admin_license",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "User-Provided Transcripts",
+        "sourceName": "User-Provided Transcripts",
+        "platform": "user_upload",
+        "copyrightStatus": "user_attested",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "Public Written Q&A Pages",
+        "sourceName": "Public Written Q&A Pages",
+        "platform": "web",
+        "copyrightStatus": "public_metadata_only",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "Phase 2I Conversation Stress Test",
+        "sourceName": "Phase 2I Conversation Stress Test",
+        "platform": "internal",
+        "copyrightStatus": "internal",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "Manual Admin Notes",
+        "sourceName": "Manual Admin Notes",
+        "platform": "manual",
+        "copyrightStatus": "admin_attested",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      },
+      {
+        "sourceId": "phase2i_stress_registry",
+        "sourceName": "Phase 2I Conversation Stress Test",
+        "platform": "internal",
+        "copyrightStatus": "internal",
+        "processingAllowed": false,
+        "registryEntryCount": 0,
+        "processedVolume": 0,
+        "estimatedContentVolume": 0,
+        "percentageProcessed": 0,
+        "discoveryMode": "registered_not_processed"
+      }
+    ],
+    "totals": {
+      "registeredSources": 33,
+      "totalEstimatedVolume": 1802,
+      "totalProcessedVolume": 300,
+      "overallProcessedPct": 16.6,
+      "registryOnlySources": 13,
+      "notProcessedSources": 17
+    },
+    "verdict": "B_registry_loaded_material_only",
+    "verdictDetail": "Processed 300 questions vs estimated corpus 1802 — discovery loads registry JSON files, not live IOG/web corpus."
+  },
+  "expansionReadiness": {
+    "current": {
+      "questions": 167,
+      "topics": 21,
+      "chains": 120,
+      "g2rExpansions": 73
+    },
+    "projected": {
+      "questions": 1128,
+      "topics": 29,
+      "chains": 811,
+      "g2rExpansions": 493
+    },
+    "uplift": {
+      "questions": 961,
+      "topics": 8,
+      "chains": 691,
+      "g2rExpansions": 420
+    },
+    "assumptions": [
+      "60% of unprocessed estimated corpus volume becomes discoverable questions after licensing",
+      "Each missing/partial topic adds ~3 projected questions when sources are loaded",
+      "Chain and G2R ratios held constant from Phase 3A yields",
+      "No new discovery engine — projection assumes registry/transcript loading only"
+    ],
+    "bottlenecks": [
+      {
+        "id": "iog_license",
+        "severity": "critical",
+        "note": "6 IOG/metadata sources awaiting license for transcript processing"
+      },
+      {
+        "id": "empty_registries",
+        "severity": "high",
+        "note": "3 registered source slots have zero entries"
+      },
+      {
+        "id": "no_scripture",
+        "severity": "high",
+        "note": "150 questions lack scripture citations — cannot form chains"
+      }
+    ],
+    "hiddenCandidatesEstimate": 174
+  },
+  "clustering": {
+    "clusters": 138,
+    "questionsMergedBySimilarity": 29,
+    "largestClusters": [
+      {
+        "clusterId": "qc_017",
+        "topic": "sabbath",
+        "frequency": 26,
+        "variantCount": 3,
+        "representative": "How do we keep the Sabbath holy?"
+      },
+      {
+        "clusterId": "qc_009",
+        "topic": "holiness",
+        "frequency": 23,
+        "variantCount": 5,
+        "representative": "What does holy mean in the Bible?"
+      },
+      {
+        "clusterId": "qc_019",
+        "topic": "dietary_law",
+        "frequency": 20,
+        "variantCount": 3,
+        "representative": "Can I eat pork?"
+      },
+      {
+        "clusterId": "qc_018",
+        "topic": "messiah_logos",
+        "frequency": 16,
+        "variantCount": 2,
+        "representative": "What does Logos mean in John 1?"
+      },
+      {
+        "clusterId": "qc_062",
+        "topic": "death_state",
+        "frequency": 16,
+        "variantCount": 3,
+        "representative": "I am grieving. What does the Bible say about death?"
+      },
+      {
+        "clusterId": "qc_011",
+        "topic": "kingdom",
+        "frequency": 15,
+        "variantCount": 3,
+        "representative": "Where is the kingdom of God?"
+      },
+      {
+        "clusterId": "qc_016",
+        "topic": "sabbath",
+        "frequency": 15,
+        "variantCount": 3,
+        "representative": "What is the Sabbath day according to Scripture?"
+      },
+      {
+        "clusterId": "qc_005",
+        "topic": "death_state",
+        "frequency": 14,
+        "variantCount": 3,
+        "representative": "Do believers go to heaven when they die?"
+      }
+    ]
+  },
+  "executive": {
+    "discoveringFullCorpus": false,
+    "discoveringFullCorpusDetail": "Processed 300 questions vs estimated corpus 1802 — discovery loads registry JSON files, not live IOG/web corpus.",
+    "topicsCollapsing": true,
+    "topicsCollapsingDetail": "18 open/mixed questions; 5 watchlist subtopics found in corpus; keyword topic map has only 28 topics.",
+    "overDeduplicated": true,
+    "overDeduplicatedDetail": "389 raw → 167 Phase 3A (42.9% retained from raw). Exact-text dedup plus cross-source merge.",
+    "majorDoctrineMissing": false,
+    "majorProphecyMissing": false,
+    "majorPeopleMissing": true,
+    "discoveryBreadthSufficient": false,
+    "discoveryBreadthDetail": "21 topics / 167 questions vs estimated corpus 1802; 20 audited topics missing, 0 partial.",
+    "implementationTiming": "expand_discovery_first",
+    "implementationTimingDetail": "Continue high-score candidate review (Dietary/Sabbath) in parallel, but expand discovery breadth (IOG licensing, transcript loading, topic keyword map) before corpus-wide implementation.",
+    "coverageVerdict": "B_registry_loaded_material_only",
+    "totals": {
+      "totalRawQuestions": 389,
+      "totalDeduplicatedWithinSource": 351,
+      "totalPhase3aQuestions": 167,
+      "totalDiscardedFromRaw": 38,
+      "percentageRetainedFromRaw": 42.9,
+      "percentageRetainedFromUnique": 47.6
+    },
+    "expansionReadiness": {
+      "questions": 1128,
+      "topics": 29,
+      "chains": 811,
+      "g2rExpansions": 493
+    }
+  },
+  "safety": {
+    "productionChanges": false,
+    "newDiscovery": false,
+    "implementation": false,
+    "graphChanges": false,
+    "cardChanges": false,
+    "doctrineChanges": false,
+    "passed": true
+  },
+  "productionMutations": false
+}

@@ -1,0 +1,18 @@
+{
+  "ranAt": "2026-06-10T04:19:07.139Z",
+  "normalizationCoverage": 1,
+  "traceabilityCoverage": 0.897,
+  "continuityCoverage": 1,
+  "inheritanceCoverage": 1,
+  "questionCoverage": 0.584,
+  "duplicateScriptureGroups": 359,
+  "duplicateChainRate": 0,
+  "reviewQueueSize": 32,
+  "reviewQueuePct": 0.159,
+  "orphanTopicCount": 0,
+  "enrichmentCompletePacks": 24,
+  "enrichmentCoverage": 1,
+  "enrichmentTotalWitnessRefs": 6088,
+  "relationshipObserved": 4732,
+  "witnessTopicsScored": 26
+}

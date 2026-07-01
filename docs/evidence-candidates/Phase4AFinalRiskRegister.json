@@ -1,0 +1,43 @@
+{
+  "ranAt": "2026-06-10T06:57:31.209Z",
+  "phase": "4A.Final",
+  "risks": [
+    {
+      "category": "corpus_risk",
+      "rating": "low",
+      "summary": "Frozen corpus loaded with zero missing files; certification checks pass.",
+      "factors": [
+        "freeze_prepared",
+        "no_missing_artifacts"
+      ]
+    },
+    {
+      "category": "traceability_risk",
+      "rating": "low",
+      "summary": "Partial supporting inventory tiers for dietary_law, death_state, holy_spirit; bookkeeping activations pending human approval.",
+      "factors": [
+        "partial_supporting_inventory_tiers",
+        "pending_chain_attachments"
+      ]
+    },
+    {
+      "category": "governance_risk",
+      "rating": "medium",
+      "summary": "4 candidates approved for future activation pending human sign-off; no automatic promotion.",
+      "factors": [
+        "human_approval_required",
+        "david_vine_node_pending"
+      ]
+    },
+    {
+      "category": "implementation_risk",
+      "rating": "medium",
+      "summary": "Kingdom→David→Messiah vine path partial; non-blocking for Phase 4B sandbox. Zero implementation blockers in review queue.",
+      "factors": [
+        "david_vine_gap",
+        "zero_queue_blockers"
+      ]
+    }
+  ],
+  "overallRisk": "medium"
+}

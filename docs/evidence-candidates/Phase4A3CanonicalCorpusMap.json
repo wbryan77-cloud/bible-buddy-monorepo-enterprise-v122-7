@@ -1,0 +1,134 @@
+{
+  "ranAt": "2026-06-10T06:51:36.652Z",
+  "phase": "4A.3",
+  "recommendedRoot": "corpus",
+  "mappingOnly": true,
+  "filesMoved": false,
+  "artifacts": [
+    {
+      "artifact": "Phase3CorpusFreezeManifest.json",
+      "currentLocation": "docs/evidence-candidates/Phase3CorpusFreezeManifest.json",
+      "recommendedLocation": "corpus/freeze/Phase3CorpusFreezeManifest.json"
+    },
+    {
+      "artifact": "corpus-freeze-audit.json",
+      "currentLocation": "docs/evidence-candidates/corpus-freeze-audit.json",
+      "recommendedLocation": "corpus/freeze/corpus-freeze-audit.json"
+    },
+    {
+      "artifact": "Phase3CorpusSnapshot.json",
+      "currentLocation": "docs/evidence-candidates/Phase3CorpusSnapshot.json",
+      "recommendedLocation": "corpus/freeze/Phase3CorpusSnapshot.json"
+    },
+    {
+      "artifact": "scripture-traceability-index.json",
+      "currentLocation": "docs/evidence-candidates/scripture-traceability-index.json",
+      "recommendedLocation": "corpus/traceability/scripture-traceability-index.json"
+    },
+    {
+      "artifact": "kjv-traceability-freeze-support.json",
+      "currentLocation": "docs/evidence-candidates/kjv-traceability-freeze-support.json",
+      "recommendedLocation": "corpus/traceability/kjv-traceability-freeze-support.json"
+    },
+    {
+      "artifact": "traceability-finalization-report.json",
+      "currentLocation": "docs/evidence-candidates/traceability-finalization-report.json",
+      "recommendedLocation": "corpus/traceability/traceability-finalization-report.json"
+    },
+    {
+      "artifact": "scripture-chain-library.json",
+      "currentLocation": "docs/evidence-candidates/scripture-chain-library.json",
+      "recommendedLocation": "corpus/chains/scripture-chain-library.json"
+    },
+    {
+      "artifact": "expanded-chain-support.json",
+      "currentLocation": "docs/evidence-candidates/expanded-chain-support.json",
+      "recommendedLocation": "corpus/chains/expanded-chain-support.json"
+    },
+    {
+      "artifact": "chain-attachment-finalization.json",
+      "currentLocation": "docs/evidence-candidates/chain-attachment-finalization.json",
+      "recommendedLocation": "corpus/chains/chain-attachment-finalization.json"
+    },
+    {
+      "artifact": "genesis-to-revelation-continuity-index.json",
+      "currentLocation": "docs/evidence-candidates/genesis-to-revelation-continuity-index.json",
+      "recommendedLocation": "corpus/continuity/genesis-to-revelation-continuity-index.json"
+    },
+    {
+      "artifact": "topic-inheritance-map.json",
+      "currentLocation": "docs/evidence-candidates/topic-inheritance-map.json",
+      "recommendedLocation": "corpus/inheritance/topic-inheritance-map.json"
+    },
+    {
+      "artifact": "ScriptureVineNetwork.json",
+      "currentLocation": "docs/evidence-candidates/ScriptureVineNetwork.json",
+      "recommendedLocation": "corpus/vine/ScriptureVineNetwork.json"
+    },
+    {
+      "artifact": "bible-wide-scripture-enrichment.json",
+      "currentLocation": "docs/evidence-candidates/bible-wide-scripture-enrichment.json",
+      "recommendedLocation": "corpus/vine/bible-wide-scripture-enrichment.json"
+    },
+    {
+      "artifact": "ScriptureVineNetworkAudit.json",
+      "currentLocation": "docs/evidence-candidates/ScriptureVineNetworkAudit.json",
+      "recommendedLocation": "corpus/vine/ScriptureVineNetworkAudit.json"
+    },
+    {
+      "artifact": "question-coverage-index.json",
+      "currentLocation": "docs/evidence-candidates/question-coverage-index.json",
+      "recommendedLocation": "corpus/questions/question-coverage-index.json"
+    },
+    {
+      "artifact": "review-queue-finalization.json",
+      "currentLocation": "docs/evidence-candidates/review-queue-finalization.json",
+      "recommendedLocation": "corpus/review/review-queue-finalization.json"
+    },
+    {
+      "artifact": "ObservedRelationshipLibrary.json",
+      "currentLocation": "docs/evidence-candidates/ObservedRelationshipLibrary.json",
+      "recommendedLocation": "corpus/readiness/ObservedRelationshipLibrary.json"
+    },
+    {
+      "artifact": "CandidateRelationshipLibrary.json",
+      "currentLocation": "docs/evidence-candidates/CandidateRelationshipLibrary.json",
+      "recommendedLocation": "corpus/readiness/CandidateRelationshipLibrary.json"
+    },
+    {
+      "artifact": "relationship-graph.json",
+      "currentLocation": "docs/evidence-candidates/relationship-graph.json",
+      "recommendedLocation": "corpus/readiness/relationship-graph.json"
+    },
+    {
+      "artifact": "Phase4ImplementationInputs.json",
+      "currentLocation": "docs/evidence-candidates/Phase4ImplementationInputs.json",
+      "recommendedLocation": "corpus/readiness/Phase4ImplementationInputs.json"
+    },
+    {
+      "artifact": "phase4a-sandbox/sandbox-test-results.json",
+      "currentLocation": "docs/evidence-candidates/phase4a-sandbox/sandbox-test-results.json",
+      "recommendedLocation": "corpus/readiness/sandbox-test-results.json"
+    },
+    {
+      "artifact": "phase4a1/primary-chain-gap-analysis.json",
+      "currentLocation": "docs/evidence-candidates/phase4a1/primary-chain-gap-analysis.json",
+      "recommendedLocation": "corpus/review/primary-chain-gap-analysis.json"
+    },
+    {
+      "artifact": "phase4a2/primary-chain-governance-review.json",
+      "currentLocation": "docs/evidence-candidates/phase4a2/primary-chain-governance-review.json",
+      "recommendedLocation": "corpus/review/primary-chain-governance-review.json"
+    },
+    {
+      "artifact": "Phase4A3ReviewQueueClassification.json",
+      "currentLocation": "docs/evidence-candidates/Phase4A3ReviewQueueClassification.json",
+      "recommendedLocation": "corpus/review/Phase4A3ReviewQueueClassification.json"
+    },
+    {
+      "artifact": "Phase4A3GovernanceApprovalRegistry.json",
+      "currentLocation": "docs/evidence-candidates/Phase4A3GovernanceApprovalRegistry.json",
+      "recommendedLocation": "corpus/review/Phase4A3GovernanceApprovalRegistry.json"
+    }
+  ]
+}

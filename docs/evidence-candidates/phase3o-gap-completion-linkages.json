@@ -1,0 +1,4386 @@
+{
+  "ranAt": "2026-06-09T15:51:44.104Z",
+  "campMappings": [
+    {
+      "rawTitle": "Riches & Gains: The Doctrine of Today",
+      "canonicalTitle": "Riches & Gains: The Doctrine of Today",
+      "camp": "HQ",
+      "source": "IOG Main Website",
+      "assignedTopic": "riches_gains_the_doctrine",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "Power Over The Nations",
+      "canonicalTitle": "Power Over The Nations",
+      "camp": "HQ",
+      "source": "IOG Main Website",
+      "assignedTopic": "power_over_the_nations",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "God: Is It Two of Them or Just One, Who Talks To Himself",
+      "canonicalTitle": "God: Is It Two of Them or Just One, Who Talks To Himself",
+      "camp": "HQ",
+      "source": "IOG Main Website",
+      "assignedTopic": "god_two_them_just",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "Death: A Tool Created & Used By God, Not Satan",
+      "canonicalTitle": "Death: A Tool Created & Used By God, Not Satan",
+      "camp": "HQ",
+      "source": "IOG Main Website",
+      "assignedTopic": "death_state",
+      "assignedDoctrinePack": "Death State",
+      "assignedDoctrinePackTopic": "death_state",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "Feast Of Unleavened Bread 2022",
+      "canonicalTitle": "Feast Of Unleavened Bread",
+      "camp": "HQ",
+      "source": "IOG Main Website",
+      "assignedTopic": "feast_unleavened_bread_2022",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "Jacob & Esau",
+      "canonicalTitle": "Jacob & Esau",
+      "camp": "HQ",
+      "source": "IOG Main Website",
+      "assignedTopic": "jacob",
+      "assignedDoctrinePack": "Jacob",
+      "assignedDoctrinePackTopic": "jacob",
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "Passover",
+      "canonicalTitle": "Passover",
+      "camp": "HQ",
+      "source": "IOG Main Website",
+      "assignedTopic": "feasts",
+      "assignedDoctrinePack": "Feasts",
+      "assignedDoctrinePackTopic": "feasts",
+      "chainStatus": "chain_found_canonical",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "The Word of God: It Is Life and Power",
+      "canonicalTitle": "The Word of God: It Is Life and Power",
+      "camp": "HQ",
+      "source": "IOG Main Website",
+      "assignedTopic": "messiah_logos",
+      "assignedDoctrinePack": "Messiah Logos",
+      "assignedDoctrinePackTopic": "messiah_logos",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "The Destruction and Restoration of Israel",
+      "canonicalTitle": "The Destruction and Restoration of Israel",
+      "camp": "HQ",
+      "source": "IOG Main Website",
+      "assignedTopic": "the_destruction_and_restoration",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "Shows - The Israel of God",
+      "canonicalTitle": "Shows - The Israel of God",
+      "camp": "HQ",
+      "source": "IOG Shows",
+      "assignedTopic": "shows_the_israel_god",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"",
+      "canonicalTitle": "This Little Light of Mine, I'm Gonna Let It Shine",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_birmingham_this_little",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - \"PENTECOSTÉS\" 2026",
+      "canonicalTitle": "PENTECOSTÉS",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "feasts",
+      "assignedDoctrinePack": "Feasts",
+      "assignedDoctrinePackTopic": "feasts",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - \"JESÚS: El Dios desconocido\" 2026",
+      "canonicalTitle": "JESÚS: El Dios desconocido",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_jess_dios_desconocido",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - \"El velo de la mujer\" y \"La segunda muerte: el lago de fuego, la última parada para los...\"",
+      "canonicalTitle": "El velo de la mujer\" y \"La segunda muerte: el lago de fuego, la última parada para los...",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_velo_mujer_segunda",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - \"El gran cambio\" 2026",
+      "canonicalTitle": "El gran cambio",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_gran_cambio_2026",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - \"The Gospel By The Prophet Zechariah\" 2026",
+      "canonicalTitle": "The Gospel By The Prophet Zechariah",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_the_gospel_the",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Bay Area - \"Prepare To Meet Your God\"",
+      "canonicalTitle": "Prepare To Meet Your God",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_bay_area_prepare",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 1
+    },
+    {
+      "rawTitle": "IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"",
+      "canonicalTitle": "IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_washington_the_soul",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Detroit - \"Our God Dwells In The Thick Darkness\"",
+      "canonicalTitle": "Our God Dwells In The Thick Darkness",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_detroit_our_god",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - \"PENTECOST\" 2026",
+      "canonicalTitle": "PENTECOST",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "feasts",
+      "assignedDoctrinePack": "Feasts",
+      "assignedDoctrinePackTopic": "feasts",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"",
+      "canonicalTitle": "Adversity Builds Character, If You Let It",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_baton_rouge_adversity",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Phoenix - \"For Thine Is The Kingdom, And The Power, And The Glory, Forever\"",
+      "canonicalTitle": "For Thine Is The Kingdom, And The Power, And The Glory, Forever",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_phoenix_for_thine",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Dallas - \"Thy Kingdom Come: Preparing For The Rule & Reign of the King\"",
+      "canonicalTitle": "Thy Kingdom Come: Preparing For The Rule & Reign of the King",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "kingdom_of_god",
+      "assignedDoctrinePack": "Kingdom Of God",
+      "assignedDoctrinePackTopic": "kingdom_of_god",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG St. Louis - \"The Powers That Be\"",
+      "canonicalTitle": "IOG St. Louis - \"The Powers That Be",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_louis_the_powers",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - \"JESUS: The Unknown God\" 2026",
+      "canonicalTitle": "JESUS: The Unknown God",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_jesus_the_unknown",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Houston - \"Understanding The Fear of the Lord\"",
+      "canonicalTitle": "Understanding The Fear of the Lord",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_houston_understanding_the",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Jackson - \"Breaking Bonds & Spiritual Strongholds\"",
+      "canonicalTitle": "Breaking Bonds & Spiritual Strongholds",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_jackson_breaking_bonds",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Buffalo - \"The Destruction & Restoration of Israel\"",
+      "canonicalTitle": "The Destruction & Restoration of Israel",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_buffalo_the_destruction",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Charlotte - \"The Purpose of the Ministry: Service Unto Salvation\"",
+      "canonicalTitle": "The Purpose of the Ministry: Service Unto Salvation",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_charlotte_the_purpose",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Bay Area - \"Hath God Cast Away His People Israel?\"",
+      "canonicalTitle": "Hath God Cast Away His People Israel?",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_bay_area_hath",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG Orlando - \"The Lord's Day Is The Last Day\"",
+      "canonicalTitle": "The Lord's Day Is The Last Day",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_orlando_the_lords",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG — «Jesús en su templo; sus santos y sus labores» 2026",
+      "canonicalTitle": "IOG — «Jesús en su templo; sus santos y sus labores»",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_jess_templo_sus",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG — «¿Quién mató realmente a Jesús? ¡Adán!» 2026",
+      "canonicalTitle": "IOG — «¿Quién mató realmente a Jesús? ¡Adán!»",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_quin_mat_realmente",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG — «Israel reemplazado por su hermano Esaú» 2026",
+      "canonicalTitle": "IOG — «Israel reemplazado por su hermano Esaú»",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_israel_reemplazado_por",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG — «Los frutos del Espíritu, la imagen de Dios en el hombre y las claves para entrar en el...»",
+      "canonicalTitle": "IOG — «Los frutos del Espíritu, la imagen de Dios en el hombre y las claves para entrar en el...»",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_los_frutos_del",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - \"Israel el cautivo: de Babilonia a Babilonia\" 2026",
+      "canonicalTitle": "Israel el cautivo: de Babilonia a Babilonia",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_israel_cautivo_babilonia",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026",
+      "canonicalTitle": "IOG — «La Fiesta de los Panes sin Levadura: La última noche»",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_fiesta_los_panes",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG — «La Pascua: un festival pagano, no sagrado» (2026)",
+      "canonicalTitle": "IOG — «La Pascua: un festival pagano, no sagrado» (2026)",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_pascua_festival_pagano",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026",
+      "canonicalTitle": "IOG — «La Fiesta de los Panes sin Levadura: Primera noche»",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_fiesta_los_panes",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG — «La promesa y el tiempo de su cumplimiento» 2026",
+      "canonicalTitle": "IOG — «La promesa y el tiempo de su cumplimiento»",
+      "camp": "HQ",
+      "source": "IOG YouTube Main (IOGNEWS9002)",
+      "assignedTopic": "iog_promesa_tiempo_cumplimiento",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG X (Twitter)",
+      "canonicalTitle": "IOG X (Twitter)",
+      "camp": "HQ",
+      "source": "IOG X (Twitter)",
+      "assignedTopic": "iog_twitter_iog_twitter",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Glory To Glory\"",
+      "canonicalTitle": "Stick To The Script - \"Glory To Glory",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Works of The Flesh\"",
+      "canonicalTitle": "Stick To The Script - \"The Works of The Flesh",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "works",
+      "assignedDoctrinePack": "Works",
+      "assignedDoctrinePackTopic": "works",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"",
+      "canonicalTitle": "Stick To The Script - \"Deuteronomy 28: The Curse of Israel",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 1
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Stir Up The Gift\"",
+      "canonicalTitle": "Stick To The Script - \"Stir Up The Gift",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Way of Holiness\"",
+      "canonicalTitle": "Stick To The Script - \"The Way of Holiness",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "holiness",
+      "assignedDoctrinePack": "Holiness",
+      "assignedDoctrinePackTopic": "holiness",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Tabernacle of the Congregation\"",
+      "canonicalTitle": "Stick To The Script - \"The Tabernacle of the Congregation",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "tabernacle",
+      "assignedDoctrinePack": "Tabernacle",
+      "assignedDoctrinePackTopic": "tabernacle",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"An Altar of Earth Thou Shall Make Unto Me\"",
+      "canonicalTitle": "Stick To The Script - \"An Altar of Earth Thou Shall Make Unto Me",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Father of Lights\"",
+      "canonicalTitle": "Stick To The Script - \"The Father of Lights",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Passover\"",
+      "canonicalTitle": "Stick To The Script - \"The Passover",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "feasts",
+      "assignedDoctrinePack": "Feasts",
+      "assignedDoctrinePackTopic": "feasts",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The King Of Saints\"",
+      "canonicalTitle": "Stick To The Script - \"The King Of Saints",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Bosom of Fools\"",
+      "canonicalTitle": "Stick To The Script - \"Bosom of Fools",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Miracle of Emmaus\"",
+      "canonicalTitle": "Stick To The Script - \"The Miracle of Emmaus",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Teachers Script - Part 20\"",
+      "canonicalTitle": "Stick To The Script - \"Teachers Script - Part 20",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Law of Judgment\"",
+      "canonicalTitle": "Stick To The Script - \"The Law of Judgment",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Faith Worketh Patience\"",
+      "canonicalTitle": "Stick To The Script - \"Faith Worketh Patience",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "faith",
+      "assignedDoctrinePack": "Faith",
+      "assignedDoctrinePackTopic": "faith",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"They That Are Made Whole\"",
+      "canonicalTitle": "Stick To The Script - \"They That Are Made Whole",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Faint Not\"",
+      "canonicalTitle": "Stick To The Script - \"Faint Not",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Tradition of Men\" 2026",
+      "canonicalTitle": "Stick To The Script - \"The Tradition of Men",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Book of Remembrance\"",
+      "canonicalTitle": "Stick To The Script - \"The Book of Remembrance",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"They That Know Good and Doeth It Not\"",
+      "canonicalTitle": "Stick To The Script - \"They That Know Good and Doeth It Not",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Spirit of Grace\"",
+      "canonicalTitle": "Stick To The Script - \"The Spirit of Grace",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "grace",
+      "assignedDoctrinePack": "Grace",
+      "assignedDoctrinePackTopic": "grace",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Patience of The Saints\"",
+      "canonicalTitle": "Stick To The Script - \"The Patience of The Saints",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"SEEK YE OUT of the BOOK\"",
+      "canonicalTitle": "Stick To The Script - \"SEEK YE OUT of the BOOK",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Beauty of Holiness\"",
+      "canonicalTitle": "Stick To The Script - \"Beauty of Holiness",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "holiness",
+      "assignedDoctrinePack": "Holiness",
+      "assignedDoctrinePackTopic": "holiness",
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"The Contingency of Sainthood\"",
+      "canonicalTitle": "Stick To The Script - \"The Contingency of Sainthood",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Why Did Israel Choose Mount Ebal?\"",
+      "canonicalTitle": "Stick To The Script - \"Why Did Israel Choose Mount Ebal?",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"Corrupt Fruit\"",
+      "canonicalTitle": "Stick To The Script - \"Corrupt Fruit",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "IOG - Stick To The Script - \"TABERNACLES\"",
+      "canonicalTitle": "Stick To The Script - \"TABERNACLES",
+      "camp": "HQ",
+      "source": "IOG Wednesday Night Q&A (IOGIsrael)",
+      "assignedTopic": "iog_stick_the_script",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "THE ISRAEL OF GOD RESEARCH COMMITTEE HOMEPAGE",
+      "canonicalTitle": "THE ISRAEL OF GOD RESEARCH COMMITTEE HOMEPAGE",
+      "camp": "HQ",
+      "source": "IOG Research Committee",
+      "assignedTopic": "the_israel_god_research",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "Home - Israel The Church Of Jesus",
+      "canonicalTitle": "Home - Israel The Church Of Jesus",
+      "camp": "HQ",
+      "source": "ICOJ Main Website",
+      "assignedTopic": "home_israel_the_church",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "6 5 26 THE BOOK OF LIFE",
+      "canonicalTitle": "6 5 26 THE BOOK OF LIFE",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "the_book_life_the",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "5 29 26 THE WORD OF GOD",
+      "canonicalTitle": "5 29 26 THE WORD OF GOD",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "messiah_logos",
+      "assignedDoctrinePack": "Messiah Logos",
+      "assignedDoctrinePackTopic": "messiah_logos",
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "5 30 26 THE SPIRIT OF GOD",
+      "canonicalTitle": "5 30 26 THE SPIRIT OF GOD",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "holy_spirit",
+      "assignedDoctrinePack": "Holy Spirit",
+      "assignedDoctrinePackTopic": "holy_spirit",
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "5 22 26 THAT MAN OF SIN",
+      "canonicalTitle": "5 22 26 THAT MAN OF SIN",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "that_man_sin_that",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "5 22 26 THAT MAN OF SIN Ref",
+      "canonicalTitle": "5 22 26 THAT MAN OF SIN Ref",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "that_man_sin_ref",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found_canonical",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "MAY 23 26 WHOREDOM AKA FORNICATION",
+      "canonicalTitle": "MAY 23 26 WHOREDOM AKA FORNICATION",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "may_whoredom_aka_fornication",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "5 15 16 AMERICA IN DECLINE ROME IS RISING",
+      "canonicalTitle": "5 15 16 AMERICA IN DECLINE ROME IS RISING",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "america_decline_rome_rising",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "The Sun Never Sets British Empire WORD doc",
+      "canonicalTitle": "The Sun Never Sets British Empire WORD doc",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "the_sun_never_sets",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "no_chain",
+      "chainCount": 0
+    },
+    {
+      "rawTitle": "5 16 26 REAP WHAT YOU SOW",
+      "canonicalTitle": "5 16 26 REAP WHAT YOU SOW",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "reap_what_you_sow",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "5 8 26 KILLED FOR JESUS",
+      "canonicalTitle": "5 8 26 KILLED FOR JESUS",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "killed_for_jesus_killed",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "5 1 26 THE LORDS DETERMINATION",
+      "canonicalTitle": "5 1 26 THE LORDS DETERMINATION",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "the_lords_determination_the",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "MAY 2 2026 KING DAVID A MAN AFTER GODS HEART",
+      "canonicalTitle": "MAY 2 2026 KING DAVID A MAN AFTER GODS HEART",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "david",
+      "assignedDoctrinePack": "David",
+      "assignedDoctrinePackTopic": "david",
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "4 24 26 SEEK GOD NOW TIME IS SHORT",
+      "canonicalTitle": "4 24 26 SEEK GOD NOW TIME IS SHORT",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "seek_god_now_time",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "4 25 26 THE AWAKENING OF HEBREWS",
+      "canonicalTitle": "4 25 26 THE AWAKENING OF HEBREWS",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "the_awakening_hebrews_the",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "4 17 26 BACK INTO EGYPT fnl",
+      "canonicalTitle": "4 17 26 BACK INTO EGYPT fnl",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "back_into_egypt_fnl",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "4 18 26 VENGEANCE IS THE LORDS",
+      "canonicalTitle": "4 18 26 VENGEANCE IS THE LORDS",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "vengeance_the_lords_vengeance",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "4 1 26 CHRIST OUR PASSOVER LAMB NOT EASTER HAM",
+      "canonicalTitle": "4 1 26 CHRIST OUR PASSOVER LAMB NOT EASTER HAM",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "ham",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "4 3 26 THE UNLEAVENED BREAD JOURNEY BEGINS",
+      "canonicalTitle": "4 3 26 THE UNLEAVENED BREAD JOURNEY BEGINS",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "the_unleavened_bread_journey",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "Sabbath Eve 4 3 26 O JERUSALEM JERUSALEM",
+      "canonicalTitle": "Sabbath Eve 4 3 26 O JERUSALEM JERUSALEM",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "eve",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "4 4 26 A LITTLE LEAVEN W daily readings",
+      "canonicalTitle": "4 4 26 A LITTLE LEAVEN W daily readings",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "little_leaven_daily_readings",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "3 27 26 CIRCUMCISION STILL GOOD",
+      "canonicalTitle": "3 27 26 CIRCUMCISION STILL GOOD",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "circumcision_still_good_circumcision",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "3 28 26 GODS JUDGMENT",
+      "canonicalTitle": "3 28 26 GODS JUDGMENT",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "gods_judgment_gods_judgment",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "3 20 26 ABIB A FRESH BEGINNING",
+      "canonicalTitle": "3 20 26 ABIB A FRESH BEGINNING",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "abib_fresh_beginning_abib",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "3 21 26 CHILDREN ARE THE FUTURE",
+      "canonicalTitle": "3 21 26 CHILDREN ARE THE FUTURE",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "children_are_the_future",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "3 13 26 FASTING AND PRAYING",
+      "canonicalTitle": "3 13 26 FASTING AND PRAYING",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "prayer",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "3 14 26 JESUS SPOKEN OF BY DAVID THE PROPHET Bro Willie",
+      "canonicalTitle": "3 14 26 JESUS SPOKEN OF BY DAVID THE PROPHET Bro Willie",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "david",
+      "assignedDoctrinePack": "David",
+      "assignedDoctrinePackTopic": "david",
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "3 6 26 SATAN HAS DECEIVED THE WHOLE WORLD",
+      "canonicalTitle": "3 6 26 SATAN HAS DECEIVED THE WHOLE WORLD",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "satan",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "3 7 26 BEWARE OF SPIRITS ALL ARE NOT OF GOD",
+      "canonicalTitle": "3 7 26 BEWARE OF SPIRITS ALL ARE NOT OF GOD",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "beware_spirits_all_are",
+      "assignedDoctrinePack": null,
+      "assignedDoctrinePackTopic": null,
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    },
+    {
+      "rawTitle": "2 27 26 FEAR GOD OR HELL FIRE and BORN AGAIN A MENTAL CHANGE ONLY OR A BODILY CHANGE TOO",
+      "canonicalTitle": "2 27 26 FEAR GOD OR HELL FIRE and BORN AGAIN A MENTAL CHANGE ONLY OR A BODILY CHANGE TOO",
+      "camp": "HQ",
+      "source": "ICOJ Lesson Handouts",
+      "assignedTopic": "lake_of_fire",
+      "assignedDoctrinePack": "Lake Of Fire",
+      "assignedDoctrinePackTopic": "lake_of_fire",
+      "chainStatus": "chain_found",
+      "chainCount": 3
+    }
+  ],
+  "spanishLinkages": [
+    {
+      "spanishTitle": "IOG - \"PENTECOSTÉS\" 2026",
+      "englishEquivalent": "Pentecost",
+      "topicCandidate": "pentecost",
+      "doctrinePackAssignment": "Pentecost",
+      "doctrinePackTopic": "pentecost",
+      "scriptureRefsFound": [],
+      "chainFound": false,
+      "status": "topic_assigned",
+      "manualTranscriptNeeded": true
+    },
+    {
+      "spanishTitle": "IOG - \"JESÚS: El Dios desconocido\" 2026",
+      "englishEquivalent": "Jesus: The Unknown God",
+      "topicCandidate": "jesus_old_testament_new_testament",
+      "doctrinePackAssignment": "Jesus Old Testament / New Testament",
+      "doctrinePackTopic": "jesus_old_testament_new_testament",
+      "scriptureRefsFound": [],
+      "chainFound": false,
+      "status": "topic_assigned",
+      "manualTranscriptNeeded": true
+    },
+    {
+      "spanishTitle": "IOG - \"El velo de la mujer\" y \"La segunda muerte: el lago de fuego, la última parada para los...\"",
+      "englishEquivalent": "The veil of the woman",
+      "topicCandidate": "women_in_bible",
+      "doctrinePackAssignment": "Women In Bible",
+      "doctrinePackTopic": "women_in_bible",
+      "scriptureRefsFound": [],
+      "chainFound": false,
+      "status": "topic_assigned",
+      "manualTranscriptNeeded": true
+    },
+    {
+      "spanishTitle": "IOG - \"El gran cambio\" 2026",
+      "englishEquivalent": "The great change",
+      "topicCandidate": "resurrection",
+      "doctrinePackAssignment": "Resurrection",
+      "doctrinePackTopic": null,
+      "scriptureRefsFound": [],
+      "chainFound": false,
+      "status": "topic_assigned",
+      "manualTranscriptNeeded": true
+    },
+    {
+      "spanishTitle": "IOG — «Jesús en su templo; sus santos y sus labores» 2026",
+      "englishEquivalent": "Jesus: The Unknown God",
+      "topicCandidate": "jesus_old_testament_new_testament",
+      "doctrinePackAssignment": "Jesus Old Testament / New Testament",
+      "doctrinePackTopic": "jesus_old_testament_new_testament",
+      "scriptureRefsFound": [],
+      "chainFound": false,
+      "status": "topic_assigned",
+      "manualTranscriptNeeded": true
+    },
+    {
+      "spanishTitle": "IOG — «¿Quién mató realmente a Jesús? ¡Adán!» 2026",
+      "englishEquivalent": "Jesus: The Unknown God",
+      "topicCandidate": "jesus_old_testament_new_testament",
+      "doctrinePackAssignment": "Jesus Old Testament / New Testament",
+      "doctrinePackTopic": "jesus_old_testament_new_testament",
+      "scriptureRefsFound": [],
+      "chainFound": false,
+      "status": "topic_assigned",
+      "manualTranscriptNeeded": true
+    },
+    {
+      "spanishTitle": "IOG — «Israel reemplazado por su hermano Esaú» 2026",
+      "englishEquivalent": "IOG — «Israel reemplazado por su hermano Esaú»",
+      "topicCandidate": "iog_israel_reemplazado_por",
+      "doctrinePackAssignment": "Iog Israel Reemplazado Por",
+      "doctrinePackTopic": null,
+      "scriptureRefsFound": [],
+      "chainFound": false,
+      "status": "needs_transcript",
+      "manualTranscriptNeeded": true
+    },
+    {
+      "spanishTitle": "IOG — «Los frutos del Espíritu, la imagen de Dios en el hombre y las claves para entrar en el...»",
+      "englishEquivalent": "IOG — «Los frutos del Espíritu, la imagen de Dios en el hombre y las claves para entrar en el...»",
+      "topicCandidate": "iog_los_frutos_del",
+      "doctrinePackAssignment": "Iog Los Frutos Del",
+      "doctrinePackTopic": null,
+      "scriptureRefsFound": [],
+      "chainFound": false,
+      "status": "needs_transcript",
+      "manualTranscriptNeeded": true
+    },
+    {
+      "spanishTitle": "IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026",
+      "englishEquivalent": "IOG — «La Fiesta de los Panes sin Levadura: La última noche»",
+      "topicCandidate": "iog_fiesta_los_panes",
+      "doctrinePackAssignment": "Iog Fiesta Los Panes",
+      "doctrinePackTopic": null,
+      "scriptureRefsFound": [],
+      "chainFound": false,
+      "status": "normalized",
+      "manualTranscriptNeeded": false
+    }
+  ],
+  "priorityExtractions": [
+    {
+      "lessonTitle": "Power Over The Nations",
+      "camp": "HQ",
+      "sourceUrl": "https://theisraelofgod.com/power-over-the-nations/",
+      "sourceType": "wordpress_lesson",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the lesson \"Power Over The Nations\" teach according to Scripture?",
+        "What is the biblical teaching on Power Over The Nations?",
+        "(HQ) What does the lesson \"Power Over The Nations\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_lesson",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_refs_in_source_text",
+      "priority": "high"
+    },
+    {
+      "lessonTitle": "Feast Of Unleavened Bread 2022",
+      "camp": "HQ",
+      "sourceUrl": "https://theisraelofgod.com/feast-of-unleavened-bread-2022/",
+      "sourceType": "wordpress_lesson",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the lesson \"Feast Of Unleavened Bread 2022\" teach according to Scripture?",
+        "What is the biblical teaching on Feast Of Unleavened Bread 2022?",
+        "(HQ) What does the lesson \"Feast Of Unleavened Bread 2022\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_lesson",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_refs_in_source_text",
+      "priority": "high"
+    },
+    {
+      "lessonTitle": "The Destruction and Restoration of Israel",
+      "camp": "HQ",
+      "sourceUrl": "https://theisraelofgod.com/the-destruction-and-restoration-of-israel/",
+      "sourceType": "rss_item",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the lesson \"The Destruction and Restoration of Israel\" teach according to Scripture?",
+        "What is the biblical teaching on Destruction and Restoration of Israel?",
+        "(HQ) What does the lesson \"The Destruction and Restoration of Israel\" teach according to Scripture?",
+        "What does the video \"IOG Buffalo - \"The Destruction & Restoration of Israel\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_lesson",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_refs_in_source_text",
+      "priority": "high"
+    },
+    {
+      "lessonTitle": "Shows - The Israel of God",
+      "camp": "HQ",
+      "sourceUrl": "https://theisraelofgod.com/shows",
+      "sourceType": "website_page",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the lesson \"Shows - The Israel of God\" teach according to Scripture?",
+        "What is the biblical teaching on Shows - The Israel of God?",
+        "(HQ) What does the lesson \"Shows - The Israel of God\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_lesson",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_refs_in_source_text",
+      "priority": "high"
+    },
+    {
+      "lessonTitle": "IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"",
+      "camp": "Birmingham",
+      "sourceUrl": "https://www.youtube.com/watch?v=58PphDsDAA4",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - \"JESÚS: El Dios desconocido\" 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S_eXQ4pODbc",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG - \"JESÚS: El Dios desconocido\" 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - \"El velo de la mujer\" y \"La segunda muerte: el lago de fuego, la última parada para los...\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=63TQjYslaC8",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG - \"El velo de la mujer\" y \"La segunda muerte: el lago de fuego, la última parada para los...\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - \"El gran cambio\" 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=_ukaBCp_0Eg",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG - \"El gran cambio\" 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - \"The Gospel By The Prophet Zechariah\" 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=ee7SNNGUcLw",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG - \"The Gospel By The Prophet Zechariah\" 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"",
+      "camp": "Washington DC",
+      "sourceUrl": "https://www.youtube.com/watch?v=lZA0JqcyybA",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Detroit - \"Our God Dwells In The Thick Darkness\"",
+      "camp": "Detroit",
+      "sourceUrl": "https://www.youtube.com/watch?v=YMwLexXc5aY",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Detroit - \"Our God Dwells In The Thick Darkness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"",
+      "camp": "Baton Rouge",
+      "sourceUrl": "https://www.youtube.com/watch?v=sWUbcNzoCgo",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Phoenix - \"For Thine Is The Kingdom, And The Power, And The Glory, Forever\"",
+      "camp": "Phoenix",
+      "sourceUrl": "https://www.youtube.com/watch?v=Uls_pJGaAlI",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Phoenix - \"For Thine Is The Kingdom, And The Power, And The Glory, Forever\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG St. Louis - \"The Powers That Be\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=ndtuKEYL78Q",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG St. Louis - \"The Powers That Be\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - \"JESUS: The Unknown God\" 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=emo113e3s7c",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG - \"JESUS: The Unknown God\" 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Houston - \"Understanding The Fear of the Lord\"",
+      "camp": "Regional",
+      "sourceUrl": "https://www.youtube.com/watch?v=6vlr_r7a6tQ",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Houston - \"Understanding The Fear of the Lord\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Jackson - \"Breaking Bonds & Spiritual Strongholds\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=TGxvHjcGIAQ",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Jackson - \"Breaking Bonds & Spiritual Strongholds\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Buffalo - \"The Destruction & Restoration of Israel\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=G53Nphg8UOA",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Buffalo - \"The Destruction & Restoration of Israel\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Charlotte - \"The Purpose of the Ministry: Service Unto Salvation\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=uf_VcPk_paw",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Charlotte - \"The Purpose of the Ministry: Service Unto Salvation\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Bay Area - \"Hath God Cast Away His People Israel?\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=7WyKj0bG3c4",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "IOG Bay Area - \"Hath God Cast Away His People Israel?\"",
+        "What does the video \"IOG Bay Area - \"Hath God Cast Away His People Israel?\"\" teach according to Scripture?",
+        "This is a lesson entitled IOG Bay Area - \"Hath God Cast Away His People Israel?\" taught by Bro."
+      ],
+      "topicCandidate": "iog_bay_area_hath",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG Orlando - \"The Lord's Day Is The Last Day\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=cTa9omr-BUs",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG Orlando - \"The Lord's Day Is The Last Day\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG — «Jesús en su templo; sus santos y sus labores» 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=fF9zdhTjDyY",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG — «Jesús en su templo; sus santos y sus labores» 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG — «Israel reemplazado por su hermano Esaú» 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=Bcwt5s5JObI",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG — «Israel reemplazado por su hermano Esaú» 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - \"Israel el cautivo: de Babilonia a Babilonia\" 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=v0Bmy2PTfoI",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG - \"Israel el cautivo: de Babilonia a Babilonia\" 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=gCChLEvR9ME",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026\" teach according to Scripture?",
+        "What does the video \"IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=gCChLEvR9ME",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026\" teach according to Scripture?",
+        "What does the video \"IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG — «La promesa y el tiempo de su cumplimiento» 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=Ps-IQLCSdG0",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG — «La promesa y el tiempo de su cumplimiento» 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG X (Twitter)",
+      "camp": "HQ",
+      "sourceUrl": "https://twitter.com/TheIsraelofGod",
+      "sourceType": "website_page",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the lesson \"IOG X (Twitter)\" teach according to Scripture?",
+        "What is the biblical teaching on IOG X (Twitter)?",
+        "(HQ) What does the lesson \"IOG X (Twitter)\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_lesson",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_refs_in_source_text",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"Glory To Glory\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Works of The Flesh\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "works",
+      "doctrinePackAssignment": "Works",
+      "doctrinePackTopic": "works",
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"Stir Up The Gift\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"An Altar of Earth Thou Shall Make Unto Me\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Father of Lights\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The King Of Saints\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Miracle of Emmaus\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Law of Judgment\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"Faith Worketh Patience\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "faith",
+      "doctrinePackAssignment": "Faith",
+      "doctrinePackTopic": "faith",
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"They That Are Made Whole\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"Faint Not\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Tradition of Men\" 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Book of Remembrance\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Patience of The Saints\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"SEEK YE OUT of the BOOK\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Contingency of Sainthood\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"Corrupt Fruit\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"TABERNACLES\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "The Sun Never Sets British Empire WORD doc",
+      "camp": "HQ",
+      "sourceUrl": "https://www.israelthechurchofjesus.net/wp-content/uploads/2026/05/The-Sun-Never-Sets-British-Empire-WORD-doc.pdf",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the lesson \"The Sun Never Sets British Empire WORD doc\" teach according to Scripture?",
+        "What is the biblical teaching on Sun Never Sets British Empire WORD doc?",
+        "(HQ) What does the lesson \"The Sun Never Sets British Empire WORD doc\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_lesson",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "LEE HUTSON (CANADA) & NATE LEONARD (ATL) SHARE THEIR STORY, EXPERIENCE, & LIFE LESSONS.",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=B1u4ICxgcBI",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"LEE HUTSON (CANADA) & NATE LEONARD (ATL) SHARE THEIR STORY, EXPERIENCE, & LIFE LESSONS.\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Israel School of Excellence is Training up the Next Generation #isoe #education",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=wxi8fQuDke0",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"Israel School of Excellence is Training up the Next Generation #isoe #education\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I lost someone I love.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I lost someone I love.",
+        "I lost my job and feel hopeless."
+      ],
+      "topicCandidate": "lost_someone_love_emotional",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I am angry with God.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I am angry with God.",
+        "I am scared about the future.",
+        "I am struggling with depression.",
+        "I am lonely.",
+        "I am still angry."
+      ],
+      "topicCandidate": "angry_with_god_emotional",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: Today has been a rough day. I had to let go of someone I love.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "Today has been a rough day. I had to let go of someone I love."
+      ],
+      "topicCandidate": "today_has_been_rough",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: My mother has Alzheimer's and I feel overwhelmed.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "My mother has Alzheimer's and I feel overwhelmed."
+      ],
+      "topicCandidate": "mother_has_alzheimers_and",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I'm so angry I can't think straight.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I'm so angry I can't think straight."
+      ],
+      "topicCandidate": "angry_cant_think_straight",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I'm worried about money and bills this month.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I'm worried about money and bills this month."
+      ],
+      "topicCandidate": "worried_about_money_and",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I feel guilty about my past.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I feel abandoned by God.",
+        "I feel guilty about my past.",
+        "I feel alone in my faith.",
+        "I feel like God is silent.",
+        "I feel spiritually dry."
+      ],
+      "topicCandidate": "emotional",
+      "doctrinePackAssignment": "Emotional",
+      "doctrinePackTopic": "emotional",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Prayer: Please pray for my family.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "Please pray for my family."
+      ],
+      "topicCandidate": "prayer",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I feel alone in my faith.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I feel abandoned by God.",
+        "I feel guilty about my past.",
+        "I feel alone in my faith.",
+        "I feel like God is silent.",
+        "I feel spiritually dry."
+      ],
+      "topicCandidate": "faith",
+      "doctrinePackAssignment": "Faith",
+      "doctrinePackTopic": "faith",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: My marriage is falling apart.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "My marriage is falling apart."
+      ],
+      "topicCandidate": "marriage",
+      "doctrinePackAssignment": "Marriage",
+      "doctrinePackTopic": "marriage",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I feel like God is silent.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I feel abandoned by God.",
+        "I feel guilty about my past.",
+        "I feel alone in my faith.",
+        "I feel like God is silent.",
+        "I feel spiritually dry."
+      ],
+      "topicCandidate": "emotional",
+      "doctrinePackAssignment": "Emotional",
+      "doctrinePackTopic": "emotional",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I am struggling with depression.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I am angry with God.",
+        "I am scared about the future.",
+        "I am struggling with depression.",
+        "I am lonely.",
+        "I am still angry."
+      ],
+      "topicCandidate": "angry_with_god_emotional",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: My friend betrayed me and I am hurting.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "My friend betrayed me and I am hurting."
+      ],
+      "topicCandidate": "friend_betrayed_and_hurting",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I cannot forgive myself.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I cannot forgive myself."
+      ],
+      "topicCandidate": "cannot_forgive_myself_emotional",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I feel spiritually dry.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I feel abandoned by God.",
+        "I feel guilty about my past.",
+        "I feel alone in my faith.",
+        "I feel like God is silent.",
+        "I feel spiritually dry."
+      ],
+      "topicCandidate": "emotional",
+      "doctrinePackAssignment": "Emotional",
+      "doctrinePackTopic": "emotional",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I lost my job and feel hopeless.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I lost someone I love.",
+        "I lost my job and feel hopeless."
+      ],
+      "topicCandidate": "lost_someone_love_emotional",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I need comfort from Scripture.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I need comfort from Scripture."
+      ],
+      "topicCandidate": "need_comfort_from_scripture",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Health: How do I trust God when life hurts?",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "How do I trust God when life hurts?"
+      ],
+      "topicCandidate": "how_trust_god_when",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Mixed: How do I honor God with my diet?",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "How do I honor God with my diet?",
+        "How do I pray when I am angry with God?",
+        "How do I apply this while working Monday to Friday?"
+      ],
+      "topicCandidate": "how_honor_god_with",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Mixed: How do I pray when I am angry with God?",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "How do I honor God with my diet?",
+        "How do I pray when I am angry with God?",
+        "How do I apply this while working Monday to Friday?"
+      ],
+      "topicCandidate": "prayer",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Challenge: Matthew 6:10 is only a prayer, not about earth.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "Matthew 6:10 is only a prayer, not about earth."
+      ],
+      "topicCandidate": "prayer",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Mixed: Thank you. That helps me grieve with hope.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "Thank you. That helps me grieve with hope."
+      ],
+      "topicCandidate": "thank_you_that_helps",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Mixed: How do I apply this while working Monday to Friday?",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "How do I honor God with my diet?",
+        "How do I pray when I am angry with God?",
+        "How do I apply this while working Monday to Friday?"
+      ],
+      "topicCandidate": "how_honor_god_with",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Challenge: So Leviticus does not apply anymore?",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "So Leviticus does not apply anymore?"
+      ],
+      "topicCandidate": "leviticus_does_not_apply",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Challenge: Give me a clear yes or no from Scripture.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "Give me a clear yes or no from Scripture."
+      ],
+      "topicCandidate": "give_clear_yes_from",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I am still angry.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I am angry with God.",
+        "I am scared about the future.",
+        "I am struggling with depression.",
+        "I am lonely.",
+        "I am still angry."
+      ],
+      "topicCandidate": "angry_with_god_emotional",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "God: Is It Two of Them or Just One, Who Talks To Himself",
+      "camp": "HQ",
+      "sourceUrl": "https://theisraelofgod.com/god-is-it-two-of-them-or-just-one-who-talks-to-himself/",
+      "sourceType": "wordpress_lesson",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the lesson \"God: Is It Two of Them or Just One, Who Talks To Himself\" teach according to Scripture?",
+        "What is the biblical teaching on God: Is It Two of Them or Just One, Who Talks To Himself?",
+        "(HQ) What does the lesson \"God: Is It Two of Them or Just One, Who Talks To Himself\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_lesson",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_refs_in_source_text",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG — «¿Quién mató realmente a Jesús? ¡Adán!» 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=WOvJn2Eu49I",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "IOG — «¿Quién mató realmente a Jesús? ¡Adán!» 2026",
+        "What does the video \"IOG — «¿Quién mató realmente a Jesús? ¡Adán!» 2026\" teach according to Scripture?",
+        "This is a partial lesson entitled IOG - \"Who Really Killed Jesus?"
+      ],
+      "topicCandidate": "iog_quin_mat_realmente",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG — «Los frutos del Espíritu, la imagen de Dios en el hombre y las claves para entrar en el...»",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=BUcGcaHgWnI",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG — «Los frutos del Espíritu, la imagen de Dios en el hombre y las claves para entrar en el...»\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG — «La Pascua: un festival pagano, no sagrado» (2026)",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=7860Ttf04kM",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG — «La Pascua: un festival pagano, no sagrado» (2026)\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"Bosom of Fools\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"They That Know Good and Doeth It Not\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "#SabbathRecap",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=QYwXNY1U1fw",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"#SabbathRecap\" teach according to Scripture?"
+      ],
+      "topicCandidate": "what_does_the_video",
+      "doctrinePackAssignment": null,
+      "doctrinePackTopic": null,
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Death: A Tool Created & Used By God, Not Satan",
+      "camp": "HQ",
+      "sourceUrl": "https://theisraelofgod.com/death-a-tool-created-used-by-god-not-satan/",
+      "sourceType": "wordpress_lesson",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the lesson \"Death: A Tool Created & Used By God, Not Satan\" teach according to Scripture?",
+        "What is the biblical teaching on Death: A Tool Created & Used By God, Not Satan?",
+        "(HQ) What does the lesson \"Death: A Tool Created & Used By God, Not Satan\" teach according to Scripture?"
+      ],
+      "topicCandidate": "death_state",
+      "doctrinePackAssignment": "Death State",
+      "doctrinePackTopic": "death_state",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_refs_in_source_text",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "The Word of God: It Is Life and Power",
+      "camp": "HQ",
+      "sourceUrl": "https://theisraelofgod.com/life-and-power/",
+      "sourceType": "wordpress_lesson",
+      "scriptureRefsFound": [
+        "Psalm 138:1-4",
+        "Luke 24:25-27",
+        "Luke 24:44-45",
+        "Exodus 17:14",
+        "Jeremiah 30:1-3",
+        "Isaiah 30:8-10",
+        "Isaiah 34:16",
+        "Isaiah 55:6-11",
+        "Job 19:23-27",
+        "2 Samuel 23:1-3",
+        "2 Peter 1:15-21",
+        "2 Timothy 3:14-17",
+        "James 1:21-22",
+        "Acts 17:2-3",
+        "Acts 17:10-11",
+        "Deuteronomy 4:1-2",
+        "Proverbs 30:5-6",
+        "Revelation 22:18-19",
+        "Revelation 22:12-15",
+        "Hebrews 4:12-13"
+      ],
+      "scriptureOrder": [
+        "Psalm 138:1-4",
+        "Luke 24:25-27",
+        "Luke 24:44-45",
+        "Exodus 17:14",
+        "Jeremiah 30:1-3",
+        "Isaiah 30:8-10",
+        "Isaiah 34:16",
+        "Isaiah 55:6-11",
+        "Job 19:23-27",
+        "2 Samuel 23:1-3",
+        "2 Peter 1:15-21",
+        "2 Timothy 3:14-17",
+        "James 1:21-22",
+        "Acts 17:2-3",
+        "Acts 17:10-11",
+        "Deuteronomy 4:1-2",
+        "Proverbs 30:5-6",
+        "Revelation 22:18-19",
+        "Revelation 22:12-15",
+        "Hebrews 4:12-13"
+      ],
+      "questionCandidates": [
+        "What does the lesson \"The Word of God: It Is Life and Power\" teach according to Scripture?",
+        "What is the biblical teaching on Word of God: It Is Life and Power?",
+        "(HQ) What does the lesson \"The Word of God: It Is Life and Power\" teach according to Scripture?",
+        "What does the lesson \"5 29 26 THE WORD OF GOD\" teach according to Scripture?",
+        "What is the biblical teaching on 5 29 26 THE WORD OF GOD?"
+      ],
+      "topicCandidate": "messiah_logos",
+      "doctrinePackAssignment": "Messiah Logos",
+      "doctrinePackTopic": "messiah_logos",
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - \"PENTECOSTÉS\" 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=b6QGWM16vnM",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG - \"PENTECOSTÉS\" 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "feasts",
+      "doctrinePackAssignment": "Feasts",
+      "doctrinePackTopic": "feasts",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - \"PENTECOST\" 2026",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=LClKKyCIBQc",
+      "sourceType": "youtube_transcript",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG - \"PENTECOST\" 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "feasts",
+      "doctrinePackAssignment": "Feasts",
+      "doctrinePackTopic": "feasts",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "source_text_unavailable",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Way of Holiness\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "holiness",
+      "doctrinePackAssignment": "Holiness",
+      "doctrinePackTopic": "holiness",
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Tabernacle of the Congregation\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "tabernacle",
+      "doctrinePackAssignment": "Tabernacle",
+      "doctrinePackTopic": "tabernacle",
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Passover\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "feasts",
+      "doctrinePackAssignment": "Feasts",
+      "doctrinePackTopic": "feasts",
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"The Spirit of Grace\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "grace",
+      "doctrinePackAssignment": "Grace",
+      "doctrinePackTopic": "grace",
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"Beauty of Holiness\"",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=S0ErrdBWLAg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [
+        "Deuteronomy 28"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 28"
+      ],
+      "questionCandidates": [
+        "What does the video \"IOG - Stick To The Script - \"Glory To Glory\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Works of The Flesh\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"Stir Up The Gift\"\" teach according to Scripture?",
+        "What does the video \"IOG - Stick To The Script - \"The Way of Holiness\"\" teach according to Scripture?"
+      ],
+      "topicCandidate": "holiness",
+      "doctrinePackAssignment": "Holiness",
+      "doctrinePackTopic": "holiness",
+      "chainFound": false,
+      "extractionStatus": "extracted",
+      "reasonMissing": null,
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Sabbath Recap",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=jgNOiQ9uzeg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"Sabbath Recap\" teach according to Scripture?",
+        "What does the video \"Sabbath Recap📜✌🏾\" teach according to Scripture?"
+      ],
+      "topicCandidate": "sabbath",
+      "doctrinePackAssignment": "Sabbath",
+      "doctrinePackTopic": "sabbath",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "RICK ROSS & ELIJAH ISRAEL SHARE THEIR STORY, EXPERIENCE, & LIFE LESSONS. #rickross #isoe #motivation",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=24eNlrEigpg",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"RICK ROSS & ELIJAH ISRAEL SHARE THEIR STORY, EXPERIENCE, & LIFE LESSONS. #rickross #isoe #motivation\" teach according to Scripture?"
+      ],
+      "topicCandidate": "elijah",
+      "doctrinePackAssignment": "Elijah",
+      "doctrinePackTopic": "elijah",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Open Topic: Are the ten commandments still binding?",
+      "camp": "HQ",
+      "sourceUrl": "iog_qa_expanded",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "Are the ten commandments still binding?"
+      ],
+      "topicCandidate": "ten_commandments",
+      "doctrinePackAssignment": "Ten Commandments",
+      "doctrinePackTopic": "ten_commandments",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Heavens: Give me Bible only. No traditions.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "Give me Bible only. No traditions."
+      ],
+      "topicCandidate": "heavens",
+      "doctrinePackAssignment": "Heavens",
+      "doctrinePackTopic": "heavens",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I feel abandoned by God.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I feel abandoned by God.",
+        "I feel guilty about my past.",
+        "I feel alone in my faith.",
+        "I feel like God is silent.",
+        "I feel spiritually dry."
+      ],
+      "topicCandidate": "emotional",
+      "doctrinePackAssignment": "Emotional",
+      "doctrinePackTopic": "emotional",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I am scared about the future.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I am angry with God.",
+        "I am scared about the future.",
+        "I am struggling with depression.",
+        "I am lonely.",
+        "I am still angry."
+      ],
+      "topicCandidate": "emotional",
+      "doctrinePackAssignment": "Emotional",
+      "doctrinePackTopic": "emotional",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Grief: I miss my father who passed away.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I miss my father who passed away."
+      ],
+      "topicCandidate": "death_state",
+      "doctrinePackAssignment": "Death State",
+      "doctrinePackTopic": "death_state",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Health: I am anxious about my health.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I am anxious about my health."
+      ],
+      "topicCandidate": "emotional",
+      "doctrinePackAssignment": "Emotional",
+      "doctrinePackTopic": "emotional",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Health: My child is sick and I am afraid.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "My child is sick and I am afraid."
+      ],
+      "topicCandidate": "emotional",
+      "doctrinePackAssignment": "Emotional",
+      "doctrinePackTopic": "emotional",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Emotional: I am lonely.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "I am angry with God.",
+        "I am scared about the future.",
+        "I am struggling with depression.",
+        "I am lonely.",
+        "I am still angry."
+      ],
+      "topicCandidate": "emotional",
+      "doctrinePackAssignment": "Emotional",
+      "doctrinePackTopic": "emotional",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Challenge: John 3:13 does not apply to believers today.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "John 3:13 does not apply to believers today."
+      ],
+      "topicCandidate": "john",
+      "doctrinePackAssignment": "John",
+      "doctrinePackTopic": "john",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Mixed: You did not mention Isaiah 58.",
+      "camp": "HQ",
+      "sourceUrl": "phase2i_stress",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "You did not mention Isaiah 58."
+      ],
+      "topicCandidate": "isaiah",
+      "doctrinePackAssignment": "Isaiah",
+      "doctrinePackTopic": "isaiah",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Millennial Kingdom",
+      "camp": "HQ",
+      "sourceUrl": null,
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [],
+      "topicCandidate": "millennial_kingdom",
+      "doctrinePackAssignment": "Millennial Kingdom",
+      "doctrinePackTopic": "millennial_kingdom",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "Pentecost",
+      "camp": "HQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=b6QGWM16vnM",
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [
+        "What does the video \"IOG - \"PENTECOSTÉS\" 2026\" teach according to Scripture?",
+        "What does the video \"IOG - \"PENTECOST\" 2026\" teach according to Scripture?"
+      ],
+      "topicCandidate": "feasts",
+      "doctrinePackAssignment": "Feasts",
+      "doctrinePackTopic": "feasts",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    },
+    {
+      "lessonTitle": "High Sabbaths",
+      "camp": "HQ",
+      "sourceUrl": null,
+      "sourceType": "question_inventory",
+      "scriptureRefsFound": [],
+      "scriptureOrder": [],
+      "questionCandidates": [],
+      "topicCandidate": "high_sabbaths",
+      "doctrinePackAssignment": "High Sabbaths",
+      "doctrinePackTopic": "high_sabbaths",
+      "chainFound": false,
+      "extractionStatus": "needs_manual_transcript_or_source_text",
+      "reasonMissing": "no_scripture_chain_in_corpus",
+      "priority": "remaining_gap"
+    }
+  ],
+  "executive": {
+    "priorityGapsProcessed": 106,
+    "missingEntriesRecovered": 94,
+    "spanishTitlesLinked": 6,
+    "campTitlesNormalized": 291,
+    "campTitlesWithChains": 175,
+    "icojDocumentsOrganized": 48,
+    "millennialKingdomScriptures": 0,
+    "peterScriptures": 10,
+    "jacobScriptures": 0,
+    "p144000Scriptures": 0,
+    "feastPacksImproved": 0,
+    "coverage": {
+      "covered": 334,
+      "partial": 57,
+      "missing": 202
+    },
+    "targetsMet": {
+      "coveredTarget": 350,
+      "partialTarget": 40,
+      "missingTarget": 150,
+      "coveredMet": false,
+      "partialMet": false,
+      "missingMet": false
+    },
+    "reviewReadyCount": 79,
+    "reviewReadyPackets": [
+      {
+        "category": "priority_recovered",
+        "topic": "jesus_old_testament_new_testament",
+        "displayName": "Jesus Old Testament / New Testament",
+        "supportScore": 89,
+        "reviewReadiness": 99,
+        "originalScriptureChain": [
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Exodus 3:13-15",
+          "Exodus 6:1-3",
+          "Exodus 14:23-26",
+          "Exodus 24:9-12",
+          "Exodus 20:8",
+          "Deuteronomy 30:1-8",
+          "Deuteronomy 10:14"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 2:7",
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Exodus 3:13-15",
+          "Exodus 6:1-3",
+          "Exodus 14:23-26",
+          "Exodus 24:9-12",
+          "Exodus 20:8"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "holy_spirit",
+        "displayName": "Holy Spirit",
+        "supportScore": 88,
+        "reviewReadiness": 99,
+        "originalScriptureChain": [
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Genesis 1:2",
+          "Job 32:7-10",
+          "Job 32:17-20",
+          "Isaiah 11:1-2",
+          "Joel 2:28-29",
+          "Luke 10:1-3",
+          "Luke 4:1"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Exodus 12:1-14",
+          "Leviticus 23",
+          "Numbers 11:25-29",
+          "Deuteronomy 18:15-19",
+          "1 Samuel 16:13"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "kingdom_of_god",
+        "displayName": "Kingdom Of God",
+        "supportScore": 87,
+        "reviewReadiness": 99,
+        "originalScriptureChain": [
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Exodus 4:6-7",
+          "Exodus 4:15-21",
+          "Exodus 9:7-11",
+          "Exodus 11:25-28",
+          "Exodus 25:1-3",
+          "Exodus 25:8",
+          "Exodus 29:42-46"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 2:7",
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Exodus 4:6-7",
+          "Exodus 4:15-21",
+          "Exodus 9:7-11",
+          "Exodus 11:25-28",
+          "Exodus 25:1-3"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "leviticus_23",
+        "displayName": "Leviticus 23",
+        "supportScore": 84,
+        "reviewReadiness": 91,
+        "originalScriptureChain": [
+          "Genesis 35:21-22",
+          "Exodus 3:13-15",
+          "Exodus 6:1-3",
+          "Exodus 14:23-26",
+          "Exodus 24:9-12",
+          "Leviticus 19:29",
+          "Leviticus 20:10-21",
+          "Leviticus 11",
+          "Leviticus 11:3",
+          "Leviticus 11:47"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Genesis 35:21-22",
+          "Exodus 3:13-15",
+          "Exodus 6:1-3",
+          "Exodus 14:23-26",
+          "Exodus 24:9-12",
+          "Exodus 20:8-11",
+          "Exodus 31:13"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "new_jerusalem",
+        "displayName": "New Jerusalem",
+        "supportScore": 82,
+        "reviewReadiness": 89,
+        "originalScriptureChain": [
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Leviticus 23",
+          "2 Samuel 7:12-16",
+          "Ecclesiastes 9:5",
+          "Isaiah 2:1-4",
+          "Isaiah 9:6",
+          "Daniel 2:44-45",
+          "Daniel 7:13-14",
+          "Micah 4:1-5"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Leviticus 23",
+          "2 Samuel 7:12-16",
+          "Ecclesiastes 9:5",
+          "Isaiah 2:1-4",
+          "Isaiah 9:6"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "captivity",
+        "displayName": "Captivity",
+        "supportScore": 82,
+        "reviewReadiness": 89,
+        "originalScriptureChain": [
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Leviticus 26:14-46",
+          "Leviticus 23",
+          "Deuteronomy 28:15-68",
+          "2 Kings 17:6-23",
+          "Ecclesiastes 9:5",
+          "Isaiah 9:6",
+          "Jeremiah 16:14-21",
+          "Ezekiel 37:1-14"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Leviticus 26:14-46",
+          "Leviticus 23",
+          "Deuteronomy 28:15-68",
+          "2 Kings 17:6-23",
+          "Ecclesiastes 9:5"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "eighth_day_father",
+        "displayName": "Eighth Day Father",
+        "supportScore": 85,
+        "reviewReadiness": 89,
+        "originalScriptureChain": [
+          "Genesis 1:1-31",
+          "Genesis 2:7",
+          "Genesis 3:19",
+          "Exodus 20:1-5",
+          "Exodus 20:8",
+          "Exodus 20:11",
+          "Leviticus 23:1-44",
+          "Leviticus 23",
+          "Judges 17:1-13",
+          "2 Kings 5:1-5"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 1:1-31",
+          "Genesis 2:7",
+          "Genesis 3:19",
+          "Exodus 20:1-5",
+          "Exodus 20:8",
+          "Exodus 20:11",
+          "Leviticus 23:1-44",
+          "Leviticus 23"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "tree_of_life",
+        "displayName": "Tree Of Life",
+        "supportScore": 82,
+        "reviewReadiness": 89,
+        "originalScriptureChain": [
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Genesis 2:7",
+          "Genesis 6:5-8",
+          "Genesis 7:1",
+          "Exodus 20:1-5"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Exodus 20:1-5",
+          "Exodus 32:30-33",
+          "Exodus 17:14",
+          "Exodus 19:1-4",
+          "Exodus 9:1",
+          "Leviticus 23"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "tree_of_knowledge",
+        "displayName": "Tree Of Knowledge",
+        "supportScore": 82,
+        "reviewReadiness": 89,
+        "originalScriptureChain": [
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Genesis 2:7",
+          "Genesis 6:5-8",
+          "Genesis 7:1",
+          "Exodus 20:1-5"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Exodus 20:1-5",
+          "Exodus 32:30-33",
+          "Exodus 17:14",
+          "Exodus 19:1-4",
+          "Exodus 9:1",
+          "Leviticus 23"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "john",
+        "displayName": "John",
+        "supportScore": 82,
+        "reviewReadiness": 89,
+        "originalScriptureChain": [
+          "Genesis 1:1",
+          "Genesis 1:14-17",
+          "Genesis 2:7",
+          "Genesis 3:19",
+          "Genesis 1:6-8",
+          "Deuteronomy 10:14",
+          "1 Kings 8:27",
+          "Job 14:10-15",
+          "Psalm 110:1",
+          "Psalm 146:4"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 1:14-17",
+          "Genesis 2:7",
+          "Leviticus 23",
+          "Deuteronomy 10:14",
+          "1 Kings 8:27",
+          "Job 14:10-15",
+          "Psalm 110:1",
+          "Psalm 146:4"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "passover",
+        "displayName": "Passover",
+        "supportScore": 82,
+        "reviewReadiness": 86,
+        "originalScriptureChain": [
+          "Exodus 20:1-3",
+          "Exodus 12:1-7",
+          "Exodus 12:11-14",
+          "Exodus 12:43-49",
+          "Exodus 12:28-33",
+          "Leviticus 23:1-6",
+          "Deuteronomy 14:1-3",
+          "Deuteronomy 14:8",
+          "Deuteronomy 14:22-27",
+          "2 Chronicles 30:1"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Exodus 20:1-3",
+          "Exodus 12:1-7",
+          "Exodus 12:11-14",
+          "Exodus 12:43-49",
+          "Exodus 12:28-33",
+          "Exodus 12",
+          "Leviticus 23:1-6"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "lake_of_fire",
+        "displayName": "Lake Of Fire",
+        "supportScore": 80,
+        "reviewReadiness": 86,
+        "originalScriptureChain": [
+          "Job 19:25-27",
+          "Job 14:14",
+          "Psalm 111:1",
+          "Psalm 111:10",
+          "Proverbs 1:7",
+          "Proverbs 1:22-33",
+          "Ecclesiastes 12:13-14",
+          "Matthew 22:1-3",
+          "Matthew 22:10-14",
+          "Mark 9:43-48"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Genesis 1:6-8",
+          "Leviticus 23",
+          "Job 19:25-27",
+          "Job 14:14",
+          "Psalm 111:1",
+          "Psalm 111:10",
+          "Proverbs 1:7"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "emotional",
+        "displayName": "Emotional",
+        "supportScore": 78,
+        "reviewReadiness": 86,
+        "originalScriptureChain": [
+          "Genesis 2:7",
+          "Genesis 3:19",
+          "Deuteronomy 31:6",
+          "Job 14:10-15",
+          "Psalm 34:18",
+          "Psalm 146:4",
+          "Psalm 6:5",
+          "Psalm 115:17",
+          "Psalm 146:3-4",
+          "Ecclesiastes 9:5"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Genesis 3:19",
+          "Leviticus 23",
+          "Deuteronomy 31:6",
+          "Job 14:10-15",
+          "Psalm 34:18",
+          "Psalm 146:4",
+          "Psalm 6:5"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "the_beast",
+        "displayName": "The Beast",
+        "supportScore": 74,
+        "reviewReadiness": 86,
+        "originalScriptureChain": [
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Genesis 35:21-22",
+          "Genesis 17:1-27",
+          "Genesis 18:16-19",
+          "Genesis 2:16-17",
+          "Genesis 3:1-6",
+          "Genesis 6:1-4",
+          "Genesis 4:8"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Exodus 20:1-5",
+          "Exodus 32:30-33",
+          "Exodus 17:14",
+          "Exodus 19:1-4",
+          "Exodus 9:1",
+          "Exodus 13:3"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "women_in_bible",
+        "displayName": "Women In Bible",
+        "supportScore": 74,
+        "reviewReadiness": 86,
+        "originalScriptureChain": [
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Genesis 35:21-22",
+          "Genesis 17:1-27",
+          "Genesis 18:16-19",
+          "Genesis 2:16-17",
+          "Genesis 3:1-6",
+          "Genesis 6:1-4",
+          "Genesis 4:8"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Exodus 20:1-5",
+          "Exodus 32:30-33",
+          "Exodus 17:14",
+          "Exodus 19:1-4",
+          "Exodus 9:1",
+          "Exodus 13:3"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "the_church",
+        "displayName": "The Church",
+        "supportScore": 74,
+        "reviewReadiness": 86,
+        "originalScriptureChain": [
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Genesis 35:21-22",
+          "Genesis 17:1-27",
+          "Genesis 18:16-19",
+          "Genesis 2:16-17",
+          "Genesis 3:1-6",
+          "Genesis 6:1-4",
+          "Genesis 4:8"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 41:1-2",
+          "Genesis 41:8",
+          "Genesis 41:32-40",
+          "Exodus 20:1-5",
+          "Exodus 32:30-33",
+          "Exodus 17:14",
+          "Exodus 19:1-4",
+          "Exodus 9:1",
+          "Exodus 13:3"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "edom",
+        "displayName": "Edom",
+        "supportScore": 82,
+        "reviewReadiness": 84,
+        "originalScriptureChain": [
+          "Genesis 35:21-22",
+          "Leviticus 19:29",
+          "Leviticus 20:10-21",
+          "Numbers 25:1-9",
+          "Judges 19:1-4",
+          "Judges 19:22-30",
+          "Proverbs 6:32",
+          "Proverbs 6:23-33",
+          "Isaiah 5:11-13",
+          "Hosea 4:10-14"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Genesis 35:21-22",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Leviticus 19:29",
+          "Leviticus 20:10-21",
+          "Leviticus 23",
+          "Numbers 25:1-9"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "deuteronomy_28_curses",
+        "displayName": "Deuteronomy 28 Curses",
+        "supportScore": 81,
+        "reviewReadiness": 84,
+        "originalScriptureChain": [
+          "Exodus 12:1-3",
+          "Exodus 12:6",
+          "Exodus 12:11",
+          "Exodus 12:3",
+          "Deuteronomy 28",
+          "Deuteronomy 1:12-17",
+          "1 Samuel 13:13-14",
+          "1 Samuel 16:1-7",
+          "1 Samuel 16:11-14",
+          "Psalm 50:1-6"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Exodus 12:1-3",
+          "Exodus 12:6",
+          "Exodus 12:11",
+          "Exodus 12:3",
+          "Leviticus 23",
+          "Deuteronomy 28",
+          "Deuteronomy 1:12-17"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "david",
+        "displayName": "David",
+        "supportScore": 78,
+        "reviewReadiness": 84,
+        "originalScriptureChain": [
+          "1 Samuel 13:13-14",
+          "1 Samuel 16:1-4",
+          "1 Samuel 16:10-14",
+          "1 Samuel 17:1-4",
+          "1 Samuel 17:8-37",
+          "1 Samuel 26:1-25",
+          "2 Samuel 16:5-14",
+          "2 Samuel 23:1-3",
+          "2 Samuel 23:6-8",
+          "2 Samuel 23:16-18"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Genesis 1:6-8",
+          "Leviticus 23",
+          "1 Samuel 13:13-14",
+          "1 Samuel 16:1-4",
+          "1 Samuel 16:10-14",
+          "1 Samuel 17:1-4",
+          "1 Samuel 17:8-37"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      },
+      {
+        "category": "priority_recovered",
+        "topic": "paul",
+        "displayName": "Paul",
+        "supportScore": 78,
+        "reviewReadiness": 84,
+        "originalScriptureChain": [
+          "Genesis 15:6",
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Deuteronomy 10:14",
+          "1 Kings 8:27",
+          "Psalm 115:16",
+          "Matthew 5:5",
+          "Matthew 6:9-10",
+          "Matthew 6:9"
+        ],
+        "genesisToRevelationChain": [
+          "Genesis 2:2-3",
+          "Genesis 15:6",
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Leviticus 23",
+          "Deuteronomy 10:14",
+          "1 Kings 8:27",
+          "Psalm 115:16",
+          "Ecclesiastes 9:5",
+          "Isaiah 9:6"
+        ],
+        "reviewNotes": "Phase 3O — ready for human review"
+      }
+    ],
+    "unresolved": [
+      {
+        "lessonTitle": "Power Over The Nations",
+        "camp": "HQ",
+        "sourceUrl": "https://theisraelofgod.com/power-over-the-nations/",
+        "sourceType": "wordpress_lesson",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the lesson \"Power Over The Nations\" teach according to Scripture?",
+          "What is the biblical teaching on Power Over The Nations?",
+          "(HQ) What does the lesson \"Power Over The Nations\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_lesson",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "no_scripture_refs_in_source_text",
+        "priority": "high"
+      },
+      {
+        "lessonTitle": "Feast Of Unleavened Bread 2022",
+        "camp": "HQ",
+        "sourceUrl": "https://theisraelofgod.com/feast-of-unleavened-bread-2022/",
+        "sourceType": "wordpress_lesson",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the lesson \"Feast Of Unleavened Bread 2022\" teach according to Scripture?",
+          "What is the biblical teaching on Feast Of Unleavened Bread 2022?",
+          "(HQ) What does the lesson \"Feast Of Unleavened Bread 2022\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_lesson",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "no_scripture_refs_in_source_text",
+        "priority": "high"
+      },
+      {
+        "lessonTitle": "The Destruction and Restoration of Israel",
+        "camp": "HQ",
+        "sourceUrl": "https://theisraelofgod.com/the-destruction-and-restoration-of-israel/",
+        "sourceType": "rss_item",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the lesson \"The Destruction and Restoration of Israel\" teach according to Scripture?",
+          "What is the biblical teaching on Destruction and Restoration of Israel?",
+          "(HQ) What does the lesson \"The Destruction and Restoration of Israel\" teach according to Scripture?",
+          "What does the video \"IOG Buffalo - \"The Destruction & Restoration of Israel\"\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_lesson",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "no_scripture_refs_in_source_text",
+        "priority": "high"
+      },
+      {
+        "lessonTitle": "Shows - The Israel of God",
+        "camp": "HQ",
+        "sourceUrl": "https://theisraelofgod.com/shows",
+        "sourceType": "website_page",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the lesson \"Shows - The Israel of God\" teach according to Scripture?",
+          "What is the biblical teaching on Shows - The Israel of God?",
+          "(HQ) What does the lesson \"Shows - The Israel of God\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_lesson",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "no_scripture_refs_in_source_text",
+        "priority": "high"
+      },
+      {
+        "lessonTitle": "IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"",
+        "camp": "Birmingham",
+        "sourceUrl": "https://www.youtube.com/watch?v=58PphDsDAA4",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG - \"JESÚS: El Dios desconocido\" 2026",
+        "camp": "HQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=S_eXQ4pODbc",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG - \"JESÚS: El Dios desconocido\" 2026\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG - \"El velo de la mujer\" y \"La segunda muerte: el lago de fuego, la última parada para los...\"",
+        "camp": "HQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=63TQjYslaC8",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG - \"El velo de la mujer\" y \"La segunda muerte: el lago de fuego, la última parada para los...\"\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG - \"El gran cambio\" 2026",
+        "camp": "HQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=_ukaBCp_0Eg",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG - \"El gran cambio\" 2026\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG - \"The Gospel By The Prophet Zechariah\" 2026",
+        "camp": "HQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=ee7SNNGUcLw",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG - \"The Gospel By The Prophet Zechariah\" 2026\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"",
+        "camp": "Washington DC",
+        "sourceUrl": "https://www.youtube.com/watch?v=lZA0JqcyybA",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG Detroit - \"Our God Dwells In The Thick Darkness\"",
+        "camp": "Detroit",
+        "sourceUrl": "https://www.youtube.com/watch?v=YMwLexXc5aY",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG Detroit - \"Our God Dwells In The Thick Darkness\"\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"",
+        "camp": "Baton Rouge",
+        "sourceUrl": "https://www.youtube.com/watch?v=sWUbcNzoCgo",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG Phoenix - \"For Thine Is The Kingdom, And The Power, And The Glory, Forever\"",
+        "camp": "Phoenix",
+        "sourceUrl": "https://www.youtube.com/watch?v=Uls_pJGaAlI",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG Phoenix - \"For Thine Is The Kingdom, And The Power, And The Glory, Forever\"\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG St. Louis - \"The Powers That Be\"",
+        "camp": "HQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=ndtuKEYL78Q",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG St. Louis - \"The Powers That Be\"\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      },
+      {
+        "lessonTitle": "IOG - \"JESUS: The Unknown God\" 2026",
+        "camp": "HQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=emo113e3s7c",
+        "sourceType": "youtube_transcript",
+        "scriptureRefsFound": [],
+        "scriptureOrder": [],
+        "questionCandidates": [
+          "What does the video \"IOG - \"JESUS: The Unknown God\" 2026\" teach according to Scripture?"
+        ],
+        "topicCandidate": "what_does_the_video",
+        "doctrinePackAssignment": null,
+        "doctrinePackTopic": null,
+        "chainFound": false,
+        "extractionStatus": "needs_manual_transcript_or_source_text",
+        "reasonMissing": "source_text_unavailable",
+        "priority": "remaining_gap"
+      }
+    ],
+    "majoritySourceLinked": false,
+    "dataNotes": {
+      "corpusRegistryAvailable": true,
+      "scrubbedCorpusAvailable": true
+    }
+  }
+}

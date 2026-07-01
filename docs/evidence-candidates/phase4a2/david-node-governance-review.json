@@ -1,0 +1,24 @@
+{
+  "topic": "david",
+  "reviewRecommendation": "approve_candidate_node",
+  "confidence": 0.88,
+  "humanApprovalRequired": true,
+  "metrics": {
+    "continuitySupport": true,
+    "continuityTopicCount": 2,
+    "inheritanceSupport": false,
+    "packetSupport": true,
+    "packetCount": 2,
+    "chainCount": 2,
+    "topicSupport": true,
+    "inScriptureVineNetwork": false,
+    "pathwayNavigable": false,
+    "chainCompleteness": "good",
+    "scriptureWitnessCount": 30,
+    "suggestedLinks": [
+      "kingdom_of_god",
+      "messiah_logos",
+      "samuel"
+    ]
+  }
+}

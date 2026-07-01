@@ -1,0 +1,268 @@
+{
+  "ranAt": "2026-06-10T06:51:36.652Z",
+  "phase": "4A.3",
+  "majorTopicCount": 24,
+  "majorTopicsFullyConnected": 24,
+  "isolatedMajorTopics": [],
+  "noOrphanMajorTopics": true,
+  "majorPaths": [
+    {
+      "name": "Abraham covenant path",
+      "connected": true,
+      "pathCount": 8,
+      "issues": [],
+      "topics": [
+        "abraham",
+        "isaac",
+        "jacob",
+        "israel",
+        "jacob_israel_twelve_tribes",
+        "kingdom_of_god",
+        "new_jerusalem",
+        "one_hundred_forty_four_thousand"
+      ]
+    },
+    {
+      "name": "Peter apostolic path",
+      "connected": true,
+      "pathCount": 6,
+      "issues": [],
+      "topics": [
+        "peter",
+        "pentecost",
+        "cornelius",
+        "gentiles",
+        "paul",
+        "peter_paul_alignment"
+      ]
+    },
+    {
+      "name": "Kingdom David path",
+      "connected": false,
+      "pathCount": 6,
+      "issues": [
+        "missing_node:david",
+        "disconnected:kingdom_of_god→david",
+        "disconnected:david→messiah_logos",
+        "disconnected:resurrection→millennial_kingdom_kingdom_on_earth"
+      ],
+      "topics": [
+        "kingdom_of_god",
+        "david",
+        "messiah_logos",
+        "resurrection",
+        "millennial_kingdom_kingdom_on_earth",
+        "new_jerusalem"
+      ]
+    }
+  ],
+  "sandboxPathResults": [
+    {
+      "name": "Abraham → Isaac → Jacob → Israel → Twelve Tribes → Kingdom → New Jerusalem → 144000",
+      "fullyNavigable": true
+    },
+    {
+      "name": "Peter → Pentecost → Cornelius → Gentiles → Paul",
+      "fullyNavigable": true
+    },
+    {
+      "name": "Kingdom → David → Messiah → Resurrection → Millennium → New Jerusalem",
+      "fullyNavigable": false
+    }
+  ],
+  "topics": [
+    {
+      "topic": "abraham",
+      "connected": true,
+      "pathCount": 3,
+      "issues": []
+    },
+    {
+      "topic": "isaac",
+      "connected": true,
+      "pathCount": 3,
+      "issues": []
+    },
+    {
+      "topic": "jacob",
+      "connected": true,
+      "pathCount": 7,
+      "issues": []
+    },
+    {
+      "topic": "israel",
+      "connected": true,
+      "pathCount": 7,
+      "issues": []
+    },
+    {
+      "topic": "jacob_israel_twelve_tribes",
+      "connected": true,
+      "pathCount": 7,
+      "issues": []
+    },
+    {
+      "topic": "kingdom_of_god",
+      "connected": true,
+      "pathCount": 7,
+      "issues": []
+    },
+    {
+      "topic": "messiah_logos",
+      "connected": true,
+      "pathCount": 5,
+      "issues": []
+    },
+    {
+      "topic": "house_of_israel",
+      "connected": true,
+      "pathCount": 3,
+      "issues": []
+    },
+    {
+      "topic": "captivity",
+      "connected": true,
+      "pathCount": 3,
+      "issues": []
+    },
+    {
+      "topic": "regathering",
+      "connected": true,
+      "pathCount": 2,
+      "issues": []
+    },
+    {
+      "topic": "new_jerusalem",
+      "connected": true,
+      "pathCount": 3,
+      "issues": []
+    },
+    {
+      "topic": "one_hundred_forty_four_thousand",
+      "connected": true,
+      "pathCount": 7,
+      "issues": []
+    },
+    {
+      "topic": "disciples",
+      "connected": true,
+      "pathCount": 1,
+      "issues": []
+    },
+    {
+      "topic": "peter",
+      "connected": true,
+      "pathCount": 6,
+      "issues": []
+    },
+    {
+      "topic": "pentecost",
+      "connected": true,
+      "pathCount": 6,
+      "issues": []
+    },
+    {
+      "topic": "cornelius",
+      "connected": true,
+      "pathCount": 4,
+      "issues": []
+    },
+    {
+      "topic": "gentiles",
+      "connected": true,
+      "pathCount": 4,
+      "issues": []
+    },
+    {
+      "topic": "paul",
+      "connected": true,
+      "pathCount": 2,
+      "issues": []
+    },
+    {
+      "topic": "peter_paul_alignment",
+      "connected": true,
+      "pathCount": 3,
+      "issues": []
+    },
+    {
+      "topic": "gospel",
+      "connected": true,
+      "pathCount": 4,
+      "issues": []
+    },
+    {
+      "topic": "millennial_kingdom_kingdom_on_earth",
+      "connected": true,
+      "pathCount": 2,
+      "issues": []
+    },
+    {
+      "topic": "holy_spirit",
+      "connected": true,
+      "pathCount": 5,
+      "issues": []
+    },
+    {
+      "topic": "spirit_of_god",
+      "connected": true,
+      "pathCount": 2,
+      "issues": []
+    },
+    {
+      "topic": "feasts",
+      "connected": true,
+      "pathCount": 7,
+      "issues": []
+    },
+    {
+      "topic": "sabbath",
+      "connected": true,
+      "pathCount": 3,
+      "issues": []
+    },
+    {
+      "topic": "death_state",
+      "connected": true,
+      "pathCount": 2,
+      "issues": []
+    },
+    {
+      "topic": "resurrection",
+      "connected": true,
+      "pathCount": 2,
+      "issues": []
+    },
+    {
+      "topic": "dietary_law",
+      "connected": true,
+      "pathCount": 1,
+      "issues": []
+    },
+    {
+      "topic": "book_of_life",
+      "connected": true,
+      "pathCount": 1,
+      "issues": []
+    },
+    {
+      "topic": "word_of_god",
+      "connected": true,
+      "pathCount": 1,
+      "issues": []
+    },
+    {
+      "topic": "david",
+      "connected": false,
+      "pathCount": 0,
+      "issues": [
+        "missing_vine_node",
+        "kingdom_path_partial"
+      ]
+    }
+  ],
+  "certified": true,
+  "kingdomPathNavigable": false,
+  "covenantPathNavigable": true,
+  "apostolicPathNavigable": true
+}

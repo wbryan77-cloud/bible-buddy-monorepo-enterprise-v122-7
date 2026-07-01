@@ -1,0 +1,85 @@
+{
+  "ranAt": "2026-06-06T06:00:09.064Z",
+  "hotRoots": [
+    "routes/buddy.js",
+    "services/buddyBrain.js",
+    "services/openAiFirstCompanionRuntime.js",
+    "services/reasonFirstComposer.js",
+    "services/doctrineBoundaryValidator.js",
+    "services/answerVerifier.js",
+    "services/metaAnswerResponder.js"
+  ],
+  "modulesVisited": 115,
+  "edgeCount": 320,
+  "issues": [
+    {
+      "file": "services/answerVerifier.js",
+      "status": "untracked",
+      "risk": "critical"
+    },
+    {
+      "file": "services/evidenceCards.js",
+      "status": "missing_on_disk",
+      "risk": "critical"
+    },
+    {
+      "file": "services/liveResponseCapture.js",
+      "status": "untracked",
+      "risk": "low"
+    },
+    {
+      "file": "services/metaAnswerResponder.js",
+      "status": "untracked",
+      "risk": "critical"
+    }
+  ],
+  "criticalUntracked": [
+    {
+      "file": "services/answerVerifier.js",
+      "status": "untracked",
+      "risk": "critical"
+    },
+    {
+      "file": "services/metaAnswerResponder.js",
+      "status": "untracked",
+      "risk": "critical"
+    }
+  ],
+  "answerVerifierChain": [
+    {
+      "from": "services/sabbathHistoryDeepResponder.js",
+      "to": "services/metaAnswerResponder.js",
+      "req": "./metaAnswerResponder"
+    },
+    {
+      "from": "services/doctrineBoundaryValidator.js",
+      "to": "services/doctrineBoundaries.js",
+      "req": "./doctrineBoundaries"
+    },
+    {
+      "from": "services/doctrineBoundaryValidator.js",
+      "to": "services/answerVerifier.js",
+      "req": "./answerVerifier"
+    },
+    {
+      "from": "services/answerVerifier.js",
+      "to": "services/metaAnswerResponder.js",
+      "req": "./metaAnswerResponder"
+    },
+    {
+      "from": "services/answerVerifier.js",
+      "to": "services/questionIntentResolver.js",
+      "req": "./questionIntentResolver"
+    },
+    {
+      "from": "services/doctrineBoundaryValidator.js",
+      "to": "services/listeningSpecificityValidator.js",
+      "req": "./listeningSpecificityValidator"
+    },
+    {
+      "from": "services/doctrineBoundaryValidator.js",
+      "to": "services/ownershipAntiOverrideGuard.js",
+      "req": "./ownershipAntiOverrideGuard"
+    }
+  ]
+}

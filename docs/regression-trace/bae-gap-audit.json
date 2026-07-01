@@ -1,0 +1,266 @@
+{
+  "ranAt": "2026-06-07T22:46:41.086Z",
+  "mode": "offline_retrieval_and_validator",
+  "topics": [
+    {
+      "topic": "third_heaven",
+      "question": "What is the third heaven?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "heavens"
+      ],
+      "catalogKeys": [
+        "threeHeavens"
+      ],
+      "scriptureChainCount": 10,
+      "bindingRuleCount": 10,
+      "approvedRefCount": 23,
+      "effectiveTopic": "heavens",
+      "driftValidatorCaught": true,
+      "driftClassification": "D",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    },
+    {
+      "topic": "kingdom",
+      "question": "What is the kingdom of God?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "kingdom"
+      ],
+      "catalogKeys": [
+        "kingdomComesToEarth"
+      ],
+      "scriptureChainCount": 7,
+      "bindingRuleCount": 10,
+      "approvedRefCount": 24,
+      "effectiveTopic": "kingdom",
+      "driftValidatorCaught": true,
+      "driftClassification": "D",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    },
+    {
+      "topic": "death_state",
+      "question": "What happens when we die?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "deathState"
+      ],
+      "catalogKeys": [
+        "stateOfTheDead"
+      ],
+      "scriptureChainCount": 6,
+      "bindingRuleCount": 4,
+      "approvedRefCount": 17,
+      "effectiveTopic": "death_state",
+      "driftValidatorCaught": true,
+      "driftClassification": "D",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    },
+    {
+      "topic": "resurrection",
+      "question": "What does Scripture teach about resurrection?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "deathState"
+      ],
+      "catalogKeys": [
+        "stateOfTheDead"
+      ],
+      "scriptureChainCount": 6,
+      "bindingRuleCount": 4,
+      "approvedRefCount": 17,
+      "effectiveTopic": "resurrection_timeline",
+      "driftValidatorCaught": true,
+      "driftClassification": "C",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    },
+    {
+      "topic": "acts_10",
+      "question": "Does Acts 10 make pork clean?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "dietaryLaw"
+      ],
+      "catalogKeys": [],
+      "scriptureChainCount": 7,
+      "bindingRuleCount": 0,
+      "approvedRefCount": 7,
+      "effectiveTopic": "dietary_law",
+      "driftValidatorCaught": true,
+      "driftClassification": "D",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    },
+    {
+      "topic": "clean_unclean",
+      "question": "Is pork unclean according to Scripture?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "dietaryLaw"
+      ],
+      "catalogKeys": [],
+      "scriptureChainCount": 7,
+      "bindingRuleCount": 0,
+      "approvedRefCount": 7,
+      "effectiveTopic": "dietary_law",
+      "driftValidatorCaught": true,
+      "driftClassification": "D",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    },
+    {
+      "topic": "sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "sabbath"
+      ],
+      "catalogKeys": [],
+      "scriptureChainCount": 8,
+      "bindingRuleCount": 0,
+      "approvedRefCount": 6,
+      "effectiveTopic": "sabbath",
+      "driftValidatorCaught": true,
+      "driftClassification": "D",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    },
+    {
+      "topic": "holy_days",
+      "question": "What feasts does Scripture command?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "feasts"
+      ],
+      "catalogKeys": [],
+      "scriptureChainCount": 6,
+      "bindingRuleCount": 0,
+      "approvedRefCount": 6,
+      "effectiveTopic": "feasts",
+      "driftValidatorCaught": true,
+      "driftClassification": "C",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    },
+    {
+      "topic": "logos",
+      "question": "What does Logos mean in John 1:1?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "messiahLogos"
+      ],
+      "catalogKeys": [],
+      "scriptureChainCount": 0,
+      "bindingRuleCount": 0,
+      "approvedRefCount": 10,
+      "effectiveTopic": "messiah_logos",
+      "driftValidatorCaught": true,
+      "driftClassification": "C",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": "G"
+    },
+    {
+      "topic": "holy",
+      "question": "What does holy mean?",
+      "evidenceAvailable": false,
+      "evidenceRetrieved": false,
+      "cardIds": [],
+      "catalogKeys": [],
+      "scriptureChainCount": 0,
+      "bindingRuleCount": 0,
+      "approvedRefCount": 0,
+      "effectiveTopic": null,
+      "driftValidatorCaught": true,
+      "driftClassification": "C",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": "A"
+    },
+    {
+      "topic": "no_ascended",
+      "question": "Where does the Bible say no man has ascended to heaven?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "heavens"
+      ],
+      "catalogKeys": [
+        "threeHeavens"
+      ],
+      "scriptureChainCount": 10,
+      "bindingRuleCount": 10,
+      "approvedRefCount": 23,
+      "effectiveTopic": "heavens",
+      "driftValidatorCaught": true,
+      "driftClassification": "D",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    },
+    {
+      "topic": "cannot_come",
+      "question": "What did Jesus mean where I go ye cannot come?",
+      "evidenceAvailable": true,
+      "evidenceRetrieved": true,
+      "cardIds": [
+        "kingdom"
+      ],
+      "catalogKeys": [
+        "kingdomComesToEarth"
+      ],
+      "scriptureChainCount": 7,
+      "bindingRuleCount": 10,
+      "approvedRefCount": 24,
+      "effectiveTopic": "kingdom",
+      "driftValidatorCaught": true,
+      "driftClassification": "D",
+      "citationFalsePass": false,
+      "claimsValidatedOffline": true,
+      "doctrineConfidence": "validator_blocks_drift",
+      "rootCauseIfLiveDrift": null
+    }
+  ],
+  "summary": {
+    "evidenceGaps": [
+      "holy"
+    ],
+    "routingFailures": [],
+    "graphIncomplete": [
+      "logos"
+    ],
+    "validatorMisses": []
+  }
+}

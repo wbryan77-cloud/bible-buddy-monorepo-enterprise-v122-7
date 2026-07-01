@@ -1,0 +1,106 @@
+# Recovered Pack Review Readiness
+
+**Phase:** 3L Part I — informational scores only; do not block human review
+**Date:** 2026-06-09T15:01:20.962Z
+
+**Review-ready packs:** 77
+
+| Topic | Support | Scripture depth | Chain org | G2R complete | Review readiness | Status |
+|-------|---------|-----------------|-----------|--------------|------------------|--------|
+| jesus_old_testament_new_testament | 89 | 100 | 95 | 100% | 99 | review_ready |
+| holy_spirit | 88 | 100 | 95 | 100% | 99 | review_ready |
+| kingdom_of_god | 87 | 100 | 95 | 100% | 99 | review_ready |
+| leviticus_23 | 84 | 100 | 85 | 100% | 91 | review_ready |
+| new_jerusalem | 82 | 100 | 95 | 100% | 89 | review_ready |
+| captivity | 82 | 100 | 95 | 100% | 89 | review_ready |
+| eighth_day_father | 85 | 100 | 80 | 100% | 89 | review_ready |
+| tree_of_life | 82 | 100 | 80 | 100% | 89 | review_ready |
+| tree_of_knowledge | 82 | 100 | 80 | 100% | 89 | review_ready |
+| john | 82 | 100 | 80 | 100% | 89 | review_ready |
+| passover | 82 | 100 | 95 | 89% | 86 | review_ready |
+| lake_of_fire | 80 | 100 | 95 | 89% | 86 | review_ready |
+| emotional | 78 | 100 | 80 | 89% | 86 | review_ready |
+| the_beast | 74 | 100 | 70 | 100% | 86 | review_ready |
+| women_in_bible | 74 | 100 | 70 | 100% | 86 | review_ready |
+| the_church | 74 | 100 | 70 | 100% | 86 | review_ready |
+| edom | 82 | 100 | 80 | 100% | 84 | review_ready |
+| deuteronomy_28_curses | 81 | 100 | 80 | 100% | 84 | review_ready |
+| david | 78 | 100 | 80 | 100% | 84 | review_ready |
+| paul | 78 | 100 | 80 | 100% | 84 | review_ready |
+| gog_and_magog | 79 | 100 | 85 | 89% | 83 | review_ready |
+| abomination_of_desolation | 78 | 100 | 80 | 89% | 81 | review_ready |
+| daniel | 78 | 100 | 80 | 89% | 81 | review_ready |
+| false_prophet | 78 | 100 | 70 | 100% | 81 | review_ready |
+| feast_of_trumpets | 78 | 100 | 70 | 100% | 81 | review_ready |
+| day_of_atonement | 77 | 100 | 70 | 100% | 81 | review_ready |
+| last_great_day | 78 | 100 | 70 | 100% | 81 | review_ready |
+| circumcision | 80 | 100 | 80 | 89% | 81 | review_ready |
+| feast_of_tabernacles | 78 | 100 | 70 | 100% | 81 | review_ready |
+| gentiles | 80 | 100 | 80 | 89% | 81 | review_ready |
+| three_pilgrimage_feasts | 77 | 100 | 70 | 100% | 81 | review_ready |
+| unleavened_bread | 79 | 100 | 80 | 89% | 81 | review_ready |
+| kingdom_on_earth | 78 | 100 | 70 | 100% | 81 | review_ready |
+| israel | 79 | 100 | 80 | 89% | 81 | review_ready |
+| hebrews_people | 79 | 100 | 80 | 89% | 81 | review_ready |
+| covenants | 74 | 84 | 75 | 89% | 79 | review_ready |
+| melchizedek | 76 | 100 | 70 | 89% | 78 | review_ready |
+| temple | 76 | 100 | 70 | 89% | 78 | review_ready |
+| gabriel | 76 | 100 | 70 | 89% | 78 | review_ready |
+| devil_deception | 76 | 100 | 70 | 89% | 78 | review_ready |
+| armageddon | 76 | 100 | 70 | 89% | 78 | review_ready |
+| adam | 76 | 100 | 70 | 89% | 78 | review_ready |
+| cain | 76 | 100 | 70 | 89% | 78 | review_ready |
+| abel | 76 | 100 | 70 | 89% | 78 | review_ready |
+| shem | 76 | 100 | 70 | 89% | 78 | review_ready |
+| japheth | 76 | 100 | 70 | 89% | 78 | review_ready |
+| abraham | 76 | 100 | 70 | 89% | 78 | review_ready |
+| isaac | 76 | 100 | 70 | 89% | 78 | review_ready |
+| joseph | 76 | 100 | 70 | 89% | 78 | review_ready |
+| judah | 76 | 100 | 70 | 89% | 78 | review_ready |
+| moses | 76 | 100 | 70 | 89% | 78 | review_ready |
+| aaron | 76 | 100 | 70 | 89% | 78 | review_ready |
+| joshua | 76 | 100 | 70 | 89% | 78 | review_ready |
+| samson | 76 | 100 | 70 | 89% | 78 | review_ready |
+| samuel | 76 | 100 | 70 | 89% | 78 | review_ready |
+| saul | 76 | 100 | 70 | 89% | 78 | review_ready |
+| solomon | 76 | 100 | 70 | 89% | 78 | review_ready |
+| elijah | 76 | 100 | 70 | 89% | 78 | review_ready |
+| elisha | 76 | 100 | 70 | 89% | 78 | review_ready |
+| isaiah | 76 | 100 | 70 | 89% | 78 | review_ready |
+| jeremiah | 76 | 100 | 70 | 89% | 78 | review_ready |
+| ezekiel | 76 | 100 | 70 | 89% | 78 | review_ready |
+| grace | 76 | 100 | 70 | 89% | 78 | review_ready |
+| repentance | 76 | 100 | 70 | 89% | 78 | review_ready |
+| priesthood | 76 | 100 | 70 | 89% | 78 | review_ready |
+| divorce | 76 | 100 | 70 | 89% | 78 | review_ready |
+| adam_to_noah | 76 | 100 | 70 | 89% | 78 | review_ready |
+| noah_to_abraham | 76 | 100 | 70 | 89% | 78 | review_ready |
+| abraham_to_david | 76 | 100 | 70 | 89% | 78 | review_ready |
+| david_to_christ | 76 | 100 | 70 | 89% | 78 | review_ready |
+| tribes_of_israel | 76 | 100 | 70 | 89% | 78 | review_ready |
+| sons_of_noah | 76 | 100 | 70 | 89% | 78 | review_ready |
+| tabernacle | 76 | 100 | 70 | 89% | 78 | review_ready |
+| sacrificial_system | 76 | 100 | 70 | 89% | 78 | review_ready |
+| holy_days | 76 | 100 | 70 | 89% | 78 | review_ready |
+| ten_commandments | 76 | 100 | 70 | 89% | 78 | review_ready |
+| fathers_kingdom | 76 | 100 | 70 | 89% | 78 | review_ready |
+| two_witnesses | 71 | 74 | 85 | 89% | 74 | moderate |
+| davidic_covenant | 70 | 78 | 60 | 100% | 70 | moderate |
+| mark_of_the_beast | 68 | 66 | 75 | 89% | 68 | moderate |
+| new_covenant | 68 | 77 | 60 | 89% | 67 | moderate |
+| abrahamic_covenant | 71 | 77 | 60 | 89% | 67 | moderate |
+| high_sabbaths | 66 | 68 | 55 | 89% | 63 | moderate |
+| great_tribulation | 64 | 56 | 70 | 89% | 63 | moderate |
+| pentecost | 65 | 65 | 55 | 89% | 62 | moderate |
+| tithes | 63 | 62 | 60 | 89% | 62 | moderate |
+| noah | 62 | 60 | 60 | 89% | 61 | moderate |
+| faith | 64 | 56 | 60 | 89% | 60 | moderate |
+| works | 64 | 56 | 60 | 89% | 60 | moderate |
+| baptism | 62 | 56 | 60 | 89% | 60 | moderate |
+| great_white_throne | 63 | 53 | 60 | 89% | 59 | moderate |
+| marriage | 62 | 53 | 60 | 89% | 59 | moderate |
+| female_prophecy | 62 | 51 | 60 | 89% | 58 | moderate |
+| 144000 | 57 | 50 | 40 | 89% | 52 | weak |
+| peter | 60 | 48 | 40 | 89% | 51 | weak |
+| jacob | 55 | 44 | 40 | 89% | 50 | weak |
+| millennial_kingdom | 56 | 38 | 40 | 89% | 48 | weak |

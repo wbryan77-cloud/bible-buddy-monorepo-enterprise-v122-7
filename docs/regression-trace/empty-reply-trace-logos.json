@@ -1,0 +1,298 @@
+{
+  "ranAt": "2026-06-06T05:15:26.737Z",
+  "message": "What does Logos mean in John 1:1?",
+  "body": {
+    "userId": "demo-user",
+    "mode": "COMPANION",
+    "personaKey": "ADAPTIVE_COMPANION",
+    "message": "What does Logos mean in John 1:1?"
+  },
+  "openAiKeyPresent": true,
+  "stages": {
+    "afterRunBuddy": {
+      "stage": "runBuddy return",
+      "type": "object",
+      "keys": [
+        "reply",
+        "scripture",
+        "mode",
+        "confidence",
+        "memory_used",
+        "safety_level",
+        "admin_flags",
+        "runtime",
+        "quality",
+        "coreDebug"
+      ],
+      "reply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "replyType": "string",
+      "replyLength": 83,
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "buildConnectionErrorReplyUsed": true
+    },
+    "composeReasonFirstReply": {
+      "beforeReturn": {
+        "stage": "composeReasonFirstReply.structured",
+        "type": "object",
+        "keys": [
+          "reply",
+          "mode",
+          "confidence",
+          "memory_used",
+          "safety_level",
+          "runtime"
+        ],
+        "reply": "",
+        "replyType": "string",
+        "replyLength": 0,
+        "openAiCalled": null,
+        "finalAnswerAuthor": null,
+        "buildConnectionErrorReplyUsed": null
+      },
+      "openaiCalled": false,
+      "apiError": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+      "validationPassed": false
+    },
+    "beforeNormalizePayload": {
+      "stage": "before normalizePayload",
+      "type": "object",
+      "keys": [
+        "reply",
+        "scripture",
+        "mode",
+        "confidence",
+        "memory_used",
+        "safety_level",
+        "admin_flags",
+        "runtime",
+        "quality",
+        "coreDebug"
+      ],
+      "reply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "replyType": "string",
+      "replyLength": 83,
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "buildConnectionErrorReplyUsed": true
+    },
+    "afterNormalizePayload": {
+      "stage": "after normalizePayload",
+      "type": "object",
+      "keys": [
+        "reply",
+        "scripture",
+        "mode",
+        "confidence",
+        "memory_used",
+        "safety_level",
+        "admin_flags",
+        "runtime",
+        "quality",
+        "coreDebug"
+      ],
+      "reply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "replyType": "string",
+      "replyLength": 83,
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "buildConnectionErrorReplyUsed": true
+    },
+    "httpJson200": {
+      "ok": true,
+      "replyShape": {
+        "stage": "httpJson.reply",
+        "type": "object",
+        "keys": [
+          "reply",
+          "scripture",
+          "mode",
+          "confidence",
+          "memory_used",
+          "safety_level",
+          "admin_flags",
+          "runtime",
+          "quality",
+          "coreDebug"
+        ],
+        "reply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+        "replyType": "string",
+        "replyLength": 83,
+        "openAiCalled": false,
+        "finalAnswerAuthor": "connection_error",
+        "buildConnectionErrorReplyUsed": true
+      },
+      "serializedLength": 4749
+    },
+    "indexHtmlParse": {
+      "payload": {
+        "reply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+        "scripture": [],
+        "mode": "companion",
+        "confidence": "low",
+        "memory_used": false,
+        "safety_level": "standard",
+        "admin_flags": [
+          "core_connection_error"
+        ],
+        "runtime": {
+          "masterRoute": "core_connection_error",
+          "openAiCalled": false,
+          "connectionError": "401 Incorrect API key provided: sk-proj-********************************************************************************",
+          "buildConnectionErrorReplyUsed": true,
+          "companionPresentation": {
+            "skipRelationshipEnrichment": true,
+            "skipStudyPrompts": true
+          },
+          "buddyRuntime": "core_openai_first",
+          "evidenceTopic": "messiah_logos",
+          "routingHintsOnly": true,
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "validation": {
+            "passed": false,
+            "doctrineValidationResult": "skipped",
+            "issues": [
+              "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+            ]
+          },
+          "regenerated": false,
+          "ownershipGuard": {
+            "passed": false,
+            "issues": [
+              "openai_not_called"
+            ],
+            "currentQuestionMatch": 0,
+            "studyLoopUsed": false,
+            "templateUsed": false,
+            "regenInstruction": null,
+            "allowConnectionFallback": true
+          },
+          "directnessGuard": {
+            "passed": false,
+            "issues": [
+              "not_openai_authored",
+              "missing_word_study"
+            ],
+            "forbiddenPhraseDetected": false,
+            "forbiddenHits": [],
+            "answerMatchesLatestQuestion": false,
+            "correctionRepair": true,
+            "historyAllowed": false,
+            "regenInstruction": "Answer the latest user question directly. Use evidence silently. Do not use template language, study continuation, prior-topic continuation, or history unless asked."
+          },
+          "coreDebug": {
+            "runtimeUsed": "core_openai_first",
+            "currentIntent": "meaning_word_study",
+            "historyAllowed": false,
+            "evidenceCardsUsed": true,
+            "openaiCalled": false,
+            "openaiResponseReceived": false,
+            "finalAnswerAuthor": "connection_error",
+            "templateUsed": false,
+            "fallbackUsed": true,
+            "studyFallbackUsed": false,
+            "responderUsed": false,
+            "relationshipEnrichmentUsed": false,
+            "sourceGroundedResponderUsed": false,
+            "sabbathHistoryDeepResponderUsed": false,
+            "forbiddenPhraseDetected": false,
+            "answerMatchesLatestQuestion": false,
+            "regenerated": false,
+            "routeUsed": "core_connection_error",
+            "studyLoopUsed": false,
+            "prayerTemplateUsed": false,
+            "scriptureWitnessTemplateUsed": false,
+            "doctrineValidatorUsed": true,
+            "scriptureEvidenceUsed": false,
+            "activeTopicUsedAsContextOnly": true,
+            "evidenceTopic": "messiah_logos",
+            "validationPassed": false,
+            "validationIssues": [
+              "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+            ],
+            "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "approvedDoctrineFrozen": true,
+            "discoveryReinforcementCount": 1,
+            "buildConnectionErrorReplyUsed": true,
+            "correctionRepair": true
+          }
+        },
+        "quality": {
+          "score": 100,
+          "issues": [],
+          "passed": true
+        },
+        "coreDebug": {
+          "runtimeUsed": "core_openai_first",
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "evidenceCardsUsed": true,
+          "openaiCalled": false,
+          "openaiResponseReceived": false,
+          "finalAnswerAuthor": "connection_error",
+          "templateUsed": false,
+          "fallbackUsed": true,
+          "studyFallbackUsed": false,
+          "responderUsed": false,
+          "relationshipEnrichmentUsed": false,
+          "sourceGroundedResponderUsed": false,
+          "sabbathHistoryDeepResponderUsed": false,
+          "forbiddenPhraseDetected": false,
+          "answerMatchesLatestQuestion": false,
+          "regenerated": false,
+          "routeUsed": "core_connection_error",
+          "studyLoopUsed": false,
+          "prayerTemplateUsed": false,
+          "scriptureWitnessTemplateUsed": false,
+          "doctrineValidatorUsed": true,
+          "scriptureEvidenceUsed": false,
+          "activeTopicUsedAsContextOnly": true,
+          "evidenceTopic": "messiah_logos",
+          "validationPassed": false,
+          "validationIssues": [
+            "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+          ],
+          "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+          "approvedDoctrineFrozen": true,
+          "discoveryReinforcementCount": 1,
+          "buildConnectionErrorReplyUsed": true,
+          "correctionRepair": true
+        }
+      },
+      "displayed": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "clientFallbackUsed": false,
+      "resOkAssumed": true
+    },
+    "indexHtmlOn400": {
+      "httpStatus": 400,
+      "dataOk": false,
+      "payload": {
+        "ok": false,
+        "error": "message is required"
+      },
+      "displayed": "I'm here with you. Tell me a little more.",
+      "clientFallbackUsed": true,
+      "note": "index.html does NOT check res.ok or data.ok"
+    },
+    "indexHtmlOn500": {
+      "httpStatus": 500,
+      "dataOk": false,
+      "payload": {
+        "ok": false,
+        "error": "Simulated server error"
+      },
+      "displayed": "I'm here with you. Tell me a little more.",
+      "clientFallbackUsed": true,
+      "note": "index.html does NOT check res.ok or data.ok"
+    },
+    "runBuddyIsNull": false,
+    "replyTruthyChain": {
+      "runBuddy_reply": true,
+      "runBuddy_reply_length": 83,
+      "payload_reply": true,
+      "payload_reply_length": 83,
+      "index_would_fallback": false
+    }
+  }
+}

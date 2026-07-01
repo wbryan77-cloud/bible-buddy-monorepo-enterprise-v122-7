@@ -1,0 +1,49 @@
+{
+  "before": {
+    "coverage": {
+      "covered": 324,
+      "partial": 216,
+      "missing": 53
+    },
+    "humanReviewPackets": 176,
+    "humanReviewRequired": 176,
+    "incompleteRefCandidates": 4581,
+    "normalizedRefs": 0,
+    "autoLinkedPacks": 0,
+    "pdfAutoApproved": 0,
+    "spanishWithScriptures": 0,
+    "facebookScriptures": 0,
+    "missingEntries": 33
+  },
+  "after": {
+    "coverage": {
+      "covered": 365,
+      "partial": 219,
+      "missing": 9
+    },
+    "humanReviewPackets": 201,
+    "humanReviewRequired": 32,
+    "incompleteRefCandidates": 4581,
+    "normalizedRefs": 390,
+    "autoLinkedPacks": 116,
+    "pdfAutoApproved": 33,
+    "spanishWithScriptures": 2,
+    "facebookScriptures": 0,
+    "missingEntries": 9
+  },
+  "delta": {
+    "covered": 41,
+    "partial": 3,
+    "missing": -44,
+    "humanReviewReductionPct": 88,
+    "normalizedRefsGain": 390,
+    "autoLinkedGain": 116
+  },
+  "targets": {
+    "missingUnder15": true,
+    "coverageCoveredGt340": true,
+    "coveragePartialGt220": true,
+    "coverageMissingLt15": true,
+    "humanReviewReduced50Pct": true
+  }
+}

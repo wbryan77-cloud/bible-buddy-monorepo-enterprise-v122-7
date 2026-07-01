@@ -1,0 +1,1303 @@
+{
+  "phase": "3W.2",
+  "ranAt": "2026-06-10T05:11:43.828Z",
+  "validations": {
+    "chainAttachment": {
+      "ranAt": "2026-06-10T05:11:43.800Z",
+      "purpose": "Separate chain attachment bookkeeping issues from evidence issues",
+      "summary": {
+        "totalChains": 6,
+        "attachedChains": 6,
+        "unattachedChains": 0,
+        "missingLinkageCount": 0,
+        "insufficientEvidenceCount": 0,
+        "majorPacksWithoutChainAttachment": 19,
+        "packGapsMissingLinkage": 4,
+        "packGapsInsufficientEvidence": 15,
+        "bookkeepingSharePct": 21.1
+      },
+      "chains": [],
+      "packAttachmentGaps": [
+        {
+          "topic": "millennial_kingdom_kingdom_on_earth",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 5,
+          "classification": "missing_linkage",
+          "overlappingChainIds": [
+            "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+            "chain_malachi 3:14-18_luke 10:1-2_luke 10:17-20_philip",
+            "chain_psalm 138:1-4_luke 24:25-27_luke 24:44-45_exodus",
+            "chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+            "chain_matthew 6:10_acts 1:6-7_exodus 4:21-23_exodus 8:"
+          ]
+        },
+        {
+          "topic": "peter_paul_alignment",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "sabbath",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 1,
+          "classification": "missing_linkage",
+          "overlappingChainIds": [
+            "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel"
+          ]
+        },
+        {
+          "topic": "peter",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "kingdom_of_god",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 2,
+          "classification": "missing_linkage",
+          "overlappingChainIds": [
+            "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+            "chain_matthew 6:10_acts 1:6-7_exodus 4:21-23_exodus 8:"
+          ]
+        },
+        {
+          "topic": "feasts",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 1,
+          "classification": "missing_linkage",
+          "overlappingChainIds": [
+            "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel"
+          ]
+        },
+        {
+          "topic": "messiah_logos",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "one_hundred_forty_four_thousand",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "holy_spirit",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "death_state",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "resurrection",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "dietary_law",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "leviticus_23",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "passover",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "pentecost",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "abraham",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "isaac",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "israel",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        },
+        {
+          "topic": "esau_edom_edomites",
+          "chainLibraryAttached": false,
+          "overlappingChainCount": 0,
+          "classification": "insufficient_evidence",
+          "overlappingChainIds": []
+        }
+      ],
+      "safety": {
+        "validationOnly": true
+      }
+    },
+    "questionCoverage": {
+      "ranAt": "2026-06-10T05:11:43.822Z",
+      "purpose": "Measure true question coverage across scoring methodologies",
+      "coverageA": {
+        "label": "Coverage A — current scorecard formula",
+        "numerator": 589,
+        "denominator": 1009,
+        "coveragePct": 58.4,
+        "note": "Denominator double-counts traceability questions already present in question-coverage-index"
+      },
+      "coverageB": {
+        "label": "Coverage B — exclude internal audit prompts",
+        "numerator": 457,
+        "denominator": 554,
+        "coveragePct": 82.5,
+        "phase3fCorpus": {
+          "numerator": 288,
+          "denominator": 385,
+          "coveragePct": 74.8
+        },
+        "internalAuditExcluded": 35
+      },
+      "coverageC": {
+        "label": "Coverage C — include imported audit prompts",
+        "numerator": 460,
+        "denominator": 589,
+        "coveragePct": 78.1,
+        "phase3fCorpus": {
+          "numerator": 293,
+          "denominator": 420,
+          "coveragePct": 69.8
+        },
+        "importedAuditPromptCount": 35
+      },
+      "weaknessDiagnosis": {
+        "currentScoreInflatedByDoubleCounting": true,
+        "corpusScopeSharePct": 0.12,
+        "scoringLimitationSharePct": 29.2,
+        "trueCoverageEstimatePct": 74.8
+      },
+      "safety": {
+        "validationOnly": true
+      }
+    },
+    "traceabilityGap": {
+      "ranAt": "2026-06-10T05:11:43.822Z",
+      "purpose": "Determine whether traceability failures are metadata-only or evidence-related",
+      "summary": {
+        "totalPacksAudited": 28,
+        "packsInTraceabilityIndex": 26,
+        "failureCount": 28,
+        "metadataOnlyFailures": 26,
+        "evidenceRelatedFailures": 2,
+        "metadataOnlySharePct": 92.9
+      },
+      "failures": [
+        {
+          "topic": "wednesday_night_qa",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 1298,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 98
+        },
+        {
+          "topic": "isaiah",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 590,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 27
+        },
+        {
+          "topic": "joshua",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 65,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 2
+        },
+        {
+          "topic": "john",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 70,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 4
+        },
+        {
+          "topic": "feasts",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 49,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 5
+        },
+        {
+          "topic": "samuel",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 184,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 9
+        },
+        {
+          "topic": "millennial_kingdom_kingdom_on_earth",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 31,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "kingdom_of_god",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 56,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "sabbath",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 66,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 2
+        },
+        {
+          "topic": "messiah_logos",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 38,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "jacob_israel_twelve_tribes",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 92,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 11
+        },
+        {
+          "topic": "book_of_life",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 16,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "word_of_god",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 20,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 3
+        },
+        {
+          "topic": "spirit_of_god",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 44,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "daniel",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 21,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "jeremiah",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 38,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 2
+        },
+        {
+          "topic": "ham",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 25,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "little_leaven_daily_readings",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 17,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "ezekiel",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 28,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 2
+        },
+        {
+          "topic": "abib_fresh_beginning_revelation",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 10,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "lake_of_fire",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 22,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "peter",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 21,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "content_with_what_you",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 14,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "research_ecclesiastes_1213",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 1,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "lessons_hebrews",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 1,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "iog_jess_templo_sus",
+          "failureType": "incomplete_metadata",
+          "missingFields": [
+            "sourceUrl"
+          ],
+          "classification": "metadata_only",
+          "primaryScriptureCount": 1,
+          "sourceTitlePresent": true,
+          "orgPacketCount": 1
+        },
+        {
+          "topic": "one_hundred_forty_four_thousand",
+          "failureType": "missing_traceability_entry",
+          "missingFields": [
+            "entire_traceability_record"
+          ],
+          "classification": "evidence_related",
+          "hasDeepPack": true,
+          "orgPacketCount": 0
+        },
+        {
+          "topic": "peter_paul_alignment",
+          "failureType": "missing_traceability_entry",
+          "missingFields": [
+            "entire_traceability_record"
+          ],
+          "classification": "evidence_related",
+          "hasDeepPack": true,
+          "orgPacketCount": 0
+        }
+      ],
+      "safety": {
+        "validationOnly": true
+      }
+    },
+    "pathwayQuality": {
+      "ranAt": "2026-06-10T05:11:43.828Z",
+      "purpose": "Prevent inflated pathway counts from appearing as corpus weaknesses",
+      "summary": {
+        "observedPathwayCount": 4732,
+        "candidatePathwayCount": 10,
+        "supportedCount": 229,
+        "candidateCount": 10,
+        "weakCount": 4503,
+        "insufficientEvidenceCount": 0,
+        "inflatedWeaknessIfAllObservedCountedPct": 100,
+        "adjustedWeakPathwayPct": 95.2,
+        "bookkeepingInflationPct": 4.8
+      },
+      "nonSupportedObservedSample": [
+        {
+          "source": "Exodus 21",
+          "target": "Genesis 6",
+          "relationshipType": "repeated_theme",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Genesis 6",
+          "target": "Psalm 90",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Psalm 90",
+          "target": "Psalm 78",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Psalm 78",
+          "target": "Matthew 12",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Matthew 12",
+          "target": "Exodus 23",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Exodus 23",
+          "target": "Isaiah 59",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Isaiah 59",
+          "target": "Matthew 25",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Matthew 25",
+          "target": "Ephesians 4",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "John 14",
+          "target": "Amos 1",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Amos 1",
+          "target": "Romans 7",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Romans 7",
+          "target": "Exodus 24",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Exodus 34",
+          "target": "Exodus 342",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Exodus 342",
+          "target": "Joel 2",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Joel 2",
+          "target": "Isaiah 11",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Isaiah 11",
+          "target": "John 5:7",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "John 5:7",
+          "target": "Ecclesiastes 9",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Ecclesiastes 9",
+          "target": "Deuteronomy 176",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Deuteronomy 176",
+          "target": "Leviticus 20",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Leviticus 20",
+          "target": "Isaiah 66",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Psalm 27",
+          "target": "Jeremiah 31",
+          "relationshipType": "repeated_theme",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Jeremiah 31",
+          "target": "Isaiah 34",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Isaiah 34",
+          "target": "Daniel 2",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Daniel 2",
+          "target": "Revelation 12",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Genesis 37",
+          "target": "Romans 16",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Romans 16",
+          "target": "Revelation 20",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Revelation 20",
+          "target": "Ezekiel 47",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Ezekiel 47",
+          "target": "Ezekiel 18",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Ezekiel 18",
+          "target": "Acts 2",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Acts 2",
+          "target": "Zephaniah 2",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Zephaniah 2",
+          "target": "Mark 18",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Mark 18",
+          "target": "1 Corinthians 3",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "1 Corinthians 3",
+          "target": "Matthew 244",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Matthew 244",
+          "target": "Exodus 34",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Exodus 34",
+          "target": "Exodus 20",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Exodus 20",
+          "target": "Hebrews 4",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Hebrews 4",
+          "target": "Isaiah 61",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "1 Corinthians 15",
+          "target": "Ephesians 47",
+          "relationshipType": "repeated_theme",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Ephesians 47",
+          "target": "Zechariah 9",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Zechariah 9",
+          "target": "Ephesians 4:10",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Ephesians 4:10",
+          "target": "Matthew 25",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Matthew 25",
+          "target": "Isaiah 58",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Isaiah 58",
+          "target": "Ephesians 4",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Ephesians 4",
+          "target": "Hebrews 10",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Hebrews 10",
+          "target": "Luke 24",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Luke 24",
+          "target": "Romans 5",
+          "relationshipType": "continuity",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Romans 5",
+          "target": "1 Corinthians 15:21",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "1 Corinthians 15:21",
+          "target": "Romans 301",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Romans 301",
+          "target": "1 Timothy 2",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "1 Timothy 2",
+          "target": "Acts 2",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        },
+        {
+          "source": "Acts 2",
+          "target": "Psalms 16",
+          "relationshipType": "supporting",
+          "pathwayType": "observed",
+          "quality": "weak",
+          "evidenceCount": 1,
+          "independentSourceCount": 1,
+          "evidenceTypeCount": 1
+        }
+      ],
+      "candidatePathways": [
+        {
+          "source": "israel",
+          "target": "jacob",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.2,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        },
+        {
+          "source": "jacob",
+          "target": "jacob_israel_twelve_tribes",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.4,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        },
+        {
+          "source": "israel",
+          "target": "jacob_israel_twelve_tribes",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.4,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        },
+        {
+          "source": "pentecost",
+          "target": "peter",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.25,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        },
+        {
+          "source": "kingdom",
+          "target": "kingdom_of_god",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.5,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        },
+        {
+          "source": "israel",
+          "target": "kingdom_of_god",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.5,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        },
+        {
+          "source": "pentecost",
+          "target": "feasts",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.75,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        },
+        {
+          "source": "sabbath",
+          "target": "feasts",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.75,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        },
+        {
+          "source": "messiah",
+          "target": "messiah_logos",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.667,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        },
+        {
+          "source": "gospel",
+          "target": "messiah_logos",
+          "relationshipType": "continuity",
+          "pathwayType": "candidate",
+          "quality": "candidate",
+          "confidence": 0.667,
+          "inferenceBasis": "inheritance_map_with_continuity_index",
+          "evidenceCount": 1,
+          "independentSourceCount": 0,
+          "evidenceTypeCount": 1,
+          "autoDoctrine": false
+        }
+      ],
+      "safety": {
+        "candidatePathwaysNeverAutoDoctrine": true,
+        "validationOnly": true
+      }
+    }
+  },
+  "healthRecalibration": {
+    "ranAt": "2026-06-10T05:11:43.828Z",
+    "purpose": "Determine actual intelligence readiness after validation adjustments",
+    "currentScores": {
+      "chainAttachmentCoveragePct": 20.8,
+      "questionCoveragePct": 58.4,
+      "traceabilityCoveragePct": 89.7,
+      "enrichmentCoveragePct": 100,
+      "topicConnectivityPct": 100,
+      "overallReadinessPct": 80
+    },
+    "adjustedScores": {
+      "chainAttachmentCoveragePct": 37.5,
+      "questionCoveragePct": 82.5,
+      "traceabilityCoveragePct": 92.9,
+      "enrichmentCoveragePct": 100,
+      "topicConnectivityPct": 100,
+      "pathwayQualitySupportedPct": 4.8
+    },
+    "metadataAdjustedScores": {
+      "chainAttachmentCoveragePct": 37.5,
+      "questionCoveragePct": 74.8,
+      "traceabilityCoveragePct": 92.9,
+      "enrichmentCoveragePct": 100,
+      "topicConnectivityPct": 100,
+      "pathwayQualitySupportedPct": 4.8
+    },
+    "adjustedMetrics": [
+      {
+        "name": "chain_attachment",
+        "current": 20.8,
+        "adjusted": 37.5,
+        "metadataAdjusted": 37.5
+      },
+      {
+        "name": "question_coverage",
+        "current": 58.4,
+        "adjusted": 82.5,
+        "metadataAdjusted": 74.8
+      },
+      {
+        "name": "traceability",
+        "current": 89.7,
+        "adjusted": 92.9,
+        "metadataAdjusted": 92.9
+      },
+      {
+        "name": "enrichment",
+        "current": 100,
+        "adjusted": 100,
+        "metadataAdjusted": 100
+      },
+      {
+        "name": "topic_connectivity",
+        "current": 100,
+        "adjusted": 100,
+        "metadataAdjusted": 100
+      }
+    ],
+    "readiness": {
+      "currentReadinessPct": 80,
+      "adjustedReadinessPct": 80,
+      "metadataAdjustedReadinessPct": 80,
+      "readyForPhase4ImplementationTesting": true,
+      "readyForPhase4WithBookkeepingFixes": true
+    },
+    "weaknessBreakdown": {
+      "chainAttachment": {
+        "bookkeepingSharePct": 21.1,
+        "packGapsMissingLinkage": 4,
+        "packGapsInsufficientEvidence": 15,
+        "verdict": "mostly_insufficient_evidence"
+      },
+      "questionCoverage": {
+        "currentFormulaPct": 58.4,
+        "trueCoveragePct": 74.8,
+        "corpusScopeSharePct": 21.9,
+        "scoringLimitationPct": 29.2,
+        "verdict": "mostly_scoring_formula"
+      },
+      "traceability": {
+        "metadataOnlySharePct": 92.9,
+        "evidenceRelatedFailures": 2,
+        "verdict": "mostly_metadata"
+      },
+      "pathwayQuality": {
+        "supportedPct": 4.8,
+        "weakPct": 95.2,
+        "verdict": "mostly_single_source_observed_edges_not_corpus_weakness"
+      }
+    },
+    "executiveAnswers": {
+      "chainAttachmentBookkeepingSharePct": 21.1,
+      "questionCoverageCorpusScopePct": 74.8,
+      "traceabilityMetadataSharePct": 92.9,
+      "adjustedCorpusHealthScorePct": 80,
+      "phase4Ready": true
+    },
+    "safety": {
+      "validationOnly": true
+    }
+  },
+  "safety": {
+    "doctrineGeneration": false,
+    "doctrineApproval": false,
+    "productionChanges": false,
+    "evidenceCardChanges": false,
+    "promptChanges": false,
+    "validationOnly": true
+  }
+}

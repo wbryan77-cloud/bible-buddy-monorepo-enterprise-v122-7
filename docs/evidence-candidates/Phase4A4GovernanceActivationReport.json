@@ -1,0 +1,71 @@
+{
+  "ranAt": "2026-06-10T07:26:30.784Z",
+  "phase": "4A.4",
+  "activations": [
+    {
+      "candidateId": "dietary_law__chain_leviticus 11_leviticus 11:3_leviticus 11:47_leviticus 11:4",
+      "activationStatus": "activated",
+      "activationType": "primary_chain",
+      "evidenceVerified": true,
+      "traceabilityVerified": true,
+      "humanApproved": true,
+      "productionApplied": false,
+      "chainId": "chain_leviticus 11_leviticus 11:3_leviticus 11:47_leviticus 11:4",
+      "scriptureCount": 12
+    },
+    {
+      "candidateId": "death_state__chain_ecclesiastes 9:5_psalm 146:4_john 11:11-14_1 thessalonians 4:13-16",
+      "activationStatus": "activated",
+      "activationType": "primary_chain",
+      "evidenceVerified": true,
+      "traceabilityVerified": true,
+      "humanApproved": true,
+      "productionApplied": false,
+      "chainId": "chain_ecclesiastes 9:5_psalm 146:4_john 11:11-14_1 thessalonians 4:13-16",
+      "scriptureCount": 16
+    },
+    {
+      "candidateId": "holy_spirit__chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+      "activationStatus": "activated",
+      "activationType": "cross_pack_linkage",
+      "evidenceVerified": true,
+      "traceabilityVerified": true,
+      "humanApproved": true,
+      "productionApplied": false,
+      "chainId": "chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+      "scriptureCount": 44
+    },
+    {
+      "candidateId": "david__vine_node",
+      "activationStatus": "activated",
+      "activationType": "vine_node",
+      "evidenceVerified": true,
+      "traceabilityVerified": true,
+      "humanApproved": true,
+      "productionApplied": false,
+      "vineUpdates": [
+        {
+          "action": "david_node_created"
+        },
+        {
+          "action": "kingdom_child_david"
+        },
+        {
+          "action": "messiah_parent_david"
+        },
+        {
+          "action": "messiah_child_resurrection"
+        },
+        {
+          "action": "resurrection_child_millennial"
+        },
+        {
+          "action": "millennial_parent_resurrection"
+        }
+      ]
+    }
+  ],
+  "productionApplied": false,
+  "corpusMutation": true,
+  "corpusScope": "docs/evidence-candidates only"
+}

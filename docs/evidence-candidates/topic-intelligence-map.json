@@ -1,0 +1,541 @@
+{
+  "ranAt": "2026-06-10T04:19:07.139Z",
+  "topics": [
+    {
+      "topic": "144000",
+      "dependsOn": [
+        "israel",
+        "twelve tribes",
+        "sealing",
+        "kingdom",
+        "revelation"
+      ],
+      "dependsOnObserved": [
+        "israel",
+        "kingdom",
+        "revelation"
+      ],
+      "supports": [
+        {
+          "topic": "israel",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "kingdom",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "revelation",
+          "relationship": "depends_on_observed"
+        }
+      ],
+      "continuityLinks": [],
+      "relatedTopics": [],
+      "confidence": 0.6,
+      "traceable": true
+    },
+    {
+      "topic": "jacob",
+      "dependsOn": [
+        "abraham",
+        "isaac",
+        "birthright",
+        "blessing",
+        "israel"
+      ],
+      "dependsOnObserved": [
+        "israel"
+      ],
+      "supports": [
+        {
+          "topic": "israel",
+          "relationship": "depends_on_observed"
+        }
+      ],
+      "continuityLinks": [
+        {
+          "section": "Torah",
+          "strength": "Strong"
+        },
+        {
+          "section": "Latter Prophets",
+          "strength": "Strong"
+        },
+        {
+          "section": "Writings",
+          "strength": "Strong"
+        },
+        {
+          "section": "Gospels",
+          "strength": "Strong"
+        },
+        {
+          "section": "Acts",
+          "strength": "Strong"
+        },
+        {
+          "section": "Revelation",
+          "strength": "Strong"
+        }
+      ],
+      "relatedTopics": [],
+      "confidence": 0.2,
+      "traceable": true
+    },
+    {
+      "topic": "jacob_israel_twelve_tribes",
+      "dependsOn": [
+        "jacob",
+        "abraham",
+        "isaac",
+        "israel",
+        "twelve tribes"
+      ],
+      "dependsOnObserved": [
+        "jacob",
+        "israel"
+      ],
+      "supports": [
+        {
+          "topic": "jacob",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "israel",
+          "relationship": "depends_on_observed"
+        }
+      ],
+      "continuityLinks": [
+        {
+          "section": "Torah",
+          "strength": "Strong"
+        },
+        {
+          "section": "Latter Prophets",
+          "strength": "Strong"
+        },
+        {
+          "section": "Writings",
+          "strength": "Strong"
+        },
+        {
+          "section": "Gospels",
+          "strength": "Strong"
+        },
+        {
+          "section": "Acts",
+          "strength": "Strong"
+        },
+        {
+          "section": "Revelation",
+          "strength": "Strong"
+        }
+      ],
+      "relatedTopics": [
+        {
+          "topic": "kingdom_of_god",
+          "sharedScriptureCount": 38
+        },
+        {
+          "topic": "wednesday_night_qa",
+          "sharedScriptureCount": 29
+        },
+        {
+          "topic": "isaiah",
+          "sharedScriptureCount": 13
+        },
+        {
+          "topic": "sabbath",
+          "sharedScriptureCount": 8
+        },
+        {
+          "topic": "samuel",
+          "sharedScriptureCount": 7
+        },
+        {
+          "topic": "joshua",
+          "sharedScriptureCount": 5
+        },
+        {
+          "topic": "feasts",
+          "sharedScriptureCount": 5
+        },
+        {
+          "topic": "millennial_kingdom_kingdom_on_earth",
+          "sharedScriptureCount": 4
+        }
+      ],
+      "confidence": 0.4,
+      "traceable": true
+    },
+    {
+      "topic": "peter",
+      "dependsOn": [
+        "disciples",
+        "apostles",
+        "pentecost",
+        "cornelius"
+      ],
+      "dependsOnObserved": [
+        "pentecost"
+      ],
+      "supports": [
+        {
+          "topic": "pentecost",
+          "relationship": "depends_on_observed"
+        }
+      ],
+      "continuityLinks": [
+        {
+          "section": "Torah",
+          "strength": "Strong"
+        },
+        {
+          "section": "Writings",
+          "strength": "Strong"
+        },
+        {
+          "section": "Gospels",
+          "strength": "Strong"
+        },
+        {
+          "section": "Epistles",
+          "strength": "Strong"
+        },
+        {
+          "section": "Revelation",
+          "strength": "Strong"
+        }
+      ],
+      "relatedTopics": [],
+      "confidence": 0.25,
+      "traceable": true
+    },
+    {
+      "topic": "one_hundred_forty_four_thousand",
+      "dependsOn": [
+        "israel",
+        "twelve tribes",
+        "sealing",
+        "kingdom",
+        "revelation"
+      ],
+      "dependsOnObserved": [
+        "israel",
+        "kingdom",
+        "revelation"
+      ],
+      "supports": [
+        {
+          "topic": "israel",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "kingdom",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "revelation",
+          "relationship": "depends_on_observed"
+        }
+      ],
+      "continuityLinks": [],
+      "relatedTopics": [],
+      "confidence": 0.6,
+      "traceable": true
+    },
+    {
+      "topic": "kingdom_of_god",
+      "dependsOn": [
+        "kingdom",
+        "prophecy",
+        "covenant",
+        "israel"
+      ],
+      "dependsOnObserved": [
+        "kingdom",
+        "israel"
+      ],
+      "supports": [
+        {
+          "topic": "kingdom",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "israel",
+          "relationship": "depends_on_observed"
+        }
+      ],
+      "continuityLinks": [
+        {
+          "section": "Torah",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Latter Prophets",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Writings",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Gospels",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Acts",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Epistles",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Revelation",
+          "strength": "Very Strong"
+        }
+      ],
+      "relatedTopics": [
+        {
+          "topic": "jacob_israel_twelve_tribes",
+          "sharedScriptureCount": 38
+        },
+        {
+          "topic": "wednesday_night_qa",
+          "sharedScriptureCount": 19
+        },
+        {
+          "topic": "isaiah",
+          "sharedScriptureCount": 10
+        },
+        {
+          "topic": "samuel",
+          "sharedScriptureCount": 7
+        },
+        {
+          "topic": "feasts",
+          "sharedScriptureCount": 3
+        },
+        {
+          "topic": "sabbath",
+          "sharedScriptureCount": 3
+        },
+        {
+          "topic": "messiah_logos",
+          "sharedScriptureCount": 3
+        },
+        {
+          "topic": "jeremiah",
+          "sharedScriptureCount": 3
+        }
+      ],
+      "confidence": 0.5,
+      "traceable": true
+    },
+    {
+      "topic": "holy_spirit",
+      "dependsOn": [
+        "spirit of god",
+        "pentecost",
+        "prophecy"
+      ],
+      "dependsOnObserved": [
+        "spirit of god",
+        "pentecost"
+      ],
+      "supports": [
+        {
+          "topic": "spirit of god",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "pentecost",
+          "relationship": "depends_on_observed"
+        }
+      ],
+      "continuityLinks": [],
+      "relatedTopics": [],
+      "confidence": 0.667,
+      "traceable": true
+    },
+    {
+      "topic": "feasts",
+      "dependsOn": [
+        "passover",
+        "pentecost",
+        "sabbath",
+        "leviticus 23"
+      ],
+      "dependsOnObserved": [
+        "pentecost",
+        "sabbath",
+        "leviticus 23"
+      ],
+      "supports": [
+        {
+          "topic": "pentecost",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "sabbath",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "leviticus 23",
+          "relationship": "depends_on_observed"
+        }
+      ],
+      "continuityLinks": [
+        {
+          "section": "Torah",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Latter Prophets",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Writings",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Gospels",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Acts",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Epistles",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Revelation",
+          "strength": "Very Strong"
+        }
+      ],
+      "relatedTopics": [
+        {
+          "topic": "wednesday_night_qa",
+          "sharedScriptureCount": 24
+        },
+        {
+          "topic": "samuel",
+          "sharedScriptureCount": 10
+        },
+        {
+          "topic": "isaiah",
+          "sharedScriptureCount": 9
+        },
+        {
+          "topic": "jacob_israel_twelve_tribes",
+          "sharedScriptureCount": 5
+        },
+        {
+          "topic": "little_leaven_daily_readings",
+          "sharedScriptureCount": 5
+        },
+        {
+          "topic": "joshua",
+          "sharedScriptureCount": 3
+        },
+        {
+          "topic": "john",
+          "sharedScriptureCount": 3
+        },
+        {
+          "topic": "millennial_kingdom_kingdom_on_earth",
+          "sharedScriptureCount": 3
+        }
+      ],
+      "confidence": 0.75,
+      "traceable": true
+    },
+    {
+      "topic": "messiah_logos",
+      "dependsOn": [
+        "messiah",
+        "prophecy",
+        "gospel"
+      ],
+      "dependsOnObserved": [
+        "messiah",
+        "gospel"
+      ],
+      "supports": [
+        {
+          "topic": "messiah",
+          "relationship": "depends_on_observed"
+        },
+        {
+          "topic": "gospel",
+          "relationship": "depends_on_observed"
+        }
+      ],
+      "continuityLinks": [
+        {
+          "section": "Torah",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Latter Prophets",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Writings",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Gospels",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Acts",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Epistles",
+          "strength": "Very Strong"
+        },
+        {
+          "section": "Revelation",
+          "strength": "Very Strong"
+        }
+      ],
+      "relatedTopics": [
+        {
+          "topic": "wednesday_night_qa",
+          "sharedScriptureCount": 23
+        },
+        {
+          "topic": "isaiah",
+          "sharedScriptureCount": 14
+        },
+        {
+          "topic": "john",
+          "sharedScriptureCount": 4
+        },
+        {
+          "topic": "feasts",
+          "sharedScriptureCount": 3
+        },
+        {
+          "topic": "kingdom_of_god",
+          "sharedScriptureCount": 3
+        },
+        {
+          "topic": "joshua",
+          "sharedScriptureCount": 2
+        },
+        {
+          "topic": "samuel",
+          "sharedScriptureCount": 2
+        }
+      ],
+      "confidence": 0.667,
+      "traceable": true
+    }
+  ]
+}

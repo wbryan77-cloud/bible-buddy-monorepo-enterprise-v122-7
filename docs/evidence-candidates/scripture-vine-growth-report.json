@@ -1,0 +1,706 @@
+{
+  "ranAt": "2026-06-10T04:59:27.179Z",
+  "purpose": "Measure Scripture Vine topic connectivity — informational only",
+  "topicCount": 53,
+  "topicsWithGrowthOpportunities": 50,
+  "topics": [
+    {
+      "topic": "kingdom_of_god",
+      "parentCount": 5,
+      "childCount": 2,
+      "relatedCount": 10,
+      "continuityCount": 1,
+      "totalConnections": 18,
+      "growthOpportunities": [],
+      "informationalOnly": true
+    },
+    {
+      "topic": "feasts",
+      "parentCount": 5,
+      "childCount": 2,
+      "relatedCount": 11,
+      "continuityCount": 0,
+      "totalConnections": 18,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "jacob_israel_twelve_tribes",
+      "parentCount": 5,
+      "childCount": 2,
+      "relatedCount": 9,
+      "continuityCount": 0,
+      "totalConnections": 16,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "messiah_logos",
+      "parentCount": 5,
+      "childCount": 0,
+      "relatedCount": 9,
+      "continuityCount": 1,
+      "totalConnections": 15,
+      "growthOpportunities": [
+        "add_child_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "jacob",
+      "parentCount": 5,
+      "childCount": 2,
+      "relatedCount": 3,
+      "continuityCount": 0,
+      "totalConnections": 10,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "israel",
+      "parentCount": 1,
+      "childCount": 6,
+      "relatedCount": 3,
+      "continuityCount": 0,
+      "totalConnections": 10,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "one_hundred_forty_four_thousand",
+      "parentCount": 7,
+      "childCount": 0,
+      "relatedCount": 3,
+      "continuityCount": 0,
+      "totalConnections": 10,
+      "growthOpportunities": [
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "peter",
+      "parentCount": 4,
+      "childCount": 2,
+      "relatedCount": 3,
+      "continuityCount": 0,
+      "totalConnections": 9,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "pentecost",
+      "parentCount": 2,
+      "childCount": 4,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 8,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "holy_spirit",
+      "parentCount": 4,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 1,
+      "totalConnections": 8,
+      "growthOpportunities": [],
+      "informationalOnly": true
+    },
+    {
+      "topic": "sabbath",
+      "parentCount": 2,
+      "childCount": 1,
+      "relatedCount": 4,
+      "continuityCount": 1,
+      "totalConnections": 8,
+      "growthOpportunities": [],
+      "informationalOnly": true
+    },
+    {
+      "topic": "abraham",
+      "parentCount": 0,
+      "childCount": 3,
+      "relatedCount": 2,
+      "continuityCount": 1,
+      "totalConnections": 6,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "canonical_path_root_topic"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "gospel",
+      "parentCount": 3,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 6,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "millennial_kingdom_kingdom_on_earth",
+      "parentCount": 1,
+      "childCount": 1,
+      "relatedCount": 4,
+      "continuityCount": 0,
+      "totalConnections": 6,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "isaac",
+      "parentCount": 1,
+      "childCount": 2,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 5,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "house_of_israel",
+      "parentCount": 2,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 5,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "captivity",
+      "parentCount": 2,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 5,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "new_jerusalem",
+      "parentCount": 2,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 5,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "cornelius",
+      "parentCount": 2,
+      "childCount": 2,
+      "relatedCount": 1,
+      "continuityCount": 0,
+      "totalConnections": 5,
+      "growthOpportunities": [
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "gentiles",
+      "parentCount": 2,
+      "childCount": 2,
+      "relatedCount": 1,
+      "continuityCount": 0,
+      "totalConnections": 5,
+      "growthOpportunities": [
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "peter_paul_alignment",
+      "parentCount": 2,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 5,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "leviticus_23",
+      "parentCount": 1,
+      "childCount": 3,
+      "relatedCount": 1,
+      "continuityCount": 0,
+      "totalConnections": 5,
+      "growthOpportunities": [
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "144000",
+      "parentCount": 5,
+      "childCount": 0,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 5,
+      "growthOpportunities": [
+        "add_child_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "regathering",
+      "parentCount": 1,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 4,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "paul",
+      "parentCount": 1,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 4,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "spirit_of_god",
+      "parentCount": 1,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 4,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "death_state",
+      "parentCount": 1,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 4,
+      "growthOpportunities": [
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "passover",
+      "parentCount": 2,
+      "childCount": 1,
+      "relatedCount": 1,
+      "continuityCount": 0,
+      "totalConnections": 4,
+      "growthOpportunities": [
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "wednesday_night_qa",
+      "parentCount": 0,
+      "childCount": 0,
+      "relatedCount": 4,
+      "continuityCount": 0,
+      "totalConnections": 4,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "isaiah",
+      "parentCount": 0,
+      "childCount": 0,
+      "relatedCount": 4,
+      "continuityCount": 0,
+      "totalConnections": 4,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "samuel",
+      "parentCount": 0,
+      "childCount": 0,
+      "relatedCount": 4,
+      "continuityCount": 0,
+      "totalConnections": 4,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "disciples",
+      "parentCount": 0,
+      "childCount": 1,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_continuity_topic_connections",
+        "canonical_path_root_topic"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "resurrection",
+      "parentCount": 2,
+      "childCount": 0,
+      "relatedCount": 1,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_child_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "dietary_law",
+      "parentCount": 1,
+      "childCount": 0,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "book_of_life",
+      "parentCount": 1,
+      "childCount": 0,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "word_of_god",
+      "parentCount": 1,
+      "childCount": 0,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "esau_edom_edomites",
+      "parentCount": 1,
+      "childCount": 0,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "twelve tribes",
+      "parentCount": 0,
+      "childCount": 3,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "kingdom",
+      "parentCount": 0,
+      "childCount": 3,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "prophecy",
+      "parentCount": 0,
+      "childCount": 3,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "joshua",
+      "parentCount": 0,
+      "childCount": 0,
+      "relatedCount": 3,
+      "continuityCount": 0,
+      "totalConnections": 3,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "sealing",
+      "parentCount": 0,
+      "childCount": 2,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 2,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "revelation",
+      "parentCount": 0,
+      "childCount": 2,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 2,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "john",
+      "parentCount": 0,
+      "childCount": 0,
+      "relatedCount": 2,
+      "continuityCount": 0,
+      "totalConnections": 2,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "add_child_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "birthright",
+      "parentCount": 0,
+      "childCount": 1,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 1,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "blessing",
+      "parentCount": 0,
+      "childCount": 1,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 1,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "apostles",
+      "parentCount": 0,
+      "childCount": 1,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 1,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "covenant",
+      "parentCount": 0,
+      "childCount": 1,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 1,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "spirit of god",
+      "parentCount": 0,
+      "childCount": 1,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 1,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "leviticus 23",
+      "parentCount": 0,
+      "childCount": 1,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 1,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "messiah",
+      "parentCount": 0,
+      "childCount": 1,
+      "relatedCount": 0,
+      "continuityCount": 0,
+      "totalConnections": 1,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "jeremiah",
+      "parentCount": 0,
+      "childCount": 0,
+      "relatedCount": 1,
+      "continuityCount": 0,
+      "totalConnections": 1,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "add_child_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    },
+    {
+      "topic": "little_leaven_daily_readings",
+      "parentCount": 0,
+      "childCount": 0,
+      "relatedCount": 1,
+      "continuityCount": 0,
+      "totalConnections": 1,
+      "growthOpportunities": [
+        "add_parent_topic_connections",
+        "add_child_topic_connections",
+        "expand_related_topic_connections",
+        "expand_continuity_topic_connections"
+      ],
+      "informationalOnly": true
+    }
+  ],
+  "summary": {
+    "avgParentConnections": 1.51,
+    "avgChildConnections": 1.25,
+    "avgRelatedConnections": 2.25,
+    "avgContinuityConnections": 0.09
+  },
+  "safety": {
+    "informationalOnly": true,
+    "neverBlocksEnrichment": true,
+    "neverBlocksExpansion": true,
+    "neverBlocksDiscovery": true
+  }
+}

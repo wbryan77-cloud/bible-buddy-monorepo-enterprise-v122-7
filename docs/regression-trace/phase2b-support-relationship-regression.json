@@ -1,0 +1,1475 @@
+{
+  "ranAt": "2026-06-08T04:17:39.407Z",
+  "topics": [
+    {
+      "id": "third_heaven",
+      "message": "What is the third heaven?",
+      "openaiCalled": true,
+      "claimsExtracted": 10,
+      "classCounts": {
+        "A": 6,
+        "B": 4,
+        "C": 0,
+        "D": 0
+      },
+      "supportAccuracyPct": 100,
+      "validatorPassed": true,
+      "approvalDecision": "approved",
+      "claimDegraded": false,
+      "matrix": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "Shows the first heaven as the firmament or sky.",
+          "scriptures": [
+            "Genesis 1:6-8"
+          ],
+          "supportingScriptures": [
+            "Genesis 1:6-8"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_chain_threeHeavens_Genesis_1:6-8, source: catalog:threeHeavens, ref: Genesis 1:6-8).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Describes the celestial heavens with sun, moon, and stars.",
+          "scriptures": [
+            "Genesis 1:14-17"
+          ],
+          "supportingScriptures": [
+            "Genesis 1:14-17"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_chain_threeHeavens_Genesis_1:14-17, source: catalog:threeHeavens, ref: Genesis 1:14-17).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "catalog_chain_threeHeavens_Genesis_1:14-17"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Paul mentions being caught up to the third heaven in a vision.",
+          "scriptures": [
+            "2 Corinthians 12:2-4"
+          ],
+          "supportingScriptures": [
+            "2 Corinthians 12:2-4"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: 2cor12_2_names_third_heaven, source: heavens.card bindingRules, ref: 2 Corinthians 12:2-4).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "2cor12_2_names_third_heaven"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "No man has ascended to heaven except the Son of Man, limiting ascension claims.",
+          "scriptures": [
+            "John 3:13"
+          ],
+          "supportingScriptures": [
+            "John 3:13"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: john3_13_no_ascension, source: heavens.card bindingRules, ref: John 3:13).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "john3_13_no_ascension"
+        },
+        {
+          "claimId": "c_witness_5",
+          "claim": "Prayer for God’s kingdom to come on earth, highlighting the kingdom hope.",
+          "scriptures": [
+            "Matthew 6:10"
+          ],
+          "supportingScriptures": [
+            "Matthew 6:10"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: matt6_10_kingdom_on_earth, source: kingdom.card bindingRules, ref: Matthew 6:10).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "matt6_10_kingdom_on_earth"
+        },
+        {
+          "claimId": "c_witness_6",
+          "claim": "Describes the New Jerusalem coming down from heaven to earth.",
+          "scriptures": [
+            "Revelation 21:1-3"
+          ],
+          "supportingScriptures": [
+            "Revelation 21:1-3"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: rev21_comes_down, source: kingdom.card bindingRules, ref: Revelation 21:1-3).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "rev21_comes_down"
+        },
+        {
+          "claimId": "c_sent_7",
+          "claim": "The first heaven is the sky or firmament where birds fly (Genesis 1:6-8).",
+          "scriptures": [
+            "Genesis 1:6-8"
+          ],
+          "supportingScriptures": [
+            "Genesis 1:6-8"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_chain_threeHeavens_Genesis_1:6-8, source: catalog:threeHeavens, ref: Genesis 1:6-8).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+        },
+        {
+          "claimId": "c_sent_8",
+          "claim": "The second heaven is the celestial realm with the sun, moon, and stars (Genesis 1:14-17).",
+          "scriptures": [
+            "Genesis 1:14-17"
+          ],
+          "supportingScriptures": [
+            "Genesis 1:14-17"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_chain_threeHeavens_Genesis_1:14-17, source: catalog:threeHeavens, ref: Genesis 1:14-17).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "catalog_chain_threeHeavens_Genesis_1:14-17"
+        },
+        {
+          "claimId": "c_sent_9",
+          "claim": "The \"third heaven\" is mentioned by the Apostle Paul in 2 Corinthians 12:2, describing a place he was caught up to in a vision.",
+          "scriptures": [
+            "2 Corinthians 12:2-4"
+          ],
+          "supportingScriptures": [
+            "2 Corinthians 12:2-4"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: 2cor12_2_names_third_heaven, source: heavens.card bindingRules, ref: 2 Corinthians 12:2-4).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "2cor12_2_names_third_heaven"
+        },
+        {
+          "claimId": "c_sent_10",
+          "claim": "The Bible emphasizes the hope of Christ’s kingdom coming to earth (Matthew 6:10) and the New Jerusalem coming down from heaven (Revelation 21:1-3).",
+          "scriptures": [
+            "Matthew 6:10",
+            "Revelation 21:1-3"
+          ],
+          "supportingScriptures": [
+            "Matthew 6:10",
+            "Revelation 21:1-3"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: rev21_comes_down, source: kingdom.card bindingRules, ref: Matthew 6:10).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "heavens",
+          "citationDenialId": null,
+          "affirmationId": "rev21_comes_down"
+        }
+      ],
+      "summary": {
+        "totalClaims": 10,
+        "classCounts": {
+          "A": 6,
+          "B": 4,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 10,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "kingdom",
+      "message": "What is the kingdom of God?",
+      "openaiCalled": true,
+      "claimsExtracted": 8,
+      "classCounts": {
+        "A": 8,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "supportAccuracyPct": 100,
+      "validatorPassed": true,
+      "approvalDecision": "approved",
+      "claimDegraded": false,
+      "matrix": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "This passage shows the prayer for God's kingdom to come and His will to be done on earth.",
+          "scriptures": [
+            "Matthew 6:9-10"
+          ],
+          "supportingScriptures": [
+            "Matthew 6:9-10"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: matt6_10_kingdom_on_earth, source: kingdom.card bindingRules, ref: Matthew 6:9-10).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "kingdom",
+          "citationDenialId": null,
+          "affirmationId": "matt6_10_kingdom_on_earth"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Jesus indicates a present separation between Him and believers before His return.",
+          "scriptures": [
+            "John 13:33"
+          ],
+          "supportingScriptures": [
+            "John 13:33"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: john13_33_cannot_come, source: kingdom.card bindingRules, ref: John 13:33).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "kingdom",
+          "citationDenialId": null,
+          "affirmationId": "john13_33_cannot_come"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Jesus promises He will come again to receive believers.",
+          "scriptures": [
+            "John 14:3"
+          ],
+          "supportingScriptures": [
+            "John 14:3"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: john14_3_come_again, source: kingdom.card cautionPassages, ref: John 14:3).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "kingdom",
+          "citationDenialId": null,
+          "affirmationId": "john14_3_come_again"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "The saints will reign with Christ on earth.",
+          "scriptures": [
+            "Revelation 5:10"
+          ],
+          "supportingScriptures": [
+            "Revelation 5:10"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: rev5_10_reign_earth, source: kingdom.card bindingRules, ref: Revelation 5:10).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "kingdom",
+          "citationDenialId": null,
+          "affirmationId": "rev5_10_reign_earth"
+        },
+        {
+          "claimId": "c_witness_5",
+          "claim": "Describes the New Jerusalem coming down to earth where God will dwell with men.",
+          "scriptures": [
+            "Revelation 21:1-3"
+          ],
+          "supportingScriptures": [
+            "Revelation 21:1-3"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: rev21_comes_down, source: kingdom.card bindingRules, ref: Revelation 21:1-3).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "kingdom",
+          "citationDenialId": null,
+          "affirmationId": "rev21_comes_down"
+        },
+        {
+          "claimId": "c_sent_6",
+          "claim": "Jesus taught us to pray, \"Thy kingdom come, Thy will be done in earth, as it is in heaven\" (Matthew 6:10), showing that the kingdom is a future reality where God's will is carried out here on earth.",
+          "scriptures": [
+            "Matthew 6:10"
+          ],
+          "supportingScriptures": [
+            "Matthew 6:10"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: matt6_10_kingdom_on_earth, source: kingdom.card bindingRules, ref: Matthew 6:10).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "kingdom",
+          "citationDenialId": null,
+          "affirmationId": "matt6_10_kingdom_on_earth"
+        },
+        {
+          "claimId": "c_sent_7",
+          "claim": "Currently, there is a separation between Jesus and believers, as He said, \"Whither I go, ye cannot come\" (John 13:33), but He promised He will come again to receive His followers (John 14:3).",
+          "scriptures": [
+            "John 13:33",
+            "John 14:3"
+          ],
+          "supportingScriptures": [
+            "John 13:33",
+            "John 14:3"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: john14_3_come_again, source: kingdom.card cautionPassages, ref: John 13:33).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "kingdom",
+          "citationDenialId": null,
+          "affirmationId": "john14_3_come_again"
+        },
+        {
+          "claimId": "c_sent_8",
+          "claim": "Revelation describes the saints reigning with Christ on earth (Revelation 5:10) and the holy city, the New Jerusalem, coming down from heaven to dwell with men (Revelation 21:1-3).",
+          "scriptures": [
+            "Revelation 5:10",
+            "Revelation 21:1-3"
+          ],
+          "supportingScriptures": [
+            "Revelation 5:10",
+            "Revelation 21:1-3"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: rev21_comes_down, source: kingdom.card bindingRules, ref: Revelation 5:10).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "kingdom",
+          "citationDenialId": null,
+          "affirmationId": "rev21_comes_down"
+        }
+      ],
+      "summary": {
+        "totalClaims": 8,
+        "classCounts": {
+          "A": 8,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 8,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "acts_10",
+      "message": "Does Acts 10 make pork clean?",
+      "openaiCalled": true,
+      "claimsExtracted": 6,
+      "classCounts": {
+        "A": 6,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "supportAccuracyPct": 100,
+      "validatorPassed": true,
+      "approvalDecision": "approved",
+      "claimDegraded": false,
+      "matrix": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "Shows swine is declared unclean.",
+          "scriptures": [
+            "Leviticus 11"
+          ],
+          "supportingScriptures": [
+            "Leviticus 11"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: lev11_swine_unclean, source: dietaryLaw.card bibleFirstConclusion, ref: Leviticus 11).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "lev11_swine_unclean"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Reaffirms swine as unclean and forbidden.",
+          "scriptures": [
+            "Deuteronomy 14"
+          ],
+          "supportingScriptures": [
+            "Deuteronomy 14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: lev11_swine_unclean, source: dietaryLaw.card bibleFirstConclusion, ref: Deuteronomy 14).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "lev11_swine_unclean"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Peter’s vision uses 'unclean' of animals but is about understanding God’s acceptance of Gentiles, not cleansing food.",
+          "scriptures": [
+            "Acts 10:14"
+          ],
+          "supportingScriptures": [
+            "Acts 10:14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: acts10_28_people_not_food, source: dietaryLaw.card cautionPassages, ref: Acts 10:14).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "acts10_28_people_not_food"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "Peter explains the vision is about people, not food.",
+          "scriptures": [
+            "Acts 10:28"
+          ],
+          "supportingScriptures": [
+            "Acts 10:28"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: acts10_28_people_not_food, source: dietaryLaw.card cautionPassages, ref: Acts 10:28).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "acts10_28_people_not_food"
+        },
+        {
+          "claimId": "c_sent_5",
+          "claim": "The Old Testament clearly lists swine as unclean in Leviticus 11:7 and Deuteronomy 14:8, and this distinction remains in Scripture.",
+          "scriptures": [
+            "Leviticus 11",
+            "Deuteronomy 14"
+          ],
+          "supportingScriptures": [
+            "Leviticus 11",
+            "Deuteronomy 14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: lev11_swine_unclean, source: dietaryLaw.card bibleFirstConclusion, ref: Leviticus 11).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "lev11_swine_unclean"
+        },
+        {
+          "claimId": "c_sent_6",
+          "claim": "The vision Peter received in Acts 10:14-28 concerns God showing him not to call any man common or unclean, referring to people (Gentiles), not food.",
+          "scriptures": [
+            "Acts 10:14"
+          ],
+          "supportingScriptures": [
+            "Acts 10:14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: acts10_28_people_not_food, source: dietaryLaw.card cautionPassages, ref: Acts 10:14).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "acts10_28_people_not_food"
+        }
+      ],
+      "summary": {
+        "totalClaims": 6,
+        "classCounts": {
+          "A": 6,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 6,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "pork",
+      "message": "Can I eat pork?",
+      "openaiCalled": true,
+      "claimsExtracted": 5,
+      "classCounts": {
+        "A": 5,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "supportAccuracyPct": 100,
+      "validatorPassed": true,
+      "approvalDecision": "approved",
+      "claimDegraded": false,
+      "matrix": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "Lists swine as unclean because it does not chew the cud, making it forbidden to eat.",
+          "scriptures": [
+            "Leviticus 11"
+          ],
+          "supportingScriptures": [
+            "Leviticus 11"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: lev11_swine_unclean, source: dietaryLaw.card bibleFirstConclusion, ref: Leviticus 11).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "lev11_swine_unclean"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Reiterates the swine as unclean for eating among the dietary laws.",
+          "scriptures": [
+            "Deuteronomy 14"
+          ],
+          "supportingScriptures": [
+            "Deuteronomy 14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: lev11_swine_unclean, source: dietaryLaw.card bibleFirstConclusion, ref: Deuteronomy 14).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "lev11_swine_unclean"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Peter’s vision about not calling any man common or unclean refers to people, not food.",
+          "scriptures": [
+            "Acts 10:14"
+          ],
+          "supportingScriptures": [
+            "Acts 10:14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: acts10_28_people_not_food, source: dietaryLaw.card cautionPassages, ref: Acts 10:14).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "acts10_28_people_not_food"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "Peter’s explanation clarifies that the vision was about Gentiles, not a change in dietary laws.",
+          "scriptures": [
+            "Acts 11:1-18"
+          ],
+          "supportingScriptures": [
+            "Acts 11:1-18"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: acts11_gentile_clarification, source: dietaryLaw.card bibleFirstConclusion, ref: Acts 11:1-18).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "acts11_gentile_clarification"
+        },
+        {
+          "claimId": "c_sent_5",
+          "claim": "Leviticus 11:7 and Deuteronomy 14:8 list the swine as an unclean animal because it does not chew the cud, even though it has a divided hoof.",
+          "scriptures": [
+            "Leviticus 11",
+            "Deuteronomy 14"
+          ],
+          "supportingScriptures": [
+            "Leviticus 11",
+            "Deuteronomy 14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: lev11_swine_unclean, source: dietaryLaw.card bibleFirstConclusion, ref: Leviticus 11).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "dietaryLaw",
+          "citationDenialId": null,
+          "affirmationId": "lev11_swine_unclean"
+        }
+      ],
+      "summary": {
+        "totalClaims": 5,
+        "classCounts": {
+          "A": 5,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 5,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "sabbath",
+      "message": "How do we keep the Sabbath holy?",
+      "openaiCalled": true,
+      "claimsExtracted": 9,
+      "classCounts": {
+        "A": 9,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "supportAccuracyPct": 100,
+      "validatorPassed": true,
+      "approvalDecision": "approved",
+      "claimDegraded": false,
+      "matrix": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "This passage shows the origin of the Sabbath as a day God rested and blessed, setting the pattern for us.",
+          "scriptures": [
+            "Genesis 2:2-3"
+          ],
+          "supportingScriptures": [
+            "Genesis 2:2-3"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: gen2_sabbath_rest_established, source: sabbath.card primaryScriptures + bibleFirstConclusion, ref: Genesis 2:2-3).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "sabbath",
+          "citationDenialId": null,
+          "affirmationId": "gen2_sabbath_rest_established"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "God commands to cease work on the seventh day and keep it holy, a direct instruction on Sabbath observance.",
+          "scriptures": [
+            "Exodus 20:8-11"
+          ],
+          "supportingScriptures": [
+            "Exodus 20:8-11"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: ex20_remember_sabbath, source: sabbath.card primaryScriptures, ref: Exodus 20:8-11).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "sabbath",
+          "citationDenialId": null,
+          "affirmationId": "ex20_remember_sabbath"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Encourages delighting in the Lord on the Sabbath and turning away from personal pleasure to do good and show mercy.",
+          "scriptures": [
+            "Isaiah 58:13-14"
+          ],
+          "supportingScriptures": [
+            "Isaiah 58:13-14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: isa58_delight_in_sabbath, source: sabbath.card supportingScriptures, ref: Isaiah 58:13-14).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "sabbath",
+          "citationDenialId": null,
+          "affirmationId": "isa58_delight_in_sabbath"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "Jesus' example of attending Sabbath worship regularly affirms the practice.",
+          "scriptures": [
+            "Luke 4:16"
+          ],
+          "supportingScriptures": [
+            "Luke 4:16"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: luke4_jesus_sabbath_custom, source: sabbath.card supportingScriptures, ref: Luke 4:16).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "sabbath",
+          "citationDenialId": null,
+          "affirmationId": "luke4_jesus_sabbath_custom"
+        },
+        {
+          "claimId": "c_witness_5",
+          "claim": "The early believers gathered for teaching on the Sabbath, showing its continued observance.",
+          "scriptures": [
+            "Acts 17:2"
+          ],
+          "supportingScriptures": [
+            "Acts 17:2"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: acts17_sabbath_teaching, source: sabbath.card supportingScriptures, ref: Acts 17:2).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "sabbath",
+          "citationDenialId": null,
+          "affirmationId": "acts17_sabbath_teaching"
+        },
+        {
+          "claimId": "c_witness_6",
+          "claim": "Speaks of a Sabbath rest remaining for God's people, encouraging faith and obedience in entering that rest.",
+          "scriptures": [
+            "Hebrews 4:9"
+          ],
+          "supportingScriptures": [
+            "Hebrews 4:9"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: heb4_sabbath_rest_remains, source: sabbath.card supportingScriptures, ref: Hebrews 4:9).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "sabbath",
+          "citationDenialId": null,
+          "affirmationId": "heb4_sabbath_rest_remains"
+        },
+        {
+          "claimId": "c_sent_7",
+          "claim": "To keep the Sabbath holy according to Scripture, we rest from our ordinary work as God did after creation (Genesis 2:2-3) and observe the commandment to remember the Sabbath day to keep it holy by ceasing labor (Exodus 20:8-11).",
+          "scriptures": [
+            "Genesis 2:2-3",
+            "Exodus 20:8-11"
+          ],
+          "supportingScriptures": [
+            "Genesis 2:2-3",
+            "Exodus 20:8-11"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: gen2_sabbath_rest_established, source: sabbath.card primaryScriptures + bibleFirstConclusion, ref: Genesis 2:2-3).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "sabbath",
+          "citationDenialId": null,
+          "affirmationId": "gen2_sabbath_rest_established"
+        },
+        {
+          "claimId": "c_sent_8",
+          "claim": "We are also invited to delight in the Lord on His holy day by turning away from our own pleasures and doing good, showing mercy and kindness (Isaiah 58:13-14).",
+          "scriptures": [
+            "Isaiah 58:13-14"
+          ],
+          "supportingScriptures": [
+            "Isaiah 58:13-14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: isa58_delight_in_sabbath, source: sabbath.card supportingScriptures, ref: Isaiah 58:13-14).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "sabbath",
+          "citationDenialId": null,
+          "affirmationId": "isa58_delight_in_sabbath"
+        },
+        {
+          "claimId": "c_sent_9",
+          "claim": "Jesus Himself regularly attended Sabbath worship, setting an example for us (Luke 4:16), and the early believers gathered on the Sabbath for teaching and fellowship (Acts 17:2).",
+          "scriptures": [
+            "Luke 4:16",
+            "Acts 17:2"
+          ],
+          "supportingScriptures": [
+            "Luke 4:16",
+            "Acts 17:2"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: luke4_jesus_sabbath_custom, source: sabbath.card supportingScriptures, ref: Luke 4:16).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "sabbath",
+          "citationDenialId": null,
+          "affirmationId": "luke4_jesus_sabbath_custom"
+        }
+      ],
+      "summary": {
+        "totalClaims": 9,
+        "classCounts": {
+          "A": 9,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 9,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "death_state",
+      "message": "What happens when we die?",
+      "openaiCalled": true,
+      "claimsExtracted": 5,
+      "classCounts": {
+        "A": 0,
+        "B": 5,
+        "C": 0,
+        "D": 0
+      },
+      "supportAccuracyPct": 100,
+      "validatorPassed": true,
+      "approvalDecision": "approved",
+      "claimDegraded": false,
+      "matrix": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "Shows the dead know nothing and are like asleep.",
+          "scriptures": [
+            "Ecclesiastes 9:5"
+          ],
+          "supportingScriptures": [
+            "Ecclesiastes 9:5"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_teaching_order, source: approvedCatalogEvidence, ref: Ecclesiastes 9:5).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": null
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Jesus describes death as sleep, indicating a temporary state.",
+          "scriptures": [
+            "John 11:11-14"
+          ],
+          "supportingScriptures": [
+            "John 11:11-14"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_chain_stateOfTheDead_John_11:11-14, source: catalog:stateOfTheDead, ref: John 11:11-14).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": "catalog_chain_stateOfTheDead_John_11:11-14"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Speaks of hope in resurrection for those who have died.",
+          "scriptures": [
+            "1 Thessalonians 4:13-16"
+          ],
+          "supportingScriptures": [
+            "1 Thessalonians 4:13-16"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_teaching_order, source: approvedCatalogEvidence, ref: 1 Thessalonians 4:13-16).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": null
+        },
+        {
+          "claimId": "c_sent_4",
+          "claim": "This understanding is found in verses such as Ecclesiastes 9:5, which says the dead know not anything, and John 11:11-14, where Jesus refers to death as sleep.",
+          "scriptures": [
+            "Ecclesiastes 9:5",
+            "John 11:11-14"
+          ],
+          "supportingScriptures": [
+            "Ecclesiastes 9:5",
+            "John 11:11-14"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_chain_stateOfTheDead_John_11:11-14, source: catalog:stateOfTheDead, ref: Ecclesiastes 9:5).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": "catalog_chain_stateOfTheDead_John_11:11-14"
+        },
+        {
+          "claimId": "c_sent_5",
+          "claim": "The hope for believers is that they will be raised to life again, as described in 1 Thessalonians 4:13-16.",
+          "scriptures": [
+            "1 Thessalonians 4:13-16"
+          ],
+          "supportingScriptures": [
+            "1 Thessalonians 4:13-16"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_teaching_order, source: approvedCatalogEvidence, ref: 1 Thessalonians 4:13-16).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": null
+        }
+      ],
+      "summary": {
+        "totalClaims": 5,
+        "classCounts": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 5,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "resurrection",
+      "message": "What does Scripture teach about resurrection?",
+      "openaiCalled": true,
+      "claimsExtracted": 5,
+      "classCounts": {
+        "A": 0,
+        "B": 5,
+        "C": 0,
+        "D": 0
+      },
+      "supportAccuracyPct": 100,
+      "validatorPassed": true,
+      "approvalDecision": "approved",
+      "claimDegraded": false,
+      "matrix": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "This verse shows the dead know nothing, indicating unconsciousness until resurrection.",
+          "scriptures": [
+            "Ecclesiastes 9:5"
+          ],
+          "supportingScriptures": [
+            "Ecclesiastes 9:5"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_teaching_order, source: approvedCatalogEvidence, ref: Ecclesiastes 9:5).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": null
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Jesus describes death as sleep, illustrating the state of the dead before resurrection.",
+          "scriptures": [
+            "John 11:11-14"
+          ],
+          "supportingScriptures": [
+            "John 11:11-14"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_chain_stateOfTheDead_John_11:11-14, source: catalog:stateOfTheDead, ref: John 11:11-14).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": "catalog_chain_stateOfTheDead_John_11:11-14"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "This passage explains the resurrection of believers at Christ's coming as a future hope.",
+          "scriptures": [
+            "1 Thessalonians 4:13-16"
+          ],
+          "supportingScriptures": [
+            "1 Thessalonians 4:13-16"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_teaching_order, source: approvedCatalogEvidence, ref: 1 Thessalonians 4:13-16).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": null
+        },
+        {
+          "claimId": "c_sent_4",
+          "claim": "This is clear from passages like Ecclesiastes 9:5, which says the dead know nothing, and John 11:11-14 where Jesus refers to death as sleep.",
+          "scriptures": [
+            "Ecclesiastes 9:5",
+            "John 11:11-14"
+          ],
+          "supportingScriptures": [
+            "Ecclesiastes 9:5",
+            "John 11:11-14"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_chain_stateOfTheDead_John_11:11-14, source: catalog:stateOfTheDead, ref: Ecclesiastes 9:5).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": "catalog_chain_stateOfTheDead_John_11:11-14"
+        },
+        {
+          "claimId": "c_sent_5",
+          "claim": "The hope of resurrection is further explained in 1 Thessalonians 4:13-16, which describes believers being raised at Christ's coming.",
+          "scriptures": [
+            "1 Thessalonians 4:13-16"
+          ],
+          "supportingScriptures": [
+            "1 Thessalonians 4:13-16"
+          ],
+          "supportClass": "B",
+          "supportReason": "Approved support graph match (indirectly_supports: catalog_teaching_order, source: approvedCatalogEvidence, ref: 1 Thessalonians 4:13-16).",
+          "supportRelationship": "chain",
+          "confidence": "medium",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "deathState",
+          "citationDenialId": null,
+          "affirmationId": null
+        }
+      ],
+      "summary": {
+        "totalClaims": 5,
+        "classCounts": {
+          "A": 0,
+          "B": 5,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 5,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "logos",
+      "message": "What does Logos mean in John 1:1?",
+      "openaiCalled": true,
+      "claimsExtracted": 5,
+      "classCounts": {
+        "A": 5,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "supportAccuracyPct": 100,
+      "validatorPassed": true,
+      "approvalDecision": "approved",
+      "claimDegraded": false,
+      "matrix": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "This verse explicitly identifies Logos as the Word, eternal and divine.",
+          "scriptures": [
+            "John 1:1-14"
+          ],
+          "supportingScriptures": [
+            "John 1:1-14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: john1_logos_word_deity, source: messiahLogos.card primaryScriptures + bibleFirstConclusion, ref: John 1:1-14).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "messiahLogos",
+          "citationDenialId": null,
+          "affirmationId": "john1_logos_word_deity"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "This shows the Logos became human in Jesus, fulfilling Old Testament promises.",
+          "scriptures": [
+            "John 1:1"
+          ],
+          "supportingScriptures": [
+            "John 1:1"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: john1_logos_made_flesh, source: messiahLogos.card primaryScriptures, ref: John 1:1).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "messiahLogos",
+          "citationDenialId": null,
+          "affirmationId": "john1_logos_made_flesh"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Demonstrates God's creative power, which the Logos is associated with here.",
+          "scriptures": [
+            "Genesis 1:1"
+          ],
+          "supportingScriptures": [
+            "Genesis 1:1"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: gen1_create_by_word, source: messiahLogos.card supportingScriptures, ref: Genesis 1:1).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "messiahLogos",
+          "citationDenialId": null,
+          "affirmationId": "gen1_create_by_word"
+        },
+        {
+          "claimId": "c_sent_4",
+          "claim": "In John 1:1, the term \"Logos\" means \"Word.\" It refers to Jesus as the eternal Word who was with God in the beginning and who is God Himself.",
+          "scriptures": [
+            "John 1:1-14"
+          ],
+          "supportingScriptures": [
+            "John 1:1-14"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: john1_logos_word_deity, source: messiahLogos.card primaryScriptures + bibleFirstConclusion, ref: John 1:1-14).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "messiahLogos",
+          "citationDenialId": null,
+          "affirmationId": "john1_logos_word_deity"
+        },
+        {
+          "claimId": "c_sent_5",
+          "claim": "John 1:14 clarifies that this Word became flesh, showing Jesus as the promised Messiah from the Old Testament.",
+          "scriptures": [
+            "John 1:1"
+          ],
+          "supportingScriptures": [
+            "John 1:1"
+          ],
+          "supportClass": "A",
+          "supportReason": "Approved support graph match (directly_affirms: john1_logos_made_flesh, source: messiahLogos.card primaryScriptures, ref: John 1:1).",
+          "supportRelationship": "direct",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref",
+          "validatorDecision": "Approved",
+          "approvalDecision": "approved",
+          "issues": [],
+          "evidenceCardUsed": "messiahLogos",
+          "citationDenialId": null,
+          "affirmationId": "john1_logos_made_flesh"
+        }
+      ],
+      "summary": {
+        "totalClaims": 5,
+        "classCounts": {
+          "A": 5,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 5,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "holy",
+      "message": "What does holy mean?",
+      "openaiCalled": true,
+      "claimsExtracted": 0,
+      "classCounts": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "supportAccuracyPct": null,
+      "validatorPassed": true,
+      "approvalDecision": "approved",
+      "claimDegraded": false,
+      "matrix": [],
+      "summary": {
+        "totalClaims": 0,
+        "classCounts": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 0,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": null
+      }
+    }
+  ],
+  "aggregate": {
+    "total": 9,
+    "openaiSuccess": 9,
+    "totalClaims": 53,
+    "classCounts": {
+      "A": 39,
+      "B": 14,
+      "C": 0,
+      "D": 0
+    },
+    "supportAccuracyPct": 100,
+    "validatorPassed": 9,
+    "approvalApproved": 9,
+    "approvalDegraded": 0,
+    "allHaveSupportReason": true
+  }
+}

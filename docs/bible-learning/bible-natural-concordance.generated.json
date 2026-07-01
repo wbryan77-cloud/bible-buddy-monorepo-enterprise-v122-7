@@ -1,0 +1,909 @@
+{
+  "generatedAt": "2026-06-14T16:07:11.048Z",
+  "version": "phase5e-1",
+  "disclaimer": "BNC is a language bridge only — not doctrine authority. All entries pending_review until human review.",
+  "entryCount": 28,
+  "evidenceCardTopics": [
+    {
+      "file": "deathState.card.js",
+      "topic": "death_state"
+    },
+    {
+      "file": "dietaryLaw.card.js",
+      "topic": "dietary_law"
+    },
+    {
+      "file": "feasts.card.js",
+      "topic": "feasts"
+    },
+    {
+      "file": "heavens.card.js",
+      "topic": "heavens"
+    },
+    {
+      "file": "holiness.card.js",
+      "topic": "holiness"
+    },
+    {
+      "file": "kingdom.card.js",
+      "topic": "kingdom"
+    },
+    {
+      "file": "lawCommandments.card.js",
+      "topic": "law_commandments"
+    },
+    {
+      "file": "messiahLogos.card.js",
+      "topic": "messiah_logos"
+    },
+    {
+      "file": "sabbath.card.js",
+      "topic": "sabbath"
+    },
+    {
+      "file": "traditions.card.js",
+      "topic": "traditions"
+    }
+  ],
+  "sampledReportPhrases": [],
+  "entries": [
+    {
+      "conceptId": "dietary_pork_unclean",
+      "canonicalLabel": "dietary pork unclean",
+      "aliases": [],
+      "naturalPhrases": [
+        "can we eat pork",
+        "can (christians|we) eat pork",
+        "eat pork",
+        "pork",
+        "swine",
+        "shellfish",
+        "unclean food",
+        "clean and unclean"
+      ],
+      "relatedWords": [],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Leviticus 11:7-8",
+        "Deuteronomy 14:8",
+        "Leviticus 11",
+        "Deuteronomy 14",
+        "Isaiah 66:17",
+        "Acts 10:14"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": "dietary_law",
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "fornication_sexual_sin",
+      "canonicalLabel": "fornication sexual sin",
+      "aliases": [],
+      "naturalPhrases": [
+        "fornication",
+        "sex without marriage",
+        "sex before marriage",
+        "premarital sex",
+        "sexual relations without marriage",
+        "sleeping together",
+        "whoremonger",
+        "sexual immorality"
+      ],
+      "relatedWords": [],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "1 Corinthians 6:18",
+        "1 Thessalonians 4:3-5",
+        "Hebrews 13:4",
+        "Ephesians 5:3",
+        "Galatians 5:19-21"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "kingdom_on_earth",
+      "canonicalLabel": "kingdom on earth",
+      "aliases": [],
+      "naturalPhrases": [
+        "heaven on earth",
+        "kingdom on earth",
+        "kingdom coming here",
+        "kingdom come here",
+        "kingdom coming to earth",
+        "man staying on earth",
+        "men staying on earth",
+        "people staying on earth"
+      ],
+      "relatedWords": [],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Matthew 6:10",
+        "Revelation 5:10",
+        "Revelation 21:1-3",
+        "Daniel 7:27",
+        "Psalm 37:9-11",
+        "Matthew 5:5"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": "kingdom",
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "heaven_layers",
+      "canonicalLabel": "heaven layers",
+      "aliases": [],
+      "naturalPhrases": [
+        "third heaven",
+        "three heavens",
+        "heavens",
+        "heaven and earth"
+      ],
+      "relatedWords": [],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "2 Corinthians 12:2",
+        "Genesis 1:1",
+        "Deuteronomy 10:14"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "ten_commandments",
+      "canonicalLabel": "ten commandments",
+      "aliases": [],
+      "naturalPhrases": [
+        "10 commandments",
+        "ten commandments",
+        "decalogue",
+        "what are the commandments"
+      ],
+      "relatedWords": [],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Exodus 20",
+        "Deuteronomy 5",
+        "Exodus 34:28"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "death_state",
+      "canonicalLabel": "death state",
+      "aliases": [],
+      "naturalPhrases": [
+        "what happens when.*dies",
+        "when (someone|a person) dies",
+        "dead know nothing",
+        "death as sleep",
+        "dead.*resurrection"
+      ],
+      "relatedWords": [],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Ecclesiastes 9:5",
+        "Psalm 146:4",
+        "John 11:11-14",
+        "1 Thessalonians 4:13-16"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": "death_state",
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "acts_10",
+      "canonicalLabel": "acts 10",
+      "aliases": [],
+      "naturalPhrases": [
+        "actss*10",
+        "peter'?s?s+vision",
+        "gentiles.*actss*10",
+        "food is clean",
+        "actss*10 mean"
+      ],
+      "relatedWords": [],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Acts 10:28",
+        "Acts 10:14",
+        "Acts 10:34-35",
+        "Acts 11:1-18"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": "acts_10",
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "sabbath",
+      "canonicalLabel": "sabbath",
+      "aliases": [],
+      "naturalPhrases": [
+        "sabbath",
+        "seventh day",
+        "fourth commandment",
+        "keep the sabbath"
+      ],
+      "relatedWords": [],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Exodus 20:8-11",
+        "Deuteronomy 5:12-15",
+        "Isaiah 58:13-14"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": "sabbath",
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "dietary_clean_unclean",
+      "canonicalLabel": "dietary clean unclean",
+      "aliases": [
+        "clean and unclean",
+        "dietary law in Scripture"
+      ],
+      "naturalPhrases": [
+        "clean and unclean animals",
+        "clean meats",
+        "unclean meats",
+        "leviticuss*11",
+        "deuteronomys*14"
+      ],
+      "relatedWords": [
+        "dietary_pork_unclean",
+        "acts_10"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Leviticus 11",
+        "Deuteronomy 14",
+        "Daniel 1:8-16"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": "dietary_law",
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": [
+        "acts_10 means all food clean"
+      ]
+    },
+    {
+      "conceptId": "marriage_bed",
+      "canonicalLabel": "marriage bed",
+      "aliases": [
+        "what Scripture says about marriage"
+      ],
+      "naturalPhrases": [
+        "marriage bed",
+        "honor marriage",
+        "marriage is honorable",
+        "hebrewss*13:?s*4"
+      ],
+      "relatedWords": [
+        "fornication_sexual_sin"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Hebrews 13:4",
+        "Genesis 2:24",
+        "Matthew 19:5-6"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": [
+        "fornication permitted"
+      ]
+    },
+    {
+      "conceptId": "new_jerusalem",
+      "canonicalLabel": "new jerusalem",
+      "aliases": [
+        "New Jerusalem coming down"
+      ],
+      "naturalPhrases": [
+        "new jerusalem",
+        "holy city.*(come|comes) down",
+        "new jerusalem comes down"
+      ],
+      "relatedWords": [
+        "kingdom_on_earth",
+        "heaven_layers"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Revelation 21:1-3",
+        "Revelation 21:2",
+        "Revelation 22:1-5"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": "new_jerusalem",
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": [
+        "believers leave earth permanently"
+      ]
+    },
+    {
+      "conceptId": "prayer_comfort",
+      "canonicalLabel": "prayer comfort",
+      "aliases": [
+        "pray with me",
+        "I need prayer"
+      ],
+      "naturalPhrases": [
+        "pray with me",
+        "need prayer",
+        "help me pray",
+        "prayer for"
+      ],
+      "relatedWords": [
+        "heartbreak_comfort"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Philippians 4:6-7",
+        "Matthew 6:9-13",
+        "James 5:16"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "heartbreak_comfort",
+      "canonicalLabel": "heartbreak comfort",
+      "aliases": [
+        "love life is crashing",
+        "heartbreak"
+      ],
+      "naturalPhrases": [
+        "love life",
+        "heartbreak",
+        "heart is breaking",
+        "crashing",
+        "broken heart",
+        "life is crashing"
+      ],
+      "relatedWords": [
+        "prayer_comfort",
+        "overwhelmed_comfort"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Psalm 34:18",
+        "1 Peter 5:7",
+        "Psalm 147:3"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "abomination_desolation",
+      "canonicalLabel": "Abomination of desolation",
+      "aliases": [
+        "abomination",
+        "abomination of desolation",
+        "desolation",
+        "desalation",
+        "abomination spoken of by Daniel",
+        "abomination talked about by Daniel",
+        "Daniel abomination",
+        "holy place",
+        "stand in the holy place"
+      ],
+      "naturalPhrases": [
+        "the abomination talk about by Daniel",
+        "abomination of desalation",
+        "what is the abomination of desolation"
+      ],
+      "relatedWords": [
+        "millennial_kingdom"
+      ],
+      "bibleTerms": [
+        "abomination",
+        "desolation",
+        "holy place"
+      ],
+      "scriptureRefs": [
+        "Daniel 9:27",
+        "Daniel 11:31",
+        "Daniel 12:11",
+        "Matthew 24:15",
+        "Mark 13:14"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": true,
+      "forbiddenConfusions": [
+        "dietary_law",
+        "pork",
+        "clean_unclean_food"
+      ],
+      "misspellings": [
+        "desalation",
+        "desolaiton"
+      ]
+    },
+    {
+      "conceptId": "sexual_boundaries_dating",
+      "canonicalLabel": "Sexual boundaries and dating",
+      "aliases": [
+        "can you have sex",
+        "sex without marriage",
+        "premarital sex",
+        "sleeping together",
+        "sexual intimacy"
+      ],
+      "naturalPhrases": [
+        "if I have sex",
+        "she may want to have sex",
+        "can you have sex"
+      ],
+      "relatedWords": [
+        "fornication_sexual_sin",
+        "marriage_bed"
+      ],
+      "bibleTerms": [
+        "fornication",
+        "marriage",
+        "holiness"
+      ],
+      "scriptureRefs": [
+        "1 Corinthians 6:18",
+        "1 Thessalonians 4:3-5",
+        "Hebrews 13:4"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": [
+        "sexual mechanics",
+        "contraception advice"
+      ],
+      "misspellings": [
+        "sed"
+      ]
+    },
+    {
+      "conceptId": "onan_seed_context",
+      "canonicalLabel": "Onan and spilled seed (Genesis 38)",
+      "aliases": [
+        "spilled seed",
+        "spill seed",
+        "brother spilled seed",
+        "onan",
+        "levirate duty"
+      ],
+      "naturalPhrases": [
+        "parable about the brother that spilled seed",
+        "brother that spilled seed"
+      ],
+      "relatedWords": [
+        "marriage_bed"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Genesis 38:9-10",
+        "Genesis 1:28",
+        "Deuteronomy 25:5-6"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": true,
+      "forbiddenConfusions": [
+        "contraception doctrine proof"
+      ]
+    },
+    {
+      "conceptId": "sabbath_seventh_day",
+      "canonicalLabel": "Sabbath seventh day",
+      "aliases": [
+        "lords sabbath",
+        "saturday or sunday",
+        "seventh day",
+        "friday to sat"
+      ],
+      "naturalPhrases": [
+        "Is the Lords Sabbath Friday to Sat or Sunday"
+      ],
+      "relatedWords": [
+        "sabbath",
+        "sabbath_how_to_keep"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Exodus 20:8-11",
+        "Deuteronomy 5:12-15"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": "sabbath",
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "sabbath_how_to_keep",
+      "canonicalLabel": "How to keep the Sabbath",
+      "aliases": [
+        "how to keep the sabbath",
+        "how are we supposed to keep it",
+        "keep the sabbath"
+      ],
+      "naturalPhrases": [
+        "how are we supposed to keep",
+        "how (do we|should we) keep (it|the sabbath)",
+        "how to keep the sabbath",
+        "keep the sabbath"
+      ],
+      "relatedWords": [
+        "sabbath_seventh_day",
+        "sabbath"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": "sabbath",
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "third_heaven",
+      "canonicalLabel": "Third heaven",
+      "aliases": [
+        "third heaven",
+        "three heavens"
+      ],
+      "naturalPhrases": [
+        "third heaven",
+        "three heavens",
+        "2 corinthianss*12:?s*2"
+      ],
+      "relatedWords": [
+        "heaven_layers"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "2 Corinthians 12:2"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": [
+        "kingdom_on_earth"
+      ]
+    },
+    {
+      "conceptId": "millennial_kingdom",
+      "canonicalLabel": "Millennial kingdom",
+      "aliases": [
+        "millennium",
+        "millennial kingdom",
+        "thousand years"
+      ],
+      "naturalPhrases": [
+        "millennium",
+        "millennial kingdom",
+        "thousand years",
+        "millium"
+      ],
+      "relatedWords": [
+        "kingdom_on_earth"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Revelation 20:4-6"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": "kingdom",
+      "confidence": 0.85,
+      "needsHumanReview": true,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "prayer_with_user",
+      "canonicalLabel": "Pray with user",
+      "aliases": [
+        "pray with me",
+        "can you pray with me"
+      ],
+      "naturalPhrases": [
+        "can you pray with me",
+        "pray with me",
+        "let us pray"
+      ],
+      "relatedWords": [
+        "prayer_comfort"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Matthew 6:9-13",
+        "Philippians 4:6-7"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "overwhelmed_comfort",
+      "canonicalLabel": "Overwhelmed comfort",
+      "aliases": [
+        "overwhelmed",
+        "my feeling overwhelmed",
+        "feeling overwhelmed"
+      ],
+      "naturalPhrases": [
+        "overwhelmed",
+        "my feeling overwhelmed",
+        "feeling overwhelmed"
+      ],
+      "relatedWords": [
+        "heartbreak_comfort"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Psalm 34:18",
+        "1 Peter 5:7"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "dating_anxiety",
+      "canonicalLabel": "Dating anxiety",
+      "aliases": [
+        "dating anxiety",
+        "nervous about dating"
+      ],
+      "naturalPhrases": [
+        "dating anxiety",
+        "nervous about dating",
+        "anxious about dating"
+      ],
+      "relatedWords": [
+        "sexual_boundaries_dating"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Philippians 4:6-7",
+        "1 Peter 5:7"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "repentance",
+      "canonicalLabel": "Repentance",
+      "aliases": [
+        "repent",
+        "repentance",
+        "turn from sin"
+      ],
+      "naturalPhrases": [
+        "repent",
+        "repentance",
+        "turn from sin"
+      ],
+      "relatedWords": [
+        "faith_obedience"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "Acts 2:38",
+        "1 John 1:9"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "faith_obedience",
+      "canonicalLabel": "Faith and obedience",
+      "aliases": [
+        "faith and obedience",
+        "obey God",
+        "faith without works"
+      ],
+      "naturalPhrases": [
+        "faith and obedience",
+        "obey god",
+        "faith without works"
+      ],
+      "relatedWords": [
+        "repentance"
+      ],
+      "bibleTerms": [],
+      "scriptureRefs": [
+        "James 2:17",
+        "Hebrews 11:1"
+      ],
+      "sourceFiles": [
+        "services/bibleConceptGraph.js",
+        "services/bibleConceptConcordance.js",
+        "bibleNaturalConcordanceBuilder.js"
+      ],
+      "strictTopic": null,
+      "confidence": 0.85,
+      "needsHumanReview": false,
+      "forbiddenConfusions": []
+    },
+    {
+      "conceptId": "new_jerusalem_comes_down",
+      "canonicalLabel": "New Jerusalem comes down",
+      "aliases": [
+        "new jerusalem comes down",
+        "holy city comes down"
+      ],
+      "scriptureRefs": [
+        "Revelation 21:1-3",
+        "Revelation 21:2"
+      ],
+      "needsHumanReview": false,
+      "sourceFiles": [
+        "bibleNaturalConcordanceBuilder.js"
+      ]
+    },
+    {
+      "conceptId": "death_state_sleep",
+      "canonicalLabel": "Death as sleep",
+      "aliases": [
+        "death as sleep",
+        "dead know nothing"
+      ],
+      "scriptureRefs": [
+        "Ecclesiastes 9:5",
+        "John 11:11-14"
+      ],
+      "needsHumanReview": false,
+      "sourceFiles": [
+        "bibleNaturalConcordanceBuilder.js"
+      ]
+    },
+    {
+      "conceptId": "acts_10_people_not_food",
+      "canonicalLabel": "Acts 10 people not food",
+      "aliases": [
+        "acts 10",
+        "peters vision",
+        "gentiles acts 10"
+      ],
+      "scriptureRefs": [
+        "Acts 10:28",
+        "Acts 10:14",
+        "Acts 11:1-18"
+      ],
+      "strictTopic": "acts_10",
+      "needsHumanReview": false,
+      "sourceFiles": [
+        "bibleNaturalConcordanceBuilder.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2735 @@
+{
+  "ranAt": "2026-06-10T00:31:00.611Z",
+  "normalized": [
+    {
+      "sourceId": "-1J0BQ64Vi0",
+      "originalReference": "Acts 1",
+      "normalizedReference": "Acts 1:28",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "acts 13:22 align:start position:0% acts 13:22 align:start position:0% acts 13:22 T and when he had removed him he raised align:start position:0% T and when he h"
+    },
+    {
+      "sourceId": "ylGGBsbWaGE",
+      "originalReference": "Amos 3",
+      "normalizedReference": "Amos 3:9-11",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "nish you for all your iniquities yep so verses align:start position:0% for all your iniquities yep so verses align:start position:0% for all your iniquities yep"
+    },
+    {
+      "sourceId": "l0oAY0phMmQ",
+      "originalReference": "Jeremiah 35",
+      "normalizedReference": "Jeremiah 35:18",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "n:0% Vineyard how will they survive and verses 18 and 19 please align:start position:0% verses 18 and 19 please align:start position:0% verses 18 and 19 please"
+    },
+    {
+      "sourceId": "KdyaINK_Y8A",
+      "originalReference": "Revelation 21",
+      "normalizedReference": "Revelation 21:24",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ren of Israel now skip on down and read verse align:start position:0% Israel now skip on down and read verse align:start position:0% Israel now skip on down and"
+    },
+    {
+      "sourceId": "KdyaINK_Y8A",
+      "originalReference": "Leviticus 23",
+      "normalizedReference": "Leviticus 23:8",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": "Leviticus 23: 27 also on the 10th day of align:start position:0% Leviticus 23: 27 also on the 10th day of this seventh month there shall be a day align:start po"
+    },
+    {
+      "sourceId": "dOrxNlJVXKw",
+      "originalReference": "Psalms 3",
+      "normalizedReference": "Psalms 3:17-18",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "go to Psalm 30 and we're going to read verse align:start position:0% Psalm 30 and we're going to read verse align:start position:0% Psalm 30 and we're going to"
+    },
+    {
+      "sourceId": "dOrxNlJVXKw",
+      "originalReference": "Exodus 1",
+      "normalizedReference": "Exodus 1:26",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": "align:start position:0% Psalms 78 read verses align:start position:0% align:start position:0% 43 through 44 and we going to skip down align:start position:0% 4"
+    },
+    {
+      "sourceId": "dOrxNlJVXKw",
+      "originalReference": "Psalm 78",
+      "normalizedReference": "Psalm 78:26",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": "Psalm 78: 43- align:start position:0% 78: 43- align:start position:0% 78: 43- 44 how he had wrought his signs in Egypt align:start position:0% 44 how he had wro"
+    },
+    {
+      "sourceId": "9TLBqIJ0wR4",
+      "originalReference": "Zechariah 13",
+      "normalizedReference": "Zechariah 13:8",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "tanzel and when you get there read that verse 8 and N in Zechariah 13 and the align:start position:0% verse 8 and N in Zechariah 13 and the align:start position"
+    },
+    {
+      "sourceId": "ELcI5oQHw5Q",
+      "originalReference": "Deuteronomy 1",
+      "normalizedReference": "Deuteronomy 1:24-32",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Deuteronomy 12:29 let's align:start position:0% Deuteronomy 12:29 let's go 12 and 29 says when the Lord thy God align:start position:0% go 12 and 29 says when t"
+    },
+    {
+      "sourceId": "sQus_1R9-R0",
+      "originalReference": "1 Corinthians 7",
+      "normalizedReference": "1 Corinthians 7:28",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "1 Corinthians 7: 10-15 align:start position:0% 7 1 Corinthians 7: 10-15 align:start position:0% 7 1 Corinthians 7: 10-15 says and unto the married I command yet"
+    },
+    {
+      "sourceId": "sQus_1R9-R0",
+      "originalReference": "Genesis 2",
+      "normalizedReference": "Genesis 2:1-31",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "sition:0% 1 Genesis 1 and pick it up at verse align:start position:0% 1 Genesis 1 and pick it up at verse align:start position:0% 1 Genesis 1 and pick it up at"
+    },
+    {
+      "sourceId": "7Vak4aK6Wkc",
+      "originalReference": "Galatians 3",
+      "normalizedReference": "Galatians 3:8-10",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Galatians 3: align:start position:0% Galatians 3: 26-29 says for ye are all the children align:start position:0% 26-29 says for ye are all the children align:st"
+    },
+    {
+      "sourceId": "beK2uf5dWHM",
+      "originalReference": "Genesis 3",
+      "normalizedReference": "Genesis 3:2-4",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "this go to Hosea the 12th chapter read verses 2 align:start position:0% Hosea the 12th chapter read verses 2 align:start position:0% Hosea the 12th chapter rea"
+    },
+    {
+      "sourceId": "beK2uf5dWHM",
+      "originalReference": "Exodus 3",
+      "normalizedReference": "Exodus 3:9-20",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "r okay I'm there we gonna pick it up at verse align:start position:0% I'm there we gonna pick it up at verse align:start position:0% I'm there we gonna pick it"
+    },
+    {
+      "sourceId": "dDVXWR956VY",
+      "originalReference": "John 1",
+      "normalizedReference": "John 1:26",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "chapter. Acts the 11th chapter 10 just verse 26 align:start position:0% Acts the 11th chapter 10 just verse 26 align:start position:0% Acts the 11th chapter 10"
+    },
+    {
+      "sourceId": "4gCanp7Ive0",
+      "originalReference": "Daniel 1",
+      "normalizedReference": "Daniel 1:18",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Daniel 12:12 says, \"Blessed is he that align:start position:0% Daniel 12:12 says, \"Blessed is he that align:start position:0% Daniel 12:12 says, \"Blessed is he"
+    },
+    {
+      "sourceId": "4gCanp7Ive0",
+      "originalReference": "John 1",
+      "normalizedReference": "John 1:15-21",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "ou by any means necessary. Skip down to verse align:start position:0% any means necessary. Skip down to verse align:start position:0% any means necessary. Skip"
+    },
+    {
+      "sourceId": "4gCanp7Ive0",
+      "originalReference": "Matthew 1",
+      "normalizedReference": "Matthew 1:18",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "early Christians did the same. Acts 16 verse 18. align:start position:0% same. Acts 16 verse 18. align:start position:0% same. Acts 16 verse 18. All right. So"
+    },
+    {
+      "sourceId": "4gCanp7Ive0",
+      "originalReference": "Mark 1",
+      "normalizedReference": "Mark 1:18",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "early Christians did the same. Acts 16 verse 18. align:start position:0% same. Acts 16 verse 18. align:start position:0% same. Acts 16 verse 18. All right. So"
+    },
+    {
+      "sourceId": "7JA1Z61fZxc",
+      "originalReference": "Daniel 1",
+      "normalizedReference": "Daniel 1:17",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": "Daniel 13:1 go ahead. You align:start position:0% to learn this. Daniel 13:1 go ahead. You align:start position:0% to learn this. Daniel 13:1 go ahead. You said"
+    },
+    {
+      "sourceId": "gPTn8ecr5EU",
+      "originalReference": "Luke 1",
+      "normalizedReference": "Luke 1:8-13",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "grave. But let's go to John 3 and read verse 13. John 3 align:start position:0% to John 3 and read verse 13. John 3 align:start position:0% to John 3 and read"
+    },
+    {
+      "sourceId": "IBWasv0z2NQ",
+      "originalReference": "Genesis 1",
+      "normalizedReference": "Genesis 1:11-12",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "position:0% Tanzil, Genesis 17 and read verse 12. Noah, pick it up align:start position:0% 17 and read verse 12. Noah, pick it up align:start position:0% 17 and"
+    },
+    {
+      "sourceId": "rM3LfazhOb0",
+      "originalReference": "Revelation 1",
+      "normalizedReference": "Revelation 1:4-8",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "start position:0% that. Exodus 16, read verse 4-8 and then align:start position:0% that. Exodus 16, read verse 4-8 and then align:start position:0% that. Exodus"
+    },
+    {
+      "sourceId": "eEuaavNUJYs",
+      "originalReference": "Zechariah 1",
+      "normalizedReference": "Zechariah 1:16",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "'s Jesus kingdom. But let's go read the verses that you align:start position:0% But let's go read the verses that you align:start position:0% But let's go read"
+    },
+    {
+      "sourceId": "cEOXD8wLQPY",
+      "originalReference": "Psalm 14",
+      "normalizedReference": "Psalm 14:19-20",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Psalm 147:10. We going to read verses 19 align:start position:0% Psalm 147:10. We going to read verses 19 align:start position:0% Psalm 147:10. We goin"
+    },
+    {
+      "sourceId": "99Ro3vRQurU",
+      "originalReference": "Psalm 8",
+      "normalizedReference": "Psalm 8:23-25",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Psalm 82:1-2 align:start position:0% Psalm 82:1-2 align:start position:0% Psalm 82:1-2 says, \"God standeth in the congregation align:start position:0% says, \"Go"
+    },
+    {
+      "sourceId": "OjJ8azAhbyA",
+      "originalReference": "Exodus 3",
+      "normalizedReference": "Exodus 3:10-14",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "he 23rd chapter and we're going to read verse 10. And then we're going to skip align:start position:0% verse 10. And then we're going to skip align:start positi"
+    },
+    {
+      "sourceId": "p-blCpZuAhg",
+      "originalReference": "John 1",
+      "normalizedReference": "John 1:20",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": "John 19:31. align:start position:0% St. John 19:31. align:start position:0% St. John 19:31. Yeah. align:start position:0% align:start position:0% Read. align:st"
+    },
+    {
+      "sourceId": "KVp1r6X1BQg",
+      "originalReference": "Revelation 1",
+      "normalizedReference": "Revelation 1:1-4",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "gn:start position:0% uh it has 14:1 and verses 4 and 5. align:start position:0% and verses 4 and 5. align:start position:0% and verses 4 and 5. Revelation 14:1"
+    },
+    {
+      "sourceId": "KVp1r6X1BQg",
+      "originalReference": "Matthew 2",
+      "normalizedReference": "Matthew 2:21",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "gn:start position:0% Psalm 37 and we go verse 21. align:start position:0% verse 21. align:start position:0% verse 21. All right. It says, align:start position:0"
+    },
+    {
+      "sourceId": "KVp1r6X1BQg",
+      "originalReference": "Deuteronomy 2",
+      "normalizedReference": "Deuteronomy 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "nicles, Ezra, Nehemiah. Nehemiah 13 and verse 1 says, \"On that align:start position:0% Nehemiah 13 and verse 1 says, \"On that align:start position:0% Nehemiah 1"
+    },
+    {
+      "sourceId": "EoVaP4ssOBM",
+      "originalReference": "Hebrews 1",
+      "normalizedReference": "Hebrews 1:13-16",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "brews 10:26 align:start position:0% two verses. Hebrews 10:26 align:start position:0% two verses. Hebrews 10:26 and 27. Cuz once you get that clean align:start"
+    },
+    {
+      "sourceId": "EoVaP4ssOBM",
+      "originalReference": "Isaiah 11",
+      "normalizedReference": "Isaiah 11:11-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Isaiah 113:14. align:start position:0% Isaiah 1 13 and 14. Isaiah 113:14. align:start position:0% Isaiah 1 13 and 14. Isaiah 113:14. Yep. align:start position:0"
+    },
+    {
+      "sourceId": "C3cYTk3cmSI",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:18",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "love asks for you to explain Psalms 34 verse 18. align:start position:0% explain Psalms 34 verse 18. align:start position:0% explain Psalms 34 verse 18. Psalms"
+    },
+    {
+      "sourceId": "C3cYTk3cmSI",
+      "originalReference": "Luke 2",
+      "normalizedReference": "Luke 2:44",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "books down to himself. Now skip down to verse 44 align:start position:0% to himself. Now skip down to verse 44 align:start"
+    },
+    {
+      "sourceId": "C3cYTk3cmSI",
+      "originalReference": "Deuteronomy 3",
+      "normalizedReference": "Deuteronomy 3:12",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "his power from? Matthew 10 and just one verse. align:start position:0% from? Matthew 10 and just one verse. align:start position:0% from? Matthew 10 and just on"
+    },
+    {
+      "sourceId": "aj3y-4e-w5Y",
+      "originalReference": "Leviticus 2",
+      "normalizedReference": "Leviticus 2:19",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "gn:start position:0% and let's read the verse 19. And let's see what it says align:start position:0% the verse 19. And let's see what it says align:start positi"
+    },
+    {
+      "sourceId": "aj3y-4e-w5Y",
+      "originalReference": "Leviticus 1",
+      "normalizedReference": "Leviticus 1:14",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": "halt not let thy cattle ginger with a diverse align:start position:0% not let thy cattle ginger with a diverse align:start position:0% not let thy cattle ginger"
+    },
+    {
+      "sourceId": "VDVvU4nYBDE",
+      "originalReference": "Exodus 1",
+      "normalizedReference": "Exodus 1:26",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus 16:22 align:start position:0% the Lord said back here. Exodus 16:22 align:start position:0% the Lord said back here. Exodus 16:22 and 23. Brother, go ahe"
+    },
+    {
+      "sourceId": "KkfK2KVdGC0",
+      "originalReference": "Revelation 1",
+      "normalizedReference": "Revelation 1:12-29",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "oing to flee at. Now skip down and read verse started reading align:start position:0% skip down and read verse started reading align:start position:0% skip down"
+    },
+    {
+      "sourceId": "KkfK2KVdGC0",
+      "originalReference": "James 2",
+      "normalizedReference": "James 2:3-13",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "lf told you in St. John the 3rd chapter verse 13 that align:start position:0% St. John the 3rd chapter verse 13 that align:start position:0% St. John the 3rd ch"
+    },
+    {
+      "sourceId": "KkfK2KVdGC0",
+      "originalReference": "Mark 1",
+      "normalizedReference": "Mark 1:32-34",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "e is God? So the scriptures are Mark 15 verse 34 and Mark align:start position:0% scriptures are Mark 15 verse 34 and Mark align:start position:0% scriptures ar"
+    },
+    {
+      "sourceId": "pMXVGFaOKwQ",
+      "originalReference": "Psalm 7",
+      "normalizedReference": "Psalm 7:3-7",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "aiah chapter 18 and we're going to read verse align:start position:0% chapter 18 and we're going to read verse align:start position:0% chapter 18 and we're goin"
+    },
+    {
+      "sourceId": "pMXVGFaOKwQ",
+      "originalReference": "Matthew 2",
+      "normalizedReference": "Matthew 2:21",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "t it is time to move. Why? Skip down to verse 21. Read 21-22. align:start position:0% Skip down to verse 21. Read 21-22. align:start position:0% Skip down to ve"
+    },
+    {
+      "sourceId": "pMXVGFaOKwQ",
+      "originalReference": "Ezekiel 2",
+      "normalizedReference": "Ezekiel 2:12",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ut as well. So let's skip down and read verse 12 there. Go ahead. align:start position:0% down and read verse 12 there. Go ahead. align:start position:0% down a"
+    },
+    {
+      "sourceId": "Ni2mjtEUg9A",
+      "originalReference": "Isaiah 3",
+      "normalizedReference": "Isaiah 3:1-3",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Isaiah 35:1-6 align:start position:0% quickly as you can. Okay. Isaiah 35:1-6 align:start position:0% quickly as you can. Okay. Isaiah 35:1-6 says, \"The wildern"
+    },
+    {
+      "sourceId": "Ni2mjtEUg9A",
+      "originalReference": "Leviticus 2",
+      "normalizedReference": "Leviticus 2:23",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": ":1 and2 quickly, and then we'll skip to verse align:start position:0% quickly, and then we'll skip to verse align:start position:0% quickly, and then we'll skip"
+    },
+    {
+      "sourceId": "Ni2mjtEUg9A",
+      "originalReference": "Luke 1",
+      "normalizedReference": "Luke 1:18",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "given which are too many are Genesis 2 verses 18 22 24 and 25 Genesis 4 1 align:start position:0% verses 18 22 24 and 25 Genesis 4 1 align:start position:0% ve"
+    },
+    {
+      "sourceId": "Ni2mjtEUg9A",
+      "originalReference": "Romans 1",
+      "normalizedReference": "Romans 1:18",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "given which are too many are Genesis 2 verses 18 22 24 and 25 Genesis 4 1 align:start position:0% verses 18 22 24 and 25 Genesis 4 1 align:start position:0% ve"
+    },
+    {
+      "sourceId": "Ni2mjtEUg9A",
+      "originalReference": "Exodus 1",
+      "normalizedReference": "Exodus 1:42",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "sition:0% 42 and 43. &gt;&gt; Exodus 12 verse 42 and 43 starts. align:start position:0% &gt;&gt; Exodus 12 verse 42 and 43 starts. align:start position:0% &gt;&"
+    },
+    {
+      "sourceId": "3K5YRRElmjc",
+      "originalReference": "Acts 1",
+      "normalizedReference": "Acts 1:11",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": ". Let's go over to Acts 18 now and read verse one. Acts 18 and verse one. align:start position:0% read verse one. Acts 18 and verse one. align:start position:0%"
+    },
+    {
+      "sourceId": "3K5YRRElmjc",
+      "originalReference": "Genesis 1",
+      "normalizedReference": "Genesis 1:28",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ow these other people mentioned in this verse, they weren't Gentiles. They align:start position:0% this verse, they weren't Gentiles. They align:start position:"
+    },
+    {
+      "sourceId": "pXlH7fwBqYo",
+      "originalReference": "Ezekiel 1",
+      "normalizedReference": "Ezekiel 1:45",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "16:45. align:start position:0% Begin at verse 45. Ezekiel 16:45. align:start position:0% Begin at verse 45. Ezekiel 16:45. Look what look what the Lord said abo"
+    },
+    {
+      "sourceId": "pXlH7fwBqYo",
+      "originalReference": "Daniel 1",
+      "normalizedReference": "Daniel 1:7",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": ":0% angels over his army. Daniel 12 and verse one. align:start position:0% align:start position:0% When you get it, go ahead, brother. align:start position:0% W"
+    },
+    {
+      "sourceId": "pXlH7fwBqYo",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:3-5",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Exodus 20:10, align:start position:0% align:start position:0% &gt;&gt; but the seventh day is a Sabbath of the align:start position:0% &gt;&gt; but the seventh"
+    },
+    {
+      "sourceId": "pXlH7fwBqYo",
+      "originalReference": "Genesis 4",
+      "normalizedReference": "Genesis 4:5-28",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Genesis 43:26 and verse 28. align:start position:0% &gt;&gt; Genesis 43. Genesis 43:26 and verse 28. align:start position:0% &gt;&gt; Gene"
+    },
+    {
+      "sourceId": "cxXFQnJmMYI",
+      "originalReference": "John 1",
+      "normalizedReference": "John 1:24",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ign:start position:0% brother. Them two verse, John 13:26 and align:start position:0% brother. Them two verse, John 13:26 and 27, right, devil? align:start posi"
+    },
+    {
+      "sourceId": "VZDzWu05N-c",
+      "originalReference": "Matthew 2",
+      "normalizedReference": "Matthew 2:27",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Matthew 24:14 says, \"And align:start position:0% in 14 for me. Matthew 24:14 says, \"And align:start position:0% in 14 for me. Matthew 24:14 says, \"And this gosp"
+    },
+    {
+      "sourceId": "VZDzWu05N-c",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:1-9",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Exodus 24:1 says, \"And he said align:start position:0% &gt;&gt; Okay. Uh, Exodus 24:1 says, \"And he said align:start position:0% &gt;&gt; Okay. Uh, Exodus 24:1"
+    },
+    {
+      "sourceId": "JeNoW0UxWCY",
+      "originalReference": "Leviticus 2",
+      "normalizedReference": "Leviticus 2:39-40",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "on:0% work therein.\" Skip down and read verse 39. align:start position:0% Skip down and read verse 39. align:start position:0% Skip down and read verse 39. Also"
+    },
+    {
+      "sourceId": "ShEa2-hpK38",
+      "originalReference": "1 Corinthians 1",
+      "normalizedReference": "1 Corinthians 1:10",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": ":0% book say. 1 Corinthians 11:10. Read verse one. Start at verse one. align:start position:0% verse one. Start at verse one. align:start position:0% verse one."
+    },
+    {
+      "sourceId": "ShEa2-hpK38",
+      "originalReference": "Psalm 12",
+      "normalizedReference": "Psalm 12:31",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Psalm 127:3. align:start position:0% align:start position:0% &gt;&gt; Lo, children are inheritance of the align:start position:0% &gt;&gt; Lo, children are inhe"
+    },
+    {
+      "sourceId": "-GDAwMj5P7c",
+      "originalReference": "Hosea 1",
+      "normalizedReference": "Hosea 1:23",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ign:start position:0% chapter, and read verse 23. align:start position:0% align:start position:0% Okay. align:start position:0% Okay. align:start position:0% Ok"
+    },
+    {
+      "sourceId": "-GDAwMj5P7c",
+      "originalReference": "Deuteronomy 2",
+      "normalizedReference": "Deuteronomy 2:13-18",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "It's an agreement. Go to Malachi 2 read verse 13 and 14. align:start position:0% verse 13 and 14. align:start position:0% verse 13 and 14. Okay, align:start pos"
+    },
+    {
+      "sourceId": "-GDAwMj5P7c",
+      "originalReference": "Revelation 2",
+      "normalizedReference": "Revelation 2:6-19",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% come through David. Go ahead. Now, verse 19. align:start position:0% Go ahead. Now, verse 19. align:start position:0% Go ahead. Now, verse 19. \"And if any"
+    },
+    {
+      "sourceId": "EO6bv_71E8o",
+      "originalReference": "John 1",
+      "normalizedReference": "John 1:1-10",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "on:0% see what Jesus said. 18, John 18, verses 10 and 11. align:start position:0% 18, John 18, verses 10 and 11. align:start position:0% 18, John 18, verses 10"
+    },
+    {
+      "sourceId": "EO6bv_71E8o",
+      "originalReference": "Isaiah 1",
+      "normalizedReference": "Isaiah 1:12",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Isaiah 14:10 through and pick this up at align:start position:0% Isaiah 14:10 through and pick this up at align:start position:0% Isaiah 14:10 through and pick"
+    },
+    {
+      "sourceId": "EO6bv_71E8o",
+      "originalReference": "Acts 1",
+      "normalizedReference": "Acts 1:25-28",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "true, but let's go to Acts 11 and read verse align:start position:0% Acts 11 and read verse align:start position:0% Acts 11 and read verse 25 and 26. align:sta"
+    },
+    {
+      "sourceId": "EO6bv_71E8o",
+      "originalReference": "Acts 2",
+      "normalizedReference": "Acts 2:6",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Acts 26:28 align:start position:0% Acts 26:28 align:start position:0% Acts 26:28 and 29. align:start position:0% and 29. align:start position:0% and 29. Go ahea"
+    },
+    {
+      "sourceId": "EO6bv_71E8o",
+      "originalReference": "Matthew 2",
+      "normalizedReference": "Matthew 2:28-32",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "0% &gt;&gt; Okay. Go to Matthew 21 read verse align:start position:0% Go to Matthew 21 read verse align:start position:0% Go to Matthew 21 read verse 28 to 32."
+    },
+    {
+      "sourceId": "TEZjPrZ9hVM",
+      "originalReference": "Leviticus 2",
+      "normalizedReference": "Leviticus 2:20-23",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Leviticus 23:10 align:start position:0% &gt;&gt; Leviticus 23:10 align:start position:0% &gt;&gt; Leviticus 23:10 says, \"Speak unto the children of align:start"
+    },
+    {
+      "sourceId": "TEZjPrZ9hVM",
+      "originalReference": "Deuteronomy 2",
+      "normalizedReference": "Deuteronomy 2:16",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "t;&gt; let's go read it. Deuteronomy 24 verse 16. align:start position:0% verse 16. align:start position:0% verse 16. Okay. It says, \"The father shall not be al"
+    },
+    {
+      "sourceId": "DhkfdIcMSE4",
+      "originalReference": "Deuteronomy 1",
+      "normalizedReference": "Deuteronomy 1:9-11",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "uteronomy 18:10 align:start position:0% verse 9 through 11. Deuteronomy 18:10 align:start position:0% verse 9 through 11. Deuteronomy 18:10 through verse 9 thro"
+    },
+    {
+      "sourceId": "DhkfdIcMSE4",
+      "originalReference": "Isaiah 1",
+      "normalizedReference": "Isaiah 1:9-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Isaiah 19:24 align:start position:0% Isaiah 19:24 align:start position:0% Isaiah 19:24 and 25. align:start position:0% and 25. align:start position:0% and 25. B"
+    },
+    {
+      "sourceId": "DhkfdIcMSE4",
+      "originalReference": "Hebrews 1",
+      "normalizedReference": "Hebrews 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Hebrews 10:1 align:start position:0% align:start position:0% For the law, align:start position:0% For the law, align:start position:0% For the law, having a sha"
+    },
+    {
+      "sourceId": "vwgwdJxXf_U",
+      "originalReference": "Matthew 1",
+      "normalizedReference": "Matthew 1:11",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Corinthians 3. And we going to read one verse there. 1 Corinthians 3 and align:start position:0% one verse there. 1 Corinthians 3 and align:start position:0% on"
+    },
+    {
+      "sourceId": "vwgwdJxXf_U",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:1-7",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Mhm. And let's go to Isaiah 56 and read verse 1-7. And that'll be align:start position:0% 56 and read verse 1-7. And that'll be align:start position:0% 56 and r"
+    },
+    {
+      "sourceId": "vwgwdJxXf_U",
+      "originalReference": "Revelation 1",
+      "normalizedReference": "Revelation 1:12",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "tion:0% Revelation 6, pick it up at the verse 12. Just read align:start position:0% pick it up at the verse 12. Just read align:start"
+    },
+    {
+      "sourceId": "PGpntY1TGFk",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:21-23",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "and then it said that uh, in that 10th verse he said, \"And under align:start position:0% in that 10th verse he said, \"And under align:start position:0% in that"
+    },
+    {
+      "sourceId": "q7V7aQ_16m0",
+      "originalReference": "Isaiah 4",
+      "normalizedReference": "Isaiah 4:14-15",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "ore place. Let's go to James 4 and read verse 14. James 4:14. align:start position:0% align:start position:0% Read it when you get there, brother. align:start p"
+    },
+    {
+      "sourceId": "q7V7aQ_16m0",
+      "originalReference": "John 1",
+      "normalizedReference": "John 1:26",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "n you after a while. I need you to read verse align:start position:0% after a while. I need you to read verse align:start position:0% after a while. I need you"
+    },
+    {
+      "sourceId": "q7V7aQ_16m0",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:22-23",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "is in him.\" Was that the last the 24th verse? No, align:start position:0% Was that the last the 24th verse? No, align:start position:0% Was that the last the 2"
+    },
+    {
+      "sourceId": "q7V7aQ_16m0",
+      "originalReference": "2 Chronicles 1",
+      "normalizedReference": "2 Chronicles 1:21-23",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "2 Chronicles 15:9 says, \"And he align:start position:0% Okay. 2 Chronicles 15:9 says, \"And he align:start position:0% Okay. 2 Chronicles 15:9 says, \"And he gath"
+    },
+    {
+      "sourceId": "q7V7aQ_16m0",
+      "originalReference": "Exodus 1",
+      "normalizedReference": "Exodus 1:21-23",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "art position:0% And we're going to read verses 21 to 23. align:start position:0% And we're going to read verses 21 to 23. align:start position:0% And we're goin"
+    },
+    {
+      "sourceId": "q7V7aQ_16m0",
+      "originalReference": "Ezekiel 4",
+      "normalizedReference": "Ezekiel 4:18",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Ezekiel 47:21-23 align:start position:0% Okay. Ezekiel 47:21-23 align:start position:0% Okay. Ezekiel 47:21-23 says, \"So shall ye divide this land unto align:st"
+    },
+    {
+      "sourceId": "q7V7aQ_16m0",
+      "originalReference": "Romans 1",
+      "normalizedReference": "Romans 1:13-21",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Romans 16:22 align:start position:0% Romans 16:22 align:start position:0% Romans 16:22 says, align:start position:0% says, align:start position:0% says, \"I Tert"
+    },
+    {
+      "sourceId": "q7V7aQ_16m0",
+      "originalReference": "1 Corinthians 1",
+      "normalizedReference": "1 Corinthians 1:13-20",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "16:21 says, align:start position:0% and verse 20 1 Corinthians 16:21 says, align:start position:0% and verse 20 1 Corinthians 16:21 says, \"The salutation of me,"
+    },
+    {
+      "sourceId": "q7V7aQ_16m0",
+      "originalReference": "Jeremiah 3",
+      "normalizedReference": "Jeremiah 3:17-32",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "rt position:0% of a book.\" Skip down to verse 17 and 18. align:start position:0% Skip down to verse 17 and 18. align:start position:0% Skip down to verse 17 and"
+    },
+    {
+      "sourceId": "DK696cS5e1I",
+      "originalReference": "Proverbs 2",
+      "normalizedReference": "Proverbs 2:6-35",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "thereby is not wise. Skip down and read verse 33. Go ahead. Thine eye align:start position:0% and read verse 33. Go ahead. Thine eye align:start position:0% and"
+    },
+    {
+      "sourceId": "DK696cS5e1I",
+      "originalReference": "Psalms 1",
+      "normalizedReference": "Psalms 1:16",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "05 align:start position:0% 105 and read verse 16. Go ahead when you get align:start position:0% and read verse 16. Go ahead when you get align:start position:0%"
+    },
+    {
+      "sourceId": "DK696cS5e1I",
+      "originalReference": "Psalms 12",
+      "normalizedReference": "Psalms 12:11-32",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "mple of that. Go to Psalms 132 and read verse 11 and align:start position:0% Go to Psalms 132 and read verse 11 and align:start position:0% Go to Psalms 132 and"
+    },
+    {
+      "sourceId": "9WcSuYKz5MU",
+      "originalReference": "Hebrews 1",
+      "normalizedReference": "Hebrews 1:4-14",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "rted a new covenant. Skip down and read verse 4 and 5. align:start position:0% Skip down and read verse 4 and 5. align:start position:0% Skip down and read vers"
+    },
+    {
+      "sourceId": "V1A3Dj90KXw",
+      "originalReference": "Zechariah 1",
+      "normalizedReference": "Zechariah 1:15",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "% Israel. &gt;&gt; Okay, so ban in this verse is referring align:start position:0% &gt;&gt; Okay, so ban in this verse is referring align:start position:0% &gt;"
+    },
+    {
+      "sourceId": "O_-yu-ppxNo",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:9-30",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "at. Uh Proverbs 6, and we going to read verses align:start position:0% Proverbs 6, and we going to read verses align:start position:0% Proverbs 6, and we going"
+    },
+    {
+      "sourceId": "O_-yu-ppxNo",
+      "originalReference": "Leviticus 1",
+      "normalizedReference": "Leviticus 1:1-24",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "us 19:9 and 10. align:start position:0% verses 9 and 10. Leviticus 19:9 and 10. align:start position:0% verses 9 and 10. Leviticus 19:9 and 10. When you get it,"
+    },
+    {
+      "sourceId": "O_-yu-ppxNo",
+      "originalReference": "Revelation 2",
+      "normalizedReference": "Revelation 2:5-11",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "ghteous at his coming. Back up and read verse 5. Go align:start position:0% coming. Back up and read verse 5. Go align:start position:0% coming. Back up and rea"
+    },
+    {
+      "sourceId": "O_-yu-ppxNo",
+      "originalReference": "Revelation 1",
+      "normalizedReference": "Revelation 1:7-11",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "tion:0% uh Zechariah chapter 4 and read verse 11 and 12. align:start position:0% align:start position:0% Zechariah chapter 4 align:start position:0% Zechariah c"
+    },
+    {
+      "sourceId": "O_-yu-ppxNo",
+      "originalReference": "Matthew 1",
+      "normalizedReference": "Matthew 1:21",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "sition:0% uh align:start position:0% uh verse 21. align:start position:0% align:start position:0% We're going to read that and do it. align:start position:0% We"
+    },
+    {
+      "sourceId": "prYrV8BVghk",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:4-11",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "ome. &gt;&gt; Well, let's go read those verses that align:start position:0% &gt;&gt; Well, let's go read those verses that align:start position:0% &gt;&gt; Well"
+    },
+    {
+      "sourceId": "prYrV8BVghk",
+      "originalReference": "Genesis 3",
+      "normalizedReference": "Genesis 3:6-19",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ";&gt; Yeah, go to six and pick it up at verse align:start position:0% &gt;&gt; Yeah, go to six and pick it up at verse align:start position:0% &gt;&gt; Yeah, go"
+    },
+    {
+      "sourceId": "prYrV8BVghk",
+      "originalReference": "Genesis 1",
+      "normalizedReference": "Genesis 1:1-8",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Genesis 10:25. align:start position:0% &gt;&gt; Genesis 10:25. align:start position:0% &gt;&gt; Genesis 10:25. &gt;&gt; Yeah. Yep. align:start position:0% &gt;&"
+    },
+    {
+      "sourceId": "prYrV8BVghk",
+      "originalReference": "Luke 2",
+      "normalizedReference": "Luke 2:31-75",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":0% 32, but we going to bag up and read verse 31. align:start position:0% verse 31. align:start position:0% verse 31. &gt;&gt; Start at 31, read 31 and 32, brot"
+    },
+    {
+      "sourceId": "Kv096MKHHDs",
+      "originalReference": "Matthew 2",
+      "normalizedReference": "Matthew 2:12-13",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "let's go to that Zechariah 11 and read verse 12 through13. align:start position:0% and read verse 12 through13. align:start position:0% and read verse 12 throu"
+    },
+    {
+      "sourceId": "Kv096MKHHDs",
+      "originalReference": "Ezekiel 2",
+      "normalizedReference": "Ezekiel 2:36",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Ezekiel 20:33 says, \"As I live, sayaeth align:start position:0% &gt;&gt; Ezekiel 20:33 says, \"As I live, sayaeth align:start position:0% &gt;&gt; Ezekiel 20:33"
+    },
+    {
+      "sourceId": "Kv096MKHHDs",
+      "originalReference": "Ezekiel 1",
+      "normalizedReference": "Ezekiel 1:20",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "tion:0% shall die. &gt;&gt; Skip now to verse 20 and read that. align:start position:0% &gt;&gt; Skip now to verse 20 and read that. align:start position:0% &gt"
+    },
+    {
+      "sourceId": "DFeepSaTq10",
+      "originalReference": "Acts 2",
+      "normalizedReference": "Acts 2:9",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "the which the Holy Ghost have made you overseers, align:start position:0% Holy Ghost have made you overseers, align:start position:0% Holy Ghost have made you o"
+    },
+    {
+      "sourceId": "DFeepSaTq10",
+      "originalReference": "2 Corinthians 1",
+      "normalizedReference": "2 Corinthians 1:4-13",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "hallenge them. Skip all the way over to verse 13, 13 to 15. This is what the align:start position:0% verse 13, 13 to 15. This is what the align:start position:0"
+    },
+    {
+      "sourceId": "DFeepSaTq10",
+      "originalReference": "Psalms 4",
+      "normalizedReference": "Psalms 4:17",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Psalms 44:6. align:start position:0% Psalms 44:6. align:start position:0% Psalms 44:6. &gt;&gt; Yeah. align:start position:0% &gt;&gt; Yeah. align:start positio"
+    },
+    {
+      "sourceId": "DFeepSaTq10",
+      "originalReference": "Revelation 2",
+      "normalizedReference": "Revelation 2:7-8",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ";&gt; 21, you said? Mhm. All right. And verse 8. Let's go there, align:start position:0% All right. And verse 8. Let's go there, align:start position:0% All rig"
+    },
+    {
+      "sourceId": "TNaL2GO8gW0",
+      "originalReference": "1 Corinthians 1",
+      "normalizedReference": "1 Corinthians 1:19-26",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "our own, you can read Deuteronomy 4 and verse 19. align:start position:0% can read Deuteronomy 4 and verse 19. align:start position:0% can read Deuteronomy 4 an"
+    },
+    {
+      "sourceId": "1723reMjnPQ",
+      "originalReference": "1 John 5",
+      "normalizedReference": "1 John 5:14",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "tart position:0% brother. Pick it up at verse 14. align:start position:0% align:start position:0% And this is the confidence that we have align:start position:0"
+    },
+    {
+      "sourceId": "To_Z-Qb7TAM",
+      "originalReference": "Job 1",
+      "normalizedReference": "Job 1:10-13",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "ion:0% Deuteronomy 18 and pick it up at verse 10. When you get align:start position:0% and pick it up at verse 10. When you get align:start position:0% and pick"
+    },
+    {
+      "sourceId": "To_Z-Qb7TAM",
+      "originalReference": "Deuteronomy 1",
+      "normalizedReference": "Deuteronomy 1:12-13",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Chronicles 10, we're just going to read verse 13. align:start position:0% 10, we're just going to read verse 13. align:start position:0% 10, we're just going to"
+    },
+    {
+      "sourceId": "To_Z-Qb7TAM",
+      "originalReference": "Genesis 4",
+      "normalizedReference": "Genesis 4:11",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "n:0% scene, what are you going to do at verse 11? align:start position:0% what are you going to do at verse 11? align:start position:0% what are you going to do"
+    },
+    {
+      "sourceId": "To_Z-Qb7TAM",
+      "originalReference": "1 Corinthians 1",
+      "normalizedReference": "1 Corinthians 1:28",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "oyed is death.\" Now, skip down and read verse 28. align:start position:0% Now, skip down and read verse 28. align:start position:0% Now, skip down and read vers"
+    },
+    {
+      "sourceId": "To_Z-Qb7TAM",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:1-4",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "r align:start position:0% Then for then verse That was 15, correct? align:start position:0% then verse That was 15, correct? align:start position:0% then verse"
+    },
+    {
+      "sourceId": "To_Z-Qb7TAM",
+      "originalReference": "Acts 1",
+      "normalizedReference": "Acts 1:15",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": ". Isaiah 56, I'm going to pick it up at verse six and seven. align:start position:0% to pick it up at verse six and seven. align:start position:0% to pick it up"
+    },
+    {
+      "sourceId": "To_Z-Qb7TAM",
+      "originalReference": "Leviticus 1",
+      "normalizedReference": "Leviticus 1:1",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": "Leviticus 19:27 align:start position:0% Leviticus 19:27 align:start position:0% Leviticus 19:27 and 28. We get this a lot. And I think align:start position:0% a"
+    },
+    {
+      "sourceId": "U3nW_X6j3zI",
+      "originalReference": "Ezekiel 3",
+      "normalizedReference": "Ezekiel 3:63",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Ezekiel 37:10. align:start position:0% Ezekiel 37:10. Yeah, that that Ezekiel 37:E10, align:start position:0% Yeah, that that Ezekiel 37:E10, align:start positi"
+    },
+    {
+      "sourceId": "D2y79b5QE2A",
+      "originalReference": "Leviticus 1",
+      "normalizedReference": "Leviticus 1:1-5",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Leviticus 19:28. align:start position:0% 19. So, let's go there. Leviticus 19:28. align:start position:0% 19. So, let's go there. Leviticus 19:28. &gt;&gt; Ye s"
+    },
+    {
+      "sourceId": "D2y79b5QE2A",
+      "originalReference": "Acts 1",
+      "normalizedReference": "Acts 1:8",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "to St. John the fourth chapter and read verse 8 and 9. align:start position:0% align:start position:0% &gt;&gt; St. John align:start position:0% &gt;&gt; St. Jo"
+    },
+    {
+      "sourceId": "D2y79b5QE2A",
+      "originalReference": "Revelation 2",
+      "normalizedReference": "Revelation 2:13",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "o that Ecclesiastes chapter 12 and read verse 13 and 14. align:start position:0% chapter 12 and read verse 13 and 14. align:start position:0% chapter 12 and rea"
+    },
+    {
+      "sourceId": "D2y79b5QE2A",
+      "originalReference": "Leviticus 2",
+      "normalizedReference": "Leviticus 2:28",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Leviticus 20:25. align:start position:0% Leviticus 20:25. align:start position:0% Leviticus 20:25. &gt;&gt; Ye shall therefore put difference align:start positi"
+    },
+    {
+      "sourceId": "fVl_pd84FaI",
+      "originalReference": "1 Kings 1",
+      "normalizedReference": "1 Kings 1:4-23",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "1 Kings 16:30-32. align:start position:0% 6- 1 Kings 16:30-32. align:start position:0% 6- 1 Kings 16:30-32. Okay. 1 Kings 16 and 30 to 32 says, align:start posi"
+    },
+    {
+      "sourceId": "fVl_pd84FaI",
+      "originalReference": "Isaiah 4",
+      "normalizedReference": "Isaiah 4:24-28",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "God has given him another chance. Read verse six. align:start position:0% another chance. Read verse six. align:start position:0% another chance. Read verse si"
+    },
+    {
+      "sourceId": "oXqnswRDbsA",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:19-29",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "t position:0% Jerome. Let's go read the verses. Exodus 22:29. align:start position:0% Let's go read the verses. Exodus 22:29. align:start position:0% Let's go r"
+    },
+    {
+      "sourceId": "oXqnswRDbsA",
+      "originalReference": "1 Corinthians 1",
+      "normalizedReference": "1 Corinthians 1:12",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ose from the dead. Skip up, brother, to verse 12. align:start position:0% up, brother, to verse 12. align:start position:0% up, brother, to verse 12. Skip up to"
+    },
+    {
+      "sourceId": "oXqnswRDbsA",
+      "originalReference": "2 Kings 2",
+      "normalizedReference": "2 Kings 2:8",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "en you got uh uh Acts the 21st chapter, verses 8 and 9, Philip's four align:start position:0% chapter, verses 8 and 9, Philip's four align:start position:0% cha"
+    },
+    {
+      "sourceId": "iS9Y9zXYxJI",
+      "originalReference": "Zechariah 1",
+      "normalizedReference": "Zechariah 1:12-16",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Yes. Let's go to Zechariah 11 and read verses 12 and 13. align:start position:0% and read verses 12 and 13. align:start position:0% and read verses 12 and 13."
+    },
+    {
+      "sourceId": "iS9Y9zXYxJI",
+      "originalReference": "Genesis 2",
+      "normalizedReference": "Genesis 2:34",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Genesis 25:17-23. align:start position:0% Genesis 25:17-23. align:start position:0% Genesis 25:17-23. Uh pick it up at 22, brother, and we'll align:start positi"
+    },
+    {
+      "sourceId": "WHJdnYu3iYo",
+      "originalReference": "John 2",
+      "normalizedReference": "John 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "t position:0% Luke 24 and pick it up at verse 1. align:start position:0% and pick it up at verse 1. align:start position:0% and pick it up at verse 1. And read"
+    },
+    {
+      "sourceId": "7ZikbGw9IW8",
+      "originalReference": "Deuteronomy 1",
+      "normalizedReference": "Deuteronomy 1:10-18",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "let's tie that with Exodus 31 and read verse 18. align:start position:0% and read verse 18. align:start position:0% and read verse 18. Okay. [clears throat] al"
+    },
+    {
+      "sourceId": "7ZikbGw9IW8",
+      "originalReference": "Revelation 1",
+      "normalizedReference": "Revelation 1:14",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "on:0% to Genesis chapter 2 and read one verse and let's see if man align:start position:0% and read one verse and let's see if man align:start position:0% and r"
+    },
+    {
+      "sourceId": "7ZikbGw9IW8",
+      "originalReference": "1 Corinthians 1",
+      "normalizedReference": "1 Corinthians 1:4-18",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "uh crazy or lunatic. Skip down uh What verse was that? That was verse 4. Read align:start position:0% verse was that? That was verse 4. Read align:start positi"
+    },
+    {
+      "sourceId": "7ZikbGw9IW8",
+      "originalReference": "Isaiah 4",
+      "normalizedReference": "Isaiah 4:12-20",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "lign:start position:0% Isaiah 48:12 and verse 13. Let's go there, brother align:start position:0% and verse 13. Let's go there, brother align:start position:0%"
+    },
+    {
+      "sourceId": "JrwIQ9aG0i8",
+      "originalReference": "Psalms 5",
+      "normalizedReference": "Psalms 5:9-43",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Okay. So, uh in dealing with both those verses align:start position:0% uh in dealing with both those verses align:start position:0% uh in dealing with both thos"
+    },
+    {
+      "sourceId": "JrwIQ9aG0i8",
+      "originalReference": "Zechariah 1",
+      "normalizedReference": "Zechariah 1:11",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Zechariah 11:12-13. align:start position:0% align:start position:0% When you get it, go ahead, brother. align:start position:0% When you get it, go ahead, broth"
+    },
+    {
+      "sourceId": "CP58dhniibY",
+      "originalReference": "Exodus 2",
+      "normalizedReference": "Exodus 2:10-16",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "s, you read that earlier, but read that verse 10 and the guest align:start position:0% but read that verse 10 and the guest align:start position:0% but read tha"
+    },
+    {
+      "sourceId": "CP58dhniibY",
+      "originalReference": "Ezekiel 3",
+      "normalizedReference": "Ezekiel 3:14-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "Ezekiel 33:1 says, \"Again, the word of align:start position:0% &gt;&gt; Ezekiel 33:1 says, \"Again, the word of align:start position:0% &gt;&gt; Ezekiel 33:1 say"
+    },
+    {
+      "sourceId": "CP58dhniibY",
+      "originalReference": "Luke 1",
+      "normalizedReference": "Luke 1:11",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "yes, Luke 13 and &gt;&gt; Pick it up at verse two. align:start position:0% &gt;&gt; Pick it up at verse two. align:start position:0% &gt;&gt; Pick it up at vers"
+    },
+    {
+      "sourceId": "BXrdVrZa4x4",
+      "originalReference": "Jeremiah 1",
+      "normalizedReference": "Jeremiah 1:3-12",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "ing to their ways and their doings, but verse 9 says, \"The align:start position:0% their doings, but verse 9 says, \"The align:start position:0% their doings, bu"
+    },
+    {
+      "sourceId": "BXrdVrZa4x4",
+      "originalReference": "Psalm 9",
+      "normalizedReference": "Psalm 9:63-66",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "go into St. John the 6th chapter. Read verse align:start position:0% Read verse align:start position:0% Read verse 63 first. align:start position:0% align:star"
+    },
+    {
+      "sourceId": "BXrdVrZa4x4",
+      "originalReference": "Hebrews 1",
+      "normalizedReference": "Hebrews 1:10",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ion:0% perfect. All right. Now, down to verse four and then it tell you align:start position:0% down to verse four and then it tell you align:start position:0%"
+    },
+    {
+      "sourceId": "BXrdVrZa4x4",
+      "originalReference": "Daniel 1",
+      "normalizedReference": "Daniel 1:20",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% panel to shed a little light on that verse 20 and 21. align:start position:0% align:start position:0% The first thing is align:start position:0% The first th"
+    },
+    {
+      "sourceId": "BXrdVrZa4x4",
+      "originalReference": "Revelation 1",
+      "normalizedReference": "Revelation 1:15",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Revelation 12:1 align:start position:0% Revelation 12:1 align:start position:0% Revelation 12:1 And there appeared a great wonder in align:start position:0% And"
+    },
+    {
+      "sourceId": "Vks8t9_p4Fg",
+      "originalReference": "John 1",
+      "normalizedReference": "John 1:5-15",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "0 and I want to read I want you to read verses align:start position:0% I want to read I want you to read verses align:start position:0% I want to read I want yo"
+    },
+    {
+      "sourceId": "Vks8t9_p4Fg",
+      "originalReference": "Proverbs 2",
+      "normalizedReference": "Proverbs 2:18",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Proverbs 26:17. align:start position:0% Proverbs 26:17. align:start position:0% Proverbs 26:17. &gt;&gt; Okay. Proverbs 26 and17 says, \"He that align:start posi"
+    },
+    {
+      "sourceId": "Vks8t9_p4Fg",
+      "originalReference": "Ezekiel 4",
+      "normalizedReference": "Ezekiel 4:20",
+      "confidence": 0.7,
+      "supportingTranscriptExcerpt": "Ezekiel 42:13 says, \"Then said he align:start position:0% &gt;&gt; Okay. Ezekiel 42:13 says, \"Then said he align:start position:0% &gt;&gt; Okay. Ezekiel 42:13"
+    },
+    {
+      "sourceId": "_XX6thd8aVs",
+      "originalReference": "Isaiah 2",
+      "normalizedReference": "Isaiah 2:3",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "o to Revelation 21 and we going to read verses 3 to align:start position:0% 21 and we going to read verses 3 to align:start position:0% 21 and we going to read"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Exodus 20",
+      "normalizedReference": "Exodus 20:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Ecclesiastes 12",
+      "normalizedReference": "Ecclesiastes 12:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Revelation 22",
+      "normalizedReference": "Revelation 22:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Jeremiah 23",
+      "normalizedReference": "Jeremiah 23:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Psalms 83",
+      "normalizedReference": "Psalms 83:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Ezekiel 16",
+      "normalizedReference": "Ezekiel 16:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Exodus 24",
+      "normalizedReference": "Exodus 24:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Exodus 34",
+      "normalizedReference": "Exodus 34:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Deuteronomy 4",
+      "normalizedReference": "Deuteronomy 4:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Psalms 147",
+      "normalizedReference": "Psalms 147:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Romans 9",
+      "normalizedReference": "Romans 9:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Romans 3",
+      "normalizedReference": "Romans 3:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Amos 2",
+      "normalizedReference": "Amos 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Amos 3",
+      "normalizedReference": "Amos 3:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Luke 16",
+      "normalizedReference": "Luke 16:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Romans 11",
+      "normalizedReference": "Romans 11:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Isaiah 41",
+      "normalizedReference": "Isaiah 41:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Jeremiah 33",
+      "normalizedReference": "Jeremiah 33:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Jeremiah 31",
+      "normalizedReference": "Jeremiah 31:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Leviticus 26",
+      "normalizedReference": "Leviticus 26:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Ezekiel 36",
+      "normalizedReference": "Ezekiel 36:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Isaiah 56",
+      "normalizedReference": "Isaiah 56:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "John 10",
+      "normalizedReference": "John 10:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Ephesians 2",
+      "normalizedReference": "Ephesians 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Psalms 132",
+      "normalizedReference": "Psalms 132:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Luke 1",
+      "normalizedReference": "Luke 1:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "7WyKj0bG3c4",
+      "originalReference": "Zechariah 14",
+      "normalizedReference": "Zechariah 14:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "% the 20th chapter. We're going to read verses 1 align:start position:0% verses 1 align:start position:0% verses 1 through 17. align:start position:0% align:sta"
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Exodus 20",
+      "normalizedReference": "Exodus 20:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Ecclesiastes 12",
+      "normalizedReference": "Ecclesiastes 12:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Revelation 22",
+      "normalizedReference": "Revelation 22:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Genesis 2",
+      "normalizedReference": "Genesis 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Revelation 12",
+      "normalizedReference": "Revelation 12:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Ezekiel 18",
+      "normalizedReference": "Ezekiel 18:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Psalm 69",
+      "normalizedReference": "Psalm 69:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Romans 15",
+      "normalizedReference": "Romans 15:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Romans 5",
+      "normalizedReference": "Romans 5:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "John 2",
+      "normalizedReference": "John 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "1 John 2",
+      "normalizedReference": "1 John 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "2 Corinthians 5",
+      "normalizedReference": "2 Corinthians 5:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "1 Corinthians 5",
+      "normalizedReference": "1 Corinthians 5:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Ezekiel 36",
+      "normalizedReference": "Ezekiel 36:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Ephesians 4",
+      "normalizedReference": "Ephesians 4:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Revelation 14",
+      "normalizedReference": "Revelation 14:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Proverbs 4",
+      "normalizedReference": "Proverbs 4:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Luke 13",
+      "normalizedReference": "Luke 13:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Romans 1",
+      "normalizedReference": "Romans 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Hebrews 2",
+      "normalizedReference": "Hebrews 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "1 Corinthians 15",
+      "normalizedReference": "1 Corinthians 15:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Matthew 23",
+      "normalizedReference": "Matthew 23:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Matthew 20",
+      "normalizedReference": "Matthew 20:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Mark 3",
+      "normalizedReference": "Mark 3:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Matthew 10",
+      "normalizedReference": "Matthew 10:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Matthew 4",
+      "normalizedReference": "Matthew 4:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Matthew 24",
+      "normalizedReference": "Matthew 24:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "1 Peter 2",
+      "normalizedReference": "1 Peter 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Acts 8",
+      "normalizedReference": "Acts 8:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "uf_VcPk_paw",
+      "originalReference": "Nehemiah 8",
+      "normalizedReference": "Nehemiah 8:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "begin in Exodus 20. We're going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17. align:start position:0% going to read verses 1-1 17."
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Acts 17",
+      "normalizedReference": "Acts 17:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "John 1",
+      "normalizedReference": "John 1:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Exodus 24",
+      "normalizedReference": "Exodus 24:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "John 5",
+      "normalizedReference": "John 5:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "1 Corinthians 10",
+      "normalizedReference": "1 Corinthians 10:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Exodus 13",
+      "normalizedReference": "Exodus 13:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Isaiah 48",
+      "normalizedReference": "Isaiah 48:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Isaiah 7",
+      "normalizedReference": "Isaiah 7:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Matthew 1",
+      "normalizedReference": "Matthew 1:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Hebrews 2",
+      "normalizedReference": "Hebrews 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Genesis 22",
+      "normalizedReference": "Genesis 22:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Isaiah 9",
+      "normalizedReference": "Isaiah 9:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Luke 1",
+      "normalizedReference": "Luke 1:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Philippians 2",
+      "normalizedReference": "Philippians 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "John 39",
+      "normalizedReference": "John 39:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Isaiah 12",
+      "normalizedReference": "Isaiah 12:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Acts 2",
+      "normalizedReference": "Acts 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Acts 4",
+      "normalizedReference": "Acts 4:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Malachi 1",
+      "normalizedReference": "Malachi 1:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Malachi 11",
+      "normalizedReference": "Malachi 11:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Isaiah 40",
+      "normalizedReference": "Isaiah 40:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Revelation 22",
+      "normalizedReference": "Revelation 22:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "1 Corinthians 15",
+      "normalizedReference": "1 Corinthians 15:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "Exodus 3",
+      "normalizedReference": "Exodus 3:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "John 8",
+      "normalizedReference": "John 8:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "John 2",
+      "normalizedReference": "John 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "emo113e3s7c",
+      "originalReference": "1 John 2",
+      "normalizedReference": "1 John 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:0% Found in Exodus, the 20th chapter, verses 1 through 17. align:start position:0% verses 1 through 17. align:start position:0% verses 1 through 17. Okay, go"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Exodus 20",
+      "normalizedReference": "Exodus 20:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Ecclesiastes 12",
+      "normalizedReference": "Ecclesiastes 12:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Revelation 22",
+      "normalizedReference": "Revelation 22:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Deuteronomy 28",
+      "normalizedReference": "Deuteronomy 28:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Exodus 12",
+      "normalizedReference": "Exodus 12:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Daniel 9",
+      "normalizedReference": "Daniel 9:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Deuteronomy 32",
+      "normalizedReference": "Deuteronomy 32:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Jeremiah 15",
+      "normalizedReference": "Jeremiah 15:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Luke 19",
+      "normalizedReference": "Luke 19:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Luke 21",
+      "normalizedReference": "Luke 21:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Psalm 44",
+      "normalizedReference": "Psalm 44:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Zechariah 11",
+      "normalizedReference": "Zechariah 11:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Isaiah 42",
+      "normalizedReference": "Isaiah 42:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Isaiah 51",
+      "normalizedReference": "Isaiah 51:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Deuteronomy 30",
+      "normalizedReference": "Deuteronomy 30:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Isaiah 61",
+      "normalizedReference": "Isaiah 61:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Luke 4",
+      "normalizedReference": "Luke 4:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Jeremiah 50",
+      "normalizedReference": "Jeremiah 50:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Revelation 6",
+      "normalizedReference": "Revelation 6:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Revelation 7",
+      "normalizedReference": "Revelation 7:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Isaiah 49",
+      "normalizedReference": "Isaiah 49:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Joel 3",
+      "normalizedReference": "Joel 3:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Matthew 24",
+      "normalizedReference": "Matthew 24:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Isaiah 27",
+      "normalizedReference": "Isaiah 27:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Zechariah 2",
+      "normalizedReference": "Zechariah 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Zechariah 8",
+      "normalizedReference": "Zechariah 8:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Isaiah 65",
+      "normalizedReference": "Isaiah 65:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Acts 1",
+      "normalizedReference": "Acts 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "G53Nphg8UOA",
+      "originalReference": "Leviticus 26",
+      "normalizedReference": "Leviticus 26:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "ter 20 and we're going to pick it up at verse align:start position:0% pick it up at verse align:start position:0% pick it up at verse 1. We're going to read 1-1"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Exodus 20",
+      "normalizedReference": "Exodus 20:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Ecclesiastes 12",
+      "normalizedReference": "Ecclesiastes 12:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Revelation 22",
+      "normalizedReference": "Revelation 22:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Ecclesiastes 3",
+      "normalizedReference": "Ecclesiastes 3:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Job 1",
+      "normalizedReference": "Job 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Job 7",
+      "normalizedReference": "Job 7:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Ecclesiastes 1",
+      "normalizedReference": "Ecclesiastes 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Genesis 1",
+      "normalizedReference": "Genesis 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Romans 3",
+      "normalizedReference": "Romans 3:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "1 Peter 4",
+      "normalizedReference": "1 Peter 4:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Philippians 4",
+      "normalizedReference": "Philippians 4:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Isaiah 54",
+      "normalizedReference": "Isaiah 54:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Exodus 6",
+      "normalizedReference": "Exodus 6:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Exodus 14",
+      "normalizedReference": "Exodus 14:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Proverbs 24",
+      "normalizedReference": "Proverbs 24:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "1 Samuel 9",
+      "normalizedReference": "1 Samuel 9:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Romans 5",
+      "normalizedReference": "Romans 5:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Luke 22",
+      "normalizedReference": "Luke 22:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "James 5",
+      "normalizedReference": "James 5:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "Job 42",
+      "normalizedReference": "Job 42:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "sWUbcNzoCgo",
+      "originalReference": "1 Peter 1",
+      "normalizedReference": "1 Peter 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "Exodus chapter 20, we're going to read verse 1-1 17. Exodus align:start position:0% we're going to read verse 1-1 17. Exodus align:start position:0% we're goin"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Exodus 20",
+      "normalizedReference": "Exodus 20:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Ecclesiastes 12",
+      "normalizedReference": "Ecclesiastes 12:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Revelation 22",
+      "normalizedReference": "Revelation 22:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Hebrews 3",
+      "normalizedReference": "Hebrews 3:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "John 6",
+      "normalizedReference": "John 6:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "John 12",
+      "normalizedReference": "John 12:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Matthew 28",
+      "normalizedReference": "Matthew 28:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "1 Thessalonians 2",
+      "normalizedReference": "1 Thessalonians 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "John 3",
+      "normalizedReference": "John 3:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Revelation 21",
+      "normalizedReference": "Revelation 21:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Isaiah 1",
+      "normalizedReference": "Isaiah 1:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Deuteronomy 30",
+      "normalizedReference": "Deuteronomy 30:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Genesis 17",
+      "normalizedReference": "Genesis 17:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Proverbs 2",
+      "normalizedReference": "Proverbs 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Matthew 7",
+      "normalizedReference": "Matthew 7:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Titus 3",
+      "normalizedReference": "Titus 3:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Jeremiah 33",
+      "normalizedReference": "Jeremiah 33:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Matthew 6",
+      "normalizedReference": "Matthew 6:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Zechariah 2",
+      "normalizedReference": "Zechariah 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Psalm 111",
+      "normalizedReference": "Psalm 111:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Isaiah 46",
+      "normalizedReference": "Isaiah 46:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Ephesians 5",
+      "normalizedReference": "Ephesians 5:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Isaiah 55",
+      "normalizedReference": "Isaiah 55:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Revelation 3",
+      "normalizedReference": "Revelation 3:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Romans 8",
+      "normalizedReference": "Romans 8:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Luke 11",
+      "normalizedReference": "Luke 11:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Psalm 69",
+      "normalizedReference": "Psalm 69:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "Uls_pJGaAlI",
+      "originalReference": "Romans 3",
+      "normalizedReference": "Romans 3:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": ":start position:0% reading at Exodus 20 verses 1-17. align:start position:0% verses 1-17. align:start position:0% verses 1-17. Exodus 20:es 1-1 17. align:start"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Ecclesiastes 12",
+      "normalizedReference": "Ecclesiastes 12:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Revelation 22",
+      "normalizedReference": "Revelation 22:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Leviticus 23",
+      "normalizedReference": "Leviticus 23:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "John 20",
+      "normalizedReference": "John 20:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Leviticus 28",
+      "normalizedReference": "Leviticus 28:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Acts 1",
+      "normalizedReference": "Acts 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Acts 2",
+      "normalizedReference": "Acts 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Ezekiel 2",
+      "normalizedReference": "Ezekiel 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Ezekiel 3",
+      "normalizedReference": "Ezekiel 3:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Revelation 10",
+      "normalizedReference": "Revelation 10:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Acts 7",
+      "normalizedReference": "Acts 7:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Daniel 7",
+      "normalizedReference": "Daniel 7:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "John 6",
+      "normalizedReference": "John 6:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Isaiah 28",
+      "normalizedReference": "Isaiah 28:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "1 Corinthians 14",
+      "normalizedReference": "1 Corinthians 14:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Deuteronomy 16",
+      "normalizedReference": "Deuteronomy 16:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Acts 12",
+      "normalizedReference": "Acts 12:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Joel 2",
+      "normalizedReference": "Joel 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Revelation 6",
+      "normalizedReference": "Revelation 6:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Joel 6",
+      "normalizedReference": "Joel 6:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Isaiah 34",
+      "normalizedReference": "Isaiah 34:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Matthew 24",
+      "normalizedReference": "Matthew 24:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "1 Thessalonians 4",
+      "normalizedReference": "1 Thessalonians 4:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Zechariah 14",
+      "normalizedReference": "Zechariah 14:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Leviticus 25",
+      "normalizedReference": "Leviticus 25:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "1 Corinthians 15",
+      "normalizedReference": "1 Corinthians 15:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "LClKKyCIBQc",
+      "originalReference": "Deuteronomy 14",
+      "normalizedReference": "Deuteronomy 14:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "0% law start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th chapter verses align:start position:0% start in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Zechariah 1",
+      "normalizedReference": "Zechariah 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Jeremiah 25",
+      "normalizedReference": "Jeremiah 25:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Revelation 17",
+      "normalizedReference": "Revelation 17:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Revelation 19",
+      "normalizedReference": "Revelation 19:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Daniel 10",
+      "normalizedReference": "Daniel 10:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Revelation 7",
+      "normalizedReference": "Revelation 7:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Revelation 9",
+      "normalizedReference": "Revelation 9:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Revelation 16",
+      "normalizedReference": "Revelation 16:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Zechariah 14",
+      "normalizedReference": "Zechariah 14:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Zechariah 12",
+      "normalizedReference": "Zechariah 12:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Revelation 1",
+      "normalizedReference": "Revelation 1:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Matthew 21",
+      "normalizedReference": "Matthew 21:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Zechariah 9",
+      "normalizedReference": "Zechariah 9:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Zechariah 2",
+      "normalizedReference": "Zechariah 2:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "John 6",
+      "normalizedReference": "John 6:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Isaiah 48",
+      "normalizedReference": "Isaiah 48:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Zechariah 4",
+      "normalizedReference": "Zechariah 4:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Revelation 11",
+      "normalizedReference": "Revelation 11:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "1 Thessalonians 4",
+      "normalizedReference": "1 Thessalonians 4:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "ee7SNNGUcLw",
+      "originalReference": "Zechariah 8",
+      "normalizedReference": "Zechariah 8:1",
+      "confidence": 0.88,
+      "supportingTranscriptExcerpt": "he law found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th chapter verses align:start position:0% found in Exodus the 20th"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Exodus 20",
+      "normalizedReference": "Exodus 20:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Ecclesiastes 12",
+      "normalizedReference": "Ecclesiastes 12:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Revelation 22",
+      "normalizedReference": "Revelation 22:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Matthew 5",
+      "normalizedReference": "Matthew 5:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "John 8",
+      "normalizedReference": "John 8:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "John 6",
+      "normalizedReference": "John 6:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Isaiah 8",
+      "normalizedReference": "Isaiah 8:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "John 12",
+      "normalizedReference": "John 12:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Ephesians 5",
+      "normalizedReference": "Ephesians 5:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "1 Thessalonians 5",
+      "normalizedReference": "1 Thessalonians 5:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Leviticus 11",
+      "normalizedReference": "Leviticus 11:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Luke 11",
+      "normalizedReference": "Luke 11:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "1 Peter 2",
+      "normalizedReference": "1 Peter 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Acts 13",
+      "normalizedReference": "Acts 13:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Isaiah 49",
+      "normalizedReference": "Isaiah 49:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "1 Timothy 6",
+      "normalizedReference": "1 Timothy 6:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "John 3",
+      "normalizedReference": "John 3:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Proverbs 4",
+      "normalizedReference": "Proverbs 4:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Acts 9",
+      "normalizedReference": "Acts 9:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Acts 26",
+      "normalizedReference": "Acts 26:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Philippians 2",
+      "normalizedReference": "Philippians 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "John 1",
+      "normalizedReference": "John 1:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "1 John 2",
+      "normalizedReference": "1 John 2:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Luke 1",
+      "normalizedReference": "Luke 1:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "John 5",
+      "normalizedReference": "John 5:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Romans 13",
+      "normalizedReference": "Romans 13:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Ephesians 6",
+      "normalizedReference": "Ephesians 6:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Matthew 25",
+      "normalizedReference": "Matthew 25:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "2 Corinthians 4",
+      "normalizedReference": "2 Corinthians 4:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Isaiah 60",
+      "normalizedReference": "Isaiah 60:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    },
+    {
+      "sourceId": "58PphDsDAA4",
+      "originalReference": "Revelation 21",
+      "normalizedReference": "Revelation 21:1-17",
+      "confidence": 0.93,
+      "supportingTranscriptExcerpt": "n:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read verses 1-1 17. align:start position:0% We're going to read ve"
+    }
+  ]
+}

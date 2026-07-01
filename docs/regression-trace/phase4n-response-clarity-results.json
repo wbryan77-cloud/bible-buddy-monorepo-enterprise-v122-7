@@ -1,0 +1,164 @@
+{
+  "at": "2026-07-01T15:05:20.924Z",
+  "passed": 8,
+  "total": 8,
+  "failed": [],
+  "results": [
+    {
+      "id": "1_pork_yesno",
+      "preview": "No. Staying with Scripture, pork is unclean. Leviticus 11 and Deuteronomy 14 identify swine as unclean. Acts 10 does not overturn that; Peter explains in Acts 10:28 that the vision was about not calli",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "starts with No."
+        },
+        {
+          "pass": true,
+          "label": "must not start with Yes"
+        },
+        {
+          "pass": true,
+          "label": "no validator leak"
+        },
+        {
+          "pass": true,
+          "label": "2+ scripture witnesses"
+        }
+      ]
+    },
+    {
+      "id": "2_pork_clarify",
+      "preview": "No. Staying with Scripture, pork is unclean. Leviticus 11 and Deuteronomy 14 identify swine as unclean. Acts 10 does not overturn that; Peter explains in Acts 10:28 that the vision was about not calli",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "starts with No."
+        },
+        {
+          "pass": true,
+          "label": "no Yes-unclean polarity bug"
+        }
+      ]
+    },
+    {
+      "id": "3_fornication_yesno",
+      "preview": "No. Staying with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonians 4:3-5 commands be",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "starts with No."
+        },
+        {
+          "pass": true,
+          "label": "mentions fornication/marriage"
+        },
+        {
+          "pass": true,
+          "label": "not pork"
+        }
+      ]
+    },
+    {
+      "id": "4_fornication_direct",
+      "preview": "No. Staying with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonians 4:3-5 commands be",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "answers fornication"
+        },
+        {
+          "pass": true,
+          "label": "2-3 scriptures"
+        },
+        {
+          "pass": true,
+          "label": "not dietary"
+        }
+      ]
+    },
+    {
+      "id": "5_emotional_warmth",
+      "preview": "I'm sorry. That kind of heartbreak can feel heavy. I'm here with you. What happened today that made it feel like it's crashing? One Scripture that may steady the heart is Psalm 34:18 — the LORD is nig",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "warm companion"
+        },
+        {
+          "pass": true,
+          "label": "optional scripture"
+        },
+        {
+          "pass": true,
+          "label": "no doctrine template"
+        }
+      ]
+    },
+    {
+      "id": "6_kingdom_on_earth",
+      "preview": "Here is another Scripture witness on this topic: Matthew 6:10; Revelation 5:10; Revelation 21:1-3. Yes — Scripture points to God’s kingdom coming to earth, not man permanently escaping earth. Matthew 6:10 says God’s will",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "not orphan clarification"
+        },
+        {
+          "pass": true,
+          "label": "kingdom scriptures"
+        },
+        {
+          "pass": true,
+          "label": "kingdom on earth theme"
+        },
+        {
+          "pass": true,
+          "label": "2+ witnesses"
+        }
+      ]
+    },
+    {
+      "id": "7_continuation_after_strict",
+      "preview": "Here is another approved Scripture witness on this topic. Acts 11:1-18 records Peter explaining the vision concerned Gentiles, not unclean meat.",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "continuation works"
+        },
+        {
+          "pass": true,
+          "label": "no openai doctrine authoring"
+        }
+      ]
+    },
+    {
+      "id": "8_continuation_after_stop",
+      "preview": "I can do that. Which Bible topic would you like more Scriptures about — the Sabbath, the Kingdom, clean foods, death, or something else?",
+      "pass": true,
+      "failed": [],
+      "checks": [
+        {
+          "pass": true,
+          "label": "asks topic after stop"
+        },
+        {
+          "pass": true,
+          "label": "active cleared"
+        }
+      ]
+    }
+  ]
+}

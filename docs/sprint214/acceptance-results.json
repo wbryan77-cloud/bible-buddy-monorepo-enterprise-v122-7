@@ -1,0 +1,240 @@
+{
+  "timestamp": "2026-06-03T21:54:58.843Z",
+  "sprint": "2.14",
+  "route": "POST /buddy/chat",
+  "userPrefix": "s214-1780523510451-4934",
+  "results": [
+    {
+      "name": "TEST 1 — Lost friend",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "I'm so sorry for your loss. Losing a friend can leave a deep ache in the heart. It's okay to feel pain and to grieve—that's part of the healing process. Remember, God is close to those who are brokenhearted, and you don't have to carry this alone.",
+      "scriptureCount": 3,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 2 — Knee pain",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "It sounds like your knees hurting is adding to the weight you're carrying right now after losing your friend. Physical pain can feel so heavy especially when your heart is already hurting. It might help to rest gently and, if you can, consider seeing a healthcare provider to chec",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 3 — Job opportunity",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "You have a job opportunity on your mind amidst everything else you're processing right now. That can feel both hopeful and a bit overwhelming. It might help to take some quiet moments to pray and ask God for wisdom and clarity about this path. Remember, Proverbs 3:5-6 encourages ",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 4 — Sabbath definition",
+      "passed": false,
+      "failures": [
+        "reflection"
+      ],
+      "status": 200,
+      "replyPreview": "The Sabbath is a special seventh day of rest and worship that God established at creation and commanded for His people. It is the seventh day of the week, set apart as holy because God rested from His work after creating the world. The purpose of the Sabbath is to pause from regu",
+      "scriptureCount": 3,
+      "runtimeIntent": "doctrinal_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 5 — Sabbath history",
+      "passed": false,
+      "failures": [
+        "scriptureFirst",
+        "distinction",
+        "historyIntercept"
+      ],
+      "status": 200,
+      "replyPreview": "You’re asking who changed the Sabbath and why, seeking a straightforward historical understanding. The Bible itself does not record any direct command from God changing the Sabbath from the seventh day. Early Christians often gathered both on the Sabbath and on the first day of t",
+      "scriptureCount": 2,
+      "runtimeIntent": "doctrinal_study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 6 — Prayer",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "I hear your heart, and I’m lifting you up to God in prayer right now. Father God, please surround this dear one with Your peace that surpasses all understanding. Strengthen them, comfort them, and guide them in every step. May Your presence be very real and near to them today. In",
+      "scriptureCount": 1,
+      "runtimeIntent": "prayer",
+      "intercept": null
+    },
+    {
+      "name": "TEST 7 — Memory recall",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "Last week, we were talking about some deeply personal things you shared: how you lost a friend, how your knees have been hurting, and also about the job opportunity you're considering. Each of these touches your heart and life in important ways. If you'd like, we can keep explori",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 8 — Kingdom",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "You’re wondering about the Kingdom of God, which the Bible presents as God's sovereign rule and reign. It isn’t just a physical place but God's authority and presence that begins in the hearts of those who submit to Him and will be fully realized in the future.",
+      "scriptureCount": 3,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 9 — Continue study",
+      "passed": false,
+      "failures": [
+        "continue"
+      ],
+      "status": 200,
+      "replyPreview": "It sounds like you want to keep going, maybe to understand more or just to have someone with you as you think about the Sabbath. I’m here with you. The Sabbath isn’t just about laws or rules; it’s about God’s invitation to rest and find peace in Him. When life feels busy or heavy",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 10 — Follow-up understanding",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "You want to know specifically who was responsible for changing the Sabbath historically. Historically, no direct biblical command changed the Sabbath day, but the shift from the seventh-day Sabbath to Sunday observance was influenced by Roman Emperor Constantine in AD 321, who de",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 11 — Sabbath journey",
+      "passed": false,
+      "failures": [
+        "continueWorks"
+      ],
+      "status": 200,
+      "replyPreview": "It’s okay to feel whatever you’re feeling right now. Grief often comes in waves, and sometimes just resting in God’s presence, even in silence, can be a gentle refuge. If you’d like, we can pause together here or I’m here to listen whenever you want to share more.",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 12 — Kingdom journey",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "The Kingdom of God is often described as both a present spiritual reality and a future hope. Jesus taught that it is like a mustard seed—starting small but growing large—and that it is not of this world, meaning it transcends earthly kingdoms. It is the realm where God's will is ",
+      "scriptureCount": 3,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 13 — Feast journey",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "I’m here with you as you explore these important feast days, each deeply rooted in God's care and His unfolding plan for His people. If you want, we can go through them one by one gently, or we can pause and reflect on how these sacred times reveal God’s heart for rest, remembran",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 14 — Resume after topic switch",
+      "passed": false,
+      "failures": [
+        "resume"
+      ],
+      "status": 200,
+      "replyPreview": "It sounds like your knees are still causing you discomfort, and that can be really tough to carry day by day. While rest and care are important, I want you to know you're not alone in this. If you'd like, we can pray together for relief and strength, or simply sit quietly in peac",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 15 — Completion / next study",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "Since you’ve just explored the Kingdom of God, a natural next step could be to study the life and teachings of Jesus in the Gospels, especially Matthew and Luke, which highlight the Kingdom’s nature and how we live under God’s reign. Would you like me to suggest some starting pas",
+      "scriptureCount": 2,
+      "runtimeIntent": "study",
+      "intercept": null
+    },
+    {
+      "name": "TEST 16 — Recurring knee pain",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "I'm sorry your knees are hurting again today; that kind of recurring pain can be really discouraging. It’s good to keep resting them and maybe gently elevating your legs when you can. If it feels right, I can pray with you now for relief and healing.",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 17 — Grief follow-up",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "I hear you—it’s really hard when grief lingers and keeps weighing on your heart. It’s completely natural for the pain of losing your friend to still bother you. Sometimes the heart needs time to slowly heal, and God’s presence can be a quiet comfort even in the heaviness. If it w",
+      "scriptureCount": 2,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 18 — Continue journey explanation",
+      "passed": false,
+      "failures": [
+        "journey",
+        "significance"
+      ],
+      "status": 200,
+      "replyPreview": "It sounds like you want to keep exploring the Sabbath in a way that feels gentle and meaningful. The Sabbath invites us into a rhythm of rest and trust in God’s provision, a sacred pause amid life’s busyness. If you’d like, I can help you reflect on how this rest connects to your",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 19 — Focus this week",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "This week, focusing on caring gently for yourself and continuing to pray for healing and peace in your body and family could bring comfort. Rest, patience, and seeking God’s strength in these challenges are important steps.",
+      "scriptureCount": 2,
+      "runtimeIntent": "companion",
+      "intercept": null
+    },
+    {
+      "name": "TEST 20 — Working on lately",
+      "passed": true,
+      "failures": [],
+      "status": 200,
+      "replyPreview": "We've been exploring your thoughtful question about the Kingdom of God, understanding it as God's sovereign reign both present and future. Then, you shared a heartfelt request for wisdom, and I prayed with you, inviting God to grant that wisdom as encouraged in Scripture. If you'",
+      "scriptureCount": 1,
+      "runtimeIntent": "companion",
+      "intercept": null
+    }
+  ],
+  "scores": {
+    "Memory": 96,
+    "Warmth": 100,
+    "Scripture Grounding": 78,
+    "Accuracy": 78,
+    "Natural Conversation": 96,
+    "Listening": 97,
+    "Organic Flow": 96,
+    "Follow-Up Understanding": 97,
+    "Continue Study": 75,
+    "Historical Routing": 55,
+    "Companion Presence": 96
+  },
+  "acceptanceScore": 88,
+  "passed": 14,
+  "total": 20,
+  "allCategories95Plus": false
+}

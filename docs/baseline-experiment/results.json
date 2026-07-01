@@ -1,0 +1,1805 @@
+{
+  "timestamp": "2026-06-02T03:01:32.611Z",
+  "openaiAvailable": false,
+  "aggregateCurrent": {
+    "counts": {
+      "template": 30,
+      "responder": 20,
+      "fallback": 0,
+      "openai": 0
+    },
+    "total": 50,
+    "percentages": {
+      "template": 60,
+      "responder": 40,
+      "fallback": 0,
+      "openai": 0
+    }
+  },
+  "primaryCurrent": [
+    {
+      "id": "P1",
+      "name": "Sabbath wording (production failure)",
+      "messages": [
+        "Why should we keep Sunday as the day of worship onto the Lord?",
+        "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+        "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+        "No, I'm not asking about the shift. I'm asking about your wording.",
+        "Why are you not answering my question?",
+        "No, I'm not asking about history. I'm asking about your wording.",
+        "Are you not listening to what I am asking?"
+      ],
+      "userId": "baseline-exp-P1-1780369273911",
+      "label": "Sabbath wording (production failure)",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Why should we keep Sunday as the day of worship onto the Lord?",
+          "reply": "I hear what you're asking — not what the Sabbath is, but why many people keep Sunday instead.\n\nYou are asking why many Christians worship on Sunday rather than the biblical seventh-day Sabbath.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandment identifies the seventh day as the Sabbath of the LORD your God.\nIsaiah 58:13-14 — the Sabbath is connected to delight and honoring the LORD.\nLuke 4:16 — Yeshua kept the Sabbath as His custom.\nActs 17:2 — Paul reasoned in the synagogue on the Sabbath.\nHebrews 4:9 — a Sabbath rest remains for the people of God.\n\nScripture identifies the seventh day as the Sabbath and does not record God changing the Sabbath to Sunday.\n\nHistorical chain (secondary to Scripture):\n\nA. Early Christians in some places gathered on the first day for worship and fellowship, while many still honored the seventh-day Sabbath.\nB. In AD 321, Emperor Constantine issued a civil law making Sunday — the venerable day of the Sun — a day of rest across the Roman Empire.\nC. The Council of Laodicea (circa AD 364) later discouraged Sabbath rest and encouraged Christians to honor the Lord's Day (Sunday).\nD. Over time, Roman Catholic canon and liturgical authority made Sunday the normal day of obligation for worship in much of Western Christianity.\nE. Sunday observance became established through Roman civil authority and church authority over time — not by an explicit biblical command changing the Sabbath.\n\nDirect answer:\nScripture does not name a person who changed the Sabbath. Historically, the shift toward Sunday happened gradually through early first-day gatherings, Roman civil law (Constantine, AD 321), the Council of Laodicea (circa AD 364), and later Roman Catholic liturgical authority.\nSo if the question is whether Rome and Roman church authority helped establish Sunday observance, the historical answer is yes — but that is not the same as a biblical command from God.\n\nHistory can explain how the practice changed, but history cannot override Scripture.\n\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.\n\nSources and references (historical, secondary):\n- Constantine, Codex Justinianus 3.12.2 (AD 321 Sunday rest law)\n- Council of Laodicea, Canon 29 (circa AD 364)\n- Eusebius, Life of Constantine (early first-day imperial favor)\n- Roman Catholic catechisms and liturgical tradition on Sunday obligation",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_history",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_history",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+          "reply": "You're right — I was not answering your exact question. I used 'Roman church' as shorthand, but 'Roman Catholic Church' is more precise when referring to the later institutional church and its canon/liturgical authority. I should say 'Roman Catholic Church' when that is what I mean. The earlier Roman imperial role under Constantine is different from later Roman Catholic Church authority, so I should keep those separate clearly.",
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "masterRoute": "meta_about_previous_answer",
+          "experimentStatus": null
+        },
+        {
+          "turn": 3,
+          "message": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+          "reply": "You're right — I was not answering your exact question. I used 'Roman church' as shorthand, but 'Roman Catholic Church' is more precise when referring to the later institutional church and its canon/liturgical authority. I should say 'Roman Catholic Church' when that is what I mean. The earlier Roman imperial role under Constantine is different from later Roman Catholic Church authority, so I should keep those separate clearly.",
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "masterRoute": "meta_about_previous_answer",
+          "experimentStatus": null
+        },
+        {
+          "turn": 4,
+          "message": "No, I'm not asking about the shift. I'm asking about your wording.",
+          "reply": "You're right — I was not answering your exact question. I used 'Roman church' as shorthand, but 'Roman Catholic Church' is more precise when referring to the later institutional church and its canon/liturgical authority. I should say 'Roman Catholic Church' when that is what I mean. The earlier Roman imperial role under Constantine is different from later Roman Catholic Church authority, so I should keep those separate clearly.",
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "masterRoute": "meta_about_previous_answer",
+          "experimentStatus": null
+        },
+        {
+          "turn": 5,
+          "message": "Why are you not answering my question?",
+          "reply": "You're right — I was not answering your exact question. The answer is: I should address \"Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?\" directly instead of repeating a previous template. Tell me if you want me to clarify a specific word or phrase I used.",
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "masterRoute": "meta_about_previous_answer",
+          "experimentStatus": null
+        },
+        {
+          "turn": 6,
+          "message": "No, I'm not asking about history. I'm asking about your wording.",
+          "reply": "You're right — I was not answering your exact question. I used 'Roman church' as shorthand, but 'Roman Catholic Church' is more precise when referring to the later institutional church and its canon/liturgical authority. I should say 'Roman Catholic Church' when that is what I mean. The earlier Roman imperial role under Constantine is different from later Roman Catholic Church authority, so I should keep those separate clearly.",
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "masterRoute": "meta_about_previous_answer",
+          "experimentStatus": null
+        },
+        {
+          "turn": 7,
+          "message": "Are you not listening to what I am asking?",
+          "reply": "You're right — I was not answering your exact question. The answer is: I should address \"No, I'm not asking about the shift. I'm asking about your wording.\" directly instead of repeating a previous template. Tell me if you want me to clarify a specific word or phrase I used.",
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "masterRoute": "meta_about_previous_answer",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Job opportunity",
+      "messages": [
+        "I have a job opportunity.",
+        "The company is far away from home.",
+        "I'm not sure whether to push or wait on this offer."
+      ],
+      "userId": "baseline-exp-P2-1780369276274",
+      "label": "Job opportunity",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I have a job opportunity.",
+          "reply": "That sounds like an important decision. What feels heaviest right now — the distance, timing, money, or whether this is from God?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.\n\nIf you want, we can pray through this together or walk through the decision one piece at a time.",
+          "source": {
+            "layer": "responder",
+            "route": "job_discernment",
+            "method": "route_owner"
+          },
+          "masterRoute": "job_discernment",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "The company is far away from home.",
+          "reply": "That distance can feel heavy — it's not just a job, it's a whole life shift. What feels heaviest right now: leaving people behind, the unknown, or whether this timing is from the Lord?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.",
+          "source": {
+            "layer": "responder",
+            "route": "job_discernment",
+            "method": "route_owner"
+          },
+          "masterRoute": "job_discernment",
+          "experimentStatus": null
+        },
+        {
+          "turn": 3,
+          "message": "I'm not sure whether to push or wait on this offer.",
+          "reply": "That sounds like an important decision. What feels heaviest right now — the distance, timing, money, or whether this is from God?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.\n\nIf you want, we can pray through this together or walk through the decision one piece at a time.",
+          "source": {
+            "layer": "responder",
+            "route": "job_discernment",
+            "method": "route_owner"
+          },
+          "masterRoute": "job_discernment",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Alzheimer's caregiver",
+      "messages": [
+        "My mom was recently diagnosed with Alzheimer's.",
+        "Some days she doesn't remember who I am.",
+        "How do I stay close to God while grieving who she used to be?"
+      ],
+      "userId": "baseline-exp-P3-1780369277078",
+      "label": "Alzheimer's caregiver",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My mom was recently diagnosed with Alzheimer's.",
+          "reply": "Thank you for sharing about your mother's health. I will hold that gently — we can return to it whenever you want.\n\nI'm here with you. We can pray together, open a Scripture that fits what you're carrying, or take one small step for today — whichever would help most right now.",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "Some days she doesn't remember who I am.",
+          "reply": "I'm here with you. We can pray together, open a Scripture that fits what you're carrying, or take one small step for today — whichever would help most right now.\n\nIf it would help, we could gently check in on mother's health — only if you want to.",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        },
+        {
+          "turn": 3,
+          "message": "How do I stay close to God while grieving who she used to be?",
+          "reply": "I'm really sorry for your loss. Tell me about her if you want — we can take this gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a comforting passage, or simply talk through what you are feeling — no pressure.\n\nWhen you are ready, I can gently check in on how you have been doing — only if you want that.",
+          "source": {
+            "layer": "responder",
+            "route": "grief_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "grief_support",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "Feeling distant from God",
+      "messages": [
+        "I feel distant from God lately.",
+        "I pray but it feels empty.",
+        "Does that mean my faith is failing?"
+      ],
+      "userId": "baseline-exp-P4-1780369278392",
+      "label": "Feeling distant from God",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I feel distant from God lately.",
+          "reply": "I'm here with you. We can pray together, open a Scripture that fits what you're carrying, or take one small step for today — whichever would help most right now.",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "I pray but it feels empty.",
+          "reply": "Thank you for sharing about your prayer request. I will hold that gently — we can return to it whenever you want.\n\nI'm here with you. We can pray together, open a Scripture that fits what you're carrying, or take one small step for today — whichever would help most right now.",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        },
+        {
+          "turn": 3,
+          "message": "Does that mean my faith is failing?",
+          "reply": "I'm glad you asked to pray. Let's bring this before the Lord together.\n\nFather, we bring this need before You for Does that mean my faith is failing?. You see what we cannot fully see. Please draw near with comfort, wisdom, and peace. Hold those who are hurting, guide those who are waiting, and help us trust You one step at a time. In Jesus' name, amen.\n\nPhilippians 4:6-7 establishes the matter, and James 5:16 confirms it alongside Scripture. Psalm 34:17 carries the theme forward across the biblical witness.\n\nIf you would like, we can sit with one of these passages, talk through what you are carrying, or check in gently later — only if you want that.\n\nHow have you been doing since we prayed about prayer?",
+          "source": {
+            "layer": "responder",
+            "route": "prayer",
+            "method": "route_owner"
+          },
+          "masterRoute": "prayer",
+          "experimentStatus": null
+        }
+      ]
+    }
+  ],
+  "primaryLite": [
+    {
+      "id": "P1",
+      "name": "Sabbath wording (production failure)",
+      "messages": [
+        "Why should we keep Sunday as the day of worship onto the Lord?",
+        "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+        "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+        "No, I'm not asking about the shift. I'm asking about your wording.",
+        "Why are you not answering my question?",
+        "No, I'm not asking about history. I'm asking about your wording.",
+        "Are you not listening to what I am asking?"
+      ],
+      "userId": "baseline-exp-P1-lite-1780369274957",
+      "label": "Sabbath wording (production failure)",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Why should we keep Sunday as the day of worship onto the Lord?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 3,
+          "message": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 4,
+          "message": "No, I'm not asking about the shift. I'm asking about your wording.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 5,
+          "message": "Why are you not answering my question?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 6,
+          "message": "No, I'm not asking about history. I'm asking about your wording.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 7,
+          "message": "Are you not listening to what I am asking?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Job opportunity",
+      "messages": [
+        "I have a job opportunity.",
+        "The company is far away from home.",
+        "I'm not sure whether to push or wait on this offer."
+      ],
+      "userId": "baseline-exp-P2-lite-1780369276588",
+      "label": "Job opportunity",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I have a job opportunity.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "The company is far away from home.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 3,
+          "message": "I'm not sure whether to push or wait on this offer.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Alzheimer's caregiver",
+      "messages": [
+        "My mom was recently diagnosed with Alzheimer's.",
+        "Some days she doesn't remember who I am.",
+        "How do I stay close to God while grieving who she used to be?"
+      ],
+      "userId": "baseline-exp-P3-lite-1780369277928",
+      "label": "Alzheimer's caregiver",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My mom was recently diagnosed with Alzheimer's.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "Some days she doesn't remember who I am.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 3,
+          "message": "How do I stay close to God while grieving who she used to be?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "Feeling distant from God",
+      "messages": [
+        "I feel distant from God lately.",
+        "I pray but it feels empty.",
+        "Does that mean my faith is failing?"
+      ],
+      "userId": "baseline-exp-P4-lite-1780369279095",
+      "label": "Feeling distant from God",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I feel distant from God lately.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "I pray but it feels empty.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 3,
+          "message": "Does that mean my faith is failing?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    }
+  ],
+  "additionalCurrent": [
+    {
+      "id": "T01",
+      "name": "Grief first mention",
+      "messages": [
+        "I lost a friend Wednesday."
+      ],
+      "userId": "baseline-exp-T01-1780369279566",
+      "label": "Grief first mention",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost a friend Wednesday.",
+          "reply": "I'm really sorry for your loss. Tell me about her if you want — we can take this gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a comforting passage, or simply talk through what you are feeling — no pressure.\n\nWhen you are ready, I can gently check in on how you have been doing — only if you want that.",
+          "source": {
+            "layer": "responder",
+            "route": "grief_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "grief_support",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T02",
+      "name": "Health knee pain",
+      "messages": [
+        "My knees hurt."
+      ],
+      "userId": "baseline-exp-T02-1780369280082",
+      "label": "Health knee pain",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "reply": "I'm sorry you're dealing with that. Has this been going on for a few days, or did it start today?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray for strength and peace, sit with a gentle passage, or take one small step for today — no pressure.",
+          "source": {
+            "layer": "responder",
+            "route": "health_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "health_support",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T03",
+      "name": "Prayer request",
+      "messages": [
+        "Please pray for me."
+      ],
+      "userId": "baseline-exp-T03-1780369280596",
+      "label": "Prayer request",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Please pray for me.",
+          "reply": "I'm glad you asked to pray. Let's bring this before the Lord together.\n\nFather, we bring this need before You for me. You see what we cannot fully see. Please draw near with comfort, wisdom, and peace. Hold those who are hurting, guide those who are waiting, and help us trust You one step at a time. In Jesus' name, amen.\n\nPhilippians 4:6-7 establishes the matter, and James 5:16 confirms it alongside Scripture. Psalm 34:17 carries the theme forward across the biblical witness.\n\nIf you would like, we can sit with one of these passages, talk through what you are carrying, or check in gently later — only if you want that.\n\nWhen you are ready, we can follow up on how this prayer concern is going.",
+          "source": {
+            "layer": "responder",
+            "route": "prayer",
+            "method": "route_owner"
+          },
+          "masterRoute": "prayer",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T04",
+      "name": "Sabbath definition",
+      "messages": [
+        "What is the Sabbath?"
+      ],
+      "userId": "baseline-exp-T04-1780369281024",
+      "label": "Sabbath definition",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nThat's a thoughtful question. Let's answer it directly from Scripture.\n\nDirect answer:\nThe Sabbath is the seventh day — the day God rested, blessed, and set apart. Scripture identifies it in Genesis 2:2-3 and commands it in Exodus 20:8-11 as the Sabbath of the LORD your God.\n\nScripture foundation:\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — Remember the Sabbath day; the seventh day is the Sabbath of the LORD your God.\nIsaiah 58:13-14 — call the Sabbath a delight and honor the LORD.\nLuke 4:16 — Yeshua kept the Sabbath as His custom.\nHebrews 4:9 — a Sabbath rest remains for the people of God.\n\nScripture identifies the seventh day as the Sabbath and does not record God changing the Sabbath to Sunday.\n\nHistorical context, secondary to Scripture:\n- Tacitus Histories\n- Roman imperial edicts and histories\n- Second Temple period studies\n- Roman imperial Sunday legislation references\nHistorical support only; keep separate from Bible text.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_definition",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_definition",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T05",
+      "name": "Sabbath history",
+      "messages": [
+        "What is the Sabbath?",
+        "Who changed the Sabbath and why?"
+      ],
+      "userId": "baseline-exp-T05-1780369281444",
+      "label": "Sabbath history",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nThat's a thoughtful question. Let's answer it directly from Scripture.\n\nDirect answer:\nThe Sabbath is the seventh day — the day God rested, blessed, and set apart. Scripture identifies it in Genesis 2:2-3 and commands it in Exodus 20:8-11 as the Sabbath of the LORD your God.\n\nScripture foundation:\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — Remember the Sabbath day; the seventh day is the Sabbath of the LORD your God.\nIsaiah 58:13-14 — call the Sabbath a delight and honor the LORD.\nLuke 4:16 — Yeshua kept the Sabbath as His custom.\nHebrews 4:9 — a Sabbath rest remains for the people of God.\n\nScripture identifies the seventh day as the Sabbath and does not record God changing the Sabbath to Sunday.\n\nHistorical context, secondary to Scripture:\n- Tacitus Histories\n- Roman imperial edicts and histories\n- Second Temple period studies\n- Roman imperial Sunday legislation references\nHistorical support only; keep separate from Bible text.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_definition",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_definition",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "Who changed the Sabbath and why?",
+          "reply": "Let's answer that directly, with Scripture first and history second.\n\nYou are asking who changed Sabbath observance from Saturday to Sunday — and whether that change came from Scripture or from later human authority.\n\nDirect answer:\nScripture does not name a person who changed the Sabbath. Historically, the shift toward Sunday happened gradually through early first-day gatherings, Roman civil law (Constantine, AD 321), the Council of Laodicea (circa AD 364), and later Roman Catholic liturgical authority.\nSo if the question is whether Rome and Roman church authority helped establish Sunday observance, the historical answer is yes — but that is not the same as a biblical command from God.\n\nHistorical chain (secondary to Scripture):\n\nA. Early Christians in some places gathered on the first day for worship and fellowship, while many still honored the seventh-day Sabbath.\nB. In AD 321, Emperor Constantine issued a civil law making Sunday — the venerable day of the Sun — a day of rest across the Roman Empire.\nC. The Council of Laodicea (circa AD 364) later discouraged Sabbath rest and encouraged Christians to honor the Lord's Day (Sunday).\nD. Over time, Roman Catholic canon and liturgical authority made Sunday the normal day of obligation for worship in much of Western Christianity.\nE. Sunday observance became established through Roman civil authority and church authority over time — not by an explicit biblical command changing the Sabbath.\n\nScripture foundation:\nGenesis 2:2-3 and Exodus 20:8-11 identify the seventh day as the Sabbath. Scripture does not record God changing the Sabbath to Sunday.\n\nHistory can explain how the practice changed, but history cannot override Scripture.\n\nSources and references (historical, secondary):\n- Constantine, Codex Justinianus 3.12.2 (AD 321 Sunday rest law)\n- Council of Laodicea, Canon 29 (circa AD 364)\n- Eusebius, Life of Constantine (early first-day imperial favor)\n- Roman Catholic catechisms and liturgical tradition on Sunday obligation",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_history",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_history",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T06",
+      "name": "Kingdom question",
+      "messages": [
+        "What is the Kingdom of God?"
+      ],
+      "userId": "baseline-exp-T06-1780369282065",
+      "label": "Kingdom question",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Kingdom of God?",
+          "reply": "Let's explore that together from Scripture.\n\nIsaiah 2:1-4 establishes the matter, and Micah 4:1-5 confirms it alongside Scripture. 2 Samuel 7:12-16 carries the theme forward across the biblical witness.\n\nWitness path: Isaiah 2:1-4 → Micah 4:1-5 → 2 Samuel 7:12-16\n\nAdvanced Scripture Study: Kingdom: Creation to New Jerusalem\n\nThese passages form a continuity path across Scripture. We can walk through them line upon line without rushing to a single-verse conclusion.\n\nIsaiah 2:1-4 opens the theme, Micah 4:1-5 confirms it alongside Scripture, and 2 Samuel 7:12-16 carries the theme forward.\n\nGenesis-to-Revelation path:\n\n1. Isaiah 2:1-4\n\n2. Micah 4:1-5\n\n3. 2 Samuel 7:12-16\n\n4. Daniel 2:44-45\n\n5. Daniel 7:13-14\n\n6. Matthew 5:5\n\nWould you like to compare the next related passages together?\n\nYou've been walking a study journey through Kingdom, Messiah, Resurrection. Would you like to continue into Messiah?",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T07",
+      "name": "Memory recall",
+      "messages": [
+        "What were we talking about last week?"
+      ],
+      "userId": "baseline-exp-T07-1780369282445",
+      "label": "Memory recall",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What were we talking about last week?",
+          "reply": "I don't have that conversation stored. If you'd like, we can start fresh on any Scripture or topic.",
+          "source": {
+            "layer": "responder",
+            "route": "memory_recall",
+            "method": "route_owner"
+          },
+          "masterRoute": "memory_recall",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T08",
+      "name": "Continue study",
+      "messages": [
+        "What is the Sabbath?",
+        "Continue."
+      ],
+      "userId": "baseline-exp-T08-1780369282920",
+      "label": "Continue study",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nThat's a thoughtful question. Let's answer it directly from Scripture.\n\nDirect answer:\nThe Sabbath is the seventh day — the day God rested, blessed, and set apart. Scripture identifies it in Genesis 2:2-3 and commands it in Exodus 20:8-11 as the Sabbath of the LORD your God.\n\nScripture foundation:\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — Remember the Sabbath day; the seventh day is the Sabbath of the LORD your God.\nIsaiah 58:13-14 — call the Sabbath a delight and honor the LORD.\nLuke 4:16 — Yeshua kept the Sabbath as His custom.\nHebrews 4:9 — a Sabbath rest remains for the people of God.\n\nScripture identifies the seventh day as the Sabbath and does not record God changing the Sabbath to Sunday.\n\nHistorical context, secondary to Scripture:\n- Tacitus Histories\n- Roman imperial edicts and histories\n- Second Temple period studies\n- Roman imperial Sunday legislation references\nHistorical support only; keep separate from Bible text.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_definition",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_definition",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "Continue.",
+          "reply": "Last time we were looking at Acts 17:2 in our Sabbath study, where Scripture builds this theme line upon line. Would you like to continue from there?",
+          "source": {
+            "layer": "template",
+            "route": "continue_study",
+            "method": "route_owner"
+          },
+          "masterRoute": "continue_study",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T09",
+      "name": "Correction historical",
+      "messages": [
+        "What is the Sabbath?",
+        "Who changed the Sabbath and why?",
+        "That was not my question. Who changed it historically?"
+      ],
+      "userId": "baseline-exp-T09-1780369283567",
+      "label": "Correction historical",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nThat's a thoughtful question. Let's answer it directly from Scripture.\n\nDirect answer:\nThe Sabbath is the seventh day — the day God rested, blessed, and set apart. Scripture identifies it in Genesis 2:2-3 and commands it in Exodus 20:8-11 as the Sabbath of the LORD your God.\n\nScripture foundation:\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — Remember the Sabbath day; the seventh day is the Sabbath of the LORD your God.\nIsaiah 58:13-14 — call the Sabbath a delight and honor the LORD.\nLuke 4:16 — Yeshua kept the Sabbath as His custom.\nHebrews 4:9 — a Sabbath rest remains for the people of God.\n\nScripture identifies the seventh day as the Sabbath and does not record God changing the Sabbath to Sunday.\n\nHistorical context, secondary to Scripture:\n- Tacitus Histories\n- Roman imperial edicts and histories\n- Second Temple period studies\n- Roman imperial Sunday legislation references\nHistorical support only; keep separate from Bible text.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_definition",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_definition",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "Who changed the Sabbath and why?",
+          "reply": "Let's answer that directly, with Scripture first and history second.\n\nYou are asking who changed Sabbath observance from Saturday to Sunday — and whether that change came from Scripture or from later human authority.\n\nDirect answer:\nScripture does not name a person who changed the Sabbath. Historically, the shift toward Sunday happened gradually through early first-day gatherings, Roman civil law (Constantine, AD 321), the Council of Laodicea (circa AD 364), and later Roman Catholic liturgical authority.\nSo if the question is whether Rome and Roman church authority helped establish Sunday observance, the historical answer is yes — but that is not the same as a biblical command from God.\n\nHistorical chain (secondary to Scripture):\n\nA. Early Christians in some places gathered on the first day for worship and fellowship, while many still honored the seventh-day Sabbath.\nB. In AD 321, Emperor Constantine issued a civil law making Sunday — the venerable day of the Sun — a day of rest across the Roman Empire.\nC. The Council of Laodicea (circa AD 364) later discouraged Sabbath rest and encouraged Christians to honor the Lord's Day (Sunday).\nD. Over time, Roman Catholic canon and liturgical authority made Sunday the normal day of obligation for worship in much of Western Christianity.\nE. Sunday observance became established through Roman civil authority and church authority over time — not by an explicit biblical command changing the Sabbath.\n\nScripture foundation:\nGenesis 2:2-3 and Exodus 20:8-11 identify the seventh day as the Sabbath. Scripture does not record God changing the Sabbath to Sunday.\n\nHistory can explain how the practice changed, but history cannot override Scripture.\n\nSources and references (historical, secondary):\n- Constantine, Codex Justinianus 3.12.2 (AD 321 Sunday rest law)\n- Council of Laodicea, Canon 29 (circa AD 364)\n- Eusebius, Life of Constantine (early first-day imperial favor)\n- Roman Catholic catechisms and liturgical tradition on Sunday obligation",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_history",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_history",
+          "experimentStatus": null
+        },
+        {
+          "turn": 3,
+          "message": "That was not my question. Who changed it historically?",
+          "reply": "I hear you — that wasn't your question. Let me answer what you actually asked, with Scripture first and history second.\n\nYou're right — I drifted back to the Sabbath definition. You asked a direct historical question, and I'll answer that now.\n\nDirect answer:\nScripture does not name a person who changed the Sabbath. Historically, the shift toward Sunday happened gradually through early first-day gatherings, Roman civil law (Constantine, AD 321), the Council of Laodicea (circa AD 364), and later Roman Catholic liturgical authority.\nSo if the question is whether Rome and Roman church authority helped establish Sunday observance, the historical answer is yes — but that is not the same as a biblical command from God.\n\nHistorical chain (secondary to Scripture):\n\nA. Early Christians in some places gathered on the first day for worship and fellowship, while many still honored the seventh-day Sabbath.\nB. In AD 321, Emperor Constantine issued a civil law making Sunday — the venerable day of the Sun — a day of rest across the Roman Empire.\nC. The Council of Laodicea (circa AD 364) later discouraged Sabbath rest and encouraged Christians to honor the Lord's Day (Sunday).\nD. Over time, Roman Catholic canon and liturgical authority made Sunday the normal day of obligation for worship in much of Western Christianity.\nE. Sunday observance became established through Roman civil authority and church authority over time — not by an explicit biblical command changing the Sabbath.\n\nScripture foundation:\nGenesis 2:2-3 and Exodus 20:8-11 identify the seventh day as the Sabbath. Scripture does not record God changing the Sabbath to Sunday.\n\nHistory can explain how the practice changed, but history cannot override Scripture.\n\nSources and references (historical, secondary):\n- Constantine, Codex Justinianus 3.12.2 (AD 321 Sunday rest law)\n- Council of Laodicea, Canon 29 (circa AD 364)\n- Eusebius, Life of Constantine (early first-day imperial favor)\n- Roman Catholic catechisms and liturgical tradition on Sunday obligation",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_history",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_history",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T10",
+      "name": "Grief follow-up",
+      "messages": [
+        "I lost my friend last week.",
+        "It is still bothering me."
+      ],
+      "userId": "baseline-exp-T10-1780369284459",
+      "label": "Grief follow-up",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost my friend last week.",
+          "reply": "I'm really sorry for your loss. Tell me about her if you want — we can take this gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a comforting passage, or simply talk through what you are feeling — no pressure.\n\nWhen you are ready, I can gently check in on how you have been doing — only if you want that.",
+          "source": {
+            "layer": "responder",
+            "route": "grief_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "grief_support",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "It is still bothering me.",
+          "reply": "I hear you — it's still weighing on you. That kind of grief doesn't lift quickly, and it makes sense that it's still bothering you.\n\nYou mentioned recently that the loss you shared is still weighing on you.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a comforting passage, or simply talk through what you are feeling — no pressure.",
+          "source": {
+            "layer": "responder",
+            "route": "grief_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "grief_support",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T11",
+      "name": "Health repeat",
+      "messages": [
+        "My knees hurt.",
+        "My knees are hurting again today."
+      ],
+      "userId": "baseline-exp-T11-1780369285363",
+      "label": "Health repeat",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "reply": "I'm sorry you're dealing with that. Has this been going on for a few days, or did it start today?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray for strength and peace, sit with a gentle passage, or take one small step for today — no pressure.",
+          "source": {
+            "layer": "responder",
+            "route": "health_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "health_support",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "My knees are hurting again today.",
+          "reply": "I hear you — your knees are hurting again today. That matters, and I'm glad you told me. Let's take this gently — I'm not a doctor, but we can bring this before the Lord together.\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray for strength and peace, sit with a gentle passage, or take one small step for today — no pressure.",
+          "source": {
+            "layer": "responder",
+            "route": "health_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "health_support",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T12",
+      "name": "Feast days",
+      "messages": [
+        "What are the feast days in Leviticus 23?"
+      ],
+      "userId": "baseline-exp-T12-1780369286315",
+      "label": "Feast days",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What are the feast days in Leviticus 23?",
+          "reply": "Leviticus 23 establishes the matter, and Acts 2 confirms it alongside Scripture. 1 Corinthians 5:7-8 carries the theme forward across the biblical witness.\n\nWitness path: Leviticus 23 → Acts 2 → 1 Corinthians 5:7-8\n\nLet's answer from Scripture first.\n\nLeviticus 23 is the core chapter for the LORD's appointed feasts and holy convocations. A Bible-first answer begins there before discussing later religious holidays.\n\nContinuity study path: Leviticus 23, Acts 2, 1 Corinthians 5:7-8, and Zechariah 14:16.\n\nHistorical context, secondary to Scripture:\n- Second Temple feast observance studies\n- Jewish calendar history\n- biblical calendar studies\n- Ancient Israel feast observance references\nCalendar/history support only; Scripture remains primary.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T13",
+      "name": "Topic switch health",
+      "messages": [
+        "What is the Sabbath?",
+        "My knees hurt.",
+        "Continue."
+      ],
+      "userId": "baseline-exp-T13-1780369286691",
+      "label": "Topic switch health",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nThat's a thoughtful question. Let's answer it directly from Scripture.\n\nDirect answer:\nThe Sabbath is the seventh day — the day God rested, blessed, and set apart. Scripture identifies it in Genesis 2:2-3 and commands it in Exodus 20:8-11 as the Sabbath of the LORD your God.\n\nScripture foundation:\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — Remember the Sabbath day; the seventh day is the Sabbath of the LORD your God.\nIsaiah 58:13-14 — call the Sabbath a delight and honor the LORD.\nLuke 4:16 — Yeshua kept the Sabbath as His custom.\nHebrews 4:9 — a Sabbath rest remains for the people of God.\n\nScripture identifies the seventh day as the Sabbath and does not record God changing the Sabbath to Sunday.\n\nHistorical context, secondary to Scripture:\n- Tacitus Histories\n- Roman imperial edicts and histories\n- Second Temple period studies\n- Roman imperial Sunday legislation references\nHistorical support only; keep separate from Bible text.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_definition",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_definition",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "My knees hurt.",
+          "reply": "I'm sorry you're dealing with that. Has this been going on for a few days, or did it start today?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray for strength and peace, sit with a gentle passage, or take one small step for today — no pressure.",
+          "source": {
+            "layer": "responder",
+            "route": "health_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "health_support",
+          "experimentStatus": null
+        },
+        {
+          "turn": 3,
+          "message": "Continue.",
+          "reply": "Last time we were looking at Acts 17:2 in our Sabbath study, where Scripture builds this theme line upon line. Would you like to continue from there?",
+          "source": {
+            "layer": "template",
+            "route": "continue_study",
+            "method": "route_owner"
+          },
+          "masterRoute": "continue_study",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T14",
+      "name": "Study next",
+      "messages": [
+        "What is the Kingdom of God?",
+        "What should I study next?"
+      ],
+      "userId": "baseline-exp-T14-1780369287686",
+      "label": "Study next",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Kingdom of God?",
+          "reply": "Let's explore that together from Scripture.\n\nIsaiah 2:1-4 establishes the matter, and Micah 4:1-5 confirms it alongside Scripture. 2 Samuel 7:12-16 carries the theme forward across the biblical witness.\n\nWitness path: Isaiah 2:1-4 → Micah 4:1-5 → 2 Samuel 7:12-16\n\nAdvanced Scripture Study: Kingdom: Creation to New Jerusalem\n\nThese passages form a continuity path across Scripture. We can walk through them line upon line without rushing to a single-verse conclusion.\n\nIsaiah 2:1-4 opens the theme, Micah 4:1-5 confirms it alongside Scripture, and 2 Samuel 7:12-16 carries the theme forward.\n\nGenesis-to-Revelation path:\n\n1. Isaiah 2:1-4\n\n2. Micah 4:1-5\n\n3. 2 Samuel 7:12-16\n\n4. Daniel 2:44-45\n\n5. Daniel 7:13-14\n\n6. Matthew 5:5\n\nWould you like to compare the next related passages together?\n\nYou've been walking a study journey through Kingdom, Messiah, Resurrection. Would you like to continue into Messiah?",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "What should I study next?",
+          "reply": "Let's stay close to Scripture together. Tell me which passage or topic you want to explore, and we can walk through it line upon line.",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T15",
+      "name": "Resurrection",
+      "messages": [
+        "What happens at the resurrection?"
+      ],
+      "userId": "baseline-exp-T15-1780369288467",
+      "label": "Resurrection",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What happens at the resurrection?",
+          "reply": "Let's begin with the passages themselves.\n\nDaniel 9:27 establishes the matter, and Matthew 12:40 confirms it alongside Scripture. Matthew 28:1-6 carries the theme forward across the biblical witness.\n\nWitness path: Daniel 9:27 → Matthew 12:40 → Matthew 28:1-6\n\nLet's read Scripture line upon line before stating any chronology.\n\nAnchor passages:\n1. Matthew 12:40 — three days and three nights in the heart of the earth.\n2. Daniel 9:27 — in the midst of the week he shall cause the sacrifice and the oblation to cease.\n3. Matthew 28:1-6 — women came toward dawn on the first day of the week; He was already risen.\n4. Mark 16:1-6, Luke 24:1-6, John 20:1-8 — resurrection accounts.\n\nWhat these passages state explicitly:\n• Daniel 9:27 places a decisive event in the middle of the week in prophetic Scripture.\n• Matthew 12:40 requires three days and three nights, not a partial count.\n• Matthew 28:1-6 records Christ already risen when the women arrived at dawn.\n\nChronology (tested against the passages above):\nWednesday afternoon — Crucifixion\nBefore sunset — Burial\nThursday — Day 1 / Night 1\nFriday — Day 2 / Night 2\nSaturday — Day 3 / Night 3\nBefore dawn toward the first day of the week — Already risen (Matthew 28:1-6)\n\nThis chronology is Scripture-first. Where the exact hour is not stated, that limit should be acknowledged rather than filled from later tradition.\n\nHistorical context, secondary to Scripture:\n- The Jewish War\n- Antiquities of the Jews\nHistorical support only; never overrides Scripture.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.\n\nWould you like to compare related passages?\n\nYou've been walking a study journey through Sabbath, Feast Days, Kingdom. Would you like to continue into New Jerusalem / Heaven?\n\nGenesis-to-Revelation Study Path:\n\n1. Daniel 9:27\n2. Matthew 12:40\n3. Matthew 28:1-6\n4. Mark 16:1-6\n5. Luke 24:1-6\n6. John 20:1-8\n\nLet's continue building the picture from Scripture.\nWe can begin a Genesis-to-Revelation path starting at Matthew 12:40. Would you like to continue?\n- Step 1: Read Daniel 9:27. What do you notice about midst of the week?\n- Step 2: Read Matthew 12:40. What do you notice about three days and three nights?\n- Step 3: Read Matthew 28:1-6. Were the women present when He rose?\n- Step 4: Compare Mark 16:1-6, Luke 24:1-6, and John 20:1-8.",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T16",
+      "name": "Dietary law",
+      "messages": [
+        "Are unclean foods still forbidden?"
+      ],
+      "userId": "baseline-exp-T16-1780369288855",
+      "label": "Dietary law",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Are unclean foods still forbidden?",
+          "reply": "Let's begin with the passages themselves.\n\nLeviticus 11 establishes the matter, and Deuteronomy 14 confirms it alongside Scripture. Daniel 1 carries the theme forward across the biblical witness.\n\nWitness path: Leviticus 11 → Deuteronomy 14 → Daniel 1\n\nLet's answer this directly from Scripture.\n\nThe Bible gives the clean and unclean distinction in Leviticus 11 and Deuteronomy 14. Peter's vision should be read with Peter's own explanation, not separated from it.\n\n1. Leviticus 11 and Deuteronomy 14 define clean and unclean animals.\n2. Daniel 1 shows Daniel refusing the king's food and choosing pulse and water.\n3. Acts 10:14 — Peter: \"Not so, Lord; for I have never eaten any thing that is common or unclean.\"\n4. Acts 10:28 — Peter's explanation: God showed him not to call any man common or unclean.\n5. Acts 11:1-18 — Peter rehearses the matter to the brethren.\n6. Isaiah 66:17 — continuity passage involving swine's flesh and the mouse.\n\nActs 10 should not be presented alone as permission to eat unclean animals. Peter explains the vision as dealing with people and Gentile inclusion.\n\nHistorical context, secondary to Scripture:\n- Ancient Near East geography\n- Table of Nations studies\n- Egypt and Canaan studies\nContextual geography and history only.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.\n\nWould you like to compare related passages?\n\nWe can begin a Genesis-to-Revelation path starting at Leviticus 11:1-47. Would you like to continue?\n\nGenesis-to-Revelation Study Path:\n\n1. Leviticus 11\n2. Deuteronomy 14\n3. Daniel 1\n4. Acts 10:14\n5. Acts 10:28\n6. Acts 11:1-18\n\nLet's continue building the picture from Scripture.\n\n- Step 1: Read Leviticus 11 and Deuteronomy 14. What distinction does Scripture make?\n- Step 2: Read Acts 10:14, Acts 10:28, and Acts 11:1-18 together. What does Peter explain?\n- Step 3: Read Isaiah 66:17. What continuity does this passage add?",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T17",
+      "name": "Christmas traditions",
+      "messages": [
+        "Is Christmas a biblical command?"
+      ],
+      "userId": "baseline-exp-T17-1780369289258",
+      "label": "Christmas traditions",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Is Christmas a biblical command?",
+          "reply": "We can walk through the Scriptures one step at a time.\n\nJeremiah 10:1-4 establishes the matter, and Mark 7:6-13 confirms it alongside Scripture. Colossians 2:8 carries the theme forward across the biblical witness.\n\nWitness path: Jeremiah 10:1-4 → Mark 7:6-13 → Colossians 2:8\n\nLet's answer your question directly.\n\nFirst: where is this practice commanded in Scripture? If it is not explicitly commanded, that should be stated clearly before discussing history.\n\nRelevant passages: Jeremiah 10:1-4, Mark 7:6-13, and Colossians 2:8 — warnings about vain customs, tradition making commandments void, and traditions of men.\n\nHistorical context, secondary to Scripture:\n- Tacitus Histories\n- Roman imperial edicts and histories\n- Second Temple period studies\n- Historical winter festival references\nHistorical support only; keep separate from Bible text.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.\n\nWould you like to compare related passages?\n\nWe can begin a Genesis-to-Revelation path starting at Deuteronomy 4:2. Would you like to continue?\n\nGenesis-to-Revelation Study Path:\n\n1. Jeremiah 10:1-4\n2. Mark 7:6-13\n3. Colossians 2:8\n4. Deuteronomy 12:29-32\n5. Matthew 15:1-9\n\nLet's continue building the picture from Scripture.\n\n- Step 1: Read Jeremiah 10:1-4. What warning does Scripture give about customs?\n- Step 2: Read Mark 7:6-13. How does Jesus describe tradition and commandment?\n- Step 3: Read Colossians 2:8. What caution appears there?",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T18",
+      "name": "Rest tired",
+      "messages": [
+        "I am tired and need rest."
+      ],
+      "userId": "baseline-exp-T18-1780369289637",
+      "label": "Rest tired",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I am tired and need rest.",
+          "reply": "I hear you sharing about fatigue. Let's take this gently — I'm not a doctor, but we can bring this before the Lord together.\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray for strength and peace, sit with a gentle passage, or take one small step for today — no pressure.",
+          "source": {
+            "layer": "responder",
+            "route": "health_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "health_support",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T19",
+      "name": "Mixed week focus",
+      "messages": [
+        "What is the Sabbath?",
+        "Please pray for my family.",
+        "My knees hurt.",
+        "What should I focus on this week?"
+      ],
+      "userId": "baseline-exp-T19-1780369290170",
+      "label": "Mixed week focus",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nThat's a thoughtful question. Let's answer it directly from Scripture.\n\nDirect answer:\nThe Sabbath is the seventh day — the day God rested, blessed, and set apart. Scripture identifies it in Genesis 2:2-3 and commands it in Exodus 20:8-11 as the Sabbath of the LORD your God.\n\nScripture foundation:\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — Remember the Sabbath day; the seventh day is the Sabbath of the LORD your God.\nIsaiah 58:13-14 — call the Sabbath a delight and honor the LORD.\nLuke 4:16 — Yeshua kept the Sabbath as His custom.\nHebrews 4:9 — a Sabbath rest remains for the people of God.\n\nScripture identifies the seventh day as the Sabbath and does not record God changing the Sabbath to Sunday.\n\nHistorical context, secondary to Scripture:\n- Tacitus Histories\n- Roman imperial edicts and histories\n- Second Temple period studies\n- Roman imperial Sunday legislation references\nHistorical support only; keep separate from Bible text.\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.",
+          "source": {
+            "layer": "template",
+            "route": "sabbath_definition",
+            "method": "route_owner"
+          },
+          "masterRoute": "sabbath_definition",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "Please pray for my family.",
+          "reply": "I'm glad you asked to pray. Let's bring this before the Lord together.\n\nFather, we bring this need before You for my family. You see what we cannot fully see. Please draw near with comfort, wisdom, and peace. Hold those who are hurting, guide those who are waiting, and help us trust You one step at a time. In Jesus' name, amen.\n\nPhilippians 4:6-7 establishes the matter, and James 5:16 confirms it alongside Scripture. Psalm 34:17 carries the theme forward across the biblical witness.\n\nIf you would like, we can sit with one of these passages, talk through what you are carrying, or check in gently later — only if you want that.\n\nWhen you are ready, we can follow up on how this prayer concern is going.",
+          "source": {
+            "layer": "responder",
+            "route": "prayer",
+            "method": "route_owner"
+          },
+          "masterRoute": "prayer",
+          "experimentStatus": null
+        },
+        {
+          "turn": 3,
+          "message": "My knees hurt.",
+          "reply": "You've been faithfully bringing my family. before the Lord — I notice that prayer journey.\n\nI'm sorry you're dealing with that. Has this been going on for a few days, or did it start today?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray for strength and peace, sit with a gentle passage, or take one small step for today — no pressure.",
+          "source": {
+            "layer": "responder",
+            "route": "health_support",
+            "method": "route_owner"
+          },
+          "masterRoute": "health_support",
+          "experimentStatus": null
+        },
+        {
+          "turn": 4,
+          "message": "What should I focus on this week?",
+          "reply": "You mentioned recently that your knees have been bothering you, we have been praying together about something on your heart and we have been studying sabbath together.\nYou have mentioned your knees have been bothering you along the way.\n\nWe have prayed together about \"Please pray for my family.\".\nI am also holding these gently with you: family situation, knee pain.\nIn your life journey, we have been walking through health together.\nIf you are wondering what to focus on this week, we could gently continue your sabbath study, or pray through what you have been carrying, or care gently for your health — only what feels right for you.\nWould you like to continue from any of that, pray through it, or turn to Scripture together?\n\nHow have you been doing since we prayed about prayer?",
+          "source": {
+            "layer": "responder",
+            "route": "memory_recall",
+            "method": "route_owner"
+          },
+          "masterRoute": "memory_recall",
+          "experimentStatus": null
+        }
+      ]
+    },
+    {
+      "id": "T20",
+      "name": "Working on lately",
+      "messages": [
+        "What is the Kingdom of God?",
+        "Please pray for wisdom.",
+        "What have we been working on lately?"
+      ],
+      "userId": "baseline-exp-T20-1780369291598",
+      "label": "Working on lately",
+      "runtime": "current",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Kingdom of God?",
+          "reply": "Let's explore that together from Scripture.\n\nIsaiah 2:1-4 establishes the matter, and Micah 4:1-5 confirms it alongside Scripture. 2 Samuel 7:12-16 carries the theme forward across the biblical witness.\n\nWitness path: Isaiah 2:1-4 → Micah 4:1-5 → 2 Samuel 7:12-16\n\nAdvanced Scripture Study: Kingdom: Creation to New Jerusalem\n\nThese passages form a continuity path across Scripture. We can walk through them line upon line without rushing to a single-verse conclusion.\n\nIsaiah 2:1-4 opens the theme, Micah 4:1-5 confirms it alongside Scripture, and 2 Samuel 7:12-16 carries the theme forward.\n\nGenesis-to-Revelation path:\n\n1. Isaiah 2:1-4\n\n2. Micah 4:1-5\n\n3. 2 Samuel 7:12-16\n\n4. Daniel 2:44-45\n\n5. Daniel 7:13-14\n\n6. Matthew 5:5\n\nWould you like to compare the next related passages together?\n\nYou've been walking a study journey through Kingdom, Messiah, Resurrection. Would you like to continue into Messiah?",
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "masterRoute": "doctrine_general",
+          "experimentStatus": null
+        },
+        {
+          "turn": 2,
+          "message": "Please pray for wisdom.",
+          "reply": "I'm glad you asked to pray. Let's bring this before the Lord together.\n\nFather, we bring this need before You for wisdom. You see what we cannot fully see. Please draw near with comfort, wisdom, and peace. Hold those who are hurting, guide those who are waiting, and help us trust You one step at a time. In Jesus' name, amen.\n\nPhilippians 4:6-7 establishes the matter, and James 5:16 confirms it alongside Scripture. Psalm 34:17 carries the theme forward across the biblical witness.\n\nIf you would like, we can sit with one of these passages, talk through what you are carrying, or check in gently later — only if you want that.\n\nWhen you are ready, we can follow up on how this prayer concern is going.",
+          "source": {
+            "layer": "responder",
+            "route": "prayer",
+            "method": "route_owner"
+          },
+          "masterRoute": "prayer",
+          "experimentStatus": null
+        },
+        {
+          "turn": 3,
+          "message": "What have we been working on lately?",
+          "reply": "You mentioned recently that we have been studying kingdom together.\nWe have prayed together about \"Please pray for wisdom.\".\n\nWe have been studying kingdom, and we were recently in Daniel 7:13-14, Matthew 5:5.\nI am also holding these gently with you: prayer request.\nIn your life journey, we have been walking through prayer together.\nIf you are wondering what to focus on this week, we could gently continue your kingdom study, or pray through what you have been carrying — only what feels right for you.\nWould you like to continue from any of that, pray through it, or turn to Scripture together?",
+          "source": {
+            "layer": "responder",
+            "route": "memory_recall",
+            "method": "route_owner"
+          },
+          "masterRoute": "memory_recall",
+          "experimentStatus": null
+        }
+      ]
+    }
+  ],
+  "additionalLite": [
+    {
+      "id": "T01",
+      "name": "Grief first mention",
+      "messages": [
+        "I lost a friend Wednesday."
+      ],
+      "userId": "baseline-exp-T01-lite-1780369279924",
+      "label": "Grief first mention",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost a friend Wednesday.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T02",
+      "name": "Health knee pain",
+      "messages": [
+        "My knees hurt."
+      ],
+      "userId": "baseline-exp-T02-lite-1780369280439",
+      "label": "Health knee pain",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T03",
+      "name": "Prayer request",
+      "messages": [
+        "Please pray for me."
+      ],
+      "userId": "baseline-exp-T03-lite-1780369280834",
+      "label": "Prayer request",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Please pray for me.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T04",
+      "name": "Sabbath definition",
+      "messages": [
+        "What is the Sabbath?"
+      ],
+      "userId": "baseline-exp-T04-lite-1780369281258",
+      "label": "Sabbath definition",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T05",
+      "name": "Sabbath history",
+      "messages": [
+        "What is the Sabbath?",
+        "Who changed the Sabbath and why?"
+      ],
+      "userId": "baseline-exp-T05-lite-1780369281731",
+      "label": "Sabbath history",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "Who changed the Sabbath and why?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T06",
+      "name": "Kingdom question",
+      "messages": [
+        "What is the Kingdom of God?"
+      ],
+      "userId": "baseline-exp-T06-lite-1780369282287",
+      "label": "Kingdom question",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Kingdom of God?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T07",
+      "name": "Memory recall",
+      "messages": [
+        "What were we talking about last week?"
+      ],
+      "userId": "baseline-exp-T07-lite-1780369282764",
+      "label": "Memory recall",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What were we talking about last week?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T08",
+      "name": "Continue study",
+      "messages": [
+        "What is the Sabbath?",
+        "Continue."
+      ],
+      "userId": "baseline-exp-T08-lite-1780369283251",
+      "label": "Continue study",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "Continue.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T09",
+      "name": "Correction historical",
+      "messages": [
+        "What is the Sabbath?",
+        "Who changed the Sabbath and why?",
+        "That was not my question. Who changed it historically?"
+      ],
+      "userId": "baseline-exp-T09-lite-1780369283975",
+      "label": "Correction historical",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "Who changed the Sabbath and why?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 3,
+          "message": "That was not my question. Who changed it historically?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T10",
+      "name": "Grief follow-up",
+      "messages": [
+        "I lost my friend last week.",
+        "It is still bothering me."
+      ],
+      "userId": "baseline-exp-T10-lite-1780369285050",
+      "label": "Grief follow-up",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost my friend last week.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "It is still bothering me.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T11",
+      "name": "Health repeat",
+      "messages": [
+        "My knees hurt.",
+        "My knees are hurting again today."
+      ],
+      "userId": "baseline-exp-T11-lite-1780369285991",
+      "label": "Health repeat",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "My knees are hurting again today.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T12",
+      "name": "Feast days",
+      "messages": [
+        "What are the feast days in Leviticus 23?"
+      ],
+      "userId": "baseline-exp-T12-lite-1780369286533",
+      "label": "Feast days",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What are the feast days in Leviticus 23?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T13",
+      "name": "Topic switch health",
+      "messages": [
+        "What is the Sabbath?",
+        "My knees hurt.",
+        "Continue."
+      ],
+      "userId": "baseline-exp-T13-lite-1780369287215",
+      "label": "Topic switch health",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "My knees hurt.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 3,
+          "message": "Continue.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T14",
+      "name": "Study next",
+      "messages": [
+        "What is the Kingdom of God?",
+        "What should I study next?"
+      ],
+      "userId": "baseline-exp-T14-lite-1780369288154",
+      "label": "Study next",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Kingdom of God?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "What should I study next?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T15",
+      "name": "Resurrection",
+      "messages": [
+        "What happens at the resurrection?"
+      ],
+      "userId": "baseline-exp-T15-lite-1780369288693",
+      "label": "Resurrection",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What happens at the resurrection?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T16",
+      "name": "Dietary law",
+      "messages": [
+        "Are unclean foods still forbidden?"
+      ],
+      "userId": "baseline-exp-T16-lite-1780369289101",
+      "label": "Dietary law",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Are unclean foods still forbidden?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T17",
+      "name": "Christmas traditions",
+      "messages": [
+        "Is Christmas a biblical command?"
+      ],
+      "userId": "baseline-exp-T17-lite-1780369289480",
+      "label": "Christmas traditions",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Is Christmas a biblical command?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T18",
+      "name": "Rest tired",
+      "messages": [
+        "I am tired and need rest."
+      ],
+      "userId": "baseline-exp-T18-lite-1780369290013",
+      "label": "Rest tired",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I am tired and need rest.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T19",
+      "name": "Mixed week focus",
+      "messages": [
+        "What is the Sabbath?",
+        "Please pray for my family.",
+        "My knees hurt.",
+        "What should I focus on this week?"
+      ],
+      "userId": "baseline-exp-T19-lite-1780369290962",
+      "label": "Mixed week focus",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Sabbath?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "Please pray for my family.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 3,
+          "message": "My knees hurt.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 4,
+          "message": "What should I focus on this week?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    },
+    {
+      "id": "T20",
+      "name": "Working on lately",
+      "messages": [
+        "What is the Kingdom of God?",
+        "Please pray for wisdom.",
+        "What have we been working on lately?"
+      ],
+      "userId": "baseline-exp-T20-lite-1780369292134",
+      "label": "Working on lately",
+      "runtime": "lite",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "What is the Kingdom of God?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 2,
+          "message": "Please pray for wisdom.",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        },
+        {
+          "turn": 3,
+          "message": "What have we been working on lately?",
+          "reply": "[BibleBuddy Lite experiment: OpenAI unavailable. Set OPENAI_API_KEY to compare reason-first composition against current runtime.]",
+          "source": {
+            "layer": "blocked",
+            "route": "lite_openai_required"
+          },
+          "masterRoute": "lite_openai_required",
+          "experimentStatus": "openai_unavailable"
+        }
+      ]
+    }
+  ]
+}

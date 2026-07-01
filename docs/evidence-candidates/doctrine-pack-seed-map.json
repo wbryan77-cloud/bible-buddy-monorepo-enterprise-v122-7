@@ -1,0 +1,145 @@
+{
+  "ranAt": "2026-06-01T00:00:00.000Z",
+  "purpose": "Semantic linkage seed phrases for Phase 3U fuzzy doctrine-pack matching",
+  "packs": {
+    "kingdom_of_god": [
+      "kingdom of god",
+      "thy kingdom come",
+      "kingdom come among israel",
+      "rule and reign",
+      "millennial kingdom",
+      "kingdom on earth"
+    ],
+    "millennial_kingdom_kingdom_on_earth": [
+      "millennial kingdom",
+      "kingdom on earth",
+      "thousand years",
+      "reign on earth"
+    ],
+    "spirit_of_god": [
+      "spirit of god",
+      "holy spirit",
+      "holy ghost",
+      "spirit of the lord"
+    ],
+    "holy_spirit": [
+      "holy spirit",
+      "holy ghost",
+      "spirit of god",
+      "comforter"
+    ],
+    "book_of_life": [
+      "book of life",
+      "names written",
+      "blotted out"
+    ],
+    "word_of_god": [
+      "word of god",
+      "scripture",
+      "written word",
+      "word of truth",
+      "bible"
+    ],
+    "sabbath": [
+      "sabbath",
+      "seventh day",
+      "sabbath day",
+      "rest day"
+    ],
+    "feasts": [
+      "feast",
+      "feasts",
+      "passover",
+      "pentecost",
+      "pentecostes",
+      "unleavened bread",
+      "panes sin levadura",
+      "fiesta de los panes",
+      "pascua",
+      "festival pagano"
+    ],
+    "esau_edom_edomites": [
+      "esau",
+      "esaú",
+      "edom",
+      "edomites",
+      "reemplazado por su hermano"
+    ],
+    "wednesday_night_qa": [
+      "wednesday night q a",
+      "wednesday night qa",
+      "q a class",
+      "q&a"
+    ],
+    "passover": [
+      "passover",
+      "pesach",
+      "lamb"
+    ],
+    "pentecost": [
+      "pentecost",
+      "pentecostés",
+      "feast of weeks"
+    ],
+    "death_state": [
+      "death state",
+      "soul sleep",
+      "grave",
+      "hell",
+      "sheol",
+      "lake of fire",
+      "second death"
+    ],
+    "resurrection": [
+      "resurrection",
+      "raised from the dead",
+      "first resurrection"
+    ],
+    "messiah_logos": [
+      "messiah",
+      "logos",
+      "word made flesh",
+      "christ",
+      "unknown god"
+    ],
+    "peter": [
+      "peter",
+      "simon peter",
+      "cephas"
+    ],
+    "peter_paul_alignment": [
+      "peter and paul",
+      "paul and peter",
+      "alignment"
+    ],
+    "jacob_israel_twelve_tribes": [
+      "jacob",
+      "israel",
+      "twelve tribes",
+      "twelve sons"
+    ],
+    "one_hundred_forty_four_thousand": [
+      "144000",
+      "144 000",
+      "one hundred forty four thousand",
+      "sealed servants"
+    ],
+    "dietary_law": [
+      "dietary law",
+      "clean and unclean",
+      "food laws",
+      "meats"
+    ],
+    "jesus_old_testament_new_testament": [
+      "old testament",
+      "new testament",
+      "law and prophets",
+      "moses and prophets"
+    ],
+    "leviticus_23": [
+      "leviticus 23",
+      "feasts of the lord",
+      "appointed times"
+    ]
+  }
+}

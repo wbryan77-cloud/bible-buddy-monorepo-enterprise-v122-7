@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const express = require('express');
 const { runBuddy } = require('../services/buddyBrain');
 const { isCoreRestorationDebugEnabled } = require('../services/coreRestorationDebug');
-const { buildLiveRequestTrace, logLiveRequestTrace } = require('../services/liveRequestTrace');
+const { buildLiveRequestTrace, logLiveRequestTrace, logRouteOwnership } = require('../services/liveRequestTrace');
 const { logLiveResponseCapture } = require('../services/liveResponseCapture');
 const { applyDoctrineErrorFirewall } = require('../services/doctrineErrorFirewall');
 const { withBuddyChatGuarantee } = require('../services/responseGuarantee');
@@ -62,6 +62,9 @@ async function handleBuddyChat({ body, res, requestId }) {
     { userId, message },
   );
   const reply = guaranteed.reply || {};
+  if (reply.runtime?.routeOwnership) {
+    logRouteOwnership(reply.runtime.routeOwnership);
+  }
   const trace = buildLiveRequestTrace({
     message,
     reply,

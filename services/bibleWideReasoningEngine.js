@@ -46,10 +46,12 @@ function selectDirectWitnesses(concept, limit = 3, exclude = []) {
 function buildLineUponLineExplanation(concept, witnesses = []) {
   const c = typeof concept === 'string' ? getGraphNode(concept) : concept;
   if (!c) return '';
+  if (c.helperOnly && !c.directAnswer) return '';
   const refs = witnesses.length ? witnesses : selectDirectWitnesses(c, 3);
   if (!refs.length) return c.directAnswer || '';
   const witnessText = refs.slice(0, 3).join(', ');
-  return `${c.directAnswer || ''} Scripture witnesses: ${witnessText}.`;
+  if (!c.directAnswer) return '';
+  return `${c.directAnswer} Scripture witnesses: ${witnessText}.`;
 }
 
 function getConceptState(userId) {
@@ -130,6 +132,13 @@ function buildBibleWideAnswer({
     };
   }
   if (!concept) return null;
+
+  if (
+    (concept.id === 'prayer_comfort' || concept.helperOnly) &&
+    /\b(pray with me|can you pray|please pray|will you pray)\b/i.test(message)
+  ) {
+    return null;
+  }
 
   const prefs = userPreferences || getUserAnswerPreferences(userId);
   const state = conversationState || getConceptState(userId);

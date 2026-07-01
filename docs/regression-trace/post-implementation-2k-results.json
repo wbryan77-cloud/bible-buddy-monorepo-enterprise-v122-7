@@ -1,0 +1,221 @@
+{
+  "ranAt": "2026-06-09T03:09:47.152Z",
+  "phase": "2K",
+  "regressionPassed": true,
+  "batchRegression": [
+    {
+      "candidateId": "exp_0001",
+      "regressionPassed": true,
+      "promotionReadinessScore": 100,
+      "checks": {
+        "support": {
+          "passed": true,
+          "skipped": true,
+          "reason": "non_promotable"
+        },
+        "traceability": {
+          "passed": true,
+          "skipped": true
+        },
+        "approvalGate": {
+          "passed": true,
+          "skipped": false,
+          "forbiddenHits": [],
+          "traditionLanguage": false
+        },
+        "ownership": {
+          "passed": true,
+          "skipped": false,
+          "violations": []
+        },
+        "memory": {
+          "passed": true,
+          "skipped": false,
+          "deltaMB": 9,
+          "rssMB": 61
+        }
+      }
+    },
+    {
+      "candidateId": "exp_0007",
+      "regressionPassed": true,
+      "promotionReadinessScore": 100,
+      "checks": {
+        "support": {
+          "passed": true,
+          "skipped": true,
+          "reason": "non_promotable"
+        },
+        "traceability": {
+          "passed": true,
+          "skipped": true
+        },
+        "approvalGate": {
+          "passed": true,
+          "skipped": false,
+          "forbiddenHits": [],
+          "traditionLanguage": false
+        },
+        "ownership": {
+          "passed": true,
+          "skipped": false,
+          "violations": []
+        },
+        "memory": {
+          "passed": true,
+          "skipped": false,
+          "deltaMB": 0,
+          "rssMB": 61
+        }
+      }
+    },
+    {
+      "candidateId": "exp_0005",
+      "regressionPassed": true,
+      "promotionReadinessScore": 100,
+      "checks": {
+        "support": {
+          "passed": true,
+          "skipped": true,
+          "reason": "non_promotable"
+        },
+        "traceability": {
+          "passed": true,
+          "skipped": true
+        },
+        "approvalGate": {
+          "passed": true,
+          "skipped": false,
+          "forbiddenHits": [],
+          "traditionLanguage": false
+        },
+        "ownership": {
+          "passed": true,
+          "skipped": false,
+          "violations": []
+        },
+        "memory": {
+          "passed": true,
+          "skipped": false,
+          "deltaMB": 0,
+          "rssMB": 61
+        }
+      }
+    },
+    {
+      "candidateId": "rec_0017",
+      "regressionPassed": true,
+      "promotionReadinessScore": 100,
+      "checks": {
+        "support": {
+          "passed": true,
+          "skipped": true,
+          "reason": "non_promotable"
+        },
+        "traceability": {
+          "passed": true,
+          "skipped": true
+        },
+        "approvalGate": {
+          "passed": true,
+          "skipped": false,
+          "forbiddenHits": [],
+          "traditionLanguage": false
+        },
+        "ownership": {
+          "passed": true,
+          "skipped": false,
+          "violations": []
+        },
+        "memory": {
+          "passed": true,
+          "skipped": false,
+          "deltaMB": 0,
+          "rssMB": 61
+        }
+      }
+    },
+    {
+      "candidateId": "rec_0006",
+      "regressionPassed": true,
+      "promotionReadinessScore": 100,
+      "checks": {
+        "support": {
+          "passed": true,
+          "skipped": true,
+          "reason": "non_promotable"
+        },
+        "traceability": {
+          "passed": true,
+          "skipped": true
+        },
+        "approvalGate": {
+          "passed": true,
+          "skipped": false,
+          "forbiddenHits": [],
+          "traditionLanguage": false
+        },
+        "ownership": {
+          "passed": true,
+          "skipped": false,
+          "violations": []
+        },
+        "memory": {
+          "passed": true,
+          "skipped": false,
+          "deltaMB": 0,
+          "rssMB": 61
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "passed": true,
+    "violations": []
+  },
+  "memory": {
+    "passed": true,
+    "deltaMB": 0,
+    "rssMB": 61
+  },
+  "supportGraph": {
+    "edgeCount": 48,
+    "participationNote": "Batch added 1 edge + card supporting refs"
+  },
+  "stress": {
+    "available": true,
+    "ranAt": "2026-06-08T06:09:17.791Z",
+    "totalTurns": 125,
+    "degradedTurns": 0,
+    "degradationRate": 0,
+    "approvalRate": 100,
+    "classCounts": {
+      "A": 0,
+      "B": 0,
+      "C": 125,
+      "D": 0
+    },
+    "note": "Cached Phase 2I results — re-run stress suite with OPENAI_API_KEY for live post-2K validation"
+  },
+  "hardCutover": {
+    "ranAt": "2026-06-08T05:20:31.248Z",
+    "failed": 0,
+    "total": 0,
+    "passed": true,
+    "cached": true
+  },
+  "classABCD": {
+    "A": 0,
+    "B": 0,
+    "C": 125,
+    "D": 0
+  },
+  "approvalRate": 100,
+  "degradationRate": 0,
+  "degradationImproved": true,
+  "baseline": {
+    "phase2hClassCRemain": 35,
+    "phase2hSupportEdges": 47
+  },
+  "openaiErrors": "live_stress_not_run_missing_key"
+}

@@ -1,0 +1,1712 @@
+{
+  "ranAt": "2026-06-09T07:12:13.392Z",
+  "queues": {
+    "queue95": [
+      {
+        "question": "Why do you keep the seventh-day Sabbath?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Did the Sabbath change to Sunday?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What does Hebrews 4:9 mean about Sabbath rest?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Is pork clean according to Scripture?",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Does Acts 10 permit eating unclean animals?",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Sabbath from Genesis to Revelation",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Israel of God Lesson Archives",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Clean and unclean foods in Scripture",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Israel of God Lesson Archives",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What is the Sabbath day according to Scripture?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "How do we keep the Sabbath holy?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Can I eat pork?",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Phase 2J-A Class C extraction",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Does Acts 10 make pork clean?",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Did early Christians keep gathering on the Sabbath for Scripture?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Why do we worship on the seventh day?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What is a Sabbath day according to Scripture?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Should I keep the Sabbath on Saturday?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What does the Bible say about clean and unclean food?",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "How do I keep the Sabbath while working a job?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Can I eat pork and still be faithful?",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "I want to keep Sabbath holy but my church meets Sunday.",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "I feel guilty eating unclean food. What does the Bible say?",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Sabbath rest while caring for a sick parent?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Is pork a salvation issue? I am anxious.",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Acts 10 proves pork is clean. Change my mind.",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Sunday replaced the Sabbath. Everyone knows that.",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "You are wrong about pork. Acts 10 is clear.",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "My pastor says Sabbath was nailed to the cross.",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Leviticus is outdated. Pork is fine.",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Constantine changed the Sabbath. Admit it.",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Hebrews 4 means we do not need the seventh day anymore.",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "That was not my question about the Sabbath.",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Everyone eats pork. Stop being legalistic.",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Acts 11 confirms all food is clean now.",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Give me a yes or no: can I eat pork?",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What scriptures support resting on the seventh day?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Did Jesus keep the Sabbath?",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "But Acts 10 makes all foods clean.",
+        "topic": "dietary_law",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Continuity expansion: sabbath — commandment_keeping_saints",
+        "topic": "sabbath",
+        "supportScore": 100,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What does holy mean in the Sabbath commandment?",
+        "topic": "sabbath",
+        "supportScore": 99,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "You did not answer my question about pork.",
+        "topic": "dietary_law",
+        "supportScore": 98,
+        "strengthTier": "Very Strong",
+        "sourceName": "Phase 2J-A Class C extraction",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Please help me understand Logos. I am confused and sad.",
+        "topic": "messiah_logos",
+        "supportScore": 97,
+        "strengthTier": "Very Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      }
+    ],
+    "queue90": [
+      {
+        "question": "What is the state of the dead according to Scripture?",
+        "topic": "death_state",
+        "supportScore": 92,
+        "strengthTier": "Strong",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "State of the dead line upon line",
+        "topic": "death_state",
+        "supportScore": 91,
+        "strengthTier": "Strong",
+        "sourceName": "Israel of God Lesson Archives",
+        "chainSource": "existing_registry"
+      }
+    ],
+    "queue80": [
+      {
+        "question": "What happens when we die?",
+        "topic": "death_state",
+        "supportScore": 88,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "My father died. Where is he now?",
+        "topic": "death_state",
+        "supportScore": 88,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "I am worried about my soul. What happens when we die?",
+        "topic": "death_state",
+        "supportScore": 88,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "My father died last week.",
+        "topic": "death_state",
+        "supportScore": 88,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Where do believers go when they die?",
+        "topic": "death_state",
+        "supportScore": 88,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "I am grieving and feel far from God.",
+        "topic": "death_state",
+        "supportScore": 88,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "My spouse died. Will I see them at resurrection?",
+        "topic": "death_state",
+        "supportScore": 86,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Grieving and wondering about the resurrection.",
+        "topic": "death_state",
+        "supportScore": 86,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What does the Bible teach about the soul at death?",
+        "topic": "death_state",
+        "supportScore": 85,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What are the three heavens in Scripture?",
+        "topic": "heavens",
+        "supportScore": 83,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What is the third heaven?",
+        "topic": "heavens",
+        "supportScore": 83,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Where does Jesus say no man has ascended to heaven?",
+        "topic": "heavens",
+        "supportScore": 83,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "How many heavens are talked about in the Bible?",
+        "topic": "heavens",
+        "supportScore": 83,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Explain heaven line upon line from Scripture only.",
+        "topic": "heavens",
+        "supportScore": 83,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Does the Bible say believers go to the third heaven?",
+        "topic": "heavens",
+        "supportScore": 83,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "2 Corinthians 12:2 proves our eternal home is the third heaven.",
+        "topic": "heavens",
+        "supportScore": 83,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "Is it in heaven or on earth?",
+        "topic": "heavens",
+        "supportScore": 83,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What does holy mean?",
+        "topic": "holiness",
+        "supportScore": 81,
+        "strengthTier": "Good Support",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      }
+    ],
+    "queue70": [
+      {
+        "question": "What does holy mean? I want to live right.",
+        "topic": "holiness",
+        "supportScore": 76,
+        "strengthTier": "Review Needed",
+        "sourceName": "Phase 2J-A Class C extraction",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "I am grieving and cannot sleep.",
+        "topic": "death_state",
+        "supportScore": 75,
+        "strengthTier": "Review Needed",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      },
+      {
+        "question": "What are the biblical feast days?",
+        "topic": "feasts",
+        "supportScore": 73,
+        "strengthTier": "Review Needed",
+        "sourceName": "Previously processed unified candidates",
+        "chainSource": "existing_registry"
+      }
+    ],
+    "queueBelow70": [
+      {
+        "question": "I am grieving. What does the Bible say about death?",
+        "topic": "death_state",
+        "supportScore": 68
+      },
+      {
+        "question": "Peter said not to call anything unclean.",
+        "topic": "peter",
+        "supportScore": 62
+      },
+      {
+        "question": "Do believers go to heaven when they die?",
+        "topic": "death_state",
+        "supportScore": 61
+      },
+      {
+        "question": "Who is the Logos in John 1?",
+        "topic": "john",
+        "supportScore": 61
+      },
+      {
+        "question": "My mom died. Is she in heaven now?",
+        "topic": "death_state",
+        "supportScore": 61
+      },
+      {
+        "question": "My friend says we go to heaven when we die. What does Scripture say?",
+        "topic": "death_state",
+        "supportScore": 61
+      },
+      {
+        "question": "My brother died. Third heaven or resurrection hope?",
+        "topic": "death_state",
+        "supportScore": 61
+      },
+      {
+        "question": "We go to heaven when we die. The Bible says so.",
+        "topic": "death_state",
+        "supportScore": 61
+      },
+      {
+        "question": "2 Corinthians 5:8 proves we go to heaven immediately at death.",
+        "topic": "death_state",
+        "supportScore": 61
+      },
+      {
+        "question": "Believers go to the third heaven when they die.",
+        "topic": "death_state",
+        "supportScore": 61
+      },
+      {
+        "question": "Prove from Scripture that we do not go to heaven at death.",
+        "topic": "death_state",
+        "supportScore": 61
+      },
+      {
+        "question": "What does Logos mean in John 1?",
+        "topic": "john",
+        "supportScore": 60
+      },
+      {
+        "question": "Why does God allow pain if He is holy?",
+        "topic": "holiness",
+        "supportScore": 60
+      },
+      {
+        "question": "The soul goes to heaven. Do not give me sleep metaphors.",
+        "topic": "heavens",
+        "supportScore": 60
+      },
+      {
+        "question": "What does Logos mean in John 1:1?",
+        "topic": "john",
+        "supportScore": 59
+      },
+      {
+        "question": "What does the lesson \"3 6 26 SATAN HAS DECEIVED THE WHOLE WORLD\" teach according to Scripture?",
+        "topic": "satan",
+        "supportScore": 56
+      },
+      {
+        "question": "What is the biblical teaching on 3 6 26 SATAN HAS DECEIVED THE WHOLE WORLD?",
+        "topic": "satan",
+        "supportScore": 56
+      },
+      {
+        "question": "(HQ) What does the lesson \"3 6 26 SATAN HAS DECEIVED THE WHOLE WORLD\" teach according to Scripture?",
+        "topic": "satan",
+        "supportScore": 56
+      },
+      {
+        "question": "What does the lesson \"4 1 26 CHRIST OUR PASSOVER LAMB NOT EASTER HAM\" teach according to Scripture?",
+        "topic": "ham",
+        "supportScore": 55
+      },
+      {
+        "question": "What is the biblical teaching on 4 1 26 CHRIST OUR PASSOVER LAMB NOT EASTER HAM?",
+        "topic": "ham",
+        "supportScore": 55
+      },
+      {
+        "question": "(HQ) What does the lesson \"4 1 26 CHRIST OUR PASSOVER LAMB NOT EASTER HAM\" teach according to Scripture?",
+        "topic": "ham",
+        "supportScore": 55
+      },
+      {
+        "question": "What is the first resurrection?",
+        "topic": "resurrection",
+        "supportScore": 55
+      },
+      {
+        "question": "Does Genesis teach a literal six-day creation?",
+        "topic": "open_topic_does_genesis",
+        "supportScore": 55
+      },
+      {
+        "question": "What does Scripture teach about resurrection?",
+        "topic": "resurrection",
+        "supportScore": 55
+      },
+      {
+        "question": "What is the third heaven Paul mentions?",
+        "topic": "paul",
+        "supportScore": 55
+      },
+      {
+        "question": "My grandmother passed. Is she sleeping until resurrection?",
+        "topic": "resurrection",
+        "supportScore": 55
+      },
+      {
+        "question": "So he is sleeping until the resurrection?",
+        "topic": "resurrection",
+        "supportScore": 55
+      },
+      {
+        "question": "When is the resurrection?",
+        "topic": "resurrection",
+        "supportScore": 55
+      },
+      {
+        "question": "What does the lesson \"2 27 26 FEAR GOD OR HELL FIRE and BORN AGAIN A MENTAL CHANGE ONLY OR A BODILY CHANGE TOO\" teach according to Scripture?",
+        "topic": "lake_of_fire",
+        "supportScore": 54
+      },
+      {
+        "question": "What is the biblical teaching on 2 27 26 FEAR GOD OR HELL FIRE and BORN AGAIN A MENTAL CHANGE ONLY OR A BODILY CHANGE TOO?",
+        "topic": "lake_of_fire",
+        "supportScore": 54
+      },
+      {
+        "question": "(HQ) What does the lesson \"2 27 26 FEAR GOD OR HELL FIRE and BORN AGAIN A MENTAL CHANGE ONLY OR A BODILY CHANGE TOO\" teach according to Scripture?",
+        "topic": "lake_of_fire",
+        "supportScore": 54
+      },
+      {
+        "question": "What does the lesson \"2 7 26 THE ANGELS MARRYING WOMEN LIE and SALVATION A FIGHT TO THE FINISH\" teach according to Scripture?",
+        "topic": "angels",
+        "supportScore": 54
+      },
+      {
+        "question": "What is the biblical teaching on 2 7 26 THE ANGELS MARRYING WOMEN LIE and SALVATION A FIGHT TO THE FINISH?",
+        "topic": "angels",
+        "supportScore": 54
+      },
+      {
+        "question": "(HQ) What does the lesson \"2 7 26 THE ANGELS MARRYING WOMEN LIE and SALVATION A FIGHT TO THE FINISH\" teach according to Scripture?",
+        "topic": "angels",
+        "supportScore": 54
+      },
+      {
+        "question": "What does the lesson \"1 31 26 … AT THE LAST TRUMP…\" teach according to Scripture?",
+        "topic": "the_last_trump_lesson",
+        "supportScore": 54
+      },
+      {
+        "question": "What is the biblical teaching on 1 31 26 … AT THE LAST TRUMP…?",
+        "topic": "the_last_trump_lesson",
+        "supportScore": 54
+      },
+      {
+        "question": "(HQ) What does the lesson \"1 31 26 … AT THE LAST TRUMP…\" teach according to Scripture?",
+        "topic": "the_last_trump_lesson",
+        "supportScore": 54
+      },
+      {
+        "question": "Where is the kingdom of God?",
+        "topic": "kingdom_of_god",
+        "supportScore": 53
+      },
+      {
+        "question": "What is the kingdom of God?",
+        "topic": "kingdom_of_god",
+        "supportScore": 53
+      },
+      {
+        "question": "What does Thy Kingdom Come mean?",
+        "topic": "kingdom_of_god",
+        "supportScore": 53
+      },
+      {
+        "question": "Does Revelation teach the kingdom comes to earth?",
+        "topic": "kingdom_of_god",
+        "supportScore": 53
+      },
+      {
+        "question": "I lost my job. Where is the kingdom hope?",
+        "topic": "kingdom_of_god",
+        "supportScore": 53
+      },
+      {
+        "question": "Can you explain the kingdom and comfort me about my loss?",
+        "topic": "kingdom_of_god",
+        "supportScore": 53
+      },
+      {
+        "question": "You are just repeating old arguments about the kingdom.",
+        "topic": "kingdom_of_god",
+        "supportScore": 53
+      },
+      {
+        "question": "What does the lesson \"6 5 26 THE BOOK OF LIFE\" teach according to Scripture?",
+        "topic": "the_book_life_lesson",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the biblical teaching on 6 5 26 THE BOOK OF LIFE?",
+        "topic": "the_book_life_lesson",
+        "supportScore": 52
+      },
+      {
+        "question": "(HQ) What does the lesson \"6 5 26 THE BOOK OF LIFE\" teach according to Scripture?",
+        "topic": "the_book_life_lesson",
+        "supportScore": 52
+      },
+      {
+        "question": "What does the lesson \"5 30 26 THE SPIRIT OF GOD\" teach according to Scripture?",
+        "topic": "holy_spirit",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the biblical teaching on 5 30 26 THE SPIRIT OF GOD?",
+        "topic": "holy_spirit",
+        "supportScore": 52
+      },
+      {
+        "question": "(HQ) What does the lesson \"5 30 26 THE SPIRIT OF GOD\" teach according to Scripture?",
+        "topic": "holy_spirit",
+        "supportScore": 52
+      },
+      {
+        "question": "What does the lesson \"MAY 23 26 WHOREDOM AKA FORNICATION\" teach according to Scripture?",
+        "topic": "may_whoredom_aka_fornication",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the biblical teaching on MAY 23 26 WHOREDOM AKA FORNICATION?",
+        "topic": "may_whoredom_aka_fornication",
+        "supportScore": 52
+      },
+      {
+        "question": "(HQ) What does the lesson \"MAY 23 26 WHOREDOM AKA FORNICATION\" teach according to Scripture?",
+        "topic": "may_whoredom_aka_fornication",
+        "supportScore": 52
+      },
+      {
+        "question": "What does the lesson \"4 24 26 SEEK GOD NOW TIME IS SHORT\" teach according to Scripture?",
+        "topic": "seek_god_now_time",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the biblical teaching on 4 24 26 SEEK GOD NOW TIME IS SHORT?",
+        "topic": "seek_god_now_time",
+        "supportScore": 52
+      },
+      {
+        "question": "(HQ) What does the lesson \"4 24 26 SEEK GOD NOW TIME IS SHORT\" teach according to Scripture?",
+        "topic": "seek_god_now_time",
+        "supportScore": 52
+      },
+      {
+        "question": "What does the lesson \"Sabbath Eve 4 3 26 O JERUSALEM JERUSALEM\" teach according to Scripture?",
+        "topic": "eve",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the biblical teaching on Sabbath Eve 4 3 26 O JERUSALEM JERUSALEM?",
+        "topic": "eve",
+        "supportScore": 52
+      },
+      {
+        "question": "(HQ) What does the lesson \"Sabbath Eve 4 3 26 O JERUSALEM JERUSALEM\" teach according to Scripture?",
+        "topic": "eve",
+        "supportScore": 52
+      },
+      {
+        "question": "What does the lesson \"3 28 26 GODS JUDGMENT\" teach according to Scripture?",
+        "topic": "gods_judgment_lesson_handout",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the biblical teaching on 3 28 26 GODS JUDGMENT?",
+        "topic": "gods_judgment_lesson_handout",
+        "supportScore": 52
+      },
+      {
+        "question": "(HQ) What does the lesson \"3 28 26 GODS JUDGMENT\" teach according to Scripture?",
+        "topic": "gods_judgment_lesson_handout",
+        "supportScore": 52
+      },
+      {
+        "question": "What does the lesson \"2 21 26 THE STATE OF GODS UNION. HATED NOW FLOURISHING SOON\" teach according to Scripture?",
+        "topic": "the_state_gods_union",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the biblical teaching on 2 21 26 THE STATE OF GODS UNION. HATED NOW FLOURISHING SOON?",
+        "topic": "the_state_gods_union",
+        "supportScore": 52
+      },
+      {
+        "question": "(HQ) What does the lesson \"2 21 26 THE STATE OF GODS UNION. HATED NOW FLOURISHING SOON\" teach according to Scripture?",
+        "topic": "the_state_gods_union",
+        "supportScore": 52
+      },
+      {
+        "question": "What does the lesson \"2 14 26 JESUS THE CHRIST THE SAVIOR OF ISRAELITES\" teach according to Scripture?",
+        "topic": "jesus_the_christ_the",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the biblical teaching on 2 14 26 JESUS THE CHRIST THE SAVIOR OF ISRAELITES?",
+        "topic": "jesus_the_christ_the",
+        "supportScore": 52
+      },
+      {
+        "question": "(HQ) What does the lesson \"2 14 26 JESUS THE CHRIST THE SAVIOR OF ISRAELITES\" teach according to Scripture?",
+        "topic": "jesus_the_christ_the",
+        "supportScore": 52
+      },
+      {
+        "question": "What does the lesson \"12 27 25 FROM BABY IN MANGER TO KILLER\" teach according to Scripture?",
+        "topic": "from_baby_manger_killer",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the biblical teaching on 12 27 25 FROM BABY IN MANGER TO KILLER?",
+        "topic": "from_baby_manger_killer",
+        "supportScore": 52
+      },
+      {
+        "question": "(HQ) What does the lesson \"12 27 25 FROM BABY IN MANGER TO KILLER\" teach according to Scripture?",
+        "topic": "from_baby_manger_killer",
+        "supportScore": 52
+      },
+      {
+        "question": "What is the seal of God?",
+        "topic": "open_topic_what_the",
+        "supportScore": 52
+      },
+      {
+        "question": "What does the lesson \"Riches & Gains: The Doctrine of Today\" teach according to Scripture?",
+        "topic": "riches_gains_the_doctrine",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on Riches & Gains: The Doctrine of Today?",
+        "topic": "riches_gains_the_doctrine",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"Riches & Gains: The Doctrine of Today\" teach according to Scripture?",
+        "topic": "riches_gains_the_doctrine",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"5 22 26 THAT MAN OF SIN\" teach according to Scripture?",
+        "topic": "that_man_sin_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 5 22 26 THAT MAN OF SIN?",
+        "topic": "that_man_sin_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"5 22 26 THAT MAN OF SIN\" teach according to Scripture?",
+        "topic": "that_man_sin_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"5 15 16 AMERICA IN DECLINE ROME IS RISING\" teach according to Scripture?",
+        "topic": "america_decline_rome_rising",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 5 15 16 AMERICA IN DECLINE ROME IS RISING?",
+        "topic": "america_decline_rome_rising",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"5 15 16 AMERICA IN DECLINE ROME IS RISING\" teach according to Scripture?",
+        "topic": "america_decline_rome_rising",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"5 16 26 REAP WHAT YOU SOW\" teach according to Scripture?",
+        "topic": "reap_what_you_sow",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 5 16 26 REAP WHAT YOU SOW?",
+        "topic": "reap_what_you_sow",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"5 16 26 REAP WHAT YOU SOW\" teach according to Scripture?",
+        "topic": "reap_what_you_sow",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"5 8 26 KILLED FOR JESUS\" teach according to Scripture?",
+        "topic": "killed_for_jesus_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 5 8 26 KILLED FOR JESUS?",
+        "topic": "killed_for_jesus_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"5 8 26 KILLED FOR JESUS\" teach according to Scripture?",
+        "topic": "killed_for_jesus_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"5 1 26 THE LORDS DETERMINATION\" teach according to Scripture?",
+        "topic": "the_lords_determination_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 5 1 26 THE LORDS DETERMINATION?",
+        "topic": "the_lords_determination_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"5 1 26 THE LORDS DETERMINATION\" teach according to Scripture?",
+        "topic": "the_lords_determination_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"MAY 2 2026 KING DAVID A MAN AFTER GODS HEART\" teach according to Scripture?",
+        "topic": "david",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on MAY 2 2026 KING DAVID A MAN AFTER GODS HEART?",
+        "topic": "david",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"MAY 2 2026 KING DAVID A MAN AFTER GODS HEART\" teach according to Scripture?",
+        "topic": "david",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"4 25 26 THE AWAKENING OF HEBREWS\" teach according to Scripture?",
+        "topic": "the_awakening_hebrews_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 4 25 26 THE AWAKENING OF HEBREWS?",
+        "topic": "the_awakening_hebrews_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"4 25 26 THE AWAKENING OF HEBREWS\" teach according to Scripture?",
+        "topic": "the_awakening_hebrews_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"4 17 26 BACK INTO EGYPT fnl\" teach according to Scripture?",
+        "topic": "back_into_egypt_fnl",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 4 17 26 BACK INTO EGYPT fnl?",
+        "topic": "back_into_egypt_fnl",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"4 17 26 BACK INTO EGYPT fnl\" teach according to Scripture?",
+        "topic": "back_into_egypt_fnl",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"4 18 26 VENGEANCE IS THE LORDS\" teach according to Scripture?",
+        "topic": "vengeance_the_lords_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 4 18 26 VENGEANCE IS THE LORDS?",
+        "topic": "vengeance_the_lords_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"4 18 26 VENGEANCE IS THE LORDS\" teach according to Scripture?",
+        "topic": "vengeance_the_lords_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"4 3 26 THE UNLEAVENED BREAD JOURNEY BEGINS\" teach according to Scripture?",
+        "topic": "the_unleavened_bread_journey",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 4 3 26 THE UNLEAVENED BREAD JOURNEY BEGINS?",
+        "topic": "the_unleavened_bread_journey",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"4 3 26 THE UNLEAVENED BREAD JOURNEY BEGINS\" teach according to Scripture?",
+        "topic": "the_unleavened_bread_journey",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"4 4 26 A LITTLE LEAVEN W daily readings\" teach according to Scripture?",
+        "topic": "little_leaven_daily_readings",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 4 4 26 A LITTLE LEAVEN W daily readings?",
+        "topic": "little_leaven_daily_readings",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"4 4 26 A LITTLE LEAVEN W daily readings\" teach according to Scripture?",
+        "topic": "little_leaven_daily_readings",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"3 27 26 CIRCUMCISION STILL GOOD\" teach according to Scripture?",
+        "topic": "circumcision_still_good_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 3 27 26 CIRCUMCISION STILL GOOD?",
+        "topic": "circumcision_still_good_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"3 27 26 CIRCUMCISION STILL GOOD\" teach according to Scripture?",
+        "topic": "circumcision_still_good_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"3 20 26 ABIB A FRESH BEGINNING\" teach according to Scripture?",
+        "topic": "abib_fresh_beginning_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 3 20 26 ABIB A FRESH BEGINNING?",
+        "topic": "abib_fresh_beginning_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"3 20 26 ABIB A FRESH BEGINNING\" teach according to Scripture?",
+        "topic": "abib_fresh_beginning_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"3 21 26 CHILDREN ARE THE FUTURE\" teach according to Scripture?",
+        "topic": "children_are_the_future",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 3 21 26 CHILDREN ARE THE FUTURE?",
+        "topic": "children_are_the_future",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"3 21 26 CHILDREN ARE THE FUTURE\" teach according to Scripture?",
+        "topic": "children_are_the_future",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"3 13 26 FASTING AND PRAYING\" teach according to Scripture?",
+        "topic": "prayer",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 3 13 26 FASTING AND PRAYING?",
+        "topic": "prayer",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"3 13 26 FASTING AND PRAYING\" teach according to Scripture?",
+        "topic": "prayer",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"3 14 26 JESUS SPOKEN OF BY DAVID THE PROPHET Bro Willie\" teach according to Scripture?",
+        "topic": "david",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 3 14 26 JESUS SPOKEN OF BY DAVID THE PROPHET Bro Willie?",
+        "topic": "david",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"3 14 26 JESUS SPOKEN OF BY DAVID THE PROPHET Bro Willie\" teach according to Scripture?",
+        "topic": "david",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"3 7 26 BEWARE OF SPIRITS ALL ARE NOT OF GOD\" teach according to Scripture?",
+        "topic": "beware_spirits_all_are",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 3 7 26 BEWARE OF SPIRITS ALL ARE NOT OF GOD?",
+        "topic": "beware_spirits_all_are",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"3 7 26 BEWARE OF SPIRITS ALL ARE NOT OF GOD\" teach according to Scripture?",
+        "topic": "beware_spirits_all_are",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"2 28 26 REMEMBER THE MISSION… TEACH\" teach according to Scripture?",
+        "topic": "remember_the_mission_teach",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 2 28 26 REMEMBER THE MISSION… TEACH?",
+        "topic": "remember_the_mission_teach",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"2 28 26 REMEMBER THE MISSION… TEACH\" teach according to Scripture?",
+        "topic": "remember_the_mission_teach",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"2 20 26 . HOW FRAIL I AM\" teach according to Scripture?",
+        "topic": "how_frail_lesson_handout",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 2 20 26 . HOW FRAIL I AM?",
+        "topic": "how_frail_lesson_handout",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"2 20 26 . HOW FRAIL I AM\" teach according to Scripture?",
+        "topic": "how_frail_lesson_handout",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"2 13 26 NEITHER DEMOCRATS NOR REPUBLICANS CAN SAVE BLACK PEOPLE ISRAEL\" teach according to Scripture?",
+        "topic": "neither_democrats_nor_republicans",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 2 13 26 NEITHER DEMOCRATS NOR REPUBLICANS CAN SAVE BLACK PEOPLE ISRAEL?",
+        "topic": "neither_democrats_nor_republicans",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"2 13 26 NEITHER DEMOCRATS NOR REPUBLICANS CAN SAVE BLACK PEOPLE ISRAEL\" teach according to Scripture?",
+        "topic": "neither_democrats_nor_republicans",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"2 6 26 THE FOOLISHNESS OF MEN VS. WOMEN\" teach according to Scripture?",
+        "topic": "the_foolishness_men_women",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 2 6 26 THE FOOLISHNESS OF MEN VS. WOMEN?",
+        "topic": "the_foolishness_men_women",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"2 6 26 THE FOOLISHNESS OF MEN VS. WOMEN\" teach according to Scripture?",
+        "topic": "the_foolishness_men_women",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"1 30 26 BEGINNING AT JERUSALEM… THE GOSPEL TO ALL NATIONS\" teach according to Scripture?",
+        "topic": "beginning_jerusalem_the_gospel",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 1 30 26 BEGINNING AT JERUSALEM… THE GOSPEL TO ALL NATIONS?",
+        "topic": "beginning_jerusalem_the_gospel",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"1 30 26 BEGINNING AT JERUSALEM… THE GOSPEL TO ALL NATIONS\" teach according to Scripture?",
+        "topic": "beginning_jerusalem_the_gospel",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"1 23 26 THERE IS NO GOD BUT JESUS WHOM WE WILL ANSWER TO\" teach according to Scripture?",
+        "topic": "there_god_but_jesus",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 1 23 26 THERE IS NO GOD BUT JESUS WHOM WE WILL ANSWER TO?",
+        "topic": "there_god_but_jesus",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"1 23 26 THERE IS NO GOD BUT JESUS WHOM WE WILL ANSWER TO\" teach according to Scripture?",
+        "topic": "there_god_but_jesus",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"1 16 26 GREEDY DOG PREACHERS\" teach according to Scripture?",
+        "topic": "greedy_dog_preachers_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 1 16 26 GREEDY DOG PREACHERS?",
+        "topic": "greedy_dog_preachers_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"1 16 26 GREEDY DOG PREACHERS\" teach according to Scripture?",
+        "topic": "greedy_dog_preachers_lesson",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"1 17 26 A WHISPERER WILL SEPARATE BEST FRIENDS\" teach according to Scripture?",
+        "topic": "whisperer_will_separate_best",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 1 17 26 A WHISPERER WILL SEPARATE BEST FRIENDS?",
+        "topic": "whisperer_will_separate_best",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"1 17 26 A WHISPERER WILL SEPARATE BEST FRIENDS\" teach according to Scripture?",
+        "topic": "whisperer_will_separate_best",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"1 9 26 PART 1 THE TIMES OF THE GENTILES ALMOST UP\" teach according to Scripture?",
+        "topic": "part_the_times_the",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 1 9 26 PART 1 THE TIMES OF THE GENTILES ALMOST UP?",
+        "topic": "part_the_times_the",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"1 9 26 PART 1 THE TIMES OF THE GENTILES ALMOST UP\" teach according to Scripture?",
+        "topic": "part_the_times_the",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"1 10 26 PART 2 THE TIMES OF THE GENTILES ALMOST UP\" teach according to Scripture?",
+        "topic": "part_the_times_the",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 1 10 26 PART 2 THE TIMES OF THE GENTILES ALMOST UP?",
+        "topic": "part_the_times_the",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"1 10 26 PART 2 THE TIMES OF THE GENTILES ALMOST UP\" teach according to Scripture?",
+        "topic": "part_the_times_the",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"1 2 26 BE CONTENT WITH WHAT YOU HAVE\" teach according to Scripture?",
+        "topic": "content_with_what_you",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 1 2 26 BE CONTENT WITH WHAT YOU HAVE?",
+        "topic": "content_with_what_you",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"1 2 26 BE CONTENT WITH WHAT YOU HAVE\" teach according to Scripture?",
+        "topic": "content_with_what_you",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"12 26 25 MODERN RELIGION IS EMOTIONALISM NOT SERVING GOD\" teach according to Scripture?",
+        "topic": "modern_religion_emotionalism_not",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 12 26 25 MODERN RELIGION IS EMOTIONALISM NOT SERVING GOD?",
+        "topic": "modern_religion_emotionalism_not",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"12 26 25 MODERN RELIGION IS EMOTIONALISM NOT SERVING GOD\" teach according to Scripture?",
+        "topic": "modern_religion_emotionalism_not",
+        "supportScore": 51
+      },
+      {
+        "question": "What does the lesson \"3 14 26 Toronto THY KINGDOM COME AMONG ISRAEL\" teach according to Scripture?",
+        "topic": "kingdom_of_god",
+        "supportScore": 51
+      },
+      {
+        "question": "What is the biblical teaching on 3 14 26 Toronto THY KINGDOM COME AMONG ISRAEL?",
+        "topic": "kingdom_of_god",
+        "supportScore": 51
+      },
+      {
+        "question": "(HQ) What does the lesson \"3 14 26 Toronto THY KINGDOM COME AMONG ISRAEL\" teach according to Scripture?",
+        "topic": "kingdom_of_god",
+        "supportScore": 51
+      },
+      {
+        "question": "Jesus said where I go ye cannot come. What does that mean?",
+        "topic": "kingdom_of_god",
+        "supportScore": 51
+      },
+      {
+        "question": "John 14:3 means we go to heaven when we die.",
+        "topic": "john",
+        "supportScore": 50
+      },
+      {
+        "question": "Did Paul teach against keeping the Sabbath?",
+        "topic": "paul",
+        "supportScore": 49
+      },
+      {
+        "question": "Why would God allow suffering?",
+        "topic": "kingdom_of_god",
+        "supportScore": 49
+      },
+      {
+        "question": "What does the lesson \"5 29 26 THE WORD OF GOD\" teach according to Scripture?",
+        "topic": "messiah_logos",
+        "supportScore": 47
+      },
+      {
+        "question": "What is the biblical teaching on 5 29 26 THE WORD OF GOD?",
+        "topic": "messiah_logos",
+        "supportScore": 47
+      },
+      {
+        "question": "(HQ) What does the lesson \"5 29 26 THE WORD OF GOD\" teach according to Scripture?",
+        "topic": "messiah_logos",
+        "supportScore": 47
+      },
+      {
+        "question": "What does the lesson \"1 3 26 WE MUST DIE FOR THE LORD ONE WAY OR ANOTHER\" teach according to Scripture?",
+        "topic": "death_state",
+        "supportScore": 47
+      },
+      {
+        "question": "What is the biblical teaching on 1 3 26 WE MUST DIE FOR THE LORD ONE WAY OR ANOTHER?",
+        "topic": "death_state",
+        "supportScore": 47
+      },
+      {
+        "question": "(HQ) What does the lesson \"1 3 26 WE MUST DIE FOR THE LORD ONE WAY OR ANOTHER\" teach according to Scripture?",
+        "topic": "death_state",
+        "supportScore": 47
+      },
+      {
+        "question": "Where is he now according to Scripture?",
+        "topic": "mixed_where_now_according",
+        "supportScore": 45
+      },
+      {
+        "question": "How does John 13:33 fit with all this?",
+        "topic": "john",
+        "supportScore": 45
+      },
+      {
+        "question": "How should we pray according to Jesus?",
+        "topic": "prayer",
+        "supportScore": 43
+      },
+      {
+        "question": "What does Revelation teach about the mark of the beast?",
+        "topic": "mark_of_the_beast",
+        "supportScore": 43
+      },
+      {
+        "question": "The remnant in prophecy",
+        "topic": "open_topic_the_remnant",
+        "supportScore": 43
+      },
+      {
+        "question": "What does the lesson \"Home - Israel The Church Of Jesus\" teach according to Scripture?",
+        "topic": "home_israel_the_church",
+        "supportScore": 39
+      },
+      {
+        "question": "What is the biblical teaching on Home - Israel The Church Of Jesus?",
+        "topic": "home_israel_the_church",
+        "supportScore": 39
+      },
+      {
+        "question": "(HQ) What does the lesson \"Home - Israel The Church Of Jesus\" teach according to Scripture?",
+        "topic": "home_israel_the_church",
+        "supportScore": 39
+      },
+      {
+        "question": "Who is Michael the archangel?",
+        "topic": "michael_archangel",
+        "supportScore": 39
+      },
+      {
+        "question": "What is the Abrahamic covenant?",
+        "topic": "covenants",
+        "supportScore": 39
+      },
+      {
+        "question": "Should Christians tithe?",
+        "topic": "tithes",
+        "supportScore": 39
+      },
+      {
+        "question": "What was the purpose of Noah's flood?",
+        "topic": "noah",
+        "supportScore": 39
+      },
+      {
+        "question": "Faith and works in James and Paul",
+        "topic": "paul",
+        "supportScore": 39
+      },
+      {
+        "question": "Fear of God in Scripture",
+        "topic": "open_topic_fear_god",
+        "supportScore": 39
+      },
+      {
+        "question": "What does the Bible teach about the Holy Spirit?",
+        "topic": "holy_spirit",
+        "supportScore": 39
+      },
+      {
+        "question": "What is the unpardonable sin?",
+        "topic": "open_topic_what_the",
+        "supportScore": 37
+      },
+      {
+        "question": "What is the great tribulation?",
+        "topic": "great_tribulation",
+        "supportScore": 37
+      },
+      {
+        "question": "What does baptism mean in Scripture?",
+        "topic": "baptism",
+        "supportScore": 37
+      },
+      {
+        "question": "What does the Bible say about marriage?",
+        "topic": "marriage",
+        "supportScore": 37
+      },
+      {
+        "question": "What is the new covenant?",
+        "topic": "covenants",
+        "supportScore": 37
+      },
+      {
+        "question": "What is the judgment according to Scripture?",
+        "topic": "open_topic_what_the",
+        "supportScore": 37
+      },
+      {
+        "question": "Who are the two witnesses in Revelation?",
+        "topic": "two_witnesses",
+        "supportScore": 37
+      },
+      {
+        "question": "What does the lesson \"THE ISRAEL OF GOD RESEARCH COMMITTEE HOMEPAGE\" teach according to Scripture?",
+        "topic": "the_israel_god_research",
+        "supportScore": 35
+      },
+      {
+        "question": "What is the biblical teaching on ISRAEL OF GOD RESEARCH COMMITTEE HOMEPAGE?",
+        "topic": "the_israel_god_research",
+        "supportScore": 35
+      },
+      {
+        "question": "(HQ) What does the lesson \"THE ISRAEL OF GOD RESEARCH COMMITTEE HOMEPAGE\" teach according to Scripture?",
+        "topic": "the_israel_god_research",
+        "supportScore": 35
+      },
+      {
+        "question": "Who are the 144,000 in Revelation?",
+        "topic": "144000",
+        "supportScore": 35
+      },
+      {
+        "question": "What does the lesson \"Jacob & Esau\" teach according to Scripture?",
+        "topic": "jacob",
+        "supportScore": 27
+      },
+      {
+        "question": "What is the biblical teaching on Jacob & Esau?",
+        "topic": "jacob",
+        "supportScore": 27
+      },
+      {
+        "question": "(HQ) What does the lesson \"Jacob & Esau\" teach according to Scripture?",
+        "topic": "jacob",
+        "supportScore": 27
+      },
+      {
+        "question": "What does the video \"IOG Bay Area - \"Prepare To Meet Your God\"\" teach according to Scripture?",
+        "topic": "iog_bay_area_prepare",
+        "supportScore": 27
+      },
+      {
+        "question": "What does the video \"IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"\" teach according to Scripture?",
+        "topic": "iog_stick_the_script",
+        "supportScore": 27
+      },
+      {
+        "question": "I feel abandoned. Does Scripture say God leaves us?",
+        "topic": "emotional",
+        "supportScore": 27
+      },
+      {
+        "question": "Does Scripture say God understands my pain?",
+        "topic": "emotional_does_scripture_say",
+        "supportScore": 27
+      },
+      {
+        "question": "Can you pray with me and point me to one verse?",
+        "topic": "prayer",
+        "supportScore": 27
+      }
+    ]
+  },
+  "scoreBuckets": {
+    "above95": 40,
+    "above90": 42,
+    "above80": 60,
+    "above70": 63,
+    "below70": 209
+  },
+  "executive": {
+    "pdfsProcessed": 49,
+    "pdfsWithScriptures": 47,
+    "websiteLessonsProcessed": 13,
+    "websiteWithScriptures": 3,
+    "videoDescriptionsProcessed": 71,
+    "videosWithScriptures": 1,
+    "transcriptsProcessed": 25,
+    "transcriptsWithScriptures": 0,
+    "scriptureReferencesExtracted": 4640,
+    "referencesNormalized": 963,
+    "newScriptureChainsBuilt": 272,
+    "questionsStillWithoutChains": 148,
+    "totalQuestions": 420,
+    "priorChainCount": 127,
+    "chainCountDelta": 145,
+    "chainCountIncreasedSignificantly": true,
+    "candidates95Plus": 40,
+    "candidates90Plus": 42,
+    "candidates80Plus": 60,
+    "topSources": [
+      {
+        "sourceName": "ICOJ Lesson Handouts",
+        "scriptureRefs": 2592
+      },
+      {
+        "sourceName": "Previously processed unified candidates",
+        "scriptureRefs": 872
+      },
+      {
+        "sourceName": "IOG Main Website",
+        "scriptureRefs": 141
+      },
+      {
+        "sourceName": "Israel of God Lesson Archives",
+        "scriptureRefs": 29
+      },
+      {
+        "sourceName": "Public Teaching Archive — Admin Attested",
+        "scriptureRefs": 19
+      },
+      {
+        "sourceName": "Israel of God Q&A Archives",
+        "scriptureRefs": 14
+      },
+      {
+        "sourceName": "Phase 2J-A Class C extraction",
+        "scriptureRefs": 13
+      },
+      {
+        "sourceName": "ICOJ Main Website",
+        "scriptureRefs": 12
+      },
+      {
+        "sourceName": "Official Licensed Transcript",
+        "scriptureRefs": 7
+      },
+      {
+        "sourceName": "Additional Scripture-Focused Sources",
+        "scriptureRefs": 7
+      }
+    ],
+    "strongestTopics": [
+      {
+        "topic": "sabbath",
+        "avgScore": 100,
+        "count": 22
+      },
+      {
+        "topic": "dietary_law",
+        "avgScore": 100,
+        "count": 17
+      },
+      {
+        "topic": "heavens",
+        "avgScore": 80,
+        "count": 9
+      },
+      {
+        "topic": "death_state",
+        "avgScore": 73,
+        "count": 24
+      },
+      {
+        "topic": "feasts",
+        "avgScore": 73,
+        "count": 1
+      },
+      {
+        "topic": "holiness",
+        "avgScore": 72,
+        "count": 3
+      },
+      {
+        "topic": "peter",
+        "avgScore": 62,
+        "count": 1
+      },
+      {
+        "topic": "messiah_logos",
+        "avgScore": 60,
+        "count": 4
+      },
+      {
+        "topic": "satan",
+        "avgScore": 56,
+        "count": 3
+      },
+      {
+        "topic": "john",
+        "avgScore": 55,
+        "count": 5
+      },
+      {
+        "topic": "ham",
+        "avgScore": 55,
+        "count": 3
+      },
+      {
+        "topic": "resurrection",
+        "avgScore": 55,
+        "count": 5
+      },
+      {
+        "topic": "open_topic_does_genesis",
+        "avgScore": 55,
+        "count": 1
+      },
+      {
+        "topic": "lake_of_fire",
+        "avgScore": 54,
+        "count": 3
+      },
+      {
+        "topic": "angels",
+        "avgScore": 54,
+        "count": 3
+      }
+    ],
+    "readyForHumanReview": 42
+  }
+}

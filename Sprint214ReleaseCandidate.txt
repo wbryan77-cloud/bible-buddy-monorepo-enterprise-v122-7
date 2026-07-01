@@ -1,0 +1,88 @@
+# Sprint 2.14 Release Candidate File List
+# Generated: 2026-05-31
+# Include: runtime-required + acceptance testing
+# Exclude: runtime data, reports, test outputs, unit tests
+
+# --- ROUTE REPAIR ---
+public/chat.html
+
+# --- CORE ORCHESTRATOR ---
+services/buddyBrain.js
+
+# --- MEMORY ---
+services/memoryRecallEngine.js
+services/memoryTruthfulness.js
+services/relationshipRecallEngine.js
+services/relationshipMemoryBridge.js
+services/runtimeRelationshipMemoryEngine.js
+services/continuityMemoryRuntime.js
+services/runtimeMemoryBridge.js
+services/emotionalArcEngine.js
+services/openLoopsEngine.js
+services/lifeTimelineMemory.js
+services/milestoneTracking.js
+
+# --- STUDY ---
+services/continueStudyIntent.js
+services/continueStudyEngine.js
+services/studyConnectionIntent.js
+services/studyJourneyEngine.js
+services/studyModeGating.js
+services/studyContinuityRuntime.js
+services/continuityStudySessionRuntime.js
+services/registryStudyPresenter.js
+services/genesisToRevelationContinuityRegistry.js
+services/doctrineStudyCatalogResolver.js
+services/doctrineSafetyLayer.js
+services/runtimeLineUponLineTraversalEngine.js
+services/companionLearningLayer.js
+
+# --- PRAYER ---
+services/prayerCompanionResponse.js
+services/prayerContinuityFollowup.js
+services/runtimePrayerContinuityEngine.js
+
+# --- GRIEF / EMOTIONAL ---
+services/griefCompanionResponse.js
+
+# --- HEALTH ---
+services/healthCompanionResponse.js
+
+# --- DOCTRINE PRESENTATION ---
+services/companionDoctrinePresenter.js
+services/companionDeliveryLayer.js
+services/companionReflectionLayer.js
+services/companionReplyPolish.js
+services/companionNextSteps.js
+services/companionRelationshipOrchestrator.js
+services/scriptureWitnessEngine.js
+services/sourceGroundedResponder.js
+services/doctrineRuntimePipeline.js
+services/doctrineContinuityRules.js
+services/doctrineGuard.js
+services/personalizedFallback.js
+services/scriptureChainExpansion.js
+services/scriptureConfidenceRuntime.js
+services/scriptureCertaintyFramework.js
+services/parallelVerseExpansionEngine.js
+
+# --- HISTORY ROUTING ---
+services/sabbathIntentRouter.js
+services/sabbathHistoryCompanion.js
+services/historicalContextRouter.js
+services/runtimeLabelStripper.js
+
+# --- RUNTIME SUPPORT (modified, required) ---
+services/retrievalFirstBuddyOrchestrator.js
+services/runtimeOrchestrator.js
+services/runtimeQualityValidator.js
+services/runtimeResponseSanitizer.js
+services/runtimeLoopGuard.js
+services/fallbackLoopSuppressor.js
+services/runtimeConversationStateEngine.js
+
+# --- ACCEPTANCE TESTING ---
+scripts/sprint214AcceptanceHttp.js
+scripts/sprint2DeployValidation.js
+
+# TOTAL: 58 files

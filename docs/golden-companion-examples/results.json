@@ -1,0 +1,184 @@
+{
+  "generatedAt": "2026-06-03T23:55:43.859Z",
+  "openaiAvailable": true,
+  "libraryExampleCount": 12,
+  "control": {
+    "arm": "control_live",
+    "source": "live",
+    "metrics": {
+      "turns": 20,
+      "listening": 6.4,
+      "warmth": 5.7,
+      "feltHeard": 5.6,
+      "threadSpecific": 5.3,
+      "naturalness": 6.2,
+      "companionPresence": 5.7,
+      "biblicalGrounding": 5.6,
+      "overExplaining": 6.4,
+      "correctionRecovery": 6.2,
+      "shallowAckCount": 2,
+      "openaiPct": 100,
+      "sabbathT7Listening": 7
+    }
+  },
+  "golden": {
+    "arm": "golden",
+    "blocked": false,
+    "metrics": {
+      "turns": 20,
+      "listening": 6.5,
+      "warmth": 5.9,
+      "feltHeard": 5.9,
+      "threadSpecific": 5.4,
+      "naturalness": 6.7,
+      "companionPresence": 6.5,
+      "biblicalGrounding": 5.3,
+      "overExplaining": 6.9,
+      "correctionRecovery": 7,
+      "shallowAckCount": 0,
+      "openaiPct": 100,
+      "sabbathT7Listening": 7
+    }
+  },
+  "delta": {
+    "turns": 0,
+    "listening": 0.1,
+    "warmth": 0.2,
+    "feltHeard": 0.3,
+    "threadSpecific": 0.1,
+    "naturalness": 0.5,
+    "companionPresence": 0.8,
+    "biblicalGrounding": -0.3,
+    "overExplaining": 0.5,
+    "correctionRecovery": 0.8,
+    "shallowAckCount": -2,
+    "openaiPct": 0
+  },
+  "passGate": {
+    "listeningDelta": 0.1,
+    "listeningPass": false,
+    "naturalnessImproved": true,
+    "feltHeardImproved": true,
+    "overExplainingImproved": true,
+    "sabbathT7NoRegression": true,
+    "biblicalGroundingOk": true,
+    "targetListening": false,
+    "pass": false
+  },
+  "threadDeltas": [
+    {
+      "id": "job",
+      "name": "Job opportunity",
+      "control": 5.3,
+      "golden": 5.8,
+      "delta": 0.5
+    },
+    {
+      "id": "alz",
+      "name": "Alzheimer's caregiver",
+      "control": 6.7,
+      "golden": 7,
+      "delta": 0.3
+    },
+    {
+      "id": "distant",
+      "name": "Feeling distant from God",
+      "control": 6.1,
+      "golden": 6.1,
+      "delta": 0
+    },
+    {
+      "id": "sabbath",
+      "name": "Sabbath wording thread",
+      "control": 6.8,
+      "golden": 6.8,
+      "delta": 0.1
+    },
+    {
+      "id": "grief",
+      "name": "Grief thread",
+      "control": 6.7,
+      "golden": 6.2,
+      "delta": -0.5
+    },
+    {
+      "id": "health",
+      "name": "Health thread",
+      "control": 6.4,
+      "golden": 6.3,
+      "delta": -0.1
+    }
+  ],
+  "qualitative": [
+    {
+      "threadId": "job",
+      "threadName": "Job opportunity",
+      "sampleMessage": "I have a job opportunity.",
+      "currentRaclReply": "It sounds like this job opportunity is an important step for you, and it’s natural to want to seek wise guidance about it. A good place to start is to trust in the LORD with all your heart, as Proverbs 3:5-6 encourages, and to ask God for wisdom in making this decision, just as James 1:5 invites us to do. Remember, Psalm 37:23 reminds us that the steps of a good man are ordered by the LORD. Would you like to talk about what’s on your heart regarding this opportunity or any specific concerns you ",
+      "goldenArmReply": "A new job opportunity can bring a mix of excitement and uncertainty. It’s okay to take time to consider what this means for your life and peace of mind. When you pray, you might share with God what draws you to this job and what concerns you have. Proverbs 3:5-6 reminds us to trust the LORD with all our heart and lean not on our own understanding. Asking God for wisdom, like James 1:5 encourages, can be a gentle way to seek clarity without pressure.",
+      "libraryGoldenText": "A new job opportunity can stir a lot at once — hope, worry, and questions about timing. You do not have to decide today. When you pray, you might simply tell God what drew you to this offer and what you are afraid of losing. James 1:5 is a good place to start if you want wisdom without pressure.",
+      "libraryWhy": "Names the situation without a template opener; one natural Scripture mention; practical next step without forcing a prayer script.",
+      "qualitativeWinner": "Golden arm",
+      "qualitativeWhy": "Drops It-sounds-like template; more concrete."
+    },
+    {
+      "threadId": "alz",
+      "threadName": "Alzheimer's caregiver",
+      "sampleMessage": "My mom was recently diagnosed with Alzheimer's.",
+      "currentRaclReply": "I'm truly sorry to hear about your mom's diagnosis. Alzheimer's can be such a difficult journey for both her and you. Remember that God honors those who care for their parents, as Exodus 20:12 reminds us to honor our father and mother. He is also close to us in every season of life, carrying us gently even into old age, as Isaiah 46:4 assures. Would you like to pray together for strength and peace for you and your mom, or perhaps talk about some ways Scripture can comfort you now?",
+      "goldenArmReply": "Learning that your mom has Alzheimer's is a hard turn — for her and for you. You are still her son or daughter in God's eyes, and honoring her can look like showing up even when the days are confusing. You do not need a perfect speech; steady presence and prayer in small moments count.",
+      "libraryGoldenText": "Learning that your mom has Alzheimer's is a hard turn — for her and for you. You are still her son or daughter in God's eyes, and honoring her can look like showing up even when the days are confusing. You do not need a perfect speech; steady presence and prayer in small moments count.",
+      "libraryWhy": "Anchors to mom and Alzheimer’s immediately; comfort without a lecture; Scripture implied through honor, not a stacked chain.",
+      "qualitativeWinner": "Golden arm",
+      "qualitativeWhy": "Shorter, less over-explaining."
+    },
+    {
+      "threadId": "distant",
+      "threadName": "Feeling distant from God",
+      "sampleMessage": "I feel distant from God lately.",
+      "currentRaclReply": "Feeling distant from God can be a heavy and lonely place, and it's okay to be honest about that. The Bible reminds us that God’s presence is always near, even when we feel far. Psalm 139 beautifully says there is nowhere we can flee from God's Spirit, showing His constant closeness. A gentle next step could be to simply invite God into your feelings in prayer, asking Him to draw you near as James 4:8 encourages. If you want, I can help you pray or reflect on a passage to renew your heart and spi",
+      "goldenArmReply": "Feeling distant from God lately can be a heavy and confusing experience. It doesn’t mean God has left you; often it means your heart is tired or wrestling with something unseen. Sometimes just honestly sharing that feeling with Him, even without words, can be a quiet way to begin drawing near again. Would you like, I can share a gentle verse and a simple prayer you might try in this season?",
+      "libraryGoldenText": "Feeling distant from God lately does not mean He has left you — it often means your heart is tired or guarded. You can tell Him plainly that prayer feels dry and that you miss closeness. Sometimes the next step is not trying harder, but showing up honestly for five quiet minutes without fixing the feeling first.",
+      "libraryWhy": "Keeps “lately”; normalizes without a sermon; one gentle practice, no mechanical verse stack.",
+      "qualitativeWinner": "Golden arm",
+      "qualitativeWhy": "Shorter, less over-explaining."
+    },
+    {
+      "threadId": "sabbath",
+      "threadName": "Sabbath wording thread",
+      "sampleMessage": "Why should we keep Sunday as the day of worship onto the Lord?",
+      "currentRaclReply": "The Bible itself designates the seventh day (Saturday) as the Sabbath, a day blessed and sanctified by God (Genesis 2:2-3; Exodus 20:8-11). Early Christians often met on the first day of the week (Sunday) to commemorate Jesus Christ's resurrection, but the Bible does not explicitly command changing the Sabbath to Sunday. Historically, Sunday worship became widespread due to a combination of early Christian practice, Roman civil law under Emperor Constantine in AD 321, and church councils like La",
+      "goldenArmReply": "The Bible explicitly identifies the seventh day, the Sabbath, as the day God blessed and set apart for rest and worship (Genesis 2:2-3; Exodus 20:8-11). Early Christians met on the first day of the week (Sunday) to commemorate Jesus' resurrection, but Scripture does not command changing the Sabbath to Sunday as the official day of worship. Historically, Sunday observance developed over time through civil laws like Emperor Constantine's AD 321 decree making Sunday a rest day, and church councils ",
+      "libraryGoldenText": "You are right to ask about the name. I used “Roman church” as shorthand for the church centered in Rome in historical discussions — not to avoid the full title. I can say Roman Catholic Church when you prefer that precision. My aim is clarity about history and Scripture, not debating labels for their own sake.",
+      "libraryWhy": "Direct answer to wording; acknowledges preference; no Constantine digression on a meta question.",
+      "qualitativeWinner": "Mixed / read both",
+      "qualitativeWhy": "Compare person-detail and correction directness on the live replies above."
+    },
+    {
+      "threadId": "grief",
+      "threadName": "Grief thread",
+      "sampleMessage": "I lost a friend Wednesday.",
+      "currentRaclReply": "I'm truly sorry for your loss. Losing a friend is deeply painful, and it's completely natural to feel brokenhearted right now. The Lord is close to those who are hurting, and even Jesus showed His own sorrow when He wept over loss. If you’d like, I can gently pray with you or simply be here to listen as you remember your friend.",
+      "goldenArmReply": "Losing a friend Wednesday—this fresh loss must feel heavy and raw. It's okay to feel the weight of it deeply. You don't have to have it all figured out or be 'over it.' I'm here with you in this moment, and when you're ready, we can simply pray together for comfort and peace, without trying to rush healing.",
+      "libraryGoldenText": "Losing a friend Wednesday — that is fresh grief, and it makes sense that it is still heavy. You do not have to be over it or explain it well. I am here with you in it; when you want, we can pray simply for comfort, without trying to fix the hurt today.",
+      "libraryWhy": "Wednesday and friend in the first sentence; presence over program; prayer offered, not forced.",
+      "qualitativeWinner": "Golden arm",
+      "qualitativeWhy": "Names Wednesday; baseline generic loss opener."
+    },
+    {
+      "threadId": "health",
+      "threadName": "Health thread",
+      "sampleMessage": "My knees hurt.",
+      "currentRaclReply": "I'm sorry to hear your knees hurt. That kind of pain can really weigh on you. It could help to rest them gently and maybe use some ice if there's swelling. Also, I can pray with you for healing and relief if you'd like.",
+      "goldenArmReply": "Knee pain can be really wearing, and it’s important to listen to what your body is telling you. Resting your knees and seeking medical advice can be wise steps. Meanwhile, you can bring this honestly before God in prayer, asking for His comfort and healing strength as you wait.",
+      "libraryGoldenText": "Knee pain can wear on your body and your spirit — especially when it keeps showing up. Rest and a clinician’s check are wise, not a lack of faith. You can tell God plainly that your knees hurt and ask for strength and healing in His time.",
+      "libraryWhy": "Specific body detail; practical care + prayer without three verses; human tone.",
+      "qualitativeWinner": "Mixed / read both",
+      "qualitativeWhy": "Compare person-detail and correction directness on the live replies above."
+    }
+  ],
+  "baselineReference": {
+    "listening": 6.3,
+    "openingUtilAudit": 0.51
+  }
+}

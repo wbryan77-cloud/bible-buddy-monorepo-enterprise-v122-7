@@ -1,0 +1,986 @@
+[
+  {
+    "thread": "Job opportunity",
+    "turn": 1,
+    "message": "I have a job opportunity.",
+    "listening": 7,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "I have a job opportunity.",
+      "plainEnglishRestatement": "The user is facing a life decision and wants thoughtful conversation, not a template answer.",
+      "questionType": "discernment",
+      "requestedAnswerType": "discernment_conversation",
+      "forbiddenDistractions": [
+        "Sabbath history",
+        "Feast Days",
+        "doctrine intercept",
+        "study prompts"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": true,
+      "continueStudy": false
+    },
+    "reply": "It sounds like you’re standing at an important crossroads with this job opportunity, which can bring both excitement and uncertainty. It’s natural to want to consider how this decision aligns with your values, calling, and peace in your heart. A helpful next step might be to pray quietly, asking God to guide your thoughts and reveal what He wants for you in this new season. Sometimes, writing down"
+  },
+  {
+    "thread": "Job opportunity",
+    "turn": 2,
+    "message": "The company is far away from home.",
+    "listening": 7,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "The company is far away from home.",
+      "plainEnglishRestatement": "The user is facing a life decision and wants thoughtful conversation, not a template answer.",
+      "questionType": "discernment",
+      "requestedAnswerType": "discernment_conversation",
+      "forbiddenDistractions": [
+        "Sabbath history",
+        "Feast Days",
+        "doctrine intercept",
+        "study prompts"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": true,
+      "continueStudy": false
+    },
+    "reply": "It sounds like the distance of this job from home is an important factor weighing on your heart as you consider this opportunity. This can bring challenges like being away from familiar support and routines, but also new chances for growth. A gentle next step could be to list the pros and cons of relocating, including how it might affect your spiritual life, community, and well-being. You might al"
+  },
+  {
+    "thread": "Job opportunity",
+    "turn": 3,
+    "message": "I'm not sure whether to push or wait on this offer.",
+    "listening": 7,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "I'm not sure whether to push or wait on this offer.",
+      "plainEnglishRestatement": "The user is facing a life decision and wants thoughtful conversation, not a template answer.",
+      "questionType": "discernment",
+      "requestedAnswerType": "discernment_conversation",
+      "forbiddenDistractions": [
+        "Sabbath history",
+        "Feast Days",
+        "doctrine intercept",
+        "study prompts"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": true,
+      "continueStudy": false
+    },
+    "reply": "It sounds like you're feeling uncertain about whether to take the initiative with this job offer or to be patient and wait for the right timing. This kind of decision can feel heavy because it involves trusting God's timing as well as your own discernment. A gentle next step might be to pause and ask God for peace and wisdom in this moment, as Proverbs 3:5-6 reminds us to trust in the Lord with al"
+  },
+  {
+    "thread": "Alzheimer's caregiver",
+    "turn": 1,
+    "message": "My mom was recently diagnosed with Alzheimer's.",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "My mom was recently diagnosed with Alzheimer's.",
+      "plainEnglishRestatement": "The user asked: \"My mom was recently diagnosed with Alzheimer's.\" and wants that exact question answered first.",
+      "questionType": "direct_question",
+      "requestedAnswerType": "direct_answer",
+      "forbiddenDistractions": [],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "I'm so sorry to hear that your mom has been diagnosed with Alzheimer's. That is a heavy and challenging situation for both her and your family. It’s natural to feel a mix of emotions—concern, sadness, uncertainty. If you would like, I can help you find comfort and peace through prayer and Scripture, or just listen as you share more about what you’re feeling."
+  },
+  {
+    "thread": "Alzheimer's caregiver",
+    "turn": 2,
+    "message": "Some days she doesn't remember who I am.",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "Some days she doesn't remember who I am.",
+      "plainEnglishRestatement": "The user asked: \"Some days she doesn't remember who I am.\" and wants that exact question answered first.",
+      "questionType": "direct_question",
+      "requestedAnswerType": "direct_answer",
+      "forbiddenDistractions": [],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "It sounds deeply painful and confusing to face days when your mom doesn’t recognize you. Alzheimer’s can steal precious moments of connection, but your love and presence remain a strong, comforting anchor for her even when memory fades. It’s okay to grieve those losses while also cherishing the times she does remember. If you want, I can offer a prayer for strength and peace for both of you."
+  },
+  {
+    "thread": "Alzheimer's caregiver",
+    "turn": 3,
+    "message": "How do I stay close to God while grieving who she used to be?",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": "grief",
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "How do I stay close to God while grieving who she used to be?",
+      "plainEnglishRestatement": "The user is grieving and wants companionship first, not a verse dump.",
+      "questionType": "grief",
+      "requestedAnswerType": "companion_support",
+      "forbiddenDistractions": [
+        "Sabbath history",
+        "Feast Days",
+        "doctrine intercept",
+        "study prompts"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": true,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "Grieving the loss of who your mom used to be while wanting to stay close to God is such a tender and real struggle. It's okay to bring your feelings honestly to Him—the sadness, confusion, even anger—and trust that He listens and cares deeply. Remember, God promises His nearness especially to the brokenhearted, and He wants to walk this hard path with you, giving you strength and peace beyond unde"
+  },
+  {
+    "thread": "Feeling distant from God",
+    "turn": 1,
+    "message": "I feel distant from God lately.",
+    "listening": 7,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "I feel distant from God lately.",
+      "plainEnglishRestatement": "The user asked: \"I feel distant from God lately.\" and wants that exact question answered first.",
+      "questionType": "direct_question",
+      "requestedAnswerType": "direct_answer",
+      "forbiddenDistractions": [],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "Feeling distant from God can be really hard, and it sounds like your heart is longing for a closer connection with Him right now. This experience is common, even among those who love God deeply. The Bible acknowledges times of spiritual dryness or feeling far from God's presence. For example, in Psalm 42:1-2, the Psalmist cries out, 'As the hart panteth after the water brooks, so panteth my soul a"
+  },
+  {
+    "thread": "Feeling distant from God",
+    "turn": 2,
+    "message": "I pray but it feels empty.",
+    "listening": 7,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "I pray but it feels empty.",
+      "plainEnglishRestatement": "The user asked: \"I pray but it feels empty.\" and wants that exact question answered first.",
+      "questionType": "direct_question",
+      "requestedAnswerType": "direct_answer",
+      "forbiddenDistractions": [],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "It sounds like your prayers feel empty right now, which can be discouraging when you long for a meaningful connection with God. This experience is not uncommon and doesn't mean God is far from you. Sometimes, prayers feel empty because our hearts are heavy, distracted, or unsure how to express what we truly feel. The Bible encourages us to keep praying honestly and persistently, even when it feels"
+  },
+  {
+    "thread": "Feeling distant from God",
+    "turn": 3,
+    "message": "Does that mean my faith is failing?",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "Does that mean my faith is failing?",
+      "plainEnglishRestatement": "The user asked: \"Does that mean my faith is failing?\" and wants that exact question answered first.",
+      "questionType": "direct_question",
+      "requestedAnswerType": "direct_answer",
+      "forbiddenDistractions": [],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "Feeling that your prayers are empty or that God feels distant does not mean your faith is failing. Many godly people have experienced dry seasons in their spiritual walk, yet their faith remained alive and growing. The Bible encourages perseverance and trust even when feelings are weak. For example, in 2 Corinthians 5:7, it says we walk by faith, not by sight, meaning faith persists beyond what we"
+  },
+  {
+    "thread": "Sabbath wording thread",
+    "turn": 1,
+    "message": "Why should we keep Sunday as the day of worship onto the Lord?",
+    "listening": 7,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": "sabbath",
+      "title": "The Seventh-Day Sabbath",
+      "references": [
+        {
+          "reference": "Genesis 2:2-3",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Exodus 20:8-11",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Leviticus 23:1-3",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Isaiah 58:13-14",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Luke 4:16",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Acts 13:42-44",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Acts 17:2",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Hebrews 4:9",
+          "theme": "The Seventh-Day Sabbath"
+        }
+      ]
+    },
+    "history": {
+      "included": true,
+      "focus": {
+        "asksRome": false,
+        "asksCatholic": false,
+        "asksWhoChanged": false,
+        "asksWhySunday": true,
+        "asksEvidence": false,
+        "isYesNo": false
+      },
+      "chainSteps": [
+        "A. Early Christians in some places gathered on the first day for worship and fellowship, while many still honored the seventh-day Sabbath.",
+        "B. In AD 321, Emperor Constantine issued a civil law making Sunday — the venerable day of the Sun — a day of rest across the Roman Empire.",
+        "C. The Council of Laodicea (circa AD 364) later discouraged Sabbath rest and encouraged Christians to honor the Lord's Day (Sunday).",
+        "D. Over time, Roman Catholic canon and liturgical authority made Sunday the normal day of obligation for worship in much of Western Christianity.",
+        "E. Sunday observance became established through Roman civil authority and church authority over time — not by an explicit biblical command changing the Sabbath."
+      ],
+      "sources": [
+        "Constantine, Codex Justinianus 3.12.2 (AD 321 Sunday rest law)",
+        "Council of Laodicea, Canon 29 (circa AD 364)",
+        "Eusebius, Life of Constantine (early first-day imperial favor)",
+        "Roman Catholic catechisms and liturgical tradition on Sunday obligation"
+      ],
+      "distinction": "Historical developments are not the same as biblical commands.",
+      "tier": "historical_secondary"
+    },
+    "understanding": {
+      "exactUserQuestion": "Why should we keep Sunday as the day of worship onto the Lord?",
+      "plainEnglishRestatement": "The user wants a direct historical answer to their specific question, not a full repeated Sabbath definition block.",
+      "questionType": "historical_evidence",
+      "requestedAnswerType": "historical_answer",
+      "forbiddenDistractions": [],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "You are asking why Sunday has become the chosen day for Christian worship historically, rather than the biblical seventh-day Sabbath. Early Christians did gather on the first day of the week (Sunday) for fellowship and remembrance of Jesus' resurrection, but many still observed the seventh-day Sabbath. The formal establishment of Sunday as a day of rest and worship came later through Roman civil a"
+  },
+  {
+    "thread": "Sabbath wording thread",
+    "turn": 2,
+    "message": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "wording_question"
+    },
+    "understanding": {
+      "exactUserQuestion": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+      "plainEnglishRestatement": "The user is asking why I used informal church language instead of the precise name Roman Catholic Church, not a repeated topic template.",
+      "questionType": "meta_about_previous_answer",
+      "requestedAnswerType": "wording_explanation",
+      "forbiddenDistractions": [
+        "Sabbath definition block",
+        "Constantine chain repeat",
+        "Laodicea template repeat",
+        "knee pain memory",
+        "grief memory",
+        "study prompts",
+        "Feast Days invitation",
+        "generic fallback template"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": true,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "I appreciate you pointing that out. I chose to say \"Roman church\" as a simpler, informal way to refer to that historical Christian body without implying official titles. Using \"Roman Catholic Church\" is indeed the precise name commonly used today, but sometimes I use shorter terms to keep things conversational and focused on the historical context rather than denominational labels. If you prefer, "
+  },
+  {
+    "thread": "Sabbath wording thread",
+    "turn": 3,
+    "message": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "wording_question"
+    },
+    "understanding": {
+      "exactUserQuestion": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+      "plainEnglishRestatement": "The user is asking why I used informal church language instead of the precise name Roman Catholic Church, not a repeated topic template.",
+      "questionType": "meta_about_previous_answer",
+      "requestedAnswerType": "wording_explanation",
+      "forbiddenDistractions": [
+        "Sabbath definition block",
+        "Constantine chain repeat",
+        "Laodicea template repeat",
+        "knee pain memory",
+        "grief memory",
+        "study prompts",
+        "Feast Days invitation",
+        "generic fallback template"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": true,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "Thank you for your thoughtful question. I use the term \"Roman church\" as a simpler, more informal way to refer to that historical Christian body without implying official titles or denominational distinctions. The full term \"Roman Catholic Church\" is indeed the precise and common name used today, and I can certainly use it if that makes our conversation clearer and more respectful to your preferen"
+  },
+  {
+    "thread": "Sabbath wording thread",
+    "turn": 4,
+    "message": "No, I'm not asking about the shift. I'm asking about your wording.",
+    "listening": 7,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "wording_question"
+    },
+    "understanding": {
+      "exactUserQuestion": "No, I'm not asking about the shift. I'm asking about your wording.",
+      "plainEnglishRestatement": "The user is asking about my wording or phrasing, not a repeated topic template.",
+      "questionType": "meta_about_previous_answer",
+      "requestedAnswerType": "wording_explanation",
+      "forbiddenDistractions": [
+        "Sabbath definition block",
+        "Constantine chain repeat",
+        "Laodicea template repeat",
+        "knee pain memory",
+        "grief memory",
+        "study prompts",
+        "Feast Days invitation",
+        "generic fallback template"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": true,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "I hear you clearly that your question is about why I chose the phrase \"Roman church\" rather than the full technical name \"Roman Catholic Church.\" I use \"Roman church\" as a simpler, more conversational shorthand to keep our discussion focused and accessible without implying formal titles or denominational distinctions. I want to respect your preference, so if you’d like, I’m happy to use the full n"
+  },
+  {
+    "thread": "Sabbath wording thread",
+    "turn": 5,
+    "message": "Why are you not answering my question?",
+    "listening": 7,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": "sabbath",
+      "title": "The Seventh-Day Sabbath",
+      "references": [
+        {
+          "reference": "Genesis 2:2-3",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Exodus 20:8-11",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Leviticus 23:1-3",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Isaiah 58:13-14",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Luke 4:16",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Acts 13:42-44",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Acts 17:2",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Hebrews 4:9",
+          "theme": "The Seventh-Day Sabbath"
+        }
+      ]
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "Why are you not answering my question?",
+      "plainEnglishRestatement": "The user is frustrated because I did not answer their exact question.",
+      "questionType": "correction",
+      "requestedAnswerType": "direct_reanswer",
+      "forbiddenDistractions": [
+        "full history template",
+        "scripture chain dump",
+        "unrelated memory",
+        "study prompts"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": true
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "I hear your concern that you feel your question about my specific wording choice hasn't been fully answered. To clarify, I used the term \"Roman church\" as a more conversational and simpler phrase to keep our discussion accessible and focused, without implying formal titles or denominational distinctions. My goal is to respect your preference, so if you wish, I will use the full term \"Roman Catholi"
+  },
+  {
+    "thread": "Sabbath wording thread",
+    "turn": 6,
+    "message": "No, I'm not asking about history. I'm asking about your wording.",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "wording_question"
+    },
+    "understanding": {
+      "exactUserQuestion": "No, I'm not asking about history. I'm asking about your wording.",
+      "plainEnglishRestatement": "The user is asking about my wording or phrasing, not a repeated topic template.",
+      "questionType": "meta_about_previous_answer",
+      "requestedAnswerType": "wording_explanation",
+      "forbiddenDistractions": [
+        "Sabbath definition block",
+        "Constantine chain repeat",
+        "Laodicea template repeat",
+        "knee pain memory",
+        "grief memory",
+        "study prompts",
+        "Feast Days invitation",
+        "generic fallback template"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": true,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "I truly appreciate your patience and understand that your focus is specifically on why I chose the particular wording \"Roman church\" rather than the full technical name \"Roman Catholic Church.\" My intention in using \"Roman church\" is to keep our conversation simple and approachable, avoiding formal titles or denominational labels that might detract from the broader discussion. I want to honor your"
+  },
+  {
+    "thread": "Sabbath wording thread",
+    "turn": 7,
+    "message": "Are you not listening to what I am asking?",
+    "listening": 3,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": "sabbath",
+      "title": "The Seventh-Day Sabbath",
+      "references": [
+        {
+          "reference": "Genesis 2:2-3",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Exodus 20:8-11",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Leviticus 23:1-3",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Isaiah 58:13-14",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Luke 4:16",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Acts 13:42-44",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Acts 17:2",
+          "theme": "The Seventh-Day Sabbath"
+        },
+        {
+          "reference": "Hebrews 4:9",
+          "theme": "The Seventh-Day Sabbath"
+        }
+      ]
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "Are you not listening to what I am asking?",
+      "plainEnglishRestatement": "The user is correcting my previous answer and wants the exact question answered.",
+      "questionType": "correction",
+      "requestedAnswerType": "direct_reanswer",
+      "forbiddenDistractions": [
+        "full history template",
+        "scripture chain dump",
+        "unrelated memory",
+        "study prompts",
+        "Sunday worship justification repeat",
+        "Genesis-to-Revelation path"
+      ],
+      "strictAnswerMode": true,
+      "isMetaQuestion": false,
+      "isCorrection": true
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "I completely understand your frustration, and I want to affirm that I'm listening closely to your question about my specific choice of the phrase \"Roman church\" rather than the full term \"Roman Catholic Church.\" My intention was to use simpler, more conversational wording to keep our dialogue clear and approachable without emphasizing formal titles or denominational distinctions. I respect your pr"
+  },
+  {
+    "thread": "Grief thread",
+    "turn": 1,
+    "message": "I lost a friend Wednesday.",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": "grief",
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "I lost a friend Wednesday.",
+      "plainEnglishRestatement": "The user is grieving and wants companionship first, not a verse dump.",
+      "questionType": "grief",
+      "requestedAnswerType": "companion_support",
+      "forbiddenDistractions": [
+        "Sabbath history",
+        "Feast Days",
+        "doctrine intercept",
+        "study prompts"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": true,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "I'm so sorry to hear about your loss. Losing a friend is deeply painful, and it’s okay to feel whatever you’re feeling right now. If you want, I’m here to listen or to gently share some comforting words from Scripture when you’re ready. Take your time, and know you’re not alone."
+  },
+  {
+    "thread": "Grief thread",
+    "turn": 2,
+    "message": "It is still bothering me.",
+    "listening": 7,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "It is still bothering me.",
+      "plainEnglishRestatement": "The user asked: \"It is still bothering me.\" and wants that exact question answered first.",
+      "questionType": "direct_question",
+      "requestedAnswerType": "direct_answer",
+      "forbiddenDistractions": [],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": false,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "It sounds like the loss of your friend is weighing heavily on your heart, and that feeling is very real and important. Grief can linger and sometimes feel overwhelming, but you don’t have to carry it alone. If it feels right, we could take a moment together to breathe and pray, asking God for His comforting presence and peace to gradually ease your pain. Whenever you want, I’m here to listen or to"
+  },
+  {
+    "thread": "Health thread",
+    "turn": 1,
+    "message": "My knees hurt.",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "My knees hurt.",
+      "plainEnglishRestatement": "The user is sharing a personal health concern and wants empathy and a helpful next step, not a study lecture.",
+      "questionType": "health",
+      "requestedAnswerType": "companion_support",
+      "forbiddenDistractions": [
+        "Sabbath history",
+        "Feast Days",
+        "doctrine intercept",
+        "study prompts"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": true,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "I'm sorry to hear your knees are hurting. That can be really uncomfortable and frustrating. Sometimes gentle movement, rest, and warm compresses can help ease knee pain. If it continues or worsens, it might be good to check with a healthcare professional to find out the cause and best care. Meanwhile, I can keep you in a simple prayer for relief and strength if you like."
+  },
+  {
+    "thread": "Health thread",
+    "turn": 2,
+    "message": "My knees are hurting again today.",
+    "listening": 5,
+    "memory": {
+      "snippets": [],
+      "hits": [],
+      "recallRequested": false
+    },
+    "scripture": {
+      "topic": null,
+      "title": null,
+      "references": []
+    },
+    "history": {
+      "included": false,
+      "reason": "not_historical"
+    },
+    "understanding": {
+      "exactUserQuestion": "My knees are hurting again today.",
+      "plainEnglishRestatement": "The user is sharing a personal health concern and wants empathy and a helpful next step, not a study lecture.",
+      "questionType": "health",
+      "requestedAnswerType": "companion_support",
+      "forbiddenDistractions": [
+        "Sabbath history",
+        "Feast Days",
+        "doctrine intercept",
+        "study prompts"
+      ],
+      "strictAnswerMode": false,
+      "isMetaQuestion": false,
+      "isCorrection": false
+    },
+    "activeConversation": null,
+    "companionContext": {
+      "health": true,
+      "grief": false,
+      "prayer": false,
+      "discernment": false,
+      "continueStudy": false
+    },
+    "reply": "I can sense that your knee pain is persistent today, and that must be wearing on you. Continuing with gentle care like rest, avoiding strain, and maybe some warm compresses could help ease the discomfort. If it keeps coming back, it’s wise to consider seeing a healthcare professional to understand the root cause. Meanwhile, I’d be honored to pray with you for healing and strength, if you’d like."
+  }
+]

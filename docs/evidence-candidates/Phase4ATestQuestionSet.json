@@ -1,0 +1,77 @@
+{
+  "ranAt": "2026-06-10T06:10:23.957Z",
+  "phase": "4A",
+  "sandboxOnly": true,
+  "questions": [
+    {
+      "label": "Sabbath",
+      "packId": "sabbath",
+      "question": "What Scriptures in the recovered corpus address the Sabbath?"
+    },
+    {
+      "label": "Dietary Law",
+      "packId": "dietary_law",
+      "question": "What Scriptures support traceability for dietary law?"
+    },
+    {
+      "label": "Death State",
+      "packId": "death_state",
+      "question": "What Scriptures address the death state in the frozen corpus?"
+    },
+    {
+      "label": "Jesus OT/NT",
+      "packId": "messiah_logos",
+      "question": "What Scriptures connect Messiah across Old and New Testaments?"
+    },
+    {
+      "label": "Holy Spirit",
+      "packId": "holy_spirit",
+      "question": "What Scriptures are traced for the Holy Spirit pack?"
+    },
+    {
+      "label": "Kingdom of God",
+      "packId": "kingdom_of_god",
+      "question": "What Scriptures support Kingdom of God traceability?"
+    },
+    {
+      "label": "Feasts / High Sabbaths",
+      "packId": "feasts",
+      "question": "What Scriptures are linked to feasts and high Sabbaths?"
+    },
+    {
+      "label": "144000",
+      "packId": "one_hundred_forty_four_thousand",
+      "question": "What Scriptures support 144000 traceability candidates?"
+    },
+    {
+      "label": "Peter / Paul Alignment",
+      "packId": "peter_paul_alignment",
+      "question": "What Scriptures support Peter-Paul alignment traceability?"
+    },
+    {
+      "label": "Jacob / Israel / Twelve Tribes",
+      "packId": "jacob_israel_twelve_tribes",
+      "question": "What Scriptures trace Jacob, Israel, and the twelve tribes?"
+    },
+    {
+      "label": "Millennial Kingdom",
+      "packId": "millennial_kingdom_kingdom_on_earth",
+      "question": "What Scriptures support millennial kingdom traceability?"
+    },
+    {
+      "label": "Book of Life",
+      "packId": "book_of_life",
+      "question": "What Scriptures are in the Book of Life pack inventory?"
+    },
+    {
+      "label": "Word of God",
+      "packId": "word_of_god",
+      "question": "What Scriptures trace the Word of God pack?"
+    },
+    {
+      "label": "Spirit of God",
+      "packId": "spirit_of_god",
+      "question": "What Scriptures trace Spirit of God in the corpus?"
+    }
+  ]
+}

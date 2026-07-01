@@ -14,6 +14,7 @@ const CARD_MODULES = {
   lawCommandments: require('./lawCommandments.card'),
   feasts: require('./feasts.card'),
   traditions: require('./traditions.card'),
+  holiness: require('./holiness.card'),
 };
 
 const TOPIC_TO_CARD = {
@@ -27,6 +28,7 @@ const TOPIC_TO_CARD = {
   feasts: 'feasts',
   feast_days: 'feasts',
   traditions: 'traditions',
+  holiness: 'holiness',
   acts_10_clarification: 'dietaryLaw',
   isaiah_66_17: 'dietaryLaw',
 };
@@ -44,7 +46,10 @@ const MESSAGE_PATTERNS = [
     cardId: 'kingdom',
     re: /\b(kingdom|thy kingdom come|new jerusalem|kingdom come|kingdom of heaven|where i go ye cannot come|where i go you cannot come|revelation 21|believers? going to heaven|going to heaven or)\b/i,
   },
-  { cardId: 'deathState', re: /\b(die|death|soul|grave|sleep)\b/i },
+  {
+    cardId: 'deathState',
+    re: /\b(die|died|dead|death|soul|grave|sleep|resurrection|state of the dead|what happens when we die)\b/i,
+  },
   {
     cardId: 'messiahLogos',
     re: /\b(logos|word of god|yahweh|jehovah|jesus).*(old testament|god)|god.*old testament|logos mean|john 1:1\b/i,
@@ -52,6 +57,10 @@ const MESSAGE_PATTERNS = [
   { cardId: 'lawCommandments', re: /\b(commandments?|ten commandments|law (still|abolished)|matthew 5:17)\b/i },
   { cardId: 'feasts', re: /\b(feast|feasts|leviticus 23|high sabbath|passover|pentecost|tabernacles)\b/i },
   { cardId: 'traditions', re: /\b(easter|christmas|good friday|tradition)\b/i },
+  {
+    cardId: 'holiness',
+    re: /\b(holy|holiness)\b.{0,30}\b(mean|definition|scripture|as god|commandment)\b|\bwhat does holy mean\b|\bbe holy as god\b/i,
+  },
 ];
 
 function cloneFrozenCard(card) {
@@ -87,7 +96,7 @@ function resolveCardIds(topic = '', message = '') {
     if (re.test(lower)) ids.add(cardId);
   }
 
-  if (/\b(die|death|soul|grave|sleep|absent from the body|2 corinthians 5)\b/i.test(lower)) {
+  if (/\b(die|died|dead|death|soul|grave|sleep|resurrection|state of the dead|absent from the body|2 corinthians 5)\b/i.test(lower)) {
     ids.add('deathState');
   }
   if (/\b(heaven|heavens|third heaven)\b/i.test(lower)) ids.add('heavens');

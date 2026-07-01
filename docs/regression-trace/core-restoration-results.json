@@ -1,0 +1,138 @@
+{
+  "ranAt": "2026-06-04T08:24:57.261Z",
+  "openAiKeyPresent": false,
+  "passed": 13,
+  "failed": 0,
+  "results": [
+    {
+      "id": "1_relationship_pain",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "2_correction_no_template",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "2b_seeded_health_no_route",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "3_listen_first",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "4_alzheimers",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "5_how_many_heavens",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "6_sabbath_definition",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "7_sabbath_how_holy",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "8_dietary_law",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "9_swine_pork",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "10_no_unasked_prayer",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "11_jesus_god_ot",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    },
+    {
+      "id": "12_real_health",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "core_connection_error",
+      "openAiCalled": false,
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment."
+    }
+  ]
+}

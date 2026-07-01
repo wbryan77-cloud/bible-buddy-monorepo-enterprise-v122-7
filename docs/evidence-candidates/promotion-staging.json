@@ -1,0 +1,393 @@
+{
+  "phase": "2J-N",
+  "generatedAt": "2026-06-09T01:24:08.539Z",
+  "description": "First admin approval batch — staged only, not applied.",
+  "batchTest": true,
+  "humanApprovalRequired": true,
+  "productionApplied": false,
+  "autoApplied": false,
+  "stagedCount": 5,
+  "items": [
+    {
+      "candidateId": "exp_0001",
+      "question": "Sabbath from Genesis to Revelation",
+      "topic": "sabbath",
+      "promotionType": "approve_card_ref",
+      "supportScore": 88,
+      "approvalMetadata": {
+        "reviewedBy": "William Bryan",
+        "reviewDate": "2026-06-09",
+        "notes": "Approved for batch test — flagship Sabbath G2R continuity chain.",
+        "recommendedAction": "candidate_review",
+        "discoveryPhase": "2J-J"
+      },
+      "regression": {
+        "candidateId": "exp_0001",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100,
+        "approvalGatePassed": true,
+        "ownershipPassed": true,
+        "memoryPassed": true,
+        "supportPassed": true,
+        "traceabilityPassed": true,
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "C",
+            "supportGraphMatch": null,
+            "wouldImprove": false,
+            "issues": [
+              "unsupported_citation"
+            ]
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 0,
+              "B": 0,
+              "C": 1,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 96
+          }
+        },
+        "requiresRegression": true,
+        "productionApplied": false,
+        "question": "Sabbath from Genesis to Revelation",
+        "topic": "sabbath",
+        "supportScore": 88,
+        "promotionType": "approve_card_ref",
+        "reviewedBy": "William Bryan"
+      },
+      "requiresRegression": true,
+      "regressionPassed": true,
+      "productionApplied": false,
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "stagedAt": null
+    },
+    {
+      "candidateId": "exp_0007",
+      "question": "Did early Christians keep gathering on the Sabbath for Scripture?",
+      "topic": "sabbath",
+      "promotionType": "approve_card_ref",
+      "supportScore": 82,
+      "approvalMetadata": {
+        "reviewedBy": "William Bryan",
+        "reviewDate": "2026-06-09",
+        "notes": "Approved for batch test — Acts 13:42-44 supporting scripture staging.",
+        "recommendedAction": "candidate_review",
+        "discoveryPhase": "2J-J"
+      },
+      "regression": {
+        "candidateId": "exp_0007",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100,
+        "approvalGatePassed": true,
+        "ownershipPassed": true,
+        "memoryPassed": true,
+        "supportPassed": true,
+        "traceabilityPassed": true,
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "C",
+            "supportGraphMatch": null,
+            "wouldImprove": false,
+            "issues": [
+              "unsupported_citation"
+            ]
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 0,
+              "B": 0,
+              "C": 1,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 96
+          }
+        },
+        "requiresRegression": true,
+        "productionApplied": false,
+        "question": "Did early Christians keep gathering on the Sabbath for Scripture?",
+        "topic": "sabbath",
+        "supportScore": 82,
+        "promotionType": "approve_card_ref",
+        "reviewedBy": "William Bryan"
+      },
+      "requiresRegression": true,
+      "regressionPassed": true,
+      "productionApplied": false,
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "stagedAt": null
+    },
+    {
+      "candidateId": "exp_0005",
+      "question": "What does Logos mean in John 1?",
+      "topic": "messiah_logos",
+      "promotionType": "approve_support_edge",
+      "supportScore": 97,
+      "approvalMetadata": {
+        "reviewedBy": "William Bryan",
+        "reviewDate": "2026-06-09",
+        "notes": "Approved for batch test — Logos John 1 high-confidence chain.",
+        "recommendedAction": "priority_admin_review",
+        "discoveryPhase": "2J-J"
+      },
+      "regression": {
+        "candidateId": "exp_0005",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100,
+        "approvalGatePassed": true,
+        "ownershipPassed": true,
+        "memoryPassed": true,
+        "supportPassed": true,
+        "traceabilityPassed": true,
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "C",
+            "supportGraphMatch": null,
+            "wouldImprove": false,
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 0,
+              "B": 0,
+              "C": 1,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 97
+          }
+        },
+        "requiresRegression": true,
+        "productionApplied": false,
+        "question": "What does Logos mean in John 1?",
+        "topic": "messiah_logos",
+        "supportScore": 97,
+        "promotionType": "approve_support_edge",
+        "reviewedBy": "William Bryan"
+      },
+      "requiresRegression": true,
+      "regressionPassed": true,
+      "productionApplied": false,
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "stagedAt": null
+    },
+    {
+      "candidateId": "rec_0017",
+      "question": "What happens when we die?",
+      "topic": "death_state",
+      "promotionType": "approve_card_ref",
+      "supportScore": 85,
+      "approvalMetadata": {
+        "reviewedBy": "William Bryan",
+        "reviewDate": "2026-06-09",
+        "notes": "Approved for batch test — death state core doctrine question.",
+        "recommendedAction": "candidate_review",
+        "discoveryPhase": "2J-H"
+      },
+      "regression": {
+        "candidateId": "rec_0017",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100,
+        "approvalGatePassed": true,
+        "ownershipPassed": true,
+        "memoryPassed": true,
+        "supportPassed": true,
+        "traceabilityPassed": true,
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "A",
+            "supportGraphMatch": "john11_death_as_sleep",
+            "wouldImprove": true,
+            "issues": []
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 1,
+              "B": 0,
+              "C": 0,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 97
+          }
+        },
+        "requiresRegression": true,
+        "productionApplied": false,
+        "question": "What happens when we die?",
+        "topic": "death_state",
+        "supportScore": 85,
+        "promotionType": "approve_card_ref",
+        "reviewedBy": "William Bryan"
+      },
+      "requiresRegression": true,
+      "regressionPassed": true,
+      "productionApplied": false,
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "stagedAt": null
+    },
+    {
+      "candidateId": "rec_0006",
+      "question": "What is the first resurrection?",
+      "topic": "death_state",
+      "promotionType": "approve_card_ref",
+      "supportScore": 85,
+      "approvalMetadata": {
+        "reviewedBy": "William Bryan",
+        "reviewDate": "2026-06-09",
+        "notes": "Approved for batch test — first resurrection continuity chain.",
+        "recommendedAction": "candidate_review",
+        "discoveryPhase": "2J-H"
+      },
+      "regression": {
+        "candidateId": "rec_0006",
+        "regressionPassed": true,
+        "promotionReadinessScore": 100,
+        "approvalGatePassed": true,
+        "ownershipPassed": true,
+        "memoryPassed": true,
+        "supportPassed": true,
+        "traceabilityPassed": true,
+        "checks": {
+          "support": {
+            "passed": true,
+            "skipped": false,
+            "classification": "A",
+            "supportGraphMatch": "john11_death_as_sleep",
+            "wouldImprove": true,
+            "issues": []
+          },
+          "traceability": {
+            "passed": true,
+            "skipped": false,
+            "classCounts": {
+              "A": 1,
+              "B": 0,
+              "C": 0,
+              "D": 0
+            },
+            "rows": 0
+          },
+          "approvalGate": {
+            "passed": true,
+            "skipped": false,
+            "forbiddenHits": [],
+            "traditionLanguage": false
+          },
+          "ownership": {
+            "passed": true,
+            "skipped": false,
+            "violations": []
+          },
+          "memory": {
+            "passed": true,
+            "skipped": false,
+            "deltaMB": 0,
+            "rssMB": 97
+          }
+        },
+        "requiresRegression": true,
+        "productionApplied": false,
+        "question": "What is the first resurrection?",
+        "topic": "death_state",
+        "supportScore": 85,
+        "promotionType": "approve_card_ref",
+        "reviewedBy": "William Bryan"
+      },
+      "requiresRegression": true,
+      "regressionPassed": true,
+      "productionApplied": false,
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "stagedAt": null
+    }
+  ]
+}

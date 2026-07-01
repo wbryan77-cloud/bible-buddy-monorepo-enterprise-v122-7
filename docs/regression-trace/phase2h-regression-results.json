@@ -1,0 +1,552 @@
+{
+  "ranAt": "2026-06-08T05:22:16.104Z",
+  "supportEdgeCount": 47,
+  "classCReplay": {
+    "total": 82,
+    "fixed": 47,
+    "remain": 35,
+    "remainList": [
+      {
+        "id": "CC-016",
+        "topic": "grief",
+        "sub": "general_cluster",
+        "claim": "This Scripture reassures that God is close to those hurting deeply."
+      },
+      {
+        "id": "CC-017",
+        "topic": "grief",
+        "sub": "death_resurrection_cluster",
+        "claim": "Jesus’ tears show that grief is natural and He understands your pain."
+      },
+      {
+        "id": "CC-018",
+        "topic": "deathState",
+        "sub": "death_resurrection_cluster",
+        "claim": "This verse reminds us that God is close to those who are brokenhearted, offering comfort in grief."
+      },
+      {
+        "id": "CC-019",
+        "topic": "deathState",
+        "sub": "death_resurrection_cluster",
+        "claim": "This shows Jesus' compassion and that grieving is natural, even for Him."
+      },
+      {
+        "id": "CC-024",
+        "topic": "grief",
+        "sub": "general_cluster",
+        "claim": "This verse reminds us that God is close to those who are brokenhearted in grief."
+      },
+      {
+        "id": "CC-025",
+        "topic": "grief",
+        "sub": "death_resurrection_cluster",
+        "claim": "Jesus' tears show that sorrow at death is real and personal."
+      },
+      {
+        "id": "CC-027",
+        "topic": "emotional",
+        "sub": "general_cluster",
+        "claim": "This verse directly assures us that God promises never to leave or forsake us."
+      },
+      {
+        "id": "CC-028",
+        "topic": "emotional",
+        "sub": "general_cluster",
+        "claim": "This passage reinforces that God goes with His people and will not forsake them."
+      },
+      {
+        "id": "CC-032",
+        "topic": "holiness",
+        "sub": "holy_cluster",
+        "claim": "Encourages prayer for healing and God's presence in suffering."
+      },
+      {
+        "id": "CC-033",
+        "topic": "holiness",
+        "sub": "holy_cluster",
+        "claim": "Highlights the healing power of a joyful heart during hardship."
+      },
+      {
+        "id": "CC-034",
+        "topic": "holiness",
+        "sub": "holy_cluster",
+        "claim": "Reminds us that our bodies are holy and cared for by God."
+      },
+      {
+        "id": "CC-035",
+        "topic": "holiness",
+        "sub": "holy_cluster",
+        "claim": "James 5:14 invites the sick to call for prayer and anointing, showing God’s care in our suffering."
+      },
+      {
+        "id": "CC-036",
+        "topic": "holiness",
+        "sub": "holy_cluster",
+        "claim": "Proverbs 17:22 reminds us that a merry heart is good medicine, encouraging us to seek joy amid trial"
+      },
+      {
+        "id": "CC-037",
+        "topic": "holiness",
+        "sub": "holy_cluster",
+        "claim": "Also, 1 Corinthians 6:19-20 teaches that our bodies are temples of the Holy Spirit, so caring for ou"
+      },
+      {
+        "id": "CC-038",
+        "topic": "sabbath",
+        "sub": "sabbath_cluster",
+        "claim": "Jesus also taught that doing good and helping others, like healing, is lawful on the Sabbath (implie"
+      },
+      {
+        "id": "CC-039",
+        "topic": "heavens",
+        "sub": "caution_without_teaching_chain",
+        "claim": "Expresses confidence in being with the Lord when absent from the body but is not standalone proof of"
+      },
+      {
+        "id": "CC-040",
+        "topic": "heavens",
+        "sub": "caution_without_teaching_chain",
+        "claim": "2 Corinthians 5:8 expresses the hope and confidence of being absent from the body and present with t"
+      },
+      {
+        "id": "CC-041",
+        "topic": "heavens",
+        "sub": "caution_without_teaching_chain",
+        "claim": "So, 2 Corinthians 5:8 should be understood with caution and in the broader biblical context of death"
+      },
+      {
+        "id": "CC-048",
+        "topic": "sabbath",
+        "sub": "unmapped_doctrine_claim",
+        "claim": "The Bible does not explicitly command changing the Sabbath from the seventh day to Sunday."
+      },
+      {
+        "id": "CC-057",
+        "topic": "general",
+        "sub": "general_cluster",
+        "claim": "The LORD is near to the brokenhearted and saves those who are crushed in spirit."
+      },
+      {
+        "id": "CC-059",
+        "topic": "resurrection_timeline",
+        "sub": "general_cluster",
+        "claim": "Jesus explains the resurrection timing by comparing it to Jonah's three days and nights in the whale"
+      },
+      {
+        "id": "CC-060",
+        "topic": "resurrection_timeline",
+        "sub": "general_cluster",
+        "claim": "Describes Jesus' burial, setting the timeline for the resurrection."
+      },
+      {
+        "id": "CC-061",
+        "topic": "resurrection_timeline",
+        "sub": "general_cluster",
+        "claim": "Describes Jesus rising on the third day, confirming the resurrection event."
+      },
+      {
+        "id": "CC-062",
+        "topic": "resurrection_timeline",
+        "sub": "general_cluster",
+        "claim": "Gospel account of the resurrection appearance, affirming the timing."
+      },
+      {
+        "id": "CC-064",
+        "topic": "sabbath",
+        "sub": "sabbath_cluster",
+        "claim": "Early Christians gathered on the Sabbath for hearing the word."
+      },
+      {
+        "id": "CC-066",
+        "topic": "sabbath",
+        "sub": "sabbath_cluster",
+        "claim": "Jesus showed example by attending synagogue on the Sabbath (Luke 4:16), and the early Christians als"
+      },
+      {
+        "id": "CC-067",
+        "topic": "sabbath",
+        "sub": "sabbath_cluster",
+        "claim": "Mercy and doing good are permitted on the Sabbath, as Jesus taught (Matthew 12:11-12, not in evidenc"
+      },
+      {
+        "id": "CC-068",
+        "topic": "sabbath",
+        "sub": "sabbath_cluster",
+        "claim": "The seventh day is declared a sabbath of rest, a holy convocation."
+      },
+      {
+        "id": "CC-070",
+        "topic": "sabbath",
+        "sub": "sabbath_cluster",
+        "claim": "Leviticus 23:3 also designates the seventh day as a sabbath of rest."
+      },
+      {
+        "id": "CC-073",
+        "topic": "general",
+        "sub": "general_cluster",
+        "claim": "Shows Jesus telling His disciples they cannot yet follow Him to where He is, indicating present sepa"
+      },
+      {
+        "id": "CC-078",
+        "topic": "emotional_pastoral",
+        "sub": "pastoral_no_evidence_card",
+        "claim": "This verse assures us God is near to those who are brokenhearted, showing His understanding of our p"
+      },
+      {
+        "id": "CC-079",
+        "topic": "emotional",
+        "sub": "pastoral_no_evidence_card",
+        "claim": "Jesus' tears show His personal empathy and understanding of human grief."
+      },
+      {
+        "id": "CC-080",
+        "topic": "deathState",
+        "sub": "pastoral_no_evidence_card",
+        "claim": "For example, the psalmist says, \"The LORD is nigh unto them that are of a broken heart\" (Psalm 34:18"
+      },
+      {
+        "id": "CC-081",
+        "topic": "emotional",
+        "sub": "pastoral_no_evidence_card",
+        "claim": "This verse offers Jesus' invitation to bring our burdens to Him for rest and peace."
+      },
+      {
+        "id": "CC-082",
+        "topic": "emotional",
+        "sub": "pastoral_no_evidence_card",
+        "claim": "A verse that encourages us is: \"Come unto me, all ye that labour and are heavy laden, and I will giv"
+      }
+    ]
+  },
+  "liveTopics": [
+    {
+      "id": "sabbath",
+      "message": "How do we keep the Sabbath holy?",
+      "latencyMs": 7119,
+      "openaiCalled": true,
+      "approvalDecision": "approved",
+      "classCounts": {
+        "A": 10,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "graphMatches": 10,
+      "claims": 10,
+      "ownershipViolations": [],
+      "matrix": {
+        "totalClaims": 10,
+        "classCounts": {
+          "A": 10,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 10,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "death_state",
+      "message": "What is the state of the dead according to Scripture?",
+      "latencyMs": 6722,
+      "openaiCalled": true,
+      "approvalDecision": "approved",
+      "classCounts": {
+        "A": 5,
+        "B": 1,
+        "C": 0,
+        "D": 0
+      },
+      "graphMatches": 6,
+      "claims": 6,
+      "ownershipViolations": [],
+      "matrix": {
+        "totalClaims": 6,
+        "classCounts": {
+          "A": 5,
+          "B": 1,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 6,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "resurrection",
+      "message": "What does Scripture teach about resurrection?",
+      "latencyMs": 5457,
+      "openaiCalled": true,
+      "approvalDecision": "approved",
+      "classCounts": {
+        "A": 3,
+        "B": 1,
+        "C": 0,
+        "D": 0
+      },
+      "graphMatches": 4,
+      "claims": 4,
+      "ownershipViolations": [],
+      "matrix": {
+        "totalClaims": 4,
+        "classCounts": {
+          "A": 3,
+          "B": 1,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 4,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "third_heaven",
+      "message": "What is the third heaven?",
+      "latencyMs": 14582,
+      "openaiCalled": true,
+      "approvalDecision": "approved",
+      "classCounts": {
+        "A": 4,
+        "B": 2,
+        "C": 0,
+        "D": 0
+      },
+      "graphMatches": 6,
+      "claims": 6,
+      "ownershipViolations": [],
+      "matrix": {
+        "totalClaims": 6,
+        "classCounts": {
+          "A": 4,
+          "B": 2,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 6,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "kingdom",
+      "message": "What is the kingdom of God?",
+      "latencyMs": 6159,
+      "openaiCalled": true,
+      "approvalDecision": "approved",
+      "classCounts": {
+        "A": 7,
+        "B": 1,
+        "C": 0,
+        "D": 0
+      },
+      "graphMatches": 8,
+      "claims": 8,
+      "ownershipViolations": [],
+      "matrix": {
+        "totalClaims": 8,
+        "classCounts": {
+          "A": 7,
+          "B": 1,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 8,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "acts_10",
+      "message": "Does Acts 10 make pork clean?",
+      "latencyMs": 4885,
+      "openaiCalled": true,
+      "approvalDecision": "approved",
+      "classCounts": {
+        "A": 5,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "graphMatches": 5,
+      "claims": 5,
+      "ownershipViolations": [],
+      "matrix": {
+        "totalClaims": 5,
+        "classCounts": {
+          "A": 5,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 5,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "pork",
+      "message": "Can I eat pork?",
+      "latencyMs": 12435,
+      "openaiCalled": true,
+      "approvalDecision": "approved",
+      "classCounts": {
+        "A": 5,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "graphMatches": 5,
+      "claims": 5,
+      "ownershipViolations": [],
+      "matrix": {
+        "totalClaims": 5,
+        "classCounts": {
+          "A": 5,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 5,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "logos",
+      "message": "What does Logos mean in John 1:1?",
+      "latencyMs": 6995,
+      "openaiCalled": true,
+      "approvalDecision": "approved",
+      "classCounts": {
+        "A": 5,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "graphMatches": 5,
+      "claims": 5,
+      "ownershipViolations": [],
+      "matrix": {
+        "totalClaims": 5,
+        "classCounts": {
+          "A": 5,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 5,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    },
+    {
+      "id": "holy",
+      "message": "What does holy mean?",
+      "latencyMs": 4608,
+      "openaiCalled": true,
+      "approvalDecision": "approved",
+      "classCounts": {
+        "A": 4,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "graphMatches": 4,
+      "claims": 4,
+      "ownershipViolations": [],
+      "matrix": {
+        "totalClaims": 4,
+        "classCounts": {
+          "A": 4,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "approved": 4,
+        "rejected": 0,
+        "unsupportedClaims": [],
+        "contradictedClaims": [],
+        "validatorResult": "pass",
+        "approvalDecision": "approved",
+        "claimDegraded": false,
+        "citationWithoutSupport": 0,
+        "supportAccuracyPct": 100
+      }
+    }
+  ],
+  "aggregate": {
+    "liveTopicCount": 9,
+    "classCounts": {
+      "A": 48,
+      "B": 5,
+      "C": 0,
+      "D": 0
+    },
+    "totalClaims": 53,
+    "supportAccuracyPct": 100,
+    "graphParticipationPct": 100,
+    "approvalApproved": 9,
+    "approvalDegraded": 0,
+    "degradationRatePct": 0,
+    "ownershipViolationTurns": 0,
+    "openaiCallCount": 9
+  },
+  "comparePhase2F": {
+    "classC_stress": 82,
+    "supportAccuracy_stress": 82,
+    "degradation_stress": 29,
+    "graphParticipation_stress": 83
+  }
+}

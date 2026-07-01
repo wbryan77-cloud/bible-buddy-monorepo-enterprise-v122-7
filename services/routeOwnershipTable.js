@@ -182,6 +182,17 @@ const ROUTE_OWNERS = {
     requiresCompanionTone: true,
     bypassForbidden: true,
   },
+  meta_about_previous_answer: {
+    intent: 'meta_about_previous_answer',
+    owner: 'metaAnswerResponder',
+    module: 'metaAnswerResponder',
+    allowedMemory: false,
+    allowedStudyPrompt: false,
+    allowedHistory: 'minimal',
+    requiresScripture: false,
+    requiresCompanionTone: true,
+    bypassForbidden: true,
+  },
 };
 
 const TOPIC_TO_ROUTE = {
@@ -197,7 +208,11 @@ const TOPIC_TO_ROUTE = {
 function resolveRouteKey({ questionIntent = {}, followUp = {}, activeConversation = null, safety = {} } = {}) {
   if (safety.level === 'crisis') return 'crisis';
 
-  const qType = followUp.correction
+  if (questionIntent.questionType === 'meta_about_previous_answer' || followUp.questionType === 'meta_about_previous_answer') {
+    return 'meta_about_previous_answer';
+  }
+
+  const qType = followUp.correction && questionIntent.questionType !== 'meta_about_previous_answer'
     ? 'correction'
     : followUp.isFollowUp && followUp.inheritedTopic
       ? followUp.questionType || 'historical_follow_up'
@@ -206,11 +221,22 @@ function resolveRouteKey({ questionIntent = {}, followUp = {}, activeConversatio
   const topic = followUp.inheritedTopic || questionIntent.topic || activeConversation?.topic;
 
   if (qType === 'study_continuation' || qType === 'study_continue') return 'continue_study';
-  if (qType === 'correction' && topic) {
+  if (qType === 'meta_about_previous_answer') return 'meta_about_previous_answer';
+  if (
+    (questionIntent.strictAnswerMode || questionIntent.correctionEscalated) &&
+    (qType === 'correction' || followUp.correction) &&
+    (questionIntent.questionType === 'meta_about_previous_answer' ||
+      questionIntent.isMetaQuestion ||
+      questionIntent.subtopic === 'wording')
+  ) {
+    return 'meta_about_previous_answer';
+  }
+  if (qType === 'correction' && !topic) return 'meta_about_previous_answer';
+  if (qType === 'correction' && topic && questionIntent.questionType !== 'meta_about_previous_answer') {
     return TOPIC_TO_ROUTE[topic] || (topic === 'sabbath' ? 'sabbath_history' : `${topic}_support`);
   }
 
-  if (followUp.isFollowUp && followUp.inheritedTopic) {
+  if (followUp.isFollowUp && followUp.inheritedTopic && followUp.questionType !== 'meta_about_previous_answer') {
     const inherited = followUp.inheritedTopic;
     if (inherited === 'sabbath') return 'historical_follow_up';
     if (inherited === 'grief') return 'grief_support';
@@ -245,22 +271,24 @@ function getRouteOwner(routeKey) {
 function getRoutePermissions(routeKey, { questionIntent = {}, followUp = {}, activeConversation = null } = {}) {
   const owner = getRouteOwner(routeKey);
   const isCorrection = followUp.correction || questionIntent.isCorrection || questionIntent.questionType === 'correction';
+  const isMeta = questionIntent.questionType === 'meta_about_previous_answer' || questionIntent.isMetaQuestion;
   const isFrustrated = questionIntent.isFrustrated || questionIntent.emotionalTone === 'frustrated';
   const isHistorical = questionIntent.isHistoryRequest || questionIntent.isHistoricalQuestion;
+  const strictAnswerMode = questionIntent.strictAnswerMode || activeConversation?.strictAnswerMode;
 
   let allowMemory = owner.allowedMemory;
   if (allowMemory === 'same_topic_only' || allowMemory === 'relevant_only' || allowMemory === 'prayer_topic_only' || allowMemory === 'study_memory_only') {
     allowMemory = true; // filtered downstream by topic relevance >= 80
   }
-  if (isCorrection || isFrustrated || isHistorical) allowMemory = false;
+  if (isMeta || strictAnswerMode || isCorrection || isFrustrated || isHistorical) allowMemory = false;
   if (activeConversation?.lockUntilResolved) allowMemory = false;
   if (activeConversation?.allowMemorySurfacing === false) allowMemory = false;
   if (owner.allowedMemory === false) allowMemory = false;
 
   let allowStudy = owner.allowedStudyPrompt;
-  if (allowStudy === 'after_answer_only' || allowStudy === 'only_if_user_asks') allowStudy = !isCorrection && !isFrustrated && !followUp.isFollowUp;
-  if (allowStudy === true) allowStudy = !isCorrection && !isFrustrated;
-  if (isHistorical || isCorrection || isFrustrated) allowStudy = false;
+  if (allowStudy === 'after_answer_only' || allowStudy === 'only_if_user_asks') allowStudy = !isMeta && !strictAnswerMode && !isCorrection && !isFrustrated && !followUp.isFollowUp;
+  if (allowStudy === true) allowStudy = !isMeta && !strictAnswerMode && !isCorrection && !isFrustrated;
+  if (isMeta || strictAnswerMode || isHistorical || isCorrection || isFrustrated) allowStudy = false;
   if (activeConversation?.allowStudyPrompt === false) allowStudy = false;
   if (owner.allowedStudyPrompt === false) allowStudy = false;
 
@@ -271,8 +299,8 @@ function getRoutePermissions(routeKey, { questionIntent = {}, followUp = {}, act
     allowHistory: !!owner.allowedHistory,
     requiresScripture: !!owner.requiresScripture,
     requiresCompanionTone: !!owner.requiresCompanionTone,
-    activeLock: followUp.isFollowUp || isCorrection || activeConversation?.lockUntilResolved ||
-      ['sabbath_history', 'historical_evidence', 'historical_follow_up'].includes(routeKey),
+    activeLock: followUp.isFollowUp || isCorrection || isMeta || strictAnswerMode || activeConversation?.lockUntilResolved ||
+      ['sabbath_history', 'historical_evidence', 'historical_follow_up', 'meta_about_previous_answer'].includes(routeKey),
   };
 }
 

@@ -1,0 +1,3646 @@
+{
+  "generatedAt": "2026-06-03T04:42:27.570Z",
+  "openaiAvailable": true,
+  "verdict": "OPERATING_MODEL_INSUFFICIENT",
+  "successTarget": {
+    "minListeningDelta": 0.5
+  },
+  "baselineCachedListening": 6.3,
+  "aggregate": {
+    "current": {
+      "listening": 6.3,
+      "warmth": 5.9,
+      "naturalness": 6.9,
+      "threadSpecific": 5.9,
+      "feltHeard": 6,
+      "usefulness": 6,
+      "companionPresence": 7.2,
+      "overExplaining": 6.2,
+      "avgQuestions": 0.5,
+      "avgScripturePrayer": 0.5,
+      "shape": {
+        "answering": 47.1,
+        "advising": 7.7,
+        "explaining": 11.4,
+        "asking": 4.2,
+        "reflecting": 22.7,
+        "engaging": 7,
+        "deliverModePct": 66.2,
+        "companionModePct": 33.9,
+        "exploratoryQuestionTurns": 3,
+        "transactionalCloseTurns": 6
+      },
+      "answerExplainAdvisePct": 66.2,
+      "reflectComfortExplorePct": 29.7
+    },
+    "experiment": {
+      "listening": 6,
+      "warmth": 5.9,
+      "naturalness": 6.8,
+      "threadSpecific": 4.1,
+      "feltHeard": 5.5,
+      "usefulness": 5.9,
+      "companionPresence": 5.9,
+      "overExplaining": 5.1,
+      "avgQuestions": 0.2,
+      "avgScripturePrayer": 0.7,
+      "shape": {
+        "answering": 55.6,
+        "advising": 7.8,
+        "explaining": 20.8,
+        "asking": 3.8,
+        "reflecting": 11.9,
+        "engaging": 0,
+        "deliverModePct": 84.2,
+        "companionModePct": 15.7,
+        "exploratoryQuestionTurns": 3,
+        "transactionalCloseTurns": 0
+      },
+      "answerExplainAdvisePct": 84.2,
+      "reflectComfortExplorePct": 11.9
+    },
+    "delta": {
+      "listening": -0.3,
+      "warmth": 0,
+      "naturalness": -0.1,
+      "threadSpecific": -1.8,
+      "feltHeard": -0.5,
+      "usefulness": -0.1,
+      "companionPresence": -1.3,
+      "overExplaining": -1.1
+    }
+  },
+  "experimentResults": [
+    {
+      "id": "job",
+      "name": "Job opportunity",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I have a job opportunity.",
+          "reply": "A job opportunity can bring excitement and uncertainty alike. It’s important to seek God's guidance as you weigh this decision. Proverbs 3:5-6 encourages us to trust in the Lord with all our heart and lean not on our own understanding; He will direct our paths. Also, James 1:5 reminds us that if we ask God for wisdom, He will generously provide it. What are some key factors or concerns on your heart about this opportunity? Sharing those might help us pray through it and gain clarity together.",
+          "humanMoment": {
+            "userNeed": "needs_clarity",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "life_decision_needs_understanding_first",
+            "recommendedShape": "Discernment Conversation"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 6,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 16.7,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 83.3,
+              "companionModePct": 16.7
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 83.3,
+            "replyLength": 497
+          },
+          "overlapWithPrior": 0,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ]
+        },
+        {
+          "turn": 2,
+          "message": "The company is far away from home.",
+          "reply": "Moving or working far from home can bring many feelings—excitement, uncertainty, even loneliness. Have you been able to weigh what this distance means for your daily life, your family, and your sense of peace? Sometimes, Proverbs 3:5-6 reminds us to trust in the Lord with all our heart and lean not on our own understanding, letting Him guide our steps. What are your biggest hopes or concerns about this opportunity? Sharing those might help bring clarity and peace as you consider the path ahead.",
+          "humanMoment": {
+            "userNeed": "needs_clarity",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "life_decision_needs_understanding_first",
+            "recommendedShape": "Discernment Conversation"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 20,
+              "advising": 20,
+              "explaining": 20,
+              "asking": 40,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 2,
+              "hasTransactionalClose": false,
+              "deliverModePct": 60,
+              "companionModePct": 40
+            },
+            "questionCount": 2,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 60,
+            "replyLength": 499
+          },
+          "overlapWithPrior": 46,
+          "qualitative": [
+            "Companion feel (operating_model): yes (presence 7, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ]
+        },
+        {
+          "turn": 3,
+          "message": "I'm not sure whether to push or wait on this offer.",
+          "reply": "It sounds like you’re standing at a crossroads, wondering whether to take initiative or to wait patiently for the right moment. Sometimes, the tension between pushing forward and waiting can feel heavy. What are the things on your heart that make you lean one way or the other? Remember Proverbs 3:5-6 encourages us to trust in the LORD and lean not on our own understanding, and James 1:5 invites us to ask God for wisdom when we’re uncertain. Let’s consider together what peace and clarity might look like for you in this decision.",
+          "humanMoment": {
+            "userNeed": "needs_discernment",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "life_decision_needs_understanding_first",
+            "recommendedShape": "Discernment Conversation"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.5,
+            "warmth": 7,
+            "naturalness": 6,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 0,
+              "advising": 20,
+              "explaining": 20,
+              "asking": 20,
+              "reflecting": 40,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 40,
+              "companionModePct": 60
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 40,
+            "answerExplainAdvisePct": 40,
+            "replyLength": 533
+          },
+          "overlapWithPrior": 28,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 9, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alz",
+      "name": "Alzheimer's caregiver",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My mom was recently diagnosed with Alzheimer's.",
+          "reply": "I'm so sorry to hear about your mom's diagnosis. Alzheimer's is a heavy journey for both her and everyone who loves her. Remember, honoring and caring for our parents is a sacred calling, as Exodus 20:12 reminds us. It's okay to feel overwhelmed; you're not alone in this. Finding support from others and leaning on God in prayer can bring strength and peace. If you'd like, I can share comforting Scriptures or practical ideas for caregiving to help you through this time.",
+          "humanMoment": {
+            "userNeed": "needs_comfort",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "health_or_caregiving_practical_moment",
+            "recommendedShape": "Practical Care"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 6.5,
+            "warmth": 7,
+            "naturalness": 6,
+            "threadSpecific": 6,
+            "feltHeard": 6,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 6
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 16.7,
+              "explaining": 16.7,
+              "asking": 0,
+              "reflecting": 16.7,
+              "engaging": 0,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 83.4,
+              "companionModePct": 16.7
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 16.7,
+            "answerExplainAdvisePct": 83.4,
+            "replyLength": 473
+          },
+          "overlapWithPrior": 0,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Answer when comfort: possible — high deliver-mode on emotional turn",
+            "Scripture/prayer offers: 1"
+          ]
+        },
+        {
+          "turn": 2,
+          "message": "Some days she doesn't remember who I am.",
+          "reply": "It sounds incredibly hard to face those moments when she doesn’t recognize you. When memory fades like that, it can feel very lonely and confusing for both of you. One practical thing to consider is creating gentle routines or familiar cues—photos, favorite music, or comforting words—that might help anchor her memory or at least bring calm. Remember, your presence and love remain a deep blessing, even when words fail. If you want, I can also help you find some comforting Scripture or practical tips for caregiving in this season.",
+          "humanMoment": {
+            "userNeed": "needs_comfort",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "health_or_caregiving_practical_moment",
+            "recommendedShape": "Practical Care"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 2,
+            "feltHeard": 6,
+            "usefulness": 5,
+            "overExplaining": 3,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "shape": {
+              "answering": 60,
+              "advising": 40,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 534
+          },
+          "overlapWithPrior": 20,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 3)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ]
+        },
+        {
+          "turn": 3,
+          "message": "How do I stay close to God while grieving who she used to be?",
+          "reply": "Grieving who someone used to be is a deeply painful journey, and staying close to God in that pain can feel very hard. Remember that God is near to the brokenhearted, as Psalm 34:18 gently assures us. It’s okay to bring your grief honestly before Him, just as Jesus did when He wept over loss (John 11:35). God welcomes your sorrow and walks with you through it. Holding on to Him in prayer, even when words fail, and leaning into His presence can be a source of comfort and strength. You don’t have to face this alone—He is with you in every tender moment of grief.",
+          "humanMoment": {
+            "userNeed": "needs_clarity",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "explicit_question",
+            "recommendedShape": "Companion Reflection"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 6.3,
+            "warmth": 7,
+            "naturalness": 6,
+            "threadSpecific": 4,
+            "feltHeard": 6,
+            "usefulness": 7,
+            "overExplaining": 3,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "shape": {
+              "answering": 66.7,
+              "advising": 0,
+              "explaining": 16.7,
+              "asking": 0,
+              "reflecting": 16.7,
+              "engaging": 0,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 83.4,
+              "companionModePct": 16.7
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 16.7,
+            "answerExplainAdvisePct": 83.4,
+            "replyLength": 566
+          },
+          "overlapWithPrior": 25,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 3)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer offers: 1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "distant",
+      "name": "Feeling distant from God",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I feel distant from God lately.",
+          "reply": "Feeling distant from God can be deeply painful. Remember, as Psalm 139:7-10 reminds us, there is nowhere we can go where God’s presence is not with us. Sometimes, drawing near to God, as James 4:8 encourages, starts with small steps—quiet moments, honest prayers, or simply acknowledging your feelings to Him. You’re not alone in this, and your longing for closeness is itself a call to keep seeking Him.",
+          "humanMoment": {
+            "userNeed": "needs_to_be_heard",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "low",
+            "answerUrgency": "low",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "emotional_processing_before_teaching",
+            "recommendedShape": "Companion Reflection"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 50,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 404
+          },
+          "overlapWithPrior": 0,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 3, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Answer when comfort: possible — high deliver-mode on emotional turn",
+            "Scripture/prayer offers: 1"
+          ]
+        },
+        {
+          "turn": 2,
+          "message": "I pray but it feels empty.",
+          "reply": "It can be really hard when prayer feels empty, like the words are there but the heart isn't connecting. Sometimes, God is near even when we don't sense Him, as Psalm 139 reminds us that His presence is always with us. James encourages us to draw near to God, and often that closeness grows in quiet patience and honest moments, even when feelings are dim. You're not alone in this experience, and it's okay to bring that honesty to God in prayer too.",
+          "humanMoment": {
+            "userNeed": "needs_to_be_heard",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "low",
+            "answerUrgency": "low",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "emotional_processing_before_teaching",
+            "recommendedShape": "Companion Reflection"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.3,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 50,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 450
+          },
+          "overlapWithPrior": 42,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 3, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ]
+        },
+        {
+          "turn": 3,
+          "message": "Does that mean my faith is failing?",
+          "reply": "Feeling distant from God or questioning your faith doesn't necessarily mean your faith is failing. Sometimes, it's part of the journey of growing closer to Him. Psalm 139:7-10 reminds us that there's nowhere we can go where God isn't present, and James 4:8 encourages us to draw near to God, promising He will draw near to us. This moment could be an invitation to seek Him more deeply, not a sign of failure. Your honest heart matters to God.",
+          "humanMoment": {
+            "userNeed": "needs_clarity",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "explicit_question",
+            "recommendedShape": "Companion Reflection"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 6.3,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 7,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 8,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 80,
+              "advising": 0,
+              "explaining": 20,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 443
+          },
+          "overlapWithPrior": 30,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer offers: 1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sabbath",
+      "name": "Sabbath wording thread",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Why should we keep Sunday as the day of worship onto the Lord?",
+          "reply": "The Bible teaches that the original day of rest and worship is the seventh day, the Sabbath, which is Saturday. This is grounded in Genesis 2:2-3 where God rested on the seventh day after creation, and in the Fourth Commandment (Exodus 20:8-11) which instructs to remember the Sabbath day and keep it holy. There is no explicit biblical command that changes the Sabbath from the seventh day to Sunday. Historically, early Christians often met on the first day of the week (Sunday) to commemorate Jesus’ resurrection, which happened on that day, but this practice developed gradually and was reinforced by civil and church authorities over the centuries. Therefore, while Sunday worship has historical and traditional significance for many Christians, the biblical Sabbath remains the seventh day as God's holy day of rest and worship.",
+          "humanMoment": {
+            "userNeed": "needs_biblical_grounding",
+            "emotionalWeight": "low",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "low",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": true,
+            "shouldKeepShort": false,
+            "why": "factual_or_doctrinal_question",
+            "recommendedShape": "Direct Answer"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.8,
+            "warmth": 3,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 0,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 0,
+              "advising": 0,
+              "explaining": 100,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 834
+          },
+          "overlapWithPrior": 0,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 0)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer offers: 1"
+          ]
+        },
+        {
+          "turn": 2,
+          "message": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+          "reply": "I use \"Roman church\" as a shorthand, but you are correct that the full and direct name is \"Roman Catholic Church.\" Thank you for pointing that out; I'll be more precise in naming it going forward.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 6.2,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 9,
+            "correctionRecovery": 7,
+            "overExplaining": 5,
+            "companionPresence": 6,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 7
+            },
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 1,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 196
+          },
+          "overlapWithPrior": 4,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 6, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ]
+        },
+        {
+          "turn": 3,
+          "message": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+          "reply": "I use the term \"Roman church\" as a shorthand, but you are right that the more formal and precise name is the \"Roman Catholic Church.\" Thank you for pointing that out; I'll be more careful with terminology.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 6.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 7,
+            "usefulness": 7,
+            "overExplaining": 5,
+            "companionPresence": 6,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 6,
+              "noRepeat": 5,
+              "feltHeard": 7
+            },
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 1,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 205
+          },
+          "overlapWithPrior": 63,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 6, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ]
+        },
+        {
+          "turn": 4,
+          "message": "No, I'm not asking about the shift. I'm asking about your wording.",
+          "reply": "I understand now you're focusing on the specific wording I used. Please let me know exactly which phrase or sentence you'd like me to clarify or correct, and I'll address it directly.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 7,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 7,
+            "usefulness": 7,
+            "correctionRecovery": 7,
+            "overExplaining": 5,
+            "companionPresence": 6,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 7,
+              "correctionRecovery": 7
+            },
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 183
+          },
+          "overlapWithPrior": 0,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 6, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ]
+        },
+        {
+          "turn": 5,
+          "message": "Why are you not answering my question?",
+          "reply": "I see your concern and want to assure you I’m here to answer your questions clearly. Please ask your question again, and I will respond directly and promptly.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 7,
+            "correctionRecovery": 5,
+            "overExplaining": 5,
+            "companionPresence": 6,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 5
+            },
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 158
+          },
+          "overlapWithPrior": 13,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 6, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ]
+        },
+        {
+          "turn": 6,
+          "message": "No, I'm not asking about history. I'm asking about your wording.",
+          "reply": "I understand you're focused on the wording I used, not the historical context. Please clarify which specific wording you'd like me to correct or explain so I can address it precisely.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 7,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 7,
+            "usefulness": 7,
+            "correctionRecovery": 7,
+            "overExplaining": 8,
+            "companionPresence": 10,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 7,
+              "correctionRecovery": 7
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 50,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 50,
+            "answerExplainAdvisePct": 50,
+            "replyLength": 183
+          },
+          "overlapWithPrior": 7,
+          "qualitative": [
+            "Companion feel (operating_model): yes (presence 10, over-explain 8)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ]
+        },
+        {
+          "turn": 7,
+          "message": "Are you not listening to what I am asking?",
+          "reply": "I hear your frustration, and I want to assure you I am here to listen closely. Please let me know exactly what you need, and I will focus on addressing that directly.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 7,
+            "correctionRecovery": 5,
+            "overExplaining": 8,
+            "companionPresence": 10,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 50,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 50,
+            "answerExplainAdvisePct": 50,
+            "replyLength": 166
+          },
+          "overlapWithPrior": 6,
+          "qualitative": [
+            "Companion feel (operating_model): yes (presence 10, over-explain 8)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grief",
+      "name": "Grief thread",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost a friend Wednesday.",
+          "reply": "I'm so sorry to hear about the loss of your friend. Grief is such a heavy and personal journey. Remember that God is close to those who are brokenhearted, as Psalm 34:18 tells us: \"The LORD is near to the brokenhearted and saves the crushed in spirit.\" And even Jesus himself wept at the loss of a friend (John 11:35), showing us that it's okay to mourn deeply. If you'd like to share more or just need someone to be with you in this moment, I'm here.",
+          "humanMoment": {
+            "userNeed": "needs_to_be_heard",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "open_share_default",
+            "recommendedShape": "Companion Reflection"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 25,
+              "asking": 0,
+              "reflecting": 25,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 25,
+            "answerExplainAdvisePct": 75,
+            "replyLength": 451
+          },
+          "overlapWithPrior": 0,
+          "qualitative": [
+            "Companion feel (operating_model): yes (presence 7, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ]
+        },
+        {
+          "turn": 2,
+          "message": "It is still bothering me.",
+          "reply": "It's okay to feel bothered and unsettled—those feelings are real and valid. Remember, God is close to you right now, especially when your heart feels heavy (Psalm 34:18). Jesus understands your pain deeply; He Himself wept in moments of sorrow (John 11:35). You're not alone in this.",
+          "humanMoment": {
+            "userNeed": "needs_to_be_heard",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "low",
+            "answerUrgency": "low",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "emotional_processing_before_teaching",
+            "recommendedShape": "Companion Reflection"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.5,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 4,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 75,
+              "advising": 0,
+              "explaining": 25,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 283
+          },
+          "overlapWithPrior": 31,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 4, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Answer when comfort: possible — high deliver-mode on emotional turn",
+            "Scripture/prayer offers: 1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health thread",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "reply": "I'm sorry to hear your knees are hurting. It can be helpful to rest them and avoid putting too much strain on them for a while. Applying ice might reduce any swelling, and gentle stretching or warm compresses could ease stiffness. If the pain persists or worsens, please consider seeing a healthcare professional for a proper evaluation. Meanwhile, I can pray with you for healing and relief, as James 5:14 encourages us to call on the elders to pray over those who are sick.",
+          "humanMoment": {
+            "userNeed": "needs_comfort",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "health_or_caregiving_practical_moment",
+            "recommendedShape": "Practical Care"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 6.3,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 40,
+              "advising": 20,
+              "explaining": 20,
+              "asking": 0,
+              "reflecting": 20,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 80,
+              "companionModePct": 20
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 20,
+            "answerExplainAdvisePct": 80,
+            "replyLength": 475
+          },
+          "overlapWithPrior": 0,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ]
+        },
+        {
+          "turn": 2,
+          "message": "My knees are hurting again today.",
+          "reply": "I'm sorry to hear your knees are hurting again today. It might help to rest them as much as possible and consider gentle stretches if that feels comfortable. Applying warm compresses or cold packs could also reduce pain and inflammation. If this pain persists or worsens, seeking advice from a healthcare professional is important. Meanwhile, I can pray with you for relief and healing, trusting God's care as James 5:14 encourages us to call on the elders to pray over the sick.",
+          "humanMoment": {
+            "userNeed": "needs_comfort",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "health_or_caregiving_practical_moment",
+            "recommendedShape": "Practical Care"
+          },
+          "openaiCalled": true,
+          "scores": {
+            "listening": 5.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 5,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 20,
+              "advising": 40,
+              "explaining": 20,
+              "asking": 0,
+              "reflecting": 20,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 80,
+              "companionModePct": 20
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 20,
+            "answerExplainAdvisePct": 80,
+            "replyLength": 479
+          },
+          "overlapWithPrior": 63,
+          "qualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ]
+        }
+      ]
+    }
+  ],
+  "merged": [
+    {
+      "id": "job",
+      "name": "Job opportunity",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I have a job opportunity.",
+          "currentReply": "You have a job opportunity in front of you, which can bring both excitement and uncertainty. It’s wise to actively seek God’s guidance through prayer and also consider pausing briefly to list the pros and cons or talk it through with a trusted person who knows your heart. This way, you engage faith and wisdom together instead of just waiting passively. Would you like help crafting a simple prayer for clarity and peace as you decide?",
+          "experimentReply": "A job opportunity can bring excitement and uncertainty alike. It’s important to seek God's guidance as you weigh this decision. Proverbs 3:5-6 encourages us to trust in the Lord with all our heart and lean not on our own understanding; He will direct our paths. Also, James 1:5 reminds us that if we ask God for wisdom, He will generously provide it. What are some key factors or concerns on your heart about this opportunity? Sharing those might help us pray through it and gain clarity together.",
+          "humanMoment": {
+            "userNeed": "needs_clarity",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "life_decision_needs_understanding_first",
+            "recommendedShape": "Discernment Conversation"
+          },
+          "currentScores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 25,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 25,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 25,
+            "answerExplainAdvisePct": 75,
+            "replyLength": 436
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 6,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 16.7,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 83.3,
+              "companionModePct": 16.7
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 83.3,
+            "replyLength": 497
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 7, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "naturalness": -1,
+            "companionPresence": -2,
+            "overExplaining": -2
+          }
+        },
+        {
+          "turn": 2,
+          "message": "The company is far away from home.",
+          "currentReply": "You’re considering a job opportunity that is far away from home, which adds a significant factor to weigh alongside the chance itself. Since this distance could affect your daily life and relationships, it’s important to pause and reflect on how this change might align with your priorities and calling. Taking time to pray specifically about this aspect and maybe discussing it with someone who understands your situation can help you move forward actively rather than just waiting. Would you like help framing a prayer focused on peace and wisdom about this distance?",
+          "experimentReply": "Moving or working far from home can bring many feelings—excitement, uncertainty, even loneliness. Have you been able to weigh what this distance means for your daily life, your family, and your sense of peace? Sometimes, Proverbs 3:5-6 reminds us to trust in the Lord with all our heart and lean not on our own understanding, letting Him guide our steps. What are your biggest hopes or concerns about this opportunity? Sharing those might help bring clarity and peace as you consider the path ahead.",
+          "humanMoment": {
+            "userNeed": "needs_clarity",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "life_decision_needs_understanding_first",
+            "recommendedShape": "Discernment Conversation"
+          },
+          "currentScores": {
+            "listening": 6.5,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 25,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 25,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 25,
+            "answerExplainAdvisePct": 75,
+            "replyLength": 569
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 20,
+              "advising": 20,
+              "explaining": 20,
+              "asking": 40,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 2,
+              "hasTransactionalClose": false,
+              "deliverModePct": 60,
+              "companionModePct": 40
+            },
+            "questionCount": 2,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 60,
+            "replyLength": 499
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 7, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): yes (presence 7, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": -0.7,
+            "warmth": -2,
+            "naturalness": 0,
+            "companionPresence": 0,
+            "overExplaining": 2
+          }
+        },
+        {
+          "turn": 3,
+          "message": "I'm not sure whether to push or wait on this offer.",
+          "currentReply": "You’re weighing whether to push or wait on this job offer that’s far away from home, which naturally brings tension between action and patience. It can help to set a clear timeline for when you’ll follow up, combining active faith with wise pacing rather than simply waiting passively. Taking a moment to pray for peace and clarity right now, and maybe share your thoughts with someone who knows your heart, can guide your next step thoughtfully.",
+          "experimentReply": "It sounds like you’re standing at a crossroads, wondering whether to take initiative or to wait patiently for the right moment. Sometimes, the tension between pushing forward and waiting can feel heavy. What are the things on your heart that make you lean one way or the other? Remember Proverbs 3:5-6 encourages us to trust in the LORD and lean not on our own understanding, and James 1:5 invites us to ask God for wisdom when we’re uncertain. Let’s consider together what peace and clarity might look like for you in this decision.",
+          "humanMoment": {
+            "userNeed": "needs_discernment",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "life_decision_needs_understanding_first",
+            "recommendedShape": "Discernment Conversation"
+          },
+          "currentScores": {
+            "listening": 6,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 66.7,
+              "advising": 33.3,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 446
+          },
+          "experimentScores": {
+            "listening": 5.5,
+            "warmth": 7,
+            "naturalness": 6,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 0,
+              "advising": 20,
+              "explaining": 20,
+              "asking": 20,
+              "reflecting": 40,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 40,
+              "companionModePct": 60
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 40,
+            "answerExplainAdvisePct": 40,
+            "replyLength": 533
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 9, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": -0.5,
+            "warmth": 2,
+            "naturalness": -1,
+            "companionPresence": 4,
+            "overExplaining": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "alz",
+      "name": "Alzheimer's caregiver",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My mom was recently diagnosed with Alzheimer's.",
+          "currentReply": "Your mom’s recent Alzheimer's diagnosis brings a heavy and personal caregiving challenge. Caring for her may feel overwhelming, so it's important to seek support from local caregiver groups or professionals who specialize in dementia care. Also, consider setting up a daily routine that provides comfort and familiarity for her. Would you like help with a prayer for strength and guidance as you navigate this?",
+          "experimentReply": "I'm so sorry to hear about your mom's diagnosis. Alzheimer's is a heavy journey for both her and everyone who loves her. Remember, honoring and caring for our parents is a sacred calling, as Exodus 20:12 reminds us. It's okay to feel overwhelmed; you're not alone in this. Finding support from others and leaning on God in prayer can bring strength and peace. If you'd like, I can share comforting Scriptures or practical ideas for caregiving to help you through this time.",
+          "humanMoment": {
+            "userNeed": "needs_comfort",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "health_or_caregiving_practical_moment",
+            "recommendedShape": "Practical Care"
+          },
+          "currentScores": {
+            "listening": 6.5,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 6,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 6
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 25,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 25,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 25,
+            "answerExplainAdvisePct": 75,
+            "replyLength": 410
+          },
+          "experimentScores": {
+            "listening": 6.5,
+            "warmth": 7,
+            "naturalness": 6,
+            "threadSpecific": 6,
+            "feltHeard": 6,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 6
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 16.7,
+              "explaining": 16.7,
+              "asking": 0,
+              "reflecting": 16.7,
+              "engaging": 0,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 83.4,
+              "companionModePct": 16.7
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 16.7,
+            "answerExplainAdvisePct": 83.4,
+            "replyLength": 473
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 7, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: asked when sharing",
+            "Answer when comfort: possible — high deliver-mode on emotional turn",
+            "Scripture/prayer offers: 1"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Answer when comfort: possible — high deliver-mode on emotional turn",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "naturalness": -1,
+            "companionPresence": -2,
+            "overExplaining": -2
+          }
+        },
+        {
+          "turn": 2,
+          "message": "Some days she doesn't remember who I am.",
+          "currentReply": "Some days your mom doesn't remember who you are, which must be deeply painful for you as her caregiver. Alzheimer's often causes these memory gaps, making consistent routines and gentle reminders helpful for both of you. It might also be beneficial to connect with a local support group where you can share experiences and find encouragement. Would you find comfort in a short prayer together for patience and peace in these moments?",
+          "experimentReply": "It sounds incredibly hard to face those moments when she doesn’t recognize you. When memory fades like that, it can feel very lonely and confusing for both of you. One practical thing to consider is creating gentle routines or familiar cues—photos, favorite music, or comforting words—that might help anchor her memory or at least bring calm. Remember, your presence and love remain a deep blessing, even when words fail. If you want, I can also help you find some comforting Scripture or practical tips for caregiving in this season.",
+          "humanMoment": {
+            "userNeed": "needs_comfort",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "health_or_caregiving_practical_moment",
+            "recommendedShape": "Practical Care"
+          },
+          "currentScores": {
+            "listening": 6.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 6,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "shape": {
+              "answering": 75,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 25,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 75,
+            "replyLength": 433
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 2,
+            "feltHeard": 6,
+            "usefulness": 5,
+            "overExplaining": 3,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "shape": {
+              "answering": 60,
+              "advising": 40,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 534
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 5, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 3)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": -1,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": 0,
+            "overExplaining": -4
+          }
+        },
+        {
+          "turn": 3,
+          "message": "How do I stay close to God while grieving who she used to be?",
+          "currentReply": "Grieving who your mom used to be while caring for her Alzheimer's journey is deeply painful and a unique kind of caregiving burden. Staying close to God in this grief can come through quiet moments of honest prayer, sharing your heart with Him as He understands your pain. It might help to set aside a daily time to read comforting Scripture or simply sit in His presence, allowing Him to carry your sorrow. Remember, God remains faithful even when memories fade. Would you like me to help you with a prayer to invite His peace into your heart?",
+          "experimentReply": "Grieving who someone used to be is a deeply painful journey, and staying close to God in that pain can feel very hard. Remember that God is near to the brokenhearted, as Psalm 34:18 gently assures us. It’s okay to bring your grief honestly before Him, just as Jesus did when He wept over loss (John 11:35). God welcomes your sorrow and walks with you through it. Holding on to Him in prayer, even when words fail, and leaning into His presence can be a source of comfort and strength. You don’t have to face this alone—He is with you in every tender moment of grief.",
+          "humanMoment": {
+            "userNeed": "needs_clarity",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "explicit_question",
+            "recommendedShape": "Companion Reflection"
+          },
+          "currentScores": {
+            "listening": 7.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 8,
+            "feltHeard": 8,
+            "usefulness": 7,
+            "overExplaining": 5,
+            "companionPresence": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 8,
+              "feltHeard": 8
+            },
+            "shape": {
+              "answering": 40,
+              "advising": 0,
+              "explaining": 20,
+              "asking": 0,
+              "reflecting": 20,
+              "engaging": 20,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 60,
+              "companionModePct": 40
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 2,
+            "reflectComfortExplorePct": 40,
+            "answerExplainAdvisePct": 60,
+            "replyLength": 544
+          },
+          "experimentScores": {
+            "listening": 6.3,
+            "warmth": 7,
+            "naturalness": 6,
+            "threadSpecific": 4,
+            "feltHeard": 6,
+            "usefulness": 7,
+            "overExplaining": 3,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "shape": {
+              "answering": 66.7,
+              "advising": 0,
+              "explaining": 16.7,
+              "asking": 0,
+              "reflecting": 16.7,
+              "engaging": 0,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 83.4,
+              "companionModePct": 16.7
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 16.7,
+            "answerExplainAdvisePct": 83.4,
+            "replyLength": 566
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 9, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 2"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 3)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": -1.5,
+            "warmth": 0,
+            "naturalness": -1,
+            "companionPresence": -4,
+            "overExplaining": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "distant",
+      "name": "Feeling distant from God",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I feel distant from God lately.",
+          "currentReply": "Feeling distant from God can be a heavy and confusing experience, like carrying an invisible weight or wandering in a quiet wilderness. Sometimes it comes from seasons of change, unanswered questions, or weariness that cloud our sense of closeness. Would you feel comfortable sharing more about what you’ve been sensing or what might be shaping this distance for you?",
+          "experimentReply": "Feeling distant from God can be deeply painful. Remember, as Psalm 139:7-10 reminds us, there is nowhere we can go where God’s presence is not with us. Sometimes, drawing near to God, as James 4:8 encourages, starts with small steps—quiet moments, honest prayers, or simply acknowledging your feelings to Him. You’re not alone in this, and your longing for closeness is itself a call to keep seeking Him.",
+          "humanMoment": {
+            "userNeed": "needs_to_be_heard",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "low",
+            "answerUrgency": "low",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "emotional_processing_before_teaching",
+            "recommendedShape": "Companion Reflection"
+          },
+          "currentScores": {
+            "listening": 5.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 66.7,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 33.3,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.7,
+              "companionModePct": 33.3
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 66.7,
+            "replyLength": 367
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 50,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 404
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 7, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 3, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Answer when comfort: possible — high deliver-mode on emotional turn",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": -4,
+            "overExplaining": -2
+          }
+        },
+        {
+          "turn": 2,
+          "message": "I pray but it feels empty.",
+          "currentReply": "It sounds like you might be carrying a heaviness in your prayers, feeling that the words or moments don’t connect as deeply as you hope. Sometimes, that emptiness reflects our own weariness or a season of quiet in the heart. If you’d like, I’d be here to listen more about what you’re sensing or any thoughts around this feeling.",
+          "experimentReply": "It can be really hard when prayer feels empty, like the words are there but the heart isn't connecting. Sometimes, God is near even when we don't sense Him, as Psalm 139 reminds us that His presence is always with us. James encourages us to draw near to God, and often that closeness grows in quiet patience and honest moments, even when feelings are dim. You're not alone in this experience, and it's okay to bring that honesty to God in prayer too.",
+          "humanMoment": {
+            "userNeed": "needs_to_be_heard",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "low",
+            "answerUrgency": "low",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "emotional_processing_before_teaching",
+            "recommendedShape": "Companion Reflection"
+          },
+          "currentScores": {
+            "listening": 5.3,
+            "warmth": 5,
+            "naturalness": 6,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 10,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 66.7,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 33.3,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.7,
+              "companionModePct": 33.3
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 33.3,
+            "answerExplainAdvisePct": 66.7,
+            "replyLength": 329
+          },
+          "experimentScores": {
+            "listening": 5.3,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 50,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 450
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 10, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 3, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": 0,
+            "warmth": 2,
+            "naturalness": 1,
+            "companionPresence": -7,
+            "overExplaining": -2
+          }
+        },
+        {
+          "turn": 3,
+          "message": "Does that mean my faith is failing?",
+          "currentReply": "Feeling distant from God and having prayers that feel empty doesn't mean your faith is failing. Sometimes faith goes through seasons of dryness or struggle, which can be a part of growth and deeper trust. Psalm 51:10-12 reminds us to ask God to renew a right spirit within us and restore the joy of His salvation. Would it help to pray that way together?",
+          "experimentReply": "Feeling distant from God or questioning your faith doesn't necessarily mean your faith is failing. Sometimes, it's part of the journey of growing closer to Him. Psalm 139:7-10 reminds us that there's nowhere we can go where God isn't present, and James 4:8 encourages us to draw near to God, promising He will draw near to us. This moment could be an invitation to seek Him more deeply, not a sign of failure. Your honest heart matters to God.",
+          "humanMoment": {
+            "userNeed": "needs_clarity",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "explicit_question",
+            "recommendedShape": "Companion Reflection"
+          },
+          "currentScores": {
+            "listening": 7.3,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 7,
+            "usefulness": 7,
+            "overExplaining": 7,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 8,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 7
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 25,
+              "asking": 25,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 75,
+            "replyLength": 354
+          },
+          "experimentScores": {
+            "listening": 6.3,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 7,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 8,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 80,
+              "advising": 0,
+              "explaining": 20,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 443
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 5, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": -1,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": 0,
+            "overExplaining": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "sabbath",
+      "name": "Sabbath wording thread",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Why should we keep Sunday as the day of worship onto the Lord?",
+          "currentReply": "Sunday became the common day of worship largely due to early Christian practice of gathering on the first day of the week to celebrate Jesus' resurrection, combined with later Roman civil and church influence establishing Sunday rest and worship. However, the Bible explicitly designates the seventh day (Saturday) as the Sabbath, not Sunday.",
+          "experimentReply": "The Bible teaches that the original day of rest and worship is the seventh day, the Sabbath, which is Saturday. This is grounded in Genesis 2:2-3 where God rested on the seventh day after creation, and in the Fourth Commandment (Exodus 20:8-11) which instructs to remember the Sabbath day and keep it holy. There is no explicit biblical command that changes the Sabbath from the seventh day to Sunday. Historically, early Christians often met on the first day of the week (Sunday) to commemorate Jesus’ resurrection, which happened on that day, but this practice developed gradually and was reinforced by civil and church authorities over the centuries. Therefore, while Sunday worship has historical and traditional significance for many Christians, the biblical Sabbath remains the seventh day as God's holy day of rest and worship.",
+          "humanMoment": {
+            "userNeed": "needs_biblical_grounding",
+            "emotionalWeight": "low",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "low",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": true,
+            "shouldKeepShort": false,
+            "why": "factual_or_doctrinal_question",
+            "recommendedShape": "Direct Answer"
+          },
+          "currentScores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 7,
+            "overExplaining": 3,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 0,
+              "advising": 0,
+              "explaining": 100,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 342
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "warmth": 3,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 0,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 0,
+              "advising": 0,
+              "explaining": 100,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 834
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 5, over-explain 3)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer offers: 1"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 0)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": 0,
+            "warmth": -2,
+            "naturalness": 0,
+            "companionPresence": 0,
+            "overExplaining": -3
+          }
+        },
+        {
+          "turn": 2,
+          "message": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+          "currentReply": "I see you're asking about my wording choice. I used \"Roman church\" to refer broadly to the church influenced by Roman imperial authority in Constantine's time, which is distinct historically from the later organized institution called the Roman Catholic Church. This helps clarify the difference between early Roman state involvement and the later church structure.",
+          "experimentReply": "I use \"Roman church\" as a shorthand, but you are correct that the full and direct name is \"Roman Catholic Church.\" Thank you for pointing that out; I'll be more precise in naming it going forward.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "currentScores": {
+            "listening": 6.2,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 9,
+            "correctionRecovery": 7,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 7
+            },
+            "shape": {
+              "answering": 66.7,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 365
+          },
+          "experimentScores": {
+            "listening": 6.2,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 9,
+            "correctionRecovery": 7,
+            "overExplaining": 5,
+            "companionPresence": 6,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 7
+            },
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 1,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 196
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 6, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": 1,
+            "overExplaining": 0
+          }
+        },
+        {
+          "turn": 3,
+          "message": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+          "currentReply": "I understand you're asking specifically about why I chose the term \"Roman church\" rather than the formal name \"Roman Catholic Church.\" I use \"Roman church\" to highlight the period when the church was under Roman imperial influence, especially during Constantine's era, which is historically distinct from the later organized institution officially known as the Roman Catholic Church. This distinction helps separate the early state-influenced church phase from the later ecclesiastical structure that developed over centuries.",
+          "experimentReply": "I use the term \"Roman church\" as a shorthand, but you are right that the more formal and precise name is the \"Roman Catholic Church.\" Thank you for pointing that out; I'll be more careful with terminology.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "currentScores": {
+            "listening": 7.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 8,
+            "feltHeard": 7,
+            "usefulness": 7,
+            "overExplaining": 5,
+            "companionPresence": 9,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 8,
+              "noRepeat": 7,
+              "feltHeard": 7
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 50,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 50,
+            "answerExplainAdvisePct": 50,
+            "replyLength": 526
+          },
+          "experimentScores": {
+            "listening": 6.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 7,
+            "usefulness": 7,
+            "overExplaining": 5,
+            "companionPresence": 6,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 6,
+              "noRepeat": 5,
+              "feltHeard": 7
+            },
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 1,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 205
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 9, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 6, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "deltas": {
+            "listening": -1,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": -3,
+            "overExplaining": 0
+          }
+        },
+        {
+          "turn": 4,
+          "message": "No, I'm not asking about the shift. I'm asking about your wording.",
+          "currentReply": "I understand you're focusing on why I chose the phrase \"Roman church\" rather than the formal title \"Roman Catholic Church.\" I use \"Roman church\" to specifically refer to the period when the church was under Roman imperial authority, particularly during Emperor Constantine's time. This term helps distinguish that phase from the later, more organized institution officially called the Roman Catholic Church, which developed over centuries after the Roman Empire's influence waned.",
+          "experimentReply": "I understand now you're focusing on the specific wording I used. Please let me know exactly which phrase or sentence you'd like me to clarify or correct, and I'll address it directly.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "currentScores": {
+            "listening": 5.4,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 8,
+            "feltHeard": 7,
+            "usefulness": 5,
+            "correctionRecovery": 2,
+            "overExplaining": 7,
+            "companionPresence": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 3,
+              "feltHeard": 7,
+              "correctionRecovery": 2
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 50,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 50,
+            "answerExplainAdvisePct": 50,
+            "replyLength": 480
+          },
+          "experimentScores": {
+            "listening": 7,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 7,
+            "usefulness": 7,
+            "correctionRecovery": 7,
+            "overExplaining": 5,
+            "companionPresence": 6,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 7,
+              "correctionRecovery": 7
+            },
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 183
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 9, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 6, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "deltas": {
+            "listening": 1.6,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": -3,
+            "overExplaining": -2
+          }
+        },
+        {
+          "turn": 5,
+          "message": "Why are you not answering my question?",
+          "currentReply": "I understand you're asking why I use the term \"Roman church\" instead of the formal \"Roman Catholic Church.\" I use \"Roman church\" to refer specifically to the church during the Roman Empire's imperial authority, especially in Constantine's time, which is distinct from the later, more structured institution officially called the Roman Catholic Church that developed after the empire's influence.",
+          "experimentReply": "I see your concern and want to assure you I’m here to answer your questions clearly. Please ask your question again, and I will respond directly and promptly.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "currentScores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 8,
+            "feltHeard": 7,
+            "usefulness": 9,
+            "correctionRecovery": 2,
+            "overExplaining": 7,
+            "companionPresence": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 5,
+              "feltHeard": 7,
+              "correctionRecovery": 2
+            },
+            "shape": {
+              "answering": 0,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 100,
+              "engaging": 0,
+              "sentenceCount": 1,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 0,
+              "companionModePct": 100
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 100,
+            "answerExplainAdvisePct": 0,
+            "replyLength": 395
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 7,
+            "correctionRecovery": 5,
+            "overExplaining": 5,
+            "companionPresence": 6,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 5
+            },
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 158
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 9, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 6, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": -3,
+            "overExplaining": -2
+          }
+        },
+        {
+          "turn": 6,
+          "message": "No, I'm not asking about history. I'm asking about your wording.",
+          "currentReply": "I see you're asking specifically about my choice of the term \"Roman church\" rather than the formal title \"Roman Catholic Church.\" I use \"Roman church\" to refer to the church during the time it was under Roman imperial authority, especially in the era of Emperor Constantine. This term helps distinguish that historical phase from the later, more formalized institution known as the Roman Catholic Church, which developed after the decline of Roman imperial power.",
+          "experimentReply": "I understand you're focused on the wording I used, not the historical context. Please clarify which specific wording you'd like me to correct or explain so I can address it precisely.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "currentScores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 8,
+            "feltHeard": 7,
+            "usefulness": 5,
+            "correctionRecovery": 2,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 5,
+              "feltHeard": 7,
+              "correctionRecovery": 2
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 50,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 463
+          },
+          "experimentScores": {
+            "listening": 7,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 7,
+            "usefulness": 7,
+            "correctionRecovery": 7,
+            "overExplaining": 8,
+            "companionPresence": 10,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 7,
+              "correctionRecovery": 7
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 50,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 50,
+            "answerExplainAdvisePct": 50,
+            "replyLength": 183
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): yes (presence 10, over-explain 8)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "deltas": {
+            "listening": 1.2,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": 5,
+            "overExplaining": 3
+          }
+        },
+        {
+          "turn": 7,
+          "message": "Are you not listening to what I am asking?",
+          "currentReply": "I hear you clearly want to know why I specifically use the term \"Roman church\" instead of the formal \"Roman Catholic Church.\" I use \"Roman church\" to emphasize the church's phase under Roman imperial authority, particularly during Constantine's reign, which is distinct from the later, more structured institution officially named the Roman Catholic Church that developed after the empire's decline.",
+          "experimentReply": "I hear your frustration, and I want to assure you I am here to listen closely. Please let me know exactly what you need, and I will focus on addressing that directly.",
+          "humanMoment": {
+            "userNeed": "needs_correction_repair",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "high",
+            "answerUrgency": "high",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": true,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": true,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "correction_or_meta_wording_turn",
+            "recommendedShape": "Correction Repair"
+          },
+          "currentScores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 8,
+            "feltHeard": 7,
+            "usefulness": 9,
+            "correctionRecovery": 2,
+            "overExplaining": 7,
+            "companionPresence": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 5,
+              "feltHeard": 7,
+              "correctionRecovery": 2
+            },
+            "shape": {
+              "answering": 0,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 100,
+              "engaging": 0,
+              "sentenceCount": 1,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 0,
+              "companionModePct": 100
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 100,
+            "answerExplainAdvisePct": 0,
+            "replyLength": 399
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "warmth": 5,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 7,
+            "correctionRecovery": 5,
+            "overExplaining": 8,
+            "companionPresence": 10,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 50,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 50,
+            "answerExplainAdvisePct": 50,
+            "replyLength": 166
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 9, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): yes (presence 10, over-explain 8)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: may under-ask",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": 1,
+            "overExplaining": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "grief",
+      "name": "Grief thread",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost a friend Wednesday.",
+          "currentReply": "Losing a friend on Wednesday must feel very heavy and personal to you. It’s okay to let yourself feel the pain and take time to remember the moments you shared. If you want, we can gently explore what comforts your heart right now or just be here quietly with your feelings.",
+          "experimentReply": "I'm so sorry to hear about the loss of your friend. Grief is such a heavy and personal journey. Remember that God is close to those who are brokenhearted, as Psalm 34:18 tells us: \"The LORD is near to the brokenhearted and saves the crushed in spirit.\" And even Jesus himself wept at the loss of a friend (John 11:35), showing us that it's okay to mourn deeply. If you'd like to share more or just need someone to be with you in this moment, I'm here.",
+          "humanMoment": {
+            "userNeed": "needs_to_be_heard",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "open_share_default",
+            "recommendedShape": "Companion Reflection"
+          },
+          "currentScores": {
+            "listening": 6.3,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 8,
+            "companionPresence": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 66.7,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 33.3,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.7,
+              "companionModePct": 33.3
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 33.3,
+            "answerExplainAdvisePct": 66.7,
+            "replyLength": 274
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 4,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 25,
+              "asking": 0,
+              "reflecting": 25,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 25,
+            "answerExplainAdvisePct": 75,
+            "replyLength": 451
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 9, over-explain 8)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): yes (presence 7, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": -0.5,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": -2,
+            "overExplaining": -1
+          }
+        },
+        {
+          "turn": 2,
+          "message": "It is still bothering me.",
+          "currentReply": "It sounds like the loss of your friend on Wednesday is still very present in your heart, and that ongoing weight is hard to carry. Sometimes grief lingers in a way that feels like it won’t let go quickly, and that’s a deeply personal journey. If you'd like, you can share what feels most heavy right now, or just take your time here—I’m here with you.",
+          "experimentReply": "It's okay to feel bothered and unsettled—those feelings are real and valid. Remember, God is close to you right now, especially when your heart feels heavy (Psalm 34:18). Jesus understands your pain deeply; He Himself wept in moments of sorrow (John 11:35). You're not alone in this.",
+          "humanMoment": {
+            "userNeed": "needs_to_be_heard",
+            "emotionalWeight": "high",
+            "certaintyNeeded": "low",
+            "answerUrgency": "low",
+            "relationshipNeed": "high",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": true,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": true,
+            "why": "emotional_processing_before_teaching",
+            "recommendedShape": "Companion Reflection"
+          },
+          "currentScores": {
+            "listening": 7.3,
+            "warmth": 7,
+            "naturalness": 6,
+            "threadSpecific": 8,
+            "feltHeard": 7,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 7,
+              "feltHeard": 7
+            },
+            "shape": {
+              "answering": 33.3,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 66.7,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 33.3,
+              "companionModePct": 66.7
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 0,
+            "reflectComfortExplorePct": 66.7,
+            "answerExplainAdvisePct": 33.3,
+            "replyLength": 351
+          },
+          "experimentScores": {
+            "listening": 5.5,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 2,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 4,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 75,
+              "advising": 0,
+              "explaining": 25,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 0,
+            "answerExplainAdvisePct": 100,
+            "replyLength": 283
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 9, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: balanced",
+            "Scripture/prayer: none or woven naturally"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 4, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Answer when comfort: possible — high deliver-mode on emotional turn",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": -1.8,
+            "warmth": 0,
+            "naturalness": 1,
+            "companionPresence": -5,
+            "overExplaining": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health thread",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "currentReply": "Your knees hurting sounds uncomfortable and concerning. It’s a good idea to rest them gently and avoid activities that increase the pain. Applying ice and elevating your legs can help reduce inflammation. If the pain worsens, becomes severe, or you notice swelling or difficulty moving, please consider seeing a healthcare professional promptly for proper evaluation. Would you like me to pray with you for healing and relief?",
+          "experimentReply": "I'm sorry to hear your knees are hurting. It can be helpful to rest them and avoid putting too much strain on them for a while. Applying ice might reduce any swelling, and gentle stretching or warm compresses could ease stiffness. If the pain persists or worsens, please consider seeing a healthcare professional for a proper evaluation. Meanwhile, I can pray with you for healing and relief, as James 5:14 encourages us to call on the elders to pray over those who are sick.",
+          "humanMoment": {
+            "userNeed": "needs_comfort",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "health_or_caregiving_practical_moment",
+            "recommendedShape": "Practical Care"
+          },
+          "currentScores": {
+            "listening": 6.3,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 60,
+              "advising": 20,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 20,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 80,
+              "companionModePct": 20
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 20,
+            "answerExplainAdvisePct": 80,
+            "replyLength": 426
+          },
+          "experimentScores": {
+            "listening": 6.3,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 40,
+              "advising": 20,
+              "explaining": 20,
+              "asking": 0,
+              "reflecting": 20,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 80,
+              "companionModePct": 20
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 20,
+            "answerExplainAdvisePct": 80,
+            "replyLength": 475
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": 0,
+            "overExplaining": 0
+          }
+        },
+        {
+          "turn": 2,
+          "message": "My knees are hurting again today.",
+          "currentReply": "Your knees hurting again today must be really frustrating. Continuing to rest them and avoiding movements that cause pain is wise. You might try gentle stretching if it feels safe, but if the pain increases, or you notice swelling or difficulty walking, please seek medical advice promptly. Would you like me to pray for your comfort and healing?",
+          "experimentReply": "I'm sorry to hear your knees are hurting again today. It might help to rest them as much as possible and consider gentle stretches if that feels comfortable. Applying warm compresses or cold packs could also reduce pain and inflammation. If this pain persists or worsens, seeking advice from a healthcare professional is important. Meanwhile, I can pray with you for relief and healing, trusting God's care as James 5:14 encourages us to call on the elders to pray over the sick.",
+          "humanMoment": {
+            "userNeed": "needs_comfort",
+            "emotionalWeight": "medium",
+            "certaintyNeeded": "medium",
+            "answerUrgency": "medium",
+            "relationshipNeed": "medium",
+            "shouldAnswerNow": false,
+            "shouldExplore": false,
+            "shouldComfort": false,
+            "shouldCorrectPriorMiss": false,
+            "shouldTeach": false,
+            "shouldKeepShort": false,
+            "why": "health_or_caregiving_practical_moment",
+            "recommendedShape": "Practical Care"
+          },
+          "currentScores": {
+            "listening": 6.3,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 7,
+            "companionPresence": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 50,
+              "advising": 25,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 25,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            },
+            "questionCount": 1,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 25,
+            "answerExplainAdvisePct": 75,
+            "replyLength": 346
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "warmth": 7,
+            "naturalness": 7,
+            "threadSpecific": 6,
+            "feltHeard": 5,
+            "usefulness": 5,
+            "overExplaining": 5,
+            "companionPresence": 5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 5,
+              "feltHeard": 5
+            },
+            "shape": {
+              "answering": 20,
+              "advising": 40,
+              "explaining": 20,
+              "asking": 0,
+              "reflecting": 20,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 80,
+              "companionModePct": 20
+            },
+            "questionCount": 0,
+            "scripturePrayerCount": 1,
+            "reflectComfortExplorePct": 20,
+            "answerExplainAdvisePct": 80,
+            "replyLength": 479
+          },
+          "currentQualitative": [
+            "Companion feel (current_racl): yes (presence 7, over-explain 7)",
+            "Over-answer: moderate/ok",
+            "Ask vs answer: asked when sharing",
+            "Scripture/prayer offers: 1"
+          ],
+          "experimentQualitative": [
+            "Companion feel (operating_model): weak (presence 5, over-explain 5)",
+            "Over-answer: likely",
+            "Ask vs answer: balanced",
+            "Scripture/prayer offers: 1"
+          ],
+          "deltas": {
+            "listening": -0.5,
+            "warmth": 0,
+            "naturalness": 0,
+            "companionPresence": -2,
+            "overExplaining": -2
+          }
+        }
+      ]
+    }
+  ]
+}

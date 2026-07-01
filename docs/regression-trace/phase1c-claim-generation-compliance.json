@@ -1,0 +1,398 @@
+{
+  "ranAt": "2026-06-07T23:15:43.949Z",
+  "model": "gpt-4.1-mini",
+  "keyPresent": true,
+  "keyLooksSk": true,
+  "topics": [
+    {
+      "id": "logos",
+      "message": "What does Logos mean in John 1:1?",
+      "success": true,
+      "latencyMs": 4038,
+      "usage": {
+        "prompt_tokens": 8518,
+        "completion_tokens": 345,
+        "total_tokens": 8863,
+        "prompt_tokens_details": {
+          "cached_tokens": 4096,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "responseBytes": 1374,
+      "evidencePack": {
+        "topic": "messiah_logos",
+        "cardIds": [
+          "messiahLogos"
+        ]
+      },
+      "raw": {
+        "reply": "populated",
+        "replyLen": 326,
+        "claims": "missing",
+        "claimsCount": 0,
+        "claimsIsArray": false,
+        "doctrineConclusion": "missing",
+        "doctrineConclusionLen": 0,
+        "hasScripture": true,
+        "scriptureCount": 3,
+        "topLevelKeys": [
+          "reply",
+          "scripture",
+          "mode",
+          "confidence",
+          "memory_used",
+          "suggested_settings_change",
+          "orb_state",
+          "safety_level",
+          "next_steps",
+          "admin_flags"
+        ],
+        "doctrineConclusionText": "",
+        "replyPreview": "In John 1:1, \"Logos\" is the Greek word translated as \"Word.\" It refers to Jesus as the eternal divine Word who was with God and was God from the beginning. This reveals Jesus as the preexistent Messia"
+      },
+      "postNormalize": {
+        "claimsCount": 1,
+        "inferred": true,
+        "doctrineConclusion": "populated",
+        "doctrineConclusionLen": 280
+      },
+      "parseLoss": {
+        "claimsLostInParse": true,
+        "doctrineLostInExtract": false
+      }
+    },
+    {
+      "id": "third_heaven",
+      "message": "What is the third heaven?",
+      "success": true,
+      "latencyMs": 5688,
+      "usage": {
+        "prompt_tokens": 11334,
+        "completion_tokens": 559,
+        "total_tokens": 11893,
+        "prompt_tokens_details": {
+          "cached_tokens": 3072,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "responseBytes": 2169,
+      "evidencePack": {
+        "topic": "heavens",
+        "cardIds": [
+          "heavens"
+        ]
+      },
+      "raw": {
+        "reply": "populated",
+        "replyLen": 845,
+        "claims": "missing",
+        "claimsCount": 0,
+        "claimsIsArray": false,
+        "doctrineConclusion": "missing",
+        "doctrineConclusionLen": 0,
+        "hasScripture": true,
+        "scriptureCount": 7,
+        "topLevelKeys": [
+          "reply",
+          "scripture",
+          "mode",
+          "confidence",
+          "memory_used",
+          "suggested_settings_change",
+          "orb_state",
+          "safety_level",
+          "next_steps",
+          "admin_flags"
+        ],
+        "doctrineConclusionText": "",
+        "replyPreview": "The third heaven is a term used by Paul in 2 Corinthians 12:2 to describe a spiritual realm or heaven he experienced in a vision. Scripture shows that the word \"heaven\" can refer to several layers: th"
+      },
+      "postNormalize": {
+        "claimsCount": 1,
+        "inferred": true,
+        "doctrineConclusion": "populated",
+        "doctrineConclusionLen": 280
+      },
+      "parseLoss": {
+        "claimsLostInParse": true,
+        "doctrineLostInExtract": false
+      }
+    },
+    {
+      "id": "acts_10",
+      "message": "Does Acts 10 make pork clean?",
+      "success": true,
+      "latencyMs": 4840,
+      "usage": {
+        "prompt_tokens": 10544,
+        "completion_tokens": 372,
+        "total_tokens": 10916,
+        "prompt_tokens_details": {
+          "cached_tokens": 3072,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "responseBytes": 1393,
+      "evidencePack": {
+        "topic": "dietary_law",
+        "cardIds": [
+          "dietaryLaw"
+        ]
+      },
+      "raw": {
+        "reply": "populated",
+        "replyLen": 334,
+        "claims": "missing",
+        "claimsCount": 0,
+        "claimsIsArray": false,
+        "doctrineConclusion": "missing",
+        "doctrineConclusionLen": 0,
+        "hasScripture": true,
+        "scriptureCount": 5,
+        "topLevelKeys": [
+          "reply",
+          "scripture",
+          "mode",
+          "confidence",
+          "memory_used",
+          "suggested_settings_change",
+          "orb_state",
+          "safety_level",
+          "next_steps",
+          "admin_flags"
+        ],
+        "doctrineConclusionText": "",
+        "replyPreview": "No, Acts 10 does not make pork clean. The vision in Acts 10 where Peter sees all kinds of animals is about not calling Gentile people unclean, not about changing the dietary laws. Swine is still liste"
+      },
+      "postNormalize": {
+        "claimsCount": 1,
+        "inferred": true,
+        "doctrineConclusion": "populated",
+        "doctrineConclusionLen": 280
+      },
+      "parseLoss": {
+        "claimsLostInParse": true,
+        "doctrineLostInExtract": false
+      }
+    },
+    {
+      "id": "pork",
+      "message": "Can I eat pork?",
+      "success": true,
+      "latencyMs": 6553,
+      "usage": {
+        "prompt_tokens": 10517,
+        "completion_tokens": 450,
+        "total_tokens": 10967,
+        "prompt_tokens_details": {
+          "cached_tokens": 3072,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "responseBytes": 1726,
+      "evidencePack": {
+        "topic": "dietary_law",
+        "cardIds": [
+          "dietaryLaw"
+        ]
+      },
+      "raw": {
+        "reply": "populated",
+        "replyLen": 477,
+        "claims": "missing",
+        "claimsCount": 0,
+        "claimsIsArray": false,
+        "doctrineConclusion": "missing",
+        "doctrineConclusionLen": 0,
+        "hasScripture": true,
+        "scriptureCount": 4,
+        "topLevelKeys": [
+          "reply",
+          "scripture",
+          "mode",
+          "confidence",
+          "memory_used",
+          "suggested_settings_change",
+          "orb_state",
+          "safety_level",
+          "next_steps",
+          "admin_flags"
+        ],
+        "doctrineConclusionText": "",
+        "replyPreview": "No, according to Scripture, pork is considered unclean and is not to be eaten. Leviticus 11:7 and Deuteronomy 14:8 clearly list the swine as unclean because it does not chew the cud, even though it ha"
+      },
+      "postNormalize": {
+        "claimsCount": 1,
+        "inferred": true,
+        "doctrineConclusion": "populated",
+        "doctrineConclusionLen": 280
+      },
+      "parseLoss": {
+        "claimsLostInParse": true,
+        "doctrineLostInExtract": false
+      }
+    },
+    {
+      "id": "sabbath",
+      "message": "How do we keep the Sabbath holy?",
+      "success": true,
+      "latencyMs": 7798,
+      "usage": {
+        "prompt_tokens": 9974,
+        "completion_tokens": 562,
+        "total_tokens": 10536,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "responseBytes": 2227,
+      "evidencePack": {
+        "topic": "sabbath",
+        "cardIds": [
+          "sabbath"
+        ]
+      },
+      "raw": {
+        "reply": "populated",
+        "replyLen": 743,
+        "claims": "missing",
+        "claimsCount": 0,
+        "claimsIsArray": false,
+        "doctrineConclusion": "missing",
+        "doctrineConclusionLen": 0,
+        "hasScripture": true,
+        "scriptureCount": 6,
+        "topLevelKeys": [
+          "reply",
+          "scripture",
+          "mode",
+          "confidence",
+          "memory_used",
+          "suggested_settings_change",
+          "orb_state",
+          "safety_level",
+          "next_steps",
+          "admin_flags"
+        ],
+        "doctrineConclusionText": "",
+        "replyPreview": "To keep the Sabbath holy according to Scripture, we rest from ordinary work and commerce on the seventh day, just as God rested after creation (Genesis 2:2-3; Exodus 20:8-11). We also delight in the L"
+      },
+      "postNormalize": {
+        "claimsCount": 1,
+        "inferred": true,
+        "doctrineConclusion": "populated",
+        "doctrineConclusionLen": 280
+      },
+      "parseLoss": {
+        "claimsLostInParse": true,
+        "doctrineLostInExtract": false
+      }
+    },
+    {
+      "id": "death_state",
+      "message": "What happens when we die?",
+      "success": true,
+      "latencyMs": 5175,
+      "usage": {
+        "prompt_tokens": 7844,
+        "completion_tokens": 410,
+        "total_tokens": 8254,
+        "prompt_tokens_details": {
+          "cached_tokens": 3072,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "responseBytes": 1573,
+      "evidencePack": {
+        "topic": null,
+        "cardIds": [
+          "deathState"
+        ]
+      },
+      "raw": {
+        "reply": "populated",
+        "replyLen": 491,
+        "claims": "missing",
+        "claimsCount": 0,
+        "claimsIsArray": false,
+        "doctrineConclusion": "missing",
+        "doctrineConclusionLen": 0,
+        "hasScripture": true,
+        "scriptureCount": 4,
+        "topLevelKeys": [
+          "reply",
+          "scripture",
+          "mode",
+          "confidence",
+          "memory_used",
+          "suggested_settings_change",
+          "orb_state",
+          "safety_level",
+          "next_steps",
+          "admin_flags"
+        ],
+        "doctrineConclusionText": "",
+        "replyPreview": "When we die, Scripture describes our body returning to dust and our conscious life ceasing—like a deep sleep—until the resurrection. The dead do not know anything during this time. This is seen in pas"
+      },
+      "postNormalize": {
+        "claimsCount": 1,
+        "inferred": true,
+        "doctrineConclusion": "populated",
+        "doctrineConclusionLen": 280
+      },
+      "parseLoss": {
+        "claimsLostInParse": true,
+        "doctrineLostInExtract": false
+      }
+    }
+  ],
+  "aggregate": {
+    "total": 6,
+    "composeSuccess": 6,
+    "replyPopulated": 6,
+    "rawClaimsPopulated": 0,
+    "rawClaimsEmpty": 0,
+    "rawClaimsMissing": 6,
+    "doctrinePopulated": 0,
+    "doctrineEmpty": 0,
+    "inferredAfterNormalize": 6,
+    "scriptureArrayUsed": 6
+  }
+}

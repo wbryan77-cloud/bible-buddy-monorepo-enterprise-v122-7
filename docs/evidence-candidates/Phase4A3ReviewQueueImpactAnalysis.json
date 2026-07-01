@@ -1,0 +1,28 @@
+{
+  "ranAt": "2026-06-10T06:51:36.652Z",
+  "phase": "4A.3",
+  "initialQueueSize": 32,
+  "scenarios": {
+    "ifMetadataOnlyAccepted": {
+      "remainingQueueSize": 25,
+      "removed": 7
+    },
+    "ifClassificationOnlyAccepted": {
+      "remainingQueueSize": 22,
+      "removed": 10
+    },
+    "ifTraceabilityOnlyAccepted": {
+      "remainingQueueSize": 7,
+      "removed": 25
+    }
+  },
+  "remainingTrueReviewQueue": 7,
+  "remainingImplementationBlockers": 0,
+  "executiveAnswers": {
+    "queueSizeIfMetadataOnlyAccepted": 25,
+    "queueSizeIfClassificationOnlyAccepted": 22,
+    "queueSizeIfBothAccepted": 7,
+    "remainingTrueReviewQueue": 7,
+    "remainingImplementationBlockers": 0
+  }
+}

@@ -1,0 +1,2782 @@
+{
+  "ranAt": "2026-06-10T04:59:27.185Z",
+  "purpose": "Track observed and candidate Scripture pathways as the vine network matures",
+  "summary": {
+    "observedPathwayCount": 4732,
+    "candidatePathwayCount": 10,
+    "supportedPathwayCount": 229,
+    "observedPathwaysNeedingEvidenceCount": 4503,
+    "candidatePathwaysNeedingEvidenceCount": 10,
+    "pathwaysNeedingAdditionalEvidenceCount": 4513,
+    "observedByRelationshipType": {
+      "repeated_theme": 76,
+      "continuity": 1538,
+      "supporting": 3118
+    }
+  },
+  "observedPathwaysSample": [
+    {
+      "source": "Exodus 21",
+      "target": "Genesis 6",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Genesis 6",
+      "target": "Psalm 90",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Psalm 90",
+      "target": "Psalm 78",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Psalm 78",
+      "target": "Matthew 12",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Matthew 12",
+      "target": "Exodus 23",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 23",
+      "target": "Isaiah 59",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Isaiah 59",
+      "target": "Matthew 25",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Matthew 25",
+      "target": "Ephesians 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Ephesians 4",
+      "target": "John 14",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "John 14",
+      "target": "Amos 1",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Amos 1",
+      "target": "Romans 7",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Romans 7",
+      "target": "Exodus 24",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 24",
+      "target": "Exodus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 20",
+      "target": "Exodus 34",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 34",
+      "target": "Exodus 342",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 342",
+      "target": "Joel 2",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Joel 2",
+      "target": "Isaiah 11",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Isaiah 11",
+      "target": "John 5:7",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "John 5:7",
+      "target": "Ecclesiastes 9",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Ecclesiastes 9",
+      "target": "Deuteronomy 176",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Deuteronomy 176",
+      "target": "Leviticus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Leviticus 20",
+      "target": "Isaiah 66",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Psalm 27",
+      "target": "Jeremiah 31",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Jeremiah 31",
+      "target": "Isaiah 34",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Isaiah 34",
+      "target": "Daniel 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Daniel 2",
+      "target": "Revelation 12",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Revelation 12",
+      "target": "Genesis 37",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Genesis 37",
+      "target": "Romans 16",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Romans 16",
+      "target": "Revelation 20",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Revelation 20",
+      "target": "Ezekiel 47",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Ezekiel 47",
+      "target": "Ezekiel 18",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Ezekiel 18",
+      "target": "Acts 2",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Acts 2",
+      "target": "Zephaniah 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Zephaniah 2",
+      "target": "Mark 18",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Mark 18",
+      "target": "1 Corinthians 3",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "1 Corinthians 3",
+      "target": "Matthew 244",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Matthew 244",
+      "target": "Exodus 34",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 34",
+      "target": "Exodus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 20",
+      "target": "Hebrews 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Hebrews 4",
+      "target": "Isaiah 61",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "1 Corinthians 15",
+      "target": "Ephesians 47",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Ephesians 47",
+      "target": "Zechariah 9",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Zechariah 9",
+      "target": "Ephesians 4:10",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Ephesians 4:10",
+      "target": "Matthew 25",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Matthew 25",
+      "target": "Isaiah 58",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Isaiah 58",
+      "target": "Ephesians 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Ephesians 4",
+      "target": "Hebrews 10",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Hebrews 10",
+      "target": "Luke 24",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Luke 24",
+      "target": "Romans 5",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Romans 5",
+      "target": "1 Corinthians 15:21",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    }
+  ],
+  "candidatePathways": [
+    {
+      "source": "israel",
+      "target": "jacob",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.2,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    },
+    {
+      "source": "jacob",
+      "target": "jacob_israel_twelve_tribes",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.4,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    },
+    {
+      "source": "israel",
+      "target": "jacob_israel_twelve_tribes",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.4,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    },
+    {
+      "source": "pentecost",
+      "target": "peter",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.25,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    },
+    {
+      "source": "kingdom",
+      "target": "kingdom_of_god",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.5,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    },
+    {
+      "source": "israel",
+      "target": "kingdom_of_god",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.5,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    },
+    {
+      "source": "pentecost",
+      "target": "feasts",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.75,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    },
+    {
+      "source": "sabbath",
+      "target": "feasts",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.75,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    },
+    {
+      "source": "messiah",
+      "target": "messiah_logos",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.667,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    },
+    {
+      "source": "gospel",
+      "target": "messiah_logos",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.667,
+      "evidenceCount": 1,
+      "evidenceTypes": [
+        "inheritance_continuity_inference"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "candidateOnly": true
+    }
+  ],
+  "supportedPathwaysSample": [
+    {
+      "source": "Ephesians 4",
+      "target": "John 14",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 24",
+      "target": "Exodus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 20",
+      "target": "Exodus 34",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Revelation 12",
+      "target": "Genesis 37",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Hebrews 10",
+      "target": "Revelation 22",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Leviticus 11",
+      "target": "Leviticus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Ephesians 4",
+      "target": "Colossians 3",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Acts 18",
+      "target": "Acts 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 3,
+      "independentSourceCount": 3,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "1 Corinthians 15",
+      "target": "Romans 12",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "John 4",
+      "target": "1 John 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Acts 2",
+      "target": "Exodus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 20",
+      "target": "Isaiah 58",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 3,
+      "independentSourceCount": 3,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Genesis 17",
+      "target": "Exodus 12",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Genesis 1",
+      "target": "Genesis 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Numbers 19",
+      "target": "Hebrews 10",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Hebrews 10",
+      "target": "Hebrews 1",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "2 Kings 2",
+      "target": "John 3",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 12",
+      "target": "Deuteronomy 16",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Revelation 19",
+      "target": "Revelation 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "1 Thessalonians 4",
+      "target": "1 Corinthians 15",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Leviticus 25",
+      "target": "Deuteronomy 22",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "John 1",
+      "target": "Ezekiel 18",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 3,
+      "independentSourceCount": 3,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Revelation 20",
+      "target": "Matthew 24",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Genesis 3",
+      "target": "Revelation 12",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 4,
+      "independentSourceCount": 4,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Exodus 20",
+      "target": "Exodus 21",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "John 3",
+      "target": "John 8",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Joel 2",
+      "target": "Acts 2",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 3,
+      "independentSourceCount": 3,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Isaiah 7",
+      "target": "Matthew 1",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "John 5",
+      "target": "1 John 5",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 3,
+      "independentSourceCount": 3,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "1 John 5",
+      "target": "Revelation 1",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Romans 1",
+      "target": "1 Corinthians 1",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Hebrews 7",
+      "target": "Hebrews 7:1",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Revelation 12",
+      "target": "Genesis 3",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Ezekiel 43",
+      "target": "Ezekiel 44",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Romans 7",
+      "target": "Romans 8",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Acts 4",
+      "target": "Matthew 1",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Mark 16",
+      "target": "Acts 2",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Genesis 1",
+      "target": "Zechariah 14",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Numbers 15",
+      "target": "Jeremiah 31",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 3,
+      "independentSourceCount": 3,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Zechariah 14",
+      "target": "Isaiah 66",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Proverbs 24",
+      "target": "Ecclesiastes 9",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Romans 9",
+      "target": "Romans 3",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "John 3",
+      "target": "1 John 3",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 3,
+      "independentSourceCount": 3,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Luke 23",
+      "target": "Matthew 3",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "1 Corinthians 5",
+      "target": "Galatians 3",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "1 Corinthians 6",
+      "target": "1 Corinthians 6:19",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Matthew 19",
+      "target": "1 Corinthians 7",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Revelation 22",
+      "target": "Genesis 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Genesis 2",
+      "target": "Genesis 2:7",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    },
+    {
+      "source": "Philippians 2",
+      "target": "Hebrews 1",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 2,
+      "independentSourceCount": 2,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain",
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false
+    }
+  ],
+  "pathwaysNeedingAdditionalEvidenceSample": [
+    {
+      "source": "Exodus 21",
+      "target": "Genesis 6",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Genesis 6",
+      "target": "Psalm 90",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Psalm 90",
+      "target": "Psalm 78",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Psalm 78",
+      "target": "Matthew 12",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Matthew 12",
+      "target": "Exodus 23",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Exodus 23",
+      "target": "Isaiah 59",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Isaiah 59",
+      "target": "Matthew 25",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Matthew 25",
+      "target": "Ephesians 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "John 14",
+      "target": "Amos 1",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Amos 1",
+      "target": "Romans 7",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Romans 7",
+      "target": "Exodus 24",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Exodus 34",
+      "target": "Exodus 342",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Exodus 342",
+      "target": "Joel 2",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Joel 2",
+      "target": "Isaiah 11",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Isaiah 11",
+      "target": "John 5:7",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "John 5:7",
+      "target": "Ecclesiastes 9",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Ecclesiastes 9",
+      "target": "Deuteronomy 176",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Deuteronomy 176",
+      "target": "Leviticus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Leviticus 20",
+      "target": "Isaiah 66",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Psalm 27",
+      "target": "Jeremiah 31",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Jeremiah 31",
+      "target": "Isaiah 34",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Isaiah 34",
+      "target": "Daniel 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Daniel 2",
+      "target": "Revelation 12",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Genesis 37",
+      "target": "Romans 16",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Romans 16",
+      "target": "Revelation 20",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Revelation 20",
+      "target": "Ezekiel 47",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Ezekiel 47",
+      "target": "Ezekiel 18",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Ezekiel 18",
+      "target": "Acts 2",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Acts 2",
+      "target": "Zephaniah 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Zephaniah 2",
+      "target": "Mark 18",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Mark 18",
+      "target": "1 Corinthians 3",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "1 Corinthians 3",
+      "target": "Matthew 244",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Matthew 244",
+      "target": "Exodus 34",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Exodus 34",
+      "target": "Exodus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Exodus 20",
+      "target": "Hebrews 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Hebrews 4",
+      "target": "Isaiah 61",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "1 Corinthians 15",
+      "target": "Ephesians 47",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Ephesians 47",
+      "target": "Zechariah 9",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Zechariah 9",
+      "target": "Ephesians 4:10",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Ephesians 4:10",
+      "target": "Matthew 25",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Matthew 25",
+      "target": "Isaiah 58",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Isaiah 58",
+      "target": "Ephesians 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Ephesians 4",
+      "target": "Hebrews 10",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Hebrews 10",
+      "target": "Luke 24",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Luke 24",
+      "target": "Romans 5",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Romans 5",
+      "target": "1 Corinthians 15:21",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "1 Corinthians 15:21",
+      "target": "Romans 301",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Romans 301",
+      "target": "1 Timothy 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "1 Timothy 2",
+      "target": "Acts 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Acts 2",
+      "target": "Psalms 16",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Psalms 16",
+      "target": "Psalm 30",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Psalm 30",
+      "target": "Lamentations 47",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Lamentations 47",
+      "target": "Leviticus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Leviticus 20",
+      "target": "Luke 1",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Luke 1",
+      "target": "Ezekiel 10",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Ezekiel 10",
+      "target": "Revelation 5",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Revelation 5",
+      "target": "Revelation 4",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Revelation 4",
+      "target": "Psalm 19",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "James 2",
+      "target": "Ezekiel 18",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Ezekiel 18",
+      "target": "Exodus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Exodus 20",
+      "target": "Numbers 14",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Numbers 14",
+      "target": "Numbers 32",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Numbers 32",
+      "target": "James 1",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "James 1",
+      "target": "James 5",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "James 5",
+      "target": "Mark 3",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Mark 3",
+      "target": "John 11",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "John 11",
+      "target": "Isaiah 54",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Isaiah 54",
+      "target": "Job 7",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Job 7",
+      "target": "Job 32",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Job 32",
+      "target": "Leviticus 22",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Leviticus 22",
+      "target": "Matthew 6",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Matthew 6",
+      "target": "Deuteronomy 26",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Deuteronomy 26",
+      "target": "Zechariah 14",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Zechariah 14",
+      "target": "Leviticus 231",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    },
+    {
+      "source": "Leviticus 231",
+      "target": "Revelation 21",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypes": [
+        "adjacent_in_recovered_chain"
+      ],
+      "traceable": true,
+      "reviewable": true,
+      "autoDoctrine": false,
+      "reason": "observed_single_source_or_low_evidence"
+    }
+  ],
+  "allCandidatePathwaysTraceable": true,
+  "allCandidatePathwaysReviewable": true,
+  "safety": {
+    "candidatePathwaysNeverAutoDoctrine": true,
+    "informationalOnly": true,
+    "observedPathwaysFullCount": 4732,
+    "supportedPathwaysFullCount": 229,
+    "pathwaysNeedingEvidenceFullCount": 4513
+  }
+}

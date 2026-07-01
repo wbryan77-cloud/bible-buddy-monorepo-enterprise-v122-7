@@ -1,0 +1,3294 @@
+{
+  "ranAt": "2026-06-06T06:02:59.343Z",
+  "entryRoots": [
+    "routes/buddy.js",
+    "services/buddyBrain.js",
+    "services/openAiFirstCompanionRuntime.js",
+    "services/reasonFirstComposer.js",
+    "services/doctrineBoundaryValidator.js"
+  ],
+  "totals": {
+    "modules": 123,
+    "tracked": 120,
+    "untracked": 3,
+    "missingOnDisk": 0,
+    "runtimeCritical": 121,
+    "deployBlockers": 3
+  },
+  "deployBlockers": [
+    {
+      "file": "services/answerVerifier.js",
+      "gitTracked": false,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineBoundaryValidator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": true,
+      "blockerReason": "untracked"
+    },
+    {
+      "file": "services/liveResponseCapture.js",
+      "gitTracked": false,
+      "existsLocally": true,
+      "importedBy": [
+        "routes/buddy.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": true,
+      "blockerReason": "untracked"
+    },
+    {
+      "file": "services/metaAnswerResponder.js",
+      "gitTracked": false,
+      "existsLocally": true,
+      "importedBy": [
+        "services/sabbathHistoryDeepResponder.js",
+        "services/answerVerifier.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": true,
+      "blockerReason": "untracked"
+    }
+  ],
+  "criticalUntracked": [
+    {
+      "file": "services/answerVerifier.js",
+      "gitTracked": false,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineBoundaryValidator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": true,
+      "blockerReason": "untracked"
+    },
+    {
+      "file": "services/liveResponseCapture.js",
+      "gitTracked": false,
+      "existsLocally": true,
+      "importedBy": [
+        "routes/buddy.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": true,
+      "blockerReason": "untracked"
+    },
+    {
+      "file": "services/metaAnswerResponder.js",
+      "gitTracked": false,
+      "existsLocally": true,
+      "importedBy": [
+        "services/sabbathHistoryDeepResponder.js",
+        "services/answerVerifier.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": true,
+      "blockerReason": "untracked"
+    }
+  ],
+  "criticalMissing": [],
+  "requiredForRenderParity": [
+    "services/answerVerifier.js",
+    "services/liveResponseCapture.js",
+    "services/metaAnswerResponder.js"
+  ],
+  "nodes": [
+    {
+      "file": "routes/buddy.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/activeConversationManager.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/answerGuidance.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/ownershipAntiOverrideGuard.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/answerVerifier.js",
+      "gitTracked": false,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineBoundaryValidator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": true,
+      "blockerReason": "untracked"
+    },
+    {
+      "file": "services/approvedDoctrineRegistry.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/evidenceCards/index.js",
+        "services/scriptureDiscoveryEngine.js",
+        "services/concordanceFoundation.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/bibleLearningLog.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/openAiFirstCompanionRuntime.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/bibleTopicCatalog.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/scriptureChainExpansion.js",
+        "services/doctrineStudyCatalogResolver.js",
+        "services/retrievalFirstBuddyOrchestrator.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/buddyBrain.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "routes/buddy.js",
+        "services/reasonFirstComposer.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/canonicalTraversalOrderingEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalFirstBuddyOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/companionDeliveryLayer.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js",
+        "services/griefCompanionResponse.js",
+        "services/registryStudyPresenter.js",
+        "services/personalizedFallback.js",
+        "services/healthCompanionResponse.js",
+        "services/prayerCompanionResponse.js",
+        "services/studyConnectionIntent.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/companionDiscernmentResponder.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/reasoningSnapshot.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/companionDoctrinePresenter.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/companionIntelligence.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/companionLearningLayer.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/relationshipRecallEngine.js",
+        "services/companionNextSteps.js",
+        "services/studyJourneyEngine.js",
+        "services/companionDeliveryLayer.js",
+        "services/companionReflectionLayer.js",
+        "services/buddyBrain.js",
+        "services/continueStudyIntent.js",
+        "services/personalizedFallback.js",
+        "services/companionRelationshipOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/companionNextSteps.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js",
+        "services/griefCompanionResponse.js",
+        "services/registryStudyPresenter.js",
+        "services/personalizedFallback.js",
+        "services/buddyBrain.js",
+        "services/healthCompanionResponse.js",
+        "services/prayerCompanionResponse.js",
+        "services/studyConnectionIntent.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/companionReflectionLayer.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js",
+        "services/personalizedFallback.js",
+        "services/companionRelationshipOrchestrator.js",
+        "services/prayerCompanionResponse.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/companionRelationshipOrchestrator.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/companionReplyPolish.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js",
+        "services/registryStudyPresenter.js",
+        "services/buddyBrain.js",
+        "services/sabbathHistoryDeepResponder.js",
+        "services/companionDiscernmentResponder.js",
+        "services/reasonFirstComposer.js",
+        "services/openAiFirstCompanionRuntime.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/concordanceFoundation.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/scriptureDiscoveryEngine.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/contentInsight.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/continueStudyEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js",
+        "services/continueStudyIntent.js",
+        "services/personalizedFallback.js",
+        "services/studyConnectionIntent.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/continueStudyIntent.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/studyConnectionIntent.js",
+        "services/reasoningSnapshot.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/continuityMemoryRuntime.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/relationalContinuityPromptBuilder.js",
+        "services/runtimeCompanionReflectionEngine.js",
+        "services/runtimePersonalizedFollowupEngine.js",
+        "services/relationshipRecallEngine.js",
+        "services/memoryRecallEngine.js",
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/continuityPersistenceScoring.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineRuntimePipeline.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/continuityScoringRuntime.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalFirstBuddyOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/continuityStudySessionRuntime.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/relationalContinuityPromptBuilder.js",
+        "services/runtimeCompanionPresenceEngine.js",
+        "services/runtimeCompanionReflectionEngine.js",
+        "services/runtimePersonalizedFollowupEngine.js",
+        "services/companionDoctrinePresenter.js",
+        "services/continueStudyEngine.js",
+        "services/relationshipRecallEngine.js",
+        "services/memoryRecallEngine.js",
+        "services/studyJourneyEngine.js",
+        "services/continueStudyIntent.js",
+        "services/registryStudyPresenter.js",
+        "services/milestoneTracking.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/coreResponseGuards.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/ownershipAntiOverrideGuard.js",
+        "services/reasonFirstComposer.js",
+        "services/openAiFirstCompanionRuntime.js",
+        "services/liveRequestTrace.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/coreRestorationDebug.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/openAiFirstCompanionRuntime.js",
+        "routes/buddy.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/correctionLedger.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalEvidencePack.js",
+        "services/listeningSpecificityValidator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/currentMessageIntent.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalEvidencePack.js",
+        "services/directnessGuard.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/deathResurrectionKingdomCatalog.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineStudyCatalogResolver.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/directnessGuard.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/openAiFirstCompanionRuntime.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineBoundaries.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/sourceGroundedResponder.js",
+        "services/questionIntentResolver.js",
+        "services/buddyBrain.js",
+        "services/retrievalEvidencePack.js",
+        "services/doctrineBoundaryValidator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineBoundaryValidator.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/reasonFirstComposer.js",
+        "services/openAiFirstCompanionRuntime.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineConflictEscalationPipeline.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineRuntimePipeline.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineContinuityRules.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/runtimeQualityValidator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineEvidenceSnippets.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineGuard.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineResponseRouter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineResponseRouter.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineRuntimePipeline.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineRuntimePipeline.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineSafetyLayer.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/runtimeQualityValidator.js",
+        "services/continueStudyEngine.js",
+        "services/historicalContextRouter.js",
+        "services/scriptureWitnessEngine.js",
+        "services/registryStudyPresenter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineSourceProvenance.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineRuntimePipeline.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/doctrineStudyCatalogResolver.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalFirstBuddyOrchestrator.js",
+        "services/companionDoctrinePresenter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/emotionalArcEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/relationshipRecallEngine.js",
+        "services/companionNextSteps.js",
+        "services/companionReflectionLayer.js",
+        "services/milestoneTracking.js",
+        "services/companionRelationshipOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/emotionalCenter.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/reasonFirstComposer.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/emotionalCenterValidator.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/reasonFirstComposer.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/emotionalOrchestrator.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js",
+        "services/relationalPresence.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/evidenceCards/deathState.card.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/evidenceCards/index.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/evidenceCards/dietaryLaw.card.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/evidenceCards/index.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/evidenceCards/feasts.card.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/evidenceCards/index.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/evidenceCards/heavens.card.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/evidenceCards/index.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/evidenceCards/index.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/evidenceCards/lawCommandments.card.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/evidenceCards/index.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/evidenceCards/messiahLogos.card.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/evidenceCards/index.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/evidenceCards/sabbath.card.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/evidenceCards/index.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/evidenceCards/traditions.card.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/evidenceCards/index.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/fallbackLoopSuppressor.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/feastsAndProphecyCatalog.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineStudyCatalogResolver.js",
+        "services/retrievalFirstBuddyOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/forbiddenProseGuard.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/directnessGuard.js",
+        "services/openAiFirstCompanionRuntime.js",
+        "services/liveRequestTrace.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/genesisToRevelationContinuityRegistry.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineSafetyLayer.js",
+        "services/continueStudyEngine.js",
+        "services/historicalContextRouter.js",
+        "services/scriptureWitnessEngine.js",
+        "services/registryStudyPresenter.js",
+        "services/studyConnectionIntent.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/goldenCompanionExamples.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/reasonFirstComposer.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/griefCompanionResponse.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/reasoningSnapshot.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/healthCompanionResponse.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/reasoningSnapshot.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/historicalContextRouter.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js",
+        "services/registryStudyPresenter.js",
+        "services/sabbathHistoryDeepResponder.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/historicalEvidenceLayer.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/historicalContextRouter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/historicalReferenceIndex.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/historicalContextRouter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/lifeTimelineMemory.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/relationshipRecallEngine.js",
+        "services/companionReflectionLayer.js",
+        "services/companionRelationshipOrchestrator.js",
+        "services/milestoneTracking.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/listeningSpecificityValidator.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineBoundaryValidator.js",
+        "services/reasonFirstComposer.js",
+        "services/emotionalCenter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/liveRequestTrace.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "routes/buddy.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/liveResponseCapture.js",
+      "gitTracked": false,
+      "existsLocally": true,
+      "importedBy": [
+        "routes/buddy.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": true,
+      "blockerReason": "untracked"
+    },
+    {
+      "file": "services/memoryRecallEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/memoryTruthfulness.js",
+        "services/relationshipRecallEngine.js",
+        "services/companionNextSteps.js",
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/memoryTruthfulness.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/runtimeRelationshipMemoryEngine.js",
+        "services/relationshipRecallEngine.js",
+        "services/companionReflectionLayer.js",
+        "services/companionRelationshipOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/metaAnswerResponder.js",
+      "gitTracked": false,
+      "existsLocally": true,
+      "importedBy": [
+        "services/sabbathHistoryDeepResponder.js",
+        "services/answerVerifier.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": true,
+      "blockerReason": "untracked"
+    },
+    {
+      "file": "services/milestoneTracking.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionRelationshipOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/openaiClient.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/contentInsight.js",
+        "services/reasonFirstComposer.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/openAiFirstCompanionRuntime.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/openLoopsEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/relationshipRecallEngine.js",
+        "services/companionNextSteps.js",
+        "services/companionReflectionLayer.js",
+        "services/personalizedFallback.js",
+        "services/companionRelationshipOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/ownershipAntiOverrideGuard.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/personalizedFallback.js",
+        "services/buddyBrain.js",
+        "services/doctrineBoundaryValidator.js",
+        "services/openAiFirstCompanionRuntime.js",
+        "services/directnessGuard.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/parallelVerseExpansionEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalFirstBuddyOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/personalizedFallback.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/prayerCompanionResponse.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/reasoningSnapshot.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/prayerContinuityFollowup.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/griefCompanionResponse.js",
+        "services/buddyBrain.js",
+        "services/prayerCompanionResponse.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/projectBrain.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/contentInsight.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/questionIntentResolver.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/answerGuidance.js",
+        "services/metaAnswerResponder.js",
+        "services/buddyBrain.js",
+        "services/reasoningSnapshot.js",
+        "services/retrievalEvidencePack.js",
+        "services/answerVerifier.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/reasonFirstComposer.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/openAiFirstCompanionRuntime.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/reasoningSnapshot.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/registryStudyPresenter.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/relationalContinuityPromptBuilder.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/runtimeCompanionPresenceEngine.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/relationalPresence.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDeliveryLayer.js",
+        "services/companionRelationshipOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/relationshipMemoryBridge.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/healthCompanionResponse.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/relationshipRecallEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js",
+        "services/griefCompanionResponse.js",
+        "services/personalizedFallback.js",
+        "services/buddyBrain.js",
+        "services/healthCompanionResponse.js",
+        "services/reasoningSnapshot.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/resurrectionReferenceCatalog.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineStudyCatalogResolver.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/retrievalEvidencePack.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/openAiFirstCompanionRuntime.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/retrievalFirstBuddyOrchestrator.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeCompanionPresenceEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeCompanionReflectionEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeConversationStateEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/runtimeCompanionPresenceEngine.js",
+        "services/runtimeCompanionReflectionEngine.js",
+        "services/runtimePersonalizedFollowupEngine.js",
+        "services/memoryRecallEngine.js",
+        "services/relationshipRecallEngine.js",
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeFallbackSuppression.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalFirstBuddyOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeLabelStripper.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/runtimeResponseSanitizer.js",
+        "services/companionReplyPolish.js",
+        "services/companionDoctrinePresenter.js",
+        "services/sabbathHistoryDeepResponder.js",
+        "services/buddyBrain.js",
+        "services/reasonFirstComposer.js",
+        "services/openAiFirstCompanionRuntime.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeLineUponLineTraversalEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineStudyCatalogResolver.js",
+        "services/companionDoctrinePresenter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeLoopGuard.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/personalizedFallback.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeOrchestrator.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js",
+        "services/openAiFirstCompanionRuntime.js",
+        "services/reasonFirstComposer.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimePersonalityContinuity.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/relationalContinuityPromptBuilder.js",
+        "services/buddyBrain.js",
+        "services/companionRelationshipOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimePersonalizedFollowupEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimePrayerContinuityEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/runtimeCompanionPresenceEngine.js",
+        "services/memoryRecallEngine.js",
+        "services/relationshipRecallEngine.js",
+        "services/companionNextSteps.js",
+        "services/companionReflectionLayer.js",
+        "services/buddyBrain.js",
+        "services/prayerContinuityFollowup.js",
+        "services/personalizedFallback.js",
+        "services/milestoneTracking.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeQualityValidator.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineRuntimePipeline.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeRelationshipMemoryEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/relationshipRecallEngine.js",
+        "services/memoryRecallEngine.js",
+        "services/companionNextSteps.js",
+        "services/companionReflectionLayer.js",
+        "services/relationshipMemoryBridge.js",
+        "services/prayerContinuityFollowup.js",
+        "services/griefCompanionResponse.js",
+        "services/milestoneTracking.js",
+        "services/companionRelationshipOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/runtimeResponseSanitizer.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineRuntimePipeline.js",
+        "services/reasonFirstComposer.js",
+        "services/openAiFirstCompanionRuntime.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/sabbathHistoryCompanion.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/sabbathHistoryDeepResponder.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/sabbathHistoryCompanion.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/sabbathIntentRouter.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/scriptureCertaintyFramework.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/runtimeQualityValidator.js",
+        "services/doctrineSafetyLayer.js",
+        "services/studyModeGating.js",
+        "services/genesisToRevelationContinuityRegistry.js",
+        "services/scriptureWitnessEngine.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/scriptureChainExpansion.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/runtimeOrchestrator.js",
+        "services/doctrineStudyCatalogResolver.js",
+        "services/runtimeLineUponLineTraversalEngine.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/scriptureDiscoveryEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/scriptureWitnessEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionDoctrinePresenter.js",
+        "services/griefCompanionResponse.js",
+        "services/registryStudyPresenter.js",
+        "services/healthCompanionResponse.js",
+        "services/prayerCompanionResponse.js",
+        "services/studyConnectionIntent.js",
+        "services/companionDiscernmentResponder.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/sourceGroundedResponder.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineResponseRouter.js",
+        "services/retrievalEvidencePack.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/structuredVerseChainResponseBuilder.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/retrievalFirstBuddyOrchestrator.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/studyConnectionIntent.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/studyContinuityRuntime.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineStudyCatalogResolver.js",
+        "services/buddyBrain.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/studyJourneyEngine.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/companionNextSteps.js",
+        "services/companionDoctrinePresenter.js",
+        "services/personalizedFallback.js",
+        "services/companionRelationshipOrchestrator.js",
+        "services/studyConnectionIntent.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "services/studyModeGating.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineSafetyLayer.js",
+        "services/runtimeQualityValidator.js",
+        "services/registryStudyPresenter.js",
+        "services/studyConnectionIntent.js"
+      ],
+      "runtimeCritical": true,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "tests/automatedDoctrineQaHarness.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "services/doctrineRuntimePipeline.js"
+      ],
+      "runtimeCritical": false,
+      "deployBlocker": false,
+      "blockerReason": null
+    },
+    {
+      "file": "tests/doctrineReplay.test.js",
+      "gitTracked": true,
+      "existsLocally": true,
+      "importedBy": [
+        "tests/automatedDoctrineQaHarness.js"
+      ],
+      "runtimeCritical": false,
+      "deployBlocker": false,
+      "blockerReason": null
+    }
+  ],
+  "edges": [
+    {
+      "from": "routes/buddy.js",
+      "to": "services/buddyBrain.js",
+      "req": "../services/buddyBrain"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/openaiClient.js",
+      "req": "./openaiClient"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/runtimeOrchestrator.js",
+      "req": "./runtimeOrchestrator"
+    },
+    {
+      "from": "services/runtimeOrchestrator.js",
+      "to": "services/scriptureChainExpansion.js",
+      "req": "./scriptureChainExpansion"
+    },
+    {
+      "from": "services/scriptureChainExpansion.js",
+      "to": "services/bibleTopicCatalog.js",
+      "req": "./bibleTopicCatalog"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/doctrineRuntimePipeline.js",
+      "req": "./doctrineRuntimePipeline"
+    },
+    {
+      "from": "services/doctrineRuntimePipeline.js",
+      "to": "services/doctrineResponseRouter.js",
+      "req": "./doctrineResponseRouter"
+    },
+    {
+      "from": "services/doctrineResponseRouter.js",
+      "to": "services/sourceGroundedResponder.js",
+      "req": "./sourceGroundedResponder"
+    },
+    {
+      "from": "services/sourceGroundedResponder.js",
+      "to": "services/doctrineBoundaries.js",
+      "req": "./doctrineBoundaries"
+    },
+    {
+      "from": "services/doctrineResponseRouter.js",
+      "to": "services/doctrineGuard.js",
+      "req": "./doctrineGuard"
+    },
+    {
+      "from": "services/doctrineRuntimePipeline.js",
+      "to": "services/runtimeResponseSanitizer.js",
+      "req": "./runtimeResponseSanitizer"
+    },
+    {
+      "from": "services/runtimeResponseSanitizer.js",
+      "to": "services/runtimeLabelStripper.js",
+      "req": "./runtimeLabelStripper"
+    },
+    {
+      "from": "services/doctrineRuntimePipeline.js",
+      "to": "services/runtimeQualityValidator.js",
+      "req": "./runtimeQualityValidator"
+    },
+    {
+      "from": "services/runtimeQualityValidator.js",
+      "to": "services/doctrineContinuityRules.js",
+      "req": "./doctrineContinuityRules"
+    },
+    {
+      "from": "services/runtimeQualityValidator.js",
+      "to": "services/scriptureCertaintyFramework.js",
+      "req": "./scriptureCertaintyFramework"
+    },
+    {
+      "from": "services/runtimeQualityValidator.js",
+      "to": "services/doctrineSafetyLayer.js",
+      "req": "./doctrineSafetyLayer"
+    },
+    {
+      "from": "services/doctrineSafetyLayer.js",
+      "to": "services/scriptureCertaintyFramework.js",
+      "req": "./scriptureCertaintyFramework"
+    },
+    {
+      "from": "services/doctrineSafetyLayer.js",
+      "to": "services/studyModeGating.js",
+      "req": "./studyModeGating"
+    },
+    {
+      "from": "services/studyModeGating.js",
+      "to": "services/scriptureCertaintyFramework.js",
+      "req": "./scriptureCertaintyFramework"
+    },
+    {
+      "from": "services/doctrineSafetyLayer.js",
+      "to": "services/genesisToRevelationContinuityRegistry.js",
+      "req": "./genesisToRevelationContinuityRegistry"
+    },
+    {
+      "from": "services/genesisToRevelationContinuityRegistry.js",
+      "to": "services/scriptureCertaintyFramework.js",
+      "req": "./scriptureCertaintyFramework"
+    },
+    {
+      "from": "services/runtimeQualityValidator.js",
+      "to": "services/studyModeGating.js",
+      "req": "./studyModeGating"
+    },
+    {
+      "from": "services/doctrineRuntimePipeline.js",
+      "to": "services/continuityPersistenceScoring.js",
+      "req": "./continuityPersistenceScoring"
+    },
+    {
+      "from": "services/doctrineRuntimePipeline.js",
+      "to": "services/doctrineSourceProvenance.js",
+      "req": "./doctrineSourceProvenance"
+    },
+    {
+      "from": "services/doctrineRuntimePipeline.js",
+      "to": "services/doctrineConflictEscalationPipeline.js",
+      "req": "./doctrineConflictEscalationPipeline"
+    },
+    {
+      "from": "services/doctrineRuntimePipeline.js",
+      "to": "tests/automatedDoctrineQaHarness.js",
+      "req": "../tests/automatedDoctrineQaHarness"
+    },
+    {
+      "from": "tests/automatedDoctrineQaHarness.js",
+      "to": "tests/doctrineReplay.test.js",
+      "req": "./doctrineReplay.test"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/retrievalFirstBuddyOrchestrator.js",
+      "req": "./retrievalFirstBuddyOrchestrator"
+    },
+    {
+      "from": "services/retrievalFirstBuddyOrchestrator.js",
+      "to": "services/parallelVerseExpansionEngine.js",
+      "req": "./parallelVerseExpansionEngine"
+    },
+    {
+      "from": "services/retrievalFirstBuddyOrchestrator.js",
+      "to": "services/canonicalTraversalOrderingEngine.js",
+      "req": "./canonicalTraversalOrderingEngine"
+    },
+    {
+      "from": "services/retrievalFirstBuddyOrchestrator.js",
+      "to": "services/continuityScoringRuntime.js",
+      "req": "./continuityScoringRuntime"
+    },
+    {
+      "from": "services/retrievalFirstBuddyOrchestrator.js",
+      "to": "services/structuredVerseChainResponseBuilder.js",
+      "req": "./structuredVerseChainResponseBuilder"
+    },
+    {
+      "from": "services/retrievalFirstBuddyOrchestrator.js",
+      "to": "services/runtimeFallbackSuppression.js",
+      "req": "./runtimeFallbackSuppression"
+    },
+    {
+      "from": "services/retrievalFirstBuddyOrchestrator.js",
+      "to": "services/doctrineStudyCatalogResolver.js",
+      "req": "./doctrineStudyCatalogResolver"
+    },
+    {
+      "from": "services/doctrineStudyCatalogResolver.js",
+      "to": "services/bibleTopicCatalog.js",
+      "req": "./bibleTopicCatalog"
+    },
+    {
+      "from": "services/doctrineStudyCatalogResolver.js",
+      "to": "services/feastsAndProphecyCatalog.js",
+      "req": "./feastsAndProphecyCatalog"
+    },
+    {
+      "from": "services/doctrineStudyCatalogResolver.js",
+      "to": "services/resurrectionReferenceCatalog.js",
+      "req": "./resurrectionReferenceCatalog"
+    },
+    {
+      "from": "services/doctrineStudyCatalogResolver.js",
+      "to": "services/deathResurrectionKingdomCatalog.js",
+      "req": "./deathResurrectionKingdomCatalog"
+    },
+    {
+      "from": "services/doctrineStudyCatalogResolver.js",
+      "to": "services/scriptureChainExpansion.js",
+      "req": "./scriptureChainExpansion"
+    },
+    {
+      "from": "services/doctrineStudyCatalogResolver.js",
+      "to": "services/studyContinuityRuntime.js",
+      "req": "./studyContinuityRuntime"
+    },
+    {
+      "from": "services/doctrineStudyCatalogResolver.js",
+      "to": "services/runtimeLineUponLineTraversalEngine.js",
+      "req": "./runtimeLineUponLineTraversalEngine"
+    },
+    {
+      "from": "services/runtimeLineUponLineTraversalEngine.js",
+      "to": "services/scriptureChainExpansion.js",
+      "req": "./scriptureChainExpansion"
+    },
+    {
+      "from": "services/retrievalFirstBuddyOrchestrator.js",
+      "to": "services/bibleTopicCatalog.js",
+      "req": "./bibleTopicCatalog"
+    },
+    {
+      "from": "services/retrievalFirstBuddyOrchestrator.js",
+      "to": "services/feastsAndProphecyCatalog.js",
+      "req": "./feastsAndProphecyCatalog"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/companionDoctrinePresenter.js",
+      "req": "./companionDoctrinePresenter"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/runtimeCompanionPresenceEngine.js",
+      "req": "./runtimeCompanionPresenceEngine"
+    },
+    {
+      "from": "services/runtimeCompanionPresenceEngine.js",
+      "to": "services/runtimeConversationStateEngine.js",
+      "req": "./runtimeConversationStateEngine"
+    },
+    {
+      "from": "services/runtimeCompanionPresenceEngine.js",
+      "to": "services/relationalContinuityPromptBuilder.js",
+      "req": "./relationalContinuityPromptBuilder"
+    },
+    {
+      "from": "services/relationalContinuityPromptBuilder.js",
+      "to": "services/continuityMemoryRuntime.js",
+      "req": "./continuityMemoryRuntime"
+    },
+    {
+      "from": "services/relationalContinuityPromptBuilder.js",
+      "to": "services/runtimePersonalityContinuity.js",
+      "req": "./runtimePersonalityContinuity"
+    },
+    {
+      "from": "services/relationalContinuityPromptBuilder.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/runtimeCompanionPresenceEngine.js",
+      "to": "services/runtimePrayerContinuityEngine.js",
+      "req": "./runtimePrayerContinuityEngine"
+    },
+    {
+      "from": "services/runtimeCompanionPresenceEngine.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/runtimeCompanionReflectionEngine.js",
+      "req": "./runtimeCompanionReflectionEngine"
+    },
+    {
+      "from": "services/runtimeCompanionReflectionEngine.js",
+      "to": "services/continuityMemoryRuntime.js",
+      "req": "./continuityMemoryRuntime"
+    },
+    {
+      "from": "services/runtimeCompanionReflectionEngine.js",
+      "to": "services/runtimeConversationStateEngine.js",
+      "req": "./runtimeConversationStateEngine"
+    },
+    {
+      "from": "services/runtimeCompanionReflectionEngine.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/runtimePersonalizedFollowupEngine.js",
+      "req": "./runtimePersonalizedFollowupEngine"
+    },
+    {
+      "from": "services/runtimePersonalizedFollowupEngine.js",
+      "to": "services/continuityMemoryRuntime.js",
+      "req": "./continuityMemoryRuntime"
+    },
+    {
+      "from": "services/runtimePersonalizedFollowupEngine.js",
+      "to": "services/runtimeConversationStateEngine.js",
+      "req": "./runtimeConversationStateEngine"
+    },
+    {
+      "from": "services/runtimePersonalizedFollowupEngine.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/emotionalOrchestrator.js",
+      "req": "./emotionalOrchestrator"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/doctrineStudyCatalogResolver.js",
+      "req": "./doctrineStudyCatalogResolver"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/runtimeLineUponLineTraversalEngine.js",
+      "req": "./runtimeLineUponLineTraversalEngine"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/continueStudyEngine.js",
+      "req": "./continueStudyEngine"
+    },
+    {
+      "from": "services/continueStudyEngine.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/continueStudyEngine.js",
+      "to": "services/doctrineSafetyLayer.js",
+      "req": "./doctrineSafetyLayer"
+    },
+    {
+      "from": "services/continueStudyEngine.js",
+      "to": "services/genesisToRevelationContinuityRegistry.js",
+      "req": "./genesisToRevelationContinuityRegistry"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/historicalContextRouter.js",
+      "req": "./historicalContextRouter"
+    },
+    {
+      "from": "services/historicalContextRouter.js",
+      "to": "services/historicalReferenceIndex.js",
+      "req": "./historicalReferenceIndex"
+    },
+    {
+      "from": "services/historicalContextRouter.js",
+      "to": "services/historicalEvidenceLayer.js",
+      "req": "./historicalEvidenceLayer"
+    },
+    {
+      "from": "services/historicalContextRouter.js",
+      "to": "services/doctrineSafetyLayer.js",
+      "req": "./doctrineSafetyLayer"
+    },
+    {
+      "from": "services/historicalContextRouter.js",
+      "to": "services/genesisToRevelationContinuityRegistry.js",
+      "req": "./genesisToRevelationContinuityRegistry"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/scriptureWitnessEngine.js",
+      "req": "./scriptureWitnessEngine"
+    },
+    {
+      "from": "services/scriptureWitnessEngine.js",
+      "to": "services/doctrineSafetyLayer.js",
+      "req": "./doctrineSafetyLayer"
+    },
+    {
+      "from": "services/scriptureWitnessEngine.js",
+      "to": "services/genesisToRevelationContinuityRegistry.js",
+      "req": "./genesisToRevelationContinuityRegistry"
+    },
+    {
+      "from": "services/scriptureWitnessEngine.js",
+      "to": "services/scriptureCertaintyFramework.js",
+      "req": "./scriptureCertaintyFramework"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/relationshipRecallEngine.js",
+      "req": "./relationshipRecallEngine"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/continuityMemoryRuntime.js",
+      "req": "./continuityMemoryRuntime"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/runtimeRelationshipMemoryEngine.js",
+      "req": "./runtimeRelationshipMemoryEngine"
+    },
+    {
+      "from": "services/runtimeRelationshipMemoryEngine.js",
+      "to": "services/memoryTruthfulness.js",
+      "req": "./memoryTruthfulness"
+    },
+    {
+      "from": "services/memoryTruthfulness.js",
+      "to": "services/memoryRecallEngine.js",
+      "req": "./memoryRecallEngine"
+    },
+    {
+      "from": "services/memoryRecallEngine.js",
+      "to": "services/continuityMemoryRuntime.js",
+      "req": "./continuityMemoryRuntime"
+    },
+    {
+      "from": "services/memoryRecallEngine.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/memoryRecallEngine.js",
+      "to": "services/runtimeRelationshipMemoryEngine.js",
+      "req": "./runtimeRelationshipMemoryEngine"
+    },
+    {
+      "from": "services/memoryRecallEngine.js",
+      "to": "services/runtimePrayerContinuityEngine.js",
+      "req": "./runtimePrayerContinuityEngine"
+    },
+    {
+      "from": "services/memoryRecallEngine.js",
+      "to": "services/runtimeConversationStateEngine.js",
+      "req": "./runtimeConversationStateEngine"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/runtimePrayerContinuityEngine.js",
+      "req": "./runtimePrayerContinuityEngine"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/runtimeConversationStateEngine.js",
+      "req": "./runtimeConversationStateEngine"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/companionLearningLayer.js",
+      "req": "./companionLearningLayer"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/memoryRecallEngine.js",
+      "req": "./memoryRecallEngine"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/memoryTruthfulness.js",
+      "req": "./memoryTruthfulness"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/openLoopsEngine.js",
+      "req": "./openLoopsEngine"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/emotionalArcEngine.js",
+      "req": "./emotionalArcEngine"
+    },
+    {
+      "from": "services/relationshipRecallEngine.js",
+      "to": "services/lifeTimelineMemory.js",
+      "req": "./lifeTimelineMemory"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/companionNextSteps.js",
+      "req": "./companionNextSteps"
+    },
+    {
+      "from": "services/companionNextSteps.js",
+      "to": "services/companionLearningLayer.js",
+      "req": "./companionLearningLayer"
+    },
+    {
+      "from": "services/companionNextSteps.js",
+      "to": "services/memoryRecallEngine.js",
+      "req": "./memoryRecallEngine"
+    },
+    {
+      "from": "services/companionNextSteps.js",
+      "to": "services/runtimePrayerContinuityEngine.js",
+      "req": "./runtimePrayerContinuityEngine"
+    },
+    {
+      "from": "services/companionNextSteps.js",
+      "to": "services/runtimeRelationshipMemoryEngine.js",
+      "req": "./runtimeRelationshipMemoryEngine"
+    },
+    {
+      "from": "services/companionNextSteps.js",
+      "to": "services/openLoopsEngine.js",
+      "req": "./openLoopsEngine"
+    },
+    {
+      "from": "services/companionNextSteps.js",
+      "to": "services/studyJourneyEngine.js",
+      "req": "./studyJourneyEngine"
+    },
+    {
+      "from": "services/studyJourneyEngine.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/studyJourneyEngine.js",
+      "to": "services/companionLearningLayer.js",
+      "req": "./companionLearningLayer"
+    },
+    {
+      "from": "services/companionNextSteps.js",
+      "to": "services/emotionalArcEngine.js",
+      "req": "./emotionalArcEngine"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/companionDeliveryLayer.js",
+      "req": "./companionDeliveryLayer"
+    },
+    {
+      "from": "services/companionDeliveryLayer.js",
+      "to": "services/companionLearningLayer.js",
+      "req": "./companionLearningLayer"
+    },
+    {
+      "from": "services/companionDeliveryLayer.js",
+      "to": "services/relationalPresence.js",
+      "req": "./relationalPresence"
+    },
+    {
+      "from": "services/relationalPresence.js",
+      "to": "services/emotionalOrchestrator.js",
+      "req": "./emotionalOrchestrator"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/companionReflectionLayer.js",
+      "req": "./companionReflectionLayer"
+    },
+    {
+      "from": "services/companionReflectionLayer.js",
+      "to": "services/runtimeRelationshipMemoryEngine.js",
+      "req": "./runtimeRelationshipMemoryEngine"
+    },
+    {
+      "from": "services/companionReflectionLayer.js",
+      "to": "services/openLoopsEngine.js",
+      "req": "./openLoopsEngine"
+    },
+    {
+      "from": "services/companionReflectionLayer.js",
+      "to": "services/emotionalArcEngine.js",
+      "req": "./emotionalArcEngine"
+    },
+    {
+      "from": "services/companionReflectionLayer.js",
+      "to": "services/lifeTimelineMemory.js",
+      "req": "./lifeTimelineMemory"
+    },
+    {
+      "from": "services/companionReflectionLayer.js",
+      "to": "services/runtimePrayerContinuityEngine.js",
+      "req": "./runtimePrayerContinuityEngine"
+    },
+    {
+      "from": "services/companionReflectionLayer.js",
+      "to": "services/companionLearningLayer.js",
+      "req": "./companionLearningLayer"
+    },
+    {
+      "from": "services/companionReflectionLayer.js",
+      "to": "services/memoryTruthfulness.js",
+      "req": "./memoryTruthfulness"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/studyJourneyEngine.js",
+      "req": "./studyJourneyEngine"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/companionReplyPolish.js",
+      "req": "./companionReplyPolish"
+    },
+    {
+      "from": "services/companionReplyPolish.js",
+      "to": "services/runtimeLabelStripper.js",
+      "req": "./runtimeLabelStripper"
+    },
+    {
+      "from": "services/companionDoctrinePresenter.js",
+      "to": "services/runtimeLabelStripper.js",
+      "req": "./runtimeLabelStripper"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/runtimeConversationStateEngine.js",
+      "req": "./runtimeConversationStateEngine"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/continuityMemoryRuntime.js",
+      "req": "./continuityMemoryRuntime"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/runtimePrayerContinuityEngine.js",
+      "req": "./runtimePrayerContinuityEngine"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/studyContinuityRuntime.js",
+      "req": "./studyContinuityRuntime"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/companionLearningLayer.js",
+      "req": "./companionLearningLayer"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/memoryRecallEngine.js",
+      "req": "./memoryRecallEngine"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/fallbackLoopSuppressor.js",
+      "req": "./fallbackLoopSuppressor"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/runtimeLoopGuard.js",
+      "req": "./runtimeLoopGuard"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/continueStudyIntent.js",
+      "req": "./continueStudyIntent"
+    },
+    {
+      "from": "services/continueStudyIntent.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/continueStudyIntent.js",
+      "to": "services/continueStudyEngine.js",
+      "req": "./continueStudyEngine"
+    },
+    {
+      "from": "services/continueStudyIntent.js",
+      "to": "services/companionLearningLayer.js",
+      "req": "./companionLearningLayer"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/relationshipMemoryBridge.js",
+      "req": "./relationshipMemoryBridge"
+    },
+    {
+      "from": "services/relationshipMemoryBridge.js",
+      "to": "services/runtimeRelationshipMemoryEngine.js",
+      "req": "./runtimeRelationshipMemoryEngine"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/griefCompanionResponse.js",
+      "req": "./griefCompanionResponse"
+    },
+    {
+      "from": "services/griefCompanionResponse.js",
+      "to": "services/scriptureWitnessEngine.js",
+      "req": "./scriptureWitnessEngine"
+    },
+    {
+      "from": "services/griefCompanionResponse.js",
+      "to": "services/companionNextSteps.js",
+      "req": "./companionNextSteps"
+    },
+    {
+      "from": "services/griefCompanionResponse.js",
+      "to": "services/relationshipRecallEngine.js",
+      "req": "./relationshipRecallEngine"
+    },
+    {
+      "from": "services/griefCompanionResponse.js",
+      "to": "services/prayerContinuityFollowup.js",
+      "req": "./prayerContinuityFollowup"
+    },
+    {
+      "from": "services/prayerContinuityFollowup.js",
+      "to": "services/runtimePrayerContinuityEngine.js",
+      "req": "./runtimePrayerContinuityEngine"
+    },
+    {
+      "from": "services/prayerContinuityFollowup.js",
+      "to": "services/runtimeRelationshipMemoryEngine.js",
+      "req": "./runtimeRelationshipMemoryEngine"
+    },
+    {
+      "from": "services/griefCompanionResponse.js",
+      "to": "services/companionDeliveryLayer.js",
+      "req": "./companionDeliveryLayer"
+    },
+    {
+      "from": "services/griefCompanionResponse.js",
+      "to": "services/runtimeRelationshipMemoryEngine.js",
+      "req": "./runtimeRelationshipMemoryEngine"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/registryStudyPresenter.js",
+      "req": "./registryStudyPresenter"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/genesisToRevelationContinuityRegistry.js",
+      "req": "./genesisToRevelationContinuityRegistry"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/doctrineSafetyLayer.js",
+      "req": "./doctrineSafetyLayer"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/scriptureWitnessEngine.js",
+      "req": "./scriptureWitnessEngine"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/historicalContextRouter.js",
+      "req": "./historicalContextRouter"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/companionNextSteps.js",
+      "req": "./companionNextSteps"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/studyModeGating.js",
+      "req": "./studyModeGating"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/studyModeGating.js",
+      "req": "./studyModeGating"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/companionDeliveryLayer.js",
+      "req": "./companionDeliveryLayer"
+    },
+    {
+      "from": "services/registryStudyPresenter.js",
+      "to": "services/companionReplyPolish.js",
+      "req": "./companionReplyPolish"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/personalizedFallback.js",
+      "req": "./personalizedFallback"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/companionLearningLayer.js",
+      "req": "./companionLearningLayer"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/relationshipRecallEngine.js",
+      "req": "./relationshipRecallEngine"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/runtimePrayerContinuityEngine.js",
+      "req": "./runtimePrayerContinuityEngine"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/companionNextSteps.js",
+      "req": "./companionNextSteps"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/continueStudyEngine.js",
+      "req": "./continueStudyEngine"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/companionDeliveryLayer.js",
+      "req": "./companionDeliveryLayer"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/runtimeLoopGuard.js",
+      "req": "./runtimeLoopGuard"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/companionReflectionLayer.js",
+      "req": "./companionReflectionLayer"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/studyJourneyEngine.js",
+      "req": "./studyJourneyEngine"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/openLoopsEngine.js",
+      "req": "./openLoopsEngine"
+    },
+    {
+      "from": "services/personalizedFallback.js",
+      "to": "services/ownershipAntiOverrideGuard.js",
+      "req": "./ownershipAntiOverrideGuard"
+    },
+    {
+      "from": "services/ownershipAntiOverrideGuard.js",
+      "to": "services/coreResponseGuards.js",
+      "req": "./coreResponseGuards"
+    },
+    {
+      "from": "services/ownershipAntiOverrideGuard.js",
+      "to": "services/answerGuidance.js",
+      "req": "./answerGuidance"
+    },
+    {
+      "from": "services/answerGuidance.js",
+      "to": "services/questionIntentResolver.js",
+      "req": "./questionIntentResolver"
+    },
+    {
+      "from": "services/questionIntentResolver.js",
+      "to": "services/doctrineBoundaries.js",
+      "req": "./doctrineBoundaries"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/companionNextSteps.js",
+      "req": "./companionNextSteps"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/relationshipRecallEngine.js",
+      "req": "./relationshipRecallEngine"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/runtimePersonalityContinuity.js",
+      "req": "./runtimePersonalityContinuity"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/prayerContinuityFollowup.js",
+      "req": "./prayerContinuityFollowup"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/companionRelationshipOrchestrator.js",
+      "req": "./companionRelationshipOrchestrator"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/lifeTimelineMemory.js",
+      "req": "./lifeTimelineMemory"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/openLoopsEngine.js",
+      "req": "./openLoopsEngine"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/milestoneTracking.js",
+      "req": "./milestoneTracking"
+    },
+    {
+      "from": "services/milestoneTracking.js",
+      "to": "services/runtimeRelationshipMemoryEngine.js",
+      "req": "./runtimeRelationshipMemoryEngine"
+    },
+    {
+      "from": "services/milestoneTracking.js",
+      "to": "services/runtimePrayerContinuityEngine.js",
+      "req": "./runtimePrayerContinuityEngine"
+    },
+    {
+      "from": "services/milestoneTracking.js",
+      "to": "services/lifeTimelineMemory.js",
+      "req": "./lifeTimelineMemory"
+    },
+    {
+      "from": "services/milestoneTracking.js",
+      "to": "services/emotionalArcEngine.js",
+      "req": "./emotionalArcEngine"
+    },
+    {
+      "from": "services/milestoneTracking.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/emotionalArcEngine.js",
+      "req": "./emotionalArcEngine"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/studyJourneyEngine.js",
+      "req": "./studyJourneyEngine"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/companionReflectionLayer.js",
+      "req": "./companionReflectionLayer"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/memoryTruthfulness.js",
+      "req": "./memoryTruthfulness"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/runtimeRelationshipMemoryEngine.js",
+      "req": "./runtimeRelationshipMemoryEngine"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/openLoopsEngine.js",
+      "req": "./openLoopsEngine"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/lifeTimelineMemory.js",
+      "req": "./lifeTimelineMemory"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/milestoneTracking.js",
+      "req": "./milestoneTracking"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/runtimePersonalityContinuity.js",
+      "req": "./runtimePersonalityContinuity"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/companionLearningLayer.js",
+      "req": "./companionLearningLayer"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/runtimePersonalityContinuity.js",
+      "req": "./runtimePersonalityContinuity"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/relationalPresence.js",
+      "req": "./relationalPresence"
+    },
+    {
+      "from": "services/companionRelationshipOrchestrator.js",
+      "to": "services/openLoopsEngine.js",
+      "req": "./openLoopsEngine"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/healthCompanionResponse.js",
+      "req": "./healthCompanionResponse"
+    },
+    {
+      "from": "services/healthCompanionResponse.js",
+      "to": "services/relationshipMemoryBridge.js",
+      "req": "./relationshipMemoryBridge"
+    },
+    {
+      "from": "services/healthCompanionResponse.js",
+      "to": "services/scriptureWitnessEngine.js",
+      "req": "./scriptureWitnessEngine"
+    },
+    {
+      "from": "services/healthCompanionResponse.js",
+      "to": "services/companionNextSteps.js",
+      "req": "./companionNextSteps"
+    },
+    {
+      "from": "services/healthCompanionResponse.js",
+      "to": "services/relationshipRecallEngine.js",
+      "req": "./relationshipRecallEngine"
+    },
+    {
+      "from": "services/healthCompanionResponse.js",
+      "to": "services/companionDeliveryLayer.js",
+      "req": "./companionDeliveryLayer"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/prayerCompanionResponse.js",
+      "req": "./prayerCompanionResponse"
+    },
+    {
+      "from": "services/prayerCompanionResponse.js",
+      "to": "services/scriptureWitnessEngine.js",
+      "req": "./scriptureWitnessEngine"
+    },
+    {
+      "from": "services/prayerCompanionResponse.js",
+      "to": "services/companionNextSteps.js",
+      "req": "./companionNextSteps"
+    },
+    {
+      "from": "services/prayerCompanionResponse.js",
+      "to": "services/companionReflectionLayer.js",
+      "req": "./companionReflectionLayer"
+    },
+    {
+      "from": "services/prayerCompanionResponse.js",
+      "to": "services/prayerContinuityFollowup.js",
+      "req": "./prayerContinuityFollowup"
+    },
+    {
+      "from": "services/prayerCompanionResponse.js",
+      "to": "services/companionDeliveryLayer.js",
+      "req": "./companionDeliveryLayer"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/studyConnectionIntent.js",
+      "req": "./studyConnectionIntent"
+    },
+    {
+      "from": "services/studyConnectionIntent.js",
+      "to": "services/continueStudyIntent.js",
+      "req": "./continueStudyIntent"
+    },
+    {
+      "from": "services/studyConnectionIntent.js",
+      "to": "services/continueStudyEngine.js",
+      "req": "./continueStudyEngine"
+    },
+    {
+      "from": "services/studyConnectionIntent.js",
+      "to": "services/studyJourneyEngine.js",
+      "req": "./studyJourneyEngine"
+    },
+    {
+      "from": "services/studyConnectionIntent.js",
+      "to": "services/genesisToRevelationContinuityRegistry.js",
+      "req": "./genesisToRevelationContinuityRegistry"
+    },
+    {
+      "from": "services/studyConnectionIntent.js",
+      "to": "services/scriptureWitnessEngine.js",
+      "req": "./scriptureWitnessEngine"
+    },
+    {
+      "from": "services/studyConnectionIntent.js",
+      "to": "services/companionNextSteps.js",
+      "req": "./companionNextSteps"
+    },
+    {
+      "from": "services/studyConnectionIntent.js",
+      "to": "services/companionDeliveryLayer.js",
+      "req": "./companionDeliveryLayer"
+    },
+    {
+      "from": "services/studyConnectionIntent.js",
+      "to": "services/studyModeGating.js",
+      "req": "./studyModeGating"
+    },
+    {
+      "from": "services/studyConnectionIntent.js",
+      "to": "services/studyModeGating.js",
+      "req": "./studyModeGating"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/companionReplyPolish.js",
+      "req": "./companionReplyPolish"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/sabbathIntentRouter.js",
+      "req": "./sabbathIntentRouter"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/sabbathHistoryCompanion.js",
+      "req": "./sabbathHistoryCompanion"
+    },
+    {
+      "from": "services/sabbathHistoryCompanion.js",
+      "to": "services/sabbathHistoryDeepResponder.js",
+      "req": "./sabbathHistoryDeepResponder"
+    },
+    {
+      "from": "services/sabbathHistoryDeepResponder.js",
+      "to": "services/historicalContextRouter.js",
+      "req": "./historicalContextRouter"
+    },
+    {
+      "from": "services/sabbathHistoryDeepResponder.js",
+      "to": "services/companionReplyPolish.js",
+      "req": "./companionReplyPolish"
+    },
+    {
+      "from": "services/sabbathHistoryDeepResponder.js",
+      "to": "services/runtimeLabelStripper.js",
+      "req": "./runtimeLabelStripper"
+    },
+    {
+      "from": "services/sabbathHistoryDeepResponder.js",
+      "to": "services/metaAnswerResponder.js",
+      "req": "./metaAnswerResponder"
+    },
+    {
+      "from": "services/metaAnswerResponder.js",
+      "to": "services/questionIntentResolver.js",
+      "req": "./questionIntentResolver"
+    },
+    {
+      "from": "services/metaAnswerResponder.js",
+      "to": "services/questionIntentResolver.js",
+      "req": "./questionIntentResolver"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/questionIntentResolver.js",
+      "req": "./questionIntentResolver"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/doctrineBoundaries.js",
+      "req": "./doctrineBoundaries"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/activeConversationManager.js",
+      "req": "./activeConversationManager"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/runtimeLabelStripper.js",
+      "req": "./runtimeLabelStripper"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/ownershipAntiOverrideGuard.js",
+      "req": "./ownershipAntiOverrideGuard"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/projectBrain.js",
+      "req": "./projectBrain"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/contentInsight.js",
+      "req": "./contentInsight"
+    },
+    {
+      "from": "services/contentInsight.js",
+      "to": "services/openaiClient.js",
+      "req": "./openaiClient"
+    },
+    {
+      "from": "services/contentInsight.js",
+      "to": "services/projectBrain.js",
+      "req": "./projectBrain"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/companionIntelligence.js",
+      "req": "./companionIntelligence"
+    },
+    {
+      "from": "services/buddyBrain.js",
+      "to": "services/openAiFirstCompanionRuntime.js",
+      "req": "./openAiFirstCompanionRuntime"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/runtimeOrchestrator.js",
+      "req": "./runtimeOrchestrator"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/retrievalEvidencePack.js",
+      "req": "./retrievalEvidencePack"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/bibleTopicCatalog.js",
+      "req": "./bibleTopicCatalog"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/scriptureChainExpansion.js",
+      "req": "./scriptureChainExpansion"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/doctrineBoundaries.js",
+      "req": "./doctrineBoundaries"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/sabbathHistoryDeepResponder.js",
+      "req": "./sabbathHistoryDeepResponder"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/sourceGroundedResponder.js",
+      "req": "./sourceGroundedResponder"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/registryStudyPresenter.js",
+      "req": "./registryStudyPresenter"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/continueStudyEngine.js",
+      "req": "./continueStudyEngine"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/continuityStudySessionRuntime.js",
+      "req": "./continuityStudySessionRuntime"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/reasoningSnapshot.js",
+      "req": "./reasoningSnapshot"
+    },
+    {
+      "from": "services/reasoningSnapshot.js",
+      "to": "services/questionIntentResolver.js",
+      "req": "./questionIntentResolver"
+    },
+    {
+      "from": "services/reasoningSnapshot.js",
+      "to": "services/healthCompanionResponse.js",
+      "req": "./healthCompanionResponse"
+    },
+    {
+      "from": "services/reasoningSnapshot.js",
+      "to": "services/griefCompanionResponse.js",
+      "req": "./griefCompanionResponse"
+    },
+    {
+      "from": "services/reasoningSnapshot.js",
+      "to": "services/prayerCompanionResponse.js",
+      "req": "./prayerCompanionResponse"
+    },
+    {
+      "from": "services/reasoningSnapshot.js",
+      "to": "services/companionDiscernmentResponder.js",
+      "req": "./companionDiscernmentResponder"
+    },
+    {
+      "from": "services/companionDiscernmentResponder.js",
+      "to": "services/scriptureWitnessEngine.js",
+      "req": "./scriptureWitnessEngine"
+    },
+    {
+      "from": "services/companionDiscernmentResponder.js",
+      "to": "services/companionReplyPolish.js",
+      "req": "./companionReplyPolish"
+    },
+    {
+      "from": "services/reasoningSnapshot.js",
+      "to": "services/relationshipRecallEngine.js",
+      "req": "./relationshipRecallEngine"
+    },
+    {
+      "from": "services/reasoningSnapshot.js",
+      "to": "services/continueStudyIntent.js",
+      "req": "./continueStudyIntent"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/doctrineEvidenceSnippets.js",
+      "req": "./doctrineEvidenceSnippets"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/answerGuidance.js",
+      "req": "./answerGuidance"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/evidenceCards/index.js",
+      "req": "./evidenceCards"
+    },
+    {
+      "from": "services/evidenceCards/index.js",
+      "to": "services/approvedDoctrineRegistry.js",
+      "req": "../approvedDoctrineRegistry"
+    },
+    {
+      "from": "services/evidenceCards/index.js",
+      "to": "services/evidenceCards/sabbath.card.js",
+      "req": "./sabbath.card"
+    },
+    {
+      "from": "services/evidenceCards/index.js",
+      "to": "services/evidenceCards/dietaryLaw.card.js",
+      "req": "./dietaryLaw.card"
+    },
+    {
+      "from": "services/evidenceCards/index.js",
+      "to": "services/evidenceCards/heavens.card.js",
+      "req": "./heavens.card"
+    },
+    {
+      "from": "services/evidenceCards/index.js",
+      "to": "services/evidenceCards/deathState.card.js",
+      "req": "./deathState.card"
+    },
+    {
+      "from": "services/evidenceCards/index.js",
+      "to": "services/evidenceCards/messiahLogos.card.js",
+      "req": "./messiahLogos.card"
+    },
+    {
+      "from": "services/evidenceCards/index.js",
+      "to": "services/evidenceCards/lawCommandments.card.js",
+      "req": "./lawCommandments.card"
+    },
+    {
+      "from": "services/evidenceCards/index.js",
+      "to": "services/evidenceCards/feasts.card.js",
+      "req": "./feasts.card"
+    },
+    {
+      "from": "services/evidenceCards/index.js",
+      "to": "services/evidenceCards/traditions.card.js",
+      "req": "./traditions.card"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/scriptureDiscoveryEngine.js",
+      "req": "./scriptureDiscoveryEngine"
+    },
+    {
+      "from": "services/scriptureDiscoveryEngine.js",
+      "to": "services/approvedDoctrineRegistry.js",
+      "req": "./approvedDoctrineRegistry"
+    },
+    {
+      "from": "services/scriptureDiscoveryEngine.js",
+      "to": "services/concordanceFoundation.js",
+      "req": "./concordanceFoundation"
+    },
+    {
+      "from": "services/concordanceFoundation.js",
+      "to": "services/approvedDoctrineRegistry.js",
+      "req": "./approvedDoctrineRegistry"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/concordanceFoundation.js",
+      "req": "./concordanceFoundation"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/questionIntentResolver.js",
+      "req": "./questionIntentResolver"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/activeConversationManager.js",
+      "req": "./activeConversationManager"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/relationshipRecallEngine.js",
+      "req": "./relationshipRecallEngine"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/healthCompanionResponse.js",
+      "req": "./healthCompanionResponse"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/griefCompanionResponse.js",
+      "req": "./griefCompanionResponse"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/prayerCompanionResponse.js",
+      "req": "./prayerCompanionResponse"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/companionDiscernmentResponder.js",
+      "req": "./companionDiscernmentResponder"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/continueStudyIntent.js",
+      "req": "./continueStudyIntent"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/correctionLedger.js",
+      "req": "./correctionLedger"
+    },
+    {
+      "from": "services/retrievalEvidencePack.js",
+      "to": "services/currentMessageIntent.js",
+      "req": "./currentMessageIntent"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/reasonFirstComposer.js",
+      "req": "./reasonFirstComposer"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/openaiClient.js",
+      "req": "./openaiClient"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/buddyBrain.js",
+      "req": "./buddyBrain"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/runtimeOrchestrator.js",
+      "req": "./runtimeOrchestrator"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/doctrineBoundaryValidator.js",
+      "req": "./doctrineBoundaryValidator"
+    },
+    {
+      "from": "services/doctrineBoundaryValidator.js",
+      "to": "services/doctrineBoundaries.js",
+      "req": "./doctrineBoundaries"
+    },
+    {
+      "from": "services/doctrineBoundaryValidator.js",
+      "to": "services/answerVerifier.js",
+      "req": "./answerVerifier"
+    },
+    {
+      "from": "services/answerVerifier.js",
+      "to": "services/metaAnswerResponder.js",
+      "req": "./metaAnswerResponder"
+    },
+    {
+      "from": "services/answerVerifier.js",
+      "to": "services/questionIntentResolver.js",
+      "req": "./questionIntentResolver"
+    },
+    {
+      "from": "services/doctrineBoundaryValidator.js",
+      "to": "services/listeningSpecificityValidator.js",
+      "req": "./listeningSpecificityValidator"
+    },
+    {
+      "from": "services/listeningSpecificityValidator.js",
+      "to": "services/correctionLedger.js",
+      "req": "./correctionLedger"
+    },
+    {
+      "from": "services/doctrineBoundaryValidator.js",
+      "to": "services/ownershipAntiOverrideGuard.js",
+      "req": "./ownershipAntiOverrideGuard"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/listeningSpecificityValidator.js",
+      "req": "./listeningSpecificityValidator"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/companionReplyPolish.js",
+      "req": "./companionReplyPolish"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/runtimeResponseSanitizer.js",
+      "req": "./runtimeResponseSanitizer"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/runtimeLabelStripper.js",
+      "req": "./runtimeLabelStripper"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/goldenCompanionExamples.js",
+      "req": "./goldenCompanionExamples"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/emotionalCenter.js",
+      "req": "./emotionalCenter"
+    },
+    {
+      "from": "services/emotionalCenter.js",
+      "to": "services/listeningSpecificityValidator.js",
+      "req": "./listeningSpecificityValidator"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/emotionalCenterValidator.js",
+      "req": "./emotionalCenterValidator"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/coreResponseGuards.js",
+      "req": "./coreResponseGuards"
+    },
+    {
+      "from": "services/reasonFirstComposer.js",
+      "to": "services/emotionalCenterValidator.js",
+      "req": "./emotionalCenterValidator"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/doctrineBoundaryValidator.js",
+      "req": "./doctrineBoundaryValidator"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/companionReplyPolish.js",
+      "req": "./companionReplyPolish"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/runtimeResponseSanitizer.js",
+      "req": "./runtimeResponseSanitizer"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/runtimeLabelStripper.js",
+      "req": "./runtimeLabelStripper"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/coreRestorationDebug.js",
+      "req": "./coreRestorationDebug"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/coreResponseGuards.js",
+      "req": "./coreResponseGuards"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/ownershipAntiOverrideGuard.js",
+      "req": "./ownershipAntiOverrideGuard"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/directnessGuard.js",
+      "req": "./directnessGuard"
+    },
+    {
+      "from": "services/directnessGuard.js",
+      "to": "services/forbiddenProseGuard.js",
+      "req": "./forbiddenProseGuard"
+    },
+    {
+      "from": "services/directnessGuard.js",
+      "to": "services/ownershipAntiOverrideGuard.js",
+      "req": "./ownershipAntiOverrideGuard"
+    },
+    {
+      "from": "services/directnessGuard.js",
+      "to": "services/currentMessageIntent.js",
+      "req": "./currentMessageIntent"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/forbiddenProseGuard.js",
+      "req": "./forbiddenProseGuard"
+    },
+    {
+      "from": "services/openAiFirstCompanionRuntime.js",
+      "to": "services/bibleLearningLog.js",
+      "req": "./bibleLearningLog"
+    },
+    {
+      "from": "routes/buddy.js",
+      "to": "services/coreRestorationDebug.js",
+      "req": "../services/coreRestorationDebug"
+    },
+    {
+      "from": "routes/buddy.js",
+      "to": "services/liveRequestTrace.js",
+      "req": "../services/liveRequestTrace"
+    },
+    {
+      "from": "services/liveRequestTrace.js",
+      "to": "services/coreResponseGuards.js",
+      "req": "./coreResponseGuards"
+    },
+    {
+      "from": "services/liveRequestTrace.js",
+      "to": "services/forbiddenProseGuard.js",
+      "req": "./forbiddenProseGuard"
+    },
+    {
+      "from": "routes/buddy.js",
+      "to": "services/liveResponseCapture.js",
+      "req": "../services/liveResponseCapture"
+    }
+  ]
+}

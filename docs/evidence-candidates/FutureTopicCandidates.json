@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-06-08T23:48:50.732Z",
+  "phase": "2J-I",
+  "reviewRequired": true,
+  "autoApplied": false,
+  "productionApplied": false,
+  "candidates": [
+    {
+      "topic": "pastoral_care",
+      "frequency": 15,
+      "questions": [
+        "I feel abandoned by God.",
+        "My mother has Alzheimer's and I feel overwhelmed.",
+        "Please pray for my family.",
+        "I feel alone in my faith.",
+        "My marriage is falling apart.",
+        "I am scared about the future.",
+        "I feel like God is silent.",
+        "I am struggling with depression.",
+        "My friend betrayed me and I am hurting.",
+        "I am anxious about my health.",
+        "I feel spiritually dry.",
+        "I lost my job and feel hopeless.",
+        "I am lonely.",
+        "I need comfort from Scripture.",
+        "Thank you. That helps me grieve with hope."
+      ],
+      "classifications": [
+        "future_research"
+      ],
+      "hasApprovedCard": false,
+      "estimatedCoverageImpact": 9.4,
+      "estimatedDiscoveryGain": 15,
+      "estimatedSupportGraphGain": 4,
+      "estimatedAuthorityGain": 8,
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "topic": "emotional_pastoral",
+      "frequency": 5,
+      "questions": [
+        "I am angry with God.",
+        "I'm so angry I can't think straight.",
+        "I'm worried about money and bills this month.",
+        "How do I pray when I am angry with God?",
+        "I am still angry."
+      ],
+      "classifications": [
+        "future_research"
+      ],
+      "hasApprovedCard": false,
+      "estimatedCoverageImpact": 3.1,
+      "estimatedDiscoveryGain": 5,
+      "estimatedSupportGraphGain": 3,
+      "estimatedAuthorityGain": 7,
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "topic": "kingdom",
+      "frequency": 1,
+      "questions": [
+        "Matthew 6:10 is only a prayer, not about earth."
+      ],
+      "classifications": [
+        "missing_scripture_chain"
+      ],
+      "hasApprovedCard": true,
+      "estimatedCoverageImpact": 0.6,
+      "estimatedDiscoveryGain": 1,
+      "estimatedSupportGraphGain": 0,
+      "estimatedAuthorityGain": 2,
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "topic": "heavens",
+      "frequency": 1,
+      "questions": [
+        "John 3:13 does not apply to believers today."
+      ],
+      "classifications": [
+        "missing_scripture_chain"
+      ],
+      "hasApprovedCard": true,
+      "estimatedCoverageImpact": 0.6,
+      "estimatedDiscoveryGain": 1,
+      "estimatedSupportGraphGain": 0,
+      "estimatedAuthorityGain": 2,
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "topic": "unpardonable_sin",
+      "frequency": 1,
+      "questions": [
+        "What is the unpardonable sin?"
+      ],
+      "classifications": [
+        "new_topic"
+      ],
+      "hasApprovedCard": false,
+      "estimatedCoverageImpact": 0.6,
+      "estimatedDiscoveryGain": 1,
+      "estimatedSupportGraphGain": 1,
+      "estimatedAuthorityGain": 3,
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "topic": "seal_of_god",
+      "frequency": 1,
+      "questions": [
+        "What is the seal of God?"
+      ],
+      "classifications": [
+        "new_topic"
+      ],
+      "hasApprovedCard": false,
+      "estimatedCoverageImpact": 0.6,
+      "estimatedDiscoveryGain": 1,
+      "estimatedSupportGraphGain": 1,
+      "estimatedAuthorityGain": 3,
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "topic": "michael_archangel",
+      "frequency": 1,
+      "questions": [
+        "Who is Michael the archangel?"
+      ],
+      "classifications": [
+        "new_topic"
+      ],
+      "hasApprovedCard": false,
+      "estimatedCoverageImpact": 0.6,
+      "estimatedDiscoveryGain": 1,
+      "estimatedSupportGraphGain": 1,
+      "estimatedAuthorityGain": 3,
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "topic": "faith_works",
+      "frequency": 1,
+      "questions": [
+        "What is faith without works?"
+      ],
+      "classifications": [
+        "new_topic"
+      ],
+      "hasApprovedCard": false,
+      "estimatedCoverageImpact": 0.6,
+      "estimatedDiscoveryGain": 1,
+      "estimatedSupportGraphGain": 1,
+      "estimatedAuthorityGain": 3,
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "topic": "fear_of_god",
+      "frequency": 1,
+      "questions": [
+        "Should we fear God?"
+      ],
+      "classifications": [
+        "new_topic"
+      ],
+      "hasApprovedCard": false,
+      "estimatedCoverageImpact": 0.6,
+      "estimatedDiscoveryGain": 1,
+      "estimatedSupportGraphGain": 1,
+      "estimatedAuthorityGain": 3,
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "topic": "great_tribulation",
+      "frequency": 1,
+      "questions": [
+        "What is the great tribulation?"
+      ],
+      "classifications": [
+        "new_topic"
+      ],
+      "hasApprovedCard": false,
+      "estimatedCoverageImpact": 0.6,
+      "estimatedDiscoveryGain": 1,
+      "estimatedSupportGraphGain": 1,
+      "estimatedAuthorityGain": 3,
+      "reviewRequired": true,
+      "autoApplied": false
+    }
+  ]
+}

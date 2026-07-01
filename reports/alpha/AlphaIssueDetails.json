@@ -1,0 +1,34 @@
+{
+  "issues": [
+    {
+      "id": "prayer_didnt_pray",
+      "severity": "high",
+      "frequency": 85,
+      "percentOfSessions": 100,
+      "examplePreview": "Yes, I'll pray with you. Father, please steady his heart. Give him wisdom, peace, courage, and gentleness. Help him speak truth without fear and love without compromise. In Jesus' name, amen. Hold ont",
+      "likelyRootCause": "Heuristic match for prayer_didnt_pray",
+      "suggestedFix": "Review services/companionResponseBuilder.js, services/practicalGuidanceEngine.js",
+      "affectedFiles": [
+        "services/companionResponseBuilder.js",
+        "services/practicalGuidanceEngine.js"
+      ],
+      "regressionTestToAdd": "scripts/runPhase5JConversationEvalPack.js — prayer_didnt_pray"
+    },
+    {
+      "id": "emotional_support_weak",
+      "severity": "medium",
+      "frequency": 170,
+      "percentOfSessions": 100,
+      "examplePreview": "I remember you were working through how to talk with your family about Scripture. That's understandable when Scripture and family relationships are both on the line. Speak slowly, listen, and don't tr",
+      "likelyRootCause": "Heuristic match for emotional_support_weak",
+      "suggestedFix": "Review services/companionResponseBuilder.js",
+      "affectedFiles": [
+        "services/companionResponseBuilder.js"
+      ],
+      "regressionTestToAdd": "scripts/runPhase5JConversationEvalPack.js — emotional_support_weak"
+    }
+  ],
+  "totalCaptures": 680,
+  "totalFeedback": 85,
+  "totalSessions": 85
+}

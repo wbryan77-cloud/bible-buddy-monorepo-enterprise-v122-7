@@ -1,0 +1,83 @@
+# Doctrine Pack Enrichment Report
+
+**Phase:** 3I Part F
+**Date:** 2026-06-09T13:50:00.105Z
+
+| Topic | Scriptures before | after | Parallel + | Supporting + | Continuity + | G2R + |
+|-------|-------------------|-------|------------|--------------|----------------|-------|
+| resurrection | 12 | 48 | 11 | 17 | 8 | 34 |
+| messiah_logos | 26 | 59 | 9 | 14 | 10 | 45 |
+| riches_gains_the_doctrine | 46 | 76 | 10 | 20 | 0 | 56 |
+| beginning_jerusalem_the_gospel | 27 | 62 | 12 | 23 | 0 | 44 |
+| the_awakening_hebrews_lesson | 26 | 61 | 12 | 23 | 0 | 43 |
+| death_state | 45 | 73 | 10 | 17 | 1 | 33 |
+| greedy_dog_preachers_lesson | 24 | 59 | 12 | 23 | 0 | 41 |
+| lake_of_fire | 22 | 57 | 11 | 17 | 7 | 38 |
+| eve | 28 | 60 | 11 | 21 | 0 | 43 |
+| back_into_egypt_fnl | 24 | 58 | 11 | 23 | 0 | 40 |
+| two_witnesses | 3 | 41 | 12 | 20 | 6 | 33 |
+| sabbath | 12 | 37 | 11 | 13 | 1 | 24 |
+| holiness | 5 | 39 | 11 | 23 | 0 | 33 |
+| kingdom_of_god | 38 | 71 | 12 | 14 | 7 | 38 |
+| the_foolishness_men_women | 18 | 53 | 12 | 23 | 0 | 35 |
+| seek_god_now_time | 20 | 54 | 12 | 22 | 0 | 36 |
+| beware_spirits_all_are | 20 | 54 | 12 | 22 | 0 | 36 |
+| how_frail_lesson_handout | 25 | 57 | 12 | 20 | 0 | 39 |
+| modern_religion_emotionalism_not | 17 | 52 | 12 | 23 | 0 | 34 |
+| remember_the_mission_teach | 16 | 51 | 12 | 23 | 0 | 33 |
+| david | 30 | 65 | 12 | 23 | 0 | 33 |
+| america_decline_rome_rising | 14 | 49 | 12 | 23 | 0 | 32 |
+| the_lords_determination_lesson | 17 | 51 | 12 | 22 | 0 | 33 |
+| home_israel_the_church | 4 | 39 | 12 | 23 | 0 | 32 |
+| tithes | 4 | 39 | 12 | 23 | 0 | 32 |
+| baptism | 3 | 38 | 12 | 23 | 0 | 32 |
+| open_topic_fear_god | 4 | 39 | 12 | 23 | 0 | 32 |
+| the_israel_god_research | 2 | 37 | 12 | 23 | 0 | 32 |
+| gods_judgment_lesson_handout | 21 | 53 | 11 | 21 | 0 | 36 |
+| part_the_times_the | 41 | 71 | 11 | 19 | 0 | 39 |
+| jacob | 1 | 36 | 12 | 23 | 0 | 32 |
+| iog_bay_area_prepare | 1 | 36 | 12 | 23 | 0 | 32 |
+| iog_stick_the_script | 1 | 36 | 12 | 23 | 0 | 32 |
+| emotional | 1 | 36 | 12 | 23 | 0 | 32 |
+| emotional_does_scripture_say | 1 | 36 | 12 | 23 | 0 | 32 |
+| whisperer_will_separate_best | 16 | 50 | 12 | 22 | 0 | 32 |
+| open_topic_the_remnant | 4 | 38 | 12 | 22 | 0 | 32 |
+| covenants | 7 | 41 | 13 | 18 | 3 | 32 |
+| feasts | 3 | 34 | 12 | 19 | 0 | 33 |
+| angels | 21 | 52 | 13 | 18 | 0 | 36 |
+| 144000 | 2 | 36 | 11 | 23 | 0 | 32 |
+| mark_of_the_beast | 3 | 37 | 11 | 18 | 5 | 31 |
+| content_with_what_you | 14 | 48 | 11 | 23 | 0 | 31 |
+| mixed_where_now_according | 1 | 35 | 12 | 22 | 0 | 31 |
+| reap_what_you_sow | 14 | 47 | 12 | 21 | 0 | 32 |
+| michael_archangel | 4 | 38 | 11 | 23 | 0 | 31 |
+| noah | 4 | 38 | 13 | 21 | 0 | 31 |
+| great_tribulation | 3 | 37 | 11 | 23 | 0 | 31 |
+| little_leaven_daily_readings | 17 | 50 | 12 | 21 | 0 | 32 |
+| that_man_sin_lesson | 21 | 51 | 11 | 19 | 0 | 36 |
+| jesus_the_christ_the | 21 | 52 | 11 | 20 | 0 | 34 |
+| abib_fresh_beginning_lesson | 10 | 43 | 12 | 21 | 0 | 31 |
+| the_last_trump_lesson | 22 | 52 | 13 | 17 | 0 | 35 |
+| neither_democrats_nor_republicans | 20 | 50 | 12 | 18 | 0 | 35 |
+| the_book_life_lesson | 16 | 48 | 11 | 21 | 0 | 31 |
+| open_topic_what_the | 10 | 42 | 12 | 20 | 0 | 31 |
+| children_are_the_future | 10 | 42 | 13 | 19 | 0 | 30 |
+| killed_for_jesus_lesson | 14 | 45 | 11 | 20 | 0 | 31 |
+| satan | 17 | 47 | 12 | 18 | 0 | 32 |
+| marriage | 3 | 34 | 12 | 19 | 0 | 30 |
+| may_whoredom_aka_fornication | 16 | 47 | 12 | 19 | 0 | 29 |
+| circumcision_still_good_lesson | 12 | 43 | 13 | 18 | 0 | 29 |
+| vengeance_the_lords_lesson | 16 | 47 | 11 | 20 | 0 | 29 |
+| prayer | 25 | 54 | 9 | 20 | 0 | 32 |
+| from_baby_manger_killer | 16 | 46 | 11 | 19 | 0 | 28 |
+| the_unleavened_bread_journey | 18 | 47 | 11 | 18 | 0 | 29 |
+| open_topic_does_genesis | 3 | 32 | 12 | 17 | 0 | 28 |
+| ham | 25 | 51 | 11 | 15 | 0 | 33 |
+| paul | 19 | 49 | 12 | 18 | 0 | 27 |
+| dietary_law | 12 | 40 | 12 | 16 | 0 | 25 |
+| there_god_but_jesus | 22 | 47 | 10 | 15 | 0 | 34 |
+| holy_spirit | 18 | 47 | 10 | 19 | 0 | 27 |
+| peter | 12 | 40 | 12 | 16 | 0 | 25 |
+| heavens | 19 | 40 | 9 | 12 | 0 | 29 |
+| the_state_gods_union | 17 | 42 | 9 | 16 | 0 | 29 |
+| john | 25 | 50 | 10 | 15 | 0 | 26 |

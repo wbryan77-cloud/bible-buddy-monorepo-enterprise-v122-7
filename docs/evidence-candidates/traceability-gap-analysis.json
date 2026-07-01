@@ -1,0 +1,323 @@
+{
+  "ranAt": "2026-06-10T05:11:43.822Z",
+  "purpose": "Determine whether traceability failures are metadata-only or evidence-related",
+  "summary": {
+    "totalPacksAudited": 28,
+    "packsInTraceabilityIndex": 26,
+    "failureCount": 28,
+    "metadataOnlyFailures": 26,
+    "evidenceRelatedFailures": 2,
+    "metadataOnlySharePct": 92.9
+  },
+  "failures": [
+    {
+      "topic": "wednesday_night_qa",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 1298,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 98
+    },
+    {
+      "topic": "isaiah",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 590,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 27
+    },
+    {
+      "topic": "joshua",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 65,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 2
+    },
+    {
+      "topic": "john",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 70,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 4
+    },
+    {
+      "topic": "feasts",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 49,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 5
+    },
+    {
+      "topic": "samuel",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 184,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 9
+    },
+    {
+      "topic": "millennial_kingdom_kingdom_on_earth",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 31,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "kingdom_of_god",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 56,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "sabbath",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 66,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 2
+    },
+    {
+      "topic": "messiah_logos",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 38,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "jacob_israel_twelve_tribes",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 92,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 11
+    },
+    {
+      "topic": "book_of_life",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 16,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "word_of_god",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 20,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 3
+    },
+    {
+      "topic": "spirit_of_god",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 44,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "daniel",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 21,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "jeremiah",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 38,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 2
+    },
+    {
+      "topic": "ham",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 25,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "little_leaven_daily_readings",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 17,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "ezekiel",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 28,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 2
+    },
+    {
+      "topic": "abib_fresh_beginning_revelation",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 10,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "lake_of_fire",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 22,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "peter",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 21,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "content_with_what_you",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 14,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "research_ecclesiastes_1213",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 1,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "lessons_hebrews",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 1,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "iog_jess_templo_sus",
+      "failureType": "incomplete_metadata",
+      "missingFields": [
+        "sourceUrl"
+      ],
+      "classification": "metadata_only",
+      "primaryScriptureCount": 1,
+      "sourceTitlePresent": true,
+      "orgPacketCount": 1
+    },
+    {
+      "topic": "one_hundred_forty_four_thousand",
+      "failureType": "missing_traceability_entry",
+      "missingFields": [
+        "entire_traceability_record"
+      ],
+      "classification": "evidence_related",
+      "hasDeepPack": true,
+      "orgPacketCount": 0
+    },
+    {
+      "topic": "peter_paul_alignment",
+      "failureType": "missing_traceability_entry",
+      "missingFields": [
+        "entire_traceability_record"
+      ],
+      "classification": "evidence_related",
+      "hasDeepPack": true,
+      "orgPacketCount": 0
+    }
+  ],
+  "safety": {
+    "validationOnly": true
+  }
+}

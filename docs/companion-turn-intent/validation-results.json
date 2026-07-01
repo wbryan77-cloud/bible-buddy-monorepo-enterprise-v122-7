@@ -1,0 +1,1350 @@
+{
+  "generatedAt": "2026-06-03T03:40:04.350Z",
+  "openaiAvailable": true,
+  "feature": "companion_turn_intent",
+  "baselineMetrics": {
+    "turns": 20,
+    "openaiCount": 20,
+    "openaiPct": 100,
+    "avgTemplatePct": 0,
+    "avgHumanListening": 6.3,
+    "inThreadMemoryHitTurns": 20
+  },
+  "metrics": {
+    "turns": 20,
+    "openaiPct": 100,
+    "avgTemplatePct": 0,
+    "avgHumanListening": 6.2,
+    "avgComposite": 6.5,
+    "avgPostureFit": 8,
+    "avgWarmth": 6,
+    "avgFollowUp": 7.4,
+    "avgUsefulness": 6.6,
+    "avgNaturalness": 6.9,
+    "inThreadMemoryHitTurns": 20,
+    "shape": {
+      "answering": 47.4,
+      "advising": 14.5,
+      "explaining": 15.8,
+      "asking": 2.5,
+      "reflecting": 15,
+      "engaging": 4.8,
+      "deliverModePct": 77.7,
+      "companionModePct": 22.3,
+      "exploratoryQuestionTurns": 2,
+      "transactionalCloseTurns": 4
+    },
+    "postureHardFails": 5
+  },
+  "gate": {
+    "checks": [
+      {
+        "name": "Listening >= 7.2",
+        "pass": false,
+        "value": "6.2/10"
+      },
+      {
+        "name": "Listening target >= 7.5",
+        "pass": false,
+        "value": "6.2/10"
+      },
+      {
+        "name": "Warmth >= 6.7",
+        "pass": false,
+        "value": "6/10"
+      },
+      {
+        "name": "Follow-up >= 7",
+        "pass": true,
+        "value": "7.4/10"
+      },
+      {
+        "name": "Sabbath T7 >= 8",
+        "pass": false,
+        "value": "5.8/10"
+      },
+      {
+        "name": "OpenAI >= 70%",
+        "pass": true,
+        "value": "100%"
+      },
+      {
+        "name": "Template <= 20%",
+        "pass": true,
+        "value": "0%"
+      }
+    ],
+    "pass": false
+  },
+  "humanFeel": [
+    {
+      "name": "Job discernment",
+      "postureFit": 9,
+      "feltHeard": 5,
+      "threadSpecific": 4.7,
+      "usefulness": 6.3,
+      "naturalness": 7,
+      "correctionRecovery": null,
+      "listening": 6,
+      "composite": 6.4
+    },
+    {
+      "name": "Alzheimer's caregiver",
+      "postureFit": 9,
+      "feltHeard": 6,
+      "threadSpecific": 6,
+      "usefulness": 6.3,
+      "naturalness": 7,
+      "correctionRecovery": null,
+      "listening": 6.7,
+      "composite": 6.9
+    },
+    {
+      "name": "Feeling distant from God",
+      "postureFit": 8.7,
+      "feltHeard": 5.7,
+      "threadSpecific": 4,
+      "usefulness": 6,
+      "naturalness": 6.3,
+      "correctionRecovery": null,
+      "listening": 6.1,
+      "composite": 6.1
+    },
+    {
+      "name": "Sabbath wording correction",
+      "postureFit": 6.1,
+      "feltHeard": 6.4,
+      "threadSpecific": 6.6,
+      "usefulness": 6.9,
+      "naturalness": 7,
+      "correctionRecovery": 3.6,
+      "listening": 5.9,
+      "composite": 6.2
+    },
+    {
+      "name": "Grief",
+      "postureFit": 9,
+      "feltHeard": 6,
+      "threadSpecific": 7,
+      "usefulness": 6.5,
+      "naturalness": 6.5,
+      "correctionRecovery": null,
+      "listening": 6.9,
+      "composite": 7
+    },
+    {
+      "name": "Knee pain",
+      "postureFit": 9,
+      "feltHeard": 5,
+      "threadSpecific": 6,
+      "usefulness": 7,
+      "naturalness": 7,
+      "correctionRecovery": null,
+      "listening": 6.4,
+      "composite": 6.8
+    }
+  ],
+  "results": [
+    {
+      "id": "job",
+      "name": "Job opportunity",
+      "humanFeel": "Job discernment",
+      "userId": "turn-intent-job-1780457782556",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I have a job opportunity.",
+          "reply": "You have a job opportunity before you, which brings both hope and important decisions. It’s good to actively seek God’s guidance through prayer and also to pause and reflect on how this aligns with your values and long-term goals. Consider talking with trusted friends or mentors who know you well to gain perspective. What’s one small step you can take today to move forward with clarity and peace?",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 5.8,
+          "scores": {
+            "listening": 5.8,
+            "postureFit": 9,
+            "feltHeard": 5,
+            "threadSpecific": 4,
+            "usefulness": 7,
+            "naturalness": 7,
+            "warmth": 7,
+            "followUp": null,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "composite": 6.4
+          },
+          "shape": {
+            "answering": 50,
+            "advising": 25,
+            "explaining": 0,
+            "asking": 25,
+            "reflecting": 0,
+            "engaging": 0,
+            "sentenceCount": 4,
+            "hasExploratoryQuestion": true,
+            "exploratoryQuestionCount": 1,
+            "hasTransactionalClose": false,
+            "deliverModePct": 75,
+            "companionModePct": 25
+          },
+          "overlapWithPrior": 0,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 1,
+            "memorySnippetCount": 1
+          }
+        },
+        {
+          "turn": 2,
+          "message": "The company is far away from home.",
+          "reply": "This job opportunity being far away from home adds an important layer to your decision. It’s helpful to actively seek God’s guidance through prayer, not just waiting passively, and to weigh the practical impacts on your life and relationships. Maybe you could set a timeline to pray, gather counsel, and reflect on how this move aligns with your values and long-term goals. What might be one realistic step you could take to bring more clarity about this distance concern?",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 6.3,
+          "scores": {
+            "listening": 6.3,
+            "postureFit": 9,
+            "feltHeard": 5,
+            "threadSpecific": 6,
+            "usefulness": 5,
+            "naturalness": 7,
+            "warmth": 7,
+            "followUp": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "composite": 6.4
+          },
+          "shape": {
+            "answering": 50,
+            "advising": 25,
+            "explaining": 0,
+            "asking": 25,
+            "reflecting": 0,
+            "engaging": 0,
+            "sentenceCount": 4,
+            "hasExploratoryQuestion": true,
+            "exploratoryQuestionCount": 1,
+            "hasTransactionalClose": false,
+            "deliverModePct": 75,
+            "companionModePct": 25
+          },
+          "overlapWithPrior": 42,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 3,
+            "memorySnippetCount": 3
+          }
+        },
+        {
+          "turn": 3,
+          "message": "I'm not sure whether to push or wait on this offer.",
+          "reply": "You're weighing whether to push forward or wait on this job opportunity that's quite far from home. It’s important to balance active faith—like praying and seeking wise counsel—with thoughtful patience rather than just waiting passively. Setting a clear timeline to pray, reflect, and talk with trusted people might help you find peace in your decision.",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 6,
+          "scores": {
+            "listening": 6,
+            "postureFit": 9,
+            "feltHeard": 5,
+            "threadSpecific": 4,
+            "usefulness": 7,
+            "naturalness": 7,
+            "warmth": 5,
+            "followUp": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "composite": 6.4
+          },
+          "shape": {
+            "answering": 100,
+            "advising": 0,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 100,
+            "companionModePct": 0
+          },
+          "overlapWithPrior": 32,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 5,
+            "memorySnippetCount": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "alz",
+      "name": "Alzheimer's caregiver",
+      "humanFeel": "Alzheimer's caregiver",
+      "userId": "turn-intent-alz-1780457800409",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My mom was recently diagnosed with Alzheimer's.",
+          "reply": "Your mom’s recent Alzheimer’s diagnosis brings a heavy caregiver burden that can feel overwhelming. It’s important to seek support, whether from local caregiver groups or trusted friends, to share the load and find practical help. Also, consider setting daily reminders for medications or appointments to ease the stress. Would you like a prayer to help bring peace in this difficult time?",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 6.5,
+          "scores": {
+            "listening": 6.5,
+            "postureFit": 9,
+            "feltHeard": 6,
+            "threadSpecific": 6,
+            "usefulness": 7,
+            "naturalness": 7,
+            "warmth": 7,
+            "followUp": null,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 6
+            },
+            "composite": 7
+          },
+          "shape": {
+            "answering": 25,
+            "advising": 50,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 25,
+            "sentenceCount": 4,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": true,
+            "deliverModePct": 75,
+            "companionModePct": 25
+          },
+          "overlapWithPrior": 0,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 1,
+            "memorySnippetCount": 1
+          }
+        },
+        {
+          "turn": 2,
+          "message": "Some days she doesn't remember who I am.",
+          "reply": "It must be very painful that some days your mom doesn’t remember who you are, deepening the caregiver burden you already carry. When this happens, try gently reminding her with familiar names or shared memories to help anchor her in the moment. Also, consider connecting with an Alzheimer’s support group for caregivers to share your feelings and find practical encouragement.",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 6.8,
+          "scores": {
+            "listening": 6.8,
+            "postureFit": 9,
+            "feltHeard": 6,
+            "threadSpecific": 6,
+            "usefulness": 7,
+            "naturalness": 7,
+            "warmth": 7,
+            "followUp": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "composite": 7
+          },
+          "shape": {
+            "answering": 33.3,
+            "advising": 66.7,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 100,
+            "companionModePct": 0
+          },
+          "overlapWithPrior": 31,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 3,
+            "memorySnippetCount": 3
+          }
+        },
+        {
+          "turn": 3,
+          "message": "How do I stay close to God while grieving who she used to be?",
+          "reply": "Grieving who your mom used to be while caring for her through Alzheimer's is deeply painful and adds to the caregiver burden you carry. Staying close to God in this season can come through quiet moments of prayer where you honestly share your heart with Him, and by leaning on His promise to carry you, even when the path feels heavy. You might find comfort in setting a daily time of reflection and asking God for strength and peace, and also sharing your feelings with a trusted friend or support group to help lighten your emotional load.",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 6.8,
+          "scores": {
+            "listening": 6.8,
+            "postureFit": 9,
+            "feltHeard": 6,
+            "threadSpecific": 6,
+            "usefulness": 5,
+            "naturalness": 7,
+            "warmth": 7,
+            "followUp": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "composite": 6.6
+          },
+          "shape": {
+            "answering": 0,
+            "advising": 33.3,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 66.7,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 33.3,
+            "companionModePct": 66.7
+          },
+          "overlapWithPrior": 30,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 5,
+            "memorySnippetCount": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "distant",
+      "name": "Feeling distant from God",
+      "humanFeel": "Feeling distant from God",
+      "userId": "turn-intent-distant-1780457812637",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I feel distant from God lately.",
+          "reply": "It sounds like you’re carrying a heavy feeling of distance from God right now, which can be really hard and lonely. Sometimes this happens when life feels overwhelming, or when our hearts are restless and searching. If you want, I’m here to listen as you share more about what’s been going on for you.",
+          "companionTurnIntent": {
+            "posture": "WALK_WITH_ME",
+            "why": "emotional_processing_without_needing_immediate_fix"
+          },
+          "expectedPosture": "WALK_WITH_ME",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 5.8,
+          "scores": {
+            "listening": 5.8,
+            "postureFit": 9,
+            "feltHeard": 5,
+            "threadSpecific": 4,
+            "usefulness": 6,
+            "naturalness": 6,
+            "warmth": 7,
+            "followUp": null,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "composite": 6
+          },
+          "shape": {
+            "answering": 66.7,
+            "advising": 0,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 33.3,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 66.7,
+            "companionModePct": 33.3
+          },
+          "overlapWithPrior": 0,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 1,
+            "memorySnippetCount": 1
+          }
+        },
+        {
+          "turn": 2,
+          "message": "I pray but it feels empty.",
+          "reply": "It sounds like your prayers feel empty because you might be carrying that same sense of distance from God you mentioned before, which can make connecting feel hard and lonely. Sometimes, when our hearts feel far or restless, our prayers can feel like they lack that closeness or meaning we long for. If you want, feel free to share more about what your prayers have been like or what you’re feeling inside.",
+          "companionTurnIntent": {
+            "posture": "WALK_WITH_ME",
+            "why": "emotional_processing_without_needing_immediate_fix"
+          },
+          "expectedPosture": "WALK_WITH_ME",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 5.3,
+          "scores": {
+            "listening": 5.3,
+            "postureFit": 9,
+            "feltHeard": 5,
+            "threadSpecific": 2,
+            "usefulness": 5,
+            "naturalness": 6,
+            "warmth": 5,
+            "followUp": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "composite": 5.4
+          },
+          "shape": {
+            "answering": 66.7,
+            "advising": 0,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 33.3,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 66.7,
+            "companionModePct": 33.3
+          },
+          "overlapWithPrior": 48,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 3,
+            "memorySnippetCount": 3
+          }
+        },
+        {
+          "turn": 3,
+          "message": "Does that mean my faith is failing?",
+          "reply": "Feeling distant from God and experiencing empty prayers doesn’t mean your faith is failing. Sometimes faith goes through seasons of dryness or silence, but God’s presence remains even when we don’t feel it. It can help to honestly bring these feelings to God, asking Him to renew your spirit and draw you closer, as James 4:8 encourages us to draw near to Him. Would you like a simple prayer to help express these honest feelings to God?",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 1,
+            "mustDoMisses": 1
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 7.3,
+          "scores": {
+            "listening": 7.3,
+            "postureFit": 8,
+            "feltHeard": 7,
+            "threadSpecific": 6,
+            "usefulness": 7,
+            "naturalness": 7,
+            "warmth": 5,
+            "followUp": 7,
+            "listeningDimensions": {
+              "answeredLatest": 8,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 7
+            },
+            "composite": 7
+          },
+          "shape": {
+            "answering": 50,
+            "advising": 25,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 25,
+            "sentenceCount": 4,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": true,
+            "deliverModePct": 75,
+            "companionModePct": 25
+          },
+          "overlapWithPrior": 22,
+          "postureWarnings": [
+            "Missing: Address distant, empty prayer, or faith fear using their wording"
+          ],
+          "evidence": {
+            "threadLocalHitCount": 5,
+            "memorySnippetCount": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "sabbath",
+      "name": "Sabbath wording thread",
+      "humanFeel": "Sabbath wording correction",
+      "userId": "turn-intent-sabbath-1780457823376",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Why should we keep Sunday as the day of worship onto the Lord?",
+          "reply": "Sunday became the common day of Christian worship largely through historical developments rather than an explicit biblical command to replace the seventh-day Sabbath. Early Christians sometimes met on Sunday to commemorate Jesus' resurrection, but the biblical Sabbath remains the seventh day. Over time, Roman Emperor Constantine's AD 321 decree and later church councils established Sunday as a civil and ecclesiastical day of rest and worship.",
+          "companionTurnIntent": {
+            "posture": "DIRECT_ANSWER",
+            "why": "factual_or_doctrinal_question"
+          },
+          "expectedPosture": "DIRECT_ANSWER",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 5.8,
+          "scores": {
+            "listening": 5.8,
+            "postureFit": 9,
+            "feltHeard": 5,
+            "threadSpecific": 4,
+            "usefulness": 6,
+            "naturalness": 7,
+            "warmth": 5,
+            "followUp": null,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "composite": 6.2
+          },
+          "shape": {
+            "answering": 0,
+            "advising": 0,
+            "explaining": 100,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 100,
+            "companionModePct": 0
+          },
+          "overlapWithPrior": 0,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 1,
+            "memorySnippetCount": 1
+          }
+        },
+        {
+          "turn": 2,
+          "message": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+          "reply": "I understand you're asking about my wording choice. I used \"Roman church\" to refer broadly to the historical Christian church centered in Rome, distinguishing it from the later institutional \"Roman Catholic Church\" which developed distinct authority structures after the Roman Empire era, especially post-Constantine. This helps keep clear the difference between imperial influence and later church developments.",
+          "companionTurnIntent": {
+            "posture": "CORRECTION_RECOVERY",
+            "why": "correction_or_meta_wording"
+          },
+          "expectedPosture": "CORRECTION_RECOVERY",
+          "postureValidation": {
+            "passed": false,
+            "hardIssues": [
+              "correction_posture_sabbath_history_bleed"
+            ],
+            "softCount": 1,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 6.2,
+          "scores": {
+            "listening": 6.2,
+            "postureFit": 5,
+            "feltHeard": 5,
+            "threadSpecific": 2,
+            "usefulness": 7,
+            "naturalness": 7,
+            "correctionRecovery": 7,
+            "warmth": 5,
+            "followUp": 5,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 7
+            },
+            "composite": 5.5
+          },
+          "shape": {
+            "answering": 33.3,
+            "advising": 0,
+            "explaining": 33.3,
+            "asking": 0,
+            "reflecting": 33.3,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 66.6,
+            "companionModePct": 33.3
+          },
+          "overlapWithPrior": 18,
+          "postureWarnings": [
+            "Avoid: repeating Sabbath history chain"
+          ],
+          "evidence": {
+            "threadLocalHitCount": 3,
+            "memorySnippetCount": 3
+          }
+        },
+        {
+          "turn": 3,
+          "message": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+          "reply": "I see you're asking specifically about my choice of words. I use \"Roman church\" to refer to the Christian community historically centered in Rome before the formal development of the Roman Catholic Church's distinct institutional structure, which arose later, especially after the Roman Empire period. This distinction helps separate the influence of Roman imperial authority from the later ecclesiastical authority that the Roman Catholic Church came to hold.",
+          "companionTurnIntent": {
+            "posture": "CORRECTION_RECOVERY",
+            "why": "correction_or_meta_wording"
+          },
+          "expectedPosture": "CORRECTION_RECOVERY",
+          "postureValidation": {
+            "passed": false,
+            "hardIssues": [
+              "correction_posture_repeated_rationale"
+            ],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 7.3,
+          "scores": {
+            "listening": 7.3,
+            "postureFit": 7,
+            "feltHeard": 7,
+            "threadSpecific": 8,
+            "usefulness": 7,
+            "naturalness": 7,
+            "warmth": 5,
+            "followUp": 7,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 8,
+              "noRepeat": 5,
+              "feltHeard": 7
+            },
+            "composite": 7.2
+          },
+          "shape": {
+            "answering": 66.7,
+            "advising": 0,
+            "explaining": 33.3,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 100,
+            "companionModePct": 0
+          },
+          "overlapWithPrior": 59,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 5,
+            "memorySnippetCount": 5
+          }
+        },
+        {
+          "turn": 4,
+          "message": "No, I'm not asking about the shift. I'm asking about your wording.",
+          "reply": "I appreciate your clarification that you're focusing on my choice of words. I use \"Roman church\" to distinguish the early Christian community in Rome before the formal establishment of the Roman Catholic Church's institutional structure, which developed later. This helps separate the period of Roman imperial influence, such as under Emperor Constantine, from the later ecclesiastical authority that the Roman Catholic Church came to hold.",
+          "companionTurnIntent": {
+            "posture": "CORRECTION_RECOVERY",
+            "why": "correction_or_meta_wording"
+          },
+          "expectedPosture": "CORRECTION_RECOVERY",
+          "postureValidation": {
+            "passed": false,
+            "hardIssues": [
+              "correction_posture_sabbath_history_bleed"
+            ],
+            "softCount": 1,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 5.4,
+          "scores": {
+            "listening": 5.4,
+            "postureFit": 5,
+            "feltHeard": 7,
+            "threadSpecific": 8,
+            "usefulness": 7,
+            "naturalness": 7,
+            "correctionRecovery": 2,
+            "warmth": 5,
+            "followUp": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 3,
+              "feltHeard": 7,
+              "correctionRecovery": 2
+            },
+            "composite": 6
+          },
+          "shape": {
+            "answering": 66.7,
+            "advising": 0,
+            "explaining": 33.3,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 100,
+            "companionModePct": 0
+          },
+          "overlapWithPrior": 67,
+          "postureWarnings": [
+            "Avoid: repeating Sabbath history chain"
+          ],
+          "evidence": {
+            "threadLocalHitCount": 7,
+            "memorySnippetCount": 7
+          }
+        },
+        {
+          "turn": 5,
+          "message": "Why are you not answering my question?",
+          "reply": "I understand you want a clear explanation about my wording choice. I use \"Roman church\" to specifically refer to the early Christian community in Rome before the Roman Catholic Church developed its formal institutional authority later on. This distinction helps separate the time of Roman imperial influence, such as under Emperor Constantine, from the later ecclesiastical authority of the Roman Catholic Church.",
+          "companionTurnIntent": {
+            "posture": "CORRECTION_RECOVERY",
+            "why": "correction_or_meta_wording"
+          },
+          "expectedPosture": "CORRECTION_RECOVERY",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 1,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 5.4,
+          "scores": {
+            "listening": 5.4,
+            "postureFit": 7,
+            "feltHeard": 7,
+            "threadSpecific": 8,
+            "usefulness": 7,
+            "naturalness": 7,
+            "correctionRecovery": 2,
+            "warmth": 5,
+            "followUp": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 3,
+              "feltHeard": 7,
+              "correctionRecovery": 2
+            },
+            "composite": 6.3
+          },
+          "shape": {
+            "answering": 33.3,
+            "advising": 0,
+            "explaining": 33.3,
+            "asking": 0,
+            "reflecting": 33.3,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 66.6,
+            "companionModePct": 33.3
+          },
+          "overlapWithPrior": 66,
+          "postureWarnings": [
+            "Avoid: repeating Sabbath history chain"
+          ],
+          "evidence": {
+            "threadLocalHitCount": 9,
+            "memorySnippetCount": 8
+          }
+        },
+        {
+          "turn": 6,
+          "message": "No, I'm not asking about history. I'm asking about your wording.",
+          "reply": "I understand you're focusing on my choice of words. I use \"Roman church\" to specifically highlight the early Christian community in Rome before the Roman Catholic Church developed its formal institutional authority, which came later. This distinction separates the era of Roman imperial influence, such as under Emperor Constantine, from the later ecclesiastical authority established by the Roman Catholic Church.",
+          "companionTurnIntent": {
+            "posture": "CORRECTION_RECOVERY",
+            "why": "correction_or_meta_wording"
+          },
+          "expectedPosture": "CORRECTION_RECOVERY",
+          "postureValidation": {
+            "passed": false,
+            "hardIssues": [
+              "correction_posture_sabbath_history_bleed",
+              "correction_posture_repeated_rationale"
+            ],
+            "softCount": 1,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 5.4,
+          "scores": {
+            "listening": 5.4,
+            "postureFit": 5,
+            "feltHeard": 7,
+            "threadSpecific": 8,
+            "usefulness": 7,
+            "naturalness": 7,
+            "correctionRecovery": 2,
+            "warmth": 5,
+            "followUp": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 3,
+              "feltHeard": 7,
+              "correctionRecovery": 2
+            },
+            "composite": 6
+          },
+          "shape": {
+            "answering": 33.3,
+            "advising": 0,
+            "explaining": 33.3,
+            "asking": 0,
+            "reflecting": 33.3,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 66.6,
+            "companionModePct": 33.3
+          },
+          "overlapWithPrior": 74,
+          "postureWarnings": [
+            "Avoid: repeating Sabbath history chain"
+          ],
+          "evidence": {
+            "threadLocalHitCount": 9,
+            "memorySnippetCount": 8
+          }
+        },
+        {
+          "turn": 7,
+          "message": "Are you not listening to what I am asking?",
+          "reply": "I hear that you're asking about why I specifically use the term \"Roman church\" rather than \"Roman Catholic Church.\" I use \"Roman church\" to clearly refer to the early Christian community in Rome before the later institutional structure and authority of the Roman Catholic Church developed, which was after the time of Roman imperial influence such as under Constantine. This wording helps keep distinct the early church in Rome from the later ecclesiastical authority that emerged.",
+          "companionTurnIntent": {
+            "posture": "CORRECTION_RECOVERY",
+            "why": "correction_or_meta_wording"
+          },
+          "expectedPosture": "CORRECTION_RECOVERY",
+          "postureValidation": {
+            "passed": false,
+            "hardIssues": [
+              "correction_posture_repeated_rationale"
+            ],
+            "softCount": 1,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 5.8,
+          "scores": {
+            "listening": 5.8,
+            "postureFit": 5,
+            "feltHeard": 7,
+            "threadSpecific": 8,
+            "usefulness": 7,
+            "naturalness": 7,
+            "correctionRecovery": 2,
+            "warmth": 5,
+            "followUp": 7,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 5,
+              "feltHeard": 7,
+              "correctionRecovery": 2
+            },
+            "composite": 6
+          },
+          "shape": {
+            "answering": 50,
+            "advising": 0,
+            "explaining": 50,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 0,
+            "sentenceCount": 2,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 100,
+            "companionModePct": 0
+          },
+          "overlapWithPrior": 56,
+          "postureWarnings": [
+            "Avoid: repeating Sabbath history chain"
+          ],
+          "evidence": {
+            "threadLocalHitCount": 9,
+            "memorySnippetCount": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "grief",
+      "name": "Grief thread",
+      "humanFeel": "Grief",
+      "userId": "turn-intent-grief-1780457987482",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost a friend Wednesday.",
+          "reply": "Losing your friend on Wednesday must feel very heavy and real right now. Grief can come in waves, and it’s okay to let yourself feel whatever comes. If you want, I’m here to listen or walk through this with you gently.",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 6.3,
+          "scores": {
+            "listening": 6.3,
+            "postureFit": 9,
+            "feltHeard": 5,
+            "threadSpecific": 6,
+            "usefulness": 7,
+            "naturalness": 7,
+            "warmth": 7,
+            "followUp": null,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "composite": 6.8
+          },
+          "shape": {
+            "answering": 100,
+            "advising": 0,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 100,
+            "companionModePct": 0
+          },
+          "overlapWithPrior": 0,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 1,
+            "memorySnippetCount": 1
+          }
+        },
+        {
+          "turn": 2,
+          "message": "It is still bothering me.",
+          "reply": "It sounds like the loss of your friend on Wednesday is still weighing heavily on your heart. Sometimes grief lingers in ways that feel hard to put into words or to move past quickly. If you want to share more about what’s still bothering you or how you’re feeling right now, I’m here to listen with you.",
+          "companionTurnIntent": {
+            "posture": "WALK_WITH_ME",
+            "why": "emotional_processing_without_needing_immediate_fix"
+          },
+          "expectedPosture": "WALK_WITH_ME",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 7.5,
+          "scores": {
+            "listening": 7.5,
+            "postureFit": 9,
+            "feltHeard": 7,
+            "threadSpecific": 8,
+            "usefulness": 6,
+            "naturalness": 6,
+            "warmth": 7,
+            "followUp": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 8,
+              "feltHeard": 7
+            },
+            "composite": 7.2
+          },
+          "shape": {
+            "answering": 33.3,
+            "advising": 0,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 66.7,
+            "engaging": 0,
+            "sentenceCount": 3,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": false,
+            "deliverModePct": 33.3,
+            "companionModePct": 66.7
+          },
+          "overlapWithPrior": 30,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 3,
+            "memorySnippetCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health thread",
+      "humanFeel": "Knee pain",
+      "userId": "turn-intent-health-1780457996575",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "reply": "Your knees hurting must be quite uncomfortable. It might help to rest them and apply ice if there's swelling. If the pain lasts more than a few days, worsens, or limits your ability to walk, consider seeing a healthcare professional. Meanwhile, gentle stretching or over-the-counter pain relief could be beneficial, but be cautious with any treatments. Would you like me to pray with you for comfort and healing?",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 6.3,
+          "scores": {
+            "listening": 6.3,
+            "postureFit": 9,
+            "feltHeard": 5,
+            "threadSpecific": 6,
+            "usefulness": 7,
+            "naturalness": 7,
+            "warmth": 7,
+            "followUp": null,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "composite": 6.8
+          },
+          "shape": {
+            "answering": 40,
+            "advising": 40,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 20,
+            "sentenceCount": 5,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": true,
+            "deliverModePct": 80,
+            "companionModePct": 20
+          },
+          "overlapWithPrior": 0,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 1,
+            "memorySnippetCount": 1
+          }
+        },
+        {
+          "turn": 2,
+          "message": "My knees are hurting again today.",
+          "reply": "Your knees hurting again today sounds really tough. It’s important to keep resting them and avoid putting too much strain on them. If the pain continues, worsens, or you notice swelling or difficulty walking, please see a healthcare professional soon. Would you like me to pray with you for strength and relief?",
+          "companionTurnIntent": {
+            "posture": "REFLECT_THEN_HELP",
+            "why": "pain_uncertainty_or_practical_help"
+          },
+          "expectedPosture": "REFLECT_THEN_HELP",
+          "postureValidation": {
+            "passed": true,
+            "hardIssues": [],
+            "softCount": 0,
+            "mustDoMisses": 0
+          },
+          "openaiCalled": true,
+          "templateCharsPct": 0,
+          "humanListening": 6.5,
+          "scores": {
+            "listening": 6.5,
+            "postureFit": 9,
+            "feltHeard": 5,
+            "threadSpecific": 6,
+            "usefulness": 7,
+            "naturalness": 7,
+            "warmth": 7,
+            "followUp": 9,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "composite": 6.8
+          },
+          "shape": {
+            "answering": 50,
+            "advising": 25,
+            "explaining": 0,
+            "asking": 0,
+            "reflecting": 0,
+            "engaging": 25,
+            "sentenceCount": 4,
+            "hasExploratoryQuestion": false,
+            "exploratoryQuestionCount": 0,
+            "hasTransactionalClose": true,
+            "deliverModePct": 75,
+            "companionModePct": 25
+          },
+          "overlapWithPrior": 33,
+          "postureWarnings": [],
+          "evidence": {
+            "threadLocalHitCount": 3,
+            "memorySnippetCount": 3
+          }
+        }
+      ]
+    }
+  ]
+}

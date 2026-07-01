@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bible Authority Command Center</title>
+  <link rel="stylesheet" href="/admin/theme.css" />
+  <style>
+    body { font-family: system-ui, sans-serif; background: #f5f7fb; margin: 0; padding: 24px; }
+    h1 { margin-top: 0; }
+    .nav { margin-bottom: 20px; }
+    .nav a, .nav button {
+      margin-right: 8px; padding: 8px 14px; border-radius: 6px;
+      border: 1px solid #ccc; background: #fff; cursor: pointer; text-decoration: none; color: #111;
+    }
+    .nav a.active, .nav button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+    .section { display: none; }
+    .section.active { display: block; }
+    .card { background: #fff; border-radius: 10px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+    .metric { font-size: 28px; font-weight: 700; }
+    .metric-label { font-size: 13px; color: #555; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; vertical-align: top; }
+    .tier-badge { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: #e5e7eb; }
+    .candidate-detail { font-size: 12px; color: #444; margin-top: 8px; }
+    .link-drill { color: #2563eb; cursor: pointer; text-decoration: underline; }
+    pre { background: #f8fafc; padding: 12px; border-radius: 8px; overflow: auto; font-size: 12px; }
+    .sub-nav { margin-bottom: 12px; }
+    .sub-nav button { margin: 4px; padding: 6px 12px; font-size: 13px; border: 1px solid #ccc; background: #fff; cursor: pointer; border-radius: 6px; }
+    .sub-nav button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+    .sub-view { display: none; }
+    .sub-view.active { display: block; }
+  </style>
+</head>
+<body>
+  <h1>Bible Authority Command Center</h1>
+  <p>Scripture review · Engineering health · Executive growth — separated surfaces.</p>
+
+  <div class="nav">
+    <a href="/admin">← Legacy Admin</a>
+    <button type="button" id="tab-executive" class="active">Executive Growth</button>
+    <button type="button" id="tab-scripture">Scripture Authority Review</button>
+    <button type="button" id="tab-engineering">Engineering Intelligence</button>
+    <button type="button" id="refreshBtn">Refresh</button>
+  </div>
+
+  <section id="executive" class="section active">
+    <div class="card">
+      <h2>Executive Growth Dashboard</h2>
+      <div id="executiveMetrics" class="grid"></div>
+      <p id="executiveHealth"></p>
+      <p>
+        <span class="link-drill" data-goto="scripture">→ Scripture Authority Review</span>
+        ·
+        <span class="link-drill" data-goto="engineering">→ Engineering Intelligence</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="scripture-review" class="section">
+    <div class="card">
+      <h2>Scripture Authority Review</h2>
+      <p>Bible-first review — no Green/Yellow/Red. Strength tiers only.</p>
+      <div class="sub-nav">
+        <button type="button" id="sub-candidates" class="active">Candidates</button>
+        <button type="button" id="sub-groups">Relationship Groups</button>
+        <button type="button" id="sub-coverage">Topic Coverage</button>
+        <button type="button" id="sub-readiness">Implementation Readiness</button>
+        <button type="button" id="sub-packs">Topic Packs</button>
+      </div>
+      <div id="view-candidates" class="sub-view active">
+        <div id="tierFilters"></div>
+        <div id="scriptureList"></div>
+      </div>
+      <div id="view-groups" class="sub-view">
+        <h3>Scripture Relationship Groups</h3>
+        <div id="relationshipGroups"></div>
+      </div>
+      <div id="view-coverage" class="sub-view">
+        <h3>Topic Coverage Dashboard</h3>
+        <div id="topicCoverage"></div>
+      </div>
+      <div id="view-readiness" class="sub-view">
+        <h3>Implementation Readiness</h3>
+        <div id="implementationReadiness"></div>
+      </div>
+      <div id="view-packs" class="sub-view">
+        <h3>Topic Approval Packs</h3>
+        <p>Review by topic pack — Approve Pack / Hold Pack / Reject Pack.</p>
+        <div id="topicPacks"></div>
+        <p id="coverageScoreLine"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="engineering" class="section">
+    <div class="card">
+      <h2>Engineering Intelligence</h2>
+      <p>System health for developers — not used for scripture approval.</p>
+      <pre id="engineeringBody">Loading…</pre>
+    </div>
+  </section>
+
+  <script src="/admin/js/bible-authority.js"></script>
+</body>
+</html>

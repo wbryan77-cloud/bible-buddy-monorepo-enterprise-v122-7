@@ -1,0 +1,32 @@
+{
+  "phase": "2P",
+  "reviewedAt": "2026-06-09",
+  "reviewedBy": "William Bryan",
+  "humanApprovalRequired": true,
+  "autoApplied": false,
+  "packs": [
+    {
+      "topic": "sabbath",
+      "displayName": "Sabbath Doctrine Pack",
+      "decision": "approve_pack",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "reasonForDecision": "Third batch exp_0011/exp_0023; Matthew 12:11-12 holy Sabbath witness; Hebrews 4 seventh-day remains edge.",
+      "associatedCandidates": [
+        "exp_0011",
+        "exp_0023"
+      ]
+    },
+    {
+      "topic": "messiah_logos",
+      "displayName": "Messiah Logos Doctrine Pack",
+      "decision": "approve_pack",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "reasonForDecision": "Third batch rec_0010; Who is the Logos retrieval edge without doctrine change.",
+      "associatedCandidates": [
+        "rec_0010"
+      ]
+    }
+  ]
+}

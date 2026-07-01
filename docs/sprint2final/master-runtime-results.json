@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T22:47:27.442Z",
+  "timestamp": "2026-06-02T00:42:16.230Z",
   "sprint": "2.FINAL",
   "results": [
     {
@@ -16,15 +16,15 @@
       "failures": [],
       "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — later papal and Roman church authorit",
       "intent": "sabbath_history",
-      "route": "historical_follow_up"
+      "route": "sabbath_history"
     },
     {
       "name": "A3 — What evidence exists?",
       "passed": true,
       "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it",
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play ",
       "intent": "sabbath_history",
-      "route": "historical_follow_up"
+      "route": "sabbath_history"
     },
     {
       "name": "A4 — Why did they do it?",
@@ -32,7 +32,7 @@
       "failures": [],
       "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou are asking who changed Sabbath observance from Saturday to Sunday — and whether that change came from Scripture or from later human authority.\n\nDirect answer:\nScripture does not name a person who changed th",
       "intent": "sabbath_history",
-      "route": "historical_follow_up"
+      "route": "sabbath_history"
     },
     {
       "name": "A5 — Listen and answer my question.",
@@ -46,7 +46,7 @@
       "name": "A6 — I'm not asking about my knee.",
       "passed": true,
       "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it",
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play ",
       "intent": "sabbath_history",
       "route": "sabbath_history"
     },
@@ -86,7 +86,7 @@
       "name": "C1 — My knees hurt.",
       "passed": true,
       "failures": [],
-      "replyPreview": "I'm sorry you're dealing with that. How long has it been hurting — just today, or has this been going on for a while?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf",
+      "replyPreview": "I'm sorry you're dealing with that. Has this been going on for a few days, or did it start today?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf you would like, we ",
       "intent": "health_support",
       "route": "health_support"
     },
@@ -102,9 +102,9 @@
       "name": "C3 — What should I do next?",
       "passed": true,
       "failures": [],
-      "replyPreview": "I hear you sharing about this. Let's take this gently — I'm not a doctor, but we can bring this before the Lord together.\n\nYou mentioned recently that your knees have been bothering you. How have they been feeling lately?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 conf",
-      "intent": "health_support",
-      "route": "health_support"
+      "replyPreview": "That sounds like something worth sitting with carefully. What's the part that feels most uncertain right now?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.\n\nIf you want, we",
+      "intent": "discernment",
+      "route": "job_discernment"
     },
     {
       "name": "D1 — I have a job opportunity.",
@@ -158,9 +158,9 @@
       "name": "E4 — What did we study last?",
       "passed": true,
       "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it",
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play ",
       "intent": "sabbath_history",
-      "route": "historical_follow_up"
+      "route": "sabbath_history"
     },
     {
       "name": "F1 — I feel lost.",

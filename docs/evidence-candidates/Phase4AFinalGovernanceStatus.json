@@ -1,0 +1,95 @@
+{
+  "ranAt": "2026-06-10T06:57:31.208Z",
+  "phase": "4A.Final",
+  "approvedCandidates": [
+    {
+      "candidateId": "dietary_law__chain_leviticus 11_leviticus 11:3_leviticus 11:47_leviticus 11:4",
+      "candidateType": "primary_chain",
+      "topic": "dietary_law",
+      "confidence": 0.92,
+      "humanApprovalRequired": true,
+      "activated": false
+    },
+    {
+      "candidateId": "death_state__chain_ecclesiastes 9:5_psalm 146:4_john 11:11-14_1 thessalonians 4:13-16",
+      "candidateType": "primary_chain",
+      "topic": "death_state",
+      "confidence": 0.92,
+      "humanApprovalRequired": true,
+      "activated": false
+    },
+    {
+      "candidateId": "holy_spirit__chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+      "candidateType": "cross_pack_linkage",
+      "topic": "holy_spirit",
+      "confidence": 0.88,
+      "humanApprovalRequired": true,
+      "activated": false
+    },
+    {
+      "candidateId": "david__vine_node",
+      "candidateType": "vine_node",
+      "topic": "david",
+      "confidence": 0.88,
+      "humanApprovalRequired": true,
+      "activated": false
+    }
+  ],
+  "retainedCandidates": [
+    {
+      "candidateId": "holy_spirit__chain_hebrews 1:7_luke 10:1-3_john 6:48-54_philippians 2:12",
+      "candidateType": "primary_chain",
+      "topic": "holy_spirit",
+      "confidence": 0.55
+    }
+  ],
+  "rejectedCandidates": [],
+  "pendingDoctrinalReviews": [
+    {
+      "packetId": "2314bff3de277337",
+      "title": "IOG — «¿Quién mató realmente a Jesús? ¡Adán!» 2026",
+      "recommendedAction": "human_review_required"
+    },
+    {
+      "packetId": "f1c730b26768c655",
+      "title": "2 27 26 FEAR GOD OR HELL FIRE and BORN AGAIN A MENTAL CHANGE ONLY OR A BODILY CHANGE TOO",
+      "recommendedAction": "human_review_required"
+    },
+    {
+      "packetId": "c0414b43a39a21e6",
+      "title": "IOG — «La Pascua: un festival pagano, no sagrado» (2026)",
+      "recommendedAction": "human_review_required"
+    }
+  ],
+  "pendingEvidenceReviews": [
+    {
+      "packetId": "2a8bf3264ee88aa5",
+      "title": "IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026",
+      "recommendedAction": "defer"
+    },
+    {
+      "packetId": "5cac9872fc71da4e",
+      "title": "IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026",
+      "recommendedAction": "defer"
+    },
+    {
+      "packetId": "01608a74d76e6e3f",
+      "title": "Emotional: I need comfort from Scripture.",
+      "recommendedAction": "defer"
+    },
+    {
+      "packetId": "2639da2385d53e32",
+      "title": "Challenge: Give me a clear yes or no from Scripture.",
+      "recommendedAction": "defer"
+    }
+  ],
+  "counts": {
+    "approved": 4,
+    "retained": 1,
+    "rejected": 0,
+    "pendingDoctrinalReviews": 3,
+    "pendingEvidenceReviews": 4
+  },
+  "autoActivation": false,
+  "corpusMutation": false
+}

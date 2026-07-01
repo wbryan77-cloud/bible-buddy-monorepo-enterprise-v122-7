@@ -1,0 +1,461 @@
+{
+  "ranAt": "2026-06-10T05:27:19.418Z",
+  "majorTopicCount": 24,
+  "isolatedMajorTopics": [],
+  "isolatedMajorCount": 0,
+  "canonicalPaths": [
+    {
+      "name": "abraham → isaac → jacob → israel → jacob_israel_twelve_tribes → kingdom_of_god → messiah_logos",
+      "topics": [
+        "abraham",
+        "isaac",
+        "jacob",
+        "israel",
+        "jacob_israel_twelve_tribes",
+        "kingdom_of_god",
+        "messiah_logos"
+      ]
+    },
+    {
+      "name": "jacob → israel → house_of_israel → captivity → regathering → new_jerusalem → one_hundred_forty_four_thousand",
+      "topics": [
+        "jacob",
+        "israel",
+        "house_of_israel",
+        "captivity",
+        "regathering",
+        "new_jerusalem",
+        "one_hundred_forty_four_thousand"
+      ]
+    },
+    {
+      "name": "disciples → peter → pentecost → cornelius → gentiles → paul → peter_paul_alignment → gospel",
+      "topics": [
+        "disciples",
+        "peter",
+        "pentecost",
+        "cornelius",
+        "gentiles",
+        "paul",
+        "peter_paul_alignment",
+        "gospel"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "topic": "one_hundred_forty_four_thousand",
+      "pathwayCount": 10,
+      "connectedTopics": [
+        "new_jerusalem",
+        "jacob_israel_twelve_tribes",
+        "israel",
+        "twelve tribes",
+        "sealing",
+        "kingdom",
+        "revelation"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": true,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "peter",
+      "pathwayCount": 9,
+      "connectedTopics": [
+        "disciples",
+        "apostles",
+        "pentecost",
+        "cornelius",
+        "peter_paul_alignment",
+        "gentiles"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "peter_paul_alignment",
+      "pathwayCount": 5,
+      "connectedTopics": [
+        "paul",
+        "peter",
+        "gospel",
+        "gentiles"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": true,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "jacob_israel_twelve_tribes",
+      "pathwayCount": 16,
+      "connectedTopics": [
+        "israel",
+        "jacob",
+        "abraham",
+        "isaac",
+        "twelve tribes",
+        "kingdom_of_god",
+        "one_hundred_forty_four_thousand",
+        "wednesday_night_qa",
+        "isaiah",
+        "sabbath",
+        "samuel",
+        "joshua",
+        "feasts",
+        "millennial_kingdom_kingdom_on_earth"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureChainAttachments": 2,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "millennial_kingdom_kingdom_on_earth",
+      "pathwayCount": 6,
+      "connectedTopics": [
+        "kingdom_of_god",
+        "new_jerusalem",
+        "regathering",
+        "prophecy",
+        "jacob_israel_twelve_tribes",
+        "feasts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureChainAttachments": 5,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "kingdom_of_god",
+      "pathwayCount": 18,
+      "connectedTopics": [
+        "jacob_israel_twelve_tribes",
+        "israel",
+        "covenant",
+        "kingdom",
+        "prophecy",
+        "messiah_logos",
+        "millennial_kingdom_kingdom_on_earth",
+        "new_jerusalem",
+        "wednesday_night_qa",
+        "isaiah",
+        "samuel",
+        "feasts",
+        "sabbath",
+        "jeremiah"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureChainAttachments": 2,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "holy_spirit",
+      "pathwayCount": 8,
+      "connectedTopics": [
+        "spirit_of_god",
+        "pentecost",
+        "spirit of god",
+        "prophecy",
+        "feasts"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "spirit_of_god",
+      "pathwayCount": 4,
+      "connectedTopics": [
+        "holy_spirit",
+        "pentecost"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureChainAttachments": 1,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "feasts",
+      "pathwayCount": 18,
+      "connectedTopics": [
+        "leviticus_23",
+        "passover",
+        "pentecost",
+        "sabbath",
+        "leviticus 23",
+        "jacob_israel_twelve_tribes",
+        "kingdom_of_god",
+        "wednesday_night_qa",
+        "samuel",
+        "isaiah",
+        "little_leaven_daily_readings",
+        "joshua",
+        "john",
+        "millennial_kingdom_kingdom_on_earth",
+        "messiah_logos"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureChainAttachments": 1,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "sabbath",
+      "pathwayCount": 8,
+      "connectedTopics": [
+        "feasts",
+        "leviticus_23",
+        "creation",
+        "jacob_israel_twelve_tribes",
+        "kingdom_of_god",
+        "covenant"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureChainAttachments": 1,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "death_state",
+      "pathwayCount": 4,
+      "connectedTopics": [
+        "judgment",
+        "resurrection",
+        "lake of fire"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "resurrection",
+      "pathwayCount": 3,
+      "connectedTopics": [
+        "death_state",
+        "messiah_logos"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "messiah_logos",
+      "pathwayCount": 15,
+      "connectedTopics": [
+        "kingdom_of_god",
+        "prophecy",
+        "covenant",
+        "messiah",
+        "gospel",
+        "resurrection",
+        "wednesday_night_qa",
+        "isaiah",
+        "john",
+        "feasts",
+        "joshua",
+        "samuel"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "dietary_law",
+      "pathwayCount": 3,
+      "connectedTopics": [
+        "leviticus_23",
+        "feasts",
+        "sabbath"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "book_of_life",
+      "pathwayCount": 3,
+      "connectedTopics": [
+        "judgment",
+        "kingdom_of_god",
+        "death_state"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureChainAttachments": 1,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "word_of_god",
+      "pathwayCount": 3,
+      "connectedTopics": [
+        "messiah_logos",
+        "scripture"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureChainAttachments": 1,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "leviticus_23",
+      "pathwayCount": 5,
+      "connectedTopics": [
+        "feasts",
+        "passover",
+        "pentecost",
+        "sabbath"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "passover",
+      "pathwayCount": 4,
+      "connectedTopics": [
+        "feasts",
+        "leviticus_23",
+        "pentecost"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "pentecost",
+      "pathwayCount": 8,
+      "connectedTopics": [
+        "peter",
+        "feasts",
+        "cornelius",
+        "holy_spirit",
+        "acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "abraham",
+      "pathwayCount": 6,
+      "connectedTopics": [
+        "isaac",
+        "jacob",
+        "jacob_israel_twelve_tribes",
+        "covenant",
+        "israel",
+        "kingdom_of_god"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "isaac",
+      "pathwayCount": 5,
+      "connectedTopics": [
+        "abraham",
+        "jacob",
+        "jacob_israel_twelve_tribes",
+        "birthright",
+        "blessing"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "jacob",
+      "pathwayCount": 10,
+      "connectedTopics": [
+        "isaac",
+        "abraham",
+        "birthright",
+        "blessing",
+        "israel",
+        "jacob_israel_twelve_tribes",
+        "twelve tribes",
+        "esau"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureChainAttachments": 1,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "israel",
+      "pathwayCount": 10,
+      "connectedTopics": [
+        "jacob",
+        "jacob_israel_twelve_tribes",
+        "house_of_israel",
+        "kingdom_of_god",
+        "144000",
+        "one_hundred_forty_four_thousand",
+        "judah",
+        "captivity",
+        "twelve tribes"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    },
+    {
+      "topic": "esau_edom_edomites",
+      "pathwayCount": 3,
+      "connectedTopics": [
+        "jacob",
+        "israel",
+        "jacob_israel_twelve_tribes"
+      ],
+      "continuityStrength": "Unknown",
+      "scriptureChainAttachments": 0,
+      "humanReviewRequired": false,
+      "isolated": false,
+      "informationalOnly": true
+    }
+  ],
+  "successCriteriaMet": true,
+  "informationalOnly": true,
+  "noAutomaticRelationshipGeneration": true
+}

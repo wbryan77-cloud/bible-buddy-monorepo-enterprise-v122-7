@@ -57,8 +57,10 @@ const TOPIC_TO_CHAIN = {
   sabbath_history: 'sabbath',
   dietary_law: 'dietaryLaw',
   feast_days: 'feastDays',
+  feasts: 'feastDays',
   traditions: 'traditions',
   resurrection_timeline: 'resurrection',
+  death_state: 'resurrection',
   heavens: 'heavensLayers',
   kingdom: 'kingdomOnEarth',
 };
@@ -68,10 +70,12 @@ const CATALOG_KEY_MAP = {
   dietary_law: 'dietaryLaw',
   dietaryLaw: 'dietaryLaw',
   feast_days: 'feastDaysHighSabbaths',
+  feasts: 'feastDaysHighSabbaths',
   heavens: 'heavensLayers',
   kingdom: 'kingdomOnEarth',
   traditions: 'traditionsOfMen',
   resurrection_timeline: 'resurrectionTimeline',
+  death_state: 'resurrectionTimeline',
 };
 
 const NAMED_ENTITY_PATTERNS = [
@@ -475,16 +479,22 @@ function buildRetrievalEvidencePack({
     threadLocal,
   });
 
-  const scripture = retrieveScriptureEvidence(topic, {
+  const evidenceCards = retrieveEvidenceCards({ topic, message });
+  const cardTopics = evidenceCards.map((c) => c.topic);
+  const effectiveTopic = topic || cardTopics[0] || null;
+
+  const scripture = retrieveScriptureEvidence(effectiveTopic, {
     companionTopic,
     suppressDoctrineChain: suppressDoctrine && !companionTopic,
   });
 
   const bibleOnlyMode = detectBibleOnlyMode(message);
-  const doctrineSnippets = buildDoctrineEvidenceSnippets(topic, message);
-  const evidenceCards = retrieveEvidenceCards({ topic, message });
-  const cardTopics = evidenceCards.map((c) => c.topic);
-  const approvedCatalogEvidence = buildApprovedCatalogEvidence({ topic, message, cardTopics });
+  const doctrineSnippets = buildDoctrineEvidenceSnippets(effectiveTopic || topic, message);
+  const approvedCatalogEvidence = buildApprovedCatalogEvidence({
+    topic: effectiveTopic || topic,
+    message,
+    cardTopics,
+  });
   const reinforcement = discoverScriptureRelationships(evidenceCards);
   const evidenceCardPayload = buildEvidenceCardPayload(evidenceCards, reinforcement);
   const concordanceHints = buildConcordanceComposerHints(evidenceCards);
@@ -530,6 +540,7 @@ function buildRetrievalEvidencePack({
       isCorrection: understanding.isCorrection,
     },
     topic,
+    effectiveTopic,
     memory: slimMemorySlice(memory),
     scripture,
     bibleOnlyMode,

@@ -1,0 +1,582 @@
+{
+  "ranAt": "2026-06-09T13:28:14.564Z",
+  "foundTopics": [
+    {
+      "topic": "death_state",
+      "packTopic": "death_state",
+      "displayName": "Death State",
+      "supportScore": 73,
+      "scriptureCount": 45,
+      "chainCount": 24
+    },
+    {
+      "topic": "dietary_law",
+      "packTopic": "dietary_law",
+      "displayName": "Dietary Law",
+      "supportScore": 100,
+      "scriptureCount": 12,
+      "chainCount": 17
+    },
+    {
+      "topic": "heavens",
+      "packTopic": "heavens",
+      "displayName": "Heavens",
+      "supportScore": 80,
+      "scriptureCount": 19,
+      "chainCount": 9
+    },
+    {
+      "topic": "holiness",
+      "packTopic": "holiness",
+      "displayName": "Holiness",
+      "supportScore": 72,
+      "scriptureCount": 5,
+      "chainCount": 3
+    },
+    {
+      "topic": "sabbath",
+      "packTopic": "sabbath",
+      "displayName": "Sabbath",
+      "supportScore": 100,
+      "scriptureCount": 12,
+      "chainCount": 22
+    }
+  ],
+  "weakTopics": [
+    {
+      "topic": "144000",
+      "packTopic": "144000",
+      "displayName": "144000",
+      "supportScore": 35,
+      "scriptureCount": 2,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "abraham",
+      "packTopic": "ham",
+      "displayName": "Ham",
+      "supportScore": 55,
+      "scriptureCount": 25,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "abraham_to_david",
+      "packTopic": "ham",
+      "displayName": "Ham",
+      "supportScore": 55,
+      "scriptureCount": 25,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "adam_to_noah",
+      "packTopic": "noah",
+      "displayName": "Noah",
+      "supportScore": 39,
+      "scriptureCount": 4,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "angels",
+      "packTopic": "angels",
+      "displayName": "Angels",
+      "supportScore": 54,
+      "scriptureCount": 21,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "baptism",
+      "packTopic": "baptism",
+      "displayName": "Baptism",
+      "supportScore": 37,
+      "scriptureCount": 3,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "covenants",
+      "packTopic": "covenants",
+      "displayName": "Covenants",
+      "supportScore": 38,
+      "scriptureCount": 7,
+      "chainCount": 2,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "david",
+      "packTopic": "david",
+      "displayName": "David",
+      "supportScore": 51,
+      "scriptureCount": 30,
+      "chainCount": 6,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "david_to_christ",
+      "packTopic": "david",
+      "displayName": "David",
+      "supportScore": 51,
+      "scriptureCount": 30,
+      "chainCount": 6,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "eve",
+      "packTopic": "eve",
+      "displayName": "Eve",
+      "supportScore": 52,
+      "scriptureCount": 28,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "feasts",
+      "packTopic": "feasts",
+      "displayName": "Feast Days",
+      "supportScore": 73,
+      "scriptureCount": 3,
+      "chainCount": 1,
+      "reason": "low_scripture_depth"
+    },
+    {
+      "topic": "great_tribulation",
+      "packTopic": "great_tribulation",
+      "displayName": "Great Tribulation",
+      "supportScore": 37,
+      "scriptureCount": 3,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "ham",
+      "packTopic": "ham",
+      "displayName": "Ham",
+      "supportScore": 55,
+      "scriptureCount": 25,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "holy_spirit",
+      "packTopic": "holy_spirit",
+      "displayName": "Holy Spirit",
+      "supportScore": 49,
+      "scriptureCount": 18,
+      "chainCount": 4,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "jacob",
+      "packTopic": "jacob",
+      "displayName": "Jacob",
+      "supportScore": 27,
+      "scriptureCount": 1,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "john",
+      "packTopic": "john",
+      "displayName": "John",
+      "supportScore": 55,
+      "scriptureCount": 25,
+      "chainCount": 5,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "kingdom_of_god",
+      "packTopic": "kingdom_of_god",
+      "displayName": "Kingdom of God",
+      "supportScore": 52,
+      "scriptureCount": 38,
+      "chainCount": 12,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "lake_of_fire",
+      "packTopic": "lake_of_fire",
+      "displayName": "Lake of Fire",
+      "supportScore": 54,
+      "scriptureCount": 22,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "logos",
+      "packTopic": "messiah_logos",
+      "displayName": "Messiah & Logos",
+      "supportScore": 60,
+      "scriptureCount": 26,
+      "chainCount": 4,
+      "reason": "low_support_score"
+    },
+    {
+      "topic": "mark_of_the_beast",
+      "packTopic": "mark_of_the_beast",
+      "displayName": "Mark of the Beast",
+      "supportScore": 43,
+      "scriptureCount": 3,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "marriage",
+      "packTopic": "marriage",
+      "displayName": "Marriage",
+      "supportScore": 37,
+      "scriptureCount": 3,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "messiah",
+      "packTopic": "messiah_logos",
+      "displayName": "Messiah & Logos",
+      "supportScore": 60,
+      "scriptureCount": 26,
+      "chainCount": 4,
+      "reason": "low_support_score"
+    },
+    {
+      "topic": "messiah_logos",
+      "packTopic": "messiah_logos",
+      "displayName": "Messiah & Logos",
+      "supportScore": 60,
+      "scriptureCount": 26,
+      "chainCount": 4,
+      "reason": "low_support_score"
+    },
+    {
+      "topic": "michael_archangel",
+      "packTopic": "michael_archangel",
+      "displayName": "Michael",
+      "supportScore": 39,
+      "scriptureCount": 4,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "noah",
+      "packTopic": "noah",
+      "displayName": "Noah",
+      "supportScore": 39,
+      "scriptureCount": 4,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "noah_to_abraham",
+      "packTopic": "ham",
+      "displayName": "Ham",
+      "supportScore": 55,
+      "scriptureCount": 25,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "paul",
+      "packTopic": "paul",
+      "displayName": "Paul",
+      "supportScore": 48,
+      "scriptureCount": 19,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "peter",
+      "packTopic": "peter",
+      "displayName": "Peter",
+      "supportScore": 62,
+      "scriptureCount": 12,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "resurrection",
+      "packTopic": "resurrection",
+      "displayName": "Resurrection",
+      "supportScore": 55,
+      "scriptureCount": 12,
+      "chainCount": 5,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "satan",
+      "packTopic": "satan",
+      "displayName": "Satan",
+      "supportScore": 56,
+      "scriptureCount": 17,
+      "chainCount": 3,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "sons_of_noah",
+      "packTopic": "noah",
+      "displayName": "Noah",
+      "supportScore": 39,
+      "scriptureCount": 4,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    },
+    {
+      "topic": "two_witnesses",
+      "packTopic": "two_witnesses",
+      "displayName": "Two Witnesses",
+      "supportScore": 37,
+      "scriptureCount": 3,
+      "chainCount": 1,
+      "reason": "needs_more_extraction"
+    }
+  ],
+  "missingTopics": [
+    {
+      "topic": "aaron",
+      "displayName": "Aaron",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "abel",
+      "displayName": "Abel",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "abomination_of_desolation",
+      "displayName": "Abomination of Desolation",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "adam",
+      "displayName": "Adam",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "armageddon",
+      "displayName": "Armageddon",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "cain",
+      "displayName": "Cain",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "daniel",
+      "displayName": "Daniel",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "divorce",
+      "displayName": "Divorce",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "elijah",
+      "displayName": "Elijah",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "elisha",
+      "displayName": "Elisha",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "ezekiel",
+      "displayName": "Ezekiel",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "faith",
+      "displayName": "Faith",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "gog_and_magog",
+      "displayName": "Gog And Magog",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "grace",
+      "displayName": "Grace",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "holy_days",
+      "displayName": "Holy Days",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "isaac",
+      "displayName": "Isaac",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "isaiah",
+      "displayName": "Isaiah",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "japheth",
+      "displayName": "Japheth",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "jeremiah",
+      "displayName": "Jeremiah",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "joseph",
+      "displayName": "Joseph",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "joshua",
+      "displayName": "Joshua",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "judah",
+      "displayName": "Judah",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "millennial_kingdom",
+      "displayName": "Millennial Kingdom",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "moses",
+      "displayName": "Moses",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "new_jerusalem",
+      "displayName": "New Jerusalem",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "priesthood",
+      "displayName": "Priesthood",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "prophecy",
+      "displayName": "Prophecy",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "repentance",
+      "displayName": "Repentance",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "sacrificial_system",
+      "displayName": "Sacrificial System",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "samson",
+      "displayName": "Samson",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "samuel",
+      "displayName": "Samuel",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "saul",
+      "displayName": "Saul",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "shem",
+      "displayName": "Shem",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "solomon",
+      "displayName": "Solomon",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "tabernacle",
+      "displayName": "Tabernacle",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "temple",
+      "displayName": "Temple",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "tribes_of_israel",
+      "displayName": "Tribes Of Israel",
+      "reason": "no_consolidated_pack"
+    },
+    {
+      "topic": "works",
+      "displayName": "Works",
+      "reason": "no_consolidated_pack"
+    }
+  ],
+  "doctrineCompletenessScore": 6.7,
+  "doctrineCompletenessNote": "Informational only — does not block implementation, override support score, strength tier, or human review",
+  "majorTopicsWeak": [
+    "messiah_logos",
+    "resurrection",
+    "kingdom_of_god",
+    "feasts",
+    "two_witnesses",
+    "144000",
+    "mark_of_the_beast",
+    "great_tribulation",
+    "lake_of_fire",
+    "noah",
+    "ham",
+    "abraham",
+    "jacob",
+    "david",
+    "peter",
+    "paul",
+    "john",
+    "michael_archangel",
+    "satan",
+    "angels",
+    "baptism",
+    "marriage",
+    "covenants"
+  ],
+  "majorTopicsMissing": [
+    "abomination_of_desolation",
+    "new_jerusalem",
+    "gog_and_magog",
+    "shem",
+    "japheth",
+    "isaac",
+    "joseph",
+    "judah",
+    "moses",
+    "joshua",
+    "solomon",
+    "saul",
+    "samson",
+    "elijah",
+    "elisha",
+    "isaiah",
+    "jeremiah",
+    "ezekiel",
+    "daniel",
+    "divorce",
+    "priesthood",
+    "prophecy"
+  ],
+  "seedTopicCount": 75,
+  "foundCount": 5,
+  "weakCount": 32,
+  "missingCount": 38
+}

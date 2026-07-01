@@ -1,6 +1,7 @@
 const { DISTINCTION_LINE } = require('./historicalContextRouter');
 const { polishCompanionReply } = require('./companionReplyPolish');
 const { stripInternalRuntimeLabels } = require('./runtimeLabelStripper');
+const { buildMetaAnswerResponse } = require('./metaAnswerResponder');
 
 const SCRIPTURE_BLOCK = [
   'Scripture first:',
@@ -61,7 +62,9 @@ function detectQuestionFocus(message = '') {
   const asksWhySunday =
     /\bwhy\b.*\bsunday\b/i.test(lower) ||
     /\bworship (on )?sunday\b/i.test(lower) ||
-    /\bsunday observance\b/i.test(lower);
+    /\bsunday observance\b/i.test(lower) ||
+    /\bday of worship\b/i.test(lower) ||
+    /\bkeep sunday\b/i.test(lower);
 
   const asksEvidence =
     /\bhistorical evidence\b/i.test(lower) ||
@@ -154,12 +157,28 @@ function buildSabbathHistoryDeepResponse({
   const focus = detectQuestionFocus(message);
   focus._message = message;
   const hasPriorSabbathTurn = (recentSessions || []).some((s) =>
-    /sabbath|seventh day|who changed|historical/i.test(String(s?.message || '') + String(s?.reply || ''))
+    /sabbath|seventh day|who changed|historical|sunday|worship/i.test(String(s?.message || '') + String(s?.reply || ''))
   );
+  const strictAnswerMode =
+    !!questionIntent?.strictAnswerMode || !!runtimeContext?.reasoningSnapshot?.strictAnswerMode;
   const compactMode =
+    strictAnswerMode ||
     correction ||
     focus.asksEvidence ||
-    (hasPriorSabbathTurn && (focus.asksWhoChanged || focus.asksRome || focus.asksCatholic));
+    hasPriorSabbathTurn ||
+    (hasPriorSabbathTurn && (focus.asksWhoChanged || focus.asksRome || focus.asksCatholic || focus.asksWhySunday));
+
+  if (strictAnswerMode && runtimeContext?.reasoningSnapshot?.requestedAnswerType === 'wording_explanation') {
+    return buildMetaAnswerResponse({
+      userId,
+      message,
+      recentSessions,
+      activeConversation: runtimeContext?.activeConversation,
+      questionIntent,
+      strictAnswerMode: true,
+      correctionMode: correction,
+    });
+  }
 
   const companionLead = correction
     ? "I hear you — that wasn't your question. Let me answer what you actually asked, with Scripture first and history second."

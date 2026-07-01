@@ -1,0 +1,2972 @@
+# Missing Entry Resolution V2
+
+**Phase:** 3T Part G
+**Date:** 2026-06-10T00:06:09.850Z
+
+**Total:** 94 · **Resolved:** 41 · **Still missing:** 33
+
+## By category
+
+- url_fetch_needed: 15
+- transcript_needed: 59
+- doctrine_pack_link_needed: 20
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "Power Over The Nations",
+  "sourceUrl": "https://theisraelofgod.com/power-over-the-nations/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "power_over_the_nations",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "God: Is It Two of Them or Just One, Who Talks To Himself",
+  "sourceUrl": "https://theisraelofgod.com/god-is-it-two-of-them-or-just-one-who-talks-to-himself/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "death_state",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "Feast Of Unleavened Bread 2022",
+  "sourceUrl": "https://theisraelofgod.com/feast-of-unleavened-bread-2022/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "jacob",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "The Destruction and Restoration of Israel",
+  "sourceUrl": "https://theisraelofgod.com/the-destruction-and-restoration-of-israel/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Ecclesiastes 12",
+    "Exodus 20",
+    "Ecclesiastes 0:2",
+    "Revelation 22",
+    "Deuteronomy 28",
+    "Deuteronomy 0:5",
+    "Exodus 12",
+    "Daniel 9",
+    "Deuteronomy 32",
+    "Jeremiah 15",
+    "Luke 19",
+    "Luke 0:37",
+    "Luke 21",
+    "Psalm 44",
+    "Zechariah 11",
+    "Isaiah 42",
+    "Isaiah 51",
+    "Deuteronomy 30",
+    "Isaiah 61",
+    "Mark 1:0",
+    "Luke 4",
+    "Luke 1:1",
+    "Jeremiah 50",
+    "Revelation 6",
+    "Revelation 7",
+    "Isaiah 49",
+    "Joel 1:25",
+    "Joel 3",
+    "Matthew 24",
+    "Isaiah 27",
+    "Zechariah 2",
+    "Zechariah 8",
+    "Isaiah 65",
+    "Isaiah 1:43",
+    "Acts 1:46",
+    "Acts 1",
+    "Leviticus 26"
+  ],
+  "linkageCandidate": "the_destruction_and_restoration",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "Shows - The Israel of God",
+  "sourceUrl": "https://theisraelofgod.com/shows",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "shows_the_israel_god",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=58PphDsDAA4",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "2 Corinthians 4",
+    "Exodus 20",
+    "Ecclesiastes 0:2",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Matthew 5",
+    "John 8",
+    "John 6",
+    "Isaiah 8",
+    "Isaiah 8:16",
+    "John 0:13",
+    "John 12",
+    "Matthew 0:14",
+    "Psalms 0:14",
+    "Ephesians 0:16",
+    "Ephesians 5",
+    "1 Thessalonians 0:19",
+    "1 Thessalonians 5",
+    "Leviticus 11",
+    "Luke 11",
+    "Acts 13",
+    "Isaiah 49",
+    "1 Timothy 6",
+    "John 3",
+    "John 3:16",
+    "Proverbs 4",
+    "Acts 9",
+    "Acts 26",
+    "Philippians 2",
+    "Philippians 0:57",
+    "Philippians 2:14",
+    "John 1:3",
+    "John 1",
+    "1 John 2",
+    "John 1:8",
+    "Luke 1",
+    "John 5",
+    "Romans 1:18",
+    "Romans 13",
+    "Ephesians 6",
+    "Ephesians 1:20",
+    "Matthew 1:24",
+    "Matthew 25",
+    "Isaiah 60",
+    "Revelation 1:37",
+    "Revelation 21"
+  ],
+  "linkageCandidate": "iog_birmingham_this_little",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"El gran cambio\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=_ukaBCp_0Eg",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_gran_cambio_2026",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"The Gospel By The Prophet Zechariah\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=ee7SNNGUcLw",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Zechariah 1",
+    "Jeremiah 0:11",
+    "Jeremiah 25",
+    "Daniel 0:22",
+    "Jeremiah 0:25",
+    "Revelation 19",
+    "Isaiah 0:39",
+    "Daniel 10",
+    "Revelation 7",
+    "Revelation 9",
+    "Revelation 16",
+    "Zechariah 14",
+    "Zechariah 12",
+    "Zechariah 1:10",
+    "Revelation 1",
+    "Daniel 1:15",
+    "Matthew 21",
+    "Zechariah 1:23",
+    "Zechariah 9",
+    "Zechariah 1:25",
+    "Zechariah 2",
+    "John 6",
+    "Isaiah 48",
+    "Zechariah 4",
+    "Revelation 11",
+    "1 Thessalonians 4",
+    "Zechariah 8"
+  ],
+  "linkageCandidate": "iog_the_gospel_the",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=lZA0JqcyybA",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Revelation 19",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Matthew 10",
+    "Luke 0:10",
+    "Luke 0:11",
+    "Luke 12",
+    "Luke 0:12",
+    "Matthew 0:12",
+    "Revelation 0:14",
+    "Isaiah 66",
+    "Hosea 10",
+    "Leviticus 5",
+    "Leviticus 0:25",
+    "Isaiah 0:29",
+    "Isaiah 51",
+    "Genesis 2",
+    "Psalm 104",
+    "Luke 23",
+    "Luke 8",
+    "Luke 0:43",
+    "Job 27",
+    "Isaiah 2",
+    "Genesis 0:51",
+    "Revelation 11",
+    "Job 33",
+    "Ezekiel 18",
+    "Psalms 33",
+    "Psalm 33",
+    "James 1:15",
+    "James 5",
+    "Hebrews 10",
+    "Isaiah 53",
+    "Psalm 16",
+    "Acts 2",
+    "Acts 1:43",
+    "Psalms 3",
+    "Psalm 1:49",
+    "Psalm 30",
+    "Romans 8",
+    "Psalm 49",
+    "Psalms 49",
+    "Psalm 491",
+    "1 Corinthians 2:7",
+    "1 Corinthians 15",
+    "Revelation 2:13",
+    "Revelation 3"
+  ],
+  "linkageCandidate": "iog_washington_the_soul",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Detroit - \"Our God Dwells In The Thick Darkness\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=YMwLexXc5aY",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Psalms 81",
+    "Exodus 20",
+    "John 14",
+    "Ecclesiastes 0:3",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Genesis 15",
+    "Exodus 19",
+    "Exodus 0:22",
+    "Deuteronomy 4",
+    "Exodus 24",
+    "Exodus 24:12",
+    "Exodus 33",
+    "Exodus 0:35",
+    "Exodus 34",
+    "Deuteronomy 5",
+    "Exodus 25",
+    "Numbers 9",
+    "2 Chronicles 6",
+    "2 Chronicles 1:0",
+    "Acts 2",
+    "Revelation 1:8",
+    "Mark 15",
+    "Psalms 18",
+    "Matthew 27",
+    "Psalms 97",
+    "Exodus 10",
+    "Psalms 105",
+    "Psalms 1:24",
+    "Psalms 78",
+    "Psalm 78",
+    "Psalm 1:25",
+    "Hebrews 12",
+    "Zephaniah 1"
+  ],
+  "linkageCandidate": "iog_detroit_our_god",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=sWUbcNzoCgo",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 0:1",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Revelation 0:3",
+    "Ecclesiastes 3",
+    "Job 0:9",
+    "Job 1",
+    "Job 0:17",
+    "Job 0:19",
+    "Job 7",
+    "Job 0:20",
+    "Job 0:22",
+    "Ecclesiastes 1",
+    "Genesis 1",
+    "Romans 3",
+    "1 Peter 4",
+    "Philippians 4",
+    "Isaiah 54",
+    "Exodus 0:42",
+    "Exodus 14",
+    "Proverbs 24",
+    "1 Samuel 9",
+    "Hebrews 1:6",
+    "Romans 5",
+    "Ecclesiastes 1:12",
+    "Luke 22",
+    "James 1:17",
+    "Job 1:19",
+    "Job 42",
+    "Job 1:20",
+    "1 Peter 1"
+  ],
+  "linkageCandidate": "iog_baton_rouge_adversity",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Phoenix - \"For Thine Is The Kingdom, And The Power, And The Glory, Forever\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=Uls_pJGaAlI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Matthew 0:4",
+    "Hebrews 3",
+    "John 0:10",
+    "John 6",
+    "John 12",
+    "Matthew 28",
+    "1 Thessalonians 2",
+    "John 3",
+    "Revelation 21",
+    "Isaiah 1",
+    "Deuteronomy 30",
+    "Genesis 17",
+    "Revelation 21:7",
+    "Proverbs 2",
+    "Matthew 7",
+    "Matthew 7:6",
+    "Titus 3",
+    "Daniel 0:57",
+    "Jeremiah 33",
+    "Matthew 6",
+    "Zechariah 2",
+    "Psalm 111",
+    "Ephesians 5",
+    "Isaiah 55",
+    "Revelation 3",
+    "Romans 8",
+    "Luke 11",
+    "Psalm 69",
+    "Romans 3"
+  ],
+  "linkageCandidate": "iog_phoenix_for_thine",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"JESUS: The Unknown God\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=emo113e3s7c",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Luke 1",
+    "Acts 17",
+    "John 0:11",
+    "John 1",
+    "Exodus 24",
+    "John 5",
+    "John 0:15",
+    "1 Corinthians 10",
+    "Exodus 13",
+    "Isaiah 48",
+    "Isaiah 7",
+    "Matthew 1",
+    "Hebrews 0:30",
+    "John 0:34",
+    "Hebrews 2",
+    "Genesis 22",
+    "Isaiah 9",
+    "John 0:54",
+    "Philippians 2",
+    "John 1:1",
+    "John 1:3",
+    "Isaiah 1:6",
+    "Isaiah 1:7",
+    "Isaiah 12",
+    "Song of Solomon 1:7",
+    "Acts 2",
+    "Acts 4",
+    "Malachi 1:14",
+    "Malachi 1",
+    "Malachi 11",
+    "Malachi 1:19",
+    "Isaiah 40",
+    "John 1:24",
+    "Revelation 22",
+    "1 Corinthians 15",
+    "Exodus 3",
+    "John 8",
+    "John 2"
+  ],
+  "linkageCandidate": "iog_jesus_the_unknown",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Houston - \"Understanding The Fear of the Lord\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=6vlr_r7a6tQ",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Revelation 22",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Genesis 20",
+    "2 Kings 17",
+    "Genesis 43",
+    "Psalms 0:17",
+    "Proverbs 30",
+    "Proverbs 1",
+    "Deuteronomy 0:23",
+    "Deuteronomy 31",
+    "Exodus 1",
+    "Judges 0:32",
+    "Judges 6",
+    "Acts 27",
+    "Genesis 15",
+    "Psalms 3",
+    "Psalm 27",
+    "Isaiah 29",
+    "Deuteronomy 5",
+    "Job 1:0",
+    "Proverbs 16",
+    "Acts 9",
+    "Jude 1:4",
+    "Genesis 1:6",
+    "Psalm 22",
+    "Psalms 20",
+    "2 Corinthians 7",
+    "Psalm 19",
+    "Psalms 30",
+    "Psalms 33",
+    "Revelation 19",
+    "Proverbs 3",
+    "Revelation 14",
+    "Proverbs 2",
+    "Psalms 1:28"
+  ],
+  "linkageCandidate": "iog_houston_understanding_the",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Jackson - \"Breaking Bonds & Spiritual Strongholds\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=TGxvHjcGIAQ",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 0:3",
+    "Revelation 22",
+    "Psalms 144",
+    "Psalm 119",
+    "Psalms 119",
+    "Exodus 21",
+    "Jeremiah 9",
+    "Psalms 51",
+    "Psalms 34",
+    "Jeremiah 17",
+    "Jeremiah 0:22",
+    "Psalm 69",
+    "Psalm 6",
+    "Matthew 11",
+    "Hebrews 4",
+    "Hebrews 0:47",
+    "Hebrews 10",
+    "1 Timothy 2",
+    "1 Timothy 2:1",
+    "Proverbs 28",
+    "Psalms 28",
+    "John 20",
+    "2 Corinthians 5",
+    "Matthew 17",
+    "Isaiah 58",
+    "1 Corinthians 10",
+    "Acts 10",
+    "Psalms 40",
+    "Luke 8",
+    "Luke 13",
+    "2 Corinthians 12"
+  ],
+  "linkageCandidate": "iog_jackson_breaking_bonds",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Buffalo - \"The Destruction & Restoration of Israel\"",
+  "sourceUrl": "https://theisraelofgod.com/the-destruction-and-restoration-of-israel/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Ecclesiastes 12",
+    "Exodus 20",
+    "Ecclesiastes 0:2",
+    "Revelation 22",
+    "Deuteronomy 28",
+    "Deuteronomy 0:5",
+    "Exodus 12",
+    "Daniel 9",
+    "Deuteronomy 32",
+    "Jeremiah 15",
+    "Luke 19",
+    "Luke 0:37",
+    "Luke 21",
+    "Psalm 44",
+    "Zechariah 11",
+    "Isaiah 42",
+    "Isaiah 51",
+    "Deuteronomy 30",
+    "Isaiah 61",
+    "Mark 1:0",
+    "Luke 4",
+    "Luke 1:1",
+    "Jeremiah 50",
+    "Revelation 6",
+    "Revelation 7",
+    "Isaiah 49",
+    "Joel 1:25",
+    "Joel 3",
+    "Matthew 24",
+    "Isaiah 27",
+    "Zechariah 2",
+    "Zechariah 8",
+    "Isaiah 65",
+    "Isaiah 1:43",
+    "Acts 1:46",
+    "Acts 1",
+    "Leviticus 26"
+  ],
+  "linkageCandidate": "iog_buffalo_the_destruction",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Charlotte - \"The Purpose of the Ministry: Service Unto Salvation\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=uf_VcPk_paw",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Genesis 2",
+    "Genesis 0:6",
+    "John 6:63",
+    "Revelation 12",
+    "Ezekiel 0:17",
+    "Ezekiel 18",
+    "Psalm 69",
+    "Romans 0:22",
+    "Romans 15",
+    "Romans 5",
+    "John 2",
+    "1 John 2",
+    "2 Corinthians 5",
+    "2 Corinthians 0:31",
+    "Ephesians 4:1",
+    "Job 0:50",
+    "Revelation 0:57",
+    "Revelation 14",
+    "Proverbs 4",
+    "Mark 0:59",
+    "Luke 13",
+    "Romans 1",
+    "Hebrews 2",
+    "1 Corinthians 1:16",
+    "1 Corinthians 15",
+    "John 2:25",
+    "Matthew 1:24",
+    "Matthew 23",
+    "Mark 1:25",
+    "Matthew 20",
+    "Matthew 1:26",
+    "Mark 3",
+    "Mark 3:13",
+    "Matthew 10",
+    "Matthew 1:35",
+    "Matthew 4",
+    "Matthew 24",
+    "Matthew 1:38",
+    "1 Peter 1:44",
+    "1 Peter 2",
+    "Hebrews 1:52",
+    "Acts 1:55",
+    "Acts 8",
+    "Isaiah 1:58",
+    "Nehemiah 8"
+  ],
+  "linkageCandidate": "iog_charlotte_the_purpose",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Bay Area - \"Hath God Cast Away His People Israel?\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=7WyKj0bG3c4",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 0:0",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Jeremiah 23",
+    "Psalms 83",
+    "Ezekiel 16",
+    "Exodus 24",
+    "Exodus 34",
+    "Deuteronomy 4",
+    "Psalms 147",
+    "Romans 9",
+    "Romans 3",
+    "Amos 2",
+    "Amos 3",
+    "Luke 16",
+    "Genesis 0:59",
+    "Romans 11",
+    "Isaiah 41",
+    "Jeremiah 33",
+    "Jeremiah 31",
+    "Leviticus 26",
+    "Ezekiel 36",
+    "Isaiah 56",
+    "John 10",
+    "Ephesians 2",
+    "Psalms 132",
+    "Luke 2:9",
+    "Luke 1",
+    "Zechariah 14",
+    "Jeremiah 2:16"
+  ],
+  "linkageCandidate": "iog_bay_area_hath",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Orlando - \"The Lord's Day Is The Last Day\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=cTa9omr-BUs",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Revelation 19",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Revelation 1",
+    "2 Samuel 7",
+    "Luke 1",
+    "Zechariah 14",
+    "Daniel 7",
+    "1 Thessalonians 4",
+    "Psalm 149",
+    "Revelation 21",
+    "Zechariah 0:24",
+    "Zechariah 12",
+    "Joel 3",
+    "Isaiah 0:30",
+    "Isaiah 34",
+    "Jeremiah 25",
+    "Jeremiah 0:34",
+    "Isaiah 13",
+    "Isaiah 0:41",
+    "Zephaniah 1",
+    "Isaiah 2",
+    "Amos 5",
+    "Joel 2",
+    "Joel 0:55",
+    "Matthew 24",
+    "Revelation 6",
+    "Revelation 8",
+    "Revelation 1:10",
+    "Revelation 11",
+    "Isaiah 1:15",
+    "Isaiah 1:24",
+    "Isaiah 24:5",
+    "Jeremiah 16",
+    "Revelation 20",
+    "1 Thessalonians 5",
+    "Luke 21"
+  ],
+  "linkageCandidate": "iog_orlando_the_lords",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «Israel reemplazado por su hermano Esaú» 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=Bcwt5s5JObI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_israel_reemplazado_por",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «Los frutos del Espíritu, la imagen de Dios en el hombre y las claves para entrar en el...»",
+  "sourceUrl": "https://www.youtube.com/watch?v=BUcGcaHgWnI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "kingdom_of_god",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"Israel el cautivo: de Babilonia a Babilonia\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=v0Bmy2PTfoI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_israel_cautivo_babilonia",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=gCChLEvR9ME",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_fiesta_los_panes",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «La Pascua: un festival pagano, no sagrado» (2026)",
+  "sourceUrl": "https://www.youtube.com/watch?v=7860Ttf04kM",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_pascua_festival_pagano",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=gCChLEvR9ME",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_fiesta_los_panes",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «La promesa y el tiempo de su cumplimiento» 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=Ps-IQLCSdG0",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_promesa_tiempo_cumplimiento",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG X (Twitter)",
+  "sourceUrl": "https://twitter.com/TheIsraelofGod",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_twitter",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "ICOJ",
+  "camp": "HQ",
+  "lessonTitle": "Israel School of Excellence is Training up the Next Generation #isoe #education",
+  "sourceUrl": "https://www.youtube.com/watch?v=wxi8fQuDke0",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "israel_school_excellence_training",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "ICOJ",
+  "camp": "HQ",
+  "lessonTitle": "#SabbathRecap",
+  "sourceUrl": "https://www.youtube.com/watch?v=QYwXNY1U1fw",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "sabbath",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I lost someone I love.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_lost_someone_love",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I am angry with God.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_angry_with_god",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: Today has been a rough day. I had to let go of someone I love.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_today_has_been",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: My mother has Alzheimer's and I feel overwhelmed.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_mother_has_alzheimers",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I'm so angry I can't think straight.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_angry_cant_think",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I'm worried about money and bills this month.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_worried_about_money",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I feel guilty about my past.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_feel_guilty_about",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I feel like God is silent.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_feel_like_god",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I am struggling with depression.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_struggling_with_depression",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: My friend betrayed me and I am hurting.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_friend_betrayed_and",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I cannot forgive myself.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_cannot_forgive_myself",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I feel spiritually dry.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_feel_spiritually_dry",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I lost my job and feel hopeless.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_lost_job_and",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I need comfort from Scripture.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_need_comfort_from",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Health: How do I trust God when life hurts?",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "health_how_trust_god",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Mixed: How do I honor God with my diet?",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "mixed_how_honor_god",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Mixed: How do I apply this while working Monday to Friday?",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "mixed_how_apply_this",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Challenge: So Leviticus does not apply anymore?",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "challenge_leviticus_does_not",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Challenge: Give me a clear yes or no from Scripture.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "challenge_give_clear_yes",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "Internal",
+  "camp": "Internal",
+  "lessonTitle": "Emotional: I am still angry.",
+  "sourceUrl": "phase2i_stress",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "doctrine_pack_link_needed",
+  "resolutionStatus": "linkage_candidate_only",
+  "scripturesFound": [],
+  "linkageCandidate": "emotional_still_angry",
+  "nextAction": "assign_pack_after_source_recovery"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "Power Over The Nations",
+  "sourceUrl": "https://theisraelofgod.com/power-over-the-nations/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "power_over_the_nations",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "God: Is It Two of Them or Just One, Who Talks To Himself",
+  "sourceUrl": "https://theisraelofgod.com/god-is-it-two-of-them-or-just-one-who-talks-to-himself/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "god_two_them_just",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "Feast Of Unleavened Bread 2022",
+  "sourceUrl": "https://theisraelofgod.com/feast-of-unleavened-bread-2022/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "feast_unleavened_bread_2022",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "The Destruction and Restoration of Israel",
+  "sourceUrl": "https://theisraelofgod.com/the-destruction-and-restoration-of-israel/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Ecclesiastes 12",
+    "Exodus 20",
+    "Ecclesiastes 0:2",
+    "Revelation 22",
+    "Deuteronomy 28",
+    "Deuteronomy 0:5",
+    "Exodus 12",
+    "Daniel 9",
+    "Deuteronomy 32",
+    "Jeremiah 15",
+    "Luke 19",
+    "Luke 0:37",
+    "Luke 21",
+    "Psalm 44",
+    "Zechariah 11",
+    "Isaiah 42",
+    "Isaiah 51",
+    "Deuteronomy 30",
+    "Isaiah 61",
+    "Mark 1:0",
+    "Luke 4",
+    "Luke 1:1",
+    "Jeremiah 50",
+    "Revelation 6",
+    "Revelation 7",
+    "Isaiah 49",
+    "Joel 1:25",
+    "Joel 3",
+    "Matthew 24",
+    "Isaiah 27",
+    "Zechariah 2",
+    "Zechariah 8",
+    "Isaiah 65",
+    "Isaiah 1:43",
+    "Acts 1:46",
+    "Acts 1",
+    "Leviticus 26"
+  ],
+  "linkageCandidate": "the_destruction_and_restoration",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "Shows - The Israel of God",
+  "sourceUrl": "https://theisraelofgod.com/shows",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "shows_the_israel_god",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG X (Twitter)",
+  "sourceUrl": "https://twitter.com/TheIsraelofGod",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_twitter",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=58PphDsDAA4",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "2 Corinthians 4",
+    "Exodus 20",
+    "Ecclesiastes 0:2",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Matthew 5",
+    "John 8",
+    "John 6",
+    "Isaiah 8",
+    "Isaiah 8:16",
+    "John 0:13",
+    "John 12",
+    "Matthew 0:14",
+    "Psalms 0:14",
+    "Ephesians 0:16",
+    "Ephesians 5",
+    "1 Thessalonians 0:19",
+    "1 Thessalonians 5",
+    "Leviticus 11",
+    "Luke 11",
+    "Acts 13",
+    "Isaiah 49",
+    "1 Timothy 6",
+    "John 3",
+    "John 3:16",
+    "Proverbs 4",
+    "Acts 9",
+    "Acts 26",
+    "Philippians 2",
+    "Philippians 0:57",
+    "Philippians 2:14",
+    "John 1:3",
+    "John 1",
+    "1 John 2",
+    "John 1:8",
+    "Luke 1",
+    "John 5",
+    "Romans 1:18",
+    "Romans 13",
+    "Ephesians 6",
+    "Ephesians 1:20",
+    "Matthew 1:24",
+    "Matthew 25",
+    "Isaiah 60",
+    "Revelation 1:37",
+    "Revelation 21"
+  ],
+  "linkageCandidate": "iog_birmingham_this_little",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"El gran cambio\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=_ukaBCp_0Eg",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_gran_cambio_2026",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"The Gospel By The Prophet Zechariah\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=ee7SNNGUcLw",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Zechariah 1",
+    "Jeremiah 0:11",
+    "Jeremiah 25",
+    "Daniel 0:22",
+    "Jeremiah 0:25",
+    "Revelation 19",
+    "Isaiah 0:39",
+    "Daniel 10",
+    "Revelation 7",
+    "Revelation 9",
+    "Revelation 16",
+    "Zechariah 14",
+    "Zechariah 12",
+    "Zechariah 1:10",
+    "Revelation 1",
+    "Daniel 1:15",
+    "Matthew 21",
+    "Zechariah 1:23",
+    "Zechariah 9",
+    "Zechariah 1:25",
+    "Zechariah 2",
+    "John 6",
+    "Isaiah 48",
+    "Zechariah 4",
+    "Revelation 11",
+    "1 Thessalonians 4",
+    "Zechariah 8"
+  ],
+  "linkageCandidate": "iog_the_gospel_the",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=lZA0JqcyybA",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Revelation 19",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Matthew 10",
+    "Luke 0:10",
+    "Luke 0:11",
+    "Luke 12",
+    "Luke 0:12",
+    "Matthew 0:12",
+    "Revelation 0:14",
+    "Isaiah 66",
+    "Hosea 10",
+    "Leviticus 5",
+    "Leviticus 0:25",
+    "Isaiah 0:29",
+    "Isaiah 51",
+    "Genesis 2",
+    "Psalm 104",
+    "Luke 23",
+    "Luke 8",
+    "Luke 0:43",
+    "Job 27",
+    "Isaiah 2",
+    "Genesis 0:51",
+    "Revelation 11",
+    "Job 33",
+    "Ezekiel 18",
+    "Psalms 33",
+    "Psalm 33",
+    "James 1:15",
+    "James 5",
+    "Hebrews 10",
+    "Isaiah 53",
+    "Psalm 16",
+    "Acts 2",
+    "Acts 1:43",
+    "Psalms 3",
+    "Psalm 1:49",
+    "Psalm 30",
+    "Romans 8",
+    "Psalm 49",
+    "Psalms 49",
+    "Psalm 491",
+    "1 Corinthians 2:7",
+    "1 Corinthians 15",
+    "Revelation 2:13",
+    "Revelation 3"
+  ],
+  "linkageCandidate": "iog_washington_the_soul",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Detroit - \"Our God Dwells In The Thick Darkness\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=YMwLexXc5aY",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Psalms 81",
+    "Exodus 20",
+    "John 14",
+    "Ecclesiastes 0:3",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Genesis 15",
+    "Exodus 19",
+    "Exodus 0:22",
+    "Deuteronomy 4",
+    "Exodus 24",
+    "Exodus 24:12",
+    "Exodus 33",
+    "Exodus 0:35",
+    "Exodus 34",
+    "Deuteronomy 5",
+    "Exodus 25",
+    "Numbers 9",
+    "2 Chronicles 6",
+    "2 Chronicles 1:0",
+    "Acts 2",
+    "Revelation 1:8",
+    "Mark 15",
+    "Psalms 18",
+    "Matthew 27",
+    "Psalms 97",
+    "Exodus 10",
+    "Psalms 105",
+    "Psalms 1:24",
+    "Psalms 78",
+    "Psalm 78",
+    "Psalm 1:25",
+    "Hebrews 12",
+    "Zephaniah 1"
+  ],
+  "linkageCandidate": "iog_detroit_our_god",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=sWUbcNzoCgo",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 0:1",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Revelation 0:3",
+    "Ecclesiastes 3",
+    "Job 0:9",
+    "Job 1",
+    "Job 0:17",
+    "Job 0:19",
+    "Job 7",
+    "Job 0:20",
+    "Job 0:22",
+    "Ecclesiastes 1",
+    "Genesis 1",
+    "Romans 3",
+    "1 Peter 4",
+    "Philippians 4",
+    "Isaiah 54",
+    "Exodus 0:42",
+    "Exodus 14",
+    "Proverbs 24",
+    "1 Samuel 9",
+    "Hebrews 1:6",
+    "Romans 5",
+    "Ecclesiastes 1:12",
+    "Luke 22",
+    "James 1:17",
+    "Job 1:19",
+    "Job 42",
+    "Job 1:20",
+    "1 Peter 1"
+  ],
+  "linkageCandidate": "iog_baton_rouge_adversity",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Phoenix - \"For Thine Is The Kingdom, And The Power, And The Glory, Forever\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=Uls_pJGaAlI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Matthew 0:4",
+    "Hebrews 3",
+    "John 0:10",
+    "John 6",
+    "John 12",
+    "Matthew 28",
+    "1 Thessalonians 2",
+    "John 3",
+    "Revelation 21",
+    "Isaiah 1",
+    "Deuteronomy 30",
+    "Genesis 17",
+    "Revelation 21:7",
+    "Proverbs 2",
+    "Matthew 7",
+    "Matthew 7:6",
+    "Titus 3",
+    "Daniel 0:57",
+    "Jeremiah 33",
+    "Matthew 6",
+    "Zechariah 2",
+    "Psalm 111",
+    "Ephesians 5",
+    "Isaiah 55",
+    "Revelation 3",
+    "Romans 8",
+    "Luke 11",
+    "Psalm 69",
+    "Romans 3"
+  ],
+  "linkageCandidate": "iog_phoenix_for_thine",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"JESUS: The Unknown God\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=emo113e3s7c",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Luke 1",
+    "Acts 17",
+    "John 0:11",
+    "John 1",
+    "Exodus 24",
+    "John 5",
+    "John 0:15",
+    "1 Corinthians 10",
+    "Exodus 13",
+    "Isaiah 48",
+    "Isaiah 7",
+    "Matthew 1",
+    "Hebrews 0:30",
+    "John 0:34",
+    "Hebrews 2",
+    "Genesis 22",
+    "Isaiah 9",
+    "John 0:54",
+    "Philippians 2",
+    "John 1:1",
+    "John 1:3",
+    "Isaiah 1:6",
+    "Isaiah 1:7",
+    "Isaiah 12",
+    "Song of Solomon 1:7",
+    "Acts 2",
+    "Acts 4",
+    "Malachi 1:14",
+    "Malachi 1",
+    "Malachi 11",
+    "Malachi 1:19",
+    "Isaiah 40",
+    "John 1:24",
+    "Revelation 22",
+    "1 Corinthians 15",
+    "Exodus 3",
+    "John 8",
+    "John 2"
+  ],
+  "linkageCandidate": "iog_jesus_the_unknown",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Houston - \"Understanding The Fear of the Lord\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=6vlr_r7a6tQ",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Revelation 22",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Genesis 20",
+    "2 Kings 17",
+    "Genesis 43",
+    "Psalms 0:17",
+    "Proverbs 30",
+    "Proverbs 1",
+    "Deuteronomy 0:23",
+    "Deuteronomy 31",
+    "Exodus 1",
+    "Judges 0:32",
+    "Judges 6",
+    "Acts 27",
+    "Genesis 15",
+    "Psalms 3",
+    "Psalm 27",
+    "Isaiah 29",
+    "Deuteronomy 5",
+    "Job 1:0",
+    "Proverbs 16",
+    "Acts 9",
+    "Jude 1:4",
+    "Genesis 1:6",
+    "Psalm 22",
+    "Psalms 20",
+    "2 Corinthians 7",
+    "Psalm 19",
+    "Psalms 30",
+    "Psalms 33",
+    "Revelation 19",
+    "Proverbs 3",
+    "Revelation 14",
+    "Proverbs 2",
+    "Psalms 1:28"
+  ],
+  "linkageCandidate": "iog_houston_understanding_the",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Jackson - \"Breaking Bonds & Spiritual Strongholds\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=TGxvHjcGIAQ",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 0:3",
+    "Revelation 22",
+    "Psalms 144",
+    "Psalm 119",
+    "Psalms 119",
+    "Exodus 21",
+    "Jeremiah 9",
+    "Psalms 51",
+    "Psalms 34",
+    "Jeremiah 17",
+    "Jeremiah 0:22",
+    "Psalm 69",
+    "Psalm 6",
+    "Matthew 11",
+    "Hebrews 4",
+    "Hebrews 0:47",
+    "Hebrews 10",
+    "1 Timothy 2",
+    "1 Timothy 2:1",
+    "Proverbs 28",
+    "Psalms 28",
+    "John 20",
+    "2 Corinthians 5",
+    "Matthew 17",
+    "Isaiah 58",
+    "1 Corinthians 10",
+    "Acts 10",
+    "Psalms 40",
+    "Luke 8",
+    "Luke 13",
+    "2 Corinthians 12"
+  ],
+  "linkageCandidate": "iog_jackson_breaking_bonds",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Buffalo - \"The Destruction & Restoration of Israel\"",
+  "sourceUrl": "https://theisraelofgod.com/the-destruction-and-restoration-of-israel/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Ecclesiastes 12",
+    "Exodus 20",
+    "Ecclesiastes 0:2",
+    "Revelation 22",
+    "Deuteronomy 28",
+    "Deuteronomy 0:5",
+    "Exodus 12",
+    "Daniel 9",
+    "Deuteronomy 32",
+    "Jeremiah 15",
+    "Luke 19",
+    "Luke 0:37",
+    "Luke 21",
+    "Psalm 44",
+    "Zechariah 11",
+    "Isaiah 42",
+    "Isaiah 51",
+    "Deuteronomy 30",
+    "Isaiah 61",
+    "Mark 1:0",
+    "Luke 4",
+    "Luke 1:1",
+    "Jeremiah 50",
+    "Revelation 6",
+    "Revelation 7",
+    "Isaiah 49",
+    "Joel 1:25",
+    "Joel 3",
+    "Matthew 24",
+    "Isaiah 27",
+    "Zechariah 2",
+    "Zechariah 8",
+    "Isaiah 65",
+    "Isaiah 1:43",
+    "Acts 1:46",
+    "Acts 1",
+    "Leviticus 26"
+  ],
+  "linkageCandidate": "iog_buffalo_the_destruction",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Charlotte - \"The Purpose of the Ministry: Service Unto Salvation\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=uf_VcPk_paw",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Genesis 2",
+    "Genesis 0:6",
+    "John 6:63",
+    "Revelation 12",
+    "Ezekiel 0:17",
+    "Ezekiel 18",
+    "Psalm 69",
+    "Romans 0:22",
+    "Romans 15",
+    "Romans 5",
+    "John 2",
+    "1 John 2",
+    "2 Corinthians 5",
+    "2 Corinthians 0:31",
+    "Ephesians 4:1",
+    "Job 0:50",
+    "Revelation 0:57",
+    "Revelation 14",
+    "Proverbs 4",
+    "Mark 0:59",
+    "Luke 13",
+    "Romans 1",
+    "Hebrews 2",
+    "1 Corinthians 1:16",
+    "1 Corinthians 15",
+    "John 2:25",
+    "Matthew 1:24",
+    "Matthew 23",
+    "Mark 1:25",
+    "Matthew 20",
+    "Matthew 1:26",
+    "Mark 3",
+    "Mark 3:13",
+    "Matthew 10",
+    "Matthew 1:35",
+    "Matthew 4",
+    "Matthew 24",
+    "Matthew 1:38",
+    "1 Peter 1:44",
+    "1 Peter 2",
+    "Hebrews 1:52",
+    "Acts 1:55",
+    "Acts 8",
+    "Isaiah 1:58",
+    "Nehemiah 8"
+  ],
+  "linkageCandidate": "iog_charlotte_the_purpose",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Bay Area - \"Hath God Cast Away His People Israel?\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=7WyKj0bG3c4",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 0:0",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Jeremiah 23",
+    "Psalms 83",
+    "Ezekiel 16",
+    "Exodus 24",
+    "Exodus 34",
+    "Deuteronomy 4",
+    "Psalms 147",
+    "Romans 9",
+    "Romans 3",
+    "Amos 2",
+    "Amos 3",
+    "Luke 16",
+    "Genesis 0:59",
+    "Romans 11",
+    "Isaiah 41",
+    "Jeremiah 33",
+    "Jeremiah 31",
+    "Leviticus 26",
+    "Ezekiel 36",
+    "Isaiah 56",
+    "John 10",
+    "Ephesians 2",
+    "Psalms 132",
+    "Luke 2:9",
+    "Luke 1",
+    "Zechariah 14",
+    "Jeremiah 2:16"
+  ],
+  "linkageCandidate": "iog_bay_area_hath",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG Orlando - \"The Lord's Day Is The Last Day\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=cTa9omr-BUs",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Revelation 19",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Revelation 1",
+    "2 Samuel 7",
+    "Luke 1",
+    "Zechariah 14",
+    "Daniel 7",
+    "1 Thessalonians 4",
+    "Psalm 149",
+    "Revelation 21",
+    "Zechariah 0:24",
+    "Zechariah 12",
+    "Joel 3",
+    "Isaiah 0:30",
+    "Isaiah 34",
+    "Jeremiah 25",
+    "Jeremiah 0:34",
+    "Isaiah 13",
+    "Isaiah 0:41",
+    "Zephaniah 1",
+    "Isaiah 2",
+    "Amos 5",
+    "Joel 2",
+    "Joel 0:55",
+    "Matthew 24",
+    "Revelation 6",
+    "Revelation 8",
+    "Revelation 1:10",
+    "Revelation 11",
+    "Isaiah 1:15",
+    "Isaiah 1:24",
+    "Isaiah 24:5",
+    "Jeremiah 16",
+    "Revelation 20",
+    "1 Thessalonians 5",
+    "Luke 21"
+  ],
+  "linkageCandidate": "iog_orlando_the_lords",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «Israel reemplazado por su hermano Esaú» 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=Bcwt5s5JObI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_israel_reemplazado_por",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «Los frutos del Espíritu, la imagen de Dios en el hombre y las claves para entrar en el...»",
+  "sourceUrl": "https://www.youtube.com/watch?v=BUcGcaHgWnI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_los_frutos_del",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"Israel el cautivo: de Babilonia a Babilonia\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=v0Bmy2PTfoI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_israel_cautivo_babilonia",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=gCChLEvR9ME",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_fiesta_los_panes",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «La Pascua: un festival pagano, no sagrado» (2026)",
+  "sourceUrl": "https://www.youtube.com/watch?v=7860Ttf04kM",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_pascua_festival_pagano",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=gCChLEvR9ME",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_fiesta_los_panes",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «La promesa y el tiempo de su cumplimiento» 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=Ps-IQLCSdG0",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_promesa_tiempo_cumplimiento",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "ICOJ",
+  "camp": "HQ",
+  "lessonTitle": "Israel School of Excellence is Training up the Next Generation #isoe #education",
+  "sourceUrl": "https://www.youtube.com/watch?v=wxi8fQuDke0",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "israel_school_excellence_training",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "ICOJ",
+  "camp": "HQ",
+  "lessonTitle": "#SabbathRecap",
+  "sourceUrl": "https://www.youtube.com/watch?v=QYwXNY1U1fw",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "sabbathrecap",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=58PphDsDAA4",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "2 Corinthians 4",
+    "Exodus 20",
+    "Ecclesiastes 0:2",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Matthew 5",
+    "John 8",
+    "John 6",
+    "Isaiah 8",
+    "Isaiah 8:16",
+    "John 0:13",
+    "John 12",
+    "Matthew 0:14",
+    "Psalms 0:14",
+    "Ephesians 0:16",
+    "Ephesians 5",
+    "1 Thessalonians 0:19",
+    "1 Thessalonians 5",
+    "Leviticus 11",
+    "Luke 11",
+    "Acts 13",
+    "Isaiah 49",
+    "1 Timothy 6",
+    "John 3",
+    "John 3:16",
+    "Proverbs 4",
+    "Acts 9",
+    "Acts 26",
+    "Philippians 2",
+    "Philippians 0:57",
+    "Philippians 2:14",
+    "John 1:3",
+    "John 1",
+    "1 John 2",
+    "John 1:8",
+    "Luke 1",
+    "John 5",
+    "Romans 1:18",
+    "Romans 13",
+    "Ephesians 6",
+    "Ephesians 1:20",
+    "Matthew 1:24",
+    "Matthew 25",
+    "Isaiah 60",
+    "Revelation 1:37",
+    "Revelation 21"
+  ],
+  "linkageCandidate": "iog_birmingham_this_little",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"El gran cambio\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=_ukaBCp_0Eg",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_gran_cambio_2026",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"The Gospel By The Prophet Zechariah\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=ee7SNNGUcLw",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Zechariah 1",
+    "Jeremiah 0:11",
+    "Jeremiah 25",
+    "Daniel 0:22",
+    "Jeremiah 0:25",
+    "Revelation 19",
+    "Isaiah 0:39",
+    "Daniel 10",
+    "Revelation 7",
+    "Revelation 9",
+    "Revelation 16",
+    "Zechariah 14",
+    "Zechariah 12",
+    "Zechariah 1:10",
+    "Revelation 1",
+    "Daniel 1:15",
+    "Matthew 21",
+    "Zechariah 1:23",
+    "Zechariah 9",
+    "Zechariah 1:25",
+    "Zechariah 2",
+    "John 6",
+    "Isaiah 48",
+    "Zechariah 4",
+    "Revelation 11",
+    "1 Thessalonians 4",
+    "Zechariah 8"
+  ],
+  "linkageCandidate": "iog_the_gospel_the",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=lZA0JqcyybA",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Revelation 19",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Matthew 10",
+    "Luke 0:10",
+    "Luke 0:11",
+    "Luke 12",
+    "Luke 0:12",
+    "Matthew 0:12",
+    "Revelation 0:14",
+    "Isaiah 66",
+    "Hosea 10",
+    "Leviticus 5",
+    "Leviticus 0:25",
+    "Isaiah 0:29",
+    "Isaiah 51",
+    "Genesis 2",
+    "Psalm 104",
+    "Luke 23",
+    "Luke 8",
+    "Luke 0:43",
+    "Job 27",
+    "Isaiah 2",
+    "Genesis 0:51",
+    "Revelation 11",
+    "Job 33",
+    "Ezekiel 18",
+    "Psalms 33",
+    "Psalm 33",
+    "James 1:15",
+    "James 5",
+    "Hebrews 10",
+    "Isaiah 53",
+    "Psalm 16",
+    "Acts 2",
+    "Acts 1:43",
+    "Psalms 3",
+    "Psalm 1:49",
+    "Psalm 30",
+    "Romans 8",
+    "Psalm 49",
+    "Psalms 49",
+    "Psalm 491",
+    "1 Corinthians 2:7",
+    "1 Corinthians 15",
+    "Revelation 2:13",
+    "Revelation 3"
+  ],
+  "linkageCandidate": "iog_washington_the_soul",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Detroit - \"Our God Dwells In The Thick Darkness\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=YMwLexXc5aY",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Psalms 81",
+    "Exodus 20",
+    "John 14",
+    "Ecclesiastes 0:3",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Genesis 15",
+    "Exodus 19",
+    "Exodus 0:22",
+    "Deuteronomy 4",
+    "Exodus 24",
+    "Exodus 24:12",
+    "Exodus 33",
+    "Exodus 0:35",
+    "Exodus 34",
+    "Deuteronomy 5",
+    "Exodus 25",
+    "Numbers 9",
+    "2 Chronicles 6",
+    "2 Chronicles 1:0",
+    "Acts 2",
+    "Revelation 1:8",
+    "Mark 15",
+    "Psalms 18",
+    "Matthew 27",
+    "Psalms 97",
+    "Exodus 10",
+    "Psalms 105",
+    "Psalms 1:24",
+    "Psalms 78",
+    "Psalm 78",
+    "Psalm 1:25",
+    "Hebrews 12",
+    "Zephaniah 1"
+  ],
+  "linkageCandidate": "iog_detroit_our_god",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=sWUbcNzoCgo",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 0:1",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Revelation 0:3",
+    "Ecclesiastes 3",
+    "Job 0:9",
+    "Job 1",
+    "Job 0:17",
+    "Job 0:19",
+    "Job 7",
+    "Job 0:20",
+    "Job 0:22",
+    "Ecclesiastes 1",
+    "Genesis 1",
+    "Romans 3",
+    "1 Peter 4",
+    "Philippians 4",
+    "Isaiah 54",
+    "Exodus 0:42",
+    "Exodus 14",
+    "Proverbs 24",
+    "1 Samuel 9",
+    "Hebrews 1:6",
+    "Romans 5",
+    "Ecclesiastes 1:12",
+    "Luke 22",
+    "James 1:17",
+    "Job 1:19",
+    "Job 42",
+    "Job 1:20",
+    "1 Peter 1"
+  ],
+  "linkageCandidate": "iog_baton_rouge_adversity",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Phoenix - \"For Thine Is The Kingdom, And The Power, And The Glory, Forever\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=Uls_pJGaAlI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Matthew 0:4",
+    "Hebrews 3",
+    "John 0:10",
+    "John 6",
+    "John 12",
+    "Matthew 28",
+    "1 Thessalonians 2",
+    "John 3",
+    "Revelation 21",
+    "Isaiah 1",
+    "Deuteronomy 30",
+    "Genesis 17",
+    "Revelation 21:7",
+    "Proverbs 2",
+    "Matthew 7",
+    "Matthew 7:6",
+    "Titus 3",
+    "Daniel 0:57",
+    "Jeremiah 33",
+    "Matthew 6",
+    "Zechariah 2",
+    "Psalm 111",
+    "Ephesians 5",
+    "Isaiah 55",
+    "Revelation 3",
+    "Romans 8",
+    "Luke 11",
+    "Psalm 69",
+    "Romans 3"
+  ],
+  "linkageCandidate": "iog_phoenix_for_thine",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG - \"JESUS: The Unknown God\" 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=emo113e3s7c",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Luke 1",
+    "Acts 17",
+    "John 0:11",
+    "John 1",
+    "Exodus 24",
+    "John 5",
+    "John 0:15",
+    "1 Corinthians 10",
+    "Exodus 13",
+    "Isaiah 48",
+    "Isaiah 7",
+    "Matthew 1",
+    "Hebrews 0:30",
+    "John 0:34",
+    "Hebrews 2",
+    "Genesis 22",
+    "Isaiah 9",
+    "John 0:54",
+    "Philippians 2",
+    "John 1:1",
+    "John 1:3",
+    "Isaiah 1:6",
+    "Isaiah 1:7",
+    "Isaiah 12",
+    "Song of Solomon 1:7",
+    "Acts 2",
+    "Acts 4",
+    "Malachi 1:14",
+    "Malachi 1",
+    "Malachi 11",
+    "Malachi 1:19",
+    "Isaiah 40",
+    "John 1:24",
+    "Revelation 22",
+    "1 Corinthians 15",
+    "Exodus 3",
+    "John 8",
+    "John 2"
+  ],
+  "linkageCandidate": "iog_jesus_the_unknown",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Houston - \"Understanding The Fear of the Lord\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=6vlr_r7a6tQ",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Revelation 22",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Genesis 20",
+    "2 Kings 17",
+    "Genesis 43",
+    "Psalms 0:17",
+    "Proverbs 30",
+    "Proverbs 1",
+    "Deuteronomy 0:23",
+    "Deuteronomy 31",
+    "Exodus 1",
+    "Judges 0:32",
+    "Judges 6",
+    "Acts 27",
+    "Genesis 15",
+    "Psalms 3",
+    "Psalm 27",
+    "Isaiah 29",
+    "Deuteronomy 5",
+    "Job 1:0",
+    "Proverbs 16",
+    "Acts 9",
+    "Jude 1:4",
+    "Genesis 1:6",
+    "Psalm 22",
+    "Psalms 20",
+    "2 Corinthians 7",
+    "Psalm 19",
+    "Psalms 30",
+    "Psalms 33",
+    "Revelation 19",
+    "Proverbs 3",
+    "Revelation 14",
+    "Proverbs 2",
+    "Psalms 1:28"
+  ],
+  "linkageCandidate": "iog_houston_understanding_the",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Jackson - \"Breaking Bonds & Spiritual Strongholds\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=TGxvHjcGIAQ",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 0:3",
+    "Revelation 22",
+    "Psalms 144",
+    "Psalm 119",
+    "Psalms 119",
+    "Exodus 21",
+    "Jeremiah 9",
+    "Psalms 51",
+    "Psalms 34",
+    "Jeremiah 17",
+    "Jeremiah 0:22",
+    "Psalm 69",
+    "Psalm 6",
+    "Matthew 11",
+    "Hebrews 4",
+    "Hebrews 0:47",
+    "Hebrews 10",
+    "1 Timothy 2",
+    "1 Timothy 2:1",
+    "Proverbs 28",
+    "Psalms 28",
+    "John 20",
+    "2 Corinthians 5",
+    "Matthew 17",
+    "Isaiah 58",
+    "1 Corinthians 10",
+    "Acts 10",
+    "Psalms 40",
+    "Luke 8",
+    "Luke 13",
+    "2 Corinthians 12"
+  ],
+  "linkageCandidate": "iog_jackson_breaking_bonds",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Buffalo - \"The Destruction & Restoration of Israel\"",
+  "sourceUrl": "https://theisraelofgod.com/the-destruction-and-restoration-of-israel/",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "url_fetch_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Ecclesiastes 12",
+    "Exodus 20",
+    "Ecclesiastes 0:2",
+    "Revelation 22",
+    "Deuteronomy 28",
+    "Deuteronomy 0:5",
+    "Exodus 12",
+    "Daniel 9",
+    "Deuteronomy 32",
+    "Jeremiah 15",
+    "Luke 19",
+    "Luke 0:37",
+    "Luke 21",
+    "Psalm 44",
+    "Zechariah 11",
+    "Isaiah 42",
+    "Isaiah 51",
+    "Deuteronomy 30",
+    "Isaiah 61",
+    "Mark 1:0",
+    "Luke 4",
+    "Luke 1:1",
+    "Jeremiah 50",
+    "Revelation 6",
+    "Revelation 7",
+    "Isaiah 49",
+    "Joel 1:25",
+    "Joel 3",
+    "Matthew 24",
+    "Isaiah 27",
+    "Zechariah 2",
+    "Zechariah 8",
+    "Isaiah 65",
+    "Isaiah 1:43",
+    "Acts 1:46",
+    "Acts 1",
+    "Leviticus 26"
+  ],
+  "linkageCandidate": "iog_buffalo_the_destruction",
+  "nextAction": "cursor_fetch_public_url"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Charlotte - \"The Purpose of the Ministry: Service Unto Salvation\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=uf_VcPk_paw",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Genesis 2",
+    "Genesis 0:6",
+    "John 6:63",
+    "Revelation 12",
+    "Ezekiel 0:17",
+    "Ezekiel 18",
+    "Psalm 69",
+    "Romans 0:22",
+    "Romans 15",
+    "Romans 5",
+    "John 2",
+    "1 John 2",
+    "2 Corinthians 5",
+    "2 Corinthians 0:31",
+    "Ephesians 4:1",
+    "Job 0:50",
+    "Revelation 0:57",
+    "Revelation 14",
+    "Proverbs 4",
+    "Mark 0:59",
+    "Luke 13",
+    "Romans 1",
+    "Hebrews 2",
+    "1 Corinthians 1:16",
+    "1 Corinthians 15",
+    "John 2:25",
+    "Matthew 1:24",
+    "Matthew 23",
+    "Mark 1:25",
+    "Matthew 20",
+    "Matthew 1:26",
+    "Mark 3",
+    "Mark 3:13",
+    "Matthew 10",
+    "Matthew 1:35",
+    "Matthew 4",
+    "Matthew 24",
+    "Matthew 1:38",
+    "1 Peter 1:44",
+    "1 Peter 2",
+    "Hebrews 1:52",
+    "Acts 1:55",
+    "Acts 8",
+    "Isaiah 1:58",
+    "Nehemiah 8"
+  ],
+  "linkageCandidate": "iog_charlotte_the_purpose",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Bay Area - \"Hath God Cast Away His People Israel?\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=7WyKj0bG3c4",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Exodus 0:0",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Jeremiah 23",
+    "Psalms 83",
+    "Ezekiel 16",
+    "Exodus 24",
+    "Exodus 34",
+    "Deuteronomy 4",
+    "Psalms 147",
+    "Romans 9",
+    "Romans 3",
+    "Amos 2",
+    "Amos 3",
+    "Luke 16",
+    "Genesis 0:59",
+    "Romans 11",
+    "Isaiah 41",
+    "Jeremiah 33",
+    "Jeremiah 31",
+    "Leviticus 26",
+    "Ezekiel 36",
+    "Isaiah 56",
+    "John 10",
+    "Ephesians 2",
+    "Psalms 132",
+    "Luke 2:9",
+    "Luke 1",
+    "Zechariah 14",
+    "Jeremiah 2:16"
+  ],
+  "linkageCandidate": "iog_bay_area_hath",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG Orlando - \"The Lord's Day Is The Last Day\"",
+  "sourceUrl": "https://www.youtube.com/watch?v=cTa9omr-BUs",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "resolved_youtube",
+  "scripturesFound": [
+    "Revelation 19",
+    "Exodus 20",
+    "Ecclesiastes 12",
+    "Revelation 22",
+    "Revelation 1",
+    "2 Samuel 7",
+    "Luke 1",
+    "Zechariah 14",
+    "Daniel 7",
+    "1 Thessalonians 4",
+    "Psalm 149",
+    "Revelation 21",
+    "Zechariah 0:24",
+    "Zechariah 12",
+    "Joel 3",
+    "Isaiah 0:30",
+    "Isaiah 34",
+    "Jeremiah 25",
+    "Jeremiah 0:34",
+    "Isaiah 13",
+    "Isaiah 0:41",
+    "Zephaniah 1",
+    "Isaiah 2",
+    "Amos 5",
+    "Joel 2",
+    "Joel 0:55",
+    "Matthew 24",
+    "Revelation 6",
+    "Revelation 8",
+    "Revelation 1:10",
+    "Revelation 11",
+    "Isaiah 1:15",
+    "Isaiah 1:24",
+    "Isaiah 24:5",
+    "Jeremiah 16",
+    "Revelation 20",
+    "1 Thessalonians 5",
+    "Luke 21"
+  ],
+  "linkageCandidate": "iog_orlando_the_lords",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «Israel reemplazado por su hermano Esaú» 2026",
+  "sourceUrl": "https://www.youtube.com/watch?v=Bcwt5s5JObI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_israel_reemplazado_por",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+
+```json
+{
+  "sourceName": "IOG YouTube Main (IOGNEWS9002)",
+  "camp": "HQ",
+  "lessonTitle": "IOG — «Los frutos del Espíritu, la imagen de Dios en el hombre y las claves para entrar en el...»",
+  "sourceUrl": "https://www.youtube.com/watch?v=BUcGcaHgWnI",
+  "reasonMissing": "no_scriptures_in_recovered_corpus",
+  "triageCategory": "transcript_needed",
+  "resolutionStatus": "still_missing",
+  "scripturesFound": [],
+  "linkageCandidate": "iog_los_frutos_del",
+  "nextAction": "upload_youtube_transcript"
+}
+```
+

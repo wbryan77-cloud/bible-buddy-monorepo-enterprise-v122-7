@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-06-02T00:42:30.868Z",
+  "allPassed": true,
+  "minScore": 100,
+  "ready": true,
+  "results": [
+    {
+      "name": "Master Runtime",
+      "script": "scripts/sprint2FinalMasterRuntimeHttp.js",
+      "passed": true,
+      "score": 100,
+      "minRequired": 95,
+      "scoreOk": true,
+      "exitCode": 0,
+      "durationMs": 3362,
+      "outputTail": "    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\n\nMaster Runtime: 23/23 | Overall: 97 | Min: 96\n"
+    },
+    {
+      "name": "Meta-Question",
+      "script": "scripts/sprint2FinalBMetaQuestionHttp.js",
+      "passed": true,
+      "score": 100,
+      "minRequired": 95,
+      "scoreOk": true,
+      "exitCode": 0,
+      "durationMs": 1361,
+      "outputTail": "Error reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\n"
+    },
+    {
+      "name": "Reasoning-First Thread",
+      "script": "scripts/sprint2FinalCReasoningFirstHttp.js",
+      "passed": true,
+      "score": 100,
+      "minRequired": 95,
+      "scoreOk": true,
+      "exitCode": 0,
+      "durationMs": 669,
+      "outputTail": "- /Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/services/openaiClient.js\n- /Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/services/buddyBrain.js\n- /Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/scripts/sprint2FinalCReasoningFirstHttp.js\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\n"
+    },
+    {
+      "name": "Active Conversation",
+      "script": "scripts/sprint214dActiveConversationHttp.js",
+      "passed": true,
+      "score": 100,
+      "minRequired": 95,
+      "scoreOk": true,
+      "exitCode": 0,
+      "durationMs": 1373,
+      "outputTail": "    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\nError reading project-brain file providers.json Unexpected token ' ', \"[\n  {\n    \"k\"... is not valid JSON\n\nActive Conversation Integrity: 8/8 | Overall: 97 | Min category: 96\n"
+    },
+    {
+      "name": "Companion Intelligence",
+      "script": "scripts/companionIntelligenceValidationSuite.js",
+      "passed": true,
+      "score": 100,
+      "minRequired": 95,
+      "scoreOk": true,
+      "exitCode": 0,
+      "durationMs": 11215,
+      "outputTail": "\n  Sprint 2.14 Companion Acceptance\n    PASS  20/20 tests  score 97\n  Sprint 2.14B Sabbath History Depth\n    PASS  5/5 tests  score 97\n  Sprint 2.14C Natural Reasoning\n    PASS  10/10 tests  score 97\n\n  Intelligence Categories (gate: 95+)\n    ✓ helpfulness: 96\n    ✓ feltUnderstood: 97\n    ✓ feltPeaceful: 97\n    ✓ scriptureBalance: 97\n    ✓ memoryIntelligence: 97\n    ✓ historicalReasoning: 97\n    ✓ naturalConversation: 96\n    ✓ studyContinuity: 97\n    ✓ reasoningDepth: 97\n    ✓ stability: 97\n\n  Overall: 97  |  Min category: 96\n  Readiness: READY\n  Tests: 35/35 passed\n\n"
+    }
+  ],
+  "policy": {
+    "autoModifyCode": false,
+    "producesReportsOnly": true,
+    "blockReleaseOnFailure": true,
+    "blockReleaseOnScoreBelow": 95
+  }
+}

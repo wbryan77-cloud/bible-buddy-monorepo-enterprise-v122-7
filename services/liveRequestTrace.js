@@ -22,6 +22,115 @@ function parseApiError(errorMessage = '') {
   return { errorName: null, errorMessage: null };
 }
 
+function inferSelectedEngine(runtime = {}, draftRoute = '') {
+  const lane = runtime.orchestratorLane || '';
+  const route = draftRoute || runtime.masterRoute || '';
+  if (lane === 'clarification' || route === 'bible_companion_clarification') {
+    return 'bibleCompanionOrchestrator.buildClarificationReply';
+  }
+  if (lane === 'practical_wisdom' || /practical_wisdom|practical_guidance/i.test(route)) {
+    return 'practicalWisdomEngine';
+  }
+  if (lane === 'prayer_companion' || /prayer_companion|practical_guidance_prayer/i.test(route)) {
+    return 'prayerCompanionEngine';
+  }
+  if (lane === 'app_identity' || /app_identity|phase5l_app_identity/i.test(route)) {
+    return 'companionIdentityEngine';
+  }
+  if (lane === 'anxiety_presence' || /presence_nervous/i.test(route)) {
+    return 'companionPresenceEngine';
+  }
+  if (lane === 'memory_recall' || route === 'relationship_memory_recall') {
+    return 'relationshipSummaryEngine';
+  }
+  if (lane === 'bible_wide' || /bible_wide/i.test(route)) {
+    return 'bibleWideReasoningEngine';
+  }
+  if (/doctrine_final_authority|strict_doctrine/i.test(route)) {
+    return 'doctrineFinalAuthorityEngine';
+  }
+  if (lane === 'phase5i_companion' || /phase5i_/i.test(route)) {
+    return 'companionResponseBuilder';
+  }
+  if (/practicalGuidanceEngine|practical_guidance/i.test(route)) {
+    return 'practicalGuidanceEngine';
+  }
+  if (lane) return lane;
+  return route || 'unknown';
+}
+
+function inferSelectedTemplate(runtime = {}, draftRoute = '', reply = '') {
+  const route = draftRoute || runtime.masterRoute || '';
+  if (route === 'bible_companion_clarification') return 'buildClarificationReply';
+  if (/doctrine_final_authority/i.test(route)) return 'doctrineFinalAuthorityEngine template';
+  if (runtime.bibleWideReasoning) return 'bibleWideReasoningEngine.buildBibleWideAnswer';
+  if (/I want to answer from Scripture directly/i.test(reply)) return 'buildClarificationReply';
+  if (/Scripture invites us to cast our care/i.test(reply)) return 'bibleConceptGraph.prayer_comfort.directAnswer';
+  if (/Absolutely\s*[—-]\s*staying/i.test(reply)) return 'doctrineFinalAuthorityEngine (historical) or polishDoctrineOpener';
+  if (/No\.\s+Staying with Scripture/i.test(reply)) return 'singleCompanionContract.buildPorkContractReply';
+  if (runtime.companionRepairLane) return `singleCompanionContract.${runtime.companionRepairLane}`;
+  return null;
+}
+
+function buildRouteOwnershipTrace({
+  message = '',
+  structured = {},
+  humanNeed = null,
+  anchor = {},
+  doctrineState = {},
+  draftRoute = null,
+  draftOrchestratorLane = null,
+} = {}) {
+  const rt = structured.runtime || {};
+  const contract = rt.contractDecision || {};
+  return {
+    detectedIntent:
+      contract.mode ||
+      rt.companionContractMode ||
+      humanNeed ||
+      rt.companionIntent?.category ||
+      rt.currentIntent ||
+      null,
+    detectedConcept:
+      anchor.currentDoctrineConcept ||
+      doctrineState.lastAnsweredConcept ||
+      doctrineState.sessionMemory?.activeConcept ||
+      rt.bibleConcept ||
+      rt.doctrineTopic ||
+      null,
+    selectedEngine: inferSelectedEngine(
+      { ...rt, orchestratorLane: draftOrchestratorLane || rt.orchestratorLane },
+      draftRoute,
+    ),
+    selectedTemplate: inferSelectedTemplate(rt, draftRoute, structured.reply),
+    selectedRoute: draftRoute || rt.masterRoute || null,
+    draftRoute,
+    draftOrchestratorLane: draftOrchestratorLane || rt.orchestratorLane || null,
+    finalRoute: rt.masterRoute || null,
+    contractRepairLane: rt.companionRepairLane || null,
+    forbiddenPhraseDetected: rt.forbiddenPhraseDetected || false,
+    finalResponseOwner: rt.liveResponseOwner ? 'liveResponseOwner' : rt.finalAnswerAuthor || 'unknown',
+    messagePreview: String(message).slice(0, 120),
+    replyPreview: String(structured.reply || '').slice(0, 200),
+  };
+}
+
+function logRouteOwnership(trace) {
+  const line = JSON.stringify({
+    ts: new Date().toISOString(),
+    detectedIntent: trace.detectedIntent,
+    detectedConcept: trace.detectedConcept,
+    selectedEngine: trace.selectedEngine,
+    selectedTemplate: trace.selectedTemplate,
+    selectedRoute: trace.selectedRoute,
+    finalResponseOwner: trace.finalResponseOwner,
+    draftRoute: trace.draftRoute,
+    contractRepairLane: trace.contractRepairLane,
+    forbiddenPhraseDetected: trace.forbiddenPhraseDetected,
+  });
+  console.log(`[ROUTE_OWNERSHIP] ${line}`);
+}
+
 function buildLiveRequestTrace({ message = '', reply = {}, httpStatus = 200, latencyMs = 0 } = {}) {
   const dbg = reply.coreDebug || reply.runtime?.coreDebug || {};
   const rt = reply.runtime || {};
@@ -35,6 +144,8 @@ function buildLiveRequestTrace({ message = '', reply = {}, httpStatus = 200, lat
 
   const studyFallbackUsed =
     danger.studyLoopUsed || STUDY_RE.test(reply.reply || '') || !!rt.personalizedFallback;
+
+  const routeOwnership = reply.runtime?.routeOwnership || null;
 
   const trace = {
     ts: new Date().toISOString(),
@@ -74,6 +185,7 @@ function buildLiveRequestTrace({ message = '', reply = {}, httpStatus = 200, lat
     },
     violations: [],
     replyPreview: String(reply.reply || '').slice(0, 300),
+    routeOwnership,
   };
 
   if (trace.witnessTriplet !== false && WITNESS_RE.test(reply.reply || '')) {
@@ -110,6 +222,10 @@ function logLiveRequestTrace(trace) {
 
 module.exports = {
   buildLiveRequestTrace,
+  buildRouteOwnershipTrace,
+  inferSelectedEngine,
+  inferSelectedTemplate,
+  logRouteOwnership,
   isLiveRequestTraceEnabled,
   logLiveRequestTrace,
   TRACE_PATH,

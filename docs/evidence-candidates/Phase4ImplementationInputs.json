@@ -1,0 +1,27 @@
+{
+  "ranAt": "2026-06-10T07:48:10.399Z",
+  "phase": "4A",
+  "sandboxOnly": true,
+  "inputs": {
+    "traceabilityIndex": "scripture-traceability-index.json",
+    "chainLibrary": "scripture-chain-library.json",
+    "relationshipGraph": "relationship-graph.json",
+    "observedLibrary": "ObservedRelationshipLibrary.json",
+    "candidateLibrary": "CandidateRelationshipLibrary.json",
+    "continuityIndex": "genesis-to-revelation-continuity-index.json",
+    "inheritanceMap": "topic-inheritance-map.json",
+    "questionCoverage": "question-coverage-index.json",
+    "vineNetwork": "ScriptureVineNetwork.json",
+    "enrichment": "bible-wide-scripture-enrichment.json",
+    "kjvFreezeSupport": "kjv-traceability-freeze-support.json",
+    "reviewQueue": "review-queue-finalization.json",
+    "freezeAudit": "corpus-freeze-audit.json"
+  },
+  "constraints": {
+    "noProductionDeployment": true,
+    "noLivePromptChanges": true,
+    "noDoctrineApproval": true,
+    "noEvidenceCardChanges": true,
+    "noGraphDeployment": true
+  }
+}

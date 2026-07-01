@@ -1,0 +1,402 @@
+{
+  "ranAt": "2026-07-01T15:05:27.600Z",
+  "localConfig": {
+    "nodeEnv": "development",
+    "buddyRuntime": "legacy",
+    "openAiFirstEnabled": true,
+    "openAiFirstEnv": "unset_defaults_on",
+    "templateProseEnabled": false,
+    "studyFallbackDisabled": true,
+    "studyFallbackEnabled": false,
+    "openAiKeyPresent": false,
+    "finalAnswerAuthorMode": "openai",
+    "activePath": "openAiFirstCompanionRuntime",
+    "debugEnabled": true
+  },
+  "renderYamlEnvDeclared": {
+    "BUDDY_RUNTIME": true,
+    "BUDDY_TEMPLATE_PROSE": true,
+    "BUDDY_DISABLE_STUDY_FALLBACK": true,
+    "OPENAI_API_KEY": true,
+    "NODE_ENV": true,
+    "planStandard": true,
+    "buddyDebug": true
+  },
+  "openAiKeyPresent": false,
+  "memoryAtEnd": {
+    "heapUsedMB": 52,
+    "rssMB": 234
+  },
+  "tests": [
+    {
+      "id": "t01",
+      "message": "Can I eat pork? Yes or no?",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-01T15:05:24.422Z",
+      "messagePreview": "Can I eat pork? Yes or no?",
+      "httpStatus": 200,
+      "latencyMs": 232,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "direct_yes_no",
+      "historyAllowed": false,
+      "routeUsed": "doctrine_final_authority",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "doctrine_final_authority",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 86,
+        "rssMB": 228
+      },
+      "violations": [
+        "non_openai_speaker"
+      ],
+      "replyPreview": "No. Staying with Scripture, pork is unclean. Leviticus 11 and Deuteronomy 14 identify swine as unclean. Acts 10 does not overturn that; Peter explains in Acts 10:28 that the vision was about not calling people common or unclean.",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": "dietary_pork_unclean",
+        "selectedEngine": "doctrineFinalAuthorityEngine",
+        "selectedTemplate": "doctrineFinalAuthorityEngine template",
+        "selectedRoute": "doctrine_final_authority",
+        "draftRoute": "doctrine_final_authority",
+        "draftOrchestratorLane": "strict_doctrine",
+        "finalRoute": "doctrine_final_authority",
+        "contractRepairLane": "pork_contract",
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "Can I eat pork? Yes or no?",
+        "replyPreview": "No. Staying with Scripture, pork is unclean. Leviticus 11 and Deuteronomy 14 identify swine as unclean. Acts 10 does not overturn that; Peter explains in Acts 10:28 that the vision was about not calli"
+      },
+      "scored": {
+        "pass": false,
+        "violations": [
+          "non_openai_speaker",
+          "openai_not_called_without_connection_path"
+        ],
+        "apiFailureExpected": false
+      }
+    },
+    {
+      "id": "t02",
+      "message": "How do we keep the Sabbath holy?",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-01T15:05:25.024Z",
+      "messagePreview": "How do we keep the Sabbath holy?",
+      "httpStatus": 200,
+      "latencyMs": 246,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "how_to_practice",
+      "historyAllowed": false,
+      "routeUsed": "doctrine_final_authority",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "doctrine_final_authority",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 66,
+        "rssMB": 246
+      },
+      "violations": [
+        "non_openai_speaker"
+      ],
+      "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture.",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": "sabbath_seventh_day",
+        "selectedEngine": "doctrineFinalAuthorityEngine",
+        "selectedTemplate": "doctrineFinalAuthorityEngine template",
+        "selectedRoute": "doctrine_final_authority",
+        "draftRoute": "doctrine_final_authority",
+        "draftOrchestratorLane": "strict_doctrine",
+        "finalRoute": "doctrine_final_authority",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "How do we keep the Sabbath holy?",
+        "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture."
+      },
+      "scored": {
+        "pass": false,
+        "violations": [
+          "non_openai_speaker",
+          "openai_not_called_without_connection_path"
+        ],
+        "apiFailureExpected": false
+      }
+    },
+    {
+      "id": "t03",
+      "message": "What does Logos mean in John 1:1?",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-01T15:05:25.583Z",
+      "messagePreview": "What does Logos mean in John 1:1?",
+      "httpStatus": 200,
+      "latencyMs": 205,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "companion",
+      "historyAllowed": true,
+      "routeUsed": "bible_wide_reasoning",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "bible_wide_reasoning",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 38,
+        "rssMB": 230
+      },
+      "violations": [
+        "non_openai_speaker"
+      ],
+      "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Exodus 20, Deuteronomy 5, Exodus 34:28.",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": "ten_commandments",
+        "selectedEngine": "bibleWideReasoningEngine",
+        "selectedTemplate": "bibleWideReasoningEngine.buildBibleWideAnswer",
+        "selectedRoute": "bible_wide_reasoning",
+        "draftRoute": "bible_wide_reasoning",
+        "draftOrchestratorLane": "bible_wide",
+        "finalRoute": "bible_wide_reasoning",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "What does Logos mean in John 1:1?",
+        "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Exodus 20, Deuteronomy 5, Exodus 34:28."
+      },
+      "scored": {
+        "pass": false,
+        "violations": [
+          "non_openai_speaker",
+          "openai_not_called_without_connection_path"
+        ],
+        "apiFailureExpected": false
+      }
+    },
+    {
+      "id": "t04",
+      "message": "How many heavens are talked about in the Bible?",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-01T15:05:26.153Z",
+      "messagePreview": "How many heavens are talked about in the Bible?",
+      "httpStatus": 200,
+      "latencyMs": 214,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "companion",
+      "historyAllowed": true,
+      "routeUsed": "bible_wide_reasoning",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "bible_wide_reasoning",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 83,
+        "rssMB": 239
+      },
+      "violations": [
+        "non_openai_speaker"
+      ],
+      "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. 2 Corinthians 12:2, Genesis 1:1, Deuteronomy 10:14.",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": "heaven_layers",
+        "selectedEngine": "bibleWideReasoningEngine",
+        "selectedTemplate": "bibleWideReasoningEngine.buildBibleWideAnswer",
+        "selectedRoute": "bible_wide_reasoning",
+        "draftRoute": "bible_wide_reasoning",
+        "draftOrchestratorLane": "bible_wide",
+        "finalRoute": "bible_wide_reasoning",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "How many heavens are talked about in the Bible?",
+        "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. 2 Co"
+      },
+      "scored": {
+        "pass": false,
+        "violations": [
+          "non_openai_speaker",
+          "openai_not_called_without_connection_path"
+        ],
+        "apiFailureExpected": false
+      }
+    },
+    {
+      "id": "t05",
+      "message": "Today has been a rough day. I had to let go of someone I love.",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-01T15:05:26.700Z",
+      "messagePreview": "Today has been a rough day. I had to let go of someone I love.",
+      "httpStatus": 200,
+      "latencyMs": 195,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "companion",
+      "historyAllowed": true,
+      "routeUsed": "bible_wide_reasoning",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "bible_wide_reasoning",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 38,
+        "rssMB": 232
+      },
+      "violations": [
+        "non_openai_speaker"
+      ],
+      "replyPreview": "I’m sorry that hurts. Psalm 34:18 says the LORD is nigh unto them that are of a broken heart. Psalm 34:18, 1 Peter 5:7, Psalm 147:3.",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": "heartbreak_comfort",
+        "selectedEngine": "bibleWideReasoningEngine",
+        "selectedTemplate": "bibleWideReasoningEngine.buildBibleWideAnswer",
+        "selectedRoute": "bible_wide_reasoning",
+        "draftRoute": "bible_wide_reasoning",
+        "draftOrchestratorLane": "bible_wide",
+        "finalRoute": "bible_wide_reasoning",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "Today has been a rough day. I had to let go of someone I love.",
+        "replyPreview": "I’m sorry that hurts. Psalm 34:18 says the LORD is nigh unto them that are of a broken heart. Psalm 34:18, 1 Peter 5:7, Psalm 147:3."
+      },
+      "scored": {
+        "pass": false,
+        "violations": [
+          "non_openai_speaker",
+          "openai_not_called_without_connection_path"
+        ],
+        "apiFailureExpected": false
+      }
+    },
+    {
+      "id": "t06",
+      "message": "You didn't answer my question.",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-01T15:05:27.248Z",
+      "messagePreview": "You didn't answer my question.",
+      "httpStatus": 200,
+      "latencyMs": 193,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "emotional_support",
+      "historyAllowed": true,
+      "routeUsed": "companion_doctrine_release",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "companion_release",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 52,
+        "rssMB": 234
+      },
+      "violations": [
+        "non_openai_speaker"
+      ],
+      "replyPreview": "You're right to call that out. I was stuck on the last Bible topic instead of listening to your new message. I'm with you now. What do you want me to answer?",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": null,
+        "selectedEngine": "companion_release",
+        "selectedTemplate": null,
+        "selectedRoute": "companion_doctrine_release",
+        "draftRoute": "companion_doctrine_release",
+        "draftOrchestratorLane": "companion_release",
+        "finalRoute": "companion_doctrine_release",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "You didn't answer my question.",
+        "replyPreview": "You're right to call that out. I was stuck on the last Bible topic instead of listening to your new message. I'm with you now. What do you want me to answer?"
+      },
+      "scored": {
+        "pass": false,
+        "violations": [
+          "non_openai_speaker",
+          "openai_not_called_without_connection_path"
+        ],
+        "apiFailureExpected": false
+      }
+    }
+  ],
+  "passed": 0,
+  "total": 6,
+  "apiFailureOnly": false,
+  "allPassed": false
+}

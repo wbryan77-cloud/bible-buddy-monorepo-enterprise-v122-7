@@ -1,0 +1,169 @@
+{
+  "ranAt": "2026-07-01T15:05:24.108Z",
+  "buddyRuntime": "legacy",
+  "buddyOpenAiFirst": "default-on",
+  "openAiKeyPresent": false,
+  "passed": 8,
+  "failed": 2,
+  "results": [
+    {
+      "id": "1_relationship_loss",
+      "userId": "openai-first-regression-1_relationship_loss-1782918322150-0",
+      "message": "Today has been a tough day. I let go of someone that I truly love, but she hasn’t been right for years…",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "bible_wide_reasoning",
+      "openAiCalled": false,
+      "replyPreview": "I’m sorry that hurts. Psalm 34:18 says the LORD is nigh unto them that are of a broken heart. Psalm 34:18, 1 Peter 5:7, Psalm 147:3.",
+      "adminFlags": [
+        "bible_wide_reasoning",
+        "concept_heartbreak_comfort",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "2_correction_after_relationship",
+      "userId": "openai-first-regression-2_correction_after_relationship-1782918322365-1",
+      "message": "What’s flaring up again and you didn’t address what I just mentioned at all. Why?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "bible_wide_reasoning",
+      "openAiCalled": false,
+      "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Exodus 20, Deuteronomy 5, Exodus 34:28.",
+      "adminFlags": [
+        "bible_wide_reasoning",
+        "concept_ten_commandments",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "2b_correction_seeded_health_topic",
+      "userId": "openai-first-regression-2b_correction_seeded_health_topic-1782918322542-2",
+      "message": "What’s flaring up again and you didn’t address what I just mentioned at all. Why?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "bible_wide_reasoning",
+      "openAiCalled": false,
+      "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Exodus 20, Deuteronomy 5, Exodus 34:28.",
+      "adminFlags": [
+        "bible_wide_reasoning",
+        "concept_ten_commandments",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "3_listen_first",
+      "userId": "openai-first-regression-3_listen_first-1782918322716-3",
+      "message": "I just want to talk for a minute. Please listen first.",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "bible_wide_reasoning",
+      "openAiCalled": false,
+      "replyPreview": "No. Scripture calls believers to flee fornication and honor the marriage bed. 1 Corinthians 6:18 says flee fornication; 1 Thessalonians 4:3-5 commands sanctification and honor; Hebrews 13:4 honors marriage and warns God will judge whoremongers and adulterers. If you are not marri",
+      "adminFlags": [
+        "bible_wide_reasoning",
+        "concept_sexual_boundaries_dating",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "4_same_script",
+      "userId": "openai-first-regression-4_same_script-1782918322898-4",
+      "message": "Why are you just giving me the same script over and over again?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "no_glitch_firewall",
+      "openAiCalled": false,
+      "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "5_alzheimers",
+      "userId": "openai-first-regression-5_alzheimers-1782918323056-5",
+      "message": "Mom has Alzheimer’s. What do I do?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "bible_wide_reasoning",
+      "openAiCalled": false,
+      "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Exodus 20, Deuteronomy 5, Exodus 34:28.",
+      "adminFlags": [
+        "bible_wide_reasoning",
+        "concept_ten_commandments",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "6_grief_what_do_i_do",
+      "userId": "openai-first-regression-6_grief_what_do_i_do-1782918323225-6",
+      "message": "I’m going through some grief what do I do?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "bible_wide_reasoning",
+      "openAiCalled": false,
+      "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Exodus 20, Deuteronomy 5, Exodus 34:28.",
+      "adminFlags": [
+        "bible_wide_reasoning",
+        "concept_ten_commandments",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "7_doctrine_after_grief_session",
+      "userId": "openai-first-regression-7_doctrine_after_grief_session-1782918323396-7",
+      "message": "Is the Logos spoken of in the Old Testament Jesus in the New Testament as well?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "no_glitch_firewall",
+      "openAiCalled": false,
+      "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "8_sabbath_definition",
+      "userId": "openai-first-regression-8_sabbath_definition-1782918323733-8",
+      "message": "What is a Sabbath day?",
+      "pass": false,
+      "failReason": "unexpected route doctrine_final_authority",
+      "masterRoute": "doctrine_final_authority",
+      "openAiCalled": false,
+      "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture.",
+      "adminFlags": [
+        "doctrine_final_authority",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "9_knees_health",
+      "userId": "openai-first-regression-9_knees_health-1782918323936-9",
+      "message": "My knees hurt again today",
+      "pass": false,
+      "failReason": "unexpected route no_glitch_firewall for health mention",
+      "masterRoute": "no_glitch_firewall",
+      "openAiCalled": false,
+      "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    }
+  ]
+}

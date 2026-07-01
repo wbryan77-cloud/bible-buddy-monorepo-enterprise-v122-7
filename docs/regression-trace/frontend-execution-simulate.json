@@ -1,0 +1,131 @@
+{
+  "ranAt": "2026-06-06T05:25:37.140Z",
+  "scenarios": {
+    "openAiSuccess": {
+      "httpStatus": 200,
+      "dataOk": true,
+      "dataReply": {
+        "reply": "In John 1:1, Logos (Greek: λόγος) means the divine Word or self-expression of God—the one through whom all things were made.",
+        "scripture": [],
+        "mode": "companion"
+      },
+      "dataReplyType": "object",
+      "payloadReply": "In John 1:1, Logos (Greek: λόγος) means the divine Word or self-expression of God—the one through whom all things were made.",
+      "payloadReplyType": "string",
+      "clientFallbackUsed": false,
+      "rendered": "In John 1:1, Logos (Greek: λόγος) means the divine Word or self-expression of God—the one through whom all things were made."
+    },
+    "uiContractLocal200": {
+      "httpStatus": 200,
+      "dataOk": true,
+      "dataReply": {
+        "reply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+        "mode": "companion"
+      },
+      "dataReplyType": "object",
+      "payloadReply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "payloadReplyType": "string",
+      "clientFallbackUsed": false,
+      "rendered": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+    },
+    "emptyNestedReply": {
+      "httpStatus": 200,
+      "dataOk": true,
+      "dataReply": {
+        "reply": "",
+        "mode": "companion"
+      },
+      "dataReplyType": "object",
+      "payloadReply": "",
+      "payloadReplyType": "string",
+      "clientFallbackUsed": true,
+      "rendered": "I'm here with you. Tell me a little more."
+    },
+    "nullNestedReply": {
+      "httpStatus": 200,
+      "dataOk": true,
+      "dataReply": {
+        "reply": null,
+        "mode": "companion"
+      },
+      "dataReplyType": "object",
+      "payloadReply": null,
+      "payloadReplyType": "object",
+      "clientFallbackUsed": true,
+      "rendered": "I'm here with you. Tell me a little more."
+    },
+    "missingNestedReply": {
+      "httpStatus": 200,
+      "dataOk": true,
+      "dataReply": {
+        "mode": "companion"
+      },
+      "dataReplyType": "object",
+      "payloadReplyType": "undefined",
+      "clientFallbackUsed": true,
+      "rendered": "I'm here with you. Tell me a little more."
+    },
+    "nullDataReply": {
+      "httpStatus": 200,
+      "dataOk": true,
+      "dataReply": null,
+      "dataReplyType": "object",
+      "payloadReply": null,
+      "payloadReplyType": "object",
+      "clientFallbackUsed": true,
+      "rendered": "I'm here with you. Tell me a little more."
+    },
+    "http500": {
+      "httpStatus": 500,
+      "dataOk": false,
+      "dataReplyType": "undefined",
+      "payloadReplyType": "undefined",
+      "clientFallbackUsed": true,
+      "rendered": "I'm here with you. Tell me a little more."
+    },
+    "http400": {
+      "httpStatus": 400,
+      "dataOk": false,
+      "dataReplyType": "undefined",
+      "payloadReplyType": "undefined",
+      "clientFallbackUsed": true,
+      "rendered": "I'm here with you. Tell me a little more."
+    },
+    "http404": {
+      "httpStatus": 404,
+      "dataOk": false,
+      "dataReplyType": "undefined",
+      "payloadReplyType": "undefined",
+      "clientFallbackUsed": true,
+      "rendered": "I'm here with you. Tell me a little more."
+    },
+    "replyAsString": {
+      "httpStatus": 200,
+      "dataOk": true,
+      "dataReply": "Answer at wrong nesting level",
+      "dataReplyType": "string",
+      "payloadReply": "Answer at wrong nesting level",
+      "payloadReplyType": "string",
+      "clientFallbackUsed": false,
+      "rendered": "Answer at wrong nesting level"
+    },
+    "replyAsArray": {
+      "httpStatus": 200,
+      "dataOk": true,
+      "dataReply": [],
+      "dataReplyType": "object",
+      "payloadReplyType": "undefined",
+      "clientFallbackUsed": true,
+      "rendered": "I'm here with you. Tell me a little more."
+    },
+    "emptyObjectReply": {
+      "httpStatus": 200,
+      "dataOk": true,
+      "dataReply": {},
+      "dataReplyType": "object",
+      "payloadReplyType": "undefined",
+      "clientFallbackUsed": true,
+      "rendered": "I'm here with you. Tell me a little more."
+    }
+  }
+}

@@ -1,0 +1,89 @@
+# Expanded Open Topic Discovery Report
+
+**Phase:** 3E Part E
+**Date:** 2026-06-09T06:49:55.682Z
+
+**Topics discovered:** 139
+
+| Topic | Category | Questions | Sources |
+|-------|----------|-----------|---------|
+| death_state | doctrine | 53 | 7 |
+| sabbath | doctrine | 31 | 4 |
+| jacob | people | 24 | 1 |
+| iog_stick_the_script | discovered | 22 | 1 |
+| kingdom_of_god | doctrine | 21 | 4 |
+| messiah_logos | doctrine | 19 | 3 |
+| feasts | doctrine | 18 | 4 |
+| dietary_law | doctrine | 17 | 3 |
+| riches_gains_the_doctrine | discovered | 12 | 1 |
+| power_over_the_nations | discovered | 12 | 1 |
+| david | people | 12 | 1 |
+| part_the_times_the | discovered | 12 | 1 |
+| heavens | doctrine | 12 | 2 |
+| prayer | doctrine | 11 | 4 |
+| holiness | doctrine | 10 | 6 |
+| holy_spirit | doctrine | 7 | 2 |
+| the_destruction_and_restoration | discovered | 6 | 1 |
+| iog_bay_area_hath | discovered | 6 | 1 |
+| adam | people | 6 | 1 |
+| the_book_life_lesson | discovered | 6 | 1 |
+| that_man_sin_lesson | discovered | 6 | 1 |
+| that_man_sin_ref | discovered | 6 | 1 |
+| may_whoredom_aka_fornication | discovered | 6 | 1 |
+| america_decline_rome_rising | discovered | 6 | 1 |
+| the_sun_never_sets | discovered | 6 | 1 |
+| reap_what_you_sow | discovered | 6 | 1 |
+| killed_for_jesus_lesson | discovered | 6 | 1 |
+| the_lords_determination_lesson | discovered | 6 | 1 |
+| seek_god_now_time | discovered | 6 | 1 |
+| the_awakening_hebrews_lesson | discovered | 6 | 1 |
+| back_into_egypt_fnl | discovered | 6 | 1 |
+| vengeance_the_lords_lesson | discovered | 6 | 1 |
+| ham | people | 6 | 1 |
+| the_unleavened_bread_journey | discovered | 6 | 1 |
+| eve | people | 6 | 1 |
+| little_leaven_daily_readings | discovered | 6 | 1 |
+| circumcision_still_good_lesson | discovered | 6 | 1 |
+| gods_judgment_lesson_handout | discovered | 6 | 1 |
+| abib_fresh_beginning_lesson | discovered | 6 | 1 |
+| children_are_the_future | discovered | 6 | 1 |
+| satan | doctrine | 6 | 1 |
+| beware_spirits_all_are | discovered | 6 | 1 |
+| lake_of_fire | prophecy | 6 | 1 |
+| remember_the_mission_teach | discovered | 6 | 1 |
+| how_frail_lesson_handout | discovered | 6 | 1 |
+| the_state_gods_union | discovered | 6 | 1 |
+| neither_democrats_nor_republicans | discovered | 6 | 1 |
+| jesus_the_christ_the | discovered | 6 | 1 |
+| the_foolishness_men_women | discovered | 6 | 1 |
+| angels | doctrine | 6 | 1 |
+| beginning_jerusalem_the_gospel | discovered | 6 | 1 |
+| the_last_trump_lesson | discovered | 6 | 1 |
+| there_god_but_jesus | discovered | 6 | 1 |
+| greedy_dog_preachers_lesson | discovered | 6 | 1 |
+| whisperer_will_separate_best | discovered | 6 | 1 |
+| content_with_what_you | discovered | 6 | 1 |
+| modern_religion_emotionalism_not | discovered | 6 | 1 |
+| from_baby_manger_killer | discovered | 6 | 1 |
+| john | people | 6 | 3 |
+| emotional | doctrine | 6 | 2 |
+| resurrection | doctrine | 5 | 1 |
+| iog_fiesta_los_panes | discovered | 4 | 1 |
+| shows_the_israel_god | discovered | 3 | 1 |
+| iog_twitter_htmlbodyheight_100cuewhitespacenormal | discovered | 3 | 1 |
+| faith | doctrine | 3 | 3 |
+| the_israel_god_research | discovered | 3 | 1 |
+| home_israel_the_church | discovered | 3 | 1 |
+| open_topic_what_the | discovered | 3 | 2 |
+| paul | people | 3 | 3 |
+| iog_birmingham_this_little | discovered | 2 | 1 |
+| iog_jess_dios_desconocido | discovered | 2 | 1 |
+| iog_velo_mujer_segunda | discovered | 2 | 1 |
+| iog_gran_cambio_2026 | discovered | 2 | 1 |
+| iog_the_gospel_the | discovered | 2 | 1 |
+| iog_bay_area_prepare | discovered | 2 | 1 |
+| iog_washington_the_soul | discovered | 2 | 1 |
+| iog_detroit_our_god | discovered | 2 | 1 |
+| iog_baton_rouge_adversity | discovered | 2 | 1 |
+| iog_phoenix_for_thine | discovered | 2 | 1 |
+| iog_louis_the_powers | discovered | 2 | 1 |

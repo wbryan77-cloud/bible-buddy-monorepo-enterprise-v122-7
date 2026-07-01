@@ -1,60 +1,71 @@
 {
-  "timestamp": "2026-06-01T22:47:33.721Z",
+  "timestamp": "2026-06-03T21:55:41.637Z",
   "sprint": "2.14B",
   "results": [
     {
       "name": "TEST 1 — Who changed Sabbath",
-      "passed": true,
-      "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou are asking who changed Sabbath observance from Saturday to Sunday — and whether that change came from Scripture or from later human authority.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the f",
-      "intercept": "sabbath_history_companion",
-      "intent": "sabbath_history"
+      "passed": false,
+      "failures": [
+        "scriptureNoChange",
+        "churchAuthority",
+        "historySecondary",
+        "intercept"
+      ],
+      "replyPreview": "You’re asking who historically changed the Sabbath observance from Saturday to Sunday. The Bible consistently designates the seventh day—Saturday—as the Sabbath, but historically, early Christians began meeting on the first day of the week for worship. In AD 321, Roman Emperor Constantine enacted a civil law declaring ",
+      "intercept": null,
+      "intent": "doctrinal_study"
     },
     {
       "name": "TEST 2 — Rome and Catholic Church",
       "passed": true,
       "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — later papal and Roman church authority helped preserve and normalize Sunday o",
-      "intercept": "sabbath_history_companion",
-      "intent": "sabbath_history"
+      "replyPreview": "You’re asking if the Roman Catholic Church was responsible for changing the day of worship from the biblical Sabbath to Sunday. Historically, early Christians often met on both the Sabbath and the first day of the week. In AD 321, Emperor Constantine, a Roman emperor, issued a civil law declaring Sunday a day of rest. ",
+      "intercept": null,
+      "intent": "companion"
     },
     {
       "name": "TEST 3 — Catholic Church performed change",
-      "passed": true,
-      "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — later papal and Roman church authority helped preserve and normalize Sunday o",
-      "intercept": "sabbath_history_companion",
-      "intent": "sabbath_history"
+      "passed": false,
+      "failures": [
+        "yesHistorically"
+      ],
+      "replyPreview": "You’re asking if the Roman Catholic Church was responsible for changing the Sabbath from Saturday to Sunday. Historically, early Christians often met on Sunday, the first day of the week, to honor Jesus’ resurrection, but many also continued observing the seventh-day Sabbath. The Roman Emperor Constantine issued a civi",
+      "intercept": null,
+      "intent": "doctrinal_study"
     },
     {
       "name": "TEST 4 — Historical evidence",
       "passed": true,
       "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou want the historical evidence for how Sunday observance became common — not a repeat of the Sabbath definition.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play a major role in changing common Christian observance fro",
-      "intercept": "sabbath_history_companion",
-      "intent": "sabbath_history"
+      "replyPreview": "You’re asking for the historical evidence about how Sabbath observance developed outside the Bible. Historically, early Christians often met on the first day of the week for worship while many still observed the seventh-day Sabbath. In AD 321, Emperor Constantine issued a civil law making Sunday a day of rest in the Ro",
+      "intercept": null,
+      "intent": "companion"
     },
     {
       "name": "TEST 5 — Follow-up correction",
-      "passed": true,
-      "failures": [],
-      "replyPreview": "I hear you — that wasn't your question. Let me answer what you actually asked, with Scripture first and history second.\n\nYou're right — I drifted back to the Sabbath definition. You asked a direct historical question, and I'll answer that now.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority pl",
-      "intercept": "sabbath_history_companion",
-      "intent": "sabbath_history"
+      "passed": false,
+      "failures": [
+        "apology",
+        "historicalAnswer",
+        "direct"
+      ],
+      "replyPreview": "I hear you want a clearer answer to your question. Could you please restate your exact question so I can respond directly to what you're asking?",
+      "intercept": null,
+      "intent": "companion"
     }
   ],
   "scoring": {
     "scores": {
-      "directness": 97,
+      "directness": 55,
       "historicalSpecificity": 97,
-      "scriptureFirst": 97,
+      "scriptureFirst": 65,
       "naturalConversation": 96,
       "noIrrelevantPrompts": 97,
       "noMemoryBleed": 97,
       "noRepetition": 97
     },
-    "overall": 97
+    "overall": 86
   },
-  "passed": 5,
+  "passed": 2,
   "total": 5
 }

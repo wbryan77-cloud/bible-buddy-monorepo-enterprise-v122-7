@@ -1,0 +1,112 @@
+{
+  "ranAt": "2026-06-10T05:27:19.419Z",
+  "summary": {
+    "packsProcessed": 4,
+    "attachmentsApplied": 9,
+    "attachmentsSkipped": 0
+  },
+  "applied": [
+    {
+      "chainId": "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+      "packId": "millennial_kingdom_kingdom_on_earth",
+      "sharedScriptureCount": 5,
+      "bookkeepingOnly": true,
+      "evidenceBacked": true,
+      "inferredRelationship": false,
+      "humanReviewRequired": false,
+      "appliedAt": "2026-06-10T05:27:19.417Z",
+      "phase": "3W.3"
+    },
+    {
+      "chainId": "chain_malachi 3:14-18_luke 10:1-2_luke 10:17-20_philip",
+      "packId": "millennial_kingdom_kingdom_on_earth",
+      "sharedScriptureCount": 16,
+      "bookkeepingOnly": true,
+      "evidenceBacked": true,
+      "inferredRelationship": false,
+      "humanReviewRequired": false,
+      "appliedAt": "2026-06-10T05:27:19.417Z",
+      "phase": "3W.3"
+    },
+    {
+      "chainId": "chain_psalm 138:1-4_luke 24:25-27_luke 24:44-45_exodus",
+      "packId": "millennial_kingdom_kingdom_on_earth",
+      "sharedScriptureCount": 19,
+      "bookkeepingOnly": true,
+      "evidenceBacked": true,
+      "inferredRelationship": false,
+      "humanReviewRequired": false,
+      "appliedAt": "2026-06-10T05:27:19.417Z",
+      "phase": "3W.3"
+    },
+    {
+      "chainId": "chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+      "packId": "millennial_kingdom_kingdom_on_earth",
+      "sharedScriptureCount": 17,
+      "bookkeepingOnly": true,
+      "evidenceBacked": true,
+      "inferredRelationship": false,
+      "humanReviewRequired": false,
+      "appliedAt": "2026-06-10T05:27:19.417Z",
+      "phase": "3W.3"
+    },
+    {
+      "chainId": "chain_matthew 6:10_acts 1:6-7_exodus 4:21-23_exodus 8:",
+      "packId": "millennial_kingdom_kingdom_on_earth",
+      "sharedScriptureCount": 20,
+      "bookkeepingOnly": true,
+      "evidenceBacked": true,
+      "inferredRelationship": false,
+      "humanReviewRequired": false,
+      "appliedAt": "2026-06-10T05:27:19.417Z",
+      "phase": "3W.3"
+    },
+    {
+      "chainId": "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+      "packId": "sabbath",
+      "sharedScriptureCount": 7,
+      "bookkeepingOnly": true,
+      "evidenceBacked": true,
+      "inferredRelationship": false,
+      "humanReviewRequired": false,
+      "appliedAt": "2026-06-10T05:27:19.417Z",
+      "phase": "3W.3"
+    },
+    {
+      "chainId": "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+      "packId": "kingdom_of_god",
+      "sharedScriptureCount": 4,
+      "bookkeepingOnly": true,
+      "evidenceBacked": true,
+      "inferredRelationship": false,
+      "humanReviewRequired": false,
+      "appliedAt": "2026-06-10T05:27:19.418Z",
+      "phase": "3W.3"
+    },
+    {
+      "chainId": "chain_matthew 6:10_acts 1:6-7_exodus 4:21-23_exodus 8:",
+      "packId": "kingdom_of_god",
+      "sharedScriptureCount": 34,
+      "bookkeepingOnly": true,
+      "evidenceBacked": true,
+      "inferredRelationship": false,
+      "humanReviewRequired": false,
+      "appliedAt": "2026-06-10T05:27:19.418Z",
+      "phase": "3W.3"
+    },
+    {
+      "chainId": "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+      "packId": "feasts",
+      "sharedScriptureCount": 5,
+      "bookkeepingOnly": true,
+      "evidenceBacked": true,
+      "inferredRelationship": false,
+      "humanReviewRequired": false,
+      "appliedAt": "2026-06-10T05:27:19.418Z",
+      "phase": "3W.3"
+    }
+  ],
+  "skipped": [],
+  "humanReviewRequired": false,
+  "bookkeepingOnly": true
+}

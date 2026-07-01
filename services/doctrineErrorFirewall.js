@@ -79,7 +79,10 @@ function sanitizeUserFacingReply(text = '', context = {}) {
       topic: context.topic,
       sample: reply.slice(0, 160),
     });
-    reply = context.strictDoctrine ? STRICT_DOCTRINE_FALLBACK_MESSAGE : USER_SAFE_RETRIEVAL_MESSAGE;
+    reply = mapInternalErrorToUserMessage('', context);
+  }
+  if (/trouble retrieving additional passages/i.test(reply)) {
+    reply = mapInternalErrorToUserMessage('', context);
   }
   return reply;
 }
@@ -100,7 +103,11 @@ function applyDoctrineErrorFirewall(structured = {}, context = {}) {
   }
 
   if (containsDiagnosticLeak(out.reply).leaked) {
-    out.reply = USER_SAFE_RETRIEVAL_MESSAGE;
+    out.reply = mapInternalErrorToUserMessage('', context);
+  }
+
+  if (out.runtime?.masterRoute === 'core_connection_error') {
+    out.runtime = { ...(out.runtime || {}), masterRoute: 'no_glitch_firewall' };
   }
 
   return out;
@@ -118,15 +125,22 @@ function isInternalSystemMessage(text = '') {
   return false;
 }
 
-function mapInternalErrorToUserMessage(error = '', { strictDoctrine = false } = {}) {
+function mapInternalErrorToUserMessage(error = '', { strictDoctrine = false, contractCategory = '' } = {}) {
+  if (contractCategory === 'bare_continuation_without_context') {
+    return require('./noGlitchTurnContract').CLARIFIER_REPLY;
+  }
   if (strictDoctrine) return STRICT_DOCTRINE_FALLBACK_MESSAGE;
-  return USER_SAFE_RETRIEVAL_MESSAGE;
+  return COMPANION_SAFE_FALLBACK;
 }
+
+const COMPANION_SAFE_FALLBACK =
+  'I want to stay with you on this. Could you ask your question again in one short sentence?';
 
 module.exports = {
   USER_SAFE_RETRIEVAL_MESSAGE,
   STRICT_DOCTRINE_FALLBACK_MESSAGE,
   WITNESS_EXHAUSTION_USER_MESSAGE,
+  COMPANION_SAFE_FALLBACK,
   USER_ECHO_FILTER_PHRASES,
   INTERNAL_SYSTEM_PHRASES,
   LEAK_PATTERNS,

@@ -1,0 +1,62 @@
+{
+  "ranAt": "2026-06-10T06:36:26.177Z",
+  "phase": "4A.2",
+  "reviewOnly": true,
+  "autoApplied": false,
+  "humanApprovalRequired": true,
+  "approvedCandidateCount": 4,
+  "impacts": {
+    "retrieval": {
+      "currentState": "Supporting inventory recoverable via vine enrichment for dietary_law, death_state, holy_spirit",
+      "ifApproved": "Primary originals become retrievable via chain-library packAttachments; partial_supporting_inventory tier may upgrade",
+      "affectedTopics": [
+        "dietary_law",
+        "death_state",
+        "holy_spirit"
+      ]
+    },
+    "traceability": {
+      "currentState": "No scripture-traceability-index entries for gap topics; sandbox tier partial_supporting_inventory",
+      "ifApproved": "Bookkeeping packAttachments add chain traceability without new doctrine",
+      "traceabilityUpgradeCandidates": [
+        "dietary_law",
+        "death_state",
+        "holy_spirit"
+      ]
+    },
+    "vineNavigation": {
+      "currentState": "Kingdom→David→Messiah pathway partial — david node missing",
+      "ifApproved": "David node would bridge kingdom_of_god and messiah_logos; pathway fully navigable",
+      "pathway": "Kingdom → David → Messiah → Resurrection → Millennium → New Jerusalem"
+    },
+    "continuityScoring": {
+      "currentState": "Gap topics score low continuitySupport in sandbox quality (0 for dietary_law, death_state, holy_spirit)",
+      "ifApproved": "Chain attachment improves genesisToRevelationSupport and continuitySupport scores on next sandbox run",
+      "expectedLift": "moderate"
+    },
+    "chainAttachment": {
+      "currentState": "weak_chain failures for dietary_law, death_state, holy_spirit in Phase 4A sandbox",
+      "ifApproved": [
+        {
+          "topic": "dietary_law",
+          "candidateChain": "chain_leviticus 11_leviticus 11:3_leviticus 11:47_leviticus 11:4",
+          "attachmentType": "chain_library_promotion"
+        },
+        {
+          "topic": "death_state",
+          "candidateChain": "chain_ecclesiastes 9:5_psalm 146:4_john 11:11-14_1 thessalonians 4:13-16",
+          "attachmentType": "chain_library_promotion"
+        },
+        {
+          "topic": "holy_spirit",
+          "candidateChain": "chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+          "attachmentType": "packAttachment_bookkeeping"
+        }
+      ],
+      "pendingRetain": [
+        "holy_spirit"
+      ],
+      "rejected": []
+    }
+  }
+}

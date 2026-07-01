@@ -1,0 +1,653 @@
+{
+  "ranAt": "2026-06-10T05:11:43.828Z",
+  "purpose": "Prevent inflated pathway counts from appearing as corpus weaknesses",
+  "summary": {
+    "observedPathwayCount": 4732,
+    "candidatePathwayCount": 10,
+    "supportedCount": 229,
+    "candidateCount": 10,
+    "weakCount": 4503,
+    "insufficientEvidenceCount": 0,
+    "inflatedWeaknessIfAllObservedCountedPct": 100,
+    "adjustedWeakPathwayPct": 95.2,
+    "bookkeepingInflationPct": 4.8
+  },
+  "nonSupportedObservedSample": [
+    {
+      "source": "Exodus 21",
+      "target": "Genesis 6",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Genesis 6",
+      "target": "Psalm 90",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Psalm 90",
+      "target": "Psalm 78",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Psalm 78",
+      "target": "Matthew 12",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Matthew 12",
+      "target": "Exodus 23",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Exodus 23",
+      "target": "Isaiah 59",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Isaiah 59",
+      "target": "Matthew 25",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Matthew 25",
+      "target": "Ephesians 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "John 14",
+      "target": "Amos 1",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Amos 1",
+      "target": "Romans 7",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Romans 7",
+      "target": "Exodus 24",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Exodus 34",
+      "target": "Exodus 342",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Exodus 342",
+      "target": "Joel 2",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Joel 2",
+      "target": "Isaiah 11",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Isaiah 11",
+      "target": "John 5:7",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "John 5:7",
+      "target": "Ecclesiastes 9",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Ecclesiastes 9",
+      "target": "Deuteronomy 176",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Deuteronomy 176",
+      "target": "Leviticus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Leviticus 20",
+      "target": "Isaiah 66",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Psalm 27",
+      "target": "Jeremiah 31",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Jeremiah 31",
+      "target": "Isaiah 34",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Isaiah 34",
+      "target": "Daniel 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Daniel 2",
+      "target": "Revelation 12",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Genesis 37",
+      "target": "Romans 16",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Romans 16",
+      "target": "Revelation 20",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Revelation 20",
+      "target": "Ezekiel 47",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Ezekiel 47",
+      "target": "Ezekiel 18",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Ezekiel 18",
+      "target": "Acts 2",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Acts 2",
+      "target": "Zephaniah 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Zephaniah 2",
+      "target": "Mark 18",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Mark 18",
+      "target": "1 Corinthians 3",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "1 Corinthians 3",
+      "target": "Matthew 244",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Matthew 244",
+      "target": "Exodus 34",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Exodus 34",
+      "target": "Exodus 20",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Exodus 20",
+      "target": "Hebrews 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Hebrews 4",
+      "target": "Isaiah 61",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "1 Corinthians 15",
+      "target": "Ephesians 47",
+      "relationshipType": "repeated_theme",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Ephesians 47",
+      "target": "Zechariah 9",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Zechariah 9",
+      "target": "Ephesians 4:10",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Ephesians 4:10",
+      "target": "Matthew 25",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Matthew 25",
+      "target": "Isaiah 58",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Isaiah 58",
+      "target": "Ephesians 4",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Ephesians 4",
+      "target": "Hebrews 10",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Hebrews 10",
+      "target": "Luke 24",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Luke 24",
+      "target": "Romans 5",
+      "relationshipType": "continuity",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Romans 5",
+      "target": "1 Corinthians 15:21",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "1 Corinthians 15:21",
+      "target": "Romans 301",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Romans 301",
+      "target": "1 Timothy 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "1 Timothy 2",
+      "target": "Acts 2",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    },
+    {
+      "source": "Acts 2",
+      "target": "Psalms 16",
+      "relationshipType": "supporting",
+      "pathwayType": "observed",
+      "quality": "weak",
+      "evidenceCount": 1,
+      "independentSourceCount": 1,
+      "evidenceTypeCount": 1
+    }
+  ],
+  "candidatePathways": [
+    {
+      "source": "israel",
+      "target": "jacob",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.2,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    },
+    {
+      "source": "jacob",
+      "target": "jacob_israel_twelve_tribes",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.4,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    },
+    {
+      "source": "israel",
+      "target": "jacob_israel_twelve_tribes",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.4,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    },
+    {
+      "source": "pentecost",
+      "target": "peter",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.25,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    },
+    {
+      "source": "kingdom",
+      "target": "kingdom_of_god",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.5,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    },
+    {
+      "source": "israel",
+      "target": "kingdom_of_god",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.5,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    },
+    {
+      "source": "pentecost",
+      "target": "feasts",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.75,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    },
+    {
+      "source": "sabbath",
+      "target": "feasts",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.75,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    },
+    {
+      "source": "messiah",
+      "target": "messiah_logos",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.667,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    },
+    {
+      "source": "gospel",
+      "target": "messiah_logos",
+      "relationshipType": "continuity",
+      "pathwayType": "candidate",
+      "quality": "candidate",
+      "confidence": 0.667,
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "evidenceCount": 1,
+      "independentSourceCount": 0,
+      "evidenceTypeCount": 1,
+      "autoDoctrine": false
+    }
+  ],
+  "safety": {
+    "candidatePathwaysNeverAutoDoctrine": true,
+    "validationOnly": true
+  }
+}

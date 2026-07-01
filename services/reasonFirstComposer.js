@@ -25,6 +25,7 @@ const { validateClaimToScripture } = require('./claimToScriptureValidator');
 const { buildDoctrineStrictComposerInstruction } = require('./doctrineAuthorityContract');
 const { buildFinalityComposerInstruction } = require('./doctrineFinalityMode');
 const { buildCorrectionPromptAppendix } = require('./doctrineCorrectionMemory');
+const { getUserAnswerPreferences } = require('./userCorrectionMemory');
 
 const SPECIFICITY_HINT =
   'Prefer specific details from the thread over general summaries. Use the user\'s wording where natural — not as a fixed opening template.';
@@ -182,6 +183,12 @@ function buildComposerSystemPrompt({
   if (correctionTopic && evidencePack.userId) {
     const correctionBlock = buildCorrectionPromptAppendix(evidencePack.userId, correctionTopic);
     if (correctionBlock) composerBlock = `${composerBlock}\n\n${correctionBlock}`;
+  }
+  if (evidencePack.userId) {
+    const prefs = getUserAnswerPreferences(evidencePack.userId);
+    if (prefs.yesNoDirect || prefs.forbidYesOpener) {
+      composerBlock = `${composerBlock}\n\nUSER ANSWER PREFERENCES:\n- For permission questions, answer direct Yes or No first according to Scripture.\n- If Scripture forbids something, start with No.\n- If Scripture allows something, start with Yes.\n- Do not start with Yes when meaning No.`;
+    }
   }
   const evidenceJson = JSON.stringify(evidenceSlice);
   return `${base}\n\n${goldenSection}${composerBlock}\n\nEvidence pack (binding facts — doctrine must trace here):\n${evidenceJson}`;

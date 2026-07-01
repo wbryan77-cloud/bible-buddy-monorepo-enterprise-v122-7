@@ -1,0 +1,29 @@
+{
+  "ranAt": "2026-07-01T15:05:27.741Z",
+  "mode": "offline_retrieval_validator_stress",
+  "turns": 12,
+  "memory": {
+    "startRssMB": 53,
+    "endRssMB": 66,
+    "peakRssMB": 66,
+    "avgRssMB": 64,
+    "deltaMB": 13
+  },
+  "evidencePack": {
+    "peakBytes": 16276,
+    "peakKB": 16
+  },
+  "productionConfig": {
+    "BUDDY_DEBUG": "unset (render=0)",
+    "BUDDY_LIVE_TRACE": "unset (render=0)",
+    "BAE_TRACE": "unset (default off)",
+    "BUDDY_REQUEST_MEMORY_LOG": "unset (off)"
+  },
+  "guards": {
+    "maxRegenEnforced": true,
+    "regenSimulated": 0,
+    "restartLoops": 0,
+    "openaiCalls": 0
+  },
+  "stable": true
+}

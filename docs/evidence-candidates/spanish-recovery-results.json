@@ -1,0 +1,51 @@
+{
+  "ranAt": "2026-06-10T00:31:00.611Z",
+  "results": [
+    {
+      "sourceId": "b6QGWM16vnM",
+      "spanishTitle": "IOG - \"PENTECOSTÉS\" 2026",
+      "englishTitle": "IOG - \"Pentecost\" 2026",
+      "scriptures": [
+        "Daniel 5",
+        "Daniel 5:1",
+        "Daniel 7:51"
+      ],
+      "doctrinePackCandidate": "feasts",
+      "confidence": 0.88,
+      "humanReviewRequired": false,
+      "captionFile": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/youtube-transcripts/The Israel of God 📖/20260607-IOG - ＂PENTECOSTÉS＂ 2026-b6QGWM16vnM.es-orig.vtt"
+    },
+    {
+      "sourceId": "S_eXQ4pODbc",
+      "spanishTitle": "IOG - \"JESÚS: El Dios desconocido\" 2026",
+      "englishTitle": "IOG - \"Jesus: The Unknown God\" 2026",
+      "scriptures": [],
+      "doctrinePackCandidate": "messiah_logos",
+      "confidence": 0.88,
+      "humanReviewRequired": false,
+      "captionFile": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/youtube-transcripts/The Israel of God 📖/20260607-IOG - ＂JESÚS： El Dios desconocido＂ 2026-S_eXQ4pODbc.es-orig.vtt"
+    },
+    {
+      "sourceId": "fF9zdhTjDyY",
+      "spanishTitle": "IOG — «Jesús en su templo; sus santos y sus labores» 2026",
+      "englishTitle": "IOG — \"Jesus en su templo; His Saints and Their Labors\" 2026",
+      "scriptures": [
+        "Daniel 7"
+      ],
+      "doctrinePackCandidate": "iog_jess_templo_sus",
+      "confidence": 0.042,
+      "humanReviewRequired": true,
+      "captionFile": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/youtube-transcripts/The Israel of God 📖/20260525-IOG — «Jesús en su templo; sus santos y sus labores» 2026-fF9zdhTjDyY.es-orig.vtt"
+    },
+    {
+      "sourceId": "WOvJn2Eu49I",
+      "spanishTitle": "IOG — «¿Quién mató realmente a Jesús? ¡Adán!» 2026",
+      "englishTitle": "IOG — \"Quién mató realmente a Jesus? Adán!\" 2026",
+      "scriptures": [],
+      "doctrinePackCandidate": "iog_quin_mat_realmente",
+      "confidence": 0.025,
+      "humanReviewRequired": true,
+      "captionFile": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/youtube-transcripts/The Israel of God 📖/20260525-IOG — «¿Quién mató realmente a Jesús？ ¡Adán!» 2026-WOvJn2Eu49I.es-orig.vtt"
+    }
+  ]
+}

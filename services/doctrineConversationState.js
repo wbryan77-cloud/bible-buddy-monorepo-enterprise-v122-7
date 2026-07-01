@@ -66,6 +66,24 @@ function defaultUserState() {
     releaseRequested: false,
     nonDoctrineTurnCount: 0,
     doctrineSuspended: false,
+    activeBibleConcept: null,
+    lastBibleConcept: null,
+    usedConceptWitnesses: [],
+    lastPendingQuestion: null,
+    lastAnsweredConcept: null,
+    topicHistory: [],
+    turnMemory: {
+      lastUserQuestion: null,
+      lastAnsweredConcept: null,
+      lastRefsShown: [],
+      lastAnswerSummary: null,
+    },
+    sessionMemory: {
+      currentStruggle: null,
+      activeConcept: null,
+      pendingQuestion: null,
+      stylePreferences: {},
+    },
   };
 }
 
@@ -118,10 +136,14 @@ function setActiveDoctrineConversation({
       ? serializeContract(BASE_CONTRACTS[topic])
       : null;
   const topicChanged = prev.activeDoctrineTopic && prev.activeDoctrineTopic !== topic;
+  const topicHistory = topicChanged
+    ? [...(prev.topicHistory || []), prev.activeDoctrineTopic].filter(Boolean).slice(-8)
+    : prev.topicHistory || [];
   const now = new Date().toISOString();
   return updateDoctrineConversationState(userId, {
     activeDoctrineTopic: topic,
     previousDoctrineTopic: topicChanged ? prev.activeDoctrineTopic : prev.previousDoctrineTopic,
+    topicHistory,
     activeStrictContract: serialized,
     activeContract: serialized,
     lastUserDoctrineIntent: userMessage,
@@ -139,6 +161,9 @@ function setActiveDoctrineConversation({
     releaseRequested: false,
     nonDoctrineTurnCount: 0,
     doctrineSuspended: false,
+    activeBibleConcept: null,
+    usedConceptWitnesses: [],
+    lastAnsweredConcept: topic === 'kingdom' ? 'kingdom_on_earth' : topic === 'dietary_law' ? 'dietary_pork_unclean' : topic === 'sabbath' ? 'sabbath_seventh_day' : null,
   });
 }
 
@@ -150,6 +175,9 @@ function recordUserTurn(userId, message = '', lane = 'companion') {
     lastLane: lane,
     lastUpdatedAt: new Date().toISOString(),
   };
+  if (m && !/^(stop|show me another|give me more)$/i.test(m)) {
+    patch.lastPendingQuestion = m;
+  }
   if (lane === 'companion') {
     patch.nonDoctrineTurnCount = (prev.nonDoctrineTurnCount || 0) + 1;
   } else if (lane === 'strict_doctrine') {
@@ -162,14 +190,26 @@ function recordUserTurn(userId, message = '', lane = 'companion') {
 function releaseDoctrineTopic(userId, reason = 'release', options = {}) {
   const prev = getDoctrineConversationState(userId);
   const blockContinuation = options.blockContinuation !== false;
+  const releasedTopic = prev.activeDoctrineTopic || null;
+  const topicHistory =
+    releasedTopic && !(prev.topicHistory || []).includes(releasedTopic)
+      ? [...(prev.topicHistory || []), releasedTopic].filter(Boolean).slice(-8)
+      : prev.topicHistory || [];
   return updateDoctrineConversationState(userId, {
     activeDoctrineTopic: null,
+    previousDoctrineTopic: prev.previousDoctrineTopic,
+    topicHistory,
     activeStrictContract: null,
     activeContract: null,
     doctrineSuspended: true,
     releaseRequested: blockContinuation,
     lastLane: 'companion',
     nonDoctrineTurnCount: prev.nonDoctrineTurnCount || 0,
+    activeBibleConcept: blockContinuation ? null : prev.activeBibleConcept,
+    lastAnsweredConcept: blockContinuation ? null : prev.lastAnsweredConcept,
+    lastAnsweredTopic: blockContinuation ? null : prev.lastAnsweredTopic,
+    lastStrictDoctrineTopic: blockContinuation ? null : prev.lastStrictDoctrineTopic,
+    usedConceptWitnesses: blockContinuation ? [] : prev.usedConceptWitnesses,
     releaseReason: String(reason).slice(0, 80),
   });
 }
@@ -215,6 +255,50 @@ function clearDoctrineConversationState(userId) {
   saveAll(all);
 }
 
+function clearReleaseRequested(userId) {
+  return updateDoctrineConversationState(userId, {
+    releaseRequested: false,
+    doctrineSuspended: false,
+  });
+}
+
+function updateTurnMemory(userId, patch = {}) {
+  const state = getDoctrineConversationState(userId);
+  const turn = { ...(state.turnMemory || {}), ...patch };
+  const session = {
+    ...(state.sessionMemory || {}),
+    activeConcept: patch.lastAnsweredConcept || state.sessionMemory?.activeConcept,
+    pendingQuestion: patch.lastUserQuestion || state.sessionMemory?.pendingQuestion,
+  };
+  return updateDoctrineConversationState(userId, {
+    turnMemory: turn,
+    sessionMemory: session,
+    lastAnsweredConcept: patch.lastAnsweredConcept || state.lastAnsweredConcept,
+  });
+}
+
+function finalizeStopRelease(userId) {
+  const prev = getDoctrineConversationState(userId);
+  return updateDoctrineConversationState(userId, {
+    activeDoctrineTopic: null,
+    activeStrictContract: null,
+    activeContract: null,
+    activeBibleConcept: null,
+    lastAnsweredConcept: null,
+    lastAnsweredTopic: null,
+    lastStrictDoctrineTopic: null,
+    usedConceptWitnesses: [],
+    releaseRequested: false,
+    doctrineSuspended: false,
+    sessionMemory: {
+      ...(prev.sessionMemory || {}),
+      activeConcept: null,
+      pendingQuestion: null,
+    },
+    releaseReason: 'stop_acknowledged',
+  });
+}
+
 function topicDisplayLabel(topic) {
   return TOPIC_LABELS[topic] || topic;
 }
@@ -234,4 +318,7 @@ module.exports = {
   addCorrectionPreference,
   recordUserTurn,
   releaseDoctrineTopic,
+  clearReleaseRequested,
+  updateTurnMemory,
+  finalizeStopRelease,
 };

@@ -1,0 +1,205 @@
+{
+  "ranAt": "2026-06-05T00:12:50.955Z",
+  "phase": "1+1A",
+  "totalChecks": 39,
+  "passed": 39,
+  "failed": 0,
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "artifact_approved-doctrine-registry.json",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "artifact_concordance-index-plan.json",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "artifact_scripture-continuity-sample.json",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "artifact_original-language-chain-sample.json",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "approved_doctrine_registry_loads",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "freeze_blocks_auto_conclusion_change",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "openai_authorship_protected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "approved_topic_count",
+      "pass": true,
+      "detail": "count=10"
+    },
+    {
+      "name": "freeze_blocks_auto_conclusion_mutation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "freeze_blocks_forbidden_gap_prompt",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "forbidden_gap_prompt_detect",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence_card_count",
+      "pass": true,
+      "detail": "count=8"
+    },
+    {
+      "name": "all_cards_approved_frozen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "all_cards_have_bible_first_conclusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dietary_card_retrieval",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sabbath_card_retrieval",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "concordance_plan_loads",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "concordance_seed_entries",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "concordance_may_not_author_prose",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "concordance_enrichment",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "concordance_not_auto_applied",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "discovery_reinforcement",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reinforcement_has_confidence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reinforcement_review_not_auto",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reinforcement_schema",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reinforcement_finding_shape",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pack_has_evidence_cards",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pack_has_discovery",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pack_cards_authorship_evidence_only",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pack_doctrine_snippets_retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "smoke_openai_Can I eat pork? Yes ",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "smoke_evidence_cards_Can I eat po",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "smoke_author_openai_Can I eat po",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "smoke_openai_How do we keep the S",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "smoke_evidence_cards_How do we ke",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "smoke_author_openai_How do we ke",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "smoke_openai_How many heavens are",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "smoke_evidence_cards_How many hea",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "smoke_author_openai_How many hea",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

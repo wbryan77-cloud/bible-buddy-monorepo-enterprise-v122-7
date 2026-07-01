@@ -1,0 +1,147 @@
+{
+  "at": "2026-06-14T06:04:30.946Z",
+  "localHead": "f2b8d19",
+  "originMain": "ce08268",
+  "total": 13,
+  "pass": 13,
+  "fail": 0,
+  "notOnOriginMain": [
+    "services/directAnswerFormatter.js",
+    "services/bibleConceptConcordance.js",
+    "services/bibleWideReasoningEngine.js",
+    "services/userCorrectionMemory.js",
+    "services/buddyLivePathVerifier.js"
+  ],
+  "results": [
+    {
+      "module": "services/directAnswerFormatter.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": false,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/bibleConceptConcordance.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": false,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/bibleWideReasoningEngine.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": false,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/userCorrectionMemory.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": false,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/bibleCompanionOrchestrator.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": true,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/bibleReasoningEngine.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": true,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/bibleConceptGraph.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": true,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/reflectionMemoryEngine.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": true,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/companionStateEngine.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": true,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/pendingQuestionResolver.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": true,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/openAiFirstCompanionRuntime.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": true,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/responseGuarantee.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": true,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    },
+    {
+      "module": "services/buddyLivePathVerifier.js",
+      "pass": true,
+      "gitTracked": true,
+      "onOriginMain": false,
+      "resolveOk": true,
+      "requireOk": true,
+      "resolveError": null,
+      "requireError": null
+    }
+  ]
+}

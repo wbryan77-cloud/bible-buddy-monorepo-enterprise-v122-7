@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T22:47:24.925Z",
+  "timestamp": "2026-06-02T00:42:19.633Z",
   "sprint": "2.14D",
   "results": [
     {
@@ -18,13 +18,13 @@
       "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — later papal and Roman church authority helped preserve and normalize Sunday o",
       "intent": "sabbath_history",
       "activeTopic": "sabbath",
-      "followUp": false
+      "followUp": true
     },
     {
       "name": "H3 — What evidence exists?",
       "passed": true,
       "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandmen",
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play a major role in changing common Christia",
       "intent": "sabbath_history",
       "activeTopic": "sabbath",
       "followUp": true

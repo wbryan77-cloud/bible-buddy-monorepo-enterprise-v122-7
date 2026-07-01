@@ -7,9 +7,12 @@ const {
   detectConceptFromGraph,
   resolveConceptAlias,
   getGraphWitnesses,
+  getGraphNode,
   hasExplicitConcept,
   CONTINUATION_PHRASE_RE,
 } = require('./bibleConceptGraph');
+const { detectSemanticConcept, shouldClearStaleTopic } = require('./bibleSemanticConceptNormalizer');
+const { resolveFollowUpContext } = require('./followUpContextResolver');
 const { planCompanionDoctrineRouting, buildRoutingContext } = require('./companionDoctrineRouter');
 const { getDoctrineConversationState } = require('./doctrineConversationState');
 const { getUserAnswerPreferences } = require('./userCorrectionMemory');
@@ -30,7 +33,16 @@ function buildReasoningPlan({
   const state = userId ? getDoctrineConversationState(userId) : {};
   const prefs = userPreferences || getUserAnswerPreferences(userId);
   const routePlan = planCompanionDoctrineRouting({ userId, message, recentSessions, runtimeContext });
-  const concept = resolveConceptAlias(m) || (context.activeBibleConcept ? detectConceptFromGraph(context.activeBibleConcept) : null);
+  const followUp = resolveFollowUpContext(m, {
+    lastAnsweredConcept: state.lastAnsweredConcept || context.lastAnsweredConcept,
+    activeBibleConcept: context.activeBibleConcept,
+    lastBibleConcept: context.lastBibleConcept,
+  });
+  let concept =
+    (followUp?.conceptId && !followUp.isActorQuestion ? getGraphNode(followUp.conceptId) : null) ||
+    detectSemanticConcept(m, context) ||
+    resolveConceptAlias(m) ||
+    (context.activeBibleConcept ? detectConceptFromGraph(context.activeBibleConcept) : null);
   const strictTopic =
     routePlan.strictTopic ||
     detectStrictTopicFromMessage(m) ||
@@ -56,7 +68,7 @@ function buildReasoningPlan({
     !concept &&
     !strictTopic &&
     !routePlan.immediateCompanionReply &&
-    UNKNOWN_BIBLE_RE.test(m) &&
+    (UNKNOWN_BIBLE_RE.test(m) || /\b(zephyrian|scriture)\b/i.test(m)) &&
     m.length > 12;
 
   if (unknownPhrase && answerLane === 'companion') {

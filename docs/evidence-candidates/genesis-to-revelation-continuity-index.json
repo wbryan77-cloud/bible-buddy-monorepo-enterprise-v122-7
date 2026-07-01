@@ -1,0 +1,3498 @@
+{
+  "ranAt": "2026-06-10T01:11:11.308Z",
+  "topics": [
+    {
+      "topic": "wednesday_night_qa",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 1298
+    },
+    {
+      "topic": "isaiah",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 590
+    },
+    {
+      "topic": "samuel",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 184
+    },
+    {
+      "topic": "israel",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 140
+    },
+    {
+      "topic": "jacob",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Epistles"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 95
+    },
+    {
+      "topic": "jacob_israel_twelve_tribes",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Epistles"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 92
+    },
+    {
+      "topic": "kingdom",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 85
+    },
+    {
+      "topic": "john",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 70
+    },
+    {
+      "topic": "sabbath",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 66
+    },
+    {
+      "topic": "joshua",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 65
+    },
+    {
+      "topic": "iog wednesday night qa 12102025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 59
+    },
+    {
+      "topic": "iog wednesday night qa 4222026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 59
+    },
+    {
+      "topic": "iog wednesday night qa 112625",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 56
+    },
+    {
+      "topic": "kingdom_of_god",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 56
+    },
+    {
+      "topic": "iog wednesday night qa 4232025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 54
+    },
+    {
+      "topic": "gospel",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 54
+    },
+    {
+      "topic": "iog wednesday night qa 32625",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 52
+    },
+    {
+      "topic": "iog wednesday night qa 02042026",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 51
+    },
+    {
+      "topic": "iog wednesday night qa 21826",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 51
+    },
+    {
+      "topic": "iog wednesday night qa 3426",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 51
+    },
+    {
+      "topic": "iog wednesday night qa 12172025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 50
+    },
+    {
+      "topic": "iog wednesday night qa 7092025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 49
+    },
+    {
+      "topic": "iog wednesday night qa 12312025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 49
+    },
+    {
+      "topic": "iog wednesday night qa 31826",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 49
+    },
+    {
+      "topic": "feasts",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 49
+    },
+    {
+      "topic": "iog wednesday night qa 4925",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 48
+    },
+    {
+      "topic": "iog wednesday night qa 8062025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 48
+    },
+    {
+      "topic": "iog washington dc the soul is the body not inside the body",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 48
+    },
+    {
+      "topic": "iog charlotte the purpose of the ministry service unto salvation",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 48
+    },
+    {
+      "topic": "iog wednesday night qa 6032026",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 47
+    },
+    {
+      "topic": "iog birmingham this little light of mine im gonna let it shine",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 46
+    },
+    {
+      "topic": "riches gains the doctrine of today",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 46
+    },
+    {
+      "topic": "iog wednesday night qa 5072025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 45
+    },
+    {
+      "topic": "iog wednesday night qa 31126",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 45
+    },
+    {
+      "topic": "iog wednesday night qa 6425",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 44
+    },
+    {
+      "topic": "iog wednesday night qa 82025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 44
+    },
+    {
+      "topic": "iog wednesday night qa 102925",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 44
+    },
+    {
+      "topic": "iog wednesday night qa 1072026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 44
+    },
+    {
+      "topic": "iog wednesday night qa 562026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 44
+    },
+    {
+      "topic": "spirit_of_god",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 44
+    },
+    {
+      "topic": "the spirit of god",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 44
+    },
+    {
+      "topic": "iog wednesday night qa 8132025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 43
+    },
+    {
+      "topic": "iog wednesday night qa 91725",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 43
+    },
+    {
+      "topic": "i0g wednesday night qa 111925",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 43
+    },
+    {
+      "topic": "iog wednesday night qa 5272026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 43
+    },
+    {
+      "topic": "iog bay area prepare to meet your god",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 43
+    },
+    {
+      "topic": "iog wednesday night qa 9242025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 42
+    },
+    {
+      "topic": "iog wednesday night qa 122425",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 42
+    },
+    {
+      "topic": "iog wednesday night qa 5202026",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 42
+    },
+    {
+      "topic": "iog wednesday night qa 5282025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 41
+    },
+    {
+      "topic": "iog wednesday night qa 7232025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 41
+    },
+    {
+      "topic": "iog wednesday night qa 91025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 41
+    },
+    {
+      "topic": "iog wednesday night qa 73025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 40
+    },
+    {
+      "topic": "iog wednesday night qa 10152025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 40
+    },
+    {
+      "topic": "iog wednesday night qa 12325",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 40
+    },
+    {
+      "topic": "iog wednesday night qa 51326",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 40
+    },
+    {
+      "topic": "iog wednesday night qa 52125",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 39
+    },
+    {
+      "topic": "iog wednesday night qa 3252026",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 39
+    },
+    {
+      "topic": "iog wednesday night qa 6252025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "iog wednesday night qa 82725",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "iog wednesday night qa 11426",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "iog wednesday night qa 40826",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "iog st louis the powers that be",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "messiah_logos",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "iog jesus the unknown god 2026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "iog orlando the lords day is the last day",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "jeremiah",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "messiah",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 38
+    },
+    {
+      "topic": "iog wednesday night qa 11624",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 37
+    },
+    {
+      "topic": "iog wednesday night qa 3192025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 37
+    },
+    {
+      "topic": "iog wednesday night qa 6182025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 37
+    },
+    {
+      "topic": "iog wednesday night qa 1212026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 37
+    },
+    {
+      "topic": "iog buffalo the destruction restoration of israel",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Epistles"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 37
+    },
+    {
+      "topic": "the destruction and restoration of israel",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Epistles"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 37
+    },
+    {
+      "topic": "iog wednesday night qa 122524",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 36
+    },
+    {
+      "topic": "iog wednesday night qa 41625",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 36
+    },
+    {
+      "topic": "iog wednesday night qa 9032025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 36
+    },
+    {
+      "topic": "iog wednesday night qa 11122025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 36
+    },
+    {
+      "topic": "iog wednesday night qa 12826",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 36
+    },
+    {
+      "topic": "iog houston understanding the fear of the lord",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Gospels"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 36
+    },
+    {
+      "topic": "iog wednesday night qa 10082025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 35
+    },
+    {
+      "topic": "iog wednesday night qa 4292026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 35
+    },
+    {
+      "topic": "iog wednesday night qa 06112025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 34
+    },
+    {
+      "topic": "iog wednesday night qa 7022025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 34
+    },
+    {
+      "topic": "iog wednesday night qa 4152026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 34
+    },
+    {
+      "topic": "iog detroit our god dwells in the thick darkness",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 34
+    },
+    {
+      "topic": "thy kingdom come among israel",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Epistles"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 34
+    },
+    {
+      "topic": "iog wednesday night qa 9252024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 33
+    },
+    {
+      "topic": "iog wednesday night qa 11202024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 33
+    },
+    {
+      "topic": "iog jackson breaking bonds spiritual strongholds",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 33
+    },
+    {
+      "topic": "iog wednesday night qa 5142025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 32
+    },
+    {
+      "topic": "iog wednesday night qa 100125",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 32
+    },
+    {
+      "topic": "iog wednesday night qa 102225",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 31
+    },
+    {
+      "topic": "iog wednesday night qa 2112026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 31
+    },
+    {
+      "topic": "iog pentecost 2026",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 31
+    },
+    {
+      "topic": "iog baton rouge adversity builds character if you let it",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 31
+    },
+    {
+      "topic": "millennial_kingdom_kingdom_on_earth",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 31
+    },
+    {
+      "topic": "iog phoenix for thine is the kingdom and the power and the glory forever",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 31
+    },
+    {
+      "topic": "iog bay area hath god cast away his people israel",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 31
+    },
+    {
+      "topic": "pentecost",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 31
+    },
+    {
+      "topic": "iog wednesday night qa 872024",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 30
+    },
+    {
+      "topic": "iog wednesday night qa 12182024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 30
+    },
+    {
+      "topic": "iog wednesday night qa 71625",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 30
+    },
+    {
+      "topic": "iog wednesday night qa 22526",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 30
+    },
+    {
+      "topic": "iog wednesday night qa 8212024",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Revelation"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 29
+    },
+    {
+      "topic": "iog wednesday night qa 22625",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 28
+    },
+    {
+      "topic": "iog wednesday night qa 43025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 28
+    },
+    {
+      "topic": "sabbath eve 4 3 26 o jerusalem jerusalem",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Epistles"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 28
+    },
+    {
+      "topic": "ezekiel",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 28
+    },
+    {
+      "topic": "iog wednesday night qa 9182024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 27
+    },
+    {
+      "topic": "iog wednesday night qa 10092024",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 27
+    },
+    {
+      "topic": "wednesday night qa 2192025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 27
+    },
+    {
+      "topic": "iog the gospel by the prophet zechariah 2026",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 27
+    },
+    {
+      "topic": "the gospel to all nations",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 27
+    },
+    {
+      "topic": "iog wednesday night qa 10162024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 26
+    },
+    {
+      "topic": "iog wednesday night qa 1125",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 26
+    },
+    {
+      "topic": "iog wednesday night qa 12925",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 26
+    },
+    {
+      "topic": "iog wednesday night qa 352025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 26
+    },
+    {
+      "topic": "the awakening of hebrews",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 26
+    },
+    {
+      "topic": "iog wednesday night qa 10232024",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 25
+    },
+    {
+      "topic": "iog wednesday night qa 103024",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 25
+    },
+    {
+      "topic": "iog wednesday night qa 21225",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 25
+    },
+    {
+      "topic": "ham",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 25
+    },
+    {
+      "topic": "not easter ham",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 25
+    },
+    {
+      "topic": "2 20 26 how frail i am",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 25
+    },
+    {
+      "topic": "iog wednesday night qa 1082025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Writings",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 24
+    },
+    {
+      "topic": "back into egypt",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Revelation"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 24
+    },
+    {
+      "topic": "greedy dog preachers",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 24
+    },
+    {
+      "topic": "iog wednesday night qa 732024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 23
+    },
+    {
+      "topic": "iog wednesday night qa 7172024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 23
+    },
+    {
+      "topic": "iog wednesday night qa 9112024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts",
+        "Epistles"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 23
+    },
+    {
+      "topic": "iog wednesday night qa 1222025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 23
+    },
+    {
+      "topic": "iog wednesday night qa 3122025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 23
+    },
+    {
+      "topic": "wednesday night qa 7242024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "wednesday night qa 7312024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "iog wednesday night qa 8282024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "iog wednesday night qa 1022024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "iog wednesday night qa 11132024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "iog wednesday night qa 4022025",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "iog dallas thy kingdom come preparing for the rule reign of the king",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "lake_of_fire",
+      "sectionsPresent": [
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "2 27 26 fear god or hell fire and born again a mental change only or a bodily change too",
+      "sectionsPresent": [
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "1 31 26 at the last trump",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "whom we will answer to",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 22
+    },
+    {
+      "topic": "iog wednesday night qa 8142024",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 21
+    },
+    {
+      "topic": "daniel",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 21
+    },
+    {
+      "topic": "that man of sin",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 21
+    },
+    {
+      "topic": "3 28 26 gods judgment",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 21
+    },
+    {
+      "topic": "fasting and praying",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Writings",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 21
+    },
+    {
+      "topic": "the savior of israelites",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 21
+    },
+    {
+      "topic": "peter",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 21
+    },
+    {
+      "topic": "the angels marrying women lie",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 21
+    },
+    {
+      "topic": "judgment",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Acts"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 21
+    },
+    {
+      "topic": "iog wednesday night qa 9424",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 20
+    },
+    {
+      "topic": "iog wednesday night qa 252025",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 20
+    },
+    {
+      "topic": "word_of_god",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 20
+    },
+    {
+      "topic": "the word of god",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 20
+    },
+    {
+      "topic": "4 24 26 seek god now time is short",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 20
+    },
+    {
+      "topic": "3 7 26 beware of spirits all are not of god",
+      "sectionsPresent": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 20
+    },
+    {
+      "topic": "2 13 26 neither democrats nor republicans can save black people israel",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 20
+    },
+    {
+      "topic": "one way or another",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 20
+    },
+    {
+      "topic": "iog wednesday night qa 7102024",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 19
+    },
+    {
+      "topic": "iog wednesday night qa 11525",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 19
+    },
+    {
+      "topic": "the times of the gentiles almost up",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 19
+    },
+    {
+      "topic": "gentiles",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 19
+    },
+    {
+      "topic": "4 3 26 the unleavened bread journey begins",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 18
+    },
+    {
+      "topic": "2 6 26 the foolishness of men vs women",
+      "sectionsPresent": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 18
+    },
+    {
+      "topic": "unleavened bread",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 18
+    },
+    {
+      "topic": "iog wednesday night qa 112724",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings",
+        "Acts",
+        "Epistles"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 17
+    },
+    {
+      "topic": "5 1 26 the lords determination",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 17
+    },
+    {
+      "topic": "little_leaven_daily_readings",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 17
+    },
+    {
+      "topic": "4 4 26 a little leaven w daily readings",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 17
+    },
+    {
+      "topic": "satan has deceived the whole world",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 17
+    },
+    {
+      "topic": "2 21 26 the state of gods union hated now flourishing soon",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 17
+    },
+    {
+      "topic": "12 26 25 modern religion is emotionalism not serving god",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Revelation"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 17
+    },
+    {
+      "topic": "book_of_life",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 16
+    },
+    {
+      "topic": "the book of life",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 16
+    },
+    {
+      "topic": "whoredom aka fornication",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 16
+    },
+    {
+      "topic": "may 2 2026 king david a man after gods heart",
+      "sectionsPresent": [
+        "Former Prophets",
+        "Writings",
+        "Gospels",
+        "Acts"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Latter Prophets",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 16
+    },
+    {
+      "topic": "4 18 26 vengeance is the lords",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Acts"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 16
+    },
+    {
+      "topic": "2 28 26 remember the mission teach",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 16
+    },
+    {
+      "topic": "a whisperer will separate best friends",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 16
+    },
+    {
+      "topic": "from baby in manger to killer",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 16
+    },
+    {
+      "topic": "edom",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 16
+    },
+    {
+      "topic": "iog wednesday night qa 12112024",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 15
+    },
+    {
+      "topic": "rome is rising",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Gospels",
+        "Acts"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 14
+    },
+    {
+      "topic": "5 16 26 reap what you sow",
+      "sectionsPresent": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah"
+      ],
+      "continuityStrength": "Very Strong",
+      "scriptureWitnessCount": 14
+    },
+    {
+      "topic": "killed for jesus",
+      "sectionsPresent": [
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 14
+    },
+    {
+      "topic": "3 14 26 jesus spoken of by david the prophet bro willie",
+      "sectionsPresent": [
+        "Former Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Latter Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 14
+    },
+    {
+      "topic": "content_with_what_you",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 14
+    },
+    {
+      "topic": "1 2 26 be content with what you have",
+      "sectionsPresent": [
+        "Torah",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 14
+    },
+    {
+      "topic": "circumcision still good",
+      "sectionsPresent": [
+        "Torah",
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Writings",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 12
+    },
+    {
+      "topic": "abib_fresh_beginning_revelation",
+      "sectionsPresent": [
+        "Torah",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 10
+    },
+    {
+      "topic": "3 20 26 abib a fresh beginning",
+      "sectionsPresent": [
+        "Torah",
+        "Gospels",
+        "Epistles",
+        "Revelation"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Acts"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 10
+    },
+    {
+      "topic": "children are the future",
+      "sectionsPresent": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels"
+      ],
+      "sectionsMissing": [
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Strong",
+      "scriptureWitnessCount": 10
+    },
+    {
+      "topic": "locations",
+      "sectionsPresent": [
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Moderate",
+      "scriptureWitnessCount": 4
+    },
+    {
+      "topic": "website",
+      "sectionsPresent": [
+        "Latter Prophets"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "research_ecclesiastes_1213",
+      "sectionsPresent": [
+        "Writings"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "research",
+      "sectionsPresent": [
+        "Writings"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "baltimore website",
+      "sectionsPresent": [
+        "Latter Prophets"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "lessons_hebrews",
+      "sectionsPresent": [
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "lessons",
+      "sectionsPresent": [
+        "Epistles"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "jacob esau",
+      "sectionsPresent": [
+        "Latter Prophets"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "iog stick to the script deuteronomy 28 the curse of israel",
+      "sectionsPresent": [
+        "Torah"
+      ],
+      "sectionsMissing": [
+        "Former Prophets",
+        "Latter Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "iog_jess_templo_sus",
+      "sectionsPresent": [
+        "Latter Prophets"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "iog jesus en su templo his saints and their labors 2026",
+      "sectionsPresent": [
+        "Latter Prophets"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    },
+    {
+      "topic": "esau",
+      "sectionsPresent": [
+        "Latter Prophets"
+      ],
+      "sectionsMissing": [
+        "Torah",
+        "Former Prophets",
+        "Writings",
+        "Gospels",
+        "Acts",
+        "Epistles",
+        "Revelation"
+      ],
+      "continuityStrength": "Weak",
+      "scriptureWitnessCount": 1
+    }
+  ]
+}
