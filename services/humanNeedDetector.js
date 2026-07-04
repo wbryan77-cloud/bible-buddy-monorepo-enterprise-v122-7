@@ -8,6 +8,29 @@ const APP_IDENTITY_RE =
   /\b(what is (the )?purpose of this app|what is this app|what does (the )?app do|what does this app do|what can this app do|how does this app work|are you trying to convert|why are you here|what do you do|are you (just )?quoting bible|closed.?minded)\b/i;
 
 function detectHumanNeed(message = '', anchor = {}, state = {}) {
+  // sprint1a6_human_need_guard
+  const sprint1a6Message = String(message || '').trim();
+
+  if (/\b(listen first|just want to talk|talk for a minute|hear me out)\b/i.test(sprint1a6Message)) {
+    return 'emotional_support';
+  }
+
+  if (/\b(grief|grieving|heartbreak|rough day|tough day|let go of someone|someone i love|broken heart|discouraged|overwhelmed)\b/i.test(sprint1a6Message)) {
+    return 'emotional_support';
+  }
+
+  if (/\b(alzheimer|alzheimer'?s|dementia|caregiv|mom has|mother has|dad has|father has)\b/i.test(sprint1a6Message)) {
+    return 'health_support';
+  }
+
+  if (/\b(knee|knees|hurt|hurts|pain|aching|ache|flare|flaring|sore|injury|doctor|medicine|blood pressure|cholesterol)\b/i.test(sprint1a6Message)) {
+    return 'health_support';
+  }
+
+  if (/\b(decision|decide|choice|discern|what should i do)\b/i.test(sprint1a6Message) && !/\b(bible|scripture|sabbath|pork|acts 10|commandments?)\b/i.test(sprint1a6Message)) {
+    return 'open_life';
+  }
+
   const m = String(message || '').trim();
   if (APP_IDENTITY_RE.test(m)) return 'app_identity';
   if (/\bwhat do you remember\b/i.test(m)) return 'memory_recall';
