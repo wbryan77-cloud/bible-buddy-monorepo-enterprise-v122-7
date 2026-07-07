@@ -54,7 +54,7 @@ function buildReasoningPlan({
   else if (routePlan.lane === 'bible_wide') answerLane = 'bible_wide';
   else if (routePlan.immediateCompanionReply) answerLane = 'companion_release';
   else if (isPendingQuestionChallenge(m)) answerLane = 'pending_resolver';
-  else if (routePlan.lane !== 'companion' && concept && !strictTopic) answerLane = 'bible_wide';
+  else if (concept && !strictTopic && UNKNOWN_BIBLE_RE.test(m)) answerLane = 'bible_wide';
   else if (strictTopic && routePlan.lane === 'strict_doctrine') answerLane = 'strict_doctrine';
 
   const witnesses = concept ? getGraphWitnesses(concept.id) : { direct: [], supporting: [], all: [] };
@@ -77,7 +77,6 @@ function buildReasoningPlan({
 
   return {
     intent: routePlan.intent,
-    humanNeed: routePlan.humanNeed || null,
     concept: concept?.id || routePlan.bibleConceptId || context.activeBibleConcept || null,
     conceptNode: concept,
     answerLane,

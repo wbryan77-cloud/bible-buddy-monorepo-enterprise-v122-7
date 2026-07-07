@@ -208,6 +208,7 @@ const HUMAN_NEED_COMPANION_INTENTS = new Set([
   'one_anchor_verse',
   'next_steps',
   'grief_comfort',
+  'health_support',
 ]);
 
 function isProtectedHumanNeed(humanNeed) {
@@ -520,6 +521,21 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
   const m = normalizeMessage(message).toLowerCase();
   if (!m) return null;
 
+  const humanNeed = detectHumanNeed(message, {}, context);
+  const protectedHumanNeed = isProtectedHumanNeed(humanNeed);
+  const release = buildCompanionReleaseReply(message, context);
+
+  if (protectedHumanNeed && release) {
+    return { reply: release, scripture: [] };
+  }
+
+  if (protectedHumanNeed) {
+    return {
+      reply: "I'm here with you. Tell me what happened, and we can take this one step at a time.",
+      scripture: [],
+    };
+  }
+
   const { buildBibleWideAnswer } = require('./bibleWideReasoningEngine');
   const { getUserAnswerPreferences } = require('./userCorrectionMemory');
   const conceptAnswer = buildBibleWideAnswer({
@@ -534,7 +550,6 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
     };
   }
 
-  const release = buildCompanionReleaseReply(message, context);
   if (release) {
     return { reply: release, scripture: [] };
   }
