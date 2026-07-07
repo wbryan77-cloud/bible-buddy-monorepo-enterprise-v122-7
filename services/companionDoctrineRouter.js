@@ -406,7 +406,7 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
       lane: 'companion',
       strictTopic: null,
       bibleConceptId: null,
-      clearDoctrine: shouldReleaseDoctrineTopic(message, context),
+      clearDoctrine,
       releaseReason: humanNeed,
       useActiveDoctrineTopic: false,
       useActiveBibleConcept: false,
@@ -525,24 +525,68 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
   const protectedHumanNeed = isProtectedHumanNeed(humanNeed);
   const release = buildCompanionReleaseReply(message, context);
 
-  if (protectedHumanNeed && release) {
-    return { reply: release, scripture: [] };
-  }
+  //
+  // Protected human conversations ALWAYS stay companion-first.
+  //
 
   if (protectedHumanNeed) {
+
+    if (release) {
+      return {
+        reply: release,
+        scripture: [],
+      };
+    }
+
+    if (humanNeed === 'health_support') {
+      return {
+        reply:
+          "I'm sorry you're dealing with that. I can't diagnose medical conditions, but I'm here with you. Tell me what has been happening and what concerns you most right now.",
+        scripture: [],
+      };
+    }
+
+    if (
+      humanNeed === 'emotional_support' ||
+      /(grief|grieving|loss|lost someone|heartbreak|broken heart|let go of someone|rough day|hard day|tough day)/i.test(m)
+    ) {
+      return {
+        reply:
+          "I'm sorry you're carrying this. Thank you for trusting me enough to share it. Tell me what happened and what hurts the most right now.",
+        scripture: [],
+      };
+    }
+
+    if (
+      /(listen first|just want to talk|talk for a minute)/i.test(m)
+    ) {
+      return {
+        reply:
+          "I'm here. I won't rush to fix anything. Take your time and tell me what's on your heart.",
+        scripture: [],
+      };
+    }
+
     return {
-      reply: "I'm here with you. Tell me what happened, and we can take this one step at a time.",
+      reply:
+        "I'm here with you. Tell me what happened, and we'll take this one step at a time.",
       scripture: [],
     };
   }
 
+  //
+  // Non-protected conversations may use Bible-wide reasoning.
+  //
+
   const { buildBibleWideAnswer } = require('./bibleWideReasoningEngine');
   const { getUserAnswerPreferences } = require('./userCorrectionMemory');
+
   const conceptAnswer = buildBibleWideAnswer({
     message,
     userId: context.userId,
     userPreferences: getUserAnswerPreferences(context.userId),
   });
+
   if (conceptAnswer) {
     return {
       reply: conceptAnswer.reply,
@@ -551,7 +595,10 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
   }
 
   if (release) {
-    return { reply: release, scripture: [] };
+    return {
+      reply: release,
+      scripture: [],
+    };
   }
 
   return null;

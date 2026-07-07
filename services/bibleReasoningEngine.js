@@ -57,6 +57,19 @@ function buildReasoningPlan({
   else if (routePlan.lane !== 'companion' && concept && !strictTopic) answerLane = 'bible_wide';
   else if (strictTopic && routePlan.lane === 'strict_doctrine') answerLane = 'strict_doctrine';
 
+  const protectedHumanConversation =
+    routePlan.lane === 'companion' &&
+    routePlan.humanNeed &&
+    routePlan.humanNeed !== 'doctrine_answer';
+
+  if (protectedHumanConversation) {
+    concept = null;
+  }
+
+  if (/\blogos\b/i.test(m) && /\bjohn\s*1\b/i.test(m) && concept?.id === 'ten_commandments') {
+    concept = null;
+  }
+
   const witnesses = concept ? getGraphWitnesses(concept.id) : { direct: [], supporting: [], all: [] };
   const directAnswer = concept?.directAnswer || null;
   const isContinuation =
@@ -78,7 +91,7 @@ function buildReasoningPlan({
   return {
     intent: routePlan.intent,
     humanNeed: routePlan.humanNeed || null,
-    concept: concept?.id || routePlan.bibleConceptId || context.activeBibleConcept || null,
+    concept: protectedHumanConversation ? null : (concept?.id || routePlan.bibleConceptId || context.activeBibleConcept || null),
     conceptNode: concept,
     answerLane,
     strictTopic,
