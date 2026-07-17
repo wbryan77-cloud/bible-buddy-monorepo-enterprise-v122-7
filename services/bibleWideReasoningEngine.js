@@ -11,6 +11,10 @@ const {
   getGraphWitnesses,
 } = require('./bibleConceptGraph');
 const { detectSemanticConcept } = require('./bibleSemanticConceptNormalizer');
+const {
+  parseScriptureRef,
+  normalizeBook,
+} = require('./scriptureReferenceNormalizer');
 const { resolveFollowUpContext } = require('./followUpContextResolver');
 const {
   getDoctrineConversationState,
@@ -27,6 +31,230 @@ function getConceptById(id) {
 function buildDirectAnswerPolarity(message = '', concept = null) {
   if (!concept) return null;
   return concept.polarity || null;
+}
+
+
+// SPRINT_2C_C3_EXPLICIT_SCRIPTURE_HANDOFF
+//
+// Converts a valid explicit canonical Scripture reference into a concept-shaped
+// handoff for the existing Bible-wide reasoning path.
+//
+// This does not provide verse text or interpretation. Canonical text retrieval,
+// claim evaluation, Scripture-silence handling, and truth validation remain
+// downstream responsibilities.
+const CANONICAL_SCRIPTURE_BOOKS = new Map([
+  ['genesis', 'Genesis'],
+  ['exodus', 'Exodus'],
+  ['leviticus', 'Leviticus'],
+  ['numbers', 'Numbers'],
+  ['deuteronomy', 'Deuteronomy'],
+  ['joshua', 'Joshua'],
+  ['judges', 'Judges'],
+  ['ruth', 'Ruth'],
+  ['1 samuel', '1 Samuel'],
+  ['2 samuel', '2 Samuel'],
+  ['1 kings', '1 Kings'],
+  ['2 kings', '2 Kings'],
+  ['1 chronicles', '1 Chronicles'],
+  ['2 chronicles', '2 Chronicles'],
+  ['ezra', 'Ezra'],
+  ['nehemiah', 'Nehemiah'],
+  ['esther', 'Esther'],
+  ['job', 'Job'],
+  ['psalm', 'Psalms'],
+  ['psalms', 'Psalms'],
+  ['proverbs', 'Proverbs'],
+  ['ecclesiastes', 'Ecclesiastes'],
+  ['song of solomon', 'Song of Solomon'],
+  ['song of songs', 'Song of Solomon'],
+  ['isaiah', 'Isaiah'],
+  ['jeremiah', 'Jeremiah'],
+  ['lamentations', 'Lamentations'],
+  ['ezekiel', 'Ezekiel'],
+  ['daniel', 'Daniel'],
+  ['hosea', 'Hosea'],
+  ['joel', 'Joel'],
+  ['amos', 'Amos'],
+  ['obadiah', 'Obadiah'],
+  ['jonah', 'Jonah'],
+  ['micah', 'Micah'],
+  ['nahum', 'Nahum'],
+  ['habakkuk', 'Habakkuk'],
+  ['zephaniah', 'Zephaniah'],
+  ['haggai', 'Haggai'],
+  ['zechariah', 'Zechariah'],
+  ['malachi', 'Malachi'],
+  ['matthew', 'Matthew'],
+  ['mark', 'Mark'],
+  ['luke', 'Luke'],
+  ['john', 'John'],
+  ['acts', 'Acts'],
+  ['romans', 'Romans'],
+  ['1 corinthians', '1 Corinthians'],
+  ['2 corinthians', '2 Corinthians'],
+  ['galatians', 'Galatians'],
+  ['ephesians', 'Ephesians'],
+  ['philippians', 'Philippians'],
+  ['colossians', 'Colossians'],
+  ['1 thessalonians', '1 Thessalonians'],
+  ['2 thessalonians', '2 Thessalonians'],
+  ['1 timothy', '1 Timothy'],
+  ['2 timothy', '2 Timothy'],
+  ['titus', 'Titus'],
+  ['philemon', 'Philemon'],
+  ['hebrews', 'Hebrews'],
+  ['james', 'James'],
+  ['1 peter', '1 Peter'],
+  ['2 peter', '2 Peter'],
+  ['1 john', '1 John'],
+  ['2 john', '2 John'],
+  ['3 john', '3 John'],
+  ['jude', 'Jude'],
+  ['revelation', 'Revelation'],
+]);
+
+const SCRIPTURE_BOOK_ALIASES = new Map([
+  ['gen', 'Genesis'],
+  ['ex', 'Exodus'],
+  ['exod', 'Exodus'],
+  ['lev', 'Leviticus'],
+  ['num', 'Numbers'],
+  ['deut', 'Deuteronomy'],
+  ['dt', 'Deuteronomy'],
+  ['ps', 'Psalms'],
+  ['prov', 'Proverbs'],
+  ['eccl', 'Ecclesiastes'],
+  ['isa', 'Isaiah'],
+  ['jer', 'Jeremiah'],
+  ['ezek', 'Ezekiel'],
+  ['dan', 'Daniel'],
+  ['matt', 'Matthew'],
+  ['mt', 'Matthew'],
+  ['mk', 'Mark'],
+  ['lk', 'Luke'],
+  ['jn', 'John'],
+  ['rom', 'Romans'],
+  ['rev', 'Revelation'],
+]);
+
+function canonicalScriptureBook(book = '') {
+  const normalized = normalizeBook(book);
+
+  return (
+    CANONICAL_SCRIPTURE_BOOKS.get(normalized) ||
+    SCRIPTURE_BOOK_ALIASES.get(normalized) ||
+    null
+  );
+}
+
+function buildCanonicalReference(parsed = null, canonicalBook = '') {
+  if (!parsed || !canonicalBook) return null;
+
+  let reference = `${canonicalBook} ${parsed.chapter}`;
+
+  if (parsed.verseStart != null) {
+    reference += `:${parsed.verseStart}`;
+
+    if (
+      parsed.verseEnd != null &&
+      parsed.verseEnd !== parsed.verseStart
+    ) {
+      reference += `-${parsed.verseEnd}`;
+    }
+  }
+
+  return reference;
+}
+
+function extractExplicitScriptureReferences(message = '') {
+  const text = String(message || '').replace(/–/g, '-');
+
+  // Capture a possible reference with up to four preceding book-name words.
+  // We then progressively trim leading words and accept only a recognized
+  // canonical Bible book.
+  const candidateRe =
+    /(?:^|[^A-Za-z0-9])((?:(?:[1-3]\s+)?[A-Za-z]+(?:\s+[A-Za-z]+){0,3})\s+\d{1,3}(?::\d{1,3}(?:\s*-\s*\d{1,3})?)?)/g;
+
+  const results = [];
+  const seen = new Set();
+
+  let match;
+
+  while ((match = candidateRe.exec(text)) !== null) {
+    const candidate = String(match[1] || '')
+      .replace(/\s*-\s*/g, '-')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    const numberMatch = candidate.match(
+      /(\d{1,3}(?::\d{1,3}(?:-\d{1,3})?)?)$/
+    );
+
+    if (!numberMatch) continue;
+
+    const numericPart = numberMatch[1];
+    const rawBookPart = candidate
+      .slice(0, candidate.length - numericPart.length)
+      .trim();
+
+    const bookTokens = rawBookPart.split(/\s+/);
+
+    for (let start = 0; start < bookTokens.length; start += 1) {
+      const possibleBook = bookTokens.slice(start).join(' ');
+      const canonicalBook = canonicalScriptureBook(possibleBook);
+
+      if (!canonicalBook) continue;
+
+      const possibleReference = `${canonicalBook} ${numericPart}`;
+      const parsed = parseScriptureRef(possibleReference);
+
+      if (!parsed) continue;
+
+      const canonicalReference = buildCanonicalReference(
+        parsed,
+        canonicalBook
+      );
+
+      if (!canonicalReference) continue;
+
+      const key = canonicalReference.toLowerCase();
+
+      if (!seen.has(key)) {
+        seen.add(key);
+        results.push({
+          reference: canonicalReference,
+          index: match.index + candidate.indexOf(possibleBook),
+        });
+      }
+
+      break;
+    }
+  }
+
+  return results
+    .sort((a, b) => a.index - b.index)
+    .map((item) => item.reference);
+}
+
+function buildExplicitScriptureReferenceConcept(message = '') {
+  const references = extractExplicitScriptureReferences(message);
+
+  if (!references.length) return null;
+
+  return {
+    id: 'explicit_scripture_reference',
+    strictTopic: null,
+    polarity: null,
+    directAnswer:
+      references.length === 1
+        ? `The requested Scripture passage is ${references[0]}`
+        : `The requested Scripture passages are ${references.join(', ')}`,
+    directWitnesses: references,
+    supportingWitnesses: [],
+    explicitScriptureReference: true,
+    canonicalReferences: references,
+    retrievalMode: 'canonical_reference',
+  };
 }
 
 function selectDirectWitnesses(concept, limit = 3, exclude = []) {
@@ -105,6 +333,13 @@ function resolveConceptForMessage(message = '', userId = '') {
 
   if (CONTINUATION_PHRASE_RE.test(message) && state.activeBibleConcept) {
     return getGraphNode(state.activeBibleConcept);
+  }
+
+  const explicitReferenceConcept =
+    buildExplicitScriptureReferenceConcept(message);
+
+  if (explicitReferenceConcept) {
+    return explicitReferenceConcept;
   }
 
   return null;

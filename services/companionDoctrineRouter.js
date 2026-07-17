@@ -103,6 +103,14 @@ const MEMORY_RECALL_PATTERNS = [
 
 const DIETARY_LEAK_TERMS = /\b(pork|shellfish|swine|shrimp|isaiah\s*66|acts\s*10|peter|dietary law|unclean food)\b/i;
 
+
+const EXPLICIT_SCRIPTURE_REFERENCE_RE =
+  /\b(?:genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|ruth|1\s*samuel|2\s*samuel|1\s*kings|2\s*kings|1\s*chronicles|2\s*chronicles|ezra|nehemiah|esther|job|psalms?|proverbs|ecclesiastes|song\s+of\s+solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|1\s*corinthians|2\s*corinthians|galatians|ephesians|philippians|colossians|1\s*thessalonians|2\s*thessalonians|1\s*timothy|2\s*timothy|titus|philemon|hebrews|james|1\s*peter|2\s*peter|1\s*john|2\s*john|3\s*john|jude|revelation)\s+\d{1,3}(?::\d{1,3}(?:-\d{1,3})?)?\b/i;
+
+function hasExplicitScriptureReference(message = '') {
+  return EXPLICIT_SCRIPTURE_REFERENCE_RE.test(String(message || ''));
+}
+
 function normalizeMessage(message = '') {
   return String(message || '').trim();
 }
@@ -141,6 +149,9 @@ function classifyCurrentTurnIntent(message = '', context = {}) {
   if (matchesAny(m, EMOTIONAL_SUPPORT_PATTERNS)) return 'emotional_support';
   if (matchesAny(m, MEMORY_RECALL_PATTERNS)) return 'memory_recall';
   if (isBeforeThatRecall(m)) return 'before_that_recall';
+
+  // Explicit Scripture references outrank semantic concept promotion.
+  if (hasExplicitScriptureReference(m)) return 'explicit_scripture_reference';
 
   const semanticConcept = detectSemanticConcept(m, context);
   if (semanticConcept && !semanticConcept.strictTopic) {
@@ -207,6 +218,7 @@ const HUMAN_NEED_COMPANION_INTENTS = new Set([
   'temptation_boundary',
   'one_anchor_verse',
   'next_steps',
+  'open_life',
   'grief_comfort',
   'health_support',
 ]);
@@ -422,6 +434,10 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
 
   if (intent === 'user_correction') {
     lane = 'companion';
+  } else if (intent === 'explicit_scripture_reference') {
+    lane = 'bible_wide';
+    strictTopic = null;
+    bibleConceptId = null;
   } else if (intent === 'stop_release' || intent === 'emotional_support') {
     lane = 'companion';
   } else if (intent === 'memory_recall') {
@@ -525,6 +541,11 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
   const protectedHumanNeed = isProtectedHumanNeed(humanNeed);
   const release = buildCompanionReleaseReply(message, context);
 
+  // Return doctrine and Scripture questions to their canonical
+  // Scripture/doctrine owner. The companion fallback is not a
+  // doctrine answer generator.
+  if (humanNeed === 'doctrine_answer') return null;
+
   //
   // Protected human conversations ALWAYS stay companion-first.
   //
@@ -548,7 +569,7 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
 
     if (
       humanNeed === 'emotional_support' ||
-      /(grief|grieving|loss|lost someone|heartbreak|broken heart|let go of someone|rough day|hard day|tough day)/i.test(m)
+      /\b(grief|grieving|loss|lost someone|heartbreak|broken heart|let go of someone|rough day|hard day|tough day)\b/i.test(m)
     ) {
       return {
         reply:
@@ -558,7 +579,7 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
     }
 
     if (
-      /(listen first|just want to talk|talk for a minute)/i.test(m)
+      /\b(listen first|just want to talk|talk for a minute)\b/i.test(m)
     ) {
       return {
         reply:
@@ -619,4 +640,6 @@ module.exports = {
   DIETARY_LEAK_TERMS,
   HUMAN_NEED_COMPANION_INTENTS,
   isProtectedHumanNeed,
+  EXPLICIT_SCRIPTURE_REFERENCE_RE,
+  hasExplicitScriptureReference,
 };

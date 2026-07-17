@@ -107,7 +107,11 @@ function applyDoctrineErrorFirewall(structured = {}, context = {}) {
   }
 
   if (out.runtime?.masterRoute === 'core_connection_error') {
-    out.runtime = { ...(out.runtime || {}), masterRoute: 'no_glitch_firewall' };
+    out.runtime = {
+      ...(out.runtime || {}),
+      firewallApplied: true,
+      firewallReason: 'core_connection_error',
+    };
   }
 
   return out;

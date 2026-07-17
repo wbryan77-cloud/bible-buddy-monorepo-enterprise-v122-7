@@ -11,6 +11,13 @@ const {
   hasExplicitConcept,
 } = require('./bibleConceptGraph');
 
+
+const EXPLICIT_SCRIPTURE_REFERENCE_RE =
+  /\b(?:genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|ruth|1\s*samuel|2\s*samuel|1\s*kings|2\s*kings|1\s*chronicles|2\s*chronicles|ezra|nehemiah|esther|job|psalms?|proverbs|ecclesiastes|song\s+of\s+solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|1\s*corinthians|2\s*corinthians|galatians|ephesians|philippians|colossians|1\s*thessalonians|2\s*thessalonians|1\s*timothy|2\s*timothy|titus|philemon|hebrews|james|1\s*peter|2\s*peter|1\s*john|2\s*john|3\s*john|jude|revelation)\s+\d{1,3}(?::\d{1,3}(?:-\d{1,3})?)?\b/i;
+
+const LIFE_DECISION_RE =
+  /\b(decision|decide|help me choose|help me decide|what should i do|next step|life choice)\b/i;
+
 const BNC_GENERATED_PATH = path.join(
   __dirname,
   '..',
@@ -121,6 +128,14 @@ function detectSemanticConcept(message = '', context = {}) {
   const normalized = normalizeBibleQuestion(m);
   if (/\bzephyrian\b/i.test(normalized)) return null;
 
+  // Explicit Scripture references are owned by Scripture retrieval,
+  // not by the semantic concept bridge.
+  if (EXPLICIT_SCRIPTURE_REFERENCE_RE.test(normalized)) return null;
+
+  // Ordinary life decisions stay companion-owned. Even when the
+  // user asks for biblical wisdom, do not invent a nearest doctrine.
+  if (LIFE_DECISION_RE.test(normalized)) return null;
+
   if (/parable/i.test(m) && !/spilled seed|spill.*seed|brother.*seed|onan\b|genesis\s*38/i.test(m)) {
     const ranked = rankConceptCandidates(m, context);
     if (!ranked.length || ranked[0].score < 0.75) return null;
@@ -169,11 +184,19 @@ function detectSemanticConcept(message = '', context = {}) {
   }
 
   const ranked = rankConceptCandidates(m, context);
-  if (ranked.length && ranked[0].score >= 0.45) {
-    return getGraphNode(ranked[0].id);
+  const top = ranked[0] || null;
+  const second = ranked[1] || null;
+  const margin = top ? top.score - (second?.score || 0) : 0;
+
+  // Semantic promotion requires high confidence and separation
+  // from the next candidate. Low confidence resolves to null.
+  if (top && top.score >= 0.75 && margin >= 0.15) {
+    return getGraphNode(top.id);
   }
 
-  return detectConceptFromGraph(m);
+  // Graph fallback is permitted only when the user supplied an
+  // explicit canonical concept, never merely the closest concept.
+  return hasExplicitConcept(m) ? detectConceptFromGraph(m) : null;
 }
 
 function explainConceptMatch(message = '', concept = null) {

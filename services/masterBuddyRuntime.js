@@ -557,6 +557,33 @@ async function runMasterBuddyRuntime(H, inputOrUserId, modeArg, personaKeyArg, m
   // Step 7: route owner selection — reasoning snapshot wins over topic inheritance
   let routeKey = reasoningSnapshot.recommendedRoute || resolveRouteKey({ questionIntent, followUp, activeConversation, safety });
 
+  if (process.env.BUDDY_ROUTE_TRACE === '1') {
+    console.log('[SPRINT1A3_ROUTE_TRACE]', JSON.stringify({
+      message: String(message || '').slice(0, 160),
+      questionType: questionIntent?.questionType || null,
+      questionTopic: questionIntent?.topic || null,
+      questionIntent: questionIntent?.intent || null,
+      followUp: {
+        isFollowUp: !!followUp?.isFollowUp,
+        inheritedTopic: followUp?.inheritedTopic || null,
+        questionType: followUp?.questionType || null,
+        correction: !!followUp?.correction,
+      },
+      activeConversation: activeConversation
+        ? {
+            topic: activeConversation.topic || null,
+            route: activeConversation.route || null,
+          }
+        : null,
+      reasoningSnapshot: {
+        questionType: reasoningSnapshot?.questionType || null,
+        recommendedRoute: reasoningSnapshot?.recommendedRoute || null,
+        routeReason: reasoningSnapshot?.routeReason || null,
+      },
+      selectedRouteKey: routeKey,
+    }));
+  }
+
   // Explicit overrides before route dispatch
   const continueStudy = classifyContinueStudyIntent(message, userId);
   if (continueStudy.isContinueStudy && profile?.memoryEnabled !== false) routeKey = 'continue_study';
