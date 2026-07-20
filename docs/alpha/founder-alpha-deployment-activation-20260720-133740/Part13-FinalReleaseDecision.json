@@ -1,0 +1,42 @@
+{
+  "part": "Part 13 - Final Release Decision",
+  "criteria": {
+    "1_workingTreeCommitted": "MET",
+    "2_releaseBranchPushed": "MET",
+    "3_baselineTagCreated": "MET",
+    "4_tagPushed": "MET",
+    "5_renderDeployingBaseline": "NOT_MET",
+    "6_publicServiceIdentifiesBaseline": "NOT_MET",
+    "7_healthEndpointPasses": "PARTIAL",
+    "8_founderAppPassesLiveTests": "PARTIAL",
+    "9_adminInterfacePresentAndProtected": "NOT_MET",
+    "10_lessonAlignmentPassesLive": "NOT_MET",
+    "11_oversizedRequestsRejected": "NOT_MET_LIVE_MET_LOCAL",
+    "12_criticalScenariosPass": "MET_LOCAL_NOT_VERIFIED_LIVE",
+    "13_founderAdminUrlsVerified": "NOT_MET",
+    "14_authenticationDocumented": "MET",
+    "15_telemetryDocumented": "MET",
+    "16_noCriticalSecurityBlocker": "NOT_MET",
+    "17_testerCommsAccurateAndVerifiedUrl": "PARTIAL",
+    "18_adminQuickReferenceComplete": "MET",
+    "19_noReleaseRegression": "MET",
+    "20_rollbackDocumented": "MET"
+  },
+  "metCount": 10,
+  "partialCount": 3,
+  "notMetCount": 7,
+  "rootCauseOfAllUnmetItems": "Live Render service has not yet received the verified baseline deploy, and BIBLE_AUTHORITY_ADMIN_TOKEN has not yet been set to a real value. Both require Render dashboard access unavailable to this batch.",
+  "finalStatus": "READY_WITH_EXACT_MANUAL_RENDER_ACTION",
+  "remainingManualAction": {
+    "steps": [
+      "Open Render dashboard for the bible-buddy-monorepo-enterprise-v122-7 service",
+      "Confirm/set branch=sprint-2c-c3-explicit-scripture-handoff, buildCommand=npm install, startCommand=node server.js, healthCheckPath=/health",
+      "Set real secret value for BIBLE_AUTHORITY_ADMIN_TOKEN",
+      "Trigger deploy of commit e1fd8977d76b34def53fd8cb45babf01b5b8f79b or later",
+      "Wait for deploy to reach Live",
+      "Rerun Part7 live verification checklist",
+      "Upon all passing, status upgrades to READY_TO_SEND_FOUNDER_INVITATIONS"
+    ],
+    "estimatedManualEffort": "under 15 minutes for a human with existing Render dashboard access"
+  }
+}

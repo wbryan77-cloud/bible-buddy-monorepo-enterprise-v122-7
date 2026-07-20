@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-07-20T14:15:00Z",
+  "founderTestingUrl": { "status": "NOT_VERIFIED", "candidate": "https://bible-buddy-monorepo-enterprise-v122-7.onrender.com", "requiredAction": "Render manual deploy (Part 5 Section 3), then rerun Part 7 checklist" },
+  "adminDashboardUrl": { "status": "NOT_VERIFIED", "candidate": "https://bible-buddy-monorepo-enterprise-v122-7.onrender.com/admin/bible-authority.html", "requiredAction": "Same redeploy action plus setting BIBLE_AUTHORITY_ADMIN_TOKEN" },
+  "lessonAlignmentUrl": { "status": "NOT_VERIFIED_ON_LIVE_HOST", "note": "Integrated in Founder App (paste-text tool) plus Admin-only review surface" },
+  "healthEndpoint": { "pathVerified": true, "liveValuesFullyVerified": false, "path": "/health" },
+  "deploymentTarget": "Render (web service)",
+  "deploymentEnvironment": "production (render.yaml NODE_ENV, not independently re-verified live beyond Part 7 checks)",
+  "deploymentStatus": "NOT_DEPLOYED",
+  "renderService": { "status": "NOT_VERIFIED", "publicHostSlug": "bible-buddy-monorepo-enterprise-v122-7" },
+  "trackedBranch": { "status": "NOT_VERIFIED", "verifiedBaselineBranch": "sprint-2c-c3-explicit-scripture-handoff" },
+  "baselineCommit": "d34d9f0f95c7cba8300221c4c70b6e89d0f48d18",
+  "currentBranchTip": "e1fd8977d76b34def53fd8cb45babf01b5b8f79b",
+  "founderBaselineTag": "founder-alpha-v1.0.0",
+  "currentApplicationVersion": "v122.14.0 (platform unification foundation)",
+  "packageJsonVersion": "v122.12",
+  "buildTimestamp": "2026-07-20T13:55:00Z",
+  "architectureFreezeStatus": "ACTIVE_UNCHANGED",
+  "architectureFreezeCommit": "09626367d1fd586b83b807a15c078507fbdd8aa1",
+  "founderAuthenticationStatus": "ANONYMOUS_SESSION_BASED",
+  "adminAuthenticationStatus": "TOKEN_GATED_MECHANISM_EXISTS_TOKEN_NOT_SET_RELEASE_BLOCKER",
+  "featureFlagsEnabled": [
+    "Scripture chat (companion core)", "KJV reader / explicit reference retrieval",
+    "Witnesses / cross-references", "Original-language study", "Historical context",
+    "Prayer", "Therapeutic / reflection companion", "Companion memory"
+  ],
+  "featureFlagsAdminOnly": ["Lesson/sermon Scripture-alignment (paste text)"],
+  "featureFlagsOff": ["Lesson/sermon file upload", "Voice", "Audio Bible", "Avatar / orb presence"],
+  "telemetryEnabled": true,
+  "telemetryConsentStatus": "DISCLOSED_IN_DOCUMENTATION_NO_IN_APP_MODAL",
+  "adminMonitoringCapabilities": "RAW_DATA_VISIBILITY_NO_AI_DIGEST",
+  "knownOperationalWarnings": [
+    "admin_auth_boundary - token not set (release blocker)",
+    "admin_dashboard_latency - ~6.1s command-center (non-blocking)",
+    "intermittent non-deterministic OpenAI answer flakiness on specific test phrasings (non-blocking, resolves on retry)",
+    "APP_VERSION/package.json.version drift (cosmetic)",
+    "single-instance file-based persistence, no horizontal scaling (documented, acceptable for Founder Alpha scale)",
+    "live deployment gap - public host not yet running verified baseline"
+  ],
+  "testingPeriodRecommendationDays": 14,
+  "supportFeedbackContact": { "status": "NOT_VERIFIED", "requiredAction": "Human release owner must supply a contact address before Part 11 communications are sent" }
+}
