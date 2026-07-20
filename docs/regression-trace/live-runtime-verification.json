@@ -1,7 +1,7 @@
 {
-  "ranAt": "2026-07-20T01:13:10.422Z",
+  "ranAt": "2026-07-20T13:50:38.940Z",
   "localConfig": {
-    "nodeEnv": "production",
+    "nodeEnv": "development",
     "buddyRuntime": "legacy",
     "openAiFirstEnabled": true,
     "openAiFirstEnv": "unset_defaults_on",
@@ -25,17 +25,17 @@
   "openAiKeyPresent": true,
   "memoryAtEnd": {
     "heapUsedMB": 20,
-    "rssMB": 269
+    "rssMB": 274
   },
   "tests": [
     {
       "id": "t01",
       "message": "Can I eat pork? Yes or no?",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-20T01:12:57.351Z",
+      "ts": "2026-07-20T13:50:22.000Z",
       "messagePreview": "Can I eat pork? Yes or no?",
       "httpStatus": 200,
-      "latencyMs": 412,
+      "latencyMs": 421,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "direct_yes_no",
       "historyAllowed": false,
@@ -127,10 +127,10 @@
       "id": "t02",
       "message": "How do we keep the Sabbath holy?",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-20T01:12:58.122Z",
+      "ts": "2026-07-20T13:50:22.774Z",
       "messagePreview": "How do we keep the Sabbath holy?",
       "httpStatus": 200,
-      "latencyMs": 417,
+      "latencyMs": 420,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "how_to_practice",
       "historyAllowed": false,
@@ -153,8 +153,8 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 68,
-        "rssMB": 252
+        "heapUsedMB": 67,
+        "rssMB": 249
       },
       "violations": [],
       "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture.",
@@ -202,10 +202,10 @@
       "id": "t03",
       "message": "What does Logos mean in John 1:1?",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-20T01:12:58.819Z",
+      "ts": "2026-07-20T13:50:23.485Z",
       "messagePreview": "What does Logos mean in John 1:1?",
       "httpStatus": 200,
-      "latencyMs": 346,
+      "latencyMs": 359,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "companion",
       "historyAllowed": true,
@@ -228,8 +228,8 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 74,
-        "rssMB": 261
+        "heapUsedMB": 76,
+        "rssMB": 252
       },
       "violations": [],
       "replyPreview": "Scripture speaks directly to this. John 1:1 — \"In the beginning was the Word, and the Word was with God, and the Word was God.\" (King James Version).",
@@ -268,10 +268,10 @@
       "id": "t04",
       "message": "How many heavens are talked about in the Bible?",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-20T01:12:59.552Z",
+      "ts": "2026-07-20T13:50:24.229Z",
       "messagePreview": "How many heavens are talked about in the Bible?",
       "httpStatus": 200,
-      "latencyMs": 381,
+      "latencyMs": 391,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "companion",
       "historyAllowed": true,
@@ -294,8 +294,8 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 78,
-        "rssMB": 275
+        "heapUsedMB": 80,
+        "rssMB": 272
       },
       "violations": [],
       "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. Scripture witnesses: 2 Corinthians 12:2, Genesis 1:1, Deuteronomy 10:14.",
@@ -339,10 +339,10 @@
       "id": "t05",
       "message": "Today has been a rough day. I had to let go of someone I love.",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-20T01:13:09.387Z",
+      "ts": "2026-07-20T13:50:37.876Z",
       "messagePreview": "Today has been a rough day. I had to let go of someone I love.",
       "httpStatus": 200,
-      "latencyMs": 9483,
+      "latencyMs": 13294,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "emotional_companion",
       "historyAllowed": false,
@@ -365,11 +365,11 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 74,
-        "rssMB": 282
+        "heapUsedMB": 75,
+        "rssMB": 287
       },
       "violations": [],
-      "replyPreview": "I’m really sorry. Having to let go of someone you love can feel like grief even when you know it may have been necessary. Today being rough makes sense — love does not just switch off because a decision had to be made.\n\nFor tonight, try not to force yourself to be “fine.” Give yourself a quiet moment to breathe, drink some water, and tell God the p",
+      "replyPreview": "I’m really sorry. Having to let go of someone you love can feel like a kind of tearing inside — even when you know it may be necessary. A rough day like that doesn’t need a speech; it needs gentleness.\n\nFor tonight, try not to force yourself to be “okay.” Give the grief a little room, but don’t let it swallow the whole room. Breathe slowly, drink s",
       "routeOwnership": {
         "detectedIntent": "emotional_support",
         "detectedConcept": null,
@@ -383,13 +383,18 @@
         "forbiddenPhraseDetected": false,
         "finalResponseOwner": "liveResponseOwner",
         "messagePreview": "Today has been a rough day. I had to let go of someone I love.",
-        "replyPreview": "I’m really sorry. Having to let go of someone you love can feel like grief even when you know it may have been necessary. Today being rough makes sense — love does not just switch off because a decisi"
+        "replyPreview": "I’m really sorry. Having to let go of someone you love can feel like a kind of tearing inside — even when you know it may be necessary. A rough day like that doesn’t need a speech; it needs gentleness"
       },
       "scripture": [
         {
           "reference": "Psalm 34:18",
           "text": "The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.",
-          "reason": "This anchors the pain of letting go in the comfort that God draws near to the brokenhearted."
+          "reason": "A gentle reminder that God draws near when the heart is hurting."
+        },
+        {
+          "reference": "John 11:35",
+          "text": "Jesus wept.",
+          "reason": "This shows that sorrow is not weakness; even Jesus entered into grief."
         }
       ],
       "scored": {
@@ -403,10 +408,10 @@
       "id": "t06",
       "message": "You didn't answer my question.",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-20T01:13:10.071Z",
+      "ts": "2026-07-20T13:50:38.589Z",
       "messagePreview": "You didn't answer my question.",
       "httpStatus": 200,
-      "latencyMs": 332,
+      "latencyMs": 361,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "emotional_support",
       "historyAllowed": true,
@@ -430,7 +435,7 @@
       "errorMessage": null,
       "memoryUsage": {
         "heapUsedMB": 93,
-        "rssMB": 286
+        "rssMB": 290
       },
       "violations": [],
       "replyPreview": "You're right to call that out. I was stuck on the last Bible topic instead of listening to your new message. I'm with you now. What do you want me to answer?",

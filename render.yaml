@@ -36,6 +36,16 @@ services:
         value: "0"
       - key: OPENAI_API_KEY
         sync: false
+      # FOUNDER_ALPHA_DEPLOYMENT_ACTIVATION — the actual Admin route gate is
+      # routes/bibleAuthorityAdmin.js checkAdminAuth(), which reads
+      # BIBLE_AUTHORITY_ADMIN_TOKEN (falling back to ALPHA_ADMIN_TOKEN /
+      # BETA_REVIEW_TOKEN). ADMIN_PASSWORD below is legacy scaffolding with no
+      # code reference anywhere in this repo — it does not protect anything.
+      # Set BIBLE_AUTHORITY_ADMIN_TOKEN to a real secret in the Render
+      # dashboard before inviting any Founder testers; leaving it unset
+      # leaves every /admin/api/bible-authority/* route publicly readable.
+      - key: BIBLE_AUTHORITY_ADMIN_TOKEN
+        sync: false
       - key: ADMIN_PASSWORD
         value: change-me
       - key: PHASE_AUTOSTART

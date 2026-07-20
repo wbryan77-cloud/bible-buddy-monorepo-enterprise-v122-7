@@ -1,45 +1,45 @@
 {
-  "runId": "founder-e2e-1784509368452",
-  "generatedAt": "2026-07-20T01:03:59.105Z",
+  "runId": "founder-e2e-1784555699671",
+  "generatedAt": "2026-07-20T13:55:13.487Z",
   "totalCases": 35,
-  "totalPass": 35,
-  "totalFail": 0,
+  "totalPass": 34,
+  "totalFail": 1,
   "byCategory": {
     "SCRIPTURE": {
-      "pass": 9,
-      "fail": 0,
-      "avgLatencyMs": 2831,
-      "maxLatencyMs": 22761
+      "pass": 8,
+      "fail": 1,
+      "avgLatencyMs": 350,
+      "maxLatencyMs": 397
     },
     "ORIGINAL_LANGUAGE": {
       "pass": 4,
       "fail": 0,
-      "avgLatencyMs": 333,
-      "maxLatencyMs": 379
+      "avgLatencyMs": 347,
+      "maxLatencyMs": 394
     },
     "HISTORY": {
       "pass": 2,
       "fail": 0,
-      "avgLatencyMs": 306,
-      "maxLatencyMs": 307
+      "avgLatencyMs": 323,
+      "maxLatencyMs": 325
     },
     "COMPANION": {
       "pass": 6,
       "fail": 0,
-      "avgLatencyMs": 6054,
-      "maxLatencyMs": 11709
+      "avgLatencyMs": 319,
+      "maxLatencyMs": 368
     },
     "UPLOAD_ALIGNMENT": {
       "pass": 5,
       "fail": 0,
-      "avgLatencyMs": 90,
-      "maxLatencyMs": 449
+      "avgLatencyMs": 52,
+      "maxLatencyMs": 261
     },
     "ADMIN": {
       "pass": 6,
       "fail": 0,
-      "avgLatencyMs": 1033,
-      "maxLatencyMs": 6093
+      "avgLatencyMs": 1035,
+      "maxLatencyMs": 6113
     },
     "FAILURE": {
       "pass": 3,
@@ -53,7 +53,7 @@
       "category": "SCRIPTURE",
       "id": "explicit_read",
       "pass": true,
-      "latencyMs": 379,
+      "latencyMs": 385,
       "detail": {
         "replyPreview": "Scripture speaks directly to this. John 3:16 — \"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not peris"
       }
@@ -62,7 +62,7 @@
       "category": "SCRIPTURE",
       "id": "chapter",
       "pass": true,
-      "latencyMs": 314,
+      "latencyMs": 328,
       "detail": {
         "replyPreview": "Scripture speaks directly to this. Psalms 23 — \"A Psalm of David. The LORD is my shepherd; I shall not want. He maketh me to lie down in green pastures: he lead"
       }
@@ -71,7 +71,7 @@
       "category": "SCRIPTURE",
       "id": "range",
       "pass": true,
-      "latencyMs": 311,
+      "latencyMs": 324,
       "detail": {
         "replyPreview": "Scripture speaks directly to this. Exodus 20:1-17 — \"And God spake all these words, saying, I am the LORD thy God, which have brought thee out of the land of Eg"
       }
@@ -80,7 +80,7 @@
       "category": "SCRIPTURE",
       "id": "doctrine",
       "pass": true,
-      "latencyMs": 380,
+      "latencyMs": 397,
       "detail": {
         "replyPreview": "From the approved Scripture witnesses (1 Corinthians 15; 1 Thessalonians 4:13-16; Daniel 12:2; John 11:25), Resurrection is the hope Scripture gives; death is d"
       }
@@ -88,17 +88,17 @@
     {
       "category": "SCRIPTURE",
       "id": "contradiction",
-      "pass": true,
-      "latencyMs": 22761,
+      "pass": false,
+      "latencyMs": 310,
       "detail": {
-        "replyPreview": "No. Scripture does not state that directly — that Jesus is a created being.\n\nI won’t add extra claims without Scripture evidence in this turn, but the direct an"
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
       }
     },
     {
       "category": "SCRIPTURE",
       "id": "multiple_witnesses",
       "pass": true,
-      "latencyMs": 344,
+      "latencyMs": 359,
       "detail": {
         "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Scripture witnesses: Exodus 20, Deut"
       }
@@ -107,7 +107,7 @@
       "category": "SCRIPTURE",
       "id": "cross_reference",
       "pass": true,
-      "latencyMs": 371,
+      "latencyMs": 394,
       "detail": {
         "replyPreview": "From the approved Scripture witnesses (1 Corinthians 15; 1 Thessalonians 4:13-16; Daniel 12:2; John 11:25), Resurrection is the hope Scripture gives; death is d"
       }
@@ -116,7 +116,7 @@
       "category": "SCRIPTURE",
       "id": "text_only_book_relationship",
       "pass": true,
-      "latencyMs": 308,
+      "latencyMs": 328,
       "detail": {
         "replyPreview": "Scripture speaks directly to this. Ruth 4:17 — \"And the women her neighbours gave it a name, saying, There is a son born to Naomi; and they called his name Obed"
       }
@@ -125,7 +125,7 @@
       "category": "SCRIPTURE",
       "id": "newly_completed_book",
       "pass": true,
-      "latencyMs": 312,
+      "latencyMs": 327,
       "detail": {
         "replyPreview": "Scripture answers this when the passages below are taken together. Numbers 21:9 — \"And Moses made a serpent of brass, and put it upon a pole, and it came to pas"
       }
@@ -134,7 +134,7 @@
       "category": "ORIGINAL_LANGUAGE",
       "id": "hebrew",
       "pass": true,
-      "latencyMs": 335,
+      "latencyMs": 350,
       "detail": {
         "replyPreview": "KJV: In the beginning God created the heaven and the earth. Original language (HEBREW): בְּ/רֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַ/שָּׁמַ֖יִם וְ/אֵ֥ת הָ/אָֽרֶץ Tra"
       }
@@ -143,7 +143,7 @@
       "category": "ORIGINAL_LANGUAGE",
       "id": "greek",
       "pass": true,
-      "latencyMs": 379,
+      "latencyMs": 394,
       "detail": {
         "replyPreview": "KJV: In the beginning was the Word, and the Word was with God, and the Word was God. Original language (GREEK): Ἐν ἀρχῇ ἦν ὁ Λόγος, καὶ ὁ Λόγος ἦν πρὸς τὸν Θεόν"
       }
@@ -152,7 +152,7 @@
       "category": "ORIGINAL_LANGUAGE",
       "id": "kjv_comparison",
       "pass": true,
-      "latencyMs": 297,
+      "latencyMs": 310,
       "detail": {
         "replyPreview": "KJV: For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. Original lang"
       }
@@ -161,7 +161,7 @@
       "category": "ORIGINAL_LANGUAGE",
       "id": "incomplete_data",
       "pass": true,
-      "latencyMs": 319,
+      "latencyMs": 335,
       "detail": {
         "replyPreview": "KJV: Then spake the Chaldeans to the king in Syriack, O king, live for ever: tell thy servants the dream, and we will shew the interpretation. Original language"
       }
@@ -170,7 +170,7 @@
       "category": "HISTORY",
       "id": "approved_history",
       "pass": true,
-      "latencyMs": 305,
+      "latencyMs": 321,
       "detail": {
         "replyPreview": "2 Samuel 7:12-16 — \"And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bow"
       }
@@ -179,7 +179,7 @@
       "category": "HISTORY",
       "id": "historical_citation",
       "pass": true,
-      "latencyMs": 307,
+      "latencyMs": 325,
       "detail": {
         "replyPreview": "Exodus 20 — \"And God spake all these words, saying, I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage. Thou s"
       }
@@ -188,34 +188,34 @@
       "category": "COMPANION",
       "id": "hard_day",
       "pass": true,
-      "latencyMs": 8726,
+      "latencyMs": 299,
       "detail": {
-        "replyPreview": "I’m really sorry. A day where nothing went right can leave you feeling drained, frustrated, and maybe even a little defeated. You don’t have to turn it into a l"
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
       }
     },
     {
       "category": "COMPANION",
       "id": "grief",
       "pass": true,
-      "latencyMs": 11709,
+      "latencyMs": 329,
       "detail": {
-        "replyPreview": "I’m so sorry. Three weeks is so fresh, and days like today can feel like the loss is suddenly heavy all over again. You don’t have to make sense of it or be “st"
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
       }
     },
     {
       "category": "COMPANION",
       "id": "family_conflict",
       "pass": true,
-      "latencyMs": 9126,
+      "latencyMs": 316,
       "detail": {
-        "replyPreview": "That sounds really heavy — a huge fight with your brother, and then a whole month of silence, can start to feel like a wall between you. You don’t have to fix e"
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
       }
     },
     {
       "category": "COMPANION",
       "id": "prayer",
       "pass": true,
-      "latencyMs": 353,
+      "latencyMs": 368,
       "detail": {
         "replyPreview": "Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fear. In Jesus'"
       }
@@ -224,16 +224,16 @@
       "category": "COMPANION",
       "id": "quiet_moment",
       "pass": true,
-      "latencyMs": 6116,
+      "latencyMs": 287,
       "detail": {
-        "replyPreview": "I’m here with you. No advice, no fixing. Just staying close for a moment.\n\nYou don’t have to explain anything right now. If all you can do is sit here and breat"
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
       }
     },
     {
       "category": "COMPANION",
       "id": "stop_release",
       "pass": true,
-      "latencyMs": 296,
+      "latencyMs": 313,
       "detail": {
         "replyPreview": "I hear you. I'll stop that topic. What do you want to talk about now?"
       }
@@ -242,7 +242,7 @@
       "category": "UPLOAD_ALIGNMENT",
       "id": "valid_lesson",
       "pass": true,
-      "latencyMs": 0,
+      "latencyMs": 1,
       "detail": {
         "summary": {
           "totalReferencesFound": 1,
@@ -287,7 +287,7 @@
       "category": "UPLOAD_ALIGNMENT",
       "id": "unresolvable_reference",
       "pass": true,
-      "latencyMs": 449,
+      "latencyMs": 261,
       "detail": {
         "summary": {
           "totalReferencesFound": 1,
@@ -311,7 +311,7 @@
       "category": "ADMIN",
       "id": "/admin/api/bible-authority/command-center",
       "pass": true,
-      "latencyMs": 6093,
+      "latencyMs": 6113,
       "detail": {
         "status": 200
       }
@@ -320,7 +320,7 @@
       "category": "ADMIN",
       "id": "/admin/api/bible-authority/review-queue",
       "pass": true,
-      "latencyMs": 27,
+      "latencyMs": 18,
       "detail": {
         "status": 200
       }
@@ -329,7 +329,7 @@
       "category": "ADMIN",
       "id": "/admin/api/bible-authority/knowledge-coverage-dashboard",
       "pass": true,
-      "latencyMs": 5,
+      "latencyMs": 3,
       "detail": {
         "status": 200
       }
@@ -347,7 +347,7 @@
       "category": "ADMIN",
       "id": "/admin/api/bible-authority/provider-health",
       "pass": true,
-      "latencyMs": 1,
+      "latencyMs": 0,
       "detail": {
         "status": 200
       }
@@ -356,7 +356,7 @@
       "category": "ADMIN",
       "id": "/admin/api/bible-authority/lesson-alignment/limits",
       "pass": true,
-      "latencyMs": 0,
+      "latencyMs": 1,
       "detail": {
         "status": 200
       }

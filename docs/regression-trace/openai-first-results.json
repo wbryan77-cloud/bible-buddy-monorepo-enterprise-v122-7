@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-07-20T01:12:56.784Z",
+  "ranAt": "2026-07-20T13:50:21.425Z",
   "buddyRuntime": "legacy",
   "buddyOpenAiFirst": "default-on",
   "openAiKeyPresent": true,
@@ -8,13 +8,13 @@
   "results": [
     {
       "id": "1_relationship_loss",
-      "userId": "openai-first-regression-1_relationship_loss-1784509834823-0",
+      "userId": "openai-first-regression-1_relationship_loss-1784555244851-0",
       "message": "Today has been a tough day. I let go of someone that I truly love, but she hasn’t been right for years…",
       "pass": true,
       "failReason": null,
       "masterRoute": "reason_first_openai",
       "openAiCalled": true,
-      "replyPreview": "I’m sorry. Letting go of someone you truly love is a deep kind of pain — especially when part of you still cares, but another part knows things haven’t been right for years. That can feel like grief and relief tangled together.\n\nPlease don’t read today as proof that you failed. S",
+      "replyPreview": "That sounds deeply painful — letting go of someone you truly love, especially after hoping for years that things might become right, can feel like grief and relief tangled together. You don’t have to pretend it doesn’t hurt just because the decision may have been necessary.\n\nFor ",
       "adminFlags": [
         "phase5l_live_owner",
         "phase5m_live_owner"
@@ -22,13 +22,13 @@
     },
     {
       "id": "2_correction_after_relationship",
-      "userId": "openai-first-regression-2_correction_after_relationship-1784509847871-1",
+      "userId": "openai-first-regression-2_correction_after_relationship-1784555259021-1",
       "message": "What’s flaring up again and you didn’t address what I just mentioned at all. Why?",
       "pass": true,
       "failReason": null,
       "masterRoute": "reason_first_openai",
       "openAiCalled": true,
-      "replyPreview": "You’re right to call that out. “Flaring up again” was my wording, not something you clearly said here. I likely inferred a health or emotional issue that wasn’t actually in your message, and that made me miss what you were trying to bring up. That’s on me.\n\nI don’t have any earli",
+      "replyPreview": "You’re right to call that out. I shouldn’t have said “flaring up again” — I don’t have enough context here to know what was flaring up, so that was an assumption on my part. And I didn’t address what you had just mentioned because I missed the actual point of your message and res",
       "adminFlags": [
         "phase5l_live_owner",
         "phase5m_live_owner"
@@ -36,13 +36,13 @@
     },
     {
       "id": "2b_correction_seeded_health_topic",
-      "userId": "openai-first-regression-2b_correction_seeded_health_topic-1784509856172-2",
+      "userId": "openai-first-regression-2b_correction_seeded_health_topic-1784555272106-2",
       "message": "What’s flaring up again and you didn’t address what I just mentioned at all. Why?",
       "pass": true,
       "failReason": null,
       "masterRoute": "reason_first_openai",
       "openAiCalled": true,
-      "replyPreview": "You’re right — I shouldn’t have said “flaring up again.” Nothing you told me specifically was “flaring up again”; you said, “My knees hurt,” and I failed to address that directly. That was my mistake, likely from using a generic health phrase instead of staying with your exact wo",
+      "replyPreview": "You’re right — I missed what you actually said: “My knees hurt.” When I said something was “flaring up again,” that was my assumption, not something you told me. I should not have worded it that way, and I’m sorry.\n\nTo address what you mentioned: knee pain can come from strain, o",
       "adminFlags": [
         "phase5l_live_owner",
         "phase5m_live_owner"
@@ -50,13 +50,13 @@
     },
     {
       "id": "3_listen_first",
-      "userId": "openai-first-regression-3_listen_first-1784509875892-3",
+      "userId": "openai-first-regression-3_listen_first-1784555282423-3",
       "message": "I just want to talk for a minute. Please listen first.",
       "pass": true,
       "failReason": null,
       "masterRoute": "reason_first_openai",
       "openAiCalled": true,
-      "replyPreview": "Of course. I’m here with you, and I’ll listen first. I won’t rush to teach, correct, or solve it. Take your time and say whatever you need to say — even if it comes out messy.",
+      "replyPreview": "Okay. I’m here with you, and I’ll listen first. No teaching, no fixing, no rushing. Take your time and say whatever you need to say.",
       "adminFlags": [
         "phase5l_live_owner",
         "phase5m_live_owner"
@@ -64,27 +64,28 @@
     },
     {
       "id": "4_same_script",
-      "userId": "openai-first-regression-4_same_script-1784509879947-4",
+      "userId": "openai-first-regression-4_same_script-1784555288210-4",
       "message": "Why are you just giving me the same script over and over again?",
       "pass": true,
       "failReason": null,
       "masterRoute": "reason_first_openai",
       "openAiCalled": true,
-      "replyPreview": "You’re right to call that out. I was likely leaning too hard on a preset response pattern instead of actually answering you in a fresh, direct way. That can feel like you’re being managed instead of heard — and I’m sorry.\n\nI’ll adjust: no more repeating the same script. If you as",
+      "replyPreview": "You’re right to call that out. If I’ve been giving you the same script over and over, that’s not helpful — it means I was over-relying on a repeated response pattern instead of actually responding to what you were saying in the moment.\n\nI’m sorry for that. I’ll slow down, answer ",
       "adminFlags": [
+        "user_reported_repetitive_response_loop",
         "phase5l_live_owner",
         "phase5m_live_owner"
       ]
     },
     {
       "id": "5_alzheimers",
-      "userId": "openai-first-regression-5_alzheimers-1784509886616-5",
+      "userId": "openai-first-regression-5_alzheimers-1784555295552-5",
       "message": "Mom has Alzheimer’s. What do I do?",
       "pass": true,
       "failReason": null,
       "masterRoute": "reason_first_openai",
       "openAiCalled": true,
-      "replyPreview": "I’m really sorry. Hearing “Mom has Alzheimer’s” can feel like the ground shifts under you. You don’t have to solve the whole future today — start by making the next few faithful, practical moves. Here’s what to do first: 1. Get a clear medical plan. Ask her doctor/neurologist: Wh",
+      "replyPreview": "I’m really sorry. Hearing “Mom has Alzheimer’s” can feel like the floor just moved under you. You do not have to solve her whole future today — start with safety, support, and one faithful step at a time. Here’s what to do first: 1. Get a medical care plan in place. If she hasn’t",
       "adminFlags": [
         "phase5l_live_owner",
         "phase5m_live_owner"
@@ -92,13 +93,13 @@
     },
     {
       "id": "6_grief_what_do_i_do",
-      "userId": "openai-first-regression-6_grief_what_do_i_do-1784509904862-6",
+      "userId": "openai-first-regression-6_grief_what_do_i_do-1784555321791-6",
       "message": "I’m going through some grief what do I do?",
       "pass": true,
       "failReason": null,
       "masterRoute": "reason_first_openai",
       "openAiCalled": true,
-      "replyPreview": "I’m really sorry you’re going through grief. First: you don’t have to “fix” it today. Grief often comes in waves, and the faithful thing may simply be to let yourself mourn honestly before God.\n\nHere’s what to do right now:\n\n1. Pause and breathe slowly for a minute. Put a hand ov",
+      "replyPreview": "I’m really sorry you’re going through grief. When loss hits, it can feel like you’re supposed to “handle it,” but grief is not something you conquer in a day — it’s something you carry with God, one breath at a time. For right now, try this: don’t make yourself process everything",
       "adminFlags": [
         "phase5l_live_owner",
         "phase5m_live_owner"
@@ -106,13 +107,13 @@
     },
     {
       "id": "7_doctrine_after_grief_session",
-      "userId": "openai-first-regression-7_doctrine_after_grief_session-1784509916474-7",
+      "userId": "openai-first-regression-7_doctrine_after_grief_session-1784555338743-7",
       "message": "Is the Logos spoken of in the Old Testament Jesus in the New Testament as well?",
       "pass": true,
       "failReason": null,
       "masterRoute": "reason_first_openai",
       "openAiCalled": true,
-      "replyPreview": "Yes — in the New Testament, the Logos, or “Word,” is identified as Jesus. John says, “the Word was with God, and the Word was God,” and then says “the Word was made flesh” in John 1:1,14. That points directly to Jesus Christ. One important distinction: the Old Testament was writt",
+      "replyPreview": "Yes — in the New Testament, the Logos/“Word” is identified as Jesus, especially in John 1:1-14, where “the Word was made flesh.” One careful distinction: the Old Testament was not written in Greek, so Scripture does not state the Greek term “Logos” in the Old Testament directly. ",
       "adminFlags": [
         "phase5l_live_owner",
         "phase5m_live_owner"
@@ -120,7 +121,7 @@
     },
     {
       "id": "8_sabbath_definition",
-      "userId": "openai-first-regression-8_sabbath_definition-1784509966514-8",
+      "userId": "openai-first-regression-8_sabbath_definition-1784555406638-8",
       "message": "What is a Sabbath day?",
       "pass": true,
       "failReason": null,
@@ -135,13 +136,13 @@
     },
     {
       "id": "9_knees_health",
-      "userId": "openai-first-regression-9_knees_health-1784509966895-9",
+      "userId": "openai-first-regression-9_knees_health-1784555407027-9",
       "message": "My knees hurt again today",
       "pass": true,
       "failReason": null,
       "masterRoute": "reason_first_openai",
       "openAiCalled": true,
-      "replyPreview": "I’m sorry your knees hurt again today — that “again” can feel really discouraging when you were hoping for some relief. For right now, try to take pressure off them if you can, rest a bit, and use whatever safe care usually helps you, like gentle elevation or warmth/ice depending",
+      "replyPreview": "I’m sorry — knee pain coming back again today can be really discouraging, especially when you were probably hoping for a better day. For right now, try to be gentle with them: rest when you can, elevate your legs, and consider ice for swelling or warmth for stiffness — whichever ",
       "adminFlags": [
         "phase5l_live_owner",
         "phase5m_live_owner"
