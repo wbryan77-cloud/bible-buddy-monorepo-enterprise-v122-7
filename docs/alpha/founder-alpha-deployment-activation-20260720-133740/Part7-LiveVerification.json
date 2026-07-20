@@ -1,0 +1,38 @@
+{
+  "part": "Part 7 - Live Production Verification",
+  "hostTested": "https://bible-buddy-monorepo-enterprise-v122-7.onrender.com",
+  "testWindow": "2026-07-20T14:03Z-14:05Z",
+  "liveHostConfirmedPreBaseline": true,
+  "checks": [
+    { "name": "health", "url": "GET /health", "httpStatus": 200, "result": "PASS" },
+    { "name": "founder_app_loads", "url": "GET /", "httpStatus": 200, "bytesReturned": 20192, "result": "PASS" },
+    { "name": "static_asset", "url": "GET /index.html", "httpStatus": 200, "result": "PASS" },
+    { "name": "basic_scripture_chat", "url": "POST /buddy/chat", "message": "Read John 3:16 to me.", "httpStatus": 200, "latencyMs": 3673, "result": "PASS" },
+    { "name": "oversized_request_rejection", "url": "POST /buddy/chat", "messageLength": 4500, "httpStatus": 200, "latencyMs": 8855, "expectedHttpStatus": 400, "result": "FAIL", "reason": "message-length guard not present on live build" },
+    { "name": "admin_command_center", "url": "GET /admin/api/bible-authority/command-center", "httpStatus": 404, "result": "FAIL", "reason": "Admin console not present on live build" },
+    { "name": "lesson_alignment_limits", "url": "GET /admin/api/bible-authority/lesson-alignment/limits", "httpStatus": 404, "result": "FAIL", "reason": "Lesson Alignment feature not present on live build" },
+    { "name": "admin_static_page", "url": "GET /admin/bible-authority.html", "httpStatus": 404, "result": "FAIL" }
+  ],
+  "notVerifiedAgainstLiveHostPendingRedeploy": [
+    "mobile_layout", "orb_rendering_visual_states", "dark_mode", "accessibility",
+    "original_language_responses", "historical_context_responses", "decision_support_lane",
+    "prayer_mode", "cross_references", "answer_lineage_disclosure", "iog_icoj_evidence",
+    "admin_token_protection_behavior", "queue_evidence_display", "concurrent_request_smoke",
+    "admin_snapshot_latency"
+  ],
+  "criticalFinding": {
+    "id": "oversized_request_not_rejected_on_live",
+    "severity": "HIGH",
+    "description": "Live host processes arbitrarily large chat messages (8.85s observed for one 4500-char message) with no length ceiling, on a single-process architecture with no rate limiting. This is the exact risk the Part 2 baseline MAX_CHAT_MESSAGE_LENGTH fix closes.",
+    "mustReverifyAfterDeploy": true
+  },
+  "summary": {
+    "liveHostReachable": true,
+    "healthEndpoint": "PASS",
+    "coreScriptureChat": "PASS",
+    "securityOversizedRequestRejection": "NOT_YET_DEPLOYED",
+    "adminInterface": "NOT_YET_DEPLOYED",
+    "lessonAlignment": "NOT_YET_DEPLOYED",
+    "fullFounderScenarioSet": "NOT_VERIFIED_AGAINST_LIVE_HOST_PENDING_REDEPLOY"
+  }
+}

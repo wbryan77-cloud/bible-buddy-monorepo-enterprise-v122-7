@@ -9,6 +9,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const APP_VERSION = 'v122.14.0 (platform unification foundation)';
 
+// FOUNDER_ALPHA_DEPLOYMENT_ACTIVATION Part 6 — safe, non-sensitive build-identity
+// field. Render automatically injects RENDER_GIT_COMMIT/RENDER_GIT_BRANCH for every
+// deploy on that platform; when absent (local dev), this stays null rather than
+// guessing. Only the short (7-char) commit prefix is ever exposed — never a full
+// SHA-adjacent secret, token, or path.
+const RELEASE_COMMIT = process.env.RENDER_GIT_COMMIT
+  ? String(process.env.RENDER_GIT_COMMIT).slice(0, 7)
+  : null;
+const RELEASE_BRANCH = process.env.RENDER_GIT_BRANCH || null;
+
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -46,6 +56,8 @@ function buildSelfTestPayload() {
       ok: true,
       version: APP_VERSION,
       time: new Date().toISOString(),
+      releaseCommit: RELEASE_COMMIT,
+      releaseBranch: RELEASE_BRANCH,
     },
     providers: computeProviderStatus(),
     queue: { ok: true, detail: 'not configured for production queue yet' },

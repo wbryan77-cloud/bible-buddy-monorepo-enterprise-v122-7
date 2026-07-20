@@ -1,0 +1,54 @@
+{
+  "part": "Part 5 - Render Deployment Discovery",
+  "renderAccessAvailable": false,
+  "accessCheckDetails": {
+    "renderApiKeyPresent": false,
+    "renderMcpServerAvailable": false,
+    "authenticatedBrowserSessionAvailable": false,
+    "mcpServersChecked": ["cursor-app-control", "cursor-ide-browser"]
+  },
+  "status": "RENDER_DASHBOARD_ACTION_REQUIRED",
+  "knownFromRepositoryEvidence": {
+    "publicHost": "https://bible-buddy-monorepo-enterprise-v122-7.onrender.com",
+    "healthEndpointPreviouslyReturned200": true,
+    "renderYamlDeclaredServiceName": "bible-buddy",
+    "trackedBranch": "UNKNOWN - requires dashboard access",
+    "autoDeployDeclaredInRenderYaml": true,
+    "autoDeployActuallyEnabledOnLiveService": "UNKNOWN - requires dashboard access",
+    "serviceId": "UNKNOWN",
+    "deploymentHistory": "UNKNOWN",
+    "envVarsPresentOnLiveService": "UNKNOWN",
+    "customDomains": "UNKNOWN",
+    "sslStatus": "UNKNOWN",
+    "runtimeRegion": "UNKNOWN",
+    "serviceStatus": "UNKNOWN"
+  },
+  "manualDeploymentSequence": {
+    "targetBranch": "sprint-2c-c3-explicit-scripture-handoff",
+    "recommendedDeployCommit": "6d8a254f9ecef84af66ff70f8b8510d2c6fbf56d",
+    "baselineTagCommit": "d34d9f0f95c7cba8300221c4c70b6e89d0f48d18",
+    "baselineTag": "founder-alpha-v1.0.0",
+    "buildCommand": "npm install",
+    "startCommand": "node server.js",
+    "healthCheckPath": "/health",
+    "requiredEnvVarNames": [
+      "NODE_ENV", "OPENAI_API_KEY", "BIBLE_AUTHORITY_ADMIN_TOKEN", "BUDDY_RUNTIME",
+      "BUDDY_TEMPLATE_PROSE", "BUDDY_DISABLE_STUDY_FALLBACK", "BUDDY_DEBUG", "BUDDY_LIVE_TRACE",
+      "PHASE_AUTOSTART", "AI_DEPLOYMENT_AGENT", "TIMEZONE", "PERSISTENCE", "SABBATH_QUIET",
+      "SUNDAY_RENEWAL_TIME", "QUEUE_RATE_PER_MINUTE", "QUEUE_MAX_RETRIES"
+    ],
+    "steps": [
+      "Open Render dashboard for the bible-buddy web service",
+      "Settings -> Build & Deploy: confirm branch, build command, start command, health check path",
+      "Settings -> Environment: confirm required env var names are set (especially BIBLE_AUTHORITY_ADMIN_TOKEN)",
+      "Trigger Manual Deploy of latest commit on the branch (or confirm auto-deploy already fired)",
+      "Monitor Logs tab until deploy reaches Live with no build errors",
+      "Verify using Part 7 live production checks"
+    ]
+  },
+  "actionsNotTaken": {
+    "credentialsFabricated": false,
+    "deploymentTriggered": false,
+    "renderSideConfigModified": false
+  }
+}
