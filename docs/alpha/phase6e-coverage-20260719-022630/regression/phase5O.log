@@ -1,0 +1,15 @@
+node:internal/process/promises:332
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+[TypeError: fetch failed] {
+  [cause]: Error: getaddrinfo ENOTFOUND bible-buddy-monorepo-enterprise-v122-7.onrender.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:121:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'bible-buddy-monorepo-enterprise-v122-7.onrender.com'
+  }
+}
+
+Node.js v26.0.0

@@ -44,10 +44,25 @@ function replyHasScriptureSupport(reply = '', scripture = []) {
   return SCRIPTURE_REF_RE.test(String(reply || ''));
 }
 
+// PHASE_6F_PART9 — a companion prayer or emergency-safety response never
+// makes a doctrinal claim in the first place, so the composer's own
+// "Scripture does not state that directly." denial-phrase instruction
+// (see reasonFirstComposer.js BIBLE_ONLY_AUTHORITY_INSTRUCTION) sometimes
+// gets appended as a stray, out-of-place sentence at the end of a warm
+// intercessory prayer or a health/crisis safety warning — neither of which
+// asserted anything Scripture needed to support or deny. This is narrowly
+// scoped to intercessory-prayer / medical-safety phrasing so it never
+// touches a genuine "Scripture is silent on this" doctrine answer (which
+// will not contain prayer-closing or emergency-care language).
+const PRAYER_OR_SAFETY_CONTEXT_RE =
+  /\b(in jesus'? name,? amen|father,? (i bring|please)|call (911|988|emergency)|nearest er|urgent care|call a doctor|contact a doctor)\b/i;
+
 function suppressValidatorLeak(reply = '', scripture = []) {
   let result = String(reply || '').trim();
   if (!result) return result;
-  if (!replyHasScriptureSupport(result, scripture)) return result;
+
+  const inPrayerOrSafetyContext = PRAYER_OR_SAFETY_CONTEXT_RE.test(result);
+  if (!inPrayerOrSafetyContext && !replyHasScriptureSupport(result, scripture)) return result;
 
   const sentences = result.split(/(?<=[.!?])\s+/).filter(Boolean);
   const filtered = sentences.filter((sentence) => !DENIAL_RE.test(sentence));

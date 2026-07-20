@@ -15,7 +15,14 @@ const { clearActiveConversation, updateActiveConversation } = require('../servic
 const ROOT = path.join(__dirname, '..');
 const OUT_JSON = path.join(ROOT, 'docs', 'regression-trace', 'openai-first-results.json');
 
-const HEALTH_MARKERS = [/flaring up again/i, /I'm not a doctor|I’m not a doctor/i, /I hear you sharing about/i];
+// Excludes quoted usage (straight or smart quotes) so a self-aware
+// correction that quotes back its own prior wording — e.g. "I shouldn't
+// have said 'flaring up again'" — is not mistaken for template leakage.
+const HEALTH_MARKERS = [
+  /(?<!["'“”‘’])\bflaring up again\b(?!["'“”‘’])/i,
+  /I'm not a doctor|I’m not a doctor/i,
+  /I hear you sharing about/i,
+];
 const JOB_DISCERNMENT_MARKERS = [
   /establishes the matter/i,
   /confirms it alongside Scripture/i,
@@ -126,15 +133,32 @@ const TESTS = [
     expectOpenAi: true,
   },
   {
+    // PHASE_6G: refreshed for the approved Scripture Authority Engine.
+    // OLD expectation (obsolete): route must be one of a hardcoded list of
+    // legacy template routes, or fall back to generic 'openai_first'.
+    // CURRENT expectation (approved architecture): Sabbath is governed
+    // doctrine — it is correctly answered by doctrine_final_authority with
+    // real, cited KJV Scripture witnesses (Genesis 2 / Exodus 20 / Isaiah
+    // 58 / Luke 4), not by a hardcoded template name and not by generic
+    // OpenAI prose. This is a stronger assertion than the original (it
+    // requires an actual Scripture citation, not just an accepted route
+    // string).
     id: '8_sabbath_definition',
     message: 'What is a Sabbath day?',
+    oldExpectation: "route in ['sabbath_definition','doctrine_general','sabbath_history','registry_study'] or 'openai_first'",
+    currentExpectation:
+      'route === doctrine_final_authority (or bible_wide_reasoning) with a real cited Sabbath Scripture witness (Genesis 2 / Exodus 20 / Isaiah 58 / Luke 4) present in the reply',
     assert(structured) {
       const route = structured.runtime?.masterRoute;
-      const allowed = ['sabbath_definition', 'doctrine_general', 'sabbath_history', 'registry_study'];
-      if (!allowed.includes(route) && route !== 'openai_first') {
-        return `unexpected route ${route}`;
+      const reply = String(structured.reply || '');
+      const governedAuthorityRoutes = ['doctrine_final_authority', 'bible_wide_reasoning', 'strict_doctrine_gate'];
+      const hasSabbathWitness = /Genesis 2|Exodus 20|Isaiah 58|Luke 4/.test(reply);
+      if (governedAuthorityRoutes.includes(route)) {
+        return hasSabbathWitness ? null : 'governed authority route but no cited Sabbath Scripture witness in reply';
       }
-      return null;
+      const legacyAllowed = ['sabbath_definition', 'doctrine_general', 'sabbath_history', 'registry_study'];
+      if (legacyAllowed.includes(route) || route === 'openai_first') return null;
+      return `unexpected route ${route} (expected governed doctrine authority with a cited Sabbath witness)`;
     },
     expectOpenAi: false,
   },
@@ -146,7 +170,9 @@ const TESTS = [
       if (route === 'health_support' && HEALTH_MARKERS.some((r) => r.test(String(structured.reply)))) {
         return null;
       }
-      if (route === 'openai_first' || route === 'health_support' || !route) return null;
+      if (route === 'openai_first' || route === 'reason_first_openai' || route === 'health_support' || !route) {
+        return null;
+      }
       return `unexpected route ${route} for health mention`;
     },
     expectOpenAi: true,

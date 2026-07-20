@@ -10,6 +10,10 @@ const {
   MERGED_GRAPH,
   hasExplicitConcept,
 } = require('./bibleConceptGraph');
+const {
+  findHintedReference,
+  buildExplicitReferenceConceptShape,
+} = require('./groundedScriptureEngine');
 
 
 const EXPLICIT_SCRIPTURE_REFERENCE_RE =
@@ -139,6 +143,17 @@ function detectSemanticConcept(message = '', context = {}) {
   if (/parable/i.test(m) && !/spilled seed|spill.*seed|brother.*seed|onan\b|genesis\s*38/i.test(m)) {
     const ranked = rankConceptCandidates(m, context);
     if (!ranked.length || ranked[0].score < 0.75) return null;
+  }
+
+  // Claims about Scripture's content (e.g. Jesus' appearance) that carry no
+  // explicit chapter:verse are routed to the grounded Scripture engine via a
+  // narrow reference-identification hint (groundedScriptureEngine
+  // .CLAIM_REFERENCE_HINTS). This never returns a doctrine-graph directAnswer
+  // — the concept shape only tells buildBibleWideAnswer which reference to
+  // retrieve live; the answer itself is always computed from that retrieval.
+  const hintedReference = findHintedReference(normalized) || findHintedReference(m);
+  if (hintedReference) {
+    return buildExplicitReferenceConceptShape([hintedReference]);
   }
 
   if (/\babomination\b/i.test(normalized) || /\bdesolation\b/i.test(normalized)) {

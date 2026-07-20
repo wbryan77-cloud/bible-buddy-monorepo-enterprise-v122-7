@@ -1,0 +1,27 @@
+=== PHASE 6E Analytics Snapshot Build ===
+Part 1 done: {
+  FULLY_REPRESENTED: 20,
+  STRONG_LINKED_COVERAGE: 5,
+  PARTIAL_LINKED_COVERAGE: 4,
+  TEXT_ONLY: 37,
+  MISSING_SUPPORTING_KNOWLEDGE: 0,
+  UNVERIFIED: 0
+}
+Part 2 done: 25 topics
+Part 3 done: {
+  MULTIPLE_STRONG_WITNESSES: 17,
+  ADEQUATE_TWO_WITNESSES: 0,
+  SINGLE_EXPLICIT_WITNESS: 0,
+  WEAK_SUPPORTING_EVIDENCE: 0,
+  DUPLICATE_HEAVY: 4,
+  MISSING_PRIMARY_EVIDENCE: 0,
+  NEEDS_REVIEW: 4
+}
+Part 4 done: 66 /66 books with dataset
+Part 5 done: 8 historical records, 8 source candidates
+Part 6 done: 475 pending, {"WEAK_TOPIC_MATCH":448,"VALID_NEW_SCRIPTURE_RELATIONSHIP":27}
+Part 7 done: 0 further actions available, applied= false
+Part 8 done.
+Part 9 done. Risk level: LOW_METADATA_ONLY
+
+=== Analytics build complete in 490ms ===

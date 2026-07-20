@@ -4,8 +4,22 @@ services:
     name: bible-buddy
     env: node
     plan: standard
-    buildCommand: npm install && npx prisma migrate deploy
+    # PHASE_6F Part 15 — `npx prisma migrate deploy` was removed from this
+    # build step. It is a guaranteed, reproducible build failure today:
+    # `prisma` is not a package.json dependency, no `prisma/migrations/`
+    # directory exists, and prisma/schema.prisma uses a datasource `url`
+    # syntax that current Prisma CLI versions reject outright (verified
+    # live: `Error: Prisma schema validation - (get-config wasm)` /
+    # `P1012`). The live runtime does not use Prisma or any database today
+    # (all persistence is local JSONL/JSON files under data/ — see
+    # docs/alpha/phase6f-*/ArchitectureScaleReadiness.md) so this step was
+    # pure dead weight that would have broken every deploy. Re-add a real
+    # migration step only once a database is actually wired into the
+    # runtime, with a valid schema and a committed prisma/migrations/
+    # directory.
+    buildCommand: npm install
     startCommand: node server.js
+    healthCheckPath: /health
     autoDeploy: true
     envVars:
       - key: NODE_ENV

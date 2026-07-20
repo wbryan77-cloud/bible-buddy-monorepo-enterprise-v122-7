@@ -1,0 +1,4 @@
+=== BASELINE LATENCY (before Phase 6E) ===
+Psalm 23:1: 336ms
+Can I eat pork? Yes or no?: 309ms
+Can you pray with me?: 300ms

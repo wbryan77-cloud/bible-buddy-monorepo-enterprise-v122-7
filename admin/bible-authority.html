@@ -41,6 +41,7 @@
     <button type="button" id="tab-executive" class="active">Executive Growth</button>
     <button type="button" id="tab-scripture">Scripture Authority Review</button>
     <button type="button" id="tab-engineering">Engineering Intelligence</button>
+    <button type="button" id="tab-founder">Founder Readiness</button>
     <button type="button" id="refreshBtn">Refresh</button>
   </div>
 
@@ -67,6 +68,7 @@
         <button type="button" id="sub-coverage">Topic Coverage</button>
         <button type="button" id="sub-readiness">Implementation Readiness</button>
         <button type="button" id="sub-packs">Topic Packs</button>
+        <button type="button" id="sub-pending">Pending Candidates</button>
       </div>
       <div id="view-candidates" class="sub-view active">
         <div id="tierFilters"></div>
@@ -90,6 +92,11 @@
         <div id="topicPacks"></div>
         <p id="coverageScoreLine"></p>
       </div>
+      <div id="view-pending" class="sub-view">
+        <h3>Pending Candidates — Support Graph Review Queue</h3>
+        <p>Rule-based engine runs first. "Auto-approve" only marks a candidate ready for admin merge — it never writes to the live Scripture-answer path by itself.</p>
+        <div id="pendingCandidates"></div>
+      </div>
     </div>
   </section>
 
@@ -98,6 +105,63 @@
       <h2>Engineering Intelligence</h2>
       <p>System health for developers — not used for scripture approval.</p>
       <pre id="engineeringBody">Loading…</pre>
+    </div>
+  </section>
+
+  <!-- PHASE_6H — Admin Experience: one consolidated, read-only view over
+       data that already exists behind separate JSON endpoints (build
+       identity, founder-alpha:validate report, feature flags, knowledge
+       coverage / IOG-ICOJ pipeline counts / historical investigation /
+       drift). No new backend computation — every number here is read
+       from an existing snapshot or report file, same pattern as the
+       Scripture Authority Review tab above. -->
+  <section id="founder" class="section">
+    <div class="card">
+      <h2>Founder Readiness</h2>
+      <p>Build identity, the latest <code>npm run founder-alpha:validate</code> result, feature flags, and knowledge-pipeline coverage — all read-only, all sourced from existing reports/snapshots.</p>
+      <div id="founderBuild" class="candidate-detail"></div>
+    </div>
+
+    <div class="card">
+      <h2>Latest Founder Readiness Validator Run</h2>
+      <div id="founderValidatorSummary">Loading…</div>
+      <div id="founderValidatorDetail"></div>
+    </div>
+
+    <div class="card">
+      <h2>Knowledge Coverage &amp; Pipeline</h2>
+      <div id="founderCoverageGrid" class="grid"></div>
+      <div id="founderPipelineNote" class="candidate-detail"></div>
+    </div>
+
+    <div class="card">
+      <h2>Feature Flags (Founder Alpha disposition)</h2>
+      <table id="founderFeatureTable"><thead><tr><th>Feature</th><th>Status</th></tr></thead><tbody></tbody></table>
+    </div>
+
+    <div class="card">
+      <h2>System Health</h2>
+      <div id="founderSystemHealthGrid" class="grid"></div>
+    </div>
+
+    <!-- PHASE_6H Part 5 — Admin review visibility for Lesson Alignment
+         (previously entirely ephemeral: analyze -> return -> gone). -->
+    <div class="card">
+      <h2>Lesson Alignment — Recent Submissions</h2>
+      <p>Read-only. Diagnostic reports only — nothing here has been promoted to production Scripture knowledge.</p>
+      <table id="lessonSubmissionsTable"><thead><tr><th>When</th><th>Source</th><th>Refs</th><th>Matches</th><th>Misquotes</th><th>Ref-only</th><th>Unresolved</th></tr></thead><tbody></tbody></table>
+    </div>
+
+    <!-- PHASE_6H Part 7 — Founder Observation Layer. Aggregate,
+         non-identifying product-improvement counters only (no message
+         text, no per-user identity) — see services/runtimeHealthMonitor.js
+         recordFounderObservation(). -->
+    <div class="card">
+      <h2>Founder Observation Layer</h2>
+      <p>Aggregate usage signals only — no message content or user identity is stored here.</p>
+      <div id="founderObservationGrid" class="grid"></div>
+      <h3 style="margin-top:16px;">Question categories seen</h3>
+      <table id="founderObservationCategoryTable"><thead><tr><th>Category / route</th><th>Count</th></tr></thead><tbody></tbody></table>
     </div>
   </section>
 

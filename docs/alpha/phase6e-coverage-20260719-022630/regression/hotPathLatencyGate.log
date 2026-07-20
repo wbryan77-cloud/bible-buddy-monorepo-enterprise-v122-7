@@ -1,0 +1,14 @@
+=== PHASE 6E Part 12 — Hot-Path Latency Gate ===
+
+--- Static require-graph check ---
+PASS routes/buddy.js (95 files visited, 0 violations)
+PASS services/bibleCompanionOrchestrator.js (139 files visited, 0 violations)
+PASS services/buddyBrain.js (89 files visited, 0 violations)
+PASS services/openAiFirstCompanionRuntime.js (175 files visited, 0 violations)
+
+--- Live latency check against http://localhost:3001 ---
+scripture avg: 278 ms | doctrine avg: 286 ms | prayer avg: 279 ms
+
+Wrote report to docs/alpha/phase6e-coverage-20260719-022630/HotPathLatencyGate.json
+
+=== Gate PASSED ===

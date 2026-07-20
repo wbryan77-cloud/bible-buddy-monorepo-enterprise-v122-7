@@ -1,14 +1,14 @@
 {
-  "ranAt": "2026-07-01T15:05:27.600Z",
+  "ranAt": "2026-07-20T01:13:10.422Z",
   "localConfig": {
-    "nodeEnv": "development",
+    "nodeEnv": "production",
     "buddyRuntime": "legacy",
     "openAiFirstEnabled": true,
     "openAiFirstEnv": "unset_defaults_on",
     "templateProseEnabled": false,
     "studyFallbackDisabled": true,
     "studyFallbackEnabled": false,
-    "openAiKeyPresent": false,
+    "openAiKeyPresent": true,
     "finalAnswerAuthorMode": "openai",
     "activePath": "openAiFirstCompanionRuntime",
     "debugEnabled": true
@@ -22,20 +22,20 @@
     "planStandard": true,
     "buddyDebug": true
   },
-  "openAiKeyPresent": false,
+  "openAiKeyPresent": true,
   "memoryAtEnd": {
-    "heapUsedMB": 52,
-    "rssMB": 234
+    "heapUsedMB": 20,
+    "rssMB": 269
   },
   "tests": [
     {
       "id": "t01",
       "message": "Can I eat pork? Yes or no?",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-01T15:05:24.422Z",
+      "ts": "2026-07-20T01:12:57.351Z",
       "messagePreview": "Can I eat pork? Yes or no?",
       "httpStatus": 200,
-      "latencyMs": 232,
+      "latencyMs": 412,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "direct_yes_no",
       "historyAllowed": false,
@@ -58,13 +58,11 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 86,
-        "rssMB": 228
+        "heapUsedMB": 80,
+        "rssMB": 258
       },
-      "violations": [
-        "non_openai_speaker"
-      ],
-      "replyPreview": "No. Staying with Scripture, pork is unclean. Leviticus 11 and Deuteronomy 14 identify swine as unclean. Acts 10 does not overturn that; Peter explains in Acts 10:28 that the vision was about not calling people common or unclean.",
+      "violations": [],
+      "replyPreview": "No. Staying with Scripture, with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles, not permission to eat unclean foods. Leviticus 11 and Deuterono",
       "routeOwnership": {
         "detectedIntent": "doctrine_answer",
         "detectedConcept": "dietary_pork_unclean",
@@ -78,25 +76,61 @@
         "forbiddenPhraseDetected": false,
         "finalResponseOwner": "liveResponseOwner",
         "messagePreview": "Can I eat pork? Yes or no?",
-        "replyPreview": "No. Staying with Scripture, pork is unclean. Leviticus 11 and Deuteronomy 14 identify swine as unclean. Acts 10 does not overturn that; Peter explains in Acts 10:28 that the vision was about not calli"
+        "replyPreview": "No. Staying with Scripture, with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture distinguishes clean "
       },
+      "scripture": [
+        {
+          "reference": "Leviticus 11:7",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Deuteronomy 14:8",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Leviticus 11",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Deuteronomy 14",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Daniel 1:8-16",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Acts 10:14",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Acts 10:28",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Acts 11:1-18",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Isaiah 66:17",
+          "theme": "dietary_law"
+        }
+      ],
       "scored": {
-        "pass": false,
-        "violations": [
-          "non_openai_speaker",
-          "openai_not_called_without_connection_path"
-        ],
-        "apiFailureExpected": false
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
       }
     },
     {
       "id": "t02",
       "message": "How do we keep the Sabbath holy?",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-01T15:05:25.024Z",
+      "ts": "2026-07-20T01:12:58.122Z",
       "messagePreview": "How do we keep the Sabbath holy?",
       "httpStatus": 200,
-      "latencyMs": 246,
+      "latencyMs": 417,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "how_to_practice",
       "historyAllowed": false,
@@ -119,12 +153,10 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 66,
-        "rssMB": 246
+        "heapUsedMB": 68,
+        "rssMB": 252
       },
-      "violations": [
-        "non_openai_speaker"
-      ],
+      "violations": [],
       "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture.",
       "routeOwnership": {
         "detectedIntent": "doctrine_answer",
@@ -141,23 +173,39 @@
         "messagePreview": "How do we keep the Sabbath holy?",
         "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture."
       },
+      "scripture": [
+        {
+          "reference": "Genesis 2:2-3",
+          "theme": "sabbath"
+        },
+        {
+          "reference": "Exodus 20:8-11",
+          "theme": "sabbath"
+        },
+        {
+          "reference": "Isaiah 58:13-14",
+          "theme": "sabbath"
+        },
+        {
+          "reference": "Luke 4:16",
+          "theme": "sabbath"
+        }
+      ],
       "scored": {
-        "pass": false,
-        "violations": [
-          "non_openai_speaker",
-          "openai_not_called_without_connection_path"
-        ],
-        "apiFailureExpected": false
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
       }
     },
     {
       "id": "t03",
       "message": "What does Logos mean in John 1:1?",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-01T15:05:25.583Z",
+      "ts": "2026-07-20T01:12:58.819Z",
       "messagePreview": "What does Logos mean in John 1:1?",
       "httpStatus": 200,
-      "latencyMs": 205,
+      "latencyMs": 346,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "companion",
       "historyAllowed": true,
@@ -180,16 +228,14 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 38,
-        "rssMB": 230
+        "heapUsedMB": 74,
+        "rssMB": 261
       },
-      "violations": [
-        "non_openai_speaker"
-      ],
-      "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Exodus 20, Deuteronomy 5, Exodus 34:28.",
+      "violations": [],
+      "replyPreview": "Scripture speaks directly to this. John 1:1 — \"In the beginning was the Word, and the Word was with God, and the Word was God.\" (King James Version).",
       "routeOwnership": {
         "detectedIntent": "doctrine_answer",
-        "detectedConcept": "ten_commandments",
+        "detectedConcept": "explicit_scripture_reference",
         "selectedEngine": "bibleWideReasoningEngine",
         "selectedTemplate": "bibleWideReasoningEngine.buildBibleWideAnswer",
         "selectedRoute": "bible_wide_reasoning",
@@ -200,25 +246,32 @@
         "forbiddenPhraseDetected": false,
         "finalResponseOwner": "liveResponseOwner",
         "messagePreview": "What does Logos mean in John 1:1?",
-        "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Exodus 20, Deuteronomy 5, Exodus 34:28."
+        "replyPreview": "Scripture speaks directly to this. John 1:1 — \"In the beginning was the Word, and the Word was with God, and the Word was God.\" (King James Version)."
       },
+      "scripture": [
+        {
+          "reference": "John 1:1",
+          "text": "In the beginning was the Word, and the Word was with God, and the Word was God.",
+          "translation": "King James Version",
+          "source": "Local KJV Corpus (public domain King James Version, vendored offline)",
+          "theme": "explicit_scripture_reference"
+        }
+      ],
       "scored": {
-        "pass": false,
-        "violations": [
-          "non_openai_speaker",
-          "openai_not_called_without_connection_path"
-        ],
-        "apiFailureExpected": false
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
       }
     },
     {
       "id": "t04",
       "message": "How many heavens are talked about in the Bible?",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-01T15:05:26.153Z",
+      "ts": "2026-07-20T01:12:59.552Z",
       "messagePreview": "How many heavens are talked about in the Bible?",
       "httpStatus": 200,
-      "latencyMs": 214,
+      "latencyMs": 381,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "companion",
       "historyAllowed": true,
@@ -241,13 +294,11 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 83,
-        "rssMB": 239
+        "heapUsedMB": 78,
+        "rssMB": 275
       },
-      "violations": [
-        "non_openai_speaker"
-      ],
-      "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. 2 Corinthians 12:2, Genesis 1:1, Deuteronomy 10:14.",
+      "violations": [],
+      "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. Scripture witnesses: 2 Corinthians 12:2, Genesis 1:1, Deuteronomy 10:14.",
       "routeOwnership": {
         "detectedIntent": "doctrine_answer",
         "detectedConcept": "heaven_layers",
@@ -258,41 +309,53 @@
         "draftOrchestratorLane": "bible_wide",
         "finalRoute": "bible_wide_reasoning",
         "contractRepairLane": null,
-        "forbiddenPhraseDetected": false,
+        "forbiddenPhraseDetected": true,
         "finalResponseOwner": "liveResponseOwner",
         "messagePreview": "How many heavens are talked about in the Bible?",
-        "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. 2 Co"
+        "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. Scri"
       },
+      "scripture": [
+        {
+          "reference": "2 Corinthians 12:2",
+          "theme": "heaven_layers"
+        },
+        {
+          "reference": "Genesis 1:1",
+          "theme": "heaven_layers"
+        },
+        {
+          "reference": "Deuteronomy 10:14",
+          "theme": "heaven_layers"
+        }
+      ],
       "scored": {
-        "pass": false,
-        "violations": [
-          "non_openai_speaker",
-          "openai_not_called_without_connection_path"
-        ],
-        "apiFailureExpected": false
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
       }
     },
     {
       "id": "t05",
       "message": "Today has been a rough day. I had to let go of someone I love.",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-01T15:05:26.700Z",
+      "ts": "2026-07-20T01:13:09.387Z",
       "messagePreview": "Today has been a rough day. I had to let go of someone I love.",
       "httpStatus": 200,
-      "latencyMs": 195,
+      "latencyMs": 9483,
       "runtimeUsed": "core_openai_first",
-      "currentIntent": "companion",
-      "historyAllowed": true,
-      "routeUsed": "bible_wide_reasoning",
-      "openaiCalled": false,
-      "openaiResponseReceived": false,
-      "finalAnswerAuthor": "bible_wide_reasoning",
+      "currentIntent": "emotional_companion",
+      "historyAllowed": false,
+      "routeUsed": "reason_first_openai",
+      "openaiCalled": true,
+      "openaiResponseReceived": true,
+      "finalAnswerAuthor": "openai",
       "templateUsed": false,
       "fallbackUsed": false,
       "studyFallbackUsed": false,
-      "responderUsed": false,
+      "responderUsed": true,
       "forbiddenPhraseDetected": false,
-      "answerMatchesLatestQuestion": null,
+      "answerMatchesLatestQuestion": true,
       "regenerated": false,
       "sourceGroundedResponderUsed": false,
       "sabbathHistoryDeepResponderUsed": false,
@@ -302,45 +365,48 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 38,
-        "rssMB": 232
+        "heapUsedMB": 74,
+        "rssMB": 282
       },
-      "violations": [
-        "non_openai_speaker"
-      ],
-      "replyPreview": "I’m sorry that hurts. Psalm 34:18 says the LORD is nigh unto them that are of a broken heart. Psalm 34:18, 1 Peter 5:7, Psalm 147:3.",
+      "violations": [],
+      "replyPreview": "I’m really sorry. Having to let go of someone you love can feel like grief even when you know it may have been necessary. Today being rough makes sense — love does not just switch off because a decision had to be made.\n\nFor tonight, try not to force yourself to be “fine.” Give yourself a quiet moment to breathe, drink some water, and tell God the p",
       "routeOwnership": {
-        "detectedIntent": "doctrine_answer",
-        "detectedConcept": "heartbreak_comfort",
-        "selectedEngine": "bibleWideReasoningEngine",
-        "selectedTemplate": "bibleWideReasoningEngine.buildBibleWideAnswer",
-        "selectedRoute": "bible_wide_reasoning",
-        "draftRoute": "bible_wide_reasoning",
-        "draftOrchestratorLane": "bible_wide",
-        "finalRoute": "bible_wide_reasoning",
+        "detectedIntent": "emotional_support",
+        "detectedConcept": null,
+        "selectedEngine": "reason_first_openai",
+        "selectedTemplate": null,
+        "selectedRoute": "reason_first_openai",
+        "draftRoute": "reason_first_openai",
+        "draftOrchestratorLane": null,
+        "finalRoute": "reason_first_openai",
         "contractRepairLane": null,
         "forbiddenPhraseDetected": false,
         "finalResponseOwner": "liveResponseOwner",
         "messagePreview": "Today has been a rough day. I had to let go of someone I love.",
-        "replyPreview": "I’m sorry that hurts. Psalm 34:18 says the LORD is nigh unto them that are of a broken heart. Psalm 34:18, 1 Peter 5:7, Psalm 147:3."
+        "replyPreview": "I’m really sorry. Having to let go of someone you love can feel like grief even when you know it may have been necessary. Today being rough makes sense — love does not just switch off because a decisi"
       },
+      "scripture": [
+        {
+          "reference": "Psalm 34:18",
+          "text": "The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.",
+          "reason": "This anchors the pain of letting go in the comfort that God draws near to the brokenhearted."
+        }
+      ],
       "scored": {
-        "pass": false,
-        "violations": [
-          "non_openai_speaker",
-          "openai_not_called_without_connection_path"
-        ],
-        "apiFailureExpected": false
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": false
       }
     },
     {
       "id": "t06",
       "message": "You didn't answer my question.",
       "channel": "runBuddy_direct",
-      "ts": "2026-07-01T15:05:27.248Z",
+      "ts": "2026-07-20T01:13:10.071Z",
       "messagePreview": "You didn't answer my question.",
       "httpStatus": 200,
-      "latencyMs": 193,
+      "latencyMs": 332,
       "runtimeUsed": "core_openai_first",
       "currentIntent": "emotional_support",
       "historyAllowed": true,
@@ -363,12 +429,10 @@
       "errorName": null,
       "errorMessage": null,
       "memoryUsage": {
-        "heapUsedMB": 52,
-        "rssMB": 234
+        "heapUsedMB": 93,
+        "rssMB": 286
       },
-      "violations": [
-        "non_openai_speaker"
-      ],
+      "violations": [],
       "replyPreview": "You're right to call that out. I was stuck on the last Bible topic instead of listening to your new message. I'm with you now. What do you want me to answer?",
       "routeOwnership": {
         "detectedIntent": "doctrine_answer",
@@ -385,18 +449,17 @@
         "messagePreview": "You didn't answer my question.",
         "replyPreview": "You're right to call that out. I was stuck on the last Bible topic instead of listening to your new message. I'm with you now. What do you want me to answer?"
       },
+      "scripture": [],
       "scored": {
-        "pass": false,
-        "violations": [
-          "non_openai_speaker",
-          "openai_not_called_without_connection_path"
-        ],
-        "apiFailureExpected": false
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
       }
     }
   ],
-  "passed": 0,
+  "passed": 6,
   "total": 6,
   "apiFailureOnly": false,
-  "allPassed": false
+  "allPassed": true
 }

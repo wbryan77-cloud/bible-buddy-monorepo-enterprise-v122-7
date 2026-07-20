@@ -1,0 +1,127 @@
+ M .gitignore
+ M Phase4OBibleWideReasoningRegressionReport.md
+ M Phase5ABibleCompanionOrchestrationRegressionReport.md
+ M Phase5LLiveThreadRegressionReport.md
+ M Phase5LNoRegressionGateReport.md
+ M admin/bible-authority.html
+ M admin/js/bible-authority.js
+ M docs/regression-trace/live-runtime-verification.json
+ M docs/regression-trace/openai-first-results.json
+ M docs/regression-trace/phase4o-bible-wide-results.json
+ M docs/regression-trace/phase5a-orchestration-results.json
+ M public/chat.html
+ M routes/bibleAuthorityAdmin.js
+ M routes/runtimeHealth.js
+ M scripts/openAiFirstRegressionTest.js
+ M services/bibleCompanionOrchestrator.js
+ M services/bibleSemanticConceptNormalizer.js
+ M services/bibleWideReasoningEngine.js
+ M services/companionDoctrineRouter.js
+ M services/openAiFirstCompanionRuntime.js
+ M services/pendingQuestionResolver.js
+ M services/reasonFirstComposer.js
+ M services/safeJsonlWriter.js
+ M services/supportGraphCandidateQueue.js
+?? Phase5RLiveRuntimeValidationReport.md
+?? Phase5SScriptureAuthorityEngineReport.md
+?? docs/alpha/AlphaFreezePlan.md
+?? docs/alpha/BibleBuddyAlphaConstitution.md
+?? docs/alpha/Roadmap.md
+?? docs/alpha/architecture/
+?? docs/alpha/archverify-20260717-222100/
+?? docs/alpha/batch1-architecture-foundation-20260716-161250/
+?? docs/alpha/batch1-complete-v2-20260716-174935/
+?? docs/alpha/batch1-repair-complete-20260716-161939/
+?? docs/alpha/batch2-authority-ownership-20260716-180728/
+?? docs/alpha/batch2a-regression-triage-20260716-182607/
+?? docs/alpha/checklists/
+?? docs/alpha/cleanup/
+?? docs/alpha/concepts/
+?? docs/alpha/consolidation/
+?? docs/alpha/core-connection-audit/
+?? docs/alpha/dispatcher-analysis/
+?? docs/alpha/governance/
+?? docs/alpha/implementation-source/
+?? docs/alpha/implementation/
+?? docs/alpha/kilrps-20260717-232059/
+?? docs/alpha/minimum-live-runtime-export.zip
+?? docs/alpha/minimum-live-runtime-export/
+?? docs/alpha/phase5t-2026-07-19T0840/
+?? docs/alpha/phase5t-20260717-211212/
+?? docs/alpha/phase6-knowledge-20260718-204759/
+?? docs/alpha/phase6-knowledge-20260719-011107/
+?? docs/alpha/phase6e-coverage-20260719-022630/
+?? docs/alpha/project-checkpoint/
+?? docs/alpha/readiness/
+?? docs/alpha/regression-architecture/
+?? docs/alpha/regression/
+?? docs/alpha/repository-inventory/
+?? docs/alpha/runtime-source-export.zip
+?? docs/alpha/runtime-source-export/
+?? docs/alpha/runtime/
+?? docs/alpha/scripture-completion-rebaseline-20260715-184344.zip
+?? docs/alpha/scripture-completion-rebaseline-20260715-184344/
+?? docs/alpha/scripture-fidelity/
+?? docs/alpha/sprint2-discovery/
+?? docs/alpha/sprint2c-c-resolver-evidence-20260712-163959/
+?? docs/alpha/sprint2c-c-resolver-evidence-20260712-164145.zip
+?? docs/alpha/sprint2c-c-resolver-evidence-20260712-164145/
+?? docs/alpha/sprint2c-c-resolver-exact-body-20260712-173133.zip
+?? docs/alpha/sprint2c-c-resolver-exact-body-20260712-173133/
+?? docs/alpha/sprint2c-c1-decision-package-20260713-124745.zip
+?? docs/alpha/sprint2c-c1-decision-package-20260713-124745/
+?? docs/alpha/sprint2c-c1-resolver-branch-trace-20260712-200038/
+?? docs/alpha/sprint2c-c1-resolver-branch-trace-20260713-134035/
+?? docs/alpha/sprint2c-c2-explicit-scripture-handoff-20260713-132400.zip
+?? docs/alpha/sprint2c-c2-explicit-scripture-handoff-20260713-132400/
+?? docs/alpha/sprint2c-c2-explicit-scripture-handoff-20260713-132545.zip
+?? docs/alpha/sprint2c-c2-explicit-scripture-handoff-20260713-132545/
+?? docs/alpha/sprint2c-c3-ast-caller-boundary-20260713-233828/
+?? docs/alpha/sprint2c-c3-brace-aware-caller-20260715-064608/
+?? docs/alpha/sprint2c-c3-caller-boundary-20260713-143024.zip
+?? docs/alpha/sprint2c-c3-caller-boundary-20260713-143024/
+?? docs/alpha/sprint2c-c3-caller-window-20260715-074647.zip
+?? docs/alpha/sprint2c-c3-caller-window-20260715-074647/
+?? docs/alpha/sprint2c-c3-clean-repair-20260716-064617/
+?? docs/alpha/sprint2c-c3-explicit-scripture-handoff-20260715-212822/
+?? docs/alpha/sprint2c-c3-explicit-scripture-repair-20260715-214242/
+?? docs/alpha/sprint2c-c3-explicit-scripture-repair-20260715-214429/
+?? docs/alpha/sprint2c-c3-final-repair-20260716-063637/
+?? docs/alpha/sprint2c-closeout-20260712-155318.zip
+?? docs/alpha/sprint2c-closeout-20260712-155318/
+?? docs/alpha/sprint2c-enterprise-rebaseline-20260710-213122.zip
+?? docs/alpha/sprint2c-enterprise-rebaseline-20260710-213122/
+?? docs/alpha/sprint2c-fallback-target/
+?? docs/alpha/sprint2c-retrieval-execution-trace-20260712-142906.zip
+?? docs/alpha/sprint2c-retrieval-execution-trace-20260712-142906/
+?? docs/alpha/sprint2c-retrieval-execution-trace-20260713-134047.zip
+?? docs/alpha/sprint2c-retrieval-execution-trace-20260713-134047/
+?? docs/alpha/sprint2c-retrieval-root-cause-20260712-133334/
+?? docs/architecture/
+?? docs/dev-archive/offline-bible-fallback-20260710-202242/
+?? docs/dev-archive/scripture-final-20260710-202937/
+?? docs/dev-archive/scripture-final-20260710-203840/
+?? docs/dev-archive/sprint2c-b-20260710-180527/
+?? docs/dev-archive/sprint2c-b-canonical-wiring-20260712-130050/
+?? docs/dev-archive/sprint2c-corrective-20260710-183600/
+?? docs/dev-archive/sprint2c-systemic-20260710-190652/
+?? scripts/alpha/
+?? scripts/architectureOwnershipAudit.js
+?? scripts/runPhase5RLiveRuntimeValidation.js
+?? services/bibleTextProvider.js
+?? services/canonicalScriptureProvider.js
+?? services/companionIntentIntelligence.js.before-restore.20260703-142214
+?? services/groundedScriptureEngine.js
+?? services/historicalKnowledgeProvider.js
+?? services/iogIcojGovernedIngestion.js
+?? services/knowledgeApprovalRulesEngine.js
+?? services/localKjvCorpusProvider.js
+?? services/originalLanguageProvider.js
+?? services/originalLanguageResponseFormatter.js
+?? services/runtimeCanonicalContinuityScoringAI.js
+?? services/runtimeCanonicalLifeApplicationEngine.js
+?? services/runtimeCanonicalResponseComposer.js
+?? services/runtimeCanonicalWorshipContinuityEngine.js
+?? services/scriptureAuthorityEngine.js
+?? services/scriptureRelationshipGraph.js
+?? services/topicWitnessRegistry.js

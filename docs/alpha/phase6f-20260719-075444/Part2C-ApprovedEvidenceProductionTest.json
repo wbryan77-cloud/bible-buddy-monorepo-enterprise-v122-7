@@ -1,0 +1,87 @@
+[
+  {
+    "id": "acts10_still_correct",
+    "ok": true,
+    "error": null,
+    "missing": [],
+    "replyPreview": "No. Staying with Scripture, with Scripture, Scripture answers this when the passages below are taken together. Acts 10:28 — \"And he said unto them, Ye know how that it is an unlawful thing for a man that is a Jew to keep"
+  },
+  {
+    "id": "david_covenant",
+    "ok": false,
+    "error": null,
+    "missing": [
+      {}
+    ],
+    "replyPreview": "I want to make sure I answer the right thing. Are you asking about a Bible passage, a life situation, or something you want prayer for?"
+  },
+  {
+    "id": "holy_spirit_ot",
+    "ok": true,
+    "error": null,
+    "missing": [],
+    "replyPreview": "From the approved Scripture witnesses (John 14:16-17; John 16:13; Acts 2:38; Romans 8:9), The Holy Spirit is the Spirit of God active in believers according to Scripture witnesses."
+  },
+  {
+    "id": "heavens_layers",
+    "ok": true,
+    "error": null,
+    "missing": [],
+    "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. Scripture witnesses: 2 C"
+  },
+  {
+    "id": "resurrection_hope",
+    "ok": true,
+    "error": null,
+    "missing": [],
+    "replyPreview": "From the approved Scripture witnesses (1 Corinthians 15; 1 Thessalonians 4:13-16; Daniel 12:2; John 11:25), Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead."
+  },
+  {
+    "id": "ten_commandments_ask",
+    "ok": true,
+    "error": null,
+    "missing": [],
+    "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Scripture witnesses: Exodus 20, Deuteronomy 5, Exodus 34:28."
+  },
+  {
+    "id": "hosea_out_of_egypt",
+    "ok": true,
+    "error": null,
+    "missing": [],
+    "replyPreview": "No — Scripture does not explicitly state that. Hosea 11:1 — \"When Israel was a child, then I loved him, and called my son out of Egypt.\" (King James Version). Scripture is silent on this specific detail."
+  },
+  {
+    "id": "habakkuk_just_shall_live",
+    "ok": true,
+    "error": null,
+    "missing": [],
+    "replyPreview": "Scripture speaks directly to this. Habakkuk 2:4 — \"Behold, his soul which is lifted up is not upright in him: but the just shall live by his faith.\" (King James Version)."
+  },
+  {
+    "id": "malachi_messenger",
+    "ok": false,
+    "error": null,
+    "missing": [
+      {}
+    ],
+    "replyPreview": "I want to make sure I answer the right thing. Are you asking about a Bible passage, a life situation, or something you want prayer for?"
+  },
+  {
+    "id": "peter_jude_parallel",
+    "ok": false,
+    "error": null,
+    "missing": [
+      {}
+    ],
+    "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
+  },
+  {
+    "id": "jonah_sign",
+    "ok": false,
+    "error": null,
+    "missing": [
+      {}
+    ],
+    "replyPreview": "I want to make sure I answer the right thing. Are you asking about a Bible passage, a life situation, or something you want prayer for?"
+  }
+]

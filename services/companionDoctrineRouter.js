@@ -10,6 +10,7 @@ const {
   CONTINUATION_PHRASE_RE,
 } = require('./bibleConceptConcordance');
 const { detectSemanticConcept, shouldClearStaleTopic } = require('./bibleSemanticConceptNormalizer');
+const { findHintedReference } = require('./groundedScriptureEngine');
 const { mapTopicToConceptId } = require('./followUpContextResolver');
 const { isCorrectionMessage, buildCorrectionAcknowledgment } = require('./userCorrectionMemory');
 const {
@@ -108,7 +109,14 @@ const EXPLICIT_SCRIPTURE_REFERENCE_RE =
   /\b(?:genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|ruth|1\s*samuel|2\s*samuel|1\s*kings|2\s*kings|1\s*chronicles|2\s*chronicles|ezra|nehemiah|esther|job|psalms?|proverbs|ecclesiastes|song\s+of\s+solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|1\s*corinthians|2\s*corinthians|galatians|ephesians|philippians|colossians|1\s*thessalonians|2\s*thessalonians|1\s*timothy|2\s*timothy|titus|philemon|hebrews|james|1\s*peter|2\s*peter|1\s*john|2\s*john|3\s*john|jude|revelation)\s+\d{1,3}(?::\d{1,3}(?:-\d{1,3})?)?\b/i;
 
 function hasExplicitScriptureReference(message = '') {
-  return EXPLICIT_SCRIPTURE_REFERENCE_RE.test(String(message || ''));
+  const m = String(message || '');
+  if (EXPLICIT_SCRIPTURE_REFERENCE_RE.test(m)) return true;
+  // A claim about Scripture's content can name no chapter:verse at all
+  // (e.g. "verses that say Jesus had white skin, blue eyes...") yet still
+  // needs to be settled by grounded retrieval rather than open-ended
+  // companion conversation. findHintedReference only identifies which
+  // reference is relevant — it never supplies the answer.
+  return Boolean(findHintedReference(m));
 }
 
 function normalizeMessage(message = '') {
@@ -533,7 +541,7 @@ function applyDoctrineRoutingSideEffects(userId, plan, message = '') {
  * Warm local fallback when companion lane cannot reach OpenAI.
  * Scripture-grounded, not strict-doctrine template repetition.
  */
-function buildCompanionLaneFallbackReply(message = '', context = {}) {
+async function buildCompanionLaneFallbackReply(message = '', context = {}) {
   const m = normalizeMessage(message).toLowerCase();
   if (!m) return null;
 
@@ -602,7 +610,7 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
   const { buildBibleWideAnswer } = require('./bibleWideReasoningEngine');
   const { getUserAnswerPreferences } = require('./userCorrectionMemory');
 
-  const conceptAnswer = buildBibleWideAnswer({
+  const conceptAnswer = await buildBibleWideAnswer({
     message,
     userId: context.userId,
     userPreferences: getUserAnswerPreferences(context.userId),

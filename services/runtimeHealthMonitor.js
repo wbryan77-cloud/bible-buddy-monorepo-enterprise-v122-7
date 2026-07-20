@@ -50,6 +50,20 @@ const metrics = {
   alphaAverageLatency: 0,
   alphaNotificationQueueCount: 0,
   alphaCaptureCount: 0,
+  // PHASE_6H Part 7 — Founder Observation Layer. Lightweight, in-process
+  // product-improvement counters (never personal profiling — no per-user
+  // identity is stored here, only aggregate counts), reusing this existing
+  // health-monitor module rather than a new analytics engine. Surfaced
+  // read-only in the Admin Founder Readiness tab.
+  observation: {
+    witnessRetrievalCount: 0,
+    historicalContextUsedCount: 0,
+    originalLanguageUsedCount: 0,
+    prayerUsageCount: 0,
+    lessonAlignmentUsageCount: 0,
+    continuationUsageCount: 0,
+    questionCategoryCounts: {},
+  },
 };
 
 let alphaLatencySum = 0;
@@ -296,6 +310,41 @@ function recordRouteFallback({
   persistSnapshot();
 }
 
+const MAX_OBSERVATION_CATEGORIES = 60;
+
+/**
+ * PHASE_6H Part 7 — Founder Observation Layer. Records only aggregate,
+ * product-improvement counters from a single completed /buddy/chat (or
+ * lesson-alignment) turn: which category of question it was, whether a
+ * witness/original-language/historical-context/prayer/continuation path
+ * was used. No message text, no user identity, no free-form content is
+ * stored here — this module only ever increments numbers.
+ */
+function recordFounderObservation({
+  category = null,
+  witnessRetrieved = false,
+  historicalContextUsed = false,
+  originalLanguageUsed = false,
+  prayerUsed = false,
+  lessonAlignmentUsed = false,
+  continuationUsed = false,
+} = {}) {
+  const obs = metrics.observation;
+  if (witnessRetrieved) obs.witnessRetrievalCount += 1;
+  if (historicalContextUsed) obs.historicalContextUsedCount += 1;
+  if (originalLanguageUsed) obs.originalLanguageUsedCount += 1;
+  if (prayerUsed) obs.prayerUsageCount += 1;
+  if (lessonAlignmentUsed) obs.lessonAlignmentUsageCount += 1;
+  if (continuationUsed) obs.continuationUsageCount += 1;
+  if (category) {
+    const key = String(category).slice(0, 60);
+    if (obs.questionCategoryCounts[key] != null || Object.keys(obs.questionCategoryCounts).length < MAX_OBSERVATION_CATEGORIES) {
+      obs.questionCategoryCounts[key] = (obs.questionCategoryCounts[key] || 0) + 1;
+    }
+  }
+  persistSnapshot();
+}
+
 function getRuntimeHealthSnapshot() {
   metrics.uptimeMs = Date.now() - startedAt;
   sampleMemory();
@@ -344,6 +393,7 @@ module.exports = {
   recordContractHandled,
   recordAlphaCapture,
   recordAlphaFeedback,
+  recordFounderObservation,
   setAlphaNotificationQueueCount,
   getRuntimeHealthSnapshot,
   persistSnapshot,

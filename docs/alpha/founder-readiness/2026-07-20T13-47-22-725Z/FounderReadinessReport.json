@@ -1,0 +1,295 @@
+{
+  "status": "READY_WITH_DOCUMENTED_WARNINGS",
+  "exactCommit": "09626367d1fd586b83b807a15c078507fbdd8aa1",
+  "branch": "sprint-2c-c3-explicit-scripture-handoff",
+  "workingTreeStatus": "DIRTY",
+  "timestamp": "2026-07-20T13:52:01.249Z",
+  "durationMs": 278523,
+  "baseUrl": "http://localhost:3000",
+  "serverReachable": true,
+  "skipSlow": false,
+  "categories": [
+    {
+      "name": "REPOSITORY",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "node_version",
+          "status": "PASS",
+          "detail": "v26.0.0"
+        },
+        {
+          "name": "npm_version",
+          "status": "PASS",
+          "detail": "11.12.1"
+        },
+        {
+          "name": "lockfile_present",
+          "status": "PASS",
+          "detail": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/package-lock.json"
+        },
+        {
+          "name": "required_files_present",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "server_syntax_valid",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "migrations_not_referenced_in_build",
+          "status": "PASS",
+          "detail": "no migrations dir; render.yaml does not invoke prisma migrate in any active (non-comment) line (confirmed fixed Phase 6F/6G)"
+        },
+        {
+          "name": "commit_and_working_tree_status",
+          "status": "PASS",
+          "detail": "branch=sprint-2c-c3-explicit-scripture-handoff head=09626367d1fd dirty=true"
+        }
+      ]
+    },
+    {
+      "name": "SCRIPTURE",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "scriptureFidelitySmoke",
+          "status": "PASS",
+          "detail": "4 passed, 0 failed"
+        },
+        {
+          "name": "alphaCoreTruthSmoke",
+          "status": "PASS",
+          "detail": "6 passed, 0 failed"
+        },
+        {
+          "name": "openAiFirstRegressionTest",
+          "status": "PASS",
+          "detail": "10 passed, 0 failed"
+        },
+        {
+          "name": "liveRuntimeVerification",
+          "status": "PASS",
+          "detail": "6 passed, 0 failed"
+        }
+      ]
+    },
+    {
+      "name": "ORIGINAL_LANGUAGE",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "originalLanguageValidation",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    },
+    {
+      "name": "HISTORY",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "historical_records_present",
+          "status": "PASS",
+          "detail": "13 records"
+        },
+        {
+          "name": "historical_records_approved_and_tiered",
+          "status": "PASS",
+          "detail": "approved=true tiered=true"
+        }
+      ]
+    },
+    {
+      "name": "COMPANION",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "decisionOwnershipSmoke",
+          "status": "PASS",
+          "detail": "14 passed, 0 failed"
+        },
+        {
+          "name": "phase5OContinuationRegression",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    },
+    {
+      "name": "ADMIN",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "admin_/admin/api/bible-authority/command-center",
+          "status": "PASS",
+          "detail": "status=200"
+        },
+        {
+          "name": "admin_/admin/api/bible-authority/review-queue",
+          "status": "PASS",
+          "detail": "status=200"
+        },
+        {
+          "name": "admin_/admin/api/bible-authority/knowledge-coverage-dashboard",
+          "status": "PASS",
+          "detail": "status=200"
+        },
+        {
+          "name": "admin_/admin/api/bible-authority/founder-console",
+          "status": "PASS",
+          "detail": "status=200"
+        },
+        {
+          "name": "admin_/admin/api/bible-authority/provider-health",
+          "status": "PASS",
+          "detail": "status=200"
+        }
+      ]
+    },
+    {
+      "name": "USER_PRODUCT",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "no_technical_route_leakage_in_ui",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "coming_soon_labels_present_for_disabled_toggles",
+          "status": "PASS",
+          "detail": "expected disabled-feature labeling"
+        },
+        {
+          "name": "home_page_reachable",
+          "status": "PASS",
+          "detail": "status=200"
+        }
+      ]
+    },
+    {
+      "name": "PROVIDERS",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "openai_configured_or_honest_fallback",
+          "status": "PASS",
+          "detail": "OPENAI_API_KEY present"
+        },
+        {
+          "name": "local_kjv_corpus_available",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "no_secret_values_in_env_sample",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    },
+    {
+      "name": "SECURITY_AND_PRIVACY",
+      "status": "WARN",
+      "checks": [
+        {
+          "name": "admin_auth_boundary",
+          "status": "WARN",
+          "detail": "no admin token env var configured — Admin routes are open in this environment (expected for local Founder testing, must be set before any shared/public deployment)"
+        },
+        {
+          "name": "dotenv_gitignored",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "no_env_file_committed",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    },
+    {
+      "name": "PERFORMANCE",
+      "status": "WARN",
+      "checks": [
+        {
+          "name": "governed_doctrine_latency",
+          "status": "PASS",
+          "detail": "457ms (no OpenAI call expected)"
+        },
+        {
+          "name": "concurrent_health_requests",
+          "status": "PASS",
+          "detail": "5 concurrent /health in 511ms, allOk=true"
+        },
+        {
+          "name": "admin_dashboard_latency",
+          "status": "WARN",
+          "detail": "command-center in 6151ms (offline-precomputed snapshot aggregation; not on the live chat hot path)"
+        }
+      ]
+    },
+    {
+      "name": "DEPLOYMENT",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "render_yaml_present",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "render_start_command_present",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "render_health_check_path_present",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "no_prisma_migrate_in_build",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "env_sample_present",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "readme_present",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    }
+  ],
+  "criticalFailures": [],
+  "warnings": [
+    {
+      "category": "SECURITY_AND_PRIVACY",
+      "check": "admin_auth_boundary",
+      "detail": "no admin token env var configured — Admin routes are open in this environment (expected for local Founder testing, must be set before any shared/public deployment)"
+    },
+    {
+      "category": "PERFORMANCE",
+      "check": "admin_dashboard_latency",
+      "detail": "command-center in 6151ms (offline-precomputed snapshot aggregation; not on the live chat hot path)"
+    }
+  ],
+  "skippedChecks": [],
+  "testCounts": {
+    "pass": 37,
+    "warn": 2,
+    "fail": 0,
+    "skip": 0
+  },
+  "readinessDecision": "READY_WITH_DOCUMENTED_WARNINGS"
+}

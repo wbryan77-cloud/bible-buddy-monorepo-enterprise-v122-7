@@ -23,7 +23,7 @@ function getPendingQuestion(userId) {
   return state.lastPendingQuestion || state.lastUserQuestion || null;
 }
 
-function resolvePendingQuestion({ userId, message, runtimeContext = {}, safety = {} } = {}) {
+async function resolvePendingQuestion({ userId, message, runtimeContext = {}, safety = {} } = {}) {
   const pending = getPendingQuestion(userId);
   if (!pending || /^(stop|why)/i.test(pending) && message) {
     const current = String(message || '').trim();
@@ -40,7 +40,7 @@ function resolvePendingQuestion({ userId, message, runtimeContext = {}, safety =
 
   const concept = detectConceptFromGraph(pending);
   if (concept) {
-    const wide = buildBibleWideAnswer({
+    const wide = await buildBibleWideAnswer({
       message: pending,
       concept,
       userId,

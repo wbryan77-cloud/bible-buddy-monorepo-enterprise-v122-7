@@ -1,0 +1,78 @@
+npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> bible-buddy-monorepo-enterprise@v122.12 founder-alpha:validate
+> node -r dotenv/config scripts/founderAlphaReadinessValidator.js
+
+
+BibleBuddy Founder Readiness Validator — 2026-07-19T23:57:33.403Z
+Base URL for HTTP checks: http://localhost:3000
+Server reachable: true
+
+[PASS] === REPOSITORY ===
+  [PASS] node_version — v26.0.0
+  [PASS] npm_version — 11.12.1
+  [PASS] lockfile_present — /Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/package-lock.json
+  [PASS] required_files_present
+  [PASS] server_syntax_valid
+  [PASS] migrations_not_referenced_in_build — no migrations dir; render.yaml does not invoke prisma migrate in any active (non-comment) line (confirmed fixed Phase 6F/6G)
+  [PASS] commit_and_working_tree_status — branch=sprint-2c-c3-explicit-scripture-handoff head=09626367d1fd dirty=true
+
+[PASS] === SCRIPTURE ===
+  [PASS] scriptureFidelitySmoke — 4 passed, 0 failed
+  [PASS] alphaCoreTruthSmoke — 6 passed, 0 failed
+  [PASS] openAiFirstRegressionTest — 10 passed, 0 failed
+  [PASS] liveRuntimeVerification — 6 passed, 0 failed
+
+[PASS] === ORIGINAL_LANGUAGE ===
+  [PASS] originalLanguageValidation
+
+[PASS] === HISTORY ===
+  [PASS] historical_records_present — 13 records
+  [PASS] historical_records_approved_and_tiered — approved=true tiered=true
+
+[PASS] === COMPANION ===
+  [PASS] decisionOwnershipSmoke — 14 passed, 0 failed
+  [PASS] phase5OContinuationRegression
+
+[PASS] === ADMIN ===
+  [PASS] admin_/admin/api/bible-authority/command-center — status=200
+  [PASS] admin_/admin/api/bible-authority/review-queue — status=200
+  [PASS] admin_/admin/api/bible-authority/knowledge-coverage-dashboard — status=200
+  [PASS] admin_/admin/api/bible-authority/founder-console — status=200
+  [PASS] admin_/admin/api/bible-authority/provider-health — status=200
+
+[PASS] === USER_PRODUCT ===
+  [PASS] no_technical_route_leakage_in_ui
+  [PASS] coming_soon_labels_present_for_disabled_toggles — expected disabled-feature labeling
+  [PASS] home_page_reachable — status=200
+
+[PASS] === PROVIDERS ===
+  [PASS] openai_configured_or_honest_fallback — OPENAI_API_KEY present
+  [PASS] local_kjv_corpus_available
+  [PASS] no_secret_values_in_env_sample
+
+[WARN] === SECURITY_AND_PRIVACY ===
+  [WARN] admin_auth_boundary — no admin token env var configured — Admin routes are open in this environment (expected for local Founder testing, must be set before any shared/public deployme
+  [PASS] dotenv_gitignored
+  [PASS] no_env_file_committed
+✅ OpenAI client ready
+[LIVE_TRUTH_ORCHESTRATOR] {"at":"2026-07-20T00:01:30.687Z","message":"What is a Sabbath day?","userId":"founder-validator-perf-1784505690447","runtimeContextIntent":"doctrinal_study","orchestratorHandled":true,"orchestratorDispatch":"strict","orchestratorMasterRoute":"doctrine_final_authority","orchestratorHumanNeed":"doctrine_answer","orchestratorReplyPreview":"From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture"}
+[LIVE_TRUTH_RETURN] {"message":"What is a Sabbath day?","selectedReturn":"strict","replyPreview":"From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture.","route":"doctrine_final_authority","doctrineTopic":"sabbath","humanNeed":"doctrine_answer"}
+[ROUTE_OWNERSHIP] {"ts":"2026-07-20T00:01:30.729Z","detectedIntent":"doctrine_answer","detectedConcept":"sabbath_seventh_day","selectedEngine":"doctrineFinalAuthorityEngine","selectedTemplate":"doctrineFinalAuthorityEngine template","selectedRoute":"doctrine_final_authority","finalResponseOwner":"liveResponseOwner","draftRoute":"doctrine_final_authority","contractRepairLane":null,"forbiddenPhraseDetected":false}
+
+[WARN] === PERFORMANCE ===
+  [PASS] governed_doctrine_latency — 438ms (no OpenAI call expected)
+  [PASS] concurrent_health_requests — 5 concurrent /health in 675ms, allOk=true
+  [WARN] admin_dashboard_latency — command-center in 6263ms (offline-precomputed snapshot aggregation; not on the live chat hot path)
+
+[PASS] === DEPLOYMENT ===
+  [PASS] render_yaml_present
+  [PASS] render_start_command_present
+  [PASS] render_health_check_path_present
+  [PASS] no_prisma_migrate_in_build
+  [PASS] env_sample_present
+  [PASS] readme_present
+
+=== FOUNDER READINESS: READY_WITH_DOCUMENTED_WARNINGS ===
+pass=37 warn=2 fail=0 skip=0
+Report written to /Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/alpha/founder-readiness/2026-07-19T23-57-33-402Z

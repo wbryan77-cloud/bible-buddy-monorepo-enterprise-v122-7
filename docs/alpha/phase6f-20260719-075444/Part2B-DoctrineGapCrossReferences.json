@@ -1,0 +1,210 @@
+{
+  "generatedAt": "2026-07-19T15:07:38.065Z",
+  "persisted": true,
+  "results": [
+    {
+      "topicId": "resurrection",
+      "sourceReference": "Job 19:25-27",
+      "targetReference": "1 Corinthians 15:20",
+      "reason": "Job's \"I know that my redeemer liveth... in my flesh I shall see God\" is the classic OT resurrection-hope passage, thematically continued in Paul's resurrection chapter (already a primary witness for this topic).",
+      "evaluation": {
+        "candidateId": "sgc_doctrinegap_343ac14170f6c871",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_doctrine_gap_cross_references\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_doctrine_gap_cross_references\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "topicId": "resurrection",
+      "sourceReference": "Isaiah 26:19",
+      "targetReference": "John 11:25",
+      "reason": "Isaiah 26:19 (\"thy dead men shall live... awake and sing\") is a recognized OT resurrection-hope witness alongside Daniel 12:2 (already primary), thematically continued in John 11:25 (already primary).",
+      "evaluation": {
+        "candidateId": "sgc_doctrinegap_e7342d07609ec6d6",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_doctrine_gap_cross_references\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_doctrine_gap_cross_references\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "topicId": "ten_commandments",
+      "sourceReference": "Deuteronomy 4:13",
+      "targetReference": "Exodus 20",
+      "reason": "Deuteronomy 4:13 explicitly refers back to \"his covenant, which he commanded you to perform, even ten commandments; and he wrote them upon two tables of stone\" — the same giving recorded in Exodus 20 (already primary).",
+      "evaluation": {
+        "candidateId": "sgc_doctrinegap_416a81072984950a",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_doctrine_gap_cross_references\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_doctrine_gap_cross_references\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "topicId": "ten_commandments",
+      "sourceReference": "Matthew 19:18-19",
+      "targetReference": "Exodus 20",
+      "reason": "Jesus directly lists several of the ten commandments (do not kill, commit adultery, steal, bear false witness, honour thy father and mother) when answering the rich young ruler, quoting Exodus 20 by content.",
+      "evaluation": {
+        "candidateId": "sgc_doctrinegap_46e92a2a6d9a1b8c",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_doctrine_gap_cross_references\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_doctrine_gap_cross_references\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    }
+  ],
+  "counts": {
+    "approved": 4,
+    "failed": 0
+  }
+}

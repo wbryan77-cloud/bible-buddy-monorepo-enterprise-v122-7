@@ -524,7 +524,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   evidencePack.userMessage = message;
   evidencePack.userId = userId;
 
-  const orchestratorResult = runBibleCompanionOrchestrator({
+  const orchestratorResult = await runBibleCompanionOrchestrator({
     H,
     userId,
     message,
@@ -799,7 +799,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
       fallbackUsed = true;
       const companionFallback =
         routePlan.lane === 'companion'
-          ? buildCompanionLaneFallbackReply(message, buildRoutingContext(userId, { runtimeContext, recentSessions }))
+          ? await buildCompanionLaneFallbackReply(message, buildRoutingContext(userId, { runtimeContext, recentSessions }))
           : null;
       if (companionFallback?.reply) {
         finalAnswerAuthor = 'companion_lane_fallback';

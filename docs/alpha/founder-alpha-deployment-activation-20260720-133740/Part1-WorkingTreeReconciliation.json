@@ -1,0 +1,143 @@
+{
+  "batch": "Founder Alpha Baseline, Deployment Activation, Live Verification, and Tester Access Package",
+  "part": "Part 1 - Working-Tree Reconciliation",
+  "timestamp": "2026-07-20T13:37:40Z",
+  "baseCommit": "09626367d1fd586b83b807a15c078507fbdd8aa1",
+  "branch": "sprint-2c-c3-explicit-scripture-handoff",
+  "summary": {
+    "totalTopLevelChangedEntries": 167,
+    "includedTopLevelEntries": 93,
+    "excludedTopLevelEntries": 74,
+    "stagedFileCount": 339,
+    "stagedInsertions": 127504,
+    "stagedDeletions": 365,
+    "excludedApproxSizeBytes": 1825361100,
+    "excludedApproxSizeHuman": "1.7G",
+    "secretsFound": 0,
+    "unrelatedChangesFound": 0,
+    "unknownRequiresReviewFound": 0,
+    "filesDeleted": 0,
+    "verifiedWorkLost": false
+  },
+  "classificationMethod": {
+    "modifiedTrackedFiles": "FOUNDER_ALPHA_REQUIRED or RELEASE_DOCUMENTATION - all included",
+    "newApplicationSourceFiles": "under services/, routes/, scripts/, scripts/alpha/, public/, admin/ - FOUNDER_ALPHA_REQUIRED - all included",
+    "dateRuleInclude": "docs/alpha evidence directories with latest file mtime >= 2026-07-17 (Phase 5R/5S) through 2026-07-20 (Phase 6-Knowledge -> 6E -> 6F -> 6G -> 6H -> Final Gate -> Release Review -> Deployment Activation) = RELEASE_DOCUMENTATION/GENERATED_REPORT - included",
+    "dateRuleExclude": "docs/alpha evidence directories with latest file mtime 2026-07-07 through 2026-07-16 (pre-Phase-6 Sprint 2C / batch1 / batch2 exploratory work, superseded) = LOCAL_ONLY_ARTIFACT - excluded",
+    "contentOverrides": [
+      "Phase5RLiveRuntimeValidationReport.md and Phase5SScriptureAuthorityEngineReport.md (dated 2026-07-17) included by content inspection - document currently-active engines",
+      "docs/alpha/architecture/ArchitectureFreeze.md (2026-07-07, 165 bytes) excluded by content inspection - superseded stub, real doc is docs/alpha/ArchitectureFreezeDeclaration.md",
+      "docs/architecture/ (root-level ADRs, dated 2026-07-16) included - durable architecture decision records, not disposable test evidence"
+    ],
+    "archiveRule": "any .zip under docs/alpha/ = LOCAL_ONLY_ARTIFACT (generated archive duplicating an already-unzipped directory) - excluded",
+    "devArchiveRule": "docs/dev-archive/* is self-labeled archive of superseded Sprint 2C work (2026-07-10/07-12) - excluded",
+    "backupRule": "services/companionIntentIntelligence.js.before-restore.20260703-142214 is a manual pre-restore backup of an unchanged tracked file - excluded"
+  },
+  "included": {
+    "modifiedTrackedFiles": [
+      ".gitignore", "Phase4NResponseClarityRegressionReport.md", "Phase4OBibleWideReasoningRegressionReport.md",
+      "Phase5ABibleCompanionOrchestrationRegressionReport.md", "Phase5LLiveThreadRegressionReport.md",
+      "Phase5LNoRegressionGateReport.md", "admin/bible-authority.html", "admin/js/bible-authority.js",
+      "docs/evidence-candidates/console-queue.json", "docs/evidence-candidates/topic-approval-packs.json",
+      "docs/regression-trace/live-runtime-verification.json", "docs/regression-trace/openai-first-results.json",
+      "docs/regression-trace/phase4n-response-clarity-results.json", "docs/regression-trace/phase4o-bible-wide-results.json",
+      "docs/regression-trace/phase5a-orchestration-results.json", "package.json", "public/chat.html", "public/index.html",
+      "render.yaml", "routes/bibleAuthorityAdmin.js", "routes/buddy.js", "routes/runtimeHealth.js",
+      "scripts/liveRuntimeVerification.js", "scripts/openAiFirstRegressionTest.js", "scripts/runPhase5OContinuationRegression.js",
+      "services/bibleCompanionOrchestrator.js", "services/bibleConceptGraph.js", "services/bibleSemanticConceptNormalizer.js",
+      "services/bibleWideReasoningEngine.js", "services/companionDoctrineRouter.js", "services/directAnswerFormatter.js",
+      "services/doctrineAuthorityContract.js", "services/humanNeedDetector.js", "services/liveRequestTrace.js",
+      "services/openAiFirstCompanionRuntime.js", "services/pendingQuestionResolver.js", "services/reasonFirstComposer.js",
+      "services/runtimeHealthMonitor.js", "services/safeJsonlWriter.js", "services/supportGraphCandidateQueue.js"
+    ],
+    "newFlatFiles": [
+      ".env.sample", "Phase5RLiveRuntimeValidationReport.md", "Phase5SScriptureAuthorityEngineReport.md",
+      "docs/alpha/AlphaFreezePlan.md", "docs/alpha/ArchitectureFreezeDeclaration.md", "docs/alpha/BibleBuddyAlphaConstitution.md",
+      "docs/alpha/FounderAlphaIssueTemplate.md", "docs/alpha/FounderAlphaTestChecklist.md", "docs/alpha/FounderAlphaTestingGuide.md",
+      "docs/alpha/Roadmap.md", "scripts/architectureOwnershipAudit.js", "scripts/founderAlphaReadinessValidator.js",
+      "scripts/runPhase5RLiveRuntimeValidation.js", "services/adminQueueDiagnosticsEngine.js", "services/bibleTextProvider.js",
+      "services/canonicalScriptureProvider.js", "services/founderAdminConsoleStatus.js", "services/founderKnowledgeReadinessScorer.js",
+      "services/groundedScriptureEngine.js", "services/historicalKnowledgeProvider.js", "services/historicalSourceInvestigationEngine.js",
+      "services/iogIcojGovernedIngestion.js", "services/knowledgeAnalyticsSnapshotStore.js", "services/knowledgeApprovalRulesEngine.js",
+      "services/knowledgeApprovalRulesOptimizer.js", "services/knowledgeCoverageAnalyticsEngine.js", "services/knowledgeDriftDetector.js",
+      "services/knowledgePipelineAnalytics.js", "services/knowledgeTagStage.js", "services/lessonScriptureAlignmentAnalyzer.js",
+      "services/localKjvCorpusProvider.js", "services/originalLanguageProvider.js", "services/originalLanguageResponseFormatter.js",
+      "services/runtimeCanonicalContinuityScoringAI.js", "services/runtimeCanonicalLifeApplicationEngine.js",
+      "services/runtimeCanonicalResponseComposer.js", "services/runtimeCanonicalWorshipContinuityEngine.js",
+      "services/scriptureAuthorityEngine.js", "services/scriptureRelationshipGraph.js", "services/topicWitnessRegistry.js"
+    ],
+    "newDirectories": [
+      "docs/alpha/founder-alpha-deployment-activation-20260720-133740/", "docs/alpha/founder-alpha-release-verification-20260720-004049/",
+      "docs/alpha/founder-readiness/", "docs/alpha/phase5t-2026-07-19T0840/", "docs/alpha/phase5t-2026-07-19T0948/",
+      "docs/alpha/phase6-knowledge-20260718-204759/", "docs/alpha/phase6-knowledge-20260719-011107/",
+      "docs/alpha/phase6e-coverage-20260719-022630/", "docs/alpha/phase6f-20260719-075444/",
+      "docs/alpha/phase6g-founder-hardening-20260719-102058/", "docs/alpha/phase6h-founder-experience-product-polish-20260719-234100/",
+      "docs/alpha/phase6h-founder-experience-ui-polish-20260719-220000/", "docs/architecture/", "scripts/alpha/"
+    ]
+  },
+  "excluded": {
+    "reason": "LOCAL_ONLY_ARTIFACT - superseded pre-Phase-6 evidence, generated archive, self-labeled dev archive, or backup file. All items remain present on disk at their original path; nothing was deleted.",
+    "directories": [
+      "docs/alpha/architecture/", "docs/alpha/archverify-20260717-222100/", "docs/alpha/batch1-architecture-foundation-20260716-161250/",
+      "docs/alpha/batch1-complete-v2-20260716-174935/", "docs/alpha/batch1-repair-complete-20260716-161939/",
+      "docs/alpha/batch2-authority-ownership-20260716-180728/", "docs/alpha/batch2a-regression-triage-20260716-182607/",
+      "docs/alpha/checklists/", "docs/alpha/cleanup/", "docs/alpha/concepts/", "docs/alpha/consolidation/",
+      "docs/alpha/core-connection-audit/", "docs/alpha/dispatcher-analysis/", "docs/alpha/governance/",
+      "docs/alpha/implementation-source/", "docs/alpha/implementation/", "docs/alpha/kilrps-20260717-232059/",
+      "docs/alpha/minimum-live-runtime-export/", "docs/alpha/phase5t-20260717-211212/", "docs/alpha/project-checkpoint/",
+      "docs/alpha/readiness/", "docs/alpha/regression-architecture/", "docs/alpha/regression/", "docs/alpha/repository-inventory/",
+      "docs/alpha/runtime-source-export/", "docs/alpha/runtime/", "docs/alpha/scripture-completion-rebaseline-20260715-184344/",
+      "docs/alpha/scripture-fidelity/", "docs/alpha/sprint2-discovery/", "docs/alpha/sprint2c-c-resolver-evidence-20260712-163959/",
+      "docs/alpha/sprint2c-c-resolver-evidence-20260712-164145/", "docs/alpha/sprint2c-c-resolver-exact-body-20260712-173133/",
+      "docs/alpha/sprint2c-c1-decision-package-20260713-124745/", "docs/alpha/sprint2c-c1-resolver-branch-trace-20260712-200038/",
+      "docs/alpha/sprint2c-c1-resolver-branch-trace-20260713-134035/", "docs/alpha/sprint2c-c2-explicit-scripture-handoff-20260713-132400/",
+      "docs/alpha/sprint2c-c2-explicit-scripture-handoff-20260713-132545/", "docs/alpha/sprint2c-c3-ast-caller-boundary-20260713-233828/",
+      "docs/alpha/sprint2c-c3-brace-aware-caller-20260715-064608/", "docs/alpha/sprint2c-c3-caller-boundary-20260713-143024/",
+      "docs/alpha/sprint2c-c3-caller-window-20260715-074647/", "docs/alpha/sprint2c-c3-clean-repair-20260716-064617/",
+      "docs/alpha/sprint2c-c3-explicit-scripture-handoff-20260715-212822/", "docs/alpha/sprint2c-c3-explicit-scripture-repair-20260715-214242/",
+      "docs/alpha/sprint2c-c3-explicit-scripture-repair-20260715-214429/", "docs/alpha/sprint2c-c3-final-repair-20260716-063637/",
+      "docs/alpha/sprint2c-closeout-20260712-155318/", "docs/alpha/sprint2c-enterprise-rebaseline-20260710-213122/",
+      "docs/alpha/sprint2c-fallback-target/", "docs/alpha/sprint2c-retrieval-execution-trace-20260712-142906/",
+      "docs/alpha/sprint2c-retrieval-execution-trace-20260713-134047/", "docs/alpha/sprint2c-retrieval-root-cause-20260712-133334/",
+      "docs/dev-archive/offline-bible-fallback-20260710-202242/", "docs/dev-archive/scripture-final-20260710-202937/",
+      "docs/dev-archive/scripture-final-20260710-203840/", "docs/dev-archive/sprint2c-b-20260710-180527/",
+      "docs/dev-archive/sprint2c-b-canonical-wiring-20260712-130050/", "docs/dev-archive/sprint2c-corrective-20260710-183600/",
+      "docs/dev-archive/sprint2c-systemic-20260710-190652/"
+    ],
+    "zipArchives": [
+      "docs/alpha/minimum-live-runtime-export.zip", "docs/alpha/runtime-source-export.zip",
+      "docs/alpha/scripture-completion-rebaseline-20260715-184344.zip", "docs/alpha/sprint2c-c-resolver-evidence-20260712-164145.zip",
+      "docs/alpha/sprint2c-c-resolver-exact-body-20260712-173133.zip", "docs/alpha/sprint2c-c1-decision-package-20260713-124745.zip",
+      "docs/alpha/sprint2c-c2-explicit-scripture-handoff-20260713-132400.zip", "docs/alpha/sprint2c-c2-explicit-scripture-handoff-20260713-132545.zip",
+      "docs/alpha/sprint2c-c3-caller-boundary-20260713-143024.zip", "docs/alpha/sprint2c-c3-caller-window-20260715-074647.zip",
+      "docs/alpha/sprint2c-closeout-20260712-155318.zip", "docs/alpha/sprint2c-enterprise-rebaseline-20260710-213122.zip",
+      "docs/alpha/sprint2c-retrieval-execution-trace-20260712-142906.zip", "docs/alpha/sprint2c-retrieval-execution-trace-20260713-134047.zip"
+    ],
+    "backupFiles": [
+      "services/companionIntentIntelligence.js.before-restore.20260703-142214"
+    ]
+  },
+  "safetyVerification": {
+    "credentialsOrApiKeysFound": 0,
+    "envFileStaged": false,
+    "envSampleStaged": true,
+    "localAbsolutePathOccurrences": 64,
+    "localAbsolutePathOccurrencesInApplicationSource": 0,
+    "localAbsolutePathOccurrencesInStagedContent": 1,
+    "localAbsolutePathNote": "1 occurrence inside docs/architecture/live-ownership-audit.json (inert audit metadata, not a functional dependency); remaining 63 confined to excluded evidence directories",
+    "nodeModulesStaged": false,
+    "localDatabasesFound": 0,
+    "screenshotsFound": 0,
+    "stalePidFilesFound": 0,
+    "generatedArchivesFound": 14,
+    "generatedArchivesStaged": 0,
+    "accidentalUserContentExportsFound": 0,
+    "unrelatedProjectFilesFound": 0
+  },
+  "acceptanceCriteria": {
+    "everyChangedFileClassified": true,
+    "allIntendedFounderAlphaFilesIncluded": true,
+    "noSecretOrUnsafeArtifactIncluded": true,
+    "noVerifiedWorkSilentlyLost": true
+  }
+}

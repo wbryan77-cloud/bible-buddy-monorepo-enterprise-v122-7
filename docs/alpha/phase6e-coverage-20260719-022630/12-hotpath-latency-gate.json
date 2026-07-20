@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-07-19T09:45:21.218Z",
+  "staticCheck": {
+    "pass": true,
+    "results": [
+      {
+        "entry": "routes/buddy.js",
+        "filesVisited": 95,
+        "violations": [],
+        "pass": true
+      },
+      {
+        "entry": "services/bibleCompanionOrchestrator.js",
+        "filesVisited": 139,
+        "violations": [],
+        "pass": true
+      },
+      {
+        "entry": "services/buddyBrain.js",
+        "filesVisited": 89,
+        "violations": [],
+        "pass": true
+      },
+      {
+        "entry": "services/openAiFirstCompanionRuntime.js",
+        "filesVisited": 175,
+        "violations": [],
+        "pass": true
+      }
+    ]
+  },
+  "liveLatencyCheck": {
+    "skipped": false,
+    "results": {
+      "scripture": {
+        "samples": [
+          319,
+          240,
+          241
+        ],
+        "average": 267
+      },
+      "doctrine": {
+        "samples": [
+          272,
+          282,
+          272
+        ],
+        "average": 275
+      },
+      "prayer": {
+        "samples": [
+          274,
+          267,
+          265
+        ],
+        "average": 269
+      }
+    }
+  },
+  "acceptance": {
+    "noForbiddenModuleInHotPath": true,
+    "latencyWithinExpectedRange": true
+  },
+  "acceptancePassed": true
+}

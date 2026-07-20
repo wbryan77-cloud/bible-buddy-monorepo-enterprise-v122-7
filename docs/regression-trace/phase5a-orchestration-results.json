@@ -1,12 +1,12 @@
 {
-  "at": "2026-06-16T00:25:49.759Z",
+  "at": "2026-07-19T08:29:24.577Z",
   "passed": 11,
   "total": 11,
   "memoryOk": true,
   "results": [
     {
       "id": "1_pork",
-      "preview": "No. Staying with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture distinguishes cl",
+      "preview": "No. Staying with Scripture, with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture ",
       "pass": true,
       "failed": [],
       "checks": [
@@ -30,7 +30,7 @@
     },
     {
       "id": "2_correction_memory",
-      "preview": "No. Staying with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture distinguishes cl",
+      "preview": "No. Staying with Scripture, with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture ",
       "pass": true,
       "failed": [],
       "checks": [
@@ -46,7 +46,7 @@
     },
     {
       "id": "3_fornication",
-      "preview": "No. Staying with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonia",
+      "preview": "No. Staying with Scripture, with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornicatio",
       "pass": true,
       "failed": [],
       "checks": [
@@ -66,7 +66,7 @@
     },
     {
       "id": "4_fornication_verse",
-      "preview": "No. Scripture calls sexual relations outside marriage fornication and commands believers to flee it. Scripture witnesses: 1 Corinthians 6:18, 1 Thessalonians 4:3-5. what to say.",
+      "preview": "No. Staying with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. Scripture witnesses: 1 Corinthians 6:18, 1 Thessalonian",
       "pass": true,
       "failed": [],
       "checks": [
@@ -118,7 +118,7 @@
     },
     {
       "id": "7_acts10",
-      "preview": "Absolutely — staying with the Bible text: Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean. Acts 10 is about people/Gentiles, not permission to eat unclean",
+      "preview": "Scripture answers this when the passages below are taken together. Acts 10:28 — \"And he said unto them, Ye know how that it is an unlawful thing for a man that is a Jew to keep company, or come unto o",
       "pass": true,
       "failed": [],
       "checks": [
@@ -170,7 +170,7 @@
     },
     {
       "id": "10_unknown_clarify",
-      "preview": "I want to answer from Scripture directly. Could you tell me a little more — which book, topic, or passage you mean? I’ll stay with the Bible text line upon line.",
+      "preview": "I want to make sure I answer the right thing. Are you asking about a Bible passage, a life situation, or something you want prayer for?",
       "pass": true,
       "failed": [],
       "checks": [
@@ -186,7 +186,7 @@
     },
     {
       "id": "11_no_validator_leak",
-      "preview": "No. Staying with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonia",
+      "preview": "No. Staying with Scripture, with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornicatio",
       "pass": true,
       "failed": [],
       "checks": [

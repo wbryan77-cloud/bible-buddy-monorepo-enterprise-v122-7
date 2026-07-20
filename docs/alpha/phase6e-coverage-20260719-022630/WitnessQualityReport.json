@@ -1,0 +1,333 @@
+{
+  "perTopic": [
+    {
+      "topicId": "abomination_desolation",
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "acts_10",
+      "primaryWitnessCount": 4,
+      "supportingWitnessCount": 0,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "NEEDS_REVIEW"
+    },
+    {
+      "topicId": "dating_anxiety",
+      "primaryWitnessCount": 2,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "david",
+      "primaryWitnessCount": 4,
+      "supportingWitnessCount": 0,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "NEEDS_REVIEW"
+    },
+    {
+      "topicId": "death_state",
+      "primaryWitnessCount": 7,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 2,
+      "supportingRepeatsPrimaryCount": 2,
+      "crossReferenceMistypedCount": 0,
+      "classification": "DUPLICATE_HEAVY"
+    },
+    {
+      "topicId": "dietary_law",
+      "primaryWitnessCount": 9,
+      "supportingWitnessCount": 4,
+      "exactDuplicateCount": 4,
+      "supportingRepeatsPrimaryCount": 4,
+      "crossReferenceMistypedCount": 0,
+      "classification": "DUPLICATE_HEAVY"
+    },
+    {
+      "topicId": "faith_obedience",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 1,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "fornication_sexual_sin",
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 3,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "heartbreak_comfort",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "heaven_layers",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "heavens",
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 0,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "NEEDS_REVIEW"
+    },
+    {
+      "topicId": "holy_spirit",
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 0,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "NEEDS_REVIEW"
+    },
+    {
+      "topicId": "kingdom",
+      "primaryWitnessCount": 11,
+      "supportingWitnessCount": 5,
+      "exactDuplicateCount": 3,
+      "supportingRepeatsPrimaryCount": 3,
+      "crossReferenceMistypedCount": 0,
+      "classification": "DUPLICATE_HEAVY"
+    },
+    {
+      "topicId": "marriage_bed",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "new_jerusalem",
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 1,
+      "supportingRepeatsPrimaryCount": 1,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "onan_seed_context",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 1,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "overwhelmed_comfort",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "prayer_comfort",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "prayer_with_user",
+      "primaryWitnessCount": 2,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "repentance",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 1,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "resurrection",
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 1,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "sabbath",
+      "primaryWitnessCount": 8,
+      "supportingWitnessCount": 6,
+      "exactDuplicateCount": 2,
+      "supportingRepeatsPrimaryCount": 2,
+      "crossReferenceMistypedCount": 0,
+      "classification": "DUPLICATE_HEAVY"
+    },
+    {
+      "topicId": "sexual_boundaries_dating",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "ten_commandments",
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    },
+    {
+      "topicId": "third_heaven",
+      "primaryWitnessCount": 1,
+      "supportingWitnessCount": 2,
+      "exactDuplicateCount": 0,
+      "supportingRepeatsPrimaryCount": 0,
+      "crossReferenceMistypedCount": 0,
+      "classification": "MULTIPLE_STRONG_WITNESSES"
+    }
+  ],
+  "findings": [
+    {
+      "topicId": "death_state",
+      "issue": "EXACT_DUPLICATE_WITNESS",
+      "detail": [
+        "daniel:12:2-2",
+        "1 corinthians:15:null-null"
+      ]
+    },
+    {
+      "topicId": "death_state",
+      "issue": "SUPPORTING_REPEATS_PRIMARY",
+      "detail": [
+        "Daniel 12:2",
+        "1 Corinthians 15"
+      ]
+    },
+    {
+      "topicId": "dietary_law",
+      "issue": "EXACT_DUPLICATE_WITNESS",
+      "detail": [
+        "daniel:1:8-16",
+        "acts:10:14-14",
+        "acts:10:28-28",
+        "acts:11:1-18"
+      ]
+    },
+    {
+      "topicId": "dietary_law",
+      "issue": "SUPPORTING_REPEATS_PRIMARY",
+      "detail": [
+        "Daniel 1:8-16",
+        "Acts 11:1-18",
+        "Acts 10:14",
+        "Acts 10:28"
+      ]
+    },
+    {
+      "topicId": "kingdom",
+      "issue": "EXACT_DUPLICATE_WITNESS",
+      "detail": [
+        "luke:17:20-21",
+        "revelation:5:10-10",
+        "daniel:7:27-27"
+      ]
+    },
+    {
+      "topicId": "kingdom",
+      "issue": "SUPPORTING_REPEATS_PRIMARY",
+      "detail": [
+        "Luke 17:20-21",
+        "Daniel 7:27",
+        "Revelation 5:10"
+      ]
+    },
+    {
+      "topicId": "new_jerusalem",
+      "issue": "EXACT_DUPLICATE_WITNESS",
+      "detail": [
+        "isaiah:65:17-19"
+      ]
+    },
+    {
+      "topicId": "new_jerusalem",
+      "issue": "SUPPORTING_REPEATS_PRIMARY",
+      "detail": [
+        "Isaiah 65:17-19"
+      ]
+    },
+    {
+      "topicId": "sabbath",
+      "issue": "EXACT_DUPLICATE_WITNESS",
+      "detail": [
+        "luke:4:16-16",
+        "deuteronomy:5:12-15"
+      ]
+    },
+    {
+      "topicId": "sabbath",
+      "issue": "SUPPORTING_REPEATS_PRIMARY",
+      "detail": [
+        "Luke 4:16",
+        "Deuteronomy 5:12-15"
+      ]
+    }
+  ],
+  "summary": {
+    "generatedAt": "2026-07-19T09:43:56.518Z",
+    "totalTopics": 25,
+    "byClassification": {
+      "MULTIPLE_STRONG_WITNESSES": 17,
+      "ADEQUATE_TWO_WITNESSES": 0,
+      "SINGLE_EXPLICIT_WITNESS": 0,
+      "WEAK_SUPPORTING_EVIDENCE": 0,
+      "DUPLICATE_HEAVY": 4,
+      "MISSING_PRIMARY_EVIDENCE": 0,
+      "NEEDS_REVIEW": 4
+    },
+    "totalFindings": 10,
+    "findingsByIssue": {
+      "EXACT_DUPLICATE_WITNESS": 5,
+      "SUPPORTING_REPEATS_PRIMARY": 5
+    }
+  }
+}

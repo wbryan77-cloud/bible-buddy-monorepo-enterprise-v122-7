@@ -1,0 +1,39 @@
+{
+  "part": 5,
+  "title": "Fresh-Environment Installation Validation",
+  "method": "Isolated rsync copy of current working tree (uncommitted Phase 6G work included) excluding .git, node_modules, and bulk docs/ (except two runtime-required subpaths discovered during this validation); npm ci from lockfile; .env created from .env.sample with all credentials blank; server started on port 3099",
+  "installResult": "PASS — npm ci succeeded, 151 packages, no manual steps",
+  "migrations": "N/A — no migrations dir, render.yaml does not invoke prisma migrate (confirmed)",
+  "build": "PASS — no build step declared or required",
+  "startup": "PASS — server started cleanly on port 3099",
+  "health": "PASS — /health returned 200 within ~3s of process start",
+  "regressionsInIsolatedEnv": {
+    "scriptureFidelitySmoke": "4/4",
+    "alphaCoreTruthSmoke": "6/6",
+    "liveRuntimeVerification": "6/6",
+    "decisionOwnershipSmoke": "14/14",
+    "phase5OContinuationRegression": "pass",
+    "openAiFirstRegressionTest": "9/10 (1 credential-dependent, see findings)",
+    "founderAlphaValidateExitStatus": "BLOCKED (pass=34 warn=4 fail=1 skip=0) — sole FAIL is the same credential-dependent case"
+  },
+  "hiddenDependenciesFound": [
+    {
+      "finding": "docs/bible-learning/ and docs/evidence-candidates/ contain files required at runtime by services/approvedDoctrineRegistry.js, services/bibleWordSenseEngine.js, services/bibleNaturalConcordanceBuilder.js, services/concordanceFoundation.js, services/scriptureDiscoveryEngine.js, services/phase4c1RuntimeDiagnostics.js, services/iogIcojGovernedIngestion.js, services/phase4a4GovernanceActivation.js, services/phase4aFinalHandoff.js",
+      "trackedInGit": true,
+      "blocksCurrentDeployment": false,
+      "risk": "Any future deploy step that trims docs/ (common CI/dockerignore pattern given docs/ is 1.9GB) would silently break Scripture retrieval at runtime, not build time",
+      "disposition": "DOCUMENTED_NOT_FIXED — recommend relocation to data/ or runtime-config/ in a future maintenance batch"
+    }
+  ],
+  "securityFindings": [
+    {
+      "finding": "form-data 4.0.0-4.0.5 high-severity CRLF injection advisory (GHSA-hmw2-7cc7-3qxx), transitive via axios and openai packages",
+      "fixAvailable": true,
+      "fixApplied": false,
+      "reason": "npm audit fix was blocked by this session's command-safety review as an out-of-scope networked dependency mutation; not force-run",
+      "recommendation": "Run npm audit fix in a dedicated reviewed commit before or immediately after Founder Alpha launch"
+    }
+  ],
+  "cleanupResult": "PASS — temp directory fully removed, isolated port 3099 server stopped, main port 3000 dev server confirmed still healthy",
+  "undeclaredDependenciesOrMachineSpecificPaths": "None found beyond the docs/ finding above"
+}

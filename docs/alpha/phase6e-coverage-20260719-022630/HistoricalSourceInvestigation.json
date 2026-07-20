@@ -1,0 +1,195 @@
+{
+  "candidates": [
+    {
+      "id": "hsi_Sm9zZXBodXMsIFRo",
+      "rawCitationText": "Josephus, The Wars of the Jews (Bellum Judaicum), Book VI Flavius Josephus",
+      "claim": "Josephus, a first-century Jewish historian who witnessed the siege, records that Roman forces under Titus destroyed the Second Temple in Jerusalem in AD 70, ending the Temple-based sacrificial system described throughout the Old Testament.",
+      "relatedScriptures": [
+        "Matthew 24:1-2",
+        "Luke 21:6",
+        "Mark 13:1-2"
+      ],
+      "discoverySource": "EXISTING_HISTORICAL_KNOWLEDGE_PROVIDER_SELF_AUDIT",
+      "sourceDocument": "Josephus, The Wars of the Jews (Bellum Judaicum), Book VI",
+      "resolutionStatus": "RESOLVED",
+      "resolvedSource": {
+        "title": "The Wars of the Jews (Bellum Judaicum)",
+        "author": "Flavius Josephus",
+        "sourceType": "ANCIENT_HISTORIAN_ACCOUNT",
+        "trustTier": "TIER_1_PRIMARY_HISTORICAL_SOURCE",
+        "licensingStatus": "PUBLIC_DOMAIN_ANCIENT_TEXT"
+      },
+      "reason": "Resolved to \"The Wars of the Jews (Bellum Judaicum)\" (TIER_1_PRIMARY_HISTORICAL_SOURCE), public-domain/ancient-text licensing.",
+      "claimComparisonNote": "This engine resolves BIBLIOGRAPHIC IDENTITY only — it does not have the cited work's full text loaded, so it never fabricates a claim-matches-source verdict. A human Admin reviewer performs the actual textual comparison before promotion.",
+      "approvalStatus": "ELIGIBLE_FOR_ADMIN_FAST_TRACK",
+      "productionEligible": false,
+      "existingRecordId": "hist_second_temple_destruction_ad70"
+    },
+    {
+      "id": "hsi_R2VuZXJhbCBhY2Fk",
+      "rawCitationText": "General academic consensus on Second Temple Jewish practice (e.g. Mishnah tractate Shabbat; Josephus, Antiquities) ",
+      "claim": "By the first century, weekly Sabbath gatherings for Scripture reading in local synagogues were an established Jewish practice, which is why the Gospels and Acts repeatedly describe Jesus and the apostles teaching in synagogues on the Sabbath.",
+      "relatedScriptures": [
+        "Luke 4:16",
+        "Acts 13:14",
+        "Acts 17:2"
+      ],
+      "discoverySource": "EXISTING_HISTORICAL_KNOWLEDGE_PROVIDER_SELF_AUDIT",
+      "sourceDocument": "General academic consensus on Second Temple Jewish practice (e.g. Mishnah tractate Shabbat; Josephus, Antiquities)",
+      "resolutionStatus": "RESOLVED",
+      "resolvedSource": {
+        "title": "The Mishnah",
+        "author": "Compiled by Judah ha-Nasi (attrib.)",
+        "sourceType": "ANCIENT_RABBINIC_COMPILATION",
+        "trustTier": "TIER_1_PRIMARY_HISTORICAL_SOURCE",
+        "licensingStatus": "PUBLIC_DOMAIN_ANCIENT_TEXT"
+      },
+      "reason": "Resolved to \"The Mishnah\" (TIER_1_PRIMARY_HISTORICAL_SOURCE), public-domain/ancient-text licensing.",
+      "claimComparisonNote": "This engine resolves BIBLIOGRAPHIC IDENTITY only — it does not have the cited work's full text loaded, so it never fabricates a claim-matches-source verdict. A human Admin reviewer performs the actual textual comparison before promotion.",
+      "approvalStatus": "ELIGIBLE_FOR_ADMIN_FAST_TRACK",
+      "productionEligible": false,
+      "existingRecordId": "hist_sabbath_synagogue_practice_2nd_temple"
+    },
+    {
+      "id": "hsi_Sm9zZXBodXMsIFRo",
+      "rawCitationText": "Josephus, The Wars of the Jews, Book VI; general academic consensus Flavius Josephus",
+      "claim": "Josephus reports that Jerusalem's population swelled dramatically during Passover as Jewish pilgrims travelled from across the region to sacrifice and celebrate the feast at the Temple, consistent with the crowded, festival-week setting the Gospels describe around the crucifixion.",
+      "relatedScriptures": [
+        "John 11:55",
+        "Luke 2:41",
+        "Mark 14:1-2"
+      ],
+      "discoverySource": "EXISTING_HISTORICAL_KNOWLEDGE_PROVIDER_SELF_AUDIT",
+      "sourceDocument": "Josephus, The Wars of the Jews, Book VI; general academic consensus",
+      "resolutionStatus": "RESOLVED",
+      "resolvedSource": {
+        "title": "The Wars of the Jews (Bellum Judaicum)",
+        "author": "Flavius Josephus",
+        "sourceType": "ANCIENT_HISTORIAN_ACCOUNT",
+        "trustTier": "TIER_1_PRIMARY_HISTORICAL_SOURCE",
+        "licensingStatus": "PUBLIC_DOMAIN_ANCIENT_TEXT"
+      },
+      "reason": "Resolved to \"The Wars of the Jews (Bellum Judaicum)\" (TIER_1_PRIMARY_HISTORICAL_SOURCE), public-domain/ancient-text licensing.",
+      "claimComparisonNote": "This engine resolves BIBLIOGRAPHIC IDENTITY only — it does not have the cited work's full text loaded, so it never fabricates a claim-matches-source verdict. A human Admin reviewer performs the actual textual comparison before promotion.",
+      "approvalStatus": "ELIGIBLE_FOR_ADMIN_FAST_TRACK",
+      "productionEligible": false,
+      "existingRecordId": "hist_passover_pilgrimage_jerusalem"
+    },
+    {
+      "id": "hsi_R2VuZXJhbCBhY2Fk",
+      "rawCitationText": "General academic consensus on Second Temple Jewish festival calendar ",
+      "claim": "Pentecost (Feast of Weeks, Shavuot) was one of three annual pilgrimage festivals in Second Temple Judaism, drawing Jewish visitors from across the Roman world to Jerusalem — which explains the international crowd of language groups present in the Acts 2 account.",
+      "relatedScriptures": [
+        "Acts 2:1",
+        "Acts 2:5",
+        "Acts 2:9-11"
+      ],
+      "discoverySource": "EXISTING_HISTORICAL_KNOWLEDGE_PROVIDER_SELF_AUDIT",
+      "sourceDocument": "General academic consensus on Second Temple Jewish festival calendar",
+      "resolutionStatus": "UNRESOLVED",
+      "resolvedSource": null,
+      "reason": "No match against the curated bibliographic registry (KNOWN_SOURCE_REGISTRY). This citation is NOT treated as authoritative and is NOT promoted — it is queued for Admin to independently identify and, if warranted, add to the registry themselves.",
+      "claimComparisonNote": "This engine resolves BIBLIOGRAPHIC IDENTITY only — it does not have the cited work's full text loaded, so it never fabricates a claim-matches-source verdict. A human Admin reviewer performs the actual textual comparison before promotion.",
+      "approvalStatus": "NEEDS_ADMIN_REVIEW",
+      "productionEligible": false,
+      "existingRecordId": "hist_pentecost_jerusalem_pilgrim_festival"
+    },
+    {
+      "id": "hsi_R2VuZXJhbCBhY2Fk",
+      "rawCitationText": "General academic consensus; Mishnah tractate Chullin ",
+      "claim": "Observant first-century Jews followed dietary distinctions rooted in the Torah's clean/unclean animal categories, a lived social practice that forms the historical backdrop for the New Testament's dietary-law discussions.",
+      "relatedScriptures": [
+        "Leviticus 11:1-47",
+        "Acts 10:14"
+      ],
+      "discoverySource": "EXISTING_HISTORICAL_KNOWLEDGE_PROVIDER_SELF_AUDIT",
+      "sourceDocument": "General academic consensus; Mishnah tractate Chullin",
+      "resolutionStatus": "RESOLVED",
+      "resolvedSource": {
+        "title": "The Mishnah",
+        "author": "Compiled by Judah ha-Nasi (attrib.)",
+        "sourceType": "ANCIENT_RABBINIC_COMPILATION",
+        "trustTier": "TIER_1_PRIMARY_HISTORICAL_SOURCE",
+        "licensingStatus": "PUBLIC_DOMAIN_ANCIENT_TEXT"
+      },
+      "reason": "Resolved to \"The Mishnah\" (TIER_1_PRIMARY_HISTORICAL_SOURCE), public-domain/ancient-text licensing.",
+      "claimComparisonNote": "This engine resolves BIBLIOGRAPHIC IDENTITY only — it does not have the cited work's full text loaded, so it never fabricates a claim-matches-source verdict. A human Admin reviewer performs the actual textual comparison before promotion.",
+      "approvalStatus": "ELIGIBLE_FOR_ADMIN_FAST_TRACK",
+      "productionEligible": false,
+      "existingRecordId": "hist_jewish_dietary_practice_2nd_temple"
+    },
+    {
+      "id": "hsi_R2VuZXJhbCBhY2Fk",
+      "rawCitationText": "General academic consensus on Septuagint translation practice ",
+      "claim": "When Jewish translators produced the Septuagint (the Greek Old Testament) roughly two centuries before Christ, they consistently rendered the Hebrew term \"Sheol\" using the Greek term \"Hades\" — the same Greek word later used in the New Testament — showing the two terms were treated as translation equivalents by the original translators themselves.",
+      "relatedScriptures": [
+        "Psalm 16:10",
+        "Acts 2:27"
+      ],
+      "discoverySource": "EXISTING_HISTORICAL_KNOWLEDGE_PROVIDER_SELF_AUDIT",
+      "sourceDocument": "General academic consensus on Septuagint translation practice",
+      "resolutionStatus": "UNRESOLVED",
+      "resolvedSource": null,
+      "reason": "No match against the curated bibliographic registry (KNOWN_SOURCE_REGISTRY). This citation is NOT treated as authoritative and is NOT promoted — it is queued for Admin to independently identify and, if warranted, add to the registry themselves.",
+      "claimComparisonNote": "This engine resolves BIBLIOGRAPHIC IDENTITY only — it does not have the cited work's full text loaded, so it never fabricates a claim-matches-source verdict. A human Admin reviewer performs the actual textual comparison before promotion.",
+      "approvalStatus": "NEEDS_ADMIN_REVIEW",
+      "productionEligible": false,
+      "existingRecordId": "hist_sheol_hades_greek_translation_note"
+    },
+    {
+      "id": "hsi_R2VuZXJhbCBhY2Fk",
+      "rawCitationText": "General academic/archaeological consensus ",
+      "claim": "Beginning in 1947, a set of ancient Hebrew, Aramaic, and Greek manuscripts (including copies of Old Testament books centuries older than any previously known manuscript) were discovered in caves near Qumran by the Dead Sea, giving scholars a documented window into the Hebrew Bible's textual history in the centuries before and around the time of Christ.",
+      "relatedScriptures": [
+        "Isaiah 7:14"
+      ],
+      "discoverySource": "EXISTING_HISTORICAL_KNOWLEDGE_PROVIDER_SELF_AUDIT",
+      "sourceDocument": "General academic/archaeological consensus",
+      "resolutionStatus": "UNRESOLVED",
+      "resolvedSource": null,
+      "reason": "No match against the curated bibliographic registry (KNOWN_SOURCE_REGISTRY). This citation is NOT treated as authoritative and is NOT promoted — it is queued for Admin to independently identify and, if warranted, add to the registry themselves.",
+      "claimComparisonNote": "This engine resolves BIBLIOGRAPHIC IDENTITY only — it does not have the cited work's full text loaded, so it never fabricates a claim-matches-source verdict. A human Admin reviewer performs the actual textual comparison before promotion.",
+      "approvalStatus": "NEEDS_ADMIN_REVIEW",
+      "productionEligible": false,
+      "existingRecordId": "hist_qumran_dead_sea_scrolls_discovery"
+    },
+    {
+      "id": "hsi_Sm9zZXBodXMsIEFu",
+      "rawCitationText": "Josephus, Antiquities of the Jews, Book XV Flavius Josephus",
+      "claim": "Josephus records that Herod the Great began a major expansion and reconstruction of the Second Temple around 20/19 BC, a decades-long building project whose scale is reflected in the Gospel disciples' amazement at the Temple's stonework.",
+      "relatedScriptures": [
+        "Mark 13:1",
+        "John 2:20"
+      ],
+      "discoverySource": "EXISTING_HISTORICAL_KNOWLEDGE_PROVIDER_SELF_AUDIT",
+      "sourceDocument": "Josephus, Antiquities of the Jews, Book XV",
+      "resolutionStatus": "RESOLVED",
+      "resolvedSource": {
+        "title": "Antiquities of the Jews",
+        "author": "Flavius Josephus",
+        "sourceType": "ANCIENT_HISTORIAN_ACCOUNT",
+        "trustTier": "TIER_1_PRIMARY_HISTORICAL_SOURCE",
+        "licensingStatus": "PUBLIC_DOMAIN_ANCIENT_TEXT"
+      },
+      "reason": "Resolved to \"Antiquities of the Jews\" (TIER_1_PRIMARY_HISTORICAL_SOURCE), public-domain/ancient-text licensing.",
+      "claimComparisonNote": "This engine resolves BIBLIOGRAPHIC IDENTITY only — it does not have the cited work's full text loaded, so it never fabricates a claim-matches-source verdict. A human Admin reviewer performs the actual textual comparison before promotion.",
+      "approvalStatus": "ELIGIBLE_FOR_ADMIN_FAST_TRACK",
+      "productionEligible": false,
+      "existingRecordId": "hist_herod_temple_construction_timeline"
+    }
+  ],
+  "summary": {
+    "generatedAt": "2026-07-19T09:43:56.821Z",
+    "totalCandidatesInvestigated": 8,
+    "byResolutionStatus": {
+      "RESOLVED": 5,
+      "UNRESOLVED": 3
+    },
+    "icojPdfTitlesScanned": 47,
+    "icojPdfTitleCitationsFound": 0,
+    "iogTranscriptsExcluded": 240,
+    "iogTranscriptExclusionReason": "RAW_ISOLATED_NOT_PARSED_THIS_BATCH — see services/iogIcojGovernedIngestion.js acquireIogTranscriptSources(); no prose text is scanned from these files, so zero citations are extractable from them without a separate, explicitly-scoped ingestion batch.",
+    "governanceNote": "IOG/ICOJ is recorded only as discoverySource/provenance. No cited work becomes authoritative merely by being referenced — every citation is independently resolved against KNOWN_SOURCE_REGISTRY, and RESOLVED status still requires Admin action before any production use (productionEligible is never auto-set true by this engine).",
+    "honestyNote": "Zero external bibliographic citations were discoverable in the currently-acquired IOG/ICOJ metadata (47 PDF titles are the ministry's own sermon/teaching titles, e.g. \"THE BOOK OF LIFE\" — not citations of external historical works, and the underlying prose is intentionally not stored per the licensing boundary). This engine is fully implemented, tested, and ready to process real citations the moment IOG/ICOJ material with citation-bearing text is licensed and ingested."
+  }
+}

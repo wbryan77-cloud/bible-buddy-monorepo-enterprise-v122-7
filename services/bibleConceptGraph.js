@@ -301,6 +301,41 @@ const GRAPH_EXTENSIONS = {
     directAnswer:
       'Scripture joins faith and obedience. James 2:17 says faith without works is dead; Hebrews 11:1 defines faith as substance and evidence.',
   },
+  // Phase 6F Part 2C — repairs a genuinely unreachable approved topic.
+  // `david` has a full strict-doctrine contract in
+  // services/doctrineAuthorityContract.js (2 Samuel 7:12-16, Psalm 89:3-4,
+  // Acts 2:29-31, Matthew 22:41-45, Luke 1:32-33) but had NO concept-graph
+  // entry point at all, so no natural-language question about David's
+  // covenant/throne could ever route to it (confirmed by live production
+  // test this batch: "What does the Bible say about David?" fell through
+  // to the generic clarifier). Synonyms are deliberately scoped to the
+  // Davidic-covenant/Messianic-throne question, not a bare "david" match,
+  // to avoid false-triggering on unrelated mentions of a person named David
+  // in companion conversation.
+  david_covenant: {
+    id: 'david_covenant',
+    strictTopic: 'david',
+    polarity: null,
+    relatedConcepts: [],
+    forbiddenConfusions: ['Davidic hope detached from Messiah'],
+    synonyms: [
+      /\bdavidic covenant\b/i,
+      /\bthrone of david\b/i,
+      /\bdavid'?s throne\b/i,
+      /\bson of david\b/i,
+      /\bman after (god'?s|his) own heart\b/i,
+      /\bwhat does the bible say about david\b/i,
+      /\bcovenant with david\b/i,
+      /\bhistorical context of david\b/i,
+      /\bhistory of david\b/i,
+      /\bhouse of david\b/i,
+    ],
+    directWitnesses: ['2 Samuel 7:12-16', 'Psalm 89:3-4', 'Acts 2:29-31', 'Matthew 22:41-45'],
+    supportingWitnesses: ['Luke 1:32-33'],
+    directAnswer:
+      'Scripture ties David\'s covenant and throne to the Messiah. 2 Samuel 7:12-16 records God\'s promise to establish David\'s throne forever; Luke 1:32-33 records the angel Gabriel telling Mary that Jesus would be given "the throne of his father David."',
+    examples: ['What does the Bible say about David?', 'Davidic covenant', 'throne of David'],
+  },
 };
 
 const MERGED_GRAPH = { ...CONCEPTS };
@@ -334,6 +369,7 @@ const DETECTION_ORDER = [
   'dating_anxiety',
   'repentance',
   'faith_obedience',
+  'david_covenant',
 ];
 
 function matchesNode(message, node) {

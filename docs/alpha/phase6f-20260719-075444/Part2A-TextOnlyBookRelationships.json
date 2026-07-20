@@ -1,0 +1,1775 @@
+{
+  "generatedAt": "2026-07-19T15:03:11.425Z",
+  "persisted": true,
+  "booksTargeted": 31,
+  "documentedGaps": [
+    {
+      "book": "Esther",
+      "reason": "No direct NT quotation or explicit citation exists. The book's providence theme (Esther 4:14) is thematically resonant with Romans 8:28 but that is an interpretive/topical similarity, not a canon-explicit citation — left for a human Admin decision rather than self-approved."
+    },
+    {
+      "book": "Song of Solomon",
+      "reason": "Never directly quoted or cited elsewhere in the canon. Marriage/bridegroom imagery in Ephesians 5:25-32 is thematically resonant but not a textual citation of Song of Solomon specifically."
+    },
+    {
+      "book": "Lamentations",
+      "reason": "\"His compassions fail not: they are new every morning\" (3:22-23) is a widely loved verse but is not directly quoted elsewhere in canon; only thematically resonant with mercy passages (e.g. Psalm 103)."
+    },
+    {
+      "book": "Obadiah",
+      "reason": "Judgment-on-Edom theme recurs in other prophets (e.g. Jeremiah 49, Ezekiel 25, 35) but no NT passage directly quotes or cites Obadiah by name."
+    },
+    {
+      "book": "Nahum",
+      "reason": "Judgment-on-Nineveh theme; no NT direct quotation or citation exists."
+    },
+    {
+      "book": "Zephaniah",
+      "reason": "\"Day of the Lord\" theme recurs broadly (Joel, Amos, Malachi, 1-2 Thessalonians) but Zephaniah itself is not directly quoted or cited by name in the NT."
+    }
+  ],
+  "results": [
+    {
+      "book": "Numbers",
+      "sourceReference": "Numbers 21:9",
+      "targetReference": "John 3:14-15",
+      "relationshipType": "FULFILLMENT",
+      "explicit": true,
+      "reason": "Jesus explicitly cites the bronze serpent Moses lifted up in the wilderness as a type fulfilled in His own being lifted up.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_d3d15fc7715bdf9c",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Joshua",
+      "sourceReference": "Joshua 1:5",
+      "targetReference": "Hebrews 13:5",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Hebrews quotes God's promise to Joshua (\"I will never leave thee, nor forsake thee\") directly.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_5cb9d7d68d448c4b",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Judges",
+      "sourceReference": "Judges 6:11",
+      "targetReference": "Hebrews 11:32",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Hebrews 11:32 names Gideon, Barak, Samson, and Jephthah from Judges directly by name as examples of faith.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_9dc2b9fe290e81ff",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Ruth",
+      "sourceReference": "Ruth 4:17",
+      "targetReference": "Matthew 1:5",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Matthew's genealogy of Jesus explicitly names Boaz, Ruth's line (Obed, Jesse, David) as recorded in Ruth 4.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_ce9def359ad49b4e",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "1 Samuel",
+      "sourceReference": "1 Samuel 13:14",
+      "targetReference": "Acts 13:22",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Paul in Acts 13:22 directly quotes the description of David as \"a man after mine own heart\" from 1 Samuel 13:14.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_b0068803843ece6c",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "1 Kings",
+      "sourceReference": "1 Kings 10:1",
+      "targetReference": "Matthew 12:42",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Jesus explicitly references \"the queen of the south\" (Sheba) coming to hear Solomon's wisdom, from 1 Kings 10.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_7181dad9c46258e3",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "2 Kings",
+      "sourceReference": "2 Kings 5:14",
+      "targetReference": "Luke 4:27",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Jesus explicitly names \"Naaman the Syrian\" healed by Elisha (2 Kings 5) in His Nazareth synagogue address.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_0011e7a6acbeea83",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "1 Chronicles",
+      "sourceReference": "1 Chronicles 16:34",
+      "targetReference": "2 Chronicles 5:13",
+      "relationshipType": "PARALLEL_PASSAGE",
+      "explicit": true,
+      "reason": "Identical liturgical refrain (\"his mercy endureth for ever\") recorded verbatim in both books by the Chronicler.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_60631e984142b445",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "2 Chronicles",
+      "sourceReference": "2 Chronicles 5:13",
+      "targetReference": "1 Chronicles 16:34",
+      "relationshipType": "PARALLEL_PASSAGE",
+      "explicit": true,
+      "reason": "Identical liturgical refrain (\"his mercy endureth for ever\") recorded verbatim in both books by the Chronicler.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_0bc3a856e556adaf",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Ezra",
+      "sourceReference": "Ezra 1:1",
+      "targetReference": "Isaiah 44:28",
+      "relationshipType": "FULFILLMENT",
+      "explicit": true,
+      "reason": "Ezra 1:1 records the decree of Cyrus, explicitly the same king Isaiah 44:28/45:1 names by name generations earlier as God's instrument to restore Jerusalem.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_726ed4c7bf153943",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Nehemiah",
+      "sourceReference": "Nehemiah 8:2",
+      "targetReference": "Deuteronomy 31:11",
+      "relationshipType": "LAW_CONNECTION",
+      "explicit": true,
+      "reason": "Nehemiah 8 enacts the public reading of the Law that Deuteronomy 31:11-12 explicitly commands.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_25dc99ffa21c8fff",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Job",
+      "sourceReference": "Job 1:21",
+      "targetReference": "James 5:11",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "James 5:11 explicitly says \"ye have heard of the patience of Job\", directly naming the book's central figure.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_4350f663aa5d19a5",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Jeremiah",
+      "sourceReference": "Jeremiah 31:31",
+      "targetReference": "Hebrews 8:8",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Hebrews 8:8-12 quotes Jeremiah 31:31-34 (the new covenant prophecy) at length, nearly verbatim.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_31dd7b25f9f5d8b4",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Ezekiel",
+      "sourceReference": "Ezekiel 1:10",
+      "targetReference": "Revelation 4:7",
+      "relationshipType": "PARALLEL_PASSAGE",
+      "explicit": false,
+      "reason": "Both passages describe four living creatures with the same set of faces (man, lion, ox, eagle) — a well-recognized structural parallel, though Revelation does not cite Ezekiel by name.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_ec933d41dbf073aa",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "QUEUED_FOR_ADMIN_REVIEW"
+    },
+    {
+      "book": "Hosea",
+      "sourceReference": "Hosea 11:1",
+      "targetReference": "Matthew 2:15",
+      "relationshipType": "FULFILLMENT",
+      "explicit": true,
+      "reason": "Matthew 2:15 explicitly states \"that it might be fulfilled which was spoken... Out of Egypt have I called my son,\" quoting Hosea 11:1 by citation formula.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_329a1ae97a201ce9",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Joel",
+      "sourceReference": "Joel 2:28",
+      "targetReference": "Acts 2:16",
+      "relationshipType": "FULFILLMENT",
+      "explicit": true,
+      "reason": "Peter explicitly says \"this is that which was spoken by the prophet Joel\" and quotes Joel 2:28-32 at length.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_30ac75cc85a6431f",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Amos",
+      "sourceReference": "Amos 9:11",
+      "targetReference": "Acts 15:16",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "James at the Jerusalem council directly quotes Amos 9:11-12 as Scripture confirming the inclusion of the Gentiles.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_4fdbea3e4a4a8eff",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Jonah",
+      "sourceReference": "Jonah 1:17",
+      "targetReference": "Matthew 12:40",
+      "relationshipType": "FULFILLMENT",
+      "explicit": true,
+      "reason": "Jesus explicitly says \"as Jonas was three days and three nights in the whale's belly; so shall the Son of man be\" — a direct typological statement by Jesus Himself.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_60c54b73f97d9002",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Micah",
+      "sourceReference": "Micah 5:2",
+      "targetReference": "Matthew 2:6",
+      "relationshipType": "FULFILLMENT",
+      "explicit": true,
+      "reason": "The chief priests/scribes quote Micah 5:2 directly in Matthew 2:5-6 to identify Bethlehem as the Messiah's birthplace.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_ab1e9ac9672205e2",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Habakkuk",
+      "sourceReference": "Habakkuk 2:4",
+      "targetReference": "Romans 1:17",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "\"The just shall live by his faith\" (Habakkuk 2:4) is quoted directly in Romans 1:17, Galatians 3:11, and Hebrews 10:38.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_b7fd4a16dfc4b005",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Haggai",
+      "sourceReference": "Haggai 2:6",
+      "targetReference": "Hebrews 12:26",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Hebrews 12:26 directly quotes \"Yet once, it is a little while, and I will shake... the heavens\" from Haggai 2:6.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_d05b18dfd81454dd",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Zechariah",
+      "sourceReference": "Zechariah 9:9",
+      "targetReference": "Matthew 21:5",
+      "relationshipType": "FULFILLMENT",
+      "explicit": true,
+      "reason": "Matthew 21:4-5 explicitly quotes Zechariah 9:9 as fulfilled in Jesus's triumphal entry on a donkey.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_c22e25a52efdb578",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Malachi",
+      "sourceReference": "Malachi 3:1",
+      "targetReference": "Mark 1:2",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Mark 1:2 directly quotes Malachi 3:1 (\"Behold, I send my messenger\") applied to John the Baptist.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_dc720d496d020873",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Colossians",
+      "sourceReference": "Colossians 1:16",
+      "targetReference": "Ephesians 1:20",
+      "relationshipType": "PARALLEL_PASSAGE",
+      "explicit": false,
+      "reason": "Both epistles (written and carried at the same time by the same courier, Tychicus) describe Christ's supremacy over all things in closely parallel language.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_fc74bbf5f9d3f87b",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "QUEUED_FOR_ADMIN_REVIEW"
+    },
+    {
+      "book": "2 Thessalonians",
+      "sourceReference": "2 Thessalonians 2:2",
+      "targetReference": "1 Thessalonians 5:2",
+      "relationshipType": "EPISTLE_CONNECTION",
+      "explicit": true,
+      "reason": "2 Thessalonians 2 explicitly continues and clarifies the \"day of the Lord\" teaching Paul had already given the same church in 1 Thessalonians 5.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_089d0dfd7f7f62da",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "1 Timothy",
+      "sourceReference": "1 Timothy 1:3",
+      "targetReference": "Titus 1:5",
+      "relationshipType": "EPISTLE_CONNECTION",
+      "explicit": true,
+      "reason": "Both letters instruct a named delegate (Timothy at Ephesus, Titus at Crete) to set church order and appoint elders — the same pastoral-epistle genre and structure.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_02c6080f1a2e6047",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "2 Timothy",
+      "sourceReference": "2 Timothy 1:2",
+      "targetReference": "1 Timothy 1:2",
+      "relationshipType": "EPISTLE_CONNECTION",
+      "explicit": true,
+      "reason": "Both letters are explicitly addressed by Paul to the same named recipient, Timothy, as \"my own son in the faith\".",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_9262adecf21d2c22",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Titus",
+      "sourceReference": "Titus 1:4",
+      "targetReference": "1 Timothy 1:2",
+      "relationshipType": "EPISTLE_CONNECTION",
+      "explicit": true,
+      "reason": "Titus and 1 Timothy share identical greeting formula and pastoral-epistle purpose from the same author, Paul.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_3b3a7aeb2634fc45",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Philemon",
+      "sourceReference": "Philemon 1:10",
+      "targetReference": "Colossians 4:9",
+      "relationshipType": "DIRECT_QUOTATION",
+      "explicit": true,
+      "reason": "Onesimus is explicitly named in both Philemon 1:10 and Colossians 4:9 as the same person, in letters sent together by Paul at the same time.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_9e0bd4fb43ff8fec",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "2 Peter",
+      "sourceReference": "2 Peter 2:4",
+      "targetReference": "Jude 1:6",
+      "relationshipType": "PARALLEL_PASSAGE",
+      "explicit": true,
+      "reason": "2 Peter 2 and Jude describe the same \"angels that sinned\" in closely parallel, near-verbatim language — one of the most widely recognized textual parallels in the NT.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_aa52037cbc360ebe",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    },
+    {
+      "book": "Jude",
+      "sourceReference": "Jude 1:6",
+      "targetReference": "2 Peter 2:4",
+      "relationshipType": "PARALLEL_PASSAGE",
+      "explicit": true,
+      "reason": "2 Peter 2 and Jude describe the same \"angels that sinned\" in closely parallel, near-verbatim language.",
+      "verification": {
+        "sourceOk": true,
+        "targetOk": true
+      },
+      "evaluation": {
+        "candidateId": "sgc_book_5b9d944eb4196987",
+        "classification": "NEEDS_HUMAN_REVIEW",
+        "confidenceScore": 0.86,
+        "reasons": [
+          "trustedSource: Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+        ],
+        "ruleResults": {
+          "duplicateContent": {
+            "pass": true,
+            "detail": "No duplicate approved support edge found for this topic/claim."
+          },
+          "trustedSource": {
+            "pass": false,
+            "detail": "Source \"phase6f_text_only_book_completion\" is not on the trusted-source allowlist — human review required."
+          },
+          "sourcePriority": {
+            "pass": null,
+            "detail": "No source-priority ranking available for external/unknown sources."
+          },
+          "scriptureValidation": {
+            "pass": true,
+            "detail": "All 2 Scripture reference(s) resolve to a canonical KJV book."
+          },
+          "metadataCompleteness": {
+            "pass": true,
+            "detail": "All required metadata fields present."
+          },
+          "formatValidity": {
+            "pass": true,
+            "detail": "Record shape matches the support-graph-candidate schema."
+          },
+          "licensing": {
+            "pass": true,
+            "detail": "No third-party licensed content in this candidate type (internal Scripture-only claim)."
+          },
+          "indexCompatibility": {
+            "pass": true,
+            "detail": "relationshipType \"unverified_support\" is compatible with the approved-support-graph index shape."
+          }
+        },
+        "recommendation": "Route to Admin Review — rules could not confidently classify."
+      },
+      "outcome": "APPROVED_AND_PROMOTED"
+    }
+  ],
+  "counts": {
+    "verified": 31,
+    "failedVerification": 0,
+    "approvedExplicit": 29,
+    "needsHumanReview": 2
+  }
+}

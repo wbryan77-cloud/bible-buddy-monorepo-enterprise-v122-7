@@ -9,6 +9,7 @@ const {
 const {
   getGraphNode,
   getGraphWitnesses,
+  detectConceptFromGraph,
 } = require('./bibleConceptGraph');
 const { detectSemanticConcept } = require('./bibleSemanticConceptNormalizer');
 const {
@@ -23,6 +24,12 @@ const {
 const { formatDirectDoctrineReply } = require('./directAnswerFormatter');
 const { applyUserAnswerPreferences, getUserAnswerPreferences } = require('./userCorrectionMemory');
 const { validateBncAnswer } = require('./bncSafetyValidator');
+const {
+  findHintedReference,
+  buildExplicitReferenceConceptShape,
+  buildGroundedScriptureAnswer,
+} = require('./groundedScriptureEngine');
+const { buildAuthorityAnswer } = require('./scriptureAuthorityEngine');
 
 function getConceptById(id) {
   return getGraphNode(id);
@@ -198,6 +205,7 @@ function extractExplicitScriptureReferences(message = '') {
       .trim();
 
     const bookTokens = rawBookPart.split(/\s+/);
+    let foundValidBook = false;
 
     for (let start = 0; start < bookTokens.length; start += 1) {
       const possibleBook = bookTokens.slice(start).join(' ');
@@ -217,6 +225,8 @@ function extractExplicitScriptureReferences(message = '') {
 
       if (!canonicalReference) continue;
 
+      foundValidBook = true;
+
       const key = canonicalReference.toLowerCase();
 
       if (!seen.has(key)) {
@@ -229,6 +239,17 @@ function extractExplicitScriptureReferences(message = '') {
 
       break;
     }
+
+    // PHASE_6F — a candidate ending in a bare, unqualified number (e.g. "...
+    // Hebrew in 2") can consume a leading book-number digit that actually
+    // belongs to the *next* reference (e.g. "Hebrew in 2 Samuel 7:12"),
+    // starving it of its "2" and leaving an unrecognized "Samuel 7:12". When
+    // a candidate fails to resolve to any canonical book, retry one
+    // character later instead of skipping past the whole failed span so the
+    // digit remains available to a following, more specific match.
+    if (!foundValidBook && candidateRe.lastIndex > match.index + 1) {
+      candidateRe.lastIndex = match.index + 1;
+    }
   }
 
   return results
@@ -237,24 +258,43 @@ function extractExplicitScriptureReferences(message = '') {
 }
 
 function buildExplicitScriptureReferenceConcept(message = '') {
-  const references = extractExplicitScriptureReferences(message);
+  let references = extractExplicitScriptureReferences(message);
+
+  // No explicit chapter:verse in the message — check the narrow claim-
+  // reference hint list (identification only, never an answer source) so a
+  // claim like "verses that say Jesus had white skin" can still be checked
+  // against real retrieved text instead of going unanswered.
+  if (!references.length) {
+    const hinted = findHintedReference(message);
+    if (hinted) references = [hinted];
+  }
 
   if (!references.length) return null;
 
-  return {
-    id: 'explicit_scripture_reference',
-    strictTopic: null,
-    polarity: null,
-    directAnswer:
-      references.length === 1
-        ? `The requested Scripture passage is ${references[0]}`
-        : `The requested Scripture passages are ${references.join(', ')}`,
-    directWitnesses: references,
-    supportingWitnesses: [],
-    explicitScriptureReference: true,
-    canonicalReferences: references,
-    retrievalMode: 'canonical_reference',
-  };
+  // PHASE_5S_SCRIPTURE_AUTHORITY — Explicit Scripture outranks Supporting
+  // Scripture, but a bare chapter reference (no verse) that matches a
+  // curated doctrine concept's own synonym (e.g. "Acts 10") should gather
+  // that concept's specific witnesses instead of the entire raw chapter, so
+  // the Authority Engine can synthesize the actual teaching from the
+  // relevant verses rather than dumping unfocused chapter text. Only
+  // applies when the concept genuinely offers 2+ curated witnesses — this
+  // never invents supporting passages, it only reuses what a concept
+  // author already curated.
+  if (references.length === 1 && !references[0].includes(':')) {
+    const conceptMatch = detectConceptFromGraph(message);
+    const curatedWitnesses = [
+      ...(conceptMatch?.directWitnesses || []),
+      ...(conceptMatch?.supportingWitnesses || []),
+    ];
+    if (conceptMatch && curatedWitnesses.length >= 2) {
+      return {
+        ...buildExplicitReferenceConceptShape(curatedWitnesses),
+        authorityConceptId: conceptMatch.id,
+      };
+    }
+  }
+
+  return buildExplicitReferenceConceptShape(references);
 }
 
 function selectDirectWitnesses(concept, limit = 3, exclude = []) {
@@ -280,6 +320,20 @@ function buildLineUponLineExplanation(concept, witnesses = []) {
   const witnessText = refs.slice(0, 3).join(', ');
   if (!c.directAnswer) return '';
   return `${c.directAnswer} Scripture witnesses: ${witnessText}.`;
+}
+
+// PHASE_5Q_GROUNDED_SCRIPTURE_ENGINE
+//
+// Completes the explicit-Scripture path with READ / QUOTE / COMPARE /
+// YES_NO handling, using ONLY live retrieved canonical text. Delegates to
+// groundedScriptureEngine so this engine never answers from the doctrine
+// concept graph, a hand-authored witness list, or generated Scripture.
+async function retrieveGroundedScriptureForConcept(message, concept) {
+  const references =
+    concept?.canonicalReferences?.length
+      ? concept.canonicalReferences
+      : selectDirectWitnesses(concept, 3);
+  return buildGroundedScriptureAnswer({ message, references });
 }
 
 function getConceptState(userId) {
@@ -345,7 +399,7 @@ function resolveConceptForMessage(message = '', userId = '') {
   return null;
 }
 
-function buildBibleWideAnswer({
+async function buildBibleWideAnswer({
   message,
   concept: conceptInput = null,
   userId = '',
@@ -388,7 +442,29 @@ function buildBibleWideAnswer({
   }
 
   let reply;
-  if (isContinuation || CONTINUATION_PHRASE_RE.test(message)) {
+  let canonicalRetrieval = null;
+  let authorityResult = null;
+  if (concept.explicitScriptureReference) {
+    // Grounded Scripture engine (Phase 5Q) retrieves live canonical text and
+    // classifies READ / QUOTE / COMPARE / YES_NO intent. The Scripture
+    // Authority Engine (Phase 5S) then classifies and orders the final
+    // answer (classification -> direct answer -> primary Scripture ->
+    // supporting Scripture -> brief explanation -> conclusion) from that
+    // same retrieved text only — never from the doctrine graph, never
+    // invented.
+    canonicalRetrieval = await retrieveGroundedScriptureForConcept(message, concept);
+    authorityResult = await buildAuthorityAnswer({
+      intent: canonicalRetrieval.intent,
+      claimText: canonicalRetrieval.claimText,
+      successes: canonicalRetrieval.successes,
+      failures: canonicalRetrieval.failures,
+      concept,
+      requestedMinimum: 2,
+      retrievalMode: concept.retrievalMode || 'canonical_reference',
+      masterRoute: isContinuation ? 'bible_wide_continuation' : 'bible_wide_reasoning',
+    });
+    reply = authorityResult.reply;
+  } else if (isContinuation || CONTINUATION_PHRASE_RE.test(message)) {
     if (witnesses.length) {
       reply = `Here is another Scripture witness on this topic: ${witnesses.join('; ')}.`;
       if (concept.directAnswer) {
@@ -423,8 +499,29 @@ function buildBibleWideAnswer({
   });
   reply = validated.reply;
 
-  const scripture = witnesses.map((r) => ({ reference: r, theme: concept.id }));
-  const allUsed = [...used, ...witnesses];
+  const scripture = canonicalRetrieval
+    ? canonicalRetrieval.successes.map((r) => ({
+        reference: r.reference,
+        text: r.text,
+        translation: r.translation,
+        source: r.source,
+        theme: concept.id,
+      }))
+    : witnesses.map((r) => ({ reference: r, theme: concept.id }));
+
+  const effectiveWitnesses = canonicalRetrieval
+    ? canonicalRetrieval.successes.map((r) => r.reference)
+    : witnesses;
+
+  const retrievalMode = canonicalRetrieval
+    ? canonicalRetrieval.failures.length
+      ? canonicalRetrieval.successes.length
+        ? 'canonical_text_partial'
+        : 'canonical_text_unavailable'
+      : 'canonical_text'
+    : concept.retrievalMode || null;
+
+  const allUsed = [...used, ...effectiveWitnesses];
 
   if (userId) {
     setActiveBibleConcept(userId, concept.id, message, allUsed);
@@ -436,8 +533,21 @@ function buildBibleWideAnswer({
     concept: concept.id,
     strictTopic: concept.strictTopic,
     polarity,
-    witnesses,
+    witnesses: effectiveWitnesses,
+    retrievalMode,
+    scriptureMode: canonicalRetrieval?.intent || null,
+    authorityClassification: authorityResult?.classification || null,
+    primaryScripture: authorityResult?.primaryScripture || null,
+    supportingScripture: authorityResult?.supportingScripture || [],
+    primaryWitness: authorityResult?.primaryWitness || null,
+    supportingWitnesses: authorityResult?.supportingWitnesses || [],
+    crossReferences: authorityResult?.crossReferences || [],
+    witnessStatus: authorityResult?.witnessStatus || null,
+    requestedMinimum: authorityResult?.requestedMinimum ?? null,
+    availableWitnessCount: authorityResult?.availableWitnessCount ?? null,
+    selectionReason: authorityResult?.selectionReason || null,
     masterRoute: isContinuation ? 'bible_wide_continuation' : 'bible_wide_reasoning',
+    lineage: authorityResult?.lineage || null,
   };
 }
 
@@ -446,6 +556,9 @@ function buildBibleWideStructured(answer, runtimeContext = {}, safety = {}) {
   return {
     reply: answer.reply,
     scripture: answer.scripture || [],
+    primaryWitness: answer.primaryWitness || null,
+    supportingWitnesses: answer.supportingWitnesses || [],
+    crossReferences: answer.crossReferences || [],
     mode: 'companion',
     confidence: 'high',
     memory_used: false,
@@ -461,6 +574,13 @@ function buildBibleWideStructured(answer, runtimeContext = {}, safety = {}) {
       doctrineTopic: answer.strictTopic || null,
       phase5A: true,
       bncConcept: answer.concept,
+      retrievalMode: answer.retrievalMode || null,
+      scriptureMode: answer.scriptureMode || null,
+      authorityClassification: answer.authorityClassification || null,
+      witnessStatus: answer.witnessStatus || null,
+      availableWitnessCount: answer.availableWitnessCount ?? null,
+      crossReferenceCount: (answer.crossReferences || []).length,
+      lineage: answer.lineage || null,
     },
   };
 }
@@ -475,4 +595,5 @@ module.exports = {
   getConceptState,
   buildBibleWideStructured,
   getConceptById,
+  extractExplicitScriptureReferences,
 };

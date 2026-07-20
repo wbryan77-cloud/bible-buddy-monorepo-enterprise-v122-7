@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-07-20T01:33:00Z",
+  "batch": "Founder Alpha Final Release Review — Part 2",
+  "warnings": [
+    {
+      "id": "admin_auth_boundary",
+      "classification": "Expected Founder Alpha Limitation",
+      "affectsUsers": false,
+      "affectsScriptureAuthority": false,
+      "affectsProductionCorrectness": false,
+      "affectsFounderAlpha": false,
+      "blocksRelease": false
+    },
+    {
+      "id": "admin_dashboard_latency",
+      "classification": "Minor Risk",
+      "affectsUsers": false,
+      "affectsScriptureAuthority": false,
+      "affectsProductionCorrectness": false,
+      "affectsFounderAlpha": true,
+      "affectsFounderAlphaDetail": "minor — only Admin/engineering reviewers of one dashboard tab",
+      "blocksRelease": false
+    },
+    {
+      "id": "admin_ui_no_token_entry_mechanism",
+      "classification": "Expected Future Enhancement",
+      "affectsUsers": false,
+      "affectsScriptureAuthority": false,
+      "affectsProductionCorrectness": false,
+      "affectsFounderAlpha": false,
+      "blocksRelease": false,
+      "note": "must be resolved before warning admin_auth_boundary is ever remediated by turning a token on"
+    },
+    {
+      "id": "no_rate_limiting",
+      "classification": "Expected Founder Alpha Limitation",
+      "affectsUsers": false,
+      "affectsScriptureAuthority": false,
+      "affectsProductionCorrectness": false,
+      "affectsFounderAlpha": false,
+      "blocksRelease": false
+    },
+    {
+      "id": "no_multi_instance_scaling",
+      "classification": "Expected Founder Alpha Limitation",
+      "affectsUsers": false,
+      "affectsScriptureAuthority": false,
+      "affectsProductionCorrectness": false,
+      "affectsFounderAlpha": false,
+      "blocksRelease": false
+    },
+    {
+      "id": "version_string_drift",
+      "classification": "Documentation Only",
+      "affectsUsers": false,
+      "affectsScriptureAuthority": false,
+      "affectsProductionCorrectness": false,
+      "affectsFounderAlpha": false,
+      "blocksRelease": false
+    },
+    {
+      "id": "memory_export_delete_not_founder_facing",
+      "classification": "Expected Future Enhancement",
+      "affectsUsers": true,
+      "affectsUsersDetail": "a Founder cannot yet self-serve export/delete of their own memory; must be requested manually from the team",
+      "affectsScriptureAuthority": false,
+      "affectsProductionCorrectness": false,
+      "affectsFounderAlpha": true,
+      "affectsFounderAlphaDetail": "should be disclosed transparently to testers, not silently omitted",
+      "blocksRelease": false
+    },
+    {
+      "id": "flaky_external_provider_test",
+      "classification": "Expected External Dependency",
+      "affectsUsers": false,
+      "affectsScriptureAuthority": false,
+      "affectsProductionCorrectness": false,
+      "affectsFounderAlpha": false,
+      "blocksRelease": false
+    }
+  ],
+  "criticalBlockers": 0,
+  "productionRisksAffectingScriptureAuthorityOrCorrectness": 0,
+  "finalConclusion": "ACCEPTABLE_FOR_FOUNDER_ALPHA"
+}

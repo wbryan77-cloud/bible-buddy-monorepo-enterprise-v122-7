@@ -198,6 +198,20 @@ function isOpenAiDisabled() {
   return process.env.BIBLEBUDDY_DISABLE_OPENAI === '1';
 }
 
+// Some models (e.g. reasoning-only models) reject any non-default
+// temperature and return a 400 for the whole request. Detected via the
+// API's own error text so this adapts to whichever model is configured
+// without hardcoding a model-name allowlist.
+const TEMPERATURE_UNSUPPORTED_RE =
+  /unsupported value:\s*'temperature'|temperature.{0,40}(does not support|only the default)/i;
+
+function raceWithTimeout(promise, timeoutMs) {
+  const timeoutPromise = new Promise((_, reject) => {
+    setTimeout(() => reject(new Error('openai_timeout')), timeoutMs);
+  });
+  return Promise.race([promise, timeoutPromise]);
+}
+
 async function callOpenAI({ systemPrompt, userPayload, temperature = 0.72 }) {
   if (isOpenAiDisabled()) {
     return { ok: false, error: 'openai_disabled', raw: null };
@@ -207,20 +221,29 @@ async function callOpenAI({ systemPrompt, userPayload, temperature = 0.72 }) {
   }
 
   const timeoutMs = Number(process.env.OPENAI_TIMEOUT_MS || 45000);
+  const basePayload = {
+    model: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
+    response_format: { type: 'json_object' },
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: JSON.stringify(userPayload, null, 2) },
+    ],
+  };
+
   try {
-    const completionPromise = openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
-      temperature,
-      response_format: { type: 'json_object' },
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: JSON.stringify(userPayload, null, 2) },
-      ],
-    });
-    const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => reject(new Error('openai_timeout')), timeoutMs);
-    });
-    const completion = await Promise.race([completionPromise, timeoutPromise]);
+    let completion;
+    try {
+      completion = await raceWithTimeout(
+        openai.chat.completions.create({ ...basePayload, temperature }),
+        timeoutMs
+      );
+    } catch (e) {
+      if (!TEMPERATURE_UNSUPPORTED_RE.test(String(e?.message || e))) throw e;
+      completion = await raceWithTimeout(
+        openai.chat.completions.create(basePayload),
+        timeoutMs
+      );
+    }
     const raw = completion?.choices?.[0]?.message?.content || '';
     return { ok: true, raw, error: null };
   } catch (e) {

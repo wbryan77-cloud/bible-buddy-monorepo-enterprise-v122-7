@@ -1,0 +1,159 @@
+{
+  "generatedAt": "2026-07-19T09:53:07.614Z",
+  "total": 38,
+  "passed": 38,
+  "results": [
+    {
+      "id": "coverage_all_66_books_represented",
+      "pass": true
+    },
+    {
+      "id": "coverage_complete_local_kjv_availability",
+      "pass": true
+    },
+    {
+      "id": "coverage_text_only_book_identified",
+      "pass": true
+    },
+    {
+      "id": "coverage_partial_linked_coverage_identified",
+      "pass": true
+    },
+    {
+      "id": "coverage_doctrine_topic_report_generated",
+      "pass": true
+    },
+    {
+      "id": "coverage_one_witness_topic_identified",
+      "pass": true
+    },
+    {
+      "id": "coverage_missing_cross_reference_identified",
+      "pass": true
+    },
+    {
+      "id": "coverage_external_dependency_identified",
+      "pass": true
+    },
+    {
+      "id": "coverage_original_language_report_generated",
+      "pass": true
+    },
+    {
+      "id": "coverage_witness_quality_classification_complete",
+      "pass": true
+    },
+    {
+      "id": "queue_exact_duplicate_classification",
+      "pass": true
+    },
+    {
+      "id": "queue_semantic_duplicate_classification",
+      "pass": true
+    },
+    {
+      "id": "queue_missing_metadata_false_positive_style_classification",
+      "pass": true
+    },
+    {
+      "id": "queue_safely_auto_approvable_is_never_from_untrusted_source",
+      "pass": true
+    },
+    {
+      "id": "queue_safely_auto_rejectable_measured",
+      "pass": true
+    },
+    {
+      "id": "queue_true_human_review_candidate_protected",
+      "pass": true
+    },
+    {
+      "id": "queue_licensing_issue_classification",
+      "pass": true
+    },
+    {
+      "id": "queue_invalid_scripture_classification",
+      "pass": true
+    },
+    {
+      "id": "queue_replay_after_rule_optimization_is_idempotent",
+      "pass": true
+    },
+    {
+      "id": "historical_cited_book_resolved",
+      "pass": true
+    },
+    {
+      "id": "historical_cited_article_resolved_tier2",
+      "pass": true
+    },
+    {
+      "id": "historical_unverifiable_citation",
+      "pass": true
+    },
+    {
+      "id": "historical_licensing_uncertainty",
+      "pass": true
+    },
+    {
+      "id": "historical_tier1_source",
+      "pass": true
+    },
+    {
+      "id": "historical_tier2_source",
+      "pass": true
+    },
+    {
+      "id": "historical_ministry_research_discovery_source_never_authoritative",
+      "pass": true
+    },
+    {
+      "id": "historical_source_claim_matches_citation_note_present",
+      "pass": true
+    },
+    {
+      "id": "historical_source_claim_does_not_match_is_never_auto_verdicted",
+      "pass": true
+    },
+    {
+      "id": "drift_metadata_only_change",
+      "pass": true
+    },
+    {
+      "id": "drift_witness_addition_is_high_risk",
+      "pass": true
+    },
+    {
+      "id": "drift_primary_witness_change_is_critical",
+      "pass": true
+    },
+    {
+      "id": "drift_high_risk_review_requirement_not_bypassed_without_rollback_flag",
+      "pass": true
+    },
+    {
+      "id": "drift_rollback_comparison_does_not_require_new_approval",
+      "pass": true
+    },
+    {
+      "id": "drift_no_change_is_low_risk",
+      "pass": true
+    },
+    {
+      "id": "performance_analytics_modules_never_required_by_hot_path",
+      "pass": true
+    },
+    {
+      "id": "performance_dashboard_reads_precomputed_snapshot_only",
+      "pass": true
+    },
+    {
+      "id": "performance_bounded_cache_snapshot_store",
+      "pass": true
+    },
+    {
+      "id": "performance_no_user_response_blockage_pipeline_dry_run_is_offline_only",
+      "pass": true
+    }
+  ]
+}

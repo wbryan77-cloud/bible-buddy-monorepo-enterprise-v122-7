@@ -1,0 +1,24 @@
+{
+  "part": 8,
+  "title": "Full Regression and Repair Loop",
+  "suitesExecuted": {
+    "decisionOwnershipSmoke": "14/14",
+    "openAiFirstRegressionTest": "10/10",
+    "liveRuntimeVerification": "6/6",
+    "scriptureFidelitySmoke": "4/4",
+    "alphaCoreTruthSmoke": "6/6",
+    "phase6bOriginalLanguageValidation": "PASS",
+    "runPhase5OContinuationRegression": "PASS",
+    "phase6fFounderAlphaE2E": "35/35",
+    "phase6fTherapeuticMultiTurn": "PASS (anyForbiddenHit=false)",
+    "founderAlphaValidateMainInstance": "READY_WITH_DOCUMENTED_WARNINGS pass=37 warn=2 fail=0 skip=0",
+    "founderAlphaValidateFreshEnv": "BLOCKED pass=34 warn=4 fail=1 skip=0 (sole FAIL is credential-dependent, documented in Part 5)"
+  },
+  "phase6gRegressionsRemaining": 0,
+  "securityOrPrivacyBlockersRemaining": 0,
+  "materialLatencyRegression": false,
+  "acceptanceGatesPassed": "20/20",
+  "filesModifiedThisPart": [
+    "scripts/founderAlphaReadinessValidator.js (timeout increase 180s->300s for OpenAI-heavy suites)"
+  ]
+}

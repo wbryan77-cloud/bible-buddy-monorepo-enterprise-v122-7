@@ -27,7 +27,19 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
     return 'health_support';
   }
 
-  if (/\b(decision|decide|choice|discern|what should i do)\b/i.test(sprint1a6Message) && !/\b(bible|scripture|sabbath|pork|acts 10|commandments?)\b/i.test(sprint1a6Message)) {
+  // PHASE_6G: broadened beyond the literal word "decision" to also catch the
+  // very common "should I ___" personal-decision phrasing (job, money,
+  // relationships, etc.). This still only fires as a last resort inside the
+  // orchestrator (after strict-doctrine and Bible-concept detection have
+  // already had first refusal), so a genuine doctrine question phrased as
+  // "should I ___" (e.g. Sabbath/dietary/commandments) is still claimed by
+  // the doctrine engine first — this only widens the *non-doctrinal*
+  // decision-support net, it does not narrow doctrine routing.
+  if (
+    (/\b(decision|decide|choice|discern|what should i do)\b/i.test(sprint1a6Message) ||
+      (/\bshould i\b/i.test(sprint1a6Message) && !/\b(how should i|what should i say)\b/i.test(sprint1a6Message))) &&
+    !/\b(bible|scripture|sabbath|pork|acts 10|commandments?|baptis|tithe|tithing)\b/i.test(sprint1a6Message)
+  ) {
     return 'open_life';
   }
 

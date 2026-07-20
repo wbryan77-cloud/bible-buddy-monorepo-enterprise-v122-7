@@ -13,6 +13,32 @@ const STUDY_RE = /You've been studying|We can continue that study|continue your 
 const WITNESS_RE = /establishes the matter|confirms it alongside Scripture|carries the theme forward/i;
 const HISTORY_RE = /Constantine|Council of Laodicea|Saturday to Sunday/i;
 
+// PHASE_6G — Named allowlist of deterministic/governed `finalAnswerAuthor`
+// values that are *expected* to answer without calling OpenAI under the
+// approved Scripture Authority Engine architecture (Phase 5S/5T/6):
+// governed biblical claims are answered from approved evidence and
+// canonical Scripture first, with OpenAI composition reserved for
+// non-doctrinal companion conversation. Before this phase, any non-OpenAI
+// answer longer than 20 characters was unconditionally flagged as a
+// "non_openai_speaker" violation, which is exactly the obsolete
+// "every answer must call OpenAI" assumption this program replaced.
+const GOVERNED_NON_OPENAI_AUTHORS = new Set([
+  'doctrine_final_authority',
+  'strict_doctrine_gate',
+  'doctrine_strict_safe_corpus',
+  'bible_wide_reasoning',
+  'companion_release',
+  'crisis_protocol',
+  'original_language_study',
+  'historical_context',
+  'conversation_owner_life_decision',
+  'phase5o_continuation_life_decision',
+  'companion_lane_fallback',
+  'companion_state_engine',
+  'phase5k_prayer_companion',
+  'bible_companion_clarification',
+]);
+
 function parseApiError(errorMessage = '') {
   const msg = String(errorMessage || '');
   if (/429|quota/i.test(msg)) return { errorName: 'OpenAIQuotaExceeded', errorMessage: msg.slice(0, 200) };
@@ -195,7 +221,12 @@ function buildLiveRequestTrace({ message = '', reply = {}, httpStatus = 200, lat
   if (HISTORY_RE.test(reply.reply || '') && !/who changed|constantine|history|rome/i.test(message)) {
     trace.violations.push('unsolicited_sabbath_history');
   }
-  if (!openaiCalled && !trace.buildConnectionErrorReplyUsed && String(reply.reply || '').length > 20) {
+  if (
+    !openaiCalled &&
+    !trace.buildConnectionErrorReplyUsed &&
+    !GOVERNED_NON_OPENAI_AUTHORS.has(finalAnswerAuthor) &&
+    String(reply.reply || '').length > 20
+  ) {
     trace.violations.push('non_openai_speaker');
   }
 
@@ -231,4 +262,5 @@ module.exports = {
   TRACE_PATH,
   STUDY_RE,
   WITNESS_RE,
+  GOVERNED_NON_OPENAI_AUTHORS,
 };

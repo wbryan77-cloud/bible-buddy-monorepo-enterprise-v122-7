@@ -1,0 +1,165 @@
+{
+  "stages": [
+    {
+      "stage": "ACQUIRE",
+      "itemsEntered": 47,
+      "itemsPassed": 47,
+      "itemsRejected": 0,
+      "itemsErrored": 0,
+      "itemsRetried": 0,
+      "queueDepth": 0,
+      "failureReasons": [],
+      "downstreamStatus": "FEEDS_NORMALIZE",
+      "note": "240 IOG raw transcript file(s) also inventoried but intentionally left RAW_ISOLATED_NOT_PARSED_THIS_BATCH (governance/licensing boundary) — not counted as pipeline throughput."
+    },
+    {
+      "stage": "NORMALIZE",
+      "itemsEntered": 910,
+      "itemsPassed": 910,
+      "itemsRejected": 0,
+      "itemsErrored": 0,
+      "queueDepth": 0,
+      "failureReasons": [],
+      "downstreamStatus": "FEEDS_SCRIPTURE_REFERENCE_VALIDATION"
+    },
+    {
+      "stage": "SCRIPTURE_REFERENCE_VALIDATION",
+      "itemsEntered": 910,
+      "itemsPassed": 907,
+      "itemsRejected": 3,
+      "itemsErrored": 0,
+      "queueDepth": 0,
+      "failureReasons": [
+        "Reference did not resolve against the validated local KJV corpus"
+      ],
+      "downstreamStatus": "FEEDS_DEDUPE"
+    },
+    {
+      "stage": "DEDUPE",
+      "itemsEntered": 907,
+      "itemsPassed": 893,
+      "itemsRejected": 14,
+      "itemsErrored": 0,
+      "queueDepth": 0,
+      "failureReasons": [
+        "EXACT_DUPLICATE of an existing approved witness"
+      ],
+      "downstreamStatus": "FEEDS_TAG"
+    },
+    {
+      "stage": "TAG",
+      "itemsEntered": 893,
+      "itemsPassed": 893,
+      "itemsRejected": 0,
+      "itemsErrored": 0,
+      "queueDepth": 0,
+      "failureReasons": [],
+      "downstreamStatus": "FEEDS_RELATIONSHIP_EXTRACTION",
+      "status": "ACTIVE_AS_OF_PHASE_6E",
+      "tagDimensions": [
+        "authorityDomain",
+        "biblicalBook",
+        "testament",
+        "doctrineTopic",
+        "sourceType",
+        "relationshipType",
+        "historicalPeriod",
+        "originalLanguageAvailable",
+        "trustTier",
+        "approvalState",
+        "productionEligible",
+        "discoverySource"
+      ]
+    },
+    {
+      "stage": "RELATIONSHIP_EXTRACTION",
+      "itemsEntered": 893,
+      "itemsPassed": 667,
+      "itemsRejected": 226,
+      "itemsErrored": 0,
+      "queueDepth": 0,
+      "failureReasons": [
+        "Valid Scripture reference shares no book+chapter with any existing approved topic witness — no topic inferred (never guessed from AI similarity)."
+      ],
+      "downstreamStatus": "FEEDS_RULES_APPROVAL"
+    },
+    {
+      "stage": "RULES_APPROVAL",
+      "itemsEntered": 667,
+      "itemsPassed": 135,
+      "itemsRejected": 0,
+      "itemsErrored": 0,
+      "queueDepth": 532,
+      "failureReasons": [],
+      "downstreamStatus": "AUTO_APPROVED_FEEDS_INDEX; NEEDS_ADMIN_REVIEW_FEEDS_ADMIN_REVIEW"
+    },
+    {
+      "stage": "ADMIN_REVIEW",
+      "itemsEntered": 533,
+      "itemsPassed": 1,
+      "itemsRejected": 3,
+      "itemsErrored": 0,
+      "itemsRetried": 0,
+      "queueDepth": 475,
+      "oldestItemAgeMs": 21144890,
+      "failureReasons": [],
+      "downstreamStatus": "APPROVED_FEEDS_INDEX; ARCHIVED_REMOVED_FROM_ACTIVE_QUEUE (see Part 7 rules optimizer)",
+      "note": "54 archived by the Phase 6E rules optimizer (identical-relationship dedupe) — see WitnessQualityReport / AdminQueueDiagnostics for detail."
+    },
+    {
+      "stage": "INDEX",
+      "itemsEntered": 135,
+      "itemsPassed": 135,
+      "itemsRejected": 0,
+      "itemsErrored": 0,
+      "queueDepth": 0,
+      "failureReasons": [],
+      "downstreamStatus": "FEEDS_EVIDENCE_GRAPH",
+      "note": "Indexed via services/scriptureRelationshipGraph.js (readApprovedCrossReferences() is one of its typed-relationship sources)."
+    },
+    {
+      "stage": "EVIDENCE_GRAPH",
+      "itemsEntered": 135,
+      "itemsPassed": 135,
+      "itemsRejected": 0,
+      "itemsErrored": 0,
+      "queueDepth": 0,
+      "failureReasons": [],
+      "downstreamStatus": "FEEDS_PRODUCTION"
+    },
+    {
+      "stage": "PRODUCTION",
+      "itemsEntered": 135,
+      "itemsPassed": 135,
+      "itemsRejected": 0,
+      "itemsErrored": 0,
+      "queueDepth": 0,
+      "failureReasons": [],
+      "downstreamStatus": "LIVE — retrievable via services/scriptureRelationshipGraph.js CROSS_REFERENCE relationships"
+    }
+  ],
+  "summary": {
+    "generatedAt": "2026-07-19T09:53:20.663Z",
+    "dryRunPipelinePassDurationMs": 73,
+    "totalSourceDocuments": 47,
+    "totalReferencesProcessed": 910,
+    "finalCounts": {
+      "autoApproved": 135,
+      "autoRejectedDuplicate": 14,
+      "autoRejectedInvalid": 3,
+      "unclassifiedNoTopic": 226,
+      "needsAdminReview": 532
+    },
+    "auditLogEntryCount": 741,
+    "auditActionCounts": {
+      "QUEUE_FOR_ADMIN_REVIEW": 532,
+      "PROMOTE_CROSS_REFERENCE": 135,
+      "REJECT_CANDIDATE": 17,
+      "ADMIN_DECISION": 1,
+      "ADMIN_BULK_DECISION": 6,
+      "RULES_OPTIMIZER_AUTO_DECISION": 50
+    },
+    "tagStageStatus": "ACTIVE_AS_OF_PHASE_6E — every processed record now carries the full tag-dimension object (services/knowledgeTagStage.js); previously only proposedTopic + a fixed domain string were attached.",
+    "bottleneckNote": "Largest queue depth is ADMIN_REVIEW (475 pending) — expected and by design: services/knowledgeApprovalRulesEngine.js intentionally routes all new IOG/ICOJ topic-relationship candidates to a human rather than ever approving new doctrine automatically. See AdminQueueDiagnostics.md for the reason-code breakdown of that queue."
+  }
+}

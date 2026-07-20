@@ -1,4 +1,9 @@
-const BASE = process.env.BUDDY_URL || 'https://bible-buddy-monorepo-enterprise-v122-7.onrender.com';
+// PHASE_6H Part 13 — this previously defaulted to a hardcoded production
+// Render URL, so any local/offline run (no BUDDY_URL set, no route to that
+// specific host) failed with a DNS/network error unrelated to the actual
+// regression being tested. Default to the local dev server instead;
+// BUDDY_URL still overrides for an explicit remote run.
+const BASE = process.env.BUDDY_URL || `http://localhost:${process.env.PORT || 3000}`;
 
 async function ask(userId, message) {
   const res = await fetch(`${BASE}/buddy/chat`, {
