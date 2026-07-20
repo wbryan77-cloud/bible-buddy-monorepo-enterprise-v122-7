@@ -4,8 +4,19 @@ services:
     name: bible-buddy
     env: node
     plan: standard
-    buildCommand: npm install && npx prisma migrate deploy
+    # DEPLOYMENT_RECOVERY — this service was deploying `main`, which does not
+    # contain the verified Founder Alpha baseline (that work lives on
+    # `sprint-2c-c3-explicit-scripture-handoff`). Render defaults an
+    # unset `branch` to the repo's default branch, which is `main`; setting
+    # it explicitly here points the service at the verified branch instead.
+    branch: sprint-2c-c3-explicit-scripture-handoff
+    # `npx prisma migrate deploy` is a guaranteed build failure: `prisma` is
+    # not a package.json dependency and no prisma/migrations/ directory
+    # exists. The live runtime uses local JSONL/JSON file persistence, not
+    # Prisma. Removed so the build actually succeeds.
+    buildCommand: npm install
     startCommand: node server.js
+    healthCheckPath: /health
     autoDeploy: true
     envVars:
       - key: NODE_ENV
@@ -21,6 +32,11 @@ services:
       - key: BUDDY_LIVE_TRACE
         value: "0"
       - key: OPENAI_API_KEY
+        sync: false
+      # Gates every /admin/api/bible-authority/* route (checkAdminAuth() in
+      # routes/bibleAuthorityAdmin.js). Must be set to a real secret in the
+      # Render dashboard before inviting Founder testers.
+      - key: BIBLE_AUTHORITY_ADMIN_TOKEN
         sync: false
       - key: ADMIN_PASSWORD
         value: change-me
