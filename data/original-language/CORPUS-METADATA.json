@@ -1,0 +1,68 @@
+{
+  "phase": "PHASE_6B_ORIGINAL_LANGUAGE_KNOWLEDGE_SYSTEM",
+  "importedAt": "2026-07-19T04:00:00Z",
+  "importedBy": "phase6-knowledge-batch",
+  "datasets": [
+    {
+      "id": "OSHB",
+      "name": "Open Scriptures Hebrew Bible (Hebrew + Aramaic morphology)",
+      "coverage": "All 39 protocanonical Old Testament books (Hebrew narrative + Aramaic portions in Daniel/Ezra, distinguished per-token by the morph-code language prefix H=Hebrew, A=Aramaic)",
+      "baseText": "Westminster Leningrad Codex (public domain)",
+      "morphologyLemmaStrongs": "Open Scriptures Hebrew Bible morphology project",
+      "sourceRepo": "https://github.com/openscriptures/morphhb",
+      "sourceCommitFetched": "master (fetched 2026-07-19)",
+      "license": "CC BY 4.0 (Creative Commons Attribution 4.0 International)",
+      "licenseText": "See data/original-language/hebrew-aramaic/raw/ — LICENSE fetched from https://github.com/openscriptures/morphhb/blob/master/LICENSE.md. Attribution required: \"Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb\".",
+      "commercialUsePermitted": true,
+      "localPath": "data/original-language/hebrew-aramaic/raw/*.xml",
+      "format": "OSIS XML, one file per book, <w lemma=\"...\" morph=\"...\">surface</w> per word",
+      "fileCount": 39,
+      "notInScope": "VerseMap.xml (verse-numbering crosswalk, not linguistic data — not imported)"
+    },
+    {
+      "id": "NESTLE1904_MORPH",
+      "name": "Nestle 1904 Greek New Testament with morphology, lemmatization, and Strong's numbers",
+      "coverage": "All 27 New Testament books",
+      "baseText": "Eberhard Nestle's 1904 Greek New Testament (public domain; text-critical edition now over a century old)",
+      "morphologyLemmaStrongs": "Dr. Ulrik Sandborg-Petersen (Scripture Systems, Denmark), building on Dr. Maurice A. Robinson's morphological databases",
+      "sourceRepo": "https://github.com/biblicalhumanities/Nestle1904",
+      "sourceCommitFetched": "master (fetched 2026-07-19)",
+      "license": "CC0 1.0 Universal (Public Domain Dedication)",
+      "licenseText": "See data/original-language/greek/raw/Nestle1904-morph-README.md — full text waived under CC0 by biblicalhumanities.org.",
+      "commercialUsePermitted": true,
+      "localPath": "data/original-language/greek/raw/Nestle1904.csv",
+      "format": "TSV, one row per word: BCV, text, func_morph, form_morph, strongs, lemma, normalized",
+      "rowCount": 137779,
+      "rejectedAlternative": {
+        "dataset": "MorphGNT (SBLGNT edition)",
+        "reason": "The SBLGNT base text itself is distributed under the SBLGNT EULA (http://sblgnt.com/license/), which restricts commercial redistribution and republication rights. Given uncertainty about BibleBuddy Enterprise's production/commercial rights under that EULA, this batch did not import the SBLGNT text and used the CC0 Nestle 1904 edition instead, which carries no such restriction."
+      }
+    },
+    {
+      "id": "STRONGS_HEBREW",
+      "name": "Strong's Exhaustive Concordance — Hebrew/Aramaic Dictionary (1894), digitized",
+      "sourceRepo": "https://github.com/openscriptures/strongs",
+      "sourceCommitFetched": "master (fetched 2026-07-19)",
+      "license": "CC BY-SA (per in-file header comment: \"Copyright 2010, Open Scriptures. CC-BY-SA. Derived from XML.\"). No standalone LICENSE.md file exists in the source repository at the time of this fetch; this citation is the file's own header, preserved verbatim as provenance.",
+      "commercialUsePermitted": true,
+      "localPath": "data/original-language/strongs/strongs-hebrew-dictionary.js",
+      "format": "CommonJS module exporting an object keyed by Strong's number, fields: lemma, xlit, pron, derivation, strongs_def, kjv_def"
+    },
+    {
+      "id": "STRONGS_GREEK",
+      "name": "Strong's Exhaustive Concordance — Greek Dictionary (1890), digitized",
+      "sourceRepo": "https://github.com/openscriptures/strongs",
+      "sourceCommitFetched": "master (fetched 2026-07-19)",
+      "license": "CC BY-SA (per in-file header comment: \"Copyright 2009, Open Scriptures. CC-BY-SA. Derived from XML.\").",
+      "commercialUsePermitted": true,
+      "localPath": "data/original-language/strongs/strongs-greek-dictionary.js",
+      "format": "CommonJS module exporting an object keyed by Strong's number, fields: lemma, translit, derivation, strongs_def, kjv_def"
+    }
+  ],
+  "governanceNotes": [
+    "No dataset in this import was AI-generated. All lemma, morphology, Strong's-number, and gloss data trace to the named human scholarly sources above.",
+    "The Latin Vulgate was NOT imported in this batch (no validated open dataset located under the time available); it remains a documented gap, not a fabricated substitute. See docs/alpha/phase6-knowledge-<timestamp>/ report for this blocker.",
+    "The Septuagint (LXX) was NOT imported in this batch for the same reason and is documented as a gap, not fabricated.",
+    "services/originalLanguageProvider.js is the only production consumer of these files. It never calls an LLM to invent tokens, lemmas, morphology, or Strong's numbers — only to phrase an already source-grounded explanation, and only where implemented."
+  ]
+}

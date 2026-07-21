@@ -1,5 +1,15 @@
-# Local runtime / session state (beta stabilization — do not commit)
-data/
+# Local runtime / session state (beta stabilization — do not commit).
+# NOTE: this used to blanket-ignore all of data/, which also silently
+# excluded the static original-language and KJV-corpus reference data
+# from git -- breaking original-language support on every deployment
+# (ENOENT for the Greek/Hebrew source files, which only ever existed on
+# disk locally, never in the repo Render builds from). Everything directly
+# under data/ stays ignored (memory, sessions, traces, logs, snapshots);
+# only the two static, read-only reference-data directories below are
+# tracked, since features require them to exist in the deployed repo.
+data/*
+!data/original-language/
+!data/kjv-corpus/
 
 # Environment secrets
 .env
