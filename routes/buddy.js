@@ -38,9 +38,18 @@ function deriveFounderObservationSignals(reply, payload) {
   return { category, witnessRetrieved, historicalContextUsed, originalLanguageUsed, prayerUsed, continuationUsed };
 }
 
-function recordFounderObservationSafely(reply, payload) {
+// FOUNDER_ALPHA_OPERATIONAL_INTELLIGENCE Part 2 — one-way hash so the
+// runtime-health module can detect "same session, next category" without
+// ever holding a reversible userId/sessionId. Not a security boundary
+// (this is an analytics key, not a credential) — just non-identifying.
+function hashSessionKey(userId, sessionId) {
+  if (!userId && !sessionId) return null;
+  return crypto.createHash('sha256').update(`${userId || ''}:${sessionId || ''}`).digest('hex').slice(0, 24);
+}
+
+function recordFounderObservationSafely(reply, payload, sessionKey) {
   try {
-    recordFounderObservation(deriveFounderObservationSignals(reply, payload));
+    recordFounderObservation({ ...deriveFounderObservationSignals(reply, payload), sessionKey });
   } catch (e) {
     console.warn('[founderObservation] skipped:', e.message);
   }
@@ -165,7 +174,7 @@ async function handleBuddyChat({ body, res, requestId }) {
     payload.liveRequestTrace = reply.liveRequestTrace;
   }
   const latencyMs = Date.now() - started;
-  recordFounderObservationSafely(reply, payload);
+  recordFounderObservationSafely(reply, payload, hashSessionKey(userId, sessionId));
   if (isActiveAlphaTester(testerId)) {
     try {
       captureAlphaTurn({
@@ -292,7 +301,7 @@ router.post('/stream', async (req, res) => {
     if (process.env.BUDDY_LIVE_TRACE === '1') {
       donePayload.liveRequestTrace = trace;
     }
-    recordFounderObservationSafely(raw, donePayload);
+    recordFounderObservationSafely(raw, donePayload, hashSessionKey(userId, sessionId));
     send('done', donePayload);
     res.end();
   } catch (e) {

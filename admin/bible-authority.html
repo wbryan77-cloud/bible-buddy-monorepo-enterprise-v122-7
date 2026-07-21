@@ -42,6 +42,7 @@
     <button type="button" id="tab-scripture">Scripture Authority Review</button>
     <button type="button" id="tab-engineering">Engineering Intelligence</button>
     <button type="button" id="tab-founder">Founder Readiness</button>
+    <button type="button" id="tab-intelligence">Founder Intelligence</button>
     <button type="button" id="refreshBtn">Refresh</button>
   </div>
 
@@ -162,6 +163,48 @@
       <div id="founderObservationGrid" class="grid"></div>
       <h3 style="margin-top:16px;">Question categories seen</h3>
       <table id="founderObservationCategoryTable"><thead><tr><th>Category / route</th><th>Count</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- FOUNDER_ALPHA_OPERATIONAL_INTELLIGENCE — Founder Intelligence Layer.
+       Read-only research + Admin decision recording only. Nothing on this
+       tab ever publishes knowledge or bypasses governance — every
+       recommendation requires an explicit Approve/Reject click, recorded
+       via services/founderIntelligenceRecommendationStore.js. -->
+  <section id="intelligence" class="section">
+    <div class="card">
+      <h2>Daily Operational Summary</h2>
+      <div id="intelSummaryNarrative"></div>
+      <div id="intelSummaryGrid" class="grid" style="margin-top:12px;"></div>
+    </div>
+
+    <div class="card">
+      <h2>Founder Trends</h2>
+      <div id="intelTrends"></div>
+      <h3 style="margin-top:16px;">Topic Transitions (same-session)</h3>
+      <div id="intelTransitions"></div>
+    </div>
+
+    <div class="card">
+      <h2>Recurring Questions</h2>
+      <table id="intelRecurringTable"><thead><tr><th>Category</th><th>Count</th></tr></thead><tbody></tbody></table>
+    </div>
+
+    <div class="card">
+      <h2>Recommendations — Admin Approval Workflow</h2>
+      <p>The system performed the research below. You make the decision. Nothing is published automatically.</p>
+      <div class="sub-nav">
+        <button type="button" id="intel-filter-pending" class="active">Pending</button>
+        <button type="button" id="intel-filter-approved">Approved</button>
+        <button type="button" id="intel-filter-rejected">Rejected</button>
+        <button type="button" id="intel-filter-all">All</button>
+      </div>
+      <div id="intelRecommendations"></div>
+    </div>
+
+    <div class="card">
+      <h2>Self-Learning Validation (Governance Effectiveness)</h2>
+      <div id="intelEffectiveness" class="grid"></div>
     </div>
   </section>
 
