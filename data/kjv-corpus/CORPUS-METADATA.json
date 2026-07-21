@@ -1,0 +1,42 @@
+{
+  "corpusName": "Local KJV Corpus (Phase 6 Local KJV Corpus Completion)",
+  "translation": "King James Version (1769 Blayney standard text)",
+  "publicDomainStatus": "The King James Version text itself is public domain worldwide (originally published 1611; no live copyright claim blocks reuse outside the UK, and even the UK Crown-copyright administrative arrangement does not restrict this kind of reuse).",
+  "packagedSource": {
+    "npmPackage": "bible-kjv",
+    "npmVersion": "1.1.3",
+    "npmLicense": "MIT",
+    "repository": "https://github.com/AllBible/bible-kjv",
+    "author": "M2K Developments / All Bible",
+    "licenseFile": "data/kjv-corpus/raw/LICENSE-bible-kjv-1.1.3.txt",
+    "vendoredNotAsDependency": true,
+    "vendoredReason": "Vendored as static JSON data under data/kjv-corpus/raw rather than an npm runtime dependency, so the exact corpus content is version-pinned, auditable in-repo, and immune to upstream package changes."
+  },
+  "importedAt": "2026-07-19T03:48:00Z",
+  "importedDuring": "Phase 6 — Biblical Knowledge Completion (Local KJV Corpus Completion)",
+  "validation": {
+    "totalBooks": 66,
+    "canonicalBookOrder": "Genesis (1) through Revelation (66), matching services/scriptureReferenceNormalizer.js book-name conventions",
+    "totalChapters": 1189,
+    "totalVerses": 31102,
+    "missingChapterFiles": 0,
+    "emptyChapters": 0,
+    "spotChecks": [
+      { "reference": "Genesis 1:1", "verified": true },
+      { "reference": "Revelation 22:21 (last verse)", "verified": true },
+      { "reference": "John 3:16", "verified": true }
+    ],
+    "combinedCorpusSha256": "1eae094f4ba8c61b0b993334371ccd4d3b80e7a3c2fd54a0324776d6952285dd",
+    "checksumMethod": "SHA-256 of each file under data/kjv-corpus/raw (sorted by path), then SHA-256 of the concatenated per-file digests. Recomputed by scripts/alpha/localKjvCorpusValidation.js on every run and compared against this recorded value to detect silent corpus drift."
+  },
+  "markupNotes": {
+    "FI_tags": "<FI>...<Fi> marks KJV translators' italicized supplied words (words not in the original-language text, added by the 1611/1769 translators for English readability). Preserved as plain text by the normalizer (italics metadata is not currently surfaced to callers).",
+    "RF_tags": "<RF>...<Rf> marks KJV marginal/alternate-reading footnotes (e.g. literal Hebrew/Greek renderings). Stripped from the primary verse text by the normalizer; not currently exposed as structured data.",
+    "CM_tag": "<CM> marks a paragraph break in the original KJV printing. Stripped from plain text output."
+  },
+  "provider": {
+    "module": "services/localKjvCorpusProvider.js",
+    "wiredInto": "services/bibleTextProvider.js (Tier 1 — highest-priority provider, ahead of the configured approved provider and the bible-api.com external fallback)",
+    "externalProviderRetained": "services/canonicalScriptureProvider.js (bible-api.com) remains Tier 3 fallback, used only if a reference cannot be resolved locally (e.g. a malformed or non-canonical reference) or if the local corpus module itself fails to load."
+  }
+}
