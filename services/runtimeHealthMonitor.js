@@ -63,8 +63,23 @@ const metrics = {
     lessonAlignmentUsageCount: 0,
     continuationUsageCount: 0,
     questionCategoryCounts: {},
+    // FOUNDER_ALPHA_OPERATIONAL_INTELLIGENCE Part 2 — bounded, aggregate-only
+    // "category A was followed by category B within the same session" counts
+    // (e.g. "grief->resurrection": 3). Never stores message text or raw user
+    // identity — only a same-session adjacency count between two already-
+    // aggregate category labels. Powers real (not fabricated) topic-
+    // transition narratives once enough sessions have been observed.
+    categoryTransitionCounts: {},
   },
 };
+
+// Bounded, in-memory-only, never persisted-with-identity map of
+// hashed-session-key -> last observed category, used solely to detect the
+// *next* category in the same session so a transition count can be
+// incremented. Capped like RECENT_SESSION_CACHE in buddyBrain.js so it can
+// never grow unbounded across a long-running process.
+const MAX_TRANSITION_SESSION_KEYS = 300;
+const lastCategoryBySessionKey = new Map();
 
 let alphaLatencySum = 0;
 let alphaLatencyCount = 0;
@@ -311,6 +326,7 @@ function recordRouteFallback({
 }
 
 const MAX_OBSERVATION_CATEGORIES = 60;
+const MAX_TRANSITION_PAIRS = 60;
 
 /**
  * PHASE_6H Part 7 — Founder Observation Layer. Records only aggregate,
@@ -328,6 +344,7 @@ function recordFounderObservation({
   prayerUsed = false,
   lessonAlignmentUsed = false,
   continuationUsed = false,
+  sessionKey = null,
 } = {}) {
   const obs = metrics.observation;
   if (witnessRetrieved) obs.witnessRetrievalCount += 1;
@@ -340,6 +357,25 @@ function recordFounderObservation({
     const key = String(category).slice(0, 60);
     if (obs.questionCategoryCounts[key] != null || Object.keys(obs.questionCategoryCounts).length < MAX_OBSERVATION_CATEGORIES) {
       obs.questionCategoryCounts[key] = (obs.questionCategoryCounts[key] || 0) + 1;
+    }
+
+    // FOUNDER_ALPHA_OPERATIONAL_INTELLIGENCE Part 2 — same-session category
+    // adjacency. `sessionKey` is expected to already be a non-reversible,
+    // non-identifying hash (see routes/buddy.js); this module never sees a
+    // raw userId/testerId here.
+    if (sessionKey) {
+      const prevCategory = lastCategoryBySessionKey.get(sessionKey);
+      if (prevCategory && prevCategory !== key) {
+        const pairKey = `${prevCategory}->${key}`;
+        if (obs.categoryTransitionCounts[pairKey] != null || Object.keys(obs.categoryTransitionCounts).length < MAX_TRANSITION_PAIRS) {
+          obs.categoryTransitionCounts[pairKey] = (obs.categoryTransitionCounts[pairKey] || 0) + 1;
+        }
+      }
+      lastCategoryBySessionKey.set(sessionKey, key);
+      if (lastCategoryBySessionKey.size > MAX_TRANSITION_SESSION_KEYS) {
+        const oldestKey = lastCategoryBySessionKey.keys().next().value;
+        lastCategoryBySessionKey.delete(oldestKey);
+      }
     }
   }
   persistSnapshot();
@@ -379,10 +415,44 @@ function persistSnapshot() {
       strictDoctrineCalls: snap.strictDoctrineCalls,
       averageLatencyMs: snap.averageLatencyMs,
       maxLatencyMs: snap.maxLatencyMs,
+      // FOUNDER_ALPHA_OPERATIONAL_INTELLIGENCE Part 2 — cumulative Founder
+      // Observation counters at snapshot time, so the intelligence layer can
+      // compute real week-over-week (or any window-over-window) deltas from
+      // this existing history file instead of inventing a second time-series
+      // store. Values are cumulative totals (same semantics as `metrics.observation`),
+      // not per-interval deltas — the reader is responsible for subtracting.
+      observation: { ...snap.observation, questionCategoryCounts: { ...snap.observation.questionCategoryCounts } },
     });
     trimHealthHistoryFile();
   } catch (e) {
     console.warn('[runtimeHealth] persist failed:', e.message);
+  }
+}
+
+/**
+ * FOUNDER_ALPHA_OPERATIONAL_INTELLIGENCE Part 2 — read-only accessor for the
+ * existing history file so the intelligence layer can compute trends without
+ * a second telemetry store. Returns entries oldest-first, most recent
+ * `limit` entries only (bounded read, never the whole file into memory
+ * beyond what's needed).
+ */
+function getRuntimeHealthHistory({ limit = 500 } = {}) {
+  try {
+    if (!fs.existsSync(HISTORY_PATH)) return [];
+    const lines = fs.readFileSync(HISTORY_PATH, 'utf8').trim().split('\n').filter(Boolean);
+    return lines
+      .slice(-limit)
+      .map((l) => {
+        try {
+          return JSON.parse(l);
+        } catch {
+          return null;
+        }
+      })
+      .filter(Boolean);
+  } catch (e) {
+    console.warn('[runtimeHealth] history read failed:', e.message);
+    return [];
   }
 }
 
@@ -396,6 +466,7 @@ module.exports = {
   recordFounderObservation,
   setAlphaNotificationQueueCount,
   getRuntimeHealthSnapshot,
+  getRuntimeHealthHistory,
   persistSnapshot,
   handleMemoryPressure,
   sampleMemory,

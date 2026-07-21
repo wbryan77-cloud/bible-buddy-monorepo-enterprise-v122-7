@@ -415,10 +415,163 @@ function renderFounderFeatureTable(features) {
     .join('');
 }
 
+// FOUNDER_ALPHA_OPERATIONAL_INTELLIGENCE — Founder Intelligence Layer tab.
+// Pure read/render + one decision-recording POST. No knowledge-publishing
+// call exists anywhere in this section.
+let intelRecommendationFilter = 'PENDING';
+
+async function loadFounderIntelligence() {
+  try {
+    document.getElementById('intelSummaryNarrative').textContent = 'Loading…';
+    const reportRes = await fetch('/admin/api/bible-authority/founder-intelligence');
+    const report = await reportRes.json();
+    if (!report.ok) throw new Error(report.error || 'Failed to load report');
+    renderIntelSummary(report.dailyOperationalSummary);
+    renderIntelTrends(report.founderTrends);
+    renderIntelRecurring(report.recurringQuestions);
+    await loadIntelRecommendations();
+    await loadIntelEffectiveness();
+  } catch (error) {
+    document.getElementById('intelSummaryNarrative').textContent = 'Could not load Founder Intelligence: ' + error.message;
+  }
+}
+
+function renderIntelSummary(summary) {
+  const narrativeEl = document.getElementById('intelSummaryNarrative');
+  const gridEl = document.getElementById('intelSummaryGrid');
+  if (!summary) return;
+  narrativeEl.innerHTML = '<ul>' + (summary.narrative || []).map((n) => `<li>${n}</li>`).join('') + '</ul>';
+  const metrics = [
+    ['Total recommendations (this run)', summary.totalRecommendations ?? 0],
+    ...Object.entries(summary.recommendationsByType || {}).map(([t, c]) => [t.replace(/_/g, ' '), c]),
+  ];
+  gridEl.innerHTML = metrics.map(([label, val]) => `<div><div class="metric">${val}</div><div class="metric-label">${label}</div></div>`).join('');
+}
+
+function renderIntelTrends(trends) {
+  const el = document.getElementById('intelTrends');
+  const transEl = document.getElementById('intelTransitions');
+  if (!trends) return;
+  if (trends.status === 'BASELINE_ESTABLISHING') {
+    el.innerHTML = `<p><em>${trends.message}</em></p>`;
+  } else {
+    el.innerHTML = '<ul>' + (trends.trends || []).map((t) => `<li>${t.narrative} <small>(confidence: ${t.confidence})</small></li>`).join('') + '</ul>';
+  }
+  if (trends.topTopicTransitions && trends.topTopicTransitions.length) {
+    transEl.innerHTML = '<ul>' + trends.topTopicTransitions.map((t) => `<li>${t.narrative}</li>`).join('') + '</ul>';
+  } else {
+    transEl.innerHTML = `<p><em>${trends.topicTransitionNote || 'No transitions recorded yet.'}</em></p>`;
+  }
+}
+
+function renderIntelRecurring(recurring) {
+  const tbody = document.querySelector('#intelRecurringTable tbody');
+  if (!tbody || !recurring) return;
+  const cats = recurring.topQuestionCategories || [];
+  tbody.innerHTML = cats.length
+    ? cats.map((c) => `<tr><td>${c.category}</td><td>${c.count}</td></tr>`).join('')
+    : '<tr><td colspan="2">No categorized activity recorded yet.</td></tr>';
+}
+
+const INTEL_PRIORITY_COLOR = { HIGH: '#dc2626', MEDIUM: '#d97706', LOW: '#6b7280' };
+
+async function loadIntelRecommendations() {
+  const status = intelRecommendationFilter === 'ALL' ? '' : `?status=${intelRecommendationFilter}`;
+  const res = await fetch(`/admin/api/bible-authority/founder-intelligence/recommendations${status}`);
+  const data = await res.json();
+  renderIntelRecommendations(data.recommendations || []);
+}
+
+function renderIntelRecommendations(recs) {
+  const container = document.getElementById('intelRecommendations');
+  if (!recs.length) {
+    container.innerHTML = '<p>No recommendations in this view.</p>';
+    return;
+  }
+  container.innerHTML = recs
+    .map((entry) => {
+      const r = entry.latest || {};
+      const color = INTEL_PRIORITY_COLOR[r.priority] || '#6b7280';
+      const showActions = entry.status === 'PENDING';
+      return `
+        <div class="card" style="margin-bottom:10px;border-left:4px solid ${color};">
+          <strong>${r.title || 'Untitled recommendation'}</strong>
+          &nbsp;<span class="tier-badge">${r.type || ''}</span>
+          &nbsp;<span class="tier-badge" style="background:${color};color:#fff;">${r.priority || ''}</span>
+          &nbsp;<span class="tier-badge">confidence: ${r.confidence || ''}</span>
+          &nbsp;<span class="tier-badge">status: ${entry.status}</span>
+          <p style="margin:8px 0;">${r.reasoning || ''}</p>
+          <div class="candidate-detail">
+            <strong>Supporting evidence:</strong>
+            <ul>${(r.supportingEvidence || []).map((e) => `<li>${e}</li>`).join('')}</ul>
+            <strong>Source sessions:</strong> ${r.sourceSessions ?? 'n/a'} &nbsp;·&nbsp;
+            <strong>Existing production coverage:</strong> ${r.existingProductionCoverage || 'n/a'}<br/>
+            <strong>Suggested action:</strong> ${r.suggestedAction || 'n/a'}<br/>
+            <small>Seen ${entry.timesSeen}x, first ${new Date(entry.firstSeenAt).toLocaleString()}, last ${new Date(entry.lastSeenAt).toLocaleString()}</small>
+            ${entry.decidedBy ? `<br/><small>Decided by ${entry.decidedBy} at ${new Date(entry.decidedAt).toLocaleString()}${entry.note ? ' — ' + entry.note : ''}</small>` : ''}
+          </div>
+          ${showActions ? `
+            <div style="margin-top:10px;">
+              <button type="button" class="intel-decision" data-id="${entry.id}" data-decision="APPROVED">Approve</button>
+              <button type="button" class="intel-decision" data-id="${entry.id}" data-decision="REJECTED">Reject</button>
+              <button type="button" class="intel-decision" data-id="${entry.id}" data-decision="REJECTED" data-fp="1">Reject (false positive)</button>
+            </div>` : ''}
+        </div>`;
+    })
+    .join('');
+
+  document.querySelectorAll('.intel-decision').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const id = btn.getAttribute('data-id');
+      const decision = btn.getAttribute('data-decision');
+      const flaggedFalsePositive = btn.getAttribute('data-fp') === '1';
+      const note = window.prompt('Optional note for this decision:', '') || '';
+      await fetch(`/admin/api/bible-authority/founder-intelligence/recommendations/${encodeURIComponent(id)}/decision`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ decision, decidedBy: 'admin', note, flaggedFalsePositive }),
+      });
+      await loadIntelRecommendations();
+      await loadIntelEffectiveness();
+    });
+  });
+}
+
+async function loadIntelEffectiveness() {
+  const res = await fetch('/admin/api/bible-authority/founder-intelligence/effectiveness');
+  const data = await res.json();
+  const eff = data.effectiveness || {};
+  const grid = document.getElementById('intelEffectiveness');
+  if (!grid) return;
+  const metrics = [
+    ['Total tracked', eff.totalRecommendationsTracked ?? 0],
+    ['Pending', eff.byStatus ? eff.byStatus.PENDING : 0],
+    ['Approved', eff.byStatus ? eff.byStatus.APPROVED : 0],
+    ['Rejected', eff.byStatus ? eff.byStatus.REJECTED : 0],
+    ['Approval rate', eff.approvalRate != null ? eff.approvalRate + '%' : 'n/a'],
+    ['False positives flagged', eff.falsePositivesFlagged ?? 0],
+    ['Duplicates collapsed', eff.duplicatesCollapsed ?? 0],
+    ['Recommendations auto-applied', eff.governanceEffectiveness ? eff.governanceEffectiveness.recommendationsAutoApplied : 0],
+  ];
+  grid.innerHTML = metrics.map(([label, val]) => `<div><div class="metric">${val}</div><div class="metric-label">${label}</div></div>`).join('');
+}
+
+['pending', 'approved', 'rejected', 'all'].forEach((key) => {
+  const btn = document.getElementById(`intel-filter-${key}`);
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#intelligence .sub-nav button').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    intelRecommendationFilter = key.toUpperCase();
+    loadIntelRecommendations();
+  });
+});
+
 document.getElementById('tab-executive').addEventListener('click', () => showSection('executive'));
 document.getElementById('tab-scripture').addEventListener('click', () => showSection('scripture-review'));
 document.getElementById('tab-engineering').addEventListener('click', () => showSection('engineering'));
 document.getElementById('tab-founder').addEventListener('click', () => showSection('founder'));
+document.getElementById('tab-intelligence').addEventListener('click', () => { showSection('intelligence'); loadFounderIntelligence(); });
 document.getElementById('refreshBtn').addEventListener('click', load);
 
 document.getElementById('sub-candidates').addEventListener('click', () => showSubView('candidates'));

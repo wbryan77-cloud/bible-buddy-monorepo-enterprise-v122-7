@@ -471,4 +471,70 @@ router.get('/founder-readiness-report', (req, res) => {
   }
 });
 
+/**
+ * FOUNDER_ALPHA_OPERATIONAL_INTELLIGENCE — Founder Intelligence Layer
+ * (Parts 2-7). Every endpoint here is read-only research + Admin decision
+ * recording. None of them ever publish knowledge, bypass governance, or
+ * mutate Scripture/doctrine/witness data — see
+ * services/founderOperationalIntelligenceEngine.js and
+ * services/founderIntelligenceRecommendationStore.js for the hard rules.
+ */
+router.get('/founder-intelligence', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  try {
+    const { buildFounderOperationalIntelligenceReport } = require('../services/founderOperationalIntelligenceEngine');
+    const { syncRecommendations } = require('../services/founderIntelligenceRecommendationStore');
+    const report = buildFounderOperationalIntelligenceReport();
+    const syncResult = syncRecommendations(report.allRecommendations);
+    res.json({ ok: true, ...report, recommendationSync: syncResult });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.get('/founder-intelligence/recommendations', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  try {
+    const { listRecommendations } = require('../services/founderIntelligenceRecommendationStore');
+    const status = req.query.status ? String(req.query.status).toUpperCase() : null;
+    const limit = Math.min(Number(req.query.limit) || 200, 1000);
+    res.json({ ok: true, recommendations: listRecommendations({ status, limit }) });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.post('/founder-intelligence/recommendations/:id/decision', express.json({ limit: '32kb' }), (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  try {
+    const { recordAdminDecision } = require('../services/founderIntelligenceRecommendationStore');
+    const { id } = req.params;
+    const { decision, decidedBy, note, flaggedFalsePositive } = req.body || {};
+    const result = recordAdminDecision({ id, decision, decidedBy, note, flaggedFalsePositive });
+    if (!result.ok) return res.status(400).json(result);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.get('/founder-intelligence/effectiveness', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  try {
+    const { computeEffectivenessMetrics } = require('../services/founderIntelligenceRecommendationStore');
+    const { buildKnowledgeContext } = require('../services/founderOperationalIntelligenceEngine');
+    const ctx = buildKnowledgeContext();
+    const totalGaps = ctx.coverage.topics.reduce((acc, t) => acc + (t.knownGaps || []).length, 0);
+    const coverageSnapshot = {
+      totalTopics: ctx.coverage.topics.length,
+      totalKnownGaps: totalGaps,
+      topicsWithOriginalLanguageCoverage: ctx.coverage.topics.filter((t) => t.originalLanguageCoverage).length,
+      topicsWithHistoricalCoverage: ctx.coverage.topics.filter((t) => t.historicalCoverage).length,
+    };
+    res.json({ ok: true, effectiveness: computeEffectivenessMetrics(coverageSnapshot) });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
 module.exports = router;
