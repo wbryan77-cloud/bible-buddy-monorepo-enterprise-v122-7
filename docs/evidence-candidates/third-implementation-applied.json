@@ -1,0 +1,120 @@
+{
+  "phase": "2P",
+  "appliedAt": "2026-06-09T04:09:00.742Z",
+  "batchCandidateIds": [
+    "exp_0011",
+    "exp_0023",
+    "rec_0010"
+  ],
+  "approvedPackTopics": [
+    "sabbath",
+    "messiah_logos"
+  ],
+  "productionApplied": true,
+  "humanApproved": true,
+  "reviewedBy": "William Bryan",
+  "autoApplied": false,
+  "doctrineConclusionsChanged": false,
+  "promptChanges": false,
+  "changes": [
+    {
+      "topic": "sabbath",
+      "sourcePack": "Sabbath Doctrine Pack",
+      "candidateIds": [
+        "exp_0011",
+        "exp_0023"
+      ],
+      "file": "services/evidenceCards/sabbath.card.js",
+      "field": "supportingScriptures",
+      "beforeCount": 8,
+      "afterCount": 8,
+      "added": []
+    },
+    {
+      "topic": "sabbath",
+      "sourcePack": "Sabbath Doctrine Pack",
+      "candidateIds": [
+        "exp_0011"
+      ],
+      "file": "services/approvedSupportGraph.js",
+      "edgeId": "mat12_sabbath_do_good_batch3p",
+      "edgeAdded": false,
+      "scriptures": [
+        "Matthew 12:11-12",
+        "Exodus 20:8-11",
+        "Genesis 2:2-3"
+      ]
+    },
+    {
+      "topic": "sabbath",
+      "sourcePack": "Sabbath Doctrine Pack",
+      "candidateIds": [
+        "exp_0023"
+      ],
+      "file": "services/approvedSupportGraph.js",
+      "edgeId": "heb4_seventh_day_remains_batch3p",
+      "edgeAdded": false,
+      "scriptures": [
+        "Hebrews 4:9",
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Revelation 14:12"
+      ]
+    },
+    {
+      "topic": "messiah_logos",
+      "sourcePack": "Messiah Logos Doctrine Pack",
+      "candidateIds": [
+        "rec_0010"
+      ],
+      "file": "services/approvedSupportGraph.js",
+      "edgeId": "john1_who_is_logos_batch3p",
+      "edgeAdded": false,
+      "scriptures": [
+        "John 1:1-14",
+        "Genesis 1:1",
+        "Isaiah 9:6",
+        "Revelation 1:8"
+      ]
+    }
+  ],
+  "rollback": [
+    {
+      "topic": "sabbath",
+      "sourcePack": "Sabbath Doctrine Pack",
+      "candidateIds": [
+        "exp_0011",
+        "exp_0023"
+      ],
+      "file": "services/evidenceCards/sabbath.card.js",
+      "field": "supportingScriptures",
+      "beforeCount": 8,
+      "afterCount": 8,
+      "added": []
+    },
+    {
+      "file": "services/approvedSupportGraph.js",
+      "candidateIds": [
+        "exp_0011"
+      ],
+      "edgeId": "mat12_sabbath_do_good_batch3p",
+      "instruction": "Delete edge block with id 'mat12_sabbath_do_good_batch3p'"
+    },
+    {
+      "file": "services/approvedSupportGraph.js",
+      "candidateIds": [
+        "exp_0023"
+      ],
+      "edgeId": "heb4_seventh_day_remains_batch3p",
+      "instruction": "Delete edge block with id 'heb4_seventh_day_remains_batch3p'"
+    },
+    {
+      "file": "services/approvedSupportGraph.js",
+      "candidateIds": [
+        "rec_0010"
+      ],
+      "edgeId": "john1_who_is_logos_batch3p",
+      "instruction": "Delete edge block with id 'john1_who_is_logos_batch3p'"
+    }
+  ]
+}

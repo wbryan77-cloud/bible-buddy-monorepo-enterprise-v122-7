@@ -1,0 +1,20 @@
+{
+  "ranAt": "2026-06-10T01:11:11.188Z",
+  "rawTranscriptRefs": 1314,
+  "validAfterNormalization": 1314,
+  "invalidOrIncomplete": 0,
+  "incompleteCandidatesPassA": 4581,
+  "contextExpandedPassB": 390,
+  "duplicatesCollapsed": 0,
+  "normalizationGain": 390,
+  "bookAliasNormalization": {
+    "canonicalBooks": 67,
+    "examples": [
+      "Gen → Genesis",
+      "Rev → Revelation",
+      "1 Cor → 1 Corinthians",
+      "Song → Song of Solomon"
+    ]
+  },
+  "qualityScore": 1
+}

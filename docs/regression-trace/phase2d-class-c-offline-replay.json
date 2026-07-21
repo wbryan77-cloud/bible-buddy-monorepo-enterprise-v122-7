@@ -1,0 +1,149 @@
+{
+  "ranAt": "2026-06-08T04:16:38.183Z",
+  "summary": {
+    "total": 15,
+    "eliminated": 15,
+    "stillC": 0,
+    "nowD": 0,
+    "classCounts": {
+      "A": 15
+    }
+  },
+  "rows": [
+    {
+      "topic": "sabbath",
+      "claimId": "c_witness_1",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "gen2_sabbath_rest_established",
+      "issues": []
+    },
+    {
+      "topic": "sabbath",
+      "claimId": "c_witness_2",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "ex20_remember_sabbath",
+      "issues": []
+    },
+    {
+      "topic": "sabbath",
+      "claimId": "c_witness_3",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "isa58_delight_in_sabbath",
+      "issues": []
+    },
+    {
+      "topic": "sabbath",
+      "claimId": "c_witness_4",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "luke4_jesus_sabbath_custom",
+      "issues": []
+    },
+    {
+      "topic": "sabbath",
+      "claimId": "c_witness_5",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "acts17_sabbath_teaching",
+      "issues": []
+    },
+    {
+      "topic": "sabbath",
+      "claimId": "c_witness_6",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "heb4_sabbath_rest_remains",
+      "issues": []
+    },
+    {
+      "topic": "sabbath",
+      "claimId": "c_sent_7",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "gen2_sabbath_rest_established",
+      "issues": []
+    },
+    {
+      "topic": "sabbath",
+      "claimId": "c_sent_8",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "isa58_delight_in_sabbath",
+      "issues": []
+    },
+    {
+      "topic": "sabbath",
+      "claimId": "c_sent_9",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "luke4_jesus_sabbath_custom",
+      "issues": []
+    },
+    {
+      "topic": "logos",
+      "claimId": "c_witness_1",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "john1_logos_word_deity",
+      "issues": []
+    },
+    {
+      "topic": "logos",
+      "claimId": "c_witness_2",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "john1_logos_made_flesh",
+      "issues": []
+    },
+    {
+      "topic": "logos",
+      "claimId": "c_witness_3",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "gen1_create_by_word",
+      "issues": []
+    },
+    {
+      "topic": "logos",
+      "claimId": "c_witness_4",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "rev19_word_of_god_name",
+      "issues": []
+    },
+    {
+      "topic": "logos",
+      "claimId": "c_sent_5",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "john1_logos_word_deity",
+      "issues": []
+    },
+    {
+      "topic": "logos",
+      "claimId": "c_sent_6",
+      "before": "C",
+      "after": "A",
+      "improved": true,
+      "supportGraphMatch": "john1_logos_made_flesh",
+      "issues": []
+    }
+  ]
+}

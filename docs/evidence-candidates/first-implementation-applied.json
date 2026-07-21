@@ -1,0 +1,107 @@
+{
+  "phase": "2K",
+  "appliedAt": "2026-06-09T03:09:13.754Z",
+  "batchIds": [
+    "exp_0001",
+    "exp_0007",
+    "exp_0005",
+    "rec_0017",
+    "rec_0006"
+  ],
+  "productionApplied": true,
+  "humanApproved": true,
+  "reviewedBy": "William Bryan",
+  "autoApplied": false,
+  "doctrineConclusionsChanged": false,
+  "promptChanges": false,
+  "changes": [
+    {
+      "candidateIds": [
+        "exp_0001",
+        "exp_0007"
+      ],
+      "file": "services/evidenceCards/sabbath.card.js",
+      "field": "supportingScriptures",
+      "beforeCount": 4,
+      "afterCount": 6,
+      "added": [
+        "Acts 13:42-44",
+        "Revelation 14:12"
+      ]
+    },
+    {
+      "candidateIds": [
+        "rec_0017",
+        "rec_0006"
+      ],
+      "file": "services/evidenceCards/deathState.card.js",
+      "field": "supportingScriptures",
+      "beforeCount": 4,
+      "afterCount": 12,
+      "added": [
+        "Genesis 3:19",
+        "Job 14:10-15",
+        "Psalm 6:5",
+        "Psalm 115:17",
+        "Psalm 146:3-4",
+        "Ecclesiastes 3:19-21",
+        "Ecclesiastes 9:4-10",
+        "Daniel 12:2-3"
+      ]
+    },
+    {
+      "candidateIds": [
+        "exp_0005"
+      ],
+      "file": "services/approvedSupportGraph.js",
+      "edgeId": "rev1_alpha_omega_logos_g2r_batch",
+      "edgeAdded": true,
+      "scriptures": [
+        "Revelation 1:8",
+        "Genesis 1:1",
+        "John 1:1-14",
+        "Revelation 19:11-16"
+      ]
+    }
+  ],
+  "rollback": [
+    {
+      "file": "services/evidenceCards/sabbath.card.js",
+      "candidateIds": [
+        "exp_0001",
+        "exp_0007"
+      ],
+      "scripturesRemoved": [
+        "Acts 13:42-44",
+        "Revelation 14:12"
+      ],
+      "instruction": "Remove from supportingScriptures: Acts 13:42-44, Revelation 14:12"
+    },
+    {
+      "file": "services/evidenceCards/deathState.card.js",
+      "candidateIds": [
+        "rec_0017",
+        "rec_0006"
+      ],
+      "scripturesRemoved": [
+        "Genesis 3:19",
+        "Job 14:10-15",
+        "Psalm 6:5",
+        "Psalm 115:17",
+        "Psalm 146:3-4",
+        "Ecclesiastes 3:19-21",
+        "Ecclesiastes 9:4-10",
+        "Daniel 12:2-3"
+      ],
+      "instruction": "Remove from supportingScriptures: Genesis 3:19, Job 14:10-15, Psalm 6:5, Psalm 115:17, Psalm 146:3-4, Ecclesiastes 3:19-21, Ecclesiastes 9:4-10, Daniel 12:2-3"
+    },
+    {
+      "file": "services/approvedSupportGraph.js",
+      "candidateIds": [
+        "exp_0005"
+      ],
+      "edgeId": "rev1_alpha_omega_logos_g2r_batch",
+      "instruction": "Delete edge block with id 'rev1_alpha_omega_logos_g2r_batch'"
+    }
+  ]
+}

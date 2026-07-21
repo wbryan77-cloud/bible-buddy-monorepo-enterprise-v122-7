@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bible Buddy — Beta Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/admin/theme.css" />
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; background: #f3f4f6; }
+    h1 { margin-top: 0; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; align-items: center; }
+    input, select, button { font: inherit; padding: 8px 10px; border-radius: 6px; border: 1px solid #d1d5db; }
+    button { background: #1d4ed8; color: #fff; border: none; cursor: pointer; }
+    .layout { display: grid; grid-template-columns: 280px 1fr; gap: 16px; min-height: 70vh; }
+    @media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+    .list, .detail {
+      background: #fff;
+      border-radius: 8px;
+      padding: 12px;
+      overflow: auto;
+      max-height: 80vh;
+    }
+    .session-item {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+    .session-item:hover, .session-item.active { background: #eff6ff; }
+    .session-item small { display: block; color: #6b7280; }
+    .turn {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      background: #f9fafb;
+    }
+    .turn .role { font-weight: 600; font-size: 0.8rem; color: #374151; }
+    .turn .text { white-space: pre-wrap; margin-top: 4px; }
+    .feedback-block {
+      margin: 12px 0;
+      padding: 10px;
+      border-left: 3px solid #1d4ed8;
+      background: #eff6ff;
+    }
+    .ratings { font-size: 0.9rem; }
+    .empty { color: #6b7280; }
+  </style>
+</head>
+<body>
+  <h1>Beta session review</h1>
+  <p>Transcripts and feedback from <code>buddy-sessions.jsonl</code> and <code>companion-feedback.jsonl</code>.</p>
+
+  <div class="toolbar">
+    <label>Review token (if required)</label>
+    <input type="password" id="tokenInput" placeholder="BETA_REVIEW_TOKEN" style="min-width:200px;" />
+    <label>Cohort</label>
+    <select id="cohortFilter">
+      <option value="">All</option>
+      <option value="internal">internal</option>
+      <option value="external">external</option>
+    </select>
+    <button type="button" id="loadBtn">Load sessions</button>
+  </div>
+
+  <div class="layout">
+    <div class="list" id="sessionList">
+      <p class="empty">Load sessions to begin.</p>
+    </div>
+    <div class="detail" id="detailPanel">
+      <p class="empty">Select a session.</p>
+    </div>
+  </div>
+
+  <script src="/admin/js/beta-review.js"></script>
+</body>
+</html>

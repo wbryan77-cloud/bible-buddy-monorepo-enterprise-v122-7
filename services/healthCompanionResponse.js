@@ -64,7 +64,7 @@ function buildHealthSupportResponse({
   let opening;
   if (isFirstMention && /knee|hurt|pain|ache/i.test(message + issue)) {
     opening =
-      "I'm sorry you're dealing with that. How long has it been hurting — just today, or has this been going on for a while?";
+      "I'm sorry you're dealing with that. Has this been going on for a few days, or did it start today?";
   } else if (isRecurring && /knee/i.test(message + issue)) {
     opening =
       "I hear you — your knees are hurting again today. That matters, and I'm glad you told me. Let's take this gently — I'm not a doctor, but we can bring this before the Lord together.";

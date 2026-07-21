@@ -1,0 +1,863 @@
+{
+  "ranAt": "2026-06-09T14:27:28.103Z",
+  "queues": {
+    "queue95": [
+      {
+        "topic": "traditions",
+        "displayName": "Traditions",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "implementationConfidence": "Medium",
+        "learningGainScore": 304,
+        "scriptureCount": 43,
+        "implementationReady": true
+      },
+      {
+        "topic": "law_commandments",
+        "displayName": "Law Commandments",
+        "supportScore": 99,
+        "strengthTier": "Very Strong",
+        "implementationConfidence": "Medium",
+        "learningGainScore": 284,
+        "scriptureCount": 41,
+        "implementationReady": true
+      }
+    ],
+    "queue90": [
+      {
+        "topic": "kingdom",
+        "displayName": "Kingdom",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "implementationConfidence": "Medium",
+        "learningGainScore": 260,
+        "scriptureCount": 46,
+        "implementationReady": true
+      }
+    ],
+    "queue80": [
+      {
+        "topic": "dietary_law",
+        "displayName": "Dietary Law",
+        "supportScore": 80.6,
+        "strengthTier": "Good Support",
+        "implementationConfidence": "High",
+        "learningGainScore": 132,
+        "scriptureCount": 41,
+        "implementationReady": false
+      }
+    ],
+    "queue70": [
+      {
+        "topic": "sabbath",
+        "displayName": "Sabbath",
+        "supportScore": 78.75,
+        "strengthTier": "Review Needed",
+        "implementationConfidence": "Medium",
+        "learningGainScore": 241,
+        "scriptureCount": 37,
+        "implementationReady": false
+      },
+      {
+        "topic": "holiness",
+        "displayName": "Holiness",
+        "supportScore": 72.75,
+        "strengthTier": "Review Needed",
+        "implementationConfidence": "Medium",
+        "learningGainScore": 126,
+        "scriptureCount": 41,
+        "implementationReady": false
+      },
+      {
+        "topic": "heavens",
+        "displayName": "Heavens",
+        "supportScore": 77,
+        "strengthTier": "Review Needed",
+        "implementationConfidence": "Medium",
+        "learningGainScore": 120,
+        "scriptureCount": 49,
+        "implementationReady": false
+      }
+    ],
+    "queueBelow70": [
+      {
+        "topic": "death_state",
+        "supportScore": 66
+      },
+      {
+        "topic": "resurrection",
+        "supportScore": 62.6
+      },
+      {
+        "topic": "messiah_logos",
+        "supportScore": 68.95
+      },
+      {
+        "topic": "feasts",
+        "supportScore": 68.75
+      },
+      {
+        "topic": "that_man_sin_lesson",
+        "supportScore": 65.45
+      },
+      {
+        "topic": "riches_gains_the_doctrine",
+        "supportScore": 62.45
+      },
+      {
+        "topic": "lake_of_fire",
+        "supportScore": 62.85
+      },
+      {
+        "topic": "remember_the_mission_teach",
+        "supportScore": 62.75
+      },
+      {
+        "topic": "america_decline_rome_rising",
+        "supportScore": 62.75
+      },
+      {
+        "topic": "greedy_dog_preachers_lesson",
+        "supportScore": 61.75
+      },
+      {
+        "topic": "two_witnesses",
+        "supportScore": 59.25
+      },
+      {
+        "topic": "how_frail_lesson_handout",
+        "supportScore": 61.6
+      },
+      {
+        "topic": "mark_of_the_beast",
+        "supportScore": 61.6
+      },
+      {
+        "topic": "children_are_the_future",
+        "supportScore": 60.35
+      },
+      {
+        "topic": "beginning_jerusalem_the_gospel",
+        "supportScore": 59.75
+      },
+      {
+        "topic": "the_awakening_hebrews_lesson",
+        "supportScore": 58.75
+      },
+      {
+        "topic": "the_foolishness_men_women",
+        "supportScore": 59.75
+      },
+      {
+        "topic": "modern_religion_emotionalism_not",
+        "supportScore": 59.75
+      },
+      {
+        "topic": "david",
+        "supportScore": 59.75
+      },
+      {
+        "topic": "covenants",
+        "supportScore": 57.35
+      },
+      {
+        "topic": "angels",
+        "supportScore": 62.85
+      },
+      {
+        "topic": "jesus_the_christ_the",
+        "supportScore": 63.6
+      },
+      {
+        "topic": "killed_for_jesus_lesson",
+        "supportScore": 63.85
+      },
+      {
+        "topic": "may_whoredom_aka_fornication",
+        "supportScore": 62.6
+      },
+      {
+        "topic": "circumcision_still_good_lesson",
+        "supportScore": 62.35
+      },
+      {
+        "topic": "seek_god_now_time",
+        "supportScore": 60.75
+      },
+      {
+        "topic": "the_lords_determination_lesson",
+        "supportScore": 60.75
+      },
+      {
+        "topic": "satan",
+        "supportScore": 63.35
+      },
+      {
+        "topic": "vengeance_the_lords_lesson",
+        "supportScore": 61.6
+      },
+      {
+        "topic": "back_into_egypt_fnl",
+        "supportScore": 57.75
+      },
+      {
+        "topic": "beware_spirits_all_are",
+        "supportScore": 59.75
+      },
+      {
+        "topic": "home_israel_the_church",
+        "supportScore": 58.75
+      },
+      {
+        "topic": "tithes",
+        "supportScore": 57.75
+      },
+      {
+        "topic": "baptism",
+        "supportScore": 58.75
+      },
+      {
+        "topic": "part_the_times_the",
+        "supportScore": 63.6
+      },
+      {
+        "topic": "whisperer_will_separate_best",
+        "supportScore": 58.75
+      },
+      {
+        "topic": "content_with_what_you",
+        "supportScore": 58.75
+      },
+      {
+        "topic": "mixed_where_now_according",
+        "supportScore": 60.75
+      },
+      {
+        "topic": "the_last_trump_lesson",
+        "supportScore": 62.6
+      },
+      {
+        "topic": "from_baby_manger_killer",
+        "supportScore": 63.6
+      },
+      {
+        "topic": "open_topic_does_genesis",
+        "supportScore": 66.1
+      },
+      {
+        "topic": "peter",
+        "supportScore": 68.6
+      },
+      {
+        "topic": "open_topic_fear_god",
+        "supportScore": 56.75
+      },
+      {
+        "topic": "the_israel_god_research",
+        "supportScore": 56.75
+      },
+      {
+        "topic": "open_topic_the_remnant",
+        "supportScore": 58.75
+      },
+      {
+        "topic": "reap_what_you_sow",
+        "supportScore": 61
+      },
+      {
+        "topic": "neither_democrats_nor_republicans",
+        "supportScore": 60.6
+      },
+      {
+        "topic": "michael_archangel",
+        "supportScore": 58.75
+      },
+      {
+        "topic": "noah",
+        "supportScore": 57.75
+      },
+      {
+        "topic": "great_tribulation",
+        "supportScore": 58.75
+      },
+      {
+        "topic": "little_leaven_daily_readings",
+        "supportScore": 59.75
+      },
+      {
+        "topic": "abib_fresh_beginning_lesson",
+        "supportScore": 59
+      },
+      {
+        "topic": "marriage",
+        "supportScore": 59.35
+      },
+      {
+        "topic": "eve",
+        "supportScore": 60.75
+      },
+      {
+        "topic": "jacob",
+        "supportScore": 55.75
+      },
+      {
+        "topic": "iog_bay_area_prepare",
+        "supportScore": 55.75
+      },
+      {
+        "topic": "iog_stick_the_script",
+        "supportScore": 54.75
+      },
+      {
+        "topic": "emotional",
+        "supportScore": 54.75
+      },
+      {
+        "topic": "emotional_does_scripture_say",
+        "supportScore": 54.75
+      },
+      {
+        "topic": "144000",
+        "supportScore": 57.75
+      },
+      {
+        "topic": "the_book_life_lesson",
+        "supportScore": 61
+      },
+      {
+        "topic": "the_unleavened_bread_journey",
+        "supportScore": 59.6
+      },
+      {
+        "topic": "the_state_gods_union",
+        "supportScore": 63.5
+      },
+      {
+        "topic": "gods_judgment_lesson_handout",
+        "supportScore": 59.75
+      },
+      {
+        "topic": "prayer",
+        "supportScore": 60.6
+      },
+      {
+        "topic": "holy_spirit",
+        "supportScore": 59.35
+      },
+      {
+        "topic": "open_topic_what_the",
+        "supportScore": 58.75
+      },
+      {
+        "topic": "kingdom_of_god",
+        "supportScore": 56
+      },
+      {
+        "topic": "ham",
+        "supportScore": 60.6
+      },
+      {
+        "topic": "paul",
+        "supportScore": 58.25
+      },
+      {
+        "topic": "there_god_but_jesus",
+        "supportScore": 59.6
+      },
+      {
+        "topic": "john",
+        "supportScore": 61.5
+      }
+    ]
+  },
+  "executive": {
+    "doctrinePackCount": 79,
+    "packsExpanded": 79,
+    "packsGainedMostDepth": [
+      {
+        "topic": "traditions",
+        "displayName": "Traditions",
+        "scripturesAdded": 36,
+        "supportScore": 96
+      },
+      {
+        "topic": "law_commandments",
+        "displayName": "Law Commandments",
+        "scripturesAdded": 33,
+        "supportScore": 99
+      },
+      {
+        "topic": "kingdom",
+        "displayName": "Kingdom",
+        "scripturesAdded": 28,
+        "supportScore": 94
+      },
+      {
+        "topic": "messiah_logos",
+        "displayName": "Messiah & Logos",
+        "scripturesAdded": 2,
+        "supportScore": 68.95
+      },
+      {
+        "topic": "that_man_sin_lesson",
+        "displayName": "That Man Sin Lesson",
+        "scripturesAdded": 2,
+        "supportScore": 65.45
+      },
+      {
+        "topic": "riches_gains_the_doctrine",
+        "displayName": "Riches Gains The Doctrine",
+        "scripturesAdded": 2,
+        "supportScore": 62.45
+      },
+      {
+        "topic": "the_state_gods_union",
+        "displayName": "The State Gods Union",
+        "scripturesAdded": 2,
+        "supportScore": 63.5
+      },
+      {
+        "topic": "resurrection",
+        "displayName": "Resurrection",
+        "scripturesAdded": 1,
+        "supportScore": 62.6
+      },
+      {
+        "topic": "dietary_law",
+        "displayName": "Dietary Law",
+        "scripturesAdded": 1,
+        "supportScore": 80.6
+      },
+      {
+        "topic": "lake_of_fire",
+        "displayName": "Lake of Fire",
+        "scripturesAdded": 1,
+        "supportScore": 62.85
+      },
+      {
+        "topic": "how_frail_lesson_handout",
+        "displayName": "How Frail Lesson Handout",
+        "scripturesAdded": 1,
+        "supportScore": 61.6
+      },
+      {
+        "topic": "mark_of_the_beast",
+        "displayName": "Mark of the Beast",
+        "scripturesAdded": 1,
+        "supportScore": 61.6
+      }
+    ],
+    "strongestPacks": [
+      {
+        "topic": "law_commandments",
+        "displayName": "Law Commandments",
+        "supportScore": 99
+      },
+      {
+        "topic": "traditions",
+        "displayName": "Traditions",
+        "supportScore": 96
+      },
+      {
+        "topic": "kingdom",
+        "displayName": "Kingdom",
+        "supportScore": 94
+      },
+      {
+        "topic": "dietary_law",
+        "displayName": "Dietary Law",
+        "supportScore": 80.6
+      },
+      {
+        "topic": "sabbath",
+        "displayName": "Sabbath",
+        "supportScore": 78.75
+      },
+      {
+        "topic": "heavens",
+        "displayName": "Heavens",
+        "supportScore": 77
+      },
+      {
+        "topic": "holiness",
+        "displayName": "Holiness",
+        "supportScore": 72.75
+      },
+      {
+        "topic": "messiah_logos",
+        "displayName": "Messiah & Logos",
+        "supportScore": 68.95
+      },
+      {
+        "topic": "feasts",
+        "displayName": "Feast Days",
+        "supportScore": 68.75
+      },
+      {
+        "topic": "peter",
+        "displayName": "Peter",
+        "supportScore": 68.6
+      },
+      {
+        "topic": "open_topic_does_genesis",
+        "displayName": "Open Topic Does Genesis",
+        "supportScore": 66.1
+      },
+      {
+        "topic": "death_state",
+        "displayName": "Death State",
+        "supportScore": 66
+      }
+    ],
+    "weakPacks": [
+      {
+        "topic": "law_commandments",
+        "supportScore": 99,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "death_state",
+        "supportScore": 66,
+        "missingLinks": [
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "resurrection",
+        "supportScore": 62.6,
+        "missingLinks": [
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "messiah_logos",
+        "supportScore": 68.95,
+        "missingLinks": [
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "feasts",
+        "supportScore": 68.75,
+        "missingLinks": [
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "that_man_sin_lesson",
+        "supportScore": 65.45,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "riches_gains_the_doctrine",
+        "supportScore": 62.45,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "lake_of_fire",
+        "supportScore": 62.85,
+        "missingLinks": [
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "remember_the_mission_teach",
+        "supportScore": 62.75,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "america_decline_rome_rising",
+        "supportScore": 62.75,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "greedy_dog_preachers_lesson",
+        "supportScore": 61.75,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "two_witnesses",
+        "supportScore": 59.25,
+        "missingLinks": [
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "how_frail_lesson_handout",
+        "supportScore": 61.6,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "mark_of_the_beast",
+        "supportScore": 61.6,
+        "missingLinks": [
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "children_are_the_future",
+        "supportScore": 60.35,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "beginning_jerusalem_the_gospel",
+        "supportScore": 59.75,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "the_awakening_hebrews_lesson",
+        "supportScore": 58.75,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "the_foolishness_men_women",
+        "supportScore": 59.75,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "modern_religion_emotionalism_not",
+        "supportScore": 59.75,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "david",
+        "supportScore": 59.75,
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_source_coverage"
+        ]
+      }
+    ],
+    "missingPackTopics": [
+      "high_sabbaths",
+      "leviticus_23",
+      "passover",
+      "unleavened_bread",
+      "pentecost",
+      "feast_of_trumpets",
+      "day_of_atonement",
+      "feast_of_tabernacles",
+      "last_great_day",
+      "melchizedek",
+      "temple",
+      "new_jerusalem",
+      "tree_of_life",
+      "tree_of_knowledge",
+      "gabriel",
+      "millennial_kingdom",
+      "eighth_day_father",
+      "the_beast",
+      "false_prophet",
+      "devil_deception",
+      "female_prophecy",
+      "women_in_bible",
+      "circumcision",
+      "the_church",
+      "israel",
+      "gentiles",
+      "hebrews_people",
+      "edom",
+      "deuteronomy_28_curses",
+      "captivity",
+      "abomination_of_desolation",
+      "new_jerusalem",
+      "gog_and_magog",
+      "armageddon",
+      "millennial_kingdom",
+      "adam",
+      "cain",
+      "abel",
+      "shem",
+      "japheth",
+      "abraham",
+      "isaac",
+      "joseph",
+      "judah",
+      "moses",
+      "aaron",
+      "joshua",
+      "samson",
+      "samuel",
+      "saul",
+      "solomon",
+      "elijah",
+      "elisha",
+      "isaiah",
+      "jeremiah",
+      "ezekiel",
+      "daniel",
+      "faith",
+      "works",
+      "grace",
+      "repentance",
+      "priesthood",
+      "divorce",
+      "adam_to_noah",
+      "noah_to_abraham",
+      "abraham_to_david",
+      "david_to_christ",
+      "tribes_of_israel",
+      "sons_of_noah",
+      "tabernacle",
+      "temple",
+      "sacrificial_system",
+      "holy_days",
+      "ten_commandments"
+    ],
+    "weakPackTopics": [
+      "two_witnesses",
+      "144000",
+      "great_tribulation",
+      "noah",
+      "jacob",
+      "baptism",
+      "marriage",
+      "covenants",
+      "tithes",
+      "emotional"
+    ],
+    "implementationReady": [
+      "traditions",
+      "law_commandments",
+      "kingdom"
+    ],
+    "implementationReadyCount": 3,
+    "reviewFirst": [
+      {
+        "topic": "traditions",
+        "displayName": "Traditions",
+        "supportScore": 96,
+        "learningGainScore": 304,
+        "implementationConfidence": "Medium"
+      },
+      {
+        "topic": "law_commandments",
+        "displayName": "Law Commandments",
+        "supportScore": 99,
+        "learningGainScore": 284,
+        "implementationConfidence": "Medium"
+      },
+      {
+        "topic": "kingdom",
+        "displayName": "Kingdom",
+        "supportScore": 94,
+        "learningGainScore": 260,
+        "implementationConfidence": "Medium"
+      },
+      {
+        "topic": "dietary_law",
+        "displayName": "Dietary Law",
+        "supportScore": 80.6,
+        "learningGainScore": 132,
+        "implementationConfidence": "High"
+      }
+    ],
+    "implementFirstAfterReview": [
+      {
+        "rank": 1,
+        "topic": "traditions",
+        "displayName": "Traditions",
+        "supportScore": 96,
+        "learningGainScore": 304
+      },
+      {
+        "rank": 2,
+        "topic": "law_commandments",
+        "displayName": "Law Commandments",
+        "supportScore": 99,
+        "learningGainScore": 284
+      },
+      {
+        "rank": 3,
+        "topic": "kingdom",
+        "displayName": "Kingdom",
+        "supportScore": 94,
+        "learningGainScore": 260
+      },
+      {
+        "rank": 4,
+        "topic": "messiah_logos",
+        "displayName": "Messiah & Logos",
+        "supportScore": 68.95,
+        "learningGainScore": 149
+      },
+      {
+        "rank": 5,
+        "topic": "dietary_law",
+        "displayName": "Dietary Law",
+        "supportScore": 80.6,
+        "learningGainScore": 132
+      }
+    ],
+    "projectedLearningGain": 9205,
+    "bibleWideDiscovery": {
+      "catalogTopics": 106,
+      "found": 22,
+      "weak": 10,
+      "missing": 74,
+      "autoDiscovered": 40
+    },
+    "expansionTotals": {
+      "newParallel": 68,
+      "newSupporting": 55,
+      "newContinuity": 8,
+      "newScriptures": 131
+    }
+  }
+}

@@ -1,0 +1,293 @@
+# Facebook Manual Paste Workflow
+
+**Phase:** 3T Part E
+**Date:** 2026-06-10T00:06:09.850Z
+
+**Total:** 22 · **Awaiting paste:** 22
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/theisraelofgodbiblestudyclass",
+  "title": "The Israel of God, Riverdale Campus | Riverdale IL",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_riverdale",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/iogatl",
+  "title": "The Israel of God, Atlanta Campus | Stone Mountain GA",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_atlanta",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/ioghou",
+  "title": "The Israel of God, Houston Campus | Houston TX",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_houston",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/ioghou/videos",
+  "title": "The Israel of God, Houston Campus | Houston TX",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_houston",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/The-Israel-Of-God-Rialto-Los-Angeles-100080309874391",
+  "title": "The Israel Of God Rialto/ Los Angeles | Rialto CA",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_rialto",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/theisraelofgodbaltimore",
+  "title": "",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "unclassified",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/IOGDallas1",
+  "title": "The Israel of God, Dallas Campus | Dallas TX",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_dallas",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/IOGDetroit",
+  "title": "The Israel of God, Detroit Campus | Detroit MI",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_detroit",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/theiogstl",
+  "title": "The Israel Of God Bible Study Class, St. Louis Campus | St. Louis MO",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_bible",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/IOGBayArea",
+  "title": "The Israel of God, Bay Area Campus | Pittsburg CA",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_bay",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/IOGRALNC",
+  "title": "The Israel of God, Raleigh Campus | Raleigh NC",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_raleigh",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/thykingdomcome7",
+  "title": "Israel, The Church of Jesus | Hammond IN",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "israel_the_church_jesus",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/thykingdomcome7/videos",
+  "title": "Israel, The Church of Jesus | Hammond IN",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "israel_the_church_jesus",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/thykingdomcome7/videos/qa/1653238386010351",
+  "title": "Q&A | Israel, The Church of Jesus",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "israel_the_church_jesus",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/100088125694701",
+  "title": "Israel the Church of Jesus Atlanta",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "israel_the_church_jesus",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/IsraelTheChurchOfJesus",
+  "title": "Icoj LA",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "icoj",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/Israelthechurchofjesusdallas",
+  "title": "Israel The Church of Jesus Dallas | Dallas TX",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "israel_the_church_jesus",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/israelthechurchofjesusjacksonville",
+  "title": "Israel the Church of Jesus, Jacksonville | Jacksonville FL",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "israel_the_church_jesus",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/israelthechurchofjesustoronto",
+  "title": "Israel The Church Of Jesus TORONTO | Mississauga ON",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "israel_the_church_jesus",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/groups/559741117509670",
+  "title": "The Israel of God New Jersey | Facebook",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "the_israel_god_new",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/thykingdomcome7/videos/247-watch/1182783540601065",
+  "title": "",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "unclassified",
+  "existingScriptureCount": 0
+}
+```
+
+```json
+{
+  "sourceName": "Facebook Recovery",
+  "camp": "HQ",
+  "url": "https://www.facebook.com/103550015921606",
+  "title": "Israel the Church of Jesus Atlanta",
+  "neededText": "video title, description, visible Q&A, visible scripture refs, comments/questions if public",
+  "pasteStatus": "awaiting_manual_paste",
+  "assignedDoctrinePackCandidate": "israel_the_church_jesus",
+  "existingScriptureCount": 0
+}
+```
+

@@ -1,0 +1,19 @@
+{
+  "changeId": "baseline_no_prior_snapshot",
+  "timestamp": "2026-07-19T09:43:56.949Z",
+  "actorOrRule": "phase6e_analytics_build",
+  "affectedTopics": [],
+  "affectedReferences": [],
+  "before": null,
+  "after": {
+    "checksum": "bf4e8f4cc7c421c5ffde7469ce2f7906cb7b967ee24625e8ed2cca4ae0aca64d",
+    "takenAt": "2026-07-19T09:43:56.949Z"
+  },
+  "riskLevel": "LOW_METADATA_ONLY",
+  "testsRequired": [],
+  "approvalRequired": false,
+  "isRollback": false,
+  "detail": {
+    "note": "No prior snapshot existed — this run establishes the Phase 6E drift-detection baseline. Future runs will diff against data/analytics-snapshots/KnowledgeStateSnapshot.json."
+  }
+}

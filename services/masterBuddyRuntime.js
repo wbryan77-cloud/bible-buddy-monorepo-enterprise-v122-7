@@ -1,11 +1,10 @@
 /**
- * Sprint 2.FINAL — Master Buddy Runtime
- * Single decision path for POST /buddy/chat.
+ * Sprint 2.FINAL-C — Master Buddy Runtime
+ * Reason first, then route. Single decision path for POST /buddy/chat.
  *
- * Order: crisis → message → active conversation → question intent →
- * correction/follow-up → route owner → doctrine boundaries → answer →
- * Scripture → history (if relevant) → memory (if relevant) → study (if appropriate) →
- * polish → persist.
+ * Order: crisis → message → reasoning snapshot → active conversation →
+ * question intent → route owner (from reasoning) → answer →
+ * answer match gate → response contract → polish → persist.
  */
 
 const openai = require('./openaiClient');
@@ -24,7 +23,11 @@ const { classifyStudyConnectionQuery, buildStudyConnectionResponse } = require('
 const { polishCompanionReply } = require('./companionReplyPolish');
 const { resolveSabbathCompanionIntent } = require('./sabbathIntentRouter');
 const { buildSabbathHistoryResponse } = require('./sabbathHistoryCompanion');
-const { resolveQuestionIntent, resolveFollowUpQuestion } = require('./questionIntentResolver');
+const { resolveQuestionIntent, resolveFollowUpQuestion, shouldEscalateCorrection } = require('./questionIntentResolver');
+const { buildMetaAnswerResponse } = require('./metaAnswerResponder');
+const { buildReasoningSnapshot } = require('./reasoningSnapshot');
+const { applyAnswerMatchGate } = require('./answerMatchGate');
+const { attachResponseContract, validateResponseContract } = require('./responseContract');
 const { detectTopicFromMessage } = require('./doctrineBoundaries');
 const { getActiveConversation, updateActiveConversation } = require('./activeConversationManager');
 const {
@@ -128,6 +131,21 @@ async function generateAnswer({
     case 'sabbath_history':
     case 'historical_evidence':
     case 'historical_follow_up': {
+      const reasoningSnapshot = runtimeContext.reasoningSnapshot;
+      if (
+        reasoningSnapshot?.questionType === 'meta_about_previous_answer' ||
+        reasoningSnapshot?.requestedAnswerType === 'wording_explanation'
+      ) {
+        return buildMetaAnswerResponse({
+          userId,
+          message,
+          recentSessions,
+          activeConversation: runtimeContext.activeConversation,
+          questionIntent,
+          strictAnswerMode: true,
+          correctionMode: isCorrection,
+        });
+      }
       const sabbathIntent = resolveSabbathCompanionIntent({ message, recentSessions });
       const reply = buildSabbathHistoryResponse({
         userId,
@@ -219,6 +237,27 @@ async function generateAnswer({
         followUp: followUp.isFollowUp,
         activeTopic: 'discernment',
         masterRoute: routeKey,
+      };
+      return reply;
+    }
+
+    case 'meta_about_previous_answer': {
+      const reply = buildMetaAnswerResponse({
+        userId,
+        message,
+        recentSessions,
+        activeConversation: runtimeContext.activeConversation,
+        questionIntent,
+        strictAnswerMode: questionIntent.strictAnswerMode || flags.permissions?.strictAnswerMode,
+        correctionMode: followUp.correction || questionIntent.isCorrection,
+      });
+      reply.runtime = {
+        ...(reply.runtime || {}),
+        activeConversationLock: true,
+        followUp: followUp.isFollowUp,
+        activeTopic: runtimeContext.activeConversation?.topic || questionIntent.topic,
+        masterRoute: routeKey,
+        companionPresentation: { skipStudyPrompts: true, skipRelationshipEnrichment: true, skipMemory: true },
       };
       return reply;
     }
@@ -385,8 +424,12 @@ function recordConversationState({ userId, message, structured, runtimeContext, 
     lockUntilResolved: structured.runtime?.activeConversationLock || false,
     allowMemorySurfacing: !structured.runtime?.activeConversationLock && topic !== 'sabbath',
     allowStudyPrompt: !structured.runtime?.activeConversationLock && masterRoute === 'continue_study',
-    correctionMode: !!runtimeContext.followUp?.correction || runtimeContext.questionIntent?.isCorrection,
+    correctionMode: !!runtimeContext.followUp?.correction || runtimeContext.questionIntent?.isCorrection || runtimeContext.questionIntent?.strictAnswerMode,
     frustrationMode: !!runtimeContext.questionIntent?.isFrustrated,
+    strictAnswerMode: !!runtimeContext.questionIntent?.strictAnswerMode,
+    correctionCount: runtimeContext.followUp?.correction || runtimeContext.questionIntent?.isCorrection
+      ? (activeConversation?.correctionCount || 0) + 1
+      : activeConversation?.correctionCount || 0,
   });
 }
 
@@ -395,7 +438,12 @@ function recordConversationState({ userId, message, structured, runtimeContext, 
  */
 async function runMasterBuddyRuntime(H, inputOrUserId, modeArg, personaKeyArg, messageArg) {
   const startedAt = Date.now();
-  const { userId, mode, personaKey, message } = H.normalizeInput(inputOrUserId, modeArg, personaKeyArg, messageArg);
+  const { userId, mode, personaKey, message, testerId, sessionId, cohort } = H.normalizeInput(
+    inputOrUserId,
+    modeArg,
+    personaKeyArg,
+    messageArg
+  );
 
   if (!message || !String(message).trim()) {
     return H.fallbackReply({ message, safety: { level: 'standard' } });
@@ -415,8 +463,15 @@ async function runMasterBuddyRuntime(H, inputOrUserId, modeArg, personaKeyArg, m
 
   // Step 3–4: active conversation + question intent (before doctrine)
   const activeConversation = getActiveConversation(userId);
-  const questionIntent = resolveQuestionIntent({ message, recentSessions });
+  const questionIntent = resolveQuestionIntent({ message, recentSessions, activeConversation });
   let followUp = resolveFollowUpQuestion({ message, activeConversation });
+
+  if (activeConversation?.strictAnswerMode || shouldEscalateCorrection(message, recentSessions, activeConversation)) {
+    questionIntent.strictAnswerMode = true;
+    questionIntent.shouldSuppressStudyPrompts = true;
+    questionIntent.memoryAllowed = false;
+    questionIntent.doctrineTemplateAllowed = false;
+  }
 
   // Topic switch clears follow-up inheritance (e.g. "My knees hurt" after grief)
   if (followUp.isFollowUp && followUp.inheritedTopic && messageStartsNewTopic(message, followUp.inheritedTopic)) {
@@ -431,13 +486,57 @@ async function runMasterBuddyRuntime(H, inputOrUserId, modeArg, personaKeyArg, m
 
   if (followUp.isFollowUp && followUp.inheritedTopic) {
     questionIntent.topic = followUp.inheritedTopic === 'sabbath' ? 'sabbath' : followUp.inheritedTopic;
-    if (followUp.correction) questionIntent.questionType = 'correction';
-    else if (followUp.questionType) questionIntent.questionType = followUp.questionType;
+    if (followUp.questionType === 'meta_about_previous_answer') {
+      questionIntent.questionType = 'meta_about_previous_answer';
+      questionIntent.subtopic = 'wording';
+      questionIntent.isMetaQuestion = true;
+      questionIntent.isSabbathHistory = false;
+      questionIntent.shouldSuppressStudyPrompts = true;
+      questionIntent.memoryAllowed = false;
+      questionIntent.doctrineTemplateAllowed = false;
+    } else if (followUp.correction) {
+      questionIntent.questionType = 'correction';
+    } else if (followUp.questionType) {
+      questionIntent.questionType = followUp.questionType;
+    }
     questionIntent.shouldSuppressStudyPrompts = true;
-    if (followUp.inheritedTopic === 'sabbath') questionIntent.isSabbathHistory = true;
+    if (followUp.inheritedTopic === 'sabbath' && followUp.questionType !== 'meta_about_previous_answer') {
+      questionIntent.isSabbathHistory = true;
+    }
     questionIntent.isFollowUp = true;
   }
   if (followUp.correction) questionIntent.isCorrection = true;
+
+  // Step 5: reasoning snapshot BEFORE routing (reason first, then route)
+  const reasoningSnapshot = buildReasoningSnapshot({
+    message,
+    activeConversation,
+    recentSessions,
+    questionIntent,
+    followUp,
+    safety,
+  });
+  runtimeContext.reasoningSnapshot = reasoningSnapshot;
+
+  if (reasoningSnapshot.strictAnswerMode) {
+    questionIntent.strictAnswerMode = true;
+    questionIntent.shouldSuppressStudyPrompts = true;
+    questionIntent.memoryAllowed = false;
+    questionIntent.doctrineTemplateAllowed = false;
+    questionIntent.isSabbathHistory = false;
+  }
+  if (reasoningSnapshot.isMetaQuestion) {
+    questionIntent.questionType = 'meta_about_previous_answer';
+    questionIntent.isMetaQuestion = true;
+    questionIntent.subtopic = 'wording';
+    questionIntent.isSabbathHistory = false;
+    questionIntent.shouldSuppressStudyPrompts = true;
+    questionIntent.memoryAllowed = false;
+    questionIntent.doctrineTemplateAllowed = false;
+  }
+  if (reasoningSnapshot.questionType === 'correction') {
+    questionIntent.isCorrection = true;
+  }
 
   runtimeContext.questionIntent = questionIntent;
   runtimeContext.activeConversation = activeConversation;
@@ -455,8 +554,35 @@ async function runMasterBuddyRuntime(H, inputOrUserId, modeArg, personaKeyArg, m
     return crisisReply;
   }
 
-  // Step 7: route owner selection
-  let routeKey = resolveRouteKey({ questionIntent, followUp, activeConversation, safety });
+  // Step 7: route owner selection — reasoning snapshot wins over topic inheritance
+  let routeKey = reasoningSnapshot.recommendedRoute || resolveRouteKey({ questionIntent, followUp, activeConversation, safety });
+
+  if (process.env.BUDDY_ROUTE_TRACE === '1') {
+    console.log('[SPRINT1A3_ROUTE_TRACE]', JSON.stringify({
+      message: String(message || '').slice(0, 160),
+      questionType: questionIntent?.questionType || null,
+      questionTopic: questionIntent?.topic || null,
+      questionIntent: questionIntent?.intent || null,
+      followUp: {
+        isFollowUp: !!followUp?.isFollowUp,
+        inheritedTopic: followUp?.inheritedTopic || null,
+        questionType: followUp?.questionType || null,
+        correction: !!followUp?.correction,
+      },
+      activeConversation: activeConversation
+        ? {
+            topic: activeConversation.topic || null,
+            route: activeConversation.route || null,
+          }
+        : null,
+      reasoningSnapshot: {
+        questionType: reasoningSnapshot?.questionType || null,
+        recommendedRoute: reasoningSnapshot?.recommendedRoute || null,
+        routeReason: reasoningSnapshot?.routeReason || null,
+      },
+      selectedRouteKey: routeKey,
+    }));
+  }
 
   // Explicit overrides before route dispatch
   const continueStudy = classifyContinueStudyIntent(message, userId);
@@ -478,9 +604,14 @@ async function runMasterBuddyRuntime(H, inputOrUserId, modeArg, personaKeyArg, m
     }
   }
 
-  // Sabbath history from intent if not yet resolved
+  // Sabbath history from intent if not yet resolved (never when reasoning says meta/strict)
   const sabbathIntent = resolveSabbathCompanionIntent({ message, recentSessions });
   if (
+    !reasoningSnapshot.isMetaQuestion &&
+    !reasoningSnapshot.strictAnswerMode &&
+    reasoningSnapshot.recommendedRoute !== 'meta_about_previous_answer' &&
+    questionIntent.questionType !== 'meta_about_previous_answer' &&
+    !questionIntent.isMetaQuestion &&
     !followUp.isFollowUp &&
     (questionIntent.isSabbathHistory ||
       sabbathIntent.intent === 'history_deep' ||
@@ -489,6 +620,14 @@ async function runMasterBuddyRuntime(H, inputOrUserId, modeArg, personaKeyArg, m
     questionIntent.questionType !== 'comparison'
   ) {
     routeKey = 'sabbath_history';
+  }
+
+  if (reasoningSnapshot.recommendedRoute === 'meta_about_previous_answer' || reasoningSnapshot.isMetaQuestion) {
+    routeKey = 'meta_about_previous_answer';
+  }
+
+  if (questionIntent.questionType === 'meta_about_previous_answer' || questionIntent.isMetaQuestion) {
+    routeKey = 'meta_about_previous_answer';
   }
 
   if (!routeKey) routeKey = questionIntent.isSabbathDefinition ? 'sabbath_definition' : 'doctrine_general';
@@ -569,6 +708,54 @@ async function runMasterBuddyRuntime(H, inputOrUserId, modeArg, personaKeyArg, m
     structured = H.fallbackReply({ message, safety, userId, recentSessions, runtimeContext, profile });
     structured.reply = polishFinalReply(structured.reply);
   }
+
+  // Step 11: answer match gate + response contract
+  const needsAnswerMatchGate =
+    reasoningSnapshot.isMetaQuestion ||
+    reasoningSnapshot.requestedAnswerType === 'wording_explanation' ||
+    (reasoningSnapshot.strictAnswerMode && reasoningSnapshot.requestedAnswerType === 'wording_explanation');
+
+  if (needsAnswerMatchGate) {
+    const matched = applyAnswerMatchGate({
+      structured,
+      reasoningSnapshot,
+      questionIntent,
+      followUp,
+      recentSessions,
+      activeConversation,
+    });
+    structured = matched.structured;
+
+    const contractCheck = validateResponseContract(structured.runtime?.responseContract, reasoningSnapshot);
+    if (!contractCheck.valid && reasoningSnapshot.isMetaQuestion) {
+      const forced = buildMetaAnswerResponse({
+        userId,
+        message,
+        recentSessions,
+        activeConversation,
+        questionIntent,
+        strictAnswerMode: true,
+        correctionMode: reasoningSnapshot.isCorrection,
+      });
+      structured = { ...structured, ...forced, reply: forced.reply };
+    }
+
+    structured.runtime = {
+      ...(structured.runtime || {}),
+      answerMatch: matched.match,
+      answerMatchRegenerated: matched.regenerated,
+      answerMatchFallback: matched.usedFallback,
+      reasoningSnapshot,
+      masterRoute: routeKey,
+    };
+  }
+
+  structured = attachResponseContract(structured, reasoningSnapshot);
+  structured.runtime = {
+    ...(structured.runtime || {}),
+    reasoningSnapshot,
+    masterRoute: routeKey,
+  };
 
   structured.safety_level = structured.safety_level || safety.level;
 
@@ -657,6 +844,9 @@ async function runMasterBuddyRuntime(H, inputOrUserId, modeArg, personaKeyArg, m
     runtimeContext,
     profile,
     doctrineTopic: structured._doctrineTopic || null,
+    testerId,
+    sessionId,
+    cohort,
   });
 
   recordConversationState({ userId, message, structured: finalized, runtimeContext, doctrineTopic: structured._doctrineTopic || null });

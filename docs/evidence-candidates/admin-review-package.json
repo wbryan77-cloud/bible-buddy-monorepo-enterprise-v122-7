@@ -1,0 +1,767 @@
+{
+  "phase": "2J-B",
+  "generatedAt": "2026-06-08T14:58:50.516Z",
+  "description": "Admin review package for potentially useful Scripture Discovery pilot candidates. Advisory only — not applied to production.",
+  "totalPilotCandidates": 47,
+  "usefulCandidateCount": 16,
+  "reviewRequired": true,
+  "autoApplied": false,
+  "candidates": [
+    {
+      "candidateId": "sdp_0010",
+      "topic": "sabbath",
+      "question": "What is a Sabbath day according to Scripture?",
+      "scripturesCited": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "scriptureOrder": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "candidateConclusion": "Jesus Himself observed the Sabbath regularly (Luke 4:16), and the early believers met on the Sabbath as well (Acts 13:42-44; Acts 17:2).",
+      "crossReferences": [
+        {
+          "ref": "Luke 4:16",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "luke4_jesus_sabbath_custom"
+          ],
+          "onContinuityChain": true,
+          "onCatalogChain": true
+        },
+        {
+          "ref": "Acts 13:42-44",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": false,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        },
+        {
+          "ref": "Acts 17:2",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "acts17_sabbath_teaching"
+          ],
+          "onContinuityChain": true,
+          "onCatalogChain": true
+        }
+      ],
+      "existingApprovedRefs": [
+        "Luke 4:16",
+        "Acts 17:2"
+      ],
+      "missingRefs": [
+        "Acts 13:42-44"
+      ],
+      "supportScore": 66.7,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "approve_card_ref",
+      "priorityScore": 89.345,
+      "phase2iImpact": {
+        "scenario": "doc_13",
+        "classification": "missing_support_edge",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0037",
+      "topic": "sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "scripturesCited": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "scriptureOrder": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "candidateConclusion": "Jesus Himself observed the Sabbath by attending synagogue and teaching (Luke 4:16), and the early believers continued this practice (Acts 13:42-44, Acts 17:2).",
+      "crossReferences": [
+        {
+          "ref": "Luke 4:16",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "luke4_jesus_sabbath_custom"
+          ],
+          "onContinuityChain": true,
+          "onCatalogChain": true
+        },
+        {
+          "ref": "Acts 13:42-44",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": false,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        },
+        {
+          "ref": "Acts 17:2",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "acts17_sabbath_teaching"
+          ],
+          "onContinuityChain": true,
+          "onCatalogChain": true
+        }
+      ],
+      "existingApprovedRefs": [
+        "Luke 4:16",
+        "Acts 17:2"
+      ],
+      "missingRefs": [
+        "Acts 13:42-44"
+      ],
+      "supportScore": 66.7,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "approve_card_ref",
+      "priorityScore": 89.345,
+      "phase2iImpact": {
+        "scenario": "chain_sabbath_5",
+        "classification": "missing_support_edge",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0001",
+      "topic": "sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "scripturesCited": [
+        "Isaiah 58:13-14",
+        "Acts 17:2",
+        "Acts 13:42-44"
+      ],
+      "scriptureOrder": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2"
+      ],
+      "candidateConclusion": "Sabbath observance pattern from creation through apostolic era (candidate chain extension)",
+      "crossReferences": [
+        {
+          "ref": "Isaiah 58:13-14",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "isa58_delight_in_sabbath"
+          ],
+          "onContinuityChain": true,
+          "onCatalogChain": true
+        },
+        {
+          "ref": "Acts 17:2",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "acts17_sabbath_teaching"
+          ],
+          "onContinuityChain": true,
+          "onCatalogChain": true
+        },
+        {
+          "ref": "Acts 13:42-44",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": false,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        }
+      ],
+      "existingApprovedRefs": [
+        "Isaiah 58:13-14",
+        "Acts 17:2"
+      ],
+      "missingRefs": [
+        "Acts 13:42-44"
+      ],
+      "supportScore": 66.7,
+      "confidence": 0.6,
+      "riskLevel": "high",
+      "recommendedAction": "approve_card_ref",
+      "priorityScore": 72.345,
+      "phase2iImpact": {
+        "scenario": "stress_gap",
+        "classification": "mixed",
+        "degradationImpact": "medium"
+      }
+    },
+    {
+      "candidateId": "sdp_0023",
+      "topic": "messiah_logos",
+      "question": "Please help me understand Logos. I am confused and sad.",
+      "scripturesCited": [
+        "Isaiah 9:6"
+      ],
+      "scriptureOrder": [
+        "Isaiah 9:6"
+      ],
+      "candidateConclusion": "This Old Testament prophecy speaks of the coming Messiah, connecting to Jesus as the Logos.",
+      "crossReferences": [
+        {
+          "ref": "Isaiah 9:6",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": true,
+          "onCatalogChain": true
+        }
+      ],
+      "existingApprovedRefs": [],
+      "missingRefs": [
+        "Isaiah 9:6"
+      ],
+      "supportScore": 65,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "approve_support_edge",
+      "priorityScore": 68.75,
+      "phase2iImpact": {
+        "scenario": "mix_14",
+        "classification": "missing_support_edge",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0046",
+      "topic": "sabbath",
+      "question": "Did early Christians keep gathering on the Sabbath for Scripture?",
+      "scripturesCited": [
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "scriptureOrder": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "candidateConclusion": "Apostolic Sabbath gathering pattern — candidate for card supportingScriptures review",
+      "crossReferences": [
+        {
+          "ref": "Acts 13:42-44",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": false,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        },
+        {
+          "ref": "Acts 17:2",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "acts17_sabbath_teaching"
+          ],
+          "onContinuityChain": true,
+          "onCatalogChain": true
+        }
+      ],
+      "existingApprovedRefs": [
+        "Acts 17:2"
+      ],
+      "missingRefs": [
+        "Acts 13:42-44"
+      ],
+      "supportScore": 50,
+      "confidence": 0.55,
+      "riskLevel": "medium",
+      "recommendedAction": "approve_card_ref",
+      "priorityScore": 65.5,
+      "phase2iImpact": {
+        "scenario": "admin_note",
+        "classification": "card_ref_review",
+        "degradationImpact": "medium"
+      }
+    },
+    {
+      "candidateId": "sdp_0008",
+      "topic": "messiah_logos",
+      "question": "What does Logos mean in John 1:1?",
+      "scripturesCited": [
+        "Hebrews 1:1-3"
+      ],
+      "scriptureOrder": [
+        "Hebrews 1:1-3"
+      ],
+      "candidateConclusion": "Describes the Son as the brightness of God's glory and upholder of all things by His word.",
+      "crossReferences": [
+        {
+          "ref": "Hebrews 1:1-3",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": false,
+          "onCatalogChain": true
+        }
+      ],
+      "existingApprovedRefs": [],
+      "missingRefs": [
+        "Hebrews 1:1-3"
+      ],
+      "supportScore": 50,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "approve_support_edge",
+      "priorityScore": 63.5,
+      "phase2iImpact": {
+        "scenario": "doc_01",
+        "classification": "missing_support_edge",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0038",
+      "topic": "doctrine",
+      "question": "How does John 13:33 fit with all this?",
+      "scripturesCited": [
+        "John 13:33"
+      ],
+      "scriptureOrder": [
+        "John 13:33"
+      ],
+      "candidateConclusion": "Shows present separation of believers from Christ's full presence until future coming.",
+      "crossReferences": [
+        {
+          "ref": "John 13:33",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "john13_33_cannot_come",
+            "john13_33_not_permanent_heaven"
+          ],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        }
+      ],
+      "existingApprovedRefs": [
+        "John 13:33"
+      ],
+      "missingRefs": [],
+      "supportScore": 35,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "hold_for_more_review",
+      "priorityScore": 62.25,
+      "phase2iImpact": {
+        "scenario": "chain_kingdom_5",
+        "classification": "missing_retrieval",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0039",
+      "topic": "doctrine",
+      "question": "How does John 13:33 fit with all this?",
+      "scripturesCited": [
+        "Matthew 6:10"
+      ],
+      "scriptureOrder": [
+        "Matthew 6:10"
+      ],
+      "candidateConclusion": "Indicates the kingdom's full establishment is a future reality on earth.",
+      "crossReferences": [
+        {
+          "ref": "Matthew 6:10",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "matt6_10_kingdom_on_earth",
+            "matt6_10_not_kingdom_in_heaven"
+          ],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        }
+      ],
+      "existingApprovedRefs": [
+        "Matthew 6:10"
+      ],
+      "missingRefs": [],
+      "supportScore": 35,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "hold_for_more_review",
+      "priorityScore": 62.25,
+      "phase2iImpact": {
+        "scenario": "chain_kingdom_5",
+        "classification": "missing_retrieval",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0040",
+      "topic": "doctrine",
+      "question": "How does John 13:33 fit with all this?",
+      "scripturesCited": [
+        "Revelation 21:1-3"
+      ],
+      "scriptureOrder": [
+        "Revelation 21:1-3"
+      ],
+      "candidateConclusion": "Describes New Jerusalem coming down to earth where God dwells with His people.",
+      "crossReferences": [
+        {
+          "ref": "Revelation 21:1-3",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "rev21_comes_down"
+          ],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        }
+      ],
+      "existingApprovedRefs": [
+        "Revelation 21:1-3"
+      ],
+      "missingRefs": [],
+      "supportScore": 35,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "hold_for_more_review",
+      "priorityScore": 62.25,
+      "phase2iImpact": {
+        "scenario": "chain_kingdom_5",
+        "classification": "missing_retrieval",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0041",
+      "topic": "doctrine",
+      "question": "How does John 13:33 fit with all this?",
+      "scripturesCited": [
+        "John 13:33"
+      ],
+      "scriptureOrder": [
+        "John 13:33"
+      ],
+      "candidateConclusion": "John 13:33 fits with the understanding that believers do not yet share in the full glory of Christ's kingdom.",
+      "crossReferences": [
+        {
+          "ref": "John 13:33",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "john13_33_cannot_come",
+            "john13_33_not_permanent_heaven"
+          ],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        }
+      ],
+      "existingApprovedRefs": [
+        "John 13:33"
+      ],
+      "missingRefs": [],
+      "supportScore": 35,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "hold_for_more_review",
+      "priorityScore": 62.25,
+      "phase2iImpact": {
+        "scenario": "chain_kingdom_5",
+        "classification": "missing_retrieval",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0024",
+      "topic": "messiah_logos",
+      "question": "Please help me understand Logos. I am confused and sad.",
+      "scripturesCited": [
+        "Isaiah 9:6",
+        "Micah 5:2"
+      ],
+      "scriptureOrder": [
+        "Isaiah 9:6",
+        "Micah 5:2"
+      ],
+      "candidateConclusion": "This connects back to the Old Testament promises about the Messiah, such as in Isaiah 9:6 and Micah 5:2.",
+      "crossReferences": [
+        {
+          "ref": "Isaiah 9:6",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": true,
+          "onCatalogChain": true
+        },
+        {
+          "ref": "Micah 5:2",
+          "onFrozenCard": true,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": false,
+          "onCatalogChain": true
+        }
+      ],
+      "existingApprovedRefs": [],
+      "missingRefs": [
+        "Isaiah 9:6",
+        "Micah 5:2"
+      ],
+      "supportScore": 57.5,
+      "confidence": 0.4,
+      "riskLevel": "high",
+      "recommendedAction": "approve_support_edge",
+      "priorityScore": 59.125,
+      "phase2iImpact": {
+        "scenario": "mix_14",
+        "classification": "missing_support_edge",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0033",
+      "topic": "mixed",
+      "question": "Where is he now according to Scripture?",
+      "scripturesCited": [
+        "Ecclesiastes 9:5"
+      ],
+      "scriptureOrder": [
+        "Ecclesiastes 9:5"
+      ],
+      "candidateConclusion": "This verse shows the dead know nothing, supporting the idea of death as sleep.",
+      "crossReferences": [
+        {
+          "ref": "Ecclesiastes 9:5",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "eccl9_dead_know_nothing"
+          ],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        }
+      ],
+      "existingApprovedRefs": [
+        "Ecclesiastes 9:5"
+      ],
+      "missingRefs": [],
+      "supportScore": 35,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "hold_for_more_review",
+      "priorityScore": 56.25,
+      "phase2iImpact": {
+        "scenario": "chain_death_5",
+        "classification": "missing_retrieval",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0034",
+      "topic": "mixed",
+      "question": "Where is he now according to Scripture?",
+      "scripturesCited": [
+        "John 11:11-14"
+      ],
+      "scriptureOrder": [
+        "John 11:11-14"
+      ],
+      "candidateConclusion": "Jesus describes death metaphorically as sleep, indicating a state of unconsciousness until resurrection.",
+      "crossReferences": [
+        {
+          "ref": "John 11:11-14",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "john11_death_as_sleep"
+          ],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        }
+      ],
+      "existingApprovedRefs": [
+        "John 11:11-14"
+      ],
+      "missingRefs": [],
+      "supportScore": 35,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "hold_for_more_review",
+      "priorityScore": 56.25,
+      "phase2iImpact": {
+        "scenario": "chain_death_5",
+        "classification": "missing_retrieval",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0035",
+      "topic": "mixed",
+      "question": "Where is he now according to Scripture?",
+      "scripturesCited": [
+        "1 Thessalonians 4:13"
+      ],
+      "scriptureOrder": [
+        "1 Thessalonians 4:13"
+      ],
+      "candidateConclusion": "Paul encourages believers not to grieve without hope, because God will bring those who have fallen asleep with Jesus.",
+      "crossReferences": [
+        {
+          "ref": "1 Thessalonians 4:13",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": true,
+          "supportGraphEdgeIds": [
+            "1thess4_sleep_until_resurrection"
+          ],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        }
+      ],
+      "existingApprovedRefs": [
+        "1 Thessalonians 4:13"
+      ],
+      "missingRefs": [],
+      "supportScore": 35,
+      "confidence": 0.4,
+      "riskLevel": "medium",
+      "recommendedAction": "hold_for_more_review",
+      "priorityScore": 56.25,
+      "phase2iImpact": {
+        "scenario": "chain_death_5",
+        "classification": "missing_retrieval",
+        "degradationImpact": "high"
+      }
+    },
+    {
+      "candidateId": "sdp_0007",
+      "topic": "sabbath",
+      "question": "Continuity expansion: sabbath — commandment_keeping_saints",
+      "scripturesCited": [
+        "Revelation 14:12"
+      ],
+      "scriptureOrder": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9",
+        "Revelation 14:12"
+      ],
+      "candidateConclusion": "Continuity node Revelation: commandment_keeping_saints (Revelation 14:12)",
+      "crossReferences": [
+        {
+          "ref": "Revelation 14:12",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": true,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": true,
+          "onCatalogChain": false
+        }
+      ],
+      "existingApprovedRefs": [],
+      "missingRefs": [
+        "Revelation 14:12"
+      ],
+      "supportScore": 15,
+      "confidence": 0.8,
+      "riskLevel": "high",
+      "recommendedAction": "future_research",
+      "priorityScore": 16.25,
+      "phase2iImpact": {
+        "scenario": "continuity_expansion",
+        "classification": "new_relationship",
+        "degradationImpact": "low"
+      }
+    },
+    {
+      "candidateId": "sdp_0006",
+      "topic": "kingdom",
+      "question": "Why would God allow suffering?",
+      "scripturesCited": [
+        "Job 1:21-22",
+        "Romans 5:3-5",
+        "Revelation 21:4"
+      ],
+      "scriptureOrder": [
+        "Job 1:21-22",
+        "Romans 5:3-5",
+        "Revelation 21:4"
+      ],
+      "candidateConclusion": "Suffering and future hope chain (off-card refs — review only)",
+      "crossReferences": [
+        {
+          "ref": "Job 1:21-22",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": false,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        },
+        {
+          "ref": "Romans 5:3-5",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": false,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": false,
+          "onCatalogChain": false
+        },
+        {
+          "ref": "Revelation 21:4",
+          "onFrozenCard": false,
+          "onAnyFrozenCard": false,
+          "onSupportGraph": false,
+          "supportGraphEdgeIds": [],
+          "onContinuityChain": false,
+          "onCatalogChain": true
+        }
+      ],
+      "existingApprovedRefs": [],
+      "missingRefs": [
+        "Job 1:21-22",
+        "Romans 5:3-5",
+        "Revelation 21:4"
+      ],
+      "supportScore": 3.3,
+      "confidence": 0.35,
+      "riskLevel": "high",
+      "recommendedAction": "future_research",
+      "priorityScore": 13.155000000000001,
+      "phase2iImpact": {
+        "scenario": "stress_gap",
+        "classification": "mixed",
+        "degradationImpact": "medium"
+      }
+    }
+  ]
+}

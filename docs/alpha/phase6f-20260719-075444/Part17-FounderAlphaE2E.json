@@ -1,0 +1,404 @@
+{
+  "runId": "founder-e2e-1784555699671",
+  "generatedAt": "2026-07-20T13:55:13.487Z",
+  "totalCases": 35,
+  "totalPass": 34,
+  "totalFail": 1,
+  "byCategory": {
+    "SCRIPTURE": {
+      "pass": 8,
+      "fail": 1,
+      "avgLatencyMs": 350,
+      "maxLatencyMs": 397
+    },
+    "ORIGINAL_LANGUAGE": {
+      "pass": 4,
+      "fail": 0,
+      "avgLatencyMs": 347,
+      "maxLatencyMs": 394
+    },
+    "HISTORY": {
+      "pass": 2,
+      "fail": 0,
+      "avgLatencyMs": 323,
+      "maxLatencyMs": 325
+    },
+    "COMPANION": {
+      "pass": 6,
+      "fail": 0,
+      "avgLatencyMs": 319,
+      "maxLatencyMs": 368
+    },
+    "UPLOAD_ALIGNMENT": {
+      "pass": 5,
+      "fail": 0,
+      "avgLatencyMs": 52,
+      "maxLatencyMs": 261
+    },
+    "ADMIN": {
+      "pass": 6,
+      "fail": 0,
+      "avgLatencyMs": 1035,
+      "maxLatencyMs": 6113
+    },
+    "FAILURE": {
+      "pass": 3,
+      "fail": 0,
+      "avgLatencyMs": 0,
+      "maxLatencyMs": 0
+    }
+  },
+  "results": [
+    {
+      "category": "SCRIPTURE",
+      "id": "explicit_read",
+      "pass": true,
+      "latencyMs": 385,
+      "detail": {
+        "replyPreview": "Scripture speaks directly to this. John 3:16 — \"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not peris"
+      }
+    },
+    {
+      "category": "SCRIPTURE",
+      "id": "chapter",
+      "pass": true,
+      "latencyMs": 328,
+      "detail": {
+        "replyPreview": "Scripture speaks directly to this. Psalms 23 — \"A Psalm of David. The LORD is my shepherd; I shall not want. He maketh me to lie down in green pastures: he lead"
+      }
+    },
+    {
+      "category": "SCRIPTURE",
+      "id": "range",
+      "pass": true,
+      "latencyMs": 324,
+      "detail": {
+        "replyPreview": "Scripture speaks directly to this. Exodus 20:1-17 — \"And God spake all these words, saying, I am the LORD thy God, which have brought thee out of the land of Eg"
+      }
+    },
+    {
+      "category": "SCRIPTURE",
+      "id": "doctrine",
+      "pass": true,
+      "latencyMs": 397,
+      "detail": {
+        "replyPreview": "From the approved Scripture witnesses (1 Corinthians 15; 1 Thessalonians 4:13-16; Daniel 12:2; John 11:25), Resurrection is the hope Scripture gives; death is d"
+      }
+    },
+    {
+      "category": "SCRIPTURE",
+      "id": "contradiction",
+      "pass": false,
+      "latencyMs": 310,
+      "detail": {
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
+      }
+    },
+    {
+      "category": "SCRIPTURE",
+      "id": "multiple_witnesses",
+      "pass": true,
+      "latencyMs": 359,
+      "detail": {
+        "replyPreview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Scripture witnesses: Exodus 20, Deut"
+      }
+    },
+    {
+      "category": "SCRIPTURE",
+      "id": "cross_reference",
+      "pass": true,
+      "latencyMs": 394,
+      "detail": {
+        "replyPreview": "From the approved Scripture witnesses (1 Corinthians 15; 1 Thessalonians 4:13-16; Daniel 12:2; John 11:25), Resurrection is the hope Scripture gives; death is d"
+      }
+    },
+    {
+      "category": "SCRIPTURE",
+      "id": "text_only_book_relationship",
+      "pass": true,
+      "latencyMs": 328,
+      "detail": {
+        "replyPreview": "Scripture speaks directly to this. Ruth 4:17 — \"And the women her neighbours gave it a name, saying, There is a son born to Naomi; and they called his name Obed"
+      }
+    },
+    {
+      "category": "SCRIPTURE",
+      "id": "newly_completed_book",
+      "pass": true,
+      "latencyMs": 327,
+      "detail": {
+        "replyPreview": "Scripture answers this when the passages below are taken together. Numbers 21:9 — \"And Moses made a serpent of brass, and put it upon a pole, and it came to pas"
+      }
+    },
+    {
+      "category": "ORIGINAL_LANGUAGE",
+      "id": "hebrew",
+      "pass": true,
+      "latencyMs": 350,
+      "detail": {
+        "replyPreview": "KJV: In the beginning God created the heaven and the earth. Original language (HEBREW): בְּ/רֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַ/שָּׁמַ֖יִם וְ/אֵ֥ת הָ/אָֽרֶץ Tra"
+      }
+    },
+    {
+      "category": "ORIGINAL_LANGUAGE",
+      "id": "greek",
+      "pass": true,
+      "latencyMs": 394,
+      "detail": {
+        "replyPreview": "KJV: In the beginning was the Word, and the Word was with God, and the Word was God. Original language (GREEK): Ἐν ἀρχῇ ἦν ὁ Λόγος, καὶ ὁ Λόγος ἦν πρὸς τὸν Θεόν"
+      }
+    },
+    {
+      "category": "ORIGINAL_LANGUAGE",
+      "id": "kjv_comparison",
+      "pass": true,
+      "latencyMs": 310,
+      "detail": {
+        "replyPreview": "KJV: For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. Original lang"
+      }
+    },
+    {
+      "category": "ORIGINAL_LANGUAGE",
+      "id": "incomplete_data",
+      "pass": true,
+      "latencyMs": 335,
+      "detail": {
+        "replyPreview": "KJV: Then spake the Chaldeans to the king in Syriack, O king, live for ever: tell thy servants the dream, and we will shew the interpretation. Original language"
+      }
+    },
+    {
+      "category": "HISTORY",
+      "id": "approved_history",
+      "pass": true,
+      "latencyMs": 321,
+      "detail": {
+        "replyPreview": "2 Samuel 7:12-16 — \"And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bow"
+      }
+    },
+    {
+      "category": "HISTORY",
+      "id": "historical_citation",
+      "pass": true,
+      "latencyMs": 325,
+      "detail": {
+        "replyPreview": "Exodus 20 — \"And God spake all these words, saying, I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage. Thou s"
+      }
+    },
+    {
+      "category": "COMPANION",
+      "id": "hard_day",
+      "pass": true,
+      "latencyMs": 299,
+      "detail": {
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
+      }
+    },
+    {
+      "category": "COMPANION",
+      "id": "grief",
+      "pass": true,
+      "latencyMs": 329,
+      "detail": {
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
+      }
+    },
+    {
+      "category": "COMPANION",
+      "id": "family_conflict",
+      "pass": true,
+      "latencyMs": 316,
+      "detail": {
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
+      }
+    },
+    {
+      "category": "COMPANION",
+      "id": "prayer",
+      "pass": true,
+      "latencyMs": 368,
+      "detail": {
+        "replyPreview": "Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fear. In Jesus'"
+      }
+    },
+    {
+      "category": "COMPANION",
+      "id": "quiet_moment",
+      "pass": true,
+      "latencyMs": 287,
+      "detail": {
+        "replyPreview": "I want to stay with you on this. Could you ask your question again in one short sentence?"
+      }
+    },
+    {
+      "category": "COMPANION",
+      "id": "stop_release",
+      "pass": true,
+      "latencyMs": 313,
+      "detail": {
+        "replyPreview": "I hear you. I'll stop that topic. What do you want to talk about now?"
+      }
+    },
+    {
+      "category": "UPLOAD_ALIGNMENT",
+      "id": "valid_lesson",
+      "pass": true,
+      "latencyMs": 1,
+      "detail": {
+        "summary": {
+          "totalReferencesFound": 1,
+          "matchesKjv": 1,
+          "misquotes": 0,
+          "referenceOnlyNoQuote": 0,
+          "unresolvedReferences": 0
+        }
+      }
+    },
+    {
+      "category": "UPLOAD_ALIGNMENT",
+      "id": "invalid_quotation",
+      "pass": true,
+      "latencyMs": 0,
+      "detail": {
+        "summary": {
+          "totalReferencesFound": 1,
+          "matchesKjv": 0,
+          "misquotes": 1,
+          "referenceOnlyNoQuote": 0,
+          "unresolvedReferences": 0
+        }
+      }
+    },
+    {
+      "category": "UPLOAD_ALIGNMENT",
+      "id": "unsupported_claim_reference_only",
+      "pass": true,
+      "latencyMs": 0,
+      "detail": {
+        "summary": {
+          "totalReferencesFound": 1,
+          "matchesKjv": 0,
+          "misquotes": 0,
+          "referenceOnlyNoQuote": 1,
+          "unresolvedReferences": 0
+        }
+      }
+    },
+    {
+      "category": "UPLOAD_ALIGNMENT",
+      "id": "unresolvable_reference",
+      "pass": true,
+      "latencyMs": 261,
+      "detail": {
+        "summary": {
+          "totalReferencesFound": 1,
+          "matchesKjv": 0,
+          "misquotes": 0,
+          "referenceOnlyNoQuote": 0,
+          "unresolvedReferences": 1
+        }
+      }
+    },
+    {
+      "category": "UPLOAD_ALIGNMENT",
+      "id": "private_deletion_not_applicable",
+      "pass": true,
+      "latencyMs": 0,
+      "detail": {
+        "note": "Lesson analysis is never persisted to any store (Part 11 governance.promotedToProduction is always false); no deletion action is required or exposed."
+      }
+    },
+    {
+      "category": "ADMIN",
+      "id": "/admin/api/bible-authority/command-center",
+      "pass": true,
+      "latencyMs": 6113,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "category": "ADMIN",
+      "id": "/admin/api/bible-authority/review-queue",
+      "pass": true,
+      "latencyMs": 18,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "category": "ADMIN",
+      "id": "/admin/api/bible-authority/knowledge-coverage-dashboard",
+      "pass": true,
+      "latencyMs": 3,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "category": "ADMIN",
+      "id": "/admin/api/bible-authority/founder-console",
+      "pass": true,
+      "latencyMs": 73,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "category": "ADMIN",
+      "id": "/admin/api/bible-authority/provider-health",
+      "pass": true,
+      "latencyMs": 0,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "category": "ADMIN",
+      "id": "/admin/api/bible-authority/lesson-alignment/limits",
+      "pass": true,
+      "latencyMs": 1,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "category": "FAILURE",
+      "id": "empty_lesson_text_handled",
+      "pass": true,
+      "latencyMs": 0,
+      "detail": {
+        "ok": false,
+        "error": "empty_text",
+        "report": null
+      }
+    },
+    {
+      "category": "FAILURE",
+      "id": "oversized_lesson_text_handled",
+      "pass": true,
+      "latencyMs": 0,
+      "detail": {
+        "ok": false,
+        "error": "text_too_large",
+        "detail": "Pasted text is 25000 characters; the Alpha prototype limit is 20000 characters.",
+        "report": null
+      }
+    },
+    {
+      "category": "FAILURE",
+      "id": "bad_scripture_reference_handled_honestly",
+      "pass": true,
+      "latencyMs": 0,
+      "detail": [
+        {
+          "reference": "Obadiah 55:1",
+          "claimType": "REFERENCE_UNRESOLVED",
+          "quotedInLesson": null,
+          "actualKjvText": null,
+          "overlapRatio": null,
+          "note": "This module could not retrieve verified KJV text for \"Obadiah 55:1\" (HTTP 404). Not treated as verified — flagged for Admin, not silently accepted."
+        }
+      ]
+    }
+  ]
+}

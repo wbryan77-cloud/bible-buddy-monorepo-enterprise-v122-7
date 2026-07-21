@@ -1,0 +1,1361 @@
+{
+  "ranAt": "2026-06-08T00:39:53.309Z",
+  "topics": [
+    {
+      "id": "logos",
+      "message": "What does Logos mean in John 1:1?",
+      "openaiCalled": true,
+      "claimsExtracted": 7,
+      "claimsMapped": 7,
+      "extractorClaims": 7,
+      "inferredUsed": false,
+      "confidence": [
+        {
+          "claimId": "c_witness_1",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_5",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_6",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_7",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "doctrineConclusion": "Shows the Logos became flesh in Jesus Christ.",
+      "doctrineConclusionLen": 45,
+      "validator": {
+        "passed": false,
+        "classifications": [
+          {
+            "claimId": "c_witness_1",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_2",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_3",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_4",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_5",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_6",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_7",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          }
+        ]
+      },
+      "approval": {
+        "decision": "degraded",
+        "claimDegraded": true,
+        "admin_flags": [
+          "claim_validation_degraded"
+        ]
+      },
+      "claims": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "This verse explicitly identifies Logos as the Word, divine and eternal.",
+          "supportingScriptures": [
+            "John 1:1-14"
+          ],
+          "sourceSentence": "This verse explicitly identifies Logos as the Word, divine and eternal.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Shows the Logos became flesh in Jesus Christ.",
+          "supportingScriptures": [
+            "John 1:1"
+          ],
+          "sourceSentence": "Shows the Logos became flesh in Jesus Christ.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Highlights God's creative word, paralleling the Logos as agent of creation.",
+          "supportingScriptures": [
+            "Genesis 1:1"
+          ],
+          "sourceSentence": "Highlights God's creative word, paralleling the Logos as agent of creation.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "Prophecy of the Messiah, connected to the Word revealed in John.",
+          "supportingScriptures": [
+            "Isaiah 9:6"
+          ],
+          "sourceSentence": "Prophecy of the Messiah, connected to the Word revealed in John.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_5",
+          "claim": "Describes Christ's role in creation, affirming the Logos' divinity and creative power.",
+          "supportingScriptures": [
+            "Colossians 1:15-17"
+          ],
+          "sourceSentence": "Describes Christ's role in creation, affirming the Logos' divinity and creative power.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_6",
+          "claim": "In John 1:1, \"Logos\" means \"Word.\" The passage identifies the Logos as God and reveals that this Word was with God in the beginning and that all things were mad",
+          "supportingScriptures": [
+            "John 1:1-14"
+          ],
+          "sourceSentence": "In John 1:1, \"Logos\" means \"Word.\" The passage identifies the Logos as God and reveals that this Word was with God in th",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_7",
+          "claim": "This Word is further revealed as Jesus Christ, the Messiah, who became flesh (John 1:14).",
+          "supportingScriptures": [
+            "John 1:1"
+          ],
+          "sourceSentence": "This Word is further revealed as Jesus Christ, the Messiah, who became flesh (John 1:14).",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "replyPreview": "In John 1:1, \"Logos\" means \"Word.\" The passage identifies the Logos as God and reveals that this Word was with God in the beginning and that all things were made through Him. This Word is further reve"
+    },
+    {
+      "id": "third_heaven",
+      "message": "What is the third heaven?",
+      "openaiCalled": true,
+      "claimsExtracted": 7,
+      "claimsMapped": 7,
+      "extractorClaims": 7,
+      "inferredUsed": false,
+      "confidence": [
+        {
+          "claimId": "c_witness_1",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "confidence": "medium",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_5",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_6",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_7",
+          "confidence": "high",
+          "refs": 2,
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "doctrineConclusion": "The Bible teaches the hope of Christ’s kingdom on earth and the coming New Jerusalem (Matthew 6:10, Revelation 21:1-3).",
+      "doctrineConclusionLen": 119,
+      "validator": {
+        "passed": false,
+        "classifications": [
+          {
+            "claimId": "c_witness_1",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_2",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_3",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "unsupported_citation"
+            ]
+          },
+          {
+            "claimId": "c_witness_4",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_5",
+            "classification": "B",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_sent_6",
+            "classification": "D",
+            "decision": "Rejected",
+            "issues": [
+              "contradicted_third_heaven_destination"
+            ]
+          },
+          {
+            "claimId": "c_sent_7",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "unsupported_citation"
+            ]
+          }
+        ]
+      },
+      "approval": {
+        "decision": "degraded",
+        "claimDegraded": true,
+        "admin_flags": [
+          "claim_validation_degraded"
+        ]
+      },
+      "claims": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "Paul mentions the third heaven as his vision experience, revealing the concept of layered heavens.",
+          "supportingScriptures": [
+            "2 Corinthians 12:2-4"
+          ],
+          "sourceSentence": "Paul mentions the third heaven as his vision experience, revealing the concept of layered heavens.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Shows that no man ascended to heaven except the Son of Man, limiting claims about ascension.",
+          "supportingScriptures": [
+            "John 3:13"
+          ],
+          "sourceSentence": "Shows that no man ascended to heaven except the Son of Man, limiting claims about ascension.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Points to the kingdom of God coming on earth as the biblical hope.",
+          "supportingScriptures": [
+            "Matthew 6:10"
+          ],
+          "sourceSentence": "Points to the kingdom of God coming on earth as the biblical hope.",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "Describes the New Jerusalem coming down to earth, showing God dwelling with men.",
+          "supportingScriptures": [
+            "Revelation 21:1-3"
+          ],
+          "sourceSentence": "Describes the New Jerusalem coming down to earth, showing God dwelling with men.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_5",
+          "claim": "Paul refers to it in 2 Corinthians 12:2 as the place where he was caught up in a vision.",
+          "supportingScriptures": [
+            "2 Corinthians 12:2-4"
+          ],
+          "sourceSentence": "Paul refers to it in 2 Corinthians 12:2 as the place where he was caught up in a vision.",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_6",
+          "claim": "However, Scripture also makes clear that no man has ascended to heaven except Jesus Christ (John 3:13), and it does not explicitly state that believers go to th",
+          "supportingScriptures": [
+            "John 3:13"
+          ],
+          "sourceSentence": "However, Scripture also makes clear that no man has ascended to heaven except Jesus Christ (John 3:13), and it does not ",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_7",
+          "claim": "The Bible teaches the hope of Christ’s kingdom on earth and the coming New Jerusalem (Matthew 6:10, Revelation 21:1-3).",
+          "supportingScriptures": [
+            "Matthew 6:10",
+            "Revelation 21:1-3"
+          ],
+          "sourceSentence": "The Bible teaches the hope of Christ’s kingdom on earth and the coming New Jerusalem (Matthew 6:10, Revelation 21:1-3).",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "replyPreview": "The third heaven is mentioned in the Bible as a distinct level or realm of heaven beyond the sky and celestial heavens. Paul refers to it in 2 Corinthians 12:2 as the place where he was caught up in a"
+    },
+    {
+      "id": "acts_10",
+      "message": "Does Acts 10 make pork clean?",
+      "openaiCalled": true,
+      "claimsExtracted": 4,
+      "claimsMapped": 4,
+      "extractorClaims": 4,
+      "inferredUsed": false,
+      "confidence": [
+        {
+          "claimId": "c_witness_1",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        }
+      ],
+      "doctrineConclusion": "Swine is explicitly listed as an unclean animal in the dietary laws.",
+      "doctrineConclusionLen": 68,
+      "validator": {
+        "passed": false,
+        "classifications": [
+          {
+            "claimId": "c_witness_1",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_2",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_3",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_4",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          }
+        ]
+      },
+      "approval": {
+        "decision": "degraded",
+        "claimDegraded": true,
+        "admin_flags": [
+          "claim_validation_degraded"
+        ]
+      },
+      "claims": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "Swine is explicitly listed as an unclean animal in the dietary laws.",
+          "supportingScriptures": [
+            "Leviticus 11"
+          ],
+          "sourceSentence": "Swine is explicitly listed as an unclean animal in the dietary laws.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Peter’s vision includes unclean animals but is symbolic about people, not food.",
+          "supportingScriptures": [
+            "Acts 10:14"
+          ],
+          "sourceSentence": "Peter’s vision includes unclean animals but is symbolic about people, not food.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Peter states God showed him not to call any man common or unclean, referring to people.",
+          "supportingScriptures": [
+            "Acts 10:28"
+          ],
+          "sourceSentence": "Peter states God showed him not to call any man common or unclean, referring to people.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "Peter explains the vision’s meaning concerning Gentiles, clarifying it was not about food.",
+          "supportingScriptures": [
+            "Acts 11:1-18"
+          ],
+          "sourceSentence": "Peter explains the vision’s meaning concerning Gentiles, clarifying it was not about food.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        }
+      ],
+      "replyPreview": "No, Acts 10 does not make pork clean. The passage in Acts 10 describes a vision Peter had, which was about not calling any man common or unclean, specifically in the context of Gentile people, not abo"
+    },
+    {
+      "id": "pork",
+      "message": "Can I eat pork?",
+      "openaiCalled": true,
+      "claimsExtracted": 4,
+      "claimsMapped": 4,
+      "extractorClaims": 4,
+      "inferredUsed": false,
+      "confidence": [
+        {
+          "claimId": "c_witness_1",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_4",
+          "confidence": "high",
+          "refs": 2,
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "doctrineConclusion": "Leviticus 11:7 and Deuteronomy 14:8 explicitly classify the pig as unclean.",
+      "doctrineConclusionLen": 75,
+      "validator": {
+        "passed": false,
+        "classifications": [
+          {
+            "claimId": "c_witness_1",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_2",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_3",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_4",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          }
+        ]
+      },
+      "approval": {
+        "decision": "degraded",
+        "claimDegraded": true,
+        "admin_flags": [
+          "claim_validation_degraded"
+        ]
+      },
+      "claims": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "This passage lists the swine as unclean, forbidding its consumption.",
+          "supportingScriptures": [
+            "Leviticus 11"
+          ],
+          "sourceSentence": "This passage lists the swine as unclean, forbidding its consumption.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Reaffirms the unclean status of swine, instructing Israel not to eat it.",
+          "supportingScriptures": [
+            "Deuteronomy 14"
+          ],
+          "sourceSentence": "Reaffirms the unclean status of swine, instructing Israel not to eat it.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Peter explains that the vision was about not calling any man common or unclean, clarifying it does not grant permission to eat unclean animals.",
+          "supportingScriptures": [
+            "Acts 10:28"
+          ],
+          "sourceSentence": "Peter explains that the vision was about not calling any man common or unclean, clarifying it does not grant permission ",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_4",
+          "claim": "Leviticus 11:7 and Deuteronomy 14:8 explicitly classify the pig as unclean.",
+          "supportingScriptures": [
+            "Leviticus 11",
+            "Deuteronomy 14"
+          ],
+          "sourceSentence": "Leviticus 11:7 and Deuteronomy 14:8 explicitly classify the pig as unclean.",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "replyPreview": "No, according to Scripture, you should not eat pork because swine is listed as unclean. Leviticus 11:7 and Deuteronomy 14:8 explicitly classify the pig as unclean. While Acts 10 shows Peter’s vision a"
+    },
+    {
+      "id": "sabbath",
+      "message": "How do we keep the Sabbath holy?",
+      "openaiCalled": true,
+      "claimsExtracted": 13,
+      "claimsMapped": 13,
+      "extractorClaims": 13,
+      "inferredUsed": false,
+      "confidence": [
+        {
+          "claimId": "c_witness_1",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_5",
+          "confidence": "medium",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_6",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_7",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_8",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_9",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_10",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_11",
+          "confidence": "high",
+          "refs": 3,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_12",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_13",
+          "confidence": "medium",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "doctrineConclusion": "Jesus showed His practice of attending synagogue on the Sabbath to worship (Luke 4:16), and the early Christians also gathered on the Sabbath to hear Scripture (Acts 13:42-44; Acts 17:2).",
+      "doctrineConclusionLen": 187,
+      "validator": {
+        "passed": false,
+        "classifications": [
+          {
+            "claimId": "c_witness_1",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_2",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_3",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_4",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_5",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "unsupported_citation"
+            ]
+          },
+          {
+            "claimId": "c_witness_6",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_7",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_8",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_9",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_10",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_11",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "unsupported_citation"
+            ]
+          },
+          {
+            "claimId": "c_sent_12",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_13",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "unsupported_citation"
+            ]
+          }
+        ]
+      },
+      "approval": {
+        "decision": "degraded",
+        "claimDegraded": true,
+        "admin_flags": [
+          "claim_validation_degraded"
+        ]
+      },
+      "claims": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "Shows God sanctified the seventh day by resting, setting the pattern for Sabbath rest.",
+          "supportingScriptures": [
+            "Genesis 2:2-3"
+          ],
+          "sourceSentence": "Shows God sanctified the seventh day by resting, setting the pattern for Sabbath rest.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "The commandment directly instructs resting from labor and keeping the day holy.",
+          "supportingScriptures": [
+            "Exodus 20:8-11"
+          ],
+          "sourceSentence": "The commandment directly instructs resting from labor and keeping the day holy.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Encourages delighting in the Sabbath as a holy day, honoring God.",
+          "supportingScriptures": [
+            "Isaiah 58:13-14"
+          ],
+          "sourceSentence": "Encourages delighting in the Sabbath as a holy day, honoring God.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "Jesus' example of attending synagogue on the Sabbath for worship.",
+          "supportingScriptures": [
+            "Luke 4:16"
+          ],
+          "sourceSentence": "Jesus' example of attending synagogue on the Sabbath for worship.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_5",
+          "claim": "Early Christians gathered on the Sabbath to hear the Word.",
+          "supportingScriptures": [
+            "Acts 13:42-44"
+          ],
+          "sourceSentence": "Early Christians gathered on the Sabbath to hear the Word.",
+          "confidence": "medium",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_6",
+          "claim": "Paul reasoned in the synagogue on the Sabbath, showing its continued observance.",
+          "supportingScriptures": [
+            "Acts 17:2"
+          ],
+          "sourceSentence": "Paul reasoned in the synagogue on the Sabbath, showing its continued observance.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_7",
+          "claim": "Connects the Sabbath rest to God's promise of spiritual rest.",
+          "supportingScriptures": [
+            "Hebrews 4:9"
+          ],
+          "sourceSentence": "Connects the Sabbath rest to God's promise of spiritual rest.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_8",
+          "claim": "To keep the Sabbath holy, Scripture teaches us to cease from our ordinary work and rest, as God did after creation (Genesis 2:2-3).",
+          "supportingScriptures": [
+            "Genesis 2:2-3"
+          ],
+          "sourceSentence": "To keep the Sabbath holy, Scripture teaches us to cease from our ordinary work and rest, as God did after creation (Gene",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_9",
+          "claim": "We should remember the Sabbath day to keep it holy by resting and worshiping the Lord (Exodus 20:8-11).",
+          "supportingScriptures": [
+            "Exodus 20:8-11"
+          ],
+          "sourceSentence": "We should remember the Sabbath day to keep it holy by resting and worshiping the Lord (Exodus 20:8-11).",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_10",
+          "claim": "Isaiah adds that delighting in the Sabbath and calling it a holy day honors God (Isaiah 58:13-14).",
+          "supportingScriptures": [
+            "Isaiah 58:13-14"
+          ],
+          "sourceSentence": "Isaiah adds that delighting in the Sabbath and calling it a holy day honors God (Isaiah 58:13-14).",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_11",
+          "claim": "Jesus showed His practice of attending synagogue on the Sabbath to worship (Luke 4:16), and the early Christians also gathered on the Sabbath to hear Scripture ",
+          "supportingScriptures": [
+            "Luke 4:16",
+            "Acts 13:42-44",
+            "Acts 17:2"
+          ],
+          "sourceSentence": "Jesus showed His practice of attending synagogue on the Sabbath to worship (Luke 4:16), and the early Christians also ga",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_12",
+          "claim": "Hebrews speaks of a spiritual rest remaining for God's people, connecting the Sabbath to God's promise of rest (Hebrews 4:9).",
+          "supportingScriptures": [
+            "Hebrews 4:9"
+          ],
+          "sourceSentence": "Hebrews speaks of a spiritual rest remaining for God's people, connecting the Sabbath to God's promise of rest (Hebrews ",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_13",
+          "claim": "While resting, doing acts of mercy and good are allowed, as Jesus explained (not in your cited verses but consistent with Matthew 12:11-12).",
+          "supportingScriptures": [
+            "Matthew 12:11-12"
+          ],
+          "sourceSentence": "While resting, doing acts of mercy and good are allowed, as Jesus explained (not in your cited verses but consistent wit",
+          "confidence": "medium",
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "replyPreview": "To keep the Sabbath holy, Scripture teaches us to cease from our ordinary work and rest, as God did after creation (Genesis 2:2-3). We should remember the Sabbath day to keep it holy by resting and wo"
+    },
+    {
+      "id": "death_state",
+      "message": "What happens when we die?",
+      "openaiCalled": true,
+      "claimsExtracted": 6,
+      "claimsMapped": 6,
+      "extractorClaims": 6,
+      "inferredUsed": false,
+      "confidence": [
+        {
+          "claimId": "c_witness_1",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_5",
+          "confidence": "high",
+          "refs": 2,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_6",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "doctrineConclusion": "This is shown in passages like Ecclesiastes 9:5, which says the dead know nothing, and 1 Thessalonians 4:13-16, which speaks of the resurrection hope.",
+      "doctrineConclusionLen": 150,
+      "validator": {
+        "passed": true,
+        "classifications": [
+          {
+            "claimId": "c_witness_1",
+            "classification": "B",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_2",
+            "classification": "B",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_3",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_4",
+            "classification": "B",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_sent_5",
+            "classification": "B",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_sent_6",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          }
+        ]
+      },
+      "approval": {
+        "decision": "approved",
+        "claimDegraded": false,
+        "admin_flags": []
+      },
+      "claims": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "This verse clearly shows that the dead do not have conscious awareness.",
+          "supportingScriptures": [
+            "Ecclesiastes 9:5"
+          ],
+          "sourceSentence": "This verse clearly shows that the dead do not have conscious awareness.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "It shows death involves returning to dust and ceasing of thoughts.",
+          "supportingScriptures": [
+            "Psalm 146:4"
+          ],
+          "sourceSentence": "It shows death involves returning to dust and ceasing of thoughts.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Jesus uses 'sleep' as a metaphor for death, implying unconsciousness.",
+          "supportingScriptures": [
+            "John 11:11-14"
+          ],
+          "sourceSentence": "Jesus uses 'sleep' as a metaphor for death, implying unconsciousness.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "Paul comforts believers about those who have died, explaining they will rise again at Christ’s coming.",
+          "supportingScriptures": [
+            "1 Thessalonians 4:13-16"
+          ],
+          "sourceSentence": "Paul comforts believers about those who have died, explaining they will rise again at Christ’s coming.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_5",
+          "claim": "This is shown in passages like Ecclesiastes 9:5, which says the dead know nothing, and 1 Thessalonians 4:13-16, which speaks of the resurrection hope.",
+          "supportingScriptures": [
+            "Ecclesiastes 9:5",
+            "1 Thessalonians 4:13-16"
+          ],
+          "sourceSentence": "This is shown in passages like Ecclesiastes 9:5, which says the dead know nothing, and 1 Thessalonians 4:13-16, which sp",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_6",
+          "claim": "Jesus Himself referred to death as sleep in John 11:11-14.",
+          "supportingScriptures": [
+            "John 11:11-14"
+          ],
+          "sourceSentence": "Jesus Himself referred to death as sleep in John 11:11-14.",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "replyPreview": "When we die, the Bible teaches that our body returns to dust and our breath returns to God, and the dead are described as being in a state like sleep, not conscious. They \"know nothing\" until the resu"
+    },
+    {
+      "id": "kingdom",
+      "message": "What is the kingdom of God?",
+      "openaiCalled": true,
+      "claimsExtracted": 8,
+      "claimsMapped": 8,
+      "extractorClaims": 8,
+      "inferredUsed": false,
+      "confidence": [
+        {
+          "claimId": "c_witness_1",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_5",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_6",
+          "confidence": "high",
+          "refs": 1,
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_7",
+          "confidence": "medium",
+          "refs": 1,
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_8",
+          "confidence": "high",
+          "refs": 3,
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "doctrineConclusion": "After Jesus ascended, angels promised He will return (Acts 1:9-11), and Revelation depicts the saints reigning with Christ on earth (Revelation 5:10) and the holy city, the New Jerusalem, coming down to dwell with men (Revelation 21:1-3).",
+      "doctrineConclusionLen": 238,
+      "validator": {
+        "passed": false,
+        "classifications": [
+          {
+            "claimId": "c_witness_1",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_2",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_witness_3",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_4",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_5",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          },
+          {
+            "claimId": "c_witness_6",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "citation_without_verified_support"
+            ]
+          },
+          {
+            "claimId": "c_sent_7",
+            "classification": "C",
+            "decision": "Rejected",
+            "issues": [
+              "unsupported_citation"
+            ]
+          },
+          {
+            "claimId": "c_sent_8",
+            "classification": "A",
+            "decision": "Approved",
+            "issues": []
+          }
+        ]
+      },
+      "approval": {
+        "decision": "degraded",
+        "claimDegraded": true,
+        "admin_flags": [
+          "claim_validation_degraded"
+        ]
+      },
+      "claims": [
+        {
+          "claimId": "c_witness_1",
+          "claim": "This prayer shows the kingdom of God is a future reality to come on earth.",
+          "supportingScriptures": [
+            "Matthew 6:9-10"
+          ],
+          "sourceSentence": "This prayer shows the kingdom of God is a future reality to come on earth.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_2",
+          "claim": "Jesus' ascension and promise to return relate to the coming kingdom.",
+          "supportingScriptures": [
+            "Acts 1:9-11"
+          ],
+          "sourceSentence": "Jesus' ascension and promise to return relate to the coming kingdom.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_3",
+          "claim": "Saints are described as reigning on the earth with Christ.",
+          "supportingScriptures": [
+            "Revelation 5:10"
+          ],
+          "sourceSentence": "Saints are described as reigning on the earth with Christ.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_4",
+          "claim": "The New Jerusalem comes down to earth, symbolizing God's dwelling with men.",
+          "supportingScriptures": [
+            "Revelation 21:1-3"
+          ],
+          "sourceSentence": "The New Jerusalem comes down to earth, symbolizing God's dwelling with men.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_5",
+          "claim": "Christ states His followers cannot come where He goes yet, showing present separation before kingdom fulfillment.",
+          "supportingScriptures": [
+            "John 13:33"
+          ],
+          "sourceSentence": "Christ states His followers cannot come where He goes yet, showing present separation before kingdom fulfillment.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_witness_6",
+          "claim": "Jesus promises to come again to receive His followers, pointing to a future kingdom event.",
+          "supportingScriptures": [
+            "John 14:3"
+          ],
+          "sourceSentence": "Jesus promises to come again to receive His followers, pointing to a future kingdom event.",
+          "confidence": "high",
+          "derivedFrom": "scripture_witness"
+        },
+        {
+          "claimId": "c_sent_7",
+          "claim": "Jesus taught us to pray, \"Thy kingdom come, Thy will be done in earth, as it is in heaven\" (Matthew 6:10), pointing to a future fulfillment where God's rule is ",
+          "supportingScriptures": [
+            "Matthew 6:10"
+          ],
+          "sourceSentence": "Jesus taught us to pray, \"Thy kingdom come, Thy will be done in earth, as it is in heaven\" (Matthew 6:10), pointing to a",
+          "confidence": "medium",
+          "derivedFrom": "sentence_ref"
+        },
+        {
+          "claimId": "c_sent_8",
+          "claim": "After Jesus ascended, angels promised He will return (Acts 1:9-11), and Revelation depicts the saints reigning with Christ on earth (Revelation 5:10) and the ho",
+          "supportingScriptures": [
+            "Acts 1:9-11",
+            "Revelation 5:10",
+            "Revelation 21:1-3"
+          ],
+          "sourceSentence": "After Jesus ascended, angels promised He will return (Acts 1:9-11), and Revelation depicts the saints reigning with Chri",
+          "confidence": "high",
+          "derivedFrom": "sentence_ref"
+        }
+      ],
+      "replyPreview": "The kingdom of God, according to Scripture, is God's sovereign reign that is ultimately established on the earth. Jesus taught us to pray, \"Thy kingdom come, Thy will be done in earth, as it is in hea"
+    }
+  ],
+  "aggregate": {
+    "total": 7,
+    "openaiSuccess": 7,
+    "totalClaims": 49,
+    "totalMapped": 49,
+    "inferredCount": 0,
+    "extractorClaimCount": 49,
+    "doctrineConclusionPopulated": 7,
+    "validatorPassed": 1,
+    "approvalApproved": 1,
+    "approvalDegraded": 6,
+    "mappedRate": 100
+  }
+}

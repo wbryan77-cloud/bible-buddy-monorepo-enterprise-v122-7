@@ -11,8 +11,11 @@ function getEffectiveRuntimeConfig() {
     process.env.BUDDY_TEMPLATE_PROSE !== '1' || process.env.BUDDY_DISABLE_STUDY_FALLBACK === '1';
 
   let pathLabel = 'openAiFirstCompanionRuntime';
-  if (buddyRuntime === 'reason_first') pathLabel = 'reasonFirstBuddyRuntime';
-  else if (!openAiFirstEnabled) pathLabel = 'masterBuddyRuntime';
+  if (buddyRuntime === 'reason_first') {
+    pathLabel = 'openAiFirstCompanionRuntime'; // hard cutover — reason_first disabled in buddyBrain.runBuddy
+  } else if (!openAiFirstEnabled) {
+    pathLabel = 'openAiFirstCompanionRuntime'; // hard cutover — BUDDY_OPENAI_FIRST=0 ignored in buddyBrain.runBuddy
+  }
 
   return {
     nodeEnv: process.env.NODE_ENV || 'development',

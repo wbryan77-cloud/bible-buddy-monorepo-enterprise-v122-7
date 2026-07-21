@@ -1,0 +1,27 @@
+ .gitignore                                         |   6 +
+ Phase4NResponseClarityRegressionReport.md          |  16 +-
+ Phase4OBibleWideReasoningRegressionReport.md       |  18 +-
+ ...ABibleCompanionOrchestrationRegressionReport.md |  16 +-
+ Phase5LLiveThreadRegressionReport.md               |  46 ++--
+ Phase5LNoRegressionGateReport.md                   |   4 +-
+ admin/bible-authority.html                         |   6 +
+ admin/js/bible-authority.js                        |  57 ++++
+ .../live-runtime-verification.json                 | 106 +++----
+ docs/regression-trace/openai-first-results.json    |  88 +++---
+ .../phase4n-response-clarity-results.json          |  30 +-
+ .../phase4o-bible-wide-results.json                |  18 +-
+ .../phase5a-orchestration-results.json             |  16 +-
+ public/chat.html                                   |  13 +-
+ routes/bibleAuthorityAdmin.js                      | 303 +++++++++++++++++++++
+ routes/runtimeHealth.js                            |  13 +
+ scripts/openAiFirstRegressionTest.js               |  13 +-
+ services/bibleCompanionOrchestrator.js             | 158 ++++++++++-
+ services/bibleSemanticConceptNormalizer.js         |  15 +
+ services/bibleWideReasoningEngine.js               | 147 ++++++++--
+ services/companionDoctrineRouter.js                |  14 +-
+ services/openAiFirstCompanionRuntime.js            |   4 +-
+ services/pendingQuestionResolver.js                |   4 +-
+ services/reasonFirstComposer.js                    |  49 +++-
+ services/safeJsonlWriter.js                        |  24 ++
+ services/supportGraphCandidateQueue.js             | 128 ++++++++-
+ 26 files changed, 1086 insertions(+), 226 deletions(-)

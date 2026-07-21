@@ -144,6 +144,19 @@
       "lastReviewed": "2026-06-01",
       "approvedBy": "doctrine_audit",
       "bibleFirstConclusionLocked": true
+    },
+    {
+      "topicKey": "holiness",
+      "cardId": "holiness",
+      "title": "Holiness — Be Ye Holy As God Is Holy",
+      "status": "approved_frozen",
+      "lastReviewed": "2026-06-08",
+      "approvedBy": "phase2f_holy_card_review",
+      "bibleFirstConclusionLocked": true,
+      "sourceReferences": [
+        "runtimeScriptureHolinessContinuityEngine.holiness_foundation_continuity",
+        "runtimeScriptureHolinessContinuityEngine.covenant_holiness_continuity"
+      ]
     }
   ]
 }

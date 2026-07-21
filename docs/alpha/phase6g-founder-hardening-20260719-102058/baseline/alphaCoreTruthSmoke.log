@@ -1,0 +1,6 @@
+PASS {"id":"grief","humanNeed":"emotional_support","routeLane":"companion","routePlanHumanNeed":"emotional_support","answerLane":"companion","concept":null}
+PASS {"id":"health","humanNeed":"health_support","routeLane":"companion","routePlanHumanNeed":"health_support","answerLane":"companion","concept":null}
+PASS {"id":"listen","humanNeed":"emotional_support","routeLane":"companion","routePlanHumanNeed":"emotional_support","answerLane":"companion","concept":null}
+PASS {"id":"sabbath","humanNeed":"doctrine_answer","routeLane":"strict_doctrine","routePlanHumanNeed":"doctrine_answer","answerLane":"strict_doctrine","concept":"sabbath"}
+PASS {"id":"pork","humanNeed":"doctrine_answer","routeLane":"strict_doctrine","routePlanHumanNeed":"doctrine_answer","answerLane":"strict_doctrine","concept":"dietary_pork_unclean"}
+PASS {"id":"logos","humanNeed":"doctrine_answer","routeLane":"bible_wide","routePlanHumanNeed":"doctrine_answer","answerLane":"bible_wide","concept":null}

@@ -1,6 +1,6 @@
 # Phase 4M Companion Routing Regression Report
 
-**Date:** 2026-06-12T07:39:01.451Z
+**Date:** 2026-06-14T17:13:13.398Z
 **Result:** 15/15 passed
 **Metrics OK:** yes
 
@@ -37,19 +37,19 @@ None
 
 ### B5_pork (PASS)
 - Message: What about eating pork
-- Preview: Yes — staying with Scripture, pork and shellfish remain unclean. Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles
+- Preview: According to Scripture, pork and shellfish remain unclean. Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles, not 
 
 ### B6_fornication (PASS)
 - Message: Can we have sex without marriage?
-- Preview: Scripture honors marriage and warns against fornication — sexual union outside marriage. Paul urges believers to flee fornication in 1 Corinthians 6:18. What part of this would you
+- Preview: No. Staying with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonia
 
 ### B7_fornication_followup (PASS)
 - Message: I'm asking about fornication
-- Preview: Scripture honors marriage and warns against fornication — sexual union outside marriage. Paul urges believers to flee fornication in 1 Corinthians 6:18. What part of this would you
+- Preview: No. Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonians 4:3-5 commands believ
 
 ### B8_commandments (PASS)
 - Message: what are the 10 commandments
-- Preview: The ten commandments are recorded in Exodus 20 and Deuteronomy 5. Which commandment would you like to explore together?
+- Preview: The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Scripture witnesses: Exodus 20, Deuteronomy 5, Exodus 34
 
 ### B9_stop (PASS)
 - Message: stop
@@ -73,7 +73,7 @@ None
 
 ### C14_orphan_continuation (PASS)
 - Message: show me another verse
-- Preview: Which Bible topic would you like me to continue? I don't have one active right now — what do you want to explore?
+- Preview: I can do that. Which Bible topic would you like more Scriptures about — the Sabbath, the Kingdom, clean foods, death, or something else?
 
 ### D15_tired (PASS)
 - Message: I am tired and discouraged

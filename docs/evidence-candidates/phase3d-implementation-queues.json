@@ -1,0 +1,882 @@
+{
+  "ranAt": "2026-06-09T06:34:24.969Z",
+  "queues": {
+    "queue95": [
+      {
+        "candidateId": "3d_0006",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0007",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0019",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0060",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0069",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0080",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0083",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0086",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0091",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0094",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0099",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Phase 2J-A Class C extraction"
+      },
+      {
+        "candidateId": "3d_0101",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0103",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0105",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0112",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      }
+    ],
+    "queue90": [
+      {
+        "candidateId": "3d_0001",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0002",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0003",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0011",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Israel of God Lesson Archives"
+      },
+      {
+        "candidateId": "3d_0013",
+        "topic": "dietary_law",
+        "supportScore": 93,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Israel of God Lesson Archives"
+      },
+      {
+        "candidateId": "3d_0014",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0015",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0017",
+        "topic": "dietary_law",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Phase 2J-A Class C extraction"
+      },
+      {
+        "candidateId": "3d_0020",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0025",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0053",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0054",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0055",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0066",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0074",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0082",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0088",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0092",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0096",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0098",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0100",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0110",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0111",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0120",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      }
+    ],
+    "queue80": [
+      {
+        "candidateId": "3d_0012",
+        "topic": "death_state",
+        "supportScore": 81,
+        "strengthTier": "Good Support",
+        "camp": "Internal",
+        "sourceName": "Israel of God Lesson Archives"
+      },
+      {
+        "candidateId": "3d_0061",
+        "topic": "death_state",
+        "supportScore": 80,
+        "strengthTier": "Good Support",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0075",
+        "topic": "messiah_logos",
+        "supportScore": 85,
+        "strengthTier": "Good Support",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      }
+    ],
+    "queue70": [
+      {
+        "candidateId": "3d_0027",
+        "topic": "death_state",
+        "supportScore": 75,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0047",
+        "topic": "death_state",
+        "supportScore": 73,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0049",
+        "topic": "holiness",
+        "supportScore": 73,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0064",
+        "topic": "death_state",
+        "supportScore": 73,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0071",
+        "topic": "death_state",
+        "supportScore": 71,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0078",
+        "topic": "death_state",
+        "supportScore": 73,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0084",
+        "topic": "holiness",
+        "supportScore": 74,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Phase 2J-A Class C extraction"
+      },
+      {
+        "candidateId": "3d_0085",
+        "topic": "death_state",
+        "supportScore": 71,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0106",
+        "topic": "death_state",
+        "supportScore": 73,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0115",
+        "topic": "death_state",
+        "supportScore": 73,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3d_0117",
+        "topic": "death_state",
+        "supportScore": 73,
+        "strengthTier": "Review Needed",
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      }
+    ],
+    "queueBelow70": [
+      {
+        "candidateId": "3d_0004",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3d_0005",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3d_0008",
+        "topic": "john",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3d_0009",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3d_0010",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3d_0016",
+        "topic": "john",
+        "supportScore": 52
+      },
+      {
+        "candidateId": "3d_0018",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3d_0021",
+        "topic": "open_topic_what_the",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0022",
+        "topic": "open_topic_what_the",
+        "supportScore": 44
+      },
+      {
+        "candidateId": "3d_0023",
+        "topic": "michael_archangel",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0024",
+        "topic": "great_tribulation",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0026",
+        "topic": "paul",
+        "supportScore": 43
+      },
+      {
+        "candidateId": "3d_0028",
+        "topic": "baptism",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0029",
+        "topic": "prayer",
+        "supportScore": 37
+      },
+      {
+        "candidateId": "3d_0030",
+        "topic": "covenants",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0031",
+        "topic": "mark_of_the_beast",
+        "supportScore": 37
+      },
+      {
+        "candidateId": "3d_0032",
+        "topic": "tithes",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0033",
+        "topic": "144000",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0034",
+        "topic": "marriage",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0035",
+        "topic": "open_topic_does_genesis",
+        "supportScore": 49
+      },
+      {
+        "candidateId": "3d_0036",
+        "topic": "noah",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0037",
+        "topic": "paul",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0038",
+        "topic": "open_topic_fear_god",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0039",
+        "topic": "open_topic_the_remnant",
+        "supportScore": 35
+      },
+      {
+        "candidateId": "3d_0040",
+        "topic": "feasts",
+        "supportScore": 67
+      },
+      {
+        "candidateId": "3d_0041",
+        "topic": "covenants",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0042",
+        "topic": "holy_spirit",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0043",
+        "topic": "open_topic_what_the",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0044",
+        "topic": "two_witnesses",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3d_0045",
+        "topic": "john",
+        "supportScore": 49
+      },
+      {
+        "candidateId": "3d_0046",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3d_0048",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3d_0050",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3d_0051",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3d_0052",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3d_0056",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3d_0057",
+        "topic": "paul",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3d_0058",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3d_0059",
+        "topic": "kingdom_of_god",
+        "supportScore": 43
+      },
+      {
+        "candidateId": "3d_0062",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3d_0063",
+        "topic": "death_state",
+        "supportScore": 63
+      },
+      {
+        "candidateId": "3d_0065",
+        "topic": "kingdom_of_god",
+        "supportScore": 37
+      },
+      {
+        "candidateId": "3d_0067",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3d_0068",
+        "topic": "death_state",
+        "supportScore": 60
+      },
+      {
+        "candidateId": "3d_0070",
+        "topic": "emotional",
+        "supportScore": 25
+      },
+      {
+        "candidateId": "3d_0072",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3d_0073",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3d_0076",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3d_0077",
+        "topic": "holiness",
+        "supportScore": 58
+      },
+      {
+        "candidateId": "3d_0079",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3d_0081",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3d_0087",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3d_0089",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3d_0090",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3d_0093",
+        "topic": "john",
+        "supportScore": 35
+      },
+      {
+        "candidateId": "3d_0095",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3d_0097",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3d_0102",
+        "topic": "heavens",
+        "supportScore": 45
+      },
+      {
+        "candidateId": "3d_0104",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3d_0107",
+        "topic": "mixed_where_now_according",
+        "supportScore": 43
+      },
+      {
+        "candidateId": "3d_0108",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3d_0109",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3d_0113",
+        "topic": "peter",
+        "supportScore": 47
+      },
+      {
+        "candidateId": "3d_0114",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3d_0116",
+        "topic": "john",
+        "supportScore": 43
+      },
+      {
+        "candidateId": "3d_0118",
+        "topic": "emotional_does_scripture_say",
+        "supportScore": 25
+      },
+      {
+        "candidateId": "3d_0119",
+        "topic": "prayer",
+        "supportScore": 25
+      }
+    ]
+  },
+  "scoreBuckets": {
+    "above95": 15,
+    "above90": 39,
+    "above80": 42,
+    "above70": 53,
+    "below70": 67
+  },
+  "executive": {
+    "totalSources": 78,
+    "seedSourcesLoaded": 78,
+    "additionalSourcesDiscovered": 0,
+    "iogSources": 51,
+    "icojSources": 23,
+    "camps": 56,
+    "lessonsFound": 13,
+    "qaSessionsFound": 13,
+    "totalQuestions": 167,
+    "totalTopics": 57,
+    "totalScriptureChains": 120,
+    "totalGenesisRevelationExpansions": 58,
+    "totalParallelScriptures": 0,
+    "totalSupportingScriptures": 31,
+    "totalContinuityScriptures": 23,
+    "candidates95Plus": 15,
+    "candidates90Plus": 39,
+    "candidates80Plus": 42,
+    "strongestTopicPacks": [
+      {
+        "topic": "dietary_law",
+        "score": 96,
+        "questions": 17
+      },
+      {
+        "topic": "sabbath",
+        "score": 94,
+        "questions": 22
+      },
+      {
+        "topic": "messiah_logos",
+        "score": 85,
+        "questions": 1
+      },
+      {
+        "topic": "holiness",
+        "score": 68,
+        "questions": 3
+      },
+      {
+        "topic": "feasts",
+        "score": 67,
+        "questions": 1
+      },
+      {
+        "topic": "heavens",
+        "score": 65,
+        "questions": 9
+      },
+      {
+        "topic": "death_state",
+        "score": 62,
+        "questions": 21
+      },
+      {
+        "topic": "open_topic_does_genesis",
+        "score": 49,
+        "questions": 1
+      },
+      {
+        "topic": "peter",
+        "score": 47,
+        "questions": 1
+      },
+      {
+        "topic": "john",
+        "score": 45,
+        "questions": 5
+      }
+    ],
+    "missingTopicPacks": [
+      "adam",
+      "eve",
+      "cain",
+      "abel",
+      "shem",
+      "ham",
+      "japheth",
+      "abraham",
+      "isaac",
+      "jacob",
+      "joseph",
+      "judah",
+      "moses",
+      "aaron",
+      "joshua",
+      "samson",
+      "samuel",
+      "saul",
+      "david",
+      "solomon"
+    ],
+    "sourceCoveragePct": 1.9,
+    "corpusGrowthVsPhase3a": {
+      "questions": 0,
+      "topics": 36,
+      "chains": 0,
+      "sources": 78
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "ranAt": "2026-06-06T03:49:32.017Z",
+  "ranAt": "2026-06-06T03:50:02.452Z",
   "git": {
-    "headSha": "e5d388ec1136336c56588a3f9571ad6a2b3c966c",
-    "originSha": "e5d388ec1136336c56588a3f9571ad6a2b3c966c",
-    "branchStatus": "## main...origin/main\n M docs/companion-intelligence/validation-results.json\n M docs/sprint214b/sabbath-history-depth-results.json\n M docs/sprint214c/natural-reasoning-results.json\n M docs/sprint214d/active-conversation-results.json\n M docs/sprint2final/master-runtime-results.json\n M package.json\n M project-brain/providers.json\n M public/chat.html\n M render.yaml\n M routes/buddy.js\n M server.js\n M services/activeConversationManager.js\n M services/buddyBrain.js\n M services/companionIntelligence.js\n M services/companionReplyPolish.js\n M services/doctrineBoundaries.js\n M services/healthCompanionResponse.js\n M services/masterBuddyRuntime.js\n M services/personalizedFallback.js\n M services/questionIntentResolver.js\n M services/routeOwnershipTable.js\n M services/sabbathHistoryDeepResponder.js\n?? .github/\n?? .gitignore\n?? ArchitectureRollbackAnalysis.md\n?? BetaBaselineStabilizationPlan.md\n?? BetaCommitReadinessReport.md\n?? BetaReadinessRootCauseAudit.md\n?? BibleBuddyLiteComparisonReport.md\n?? BibleBuddyReasonFirstArchitecture.md\n?? BibleLearningArchitectureAudit.md\n?? BibleLearningAssetInventory.md\n?? BibleLearningEngineImplementationRecommendation.md\n?? BibleLearningEnginePlan.md\n?? BottomLineNecessityAudit.md\n?? CompanionOperatingModelExperimentReport.md\n?? CompanionTurnIntentImplementationReport.md\n?? ComplexityDebtAudit.md\n?? ComposerEmotionalCenterForensicAudit.md\n?? ComposerForensicAudit.md\n?? ComposerObjectiveConflictAudit.md\n?? ComposerPromptAudit.md\n?? ConversationExperimentReport.md\n?? ConversationShapeAudit.md\n?? CoreRestorationReport.md\n?? CurrentRuntimeBaselineReport.md\n?? DeployParityImplementationPlan.md\n?? EmergencyHardCutoverRootCauseReport.md\n?? EmotionalCenterPreservationPlan.md\n?? EmotionalCenterPreservationReport.md\n?? FinalProseAuthorshipInventory.md\n?? FinalResponseOwnershipAudit.md\n?? FlowRegressionAudit.md\n?? FullRegressionRootCauseReport.md\n?? GoldenCompanionExamplesReport.md\n?? HumanBetaEnablementPlan.md\n?? HumanBetaTestingInventoryAudit.md\n?? HumanConversationGapReport.md\n?? JsonEncodingAudit.md\n?? Listening75GapAnalysis.md\n?? Listening75RefinementPlan.md\n?? ListeningScoreAudit.md\n?? ListeningSuccessCorrelationAudit.md\n?? LiveRouteOwnershipInvestigation.md\n?? LiveRuntimeVerificationReport.md\n?? MetaQuestionAnswerVerificationReport.md\n?? MissingStageReport.md\n?? OpenAIBypassInventory.md\n?? OpenAIFirstRestorationPlan.md\n?? OpenAIFirstRestorationReport.md\n?? OpeningSentenceAttributionAudit.md\n?? OwnershipCleanupImplementationReport.md\n?? PathTo7Point5.md\n?? PersonFirstCompositionAudit.md\n?? PersonFirstReflectImplementationReport.md\n?? Phase1BetaImplementationReport.md\n?? Phase1BibleLearningEngineImplementationReport.md\n?? PostOpenAICoreRestorationReport.md\n?? ProductionParityReport.md\n?? PromptHierarchyConflictResolutionAudit.md\n?? PromptHierarchyExperiment.md\n?? PushVerificationReport.md\n?? RACLImpactAudit.md\n?? RACLImplementationReport.md\n?? RawConversationDifferentialAudit.md\n?? ReasonFirstMigrationReport.md\n?? ReasonFirstRestorationCheck.md\n?? ReasonFirstSimplificationExperiment.md\n?? ReasoningFirstCompanionRepairReport.md\n?? RelationshipObjectiveAudit.md\n?? ReleaseCandidateValidation.md\n?? ReleaseCommitVerification.md\n?? RenderMemoryStabilityNotes.md\n?? RenderStabilityVerificationReport.md\n?? ReplyOwnershipMatrix.md\n?? ResponseOwnershipTraceReport.md\n?? ResponseStructureRemovalExperiment.md\n?? RetrievalLoopControlDecisionReport.md\n?? RetrievalQualityAudit.md\n?? RuntimeCallGraph.md\n?? ShadowRuntimeProofReport.md\n?? SituationalResponseCalibrationAudit.md\n?? Sprint214BCPrePushVerification.md\n?? Sprint214CompanionQualityReport.md\n?? Sprint214DependencyReport.md\n?? Sprint214FinalReadinessAudit.md\n?? Sprint214LocationReport.md\n?? Sprint214ReleaseCandidate.txt\n?? Sprint214ReleaseInventory.md\n?? TopRemainingListeningFailures.md\n?? ValidationRecoveryAudit.md\n?? admin/beta-review.html\n?? admin/js/beta-review.js\n?? docs/baseline-experiment/\n?? docs/bible-learning/\n?? docs/companion-conversation-experiment/\n?? docs/companion-operating-model/\n?? docs/companion-turn-intent/\n?? docs/emotional-center-preservation/\n?? docs/golden-companion-examples/\n?? docs/precommit/\n?? docs/prompt-hierarchy-experiment/\n?? docs/racl/\n?? docs/reason-first-lite-experiment/\n?? docs/reason-first-migration/\n?? docs/regression-trace/\n?? docs/release-gate/\n?? docs/response-structure-removal/\n?? docs/shadow-runtime/\n?? docs/sprint214/\n?? docs/sprint2finalb/\n?? docs/sprint2finalc/\n?? package-lock.json\n?? public/beta.html\n?? routes/beta.js\n?? scripts/bibleBuddyLiteBaselineExperiment.js\n?? scripts/companionConversationExperiment.js\n?? scripts/companionOperatingModelExperiment.js\n?? scripts/companionTurnIntentValidation.js\n?? scripts/coreRestorationRegressionTest.js\n?? scripts/deployParityVerification.js\n?? scripts/emergencyHardCutoverRegression.js\n?? scripts/emotionalCenterPreservationValidation.js\n?? scripts/exportBetaData.js\n?? scripts/goldenCompanionExamplesValidation.js\n?? scripts/liveRuntimeVerification.js\n?? scripts/openAiFirstRegressionTest.js\n?? scripts/ownershipAuditBattery.js\n?? scripts/phase1BibleLearningValidation.js\n?? scripts/postOpenAiCoreRestorationSmokeTest.js\n?? scripts/promptHierarchyExperiment.js\n?? scripts/raclValidation.js\n?? scripts/reasonFirstLiteExperiment.js\n?? scripts/reasonFirstMigration.js\n?? scripts/responseOwnershipTraceAudit.js\n?? scripts/responseStructureRemovalExperiment.js\n?? scripts/shadowRuntimeComparison.js\n?? scripts/sprint214ProductionAcceptance.js\n?? scripts/sprint2FinalBMetaQuestionHttp.js\n?? scripts/sprint2FinalCReasoningFirstHttp.js\n?? scripts/sprint2FinalReleaseGate.js\n?? scripts/traceBuddyChatPath.js\n?? services/answerGuidance.js\n?? services/answerMatchGate.js\n?? services/answerVerifier.js\n?? services/approvedDoctrineRegistry.js\n?? services/betaRegistry.js\n?? services/betaSessionReader.js\n?? services/bibleBuddyLiteRuntime.js\n?? services/bibleLearningLog.js\n?? services/buddyRuntimeConfig.js\n?? services/companionConversationBehavior.js\n?? services/companionConversationExperimentRuntime.js\n?? services/companionOperatingModelExperiment.js\n?? services/companionPostureValidator.js\n?? services/companionRetrievalHints.js\n?? services/companionTurnIntent.js\n?? services/concordanceFoundation.js\n?? services/conversationShapeAnalyzer.js\n?? services/coreResponseGuards.js\n?? services/coreRestorationDebug.js\n?? services/correctionLedger.js\n?? services/currentMessageIntent.js\n?? services/directnessGuard.js\n?? services/doctrineBoundaryValidator.js\n?? services/doctrineCompanionPath.js\n?? services/doctrineEvidenceSnippets.js\n?? services/emotionalCenter.js\n?? services/emotionalCenterValidator.js\n?? services/evidenceCards/\n?? services/forbiddenProseGuard.js\n?? services/goldenCompanionExamples.js\n?? services/listeningSpecificityValidator.js\n?? services/liveRequestTrace.js\n?? services/metaAnswerResponder.js\n?? services/minimalReasonFirstRuntime.js\n?? services/openAiFirstCompanionRuntime.js\n?? services/ownershipAntiOverrideGuard.js\n?? services/reasonFirstBuddyRuntime.js\n?? services/reasonFirstComposer.js\n?? services/reasonFirstLiteRuntime.js\n?? services/reasonFirstTrace.js\n?? services/reasoningSnapshot.js\n?? services/replySourceClassifier.js\n?? services/responseContract.js\n?? services/responseStructureRemovalExperiment.js\n?? services/retrievalEvidencePack.js\n?? services/scriptureDiscoveryEngine.js\n?? services/shadowReasonFirstRuntime.js"
+    "headSha": "57b3f96f1a5393d149d2903717d3ab148a0954e0",
+    "originSha": "57b3f96f1a5393d149d2903717d3ab148a0954e0",
+    "branchStatus": "## main...origin/main\n M docs/companion-intelligence/validation-results.json\n M docs/sprint214b/sabbath-history-depth-results.json\n M docs/sprint214c/natural-reasoning-results.json\n M docs/sprint214d/active-conversation-results.json\n M docs/sprint2final/master-runtime-results.json\n M project-brain/providers.json\n M services/companionIntelligence.js\n M services/doctrineBoundaries.js\n M services/healthCompanionResponse.js\n M services/masterBuddyRuntime.js\n M services/routeOwnershipTable.js\n M services/sabbathHistoryDeepResponder.js\n?? .github/\n?? ArchitectureRollbackAnalysis.md\n?? BetaBaselineStabilizationPlan.md\n?? BetaCommitReadinessReport.md\n?? BetaReadinessRootCauseAudit.md\n?? BibleBuddyLiteComparisonReport.md\n?? BibleBuddyReasonFirstArchitecture.md\n?? BibleLearningArchitectureAudit.md\n?? BibleLearningAssetInventory.md\n?? BibleLearningEngineImplementationRecommendation.md\n?? BibleLearningEnginePlan.md\n?? BottomLineNecessityAudit.md\n?? CompanionOperatingModelExperimentReport.md\n?? CompanionTurnIntentImplementationReport.md\n?? ComplexityDebtAudit.md\n?? ComposerEmotionalCenterForensicAudit.md\n?? ComposerForensicAudit.md\n?? ComposerObjectiveConflictAudit.md\n?? ComposerPromptAudit.md\n?? ConversationExperimentReport.md\n?? ConversationShapeAudit.md\n?? CoreRestorationReport.md\n?? CurrentRuntimeBaselineReport.md\n?? EmotionalCenterPreservationPlan.md\n?? EmotionalCenterPreservationReport.md\n?? FinalProseAuthorshipInventory.md\n?? FinalResponseOwnershipAudit.md\n?? FlowRegressionAudit.md\n?? FullRegressionRootCauseReport.md\n?? GoldenCompanionExamplesReport.md\n?? HumanBetaEnablementPlan.md\n?? HumanBetaTestingInventoryAudit.md\n?? HumanConversationGapReport.md\n?? JsonEncodingAudit.md\n?? Listening75GapAnalysis.md\n?? Listening75RefinementPlan.md\n?? ListeningScoreAudit.md\n?? ListeningSuccessCorrelationAudit.md\n?? LiveRouteOwnershipInvestigation.md\n?? LiveRuntimeVerificationReport.md\n?? MetaQuestionAnswerVerificationReport.md\n?? MissingStageReport.md\n?? OpenAIBypassInventory.md\n?? OpenAIFirstRestorationPlan.md\n?? OpenAIFirstRestorationReport.md\n?? OpeningSentenceAttributionAudit.md\n?? OwnershipCleanupImplementationReport.md\n?? PathTo7Point5.md\n?? PersonFirstCompositionAudit.md\n?? PersonFirstReflectImplementationReport.md\n?? Phase1BetaImplementationReport.md\n?? PostOpenAICoreRestorationReport.md\n?? ProductionParityReport.md\n?? PromptHierarchyConflictResolutionAudit.md\n?? PromptHierarchyExperiment.md\n?? PushVerificationReport.md\n?? RACLImpactAudit.md\n?? RACLImplementationReport.md\n?? RawConversationDifferentialAudit.md\n?? ReasonFirstMigrationReport.md\n?? ReasonFirstRestorationCheck.md\n?? ReasonFirstSimplificationExperiment.md\n?? ReasoningFirstCompanionRepairReport.md\n?? RelationshipObjectiveAudit.md\n?? ReleaseCandidateValidation.md\n?? ReleaseCommitVerification.md\n?? RenderMemoryStabilityNotes.md\n?? RenderStabilityVerificationReport.md\n?? ReplyOwnershipMatrix.md\n?? ResponseOwnershipTraceReport.md\n?? ResponseStructureRemovalExperiment.md\n?? RetrievalLoopControlDecisionReport.md\n?? RetrievalQualityAudit.md\n?? RuntimeCallGraph.md\n?? ShadowRuntimeProofReport.md\n?? SituationalResponseCalibrationAudit.md\n?? Sprint214BCPrePushVerification.md\n?? Sprint214CompanionQualityReport.md\n?? Sprint214DependencyReport.md\n?? Sprint214FinalReadinessAudit.md\n?? Sprint214LocationReport.md\n?? Sprint214ReleaseCandidate.txt\n?? Sprint214ReleaseInventory.md\n?? TopRemainingListeningFailures.md\n?? ValidationRecoveryAudit.md\n?? admin/beta-review.html\n?? admin/js/beta-review.js\n?? docs/baseline-experiment/\n?? docs/companion-conversation-experiment/\n?? docs/companion-operating-model/\n?? docs/companion-turn-intent/\n?? docs/emotional-center-preservation/\n?? docs/golden-companion-examples/\n?? docs/precommit/\n?? docs/prompt-hierarchy-experiment/\n?? docs/racl/\n?? docs/reason-first-lite-experiment/\n?? docs/reason-first-migration/\n?? docs/regression-trace/OwnershipDamageRanking.json\n?? docs/regression-trace/core-restoration-results.json\n?? docs/regression-trace/live-runtime-verification.json\n?? docs/regression-trace/openai-first-results.json\n?? docs/regression-trace/ownership-cleanup-results.json\n?? docs/regression-trace/phase1-bible-learning-validation.json\n?? docs/regression-trace/response-ownership-trace.json\n?? docs/regression-trace/trace-results.json\n?? docs/release-gate/\n?? docs/response-structure-removal/\n?? docs/shadow-runtime/\n?? docs/sprint214/\n?? docs/sprint2finalb/\n?? docs/sprint2finalc/\n?? public/beta.html\n?? routes/beta.js\n?? scripts/bibleBuddyLiteBaselineExperiment.js\n?? scripts/companionConversationExperiment.js\n?? scripts/companionOperatingModelExperiment.js\n?? scripts/companionTurnIntentValidation.js\n?? scripts/coreRestorationRegressionTest.js\n?? scripts/emotionalCenterPreservationValidation.js\n?? scripts/exportBetaData.js\n?? scripts/goldenCompanionExamplesValidation.js\n?? scripts/liveRuntimeVerification.js\n?? scripts/openAiFirstRegressionTest.js\n?? scripts/ownershipAuditBattery.js\n?? scripts/phase1BibleLearningValidation.js\n?? scripts/postOpenAiCoreRestorationSmokeTest.js\n?? scripts/promptHierarchyExperiment.js\n?? scripts/raclValidation.js\n?? scripts/reasonFirstLiteExperiment.js\n?? scripts/reasonFirstMigration.js\n?? scripts/responseOwnershipTraceAudit.js\n?? scripts/responseStructureRemovalExperiment.js\n?? scripts/shadowRuntimeComparison.js\n?? scripts/sprint214ProductionAcceptance.js\n?? scripts/sprint2FinalBMetaQuestionHttp.js\n?? scripts/sprint2FinalCReasoningFirstHttp.js\n?? scripts/sprint2FinalReleaseGate.js\n?? scripts/traceBuddyChatPath.js\n?? services/answerMatchGate.js\n?? services/answerVerifier.js\n?? services/betaRegistry.js\n?? services/betaSessionReader.js\n?? services/bibleBuddyLiteRuntime.js\n?? services/companionConversationBehavior.js\n?? services/companionConversationExperimentRuntime.js\n?? services/companionOperatingModelExperiment.js\n?? services/companionPostureValidator.js\n?? services/companionRetrievalHints.js\n?? services/companionTurnIntent.js\n?? services/conversationShapeAnalyzer.js\n?? services/doctrineCompanionPath.js\n?? services/metaAnswerResponder.js\n?? services/minimalReasonFirstRuntime.js\n?? services/reasonFirstBuddyRuntime.js\n?? services/reasonFirstLiteRuntime.js\n?? services/reasonFirstTrace.js\n?? services/replySourceClassifier.js\n?? services/responseContract.js\n?? services/responseStructureRemovalExperiment.js\n?? services/shadowReasonFirstRuntime.js"
   },
   "runBuddyRouting": {
     "local": {
@@ -13,109 +13,109 @@
       "hardCutoverLock": true
     },
     "gitHead": {
-      "routesTo": "masterBuddyRuntime",
-      "openAiFirstCompanionRuntime": false,
-      "masterBuddyRuntimeCall": true,
-      "hardCutoverLock": false
+      "routesTo": "openAiFirstCompanionRuntime",
+      "openAiFirstCompanionRuntime": true,
+      "masterBuddyRuntimeCall": false,
+      "hardCutoverLock": true
     }
   },
   "fileChecklist": [
     {
       "file": "services/openAiFirstCompanionRuntime.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/currentMessageIntent.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/directnessGuard.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/forbiddenProseGuard.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/reasonFirstComposer.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/retrievalEvidencePack.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/ownershipAntiOverrideGuard.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/coreResponseGuards.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/coreRestorationDebug.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/buddyRuntimeConfig.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
     {
       "file": "services/liveRequestTrace.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     },
@@ -158,9 +158,9 @@
     {
       "file": "scripts/emergencyHardCutoverRegression.js",
       "exists": true,
-      "tracked": false,
-      "committed": false,
-      "pushed": false,
+      "tracked": true,
+      "committed": true,
+      "pushed": true,
       "imported": true,
       "active": true
     }
@@ -223,30 +223,30 @@
   "envParity": {
     "BUDDY_RUNTIME": {
       "localDeclared": true,
-      "headDeclared": false
+      "headDeclared": true
     },
     "BUDDY_TEMPLATE_PROSE": {
       "localDeclared": true,
-      "headDeclared": false
+      "headDeclared": true
     },
     "BUDDY_DISABLE_STUDY_FALLBACK": {
       "localDeclared": true,
-      "headDeclared": false
+      "headDeclared": true
     },
     "BUDDY_DEBUG": {
       "localDeclared": true,
-      "headDeclared": false
+      "headDeclared": true
     },
     "BUDDY_LIVE_TRACE": {
       "localDeclared": true,
-      "headDeclared": false
+      "headDeclared": true
     },
     "OPENAI_API_KEY": {
       "localDeclared": true,
-      "headDeclared": false
+      "headDeclared": true
     },
     "localPlanStandard": true,
-    "headPlanFree": true
+    "headPlanFree": false
   },
   "runtimeSmoke": {
     "runtimeUsed": "core_openai_first",
@@ -264,10 +264,10 @@
   "summary": {
     "allFilesExistLocally": true,
     "allCoreWiredAndActive": true,
-    "allFilesCommitted": false,
-    "allFilesPushed": false,
+    "allFilesCommitted": true,
+    "allFilesPushed": true,
     "localRuntimeParity": true,
-    "renderDeployParity": false,
+    "renderDeployParity": true,
     "openAiFirstCompanionRuntimeActive": true,
     "masterBuddyRuntimeDisabled": true,
     "forbiddenProseGuardActive": true,

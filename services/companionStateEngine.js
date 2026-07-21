@@ -4,7 +4,9 @@
 
 const { planCompanionDoctrineRouting, buildRoutingContext } = require('./companionDoctrineRouter');
 const { detectConceptFromGraph } = require('./bibleConceptGraph');
+const { detectSemanticConcept } = require('./bibleSemanticConceptNormalizer');
 const { isPendingQuestionChallenge } = require('./pendingQuestionResolver');
+const { buildPrayerResponse } = require('./practicalGuidanceEngine');
 const { isCorrectionMessage } = require('./userCorrectionMemory');
 
 const EMOTIONAL_PATTERNS = [
@@ -18,8 +20,8 @@ const EMOTIONAL_PATTERNS = [
   /\blove life\b/i,
   /\bheartbreak\b/i,
   /\bcrashing\b/i,
-  /\blife is crashing\b/i,
-  /\bfeeling down\b/i,
+  /\boverwhelmed\b/i,
+  /\bmy feeling overwhelmed\b/i,
 ];
 
 const COMFORT_SCRIPTURE = {
@@ -33,7 +35,7 @@ function classifyCompanionState({ message = '', userId = '', recentSessions = []
   const m = String(message || '').trim();
   const context = buildRoutingContext(userId, { runtimeContext, recentSessions });
   const routePlan = planCompanionDoctrineRouting({ userId, message, recentSessions, runtimeContext });
-  const concept = detectConceptFromGraph(m);
+  const concept = detectSemanticConcept(m, context) || detectConceptFromGraph(m);
 
   let mode = 'companion_general';
   if (routePlan.lane === 'strict_doctrine') mode = 'bible_teacher';
@@ -79,6 +81,14 @@ function buildCompanionSupportReply({ message = '', state = {} } = {}) {
     };
   }
 
+  if (/\boverwhelmed\b/i.test(m) || /\bmy feeling overwhelmed\b/i.test(m)) {
+    const comfort = COMFORT_SCRIPTURE.default;
+    return {
+      reply: `I hear that you feel overwhelmed. You are not alone. What's weighing on you most right now? ${comfort.ref} — ${comfort.text}.`,
+      scripture: [{ reference: comfort.ref, theme: 'comfort' }, { reference: '1 Peter 5:7', theme: 'comfort' }],
+    };
+  }
+
   if (/\bbad day\b/i.test(m)) {
     return {
       reply: "I'm sorry today was hard. I'm here with you. Want to tell me what happened?",
@@ -86,11 +96,11 @@ function buildCompanionSupportReply({ message = '', state = {} } = {}) {
     };
   }
 
-  if (/\bpray with me\b/i.test(m) || /\bneed prayer\b/i.test(m)) {
-    const comfort = COMFORT_SCRIPTURE.prayer;
+  if (/\bcan you pray with me\b/i.test(m) || /\bpray with me\b/i.test(m) || /\bneed prayer\b/i.test(m)) {
+    const prayer = buildPrayerResponse({ message, state: {}, userId: '' });
     return {
-      reply: `I'm here to pray with you. ${state.followUpQuestion || 'What would you like prayer for?'} ${comfort.ref} invites us to cast our care upon God.`,
-      scripture: [{ reference: comfort.ref, theme: 'prayer' }],
+      reply: prayer.reply,
+      scripture: prayer.scripture,
     };
   }
 

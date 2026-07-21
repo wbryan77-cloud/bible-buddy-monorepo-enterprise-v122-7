@@ -1,0 +1,8 @@
+=== git ls-remote origin sprint-2c-c3-explicit-scripture-handoff ===
+d34d9f0f95c7cba8300221c4c70b6e89d0f48d18	refs/heads/sprint-2c-c3-explicit-scripture-handoff
+=== local HEAD ===
+d34d9f0f95c7cba8300221c4c70b6e89d0f48d18
+=== branch tracking status ===
+## sprint-2c-c3-explicit-scripture-handoff...origin/sprint-2c-c3-explicit-scripture-handoff
+ M docs/alpha/phase6f-20260719-075444/Part17-FounderAlphaE2E.json
+ M docs/evidence-candidates/console-queue.json

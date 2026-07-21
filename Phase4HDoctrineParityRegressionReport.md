@@ -1,6 +1,6 @@
 # Phase 4H Doctrine Parity Regression Report
 
-Generated: 2026-06-12T01:20:41.423Z
+Generated: 2026-06-17T08:17:51.284Z
 DEPLOY_URL: (not set — local only)
 
 ## Summary: 28/28

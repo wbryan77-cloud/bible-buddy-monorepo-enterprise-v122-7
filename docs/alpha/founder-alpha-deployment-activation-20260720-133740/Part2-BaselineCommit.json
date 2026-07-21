@@ -1,0 +1,47 @@
+{
+  "part": "Part 2 - Release Branch and Commit",
+  "branchStrategy": "A - commit to current branch",
+  "branch": "sprint-2c-c3-explicit-scripture-handoff",
+  "baseCommitBeforeRelease": "09626367d1fd586b83b807a15c078507fbdd8aa1",
+  "releaseCommitSha": "d34d9f0f95c7cba8300221c4c70b6e89d0f48d18",
+  "commitMessage": "release: establish BibleBuddy Founder Alpha baseline",
+  "filesChanged": 347,
+  "insertions": 128775,
+  "deletions": 365,
+  "preCommitChecks": {
+    "syntaxCheckAllStagedJsFiles": { "result": "PASS", "filesChecked": 300, "errors": 0 },
+    "localServerHealth": { "result": "PASS", "endpoint": "http://localhost:3000/health" },
+    "founderReadinessValidator": {
+      "result": "READY_WITH_DOCUMENTED_WARNINGS",
+      "pass": 37,
+      "warn": 2,
+      "fail": 0,
+      "skip": 0,
+      "reportPath": "docs/alpha/founder-readiness/2026-07-20T13-47-22-725Z/",
+      "warnings": [
+        "admin_auth_boundary - no admin token configured locally (expected for local; blocking gate for live deployment, tracked in Part 8)",
+        "admin_dashboard_latency - command-center 6151ms (offline snapshot aggregation, not hot path)"
+      ]
+    },
+    "founderAlphaProductionE2E": {
+      "script": "scripts/alpha/phase6fFounderAlphaE2E.js",
+      "runs": 2,
+      "result": "34/35 (both runs)",
+      "failingCase": "SCRIPTURE/contradiction",
+      "classification": "EXTERNAL_PROVIDER",
+      "rootCause": "Non-deterministic OpenAI-authored answer intermittently fails to clear services/doctrineErrorFirewall.js / responseGuarantee.js safety check, triggering an intentional clarification fallback rather than a regression in routing logic.",
+      "manualRetestResult": "3/3 standalone retries with fresh session IDs returned correct grounded 'No...' answers",
+      "codeChangeRequired": false,
+      "blocksRelease": false
+    }
+  },
+  "push": {
+    "pushed": true,
+    "remote": "origin",
+    "forcePush": false,
+    "remoteHeadAfterPush": "d34d9f0f95c7cba8300221c4c70b6e89d0f48d18",
+    "localHeadAfterPush": "d34d9f0f95c7cba8300221c4c70b6e89d0f48d18",
+    "matches": true,
+    "pushActionRequired": false
+  }
+}

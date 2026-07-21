@@ -1,0 +1,49 @@
+{
+  "part": "Part 9 - Founder Monitoring and Admin Visibility",
+  "telemetryInventory": {
+    "anonymousSessionIdentifier": "IMPLEMENTED",
+    "sessionStartEnd": "PARTIAL",
+    "submittedMessagesContent": "PARTIAL",
+    "responseMetadata": "IMPLEMENTED",
+    "routeOwner": "IMPLEMENTED",
+    "evidenceLineage": "IMPLEMENTED",
+    "latency": "IMPLEMENTED",
+    "errors": "IMPLEMENTED",
+    "featureUsage": "IMPLEMENTED",
+    "lessonAlignmentUsage": "IMPLEMENTED",
+    "originalLanguageUsage": "IMPLEMENTED",
+    "historicalContextUsage": "IMPLEMENTED",
+    "explicitFeedback": "IMPLEMENTED",
+    "adminActions": "NOT_IMPLEMENTED",
+    "safetyEvents": "PARTIAL"
+  },
+  "adminVisibilityConfirmed": [
+    "GET /admin/api/bible-authority/founder-console",
+    "GET /admin/api/bible-authority/command-center",
+    "GET /api/runtime-health",
+    "GET /admin/api/bible-authority/lesson-alignment/submissions",
+    "GET /admin/api/bible-authority/knowledge-coverage-dashboard",
+    "GET /admin/api/bible-authority/provider-health",
+    "GET /admin/api/bible-authority/review-queue"
+  ],
+  "adminAiDigestFunctionality": "NOT_IMPLEMENTED",
+  "adminAiDigestNote": "admin/ai/routes.js exists as a separate pre-existing 'Lab' feature with its own admin-helper endpoint explicitly source-commented as (future)/not built out. Raw data for manual pattern review is available via the endpoints above.",
+  "buildIdentity": {
+    "primarySource": "GET /admin/api/bible-authority/founder-console -> build.commit / build.branch (reads live git HEAD, confirmed matching actual current commit)",
+    "secondarySource": "GET /health -> releaseCommit / releaseBranch (added in Part 6, populated from Render-injected RENDER_GIT_COMMIT/RENDER_GIT_BRANCH env vars, null when absent)",
+    "verifiedLive": true,
+    "verifiedCommit": "6d8a254f9ecef84af66ff70f8b8510d2c6fbf56d"
+  },
+  "invasiveTelemetry": {
+    "keystrokeLogging": false,
+    "passwordCapture": false,
+    "unrelatedBrowsingCapture": false,
+    "fullMessageContentInAggregateCounters": false,
+    "fullTranscriptStorageForAdminReview": "pre-existing mechanism from prior Alpha/Beta phases, not new in this batch"
+  },
+  "founderAlphaTelemetryFeatureFlag": {
+    "exists": false,
+    "note": "Existing Phase 6H Founder Observation Layer is always-on aggregate counting with no per-user profiling; no kill-switch flag was judged necessary in Phase 6H since no personal content is stored. Noted for completeness, not treated as a new defect."
+  },
+  "newTelemetryCodeAddedInThisBatch": false
+}

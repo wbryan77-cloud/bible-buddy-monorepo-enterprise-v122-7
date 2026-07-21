@@ -1,0 +1,773 @@
+{
+  "phase": "2J-E",
+  "generatedAt": "2026-06-08T23:14:40.609Z",
+  "description": "Bulk discovery admin review package. Advisory only — not applied to production.",
+  "reviewRequired": true,
+  "autoApplied": false,
+  "metrics": {
+    "sourceCount": 11,
+    "questionCount": 140,
+    "clusterCount": 118,
+    "chainCount": 29,
+    "candidateCount": 29,
+    "expansionCount": 21,
+    "g2rSpans": 15,
+    "scoreBuckets": {
+      "above95": 8,
+      "above90": 8,
+      "above80": 12,
+      "above70": 13,
+      "below60": 15
+    }
+  },
+  "candidates": [
+    {
+      "candidateId": "bulk_0003",
+      "question": "Clean and unclean foods in Scripture",
+      "topic": "dietary_law",
+      "scriptures": [
+        "Leviticus 11",
+        "Deuteronomy 14",
+        "Isaiah 66:17",
+        "Acts 10:28",
+        "Acts 11:1-18"
+      ],
+      "scriptureOrder": [
+        "Leviticus 11",
+        "Deuteronomy 14",
+        "Isaiah 66:17",
+        "Acts 10:28",
+        "Acts 11:1-18"
+      ],
+      "conclusion": "Clean/unclean distinction with Acts 10-11 people-not-food clarification (lesson metadata)",
+      "parallelRefs": [
+        "Daniel 1:8",
+        "Acts 10:14"
+      ],
+      "supportScore": 98,
+      "supportBand": "Strong",
+      "recommendedAction": "hold",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0006",
+      "question": "Can I eat pork?",
+      "topic": "dietary_law",
+      "scriptures": [
+        "Leviticus 11",
+        "Acts 10:28",
+        "Acts 11:1-18",
+        "Isaiah 66:17"
+      ],
+      "scriptureOrder": [
+        "Leviticus 11",
+        "Deuteronomy 14",
+        "Acts 10:28",
+        "Acts 11:1-18"
+      ],
+      "conclusion": "Clean/unclean distinction with Acts 10-11 gentile clarification",
+      "parallelRefs": [
+        "Deuteronomy 14",
+        "Daniel 1:8",
+        "Acts 10:14",
+        "Deuteronomy 14:8"
+      ],
+      "supportScore": 98,
+      "supportBand": "Strong",
+      "recommendedAction": "hold",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0013",
+      "question": "What is the state of the dead according to Scripture?",
+      "topic": "death_state",
+      "scriptures": [
+        "John 11:11-14",
+        "Ecclesiastes 9:5",
+        "1 Thessalonians 4:13-16"
+      ],
+      "scriptureOrder": [
+        "Genesis 2:7",
+        "Ecclesiastes 9:5",
+        "John 11:11-14",
+        "1 Thessalonians 4:13-18"
+      ],
+      "conclusion": "Sleep in death until resurrection (catalog chain candidate)",
+      "parallelRefs": [
+        "Genesis 2:7",
+        "Revelation 20:4-6",
+        "Daniel 12:2",
+        "1 Corinthians 15:51-55",
+        "Psalm 146:3-4"
+      ],
+      "supportScore": 98,
+      "supportBand": "Strong",
+      "recommendedAction": "approve_support_edge",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0005",
+      "question": "What does Logos mean in John 1?",
+      "topic": "messiah_logos",
+      "scriptures": [
+        "John 1:1-14",
+        "Genesis 1:1"
+      ],
+      "scriptureOrder": [
+        "John 1:1-14",
+        "Genesis 1:1"
+      ],
+      "conclusion": "Metadata-only — transcript not ingested",
+      "parallelRefs": [
+        "Isaiah 9:6",
+        "Colossians 1:15-17",
+        "Revelation 19:11-16",
+        "Psalm 110:1",
+        "Isaiah 53:1-12",
+        "Revelation 1:8"
+      ],
+      "supportScore": 97,
+      "supportBand": "Strong",
+      "recommendedAction": "approve_support_edge",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0011",
+      "question": "What does holy mean in the Sabbath commandment?",
+      "topic": "sabbath",
+      "scriptures": [
+        "Exodus 20:8-11"
+      ],
+      "scriptureOrder": [
+        "Exodus 20:8-11"
+      ],
+      "conclusion": "It commands the Sabbath to be kept holy by resting as God rested at creation.",
+      "parallelRefs": [
+        "Genesis 2:2-3",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9",
+        "Revelation 14:12"
+      ],
+      "supportScore": 96,
+      "supportBand": "Strong",
+      "recommendedAction": "approve_support_edge",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0012",
+      "question": "Jesus said where I go ye cannot come. What does that mean?",
+      "topic": "kingdom",
+      "scriptures": [
+        "John 14:3"
+      ],
+      "scriptureOrder": [
+        "John 14:3"
+      ],
+      "conclusion": "Shows the promised future reunion when He returns.",
+      "parallelRefs": [
+        "Matthew 6:9-10",
+        "Acts 1:9-11",
+        "Revelation 5:10",
+        "Revelation 11:15",
+        "Revelation 20:1-6",
+        "Revelation 21:1-3",
+        "Genesis 1:1",
+        "Genesis 1:6-8",
+        "Genesis 1:14-17",
+        "Deuteronomy 10:14",
+        "John 3:13"
+      ],
+      "supportScore": 96,
+      "supportBand": "Strong",
+      "recommendedAction": "hold",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0023",
+      "question": "Hebrews 4 means we do not need the seventh day anymore.",
+      "topic": "sabbath",
+      "scriptures": [
+        "Hebrews 4:9"
+      ],
+      "scriptureOrder": [
+        "Hebrews 4:9"
+      ],
+      "conclusion": "This verse indicates a promised rest for believers, which is often interpreted as spiritual rest in Christ.",
+      "parallelRefs": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Revelation 14:12"
+      ],
+      "supportScore": 96,
+      "supportBand": "Strong",
+      "recommendedAction": "approve_support_edge",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0024",
+      "question": "You did not answer my question about pork.",
+      "topic": "dietary_law",
+      "scriptures": [
+        "Deuteronomy 14"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 14"
+      ],
+      "conclusion": "Reinforces the unclean status and prohibition against eating pork.",
+      "parallelRefs": [
+        "Leviticus 11",
+        "Daniel 1:8",
+        "Isaiah 66:17",
+        "Acts 10:28",
+        "Acts 11:1-18",
+        "Acts 10:14"
+      ],
+      "supportScore": 96,
+      "supportBand": "Strong",
+      "recommendedAction": "hold",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0001",
+      "question": "Sabbath from Genesis to Revelation",
+      "topic": "sabbath",
+      "scriptures": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9",
+        "Revelation 14:12"
+      ],
+      "scriptureOrder": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9",
+        "Revelation 14:12"
+      ],
+      "conclusion": "Sabbath continuity from creation through Revelation (lesson metadata — not ingested)",
+      "parallelRefs": [],
+      "supportScore": 88,
+      "supportBand": "Strong Candidate",
+      "recommendedAction": "approve_support_edge",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0002",
+      "question": "State of the dead line upon line",
+      "topic": "death_state",
+      "scriptures": [
+        "Genesis 2:7",
+        "Ecclesiastes 9:5",
+        "John 11:11-14",
+        "1 Thessalonians 4:13-16",
+        "Revelation 20:4-6"
+      ],
+      "scriptureOrder": [
+        "Genesis 2:7",
+        "Ecclesiastes 9:5",
+        "John 11:11-14",
+        "1 Thessalonians 4:13-16",
+        "Revelation 20:4-6"
+      ],
+      "conclusion": "Death as sleep until resurrection (lesson metadata — not ingested)",
+      "parallelRefs": [
+        "Daniel 12:2",
+        "1 Corinthians 15:51-55",
+        "Psalm 146:3-4",
+        "Psalm 146:4"
+      ],
+      "supportScore": 87,
+      "supportBand": "Strong Candidate",
+      "recommendedAction": "approve_support_edge",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0009",
+      "question": "What does holy mean?",
+      "topic": "holiness",
+      "scriptures": [
+        "Leviticus 19:2",
+        "1 Peter 1:15-16",
+        "Hebrews 12:14"
+      ],
+      "scriptureOrder": [
+        "Leviticus 19:2",
+        "Leviticus 11:44-45",
+        "1 Peter 1:15-16",
+        "Hebrews 12:14"
+      ],
+      "conclusion": "Be holy as God is holy — covenant holiness chain",
+      "parallelRefs": [
+        "Leviticus 11:44-45",
+        "Psalm 24:3-4",
+        "Exodus 19:5-6"
+      ],
+      "supportScore": 84,
+      "supportBand": "Strong Candidate",
+      "recommendedAction": "hold",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0022",
+      "question": "What does holy mean? I want to live right.",
+      "topic": "holiness",
+      "scriptures": [
+        "1 Peter 1:15-16"
+      ],
+      "scriptureOrder": [
+        "1 Peter 1:15-16"
+      ],
+      "conclusion": "It reinforces the call to live a holy life in all ways, reflecting God's holiness.",
+      "parallelRefs": [
+        "Leviticus 11:44-45",
+        "Psalm 24:3-4",
+        "Exodus 19:5-6",
+        "Hebrews 12:14",
+        "Leviticus 19:2"
+      ],
+      "supportScore": 83,
+      "supportBand": "Strong Candidate",
+      "recommendedAction": "hold",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0004",
+      "question": "How do we keep the Sabbath holy?",
+      "topic": "sabbath",
+      "scriptures": [
+        "Isaiah 58:13-14",
+        "Acts 17:2",
+        "Acts 13:42-44"
+      ],
+      "scriptureOrder": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2"
+      ],
+      "conclusion": "Sabbath observance pattern from creation through apostolic era (candidate chain extension)",
+      "parallelRefs": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Luke 4:16",
+        "Hebrews 4:9",
+        "Revelation 14:12",
+        "Exodus 20:8"
+      ],
+      "supportScore": 71,
+      "supportBand": "Review",
+      "recommendedAction": "approve_card_ref",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0010",
+      "question": "What is a Sabbath day according to Scripture?",
+      "topic": "sabbath",
+      "scriptures": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "scriptureOrder": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "conclusion": "Jesus Himself observed the Sabbath regularly (Luke 4:16), and the early believers met on the Sabbath as well (Acts 13:42-44; Acts 17:2).",
+      "parallelRefs": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Hebrews 4:9",
+        "Revelation 14:12",
+        "Exodus 20:8"
+      ],
+      "supportScore": 62,
+      "supportBand": "Research",
+      "recommendedAction": "approve_card_ref",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0019",
+      "question": "Please help me understand Logos. I am confused and sad.",
+      "topic": "messiah_logos",
+      "scriptures": [
+        "Isaiah 9:6",
+        "Micah 5:2"
+      ],
+      "scriptureOrder": [
+        "Isaiah 9:6",
+        "Micah 5:2"
+      ],
+      "conclusion": "This connects back to the Old Testament promises about the Messiah, such as in Isaiah 9:6 and Micah 5:2.",
+      "parallelRefs": [
+        "Genesis 1:1",
+        "John 1:1-14",
+        "Colossians 1:15-17",
+        "Revelation 19:11-16",
+        "Psalm 110:1",
+        "Isaiah 53:1-12",
+        "Revelation 1:8"
+      ],
+      "supportScore": 55,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0007",
+      "question": "Did early Christians keep gathering on the Sabbath for Scripture?",
+      "topic": "sabbath",
+      "scriptures": [
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "scriptureOrder": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "conclusion": "Apostolic Sabbath gathering pattern — candidate for card supportingScriptures review",
+      "parallelRefs": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Hebrews 4:9",
+        "Revelation 14:12"
+      ],
+      "supportScore": 53,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0029",
+      "question": "Continuity expansion: sabbath — commandment_keeping_saints",
+      "topic": "sabbath",
+      "scriptures": [
+        "Revelation 14:12"
+      ],
+      "scriptureOrder": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9",
+        "Revelation 14:12"
+      ],
+      "conclusion": "Continuity node Revelation: commandment_keeping_saints (Revelation 14:12)",
+      "parallelRefs": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9"
+      ],
+      "supportScore": 51,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0008",
+      "question": "What does Logos mean in John 1:1?",
+      "topic": "messiah_logos",
+      "scriptures": [
+        "Hebrews 1:1-3"
+      ],
+      "scriptureOrder": [
+        "Hebrews 1:1-3"
+      ],
+      "conclusion": "Describes the Son as the brightness of God's glory and upholder of all things by His word.",
+      "parallelRefs": [
+        "Genesis 1:1",
+        "Isaiah 9:6",
+        "John 1:1-14",
+        "Colossians 1:15-17",
+        "Revelation 19:11-16",
+        "Psalm 110:1",
+        "Isaiah 53:1-12",
+        "Revelation 1:8"
+      ],
+      "supportScore": 47,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0025",
+      "question": "Where is he now according to Scripture?",
+      "topic": "mixed",
+      "scriptures": [
+        "Ecclesiastes 9:5"
+      ],
+      "scriptureOrder": [
+        "Ecclesiastes 9:5"
+      ],
+      "conclusion": "This verse shows the dead know nothing, supporting the idea of death as sleep.",
+      "parallelRefs": [],
+      "supportScore": 43,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0026",
+      "question": "How does John 13:33 fit with all this?",
+      "topic": "doctrine",
+      "scriptures": [
+        "John 13:33"
+      ],
+      "scriptureOrder": [
+        "John 13:33"
+      ],
+      "conclusion": "Shows present separation of believers from Christ's full presence until future coming.",
+      "parallelRefs": [],
+      "supportScore": 43,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0014",
+      "question": "I am grieving and cannot sleep.",
+      "topic": "death_state",
+      "scriptures": [
+        "Psalm 34:18",
+        "John 11:35"
+      ],
+      "scriptureOrder": [
+        "Psalm 34:18",
+        "John 11:35",
+        "1 Thessalonians 4:13"
+      ],
+      "conclusion": "Pastoral comfort scripture cross-ref (non-doctrine companion candidate)",
+      "parallelRefs": [
+        "Genesis 2:7",
+        "Ecclesiastes 9:5",
+        "John 11:11-14",
+        "1 Thessalonians 4:13-16",
+        "Revelation 20:4-6",
+        "Daniel 12:2",
+        "1 Corinthians 15:51-55",
+        "Psalm 146:3-4"
+      ],
+      "supportScore": 27,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0017",
+      "question": "I am grieving. What does the Bible say about death?",
+      "topic": "grief",
+      "scriptures": [
+        "Psalm 34:18"
+      ],
+      "scriptureOrder": [
+        "Psalm 34:18"
+      ],
+      "conclusion": "This verse reminds you that God is close to you in your grief.",
+      "parallelRefs": [],
+      "supportScore": 25,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0018",
+      "question": "I feel abandoned. Does Scripture say God leaves us?",
+      "topic": "mixed",
+      "scriptures": [
+        "Deuteronomy 31:6"
+      ],
+      "scriptureOrder": [
+        "Deuteronomy 31:6"
+      ],
+      "conclusion": "This verse directly assures us that God does not leave or abandon His people.",
+      "parallelRefs": [],
+      "supportScore": 25,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0020",
+      "question": "Why does God allow pain if He is holy?",
+      "topic": "mixed",
+      "scriptures": [
+        "James 5:14"
+      ],
+      "scriptureOrder": [
+        "James 5:14"
+      ],
+      "conclusion": "Encourages prayer and seeking God’s help in times of sickness and pain.",
+      "parallelRefs": [],
+      "supportScore": 25,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0027",
+      "question": "Does Scripture say God understands my pain?",
+      "topic": "emotional",
+      "scriptures": [
+        "Psalm 34:18"
+      ],
+      "scriptureOrder": [
+        "Psalm 34:18"
+      ],
+      "conclusion": "This verse assures us that God is near to those who are brokenhearted, showing His understanding and care.",
+      "parallelRefs": [],
+      "supportScore": 25,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0028",
+      "question": "Can you pray with me and point me to one verse?",
+      "topic": "emotional",
+      "scriptures": [
+        "Psalm 34:18"
+      ],
+      "scriptureOrder": [
+        "Psalm 34:18"
+      ],
+      "conclusion": "This verse reminds us that God is close to those who are hurting and offers salvation and comfort.",
+      "parallelRefs": [],
+      "supportScore": 25,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0016",
+      "question": "How do I keep the Sabbath while working a job?",
+      "topic": "sabbath",
+      "scriptures": [
+        "Matthew 12:11-12"
+      ],
+      "scriptureOrder": [
+        "Matthew 12:11-12"
+      ],
+      "conclusion": "Matthew 12:11-12, not quoted here as not in evidence).",
+      "parallelRefs": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9",
+        "Revelation 14:12"
+      ],
+      "supportScore": 22,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0021",
+      "question": "Sabbath rest while caring for a sick parent?",
+      "topic": "sabbath",
+      "scriptures": [
+        "Matthew 12:11-12"
+      ],
+      "scriptureOrder": [
+        "Matthew 12:11-12"
+      ],
+      "conclusion": "Matthew 12:11-12).",
+      "parallelRefs": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9",
+        "Revelation 14:12"
+      ],
+      "supportScore": 22,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    },
+    {
+      "candidateId": "bulk_0015",
+      "question": "Why would God allow suffering?",
+      "topic": "kingdom",
+      "scriptures": [
+        "Job 1:21-22",
+        "Romans 5:3-5",
+        "Revelation 21:4"
+      ],
+      "scriptureOrder": [
+        "Job 1:21-22",
+        "Romans 5:3-5",
+        "Revelation 21:4"
+      ],
+      "conclusion": "Suffering and future hope chain (off-card refs — review only)",
+      "parallelRefs": [
+        "Matthew 6:9-10",
+        "John 14:3",
+        "Acts 1:9-11",
+        "Revelation 5:10",
+        "Revelation 11:15",
+        "Revelation 20:1-6",
+        "Revelation 21:1-3",
+        "Genesis 1:1",
+        "Genesis 1:6-8",
+        "Genesis 1:14-17",
+        "Deuteronomy 10:14",
+        "John 3:13"
+      ],
+      "supportScore": 21,
+      "supportBand": "Hold",
+      "recommendedAction": "future_research",
+      "reviewRequired": true,
+      "autoApplied": false
+    }
+  ]
+}

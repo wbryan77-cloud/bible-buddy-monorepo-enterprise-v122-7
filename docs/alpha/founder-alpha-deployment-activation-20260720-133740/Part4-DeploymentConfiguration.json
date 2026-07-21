@@ -1,0 +1,33 @@
+{
+  "part": "Part 4 - Deployment Configuration Repair",
+  "renderYaml": {
+    "buildCommand": "npm install",
+    "buildCommandContainsBrokenPrismaMigrate": false,
+    "startCommand": "node server.js",
+    "healthCheckPath": "/health",
+    "nodeVersionSource": "package.json engines.node = >=20.x",
+    "autoDeploy": true,
+    "envVarCount": 25
+  },
+  "defectFound": {
+    "id": "admin-token-not-declared-in-render-yaml",
+    "description": "render.yaml declared ADMIN_PASSWORD (value: change-me) which is never read by any application code. The real Admin gate (routes/bibleAuthorityAdmin.js checkAdminAuth) reads BIBLE_AUTHORITY_ADMIN_TOKEN / ALPHA_ADMIN_TOKEN / BETA_REVIEW_TOKEN, none of which were declared as deployable env vars.",
+    "classification": "REAL_DEPLOYMENT_DEFECT",
+    "repaired": true,
+    "repairDescription": "Added BIBLE_AUTHORITY_ADMIN_TOKEN (sync: false) to render.yaml envVars with an explanatory comment. ADMIN_PASSWORD left in place but annotated as legacy/unused.",
+    "remainingManualAction": "A real secret value must still be set for BIBLE_AUTHORITY_ADMIN_TOKEN in the Render dashboard before any Founder invitations are sent; this batch does not generate or set secret values.",
+    "trackedIn": "Part 8 (Authentication) as a release-blocking item until set"
+  },
+  "localProductionSimulation": {
+    "buildCommandSimulated": true,
+    "buildCommandResult": "npm install --dry-run: clean, up to date, 0 errors",
+    "startCommandVerified": "node server.js already running locally, verified in Part 2",
+    "healthCheckVerified": true
+  },
+  "scopeDiscipline": {
+    "newDatabaseIntroduced": false,
+    "newQueueIntroduced": false,
+    "newCiCdIntroduced": false,
+    "newArchitectureIntroduced": false
+  }
+}

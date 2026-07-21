@@ -1,0 +1,3558 @@
+{
+  "ranAt": "2026-06-10T06:10:24.014Z",
+  "answers": [
+    {
+      "question": "What Scriptures in the recovered corpus address the Sabbath?",
+      "packId": "sabbath",
+      "label": "Sabbath",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Exodus 20",
+          "Ecclesiastes 12",
+          "Revelation 22",
+          "Daniel 0:7",
+          "Matthew 10",
+          "Leviticus 18",
+          "Psalm 147",
+          "Amos 3",
+          "Judges 3",
+          "Judges 6",
+          "Proverbs 21",
+          "Jeremiah 21",
+          "Song of Solomon 0:28",
+          "Jeremiah 29",
+          "Daniel 9",
+          "Isaiah 470",
+          "Isaiah 44",
+          "Isaiah 0:46",
+          "Daniel 0:49",
+          "Hebrews 12"
+        ],
+        "parallel": [],
+        "supporting": [
+          "Exodus 24",
+          "Exodus 34",
+          "Romans 301",
+          "Acts 2",
+          "Ezekiel 18",
+          "Numbers 14",
+          "Matthew 1",
+          "Revelation 20",
+          "John 9",
+          "Isaiah 63",
+          "Isaiah 13",
+          "Amos 9"
+        ],
+        "continuity": [
+          "Hebrews 4",
+          "Revelation 4",
+          "Hebrews 10",
+          "Numbers 14",
+          "Exodus 23",
+          "Isaiah 46",
+          "Genesis 3",
+          "Isaiah 58",
+          "James 1",
+          "Deuteronomy 15",
+          "Luke 630",
+          "Ezekiel 8"
+        ],
+        "genesisToRevelation": [
+          "Exodus 20",
+          "Ecclesiastes 12",
+          "Revelation 22",
+          "Daniel 0:7",
+          "Matthew 10",
+          "Leviticus 18",
+          "Psalm 147",
+          "Amos 3",
+          "Judges 3",
+          "Judges 6",
+          "Proverbs 21",
+          "Jeremiah 21",
+          "Song of Solomon 0:28",
+          "Jeremiah 29",
+          "Daniel 9",
+          "Isaiah 470",
+          "Isaiah 44",
+          "Isaiah 0:46",
+          "Daniel 0:49",
+          "Hebrews 12"
+        ],
+        "sectionsPresent": [
+          "Torah",
+          "Writings",
+          "Revelation",
+          "Latter Prophets",
+          "Gospels",
+          "Former Prophets",
+          "Epistles",
+          "Acts"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "sabbath",
+          "freezeSupport": false
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [
+        {
+          "chainId": "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+          "scriptureCount": 37,
+          "sourceCount": 2,
+          "bookkeepingOnly": true
+        }
+      ],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Matthew 12",
+            "target": "Exodus 23",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 23",
+            "target": "Isaiah 59",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Romans 7",
+            "target": "Exodus 24",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 24",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 20",
+            "target": "Exodus 34",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 34",
+            "target": "Exodus 342",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Romans 16",
+            "target": "Revelation 20",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 20",
+            "target": "Ezekiel 47",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 47",
+            "target": "Ezekiel 18",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 18",
+            "target": "Acts 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Acts 2",
+            "target": "Zephaniah 2",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Matthew 244",
+            "target": "Exodus 34",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 34",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 20",
+            "target": "Hebrews 4",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 4",
+            "target": "Isaiah 61",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "jacob",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "kingdom",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "pentecost",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "sabbath",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures support traceability for dietary law?",
+      "packId": "dietary_law",
+      "label": "Dietary Law",
+      "traceabilityTier": "partial_supporting_inventory",
+      "scripturesUsed": {
+        "original": [],
+        "parallel": [],
+        "supporting": [
+          "Ecclesiastes 12",
+          "Revelation 22",
+          "Leviticus 23",
+          "John 20",
+          "Leviticus 28",
+          "Acts 1",
+          "Acts 2",
+          "Ezekiel 2",
+          "Exodus 20",
+          "Daniel 0:7",
+          "Matthew 10",
+          "Leviticus 18"
+        ],
+        "continuity": [],
+        "genesisToRevelation": [],
+        "sectionsPresent": []
+      },
+      "sourceTraceability": [
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Ezekiel 18",
+            "target": "Acts 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Acts 2",
+            "target": "Zephaniah 2",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "1 Timothy 2",
+            "target": "Acts 2",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Acts 2",
+            "target": "Psalms 16",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 10",
+            "target": "Revelation 22",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 22",
+            "target": "Revelation 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Genesis 3",
+            "target": "Revelation 22",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 22",
+            "target": "Romans 3",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 1",
+            "target": "Revelation 22",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 22",
+            "target": "Matthew 24",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Matthew 24",
+            "target": "Acts 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Acts 2",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Jeremiah 16",
+            "target": "Acts 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Acts 2",
+            "target": "Ezekiel 37",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 4:18",
+            "target": "Ecclesiastes 12",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "pentecost",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "sabbath",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures address the death state in the frozen corpus?",
+      "packId": "death_state",
+      "label": "Death State",
+      "traceabilityTier": "partial_supporting_inventory",
+      "scripturesUsed": {
+        "original": [],
+        "parallel": [],
+        "supporting": [
+          "Luke 1",
+          "Acts 17",
+          "John 0:11",
+          "John 1",
+          "Exodus 24",
+          "John 5",
+          "John 0:15",
+          "1 Corinthians 10"
+        ],
+        "continuity": [],
+        "genesisToRevelation": [],
+        "sectionsPresent": []
+      },
+      "sourceTraceability": [
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Romans 7",
+            "target": "Exodus 24",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 24",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Leviticus 20",
+            "target": "Luke 1",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Luke 1",
+            "target": "Ezekiel 10",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 12",
+            "target": "John 5",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 5",
+            "target": "Hebrews 10",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 45",
+            "target": "John 5",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 5",
+            "target": "Isaiah 30",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Luke 2",
+            "target": "Luke 1",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Luke 1",
+            "target": "Ezekiel 43",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 20:1",
+            "target": "1 Corinthians 10",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "1 Corinthians 10",
+            "target": "John 17",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Deuteronomy 189",
+            "target": "John 5",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 5",
+            "target": "John 6",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Genesis 4:13",
+            "target": "John 1",
+            "type": "continuity",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": []
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures connect Messiah across Old and New Testaments?",
+      "packId": "messiah_logos",
+      "label": "Jesus OT/NT",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Luke 1",
+          "Acts 17",
+          "John 0:11",
+          "John 1",
+          "Exodus 24",
+          "John 5",
+          "John 0:15",
+          "1 Corinthians 10",
+          "Exodus 13",
+          "Isaiah 48",
+          "Isaiah 7",
+          "Matthew 1",
+          "Hebrews 0:30",
+          "John 0:34",
+          "Hebrews 2",
+          "Genesis 22",
+          "Isaiah 9",
+          "John 0:54",
+          "Philippians 2",
+          "John 1:1"
+        ],
+        "parallel": [],
+        "supporting": [
+          "Romans 7",
+          "Exodus 20",
+          "Zephaniah 2",
+          "Ephesians 47",
+          "1 Timothy 2",
+          "Psalms 16",
+          "Ezekiel 10",
+          "Daniel 10",
+          "Matthew 19",
+          "Deuteronomy 23",
+          "Revelation 20",
+          "Romans 12"
+        ],
+        "continuity": [
+          "Ezekiel 18",
+          "Leviticus 20",
+          "Numbers 11",
+          "Exodus 12",
+          "Hebrews 10",
+          "Deuteronomy 6",
+          "Ecclesiastes 9",
+          "Acts 15",
+          "Genesis 3",
+          "Matthew 24",
+          "Jeremiah 16",
+          "John 17"
+        ],
+        "genesisToRevelation": [
+          "Luke 1",
+          "Acts 17",
+          "John 0:11",
+          "John 1",
+          "Exodus 24",
+          "John 5",
+          "John 0:15",
+          "1 Corinthians 10",
+          "Exodus 13",
+          "Isaiah 48",
+          "Isaiah 7",
+          "Matthew 1",
+          "Hebrews 0:30",
+          "John 0:34",
+          "Hebrews 2",
+          "Genesis 22",
+          "Isaiah 9",
+          "John 0:54",
+          "Philippians 2",
+          "John 1:1"
+        ],
+        "sectionsPresent": [
+          "Gospels",
+          "Acts",
+          "Torah",
+          "Epistles",
+          "Latter Prophets",
+          "Writings",
+          "Revelation"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "messiah_logos",
+          "freezeSupport": false
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Amos 1",
+            "target": "Romans 7",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Romans 7",
+            "target": "Exodus 24",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 24",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 20",
+            "target": "Exodus 34",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 5:7",
+            "target": "Ecclesiastes 9",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ecclesiastes 9",
+            "target": "Deuteronomy 176",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Deuteronomy 176",
+            "target": "Leviticus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Leviticus 20",
+            "target": "Isaiah 66",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 47",
+            "target": "Ezekiel 18",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 18",
+            "target": "Acts 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Acts 2",
+            "target": "Zephaniah 2",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Zephaniah 2",
+            "target": "Mark 18",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 34",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 20",
+            "target": "Hebrews 4",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "1 Corinthians 15",
+            "target": "Ephesians 47",
+            "type": "repeated_theme",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "kingdom",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "pentecost",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "sabbath",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "messiah",
+            "target": "messiah_logos",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "gospel",
+            "target": "messiah_logos",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures are traced for the Holy Spirit pack?",
+      "packId": "holy_spirit",
+      "label": "Holy Spirit",
+      "traceabilityTier": "partial_supporting_inventory",
+      "scripturesUsed": {
+        "original": [],
+        "parallel": [],
+        "supporting": [
+          "John 6:63",
+          "1 Corinthians 2:13",
+          "Isaiah 31:1-3",
+          "John 4:24",
+          "Hebrews 1:7",
+          "Hebrews 1:13-14",
+          "Revelation 4:1-5",
+          "Matthew 25:31",
+          "Exodus 20",
+          "Matthew 6",
+          "Matthew 2",
+          "John 18"
+        ],
+        "continuity": [],
+        "genesisToRevelation": [],
+        "sectionsPresent": []
+      },
+      "sourceTraceability": [
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "John 424",
+            "target": "John 4:24",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 4:24",
+            "target": "John 5",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Genesis 0:6",
+            "target": "John 6:63",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 6:63",
+            "target": "Revelation 12",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 6:63",
+            "target": "1 Corinthians 2:13",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "1 Corinthians 2:13",
+            "target": "Isaiah 31:1-3",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Isaiah 31:1-3",
+            "target": "John 4:24",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 4:24",
+            "target": "Hebrews 1:7",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 1:7",
+            "target": "Hebrews 1:13-14",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 1:13-14",
+            "target": "Revelation 4:1-5",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 4:1-5",
+            "target": "Matthew 25:31",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Matthew 25:31",
+            "target": "Luke 10:1-3",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "1 John 4:1",
+            "target": "Hebrews 1:7",
+            "type": "repeated_theme",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 1:13-14",
+            "target": "Luke 10:17-20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "pentecost",
+            "target": "peter",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "pentecost",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures support Kingdom of God traceability?",
+      "packId": "kingdom_of_god",
+      "label": "Kingdom of God",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Exodus 20",
+          "Matthew 6",
+          "Matthew 2",
+          "John 18",
+          "Luke 0:20",
+          "Luke 0:21",
+          "Luke 1",
+          "Isaiah 9",
+          "Daniel 7",
+          "Revelation 14",
+          "Luke 19",
+          "Revelation 20",
+          "Revelation 5",
+          "Isaiah 65",
+          "Zechariah 8",
+          "Zechariah 14",
+          "Isaiah 2",
+          "Luke 13",
+          "Matthew 19",
+          "Ezekiel 37"
+        ],
+        "parallel": [],
+        "supporting": [
+          "Exodus 24",
+          "Exodus 34",
+          "Ezekiel 47",
+          "Ephesians 47",
+          "Ezekiel 10",
+          "Revelation 4",
+          "Ezekiel 18",
+          "Numbers 14",
+          "Deuteronomy 26",
+          "Leviticus 231",
+          "Romans 8",
+          "Zechariah 18"
+        ],
+        "continuity": [
+          "Romans 16",
+          "Hebrews 4",
+          "Leviticus 20",
+          "Ezekiel 10",
+          "Leviticus 22",
+          "Deuteronomy 26",
+          "Leviticus 231",
+          "Galatians 2",
+          "Revelation 4",
+          "Isaiah 46",
+          "Ecclesiastes 9",
+          "Acts 15"
+        ],
+        "genesisToRevelation": [
+          "Exodus 20",
+          "Matthew 6",
+          "Matthew 2",
+          "John 18",
+          "Luke 0:20",
+          "Luke 0:21",
+          "Luke 1",
+          "Isaiah 9",
+          "Daniel 7",
+          "Revelation 14",
+          "Luke 19",
+          "Revelation 20",
+          "Revelation 5",
+          "Isaiah 65",
+          "Zechariah 8",
+          "Zechariah 14",
+          "Isaiah 2",
+          "Luke 13",
+          "Matthew 19",
+          "Ezekiel 37"
+        ],
+        "sectionsPresent": [
+          "Torah",
+          "Gospels",
+          "Latter Prophets",
+          "Revelation",
+          "Epistles",
+          "Acts",
+          "Writings",
+          "Former Prophets"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "kingdom_of_god",
+          "freezeSupport": false
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [
+        {
+          "chainId": "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+          "scriptureCount": 37,
+          "sourceCount": 2,
+          "bookkeepingOnly": true
+        },
+        {
+          "chainId": "chain_matthew 6:10_acts 1:6-7_exodus 4:21-23_exodus 8:",
+          "scriptureCount": 34,
+          "sourceCount": 2,
+          "bookkeepingOnly": true
+        }
+      ],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Romans 7",
+            "target": "Exodus 24",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 24",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 20",
+            "target": "Exodus 34",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 34",
+            "target": "Exodus 342",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Deuteronomy 176",
+            "target": "Leviticus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Leviticus 20",
+            "target": "Isaiah 66",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Genesis 37",
+            "target": "Romans 16",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Romans 16",
+            "target": "Revelation 20",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 20",
+            "target": "Ezekiel 47",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 47",
+            "target": "Ezekiel 18",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 18",
+            "target": "Acts 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Matthew 244",
+            "target": "Exodus 34",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 34",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 20",
+            "target": "Hebrews 4",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 4",
+            "target": "Isaiah 61",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "israel",
+            "target": "jacob",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "jacob",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "kingdom",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "pentecost",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "sabbath",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "messiah",
+            "target": "messiah_logos",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "gospel",
+            "target": "messiah_logos",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures are linked to feasts and high Sabbaths?",
+      "packId": "feasts",
+      "label": "Feasts / High Sabbaths",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Ecclesiastes 12",
+          "Revelation 22",
+          "Leviticus 23",
+          "John 20",
+          "Leviticus 28",
+          "Acts 1",
+          "Acts 2",
+          "Ezekiel 2",
+          "Ezekiel 0:32",
+          "Ezekiel 3",
+          "Ezekiel 0:39",
+          "Revelation 10",
+          "Acts 7",
+          "Daniel 7",
+          "Acts 0:53",
+          "John 6",
+          "Isaiah 28",
+          "1 Corinthians 14",
+          "Deuteronomy 16",
+          "Acts 1:13"
+        ],
+        "parallel": [],
+        "supporting": [
+          "Isaiah 11",
+          "Jeremiah 31",
+          "Daniel 2",
+          "Zephaniah 2",
+          "Ephesians 47",
+          "1 Timothy 2",
+          "Psalms 16",
+          "Leviticus 231",
+          "Galatians 5",
+          "Numbers 11",
+          "Romans 8",
+          "Isaiah 8:19"
+        ],
+        "continuity": [
+          "Exodus 342",
+          "Ezekiel 18",
+          "Deuteronomy 26",
+          "Isaiah 402",
+          "Hebrews 10",
+          "2 Samuel 22",
+          "Ecclesiastes 9",
+          "Acts 15",
+          "Genesis 3",
+          "Acts 2",
+          "Jeremiah 16",
+          "1 Timothy 2"
+        ],
+        "genesisToRevelation": [
+          "Ecclesiastes 12",
+          "Revelation 22",
+          "Leviticus 23",
+          "John 20",
+          "Leviticus 28",
+          "Acts 1",
+          "Acts 2",
+          "Ezekiel 2",
+          "Ezekiel 0:32",
+          "Ezekiel 3",
+          "Ezekiel 0:39",
+          "Revelation 10",
+          "Acts 7",
+          "Daniel 7",
+          "Acts 0:53",
+          "John 6",
+          "Isaiah 28",
+          "1 Corinthians 14",
+          "Deuteronomy 16",
+          "Acts 1:13"
+        ],
+        "sectionsPresent": [
+          "Writings",
+          "Revelation",
+          "Torah",
+          "Gospels",
+          "Acts",
+          "Latter Prophets",
+          "Epistles",
+          "Former Prophets"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "feasts",
+          "freezeSupport": false
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [
+        {
+          "chainId": "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+          "scriptureCount": 37,
+          "sourceCount": 2,
+          "bookkeepingOnly": true
+        }
+      ],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Exodus 34",
+            "target": "Exodus 342",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 342",
+            "target": "Joel 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Joel 2",
+            "target": "Isaiah 11",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Isaiah 11",
+            "target": "John 5:7",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 5:7",
+            "target": "Ecclesiastes 9",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ecclesiastes 9",
+            "target": "Deuteronomy 176",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Psalm 27",
+            "target": "Jeremiah 31",
+            "type": "repeated_theme",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Jeremiah 31",
+            "target": "Isaiah 34",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Isaiah 34",
+            "target": "Daniel 2",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Daniel 2",
+            "target": "Revelation 12",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 47",
+            "target": "Ezekiel 18",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 18",
+            "target": "Acts 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Acts 2",
+            "target": "Zephaniah 2",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Zephaniah 2",
+            "target": "Mark 18",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "1 Corinthians 15",
+            "target": "Ephesians 47",
+            "type": "repeated_theme",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "jacob",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "pentecost",
+            "target": "peter",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "kingdom",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "pentecost",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "sabbath",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "messiah",
+            "target": "messiah_logos",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "gospel",
+            "target": "messiah_logos",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures support 144000 traceability candidates?",
+      "packId": "one_hundred_forty_four_thousand",
+      "label": "144000",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Revelation 7:1-8",
+          "Revelation 14:1-5",
+          "Genesis 49:1-28",
+          "Numbers 1:2-54",
+          "Numbers 2:1-34",
+          "Deuteronomy 33:1-29",
+          "Ezekiel 9:4",
+          "Ezekiel 9:6",
+          "Joel 2:28-29",
+          "Revelation 7:1",
+          "Revelation 7:2",
+          "Revelation 7:3",
+          "Revelation 7:4",
+          "Revelation 7:5",
+          "Revelation 7:6",
+          "Revelation 7:7",
+          "Revelation 7:8",
+          "Revelation 14:1",
+          "Revelation 14:2",
+          "Revelation 14:3"
+        ],
+        "parallel": [
+          "Ezekiel 9:1-6",
+          "Revelation 9:4",
+          "Revelation 21:12",
+          "James 1:1",
+          "Matthew 19:28",
+          "Luke 22:29-30"
+        ],
+        "supporting": [
+          "Ezekiel 37:21-28",
+          "Isaiah 11:11-12",
+          "Jeremiah 31:1-10",
+          "Jeremiah 30:3-11",
+          "Zechariah 8:7-8",
+          "Amos 9:14-15",
+          "Romans 11:1-5",
+          "Romans 11:25-29",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Revelation 19:11-16",
+          "Acts 11:1-18"
+        ],
+        "continuity": [
+          "Revelation 20:4-6",
+          "John 1:1-14",
+          "Luke 22:14-20",
+          "Revelation 5:10",
+          "Judges 11",
+          "Acts 3:19-21",
+          "Revelation 21:1-4"
+        ],
+        "genesisToRevelation": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 2:7",
+          "Genesis 49:1-28",
+          "Leviticus 23",
+          "Numbers 1:2-54",
+          "Numbers 2:1-34",
+          "Deuteronomy 33:1-29",
+          "Ecclesiastes 9:5",
+          "Isaiah 9:6",
+          "Ezekiel 9:4",
+          "Ezekiel 9:6",
+          "Joel 2:28-29",
+          "Zechariah 14:16-19",
+          "Matthew 6:9-10",
+          "Luke 22:14-20",
+          "John 1:1-14",
+          "John 11:11-14",
+          "John 3:13",
+          "Acts 11:1-18"
+        ],
+        "sectionsPresent": [
+          "Revelation",
+          "Torah",
+          "Latter Prophets",
+          "Gospels",
+          "Former Prophets",
+          "Acts",
+          "Writings",
+          "Epistles"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "one_hundred_forty_four_thousand",
+          "freezeSupport": true
+        },
+        {
+          "source": "deep-recovered-packs",
+          "topic": "one_hundred_forty_four_thousand"
+        },
+        {
+          "source": "kjv-traceability-freeze-support",
+          "humanReviewRequired": true
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Deuteronomy 14",
+            "target": "Judges 11",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Judges 11",
+            "target": "Revelation 14:1",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 14:1",
+            "target": "Luke 11",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 7",
+            "target": "Revelation 7:1",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 47",
+            "target": "Revelation 21:1-4",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 21:1-4",
+            "target": "Colossians 2:14",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Psalm 17:13-15",
+            "target": "Revelation 20:4-6",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 20:4-6",
+            "target": "Revelation 20:11-15",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 14:9-13",
+            "target": "Revelation 20:4-6",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Zephaniah 3:14-20",
+            "target": "Zechariah 8:7-8",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Zechariah 8:7-8",
+            "target": "Zechariah 8:13-15",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Matthew 19:27-30",
+            "target": "Revelation 20:4-6",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 21:1-3",
+            "target": "Revelation 21:12",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 21:12",
+            "target": "Ezekiel 48:29-31",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "israel",
+            "target": "jacob",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "jacob",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "kingdom",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures support Peter-Paul alignment traceability?",
+      "packId": "peter_paul_alignment",
+      "label": "Peter / Paul Alignment",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Matthew 16:13-19",
+          "Acts 2:14-41",
+          "Acts 10:1-48",
+          "Galatians 2:1-16",
+          "2 Peter 3:15-16",
+          "Genesis 15:6",
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Genesis 17:1-27",
+          "Exodus 4:21-26",
+          "Deuteronomy 10:14",
+          "1 Kings 8:27",
+          "Psalm 115:16",
+          "Psalm 22:27-28",
+          "Isaiah 46:9-10",
+          "Isaiah 2:1-4",
+          "Jeremiah 4:1",
+          "Jeremiah 4:6-7",
+          "Ezekiel 44:4-9"
+        ],
+        "parallel": [
+          "Acts 11:1-18",
+          "Acts 15:1-29",
+          "1 Corinthians 15:9-11",
+          "Ephesians 3:1-6"
+        ],
+        "supporting": [
+          "Acts 13:38-39",
+          "Acts 13:46-48",
+          "Romans 2:28-29",
+          "Romans 3:28-31",
+          "Romans 9:6-8",
+          "Romans 11:13-25",
+          "Ephesians 2:11-22",
+          "Colossians 1:25-27",
+          "1 Timothy 2:5-7",
+          "2 Timothy 1:11",
+          "Titus 1:1-3",
+          "1 Peter 1:1-2"
+        ],
+        "continuity": [
+          "Revelation 20:4-6",
+          "Luke 22:14-20",
+          "Revelation 5:10",
+          "John 1:1-14",
+          "Matthew 10:1",
+          "Ezekiel 20",
+          "Daniel 12",
+          "Revelation 12",
+          "Ephesians 3:9",
+          "Mark 13:14",
+          "Matthew 24:29-31",
+          "Revelation 17:1-8"
+        ],
+        "genesisToRevelation": [
+          "Genesis 2:2-3",
+          "Genesis 2:7",
+          "Genesis 15:6",
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Exodus 4:21-26",
+          "Leviticus 23",
+          "Deuteronomy 10:14",
+          "1 Kings 8:27",
+          "Psalm 115:16",
+          "Psalm 22:27-28",
+          "Ecclesiastes 9:5",
+          "Isaiah 46:9-10",
+          "Isaiah 2:1-4",
+          "Isaiah 9:6",
+          "Jeremiah 4:1",
+          "Jeremiah 4:6-7",
+          "Ezekiel 44:4-9",
+          "Daniel 12:4-13",
+          "Daniel 2:1"
+        ],
+        "sectionsPresent": [
+          "Gospels",
+          "Acts",
+          "Epistles",
+          "Torah",
+          "Former Prophets",
+          "Writings",
+          "Latter Prophets",
+          "Revelation"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "peter_paul_alignment",
+          "freezeSupport": true
+        },
+        {
+          "source": "deep-recovered-packs",
+          "topic": "peter_paul_alignment"
+        },
+        {
+          "source": "kjv-traceability-freeze-support",
+          "humanReviewRequired": true
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Daniel 2",
+            "target": "Revelation 12",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 12",
+            "target": "Genesis 37",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Joshua 194",
+            "target": "Ezekiel 20",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 20",
+            "target": "Matthew 25",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Deuteronomy 25",
+            "target": "Ezekiel 20",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 20",
+            "target": "Psalm 139",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 11",
+            "target": "Ezekiel 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 20",
+            "target": "Exodus 16",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Isaiah 58",
+            "target": "Ezekiel 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 20",
+            "target": "Revelation 12",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 5:7",
+            "target": "Ezekiel 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 20",
+            "target": "Isaiah 35",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "2 Kings 17",
+            "target": "Ezekiel 20",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 20",
+            "target": "Numbers 36",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "1 Peter 4",
+            "target": "Daniel 12",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "pentecost",
+            "target": "peter",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "gospel",
+            "target": "messiah_logos",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures trace Jacob, Israel, and the twelve tribes?",
+      "packId": "jacob_israel_twelve_tribes",
+      "label": "Jacob / Israel / Twelve Tribes",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Ecclesiastes 12",
+          "Exodus 20",
+          "Ecclesiastes 0:2",
+          "Revelation 22",
+          "Deuteronomy 28",
+          "Deuteronomy 0:5",
+          "Exodus 12",
+          "Daniel 9",
+          "Deuteronomy 32",
+          "Jeremiah 15",
+          "Luke 19",
+          "Luke 0:37",
+          "Luke 21",
+          "Psalm 44",
+          "Zechariah 11",
+          "Isaiah 42",
+          "Isaiah 51",
+          "Deuteronomy 30",
+          "Isaiah 61",
+          "Mark 1:0"
+        ],
+        "parallel": [],
+        "supporting": [
+          "John 1:19-20",
+          "Matthew 16:15-16",
+          "Matthew 16:20",
+          "Matthew 1:18-21",
+          "Matthew 15:21-24",
+          "Isaiah 61:1-2",
+          "Luke 4:14-22",
+          "Isaiah 61:2-9",
+          "Matthew 24:29-31",
+          "Isaiah 27:12-13",
+          "Isaiah 11:12",
+          "Isaiah 11:1-16"
+        ],
+        "continuity": [
+          "Revelation 5:10",
+          "Revelation 20:4-6",
+          "Hebrews 4",
+          "Galatians 2",
+          "John 5",
+          "Zechariah 1",
+          "Isaiah 402",
+          "Hebrews 10",
+          "Isaiah 46",
+          "Genesis 3",
+          "Ecclesiastes 9",
+          "Acts 2"
+        ],
+        "genesisToRevelation": [
+          "Genesis 2:2-3",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Genesis 12:1-3",
+          "Genesis 15:18",
+          "Genesis 17:7",
+          "Exodus 1:1-7",
+          "Exodus 19:5-6",
+          "Exodus 14:10-14",
+          "Exodus 4:6-7",
+          "Exodus 4:15-21",
+          "Exodus 9:7-11",
+          "Exodus 11:25-28",
+          "Exodus 25:1-3",
+          "Exodus 25:8",
+          "Exodus 29:42-46",
+          "Leviticus 23",
+          "Numbers 5:1-4",
+          "Deuteronomy 28:1-68",
+          "Deuteronomy 30:1-6"
+        ],
+        "sectionsPresent": [
+          "Writings",
+          "Torah",
+          "Revelation",
+          "Latter Prophets",
+          "Gospels",
+          "Acts",
+          "Former Prophets",
+          "Epistles"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "jacob_israel_twelve_tribes",
+          "freezeSupport": false
+        },
+        {
+          "source": "deep-recovered-packs",
+          "topic": "jacob_israel_twelve_tribes"
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [
+        {
+          "chainId": "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+          "scriptureCount": 37,
+          "sourceCount": 2,
+          "bookkeepingOnly": false
+        },
+        {
+          "chainId": "chain_matthew 6:10_acts 1:6-7_exodus 4:21-23_exodus 8:",
+          "scriptureCount": 34,
+          "sourceCount": 2,
+          "bookkeepingOnly": false
+        }
+      ],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Exodus 24",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 20",
+            "target": "Exodus 34",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 34",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 20",
+            "target": "Hebrews 4",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 4",
+            "target": "Isaiah 61",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ephesians 4",
+            "target": "Hebrews 10",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 10",
+            "target": "Luke 24",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 18",
+            "target": "Exodus 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 20",
+            "target": "Numbers 14",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 9",
+            "target": "Hebrews 10",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Isaiah 65",
+            "target": "Zechariah 18",
+            "type": "repeated_theme",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Zechariah 18",
+            "target": "Zechariah 8",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Zechariah 8",
+            "target": "Galatians 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Galatians 2",
+            "target": "Galatians 5",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Daniel 8",
+            "target": "Deuteronomy 28",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "israel",
+            "target": "jacob",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "jacob",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "kingdom",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "pentecost",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "sabbath",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures support millennial kingdom traceability?",
+      "packId": "millennial_kingdom_kingdom_on_earth",
+      "label": "Millennial Kingdom",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Ecclesiastes 12",
+          "Revelation 22",
+          "Matthew 0:4",
+          "Hebrews 3",
+          "John 0:10",
+          "John 6",
+          "John 12",
+          "Matthew 28",
+          "1 Thessalonians 2",
+          "John 3",
+          "Revelation 21",
+          "Isaiah 1",
+          "Deuteronomy 30",
+          "Genesis 17",
+          "Revelation 21:7",
+          "Proverbs 2",
+          "Matthew 7",
+          "Matthew 7:6",
+          "Titus 3",
+          "Daniel 0:57"
+        ],
+        "parallel": [],
+        "supporting": [
+          "Colossians 1:15-17",
+          "Leviticus 23",
+          "Acts 2:1-4",
+          "Zechariah 14:16-19",
+          "Deuteronomy 26",
+          "Romans 8",
+          "John 3:4",
+          "Daniel 8",
+          "Deuteronomy 17",
+          "Matthew 24",
+          "Ezekiel 18",
+          "Revelation 20"
+        ],
+        "continuity": [
+          "Luke 22:14-20",
+          "John 1:1-14",
+          "Acts 3:19-21",
+          "Revelation 21:1-4",
+          "Leviticus 22",
+          "Leviticus 231",
+          "Isaiah 41",
+          "Psalm 49",
+          "Hebrews 10",
+          "Genesis 3",
+          "Psalm 80",
+          "Malachi 2"
+        ],
+        "genesisToRevelation": [
+          "Genesis 2:2-3",
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Exodus 4:6-7",
+          "Exodus 4:15-21",
+          "Exodus 9:7-11",
+          "Exodus 11:25-28",
+          "Exodus 25:1-3",
+          "Exodus 25:8",
+          "Exodus 29:42-46",
+          "Exodus 20:1-5",
+          "Exodus 32:30-33",
+          "Exodus 17:14",
+          "Exodus 19:1-4",
+          "Exodus 9:1",
+          "Exodus 13:3",
+          "Exodus 20:1-3",
+          "Exodus 12:30-32",
+          "Exodus 14:5-18"
+        ],
+        "sectionsPresent": [
+          "Writings",
+          "Revelation",
+          "Gospels",
+          "Epistles",
+          "Latter Prophets",
+          "Torah",
+          "Former Prophets",
+          "Acts"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "millennial_kingdom_kingdom_on_earth",
+          "freezeSupport": false
+        },
+        {
+          "source": "deep-recovered-packs",
+          "topic": "millennial_kingdom_kingdom_on_earth"
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [
+        {
+          "chainId": "chain_ecclesiastes 12_exodus 20_ecclesiastes 0:2_revel",
+          "scriptureCount": 37,
+          "sourceCount": 2,
+          "bookkeepingOnly": true
+        },
+        {
+          "chainId": "chain_malachi 3:14-18_luke 10:1-2_luke 10:17-20_philip",
+          "scriptureCount": 16,
+          "sourceCount": 2,
+          "bookkeepingOnly": true
+        },
+        {
+          "chainId": "chain_psalm 138:1-4_luke 24:25-27_luke 24:44-45_exodus",
+          "scriptureCount": 20,
+          "sourceCount": 2,
+          "bookkeepingOnly": true
+        },
+        {
+          "chainId": "chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+          "scriptureCount": 44,
+          "sourceCount": 2,
+          "bookkeepingOnly": true
+        },
+        {
+          "chainId": "chain_matthew 6:10_acts 1:6-7_exodus 4:21-23_exodus 8:",
+          "scriptureCount": 34,
+          "sourceCount": 2,
+          "bookkeepingOnly": true
+        }
+      ],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Job 32",
+            "target": "Leviticus 22",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Leviticus 22",
+            "target": "Matthew 6",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Matthew 6",
+            "target": "Deuteronomy 26",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Deuteronomy 26",
+            "target": "Zechariah 14",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Zechariah 14",
+            "target": "Leviticus 231",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Leviticus 231",
+            "target": "Revelation 21",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 21",
+            "target": "Romans 8",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Romans 8",
+            "target": "John 3:4",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 3:4",
+            "target": "Hebrews 9",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Daniel 10",
+            "target": "Daniel 8",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Daniel 8",
+            "target": "Deuteronomy 28",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Deuteronomy 28",
+            "target": "Deuteronomy 17",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 17",
+            "target": "Isaiah 41",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Isaiah 41",
+            "target": "Romans 8",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Romans 8",
+            "target": "Matthew 24",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "jacob",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "jacob_israel_twelve_tribes",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "kingdom",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "pentecost",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "sabbath",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures are in the Book of Life pack inventory?",
+      "packId": "book_of_life",
+      "label": "Book of Life",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Malachi 3:14-18",
+          "Luke 10:1-2",
+          "Luke 10:17-20",
+          "Philippians 4:1-3",
+          "Exodus 32:30-33",
+          "Revelation 3:1-6",
+          "Psalm 69:28",
+          "Revelation 17:8",
+          "Revelation 21:10",
+          "Revelation 21:27",
+          "Daniel 12:1-2",
+          "Philippians 3:1-5",
+          "Philippians 3:10-21",
+          "Psalm 17:13-15",
+          "Revelation 20:4-6",
+          "Revelation 20:11-15"
+        ],
+        "parallel": [],
+        "supporting": [
+          "Luke 10:17-20",
+          "Exodus 32:30-33",
+          "Psalm 69:28",
+          "Revelation 21:10",
+          "Revelation 21:27",
+          "Daniel 12:1-2",
+          "Philippians 3:10-21",
+          "Psalm 17:13-15",
+          "Revelation 20:11-15",
+          "Luke 10:1-3",
+          "2 Chronicles 18:18-22",
+          "Revelation 13:1-3"
+        ],
+        "continuity": [
+          "Luke 10:1-2",
+          "Philippians 4:1-3",
+          "Revelation 3:1-6",
+          "Revelation 17:8",
+          "Philippians 3:1-5",
+          "Revelation 20:4-6",
+          "Matthew 19:27-30",
+          "Revelation 5:10"
+        ],
+        "genesisToRevelation": [
+          "Malachi 3:14-18",
+          "Luke 10:1-2",
+          "Luke 10:17-20",
+          "Philippians 4:1-3",
+          "Exodus 32:30-33",
+          "Revelation 3:1-6",
+          "Psalm 69:28",
+          "Revelation 17:8",
+          "Revelation 21:10",
+          "Revelation 21:27",
+          "Daniel 12:1-2",
+          "Philippians 3:1-5",
+          "Philippians 3:10-21",
+          "Psalm 17:13-15",
+          "Revelation 20:4-6",
+          "Revelation 20:11-15",
+          "Matthew 19:27-30",
+          "Revelation 5:10"
+        ],
+        "sectionsPresent": [
+          "Latter Prophets",
+          "Gospels",
+          "Epistles",
+          "Torah",
+          "Revelation",
+          "Writings"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "book_of_life",
+          "freezeSupport": false
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [
+        {
+          "chainId": "chain_malachi 3:14-18_luke 10:1-2_luke 10:17-20_philip",
+          "scriptureCount": 16,
+          "sourceCount": 2,
+          "bookkeepingOnly": false
+        }
+      ],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Malachi 3:14-18",
+            "target": "Luke 10:1-2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Luke 10:1-2",
+            "target": "Luke 10:17-20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Luke 10:17-20",
+            "target": "Philippians 4:1-3",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Philippians 4:1-3",
+            "target": "Exodus 32:30-33",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 32:30-33",
+            "target": "Revelation 3:1-6",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 3:1-6",
+            "target": "Psalm 69:28",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Psalm 69:28",
+            "target": "Revelation 17:8",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 17:8",
+            "target": "Revelation 21:10",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 21:10",
+            "target": "Revelation 21:27",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 21:27",
+            "target": "Daniel 12:1-2",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Daniel 12:1-2",
+            "target": "Philippians 3:1-5",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Philippians 3:1-5",
+            "target": "Philippians 3:10-21",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Philippians 3:10-21",
+            "target": "Psalm 17:13-15",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Psalm 17:13-15",
+            "target": "Revelation 20:4-6",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 20:4-6",
+            "target": "Revelation 20:11-15",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "kingdom",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "israel",
+            "target": "kingdom_of_god",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures trace the Word of God pack?",
+      "packId": "word_of_god",
+      "label": "Word of God",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "Psalm 138:1-4",
+          "Luke 24:25-27",
+          "Luke 24:44-45",
+          "Exodus 17:14",
+          "Jeremiah 30:1-3",
+          "Isaiah 30:8-10",
+          "Isaiah 34:16",
+          "Isaiah 55:6-11",
+          "Job 19:23-27",
+          "2 Samuel 23:1-3",
+          "2 Peter 1:15-21",
+          "2 Timothy 3:14-17",
+          "James 1:21-22",
+          "Acts 17:2-3",
+          "Acts 17:10-11",
+          "Deuteronomy 4:1-2",
+          "Proverbs 30:5-6",
+          "Revelation 22:18-19",
+          "Revelation 22:12-15",
+          "Hebrews 4:12-13"
+        ],
+        "parallel": [],
+        "supporting": [
+          "2 Chronicles 2",
+          "Exodus 23",
+          "Isaiah 30:1",
+          "Ezekiel 34:1-10",
+          "Luke 24:44-45",
+          "Exodus 17:14",
+          "Isaiah 30:8-10",
+          "Isaiah 34:16",
+          "Isaiah 55:6-11",
+          "2 Samuel 23:1-3",
+          "2 Timothy 3:14-17",
+          "James 1:21-22"
+        ],
+        "continuity": [
+          "Luke 24:25-27",
+          "Jeremiah 30:1-3",
+          "Job 19:23-27",
+          "2 Peter 1:15-21",
+          "Proverbs 30:5-6",
+          "Revelation 22:18-19",
+          "John 1:14",
+          "Philippians 3:1-2"
+        ],
+        "genesisToRevelation": [
+          "Psalm 138:1-4",
+          "Luke 24:25-27",
+          "Luke 24:44-45",
+          "Exodus 17:14",
+          "Jeremiah 30:1-3",
+          "Isaiah 30:8-10",
+          "Isaiah 34:16",
+          "Isaiah 55:6-11",
+          "Job 19:23-27",
+          "2 Samuel 23:1-3",
+          "2 Peter 1:15-21",
+          "2 Timothy 3:14-17",
+          "James 1:21-22",
+          "Acts 17:2-3",
+          "Acts 17:10-11",
+          "Deuteronomy 4:1-2",
+          "Proverbs 30:5-6",
+          "Revelation 22:18-19",
+          "Revelation 22:12-15",
+          "Hebrews 4:12-13"
+        ],
+        "sectionsPresent": [
+          "Writings",
+          "Gospels",
+          "Torah",
+          "Latter Prophets",
+          "Former Prophets",
+          "Epistles",
+          "Acts",
+          "Revelation"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "word_of_god",
+          "freezeSupport": false
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [
+        {
+          "chainId": "chain_psalm 138:1-4_luke 24:25-27_luke 24:44-45_exodus",
+          "scriptureCount": 20,
+          "sourceCount": 2,
+          "bookkeepingOnly": false
+        }
+      ],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Matthew 12",
+            "target": "Exodus 23",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 23",
+            "target": "Isaiah 59",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Colossians 3",
+            "target": "Exodus 23",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 23",
+            "target": "Jeremiah 29",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Genesis 2:18",
+            "target": "Exodus 23",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 23",
+            "target": "1 Corinthians 13",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Luke 22",
+            "target": "Exodus 23",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 23",
+            "target": "Joshua 23",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Judges 2",
+            "target": "Exodus 23",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 23",
+            "target": "Mark 8:34",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Luke 1",
+            "target": "Exodus 23",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 23",
+            "target": "Isaiah 63",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Leviticus 19",
+            "target": "Exodus 23",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 23",
+            "target": "Numbers 10:9",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Matthew 14",
+            "target": "Exodus 23",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "messiah",
+            "target": "messiah_logos",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "gospel",
+            "target": "messiah_logos",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    },
+    {
+      "question": "What Scriptures trace Spirit of God in the corpus?",
+      "packId": "spirit_of_god",
+      "label": "Spirit of God",
+      "traceabilityTier": "full",
+      "scripturesUsed": {
+        "original": [
+          "John 6:63",
+          "1 Corinthians 2:13",
+          "Isaiah 31:1-3",
+          "John 4:24",
+          "Hebrews 1:7",
+          "Hebrews 1:13-14",
+          "Revelation 4:1-5",
+          "Matthew 25:31",
+          "Luke 10:1-3",
+          "Luke 10:17-20",
+          "2 Chronicles 18:18-22",
+          "1 John 4:1-3",
+          "Nehemiah 9:19-20",
+          "John 6:48-54",
+          "John 6:63-68",
+          "Philippians 2:12",
+          "Philippians 2:16",
+          "Colossians 3:16",
+          "Ephesians 5:18-19",
+          "Luke 4:1"
+        ],
+        "parallel": [],
+        "supporting": [
+          "1 Corinthians 7:10-15",
+          "John 424",
+          "John 5",
+          "John 16",
+          "Genesis 2",
+          "Revelation 22",
+          "Luke 3",
+          "Jeremiah 15",
+          "Hebrews 10:1",
+          "Genesis 3:4",
+          "Genesis 34",
+          "Acts 12"
+        ],
+        "continuity": [
+          "Acts 8",
+          "Acts 2",
+          "Matthew 17",
+          "Exodus 23:20-24",
+          "1 Corinthians 15:45",
+          "Genesis 0:6",
+          "Revelation 12",
+          "Philippians 4:1-3",
+          "1 Corinthians 2:13",
+          "John 4:24",
+          "Hebrews 1:7",
+          "Revelation 4:1-5"
+        ],
+        "genesisToRevelation": [
+          "John 6:63",
+          "1 Corinthians 2:13",
+          "Isaiah 31:1-3",
+          "John 4:24",
+          "Hebrews 1:7",
+          "Hebrews 1:13-14",
+          "Revelation 4:1-5",
+          "Matthew 25:31",
+          "Luke 10:1-3",
+          "Luke 10:17-20",
+          "2 Chronicles 18:18-22",
+          "1 John 4:1-3",
+          "Nehemiah 9:19-20",
+          "John 6:48-54",
+          "John 6:63-68",
+          "Philippians 2:12",
+          "Philippians 2:16",
+          "Colossians 3:16",
+          "Ephesians 5:18-19",
+          "Luke 4:1"
+        ],
+        "sectionsPresent": [
+          "Gospels",
+          "Epistles",
+          "Latter Prophets",
+          "Revelation",
+          "Writings",
+          "Torah",
+          "Acts"
+        ]
+      },
+      "sourceTraceability": [
+        {
+          "source": "scripture-traceability-index",
+          "topic": "spirit_of_god",
+          "freezeSupport": false
+        },
+        {
+          "source": "bible-wide-scripture-enrichment",
+          "witnessInventoryComplete": true
+        }
+      ],
+      "chainTraceability": [
+        {
+          "chainId": "chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+          "scriptureCount": 44,
+          "sourceCount": 2,
+          "bookkeepingOnly": false
+        }
+      ],
+      "relationshipTraceability": {
+        "observed": [
+          {
+            "source": "Daniel 2",
+            "target": "Revelation 12",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 12",
+            "target": "Genesis 37",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Ezekiel 18",
+            "target": "Acts 2",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Acts 2",
+            "target": "Zephaniah 2",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "1 Timothy 2",
+            "target": "Acts 2",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Acts 2",
+            "target": "Psalms 16",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Exodus 12",
+            "target": "John 5",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 5",
+            "target": "Hebrews 10",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Hebrews 10",
+            "target": "Revelation 22",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 22",
+            "target": "Revelation 20",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Genesis 3",
+            "target": "Revelation 22",
+            "type": "continuity",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 22",
+            "target": "Romans 3",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 45",
+            "target": "John 5",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "John 5",
+            "target": "Isaiah 30",
+            "type": "supporting",
+            "supportLevel": "observed"
+          },
+          {
+            "source": "Revelation 1",
+            "target": "Revelation 22",
+            "type": "supporting",
+            "supportLevel": "observed"
+          }
+        ],
+        "candidate": [
+          {
+            "source": "pentecost",
+            "target": "peter",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          },
+          {
+            "source": "pentecost",
+            "target": "feasts",
+            "type": "continuity",
+            "supportLevel": "candidate_review_only",
+            "autoDoctrine": false
+          }
+        ]
+      },
+      "answerTraceable": true
+    }
+  ],
+  "qualityScores": [
+    {
+      "label": "Sabbath",
+      "packId": "sabbath",
+      "question": "What Scriptures in the recovered corpus address the Sabbath?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 0.875,
+      "passed": true
+    },
+    {
+      "label": "Dietary Law",
+      "packId": "dietary_law",
+      "question": "What Scriptures support traceability for dietary law?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 0.2,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 0,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 0.5,
+      "unsupportedClaimRisk": "medium",
+      "overallScore": 0.588,
+      "passed": true
+    },
+    {
+      "label": "Death State",
+      "packId": "death_state",
+      "question": "What Scriptures address the death state in the frozen corpus?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 0.2,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 0,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 0.5,
+      "unsupportedClaimRisk": "medium",
+      "overallScore": 0.588,
+      "passed": true
+    },
+    {
+      "label": "Jesus OT/NT",
+      "packId": "messiah_logos",
+      "question": "What Scriptures connect Messiah across Old and New Testaments?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 0.875,
+      "passed": true
+    },
+    {
+      "label": "Holy Spirit",
+      "packId": "holy_spirit",
+      "question": "What Scriptures are traced for the Holy Spirit pack?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 0.2,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 0,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 0.5,
+      "unsupportedClaimRisk": "medium",
+      "overallScore": 0.588,
+      "passed": true
+    },
+    {
+      "label": "Kingdom of God",
+      "packId": "kingdom_of_god",
+      "question": "What Scriptures support Kingdom of God traceability?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 0.875,
+      "passed": true
+    },
+    {
+      "label": "Feasts / High Sabbaths",
+      "packId": "feasts",
+      "question": "What Scriptures are linked to feasts and high Sabbaths?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 0.875,
+      "passed": true
+    },
+    {
+      "label": "144000",
+      "packId": "one_hundred_forty_four_thousand",
+      "question": "What Scriptures support 144000 traceability candidates?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 1,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 1,
+      "passed": true
+    },
+    {
+      "label": "Peter / Paul Alignment",
+      "packId": "peter_paul_alignment",
+      "question": "What Scriptures support Peter-Paul alignment traceability?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 1,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 1,
+      "passed": true
+    },
+    {
+      "label": "Jacob / Israel / Twelve Tribes",
+      "packId": "jacob_israel_twelve_tribes",
+      "question": "What Scriptures trace Jacob, Israel, and the twelve tribes?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 0.875,
+      "passed": true
+    },
+    {
+      "label": "Millennial Kingdom",
+      "packId": "millennial_kingdom_kingdom_on_earth",
+      "question": "What Scriptures support millennial kingdom traceability?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 0.875,
+      "passed": true
+    },
+    {
+      "label": "Book of Life",
+      "packId": "book_of_life",
+      "question": "What Scriptures are in the Book of Life pack inventory?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 0.875,
+      "passed": true
+    },
+    {
+      "label": "Word of God",
+      "packId": "word_of_god",
+      "question": "What Scriptures trace the Word of God pack?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 0.875,
+      "passed": true
+    },
+    {
+      "label": "Spirit of God",
+      "packId": "spirit_of_god",
+      "question": "What Scriptures trace Spirit of God in the corpus?",
+      "scriptureAccuracy": 1,
+      "traceability": 1,
+      "genesisToRevelationSupport": 1,
+      "parallelScriptureSupport": 0,
+      "supportingScriptureSupport": 1,
+      "continuitySupport": 1,
+      "clarity": 1,
+      "unsupportedClaimRiskScore": 1,
+      "unsupportedClaimRisk": "low",
+      "overallScore": 0.875,
+      "passed": true
+    }
+  ],
+  "failures": [
+    {
+      "label": "Dietary Law",
+      "packId": "dietary_law",
+      "failures": [
+        {
+          "type": "weak_chain",
+          "detail": "No scripture chain and no primary scriptures"
+        }
+      ]
+    },
+    {
+      "label": "Death State",
+      "packId": "death_state",
+      "failures": [
+        {
+          "type": "weak_chain",
+          "detail": "No scripture chain and no primary scriptures"
+        }
+      ]
+    },
+    {
+      "label": "Holy Spirit",
+      "packId": "holy_spirit",
+      "failures": [
+        {
+          "type": "weak_chain",
+          "detail": "No scripture chain and no primary scriptures"
+        }
+      ]
+    }
+  ],
+  "vineResults": [
+    {
+      "name": "Abraham → Isaac → Jacob → Israel → Twelve Tribes → Kingdom → New Jerusalem → 144000",
+      "result": {
+        "topicSequence": [
+          "abraham",
+          "isaac",
+          "jacob",
+          "israel",
+          "jacob_israel_twelve_tribes",
+          "kingdom_of_god",
+          "new_jerusalem",
+          "one_hundred_forty_four_thousand"
+        ],
+        "steps": [
+          {
+            "topic": "abraham",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "isaac",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "jacob",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "israel",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "jacob_israel_twelve_tribes",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "kingdom_of_god",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "new_jerusalem",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "one_hundred_forty_four_thousand",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          }
+        ],
+        "fullyNavigable": true
+      }
+    },
+    {
+      "name": "Peter → Pentecost → Cornelius → Gentiles → Paul",
+      "result": {
+        "topicSequence": [
+          "peter",
+          "pentecost",
+          "cornelius",
+          "gentiles",
+          "paul"
+        ],
+        "steps": [
+          {
+            "topic": "peter",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "pentecost",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "cornelius",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "gentiles",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          },
+          {
+            "topic": "paul",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          }
+        ],
+        "fullyNavigable": true
+      }
+    },
+    {
+      "name": "Kingdom → David → Messiah → Resurrection → Millennium → New Jerusalem",
+      "result": {
+        "topicSequence": [
+          "kingdom_of_god",
+          "david",
+          "messiah_logos",
+          "resurrection",
+          "millennial_kingdom_kingdom_on_earth",
+          "new_jerusalem"
+        ],
+        "steps": [
+          {
+            "topic": "kingdom_of_god",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": false,
+            "pathwayNavigable": false
+          },
+          {
+            "topic": "david",
+            "nodeFound": false,
+            "connectedToPrevious": false,
+            "connectedToNext": false,
+            "pathwayNavigable": false
+          },
+          {
+            "topic": "messiah_logos",
+            "nodeFound": true,
+            "connectedToPrevious": false,
+            "connectedToNext": true,
+            "pathwayNavigable": false
+          },
+          {
+            "topic": "resurrection",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": false,
+            "pathwayNavigable": false
+          },
+          {
+            "topic": "millennial_kingdom_kingdom_on_earth",
+            "nodeFound": true,
+            "connectedToPrevious": false,
+            "connectedToNext": true,
+            "pathwayNavigable": false
+          },
+          {
+            "topic": "new_jerusalem",
+            "nodeFound": true,
+            "connectedToPrevious": true,
+            "connectedToNext": true,
+            "pathwayNavigable": true
+          }
+        ],
+        "fullyNavigable": false
+      }
+    }
+  ],
+  "determination": "READY_FOR_PHASE_4B",
+  "goCriteria": {
+    "corpusLoaded": true,
+    "scriptureRetrieval": true,
+    "genesisToRevelationNavigation": true,
+    "vineNavigation": true,
+    "observedCandidateSeparation": true,
+    "answersTraceable": true,
+    "failureRateAcceptable": true
+  }
+}

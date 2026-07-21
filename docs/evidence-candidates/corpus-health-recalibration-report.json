@@ -1,0 +1,102 @@
+{
+  "ranAt": "2026-06-10T05:11:43.828Z",
+  "purpose": "Determine actual intelligence readiness after validation adjustments",
+  "currentScores": {
+    "chainAttachmentCoveragePct": 20.8,
+    "questionCoveragePct": 58.4,
+    "traceabilityCoveragePct": 89.7,
+    "enrichmentCoveragePct": 100,
+    "topicConnectivityPct": 100,
+    "overallReadinessPct": 80
+  },
+  "adjustedScores": {
+    "chainAttachmentCoveragePct": 37.5,
+    "questionCoveragePct": 82.5,
+    "traceabilityCoveragePct": 92.9,
+    "enrichmentCoveragePct": 100,
+    "topicConnectivityPct": 100,
+    "pathwayQualitySupportedPct": 4.8
+  },
+  "metadataAdjustedScores": {
+    "chainAttachmentCoveragePct": 37.5,
+    "questionCoveragePct": 74.8,
+    "traceabilityCoveragePct": 92.9,
+    "enrichmentCoveragePct": 100,
+    "topicConnectivityPct": 100,
+    "pathwayQualitySupportedPct": 4.8
+  },
+  "adjustedMetrics": [
+    {
+      "name": "chain_attachment",
+      "current": 20.8,
+      "adjusted": 37.5,
+      "metadataAdjusted": 37.5
+    },
+    {
+      "name": "question_coverage",
+      "current": 58.4,
+      "adjusted": 82.5,
+      "metadataAdjusted": 74.8
+    },
+    {
+      "name": "traceability",
+      "current": 89.7,
+      "adjusted": 92.9,
+      "metadataAdjusted": 92.9
+    },
+    {
+      "name": "enrichment",
+      "current": 100,
+      "adjusted": 100,
+      "metadataAdjusted": 100
+    },
+    {
+      "name": "topic_connectivity",
+      "current": 100,
+      "adjusted": 100,
+      "metadataAdjusted": 100
+    }
+  ],
+  "readiness": {
+    "currentReadinessPct": 80,
+    "adjustedReadinessPct": 80,
+    "metadataAdjustedReadinessPct": 80,
+    "readyForPhase4ImplementationTesting": true,
+    "readyForPhase4WithBookkeepingFixes": true
+  },
+  "weaknessBreakdown": {
+    "chainAttachment": {
+      "bookkeepingSharePct": 21.1,
+      "packGapsMissingLinkage": 4,
+      "packGapsInsufficientEvidence": 15,
+      "verdict": "mostly_insufficient_evidence"
+    },
+    "questionCoverage": {
+      "currentFormulaPct": 58.4,
+      "trueCoveragePct": 74.8,
+      "corpusScopeSharePct": 21.9,
+      "scoringLimitationPct": 29.2,
+      "verdict": "mostly_scoring_formula"
+    },
+    "traceability": {
+      "metadataOnlySharePct": 92.9,
+      "evidenceRelatedFailures": 2,
+      "verdict": "mostly_metadata"
+    },
+    "pathwayQuality": {
+      "supportedPct": 4.8,
+      "weakPct": 95.2,
+      "verdict": "mostly_single_source_observed_edges_not_corpus_weakness"
+    }
+  },
+  "executiveAnswers": {
+    "chainAttachmentBookkeepingSharePct": 21.1,
+    "questionCoverageCorpusScopePct": 74.8,
+    "traceabilityMetadataSharePct": 92.9,
+    "adjustedCorpusHealthScorePct": 80,
+    "phase4Ready": true
+  },
+  "safety": {
+    "validationOnly": true
+  }
+}

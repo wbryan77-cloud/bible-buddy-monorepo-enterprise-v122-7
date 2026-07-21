@@ -1,0 +1,212 @@
+{
+  "ranAt": "2026-06-07T22:24:45.141Z",
+  "env": {
+    "nodeEnv": "development",
+    "model": "gpt-4.1-mini",
+    "keyPresent": true,
+    "keyLen": 257,
+    "openaiClientNull": false
+  },
+  "partA": {
+    "logos": {
+      "message": "What does Logos mean in John 1:1?",
+      "model": "gpt-4.1-mini",
+      "response_format": {
+        "type": "json_object"
+      },
+      "temperature": 0.72,
+      "systemPromptBytes": 23208,
+      "userPayloadBytes": 11333,
+      "totalPromptBytes": 34541,
+      "openaiClientNull": false,
+      "keyPresent": true,
+      "keyLen": 257,
+      "success": false,
+      "errorCode": 401,
+      "errorMessage": "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys.",
+      "rawReplyPreview": null,
+      "usage": null
+    },
+    "third_heaven": {
+      "message": "What is the third heaven?",
+      "model": "gpt-4.1-mini",
+      "response_format": {
+        "type": "json_object"
+      },
+      "temperature": 0.72,
+      "systemPromptBytes": 28249,
+      "userPayloadBytes": 18069,
+      "totalPromptBytes": 46318,
+      "openaiClientNull": false,
+      "keyPresent": true,
+      "keyLen": 257,
+      "success": false,
+      "errorCode": 401,
+      "errorMessage": "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys.",
+      "rawReplyPreview": null,
+      "usage": null
+    }
+  },
+  "turns": [
+    {
+      "id": "logos",
+      "question": "What does Logos mean in John 1:1?",
+      "retrieval": {
+        "topic": "messiah_logos",
+        "effectiveTopic": "messiah_logos",
+        "cardIds": [
+          "messiahLogos"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 0,
+        "historyAllowed": false,
+        "currentIntent": "meaning_word_study"
+      },
+      "promptConstruction": {
+        "systemPromptBytes": 18313,
+        "evidenceBytes": 9680,
+        "cardsInPrompt": true,
+        "cardIdsInPrompt": [
+          "messiahLogos"
+        ],
+        "catalogKeysInPrompt": []
+      },
+      "composeDirect": {
+        "openaiCalled": false,
+        "apiError": "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys.",
+        "attempts": 1,
+        "rawReplyPreview": "",
+        "claims": [],
+        "composeValidation": false,
+        "composeValidationIssues": [
+          "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys."
+        ]
+      },
+      "runBuddy": {
+        "openaiCalled": false,
+        "openaiCalledDbg": false,
+        "openAiCalledRt": false,
+        "finalAnswerAuthor": "connection_error",
+        "errorMessage": "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys.",
+        "masterRoute": "core_connection_error",
+        "buildConnectionErrorReplyUsed": true,
+        "regenerated": false,
+        "claimDegraded": false,
+        "rawReply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+        "claims": [],
+        "claimValidation": {
+          "claimResults": []
+        },
+        "validation": {
+          "passed": false,
+          "issues": [
+            "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys."
+          ]
+        },
+        "approvalDecision": "blocked_connection",
+        "admin_flags": [
+          "core_connection_error"
+        ]
+      },
+      "memoryBefore": {
+        "rssMB": 113,
+        "heapUsedMB": 16,
+        "heapTotalMB": 36
+      },
+      "memoryAfter": {
+        "rssMB": 144,
+        "heapUsedMB": 21,
+        "heapTotalMB": 38
+      },
+      "failureClassification": {
+        "codes": [
+          "C_or_API",
+          "API_BLOCK"
+        ],
+        "primary": "API_FAILURE"
+      }
+    },
+    {
+      "id": "third_heaven",
+      "question": "What is the third heaven?",
+      "retrieval": {
+        "topic": "heavens",
+        "effectiveTopic": "heavens",
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "scriptureRefCount": 10,
+        "historyAllowed": false,
+        "currentIntent": "definition"
+      },
+      "promptConstruction": {
+        "systemPromptBytes": 23354,
+        "evidenceBytes": 14721,
+        "cardsInPrompt": true,
+        "cardIdsInPrompt": [
+          "heavens"
+        ],
+        "catalogKeysInPrompt": [
+          "threeHeavens"
+        ]
+      },
+      "composeDirect": {
+        "openaiCalled": false,
+        "apiError": "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys.",
+        "attempts": 1,
+        "rawReplyPreview": "",
+        "claims": [],
+        "composeValidation": false,
+        "composeValidationIssues": [
+          "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys."
+        ]
+      },
+      "runBuddy": {
+        "openaiCalled": false,
+        "openaiCalledDbg": false,
+        "openAiCalledRt": false,
+        "finalAnswerAuthor": "connection_error",
+        "errorMessage": "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys.",
+        "masterRoute": "core_connection_error",
+        "buildConnectionErrorReplyUsed": true,
+        "regenerated": false,
+        "claimDegraded": false,
+        "rawReply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+        "claims": [],
+        "claimValidation": {
+          "claimResults": []
+        },
+        "validation": {
+          "passed": false,
+          "issues": [
+            "401 Incorrect API key provided: william@*****************************************************************************************************************************************************************************************************************************************************k1YA. You can find your API key at https://platform.openai.com/account/api-keys."
+          ]
+        },
+        "approvalDecision": "blocked_connection",
+        "admin_flags": [
+          "core_connection_error"
+        ]
+      },
+      "memoryBefore": {
+        "rssMB": 150,
+        "heapUsedMB": 17,
+        "heapTotalMB": 42
+      },
+      "memoryAfter": {
+        "rssMB": 152,
+        "heapUsedMB": 21,
+        "heapTotalMB": 47
+      },
+      "failureClassification": {
+        "codes": [
+          "C_or_API",
+          "API_BLOCK"
+        ],
+        "primary": "API_FAILURE"
+      }
+    }
+  ]
+}

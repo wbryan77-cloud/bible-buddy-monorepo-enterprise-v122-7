@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bible Buddy — Beta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: #f7f6f4;
+      color: #111827;
+    }
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 16px 16px 100px;
+      display: flex;
+      flex-direction: column;
+    }
+    header { margin-bottom: 12px; }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    header p { margin: 4px 0 0; font-size: 0.9rem; color: #4b5563; }
+    .panel {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+      margin-bottom: 10px;
+    }
+    label { font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px; }
+    select, input, textarea {
+      width: 100%;
+      font: inherit;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+    }
+    .meta { font-size: 0.8rem; color: #6b7280; margin-top: 6px; }
+    .log {
+      flex: 1;
+      min-height: 280px;
+      max-height: 50vh;
+      overflow-y: auto;
+      padding: 8px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+    }
+    .msg { display: flex; margin: 6px 0; }
+    .msg.user { justify-content: flex-end; }
+    .bubble {
+      max-width: 85%;
+      padding: 8px 12px;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+    .msg.user .bubble { background: #dbeafe; border-bottom-right-radius: 4px; }
+    .msg.bot .bubble { background: #f3f4f6; border-bottom-left-radius: 4px; }
+    .composer {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .composer input { flex: 1; }
+    button {
+      font: inherit;
+      border-radius: 8px;
+      border: none;
+      padding: 8px 14px;
+      cursor: pointer;
+      background: #1d4ed8;
+      color: #fff;
+    }
+    button.secondary { background: #e5e7eb; color: #111827; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .status { font-size: 0.8rem; color: #6b7280; text-align: right; margin-top: 4px; }
+    .hidden { display: none !important; }
+    .rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 8px 0;
+      gap: 8px;
+    }
+    .rating-row span { flex: 1; font-size: 0.9rem; }
+    .rating-row select { width: 72px; flex: none; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Bible Buddy Beta</h1>
+      <p>Select your tester ID, chat with Buddy, then submit feedback when you are done.</p>
+    </header>
+
+    <section id="setupPanel" class="panel">
+      <label for="testerSelect">Tester</label>
+      <select id="testerSelect">
+        <option value="">Loading testers…</option>
+      </select>
+      <p class="meta" id="sessionMeta"></p>
+      <div class="actions">
+        <button type="button" id="startBtn">Start session</button>
+      </div>
+    </section>
+
+    <section id="chatPanel" class="hidden">
+      <div class="log" id="log"></div>
+      <p class="status" id="statusEl">Ready.</p>
+      <div class="composer">
+        <input id="messageInput" type="text" placeholder="Message Buddy…" autocomplete="off" />
+        <button type="button" id="sendBtn">Send</button>
+      </div>
+      <div class="actions">
+        <button type="button" class="secondary" id="endSessionBtn">End session &amp; give feedback</button>
+      </div>
+    </section>
+
+    <section id="feedbackPanel" class="panel hidden">
+      <h2 style="margin:0 0 8px;font-size:1.1rem;">Session feedback</h2>
+      <p class="meta">Rate your experience (1 = low, 5 = high). Required for all five.</p>
+
+      <div class="rating-row"><span>Felt heard</span><select id="feltHeard" required></select></div>
+      <div class="rating-row"><span>Usefulness</span><select id="usefulness" required></select></div>
+      <div class="rating-row"><span>Biblical faithfulness</span><select id="biblicalFaithfulness" required></select></div>
+      <div class="rating-row"><span>Naturalness</span><select id="naturalness" required></select></div>
+      <div class="rating-row"><span>Would use again</span><select id="wouldUseAgain" required></select></div>
+
+      <label for="comment" style="margin-top:12px;">Comment (optional)</label>
+      <textarea id="comment" rows="3" placeholder="What worked? What felt off?"></textarea>
+
+      <label style="margin-top:10px;display:flex;align-items:flex-start;gap:8px;font-weight:400;">
+        <input type="checkbox" id="consent" checked style="width:auto;margin-top:3px;" />
+        <span>I consent to aggregate review of this feedback to improve Bible Buddy.</span>
+      </label>
+
+      <div class="actions">
+        <button type="button" id="submitFeedbackBtn">Submit feedback</button>
+        <button type="button" class="secondary" id="newSessionBtn">Start new session</button>
+      </div>
+      <p class="status" id="feedbackStatus"></p>
+    </section>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'bibleBuddyBetaTesterId';
+    const state = {
+      testerId: null,
+      cohort: null,
+      sessionId: null,
+      turnCount: 0,
+    };
+
+    const testerSelect = document.getElementById('testerSelect');
+    const setupPanel = document.getElementById('setupPanel');
+    const chatPanel = document.getElementById('chatPanel');
+    const feedbackPanel = document.getElementById('feedbackPanel');
+    const logEl = document.getElementById('log');
+    const statusEl = document.getElementById('statusEl');
+    const messageInput = document.getElementById('messageInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const sessionMeta = document.getElementById('sessionMeta');
+
+    function fillRatingSelects() {
+      ['feltHeard', 'usefulness', 'biblicalFaithfulness', 'naturalness', 'wouldUseAgain'].forEach((id) => {
+        const el = document.getElementById(id);
+        el.innerHTML = '<option value="">—</option>';
+        for (let i = 1; i <= 5; i++) {
+          const opt = document.createElement('option');
+          opt.value = String(i);
+          opt.textContent = String(i);
+          el.appendChild(opt);
+        }
+      });
+    }
+
+    function newSessionId() {
+      return 'sess-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8);
+    }
+
+    function updateSessionMeta() {
+      if (!state.testerId) {
+        sessionMeta.textContent = '';
+        return;
+      }
+      sessionMeta.textContent = state.sessionId
+        ? 'Tester: ' + state.testerId + ' · Session: ' + state.sessionId + ' · Turns: ' + state.turnCount
+        : 'Tester: ' + state.testerId + (state.cohort ? ' · Cohort: ' + state.cohort : '');
+    }
+
+    function addMessage(role, text) {
+      const row = document.createElement('div');
+      row.className = 'msg ' + (role === 'user' ? 'user' : 'bot');
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.textContent = text;
+      row.appendChild(bubble);
+      logEl.appendChild(row);
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    async function loadTesters() {
+      const res = await fetch('/api/beta/testers');
+      const data = await res.json();
+      testerSelect.innerHTML = '<option value="">Select tester…</option>';
+      (data.testers || []).forEach((t) => {
+        const opt = document.createElement('option');
+        opt.value = t.testerId;
+        opt.textContent = t.displayName + ' (' + t.testerId + ')';
+        opt.dataset.cohort = t.cohort || '';
+        testerSelect.appendChild(opt);
+      });
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) testerSelect.value = saved;
+    }
+
+    function startSession() {
+      const testerId = testerSelect.value;
+      if (!testerId) {
+        alert('Please select a tester ID.');
+        return;
+      }
+      const opt = testerSelect.selectedOptions[0];
+      state.testerId = testerId;
+      state.cohort = opt?.dataset?.cohort || null;
+      state.sessionId = newSessionId();
+      state.turnCount = 0;
+      localStorage.setItem(STORAGE_KEY, testerId);
+      logEl.innerHTML = '';
+      setupPanel.classList.add('hidden');
+      chatPanel.classList.remove('hidden');
+      feedbackPanel.classList.add('hidden');
+      updateSessionMeta();
+      messageInput.focus();
+    }
+
+    async function sendToBuddy() {
+      const text = messageInput.value.trim();
+      if (!text || !state.sessionId) return;
+      addMessage('user', text);
+      messageInput.value = '';
+      sendBtn.disabled = true;
+      statusEl.textContent = 'Bible Buddy is thinking…';
+
+      try {
+        const res = await fetch('/buddy/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            testerId: state.testerId,
+            userId: state.testerId,
+            sessionId: state.sessionId,
+            cohort: state.cohort,
+            mode: 'COMPANION',
+            personaKey: 'ADAPTIVE_COMPANION',
+            message: text,
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.ok) throw new Error(data.error || 'Chat failed');
+        const payload = data.reply && typeof data.reply === 'object' ? data.reply : data;
+        addMessage('assistant', payload.reply || '(no reply)');
+        state.turnCount += 1;
+        updateSessionMeta();
+        statusEl.textContent = 'Ready.';
+      } catch (err) {
+        console.error(err);
+        addMessage('assistant', 'Sorry — something went wrong. Please try again.');
+        statusEl.textContent = 'Error.';
+      } finally {
+        sendBtn.disabled = false;
+        messageInput.focus();
+      }
+    }
+
+    function showFeedback() {
+      if (state.turnCount < 1) {
+        alert('Send at least one message before ending the session.');
+        return;
+      }
+      chatPanel.classList.add('hidden');
+      feedbackPanel.classList.remove('hidden');
+      document.getElementById('feedbackStatus').textContent =
+        'Session ' + state.sessionId;
+    }
+
+    async function submitFeedback() {
+      const body = {
+        testerId: state.testerId,
+        sessionId: state.sessionId,
+        cohort: state.cohort,
+        feltHeard: Number(document.getElementById('feltHeard').value),
+        usefulness: Number(document.getElementById('usefulness').value),
+        biblicalFaithfulness: Number(document.getElementById('biblicalFaithfulness').value),
+        naturalness: Number(document.getElementById('naturalness').value),
+        wouldUseAgain: Number(document.getElementById('wouldUseAgain').value),
+        comment: document.getElementById('comment').value.trim(),
+        consentForAggregateReview: document.getElementById('consent').checked,
+      };
+      const status = document.getElementById('feedbackStatus');
+      try {
+        const res = await fetch('/api/beta/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.ok) throw new Error(data.error || 'Feedback failed');
+        status.textContent = 'Thank you — feedback saved.';
+      } catch (err) {
+        status.textContent = err.message || 'Could not save feedback.';
+      }
+    }
+
+    function resetForNewSession() {
+      feedbackPanel.classList.add('hidden');
+      setupPanel.classList.remove('hidden');
+      chatPanel.classList.add('hidden');
+      state.sessionId = null;
+      state.turnCount = 0;
+      document.getElementById('comment').value = '';
+      ['feltHeard', 'usefulness', 'biblicalFaithfulness', 'naturalness', 'wouldUseAgain'].forEach((id) => {
+        document.getElementById(id).value = '';
+      });
+      updateSessionMeta();
+    }
+
+    document.getElementById('startBtn').addEventListener('click', startSession);
+    document.getElementById('sendBtn').addEventListener('click', sendToBuddy);
+    messageInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendToBuddy();
+    });
+    document.getElementById('endSessionBtn').addEventListener('click', showFeedback);
+    document.getElementById('submitFeedbackBtn').addEventListener('click', submitFeedback);
+    document.getElementById('newSessionBtn').addEventListener('click', resetForNewSession);
+
+    fillRatingSelects();
+    loadTesters().catch((e) => {
+      testerSelect.innerHTML = '<option value="">Could not load testers</option>';
+      console.error(e);
+    });
+  </script>
+</body>
+</html>

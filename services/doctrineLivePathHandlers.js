@@ -90,16 +90,31 @@ function containsMemoryDenial(text = '') {
 function buildDoctrineMemoryRecallReply(userId, message = '') {
   const state = getDoctrineConversationState(userId);
   const beforeThat = isBeforeThatRecall(message);
-  const topic = beforeThat && state.previousDoctrineTopic ? state.previousDoctrineTopic : state.activeDoctrineTopic;
+  let topic = beforeThat ? state.previousDoctrineTopic : state.activeDoctrineTopic;
+  if (beforeThat && !topic && (state.topicHistory || []).length >= 2) {
+    topic = state.topicHistory[state.topicHistory.length - 2];
+  } else if (beforeThat && !topic && (state.topicHistory || []).length) {
+    topic = state.topicHistory[state.topicHistory.length - 1];
+  }
   if (topic) {
     const label = topicDisplayLabel(topic);
-    const summary = state.lastApprovedAnswerSummary || state.lastDoctrineAnswerSummary || label;
+    const contract = BASE_CONTRACTS[topic] || null;
+    const topicSpecificSummary =
+      contract?.requiredConclusion?.slice(0, 200) || stateSummary(topic, contract) || label;
+    const summary =
+      topic === state.lastAnsweredTopic || topic === state.activeDoctrineTopic
+        ? state.lastApprovedAnswerSummary || state.lastDoctrineAnswerSummary || topicSpecificSummary
+        : topicSpecificSummary;
     const prefix = beforeThat
-      ? `Before that, we were discussing ${topicDisplayLabel(state.previousDoctrineTopic || topic)}.`
+      ? `Before that, we were discussing ${topicDisplayLabel(topic)}.`
       : `We were discussing ${label}. I'll continue from the approved witness chain.`;
+    const witnessRef =
+      topic === state.lastAnsweredTopic || topic === state.activeDoctrineTopic
+        ? state.lastApprovedWitness
+        : contract?.approvedWitnesses?.[0] || null;
     return {
-      reply: `${prefix} ${summary.slice(0, 160)}`,
-      scripture: state.lastApprovedWitness ? [{ reference: state.lastApprovedWitness, theme: topic }] : [],
+      reply: `${prefix} ${String(summary).slice(0, 160)}`,
+      scripture: witnessRef ? [{ reference: witnessRef, theme: topic }] : [],
       memoryRecall: true,
       topic,
     };

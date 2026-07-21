@@ -1,0 +1,300 @@
+{
+  "ranAt": "2026-06-09T05:17:41.417Z",
+  "queues": {
+    "queue95": [
+      {
+        "candidateId": "3a_0006",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0007",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0019",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0036",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0045",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0056",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0059",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0062",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0067",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0070",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0075",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0077",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0079",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0081",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0088",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      },
+      {
+        "candidateId": "3a_0089",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "strengthTier": "Very Strong"
+      }
+    ],
+    "queue90": [
+      {
+        "candidateId": "3a_0001",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0002",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0003",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0011",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0013",
+        "topic": "dietary_law",
+        "supportScore": 93,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0014",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0015",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0017",
+        "topic": "dietary_law",
+        "supportScore": 93,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0020",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0029",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0030",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0031",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0042",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0050",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0058",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0064",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0068",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0072",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0074",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0076",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0086",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0087",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0096",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong"
+      },
+      {
+        "candidateId": "3a_0120",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "strengthTier": "Strong"
+      }
+    ],
+    "queue80": [
+      {
+        "candidateId": "3a_0008",
+        "topic": "messiah_logos",
+        "supportScore": 85,
+        "strengthTier": "Good Support"
+      },
+      {
+        "candidateId": "3a_0012",
+        "topic": "death_state",
+        "supportScore": 81,
+        "strengthTier": "Good Support"
+      },
+      {
+        "candidateId": "3a_0016",
+        "topic": "messiah_logos",
+        "supportScore": 83,
+        "strengthTier": "Good Support"
+      },
+      {
+        "candidateId": "3a_0021",
+        "topic": "messiah_logos",
+        "supportScore": 85,
+        "strengthTier": "Good Support"
+      },
+      {
+        "candidateId": "3a_0037",
+        "topic": "death_state",
+        "supportScore": 80,
+        "strengthTier": "Good Support"
+      },
+      {
+        "candidateId": "3a_0051",
+        "topic": "messiah_logos",
+        "supportScore": 85,
+        "strengthTier": "Good Support"
+      },
+      {
+        "candidateId": "3a_0097",
+        "topic": "sabbath",
+        "supportScore": 87,
+        "strengthTier": "Good Support"
+      }
+    ]
+  },
+  "scoreBuckets": {
+    "above95": 16,
+    "above90": 40,
+    "above80": 47,
+    "above70": 64,
+    "below70": 56
+  }
+}

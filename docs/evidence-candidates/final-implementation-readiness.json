@@ -1,0 +1,3609 @@
+{
+  "ranAt": "2026-06-09T15:26:58.339Z",
+  "packs": [
+    {
+      "topic": "jesus_old_testament_new_testament",
+      "displayName": "Jesus Old Testament / New Testament",
+      "supportScore": 89,
+      "reviewReadiness": 99,
+      "questionCoverage": 28,
+      "lessonCoverage": 22,
+      "sourceCoverage": 5,
+      "implementationPriority": "high",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 101,
+      "missingLinks": [
+        "missing_parallel_witnesses"
+      ]
+    },
+    {
+      "topic": "holy_spirit",
+      "displayName": "Holy Spirit",
+      "supportScore": 88,
+      "reviewReadiness": 99,
+      "questionCoverage": 4,
+      "lessonCoverage": 2,
+      "sourceCoverage": 2,
+      "implementationPriority": "high",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 18,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "kingdom_of_god",
+      "displayName": "Kingdom Of God",
+      "supportScore": 87,
+      "reviewReadiness": 99,
+      "questionCoverage": 15,
+      "lessonCoverage": 13,
+      "sourceCoverage": 4,
+      "implementationPriority": "high",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 38,
+      "missingLinks": [
+        "missing_parallel_witnesses"
+      ]
+    },
+    {
+      "topic": "leviticus_23",
+      "displayName": "Leviticus 23",
+      "supportScore": 84,
+      "reviewReadiness": 91,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 50,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "new_jerusalem",
+      "displayName": "New Jerusalem",
+      "supportScore": 82,
+      "reviewReadiness": 89,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "captivity",
+      "displayName": "Captivity",
+      "supportScore": 82,
+      "reviewReadiness": 89,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "eighth_day_father",
+      "displayName": "Eighth Day Father",
+      "supportScore": 85,
+      "reviewReadiness": 89,
+      "questionCoverage": 24,
+      "lessonCoverage": 22,
+      "sourceCoverage": 6,
+      "implementationPriority": "high",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 66,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "tree_of_life",
+      "displayName": "Tree Of Life",
+      "supportScore": 82,
+      "reviewReadiness": 89,
+      "questionCoverage": 107,
+      "lessonCoverage": 65,
+      "sourceCoverage": 14,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 296,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "tree_of_knowledge",
+      "displayName": "Tree Of Knowledge",
+      "supportScore": 82,
+      "reviewReadiness": 89,
+      "questionCoverage": 104,
+      "lessonCoverage": 62,
+      "sourceCoverage": 14,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 296,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "john",
+      "displayName": "John",
+      "supportScore": 82,
+      "reviewReadiness": 89,
+      "questionCoverage": 6,
+      "lessonCoverage": 6,
+      "sourceCoverage": 3,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 25,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "passover",
+      "displayName": "Passover",
+      "supportScore": 82,
+      "reviewReadiness": 86,
+      "questionCoverage": 7,
+      "lessonCoverage": 3,
+      "sourceCoverage": 3,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 25,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_genesis_anchor",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "lake_of_fire",
+      "displayName": "Lake Of Fire",
+      "supportScore": 80,
+      "reviewReadiness": 86,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 22,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_genesis_anchor"
+      ]
+    },
+    {
+      "topic": "emotional",
+      "displayName": "Emotional",
+      "supportScore": 78,
+      "reviewReadiness": 86,
+      "questionCoverage": 12,
+      "lessonCoverage": 12,
+      "sourceCoverage": 3,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 21,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "the_beast",
+      "displayName": "The Beast",
+      "supportScore": 74,
+      "reviewReadiness": 86,
+      "questionCoverage": 324,
+      "lessonCoverage": 200,
+      "sourceCoverage": 22,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 913,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "women_in_bible",
+      "displayName": "Women In Bible",
+      "supportScore": 74,
+      "reviewReadiness": 86,
+      "questionCoverage": 330,
+      "lessonCoverage": 207,
+      "sourceCoverage": 20,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 910,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "the_church",
+      "displayName": "The Church",
+      "supportScore": 74,
+      "reviewReadiness": 86,
+      "questionCoverage": 326,
+      "lessonCoverage": 202,
+      "sourceCoverage": 22,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 913,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "edom",
+      "displayName": "Edom",
+      "supportScore": 82,
+      "reviewReadiness": 84,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 16,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "deuteronomy_28_curses",
+      "displayName": "Deuteronomy 28 Curses",
+      "supportScore": 81,
+      "reviewReadiness": 84,
+      "questionCoverage": 7,
+      "lessonCoverage": 3,
+      "sourceCoverage": 2,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 38,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_genesis_anchor"
+      ]
+    },
+    {
+      "topic": "david",
+      "displayName": "David",
+      "supportScore": 78,
+      "reviewReadiness": 84,
+      "questionCoverage": 6,
+      "lessonCoverage": 2,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 30,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_source_coverage",
+        "missing_genesis_anchor",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "paul",
+      "displayName": "Paul",
+      "supportScore": 78,
+      "reviewReadiness": 84,
+      "questionCoverage": 3,
+      "lessonCoverage": 3,
+      "sourceCoverage": 3,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 17,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "gog_and_magog",
+      "displayName": "Gog And Magog",
+      "supportScore": 79,
+      "reviewReadiness": 83,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "abomination_of_desolation",
+      "displayName": "Abomination Of Desolation",
+      "supportScore": 78,
+      "reviewReadiness": 81,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "daniel",
+      "displayName": "Daniel",
+      "supportScore": 78,
+      "reviewReadiness": 81,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "false_prophet",
+      "displayName": "False Prophet",
+      "supportScore": 78,
+      "reviewReadiness": 81,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 14,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_genesis_anchor",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "feast_of_trumpets",
+      "displayName": "Feast Of Trumpets",
+      "supportScore": 78,
+      "reviewReadiness": 81,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 302,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "day_of_atonement",
+      "displayName": "Day Of Atonement",
+      "supportScore": 77,
+      "reviewReadiness": 81,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 313,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "last_great_day",
+      "displayName": "Last Great Day",
+      "supportScore": 78,
+      "reviewReadiness": 81,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 96,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "circumcision",
+      "displayName": "Circumcision",
+      "supportScore": 80,
+      "reviewReadiness": 81,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 12,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "feast_of_tabernacles",
+      "displayName": "Feast Of Tabernacles",
+      "supportScore": 78,
+      "reviewReadiness": 81,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 302,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "gentiles",
+      "displayName": "Gentiles",
+      "supportScore": 80,
+      "reviewReadiness": 81,
+      "questionCoverage": 6,
+      "lessonCoverage": 2,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 41,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_source_coverage",
+        "missing_genesis_anchor"
+      ]
+    },
+    {
+      "topic": "three_pilgrimage_feasts",
+      "displayName": "Three Pilgrimage Feasts",
+      "supportScore": 77,
+      "reviewReadiness": 81,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 12,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "unleavened_bread",
+      "displayName": "Unleavened Bread",
+      "supportScore": 79,
+      "reviewReadiness": 81,
+      "questionCoverage": 6,
+      "lessonCoverage": 2,
+      "sourceCoverage": 2,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 18,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_genesis_anchor",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "kingdom_on_earth",
+      "displayName": "Kingdom On Earth",
+      "supportScore": 78,
+      "reviewReadiness": 81,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 881,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "israel",
+      "displayName": "Israel",
+      "supportScore": 79,
+      "reviewReadiness": 81,
+      "questionCoverage": 33,
+      "lessonCoverage": 15,
+      "sourceCoverage": 8,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 49,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_genesis_anchor"
+      ]
+    },
+    {
+      "topic": "hebrews_people",
+      "displayName": "Hebrews People",
+      "supportScore": 79,
+      "reviewReadiness": 81,
+      "questionCoverage": 11,
+      "lessonCoverage": 5,
+      "sourceCoverage": 3,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 47,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_genesis_anchor"
+      ]
+    },
+    {
+      "topic": "covenants",
+      "displayName": "Covenants",
+      "supportScore": 74,
+      "reviewReadiness": 79,
+      "questionCoverage": 2,
+      "lessonCoverage": 2,
+      "sourceCoverage": 2,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 7,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "melchizedek",
+      "displayName": "Melchizedek",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "temple",
+      "displayName": "Temple",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "gabriel",
+      "displayName": "Gabriel",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "devil_deception",
+      "displayName": "Devil Deception",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "armageddon",
+      "displayName": "Armageddon",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "adam",
+      "displayName": "Adam",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "cain",
+      "displayName": "Cain",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "abel",
+      "displayName": "Abel",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "shem",
+      "displayName": "Shem",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "japheth",
+      "displayName": "Japheth",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "abraham",
+      "displayName": "Abraham",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "isaac",
+      "displayName": "Isaac",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "joseph",
+      "displayName": "Joseph",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "judah",
+      "displayName": "Judah",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "moses",
+      "displayName": "Moses",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "aaron",
+      "displayName": "Aaron",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "joshua",
+      "displayName": "Joshua",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "samson",
+      "displayName": "Samson",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "samuel",
+      "displayName": "Samuel",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "saul",
+      "displayName": "Saul",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "solomon",
+      "displayName": "Solomon",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "elijah",
+      "displayName": "Elijah",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "elisha",
+      "displayName": "Elisha",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "isaiah",
+      "displayName": "Isaiah",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "jeremiah",
+      "displayName": "Jeremiah",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "ezekiel",
+      "displayName": "Ezekiel",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "grace",
+      "displayName": "Grace",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "repentance",
+      "displayName": "Repentance",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "priesthood",
+      "displayName": "Priesthood",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "divorce",
+      "displayName": "Divorce",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "adam_to_noah",
+      "displayName": "Adam To Noah",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "noah_to_abraham",
+      "displayName": "Noah To Abraham",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "abraham_to_david",
+      "displayName": "Abraham To David",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "david_to_christ",
+      "displayName": "David To Christ",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "tribes_of_israel",
+      "displayName": "Tribes Of Israel",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "sons_of_noah",
+      "displayName": "Sons Of Noah",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "tabernacle",
+      "displayName": "Tabernacle",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "sacrificial_system",
+      "displayName": "Sacrificial System",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "holy_days",
+      "displayName": "Holy Days",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "ten_commandments",
+      "displayName": "Ten Commandments",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 15,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "fathers_kingdom",
+      "displayName": "Fathers Kingdom",
+      "supportScore": 76,
+      "reviewReadiness": 78,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "medium",
+      "implementationPreparationStatus": "review_ready",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 38,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "two_witnesses",
+      "displayName": "Two Witnesses",
+      "supportScore": 71,
+      "reviewReadiness": 74,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "low",
+      "implementationPreparationStatus": "moderate",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 3,
+      "missingLinks": [
+        "missing_scripture_depth",
+        "missing_parallel_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_genesis_anchor"
+      ]
+    },
+    {
+      "topic": "davidic_covenant",
+      "displayName": "Davidic Covenant",
+      "supportScore": 70,
+      "reviewReadiness": 70,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "low",
+      "implementationPreparationStatus": "moderate",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 7,
+      "missingLinks": [
+        "missing_parallel_witnesses",
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage",
+        "missing_revelation_anchor"
+      ]
+    },
+    {
+      "topic": "mark_of_the_beast",
+      "displayName": "Mark of the Beast",
+      "supportScore": 71,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 37,
+      "missingLinks": []
+    },
+    {
+      "topic": "new_covenant",
+      "displayName": "New Covenant",
+      "supportScore": 71,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 39,
+      "missingLinks": [
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "abrahamic_covenant",
+      "displayName": "Abrahamic Covenant",
+      "supportScore": 77,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 39,
+      "missingLinks": [
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "high_sabbaths",
+      "displayName": "High Sabbaths",
+      "supportScore": 71,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 36,
+      "missingLinks": [
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "great_tribulation",
+      "displayName": "Great Tribulation",
+      "supportScore": 69,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 37,
+      "missingLinks": []
+    },
+    {
+      "topic": "pentecost",
+      "displayName": "Pentecost",
+      "supportScore": 71,
+      "questionCoverage": 2,
+      "lessonCoverage": 2,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 35,
+      "missingLinks": [
+        "missing_continuity_witnesses",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "tithes",
+      "displayName": "Tithes",
+      "supportScore": 69,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 39,
+      "missingLinks": []
+    },
+    {
+      "topic": "noah",
+      "displayName": "Noah",
+      "supportScore": 69,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 38,
+      "missingLinks": []
+    },
+    {
+      "topic": "faith",
+      "displayName": "Faith",
+      "supportScore": 70,
+      "questionCoverage": 4,
+      "lessonCoverage": 4,
+      "sourceCoverage": 4,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 37,
+      "missingLinks": [
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "works",
+      "displayName": "Works",
+      "supportScore": 70,
+      "questionCoverage": 3,
+      "lessonCoverage": 3,
+      "sourceCoverage": 3,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 37,
+      "missingLinks": [
+        "missing_continuity_witnesses"
+      ]
+    },
+    {
+      "topic": "baptism",
+      "displayName": "Baptism",
+      "supportScore": 69,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 38,
+      "missingLinks": []
+    },
+    {
+      "topic": "great_white_throne",
+      "displayName": "Great White Throne",
+      "supportScore": 71,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 35,
+      "missingLinks": [
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "marriage",
+      "displayName": "Marriage",
+      "supportScore": 68,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 34,
+      "missingLinks": []
+    },
+    {
+      "topic": "female_prophecy",
+      "displayName": "Female Prophecy",
+      "supportScore": 70,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 38,
+      "missingLinks": [
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "144000",
+      "displayName": "144000",
+      "supportScore": 68,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 36,
+      "missingLinks": []
+    },
+    {
+      "topic": "peter",
+      "displayName": "Peter",
+      "supportScore": 83,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 40,
+      "missingLinks": []
+    },
+    {
+      "topic": "jacob",
+      "displayName": "Jacob",
+      "supportScore": 64,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 36,
+      "missingLinks": []
+    },
+    {
+      "topic": "millennial_kingdom",
+      "displayName": "Millennial Kingdom",
+      "supportScore": 71,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 35,
+      "missingLinks": [
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "traditions",
+      "displayName": "Traditions",
+      "supportScore": 96,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 43,
+      "missingLinks": [
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "law_commandments",
+      "displayName": "Law Commandments",
+      "supportScore": 99,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 41,
+      "missingLinks": [
+        "missing_continuity_witnesses",
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "kingdom",
+      "displayName": "Kingdom",
+      "supportScore": 94,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "genesisToRevelationSpan": true,
+      "originalChainLength": 46,
+      "missingLinks": [
+        "missing_question_coverage",
+        "missing_lesson_coverage",
+        "missing_source_coverage"
+      ]
+    },
+    {
+      "topic": "sabbath",
+      "displayName": "Sabbath",
+      "supportScore": 100,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 12,
+      "missingLinks": []
+    },
+    {
+      "topic": "death_state",
+      "displayName": "Death State",
+      "supportScore": 87,
+      "questionCoverage": 24,
+      "lessonCoverage": 22,
+      "sourceCoverage": 4,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 73,
+      "missingLinks": []
+    },
+    {
+      "topic": "resurrection",
+      "displayName": "Resurrection",
+      "supportScore": 76,
+      "questionCoverage": 5,
+      "lessonCoverage": 5,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 48,
+      "missingLinks": []
+    },
+    {
+      "topic": "messiah_logos",
+      "displayName": "Messiah & Logos",
+      "supportScore": 79,
+      "questionCoverage": 4,
+      "lessonCoverage": 2,
+      "sourceCoverage": 2,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 59,
+      "missingLinks": []
+    },
+    {
+      "topic": "dietary_law",
+      "displayName": "Dietary Law",
+      "supportScore": 100,
+      "questionCoverage": 0,
+      "lessonCoverage": 0,
+      "sourceCoverage": 0,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 12,
+      "missingLinks": []
+    },
+    {
+      "topic": "holiness",
+      "displayName": "Holiness",
+      "supportScore": 91,
+      "questionCoverage": 3,
+      "lessonCoverage": 3,
+      "sourceCoverage": 2,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 39,
+      "missingLinks": []
+    },
+    {
+      "topic": "feasts",
+      "displayName": "Feast Days",
+      "supportScore": 88,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 34,
+      "missingLinks": []
+    },
+    {
+      "topic": "heavens",
+      "displayName": "Heavens",
+      "supportScore": 96,
+      "questionCoverage": 9,
+      "lessonCoverage": 9,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 40,
+      "missingLinks": []
+    },
+    {
+      "topic": "that_man_sin_lesson",
+      "displayName": "That Man Sin Lesson",
+      "supportScore": 76,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 51,
+      "missingLinks": []
+    },
+    {
+      "topic": "riches_gains_the_doctrine",
+      "displayName": "Riches Gains The Doctrine",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 76,
+      "missingLinks": []
+    },
+    {
+      "topic": "remember_the_mission_teach",
+      "displayName": "Remember The Mission Teach",
+      "supportScore": 77,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 51,
+      "missingLinks": []
+    },
+    {
+      "topic": "america_decline_rome_rising",
+      "displayName": "America Decline Rome Rising",
+      "supportScore": 77,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 49,
+      "missingLinks": []
+    },
+    {
+      "topic": "greedy_dog_preachers_lesson",
+      "displayName": "Greedy Dog Preachers Lesson",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 59,
+      "missingLinks": []
+    },
+    {
+      "topic": "how_frail_lesson_handout",
+      "displayName": "How Frail Lesson Handout",
+      "supportScore": 74,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 57,
+      "missingLinks": []
+    },
+    {
+      "topic": "children_are_the_future",
+      "displayName": "Children Are The Future",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 42,
+      "missingLinks": []
+    },
+    {
+      "topic": "beginning_jerusalem_the_gospel",
+      "displayName": "Beginning Jerusalem The Gospel",
+      "supportScore": 74,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 62,
+      "missingLinks": []
+    },
+    {
+      "topic": "the_awakening_hebrews_lesson",
+      "displayName": "The Awakening Hebrews Lesson",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 61,
+      "missingLinks": []
+    },
+    {
+      "topic": "the_foolishness_men_women",
+      "displayName": "The Foolishness Men Women",
+      "supportScore": 74,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 53,
+      "missingLinks": []
+    },
+    {
+      "topic": "modern_religion_emotionalism_not",
+      "displayName": "Modern Religion Emotionalism Not",
+      "supportScore": 74,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 52,
+      "missingLinks": []
+    },
+    {
+      "topic": "angels",
+      "displayName": "Angels",
+      "supportScore": 76,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 52,
+      "missingLinks": []
+    },
+    {
+      "topic": "jesus_the_christ_the",
+      "displayName": "Jesus The Christ The",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 52,
+      "missingLinks": []
+    },
+    {
+      "topic": "killed_for_jesus_lesson",
+      "displayName": "Killed For Jesus Lesson",
+      "supportScore": 76,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 45,
+      "missingLinks": []
+    },
+    {
+      "topic": "may_whoredom_aka_fornication",
+      "displayName": "May Whoredom Aka Fornication",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 47,
+      "missingLinks": []
+    },
+    {
+      "topic": "circumcision_still_good_lesson",
+      "displayName": "Circumcision Still Good Lesson",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 43,
+      "missingLinks": []
+    },
+    {
+      "topic": "seek_god_now_time",
+      "displayName": "Seek God Now Time",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 54,
+      "missingLinks": []
+    },
+    {
+      "topic": "the_lords_determination_lesson",
+      "displayName": "The Lords Determination Lesson",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 51,
+      "missingLinks": []
+    },
+    {
+      "topic": "satan",
+      "displayName": "Satan",
+      "supportScore": 77,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 47,
+      "missingLinks": []
+    },
+    {
+      "topic": "vengeance_the_lords_lesson",
+      "displayName": "Vengeance The Lords Lesson",
+      "supportScore": 74,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 47,
+      "missingLinks": []
+    },
+    {
+      "topic": "back_into_egypt_fnl",
+      "displayName": "Back Into Egypt Fnl",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 58,
+      "missingLinks": []
+    },
+    {
+      "topic": "beware_spirits_all_are",
+      "displayName": "Beware Spirits All Are",
+      "supportScore": 74,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 54,
+      "missingLinks": []
+    },
+    {
+      "topic": "home_israel_the_church",
+      "displayName": "Home Israel The Church",
+      "supportScore": 70,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 39,
+      "missingLinks": []
+    },
+    {
+      "topic": "part_the_times_the",
+      "displayName": "Part The Times The",
+      "supportScore": 75,
+      "questionCoverage": 6,
+      "lessonCoverage": 2,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 71,
+      "missingLinks": []
+    },
+    {
+      "topic": "whisperer_will_separate_best",
+      "displayName": "Whisperer Will Separate Best",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 50,
+      "missingLinks": []
+    },
+    {
+      "topic": "content_with_what_you",
+      "displayName": "Content With What You",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 48,
+      "missingLinks": []
+    },
+    {
+      "topic": "mixed_where_now_according",
+      "displayName": "Mixed Where Now According",
+      "supportScore": 73,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 35,
+      "missingLinks": []
+    },
+    {
+      "topic": "the_last_trump_lesson",
+      "displayName": "The Last Trump Lesson",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 52,
+      "missingLinks": []
+    },
+    {
+      "topic": "from_baby_manger_killer",
+      "displayName": "From Baby Manger Killer",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 46,
+      "missingLinks": []
+    },
+    {
+      "topic": "open_topic_does_genesis",
+      "displayName": "Open Topic Does Genesis",
+      "supportScore": 79,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 32,
+      "missingLinks": []
+    },
+    {
+      "topic": "open_topic_fear_god",
+      "displayName": "Open Topic Fear God",
+      "supportScore": 68,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 39,
+      "missingLinks": []
+    },
+    {
+      "topic": "the_israel_god_research",
+      "displayName": "The Israel God Research",
+      "supportScore": 67,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 37,
+      "missingLinks": []
+    },
+    {
+      "topic": "open_topic_the_remnant",
+      "displayName": "Open Topic The Remnant",
+      "supportScore": 71,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 38,
+      "missingLinks": []
+    },
+    {
+      "topic": "reap_what_you_sow",
+      "displayName": "Reap What You Sow",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 47,
+      "missingLinks": []
+    },
+    {
+      "topic": "neither_democrats_nor_republicans",
+      "displayName": "Neither Democrats Nor Republicans",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 50,
+      "missingLinks": []
+    },
+    {
+      "topic": "michael_archangel",
+      "displayName": "Michael",
+      "supportScore": 70,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 38,
+      "missingLinks": []
+    },
+    {
+      "topic": "little_leaven_daily_readings",
+      "displayName": "Little Leaven Daily Readings",
+      "supportScore": 74,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 50,
+      "missingLinks": []
+    },
+    {
+      "topic": "abib_fresh_beginning_lesson",
+      "displayName": "Abib Fresh Beginning Lesson",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 43,
+      "missingLinks": []
+    },
+    {
+      "topic": "eve",
+      "displayName": "Eve",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 60,
+      "missingLinks": []
+    },
+    {
+      "topic": "iog_bay_area_prepare",
+      "displayName": "Iog Bay Area Prepare",
+      "supportScore": 64,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 36,
+      "missingLinks": []
+    },
+    {
+      "topic": "iog_stick_the_script",
+      "displayName": "Iog Stick The Script",
+      "supportScore": 63,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 36,
+      "missingLinks": []
+    },
+    {
+      "topic": "emotional_does_scripture_say",
+      "displayName": "Emotional Does Scripture Say",
+      "supportScore": 63,
+      "questionCoverage": 1,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 36,
+      "missingLinks": []
+    },
+    {
+      "topic": "the_book_life_lesson",
+      "displayName": "The Book Life Lesson",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 48,
+      "missingLinks": []
+    },
+    {
+      "topic": "the_unleavened_bread_journey",
+      "displayName": "The Unleavened Bread Journey",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 47,
+      "missingLinks": []
+    },
+    {
+      "topic": "the_state_gods_union",
+      "displayName": "The State Gods Union",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 42,
+      "missingLinks": []
+    },
+    {
+      "topic": "gods_judgment_lesson_handout",
+      "displayName": "Gods Judgment Lesson Handout",
+      "supportScore": 74,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 53,
+      "missingLinks": []
+    },
+    {
+      "topic": "prayer",
+      "displayName": "Prayer",
+      "supportScore": 71,
+      "questionCoverage": 5,
+      "lessonCoverage": 3,
+      "sourceCoverage": 3,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 54,
+      "missingLinks": []
+    },
+    {
+      "topic": "open_topic_what_the",
+      "displayName": "Open Topic What The",
+      "supportScore": 71,
+      "questionCoverage": 3,
+      "lessonCoverage": 3,
+      "sourceCoverage": 2,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 42,
+      "missingLinks": []
+    },
+    {
+      "topic": "ham",
+      "displayName": "Ham",
+      "supportScore": 75,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 51,
+      "missingLinks": []
+    },
+    {
+      "topic": "there_god_but_jesus",
+      "displayName": "There God But Jesus",
+      "supportScore": 73,
+      "questionCoverage": 3,
+      "lessonCoverage": 1,
+      "sourceCoverage": 1,
+      "implementationPriority": "deferred",
+      "implementationPreparationStatus": "weak",
+      "originalChainLength": 47,
+      "missingLinks": []
+    }
+  ],
+  "executive": {
+    "sourceEntriesAudited": 593,
+    "lessonTitlesAudited": 315,
+    "questionsAudited": 420,
+    "doctrinePackCount": 158,
+    "fullyCoveredSourceTopics": 212,
+    "partiallyCoveredSourceTopics": 115,
+    "missingSourceTopics": 266,
+    "fullyCoveredDoctrinePacks": 77,
+    "partialDoctrinePacks": 2,
+    "weakDoctrinePacks": 79,
+    "strongestPacks": [
+      {
+        "topic": "jesus_old_testament_new_testament",
+        "displayName": "Jesus Old Testament / New Testament",
+        "reviewReadiness": 99,
+        "supportScore": 89
+      },
+      {
+        "topic": "holy_spirit",
+        "displayName": "Holy Spirit",
+        "reviewReadiness": 99,
+        "supportScore": 88
+      },
+      {
+        "topic": "kingdom_of_god",
+        "displayName": "Kingdom Of God",
+        "reviewReadiness": 99,
+        "supportScore": 87
+      },
+      {
+        "topic": "leviticus_23",
+        "displayName": "Leviticus 23",
+        "reviewReadiness": 91,
+        "supportScore": 84
+      },
+      {
+        "topic": "new_jerusalem",
+        "displayName": "New Jerusalem",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "captivity",
+        "displayName": "Captivity",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "eighth_day_father",
+        "displayName": "Eighth Day Father",
+        "reviewReadiness": 89,
+        "supportScore": 85
+      },
+      {
+        "topic": "tree_of_life",
+        "displayName": "Tree Of Life",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "tree_of_knowledge",
+        "displayName": "Tree Of Knowledge",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "john",
+        "displayName": "John",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "passover",
+        "displayName": "Passover",
+        "reviewReadiness": 86,
+        "supportScore": 82
+      },
+      {
+        "topic": "lake_of_fire",
+        "displayName": "Lake Of Fire",
+        "reviewReadiness": 86,
+        "supportScore": 80
+      },
+      {
+        "topic": "emotional",
+        "displayName": "Emotional",
+        "reviewReadiness": 86,
+        "supportScore": 78
+      },
+      {
+        "topic": "the_beast",
+        "displayName": "The Beast",
+        "reviewReadiness": 86,
+        "supportScore": 74
+      },
+      {
+        "topic": "women_in_bible",
+        "displayName": "Women In Bible",
+        "reviewReadiness": 86,
+        "supportScore": 74
+      }
+    ],
+    "weakPackTopics": [
+      {
+        "topic": "mark_of_the_beast",
+        "displayName": "Mark of the Beast",
+        "missingLinks": []
+      },
+      {
+        "topic": "new_covenant",
+        "displayName": "New Covenant",
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "abrahamic_covenant",
+        "displayName": "Abrahamic Covenant",
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "high_sabbaths",
+        "displayName": "High Sabbaths",
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "great_tribulation",
+        "displayName": "Great Tribulation",
+        "missingLinks": []
+      },
+      {
+        "topic": "pentecost",
+        "displayName": "Pentecost",
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "tithes",
+        "displayName": "Tithes",
+        "missingLinks": []
+      },
+      {
+        "topic": "noah",
+        "displayName": "Noah",
+        "missingLinks": []
+      },
+      {
+        "topic": "faith",
+        "displayName": "Faith",
+        "missingLinks": [
+          "missing_continuity_witnesses"
+        ]
+      },
+      {
+        "topic": "works",
+        "displayName": "Works",
+        "missingLinks": [
+          "missing_continuity_witnesses"
+        ]
+      },
+      {
+        "topic": "baptism",
+        "displayName": "Baptism",
+        "missingLinks": []
+      },
+      {
+        "topic": "great_white_throne",
+        "displayName": "Great White Throne",
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "marriage",
+        "displayName": "Marriage",
+        "missingLinks": []
+      },
+      {
+        "topic": "female_prophecy",
+        "displayName": "Female Prophecy",
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "144000",
+        "displayName": "144000",
+        "missingLinks": []
+      },
+      {
+        "topic": "peter",
+        "displayName": "Peter",
+        "missingLinks": []
+      },
+      {
+        "topic": "jacob",
+        "displayName": "Jacob",
+        "missingLinks": []
+      },
+      {
+        "topic": "millennial_kingdom",
+        "displayName": "Millennial Kingdom",
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "traditions",
+        "displayName": "Traditions",
+        "missingLinks": [
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      },
+      {
+        "topic": "law_commandments",
+        "displayName": "Law Commandments",
+        "missingLinks": [
+          "missing_continuity_witnesses",
+          "missing_question_coverage",
+          "missing_lesson_coverage",
+          "missing_source_coverage"
+        ]
+      }
+    ],
+    "reviewFirst": [
+      {
+        "topic": "jesus_old_testament_new_testament",
+        "displayName": "Jesus Old Testament / New Testament",
+        "reviewReadiness": 99,
+        "implementationPriority": "high"
+      },
+      {
+        "topic": "holy_spirit",
+        "displayName": "Holy Spirit",
+        "reviewReadiness": 99,
+        "implementationPriority": "high"
+      },
+      {
+        "topic": "kingdom_of_god",
+        "displayName": "Kingdom Of God",
+        "reviewReadiness": 99,
+        "implementationPriority": "high"
+      },
+      {
+        "topic": "leviticus_23",
+        "displayName": "Leviticus 23",
+        "reviewReadiness": 91,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "new_jerusalem",
+        "displayName": "New Jerusalem",
+        "reviewReadiness": 89,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "captivity",
+        "displayName": "Captivity",
+        "reviewReadiness": 89,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "eighth_day_father",
+        "displayName": "Eighth Day Father",
+        "reviewReadiness": 89,
+        "implementationPriority": "high"
+      },
+      {
+        "topic": "tree_of_life",
+        "displayName": "Tree Of Life",
+        "reviewReadiness": 89,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "tree_of_knowledge",
+        "displayName": "Tree Of Knowledge",
+        "reviewReadiness": 89,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "john",
+        "displayName": "John",
+        "reviewReadiness": 89,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "passover",
+        "displayName": "Passover",
+        "reviewReadiness": 86,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "lake_of_fire",
+        "displayName": "Lake Of Fire",
+        "reviewReadiness": 86,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "emotional",
+        "displayName": "Emotional",
+        "reviewReadiness": 86,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "the_beast",
+        "displayName": "The Beast",
+        "reviewReadiness": 86,
+        "implementationPriority": "medium"
+      },
+      {
+        "topic": "women_in_bible",
+        "displayName": "Women In Bible",
+        "reviewReadiness": 86,
+        "implementationPriority": "medium"
+      }
+    ],
+    "readyForImplementation": [
+      {
+        "topic": "jesus_old_testament_new_testament",
+        "displayName": "Jesus Old Testament / New Testament",
+        "reviewReadiness": 99,
+        "supportScore": 89
+      },
+      {
+        "topic": "holy_spirit",
+        "displayName": "Holy Spirit",
+        "reviewReadiness": 99,
+        "supportScore": 88
+      },
+      {
+        "topic": "kingdom_of_god",
+        "displayName": "Kingdom Of God",
+        "reviewReadiness": 99,
+        "supportScore": 87
+      },
+      {
+        "topic": "leviticus_23",
+        "displayName": "Leviticus 23",
+        "reviewReadiness": 91,
+        "supportScore": 84
+      },
+      {
+        "topic": "new_jerusalem",
+        "displayName": "New Jerusalem",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "captivity",
+        "displayName": "Captivity",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "eighth_day_father",
+        "displayName": "Eighth Day Father",
+        "reviewReadiness": 89,
+        "supportScore": 85
+      },
+      {
+        "topic": "tree_of_life",
+        "displayName": "Tree Of Life",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "tree_of_knowledge",
+        "displayName": "Tree Of Knowledge",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "john",
+        "displayName": "John",
+        "reviewReadiness": 89,
+        "supportScore": 82
+      },
+      {
+        "topic": "passover",
+        "displayName": "Passover",
+        "reviewReadiness": 86,
+        "supportScore": 82
+      },
+      {
+        "topic": "lake_of_fire",
+        "displayName": "Lake Of Fire",
+        "reviewReadiness": 86,
+        "supportScore": 80
+      },
+      {
+        "topic": "emotional",
+        "displayName": "Emotional",
+        "reviewReadiness": 86,
+        "supportScore": 78
+      },
+      {
+        "topic": "the_beast",
+        "displayName": "The Beast",
+        "reviewReadiness": 86,
+        "supportScore": 74
+      },
+      {
+        "topic": "women_in_bible",
+        "displayName": "Women In Bible",
+        "reviewReadiness": 86,
+        "supportScore": 74
+      },
+      {
+        "topic": "the_church",
+        "displayName": "The Church",
+        "reviewReadiness": 86,
+        "supportScore": 74
+      },
+      {
+        "topic": "edom",
+        "displayName": "Edom",
+        "reviewReadiness": 84,
+        "supportScore": 82
+      },
+      {
+        "topic": "deuteronomy_28_curses",
+        "displayName": "Deuteronomy 28 Curses",
+        "reviewReadiness": 84,
+        "supportScore": 81
+      },
+      {
+        "topic": "david",
+        "displayName": "David",
+        "reviewReadiness": 84,
+        "supportScore": 78
+      },
+      {
+        "topic": "paul",
+        "displayName": "Paul",
+        "reviewReadiness": 84,
+        "supportScore": 78
+      },
+      {
+        "topic": "gog_and_magog",
+        "displayName": "Gog And Magog",
+        "reviewReadiness": 83,
+        "supportScore": 79
+      },
+      {
+        "topic": "abomination_of_desolation",
+        "displayName": "Abomination Of Desolation",
+        "reviewReadiness": 81,
+        "supportScore": 78
+      },
+      {
+        "topic": "daniel",
+        "displayName": "Daniel",
+        "reviewReadiness": 81,
+        "supportScore": 78
+      },
+      {
+        "topic": "false_prophet",
+        "displayName": "False Prophet",
+        "reviewReadiness": 81,
+        "supportScore": 78
+      },
+      {
+        "topic": "feast_of_trumpets",
+        "displayName": "Feast Of Trumpets",
+        "reviewReadiness": 81,
+        "supportScore": 78
+      },
+      {
+        "topic": "day_of_atonement",
+        "displayName": "Day Of Atonement",
+        "reviewReadiness": 81,
+        "supportScore": 77
+      },
+      {
+        "topic": "last_great_day",
+        "displayName": "Last Great Day",
+        "reviewReadiness": 81,
+        "supportScore": 78
+      },
+      {
+        "topic": "circumcision",
+        "displayName": "Circumcision",
+        "reviewReadiness": 81,
+        "supportScore": 80
+      },
+      {
+        "topic": "feast_of_tabernacles",
+        "displayName": "Feast Of Tabernacles",
+        "reviewReadiness": 81,
+        "supportScore": 78
+      },
+      {
+        "topic": "gentiles",
+        "displayName": "Gentiles",
+        "reviewReadiness": 81,
+        "supportScore": 80
+      },
+      {
+        "topic": "three_pilgrimage_feasts",
+        "displayName": "Three Pilgrimage Feasts",
+        "reviewReadiness": 81,
+        "supportScore": 77
+      },
+      {
+        "topic": "unleavened_bread",
+        "displayName": "Unleavened Bread",
+        "reviewReadiness": 81,
+        "supportScore": 79
+      },
+      {
+        "topic": "kingdom_on_earth",
+        "displayName": "Kingdom On Earth",
+        "reviewReadiness": 81,
+        "supportScore": 78
+      },
+      {
+        "topic": "israel",
+        "displayName": "Israel",
+        "reviewReadiness": 81,
+        "supportScore": 79
+      },
+      {
+        "topic": "hebrews_people",
+        "displayName": "Hebrews People",
+        "reviewReadiness": 81,
+        "supportScore": 79
+      },
+      {
+        "topic": "covenants",
+        "displayName": "Covenants",
+        "reviewReadiness": 79,
+        "supportScore": 74
+      },
+      {
+        "topic": "melchizedek",
+        "displayName": "Melchizedek",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "temple",
+        "displayName": "Temple",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "gabriel",
+        "displayName": "Gabriel",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "devil_deception",
+        "displayName": "Devil Deception",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "armageddon",
+        "displayName": "Armageddon",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "adam",
+        "displayName": "Adam",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "cain",
+        "displayName": "Cain",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "abel",
+        "displayName": "Abel",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "shem",
+        "displayName": "Shem",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "japheth",
+        "displayName": "Japheth",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "abraham",
+        "displayName": "Abraham",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "isaac",
+        "displayName": "Isaac",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "joseph",
+        "displayName": "Joseph",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "judah",
+        "displayName": "Judah",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "moses",
+        "displayName": "Moses",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "aaron",
+        "displayName": "Aaron",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "joshua",
+        "displayName": "Joshua",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "samson",
+        "displayName": "Samson",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "samuel",
+        "displayName": "Samuel",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "saul",
+        "displayName": "Saul",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "solomon",
+        "displayName": "Solomon",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "elijah",
+        "displayName": "Elijah",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "elisha",
+        "displayName": "Elisha",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "isaiah",
+        "displayName": "Isaiah",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "jeremiah",
+        "displayName": "Jeremiah",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "ezekiel",
+        "displayName": "Ezekiel",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "grace",
+        "displayName": "Grace",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "repentance",
+        "displayName": "Repentance",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "priesthood",
+        "displayName": "Priesthood",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "divorce",
+        "displayName": "Divorce",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "adam_to_noah",
+        "displayName": "Adam To Noah",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "noah_to_abraham",
+        "displayName": "Noah To Abraham",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "abraham_to_david",
+        "displayName": "Abraham To David",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "david_to_christ",
+        "displayName": "David To Christ",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "tribes_of_israel",
+        "displayName": "Tribes Of Israel",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "sons_of_noah",
+        "displayName": "Sons Of Noah",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "tabernacle",
+        "displayName": "Tabernacle",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "sacrificial_system",
+        "displayName": "Sacrificial System",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "holy_days",
+        "displayName": "Holy Days",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "ten_commandments",
+        "displayName": "Ten Commandments",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      },
+      {
+        "topic": "fathers_kingdom",
+        "displayName": "Fathers Kingdom",
+        "reviewReadiness": 78,
+        "supportScore": 76
+      }
+    ],
+    "readyForImplementationCount": 77,
+    "finalGapCount": 680,
+    "gapsBeforeImplementation": [
+      {
+        "type": "source",
+        "topic": "power_over_the_nations",
+        "lessonTitle": "Power Over The Nations",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "the_destruction_and_restoration",
+        "lessonTitle": "The Destruction and Restoration of Israel",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "shows_the_israel_god",
+        "lessonTitle": "Shows - The Israel of God",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_birmingham_this_little",
+        "lessonTitle": "IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_jess_dios_desconocido",
+        "lessonTitle": "IOG - \"JESÚS: El Dios desconocido\" 2026",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_velo_mujer_segunda",
+        "lessonTitle": "IOG - \"El velo de la mujer\" y \"La segunda muerte: el lago de fuego, la última parada para los...\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_gran_cambio_2026",
+        "lessonTitle": "IOG - \"El gran cambio\" 2026",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_the_gospel_the",
+        "lessonTitle": "IOG - \"The Gospel By The Prophet Zechariah\" 2026",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_washington_the_soul",
+        "lessonTitle": "IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_detroit_our_god",
+        "lessonTitle": "IOG Detroit - \"Our God Dwells In The Thick Darkness\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_baton_rouge_adversity",
+        "lessonTitle": "IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_phoenix_for_thine",
+        "lessonTitle": "IOG Phoenix - \"For Thine Is The Kingdom, And The Power, And The Glory, Forever\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_louis_the_powers",
+        "lessonTitle": "IOG St. Louis - \"The Powers That Be\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_jesus_the_unknown",
+        "lessonTitle": "IOG - \"JESUS: The Unknown God\" 2026",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_houston_understanding_the",
+        "lessonTitle": "IOG Houston - \"Understanding The Fear of the Lord\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_jackson_breaking_bonds",
+        "lessonTitle": "IOG Jackson - \"Breaking Bonds & Spiritual Strongholds\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_buffalo_the_destruction",
+        "lessonTitle": "IOG Buffalo - \"The Destruction & Restoration of Israel\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_charlotte_the_purpose",
+        "lessonTitle": "IOG Charlotte - \"The Purpose of the Ministry: Service Unto Salvation\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_bay_area_hath",
+        "lessonTitle": "IOG Bay Area - \"Hath God Cast Away His People Israel?\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_orlando_the_lords",
+        "lessonTitle": "IOG Orlando - \"The Lord's Day Is The Last Day\"",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_jess_templo_sus",
+        "lessonTitle": "IOG — «Jesús en su templo; sus santos y sus labores» 2026",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_israel_reemplazado_por",
+        "lessonTitle": "IOG — «Israel reemplazado por su hermano Esaú» 2026",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_israel_cautivo_babilonia",
+        "lessonTitle": "IOG - \"Israel el cautivo: de Babilonia a Babilonia\" 2026",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_fiesta_los_panes",
+        "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      },
+      {
+        "type": "source",
+        "topic": "iog_fiesta_los_panes",
+        "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026",
+        "source": "IOG",
+        "status": "missing",
+        "recordType": "question"
+      }
+    ],
+    "lessonRepresented": 27,
+    "lessonPartial": 214,
+    "lessonMissing": 74,
+    "questionsCovered": 233,
+    "questionsPartial": 119,
+    "questionsMissing": 68
+  }
+}

@@ -7,13 +7,24 @@ const {
   detectConceptFromGraph,
   resolveConceptAlias,
   getGraphWitnesses,
+  getGraphNode,
   hasExplicitConcept,
   CONTINUATION_PHRASE_RE,
 } = require('./bibleConceptGraph');
-const { planCompanionDoctrineRouting, buildRoutingContext } = require('./companionDoctrineRouter');
+const { detectSemanticConcept, shouldClearStaleTopic } = require('./bibleSemanticConceptNormalizer');
+const { resolveFollowUpContext } = require('./followUpContextResolver');
+const {
+  planCompanionDoctrineRouting,
+  buildRoutingContext,
+  hasExplicitScriptureReference,
+} = require('./companionDoctrineRouter');
 const { getDoctrineConversationState } = require('./doctrineConversationState');
 const { getUserAnswerPreferences } = require('./userCorrectionMemory');
 const { isPendingQuestionChallenge } = require('./pendingQuestionResolver');
+
+
+const EXPLICIT_SCRIPTURE_REFERENCE_RE =
+  /\b(?:genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|ruth|1\s*samuel|2\s*samuel|1\s*kings|2\s*kings|1\s*chronicles|2\s*chronicles|ezra|nehemiah|esther|job|psalms?|proverbs|ecclesiastes|song\s+of\s+solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|1\s*corinthians|2\s*corinthians|galatians|ephesians|philippians|colossians|1\s*thessalonians|2\s*thessalonians|1\s*timothy|2\s*timothy|titus|philemon|hebrews|james|1\s*peter|2\s*peter|1\s*john|2\s*john|3\s*john|jude|revelation)\s+\d{1,3}(?::\d{1,3}(?:-\d{1,3})?)?\b/i;
 
 const UNKNOWN_BIBLE_RE =
   /\b(what does|what is|what are|explain|teach me|tell me about|scripture says|bible says)\b/i;
@@ -29,8 +40,40 @@ function buildReasoningPlan({
   const context = buildRoutingContext(userId, { runtimeContext, recentSessions });
   const state = userId ? getDoctrineConversationState(userId) : {};
   const prefs = userPreferences || getUserAnswerPreferences(userId);
-  const routePlan = planCompanionDoctrineRouting({ userId, message, recentSessions, runtimeContext });
-  const concept = resolveConceptAlias(m) || (context.activeBibleConcept ? detectConceptFromGraph(context.activeBibleConcept) : null);
+  const routePlan = planCompanionDoctrineRouting({
+    userId,
+    message,
+    recentSessions,
+    runtimeContext,
+  });
+
+  const explicitScriptureReference = hasExplicitScriptureReference(m);
+
+  const protectedHumanConversation =
+    routePlan.lane === 'companion' &&
+    routePlan.humanNeed &&
+    routePlan.humanNeed !== 'doctrine_answer';
+
+  const followUp = resolveFollowUpContext(m, {
+    lastAnsweredConcept: state.lastAnsweredConcept || context.lastAnsweredConcept,
+    activeBibleConcept: context.activeBibleConcept,
+    lastBibleConcept: context.lastBibleConcept,
+  });
+  const explicitConcept = hasExplicitConcept(m);
+
+  let concept =
+    (followUp?.conceptId && !followUp.isActorQuestion
+      ? getGraphNode(followUp.conceptId)
+      : null) ||
+    (!protectedHumanConversation && !explicitScriptureReference
+      ? detectSemanticConcept(m, context)
+      : null) ||
+    (explicitConcept ? resolveConceptAlias(m) : null) ||
+    (!protectedHumanConversation &&
+    !explicitScriptureReference &&
+    context.activeBibleConcept
+      ? detectConceptFromGraph(context.activeBibleConcept)
+      : null);
   const strictTopic =
     routePlan.strictTopic ||
     detectStrictTopicFromMessage(m) ||
@@ -42,8 +85,23 @@ function buildReasoningPlan({
   else if (routePlan.lane === 'bible_wide') answerLane = 'bible_wide';
   else if (routePlan.immediateCompanionReply) answerLane = 'companion_release';
   else if (isPendingQuestionChallenge(m)) answerLane = 'pending_resolver';
-  else if (concept && !strictTopic) answerLane = 'bible_wide';
+  else if (routePlan.lane !== 'companion' && concept && !strictTopic) answerLane = 'bible_wide';
   else if (strictTopic && routePlan.lane === 'strict_doctrine') answerLane = 'strict_doctrine';
+
+  if (protectedHumanConversation) {
+    concept = null;
+  }
+
+  // Explicit references stay reference-owned and cannot inherit or
+  // manufacture a semantic doctrine concept.
+  if (explicitScriptureReference) {
+    concept = null;
+    answerLane = 'bible_wide';
+  }
+
+  if (/\blogos\b/i.test(m) && /\bjohn\s*1\b/i.test(m) && concept?.id === 'ten_commandments') {
+    concept = null;
+  }
 
   const witnesses = concept ? getGraphWitnesses(concept.id) : { direct: [], supporting: [], all: [] };
   const directAnswer = concept?.directAnswer || null;
@@ -56,7 +114,7 @@ function buildReasoningPlan({
     !concept &&
     !strictTopic &&
     !routePlan.immediateCompanionReply &&
-    UNKNOWN_BIBLE_RE.test(m) &&
+    (UNKNOWN_BIBLE_RE.test(m) || /\b(zephyrian|scriture)\b/i.test(m)) &&
     m.length > 12;
 
   if (unknownPhrase && answerLane === 'companion') {
@@ -65,7 +123,8 @@ function buildReasoningPlan({
 
   return {
     intent: routePlan.intent,
-    concept: concept?.id || routePlan.bibleConceptId || context.activeBibleConcept || null,
+    humanNeed: routePlan.humanNeed || null,
+    concept: protectedHumanConversation ? null : (concept?.id || routePlan.bibleConceptId || context.activeBibleConcept || null),
     conceptNode: concept,
     answerLane,
     strictTopic,

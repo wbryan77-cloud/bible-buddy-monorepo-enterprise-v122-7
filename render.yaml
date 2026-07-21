@@ -4,16 +4,19 @@ services:
     name: bible-buddy
     env: node
     plan: standard
-    # DEPLOYMENT_RECOVERY — this service was deploying `main`, which does not
-    # contain the verified Founder Alpha baseline (that work lives on
-    # `sprint-2c-c3-explicit-scripture-handoff`). Render defaults an
-    # unset `branch` to the repo's default branch, which is `main`; setting
-    # it explicitly here points the service at the verified branch instead.
-    branch: sprint-2c-c3-explicit-scripture-handoff
-    # `npx prisma migrate deploy` is a guaranteed build failure: `prisma` is
-    # not a package.json dependency and no prisma/migrations/ directory
-    # exists. The live runtime uses local JSONL/JSON file persistence, not
-    # Prisma. Removed so the build actually succeeds.
+    # PHASE_6F Part 15 — `npx prisma migrate deploy` was removed from this
+    # build step. It is a guaranteed, reproducible build failure today:
+    # `prisma` is not a package.json dependency, no `prisma/migrations/`
+    # directory exists, and prisma/schema.prisma uses a datasource `url`
+    # syntax that current Prisma CLI versions reject outright (verified
+    # live: `Error: Prisma schema validation - (get-config wasm)` /
+    # `P1012`). The live runtime does not use Prisma or any database today
+    # (all persistence is local JSONL/JSON files under data/ — see
+    # docs/alpha/phase6f-*/ArchitectureScaleReadiness.md) so this step was
+    # pure dead weight that would have broken every deploy. Re-add a real
+    # migration step only once a database is actually wired into the
+    # runtime, with a valid schema and a committed prisma/migrations/
+    # directory.
     buildCommand: npm install
     startCommand: node server.js
     healthCheckPath: /health
@@ -33,9 +36,14 @@ services:
         value: "0"
       - key: OPENAI_API_KEY
         sync: false
-      # Gates every /admin/api/bible-authority/* route (checkAdminAuth() in
-      # routes/bibleAuthorityAdmin.js). Must be set to a real secret in the
-      # Render dashboard before inviting Founder testers.
+      # FOUNDER_ALPHA_DEPLOYMENT_ACTIVATION — the actual Admin route gate is
+      # routes/bibleAuthorityAdmin.js checkAdminAuth(), which reads
+      # BIBLE_AUTHORITY_ADMIN_TOKEN (falling back to ALPHA_ADMIN_TOKEN /
+      # BETA_REVIEW_TOKEN). ADMIN_PASSWORD below is legacy scaffolding with no
+      # code reference anywhere in this repo — it does not protect anything.
+      # Set BIBLE_AUTHORITY_ADMIN_TOKEN to a real secret in the Render
+      # dashboard before inviting any Founder testers; leaving it unset
+      # leaves every /admin/api/bible-authority/* route publicly readable.
       - key: BIBLE_AUTHORITY_ADMIN_TOKEN
         sync: false
       - key: ADMIN_PASSWORD

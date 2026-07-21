@@ -1,0 +1,2066 @@
+{
+  "ranAt": "2026-06-08T05:06:48.930Z",
+  "inventory": [
+    {
+      "id": "CC-001",
+      "topic": "sabbath",
+      "scenarioId": "doc_06",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "How do we keep the Sabbath holy?",
+      "claimId": "c_witness_3",
+      "claim": "Encourages delighting in the Sabbath and refraining from personal business.",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-002",
+      "topic": "sabbath",
+      "scenarioId": "doc_06",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "How do we keep the Sabbath holy?",
+      "claimId": "c_witness_5",
+      "claim": "Early Christians continued meeting on the Sabbath for teaching.",
+      "scriptures": [
+        "Acts 17:2"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-003",
+      "topic": "sabbath",
+      "scenarioId": "doc_06",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "How do we keep the Sabbath holy?",
+      "claimId": "c_sent_9",
+      "claim": "Isaiah encourages delighting in the Sabbath by calling it a holy day and refraining from pursuing our own business (Isaiah 58:13-14).",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-004",
+      "topic": "holiness",
+      "scenarioId": "doc_09",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What does holy mean?",
+      "claimId": "c_witness_2",
+      "claim": "Peter reiterates the call to holiness, emphasizing it as a lifestyle reflecting God's character.",
+      "scriptures": [
+        "1 Peter 1:15-16"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "holiness"
+      ],
+      "effectiveTopic": "holiness",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "holy_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-005",
+      "topic": "holiness",
+      "scenarioId": "doc_09",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What does holy mean?",
+      "claimId": "c_sent_3",
+      "claim": "For example, Leviticus 19:2 says, \"Be ye holy; for I the LORD your God am holy,\" showing that holiness is about being distinct and dedicated to God.",
+      "scriptures": [
+        "Leviticus 19:2"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "holiness"
+      ],
+      "effectiveTopic": "holiness",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "holy_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-006",
+      "topic": "kingdom",
+      "scenarioId": "doc_11",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What does Thy Kingdom Come mean?",
+      "claimId": "c_witness_3",
+      "claim": "Shows Jesus' ascension and the promise of His future return.",
+      "scriptures": [
+        "Acts 1:9-11"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "kingdom"
+      ],
+      "effectiveTopic": "kingdom",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "kingdom_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-007",
+      "topic": "sabbath",
+      "scenarioId": "doc_13",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What is a Sabbath day according to Scripture?",
+      "claimId": "c_witness_3",
+      "claim": "Encourages delighting in the Sabbath as the holy day of the Lord.",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-008",
+      "topic": "sabbath",
+      "scenarioId": "doc_15",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What does holy mean in the Sabbath commandment?",
+      "claimId": "c_witness_3",
+      "claim": "Explains holiness as delighting in the Lord and honoring His day.",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath",
+        "lawCommandments"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-009",
+      "topic": "kingdom",
+      "scenarioId": "doc_20",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "Jesus said where I go ye cannot come. What does that mean?",
+      "claimId": "c_witness_1",
+      "claim": "This directly states the phrase and shows Jesus telling His disciples about their inability to follow Him immediately.",
+      "scriptures": [
+        "John 13:33"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "kingdom"
+      ],
+      "effectiveTopic": "kingdom",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "kingdom_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-010",
+      "topic": "dietary_law",
+      "scenarioId": "doc_21",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What does the Bible say about clean and unclean food?",
+      "claimId": "c_witness_3",
+      "claim": "Maintains the distinction of unclean animals in prophetic context.",
+      "scriptures": [
+        "Isaiah 66:17"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "dietaryLaw"
+      ],
+      "effectiveTopic": "dietary_law",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "general_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-011",
+      "topic": "dietary_law",
+      "scenarioId": "doc_21",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What does the Bible say about clean and unclean food?",
+      "claimId": "c_sent_7",
+      "claim": "This distinction is maintained throughout Scripture, including in Isaiah 66:17.",
+      "scriptures": [
+        "Isaiah 66:17"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "dietaryLaw"
+      ],
+      "effectiveTopic": "dietary_law",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "general_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-012",
+      "topic": "deathState",
+      "scenarioId": "doc_22",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What is the state of the dead according to Scripture?",
+      "claimId": "c_witness_1",
+      "claim": "Jesus refers to death as sleep, indicating inactivity rather than conscious existence.",
+      "scriptures": [
+        "John 11:11-14"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "death_resurrection_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-013",
+      "topic": "deathState",
+      "scenarioId": "doc_22",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What is the state of the dead according to Scripture?",
+      "claimId": "c_witness_2",
+      "claim": "It states that the dead know not anything, supporting the idea of unconsciousness in death.",
+      "scriptures": [
+        "Ecclesiastes 9:5"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "death_resurrection_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-014",
+      "topic": "deathState",
+      "scenarioId": "doc_22",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What is the state of the dead according to Scripture?",
+      "claimId": "c_witness_3",
+      "claim": "Paul comforts believers by describing the dead in Christ as sleeping, awaiting resurrection.",
+      "scriptures": [
+        "1 Thessalonians 4:13-14"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "death_resurrection_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-015",
+      "topic": "holiness",
+      "scenarioId": "doc_25",
+      "group": "doctrine",
+      "turnIndex": 0,
+      "conversation": "What does it mean to be holy as God is holy?",
+      "claimId": "c_witness_1",
+      "claim": "This verse directly commands God's people to be holy as He is holy, setting the foundation for holiness as God’s moral standard.",
+      "scriptures": [
+        "Leviticus 19:2"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "holy_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-016",
+      "topic": "grief",
+      "scenarioId": "emo_09",
+      "group": "emotional",
+      "turnIndex": 0,
+      "conversation": "I am grieving and cannot sleep.",
+      "claimId": "c_witness_1",
+      "claim": "This Scripture reassures that God is close to those hurting deeply.",
+      "scriptures": [
+        "Psalm 34:18"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "deathState"
+      ],
+      "effectiveTopic": "grief",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "general_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-017",
+      "topic": "grief",
+      "scenarioId": "emo_09",
+      "group": "emotional",
+      "turnIndex": 0,
+      "conversation": "I am grieving and cannot sleep.",
+      "claimId": "c_witness_2",
+      "claim": "Jesus’ tears show that grief is natural and He understands your pain.",
+      "scriptures": [
+        "John 11:35"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "deathState"
+      ],
+      "effectiveTopic": "grief",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "death_resurrection_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-018",
+      "topic": "deathState",
+      "scenarioId": "mix_01",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "My father died. Where is he now?",
+      "claimId": "c_witness_1",
+      "claim": "This verse reminds us that God is close to those who are brokenhearted, offering comfort in grief.",
+      "scriptures": [
+        "Psalm 34:18"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "death_resurrection_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-019",
+      "topic": "deathState",
+      "scenarioId": "mix_01",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "My father died. Where is he now?",
+      "claimId": "c_witness_2",
+      "claim": "This shows Jesus' compassion and that grieving is natural, even for Him.",
+      "scriptures": [
+        "John 11:35"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "death_resurrection_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-020",
+      "topic": "deathState",
+      "scenarioId": "mix_01",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "My father died. Where is he now?",
+      "claimId": "c_witness_3",
+      "claim": "Paul encourages believers to grieve with hope, trusting in God's promise of resurrection.",
+      "scriptures": [
+        "1 Thessalonians 4:13"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "death_resurrection_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-021",
+      "topic": "sabbath",
+      "scenarioId": "mix_03",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "How do I keep the Sabbath while working a job?",
+      "claimId": "c_witness_3",
+      "claim": "Calls for delighting in and honoring the Sabbath by turning from your own ways and speaking peace.",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-022",
+      "topic": "sabbath",
+      "scenarioId": "mix_03",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "How do I keep the Sabbath while working a job?",
+      "claimId": "c_sent_7",
+      "claim": "Scripture commands remembering the Sabbath day and keeping it holy by resting as God did after creation (Genesis 2:2-3; Exodus 20:8-11).",
+      "scriptures": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-023",
+      "topic": "sabbath",
+      "scenarioId": "mix_03",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "How do I keep the Sabbath while working a job?",
+      "claimId": "c_sent_8",
+      "claim": "Isaiah 58:13-14 encourages delighting in the Sabbath by refraining from your own ways and speaking peace.",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-024",
+      "topic": "grief",
+      "scenarioId": "mix_05",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "I am grieving. What does the Bible say about death?",
+      "claimId": "c_witness_1",
+      "claim": "This verse reminds us that God is close to those who are brokenhearted in grief.",
+      "scriptures": [
+        "Psalm 34:18"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "deathState"
+      ],
+      "effectiveTopic": "grief",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "general_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-025",
+      "topic": "grief",
+      "scenarioId": "mix_05",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "I am grieving. What does the Bible say about death?",
+      "claimId": "c_witness_2",
+      "claim": "Jesus' tears show that sorrow at death is real and personal.",
+      "scriptures": [
+        "John 11:35"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "deathState"
+      ],
+      "effectiveTopic": "grief",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "death_resurrection_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-026",
+      "topic": "dietary_law",
+      "scenarioId": "mix_06",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "Can I eat pork and still be faithful?",
+      "claimId": "c_witness_4",
+      "claim": "Peter explains the vision's meaning, confirming it does not permit eating unclean animals.",
+      "scriptures": [
+        "Acts 11:1-18"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "dietaryLaw"
+      ],
+      "effectiveTopic": "dietary_law",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "dietary_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-027",
+      "topic": "emotional",
+      "scenarioId": "mix_07",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "I feel abandoned. Does Scripture say God leaves us?",
+      "claimId": "c_witness_1",
+      "claim": "This verse directly assures us that God promises never to leave or forsake us.",
+      "scriptures": [
+        "Hebrews 13:5"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "general_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-028",
+      "topic": "emotional",
+      "scenarioId": "mix_07",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "I feel abandoned. Does Scripture say God leaves us?",
+      "claimId": "c_witness_2",
+      "claim": "This passage reinforces that God goes with His people and will not forsake them.",
+      "scriptures": [
+        "Deuteronomy 31:6"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "general_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-029",
+      "topic": "sabbath",
+      "scenarioId": "mix_13",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "I want to keep Sabbath holy but my church meets Sunday.",
+      "claimId": "c_witness_2",
+      "claim": "This is the fourth commandment, explicitly commanding rest on the seventh-day Sabbath.",
+      "scriptures": [
+        "Exodus 20:8-11"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-030",
+      "topic": "sabbath",
+      "scenarioId": "mix_13",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "I want to keep Sabbath holy but my church meets Sunday.",
+      "claimId": "c_witness_3",
+      "claim": "These verses describe delighting in the Sabbath and honoring God by resting from your own affairs.",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-031",
+      "topic": "sabbath",
+      "scenarioId": "mix_13",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "I want to keep Sabbath holy but my church meets Sunday.",
+      "claimId": "c_witness_5",
+      "claim": "The early Christians met on the Sabbath day for teaching.",
+      "scriptures": [
+        "Acts 17:2"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-032",
+      "topic": "holiness",
+      "scenarioId": "mix_16",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "Why does God allow pain if He is holy?",
+      "claimId": "c_witness_1",
+      "claim": "Encourages prayer for healing and God's presence in suffering.",
+      "scriptures": [
+        "James 5:14"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "holy_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-033",
+      "topic": "holiness",
+      "scenarioId": "mix_16",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "Why does God allow pain if He is holy?",
+      "claimId": "c_witness_2",
+      "claim": "Highlights the healing power of a joyful heart during hardship.",
+      "scriptures": [
+        "Proverbs 17:22"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "holy_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-034",
+      "topic": "holiness",
+      "scenarioId": "mix_16",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "Why does God allow pain if He is holy?",
+      "claimId": "c_witness_3",
+      "claim": "Reminds us that our bodies are holy and cared for by God.",
+      "scriptures": [
+        "1 Corinthians 6:19-20"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "holy_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-035",
+      "topic": "holiness",
+      "scenarioId": "mix_16",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "Why does God allow pain if He is holy?",
+      "claimId": "c_sent_4",
+      "claim": "James 5:14 invites the sick to call for prayer and anointing, showing God’s care in our suffering.",
+      "scriptures": [
+        "James 5:14"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "holy_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-036",
+      "topic": "holiness",
+      "scenarioId": "mix_16",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "Why does God allow pain if He is holy?",
+      "claimId": "c_sent_5",
+      "claim": "Proverbs 17:22 reminds us that a merry heart is good medicine, encouraging us to seek joy amid trials.",
+      "scriptures": [
+        "Proverbs 17:22"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "holy_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-037",
+      "topic": "holiness",
+      "scenarioId": "mix_16",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "Why does God allow pain if He is holy?",
+      "claimId": "c_sent_6",
+      "claim": "Also, 1 Corinthians 6:19-20 teaches that our bodies are temples of the Holy Spirit, so caring for ourselves with hope is vital.",
+      "scriptures": [
+        "1 Corinthians 6:19-20"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "holy_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-038",
+      "topic": "sabbath",
+      "scenarioId": "mix_22",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "Sabbath rest while caring for a sick parent?",
+      "claimId": "c_sent_5",
+      "claim": "Jesus also taught that doing good and helping others, like healing, is lawful on the Sabbath (implied in Matthew 12:11-12, not quoted here).",
+      "scriptures": [
+        "Matthew 12:11-12"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "sabbath_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-039",
+      "topic": "heavens",
+      "scenarioId": "chl_04",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "2 Corinthians 5:8 proves we go to heaven immediately at death.",
+      "claimId": "c_witness_1",
+      "claim": "Expresses confidence in being with the Lord when absent from the body but is not standalone proof of immediate heaven at death.",
+      "scriptures": [
+        "2 Corinthians 5:8"
+      ],
+      "supportReason": "Only caution passages were cited without an approved teaching chain.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "heavens",
+        "deathState"
+      ],
+      "effectiveTopic": "heavens",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "caution_without_teaching_chain",
+        "detail": "Caution passage used without approved line-upon-line chain"
+      }
+    },
+    {
+      "id": "CC-040",
+      "topic": "heavens",
+      "scenarioId": "chl_04",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "2 Corinthians 5:8 proves we go to heaven immediately at death.",
+      "claimId": "c_sent_4",
+      "claim": "2 Corinthians 5:8 expresses the hope and confidence of being absent from the body and present with the Lord, but Scripture does not state that this verse alone proves believers go immediately to heave",
+      "scriptures": [
+        "2 Corinthians 5:8"
+      ],
+      "supportReason": "Only caution passages were cited without an approved teaching chain.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "heavens",
+        "deathState"
+      ],
+      "effectiveTopic": "heavens",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "caution_without_teaching_chain",
+        "detail": "Caution passage used without approved line-upon-line chain"
+      }
+    },
+    {
+      "id": "CC-041",
+      "topic": "heavens",
+      "scenarioId": "chl_04",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "2 Corinthians 5:8 proves we go to heaven immediately at death.",
+      "claimId": "c_sent_6",
+      "claim": "So, 2 Corinthians 5:8 should be understood with caution and in the broader biblical context of death and resurrection.",
+      "scriptures": [
+        "2 Corinthians 5:8"
+      ],
+      "supportReason": "Only caution passages were cited without an approved teaching chain.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "heavens",
+        "deathState"
+      ],
+      "effectiveTopic": "heavens",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "caution_without_teaching_chain",
+        "detail": "Caution passage used without approved line-upon-line chain"
+      }
+    },
+    {
+      "id": "CC-042",
+      "topic": "sabbath",
+      "scenarioId": "chl_08",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "My pastor says Sabbath was nailed to the cross.",
+      "claimId": "c_witness_1",
+      "claim": "Shows the Sabbath was established at creation.",
+      "scriptures": [
+        "Genesis 2:2-3"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-043",
+      "topic": "sabbath",
+      "scenarioId": "chl_08",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "My pastor says Sabbath was nailed to the cross.",
+      "claimId": "c_witness_2",
+      "claim": "Commands the Sabbath as part of the Ten Commandments.",
+      "scriptures": [
+        "Exodus 20:8-11"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-044",
+      "topic": "sabbath",
+      "scenarioId": "chl_08",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "My pastor says Sabbath was nailed to the cross.",
+      "claimId": "c_witness_3",
+      "claim": "Describes the Sabbath as a delight and lasting sign.",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-045",
+      "topic": "sabbath",
+      "scenarioId": "chl_08",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "My pastor says Sabbath was nailed to the cross.",
+      "claimId": "c_witness_5",
+      "claim": "Early Christians met on the Sabbath.",
+      "scriptures": [
+        "Acts 17:2"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-046",
+      "topic": "sabbath",
+      "scenarioId": "chl_08",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "My pastor says Sabbath was nailed to the cross.",
+      "claimId": "c_sent_7",
+      "claim": "It is described as a lasting sign and rest for God's people (Isaiah 58:13-14, Hebrews 4:9).",
+      "scriptures": [
+        "Isaiah 58:13-14",
+        "Hebrews 4:9"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-047",
+      "topic": "sabbath",
+      "scenarioId": "chl_12",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "Constantine changed the Sabbath. Admit it.",
+      "claimId": "c3",
+      "claim": "The biblical Sabbath is the seventh day, established at creation and commanded in Scripture.",
+      "scriptures": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-048",
+      "topic": "sabbath",
+      "scenarioId": "chl_12",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "Constantine changed the Sabbath. Admit it.",
+      "claimId": "c4",
+      "claim": "The Bible does not explicitly command changing the Sabbath from the seventh day to Sunday.",
+      "scriptures": [],
+      "supportReason": "No supporting scriptures were mapped to this claim.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "weak_claim_extraction",
+        "sub": "unmapped_doctrine_claim",
+        "detail": "Claim extracted without scripture mapping"
+      }
+    },
+    {
+      "id": "CC-049",
+      "topic": "sabbath",
+      "scenarioId": "chl_15",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "Hebrews 4 means we do not need the seventh day anymore.",
+      "claimId": "c_witness_2",
+      "claim": "Shows the seventh day Sabbath was established at creation.",
+      "scriptures": [
+        "Genesis 2:2-3"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-050",
+      "topic": "sabbath",
+      "scenarioId": "chl_15",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "Hebrews 4 means we do not need the seventh day anymore.",
+      "claimId": "c_witness_3",
+      "claim": "The fourth commandment prescribes keeping the seventh day holy.",
+      "scriptures": [
+        "Exodus 20:8-11"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-051",
+      "topic": "sabbath",
+      "scenarioId": "chl_15",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "Hebrews 4 means we do not need the seventh day anymore.",
+      "claimId": "c_witness_4",
+      "claim": "Describes delighting in the Sabbath as a blessing from God.",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-052",
+      "topic": "sabbath",
+      "scenarioId": "chl_15",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "Hebrews 4 means we do not need the seventh day anymore.",
+      "claimId": "c_sent_7",
+      "claim": "In fact, the seventh day as Sabbath was established at creation (Genesis 2:2-3) and commanded again in the Ten Commandments (Exodus 20:8-11).",
+      "scriptures": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-053",
+      "topic": "sabbath",
+      "scenarioId": "chl_15",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "Hebrews 4 means we do not need the seventh day anymore.",
+      "claimId": "c_sent_8",
+      "claim": "Throughout the Bible, the Sabbath remains a sign of God's covenant and a day for rest and delight in Him (Isaiah 58:13-14; Luke 4:16).",
+      "scriptures": [
+        "Isaiah 58:13-14",
+        "Luke 4:16"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-054",
+      "topic": "sabbath",
+      "scenarioId": "chl_22",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "Why do you ignore church tradition on Sunday worship?",
+      "claimId": "c_sent_4",
+      "claim": "I focus on Scripture as the foundation for worship practice because the Bible explicitly establishes the seventh day as the Sabbath from creation (Genesis 2:2-3) and commands its observance (Exodus 20",
+      "scriptures": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath",
+        "traditions"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-055",
+      "topic": "sabbath",
+      "scenarioId": "chl_22",
+      "group": "challenge",
+      "turnIndex": 0,
+      "conversation": "Why do you ignore church tradition on Sunday worship?",
+      "claimId": "c_sent_5",
+      "claim": "Early Christians did gather on the first day in some places, but many still observed the seventh-day Sabbath (Acts 17:2).",
+      "scriptures": [
+        "Acts 17:2"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath",
+        "traditions"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-056",
+      "topic": "deathState",
+      "scenarioId": "chain_death_5",
+      "group": "mixed",
+      "turnIndex": 1,
+      "conversation": "Where is he now according to Scripture?",
+      "claimId": "c_witness_1",
+      "claim": "Encourages believers not to grieve without hope because of the resurrection to come.",
+      "scriptures": [
+        "1 Thessalonians 4:13"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "death_resurrection_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-057",
+      "topic": "general",
+      "scenarioId": "chain_death_5",
+      "group": "mixed",
+      "turnIndex": 1,
+      "conversation": "Where is he now according to Scripture?",
+      "claimId": "c_witness_2",
+      "claim": "The LORD is near to the brokenhearted and saves those who are crushed in spirit.",
+      "scriptures": [
+        "Psalm 34:18"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "general_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-058",
+      "topic": "deathState",
+      "scenarioId": "chain_death_5",
+      "group": "mixed",
+      "turnIndex": 1,
+      "conversation": "Where is he now according to Scripture?",
+      "claimId": "c_witness_3",
+      "claim": "Jesus refers to death as sleep, indicating a temporary state until resurrection.",
+      "scriptures": [
+        "John 11:11-14"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "death_resurrection_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-059",
+      "topic": "resurrection_timeline",
+      "scenarioId": "chain_death_5",
+      "group": "mixed",
+      "turnIndex": 3,
+      "conversation": "When is the resurrection?",
+      "claimId": "c_witness_1",
+      "claim": "Jesus explains the resurrection timing by comparing it to Jonah's three days and nights in the whale, which points to His resurrection.",
+      "scriptures": [
+        "Matthew 12:40"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "deathState"
+      ],
+      "effectiveTopic": "resurrection_timeline",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "general_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-060",
+      "topic": "resurrection_timeline",
+      "scenarioId": "chain_death_5",
+      "group": "mixed",
+      "turnIndex": 3,
+      "conversation": "When is the resurrection?",
+      "claimId": "c_witness_2",
+      "claim": "Describes Jesus' burial, setting the timeline for the resurrection.",
+      "scriptures": [
+        "Matthew 27:57-66"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "deathState"
+      ],
+      "effectiveTopic": "resurrection_timeline",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "general_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-061",
+      "topic": "resurrection_timeline",
+      "scenarioId": "chain_death_5",
+      "group": "mixed",
+      "turnIndex": 3,
+      "conversation": "When is the resurrection?",
+      "claimId": "c_witness_3",
+      "claim": "Describes Jesus rising on the third day, confirming the resurrection event.",
+      "scriptures": [
+        "Matthew 28:1-6"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "deathState"
+      ],
+      "effectiveTopic": "resurrection_timeline",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "general_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-062",
+      "topic": "resurrection_timeline",
+      "scenarioId": "chain_death_5",
+      "group": "mixed",
+      "turnIndex": 3,
+      "conversation": "When is the resurrection?",
+      "claimId": "c_witness_4",
+      "claim": "Gospel account of the resurrection appearance, affirming the timing.",
+      "scriptures": [
+        "John 20:1-8"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "deathState"
+      ],
+      "effectiveTopic": "resurrection_timeline",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "general_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-063",
+      "topic": "sabbath",
+      "scenarioId": "chain_sabbath_5",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "How do we keep the Sabbath holy?",
+      "claimId": "c_witness_3",
+      "claim": "Instructs delighting in the Sabbath and honoring it by ceasing your own business.",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-064",
+      "topic": "sabbath",
+      "scenarioId": "chain_sabbath_5",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "How do we keep the Sabbath holy?",
+      "claimId": "c_witness_5",
+      "claim": "Early Christians gathered on the Sabbath for hearing the word.",
+      "scriptures": [
+        "Acts 13:42-44"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "sabbath_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-065",
+      "topic": "sabbath",
+      "scenarioId": "chain_sabbath_5",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "How do we keep the Sabbath holy?",
+      "claimId": "c_sent_8",
+      "claim": "Isaiah encourages delighting in the Sabbath by calling it a holy day and honoring it by refraining from your own pleasures and speaking idle words (Isaiah 58:13).",
+      "scriptures": [
+        "Isaiah 58:13-14"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_support_edge",
+        "sub": "isaiah58_sabbath_edge",
+        "detail": "Isaiah 58:13-14 — Sabbath delight edge gap on application phrasing"
+      }
+    },
+    {
+      "id": "CC-066",
+      "topic": "sabbath",
+      "scenarioId": "chain_sabbath_5",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "How do we keep the Sabbath holy?",
+      "claimId": "c_sent_9",
+      "claim": "Jesus showed example by attending synagogue on the Sabbath (Luke 4:16), and the early Christians also gathered on the Sabbath for teaching (Acts 13:42-44, Acts 17:2).",
+      "scriptures": [
+        "Luke 4:16",
+        "Acts 13:42-44",
+        "Acts 17:2"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "sabbath_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-067",
+      "topic": "sabbath",
+      "scenarioId": "chain_sabbath_5",
+      "group": "mixed",
+      "turnIndex": 0,
+      "conversation": "How do we keep the Sabbath holy?",
+      "claimId": "c_sent_11",
+      "claim": "Mercy and doing good are permitted on the Sabbath, as Jesus taught (Matthew 12:11-12, not in evidence but consistent with the principle).",
+      "scriptures": [
+        "Matthew 12:11-12"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "sabbath_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-068",
+      "topic": "sabbath",
+      "scenarioId": "chain_sabbath_5",
+      "group": "mixed",
+      "turnIndex": 1,
+      "conversation": "What scriptures support resting on the seventh day?",
+      "claimId": "c_witness_3",
+      "claim": "The seventh day is declared a sabbath of rest, a holy convocation.",
+      "scriptures": [
+        "Leviticus 23:3"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "sabbath_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-069",
+      "topic": "sabbath",
+      "scenarioId": "chain_sabbath_5",
+      "group": "mixed",
+      "turnIndex": 1,
+      "conversation": "What scriptures support resting on the seventh day?",
+      "claimId": "c_sent_8",
+      "claim": "The scriptures that support resting on the seventh day begin with Genesis 2:2-3, where God finished His work and rested on the seventh day, blessing and sanctifying it.",
+      "scriptures": [
+        "Genesis 2:2-3"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "sabbath_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-070",
+      "topic": "sabbath",
+      "scenarioId": "chain_sabbath_5",
+      "group": "mixed",
+      "turnIndex": 1,
+      "conversation": "What scriptures support resting on the seventh day?",
+      "claimId": "c_sent_10",
+      "claim": "Leviticus 23:3 also designates the seventh day as a sabbath of rest.",
+      "scriptures": [
+        "Leviticus 23:3"
+      ],
+      "supportReason": "The citation is not in the approved evidence graph for this turn.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "sabbath"
+      ],
+      "effectiveTopic": "sabbath",
+      "rootCause": {
+        "cluster": "missing_chain",
+        "sub": "sabbath_cluster",
+        "detail": "Citation not in approved evidence graph / catalog chain"
+      }
+    },
+    {
+      "id": "CC-071",
+      "topic": "dietary_law",
+      "scenarioId": "chain_pork_5",
+      "group": "challenge",
+      "turnIndex": 1,
+      "conversation": "But Acts 10 makes all foods clean.",
+      "claimId": "c_witness_4",
+      "claim": "Shows Peter’s explanation to the early church clarifying the vision’s meaning.",
+      "scriptures": [
+        "Acts 11:1-18"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "dietaryLaw"
+      ],
+      "effectiveTopic": "dietary_law",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "dietary_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-072",
+      "topic": "dietary_law",
+      "scenarioId": "chain_pork_5",
+      "group": "challenge",
+      "turnIndex": 2,
+      "conversation": "Peter said not to call anything unclean.",
+      "claimId": "c_witness_1",
+      "claim": "Shows Peter's instruction relates to people, not animals or food.",
+      "scriptures": [
+        "Acts 10:28"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "dietaryLaw"
+      ],
+      "effectiveTopic": "dietary_law",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "dietary_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-073",
+      "topic": "general",
+      "scenarioId": "chain_kingdom_5",
+      "group": "doctrine",
+      "turnIndex": 4,
+      "conversation": "How does John 13:33 fit with all this?",
+      "claimId": "c_witness_1",
+      "claim": "Shows Jesus telling His disciples they cannot yet follow Him to where He is, indicating present separation.",
+      "scriptures": [
+        "John 13:33"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "general_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-074",
+      "topic": "kingdom",
+      "scenarioId": "chain_kingdom_5",
+      "group": "doctrine",
+      "turnIndex": 4,
+      "conversation": "How does John 13:33 fit with all this?",
+      "claimId": "c_witness_2",
+      "claim": "Emphasizes the kingdom is prayed for as coming to earth.",
+      "scriptures": [
+        "Matthew 6:10"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "kingdom_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-075",
+      "topic": "kingdom",
+      "scenarioId": "chain_kingdom_5",
+      "group": "doctrine",
+      "turnIndex": 4,
+      "conversation": "How does John 13:33 fit with all this?",
+      "claimId": "c_witness_3",
+      "claim": "Describes the New Jerusalem coming down to the earth, showing the kingdom's earthly fulfillment.",
+      "scriptures": [
+        "Revelation 21:1-3"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "kingdom_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-076",
+      "topic": "heavens",
+      "scenarioId": "chain_kingdom_5",
+      "group": "doctrine",
+      "turnIndex": 4,
+      "conversation": "How does John 13:33 fit with all this?",
+      "claimId": "c_sent_4",
+      "claim": "John 13:33 fits with the understanding that Jesus has ascended to heaven but His followers cannot go there yet.",
+      "scriptures": [
+        "John 13:33"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_retrieval_trigger",
+        "sub": "death_resurrection_cluster",
+        "detail": "Doctrine scripture cited but evidence card not retrieved for turn"
+      }
+    },
+    {
+      "id": "CC-077",
+      "topic": "messiah_logos",
+      "scenarioId": "chain_grief_logos_5",
+      "group": "emotional",
+      "turnIndex": 1,
+      "conversation": "What does Logos mean in John 1:1?",
+      "claimId": "c_witness_4",
+      "claim": "Affirms Christ's role in creation and His preeminence over all things.",
+      "scriptures": [
+        "Colossians 1:15-17"
+      ],
+      "supportReason": "The citation mentions a related topic but lacks verified affirmation under frozen binding rules.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [
+        "messiahLogos"
+      ],
+      "effectiveTopic": "messiah_logos",
+      "rootCause": {
+        "cluster": "missing_affirmation",
+        "sub": "general_cluster",
+        "detail": "Card retrieved; citation named but frozen affirmation/edge does not cover claim phrasing"
+      }
+    },
+    {
+      "id": "CC-078",
+      "topic": "emotional_pastoral",
+      "scenarioId": "chain_grief_logos_5",
+      "group": "emotional",
+      "turnIndex": 2,
+      "conversation": "Does Scripture say God understands my pain?",
+      "claimId": "c_witness_1",
+      "claim": "This verse assures us God is near to those who are brokenhearted, showing His understanding of our pain.",
+      "scriptures": [
+        "Psalm 34:18"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_card",
+        "sub": "pastoral_no_evidence_card",
+        "detail": "Pastoral turn — comfort scripture cited, no doctrine card retrieved"
+      }
+    },
+    {
+      "id": "CC-079",
+      "topic": "emotional",
+      "scenarioId": "chain_grief_logos_5",
+      "group": "emotional",
+      "turnIndex": 2,
+      "conversation": "Does Scripture say God understands my pain?",
+      "claimId": "c_witness_2",
+      "claim": "Jesus' tears show His personal empathy and understanding of human grief.",
+      "scriptures": [
+        "John 11:35"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_card",
+        "sub": "pastoral_no_evidence_card",
+        "detail": "Pastoral turn — comfort scripture cited, no doctrine card retrieved"
+      }
+    },
+    {
+      "id": "CC-080",
+      "topic": "deathState",
+      "scenarioId": "chain_grief_logos_5",
+      "group": "emotional",
+      "turnIndex": 2,
+      "conversation": "Does Scripture say God understands my pain?",
+      "claimId": "c_sent_3",
+      "claim": "For example, the psalmist says, \"The LORD is nigh unto them that are of a broken heart\" (Psalm 34:18), and we see Jesus Himself wept at the sorrow of others (John 11:35), demonstrating His deep empath",
+      "scriptures": [
+        "Psalm 34:18",
+        "John 11:35"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_card",
+        "sub": "pastoral_no_evidence_card",
+        "detail": "Pastoral turn — comfort scripture cited, no doctrine card retrieved"
+      }
+    },
+    {
+      "id": "CC-081",
+      "topic": "emotional",
+      "scenarioId": "chain_grief_logos_5",
+      "group": "emotional",
+      "turnIndex": 4,
+      "conversation": "Can you pray with me and point me to one verse?",
+      "claimId": "c_witness_1",
+      "claim": "This verse offers Jesus' invitation to bring our burdens to Him for rest and peace.",
+      "scriptures": [
+        "Matthew 11:28"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_card",
+        "sub": "pastoral_no_evidence_card",
+        "detail": "Pastoral turn — comfort scripture cited, no doctrine card retrieved"
+      }
+    },
+    {
+      "id": "CC-082",
+      "topic": "emotional",
+      "scenarioId": "chain_grief_logos_5",
+      "group": "emotional",
+      "turnIndex": 4,
+      "conversation": "Can you pray with me and point me to one verse?",
+      "claimId": "c_sent_2",
+      "claim": "A verse that encourages us is: \"Come unto me, all ye that labour and are heavy laden, and I will give you rest\" (Matthew 11:28).",
+      "scriptures": [
+        "Matthew 11:28"
+      ],
+      "supportReason": "Scripture was cited but no approved evidence pack is available.",
+      "supportGraphMatch": null,
+      "approvalResult": "degraded",
+      "cards": [],
+      "effectiveTopic": null,
+      "rootCause": {
+        "cluster": "missing_card",
+        "sub": "pastoral_no_evidence_card",
+        "detail": "Pastoral turn — comfort scripture cited, no doctrine card retrieved"
+      }
+    }
+  ],
+  "clusterCounts": {
+    "missing_support_edge": 14,
+    "missing_affirmation": 23,
+    "missing_retrieval_trigger": 22,
+    "missing_chain": 17,
+    "weak_claim_extraction": 1,
+    "missing_card": 5
+  },
+  "topicCounts": {
+    "sabbath": 34,
+    "holiness": 9,
+    "kingdom": 4,
+    "dietary_law": 5,
+    "deathState": 9,
+    "grief": 4,
+    "emotional": 5,
+    "heavens": 4,
+    "general": 2,
+    "resurrection_timeline": 4,
+    "messiah_logos": 1,
+    "emotional_pastoral": 1
+  },
+  "projections": {
+    "projP0": {
+      "priority": "P0",
+      "fixCount": 57,
+      "newClassC": 25,
+      "newSupportAcc": 94.1,
+      "newDegrade": 8.8,
+      "convStability": 91.2,
+      "readiness": 93.2
+    },
+    "projP0P1": {
+      "priority": "P0+P1",
+      "fixCount": 71,
+      "newClassC": 11,
+      "newSupportAcc": 97.1,
+      "newDegrade": 4,
+      "convStability": 96,
+      "readiness": 95.8
+    },
+    "projAll": {
+      "priority": "P0+P1+P2",
+      "fixCount": 82,
+      "newClassC": 0,
+      "newSupportAcc": 99.4,
+      "newDegrade": 0,
+      "convStability": 100,
+      "readiness": 97.9
+    }
+  }
+}

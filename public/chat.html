@@ -231,7 +231,18 @@
 
         const bubble = document.createElement('div');
         bubble.className = 'bubble';
-        bubble.innerHTML = String(text || '').replace(/\n/g, '<br>');
+        // PHASE_5T security fix: never inject raw user/AI text as HTML.
+        // Escape first, then convert newlines to <br> on the escaped text,
+        // so a message containing "<script>" or "<img onerror=...>" is
+        // rendered as literal visible text instead of executing.
+        const escaped = String(text || '').replace(/[&<>"']/g, (ch) => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;',
+        }[ch]));
+        bubble.innerHTML = escaped.replace(/\n/g, '<br>');
 
         row.appendChild(bubble);
         logEl.appendChild(row);

@@ -1,0 +1,863 @@
+{
+  "ranAt": "2026-06-10T07:48:10.491Z",
+  "phase": "4B",
+  "determination": "READY_FOR_PHASE_4C",
+  "results": {
+    "category1": {
+      "metrics": {
+        "originalScriptureRetrievalRate": 1,
+        "parallelScriptureRetrievalRate": 0.143,
+        "supportingScriptureRetrievalRate": 1,
+        "traceabilityRate": 1
+      },
+      "passed": true,
+      "packs": [
+        {
+          "packId": "sabbath",
+          "original": 20,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "dietary_law",
+          "original": 12,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "death_state",
+          "original": 16,
+          "parallel": 0,
+          "supporting": 8,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "messiah_logos",
+          "original": 20,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "holy_spirit",
+          "original": 20,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "kingdom_of_god",
+          "original": 20,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "feasts",
+          "original": 20,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "one_hundred_forty_four_thousand",
+          "original": 20,
+          "parallel": 6,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "peter_paul_alignment",
+          "original": 20,
+          "parallel": 4,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "jacob_israel_twelve_tribes",
+          "original": 20,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "millennial_kingdom_kingdom_on_earth",
+          "original": 20,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "book_of_life",
+          "original": 16,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "word_of_god",
+          "original": 20,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        },
+        {
+          "packId": "spirit_of_god",
+          "original": 20,
+          "parallel": 0,
+          "supporting": 12,
+          "traceable": true,
+          "tier": "full"
+        }
+      ]
+    },
+    "category2": {
+      "results": [
+        {
+          "pathAttempted": "Abraham → Isaac → Jacob → Israel → Twelve Tribes → House of Israel → Regathering → Kingdom → New Jerusalem → 144000",
+          "pathCompleted": false,
+          "hopCount": 10,
+          "traceable": true,
+          "topics": [
+            "abraham",
+            "isaac",
+            "jacob",
+            "israel",
+            "jacob_israel_twelve_tribes",
+            "house_of_israel",
+            "regathering",
+            "kingdom_of_god",
+            "new_jerusalem",
+            "one_hundred_forty_four_thousand"
+          ],
+          "steps": [
+            {
+              "topic": "abraham",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "isaac",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "jacob",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "israel",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "jacob_israel_twelve_tribes",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": false,
+              "pathwayNavigable": false
+            },
+            {
+              "topic": "house_of_israel",
+              "nodeFound": true,
+              "connectedToPrevious": false,
+              "connectedToNext": true,
+              "pathwayNavigable": false
+            },
+            {
+              "topic": "regathering",
+              "nodeFound": true,
+              "connectedToPrevious": false,
+              "connectedToNext": true,
+              "pathwayNavigable": false
+            },
+            {
+              "topic": "kingdom_of_god",
+              "nodeFound": true,
+              "connectedToPrevious": false,
+              "connectedToNext": true,
+              "pathwayNavigable": false
+            },
+            {
+              "topic": "new_jerusalem",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "one_hundred_forty_four_thousand",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            }
+          ],
+          "brokenHops": [
+            "jacob_israel_twelve_tribes",
+            "house_of_israel",
+            "regathering",
+            "kingdom_of_god"
+          ]
+        },
+        {
+          "pathAttempted": "Peter → Apostles → Pentecost → Cornelius → Gentiles → Jerusalem Council → Paul",
+          "pathCompleted": false,
+          "hopCount": 7,
+          "traceable": true,
+          "topics": [
+            "peter",
+            "apostles",
+            "pentecost",
+            "cornelius",
+            "gentiles",
+            "peter_paul_alignment",
+            "paul"
+          ],
+          "steps": [
+            {
+              "topic": "peter",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "apostles",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": false,
+              "pathwayNavigable": false
+            },
+            {
+              "topic": "pentecost",
+              "nodeFound": true,
+              "connectedToPrevious": false,
+              "connectedToNext": true,
+              "pathwayNavigable": false
+            },
+            {
+              "topic": "cornelius",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "gentiles",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "peter_paul_alignment",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "paul",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            }
+          ],
+          "brokenHops": [
+            "apostles",
+            "pentecost"
+          ]
+        },
+        {
+          "pathAttempted": "Kingdom → David → Messiah → Resurrection → Millennium → New Jerusalem",
+          "pathCompleted": true,
+          "hopCount": 6,
+          "traceable": true,
+          "topics": [
+            "kingdom_of_god",
+            "david",
+            "messiah_logos",
+            "resurrection",
+            "millennial_kingdom_kingdom_on_earth",
+            "new_jerusalem"
+          ],
+          "steps": [
+            {
+              "topic": "kingdom_of_god",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "david",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "messiah_logos",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "resurrection",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "millennial_kingdom_kingdom_on_earth",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "new_jerusalem",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            }
+          ],
+          "brokenHops": []
+        },
+        {
+          "pathAttempted": "Canonical Abraham → 144000",
+          "pathCompleted": true,
+          "hopCount": 8,
+          "traceable": true,
+          "topics": [
+            "abraham",
+            "isaac",
+            "jacob",
+            "israel",
+            "jacob_israel_twelve_tribes",
+            "kingdom_of_god",
+            "new_jerusalem",
+            "one_hundred_forty_four_thousand"
+          ],
+          "steps": [
+            {
+              "topic": "abraham",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "isaac",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "jacob",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "israel",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "jacob_israel_twelve_tribes",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "kingdom_of_god",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "new_jerusalem",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "one_hundred_forty_four_thousand",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            }
+          ],
+          "brokenHops": []
+        },
+        {
+          "pathAttempted": "Canonical Peter → Paul",
+          "pathCompleted": true,
+          "hopCount": 6,
+          "traceable": true,
+          "topics": [
+            "disciples",
+            "peter",
+            "pentecost",
+            "cornelius",
+            "gentiles",
+            "paul"
+          ],
+          "steps": [
+            {
+              "topic": "disciples",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "peter",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "pentecost",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "cornelius",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "gentiles",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            },
+            {
+              "topic": "paul",
+              "nodeFound": true,
+              "connectedToPrevious": true,
+              "connectedToNext": true,
+              "pathwayNavigable": true
+            }
+          ],
+          "brokenHops": []
+        }
+      ],
+      "navigationSuccessRate": 0.333,
+      "passed": true,
+      "id": "vine"
+    },
+    "category3": {
+      "continuityCoverage": 1,
+      "continuityConfidence": 0.971,
+      "sectionsObserved": [
+        "Torah",
+        "Writings",
+        "Revelation",
+        "Latter Prophets",
+        "Gospels",
+        "Former Prophets",
+        "Epistles",
+        "Acts"
+      ],
+      "g2rSectionsCovered": [
+        "Torah",
+        "Writings",
+        "Revelation",
+        "Prophets",
+        "Gospels",
+        "Epistles",
+        "Acts"
+      ],
+      "passed": true
+    },
+    "category4": {
+      "witnessCount": 7.286,
+      "supportScore": 0.786,
+      "sourceDiversity": 2.214,
+      "packs": [
+        {
+          "packId": "sabbath",
+          "witnessCount": 8,
+          "supportScore": 1,
+          "chainCount": 1,
+          "sourceDiversity": 2
+        },
+        {
+          "packId": "dietary_law",
+          "witnessCount": 6,
+          "supportScore": 1,
+          "chainCount": 1,
+          "sourceDiversity": 1
+        },
+        {
+          "packId": "death_state",
+          "witnessCount": 4,
+          "supportScore": 0.1,
+          "chainCount": 1,
+          "sourceDiversity": 1
+        },
+        {
+          "packId": "messiah_logos",
+          "witnessCount": 8,
+          "supportScore": null,
+          "chainCount": 0,
+          "sourceDiversity": 2
+        },
+        {
+          "packId": "holy_spirit",
+          "witnessCount": 7,
+          "supportScore": 0.1,
+          "chainCount": 1,
+          "sourceDiversity": 1
+        },
+        {
+          "packId": "kingdom_of_god",
+          "witnessCount": 8,
+          "supportScore": 0.2,
+          "chainCount": 2,
+          "sourceDiversity": 2
+        },
+        {
+          "packId": "feasts",
+          "witnessCount": 8,
+          "supportScore": null,
+          "chainCount": 1,
+          "sourceDiversity": 2
+        },
+        {
+          "packId": "one_hundred_forty_four_thousand",
+          "witnessCount": 8,
+          "supportScore": 0.1,
+          "chainCount": 0,
+          "sourceDiversity": 4
+        },
+        {
+          "packId": "peter_paul_alignment",
+          "witnessCount": 8,
+          "supportScore": 1,
+          "chainCount": 0,
+          "sourceDiversity": 4
+        },
+        {
+          "packId": "jacob_israel_twelve_tribes",
+          "witnessCount": 8,
+          "supportScore": 0.45,
+          "chainCount": 2,
+          "sourceDiversity": 3
+        },
+        {
+          "packId": "millennial_kingdom_kingdom_on_earth",
+          "witnessCount": 8,
+          "supportScore": null,
+          "chainCount": 5,
+          "sourceDiversity": 3
+        },
+        {
+          "packId": "book_of_life",
+          "witnessCount": 6,
+          "supportScore": 0.1,
+          "chainCount": 1,
+          "sourceDiversity": 2
+        },
+        {
+          "packId": "word_of_god",
+          "witnessCount": 8,
+          "supportScore": 0.3,
+          "chainCount": 1,
+          "sourceDiversity": 2
+        },
+        {
+          "packId": "spirit_of_god",
+          "witnessCount": 7,
+          "supportScore": 0.3,
+          "chainCount": 1,
+          "sourceDiversity": 2
+        }
+      ],
+      "passed": true
+    },
+    "category5": {
+      "traceabilityCompleteness": 1,
+      "details": [
+        {
+          "packId": "sabbath",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "dietary_law",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "death_state",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "messiah_logos",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "holy_spirit",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "kingdom_of_god",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "feasts",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "one_hundred_forty_four_thousand",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "peter_paul_alignment",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "jacob_israel_twelve_tribes",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "millennial_kingdom_kingdom_on_earth",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "book_of_life",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "word_of_god",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        },
+        {
+          "packId": "spirit_of_god",
+          "scriptureTracesToSource": true,
+          "chainTracesToSource": true,
+          "answerTraceable": true,
+          "complete": true
+        }
+      ],
+      "passed": true
+    },
+    "category6": {
+      "navigationSuccessRate": 1,
+      "vineNavigation": true,
+      "inheritanceNavigation": true,
+      "continuityNavigation": true,
+      "topicIntelligenceNavigation": true,
+      "inheritanceEntries": 9,
+      "continuityTopics": 207,
+      "intelligenceTopics": 9,
+      "passed": true
+    },
+    "category7": {
+      "candidateReferenced": true,
+      "candidatePromoted": false,
+      "humanReviewRequired": true,
+      "observedRelationshipCount": 4732,
+      "candidateRelationshipCount": 10,
+      "promotionsDetected": 0,
+      "separationViolations": 0,
+      "packs": [
+        {
+          "packId": "sabbath",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 6
+        },
+        {
+          "packId": "dietary_law",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 2
+        },
+        {
+          "packId": "death_state",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 0
+        },
+        {
+          "packId": "messiah_logos",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 6
+        },
+        {
+          "packId": "holy_spirit",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 2
+        },
+        {
+          "packId": "kingdom_of_god",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 9
+        },
+        {
+          "packId": "feasts",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 9
+        },
+        {
+          "packId": "one_hundred_forty_four_thousand",
+          "separationPreserved": true,
+          "observedCount": 14,
+          "candidateCount": 5
+        },
+        {
+          "packId": "peter_paul_alignment",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 2
+        },
+        {
+          "packId": "jacob_israel_twelve_tribes",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 7
+        },
+        {
+          "packId": "millennial_kingdom_kingdom_on_earth",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 6
+        },
+        {
+          "packId": "book_of_life",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 2
+        },
+        {
+          "packId": "word_of_god",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 2
+        },
+        {
+          "packId": "spirit_of_god",
+          "separationPreserved": true,
+          "observedCount": 15,
+          "candidateCount": 2
+        }
+      ],
+      "passed": true
+    },
+    "category8": {
+      "hallucinationRate": 0,
+      "totalRefsChecked": 557,
+      "inventedCount": 0,
+      "inventedSamples": [],
+      "passed": true
+    },
+    "corpusCheck": {
+      "corpusModifiedDuringTest": false,
+      "lastChainLibraryPhase": "Phase 4A.4 bookkeeping activations — no doctrine inference",
+      "lastVinePhase": "Phase 4A.4 david vine node — bookkeeping navigation only",
+      "testingOnly": true
+    },
+    "sandbox": {
+      "failures": 0,
+      "allTraceable": true,
+      "goCriteria": {
+        "corpusLoaded": true,
+        "scriptureRetrieval": true,
+        "genesisToRevelationNavigation": true,
+        "vineNavigation": true,
+        "observedCandidateSeparation": true,
+        "answersTraceable": true,
+        "failureRateAcceptable": true
+      }
+    }
+  }
+}

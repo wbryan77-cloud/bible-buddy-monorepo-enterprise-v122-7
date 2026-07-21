@@ -1,0 +1,75 @@
+{
+  "phase": "2M",
+  "description": "Second batch human decisions — Scripture Authority Review session.",
+  "humanApprovalRequired": true,
+  "autoApplied": false,
+  "reviewedAt": "2026-06-09T03:35:02.673Z",
+  "decisions": [
+    {
+      "candidateId": "rec_0003",
+      "topic": "sabbath",
+      "lessonTitle": "Sabbath: What does Hebrews 4:9 mean about Sabbath rest?",
+      "supportScore": 93,
+      "strengthTier": "Strong",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "notes": "Strong Hebrews 4:9 chain; Exodus 31:13 covenant sign witness missing from frozen card."
+    },
+    {
+      "candidateId": "rec_0100",
+      "topic": "sabbath",
+      "lessonTitle": "Sabbath: Did Jesus keep the Sabbath?",
+      "supportScore": 93,
+      "strengthTier": "Strong",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "notes": "Jesus Sabbath custom chain complete; Exodus 31:13 strengthens covenant witness."
+    },
+    {
+      "candidateId": "rec_0001",
+      "topic": "sabbath",
+      "lessonTitle": "Sabbath: Why do you keep the seventh-day Sabbath?",
+      "supportScore": 91,
+      "strengthTier": "Strong",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "notes": "Core seventh-day rationale; Exodus 31:13 adds perpetual covenant sign support."
+    },
+    {
+      "candidateId": "rec_0022",
+      "topic": "sabbath",
+      "lessonTitle": "Sabbath: Should I keep the Sabbath on Saturday?",
+      "supportScore": 91,
+      "strengthTier": "Strong",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "notes": "Saturday seventh-day chain strong; no contradiction scriptures unresolved."
+    },
+    {
+      "candidateId": "rec_0063",
+      "topic": "sabbath",
+      "lessonTitle": "Sabbath: I want to keep Sabbath holy but my church meets Sunday.",
+      "supportScore": 91,
+      "strengthTier": "Strong",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "notes": "Pastoral Sabbath/Sunday tension; biblical seventh-day witnesses approved without doctrine change."
+    },
+    {
+      "candidateId": "rec_0099",
+      "topic": "sabbath",
+      "lessonTitle": "Sabbath: What scriptures support resting on the seventh day?",
+      "supportScore": 91,
+      "strengthTier": "Strong",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "notes": "G2R rest chain complete; Exodus 31:13 fills remaining card witness gap."
+    }
+  ]
+}

@@ -2,12 +2,49 @@ const crypto = require('crypto');
 const express = require('express');
 const { runBuddy } = require('../services/buddyBrain');
 const { isCoreRestorationDebugEnabled } = require('../services/coreRestorationDebug');
-const { buildLiveRequestTrace, logLiveRequestTrace } = require('../services/liveRequestTrace');
+const { buildLiveRequestTrace, logLiveRequestTrace, logRouteOwnership } = require('../services/liveRequestTrace');
 const { logLiveResponseCapture } = require('../services/liveResponseCapture');
 const { applyDoctrineErrorFirewall } = require('../services/doctrineErrorFirewall');
 const { withBuddyChatGuarantee } = require('../services/responseGuarantee');
 const { captureAlphaTurn } = require('../services/alphaConversationCapture');
 const { isActiveAlphaTester } = require('../services/alphaTesterManager');
+const { recordFounderObservation } = require('../services/runtimeHealthMonitor');
+
+// FOUNDER_ALPHA_RELEASE_GATE Part 4 — request-limits gate. 4000 characters
+// comfortably covers any realistic typed chat message (the Scripture
+// Alignment paste tool has its own, separate, larger limit for pasted
+// lesson text — see services/lessonScriptureAlignmentAnalyzer.js).
+const MAX_CHAT_MESSAGE_LENGTH = 4000;
+
+// PHASE_6H Part 7 — Founder Observation Layer. Derives only aggregate,
+// non-identifying signals from a single already-computed reply: which
+// category of question it was, and whether a witness / original-language /
+// historical-context / prayer / continuation path was used. Reuses fields
+// that already exist on every reply (answerLineage, runtime,
+// primaryWitness) rather than re-parsing or re-classifying anything.
+function deriveFounderObservationSignals(reply, payload) {
+  const route = payload?.answerLineage?.route || reply?.runtime?.doctrineRoute || '';
+  const category = reply?.runtime?.doctrineTopic || route || 'general';
+  const replyText = typeof payload?.reply === 'string' ? payload.reply : '';
+  const witnessRetrieved = !!(
+    payload?.primaryWitness ||
+    (Array.isArray(payload?.supportingWitnesses) && payload.supportingWitnesses.length) ||
+    (Array.isArray(payload?.scripture) && payload.scripture.length)
+  );
+  const historicalContextUsed = /Historical context:/i.test(replyText);
+  const originalLanguageUsed = /Original language \(|Transliteration:|Word-by-word literal gloss:/i.test(replyText);
+  const prayerUsed = /prayer/i.test(route);
+  const continuationUsed = !!reply?.runtime?.conversationContinuation;
+  return { category, witnessRetrieved, historicalContextUsed, originalLanguageUsed, prayerUsed, continuationUsed };
+}
+
+function recordFounderObservationSafely(reply, payload) {
+  try {
+    recordFounderObservation(deriveFounderObservationSignals(reply, payload));
+  } catch (e) {
+    console.warn('[founderObservation] skipped:', e.message);
+  }
+}
 
 const router = express.Router();
 
@@ -20,6 +57,24 @@ function emitBuddyChatJson(res, { requestId, userId, message, httpStatus, body }
     responseBody: body,
   });
   res.status(httpStatus).json(body);
+}
+
+// PHASE_6H Part 4 — Visible answer lineage is an advertised Founder Alpha
+// differentiator, but the full internal coreDebug object (25+ engineering
+// flags) is only attached when isCoreRestorationDebugEnabled() is true,
+// which is FALSE by default in production (NODE_ENV=production, per
+// render.yaml) — so Founders running the real deployed app would see none
+// of it. This exposes a small, deliberately curated, always-present
+// subset (never the full debug object) so the promise holds in production
+// too, without leaking internal engineering flags to end users.
+function buildAnswerLineage(coreDebug) {
+  if (!coreDebug || typeof coreDebug !== 'object') return null;
+  return {
+    route: coreDebug.routeUsed || null,
+    answerOwner: coreDebug.finalAnswerAuthor || null,
+    aiAssisted: typeof coreDebug.openaiCalled === 'boolean' ? coreDebug.openaiCalled : null,
+    scriptureGrounded: typeof coreDebug.scriptureEvidenceUsed === 'boolean' ? coreDebug.scriptureEvidenceUsed : null,
+  };
 }
 
 function normalizePayload(reply) {
@@ -56,12 +111,34 @@ async function handleBuddyChat({ body, res, requestId }) {
     return;
   }
 
+  // FOUNDER_ALPHA_RELEASE_GATE Part 4 — a chat message has no legitimate
+  // reason to be tens of thousands of characters; letting an unbounded
+  // string reach the companion pipeline caused multi-second processing and
+  // log bloat during release verification. Reject early with a clean 400
+  // rather than let it hang the request or the log stream.
+  if (message.length > MAX_CHAT_MESSAGE_LENGTH) {
+    emitBuddyChatJson(res, {
+      requestId,
+      userId,
+      message: message.slice(0, 200),
+      httpStatus: 400,
+      body: {
+        ok: false,
+        error: `Message is too long (${message.length} characters). Please keep messages under ${MAX_CHAT_MESSAGE_LENGTH} characters.`,
+      },
+    });
+    return;
+  }
+
   const started = Date.now();
   const guaranteed = await withBuddyChatGuarantee(
     () => runBuddy({ userId, testerId, sessionId, cohort, mode, personaKey, message }),
     { userId, message },
   );
   const reply = guaranteed.reply || {};
+  if (reply.runtime?.routeOwnership) {
+    logRouteOwnership(reply.runtime.routeOwnership);
+  }
   const trace = buildLiveRequestTrace({
     message,
     reply,
@@ -79,13 +156,16 @@ async function handleBuddyChat({ body, res, requestId }) {
     topic: reply?.runtime?.doctrineTopic,
     strictDoctrine: !!reply?.runtime?.doctrineTopic || reply?.doctrineFinalAuthority,
   });
+  const coreDebugSource = reply.coreDebug || reply.runtime?.coreDebug || null;
+  payload.answerLineage = buildAnswerLineage(coreDebugSource);
   if (isCoreRestorationDebugEnabled()) {
-    payload.coreDebug = reply.coreDebug || reply.runtime?.coreDebug || null;
+    payload.coreDebug = coreDebugSource;
   }
   if (process.env.BUDDY_LIVE_TRACE === '1') {
     payload.liveRequestTrace = reply.liveRequestTrace;
   }
   const latencyMs = Date.now() - started;
+  recordFounderObservationSafely(reply, payload);
   if (isActiveAlphaTester(testerId)) {
     try {
       captureAlphaTurn({
@@ -149,6 +229,14 @@ router.post('/stream', async (req, res) => {
       return;
     }
 
+    if (message.length > MAX_CHAT_MESSAGE_LENGTH) {
+      res.status(400).json({
+        ok: false,
+        error: `Message is too long (${message.length} characters). Please keep messages under ${MAX_CHAT_MESSAGE_LENGTH} characters.`,
+      });
+      return;
+    }
+
     res.writeHead(200, {
       'Content-Type': 'text/event-stream; charset=utf-8',
       'Cache-Control': 'no-cache, no-transform',
@@ -196,12 +284,15 @@ router.post('/stream', async (req, res) => {
         strictDoctrine: !!raw?.runtime?.doctrineTopic || raw?.doctrineFinalAuthority,
       },
     );
+    const streamCoreDebugSource = raw.coreDebug || raw.runtime?.coreDebug || null;
+    donePayload.answerLineage = buildAnswerLineage(streamCoreDebugSource);
     if (isCoreRestorationDebugEnabled()) {
-      donePayload.coreDebug = raw.coreDebug || raw.runtime?.coreDebug || null;
+      donePayload.coreDebug = streamCoreDebugSource;
     }
     if (process.env.BUDDY_LIVE_TRACE === '1') {
       donePayload.liveRequestTrace = trace;
     }
+    recordFounderObservationSafely(raw, donePayload);
     send('done', donePayload);
     res.end();
   } catch (e) {

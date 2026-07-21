@@ -13,6 +13,7 @@ const {
   buildBibleWideAnswer,
   buildBibleWideStructured,
   resolveConceptForMessage,
+  extractExplicitScriptureReferences,
 } = require('./bibleWideReasoningEngine');
 const { getConceptById } = require('./bibleConceptConcordance');
 const {
@@ -73,6 +74,8 @@ const { buildPresenceResponse } = require('./companionPresenceEngine');
 const { isAppIdentityQuestion, buildIdentityReply } = require('./companionIdentityEngine');
 const { formatRecallReply } = require('./relationshipSummaryEngine');
 const { hasEstablishedTopic } = require('./singleCompanionContract');
+const { isOriginalLanguageRequest, formatOriginalLanguageReply } = require('./originalLanguageResponseFormatter');
+const { getPassageStudy } = require('./originalLanguageProvider');
 
 const SAFE_COMPANION_CLARIFICATION =
   'I want to make sure I answer the right thing. Are you asking about a Bible passage, a life situation, or something you want prayer for?';
@@ -146,6 +149,103 @@ function tryContextualDraftBeforeClarification({
     if (presence?.reply) return { ...presence, intentCategory: 'emotional_support' };
   }
   return null;
+}
+
+// PHASE_6G — Life Decision Ownership. Ambiguous, non-doctrinal
+// "help me decide" prompts were previously falling through every
+// companion lane and landing on generic reason-first OpenAI
+// composition (no distinct ownership, no consistent safety
+// boundaries). This owns that narrow lane deterministically:
+// acknowledge, offer only wisdom Scripture genuinely supports
+// (never a fabricated "God told me" answer for the user's specific
+// choice), name what is left to the user's own judgment, give
+// concrete practical factors, and offer — never force — prayer.
+const DECISION_DOMAIN_PATTERNS = [
+  { id: 'job', re: /\b(job|career|offer|promotion|resign|quit(ting)?|coworker|workplace)\b/i },
+  { id: 'relationship', re: /\b(marry|marriage|boyfriend|girlfriend|date|dating|divorce|break ?up|relationship)\b/i },
+  { id: 'financial', re: /\b(money|buy|purchase|debt|loan|invest(ing|ment)?|financ|afford)\b/i },
+  { id: 'medical', re: /\b(surgery|treatment|diagnos|medication|doctor|health decision)\b/i },
+  { id: 'legal', re: /\b(lawyer|attorney|sue|custody|contract|legal)\b/i },
+  { id: 'family', re: /\b(family|parent|sibling|brother|sister|forgive|forgiveness)\b/i },
+];
+
+function detectDecisionDomain(message = '') {
+  const m = String(message || '');
+  for (const domain of DECISION_DOMAIN_PATTERNS) {
+    if (domain.re.test(m)) return domain.id;
+  }
+  return null;
+}
+
+const DECISION_PRACTICAL_FACTORS = {
+  job: 'For a job or career choice like this: what would change for your finances, your family, and your peace of mind either way? Is this a door opening, or fear pushing you?',
+  relationship: 'Is this decision honest, respectful, and something you could talk about openly with people who know you well?',
+  financial: 'Can you afford this without going back on a commitment you already made to someone else? Is this a need or a want right now?',
+  medical: 'This is the kind of decision that genuinely needs a licensed doctor\u2019s guidance alongside your own judgment \u2014 I can\u2019t and shouldn\u2019t make a medical call for you.',
+  legal: 'This is the kind of decision that genuinely needs a qualified legal professional \u2014 I can\u2019t and shouldn\u2019t make a legal call for you.',
+  family: 'What would honor the relationship long-term, even if the short-term conversation is hard?',
+  generic: 'What actually changes depending on which way you go \u2014 for you, and for anyone else this affects?',
+};
+
+const DECISION_WISDOM_WITNESSES = [
+  { reference: 'Proverbs 3:5-6', text: 'Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.' },
+  { reference: 'James 1:5', text: 'If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.' },
+  { reference: 'Proverbs 16:3', text: 'Commit thy works unto the LORD, and thy thoughts shall be established.' },
+];
+
+function normalizeDecisionKey(message = '') {
+  return String(message || '').trim().toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ');
+}
+
+function buildLifeDecisionReply({ message = '', anchor = {}, state = {} } = {}) {
+  const trimmed = String(message || '').trim();
+  const domain = detectDecisionDomain(trimmed);
+  const wordCount = trimmed.split(/\s+/).filter(Boolean).length;
+  const isHighRisk = domain === 'medical' || domain === 'legal';
+  const isVague = wordCount <= 4 && !domain;
+  const decisionKey = normalizeDecisionKey(trimmed);
+  const askedBefore = state.sessionMemory?.lastDecisionKey === decisionKey;
+
+  const witness = DECISION_WISDOM_WITNESSES[0];
+  const parts = [];
+
+  if (askedBefore) {
+    parts.push('You\u2019ve brought this decision back up \u2014 that tells me it\u2019s still weighing on you, so let\u2019s go a step further instead of repeating the same ground.');
+  } else if (isVague) {
+    parts.push('I hear that you\u2019re wrestling with a decision. I want to actually help, not just hand you a generic answer.');
+  } else {
+    parts.push('That\u2019s a real decision to sit with, and it\u2019s good that you\u2019re thinking it through instead of rushing it.');
+  }
+
+  parts.push(
+    `Scripture doesn\u2019t name your specific choice, but it is clear about how to approach any decision: ${witness.reference} \u2014 "${witness.text}" That means asking God for wisdom is never wasted, but it also doesn\u2019t remove your responsibility to think clearly and act.`,
+  );
+
+  if (isHighRisk) {
+    parts.push(DECISION_PRACTICAL_FACTORS[domain]);
+  } else {
+    parts.push(`A few practical things worth weighing: ${DECISION_PRACTICAL_FACTORS[domain || 'generic']}`);
+  }
+
+  if (isVague && !askedBefore) {
+    parts.push('If you tell me a bit more about what the decision actually is, I can think through it with you more specifically.');
+  } else if (!isHighRisk) {
+    parts.push('A concrete next step: name the one thing that\u2019s making this hard to decide, write down what each choice would actually cost or require, and give yourself a real (not indefinite) deadline to choose.');
+  }
+
+  parts.push('If it would help, I\u2019m glad to pray with you about this too \u2014 just say so.');
+
+  const reply = parts.join('\n\n');
+
+  return {
+    reply,
+    scripture: [{ reference: witness.reference, text: witness.text, translation: 'King James Version', source: 'local_kjv_corpus' }],
+    domain: domain || 'generic',
+    isHighRisk,
+    isVague,
+    askedBefore,
+    decisionKey,
+  };
 }
 
 function recordAnswerTurnMemory(userId, message, structured = {}) {
@@ -583,7 +683,7 @@ function runPhase5ICompanionPipeline({
 /**
  * @returns {{ handled: boolean, dispatch?: string, ctx?: object, reasoningPlan?: object }}
  */
-function runBibleCompanionOrchestrator({
+async function runBibleCompanionOrchestrator({
   H,
   userId,
   message,
@@ -1268,7 +1368,7 @@ function runBibleCompanionOrchestrator({
   }
 
   if (reasoningPlan.answerLane === 'pending_resolver' || isPendingQuestionChallenge(message)) {
-    const pending = resolvePendingQuestion({ userId, message, runtimeContext, safety });
+    const pending = await resolvePendingQuestion({ userId, message, runtimeContext, safety });
     if (pending?.handled) {
       const structured = verifyOrchestratorOutput({
         reply: pending.reply,
@@ -1519,13 +1619,160 @@ function runBibleCompanionOrchestrator({
     }
   }
 
+  // PHASE_6B — Original-Language Knowledge System early exit. Only fires
+  // when the user explicitly asks for a Hebrew/Aramaic/Greek word study of a
+  // specific, parseable Scripture reference. Placed after every
+  // companion/prayer/memory/continuation/practical-guidance lane above so
+  // it never intercepts a turn that those lanes would otherwise own; it
+  // only ever competes with the plain bible_wide explicit-reference lane
+  // immediately below, and only for this one narrow, unambiguous intent.
+  if (isOriginalLanguageRequest(message)) {
+    const explicitRefs = extractExplicitScriptureReferences(message);
+    if (explicitRefs.length) {
+      const study = await getPassageStudy({ reference: explicitRefs[0] });
+      const reply = formatOriginalLanguageReply(study);
+      const structured = verifyOrchestratorOutput({
+        reply,
+        scripture: study && study.kjvText ? [{
+          reference: study.reference,
+          text: study.kjvText,
+          translation: 'King James Version',
+          source: 'local_kjv_corpus_or_provider',
+        }] : [],
+        mode: 'companion',
+        confidence: study && study.ok ? (study.confidence || 'medium') : 'low',
+        memory_used: false,
+        safety_level: safety?.level || 'standard',
+        admin_flags: ['phase6b_original_language_study'],
+        runtime: {
+          masterRoute: 'original_language_study',
+          openAiCalled: false,
+          orchestratorLane: 'original_language_study',
+          retrievalMode: 'original_language',
+          phase6B: true,
+          sourceLanguage: study ? study.sourceLanguage : null,
+          originalLanguageOk: study ? study.ok : false,
+          originalLanguageProvenance: study ? study.provenance : null,
+        },
+      });
+      recordUserTurn(userId, message, 'bible_wide');
+      recordAnswerTurnMemory(userId, message, structured);
+      return {
+        handled: true,
+        dispatch: 'bible_wide',
+        reasoningPlan,
+        ctx: {
+          structured,
+          userId,
+          mode,
+          personaKey,
+          message,
+          safety,
+          runtimeContext,
+          profile,
+          testerId,
+          sessionId,
+          cohort,
+          route: 'original_language_study',
+          routePlan,
+        },
+      };
+    }
+  }
+
+  // PHASE_6C — Supplemental Historical Knowledge early exit. Only fires on
+  // an explicit historical/background-context request ("historical
+  // context", "history of ...", "background on ..."). Scripture is always
+  // presented first (from the same live retrieval as every other lane);
+  // approved historical context (services/historicalKnowledgeProvider,
+  // TIER_1/TIER_2 only, "SUPPLEMENTAL_HISTORICAL_INFORMATION" label) is
+  // appended afterward and only when found — this never fabricates a
+  // historical claim and never lets history override or replace Scripture.
+  // Placed after every companion/prayer/memory/original-language lane above
+  // so it never intercepts a turn those lanes would otherwise own.
+  if (/\b(historical\s+context|history\s+of|background\s+(on|of|context))\b/i.test(message)) {
+    const explicitRefs = extractExplicitScriptureReferences(message);
+    const historicalConcept = detectConceptFromGraph(message);
+    const topicId = historicalConcept?.strictTopic || historicalConcept?.id || null;
+
+    let referenceForLookup = explicitRefs[0] || historicalConcept?.directWitnesses?.[0] || null;
+    if (referenceForLookup) {
+      const { getPassage: getKjvPassageForHistory } = require('./bibleTextProvider');
+      const {
+        getHistoricalContextForReference,
+        getHistoricalContextForTopic,
+        formatHistoricalContextLine,
+      } = require('./historicalKnowledgeProvider');
+
+      const kjvResult = await getKjvPassageForHistory(referenceForLookup);
+      const byReference = getHistoricalContextForReference(referenceForLookup);
+      const byTopic = topicId ? getHistoricalContextForTopic(topicId) : [];
+      const records = byReference.length ? byReference : byTopic;
+
+      if (kjvResult && kjvResult.ok) {
+        const historyLines = records.map(formatHistoricalContextLine).filter(Boolean);
+        const reply = [
+          `${referenceForLookup} — "${kjvResult.text}" (${kjvResult.translation}).`,
+          ...(historyLines.length
+            ? historyLines
+            : ['No approved historical-context record was found for this passage in the governed historical knowledge base — Scripture above is the complete answer.']),
+        ].join('\n\n');
+
+        const structured = verifyOrchestratorOutput({
+          reply,
+          scripture: [{
+            reference: referenceForLookup,
+            text: kjvResult.text,
+            translation: kjvResult.translation,
+            source: kjvResult.source || kjvResult.providerName,
+          }],
+          mode: 'companion',
+          confidence: historyLines.length ? 'medium' : 'high',
+          memory_used: false,
+          safety_level: safety?.level || 'standard',
+          admin_flags: ['phase6c_historical_context'],
+          runtime: {
+            masterRoute: 'historical_context',
+            openAiCalled: false,
+            orchestratorLane: 'historical_context',
+            retrievalMode: 'canonical_reference_plus_supplemental_history',
+            phase6C: true,
+            historicalSources: records.map((r) => ({ id: r.id, sourceName: r.sourceName, trustTier: r.trustTier })),
+          },
+        });
+        recordUserTurn(userId, message, 'bible_wide');
+        recordAnswerTurnMemory(userId, message, structured);
+        return {
+          handled: true,
+          dispatch: 'bible_wide',
+          reasoningPlan,
+          ctx: {
+            structured,
+            userId,
+            mode,
+            personaKey,
+            message,
+            safety,
+            runtimeContext,
+            profile,
+            testerId,
+            sessionId,
+            cohort,
+            route: 'historical_context',
+            routePlan,
+          },
+        };
+      }
+    }
+  }
+
   if (reasoningPlan.answerLane === 'bible_wide' || routePlan.lane === 'bible_wide') {
     const concept =
       reasoningPlan.conceptNode ||
       getConceptById(reasoningPlan.concept) ||
       resolveConceptForMessage(message, userId);
     if (concept) {
-      const wideAnswer = buildBibleWideAnswer({
+      const wideAnswer = await buildBibleWideAnswer({
         message,
         concept,
         userId,
@@ -1611,7 +1858,7 @@ function runBibleCompanionOrchestrator({
 
   const postConcept = detectConceptFromGraph(message);
   if (postConcept && !postConcept.strictTopic) {
-    const wideAnswer = buildBibleWideAnswer({
+    const wideAnswer = await buildBibleWideAnswer({
       message,
       concept: postConcept,
       userId,
@@ -1649,6 +1896,60 @@ function runBibleCompanionOrchestrator({
         },
       };
     }
+  }
+
+  // PHASE_6G — Life Decision Ownership early exit. Only fires when no
+  // strict-doctrine gate and no Bible-concept lane above claimed the
+  // turn, and the human-need classifier detected an ambiguous personal
+  // decision request ("open_life" / "next_steps") rather than a direct
+  // biblical-teaching question. Explicit "what does the Bible say about
+  // decisions" style questions never reach here — those match
+  // humanNeed === 'doctrine_answer' far earlier in this function and are
+  // owned by the clarification/bible_wide lanes instead.
+  if (humanNeed === 'open_life' || humanNeed === 'next_steps') {
+    const decision = buildLifeDecisionReply({ message, anchor: conversationAnchor, state: mergedState });
+    const structured = verifyOrchestratorOutput({
+      reply: decision.reply,
+      scripture: decision.scripture,
+      mode: 'companion',
+      confidence: 'medium',
+      memory_used: decision.askedBefore,
+      safety_level: safety?.level || 'standard',
+      admin_flags: ['phase6g_life_decision_ownership', `decision_domain_${decision.domain}`],
+      runtime: {
+        masterRoute: 'conversation_owner_life_decision',
+        openAiCalled: false,
+        orchestratorLane: 'life_decision_ownership',
+        phase6G: true,
+        decisionDomain: decision.domain,
+        decisionHighRisk: decision.isHighRisk,
+      },
+    });
+    updateDoctrineConversationState(userId, {
+      sessionMemory: { ...(mergedState.sessionMemory || {}), lastDecisionKey: decision.decisionKey },
+    });
+    recordUserTurn(userId, message, 'companion');
+    return {
+      handled: true,
+      dispatch: 'companion',
+      reasoningPlan,
+      ctx: {
+        structured,
+        userId,
+        mode,
+        personaKey,
+        message,
+        safety,
+        runtimeContext,
+        profile,
+        testerId,
+        sessionId,
+        cohort,
+        route: 'conversation_owner_life_decision',
+        humanNeed,
+        routePlan,
+      },
+    };
   }
 
   return {

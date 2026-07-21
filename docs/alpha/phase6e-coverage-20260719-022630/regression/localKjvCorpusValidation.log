@@ -1,0 +1,25 @@
+PASS {"id":"corpus_checksum_unchanged","pass":true,"detail":{"checksum":"1eae094f4ba8c61b0b993334371ccd4d3b80e7a3c2fd54a0324776d6952285dd","expected":"1eae094f4ba8c61b0b993334371ccd4d3b80e7a3c2fd54a0324776d6952285dd"}}
+PASS {"id":"corpus_file_count_matches_66_books","pass":true,"detail":{"fileCount":1192,"expected":1192}}
+PASS {"id":"corpus_ready","pass":true,"detail":{}}
+PASS {"id":"coverage_66_books","pass":true,"detail":{"count":66}}
+PASS {"id":"coverage_full_text_all_books","pass":true,"detail":{"incomplete":[]}}
+PASS {"id":"coverage_total_verses_31102","pass":true,"detail":{"totalVerses":31102}}
+PASS {"id":"coverage_total_chapters_1189","pass":true,"detail":{"totalChapters":1189}}
+PASS {"id":"local_resolves_Genesis_1_1","pass":true,"detail":{"ref":"Genesis 1:1","ok":true}}
+PASS {"id":"local_resolves_Exodus_3_14","pass":true,"detail":{"ref":"Exodus 3:14","ok":true}}
+PASS {"id":"local_resolves_Psalm_22_1","pass":true,"detail":{"ref":"Psalm 22:1","ok":true}}
+PASS {"id":"local_resolves_Isaiah_7_14","pass":true,"detail":{"ref":"Isaiah 7:14","ok":true}}
+PASS {"id":"local_resolves_Daniel_3_4","pass":true,"detail":{"ref":"Daniel 3:4","ok":true}}
+PASS {"id":"local_resolves_Matthew_1_23","pass":true,"detail":{"ref":"Matthew 1:23","ok":true}}
+PASS {"id":"local_resolves_John_1_1","pass":true,"detail":{"ref":"John 1:1","ok":true}}
+PASS {"id":"local_resolves_John_3_16","pass":true,"detail":{"ref":"John 3:16","ok":true}}
+PASS {"id":"local_resolves_Romans_8_1","pass":true,"detail":{"ref":"Romans 8:1","ok":true}}
+PASS {"id":"local_resolves_Revelation_1_14_15","pass":true,"detail":{"ref":"Revelation 1:14-15","ok":true}}
+PASS {"id":"rejects_out_of_range_chapter","pass":true,"detail":{}}
+PASS {"id":"rejects_unknown_book","pass":true,"detail":{}}
+PASS {"id":"production_path_uses_local_corpus_by_default","pass":true,"detail":{"providerName":"local_kjv_corpus"}}
+PASS {"id":"bibleTextProvider_reports_local_corpus_active","pass":true,"detail":{}}
+PASS {"id":"bibleTextProvider_tier1_local_corpus","pass":true,"detail":{"providerMode":"local_corpus"}}
+
+ALL PASS
+exit=0

@@ -6,6 +6,8 @@
 
 const { BASE_CONTRACTS, resolveStrictTopic } = require('./doctrineAuthorityContract');
 const { getCorrectionsForUser, applyCorrectionsToReply } = require('./doctrineCorrectionMemory');
+const { isYesNoQuestion, formatDirectDoctrineReply } = require('./directAnswerFormatter');
+const { detectKingdomOnEarthTopic } = require('./doctrineTopicDetector');
 
 const STRICT_FINAL_TOPICS = [
   'acts_10',
@@ -79,7 +81,7 @@ function buildActs10FinalAnswer() {
     'Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean. Acts 10 is about people/Gentiles, not permission to eat unclean foods.';
   return {
     finalConclusion: exactConclusion,
-    reply: `Absolutely — staying with the Bible text: ${exactConclusion} Acts 10:14 shows Peter refusing unclean food. Acts 10:34-35 shows God is no respecter of persons. Acts 11:1-18 records Peter explaining the vision to the church.`,
+    reply: `${exactConclusion} Acts 10:14 shows Peter refusing unclean food. Acts 10:34-35 shows God is no respecter of persons. Acts 11:1-18 records Peter explaining the vision to the church.`,
     scriptureWitnesses: ['Acts 10:14', 'Acts 10:28', 'Acts 10:34-35', 'Acts 11:1-18'],
     requiredWording:
       'Acts 10 is about people/Gentiles. Peter explains that in Acts 10:28.',
@@ -88,13 +90,19 @@ function buildActs10FinalAnswer() {
   };
 }
 
-function buildDietaryLawFinalAnswer() {
+function buildDietaryLawFinalAnswer(message = '') {
   const exactConclusion =
     'Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles, not permission to eat unclean foods.';
+  const yesNo = isYesNoQuestion(message);
+  const directOpener = yesNo
+    ? 'No. According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten.'
+    : 'According to Scripture, pork and shellfish remain unclean.';
   return {
     finalConclusion: exactConclusion,
-    reply: `Yes — staying with Scripture, pork and shellfish remain unclean. ${exactConclusion} Leviticus 11 and Deuteronomy 14 distinguish clean and unclean animals. Daniel 1:8-16 shows faithful refusal of unclean food. Acts 10:14 shows Peter refusing unclean food. Acts 10:28 explains the vision concerned people, not food permission. Isaiah 66:17 treats eating swine’s flesh seriously in judgment.`,
+    reply: `${directOpener} ${exactConclusion} Leviticus 11 and Deuteronomy 14 distinguish clean and unclean animals. Daniel 1:8-16 shows faithful refusal of unclean food. Acts 10:14 shows Peter refusing unclean food. Acts 10:28 explains the vision concerned people, not food permission. Isaiah 66:17 treats eating swine’s flesh seriously in judgment.`,
     scriptureWitnesses: [
+      'Leviticus 11:7',
+      'Deuteronomy 14:8',
       'Leviticus 11',
       'Deuteronomy 14',
       'Daniel 1:8-16',
@@ -104,6 +112,25 @@ function buildDietaryLawFinalAnswer() {
       'Isaiah 66:17',
     ],
     topic: 'dietary_law',
+  };
+}
+
+function buildKingdomOnEarthFinalAnswer(message = '') {
+  const exactConclusion =
+    'Scripture ties kingdom hope to God’s reign on earth — the meek inheriting the earth and the holy city coming down, not believers leaving earth for a disembodied heaven-only hope.';
+  const witnesses = [
+    'Matthew 6:10',
+    'Revelation 21:1-3',
+    'Revelation 5:10',
+    'Daniel 7:27',
+    'Psalm 37:9-11',
+    'Matthew 5:5',
+  ];
+  return {
+    finalConclusion: exactConclusion,
+    reply: `Scripture witnesses kingdom hope on earth. Matthew 6:10 teaches “Thy kingdom come.” Revelation 21:1-3 shows the holy city coming down and God dwelling with men. Revelation 5:10 speaks of reigning on the earth. Daniel 7:27 gives the kingdom to the people of the saints. Psalm 37:9-11 promises the meek inheriting the earth. Matthew 5:5 says the meek shall inherit the earth.`,
+    scriptureWitnesses: witnesses,
+    topic: 'kingdom',
   };
 }
 
@@ -144,7 +171,8 @@ function buildFinalAuthorityAnswer({ topic, contract, userId, message = '' } = {
   let base;
   if (topic === 'acts_10') base = buildActs10FinalAnswer();
   else if (topic === 'death_state') base = buildDeathStateFinalAnswer();
-  else if (topic === 'dietary_law') base = buildDietaryLawFinalAnswer();
+  else if (topic === 'dietary_law') base = buildDietaryLawFinalAnswer(message);
+  else if (topic === 'kingdom' && detectKingdomOnEarthTopic(message)) base = buildKingdomOnEarthFinalAnswer(message);
   else base = buildGenericFinalAnswer(topic, c);
 
   let reply = base.reply;
@@ -154,6 +182,13 @@ function buildFinalAuthorityAnswer({ topic, contract, userId, message = '' } = {
       reply = applyCorrectionsToReply(reply, userId, 'acts_10');
     }
   }
+
+  reply = formatDirectDoctrineReply(reply, message, {
+    topic,
+    scripture: (base.scriptureWitnesses || []).map((r) => ({ reference: r })),
+    userId,
+    userPreferences: require('./userCorrectionMemory').getUserAnswerPreferences(userId),
+  });
 
   return {
     ...base,

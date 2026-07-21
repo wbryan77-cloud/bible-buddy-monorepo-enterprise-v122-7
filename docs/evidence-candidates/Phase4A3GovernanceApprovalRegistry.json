@@ -1,0 +1,63 @@
+{
+  "ranAt": "2026-06-10T06:51:36.651Z",
+  "phase": "4A.3",
+  "candidates": [
+    {
+      "candidateId": "dietary_law__chain_leviticus 11_leviticus 11:3_leviticus 11:47_leviticus 11:4",
+      "candidateType": "primary_chain",
+      "topic": "dietary_law",
+      "recommendation": "approve_for_future_activation",
+      "confidence": 0.92,
+      "humanApprovalRequired": true,
+      "candidateChain": "chain_leviticus 11_leviticus 11:3_leviticus 11:47_leviticus 11:4",
+      "governancePhase": "4A.2",
+      "corpusMutation": false
+    },
+    {
+      "candidateId": "death_state__chain_ecclesiastes 9:5_psalm 146:4_john 11:11-14_1 thessalonians 4:13-16",
+      "candidateType": "primary_chain",
+      "topic": "death_state",
+      "recommendation": "approve_for_future_activation",
+      "confidence": 0.92,
+      "humanApprovalRequired": true,
+      "candidateChain": "chain_ecclesiastes 9:5_psalm 146:4_john 11:11-14_1 thessalonians 4:13-16",
+      "governancePhase": "4A.2",
+      "corpusMutation": false
+    },
+    {
+      "candidateId": "holy_spirit__chain_hebrews 1:7_luke 10:1-3_john 6:48-54_philippians 2:12",
+      "candidateType": "primary_chain",
+      "topic": "holy_spirit",
+      "recommendation": "retain_candidate",
+      "confidence": 0.55,
+      "humanApprovalRequired": true,
+      "candidateChain": "chain_hebrews 1:7_luke 10:1-3_john 6:48-54_philippians 2:12",
+      "governancePhase": "4A.2",
+      "corpusMutation": false
+    },
+    {
+      "candidateId": "holy_spirit__chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+      "candidateType": "cross_pack_linkage",
+      "topic": "holy_spirit",
+      "recommendation": "approve_for_future_activation",
+      "confidence": 0.88,
+      "humanApprovalRequired": true,
+      "candidateChain": "chain_john 6:63_1 corinthians 2:13_isaiah 31:1-3_john ",
+      "governancePhase": "4A.2",
+      "corpusMutation": false
+    },
+    {
+      "candidateId": "david__vine_node",
+      "candidateType": "vine_node",
+      "topic": "david",
+      "recommendation": "approve_for_future_activation",
+      "confidence": 0.88,
+      "humanApprovalRequired": true,
+      "governancePhase": "4A.2",
+      "corpusMutation": false
+    }
+  ],
+  "registeredCount": 5,
+  "humanApprovalRequired": true,
+  "autoActivation": false
+}

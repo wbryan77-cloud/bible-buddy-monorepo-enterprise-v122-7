@@ -8,6 +8,41 @@ const APP_IDENTITY_RE =
   /\b(what is (the )?purpose of this app|what is this app|what does (the )?app do|what does this app do|what can this app do|how does this app work|are you trying to convert|why are you here|what do you do|are you (just )?quoting bible|closed.?minded)\b/i;
 
 function detectHumanNeed(message = '', anchor = {}, state = {}) {
+  // sprint1a6_human_need_guard
+  const sprint1a6Message = String(message || '').trim();
+
+  if (/\b(listen first|just want to talk|talk for a minute|hear me out)\b/i.test(sprint1a6Message)) {
+    return 'emotional_support';
+  }
+
+  if (/\b(grief|grieving|heartbreak|rough day|tough day|let go of someone|someone i love|broken heart|discouraged|overwhelmed)\b/i.test(sprint1a6Message)) {
+    return 'emotional_support';
+  }
+
+  if (/\b(alzheimer|alzheimer'?s|dementia|caregiv|mom has|mother has|dad has|father has)\b/i.test(sprint1a6Message)) {
+    return 'health_support';
+  }
+
+  if (/\b(knee|knees|hurt|hurts|pain|aching|ache|flare|flaring|sore|injury|doctor|medicine|blood pressure|cholesterol)\b/i.test(sprint1a6Message)) {
+    return 'health_support';
+  }
+
+  // PHASE_6G: broadened beyond the literal word "decision" to also catch the
+  // very common "should I ___" personal-decision phrasing (job, money,
+  // relationships, etc.). This still only fires as a last resort inside the
+  // orchestrator (after strict-doctrine and Bible-concept detection have
+  // already had first refusal), so a genuine doctrine question phrased as
+  // "should I ___" (e.g. Sabbath/dietary/commandments) is still claimed by
+  // the doctrine engine first — this only widens the *non-doctrinal*
+  // decision-support net, it does not narrow doctrine routing.
+  if (
+    (/\b(decision|decide|choice|discern|what should i do)\b/i.test(sprint1a6Message) ||
+      (/\bshould i\b/i.test(sprint1a6Message) && !/\b(how should i|what should i say)\b/i.test(sprint1a6Message))) &&
+    !/\b(bible|scripture|sabbath|pork|acts 10|commandments?|baptis|tithe|tithing)\b/i.test(sprint1a6Message)
+  ) {
+    return 'open_life';
+  }
+
   const m = String(message || '').trim();
   if (APP_IDENTITY_RE.test(m)) return 'app_identity';
   if (/\bwhat do you remember\b/i.test(m)) return 'memory_recall';

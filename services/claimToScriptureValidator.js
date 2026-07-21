@@ -5,11 +5,10 @@
 const { isDoctrineTurn } = require('./bibleOnlyAuthorityValidator');
 const { buildApprovedEvidenceGraph } = require('./approvedEvidenceGraph');
 const { normalizeRef, SAFE_DENIAL_RE } = require('./claimNormalizer');
+const { suppressValidatorLeak, replyHasScriptureSupport, DENIAL_PHRASE } = require('./directAnswerFormatter');
 const { refInApprovedList } = require('./scriptureReferenceNormalizer');
 const { verifyCitationSupportsClaim, validatorDecisionFromClass } = require('./claimSupportVerifier');
 const { analyzeSupportRelationship, buildSupportReason } = require('./supportRelationshipEngine');
-
-const DENIAL_PHRASE = 'Scripture does not state that directly.';
 
 const REGEN_HINT =
   'Revise claims and reply. Remove or correct any doctrine claim not supported by approved evidence. For unsupported claims say exactly: "Scripture does not state that directly." Use only KJV references from the evidence pack.';
@@ -305,12 +304,17 @@ function validateClaimToScripture({
 function applyClaimDegradation(reply = '', validation = {}) {
   let result = String(reply || '').trim();
   const failed = validation.failedClaimResults || [];
+  const hasScriptureSupport = replyHasScriptureSupport(result);
 
   for (const rule of FORBIDDEN_CLAIM_RULES) {
     for (const pattern of rule.patterns) {
       if (pattern.test(result)) {
         if (rule.unless && rule.unless.test(result)) continue;
-        result = result.replace(pattern, DENIAL_PHRASE);
+        if (hasScriptureSupport) {
+          result = result.replace(pattern, '').replace(/\s+/g, ' ').trim();
+        } else {
+          result = result.replace(pattern, DENIAL_PHRASE);
+        }
       }
     }
   }
@@ -320,18 +324,18 @@ function applyClaimDegradation(reply = '', validation = {}) {
   for (const sentence of sentences) {
     const forbidden = matchesForbidden(sentence);
     if (forbidden.length && !SAFE_DENIAL_RE.test(sentence)) {
-      if (!kept.includes(DENIAL_PHRASE)) kept.push(DENIAL_PHRASE);
+      if (!hasScriptureSupport && !kept.includes(DENIAL_PHRASE)) kept.push(DENIAL_PHRASE);
       continue;
     }
     kept.push(sentence);
   }
   result = kept.join(' ').replace(/\s+/g, ' ').trim();
 
-  if (failed.length && !SAFE_DENIAL_RE.test(result)) {
+  if (failed.length && !SAFE_DENIAL_RE.test(result) && !replyHasScriptureSupport(result)) {
     result = `${result} ${DENIAL_PHRASE}`.trim();
   }
 
-  return result;
+  return suppressValidatorLeak(result);
 }
 
 module.exports = {

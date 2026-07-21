@@ -1,0 +1,12 @@
+{
+  "counts": {
+    "autoApproved": 135,
+    "autoRejectedDuplicate": 14,
+    "autoRejectedInvalid": 3,
+    "unclassifiedNoTopic": 199,
+    "needsAdminReview": 559,
+    "newlyPersistedThisRun": 0
+  },
+  "sourcesProcessed": 47,
+  "totalSourcesAvailable": 47
+}

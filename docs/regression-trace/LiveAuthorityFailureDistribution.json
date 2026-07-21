@@ -1,0 +1,534 @@
+{
+  "ranAt": "2026-06-07T21:49:08.961Z",
+  "liveRan": true,
+  "distribution": {
+    "D": 0,
+    "E": 8,
+    "F": 0,
+    "G": 0
+  },
+  "fullDistribution": {
+    "D": 0,
+    "E": 8,
+    "F": 0,
+    "G": 0,
+    "A": 1,
+    "NONE": 0,
+    "H": 0
+  },
+  "topics": [
+    {
+      "topic": "third_heaven",
+      "label": "Third heaven",
+      "question": "What is the third heaven?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "scriptureRefCount": 10,
+        "approvedRefCount": 23,
+        "bindingRuleCount": 10
+      },
+      "evidenceSent": {
+        "bytes": 14721,
+        "cardsInPrompt": true,
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "cardIds": [
+          "heavens"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "bibleOnlyPassed": false,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "connection_error",
+      "memoryBefore": {
+        "rssMB": 78,
+        "heapUsedMB": 17,
+        "heapTotalMB": 23
+      },
+      "memoryAfter": {
+        "rssMB": 137,
+        "heapUsedMB": 20,
+        "heapTotalMB": 37
+      },
+      "liveFailurePrimary": "E",
+      "liveFailureCodes": {
+        "D": false,
+        "E": true,
+        "F": true,
+        "G": false
+      },
+      "failureNotes": [
+        "No doctrine claims[] in compose output",
+        "Validator/gate mismatch with post-hoc checks"
+      ],
+      "preFailureA": false
+    },
+    {
+      "topic": "kingdom",
+      "label": "Kingdom",
+      "question": "What is the kingdom of God?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "kingdom"
+        ],
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "scriptureRefCount": 7,
+        "approvedRefCount": 24,
+        "bindingRuleCount": 10
+      },
+      "evidenceSent": {
+        "bytes": 12319,
+        "cardsInPrompt": true,
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "cardIds": [
+          "kingdom"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "bibleOnlyPassed": false,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "connection_error",
+      "memoryBefore": {
+        "rssMB": 137,
+        "heapUsedMB": 24,
+        "heapTotalMB": 39
+      },
+      "memoryAfter": {
+        "rssMB": 151,
+        "heapUsedMB": 36,
+        "heapTotalMB": 67
+      },
+      "liveFailurePrimary": "E",
+      "liveFailureCodes": {
+        "D": false,
+        "E": true,
+        "F": true,
+        "G": false
+      },
+      "failureNotes": [
+        "No doctrine claims[] in compose output",
+        "Validator/gate mismatch with post-hoc checks"
+      ],
+      "preFailureA": false
+    },
+    {
+      "topic": "acts_10",
+      "label": "Acts 10",
+      "question": "Does Acts 10 make pork clean?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 7,
+        "approvedRefCount": 7,
+        "bindingRuleCount": 0
+      },
+      "evidenceSent": {
+        "bytes": 12852,
+        "cardsInPrompt": true,
+        "catalogKeys": [],
+        "cardIds": [
+          "dietaryLaw"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "bibleOnlyPassed": false,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "connection_error",
+      "memoryBefore": {
+        "rssMB": 151,
+        "heapUsedMB": 18,
+        "heapTotalMB": 42
+      },
+      "memoryAfter": {
+        "rssMB": 154,
+        "heapUsedMB": 30,
+        "heapTotalMB": 51
+      },
+      "liveFailurePrimary": "E",
+      "liveFailureCodes": {
+        "D": false,
+        "E": true,
+        "F": true,
+        "G": false
+      },
+      "failureNotes": [
+        "No doctrine claims[] in compose output",
+        "Validator/gate mismatch with post-hoc checks"
+      ],
+      "preFailureA": false
+    },
+    {
+      "topic": "pork",
+      "label": "Pork",
+      "question": "Can I eat pork?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 7,
+        "approvedRefCount": 7,
+        "bindingRuleCount": 0
+      },
+      "evidenceSent": {
+        "bytes": 12754,
+        "cardsInPrompt": true,
+        "catalogKeys": [],
+        "cardIds": [
+          "dietaryLaw"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "bibleOnlyPassed": false,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "connection_error",
+      "memoryBefore": {
+        "rssMB": 154,
+        "heapUsedMB": 35,
+        "heapTotalMB": 56
+      },
+      "memoryAfter": {
+        "rssMB": 154,
+        "heapUsedMB": 30,
+        "heapTotalMB": 52
+      },
+      "liveFailurePrimary": "E",
+      "liveFailureCodes": {
+        "D": false,
+        "E": true,
+        "F": true,
+        "G": false
+      },
+      "failureNotes": [
+        "No doctrine claims[] in compose output",
+        "Validator/gate mismatch with post-hoc checks"
+      ],
+      "preFailureA": false
+    },
+    {
+      "topic": "sabbath",
+      "label": "Sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "sabbath"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 8,
+        "approvedRefCount": 6,
+        "bindingRuleCount": 0
+      },
+      "evidenceSent": {
+        "bytes": 11977,
+        "cardsInPrompt": true,
+        "catalogKeys": [],
+        "cardIds": [
+          "sabbath"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "bibleOnlyPassed": false,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "connection_error",
+      "memoryBefore": {
+        "rssMB": 154,
+        "heapUsedMB": 35,
+        "heapTotalMB": 57
+      },
+      "memoryAfter": {
+        "rssMB": 169,
+        "heapUsedMB": 40,
+        "heapTotalMB": 81
+      },
+      "liveFailurePrimary": "E",
+      "liveFailureCodes": {
+        "D": false,
+        "E": true,
+        "F": true,
+        "G": false
+      },
+      "failureNotes": [
+        "No doctrine claims[] in compose output",
+        "Validator/gate mismatch with post-hoc checks"
+      ],
+      "preFailureA": false
+    },
+    {
+      "topic": "death_state",
+      "label": "Death state",
+      "question": "What happens when we die?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefCount": 6,
+        "approvedRefCount": 17,
+        "bindingRuleCount": 4
+      },
+      "evidenceSent": {
+        "bytes": 8912,
+        "cardsInPrompt": true,
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "cardIds": [
+          "deathState"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "bibleOnlyPassed": false,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "connection_error",
+      "memoryBefore": {
+        "rssMB": 171,
+        "heapUsedMB": 43,
+        "heapTotalMB": 83
+      },
+      "memoryAfter": {
+        "rssMB": 177,
+        "heapUsedMB": 50,
+        "heapTotalMB": 88
+      },
+      "liveFailurePrimary": "E",
+      "liveFailureCodes": {
+        "D": false,
+        "E": true,
+        "F": true,
+        "G": false
+      },
+      "failureNotes": [
+        "No doctrine claims[] in compose output",
+        "Validator/gate mismatch with post-hoc checks"
+      ],
+      "preFailureA": false
+    },
+    {
+      "topic": "resurrection",
+      "label": "Resurrection",
+      "question": "What does Scripture teach about resurrection?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefCount": 6,
+        "approvedRefCount": 17,
+        "bindingRuleCount": 4
+      },
+      "evidenceSent": {
+        "bytes": 8962,
+        "cardsInPrompt": true,
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "cardIds": [
+          "deathState"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "bibleOnlyPassed": false,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "connection_error",
+      "memoryBefore": {
+        "rssMB": 182,
+        "heapUsedMB": 54,
+        "heapTotalMB": 92
+      },
+      "memoryAfter": {
+        "rssMB": 177,
+        "heapUsedMB": 37,
+        "heapTotalMB": 81
+      },
+      "liveFailurePrimary": "E",
+      "liveFailureCodes": {
+        "D": false,
+        "E": true,
+        "F": true,
+        "G": false
+      },
+      "failureNotes": [
+        "No doctrine claims[] in compose output",
+        "Validator/gate mismatch with post-hoc checks"
+      ],
+      "preFailureA": false
+    },
+    {
+      "topic": "logos",
+      "label": "Logos",
+      "question": "What does Logos mean in John 1:1?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "messiahLogos"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 0,
+        "approvedRefCount": 10,
+        "bindingRuleCount": 0
+      },
+      "evidenceSent": {
+        "bytes": 9680,
+        "cardsInPrompt": true,
+        "catalogKeys": [],
+        "cardIds": [
+          "messiahLogos"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "bibleOnlyPassed": false,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "connection_error",
+      "memoryBefore": {
+        "rssMB": 179,
+        "heapUsedMB": 41,
+        "heapTotalMB": 90
+      },
+      "memoryAfter": {
+        "rssMB": 185,
+        "heapUsedMB": 19,
+        "heapTotalMB": 69
+      },
+      "liveFailurePrimary": "E",
+      "liveFailureCodes": {
+        "D": false,
+        "E": true,
+        "F": true,
+        "G": false
+      },
+      "failureNotes": [
+        "No doctrine claims[] in compose output",
+        "Validator/gate mismatch with post-hoc checks"
+      ],
+      "preFailureA": false
+    },
+    {
+      "topic": "holy",
+      "label": "Holy",
+      "question": "What does holy mean?",
+      "retrievedEvidence": {
+        "cardIds": [],
+        "catalogKeys": [],
+        "scriptureRefCount": 0,
+        "approvedRefCount": 0,
+        "bindingRuleCount": 0
+      },
+      "evidenceSent": {
+        "bytes": 3520,
+        "cardsInPrompt": false,
+        "catalogKeys": [],
+        "cardIds": []
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "connection_error",
+      "memoryBefore": {
+        "rssMB": 185,
+        "heapUsedMB": 22,
+        "heapTotalMB": 71
+      },
+      "memoryAfter": {
+        "rssMB": 186,
+        "heapUsedMB": 25,
+        "heapTotalMB": 74
+      },
+      "liveFailurePrimary": "A",
+      "liveFailureCodes": {
+        "D": false,
+        "E": false,
+        "F": false,
+        "G": false
+      },
+      "failureNotes": [
+        "Pre-live failure A — evidence missing for topic"
+      ],
+      "preFailureA": true
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "status": "BLOCKED",
+  "exactCommit": "09626367d1fd586b83b807a15c078507fbdd8aa1",
+  "branch": "sprint-2c-c3-explicit-scripture-handoff",
+  "workingTreeStatus": "DIRTY",
+  "timestamp": "2026-07-19T17:57:33.413Z",
+  "durationMs": 204657,
+  "baseUrl": "http://localhost:3000",
+  "serverReachable": false,
+  "skipSlow": false,
+  "categories": [
+    {
+      "name": "REPOSITORY",
+      "status": "FAIL",
+      "checks": [
+        {
+          "name": "node_version",
+          "status": "PASS",
+          "detail": "v26.0.0"
+        },
+        {
+          "name": "npm_version",
+          "status": "PASS",
+          "detail": "11.12.1"
+        },
+        {
+          "name": "lockfile_present",
+          "status": "PASS",
+          "detail": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/package-lock.json"
+        },
+        {
+          "name": "required_files_present",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "server_syntax_valid",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "migrations_not_referenced_in_build",
+          "status": "FAIL",
+          "detail": "no migrations dir; render.yaml does not invoke prisma migrate (confirmed fixed Phase 6F/6G)"
+        },
+        {
+          "name": "commit_and_working_tree_status",
+          "status": "PASS",
+          "detail": "branch=sprint-2c-c3-explicit-scripture-handoff head=09626367d1fd dirty=true"
+        }
+      ]
+    },
+    {
+      "name": "SCRIPTURE",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "scriptureFidelitySmoke",
+          "status": "PASS",
+          "detail": "4 passed, 0 failed"
+        },
+        {
+          "name": "alphaCoreTruthSmoke",
+          "status": "PASS",
+          "detail": "6 passed, 0 failed"
+        },
+        {
+          "name": "openAiFirstRegressionTest",
+          "status": "PASS",
+          "detail": "10 passed, 0 failed"
+        },
+        {
+          "name": "liveRuntimeVerification",
+          "status": "PASS",
+          "detail": "6 passed, 0 failed"
+        }
+      ]
+    },
+    {
+      "name": "ORIGINAL_LANGUAGE",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "originalLanguageValidation",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    },
+    {
+      "name": "HISTORY",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "historical_records_present",
+          "status": "PASS",
+          "detail": "13 records"
+        },
+        {
+          "name": "historical_records_approved_and_tiered",
+          "status": "PASS",
+          "detail": "approved=true tiered=true"
+        }
+      ]
+    },
+    {
+      "name": "COMPANION",
+      "status": "FAIL",
+      "checks": [
+        {
+          "name": "decisionOwnershipSmoke",
+          "status": "FAIL",
+          "detail": "13 passed, 1 failed"
+        },
+        {
+          "name": "phase5OContinuationRegression",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    },
+    {
+      "name": "ADMIN",
+      "status": "SKIP_WITH_REASON",
+      "checks": [
+        {
+          "name": "admin_endpoints_reachable",
+          "status": "SKIP_WITH_REASON",
+          "detail": "no server reachable at http://localhost:3000 — start the app and rerun for live Admin checks"
+        }
+      ]
+    },
+    {
+      "name": "USER_PRODUCT",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "no_technical_route_leakage_in_ui",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "coming_soon_labels_present_for_disabled_toggles",
+          "status": "PASS",
+          "detail": "expected disabled-feature labeling"
+        },
+        {
+          "name": "home_page_reachable",
+          "status": "SKIP_WITH_REASON",
+          "detail": "no server reachable at http://localhost:3000"
+        }
+      ]
+    },
+    {
+      "name": "PROVIDERS",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "openai_configured_or_honest_fallback",
+          "status": "PASS",
+          "detail": "OPENAI_API_KEY present"
+        },
+        {
+          "name": "local_kjv_corpus_available",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "no_secret_values_in_env_sample",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    },
+    {
+      "name": "SECURITY_AND_PRIVACY",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "admin_auth_boundary",
+          "status": "SKIP_WITH_REASON",
+          "detail": "no server reachable at http://localhost:3000"
+        },
+        {
+          "name": "dotenv_gitignored",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "no_env_file_committed",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    },
+    {
+      "name": "PERFORMANCE",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "governed_doctrine_latency",
+          "status": "PASS",
+          "detail": "375ms (no OpenAI call expected)"
+        },
+        {
+          "name": "concurrent_health_requests",
+          "status": "SKIP_WITH_REASON",
+          "detail": "no server reachable at http://localhost:3000"
+        }
+      ]
+    },
+    {
+      "name": "DEPLOYMENT",
+      "status": "FAIL",
+      "checks": [
+        {
+          "name": "render_yaml_present",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "render_start_command_present",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "render_health_check_path_present",
+          "status": "WARN",
+          "detail": null
+        },
+        {
+          "name": "no_prisma_migrate_in_build",
+          "status": "FAIL",
+          "detail": null
+        },
+        {
+          "name": "env_sample_present",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "readme_present",
+          "status": "PASS",
+          "detail": null
+        }
+      ]
+    }
+  ],
+  "criticalFailures": [
+    {
+      "category": "REPOSITORY",
+      "check": "migrations_not_referenced_in_build",
+      "detail": "no migrations dir; render.yaml does not invoke prisma migrate (confirmed fixed Phase 6F/6G)"
+    },
+    {
+      "category": "COMPANION",
+      "check": "decisionOwnershipSmoke",
+      "detail": "13 passed, 1 failed"
+    },
+    {
+      "category": "DEPLOYMENT",
+      "check": "no_prisma_migrate_in_build",
+      "detail": null
+    }
+  ],
+  "warnings": [
+    {
+      "category": "DEPLOYMENT",
+      "check": "render_health_check_path_present",
+      "detail": null
+    }
+  ],
+  "skippedChecks": [
+    {
+      "category": "ADMIN",
+      "check": "admin_endpoints_reachable",
+      "reason": "no server reachable at http://localhost:3000 — start the app and rerun for live Admin checks"
+    },
+    {
+      "category": "USER_PRODUCT",
+      "check": "home_page_reachable",
+      "reason": "no server reachable at http://localhost:3000"
+    },
+    {
+      "category": "SECURITY_AND_PRIVACY",
+      "check": "admin_auth_boundary",
+      "reason": "no server reachable at http://localhost:3000"
+    },
+    {
+      "category": "PERFORMANCE",
+      "check": "concurrent_health_requests",
+      "reason": "no server reachable at http://localhost:3000"
+    }
+  ],
+  "testCounts": {
+    "pass": 26,
+    "warn": 1,
+    "fail": 3,
+    "skip": 4
+  },
+  "readinessDecision": "BLOCKED"
+}

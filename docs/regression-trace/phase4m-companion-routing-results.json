@@ -1,6 +1,6 @@
 {
-  "at": "2026-06-12T07:39:01.451Z",
-  "user": "phase4m-1781249939150",
+  "at": "2026-06-14T17:13:13.398Z",
+  "user": "phase4m-1781457190392",
   "passed": 15,
   "total": 15,
   "metrics": {
@@ -105,7 +105,7 @@
     {
       "id": "B5_pork",
       "message": "What about eating pork",
-      "preview": "Yes — staying with Scripture, pork and shellfish remain unclean. Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles",
+      "preview": "According to Scripture, pork and shellfish remain unclean. Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles, not ",
       "pass": true,
       "failed": [],
       "checks": [
@@ -122,7 +122,7 @@
     {
       "id": "B6_fornication",
       "message": "Can we have sex without marriage?",
-      "preview": "Scripture honors marriage and warns against fornication — sexual union outside marriage. Paul urges believers to flee fornication in 1 Corinthians 6:18. What part of this would you",
+      "preview": "No. Staying with Scripture, Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonia",
       "pass": true,
       "failed": [],
       "checks": [
@@ -147,7 +147,7 @@
     {
       "id": "B7_fornication_followup",
       "message": "I'm asking about fornication",
-      "preview": "Scripture honors marriage and warns against fornication — sexual union outside marriage. Paul urges believers to flee fornication in 1 Corinthians 6:18. What part of this would you",
+      "preview": "No. Scripture calls sexual relations outside marriage fornication and commands believers to flee it. 1 Corinthians 6:18 says flee fornication, 1 Thessalonians 4:3-5 commands believ",
       "pass": true,
       "failed": [],
       "checks": [
@@ -164,7 +164,7 @@
     {
       "id": "B8_commandments",
       "message": "what are the 10 commandments",
-      "preview": "The ten commandments are recorded in Exodus 20 and Deuteronomy 5. Which commandment would you like to explore together?",
+      "preview": "The ten commandments are recorded in Exodus 20 and repeated in Deuteronomy 5. Exodus 34:28 calls them the ten commandments. Scripture witnesses: Exodus 20, Deuteronomy 5, Exodus 34",
       "pass": true,
       "failed": [],
       "checks": [
@@ -262,7 +262,7 @@
     {
       "id": "C14_orphan_continuation",
       "message": "show me another verse",
-      "preview": "Which Bible topic would you like me to continue? I don't have one active right now — what do you want to explore?",
+      "preview": "I can do that. Which Bible topic would you like more Scriptures about — the Sabbath, the Kingdom, clean foods, death, or something else?",
       "pass": true,
       "failed": [],
       "checks": [

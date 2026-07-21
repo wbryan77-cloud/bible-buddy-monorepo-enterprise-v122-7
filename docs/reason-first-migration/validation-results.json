@@ -1,0 +1,782 @@
+{
+  "timestamp": "2026-06-03T21:51:50.308Z",
+  "openaiAvailable": true,
+  "legacyMetrics": {
+    "turns": 20,
+    "openaiCount": 0,
+    "openaiPct": 0,
+    "avgTemplatePct": 4.1,
+    "avgListening": 5.7
+  },
+  "reasonMetrics": {
+    "turns": 20,
+    "openaiCount": 20,
+    "openaiPct": 100,
+    "avgTemplatePct": 0.1,
+    "avgListening": 5.3
+  },
+  "gate": {
+    "checks": [
+      {
+        "name": "OpenAI reasoning >= 70%",
+        "pass": true,
+        "value": "100%"
+      },
+      {
+        "name": "Template prose <= 20%",
+        "pass": true,
+        "value": "0.1%"
+      },
+      {
+        "name": "Listening score >= 7/10",
+        "pass": false,
+        "value": "5.3/10"
+      }
+    ],
+    "pass": false
+  },
+  "legacyResults": [
+    {
+      "id": "job",
+      "name": "Job opportunity",
+      "messages": [
+        "I have a job opportunity.",
+        "The company is far away from home.",
+        "I'm not sure whether to push or wait on this offer."
+      ],
+      "runtime": "legacy",
+      "userId": "rf-mig-job-legacy-1780523352874",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I have a job opportunity.",
+          "reply": "That sounds like an important decision. What feels heaviest right now — the distance, timing, money, or whether this is from God?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.\n\nIf you want, we can pray through this together or walk through the decision one piece at a time.",
+          "masterRoute": "job_discernment",
+          "openaiCalled": false,
+          "source": {
+            "layer": "responder",
+            "route": "job_discernment",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 19.7,
+          "listening": 7
+        },
+        {
+          "turn": 2,
+          "message": "The company is far away from home.",
+          "reply": "That distance can feel heavy — it's not just a job, it's a whole life shift. What feels heaviest right now: leaving people behind, the unknown, or whether this timing is from the Lord?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.",
+          "masterRoute": "job_discernment",
+          "openaiCalled": false,
+          "source": {
+            "layer": "responder",
+            "route": "job_discernment",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 10.9,
+          "listening": 5
+        },
+        {
+          "turn": 3,
+          "message": "I'm not sure whether to push or wait on this offer.",
+          "reply": "That sounds like an important decision. What feels heaviest right now — the distance, timing, money, or whether this is from God?\n\nProverbs 3:5-6 establishes the matter, and James 1:5 confirms it alongside Scripture. Psalm 37:23 carries the theme forward across the biblical witness.\n\nIf you want, we can pray through this together or walk through the decision one piece at a time.",
+          "masterRoute": "job_discernment",
+          "openaiCalled": false,
+          "source": {
+            "layer": "responder",
+            "route": "job_discernment",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 19.7,
+          "listening": 7
+        }
+      ]
+    },
+    {
+      "id": "alz",
+      "name": "Alzheimer's caregiver",
+      "messages": [
+        "My mom was recently diagnosed with Alzheimer's.",
+        "Some days she doesn't remember who I am.",
+        "How do I stay close to God while grieving who she used to be?"
+      ],
+      "runtime": "legacy",
+      "userId": "rf-mig-alz-legacy-1780523365883",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My mom was recently diagnosed with Alzheimer's.",
+          "reply": "I’m truly sorry to hear about your mom’s diagnosis. It’s a difficult and often confusing journey, and it’s natural to feel many emotions as you process this news. The Bible reminds us that God is near to the brokenhearted and a refuge in times of trouble, offering comfort when life feels overwhelming. I’m here to walk alongside you gently, whenever you need to talk or seek peace in Scripture.",
+          "masterRoute": "doctrine_general",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 2,
+          "message": "Some days she doesn't remember who I am.",
+          "reply": "It sounds deeply painful to experience days when your mom doesn't remember you. Alzheimer's can bring moments of loss that feel very personal and heartbreaking. The Bible offers comfort by reminding us that God is close to the brokenhearted and understands our sorrows. You might find peace in Psalm 34:18, which says the Lord is near to those who have a broken heart. Holding onto that truth can bring quiet strength for these difficult days. If you like, we can also pray for comfort and peace together.",
+          "masterRoute": "doctrine_general",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 3,
+          "message": "How do I stay close to God while grieving who she used to be?",
+          "reply": "I'm really sorry for your loss. Tell me about her if you want — we can take this gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a comforting passage, or simply talk through what you are feeling — no pressure.\n\nWhen you are ready, I can gently check in on how you have been doing — only if you want that.",
+          "masterRoute": "grief_support",
+          "openaiCalled": false,
+          "source": {
+            "layer": "responder",
+            "route": "grief_support",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 6.1,
+          "listening": 5
+        }
+      ]
+    },
+    {
+      "id": "distant",
+      "name": "Feeling distant from God",
+      "messages": [
+        "I feel distant from God lately.",
+        "I pray but it feels empty.",
+        "Does that mean my faith is failing?"
+      ],
+      "runtime": "legacy",
+      "userId": "rf-mig-distant-legacy-1780523390387",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I feel distant from God lately.",
+          "reply": "Feeling distant from God can be a heavy and confusing experience. It often reflects a season of spiritual struggle or growth where God's presence feels less tangible. The Bible shows us that even the psalmist experienced times of feeling distant and cried out to God in those moments. A gentle step you might consider is to honestly bring this feeling to God in prayer, asking Him to draw near and to renew your heart. Scripture encourages us that God is near to the brokenhearted and those who seek Him sincerely. If you feel comfortable, reading Psalm 42 or Psalm 63 can help express the longing for God’s presence and remind you of His faithfulness through all seasons.",
+          "masterRoute": "doctrine_general",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 2,
+          "message": "I pray but it feels empty.",
+          "reply": "It sounds like you are faithfully coming to God in prayer, yet feeling a sense of emptiness or distance in those moments. This is a common experience even among God's people, and the Bible encourages us to be honest with God about our feelings. Sometimes our hearts feel dry, but God invites us to draw near to Him earnestly and promises to draw near to us. A gentle step might be to bring this feeling before God in simple, honest prayer, asking Him to fill your heart and renew your spirit. Reflecting on verses that speak of God's nearness to the brokenhearted can also bring comfort and hope.",
+          "masterRoute": "doctrine_general",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "doctrine_general",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 7
+        },
+        {
+          "turn": 3,
+          "message": "Does that mean my faith is failing?",
+          "reply": "I'm glad you asked to pray. Let's bring this before the Lord together.\n\nFather, we bring this need before You for Does that mean my faith is failing?. You see what we cannot fully see. Please draw near with comfort, wisdom, and peace. Hold those who are hurting, guide those who are waiting, and help us trust You one step at a time. In Jesus' name, amen.\n\nPhilippians 4:6-7 establishes the matter, and James 5:16 confirms it alongside Scripture. Psalm 34:17 carries the theme forward across the biblical witness.\n\nIf you would like, we can sit with one of these passages, talk through what you are carrying, or check in gently later — only if you want that.\n\nHow have you been doing since we prayed about prayer?",
+          "masterRoute": "prayer",
+          "openaiCalled": false,
+          "source": {
+            "layer": "responder",
+            "route": "prayer",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 8.8,
+          "listening": 5
+        }
+      ]
+    },
+    {
+      "id": "sabbath",
+      "name": "Sabbath wording thread",
+      "messages": [
+        "Why should we keep Sunday as the day of worship onto the Lord?",
+        "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+        "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+        "No, I'm not asking about the shift. I'm asking about your wording.",
+        "Why are you not answering my question?",
+        "No, I'm not asking about history. I'm asking about your wording.",
+        "Are you not listening to what I am asking?"
+      ],
+      "runtime": "legacy",
+      "userId": "rf-mig-sabbath-legacy-1780523415208",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Why should we keep Sunday as the day of worship onto the Lord?",
+          "reply": "I hear what you're asking — not what the Sabbath is, but why many people keep Sunday instead.\n\nYou are asking why many Christians worship on Sunday rather than the biblical seventh-day Sabbath.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandment identifies the seventh day as the Sabbath of the LORD your God.\nIsaiah 58:13-14 — the Sabbath is connected to delight and honoring the LORD.\nLuke 4:16 — Yeshua kept the Sabbath as His custom.\nActs 17:2 — Paul reasoned in the synagogue on the Sabbath.\nHebrews 4:9 — a Sabbath rest remains for the people of God.\n\nScripture identifies the seventh day as the Sabbath and does not record God changing the Sabbath to Sunday.\n\nHistorical chain (secondary to Scripture):\n\nA. Early Christians in some places gathered on the first day for worship and fellowship, while many still honored the seventh-day Sabbath.\nB. In AD 321, Emperor Constantine issued a civil law making Sunday — the venerable day of the Sun — a day of rest across the Roman Empire.\nC. The Council of Laodicea (circa AD 364) later discouraged Sabbath rest and encouraged Christians to honor the Lord's Day (Sunday).\nD. Over time, Roman Catholic canon and liturgical authority made Sunday the normal day of obligation for worship in much of Western Christianity.\nE. Sunday observance became established through Roman civil authority and church authority over time — not by an explicit biblical command changing the Sabbath.\n\nDirect answer:\nScripture does not name a person who changed the Sabbath. Historically, the shift toward Sunday happened gradually through early first-day gatherings, Roman civil law (Constantine, AD 321), the Council of Laodicea (circa AD 364), and later Roman Catholic liturgical authority.\nSo if the question is whether Rome and Roman church authority helped establish Sunday observance, the historical answer is yes — but that is not the same as a biblical command from God.\n\nHistory can explain how the practice changed, but history cannot override Scripture.\n\nHistorical developments are not the same as biblical commands. History may support understanding, but history may not override Scripture.\n\nSources and references (historical, secondary):\n- Constantine, Codex Justinianus 3.12.2 (AD 321 Sunday rest law)\n- Council of Laodicea, Canon 29 (circa AD 364)\n- Eusebius, Life of Constantine (early first-day imperial favor)\n- Roman Catholic catechisms and liturgical tradition on Sunday obligation",
+          "masterRoute": "sabbath_history",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "sabbath_history",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 10.4,
+          "responderCharsPct": 0,
+          "listening": 7
+        },
+        {
+          "turn": 2,
+          "message": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+          "reply": "You're right — I was not answering your exact question. I used 'Roman church' as shorthand, but 'Roman Catholic Church' is more precise when referring to the later institutional church and its canon/liturgical authority. I should say 'Roman Catholic Church' when that is what I mean. The earlier Roman imperial role under Constantine is different from later Roman Catholic Church authority, so I should keep those separate clearly.",
+          "masterRoute": "meta_about_previous_answer",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 17.9,
+          "responderCharsPct": 0,
+          "listening": 7
+        },
+        {
+          "turn": 3,
+          "message": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+          "reply": "You're right — I was not answering your exact question. I used 'Roman church' as shorthand, but 'Roman Catholic Church' is more precise when referring to the later institutional church and its canon/liturgical authority. I should say 'Roman Catholic Church' when that is what I mean. The earlier Roman imperial role under Constantine is different from later Roman Catholic Church authority, so I should keep those separate clearly.",
+          "masterRoute": "meta_about_previous_answer",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 17.9,
+          "responderCharsPct": 0,
+          "listening": 7
+        },
+        {
+          "turn": 4,
+          "message": "No, I'm not asking about the shift. I'm asking about your wording.",
+          "reply": "You're right — I was not answering your exact question. I used 'Roman church' as shorthand, but 'Roman Catholic Church' is more precise when referring to the later institutional church and its canon/liturgical authority. I should say 'Roman Catholic Church' when that is what I mean. The earlier Roman imperial role under Constantine is different from later Roman Catholic Church authority, so I should keep those separate clearly.",
+          "masterRoute": "meta_about_previous_answer",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 17.9,
+          "responderCharsPct": 0,
+          "listening": 4
+        },
+        {
+          "turn": 5,
+          "message": "Why are you not answering my question?",
+          "reply": "You're right — I was not answering your exact question. The answer is: I should address \"Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?\" directly instead of repeating a previous template. Tell me if you want me to clarify a specific word or phrase I used.",
+          "masterRoute": "meta_about_previous_answer",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 6,
+          "message": "No, I'm not asking about history. I'm asking about your wording.",
+          "reply": "You're right — I was not answering your exact question. I used 'Roman church' as shorthand, but 'Roman Catholic Church' is more precise when referring to the later institutional church and its canon/liturgical authority. I should say 'Roman Catholic Church' when that is what I mean. The earlier Roman imperial role under Constantine is different from later Roman Catholic Church authority, so I should keep those separate clearly.",
+          "masterRoute": "meta_about_previous_answer",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 17.9,
+          "responderCharsPct": 0,
+          "listening": 4
+        },
+        {
+          "turn": 7,
+          "message": "Are you not listening to what I am asking?",
+          "reply": "You're right — I was not answering your exact question. The answer is: I should address \"No, I'm not asking about the shift. I'm asking about your wording.\" directly instead of repeating a previous template. Tell me if you want me to clarify a specific word or phrase I used.",
+          "masterRoute": "meta_about_previous_answer",
+          "openaiCalled": false,
+          "source": {
+            "layer": "template",
+            "route": "meta_about_previous_answer",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        }
+      ]
+    },
+    {
+      "id": "grief",
+      "name": "Grief thread",
+      "messages": [
+        "I lost a friend Wednesday.",
+        "It is still bothering me."
+      ],
+      "runtime": "legacy",
+      "userId": "rf-mig-grief-legacy-1780523495354",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost a friend Wednesday.",
+          "reply": "I'm really sorry for your loss. Tell me about her if you want — we can take this gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a comforting passage, or simply talk through what you are feeling — no pressure.\n\nWhen you are ready, I can gently check in on how you have been doing — only if you want that.",
+          "masterRoute": "grief_support",
+          "openaiCalled": false,
+          "source": {
+            "layer": "responder",
+            "route": "grief_support",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 6.1,
+          "listening": 5
+        },
+        {
+          "turn": 2,
+          "message": "It is still bothering me.",
+          "reply": "I hear you — it's still weighing on you. That kind of grief doesn't lift quickly, and it makes sense that it's still bothering you.\n\nYou mentioned recently that the loss you shared is still weighing on you.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a comforting passage, or simply talk through what you are feeling — no pressure.",
+          "masterRoute": "grief_support",
+          "openaiCalled": false,
+          "source": {
+            "layer": "responder",
+            "route": "grief_support",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 7
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health thread",
+      "messages": [
+        "My knees hurt.",
+        "My knees are hurting again today."
+      ],
+      "runtime": "legacy",
+      "userId": "rf-mig-health-legacy-1780523504389",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "reply": "I'm sorry you're dealing with that. Has this been going on for a few days, or did it start today?\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray for strength and peace, sit with a gentle passage, or take one small step for today — no pressure.",
+          "masterRoute": "health_support",
+          "openaiCalled": false,
+          "source": {
+            "layer": "responder",
+            "route": "health_support",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 2,
+          "message": "My knees are hurting again today.",
+          "reply": "I hear you — your knees are hurting again today. That matters, and I'm glad you told me. Let's take this gently — I'm not a doctor, but we can bring this before the Lord together.\n\nPsalm 103:1-5 establishes the matter, and 3 John 1:2 confirms it alongside Scripture. Matthew 11:28-30 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray for strength and peace, sit with a gentle passage, or take one small step for today — no pressure.",
+          "masterRoute": "health_support",
+          "openaiCalled": false,
+          "source": {
+            "layer": "responder",
+            "route": "health_support",
+            "method": "route_owner"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 7
+        }
+      ]
+    }
+  ],
+  "reasonResults": [
+    {
+      "id": "job",
+      "name": "Job opportunity",
+      "messages": [
+        "I have a job opportunity.",
+        "The company is far away from home.",
+        "I'm not sure whether to push or wait on this offer."
+      ],
+      "runtime": "reason_first",
+      "userId": "rf-mig-job-reason_first-1780523353341",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I have a job opportunity.",
+          "reply": "It sounds like you're at an important crossroads with this job opportunity, and that can bring a mix of excitement and uncertainty. Taking time to seek God's guidance and wisdom is a wise step. You might find it helpful to pray and ask God clearly for direction, trusting that He will order your steps as you lean on Him. Considering practical factors alongside spiritual guidance can also bring peace as you decide.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 7
+        },
+        {
+          "turn": 2,
+          "message": "The company is far away from home.",
+          "reply": "Choosing a job far from home can bring many feelings—excitement, but also concern about distance and change. It’s perfectly natural to weigh how this move might affect your daily life, relationships, and peace. Continuing to seek God's guidance with prayer, asking Him to order your steps, can be a steady anchor. Reflecting on what matters most to you and where you sense God’s peace can help clarify this decision.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 3,
+          "message": "I'm not sure whether to push or wait on this offer.",
+          "reply": "It sounds like you're feeling uncertain about whether to actively pursue this job offer or to wait patiently, which is a natural tension when big decisions loom. Trusting God to guide your timing is important. You might find it helpful to pray specifically for wisdom about the right pace—whether to press forward or to rest in waiting—and to listen quietly for His peace. Sometimes, taking a moment to reflect on where you sense calm and clarity can be the best indicator. Remember, Proverbs 3:5-6 encourages trusting the Lord fully and acknowledging Him in all your ways so He directs your paths.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 7
+        }
+      ]
+    },
+    {
+      "id": "alz",
+      "name": "Alzheimer's caregiver",
+      "messages": [
+        "My mom was recently diagnosed with Alzheimer's.",
+        "Some days she doesn't remember who I am.",
+        "How do I stay close to God while grieving who she used to be?"
+      ],
+      "runtime": "reason_first",
+      "userId": "rf-mig-alz-reason_first-1780523375413",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My mom was recently diagnosed with Alzheimer's.",
+          "reply": "I'm sorry to hear about your mom's diagnosis. It can be very hard to face such a challenge in a loved one. The Bible encourages honoring and caring for our parents (Exodus 20:12), and reminds us that God carries us even in old age and weakness (Isaiah 46:4). It's okay to feel many emotions right now. Would you like to pray together or talk about how to find strength and peace through Scripture in this season?",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 2,
+          "message": "Some days she doesn't remember who I am.",
+          "reply": "It must be incredibly painful and confusing when some days your mom doesn't remember who you are. Alzheimer's can affect memory deeply, but your love and presence remain a blessing to her. The Bible reminds us that God's love is steadfast, and He understands our struggles, carrying us through difficult times. Would you find comfort in praying together for peace and strength in these moments?",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 3,
+          "message": "How do I stay close to God while grieving who she used to be?",
+          "reply": "Grieving the change in your mom and who she used to be is deeply painful, and seeking closeness with God in the midst of that shows your heart's longing for comfort and strength. Staying close to God can be like leaning into a friend who understands your sorrow and carries you gently. It’s okay to bring your honest feelings to Him—your confusion, sadness, and love. The Bible assures us that God is near to the brokenhearted and saves those who are crushed in spirit. Taking moments to talk to Him honestly in prayer, even if it’s just a whisper, and resting in His promises can help you feel His presence. Would you like to pray together now, or perhaps I can share a comforting Scripture to hold onto in this time?",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        }
+      ]
+    },
+    {
+      "id": "distant",
+      "name": "Feeling distant from God",
+      "messages": [
+        "I feel distant from God lately.",
+        "I pray but it feels empty.",
+        "Does that mean my faith is failing?"
+      ],
+      "runtime": "reason_first",
+      "userId": "rf-mig-distant-reason_first-1780523401941",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I feel distant from God lately.",
+          "reply": "Feeling distant from God is a heavy and real experience, and it's okay to acknowledge that honestly. The Bible reminds us that God’s presence is always near, even when we can't feel it. Psalm 139 encourages us that there is no place we can go away from God’s Spirit. Sometimes, drawing near to God with a repentant and open heart brings renewal, as James 4:8 invites us to do. A gentle, honest prayer asking God to renew your spirit, like in Psalm 51, can be a comforting step forward. Would you like help with a simple prayer to start that journey?",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 2,
+          "message": "I pray but it feels empty.",
+          "reply": "It sounds really hard to pour out your prayers and feel like there's no connection or response. This empty feeling in prayer is something many experience, and sometimes it reflects spiritual dryness or a need for honest heart renewal. Scripture encourages us that even when our feelings fail, God’s presence remains constant. A practical next step might be to gently bring those feelings to God in simple, honest words—acknowledging the emptiness and asking Him to fill your heart anew. Would you like me to help you with a prayer like that?",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 3,
+          "message": "Does that mean my faith is failing?",
+          "reply": "Feeling distant from God and experiencing emptiness in prayer does not automatically mean your faith is failing. The Bible shows us that even the most faithful can go through seasons of dryness or struggle, yet God remains steadfast and near. Faith is often about continuing to seek Him honestly, even when feelings falter. Remember that God welcomes our honest hearts and draws near to those who draw near to Him (James 4:8). It's okay to bring your doubts and feelings to God in prayer and ask Him to strengthen your faith.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        }
+      ]
+    },
+    {
+      "id": "sabbath",
+      "name": "Sabbath wording thread",
+      "messages": [
+        "Why should we keep Sunday as the day of worship onto the Lord?",
+        "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+        "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+        "No, I'm not asking about the shift. I'm asking about your wording.",
+        "Why are you not answering my question?",
+        "No, I'm not asking about history. I'm asking about your wording.",
+        "Are you not listening to what I am asking?"
+      ],
+      "runtime": "reason_first",
+      "userId": "rf-mig-sabbath-reason_first-1780523415840",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Why should we keep Sunday as the day of worship onto the Lord?",
+          "reply": "You’re asking why Sunday is kept as the day of worship toward the Lord, seeking a historical explanation rather than a biblical command. Historically, early Christians often met on Sunday to commemorate Jesus’ resurrection, which happened on the first day of the week. Over time, Sunday observance was reinforced by civil authority, especially after Emperor Constantine’s decree in AD 321 making Sunday a day of rest in the Roman Empire. Later church councils, such as the Council of Laodicea around AD 364, encouraged Christians to honor Sunday, called the Lord’s Day. However, the Bible itself commands the seventh day, the Sabbath, as the day of rest and worship, and does not explicitly command changing it to Sunday. So, the practice of Sunday worship developed historically through early Christian tradition and civil laws, not through direct biblical command.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 2.2,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 2,
+          "message": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+          "reply": "I use the term \"Roman church\" as a concise way to refer historically and generally to that Christian body centered in Rome, without implying endorsement or precise denominational labels. It helps keep focus on the historical and biblical discussion without adopting later church titles that developed over centuries. If you prefer the full term \"Roman Catholic Church,\" I can certainly use that going forward.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 3,
+          "message": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+          "reply": "You’re pointing out that the formal and widely recognized name is the Roman Catholic Church. I use \"Roman church\" mainly to keep the focus clear and concise in historical and biblical discussions, avoiding assumptions about denominational specifics or endorsements. It’s not meant to diminish or alter the identity, and I’m happy to use the full term Roman Catholic Church if that feels more accurate or respectful to you.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 4,
+          "message": "No, I'm not asking about the shift. I'm asking about your wording.",
+          "reply": "I chose the phrase \"Roman church\" to keep the wording simpler and focused on the historical and biblical context, avoiding any unintended assumptions about specific denominational identities or theological positions. It was meant as a neutral shorthand rather than a formal title, aiming to speak broadly about that Christian body centered in Rome. If you prefer, I’m glad to use the full term \"Roman Catholic Church\" going forward to better match your expectation.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 5,
+          "message": "Why are you not answering my question?",
+          "reply": "I see you're feeling that I haven't addressed your question about my wording directly enough. My intention was to clarify why I chose the phrase \"Roman church\" as a neutral and concise term, but I realize that may not have fully met your expectation. Please know I'm here to listen and respond clearly to your concerns. If you'd like, I can adjust my language to match your preference more closely or explain further in a way that feels more satisfying to you.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 3
+        },
+        {
+          "turn": 6,
+          "message": "No, I'm not asking about history. I'm asking about your wording.",
+          "reply": "I understand you're focusing on why I specifically chose the term \"Roman church\" in my wording. My aim was to use a brief, neutral phrase that avoids implying formal titles or endorsing particular denominational views, so the discussion stays clear and centered on historical and biblical context. I appreciate your desire for clarity, and I’m happy to use the full term \"Roman Catholic Church\" whenever you prefer.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 7,
+          "message": "Are you not listening to what I am asking?",
+          "reply": "I hear you clearly now and want to assure you that I am listening to your question about my choice of wording. My intention in using \"Roman church\" was to keep things straightforward and avoid assumptions about denominational labels, but I understand you want a direct acknowledgment of that choice. Thank you for your patience; I’m here to respect your preferences and communicate as clearly as possible.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 7
+        }
+      ]
+    },
+    {
+      "id": "grief",
+      "name": "Grief thread",
+      "messages": [
+        "I lost a friend Wednesday.",
+        "It is still bothering me."
+      ],
+      "runtime": "reason_first",
+      "userId": "rf-mig-grief-reason_first-1780523496066",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost a friend Wednesday.",
+          "reply": "I'm so sorry for your loss. Losing a friend is deeply painful, and it's okay to feel brokenhearted. You don't have to go through this alone—God is close to those who are hurting. If you want, we can talk more about your friend or how you’re feeling. For now, just take gentle care of yourself.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 2,
+          "message": "It is still bothering me.",
+          "reply": "I hear you—it’s really hard when the pain from losing your friend lingers like this. Grief often stays with us longer than we expect, and that’s okay. Be gentle with yourself as you walk through these feelings. If it helps, you might find comfort in knowing that God is very near in times like this, holding your heart even when it feels heavy.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 7
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health thread",
+      "messages": [
+        "My knees hurt.",
+        "My knees are hurting again today."
+      ],
+      "runtime": "reason_first",
+      "userId": "rf-mig-health-reason_first-1780523505054",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "reply": "I'm sorry to hear your knees are hurting. That can be really tough to deal with. Taking some gentle rest, applying ice if swollen, and elevating your legs could help ease the discomfort. If the pain persists or worsens, it might be wise to consult a healthcare professional. Meanwhile, I can pray with you for relief and healing if you'd like.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        },
+        {
+          "turn": 2,
+          "message": "My knees are hurting again today.",
+          "reply": "I'm sorry your knees are hurting again today. That ongoing discomfort can be really discouraging. Remember to give them gentle rest and avoid strain if you can. If you feel up to it, I can pray with you now for comfort and healing.",
+          "masterRoute": "reason_first_openai",
+          "openaiCalled": true,
+          "source": {
+            "layer": "openai",
+            "route": "reason_first_openai"
+          },
+          "templateCharsPct": 0,
+          "responderCharsPct": 0,
+          "listening": 5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,470 @@
+{
+  "ranAt": "2026-07-20T13:50:38.940Z",
+  "localConfig": {
+    "nodeEnv": "development",
+    "buddyRuntime": "legacy",
+    "openAiFirstEnabled": true,
+    "openAiFirstEnv": "unset_defaults_on",
+    "templateProseEnabled": false,
+    "studyFallbackDisabled": true,
+    "studyFallbackEnabled": false,
+    "openAiKeyPresent": true,
+    "finalAnswerAuthorMode": "openai",
+    "activePath": "openAiFirstCompanionRuntime",
+    "debugEnabled": true
+  },
+  "renderYamlEnvDeclared": {
+    "BUDDY_RUNTIME": true,
+    "BUDDY_TEMPLATE_PROSE": true,
+    "BUDDY_DISABLE_STUDY_FALLBACK": true,
+    "OPENAI_API_KEY": true,
+    "NODE_ENV": true,
+    "planStandard": true,
+    "buddyDebug": true
+  },
+  "openAiKeyPresent": true,
+  "memoryAtEnd": {
+    "heapUsedMB": 20,
+    "rssMB": 274
+  },
+  "tests": [
+    {
+      "id": "t01",
+      "message": "Can I eat pork? Yes or no?",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-20T13:50:22.000Z",
+      "messagePreview": "Can I eat pork? Yes or no?",
+      "httpStatus": 200,
+      "latencyMs": 421,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "direct_yes_no",
+      "historyAllowed": false,
+      "routeUsed": "doctrine_final_authority",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "doctrine_final_authority",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 80,
+        "rssMB": 258
+      },
+      "violations": [],
+      "replyPreview": "No. Staying with Scripture, with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles, not permission to eat unclean foods. Leviticus 11 and Deuterono",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": "dietary_pork_unclean",
+        "selectedEngine": "doctrineFinalAuthorityEngine",
+        "selectedTemplate": "doctrineFinalAuthorityEngine template",
+        "selectedRoute": "doctrine_final_authority",
+        "draftRoute": "doctrine_final_authority",
+        "draftOrchestratorLane": "strict_doctrine",
+        "finalRoute": "doctrine_final_authority",
+        "contractRepairLane": "pork_contract",
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "Can I eat pork? Yes or no?",
+        "replyPreview": "No. Staying with Scripture, with Scripture, According to Scripture, pork is unclean. Leviticus 11:7 and Deuteronomy 14:8 say the swine is unclean and shall not be eaten. Scripture distinguishes clean "
+      },
+      "scripture": [
+        {
+          "reference": "Leviticus 11:7",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Deuteronomy 14:8",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Leviticus 11",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Deuteronomy 14",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Daniel 1:8-16",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Acts 10:14",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Acts 10:28",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Acts 11:1-18",
+          "theme": "dietary_law"
+        },
+        {
+          "reference": "Isaiah 66:17",
+          "theme": "dietary_law"
+        }
+      ],
+      "scored": {
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
+      }
+    },
+    {
+      "id": "t02",
+      "message": "How do we keep the Sabbath holy?",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-20T13:50:22.774Z",
+      "messagePreview": "How do we keep the Sabbath holy?",
+      "httpStatus": 200,
+      "latencyMs": 420,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "how_to_practice",
+      "historyAllowed": false,
+      "routeUsed": "doctrine_final_authority",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "doctrine_final_authority",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 67,
+        "rssMB": 249
+      },
+      "violations": [],
+      "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture.",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": "sabbath_seventh_day",
+        "selectedEngine": "doctrineFinalAuthorityEngine",
+        "selectedTemplate": "doctrineFinalAuthorityEngine template",
+        "selectedRoute": "doctrine_final_authority",
+        "draftRoute": "doctrine_final_authority",
+        "draftOrchestratorLane": "strict_doctrine",
+        "finalRoute": "doctrine_final_authority",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "How do we keep the Sabbath holy?",
+        "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture."
+      },
+      "scripture": [
+        {
+          "reference": "Genesis 2:2-3",
+          "theme": "sabbath"
+        },
+        {
+          "reference": "Exodus 20:8-11",
+          "theme": "sabbath"
+        },
+        {
+          "reference": "Isaiah 58:13-14",
+          "theme": "sabbath"
+        },
+        {
+          "reference": "Luke 4:16",
+          "theme": "sabbath"
+        }
+      ],
+      "scored": {
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
+      }
+    },
+    {
+      "id": "t03",
+      "message": "What does Logos mean in John 1:1?",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-20T13:50:23.485Z",
+      "messagePreview": "What does Logos mean in John 1:1?",
+      "httpStatus": 200,
+      "latencyMs": 359,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "companion",
+      "historyAllowed": true,
+      "routeUsed": "bible_wide_reasoning",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "bible_wide_reasoning",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 76,
+        "rssMB": 252
+      },
+      "violations": [],
+      "replyPreview": "Scripture speaks directly to this. John 1:1 — \"In the beginning was the Word, and the Word was with God, and the Word was God.\" (King James Version).",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": "explicit_scripture_reference",
+        "selectedEngine": "bibleWideReasoningEngine",
+        "selectedTemplate": "bibleWideReasoningEngine.buildBibleWideAnswer",
+        "selectedRoute": "bible_wide_reasoning",
+        "draftRoute": "bible_wide_reasoning",
+        "draftOrchestratorLane": "bible_wide",
+        "finalRoute": "bible_wide_reasoning",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "What does Logos mean in John 1:1?",
+        "replyPreview": "Scripture speaks directly to this. John 1:1 — \"In the beginning was the Word, and the Word was with God, and the Word was God.\" (King James Version)."
+      },
+      "scripture": [
+        {
+          "reference": "John 1:1",
+          "text": "In the beginning was the Word, and the Word was with God, and the Word was God.",
+          "translation": "King James Version",
+          "source": "Local KJV Corpus (public domain King James Version, vendored offline)",
+          "theme": "explicit_scripture_reference"
+        }
+      ],
+      "scored": {
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
+      }
+    },
+    {
+      "id": "t04",
+      "message": "How many heavens are talked about in the Bible?",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-20T13:50:24.229Z",
+      "messagePreview": "How many heavens are talked about in the Bible?",
+      "httpStatus": 200,
+      "latencyMs": 391,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "companion",
+      "historyAllowed": true,
+      "routeUsed": "bible_wide_reasoning",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "bible_wide_reasoning",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 80,
+        "rssMB": 272
+      },
+      "violations": [],
+      "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. Scripture witnesses: 2 Corinthians 12:2, Genesis 1:1, Deuteronomy 10:14.",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": "heaven_layers",
+        "selectedEngine": "bibleWideReasoningEngine",
+        "selectedTemplate": "bibleWideReasoningEngine.buildBibleWideAnswer",
+        "selectedRoute": "bible_wide_reasoning",
+        "draftRoute": "bible_wide_reasoning",
+        "draftOrchestratorLane": "bible_wide",
+        "finalRoute": "bible_wide_reasoning",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": true,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "How many heavens are talked about in the Bible?",
+        "replyPreview": "Scripture speaks of heavens and earth as God’s creation. Paul mentions a third heaven in 2 Corinthians 12:2. Genesis 1:1 and Deuteronomy 10:14 frame heaven and earth as distinct realms under God. Scri"
+      },
+      "scripture": [
+        {
+          "reference": "2 Corinthians 12:2",
+          "theme": "heaven_layers"
+        },
+        {
+          "reference": "Genesis 1:1",
+          "theme": "heaven_layers"
+        },
+        {
+          "reference": "Deuteronomy 10:14",
+          "theme": "heaven_layers"
+        }
+      ],
+      "scored": {
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
+      }
+    },
+    {
+      "id": "t05",
+      "message": "Today has been a rough day. I had to let go of someone I love.",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-20T13:50:37.876Z",
+      "messagePreview": "Today has been a rough day. I had to let go of someone I love.",
+      "httpStatus": 200,
+      "latencyMs": 13294,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "emotional_companion",
+      "historyAllowed": false,
+      "routeUsed": "reason_first_openai",
+      "openaiCalled": true,
+      "openaiResponseReceived": true,
+      "finalAnswerAuthor": "openai",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": true,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": true,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 75,
+        "rssMB": 287
+      },
+      "violations": [],
+      "replyPreview": "I’m really sorry. Having to let go of someone you love can feel like a kind of tearing inside — even when you know it may be necessary. A rough day like that doesn’t need a speech; it needs gentleness.\n\nFor tonight, try not to force yourself to be “okay.” Give the grief a little room, but don’t let it swallow the whole room. Breathe slowly, drink s",
+      "routeOwnership": {
+        "detectedIntent": "emotional_support",
+        "detectedConcept": null,
+        "selectedEngine": "reason_first_openai",
+        "selectedTemplate": null,
+        "selectedRoute": "reason_first_openai",
+        "draftRoute": "reason_first_openai",
+        "draftOrchestratorLane": null,
+        "finalRoute": "reason_first_openai",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "Today has been a rough day. I had to let go of someone I love.",
+        "replyPreview": "I’m really sorry. Having to let go of someone you love can feel like a kind of tearing inside — even when you know it may be necessary. A rough day like that doesn’t need a speech; it needs gentleness"
+      },
+      "scripture": [
+        {
+          "reference": "Psalm 34:18",
+          "text": "The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.",
+          "reason": "A gentle reminder that God draws near when the heart is hurting."
+        },
+        {
+          "reference": "John 11:35",
+          "text": "Jesus wept.",
+          "reason": "This shows that sorrow is not weakness; even Jesus entered into grief."
+        }
+      ],
+      "scored": {
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": false
+      }
+    },
+    {
+      "id": "t06",
+      "message": "You didn't answer my question.",
+      "channel": "runBuddy_direct",
+      "ts": "2026-07-20T13:50:38.589Z",
+      "messagePreview": "You didn't answer my question.",
+      "httpStatus": 200,
+      "latencyMs": 361,
+      "runtimeUsed": "core_openai_first",
+      "currentIntent": "emotional_support",
+      "historyAllowed": true,
+      "routeUsed": "companion_doctrine_release",
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "finalAnswerAuthor": "companion_release",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "studyFallbackUsed": false,
+      "responderUsed": false,
+      "forbiddenPhraseDetected": false,
+      "answerMatchesLatestQuestion": null,
+      "regenerated": false,
+      "sourceGroundedResponderUsed": false,
+      "sabbathHistoryDeepResponderUsed": false,
+      "buildConnectionErrorReplyUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "errorName": null,
+      "errorMessage": null,
+      "memoryUsage": {
+        "heapUsedMB": 93,
+        "rssMB": 290
+      },
+      "violations": [],
+      "replyPreview": "You're right to call that out. I was stuck on the last Bible topic instead of listening to your new message. I'm with you now. What do you want me to answer?",
+      "routeOwnership": {
+        "detectedIntent": "doctrine_answer",
+        "detectedConcept": null,
+        "selectedEngine": "companion_release",
+        "selectedTemplate": null,
+        "selectedRoute": "companion_doctrine_release",
+        "draftRoute": "companion_doctrine_release",
+        "draftOrchestratorLane": "companion_release",
+        "finalRoute": "companion_doctrine_release",
+        "contractRepairLane": null,
+        "forbiddenPhraseDetected": false,
+        "finalResponseOwner": "liveResponseOwner",
+        "messagePreview": "You didn't answer my question.",
+        "replyPreview": "You're right to call that out. I was stuck on the last Bible topic instead of listening to your new message. I'm with you now. What do you want me to answer?"
+      },
+      "scripture": [],
+      "scored": {
+        "pass": true,
+        "violations": [],
+        "apiFailureExpected": false,
+        "governedOwner": true
+      }
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "apiFailureOnly": false,
+  "allPassed": true
+}

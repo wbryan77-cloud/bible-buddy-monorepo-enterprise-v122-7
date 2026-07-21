@@ -10,6 +10,7 @@ const {
   CONTINUATION_PHRASE_RE,
 } = require('./bibleConceptConcordance');
 const { detectSemanticConcept, shouldClearStaleTopic } = require('./bibleSemanticConceptNormalizer');
+const { findHintedReference } = require('./groundedScriptureEngine');
 const { mapTopicToConceptId } = require('./followUpContextResolver');
 const { isCorrectionMessage, buildCorrectionAcknowledgment } = require('./userCorrectionMemory');
 const {
@@ -103,6 +104,21 @@ const MEMORY_RECALL_PATTERNS = [
 
 const DIETARY_LEAK_TERMS = /\b(pork|shellfish|swine|shrimp|isaiah\s*66|acts\s*10|peter|dietary law|unclean food)\b/i;
 
+
+const EXPLICIT_SCRIPTURE_REFERENCE_RE =
+  /\b(?:genesis|exodus|leviticus|numbers|deuteronomy|joshua|judges|ruth|1\s*samuel|2\s*samuel|1\s*kings|2\s*kings|1\s*chronicles|2\s*chronicles|ezra|nehemiah|esther|job|psalms?|proverbs|ecclesiastes|song\s+of\s+solomon|isaiah|jeremiah|lamentations|ezekiel|daniel|hosea|joel|amos|obadiah|jonah|micah|nahum|habakkuk|zephaniah|haggai|zechariah|malachi|matthew|mark|luke|john|acts|romans|1\s*corinthians|2\s*corinthians|galatians|ephesians|philippians|colossians|1\s*thessalonians|2\s*thessalonians|1\s*timothy|2\s*timothy|titus|philemon|hebrews|james|1\s*peter|2\s*peter|1\s*john|2\s*john|3\s*john|jude|revelation)\s+\d{1,3}(?::\d{1,3}(?:-\d{1,3})?)?\b/i;
+
+function hasExplicitScriptureReference(message = '') {
+  const m = String(message || '');
+  if (EXPLICIT_SCRIPTURE_REFERENCE_RE.test(m)) return true;
+  // A claim about Scripture's content can name no chapter:verse at all
+  // (e.g. "verses that say Jesus had white skin, blue eyes...") yet still
+  // needs to be settled by grounded retrieval rather than open-ended
+  // companion conversation. findHintedReference only identifies which
+  // reference is relevant — it never supplies the answer.
+  return Boolean(findHintedReference(m));
+}
+
 function normalizeMessage(message = '') {
   return String(message || '').trim();
 }
@@ -141,6 +157,9 @@ function classifyCurrentTurnIntent(message = '', context = {}) {
   if (matchesAny(m, EMOTIONAL_SUPPORT_PATTERNS)) return 'emotional_support';
   if (matchesAny(m, MEMORY_RECALL_PATTERNS)) return 'memory_recall';
   if (isBeforeThatRecall(m)) return 'before_that_recall';
+
+  // Explicit Scripture references outrank semantic concept promotion.
+  if (hasExplicitScriptureReference(m)) return 'explicit_scripture_reference';
 
   const semanticConcept = detectSemanticConcept(m, context);
   if (semanticConcept && !semanticConcept.strictTopic) {
@@ -207,7 +226,9 @@ const HUMAN_NEED_COMPANION_INTENTS = new Set([
   'temptation_boundary',
   'one_anchor_verse',
   'next_steps',
+  'open_life',
   'grief_comfort',
+  'health_support',
 ]);
 
 function isProtectedHumanNeed(humanNeed) {
@@ -405,7 +426,7 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
       lane: 'companion',
       strictTopic: null,
       bibleConceptId: null,
-      clearDoctrine: shouldReleaseDoctrineTopic(message, context),
+      clearDoctrine,
       releaseReason: humanNeed,
       useActiveDoctrineTopic: false,
       useActiveBibleConcept: false,
@@ -421,6 +442,10 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
 
   if (intent === 'user_correction') {
     lane = 'companion';
+  } else if (intent === 'explicit_scripture_reference') {
+    lane = 'bible_wide';
+    strictTopic = null;
+    bibleConceptId = null;
   } else if (intent === 'stop_release' || intent === 'emotional_support') {
     lane = 'companion';
   } else if (intent === 'memory_recall') {
@@ -516,17 +541,81 @@ function applyDoctrineRoutingSideEffects(userId, plan, message = '') {
  * Warm local fallback when companion lane cannot reach OpenAI.
  * Scripture-grounded, not strict-doctrine template repetition.
  */
-function buildCompanionLaneFallbackReply(message = '', context = {}) {
+async function buildCompanionLaneFallbackReply(message = '', context = {}) {
   const m = normalizeMessage(message).toLowerCase();
   if (!m) return null;
 
+  const humanNeed = detectHumanNeed(message, {}, context);
+  const protectedHumanNeed = isProtectedHumanNeed(humanNeed);
+  const release = buildCompanionReleaseReply(message, context);
+
+  // Return doctrine and Scripture questions to their canonical
+  // Scripture/doctrine owner. The companion fallback is not a
+  // doctrine answer generator.
+  if (humanNeed === 'doctrine_answer') return null;
+
+  //
+  // Protected human conversations ALWAYS stay companion-first.
+  //
+
+  if (protectedHumanNeed) {
+
+    if (release) {
+      return {
+        reply: release,
+        scripture: [],
+      };
+    }
+
+    if (humanNeed === 'health_support') {
+      return {
+        reply:
+          "I'm sorry you're dealing with that. I can't diagnose medical conditions, but I'm here with you. Tell me what has been happening and what concerns you most right now.",
+        scripture: [],
+      };
+    }
+
+    if (
+      humanNeed === 'emotional_support' ||
+      /\b(grief|grieving|loss|lost someone|heartbreak|broken heart|let go of someone|rough day|hard day|tough day)\b/i.test(m)
+    ) {
+      return {
+        reply:
+          "I'm sorry you're carrying this. Thank you for trusting me enough to share it. Tell me what happened and what hurts the most right now.",
+        scripture: [],
+      };
+    }
+
+    if (
+      /\b(listen first|just want to talk|talk for a minute)\b/i.test(m)
+    ) {
+      return {
+        reply:
+          "I'm here. I won't rush to fix anything. Take your time and tell me what's on your heart.",
+        scripture: [],
+      };
+    }
+
+    return {
+      reply:
+        "I'm here with you. Tell me what happened, and we'll take this one step at a time.",
+      scripture: [],
+    };
+  }
+
+  //
+  // Non-protected conversations may use Bible-wide reasoning.
+  //
+
   const { buildBibleWideAnswer } = require('./bibleWideReasoningEngine');
   const { getUserAnswerPreferences } = require('./userCorrectionMemory');
-  const conceptAnswer = buildBibleWideAnswer({
+
+  const conceptAnswer = await buildBibleWideAnswer({
     message,
     userId: context.userId,
     userPreferences: getUserAnswerPreferences(context.userId),
   });
+
   if (conceptAnswer) {
     return {
       reply: conceptAnswer.reply,
@@ -534,9 +623,11 @@ function buildCompanionLaneFallbackReply(message = '', context = {}) {
     };
   }
 
-  const release = buildCompanionReleaseReply(message, context);
   if (release) {
-    return { reply: release, scripture: [] };
+    return {
+      reply: release,
+      scripture: [],
+    };
   }
 
   return null;
@@ -557,4 +648,6 @@ module.exports = {
   DIETARY_LEAK_TERMS,
   HUMAN_NEED_COMPANION_INTENTS,
   isProtectedHumanNeed,
+  EXPLICIT_SCRIPTURE_REFERENCE_RE,
+  hasExplicitScriptureReference,
 };

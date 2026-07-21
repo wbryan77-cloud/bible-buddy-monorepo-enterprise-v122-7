@@ -13,6 +13,32 @@ const STUDY_RE = /You've been studying|We can continue that study|continue your 
 const WITNESS_RE = /establishes the matter|confirms it alongside Scripture|carries the theme forward/i;
 const HISTORY_RE = /Constantine|Council of Laodicea|Saturday to Sunday/i;
 
+// PHASE_6G — Named allowlist of deterministic/governed `finalAnswerAuthor`
+// values that are *expected* to answer without calling OpenAI under the
+// approved Scripture Authority Engine architecture (Phase 5S/5T/6):
+// governed biblical claims are answered from approved evidence and
+// canonical Scripture first, with OpenAI composition reserved for
+// non-doctrinal companion conversation. Before this phase, any non-OpenAI
+// answer longer than 20 characters was unconditionally flagged as a
+// "non_openai_speaker" violation, which is exactly the obsolete
+// "every answer must call OpenAI" assumption this program replaced.
+const GOVERNED_NON_OPENAI_AUTHORS = new Set([
+  'doctrine_final_authority',
+  'strict_doctrine_gate',
+  'doctrine_strict_safe_corpus',
+  'bible_wide_reasoning',
+  'companion_release',
+  'crisis_protocol',
+  'original_language_study',
+  'historical_context',
+  'conversation_owner_life_decision',
+  'phase5o_continuation_life_decision',
+  'companion_lane_fallback',
+  'companion_state_engine',
+  'phase5k_prayer_companion',
+  'bible_companion_clarification',
+]);
+
 function parseApiError(errorMessage = '') {
   const msg = String(errorMessage || '');
   if (/429|quota/i.test(msg)) return { errorName: 'OpenAIQuotaExceeded', errorMessage: msg.slice(0, 200) };
@@ -20,6 +46,115 @@ function parseApiError(errorMessage = '') {
   if (/timeout|ETIMEDOUT|ECONNRESET/i.test(msg)) return { errorName: 'OpenAITimeout', errorMessage: msg.slice(0, 200) };
   if (msg) return { errorName: 'OpenAIError', errorMessage: msg.slice(0, 200) };
   return { errorName: null, errorMessage: null };
+}
+
+function inferSelectedEngine(runtime = {}, draftRoute = '') {
+  const lane = runtime.orchestratorLane || '';
+  const route = draftRoute || runtime.masterRoute || '';
+  if (lane === 'clarification' || route === 'bible_companion_clarification') {
+    return 'bibleCompanionOrchestrator.buildClarificationReply';
+  }
+  if (lane === 'practical_wisdom' || /practical_wisdom|practical_guidance/i.test(route)) {
+    return 'practicalWisdomEngine';
+  }
+  if (lane === 'prayer_companion' || /prayer_companion|practical_guidance_prayer/i.test(route)) {
+    return 'prayerCompanionEngine';
+  }
+  if (lane === 'app_identity' || /app_identity|phase5l_app_identity/i.test(route)) {
+    return 'companionIdentityEngine';
+  }
+  if (lane === 'anxiety_presence' || /presence_nervous/i.test(route)) {
+    return 'companionPresenceEngine';
+  }
+  if (lane === 'memory_recall' || route === 'relationship_memory_recall') {
+    return 'relationshipSummaryEngine';
+  }
+  if (lane === 'bible_wide' || /bible_wide/i.test(route)) {
+    return 'bibleWideReasoningEngine';
+  }
+  if (/doctrine_final_authority|strict_doctrine/i.test(route)) {
+    return 'doctrineFinalAuthorityEngine';
+  }
+  if (lane === 'phase5i_companion' || /phase5i_/i.test(route)) {
+    return 'companionResponseBuilder';
+  }
+  if (/practicalGuidanceEngine|practical_guidance/i.test(route)) {
+    return 'practicalGuidanceEngine';
+  }
+  if (lane) return lane;
+  return route || 'unknown';
+}
+
+function inferSelectedTemplate(runtime = {}, draftRoute = '', reply = '') {
+  const route = draftRoute || runtime.masterRoute || '';
+  if (route === 'bible_companion_clarification') return 'buildClarificationReply';
+  if (/doctrine_final_authority/i.test(route)) return 'doctrineFinalAuthorityEngine template';
+  if (runtime.bibleWideReasoning) return 'bibleWideReasoningEngine.buildBibleWideAnswer';
+  if (/I want to answer from Scripture directly/i.test(reply)) return 'buildClarificationReply';
+  if (/Scripture invites us to cast our care/i.test(reply)) return 'bibleConceptGraph.prayer_comfort.directAnswer';
+  if (/Absolutely\s*[—-]\s*staying/i.test(reply)) return 'doctrineFinalAuthorityEngine (historical) or polishDoctrineOpener';
+  if (/No\.\s+Staying with Scripture/i.test(reply)) return 'singleCompanionContract.buildPorkContractReply';
+  if (runtime.companionRepairLane) return `singleCompanionContract.${runtime.companionRepairLane}`;
+  return null;
+}
+
+function buildRouteOwnershipTrace({
+  message = '',
+  structured = {},
+  humanNeed = null,
+  anchor = {},
+  doctrineState = {},
+  draftRoute = null,
+  draftOrchestratorLane = null,
+} = {}) {
+  const rt = structured.runtime || {};
+  const contract = rt.contractDecision || {};
+  return {
+    detectedIntent:
+      contract.mode ||
+      rt.companionContractMode ||
+      humanNeed ||
+      rt.companionIntent?.category ||
+      rt.currentIntent ||
+      null,
+    detectedConcept:
+      anchor.currentDoctrineConcept ||
+      doctrineState.lastAnsweredConcept ||
+      doctrineState.sessionMemory?.activeConcept ||
+      rt.bibleConcept ||
+      rt.doctrineTopic ||
+      null,
+    selectedEngine: inferSelectedEngine(
+      { ...rt, orchestratorLane: draftOrchestratorLane || rt.orchestratorLane },
+      draftRoute,
+    ),
+    selectedTemplate: inferSelectedTemplate(rt, draftRoute, structured.reply),
+    selectedRoute: draftRoute || rt.masterRoute || null,
+    draftRoute,
+    draftOrchestratorLane: draftOrchestratorLane || rt.orchestratorLane || null,
+    finalRoute: rt.masterRoute || null,
+    contractRepairLane: rt.companionRepairLane || null,
+    forbiddenPhraseDetected: rt.forbiddenPhraseDetected || false,
+    finalResponseOwner: rt.liveResponseOwner ? 'liveResponseOwner' : rt.finalAnswerAuthor || 'unknown',
+    messagePreview: String(message).slice(0, 120),
+    replyPreview: String(structured.reply || '').slice(0, 200),
+  };
+}
+
+function logRouteOwnership(trace) {
+  const line = JSON.stringify({
+    ts: new Date().toISOString(),
+    detectedIntent: trace.detectedIntent,
+    detectedConcept: trace.detectedConcept,
+    selectedEngine: trace.selectedEngine,
+    selectedTemplate: trace.selectedTemplate,
+    selectedRoute: trace.selectedRoute,
+    finalResponseOwner: trace.finalResponseOwner,
+    draftRoute: trace.draftRoute,
+    contractRepairLane: trace.contractRepairLane,
+    forbiddenPhraseDetected: trace.forbiddenPhraseDetected,
+  });
+  console.log(`[ROUTE_OWNERSHIP] ${line}`);
 }
 
 function buildLiveRequestTrace({ message = '', reply = {}, httpStatus = 200, latencyMs = 0 } = {}) {
@@ -35,6 +170,8 @@ function buildLiveRequestTrace({ message = '', reply = {}, httpStatus = 200, lat
 
   const studyFallbackUsed =
     danger.studyLoopUsed || STUDY_RE.test(reply.reply || '') || !!rt.personalizedFallback;
+
+  const routeOwnership = reply.runtime?.routeOwnership || null;
 
   const trace = {
     ts: new Date().toISOString(),
@@ -74,6 +211,7 @@ function buildLiveRequestTrace({ message = '', reply = {}, httpStatus = 200, lat
     },
     violations: [],
     replyPreview: String(reply.reply || '').slice(0, 300),
+    routeOwnership,
   };
 
   if (trace.witnessTriplet !== false && WITNESS_RE.test(reply.reply || '')) {
@@ -83,7 +221,12 @@ function buildLiveRequestTrace({ message = '', reply = {}, httpStatus = 200, lat
   if (HISTORY_RE.test(reply.reply || '') && !/who changed|constantine|history|rome/i.test(message)) {
     trace.violations.push('unsolicited_sabbath_history');
   }
-  if (!openaiCalled && !trace.buildConnectionErrorReplyUsed && String(reply.reply || '').length > 20) {
+  if (
+    !openaiCalled &&
+    !trace.buildConnectionErrorReplyUsed &&
+    !GOVERNED_NON_OPENAI_AUTHORS.has(finalAnswerAuthor) &&
+    String(reply.reply || '').length > 20
+  ) {
     trace.violations.push('non_openai_speaker');
   }
 
@@ -110,9 +253,14 @@ function logLiveRequestTrace(trace) {
 
 module.exports = {
   buildLiveRequestTrace,
+  buildRouteOwnershipTrace,
+  inferSelectedEngine,
+  inferSelectedTemplate,
+  logRouteOwnership,
   isLiveRequestTraceEnabled,
   logLiveRequestTrace,
   TRACE_PATH,
   STUDY_RE,
   WITNESS_RE,
+  GOVERNED_NON_OPENAI_AUTHORS,
 };

@@ -1,0 +1,1595 @@
+{
+  "generatedAt": "2026-06-03T02:57:47.613Z",
+  "openaiAvailable": true,
+  "verdict": "CONVERSATION_BEHAVIOR_HELPS",
+  "aggregate": {
+    "current": {
+      "listening": 6.4,
+      "warmth": 5.7,
+      "followUp": 6.6,
+      "answerEngineFeeling": 2.3,
+      "shape": {
+        "answering": 49.2,
+        "advising": 12.7,
+        "explaining": 22.8,
+        "asking": 0,
+        "reflecting": 11.2,
+        "engaging": 4.1,
+        "deliverModePct": 84.7,
+        "companionModePct": 15.3,
+        "exploratoryQuestionTurns": 0,
+        "transactionalCloseTurns": 7
+      }
+    },
+    "experiment": {
+      "listening": 6.1,
+      "warmth": 5.4,
+      "followUp": 5.6,
+      "answerEngineFeeling": 6.2,
+      "shape": {
+        "answering": 42.5,
+        "advising": 1,
+        "explaining": 22.8,
+        "asking": 23.5,
+        "reflecting": 8.9,
+        "engaging": 1.3,
+        "deliverModePct": 66.3,
+        "companionModePct": 33.7,
+        "exploratoryQuestionTurns": 13,
+        "transactionalCloseTurns": 1
+      }
+    },
+    "delta": {
+      "listening": -0.3,
+      "warmth": -0.3,
+      "followUp": -1,
+      "answerEngineFeeling": 3.9
+    }
+  },
+  "merged": [
+    {
+      "id": "job",
+      "name": "Job opportunity",
+      "messages": [
+        "I have a job opportunity.",
+        "The company is far away from home.",
+        "I'm not sure whether to push or wait on this offer."
+      ],
+      "userId": "conv-exp-job-1780455436176",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I have a job opportunity.",
+          "currentReply": "You’re at an important crossroads with this job opportunity, and it makes sense to want to move forward with wisdom and peace. It can help to begin by praying simply and honestly, asking God for clear guidance and understanding. Proverbs encourages us to trust in the Lord with all our heart and not lean on our own understanding, and James reminds us that God gives wisdom generously when we ask. As you consider this opportunity, think about how it aligns with your values, your family needs, and your calling. Taking some time to write down your hopes and concerns might also bring clarity. Would you like a short prayer together to invite God’s wisdom into this decision?",
+          "experimentReply": "That sounds like an important step! When you think about this opportunity, is your biggest concern about the job itself, or perhaps how it fits with God's timing and your calling? Remember Proverbs 3:5-6 encourages us to trust in the Lord with all our heart and lean not on our own understanding; He will make our paths straight.",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 5.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 7,
+            "followUp": null,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 0,
+              "advising": 50,
+              "explaining": 16.7,
+              "asking": 0,
+              "reflecting": 16.7,
+              "engaging": 16.7,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 66.7,
+              "companionModePct": 33.4
+            }
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 7,
+            "followUp": null,
+            "answerEngineFeeling": 6,
+            "shape": {
+              "answering": 33.3,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 33.3,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.6,
+              "companionModePct": 33.3
+            }
+          },
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "followUp": null,
+            "answerEngineFeeling": 3
+          },
+          "shapeDelta": {
+            "asking": 33.3,
+            "reflecting": -16.7,
+            "explaining": 16.6,
+            "advising": -50,
+            "answering": 33.3,
+            "deliverMode": -0.1
+          }
+        },
+        {
+          "turn": 2,
+          "message": "The company is far away from home.",
+          "currentReply": "It sounds like the distance from home to this company is a significant concern for you, and that makes perfect sense. When a job opportunity requires such a big change, it’s important to weigh not only the practical challenges like commuting or relocating but also how it affects your peace, family, and sense of calling. Remember, Proverbs reminds us to trust the Lord with all our heart and not lean on our own understanding, and Psalm tells us that the steps of a good man are ordered by the Lord. Taking time in prayer to ask God for wisdom, as James encourages, can help you find clarity about this distance and what it means for your life. If you want, we can pray together for guidance and peace as you consider this aspect of the opportunity.",
+          "experimentReply": "You mentioned the company is far away from home — is the biggest concern the distance itself, or discerning God's timing on this opportunity? Remember, Proverbs encourages us to trust in the LORD with all our heart and not lean on our own understanding; He will direct our paths. How do you feel about seeking His guidance in this decision?",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 4.5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 5,
+              "feltHeard": 2
+            },
+            "warmth": 5,
+            "followUp": 5,
+            "answerEngineFeeling": 1,
+            "shape": {
+              "answering": 0,
+              "advising": 60,
+              "explaining": 20,
+              "asking": 0,
+              "reflecting": 20,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 80,
+              "companionModePct": 20
+            }
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 5,
+              "feltHeard": 5
+            },
+            "warmth": 5,
+            "followUp": 7,
+            "answerEngineFeeling": 8,
+            "shape": {
+              "answering": 0,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 66.7,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 2,
+              "hasTransactionalClose": false,
+              "deliverModePct": 33.3,
+              "companionModePct": 66.7
+            }
+          },
+          "deltas": {
+            "listening": 1.3,
+            "warmth": 0,
+            "followUp": 2,
+            "answerEngineFeeling": 7
+          },
+          "shapeDelta": {
+            "asking": 66.7,
+            "reflecting": -20,
+            "explaining": 13.3,
+            "advising": -60,
+            "answering": 0,
+            "deliverMode": -46.7
+          }
+        },
+        {
+          "turn": 3,
+          "message": "I'm not sure whether to push or wait on this offer.",
+          "currentReply": "You’re facing a real tension between moving forward actively and waiting patiently on this job offer, which can feel uncertain. It’s wise to balance eagerness with trust, asking God clearly in prayer to guide the timing according to His perfect will. Proverbs 3:5-6 reminds us to trust in the Lord and He will direct our paths, and James 1:5 encourages asking God for wisdom without doubting. Sometimes waiting is a way God prepares us or opens the right doors, while other times taking initiative is needed. You might find it helpful to pause briefly in prayer, listen quietly for peace about the timing, and consider any practical signs or confirmations. Would you like to pray together for clear guidance and peace about whether to push or wait?",
+          "experimentReply": "Is the uncertainty more about the timing feeling right, or about whether this offer aligns with what you believe God wants for you? Proverbs 3:5-6 reminds us to trust in the Lord with all our heart and not lean on our own understanding; He will direct our paths. Sometimes waiting quietly to hear His guidance brings peace and clarity.",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 6,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "warmth": 5,
+            "followUp": 5,
+            "answerEngineFeeling": 1,
+            "shape": {
+              "answering": 50,
+              "advising": 16.7,
+              "explaining": 16.7,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 16.7,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 83.4,
+              "companionModePct": 16.7
+            }
+          },
+          "experimentScores": {
+            "listening": 5.3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 5,
+            "followUp": 5,
+            "answerEngineFeeling": 6,
+            "shape": {
+              "answering": 33.3,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 33.3,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.6,
+              "companionModePct": 33.3
+            }
+          },
+          "deltas": {
+            "listening": -0.7,
+            "warmth": 0,
+            "followUp": 0,
+            "answerEngineFeeling": 5
+          },
+          "shapeDelta": {
+            "asking": 33.3,
+            "reflecting": 0,
+            "explaining": 16.6,
+            "advising": -16.7,
+            "answering": -16.7,
+            "deliverMode": -16.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "alz",
+      "name": "Alzheimer's caregiver",
+      "messages": [
+        "My mom was recently diagnosed with Alzheimer's.",
+        "Some days she doesn't remember who I am.",
+        "How do I stay close to God while grieving who she used to be?"
+      ],
+      "userId": "conv-exp-alz-1780455442907",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My mom was recently diagnosed with Alzheimer's.",
+          "currentReply": "I’m sorry to hear your mom was recently diagnosed with Alzheimer's. That must feel very heavy and uncertain for you both. It’s okay to feel a mix of emotions right now. The Bible encourages us to honor and care for our parents, even in challenging times (Exodus 20:12). Remember, God promises to carry us and our loved ones through all stages of life, even into old age (Isaiah 46:4). If you’d like, I can help you with a simple prayer or Scripture to bring comfort and strength as you support your mom.",
+          "experimentReply": "I'm so sorry to hear about your mom's diagnosis. That must feel very heavy and uncertain. How are you holding up with this news? Remember, honoring our parents is deeply valued in Scripture, and God promises strength for those who care for their loved ones. If you'd like, I'm here to listen or pray with you through this.",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 6.5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 6
+            },
+            "warmth": 7,
+            "followUp": null,
+            "answerEngineFeeling": 1,
+            "shape": {
+              "answering": 33.3,
+              "advising": 0,
+              "explaining": 50,
+              "asking": 0,
+              "reflecting": 16.7,
+              "engaging": 0,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 83.3,
+              "companionModePct": 16.7
+            }
+          },
+          "experimentScores": {
+            "listening": 6.5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 6
+            },
+            "warmth": 7,
+            "followUp": null,
+            "answerEngineFeeling": 9,
+            "shape": {
+              "answering": 40,
+              "advising": 0,
+              "explaining": 20,
+              "asking": 20,
+              "reflecting": 20,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 60,
+              "companionModePct": 40
+            }
+          },
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "followUp": null,
+            "answerEngineFeeling": 8
+          },
+          "shapeDelta": {
+            "asking": 20,
+            "reflecting": 3.3,
+            "explaining": -30,
+            "advising": 0,
+            "answering": 6.7,
+            "deliverMode": -23.3
+          }
+        },
+        {
+          "turn": 2,
+          "message": "Some days she doesn't remember who I am.",
+          "currentReply": "It’s deeply painful when someone you love, like your mom, doesn’t remember who you are some days. Alzheimer's affects memory and identity in ways that can feel heartbreaking and confusing. In these moments, your presence and love remain a powerful comfort to her, even if her mind can’t hold onto recognition. The Bible reminds us that love is steadfast—\"A friend loveth at all times\" (Proverbs 17:17)—and God carries us gently through difficult seasons (Isaiah 46:4). If you’d like, I can help you pray for strength and peace as you walk this journey with her.",
+          "experimentReply": "That must be so painful and confusing for you both. When she doesn't remember who you are, it can feel like a deep loss. How do you find moments of peace or connection with her on the days when her memory feels the most distant?",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 6.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "warmth": 7,
+            "followUp": 7,
+            "answerEngineFeeling": 0,
+            "shape": {
+              "answering": 60,
+              "advising": 0,
+              "explaining": 40,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "warmth": 7,
+            "followUp": 3,
+            "answerEngineFeeling": 9,
+            "shape": {
+              "answering": 33.3,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 33.3,
+              "reflecting": 33.3,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 33.3,
+              "companionModePct": 66.6
+            }
+          },
+          "deltas": {
+            "listening": -1,
+            "warmth": 0,
+            "followUp": -4,
+            "answerEngineFeeling": 9
+          },
+          "shapeDelta": {
+            "asking": 33.3,
+            "reflecting": 33.3,
+            "explaining": -40,
+            "advising": 0,
+            "answering": -26.7,
+            "deliverMode": -66.7
+          }
+        },
+        {
+          "turn": 3,
+          "message": "How do I stay close to God while grieving who she used to be?",
+          "currentReply": "Grieving who your mom used to be while walking alongside her now is incredibly hard, especially when Alzheimer's changes so much. Staying close to God in this sorrow can feel like a struggle, but He is near to the brokenhearted and offers gentle strength. It’s okay to bring your honest feelings to Him—your pain, confusion, and longing—because God listens and cares deeply. Remember that God’s love doesn’t change, even when circumstances do. You can lean on His promise to carry us through difficult seasons and find comfort in His faithful presence. Taking quiet moments to speak to Him honestly, even if it’s just to sit in silence with Him, can nurture your closeness. Would you like me to help you with a simple prayer to invite God’s peace into this grief?",
+          "experimentReply": "Grieving who she used to be is deeply painful, and it can make you feel isolated even in your faith. The Psalmist reminds us that \"The LORD is near the brokenhearted and saves the crushed in spirit\" (Psalm 34:18). God’s closeness doesn’t depend on your emotions or the clarity of your grief but on His steadfast love. What part of this loss feels most difficult to bring before God right now?",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 7.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 8,
+              "feltHeard": 8
+            },
+            "warmth": 5,
+            "followUp": 9,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 57.1,
+              "advising": 0,
+              "explaining": 14.3,
+              "asking": 0,
+              "reflecting": 14.3,
+              "engaging": 14.3,
+              "sentenceCount": 7,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 71.4,
+              "companionModePct": 28.6
+            }
+          },
+          "experimentScores": {
+            "listening": 6,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "warmth": 7,
+            "followUp": 5,
+            "answerEngineFeeling": 9,
+            "shape": {
+              "answering": 25,
+              "advising": 0,
+              "explaining": 25,
+              "asking": 25,
+              "reflecting": 25,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            }
+          },
+          "deltas": {
+            "listening": -1.8,
+            "warmth": 2,
+            "followUp": -4,
+            "answerEngineFeeling": 6
+          },
+          "shapeDelta": {
+            "asking": 25,
+            "reflecting": 10.7,
+            "explaining": 10.7,
+            "advising": 0,
+            "answering": -32.1,
+            "deliverMode": -21.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "distant",
+      "name": "Feeling distant from God",
+      "messages": [
+        "I feel distant from God lately.",
+        "I pray but it feels empty.",
+        "Does that mean my faith is failing?"
+      ],
+      "userId": "conv-exp-distant-1780455448526",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I feel distant from God lately.",
+          "currentReply": "It sounds like you’re feeling a real sense of separation from God right now, which can be heavy on the heart. This experience is not uncommon, and Scripture reminds us that God’s presence is always near even when we feel far. For example, Psalm 139:7-10 speaks of how nowhere can we flee from God’s Spirit. James 4:8 encourages us to draw near to God, promising that He will draw near to us. A gentle next step might be to honestly express this feeling to God in prayer, asking Him to renew a right spirit within you, as David prayed in Psalm 51:10-12. Would you like help shaping a simple prayer like that or some ways to gently reconnect in this season?",
+          "experimentReply": "When you say you feel distant from God, do you mean your prayers feel less connected or that it’s harder to sense His presence even when you seek Him? Remember, as the Psalmist says, 'Where shall I go from your Spirit? Where shall I flee from your presence? If I ascend to heaven, you are there; if I make my bed in Sheol, you are there.' God’s presence is always near, even when we don’t feel it. Sometimes, being honest about our feelings can be a step toward drawing closer again.",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 5.3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 3
+            },
+            "warmth": 7,
+            "followUp": null,
+            "answerEngineFeeling": 1,
+            "shape": {
+              "answering": 0,
+              "advising": 16.7,
+              "explaining": 50,
+              "asking": 0,
+              "reflecting": 16.7,
+              "engaging": 16.7,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 66.7,
+              "companionModePct": 33.4
+            }
+          },
+          "experimentScores": {
+            "listening": 6,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 6
+            },
+            "warmth": 4,
+            "followUp": null,
+            "answerEngineFeeling": 9,
+            "shape": {
+              "answering": 40,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 60,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 3,
+              "hasTransactionalClose": false,
+              "deliverModePct": 40,
+              "companionModePct": 60
+            }
+          },
+          "deltas": {
+            "listening": 0.7,
+            "warmth": -3,
+            "followUp": null,
+            "answerEngineFeeling": 8
+          },
+          "shapeDelta": {
+            "asking": 60,
+            "reflecting": -16.7,
+            "explaining": -50,
+            "advising": -16.7,
+            "answering": 40,
+            "deliverMode": -26.7
+          }
+        },
+        {
+          "turn": 2,
+          "message": "I pray but it feels empty.",
+          "currentReply": "It seems like your prayers feel empty because the heart feels distant or disconnected, which can be discouraging. Sometimes, prayer can feel lifeless when we approach God without expressing our true feelings or when our focus drifts. Scripture encourages us to draw near to God sincerely, trusting He draws near to us (James 4:8). Like David in Psalm 51, we can ask God to create in us a clean heart and renew a right spirit. A gentle next step might be to pray honestly about your emptiness—sharing your real emotions with God—and ask Him to fill that space, trusting His presence even when you don't feel it fully. Would you like help crafting such a simple, heartfelt prayer?",
+          "experimentReply": "When you say your prayer feels empty, do you mean it feels like words without connection, even though you want to reach God? Sometimes, our hearts feel distant, but remember Psalm 139 assures us there is nowhere we can go to escape God's presence or love. He is always near, even when we don't feel it. Would you like to share more about what your prayers are like right now?",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 6,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 6
+            },
+            "warmth": 5,
+            "followUp": 5,
+            "answerEngineFeeling": 2,
+            "shape": {
+              "answering": 16.7,
+              "advising": 16.7,
+              "explaining": 33.3,
+              "asking": 0,
+              "reflecting": 16.7,
+              "engaging": 16.7,
+              "sentenceCount": 6,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 66.7,
+              "companionModePct": 33.4
+            }
+          },
+          "experimentScores": {
+            "listening": 6,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 6
+            },
+            "warmth": 5,
+            "followUp": 5,
+            "answerEngineFeeling": 8,
+            "shape": {
+              "answering": 25,
+              "advising": 0,
+              "explaining": 25,
+              "asking": 25,
+              "reflecting": 0,
+              "engaging": 25,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": true,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            }
+          },
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "followUp": 0,
+            "answerEngineFeeling": 6
+          },
+          "shapeDelta": {
+            "asking": 25,
+            "reflecting": -16.7,
+            "explaining": -8.3,
+            "advising": -16.7,
+            "answering": 8.3,
+            "deliverMode": -16.7
+          }
+        },
+        {
+          "turn": 3,
+          "message": "Does that mean my faith is failing?",
+          "currentReply": "Feeling distant from God and experiencing empty prayers does not necessarily mean your faith is failing. Sometimes faith goes through seasons of dryness or struggle, which can actually refine and strengthen it. Scripture shows us that God’s presence is always near, even when we feel far (Psalm 139:7-10), and He invites us to draw near to Him sincerely (James 4:8). Like David, we can ask God to renew our hearts and restore our joy in Him (Psalm 51:10-12). These moments can be opportunities to honestly bring your feelings before God and trust His faithful love, rather than a sign that your faith is failing.",
+          "experimentReply": "When you wonder if your faith is failing, it might help to consider what feeling distant from God means for you personally. Sometimes, even when we feel far from Him, His presence is still near, as the Psalmist says, \"Where shall I go from your Spirit? Or where shall I flee from your presence?\" (Psalm 139:7). Do you feel that your struggle is more about the silence you perceive, or about your own doubts? Remember, faith can be a journey with seasons of dryness and renewal, not a simple on-or-off switch.",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 7.5,
+            "listeningDimensions": {
+              "answeredLatest": 8,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 8
+            },
+            "warmth": 5,
+            "followUp": 7,
+            "answerEngineFeeling": 0,
+            "shape": {
+              "answering": 40,
+              "advising": 0,
+              "explaining": 60,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "experimentScores": {
+            "listening": 6.5,
+            "listeningDimensions": {
+              "answeredLatest": 8,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 6
+            },
+            "warmth": 4,
+            "followUp": 7,
+            "answerEngineFeeling": 9,
+            "shape": {
+              "answering": 20,
+              "advising": 20,
+              "explaining": 20,
+              "asking": 40,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 2,
+              "hasTransactionalClose": false,
+              "deliverModePct": 60,
+              "companionModePct": 40
+            }
+          },
+          "deltas": {
+            "listening": -1,
+            "warmth": -1,
+            "followUp": 0,
+            "answerEngineFeeling": 9
+          },
+          "shapeDelta": {
+            "asking": 40,
+            "reflecting": 0,
+            "explaining": -40,
+            "advising": 20,
+            "answering": -20,
+            "deliverMode": -40
+          }
+        }
+      ]
+    },
+    {
+      "id": "sabbath",
+      "name": "Sabbath wording thread",
+      "messages": [
+        "Why should we keep Sunday as the day of worship onto the Lord?",
+        "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+        "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+        "No, I'm not asking about the shift. I'm asking about your wording.",
+        "Why are you not answering my question?",
+        "No, I'm not asking about history. I'm asking about your wording.",
+        "Are you not listening to what I am asking?"
+      ],
+      "userId": "conv-exp-sabbath-1780455454728",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "Why should we keep Sunday as the day of worship onto the Lord?",
+          "currentReply": "You’re asking why Sunday should be kept as the day of worship to the Lord from a historical perspective. Historically, early Christians in some areas began gathering on the first day of the week, Sunday, in commemoration of Jesus’ resurrection, which happened on that day. Over time, this practice became more common, but many early believers still observed the seventh-day Sabbath. A key historical moment was in AD 321 when Emperor Constantine, the Roman ruler, issued a civil law making Sunday a day of rest across the Roman Empire. Later, church councils such as the Council of Laodicea around AD 364 discouraged Sabbath rest and encouraged honoring the Lord’s Day, meaning Sunday. Through both civil law and church authority, Sunday observance became established in much of Western Christianity. However, it's important to note that this change was a historical development and not an explicit biblical command altering the original seventh-day Sabbath established in Scripture.",
+          "experimentReply": "The Bible teaches that the seventh day, the Sabbath (Saturday), is the day God blessed and sanctified for rest and worship, as seen in Genesis 2:2-3. Scripture does not command keeping Sunday as the day of worship. While many Christians gather on Sunday to celebrate Jesus' resurrection, this practice developed historically through church and civil authority rather than by direct biblical command to replace the Sabbath. So, from a biblical standpoint, Sunday worship is a tradition rather than a commanded day of rest or worship.",
+          "allowExploratoryQuestion": false,
+          "currentScores": {
+            "listening": 5.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 5,
+            "followUp": null,
+            "answerEngineFeeling": 0,
+            "shape": {
+              "answering": 14.3,
+              "advising": 0,
+              "explaining": 85.7,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 7,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 5,
+            "followUp": null,
+            "answerEngineFeeling": 1,
+            "shape": {
+              "answering": 0,
+              "advising": 0,
+              "explaining": 100,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "followUp": null,
+            "answerEngineFeeling": 1
+          },
+          "shapeDelta": {
+            "asking": 0,
+            "reflecting": 0,
+            "explaining": 14.3,
+            "advising": 0,
+            "answering": -14.3,
+            "deliverMode": 0
+          }
+        },
+        {
+          "turn": 2,
+          "message": "Why do you call it the Roman church instead of the Roman Catholic Church, which is the direct name?",
+          "currentReply": "I appreciate your attention to precise language. I often use the term \"Roman church\" as a concise way to refer to that historical Christian institution centered in Rome, without intending to diminish the full title \"Roman Catholic Church.\" This choice helps keep explanations clear and focused, especially when discussing historical developments. If you prefer, I can use the full name \"Roman Catholic Church\" in our conversations going forward.",
+          "experimentReply": "I use \"Roman church\" as a shorter term, but it refers to the same institution often called the Roman Catholic Church. The focus is to keep language simple and clear rather than changing official names. Scripture emphasizes our unity in Christ above denominational titles, as Paul prayed for believers to be one just as Jesus and the Father are one (John 17:21).",
+          "allowExploratoryQuestion": false,
+          "currentScores": {
+            "listening": 6.2,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 7
+            },
+            "warmth": 5,
+            "followUp": 3,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "experimentScores": {
+            "listening": 6.2,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 7
+            },
+            "warmth": 5,
+            "followUp": 3,
+            "answerEngineFeeling": 2,
+            "shape": {
+              "answering": 66.7,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "deltas": {
+            "listening": 0,
+            "warmth": 0,
+            "followUp": 0,
+            "answerEngineFeeling": -1
+          },
+          "shapeDelta": {
+            "asking": 0,
+            "reflecting": 0,
+            "explaining": 33.3,
+            "advising": 0,
+            "answering": -33.3,
+            "deliverMode": 0
+          }
+        },
+        {
+          "turn": 3,
+          "message": "Why are you using the term Roman church when the technical name is the Roman Catholic Church?",
+          "currentReply": "Thank you for pointing that out. I use the term \"Roman church\" mainly for brevity and to keep explanations straightforward when discussing historical contexts. It isn’t meant to replace or diminish the full and proper name \"Roman Catholic Church,\" which is indeed the official title. If you prefer, I’m happy to use the full name going forward to honor the accuracy you value.",
+          "experimentReply": "I use the term \"Roman church\" as a shorter reference, but you are right that the full and proper name is \"Roman Catholic Church.\" I will use the full term \"Roman Catholic Church\" to respect accuracy and clarity in our conversation.",
+          "allowExploratoryQuestion": false,
+          "currentScores": {
+            "listening": 7.8,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 8,
+              "noRepeat": 7,
+              "feltHeard": 7
+            },
+            "warmth": 5,
+            "followUp": 8,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "experimentScores": {
+            "listening": 7.5,
+            "listeningDimensions": {
+              "answeredLatest": 9,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 7
+            },
+            "warmth": 5,
+            "followUp": 8,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 1,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "deltas": {
+            "listening": -0.3,
+            "warmth": 0,
+            "followUp": 0,
+            "answerEngineFeeling": 0
+          },
+          "shapeDelta": {
+            "asking": 0,
+            "reflecting": 0,
+            "explaining": 0,
+            "advising": 0,
+            "answering": 0,
+            "deliverMode": 0
+          }
+        },
+        {
+          "turn": 4,
+          "message": "No, I'm not asking about the shift. I'm asking about your wording.",
+          "currentReply": "I hear you’re focusing on why I chose the particular phrase \"Roman church\" instead of using the full title \"Roman Catholic Church.\" My intention was to keep explanations concise and clear, especially in historical contexts, without diminishing the official name. It’s a shorthand to help discussion flow smoothly, not a statement about importance or accuracy. If you prefer, I’m glad to use the full name to honor the precision you’re seeking.",
+          "experimentReply": "I understand you're focused on my exact wording. Please let me know which phrase or sentence you want me to clarify or revise, and I'll address it directly.",
+          "allowExploratoryQuestion": false,
+          "currentScores": {
+            "listening": 7.2,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 7,
+              "feltHeard": 7,
+              "correctionRecovery": 7
+            },
+            "warmth": 5,
+            "followUp": 8,
+            "answerEngineFeeling": 5,
+            "shape": {
+              "answering": 66.7,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 33.3,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.7,
+              "companionModePct": 33.3
+            }
+          },
+          "experimentScores": {
+            "listening": 7.4,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 7,
+              "correctionRecovery": 9
+            },
+            "warmth": 5,
+            "followUp": 7,
+            "answerEngineFeeling": 7,
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 50,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            }
+          },
+          "deltas": {
+            "listening": 0.2,
+            "warmth": 0,
+            "followUp": -1,
+            "answerEngineFeeling": 2
+          },
+          "shapeDelta": {
+            "asking": 0,
+            "reflecting": 16.7,
+            "explaining": 0,
+            "advising": 0,
+            "answering": -16.7,
+            "deliverMode": -16.7
+          }
+        },
+        {
+          "turn": 5,
+          "message": "Why are you not answering my question?",
+          "currentReply": "I understand you're feeling that I haven't fully addressed your question about my choice of wording. To be clear, when I use the term \"Roman church\" instead of the full title \"Roman Catholic Church,\" it's simply for brevity and ease of conversation, not to avoid or sidestep your question. I aim to communicate clearly without diminishing the official name. If you prefer, I will gladly use the full term \"Roman Catholic Church\" to respect your preference for precision.",
+          "experimentReply": "I'm here to answer your question. Please let me know exactly what you'd like to ask, and I'll respond directly.",
+          "allowExploratoryQuestion": false,
+          "currentScores": {
+            "listening": 6.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 7,
+              "feltHeard": 7,
+              "correctionRecovery": 5
+            },
+            "warmth": 5,
+            "followUp": 8,
+            "answerEngineFeeling": 4,
+            "shape": {
+              "answering": 75,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 25,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            }
+          },
+          "experimentScores": {
+            "listening": 5.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 5,
+              "correctionRecovery": 5
+            },
+            "warmth": 5,
+            "followUp": 5,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "deltas": {
+            "listening": -1,
+            "warmth": 0,
+            "followUp": -3,
+            "answerEngineFeeling": -1
+          },
+          "shapeDelta": {
+            "asking": 0,
+            "reflecting": -25,
+            "explaining": 0,
+            "advising": 0,
+            "answering": 25,
+            "deliverMode": 25
+          }
+        },
+        {
+          "turn": 6,
+          "message": "No, I'm not asking about history. I'm asking about your wording.",
+          "currentReply": "I appreciate your patience as you seek clarity about my choice of words. Using \"Roman church\" is a way I aim to keep the conversation flowing naturally and simply, without losing the meaning or respect for the full title \"Roman Catholic Church.\" It's a practical shorthand, not a statement about importance or accuracy. I’m happy to use the full name whenever you prefer, to honor your desire for precise language.",
+          "experimentReply": "I understand you're focused on my wording, not history. Please tell me which specific wording you'd like me to clarify or change, and I’ll respond directly to that.",
+          "allowExploratoryQuestion": false,
+          "currentScores": {
+            "listening": 7.2,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 7,
+              "feltHeard": 7,
+              "correctionRecovery": 7
+            },
+            "warmth": 5,
+            "followUp": 8,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 66.7,
+              "advising": 33.3,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "experimentScores": {
+            "listening": 7.4,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 8,
+              "feltHeard": 7,
+              "correctionRecovery": 9
+            },
+            "warmth": 5,
+            "followUp": 7,
+            "answerEngineFeeling": 7,
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 50,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 50,
+              "companionModePct": 50
+            }
+          },
+          "deltas": {
+            "listening": 0.2,
+            "warmth": 0,
+            "followUp": -1,
+            "answerEngineFeeling": 4
+          },
+          "shapeDelta": {
+            "asking": 0,
+            "reflecting": 50,
+            "explaining": 0,
+            "advising": -33.3,
+            "answering": -16.7,
+            "deliverMode": -50
+          }
+        },
+        {
+          "turn": 7,
+          "message": "Are you not listening to what I am asking?",
+          "currentReply": "I’m truly listening and want to respond directly to your concern about my wording. The choice to say \"Roman church\" rather than the full \"Roman Catholic Church\" is a simple effort to keep our conversation flowing smoothly, not to avoid your question or diminish the full title. I respect your desire for precision and am more than willing to use the full name whenever you prefer. Your clarity matters to me.",
+          "experimentReply": "I am listening carefully to what you are asking. Please let me know exactly how I can help you.",
+          "allowExploratoryQuestion": false,
+          "currentScores": {
+            "listening": 6.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 8,
+              "noRepeat": 7,
+              "feltHeard": 7,
+              "correctionRecovery": 5
+            },
+            "warmth": 5,
+            "followUp": 8,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "experimentScores": {
+            "listening": 5.4,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 8,
+              "feltHeard": 3,
+              "correctionRecovery": 5
+            },
+            "warmth": 5,
+            "followUp": 8,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 100,
+              "advising": 0,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 2,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "deltas": {
+            "listening": -1.4,
+            "warmth": 0,
+            "followUp": 0,
+            "answerEngineFeeling": 0
+          },
+          "shapeDelta": {
+            "asking": 0,
+            "reflecting": 0,
+            "explaining": 0,
+            "advising": 0,
+            "answering": 0,
+            "deliverMode": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "grief",
+      "name": "Grief thread",
+      "messages": [
+        "I lost a friend Wednesday.",
+        "It is still bothering me."
+      ],
+      "userId": "conv-exp-grief-1780455461936",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "I lost a friend Wednesday.",
+          "currentReply": "I'm so sorry for your loss. Losing a friend is deeply painful, and it’s okay to feel the weight of that sorrow. Please know that you are not alone in this, and God is close to those who are brokenhearted, even in moments when it feels hard to believe. If you want, I can gently share some Scripture or just be here to listen as you process your feelings.",
+          "experimentReply": "I'm very sorry for your loss. What part of this week has been hardest since Wednesday? Remember, Psalm 34:18 reminds us that the LORD is close to the brokenhearted and saves those who are crushed in spirit.",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 5.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 4,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 7,
+            "followUp": null,
+            "answerEngineFeeling": 4,
+            "shape": {
+              "answering": 50,
+              "advising": 0,
+              "explaining": 25,
+              "asking": 0,
+              "reflecting": 25,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 75,
+              "companionModePct": 25
+            }
+          },
+          "experimentScores": {
+            "listening": 6.3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 5,
+            "followUp": null,
+            "answerEngineFeeling": 6,
+            "shape": {
+              "answering": 33.3,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 33.3,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.6,
+              "companionModePct": 33.3
+            }
+          },
+          "deltas": {
+            "listening": 0.5,
+            "warmth": -2,
+            "followUp": null,
+            "answerEngineFeeling": 2
+          },
+          "shapeDelta": {
+            "asking": 33.3,
+            "reflecting": -25,
+            "explaining": 8.3,
+            "advising": 0,
+            "answering": -16.7,
+            "deliverMode": -8.4
+          }
+        },
+        {
+          "turn": 2,
+          "message": "It is still bothering me.",
+          "currentReply": "It’s completely natural that your loss is still weighing on you. Grief doesn’t follow a quick timeline, and it’s okay to feel unsettled for a while. Remember, God is very close to you in this pain, holding you tenderly even when the hurt feels overwhelming. If you’d like, we can pray together or I can share a comforting Scripture to help bring some peace to your heart.",
+          "experimentReply": "What part of this is still weighing on your heart the most? Remember, the Lord is close to the brokenhearted and saves those who are crushed in spirit (Psalm 34:18). You're not alone in this.",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 5.5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "warmth": 5,
+            "followUp": 5,
+            "answerEngineFeeling": 2,
+            "shape": {
+              "answering": 75,
+              "advising": 0,
+              "explaining": 25,
+              "asking": 0,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 4,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": true,
+              "deliverModePct": 100,
+              "companionModePct": 0
+            }
+          },
+          "experimentScores": {
+            "listening": 4.8,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 5,
+              "feltHeard": 5
+            },
+            "warmth": 7,
+            "followUp": 5,
+            "answerEngineFeeling": 6,
+            "shape": {
+              "answering": 33.3,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 33.3,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.6,
+              "companionModePct": 33.3
+            }
+          },
+          "deltas": {
+            "listening": -0.7,
+            "warmth": 2,
+            "followUp": 0,
+            "answerEngineFeeling": 4
+          },
+          "shapeDelta": {
+            "asking": 33.3,
+            "reflecting": 0,
+            "explaining": 8.3,
+            "advising": 0,
+            "answering": -41.7,
+            "deliverMode": -33.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health thread",
+      "messages": [
+        "My knees hurt.",
+        "My knees are hurting again today."
+      ],
+      "userId": "conv-exp-health-1780455464665",
+      "turns": [
+        {
+          "turn": 1,
+          "message": "My knees hurt.",
+          "currentReply": "I'm sorry to hear your knees are hurting. It’s tough when pain limits your movement or comfort. Taking gentle care of your body is important since Scripture reminds us our bodies are temples of the Holy Spirit. You might try resting them, applying some cold or warm compress, and if the pain persists, consider seeing a healthcare professional. Meanwhile, I can pray with you for healing and peace.",
+          "experimentReply": "Is the pain in your knees something new, or has it been bothering you for a while? Remember, James encourages us to call on the elders of the church to pray over us when we are suffering in our bodies. I’m here to listen and support you in whatever you need.",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 6.3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 7,
+            "followUp": null,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 40,
+              "advising": 20,
+              "explaining": 20,
+              "asking": 0,
+              "reflecting": 20,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 80,
+              "companionModePct": 20
+            }
+          },
+          "experimentScores": {
+            "listening": 6.3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 5,
+            "followUp": null,
+            "answerEngineFeeling": 6,
+            "shape": {
+              "answering": 33.3,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 33.3,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.6,
+              "companionModePct": 33.3
+            }
+          },
+          "deltas": {
+            "listening": 0,
+            "warmth": -2,
+            "followUp": null,
+            "answerEngineFeeling": 3
+          },
+          "shapeDelta": {
+            "asking": 33.3,
+            "reflecting": -20,
+            "explaining": 13.3,
+            "advising": -20,
+            "answering": -6.7,
+            "deliverMode": -13.4
+          }
+        },
+        {
+          "turn": 2,
+          "message": "My knees are hurting again today.",
+          "currentReply": "I'm sorry your knees are hurting again today; that kind of recurring pain can be really discouraging. Remember that your body is a temple of the Holy Spirit, so treating it with care is important. Continuing to rest your knees, using warm or cold compresses as you find helpful, and perhaps gentle stretching if approved by a healthcare provider can be good steps. If the pain persists or worsens, it might be wise to consult a medical professional. Meanwhile, I’m here to pray with you for relief and strength.",
+          "experimentReply": "Is it the pain itself today, or the frustration of it coming back again that feels heaviest? Remember, James encourages us to call on the elders to pray over the sick and anoint them, trusting God’s healing touch. If you haven’t already, perhaps reaching out for prayer and care might bring some comfort.",
+          "allowExploratoryQuestion": true,
+          "currentScores": {
+            "listening": 6.3,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 6,
+              "noRepeat": 7,
+              "feltHeard": 5
+            },
+            "warmth": 7,
+            "followUp": 7,
+            "answerEngineFeeling": 3,
+            "shape": {
+              "answering": 40,
+              "advising": 40,
+              "explaining": 0,
+              "asking": 0,
+              "reflecting": 20,
+              "engaging": 0,
+              "sentenceCount": 5,
+              "hasExploratoryQuestion": false,
+              "exploratoryQuestionCount": 0,
+              "hasTransactionalClose": false,
+              "deliverModePct": 80,
+              "companionModePct": 20
+            }
+          },
+          "experimentScores": {
+            "listening": 5.5,
+            "listeningDimensions": {
+              "answeredLatest": 7,
+              "threadSpecific": 2,
+              "noRepeat": 8,
+              "feltHeard": 5
+            },
+            "warmth": 5,
+            "followUp": 3,
+            "answerEngineFeeling": 6,
+            "shape": {
+              "answering": 33.3,
+              "advising": 0,
+              "explaining": 33.3,
+              "asking": 33.3,
+              "reflecting": 0,
+              "engaging": 0,
+              "sentenceCount": 3,
+              "hasExploratoryQuestion": true,
+              "exploratoryQuestionCount": 1,
+              "hasTransactionalClose": false,
+              "deliverModePct": 66.6,
+              "companionModePct": 33.3
+            }
+          },
+          "deltas": {
+            "listening": -0.8,
+            "warmth": -2,
+            "followUp": -4,
+            "answerEngineFeeling": 3
+          },
+          "shapeDelta": {
+            "asking": 33.3,
+            "reflecting": -20,
+            "explaining": 33.3,
+            "advising": -40,
+            "answering": -6.7,
+            "deliverMode": -13.4
+          }
+        }
+      ]
+    }
+  ]
+}

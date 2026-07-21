@@ -49,10 +49,26 @@ const DIETARY_PATTERNS = [
   /\bleviticus\s*11\b/i,
   /\bdeuteronomy\s*14\b/i,
   /\bisaiah\s*66:?\s*17\b/i,
-  /\babomination\b/i,
   /\bmouse\b/i,
   /\bcan (christians|we) eat pork\b/i,
+  /\bcan we eat pork\b/i,
   /\beat pork\b/i,
+  /\bso are you saying\b.*\b(pork|swine|eat)\b/i,
+  /\bare you saying\b.*\b(eat pork|can eat)\b/i,
+];
+
+const KINGDOM_ON_EARTH_PATTERNS = [
+  /\bheaven on earth\b/i,
+  /\bkingdom on earth\b/i,
+  /\bkingdom coming here\b/i,
+  /\bkingdom come here\b/i,
+  /\bthy kingdom come\b/i,
+  /\bman staying on earth\b/i,
+  /\bmen staying on earth\b/i,
+  /\bpeople staying on earth\b/i,
+  /\bkingdom coming to earth\b/i,
+  /\binherit the earth\b/i,
+  /\bnew heavens and new earth\b/i,
 ];
 
 const DEATH_STATE_PATTERNS = [
@@ -93,7 +109,19 @@ function detectActs10Topic(message = '') {
 }
 
 function detectDietaryTopic(message = '') {
+  const m = String(message);
+  if (
+    /\babomination of desolation\b/i.test(m) ||
+    /\babomination of desalation\b/i.test(m) ||
+    (/\babomination\b/i.test(m) && /\b(daniel|desolation|holy place|matthew\s*24)\b/i.test(m))
+  ) {
+    return false;
+  }
   return matchesAny(message, DIETARY_PATTERNS);
+}
+
+function detectKingdomOnEarthTopic(message = '') {
+  return matchesAny(message, KINGDOM_ON_EARTH_PATTERNS);
 }
 
 function detectDeathStateTopic(message = '') {
@@ -118,6 +146,7 @@ function detectStrictTopicFromMessage(message = '') {
   if (detectDietaryTopic(m)) return 'dietary_law';
   if (detectDeathStateTopic(m)) return 'death_state';
 
+  if (detectKingdomOnEarthTopic(m)) return 'kingdom';
   if (/\b(sabbath|seventh day)\b/i.test(m)) return 'sabbath';
   if (/\bnew jerusalem\b/i.test(m)) return 'new_jerusalem';
   if (/\b(kingdom of heaven|kingdom of god|thy kingdom)\b/i.test(m)) return 'kingdom';
@@ -136,4 +165,6 @@ module.exports = {
   detectActs10Topic,
   detectDietaryTopic,
   detectDeathStateTopic,
+  detectKingdomOnEarthTopic,
+  KINGDOM_ON_EARTH_PATTERNS,
 };

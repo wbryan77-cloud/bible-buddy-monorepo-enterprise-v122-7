@@ -1,0 +1,61 @@
+{
+  "program": "BibleBuddy Enterprise Ownership Migration",
+  "batch": 2,
+  "name": "Authority Ownership Migration",
+  "generatedAt": "2026-07-17T00:49:35.894506+00:00",
+  "productionFilesAllowedToChange": [
+    "services/bibleCompanionOrchestrator.js",
+    "services/openAiFirstCompanionRuntime.js"
+  ],
+  "productionFilesProtected": [
+    "services/buddyBrain.js",
+    "services/masterBuddyRuntime.js",
+    "services/strictDoctrineGate.js",
+    "services/doctrineFinalAuthorityEngine.js",
+    "services/liveResponseOwner.js",
+    "services/singleCompanionContract.js",
+    "services/bibleWideReasoningEngine.js"
+  ],
+  "requiredAuthorityDomains": [
+    "SAFETY",
+    "SCRIPTURE",
+    "COMPANION"
+  ],
+  "scriptureOwnershipSignals": [
+    "strict doctrine topic",
+    "recognized Bible concept",
+    "explicit canonical Scripture reference",
+    "Scripture request intent",
+    "humanNeed equals doctrine_answer"
+  ],
+  "mandatoryInvariants": [
+    "A null semantic concept does not release a Scripture-owned request.",
+    "A Scripture-owned request does not fall through to OpenAI as truth authority.",
+    "OpenAI unavailability does not create core_connection_error for a recognized Scripture-owned request.",
+    "Successful routes continue through the existing final response owner.",
+    "No new runtime, dispatcher, route owner, or response owner is introduced."
+  ],
+  "requiredDirectCases": [
+    "What does Revelation 1:14-15 say?",
+    "What does Logos mean in John 1:1?",
+    "Read Psalm 23.",
+    "Explain Romans 8:1-4.",
+    "Compare Genesis 1:1 and John 1:1.",
+    "Give me the Bible verses that say Jesus had white skin.",
+    "Does Scripture explicitly state that this means divine nature?"
+  ],
+  "requiredNegativeControls": [
+    "I just want to talk for a minute.",
+    "My knees hurt today.",
+    "Please pray with me.",
+    "I am grieving."
+  ],
+  "rollbackRequired": true,
+  "stopCondition": "Stop after Scripture-owned requests are claimed by the live orchestrator and no longer reach the OpenAI connection-error path. Canonical verse-text retrieval remains Batch 3.",
+  "auditEvidence": {
+    "scannedFileCount": 804,
+    "runtimeCandidateCount": 295,
+    "dormantCandidateCount": 158,
+    "disconnectedCandidateCount": 92
+  }
+}

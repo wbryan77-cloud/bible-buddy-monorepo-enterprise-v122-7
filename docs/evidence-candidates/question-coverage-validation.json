@@ -1,0 +1,44 @@
+{
+  "ranAt": "2026-06-10T05:11:43.822Z",
+  "purpose": "Measure true question coverage across scoring methodologies",
+  "coverageA": {
+    "label": "Coverage A — current scorecard formula",
+    "numerator": 589,
+    "denominator": 1009,
+    "coveragePct": 58.4,
+    "note": "Denominator double-counts traceability questions already present in question-coverage-index"
+  },
+  "coverageB": {
+    "label": "Coverage B — exclude internal audit prompts",
+    "numerator": 457,
+    "denominator": 554,
+    "coveragePct": 82.5,
+    "phase3fCorpus": {
+      "numerator": 288,
+      "denominator": 385,
+      "coveragePct": 74.8
+    },
+    "internalAuditExcluded": 35
+  },
+  "coverageC": {
+    "label": "Coverage C — include imported audit prompts",
+    "numerator": 460,
+    "denominator": 589,
+    "coveragePct": 78.1,
+    "phase3fCorpus": {
+      "numerator": 293,
+      "denominator": 420,
+      "coveragePct": 69.8
+    },
+    "importedAuditPromptCount": 35
+  },
+  "weaknessDiagnosis": {
+    "currentScoreInflatedByDoubleCounting": true,
+    "corpusScopeSharePct": 0.12,
+    "scoringLimitationSharePct": 29.2,
+    "trueCoverageEstimatePct": 74.8
+  },
+  "safety": {
+    "validationOnly": true
+  }
+}

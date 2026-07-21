@@ -1,7 +1,7 @@
 # Phase 4F Combined Stability Regression Report
 
-Generated: 2026-06-12T01:21:22.515Z
-Duration: 47.9s
+Generated: 2026-06-12T02:19:54.207Z
+Duration: 48.6s
 Timeout budget per request: 55000ms
 
 ## 1_acts10_initial_x25
@@ -1381,7 +1381,7 @@ Timeout budget per request: 55000ms
 - [PASS] pressure no openai 100
 
 ## 14_heap_growth
-- [PASS] heap growth 47.8MB < 80MB
+- [PASS] heap growth 76.2MB < 80MB
 - [PASS] health snapshot
 
 ## Summary

@@ -1,0 +1,197 @@
+{
+  "ranAt": "2026-06-10T04:59:27.186Z",
+  "purpose": "Document where additional corpus maturity could improve coverage",
+  "opportunityCount": 8,
+  "totalDocumentedItems": 5199,
+  "opportunities": [
+    {
+      "type": "transcript_unavailable",
+      "count": 30,
+      "description": "YouTube sources without recovered transcripts — additional transcript recovery could expand scripture chains",
+      "blocksLearning": false
+    },
+    {
+      "type": "source_linkage_incomplete",
+      "count": 75,
+      "sampleTitles": [
+        "IOG Birmingham - \"This Little Light of Mine, I'm Gonna Let It Shine\"",
+        "IOG - \"The Gospel By The Prophet Zechariah\" 2026",
+        "IOG Bay Area - \"Prepare To Meet Your God\"",
+        "IOG Washington DC. - \"The Soul Is The Body, Not Inside The Body\"",
+        "IOG Detroit - \"Our God Dwells In The Thick Darkness\"",
+        "IOG Baton Rouge - \"Adversity Builds Character, If You Let It\"",
+        "IOG Houston - \"Understanding The Fear of the Lord\"",
+        "IOG Jackson - \"Breaking Bonds & Spiritual Strongholds\"",
+        "IOG Charlotte - \"The Purpose of the Ministry: Service Unto Salvation\"",
+        "IOG Bay Area - \"Hath God Cast Away His People Israel?\""
+      ],
+      "description": "Packets with missing or low-confidence doctrine pack linkage",
+      "blocksLearning": false
+    },
+    {
+      "type": "human_review_queue",
+      "count": 32,
+      "description": "Packets awaiting human review — completion could unlock additional classified scriptures",
+      "blocksLearning": false
+    },
+    {
+      "type": "scripture_chain_expansion_opportunity",
+      "count": 231,
+      "topics": [
+        "abraham",
+        "isaac",
+        "house_of_israel",
+        "captivity",
+        "regathering",
+        "new_jerusalem",
+        "disciples",
+        "cornelius",
+        "paul",
+        "peter_paul_alignment",
+        "death_state",
+        "resurrection",
+        "dietary_law",
+        "leviticus_23",
+        "passover",
+        "esau_edom_edomites",
+        "twelve tribes",
+        "sealing",
+        "revelation",
+        "birthright"
+      ],
+      "description": "Topics without attached scripture chains from the chain library",
+      "blocksLearning": false
+    },
+    {
+      "type": "continuity_expansion_opportunity",
+      "count": 41,
+      "topics": [
+        "abraham",
+        "isaac",
+        "house_of_israel",
+        "captivity",
+        "regathering",
+        "new_jerusalem",
+        "disciples",
+        "cornelius",
+        "paul",
+        "peter_paul_alignment",
+        "death_state",
+        "resurrection",
+        "dietary_law",
+        "leviticus_23",
+        "passover",
+        "esau_edom_edomites",
+        "twelve tribes",
+        "sealing",
+        "revelation",
+        "birthright"
+      ],
+      "description": "Topics with limited Genesis-to-Revelation continuity section coverage",
+      "blocksLearning": false
+    },
+    {
+      "type": "inheritance_expansion_opportunity",
+      "count": 227,
+      "topics": [
+        "abraham",
+        "isaac",
+        "house_of_israel",
+        "captivity",
+        "regathering",
+        "new_jerusalem",
+        "disciples",
+        "cornelius",
+        "paul",
+        "peter_paul_alignment",
+        "death_state",
+        "resurrection",
+        "dietary_law",
+        "leviticus_23",
+        "passover",
+        "esau_edom_edomites",
+        "twelve tribes",
+        "sealing",
+        "revelation",
+        "birthright"
+      ],
+      "description": "Topics with limited inheritance map connections",
+      "blocksLearning": false
+    },
+    {
+      "type": "topic_connectivity_opportunity",
+      "count": 50,
+      "topics": [
+        "feasts",
+        "jacob_israel_twelve_tribes",
+        "messiah_logos",
+        "jacob",
+        "israel",
+        "one_hundred_forty_four_thousand",
+        "peter",
+        "pentecost",
+        "abraham",
+        "gospel",
+        "millennial_kingdom_kingdom_on_earth",
+        "isaac",
+        "house_of_israel",
+        "captivity",
+        "new_jerusalem",
+        "cornelius",
+        "gentiles",
+        "peter_paul_alignment",
+        "leviticus_23",
+        "144000"
+      ],
+      "sampleOpportunities": [
+        {
+          "topic": "feasts",
+          "growthOpportunities": [
+            "expand_continuity_topic_connections"
+          ]
+        },
+        {
+          "topic": "jacob_israel_twelve_tribes",
+          "growthOpportunities": [
+            "expand_continuity_topic_connections"
+          ]
+        },
+        {
+          "topic": "messiah_logos",
+          "growthOpportunities": [
+            "add_child_topic_connections"
+          ]
+        },
+        {
+          "topic": "jacob",
+          "growthOpportunities": [
+            "expand_continuity_topic_connections"
+          ]
+        },
+        {
+          "topic": "israel",
+          "growthOpportunities": [
+            "expand_continuity_topic_connections"
+          ]
+        }
+      ],
+      "description": "Vine network topics that could strengthen parent, child, related, or continuity connections",
+      "blocksLearning": false
+    },
+    {
+      "type": "pathway_evidence_expansion_opportunity",
+      "count": 4513,
+      "candidateCount": 10,
+      "description": "Observed and candidate pathways that could benefit from additional independent source evidence",
+      "blocksLearning": false
+    }
+  ],
+  "safety": {
+    "informationalOnly": true,
+    "neverPreventsCorpusLearning": true,
+    "neverPreventsEnrichment": true,
+    "neverPreventsExpansion": true,
+    "neverPreventsFutureDiscovery": true,
+    "allOpportunitiesDocumented": true
+  }
+}

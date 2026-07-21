@@ -1,0 +1,128 @@
+{
+  "ranAt": "2026-06-10T04:19:07.139Z",
+  "percentages": {
+    "scriptureNormalizationCoveragePct": 100,
+    "chainAttachmentCoveragePct": 20.8,
+    "doctrinePackConnectivityPct": 89.7,
+    "inheritanceCoveragePct": 100,
+    "continuityCoveragePct": 100,
+    "topicConnectivityPct": 100,
+    "orphanTopicCount": 0,
+    "orphanMajorTopicCount": 0,
+    "duplicateChainRatePct": 0,
+    "reviewQueueSize": 32,
+    "reviewQueuePct": 15.9,
+    "traceabilityCoveragePct": 89.7,
+    "questionCoveragePct": 58.4,
+    "enrichmentCoveragePct": 100
+  },
+  "metrics": [
+    {
+      "name": "scripture_normalization_coverage",
+      "value": 1,
+      "target": 0.85,
+      "pct": 100,
+      "targetPct": 85,
+      "meetsTarget": true,
+      "ratioToTarget": 1.1764705882352942
+    },
+    {
+      "name": "chain_attachment_coverage",
+      "value": 0.20833333333333334,
+      "target": 0.5,
+      "pct": 20.8,
+      "targetPct": 50,
+      "meetsTarget": false,
+      "ratioToTarget": 0.4166666666666667
+    },
+    {
+      "name": "doctrine_pack_connectivity",
+      "value": 0.897,
+      "target": 0.7,
+      "pct": 89.7,
+      "targetPct": 70,
+      "meetsTarget": true,
+      "ratioToTarget": 1.2814285714285716
+    },
+    {
+      "name": "inheritance_coverage",
+      "value": 1,
+      "target": 0.8,
+      "pct": 100,
+      "targetPct": 80,
+      "meetsTarget": true,
+      "ratioToTarget": 1.25
+    },
+    {
+      "name": "continuity_coverage",
+      "value": 1,
+      "target": 0.7,
+      "pct": 100,
+      "targetPct": 70,
+      "meetsTarget": true,
+      "ratioToTarget": 1.4285714285714286
+    },
+    {
+      "name": "topic_connectivity",
+      "value": 1,
+      "target": 0.85,
+      "pct": 100,
+      "targetPct": 85,
+      "meetsTarget": true,
+      "ratioToTarget": 1.1764705882352942
+    },
+    {
+      "name": "traceability_coverage",
+      "value": 0.897,
+      "target": 0.9,
+      "pct": 89.7,
+      "targetPct": 90,
+      "meetsTarget": false,
+      "ratioToTarget": 0.9966666666666667
+    },
+    {
+      "name": "question_coverage",
+      "value": 0.584,
+      "target": 0.95,
+      "pct": 58.4,
+      "targetPct": 95,
+      "meetsTarget": false,
+      "ratioToTarget": 0.6147368421052631
+    },
+    {
+      "name": "enrichment_coverage",
+      "value": 1,
+      "target": 0.6,
+      "pct": 100,
+      "targetPct": 60,
+      "meetsTarget": true,
+      "ratioToTarget": 1.6666666666666667
+    }
+  ],
+  "orphanTopicCount": 0,
+  "orphanMajorTopicCount": 0,
+  "duplicateChainRate": 0,
+  "reviewQueueSize": 32,
+  "inheritanceRelationshipsDocumented": true,
+  "unconnectedChainCount": 0,
+  "orphanDoctrinePackCount": 0,
+  "majorDoctrinePackCount": 24,
+  "majorPacksWithWitnessInventory": 24,
+  "weakestAreas": [
+    "chain_attachment_coverage",
+    "question_coverage",
+    "traceability_coverage",
+    "scripture_normalization_coverage"
+  ],
+  "strongestAreas": [
+    "scripture_normalization_coverage",
+    "topic_connectivity",
+    "inheritance_coverage",
+    "doctrine_pack_connectivity"
+  ],
+  "recommendedNextActions": [
+    "Reduce human review queue (32 packets) via PDF auto-approval and transcript normalization"
+  ],
+  "allWeaknessesDocumented": true,
+  "noHiddenBottlenecks": true
+}

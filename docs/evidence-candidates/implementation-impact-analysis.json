@@ -1,0 +1,766 @@
+{
+  "ranAt": "2026-06-09T13:28:14.564Z",
+  "impacts": [
+    {
+      "topic": "death_state",
+      "displayName": "Death State",
+      "newScripturesAdded": 29,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "High",
+      "learningGainScore": 238,
+      "implementationImpactSummary": "29 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence High (informational — does not override support score or human review). Marked ready for implementation preparation after human review."
+    },
+    {
+      "topic": "part_the_times_the",
+      "displayName": "Part The Times The",
+      "newScripturesAdded": 41,
+      "newChainsAdded": 6,
+      "newQuestionsCovered": 4,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 195,
+      "implementationImpactSummary": "41 scriptures not yet on approved evidence cards. 6 chains beyond Phase 3E baseline. 4 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "sabbath",
+      "displayName": "Sabbath",
+      "newScripturesAdded": 2,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "High",
+      "learningGainScore": 188,
+      "implementationImpactSummary": "2 scriptures not yet on approved evidence cards. Confidence High (informational — does not override support score or human review). Marked ready for implementation preparation after human review."
+    },
+    {
+      "topic": "riches_gains_the_doctrine",
+      "displayName": "Riches Gains The Doctrine",
+      "newScripturesAdded": 46,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 187,
+      "implementationImpactSummary": "46 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "david",
+      "displayName": "David",
+      "newScripturesAdded": 30,
+      "newChainsAdded": 6,
+      "newQuestionsCovered": 4,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 162,
+      "implementationImpactSummary": "30 scriptures not yet on approved evidence cards. 6 chains beyond Phase 3E baseline. 4 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "messiah_logos",
+      "displayName": "Messiah & Logos",
+      "newScripturesAdded": 21,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "High",
+      "learningGainScore": 144,
+      "implementationImpactSummary": "21 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence High (informational — does not override support score or human review). Marked ready for implementation preparation after human review."
+    },
+    {
+      "topic": "eve",
+      "displayName": "Eve",
+      "newScripturesAdded": 28,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 133,
+      "implementationImpactSummary": "28 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "kingdom_of_god",
+      "displayName": "Kingdom of God",
+      "newScripturesAdded": 28,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 133,
+      "implementationImpactSummary": "28 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "beginning_jerusalem_the_gospel",
+      "displayName": "Beginning Jerusalem The Gospel",
+      "newScripturesAdded": 27,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 130,
+      "implementationImpactSummary": "27 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "the_awakening_hebrews_lesson",
+      "displayName": "The Awakening Hebrews Lesson",
+      "newScripturesAdded": 26,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 127,
+      "implementationImpactSummary": "26 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "ham",
+      "displayName": "Ham",
+      "newScripturesAdded": 25,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 126,
+      "implementationImpactSummary": "25 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "how_frail_lesson_handout",
+      "displayName": "How Frail Lesson Handout",
+      "newScripturesAdded": 25,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 124,
+      "implementationImpactSummary": "25 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "back_into_egypt_fnl",
+      "displayName": "Back Into Egypt Fnl",
+      "newScripturesAdded": 24,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 121,
+      "implementationImpactSummary": "24 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "greedy_dog_preachers_lesson",
+      "displayName": "Greedy Dog Preachers Lesson",
+      "newScripturesAdded": 24,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 121,
+      "implementationImpactSummary": "24 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "prayer",
+      "displayName": "Prayer",
+      "newScripturesAdded": 25,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 121,
+      "implementationImpactSummary": "25 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "lake_of_fire",
+      "displayName": "Lake of Fire",
+      "newScripturesAdded": 22,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 116,
+      "implementationImpactSummary": "22 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "the_last_trump_lesson",
+      "displayName": "The Last Trump Lesson",
+      "newScripturesAdded": 22,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 116,
+      "implementationImpactSummary": "22 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "there_god_but_jesus",
+      "displayName": "There God But Jesus",
+      "newScripturesAdded": 22,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 115,
+      "implementationImpactSummary": "22 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "angels",
+      "displayName": "Angels",
+      "newScripturesAdded": 21,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 113,
+      "implementationImpactSummary": "21 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "gods_judgment_lesson_handout",
+      "displayName": "Gods Judgment Lesson Handout",
+      "newScripturesAdded": 21,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 112,
+      "implementationImpactSummary": "21 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "jesus_the_christ_the",
+      "displayName": "Jesus The Christ The",
+      "newScripturesAdded": 21,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 112,
+      "implementationImpactSummary": "21 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "that_man_sin_lesson",
+      "displayName": "That Man Sin Lesson",
+      "newScripturesAdded": 21,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 112,
+      "implementationImpactSummary": "21 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "seek_god_now_time",
+      "displayName": "Seek God Now Time",
+      "newScripturesAdded": 20,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 109,
+      "implementationImpactSummary": "20 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "beware_spirits_all_are",
+      "displayName": "Beware Spirits All Are",
+      "newScripturesAdded": 20,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 109,
+      "implementationImpactSummary": "20 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "neither_democrats_nor_republicans",
+      "displayName": "Neither Democrats Nor Republicans",
+      "newScripturesAdded": 20,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 109,
+      "implementationImpactSummary": "20 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "john",
+      "displayName": "John",
+      "newScripturesAdded": 25,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 103,
+      "implementationImpactSummary": "25 scriptures not yet on approved evidence cards. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "the_unleavened_bread_journey",
+      "displayName": "The Unleavened Bread Journey",
+      "newScripturesAdded": 18,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 103,
+      "implementationImpactSummary": "18 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "the_foolishness_men_women",
+      "displayName": "The Foolishness Men Women",
+      "newScripturesAdded": 18,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 103,
+      "implementationImpactSummary": "18 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "satan",
+      "displayName": "Satan",
+      "newScripturesAdded": 17,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 102,
+      "implementationImpactSummary": "17 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "holy_spirit",
+      "displayName": "Holy Spirit",
+      "newScripturesAdded": 18,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 102,
+      "implementationImpactSummary": "18 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "the_state_gods_union",
+      "displayName": "The State Gods Union",
+      "newScripturesAdded": 17,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 100,
+      "implementationImpactSummary": "17 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "the_lords_determination_lesson",
+      "displayName": "The Lords Determination Lesson",
+      "newScripturesAdded": 17,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 100,
+      "implementationImpactSummary": "17 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "little_leaven_daily_readings",
+      "displayName": "Little Leaven Daily Readings",
+      "newScripturesAdded": 17,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 100,
+      "implementationImpactSummary": "17 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "modern_religion_emotionalism_not",
+      "displayName": "Modern Religion Emotionalism Not",
+      "newScripturesAdded": 17,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 100,
+      "implementationImpactSummary": "17 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "the_book_life_lesson",
+      "displayName": "The Book Life Lesson",
+      "newScripturesAdded": 16,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 97,
+      "implementationImpactSummary": "16 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "may_whoredom_aka_fornication",
+      "displayName": "May Whoredom Aka Fornication",
+      "newScripturesAdded": 16,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 97,
+      "implementationImpactSummary": "16 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "from_baby_manger_killer",
+      "displayName": "From Baby Manger Killer",
+      "newScripturesAdded": 16,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 97,
+      "implementationImpactSummary": "16 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "vengeance_the_lords_lesson",
+      "displayName": "Vengeance The Lords Lesson",
+      "newScripturesAdded": 16,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 97,
+      "implementationImpactSummary": "16 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "remember_the_mission_teach",
+      "displayName": "Remember The Mission Teach",
+      "newScripturesAdded": 16,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 97,
+      "implementationImpactSummary": "16 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "whisperer_will_separate_best",
+      "displayName": "Whisperer Will Separate Best",
+      "newScripturesAdded": 16,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 97,
+      "implementationImpactSummary": "16 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "heavens",
+      "displayName": "Heavens",
+      "newScripturesAdded": 10,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 96,
+      "implementationImpactSummary": "10 scriptures not yet on approved evidence cards. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "resurrection",
+      "displayName": "Resurrection",
+      "newScripturesAdded": 0,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 92,
+      "implementationImpactSummary": "Consolidates existing corpus without new scripture surface area. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "america_decline_rome_rising",
+      "displayName": "America Decline Rome Rising",
+      "newScripturesAdded": 14,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 91,
+      "implementationImpactSummary": "14 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "reap_what_you_sow",
+      "displayName": "Reap What You Sow",
+      "newScripturesAdded": 14,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 91,
+      "implementationImpactSummary": "14 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "killed_for_jesus_lesson",
+      "displayName": "Killed For Jesus Lesson",
+      "newScripturesAdded": 14,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 91,
+      "implementationImpactSummary": "14 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "content_with_what_you",
+      "displayName": "Content With What You",
+      "newScripturesAdded": 14,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 91,
+      "implementationImpactSummary": "14 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "circumcision_still_good_lesson",
+      "displayName": "Circumcision Still Good Lesson",
+      "newScripturesAdded": 12,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 85,
+      "implementationImpactSummary": "12 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "paul",
+      "displayName": "Paul",
+      "newScripturesAdded": 19,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 81,
+      "implementationImpactSummary": "19 scriptures not yet on approved evidence cards. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "abib_fresh_beginning_lesson",
+      "displayName": "Abib Fresh Beginning Lesson",
+      "newScripturesAdded": 10,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 79,
+      "implementationImpactSummary": "10 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "children_are_the_future",
+      "displayName": "Children Are The Future",
+      "newScripturesAdded": 10,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 79,
+      "implementationImpactSummary": "10 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "dietary_law",
+      "displayName": "Dietary Law",
+      "newScripturesAdded": 5,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "High",
+      "learningGainScore": 74,
+      "implementationImpactSummary": "5 scriptures not yet on approved evidence cards. Confidence High (informational — does not override support score or human review). Marked ready for implementation preparation after human review."
+    },
+    {
+      "topic": "peter",
+      "displayName": "Peter",
+      "newScripturesAdded": 12,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 67,
+      "implementationImpactSummary": "12 scriptures not yet on approved evidence cards. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "feasts",
+      "displayName": "Feast Days",
+      "newScripturesAdded": 2,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 51,
+      "implementationImpactSummary": "2 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "holiness",
+      "displayName": "Holiness",
+      "newScripturesAdded": 1,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 51,
+      "implementationImpactSummary": "1 scriptures not yet on approved evidence cards. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "open_topic_what_the",
+      "displayName": "Open Topic What The",
+      "newScripturesAdded": 10,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Medium",
+      "learningGainScore": 51,
+      "implementationImpactSummary": "10 scriptures not yet on approved evidence cards. Confidence Medium (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "covenants",
+      "displayName": "Covenants",
+      "newScripturesAdded": 7,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 40,
+      "implementationImpactSummary": "7 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "jacob",
+      "displayName": "Jacob",
+      "newScripturesAdded": 1,
+      "newChainsAdded": 3,
+      "newQuestionsCovered": 2,
+      "implementationConfidence": "Low",
+      "learningGainScore": 40,
+      "implementationImpactSummary": "1 scriptures not yet on approved evidence cards. 3 chains beyond Phase 3E baseline. 2 newly covered question variants. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "open_topic_does_genesis",
+      "displayName": "Open Topic Does Genesis",
+      "newScripturesAdded": 3,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 37,
+      "implementationImpactSummary": "3 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "open_topic_the_remnant",
+      "displayName": "Open Topic The Remnant",
+      "newScripturesAdded": 4,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 34,
+      "implementationImpactSummary": "4 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "home_israel_the_church",
+      "displayName": "Home Israel The Church",
+      "newScripturesAdded": 4,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 32,
+      "implementationImpactSummary": "4 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "michael_archangel",
+      "displayName": "Michael",
+      "newScripturesAdded": 4,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 32,
+      "implementationImpactSummary": "4 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "tithes",
+      "displayName": "Tithes",
+      "newScripturesAdded": 4,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 32,
+      "implementationImpactSummary": "4 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "noah",
+      "displayName": "Noah",
+      "newScripturesAdded": 4,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 32,
+      "implementationImpactSummary": "4 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "open_topic_fear_god",
+      "displayName": "Open Topic Fear God",
+      "newScripturesAdded": 4,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 32,
+      "implementationImpactSummary": "4 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "mark_of_the_beast",
+      "displayName": "Mark of the Beast",
+      "newScripturesAdded": 3,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 31,
+      "implementationImpactSummary": "3 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "great_tribulation",
+      "displayName": "Great Tribulation",
+      "newScripturesAdded": 3,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 28,
+      "implementationImpactSummary": "3 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "baptism",
+      "displayName": "Baptism",
+      "newScripturesAdded": 3,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 28,
+      "implementationImpactSummary": "3 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "marriage",
+      "displayName": "Marriage",
+      "newScripturesAdded": 3,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 28,
+      "implementationImpactSummary": "3 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "two_witnesses",
+      "displayName": "Two Witnesses",
+      "newScripturesAdded": 3,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 28,
+      "implementationImpactSummary": "3 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "mixed_where_now_according",
+      "displayName": "Mixed Where Now According",
+      "newScripturesAdded": 1,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 26,
+      "implementationImpactSummary": "1 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "iog_bay_area_prepare",
+      "displayName": "Iog Bay Area Prepare",
+      "newScripturesAdded": 1,
+      "newChainsAdded": 1,
+      "newQuestionsCovered": 1,
+      "implementationConfidence": "Low",
+      "learningGainScore": 26,
+      "implementationImpactSummary": "1 scriptures not yet on approved evidence cards. 1 chains beyond Phase 3E baseline. 1 newly covered question variants. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "144000",
+      "displayName": "144000",
+      "newScripturesAdded": 2,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 24,
+      "implementationImpactSummary": "2 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "the_israel_god_research",
+      "displayName": "The Israel God Research",
+      "newScripturesAdded": 2,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 24,
+      "implementationImpactSummary": "2 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "iog_stick_the_script",
+      "displayName": "Iog Stick The Script",
+      "newScripturesAdded": 1,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 17,
+      "implementationImpactSummary": "1 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "emotional",
+      "displayName": "Emotional",
+      "newScripturesAdded": 1,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 17,
+      "implementationImpactSummary": "1 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    },
+    {
+      "topic": "emotional_does_scripture_say",
+      "displayName": "Emotional Does Scripture Say",
+      "newScripturesAdded": 1,
+      "newChainsAdded": 0,
+      "newQuestionsCovered": 0,
+      "implementationConfidence": "Low",
+      "learningGainScore": 17,
+      "implementationImpactSummary": "1 scriptures not yet on approved evidence cards. Confidence Low (informational — does not override support score or human review)."
+    }
+  ],
+  "doctrineCompletenessScore": 6.7
+}

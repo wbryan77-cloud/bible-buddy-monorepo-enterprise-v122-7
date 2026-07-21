@@ -1,0 +1,125 @@
+{
+  "phase": "2J-B",
+  "description": "Admin decision stubs — fill decision fields manually. Do not auto-apply.",
+  "allowedDecisions": [
+    "approve_support_edge",
+    "approve_card_ref",
+    "reject",
+    "hold",
+    "future_research"
+  ],
+  "decisions": [
+    {
+      "candidateId": "sdp_0010",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): approve_card_ref"
+    },
+    {
+      "candidateId": "sdp_0037",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): approve_card_ref"
+    },
+    {
+      "candidateId": "sdp_0001",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): approve_card_ref"
+    },
+    {
+      "candidateId": "sdp_0023",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): approve_support_edge"
+    },
+    {
+      "candidateId": "sdp_0046",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): approve_card_ref"
+    },
+    {
+      "candidateId": "sdp_0008",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): approve_support_edge"
+    },
+    {
+      "candidateId": "sdp_0038",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): hold_for_more_review"
+    },
+    {
+      "candidateId": "sdp_0039",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): hold_for_more_review"
+    },
+    {
+      "candidateId": "sdp_0040",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): hold_for_more_review"
+    },
+    {
+      "candidateId": "sdp_0041",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): hold_for_more_review"
+    },
+    {
+      "candidateId": "sdp_0024",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): approve_support_edge"
+    },
+    {
+      "candidateId": "sdp_0033",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): hold_for_more_review"
+    },
+    {
+      "candidateId": "sdp_0034",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): hold_for_more_review"
+    },
+    {
+      "candidateId": "sdp_0035",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): hold_for_more_review"
+    },
+    {
+      "candidateId": "sdp_0007",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): future_research"
+    },
+    {
+      "candidateId": "sdp_0006",
+      "decision": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": "Recommended (advisory): future_research"
+    }
+  ]
+}

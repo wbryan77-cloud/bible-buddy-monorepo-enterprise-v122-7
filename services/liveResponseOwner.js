@@ -41,24 +41,17 @@ function buildLiveResponse({
     anchor,
   });
 
+  // Validation-only contract execution. The selected runtime owner
+  // remains authoritative for reply, Scripture, route and subject.
   const enforced = enforceSingleCompanionContract({
     draftReply: draft.reply || '',
     contract,
     scripture: draft.scripture || [],
   });
 
-  const absolute = repairAbsoluteForbiddenFinal(enforced.reply, {
-    ...contract,
-    humanNeed: humanNeed || contract.humanNeed,
-  });
-  let finalReply = enforced.reply;
-  let finalScripture = enforced.scripture;
-  let absoluteRepairLane = enforced.repairLane;
-  if (absolute.repaired && absolute.reply !== enforced.reply) {
-    finalReply = absolute.reply;
-    if (absolute.scripture?.length) finalScripture = absolute.scripture;
-    absoluteRepairLane = absolute.repairLane;
-  }
+  const finalReply = String(draft.reply || '').trim();
+  const finalScripture = draft.scripture || [];
+  const absoluteRepairLane = null;
 
   return {
     reply: finalReply,
@@ -69,7 +62,9 @@ function buildLiveResponse({
     masterRoute: draft.runtime?.masterRoute || `live_owner_${contract.mode}`,
     repairLane: absoluteRepairLane || enforced.repairLane,
     forbiddenPhraseDetected:
-      enforced.forbiddenPhraseDetected || scanForbiddenFinalSubstrings(finalReply, contract).length > 0,
+      enforced.forbiddenPhraseDetected ||
+      scanForbiddenFinalSubstrings(finalReply, contract).length > 0,
+    validationOnly: true,
   };
 }
 

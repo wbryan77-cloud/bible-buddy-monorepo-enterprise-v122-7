@@ -1,0 +1,122 @@
+{
+  "updatedAt": "2026-06-09T03:35:02.673Z",
+  "phases": [
+    "2M"
+  ],
+  "entries": [
+    {
+      "candidateId": "rec_0003",
+      "topic": "sabbath",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "reasonForDecision": "Strong Hebrews 4:9 chain; Exodus 31:13 covenant sign witness missing from frozen card.",
+      "relatedCandidates": [
+        "rec_0100",
+        "rec_0001",
+        "rec_0022",
+        "rec_0063",
+        "rec_0099"
+      ],
+      "phase": "2M",
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "productionApplied": true
+    },
+    {
+      "candidateId": "rec_0100",
+      "topic": "sabbath",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "reasonForDecision": "Jesus Sabbath custom chain complete; Exodus 31:13 strengthens covenant witness.",
+      "relatedCandidates": [
+        "rec_0003",
+        "rec_0001",
+        "rec_0022",
+        "rec_0063",
+        "rec_0099"
+      ],
+      "phase": "2M",
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "productionApplied": true
+    },
+    {
+      "candidateId": "rec_0001",
+      "topic": "sabbath",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "reasonForDecision": "Core seventh-day rationale; Exodus 31:13 adds perpetual covenant sign support.",
+      "relatedCandidates": [
+        "rec_0003",
+        "rec_0100",
+        "rec_0022",
+        "rec_0063",
+        "rec_0099"
+      ],
+      "phase": "2M",
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "productionApplied": true
+    },
+    {
+      "candidateId": "rec_0022",
+      "topic": "sabbath",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "reasonForDecision": "Saturday seventh-day chain strong; no contradiction scriptures unresolved.",
+      "relatedCandidates": [
+        "rec_0003",
+        "rec_0100",
+        "rec_0001",
+        "rec_0063",
+        "rec_0099"
+      ],
+      "phase": "2M",
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "productionApplied": true
+    },
+    {
+      "candidateId": "rec_0063",
+      "topic": "sabbath",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "reasonForDecision": "Pastoral Sabbath/Sunday tension; biblical seventh-day witnesses approved without doctrine change.",
+      "relatedCandidates": [
+        "rec_0003",
+        "rec_0100",
+        "rec_0001",
+        "rec_0022",
+        "rec_0099"
+      ],
+      "phase": "2M",
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "productionApplied": true
+    },
+    {
+      "candidateId": "rec_0099",
+      "topic": "sabbath",
+      "decision": "approve",
+      "reviewedBy": "William Bryan",
+      "reviewDate": "2026-06-09",
+      "reasonForDecision": "G2R rest chain complete; Exodus 31:13 fills remaining card witness gap.",
+      "relatedCandidates": [
+        "rec_0003",
+        "rec_0100",
+        "rec_0001",
+        "rec_0022",
+        "rec_0063"
+      ],
+      "phase": "2M",
+      "humanApprovalRequired": true,
+      "autoApplied": false,
+      "productionApplied": true
+    }
+  ]
+}

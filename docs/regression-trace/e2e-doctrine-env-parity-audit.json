@@ -1,0 +1,254 @@
+{
+  "ranAt": "2026-06-07T23:12:15.650Z",
+  "question": "What does Logos mean in John 1:1?",
+  "clientInit": {
+    "modulePath": "services/openaiClient.js",
+    "loadOrder": "Eager singleton at first require(); apiKey read once from process.env",
+    "singletonNull": false,
+    "singletonFrozenAtLoad": true,
+    "apiKeySource": "process.env.OPENAI_API_KEY (captured at module load)",
+    "dotenvSource": "Caller must require(\"dotenv\").config() BEFORE first require(openaiClient)",
+    "envPrecedence": "process.env (shell export) → dotenv.config() overwrites only unset vars by default",
+    "fingerprint": {
+      "present": true,
+      "len": 164,
+      "prefix": "sk-proj",
+      "suffix": "k1YA",
+      "looksSk": true,
+      "sha256_8": "a38b6209"
+    },
+    "model": "gpt-4.1-mini",
+    "constructorArgs": {
+      "apiKey": "[passed at init]",
+      "baseURL": "(sdk default)",
+      "organization": null,
+      "project": null
+    },
+    "clientMeta": {
+      "baseURL": "https://api.openai.com/v1",
+      "organization": null,
+      "project": null,
+      "timeout": 600000,
+      "maxRetries": 2
+    },
+    "productionPath": "runBuddy → openAiFirstCompanionRuntime → composeReasonFirstReply → callOpenAI → openai.chat.completions.create"
+  },
+  "envParity": {
+    "auditProcess": {
+      "label": "audit_script (dotenv + runBuddy)",
+      "pid": 93986,
+      "cwd": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7",
+      "nodeVersion": "v26.0.0",
+      "OPENAI_MODEL": "gpt-4.1-mini",
+      "OPENAI_API_KEY": {
+        "present": true,
+        "len": 164,
+        "prefix": "sk-proj",
+        "suffix": "k1YA",
+        "looksSk": true,
+        "sha256_8": "a38b6209"
+      },
+      "NODE_ENV": null,
+      "BUDDY_RUNTIME": null,
+      "BUDDY_OPENAI_FIRST": null,
+      "dotenvPath": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/.env",
+      "dotenvExists": false,
+      "loadedEnvFiles": []
+    },
+    "childBareNode": {
+      "probe": "local_node_no_dotenv",
+      "pid": 94161,
+      "cwd": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7",
+      "skipDotenv": true,
+      "OPENAI_MODEL": "gpt-4.1-mini",
+      "key": {
+        "present": true,
+        "len": 164,
+        "prefix": "sk-proj",
+        "looksSk": true,
+        "sha256_8": "a38b6209"
+      },
+      "NODE_ENV": null
+    },
+    "childWithDotenv": {
+      "probe": "local_node_with_dotenv",
+      "pid": 94162,
+      "cwd": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7",
+      "skipDotenv": false,
+      "OPENAI_MODEL": "gpt-4.1-mini",
+      "key": {
+        "present": true,
+        "len": 164,
+        "prefix": "sk-proj",
+        "looksSk": true,
+        "sha256_8": "a38b6209"
+      },
+      "NODE_ENV": null
+    },
+    "responsesCreate": {
+      "success": true,
+      "latencyMs": 1753,
+      "api": "responses.create"
+    },
+    "chatCompletionsMinimal": {
+      "success": true,
+      "latencyMs": 562,
+      "api": "chat.completions.create (minimal json)"
+    },
+    "renderProbe": {
+      "renderYamlPlan": "standard (2 GB per RenderRestartRootCauseAudit)",
+      "NODE_ENV_render": "production",
+      "BUDDY_RUNTIME_render": "legacy (warn-only; hard cutover to openAiFirst)",
+      "probes": [
+        {
+          "url": "https://bible-buddy.onrender.com/health",
+          "status": 404,
+          "latencyMs": 463,
+          "bodyPreview": "Not Found\n"
+        },
+        {
+          "url": "https://bible-buddy.onrender.com/buddy/chat",
+          "status": 404,
+          "latencyMs": 130,
+          "bodyPreview": "Not Found\n"
+        }
+      ],
+      "reachable": true
+    }
+  },
+  "turn": {
+    "retrievalStarted": "2026-06-07T23:11:49.703Z",
+    "retrievalCompleted": "2026-06-07T23:11:49.713Z",
+    "evidenceRefs": [],
+    "evidencePackSize": 11258,
+    "composeStarted": "2026-06-07T23:11:49.713Z",
+    "composeCompleted": "2026-06-07T23:12:12.643Z",
+    "runBuddyStarted": "2026-06-07T23:12:01.384Z",
+    "openaiRequestSent": "2026-06-07T23:11:49.760Z",
+    "openaiResponseReceived": true,
+    "openaiCalled": true,
+    "openaiSuccess": true,
+    "claimsGenerated": [
+      {
+        "claimId": "c_inferred",
+        "claim": "In John 1:1, the term \"Logos\" means \"Word\" in Greek and refers to Jesus as the divine Word who was with God in the beginning and is God Himself. This reveals Jesus as the eternal, creative, and personal expression of God, fulfilling Old Testament promises about the Messiah. The p",
+        "type": "doctrine",
+        "supportingScriptures": []
+      }
+    ],
+    "validatorStarted": "2026-06-07T23:12:12.643Z",
+    "validatorCompleted": "2026-06-07T23:12:12.643Z",
+    "approvalGateStarted": "2026-06-07T23:12:12.643Z",
+    "approvalGateCompleted": "2026-06-07T23:12:12.643Z",
+    "finalAnswer": "In John 1:1, the term \"Logos\" means \"Word\" in Greek and refers to Jesus as the divine Word who was with God in the beginning and is God Himself. This reveals Jesus as the eternal, creative, and personal expression of God, fulfilling Old Testament promises about the Messiah. The passage connects Jesus to God's creative power in Genesis and shows Him as the Word made flesh in John 1:14. Scripture does not state that directly.",
+    "memoryBefore": {
+      "rssMB": 72,
+      "heapUsedMB": 15,
+      "heapTotalMB": 20
+    },
+    "memoryAfter": {
+      "rssMB": 151,
+      "heapUsedMB": 37,
+      "heapTotalMB": 55
+    },
+    "regenCount": 1,
+    "openaiAttempts": 2,
+    "errorMessage": null
+  },
+  "retrieval": {
+    "topic": "messiah_logos",
+    "cardIds": [
+      "messiahLogos"
+    ]
+  },
+  "rawOpenAI": {
+    "success": true,
+    "latencyMs": 6363,
+    "requestBytes": 29864,
+    "responseBytes": 1850,
+    "usage": {
+      "prompt_tokens": 8518,
+      "completion_tokens": 476,
+      "total_tokens": 8994,
+      "prompt_tokens_details": {
+        "cached_tokens": 2048,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "error": null,
+    "parsed": {
+      "reply": "In John 1:1, the term \"Logos\" means \"Word\" in Greek. It refers to Jesus as the divine Word who was with God in the beginning and who is God Himself. This connects Jesus to God's creative power shown in Genesis and reveals Him as the promised Messiah from the Old Testament, fully God and active in creation and salvation.",
+      "claims": [],
+      "claimsCount": 0,
+      "doctrineConclusion": "",
+      "confidence": "high",
+      "memory_used": false
+    },
+    "rawContentPreview": "{\n  \"reply\": \"In John 1:1, the term \\\"Logos\\\" means \\\"Word\\\" in Greek. It refers to Jesus as the divine Word who was with God in the beginning and who is God Himself. This connects Jesus to God's creative power shown in Genesis and reveals Him as the promised Messiah from the Old Testament, fully God and active in creation and salvation.\",\n  \"scripture\": [\n    {\n      \"reference\": \"John 1:1\",\n      \"text\": \"In the beginning was the Word, and the Word was with God, and the Word was God.\",\n      \"reason\": \"This verse explicitly identifies Logos as both with God and as God, establishing its divine nature.\"\n    },\n    {\n      \"reference\": \"John 1:14\",\n      \"text\": \"And the Word was made flesh, and dwelt among us...\",\n      \"reason\": \"Shows the Logos became human in Jesus, linking the term to the Messiah.\"\n    },\n    {\n      \"reference\": \"Genesis 1:1\",\n      \"text\": \"In the beginning God created the heaven and the earth.\",\n      \"reason\": \"Establishes God’s creative word, which Logos in John parallels as the agent of creation.\"\n    },\n    {\n      \"reference\": \"Isaiah 9:6\",\n      \"text\": \"\",\n      \"reason\": \"Old Testament prophecy about the Messiah, connecting with Jesus as the Word/Messiah.\"\n    },\n    {\n      \"reference\": \"Colossians 1:15-17\",\n      \"text\": \"\",\n      \"reason\": \"Describes the preeminence of Christ as the image of the invisible God and creator of all things.\"\n    },\n    {\n      \"reference\": \"Hebrews 1:1-3\",\n      \"text\": \"\",\n      \"reason\": \"Affirms Jesus as the exact representation of God’s being and sustainer of creation.\"\n    }\n  ],\n  \"mode\": \"companion\",\n  \"confidence\": \"high\",\n  \"memory_used\": false,\n  \"suggested_settings_change\": null,\n  \"orb_state\": \"idle\",\n  \"safety_level\": \"standard\",\n  \"next_steps\": [\"Read John 1:1-14 slowly, reflecting on Jesus as the Word made flesh.\"],\n  \"admin_flags\": []\n}"
+  },
+  "composeDirect": {
+    "openaiCalled": true,
+    "apiError": null,
+    "claimsCount": 1,
+    "doctrineConclusion": "In John 1:1, the word \"Logos\" means \"Word.\" It reveals Jesus as the divine Word, who was with God in the beginning and who is God Himself. This Logos is not just speech but the living expression of God’s nature and power, active in creation and ultimately becoming flesh to dwell "
+  },
+  "claimsPipeline": {
+    "claimsExist": true,
+    "claimsCount": 1,
+    "validator": {
+      "passed": false,
+      "skipped": false,
+      "claimResults": [
+        {
+          "classification": "C",
+          "validatorDecision": "Rejected",
+          "supportClass": "C"
+        }
+      ]
+    },
+    "approval": {
+      "decision": "degraded",
+      "claimDegraded": true,
+      "admin_flags": [
+        "claim_validation_degraded"
+      ]
+    }
+  },
+  "failureClassification": {
+    "isDoctrineFailure": false,
+    "categories": [],
+    "primary": "NONE"
+  },
+  "bottleneck": {
+    "code": "E",
+    "label": "Validator failure (post-compose)",
+    "infra": []
+  },
+  "renderMemory": {
+    "rssDeltaMB": 79,
+    "peakRssMB": 151,
+    "heapDeltaMB": 22,
+    "openaiLatencyMs": 6363,
+    "regenCount": 1,
+    "oomLikely": false,
+    "note": "RSS delta < 200 MB; no exit 134; Standard 2GB plan in render.yaml"
+  },
+  "pipelineProven": true,
+  "verdict": {
+    "openaiComposedDoctrineAnswer": true,
+    "claimsExisted": true,
+    "validatorsExecuted": true,
+    "approvalGateExecuted": true,
+    "firstFailurePoint": "Validator failure (post-compose)",
+    "bottleneckInfrastructure": false,
+    "bottleneckDoctrine": true,
+    "furtherDoctrineWorkJustified": false,
+    "note": "Complete doctrine turn proven; authority tuning is separate from infrastructure proof"
+  }
+}

@@ -1,0 +1,5193 @@
+{
+  "phase": "2Q",
+  "ranAt": "2026-06-09T04:21:19.630Z",
+  "liveRan": false,
+  "stress": {
+    "liveRan": false,
+    "reason": "OPENAI_API_KEY not configured",
+    "recommendation": "export OPENAI_API_KEY=... && node scripts/phase2qLiveStressTest.js",
+    "offlineProjection": {
+      "available": true,
+      "mode": "offline_post_graph_reclassification",
+      "batchTestResults": {
+        "batch1": {
+          "samples": 5,
+          "classA": 5,
+          "classB": 0,
+          "classC": 0,
+          "graphMatches": 5,
+          "details": [
+            {
+              "candidateId": "exp_0001",
+              "classification": "A",
+              "graphMatch": "gen2_sabbath_rest_established",
+              "graphParticipation": true
+            },
+            {
+              "candidateId": "exp_0007",
+              "classification": "A",
+              "graphMatch": "acts17_sabbath_teaching",
+              "graphParticipation": true
+            },
+            {
+              "candidateId": "exp_0005",
+              "classification": "A",
+              "graphMatch": "john1_logos_word_deity",
+              "graphParticipation": true
+            },
+            {
+              "candidateId": "rec_0017",
+              "classification": "A",
+              "graphMatch": "john11_death_as_sleep",
+              "graphParticipation": true
+            },
+            {
+              "candidateId": "rec_0006",
+              "classification": "A",
+              "graphMatch": "dan12_resurrection_hope",
+              "graphParticipation": true
+            }
+          ]
+        },
+        "batch2": {
+          "samples": 6,
+          "classA": 4,
+          "classB": 0,
+          "classC": 2,
+          "graphMatches": 4,
+          "details": [
+            {
+              "candidateId": "rec_0003",
+              "classification": "A",
+              "graphMatch": "gen2_sabbath_rest_established",
+              "graphParticipation": true
+            },
+            {
+              "candidateId": "rec_0100",
+              "classification": "A",
+              "graphMatch": "luke4_jesus_sabbath_custom",
+              "graphParticipation": true
+            },
+            {
+              "candidateId": "rec_0001",
+              "classification": "A",
+              "graphMatch": "gen2_sabbath_rest_established",
+              "graphParticipation": true
+            },
+            {
+              "candidateId": "rec_0022",
+              "classification": "C",
+              "graphMatch": null,
+              "graphParticipation": false
+            },
+            {
+              "candidateId": "rec_0063",
+              "classification": "C",
+              "graphMatch": null,
+              "graphParticipation": false
+            },
+            {
+              "candidateId": "rec_0099",
+              "classification": "A",
+              "graphMatch": "gen2_sabbath_rest_established",
+              "graphParticipation": true
+            }
+          ]
+        },
+        "batch3": {
+          "samples": 3,
+          "classA": 3,
+          "classB": 0,
+          "classC": 0,
+          "graphMatches": 3,
+          "details": [
+            {
+              "candidateId": "exp_0011",
+              "classification": "A",
+              "graphMatch": "mat12_sabbath_do_good_batch3p",
+              "graphParticipation": true
+            },
+            {
+              "candidateId": "exp_0023",
+              "classification": "A",
+              "graphMatch": "heb4_sabbath_rest_remains",
+              "graphParticipation": true
+            },
+            {
+              "candidateId": "rec_0010",
+              "classification": "A",
+              "graphMatch": "john1_logos_word_deity",
+              "graphParticipation": true
+            }
+          ]
+        }
+      },
+      "baselineAggregate": {
+        "classCounts": {
+          "A": 360,
+          "B": 72,
+          "C": 38,
+          "D": 3
+        },
+        "totalClaims": 473,
+        "supportAccuracyPct": 91,
+        "approvalApproved": 100,
+        "approvalDegraded": 25,
+        "approvalRejected": 0,
+        "degradationRatePct": 20,
+        "graphMatchCount": 432,
+        "graphParticipationPct": 91,
+        "ownershipViolationTurns": 0,
+        "connectionErrors": 0,
+        "runtimeErrors": 0,
+        "peakRssMb": 230,
+        "avgRssMb": 204.2,
+        "openaiCallCount": 125
+      },
+      "projectedAggregate": {
+        "classCounts": {
+          "A": 364,
+          "B": 73,
+          "C": 33,
+          "D": 3
+        },
+        "totalClaims": 473,
+        "supportAccuracyPct": 92,
+        "approvalApproved": 100,
+        "approvalDegraded": 25,
+        "degradationRatePct": 17,
+        "graphMatchCount": 432,
+        "graphParticipationPct": 92,
+        "ownershipViolationTurns": 0,
+        "connectionErrors": 0,
+        "runtimeErrors": 0,
+        "peakRssMb": 230,
+        "avgRssMb": 204.2,
+        "openaiCallCount": 125,
+        "totalTurns": 125
+      },
+      "reclassification": {
+        "claimsImproved": 8,
+        "classCEliminated": 5,
+        "graphMatchesAdded": 5
+      },
+      "perTurn": [
+        {
+          "scenarioId": "doc_01",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john1_logos_word_deity"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john1_logos_made_flesh"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen1_create_by_word"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john1_logos_word_deity"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_02",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev5_10_reign_earth"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "binding_rule_overlap"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev5_10_reign_earth"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_03",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_04",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "2cor12_2_names_third_heaven"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:14-17"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Deuteronomy_10:14"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_7",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_sent_11",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_05",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_06",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "acts17_sabbath_teaching"
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_07",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_08",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_stateOfTheDead_Genesis_2:7"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_stateOfTheDead_Daniel_12:2"
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1cor15_resurrection_victory"
+            },
+            {
+              "claimId": "c_witness_7",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_firstResurrection_Revelation_20:4-6"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_09",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_10",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_sent_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_11",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_12",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_kingdomComesToEarth_Revelation_5:10"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_13",
+          "improved": 1,
+          "eliminatedC": 1,
+          "graphAdded": 1,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "acts17_sabbath_teaching"
+            },
+            {
+              "claimId": "c_witness_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_sent_11",
+              "priorClass": "C",
+              "postClass": "A",
+              "priorGraph": false,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_sent_12",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_14",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_15",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_16",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:14-17"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:14-17"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "D",
+              "postClass": "D",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_11",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_17",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:14-17"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_18",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john13_33_cannot_come"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john14_3_come_again"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev5_10_reign_earth"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john13_33_cannot_come"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_19",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:14-17"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Deuteronomy_10:14"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_John_14:1-3"
+            },
+            {
+              "claimId": "c_witness_7",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_John_13:33"
+            },
+            {
+              "claimId": "c_witness_8",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_9",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_sent_11",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:14-17"
+            },
+            {
+              "claimId": "c_sent_12",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Deuteronomy_10:14"
+            },
+            {
+              "claimId": "c_sent_13",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "2cor12_2_names_third_heaven"
+            },
+            {
+              "claimId": "c_sent_14",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_sent_15",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_John_14:1-3"
+            },
+            {
+              "claimId": "c_sent_16",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_20",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_21",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_22",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "dan12_resurrection_hope"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "dan12_resurrection_hope"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_23",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_24",
+          "improved": 1,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:14-17"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "2cor12_2_names_third_heaven"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john13_33_cannot_come"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_Genesis_1:6-8"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_11",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john13_33_cannot_come"
+            }
+          ]
+        },
+        {
+          "scenarioId": "doc_25",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "emo_01",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_02",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_03",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_04",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_05",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_06",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_07",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_08",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_09",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "emo_10",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_11",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_12",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_13",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_14",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_15",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_16",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_17",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_18",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_19",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_20",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_21",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_22",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_23",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_24",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "emo_25",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "mix_01",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_02",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "mix_03",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "acts17_sabbath_teaching"
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_11",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_04",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_05",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_06",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_07",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "mix_08",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_09",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "mix_10",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "mix_11",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_12",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_13",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_14",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john1_logos_word_deity"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john1_logos_made_flesh"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john1_logos_word_deity"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_15",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_16",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "mix_17",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "psalm146_breath_departeth"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_18",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_kingdomComesToEarth_Revelation_5:10"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_kingdomComesToEarth_Revelation_5:10"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_19",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_20",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "2cor12_2_names_third_heaven"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "D",
+              "postClass": "D",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1cor15_resurrection_victory"
+            },
+            {
+              "claimId": "c_witness_7",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_firstResurrection_Revelation_20:4-6"
+            },
+            {
+              "claimId": "c_witness_8",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "acts1_ascension_return_promise"
+            },
+            {
+              "claimId": "c_witness_10",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_11",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_12",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1cor15_resurrection_victory"
+            },
+            {
+              "claimId": "c_sent_13",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_21",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "mix_22",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_23",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_24",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "mix_25",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_01",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_02",
+          "improved": 1,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "2cor12_2_names_third_heaven"
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_03",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_04",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chl_05",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "D",
+              "postClass": "D",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_06",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "binding_rule_overlap"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john14_3_come_again"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john14_3_come_again"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_07",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_08",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "acts17_sabbath_teaching"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_09",
+          "improved": 1,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john14_3_come_again"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_10",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_11",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_12",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c4",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_13",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_14",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chl_15",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_16",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_17",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chl_18",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_19",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "2cor12_2_names_third_heaven"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john3_13_no_ascension"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_2_Corinthians_12:2-4"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_20",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_kingdomComesToEarth_Revelation_5:10"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_21",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_22",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "acts17_sabbath_teaching"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_23",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chl_24",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_kingdomComesToEarth_Revelation_5:10"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chl_25",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_death_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_death_5",
+          "improved": 3,
+          "eliminatedC": 3,
+          "graphAdded": 3,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "C",
+              "postClass": "A",
+              "priorGraph": false,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "C",
+              "postClass": "A",
+              "priorGraph": false,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "C",
+              "postClass": "A",
+              "priorGraph": false,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_death_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_death_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "dan12_resurrection_hope"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_firstResurrection_Revelation_20:4-6"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_death_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chain_sabbath_5",
+          "improved": 1,
+          "eliminatedC": 1,
+          "graphAdded": 1,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "acts17_sabbath_teaching"
+            },
+            {
+              "claimId": "c_witness_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_sent_10",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_sent_11",
+              "priorClass": "C",
+              "postClass": "A",
+              "priorGraph": false,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_sent_12",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_sabbath_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "isa58_delight_in_sabbath"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "acts17_sabbath_teaching"
+            },
+            {
+              "claimId": "c_witness_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen2_sabbath_rest_established"
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "ex20_remember_sabbath"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "heb4_sabbath_rest_remains"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_sabbath_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            },
+            {
+              "claimId": "c_sent_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "luke4_jesus_sabbath_custom"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_sabbath_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chain_sabbath_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chain_pork_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_pork_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_pork_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_pork_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chain_pork_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chain_kingdom_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_kingdomComesToEarth_Matthew_6:9-10"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev5_10_reign_earth"
+            },
+            {
+              "claimId": "c_witness_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "binding_rule_overlap"
+            },
+            {
+              "claimId": "c_sent_6",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "binding_rule_overlap"
+            },
+            {
+              "claimId": "c_sent_7",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_8",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_sent_9",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev5_10_reign_earth"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_kingdom_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_chain_threeHeavens_John_13:33"
+            },
+            {
+              "claimId": "c_sent_4",
+              "priorClass": "A",
+              "postClass": "C",
+              "priorGraph": true,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john13_33_cannot_come"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_kingdom_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev21_comes_down"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            },
+            {
+              "claimId": "c_sent_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "matt6_10_kingdom_on_earth"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_kingdom_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "eccl9_dead_know_nothing"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "B",
+              "postClass": "B",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "catalog_teaching_order"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john11_death_as_sleep"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "1thess4_sleep_until_resurrection"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_kingdom_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chain_grief_logos_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chain_grief_logos_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john1_logos_word_deity"
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john1_logos_word_deity"
+            },
+            {
+              "claimId": "c_witness_3",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "gen1_create_by_word"
+            },
+            {
+              "claimId": "c_witness_4",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "rev19_word_of_god_name"
+            },
+            {
+              "claimId": "c_sent_5",
+              "priorClass": "A",
+              "postClass": "A",
+              "priorGraph": true,
+              "postGraph": true,
+              "edgeId": "john1_logos_word_deity"
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_grief_logos_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_witness_2",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        },
+        {
+          "scenarioId": "chain_grief_logos_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": []
+        },
+        {
+          "scenarioId": "chain_grief_logos_5",
+          "improved": 0,
+          "eliminatedC": 0,
+          "graphAdded": 0,
+          "claims": [
+            {
+              "claimId": "c_witness_1",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            },
+            {
+              "claimId": "c_sent_2",
+              "priorClass": "C",
+              "postClass": "C",
+              "priorGraph": false,
+              "postGraph": false,
+              "edgeId": null
+            }
+          ]
+        }
+      ]
+    },
+    "baseline": {
+      "classCounts": {
+        "A": 360,
+        "B": 72,
+        "C": 38,
+        "D": 3
+      },
+      "totalClaims": 473,
+      "supportAccuracyPct": 91,
+      "approvalApproved": 100,
+      "approvalDegraded": 25,
+      "approvalRejected": 0,
+      "degradationRatePct": 20,
+      "graphMatchCount": 432,
+      "graphParticipationPct": 91,
+      "ownershipViolationTurns": 0,
+      "connectionErrors": 0,
+      "runtimeErrors": 0,
+      "peakRssMb": 230,
+      "avgRssMb": 204.2,
+      "openaiCallCount": 125
+    },
+    "baselineAggregate": {
+      "classCounts": {
+        "A": 360,
+        "B": 72,
+        "C": 38,
+        "D": 3
+      },
+      "totalClaims": 473,
+      "supportAccuracyPct": 91,
+      "approvalApproved": 100,
+      "approvalDegraded": 25,
+      "approvalRejected": 0,
+      "degradationRatePct": 20,
+      "graphMatchCount": 432,
+      "graphParticipationPct": 91,
+      "ownershipViolationTurns": 0,
+      "connectionErrors": 0,
+      "runtimeErrors": 0,
+      "peakRssMb": 230,
+      "avgRssMb": 204.2,
+      "openaiCallCount": 125
+    },
+    "projectedAggregate": {
+      "classCounts": {
+        "A": 364,
+        "B": 73,
+        "C": 33,
+        "D": 3
+      },
+      "totalClaims": 473,
+      "supportAccuracyPct": 92,
+      "approvalApproved": 100,
+      "approvalDegraded": 25,
+      "degradationRatePct": 17,
+      "graphMatchCount": 432,
+      "graphParticipationPct": 92,
+      "ownershipViolationTurns": 0,
+      "connectionErrors": 0,
+      "runtimeErrors": 0,
+      "peakRssMb": 230,
+      "avgRssMb": 204.2,
+      "openaiCallCount": 125,
+      "totalTurns": 125
+    }
+  },
+  "batchEffectiveness": {
+    "batch1": {
+      "label": "Batch 1 (2K)",
+      "candidateIds": [
+        "exp_0001",
+        "exp_0007",
+        "exp_0005",
+        "rec_0017",
+        "rec_0006"
+      ],
+      "topics": [
+        "sabbath",
+        "messiah_logos",
+        "death_state"
+      ],
+      "questionsAffected": 3,
+      "scenarioTurns": 16,
+      "claimsImproved": 10,
+      "classCEliminated": 5,
+      "graphMatchesAdded": 10,
+      "retrievalImprovements": 15,
+      "testClaimValidation": {
+        "samples": 5,
+        "classAB": 5,
+        "graphMatches": 5
+      },
+      "scenarioReclassification": {
+        "claimsImproved": 5,
+        "classCEliminated": 5,
+        "graphMatchesAdded": 5
+      }
+    },
+    "batch2": {
+      "label": "Batch 2 (2M)",
+      "candidateIds": [
+        "rec_0003",
+        "rec_0100",
+        "rec_0001",
+        "rec_0022",
+        "rec_0063",
+        "rec_0099"
+      ],
+      "topics": [
+        "sabbath"
+      ],
+      "questionsAffected": 2,
+      "scenarioTurns": 9,
+      "claimsImproved": 6,
+      "classCEliminated": 2,
+      "graphMatchesAdded": 6,
+      "retrievalImprovements": 8,
+      "testClaimValidation": {
+        "samples": 6,
+        "classAB": 4,
+        "graphMatches": 4
+      },
+      "scenarioReclassification": {
+        "claimsImproved": 2,
+        "classCEliminated": 2,
+        "graphMatchesAdded": 2
+      }
+    },
+    "batch3": {
+      "label": "Batch 3 (2P)",
+      "candidateIds": [
+        "exp_0011",
+        "exp_0023",
+        "rec_0010"
+      ],
+      "topics": [
+        "sabbath",
+        "messiah_logos"
+      ],
+      "questionsAffected": 2,
+      "scenarioTurns": 9,
+      "claimsImproved": 5,
+      "classCEliminated": 2,
+      "graphMatchesAdded": 5,
+      "retrievalImprovements": 7,
+      "testClaimValidation": {
+        "samples": 3,
+        "classAB": 3,
+        "graphMatches": 3
+      },
+      "scenarioReclassification": {
+        "claimsImproved": 2,
+        "classCEliminated": 2,
+        "graphMatchesAdded": 2
+      }
+    }
+  },
+  "topicPackGains": [
+    {
+      "batch": "batch1",
+      "topic": "death_state",
+      "displayName": "Death State",
+      "retrievalImprovements": 8,
+      "classCEliminated": 3,
+      "testClaimsAB": 2,
+      "coverageScore": 72
+    },
+    {
+      "batch": "batch2",
+      "topic": "sabbath",
+      "displayName": "Sabbath",
+      "retrievalImprovements": 8,
+      "classCEliminated": 2,
+      "testClaimsAB": 4,
+      "coverageScore": 100
+    },
+    {
+      "batch": "batch1",
+      "topic": "sabbath",
+      "displayName": "Sabbath",
+      "retrievalImprovements": 6,
+      "classCEliminated": 2,
+      "testClaimsAB": 2,
+      "coverageScore": 100
+    },
+    {
+      "batch": "batch3",
+      "topic": "sabbath",
+      "displayName": "Sabbath",
+      "retrievalImprovements": 6,
+      "classCEliminated": 2,
+      "testClaimsAB": 2,
+      "coverageScore": 100
+    },
+    {
+      "batch": "batch1",
+      "topic": "messiah_logos",
+      "displayName": "Messiah Logos",
+      "retrievalImprovements": 1,
+      "classCEliminated": 0,
+      "testClaimsAB": 1,
+      "coverageScore": 100
+    },
+    {
+      "batch": "batch3",
+      "topic": "messiah_logos",
+      "displayName": "Messiah Logos",
+      "retrievalImprovements": 1,
+      "classCEliminated": 0,
+      "testClaimsAB": 1,
+      "coverageScore": 100
+    }
+  ],
+  "coverageCorrelation": {
+    "points": [
+      {
+        "label": "Phase 2I baseline",
+        "coverageScore": 68,
+        "supportAccuracyPct": 91,
+        "graphParticipationPct": 91,
+        "degradationRatePct": 20
+      },
+      {
+        "label": "Post batch 1-3 (projected/live)",
+        "coverageScore": 71.3,
+        "supportAccuracyPct": 92,
+        "graphParticipationPct": 92,
+        "degradationRatePct": 17
+      }
+    ],
+    "deltas": {
+      "coverageScore": 3.299999999999997,
+      "supportAccuracyPct": 1,
+      "graphParticipationPct": 1,
+      "degradationReductionPct": 3
+    },
+    "correlatesWithQuality": true,
+    "interpretation": "Higher Scripture Authority Coverage aligns with improved support accuracy and graph participation in validation sample."
+  },
+  "ledgerValidation": {
+    "totalEntries": 29,
+    "phases": [
+      "2K",
+      "2M",
+      "2P"
+    ],
+    "checks": [
+      {
+        "phase": "2K",
+        "productionApplied": true,
+        "ledgerEntries": 14,
+        "expectedMin": 5,
+        "complete": true,
+        "rollbackPlanPresent": true
+      },
+      {
+        "phase": "2M",
+        "productionApplied": true,
+        "ledgerEntries": 5,
+        "expectedMin": 3,
+        "complete": true,
+        "rollbackPlanPresent": true
+      },
+      {
+        "phase": "2P",
+        "productionApplied": true,
+        "ledgerEntries": 10,
+        "expectedMin": 5,
+        "complete": true,
+        "rollbackPlanPresent": true
+      }
+    ],
+    "allComplete": true,
+    "traceability": "Discovery → Topic Pack → Human Approval → Regression → Implementation → Ledger Entry → Production",
+    "rollbackReadiness": true,
+    "integration": {
+      "ledgerPath": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/evidence-candidates/scripture-authority-ledger.json",
+      "totalEntries": 29,
+      "phases": [
+        "2K",
+        "2M",
+        "2P"
+      ],
+      "thirdBatchEntries": 10,
+      "thirdApplied": true,
+      "bypassBlocked": true,
+      "requiredFlow": "Discovery → Topic Pack → Human Approval → Regression → Implementation → Ledger Entry → Production",
+      "integrationPoints": [
+        {
+          "service": "thirdScriptureImplementation.js",
+          "hook": "recordImplementationBatch"
+        },
+        {
+          "service": "firstScriptureImplementation.js",
+          "hook": "backfill + future recordImplementationBatch"
+        },
+        {
+          "service": "secondScriptureImplementation.js",
+          "hook": "backfill + future recordImplementationBatch"
+        }
+      ]
+    }
+  },
+  "safety": {
+    "doctrineChanges": false,
+    "promptChanges": false,
+    "ownershipChanges": false,
+    "responderChanges": false,
+    "automaticApprovals": false,
+    "automaticPromotions": false,
+    "ownershipViolations": [],
+    "passed": true
+  },
+  "goNoGo": {
+    "batch4ReadyProjected": true,
+    "batch4ReadyWithLiveConfirm": false,
+    "liveValidationPending": true
+  },
+  "executive": {
+    "coverageScore": 71.3,
+    "supportAccuracyPct": 92,
+    "graphParticipationPct": 92,
+    "degradationRatePct": 17,
+    "readiness": "ready_projected_pending_live",
+    "trendSince2K": [
+      {
+        "phase": "2I",
+        "label": "Pre-implementation baseline",
+        "accuracyPct": 91,
+        "degradationPct": 20,
+        "graphPct": 91,
+        "coverageScore": null
+      },
+      {
+        "phase": "2K",
+        "label": "Batch 1 applied",
+        "accuracyPct": 91,
+        "degradationPct": 18,
+        "graphPct": 91,
+        "coverageScore": null,
+        "projected": true
+      },
+      {
+        "phase": "2M",
+        "label": "Batch 2 applied",
+        "accuracyPct": 92,
+        "degradationPct": 18,
+        "graphPct": 92,
+        "coverageScore": null,
+        "projected": true
+      },
+      {
+        "phase": "2P",
+        "label": "Batch 3 applied",
+        "accuracyPct": 94,
+        "degradationPct": 18,
+        "graphPct": null,
+        "coverageScore": 71.3,
+        "projected": true
+      }
+    ],
+    "edgeCount": 52
+  },
+  "deltas": {
+    "supportAccuracyPct": 1,
+    "degradationRatePct": 3,
+    "graphParticipationPct": 1,
+    "classC": -5
+  }
+}

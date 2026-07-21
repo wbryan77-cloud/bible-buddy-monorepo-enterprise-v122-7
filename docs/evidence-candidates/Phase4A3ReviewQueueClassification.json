@@ -1,0 +1,415 @@
+{
+  "ranAt": "2026-06-10T06:51:36.651Z",
+  "phase": "4A.3",
+  "totalPackets": 32,
+  "packets": [
+    {
+      "packetId": "2314bff3de277337",
+      "title": "IOG — «¿Quién mató realmente a Jesús? ¡Adán!» 2026",
+      "category": "human_doctrinal_review",
+      "confidence": 0.85,
+      "implementationBlocker": false,
+      "recommendedAction": "human_review_required",
+      "doctrinePackCandidate": "iog_quin_mat_realmente",
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "packetId": "b846d45c4d53fbb5",
+      "title": "5 16 26 REAP WHAT YOU SOW",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "samuel",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "44e754f0a1a37bfc",
+      "title": "5 1 26 THE LORDS DETERMINATION",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "isaiah",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "c1736171b15850cb",
+      "title": "MAY 2 2026 KING DAVID A MAN AFTER GODS HEART",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "samuel",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "9b59cbaee1fafd84",
+      "title": "4 24 26 SEEK GOD NOW TIME IS SHORT",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "isaiah",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "7d32b4162e232af1",
+      "title": "4 18 26 VENGEANCE IS THE LORDS",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "isaiah",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "a53007f84669f544",
+      "title": "3 28 26 GODS JUDGMENT",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "samuel",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "4c43ae3ee0308687",
+      "title": "3 20 26 ABIB A FRESH BEGINNING",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "abib_fresh_beginning_revelation",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "b4dd8f1ca7267e53",
+      "title": "3 7 26 BEWARE OF SPIRITS ALL ARE NOT OF GOD",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "samuel",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "f1c730b26768c655",
+      "title": "2 27 26 FEAR GOD OR HELL FIRE and BORN AGAIN A MENTAL CHANGE ONLY OR A BODILY CHANGE TOO",
+      "category": "human_doctrinal_review",
+      "confidence": 0.85,
+      "implementationBlocker": false,
+      "recommendedAction": "human_review_required",
+      "doctrinePackCandidate": "lake_of_fire",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "535d053998cb9e2e",
+      "title": "2 28 26 REMEMBER THE MISSION… TEACH",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "ezekiel",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "e90b5339227d64ee",
+      "title": "2 20 26 . HOW FRAIL I AM",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "isaiah",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "f89643db12126250",
+      "title": "2 21 26 THE STATE OF GODS UNION. HATED NOW FLOURISHING SOON",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "isaiah",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "9c89d7ad0e5fdbb7",
+      "title": "1 31 26 … AT THE LAST TRUMP…",
+      "category": "traceability_only",
+      "confidence": 0.68,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "joshua",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "747a8f398395dde8",
+      "title": "website",
+      "category": "metadata_only",
+      "confidence": 0.95,
+      "implementationBlocker": false,
+      "recommendedAction": "accept",
+      "doctrinePackCandidate": "isaiah",
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "packetId": "f0a5e562723ae8c0",
+      "title": "locations",
+      "category": "metadata_only",
+      "confidence": 0.95,
+      "implementationBlocker": false,
+      "recommendedAction": "accept",
+      "doctrinePackCandidate": "john",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "66f62d1807d3821a",
+      "title": "research",
+      "category": "metadata_only",
+      "confidence": 0.95,
+      "implementationBlocker": false,
+      "recommendedAction": "accept",
+      "doctrinePackCandidate": "research_ecclesiastes_1213",
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "packetId": "29e068c6a5f31a14",
+      "title": "Baltimore — website",
+      "category": "metadata_only",
+      "confidence": 0.95,
+      "implementationBlocker": false,
+      "recommendedAction": "accept",
+      "doctrinePackCandidate": "isaiah",
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "packetId": "314a6b49660562c3",
+      "title": "lessons",
+      "category": "metadata_only",
+      "confidence": 0.95,
+      "implementationBlocker": false,
+      "recommendedAction": "accept",
+      "doctrinePackCandidate": "lessons_hebrews",
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "packetId": "d4dc681606b685a7",
+      "title": "Jacob & Esau",
+      "category": "classification_only",
+      "confidence": 0.82,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "packetId": "9f12d4f98850efa8",
+      "title": "IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"",
+      "category": "classification_only",
+      "confidence": 0.82,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "packetId": "d3ed8ef6022ee6ce",
+      "title": "IOG — \"Jesus en su templo; His Saints and Their Labors\" 2026",
+      "category": "classification_only",
+      "confidence": 0.6,
+      "implementationBlocker": false,
+      "recommendedAction": "defer",
+      "doctrinePackCandidate": "iog_jess_templo_sus",
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "packetId": "9a3766c73588b80b",
+      "title": "Feast Of Unleavened Bread 2022",
+      "category": "traceability_only",
+      "confidence": 0.6,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "ddbac389a0a30752",
+      "title": "Shows - The Israel of God",
+      "category": "metadata_only",
+      "confidence": 0.95,
+      "implementationBlocker": false,
+      "recommendedAction": "accept",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "a33d45f89badf0a7",
+      "title": "IOG — «Israel reemplazado por su hermano Esaú» 2026",
+      "category": "traceability_only",
+      "confidence": 0.6,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "766a34a8d00b68e5",
+      "title": "IOG - \"Israel el cautivo: de Babilonia a Babilonia\" 2026",
+      "category": "traceability_only",
+      "confidence": 0.6,
+      "implementationBlocker": false,
+      "recommendedAction": "accept_with_note",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "2a8bf3264ee88aa5",
+      "title": "IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026",
+      "category": "evidence_related",
+      "confidence": 0.65,
+      "implementationBlocker": false,
+      "recommendedAction": "defer",
+      "doctrinePackCandidate": "feasts",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "c0414b43a39a21e6",
+      "title": "IOG — «La Pascua: un festival pagano, no sagrado» (2026)",
+      "category": "human_doctrinal_review",
+      "confidence": 0.85,
+      "implementationBlocker": false,
+      "recommendedAction": "human_review_required",
+      "doctrinePackCandidate": "feasts",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "5cac9872fc71da4e",
+      "title": "IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026",
+      "category": "evidence_related",
+      "confidence": 0.65,
+      "implementationBlocker": false,
+      "recommendedAction": "defer",
+      "doctrinePackCandidate": "feasts",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "8989084b448edc41",
+      "title": "Israel School of Excellence is Training up the Next Generation #isoe #education",
+      "category": "metadata_only",
+      "confidence": 0.95,
+      "implementationBlocker": false,
+      "recommendedAction": "accept",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "01608a74d76e6e3f",
+      "title": "Emotional: I need comfort from Scripture.",
+      "category": "evidence_related",
+      "confidence": 0.7,
+      "implementationBlocker": false,
+      "recommendedAction": "defer",
+      "doctrinePackCandidate": "word_of_god",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "packetId": "2639da2385d53e32",
+      "title": "Challenge: Give me a clear yes or no from Scripture.",
+      "category": "evidence_related",
+      "confidence": 0.7,
+      "implementationBlocker": false,
+      "recommendedAction": "defer",
+      "doctrinePackCandidate": "word_of_god",
+      "reasons": [
+        "confidence_below_95"
+      ]
+    }
+  ],
+  "categoryCounts": {
+    "metadata_only": 7,
+    "classification_only": 3,
+    "traceability_only": 15,
+    "evidence_related": 4,
+    "human_doctrinal_review": 3
+  },
+  "executiveSummary": {
+    "metadataOnly": 7,
+    "classificationOnly": 3,
+    "traceabilityOnly": 15,
+    "evidenceRelated": 4,
+    "doctrinalReview": 3,
+    "trueReviewBurden": 10,
+    "implementationBlockers": 0
+  }
+}

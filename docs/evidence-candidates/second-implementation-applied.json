@@ -1,0 +1,85 @@
+{
+  "phase": "2M",
+  "appliedAt": "2026-06-09T03:33:43.571Z",
+  "batchIds": [
+    "rec_0003",
+    "rec_0100",
+    "rec_0001",
+    "rec_0022",
+    "rec_0063",
+    "rec_0099"
+  ],
+  "approvedIds": [
+    "rec_0003",
+    "rec_0100",
+    "rec_0001",
+    "rec_0022",
+    "rec_0063",
+    "rec_0099"
+  ],
+  "heldIds": [],
+  "rejectedIds": [],
+  "productionApplied": true,
+  "humanApproved": true,
+  "autoApplied": false,
+  "doctrineConclusionsChanged": false,
+  "promptChanges": false,
+  "changes": [
+    {
+      "candidateIds": [
+        "rec_0003",
+        "rec_0100",
+        "rec_0001",
+        "rec_0022",
+        "rec_0063",
+        "rec_0099"
+      ],
+      "file": "services/evidenceCards/sabbath.card.js",
+      "field": "supportingScriptures",
+      "beforeCount": 6,
+      "afterCount": 7,
+      "added": [
+        "Exodus 31:13"
+      ]
+    },
+    {
+      "candidateIds": [
+        "rec_0003"
+      ],
+      "file": "services/approvedSupportGraph.js",
+      "edgeId": "ex31_sabbath_sign_covenant_batch2m",
+      "edgeAdded": true,
+      "scriptures": [
+        "Exodus 31:13",
+        "Exodus 20:8-11",
+        "Genesis 2:2-3",
+        "Revelation 14:12"
+      ]
+    }
+  ],
+  "rollback": [
+    {
+      "file": "services/evidenceCards/sabbath.card.js",
+      "candidateIds": [
+        "rec_0003",
+        "rec_0100",
+        "rec_0001",
+        "rec_0022",
+        "rec_0063",
+        "rec_0099"
+      ],
+      "scripturesRemoved": [
+        "Exodus 31:13"
+      ],
+      "instruction": "Remove from supportingScriptures: Exodus 31:13"
+    },
+    {
+      "file": "services/approvedSupportGraph.js",
+      "candidateIds": [
+        "rec_0003"
+      ],
+      "edgeId": "ex31_sabbath_sign_covenant_batch2m",
+      "instruction": "Delete edge block with id 'ex31_sabbath_sign_covenant_batch2m'"
+    }
+  ]
+}

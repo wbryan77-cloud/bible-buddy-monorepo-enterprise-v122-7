@@ -1,0 +1,27 @@
+{
+  "part": "Part 3 - Baseline Tag",
+  "tagName": "founder-alpha-v1.0.0",
+  "tagObjectSha": "a7dcaab34eeb0b0f329e0bf16d9f1b4ff3d5ec26",
+  "dereferencedCommitSha": "d34d9f0f95c7cba8300221c4c70b6e89d0f48d18",
+  "matchesReleaseCommit": true,
+  "existingTagFoundBeforeCreation": false,
+  "overwritten": false,
+  "annotation": {
+    "releaseCommitSha": "d34d9f0f95c7cba8300221c4c70b6e89d0f48d18",
+    "verificationTimestamp": "2026-07-20T13:47:22Z",
+    "readinessResult": "READY_WITH_DOCUMENTED_WARNINGS",
+    "pass": 37,
+    "warn": 2,
+    "fail": 0,
+    "skip": 0,
+    "knownWarningsDocument": "docs/alpha/founder-alpha-release-verification-20260720-004049/FounderAlphaKnownWarnings.md",
+    "architectureFreezeReference": "docs/alpha/ArchitectureFreezeDeclaration.md",
+    "architectureFreezeCommit": "09626367d1fd586b83b807a15c078507fbdd8aa1"
+  },
+  "push": {
+    "pushed": true,
+    "remote": "origin",
+    "tagPushActionRequired": false,
+    "verifiedViaLsRemote": true
+  }
+}

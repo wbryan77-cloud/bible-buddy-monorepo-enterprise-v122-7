@@ -1,0 +1,30 @@
+{
+  "part": 2,
+  "title": "Regression Expectation Refresh",
+  "casesInspected": 6,
+  "classification": {
+    "OUTDATED_TEST_EXPECTATION": 6,
+    "REAL_PRODUCT_DEFECT": 0,
+    "HARNESS_FAILURE": 0,
+    "EXTERNAL_PROVIDER_FAILURE": 0
+  },
+  "rootCause": "services/liveRequestTrace.js unconditionally flagged any non-OpenAI answer over 20 chars as non_openai_speaker violation, a diagnostic-only (BUDDY_LIVE_TRACE gated) check that predates the Scripture Authority Engine.",
+  "filesChanged": [
+    "services/liveRequestTrace.js",
+    "scripts/liveRuntimeVerification.js",
+    "scripts/openAiFirstRegressionTest.js"
+  ],
+  "suitesBefore": {
+    "openAiFirstRegressionTest": "9/10",
+    "liveRuntimeVerification": "1/6"
+  },
+  "suitesAfter": {
+    "openAiFirstRegressionTest": "10/10",
+    "liveRuntimeVerification": "6/6"
+  },
+  "productionDefectsFound": 0,
+  "regressionConfirmedGreen": [
+    "scriptureFidelitySmoke",
+    "alphaCoreTruthSmoke"
+  ]
+}

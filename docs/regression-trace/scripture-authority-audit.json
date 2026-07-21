@@ -1,0 +1,471 @@
+{
+  "ranAt": "2026-06-07T22:58:24.318Z",
+  "keyPresent": true,
+  "topics": [
+    {
+      "id": "third_heaven",
+      "label": "Third heaven",
+      "question": "What is the third heaven?",
+      "pipelineBlocked": true,
+      "openaiCalled": false,
+      "preFailureA": false,
+      "retrievedEvidence": {
+        "topic": "heavens",
+        "effectiveTopic": "heavens",
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "approvedRefCount": 23,
+        "bindingRuleCount": 10,
+        "hasEvidence": true
+      },
+      "scripturesCited": [],
+      "claimsGenerated": [],
+      "claimTraces": [],
+      "validatorResult": {
+        "passed": true,
+        "skipped": false,
+        "unsupportedClaims": [],
+        "contradictedClaims": []
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "approvalDecision": "blocked_connection",
+      "authority": {
+        "evidenceDrivenPct": null,
+        "modelDrivenPct": null,
+        "totalUnits": 0,
+        "breakdown": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      },
+      "memoryBefore": {
+        "rssMB": 79,
+        "heapUsedMB": 17,
+        "heapTotalMB": 23
+      },
+      "memoryAfter": {
+        "rssMB": 137,
+        "heapUsedMB": 20,
+        "heapTotalMB": 37
+      }
+    },
+    {
+      "id": "kingdom",
+      "label": "Kingdom of God",
+      "question": "What is the kingdom of God?",
+      "pipelineBlocked": true,
+      "openaiCalled": false,
+      "preFailureA": false,
+      "retrievedEvidence": {
+        "topic": null,
+        "effectiveTopic": "kingdom",
+        "cardIds": [
+          "kingdom"
+        ],
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "approvedRefCount": 24,
+        "bindingRuleCount": 10,
+        "hasEvidence": true
+      },
+      "scripturesCited": [],
+      "claimsGenerated": [],
+      "claimTraces": [],
+      "validatorResult": {
+        "passed": true,
+        "skipped": false,
+        "unsupportedClaims": [],
+        "contradictedClaims": []
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "approvalDecision": "blocked_connection",
+      "authority": {
+        "evidenceDrivenPct": null,
+        "modelDrivenPct": null,
+        "totalUnits": 0,
+        "breakdown": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      },
+      "memoryBefore": {
+        "rssMB": 137,
+        "heapUsedMB": 23,
+        "heapTotalMB": 39
+      },
+      "memoryAfter": {
+        "rssMB": 150,
+        "heapUsedMB": 36,
+        "heapTotalMB": 67
+      }
+    },
+    {
+      "id": "acts_10",
+      "label": "Acts 10",
+      "question": "Does Acts 10 make pork clean?",
+      "pipelineBlocked": true,
+      "openaiCalled": false,
+      "preFailureA": false,
+      "retrievedEvidence": {
+        "topic": "dietary_law",
+        "effectiveTopic": "dietary_law",
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "approvedRefCount": 7,
+        "bindingRuleCount": 0,
+        "hasEvidence": true
+      },
+      "scripturesCited": [],
+      "claimsGenerated": [],
+      "claimTraces": [],
+      "validatorResult": {
+        "passed": true,
+        "skipped": false,
+        "unsupportedClaims": [],
+        "contradictedClaims": []
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "approvalDecision": "blocked_connection",
+      "authority": {
+        "evidenceDrivenPct": null,
+        "modelDrivenPct": null,
+        "totalUnits": 0,
+        "breakdown": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      },
+      "memoryBefore": {
+        "rssMB": 151,
+        "heapUsedMB": 18,
+        "heapTotalMB": 41
+      },
+      "memoryAfter": {
+        "rssMB": 152,
+        "heapUsedMB": 29,
+        "heapTotalMB": 51
+      }
+    },
+    {
+      "id": "pork",
+      "label": "Pork",
+      "question": "Can I eat pork?",
+      "pipelineBlocked": true,
+      "openaiCalled": false,
+      "preFailureA": false,
+      "retrievedEvidence": {
+        "topic": "dietary_law",
+        "effectiveTopic": "dietary_law",
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "approvedRefCount": 7,
+        "bindingRuleCount": 0,
+        "hasEvidence": true
+      },
+      "scripturesCited": [],
+      "claimsGenerated": [],
+      "claimTraces": [],
+      "validatorResult": {
+        "passed": true,
+        "skipped": false,
+        "unsupportedClaims": [],
+        "contradictedClaims": []
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "approvalDecision": "blocked_connection",
+      "authority": {
+        "evidenceDrivenPct": null,
+        "modelDrivenPct": null,
+        "totalUnits": 0,
+        "breakdown": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      },
+      "memoryBefore": {
+        "rssMB": 152,
+        "heapUsedMB": 34,
+        "heapTotalMB": 56
+      },
+      "memoryAfter": {
+        "rssMB": 153,
+        "heapUsedMB": 30,
+        "heapTotalMB": 52
+      }
+    },
+    {
+      "id": "sabbath",
+      "label": "Sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "pipelineBlocked": true,
+      "openaiCalled": false,
+      "preFailureA": false,
+      "retrievedEvidence": {
+        "topic": "sabbath",
+        "effectiveTopic": "sabbath",
+        "cardIds": [
+          "sabbath"
+        ],
+        "catalogKeys": [],
+        "approvedRefCount": 6,
+        "bindingRuleCount": 0,
+        "hasEvidence": true
+      },
+      "scripturesCited": [],
+      "claimsGenerated": [],
+      "claimTraces": [],
+      "validatorResult": {
+        "passed": true,
+        "skipped": false,
+        "unsupportedClaims": [],
+        "contradictedClaims": []
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "approvalDecision": "blocked_connection",
+      "authority": {
+        "evidenceDrivenPct": null,
+        "modelDrivenPct": null,
+        "totalUnits": 0,
+        "breakdown": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      },
+      "memoryBefore": {
+        "rssMB": 153,
+        "heapUsedMB": 34,
+        "heapTotalMB": 57
+      },
+      "memoryAfter": {
+        "rssMB": 165,
+        "heapUsedMB": 39,
+        "heapTotalMB": 81
+      }
+    },
+    {
+      "id": "death_state",
+      "label": "Death state",
+      "question": "What happens when we die?",
+      "pipelineBlocked": true,
+      "openaiCalled": false,
+      "preFailureA": false,
+      "retrievedEvidence": {
+        "topic": null,
+        "effectiveTopic": "death_state",
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "approvedRefCount": 17,
+        "bindingRuleCount": 4,
+        "hasEvidence": true
+      },
+      "scripturesCited": [],
+      "claimsGenerated": [],
+      "claimTraces": [],
+      "validatorResult": {
+        "passed": true,
+        "skipped": false,
+        "unsupportedClaims": [],
+        "contradictedClaims": []
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "approvalDecision": "blocked_connection",
+      "authority": {
+        "evidenceDrivenPct": null,
+        "modelDrivenPct": null,
+        "totalUnits": 0,
+        "breakdown": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      },
+      "memoryBefore": {
+        "rssMB": 167,
+        "heapUsedMB": 42,
+        "heapTotalMB": 82
+      },
+      "memoryAfter": {
+        "rssMB": 171,
+        "heapUsedMB": 56,
+        "heapTotalMB": 87
+      }
+    },
+    {
+      "id": "resurrection",
+      "label": "Resurrection",
+      "question": "What does Scripture teach about resurrection?",
+      "pipelineBlocked": true,
+      "openaiCalled": false,
+      "preFailureA": false,
+      "retrievedEvidence": {
+        "topic": "resurrection_timeline",
+        "effectiveTopic": "resurrection_timeline",
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "approvedRefCount": 17,
+        "bindingRuleCount": 4,
+        "hasEvidence": true
+      },
+      "scripturesCited": [],
+      "claimsGenerated": [],
+      "claimTraces": [],
+      "validatorResult": {
+        "passed": true,
+        "skipped": false,
+        "unsupportedClaims": [],
+        "contradictedClaims": []
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "approvalDecision": "blocked_connection",
+      "authority": {
+        "evidenceDrivenPct": null,
+        "modelDrivenPct": null,
+        "totalUnits": 0,
+        "breakdown": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      },
+      "memoryBefore": {
+        "rssMB": 169,
+        "heapUsedMB": 16,
+        "heapTotalMB": 56
+      },
+      "memoryAfter": {
+        "rssMB": 174,
+        "heapUsedMB": 43,
+        "heapTotalMB": 91
+      }
+    },
+    {
+      "id": "logos",
+      "label": "Logos",
+      "question": "What does Logos mean in John 1:1?",
+      "pipelineBlocked": true,
+      "openaiCalled": false,
+      "preFailureA": false,
+      "retrievedEvidence": {
+        "topic": "messiah_logos",
+        "effectiveTopic": "messiah_logos",
+        "cardIds": [
+          "messiahLogos"
+        ],
+        "catalogKeys": [],
+        "approvedRefCount": 10,
+        "bindingRuleCount": 0,
+        "hasEvidence": true
+      },
+      "scripturesCited": [],
+      "claimsGenerated": [],
+      "claimTraces": [],
+      "validatorResult": {
+        "passed": true,
+        "skipped": false,
+        "unsupportedClaims": [],
+        "contradictedClaims": []
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "approvalDecision": "blocked_connection",
+      "authority": {
+        "evidenceDrivenPct": null,
+        "modelDrivenPct": null,
+        "totalUnits": 0,
+        "breakdown": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      },
+      "memoryBefore": {
+        "rssMB": 178,
+        "heapUsedMB": 48,
+        "heapTotalMB": 95
+      },
+      "memoryAfter": {
+        "rssMB": 179,
+        "heapUsedMB": 30,
+        "heapTotalMB": 76
+      }
+    },
+    {
+      "id": "holy",
+      "label": "Holy",
+      "question": "What does holy mean?",
+      "pipelineBlocked": true,
+      "openaiCalled": false,
+      "preFailureA": true,
+      "retrievedEvidence": {
+        "topic": null,
+        "effectiveTopic": null,
+        "cardIds": [],
+        "catalogKeys": [],
+        "approvedRefCount": 0,
+        "bindingRuleCount": 0,
+        "hasEvidence": false
+      },
+      "scripturesCited": [],
+      "claimsGenerated": [],
+      "claimTraces": [],
+      "validatorResult": {
+        "passed": true,
+        "skipped": false,
+        "unsupportedClaims": [],
+        "contradictedClaims": []
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "approvalDecision": "blocked_connection",
+      "authority": {
+        "evidenceDrivenPct": null,
+        "modelDrivenPct": null,
+        "totalUnits": 0,
+        "breakdown": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      },
+      "memoryBefore": {
+        "rssMB": 179,
+        "heapUsedMB": 33,
+        "heapTotalMB": 79
+      },
+      "memoryAfter": {
+        "rssMB": 179,
+        "heapUsedMB": 38,
+        "heapTotalMB": 95
+      }
+    }
+  ]
+}

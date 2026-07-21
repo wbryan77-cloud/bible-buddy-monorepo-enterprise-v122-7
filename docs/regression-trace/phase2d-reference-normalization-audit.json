@@ -1,0 +1,71 @@
+{
+  "ranAt": "2026-06-08T03:54:56.070Z",
+  "refPairs": [
+    {
+      "cited": "Matthew 6:10",
+      "approved": "Matthew 6:9-10",
+      "expect": true,
+      "pass": true
+    },
+    {
+      "cited": "Acts 10:28",
+      "approved": "Acts 10",
+      "expect": true,
+      "pass": true
+    },
+    {
+      "cited": "Acts 10:28",
+      "approved": "Acts 10:28",
+      "expect": true,
+      "pass": true
+    },
+    {
+      "cited": "John 14:3",
+      "approved": "John 14:3",
+      "expect": true,
+      "pass": true
+    },
+    {
+      "cited": "John 14:3",
+      "approved": "John 14",
+      "expect": true,
+      "pass": true
+    },
+    {
+      "cited": "Revelation 21:1-3",
+      "approved": "Revelation 21",
+      "expect": true,
+      "pass": true
+    },
+    {
+      "cited": "Genesis 1:6-8",
+      "approved": "Genesis 1",
+      "expect": true,
+      "pass": true
+    },
+    {
+      "cited": "Matthew 6:10",
+      "approved": "John 3:13",
+      "expect": false,
+      "pass": true
+    }
+  ],
+  "refPairsPass": 8,
+  "refPairsTotal": 8,
+  "classCRefClaims": [
+    {
+      "id": "third_heaven_matt610",
+      "classification": "A",
+      "issues": [],
+      "supportGraphMatch": "matt6_10_kingdom_on_earth"
+    },
+    {
+      "id": "kingdom_matt610_sent",
+      "classification": "A",
+      "issues": [],
+      "supportGraphMatch": "matt6_10_kingdom_on_earth"
+    }
+  ],
+  "claimsImprovedByNormalization": 2,
+  "doctrineChange": false
+}

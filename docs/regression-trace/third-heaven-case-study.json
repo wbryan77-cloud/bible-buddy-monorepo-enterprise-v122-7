@@ -1,0 +1,176 @@
+{
+  "conversationId": "bae-live-third-heaven-case",
+  "turns": [
+    {
+      "turn": 1,
+      "question": "What is the third heaven?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ]
+      },
+      "evidenceSent": {
+        "bytes": 14721,
+        "cardsInPrompt": true,
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "cardIds": [
+          "heavens"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "approvalDecision": "approved",
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "liveFailurePrimary": "E",
+      "unsupportedInAnswer": []
+    },
+    {
+      "turn": 2,
+      "question": "What are the first second and third heavens?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ]
+      },
+      "evidenceSent": {
+        "bytes": 14854,
+        "cardsInPrompt": true,
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "cardIds": [
+          "heavens"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "approvalDecision": "approved",
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "liveFailurePrimary": "E",
+      "unsupportedInAnswer": []
+    },
+    {
+      "turn": 3,
+      "question": "Can believers go to the third heaven?",
+      "retrievedEvidence": {
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ]
+      },
+      "evidenceSent": {
+        "bytes": 14879,
+        "cardsInPrompt": true,
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "cardIds": [
+          "heavens"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "approvalDecision": "approved",
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "liveFailurePrimary": "E",
+      "unsupportedInAnswer": []
+    },
+    {
+      "turn": 4,
+      "question": "Where I go ye cannot come.",
+      "retrievedEvidence": {
+        "cardIds": [
+          "kingdom"
+        ],
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ]
+      },
+      "evidenceSent": {
+        "bytes": 12303,
+        "cardsInPrompt": true,
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "cardIds": [
+          "kingdom"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "approvalDecision": "approved",
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "liveFailurePrimary": "E",
+      "unsupportedInAnswer": []
+    },
+    {
+      "turn": 5,
+      "question": "Kingdom come on earth.",
+      "retrievedEvidence": {
+        "cardIds": [
+          "kingdom"
+        ],
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ]
+      },
+      "evidenceSent": {
+        "bytes": 12277,
+        "cardsInPrompt": true,
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "cardIds": [
+          "kingdom"
+        ]
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": [],
+      "validatorDecision": {
+        "postPassed": true,
+        "claimDegraded": false,
+        "regenerated": false
+      },
+      "approvalDecision": "approved",
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "openaiCalled": false,
+      "liveFailurePrimary": "E",
+      "unsupportedInAnswer": []
+    }
+  ],
+  "firstUnsupportedDoctrineEntry": null
+}

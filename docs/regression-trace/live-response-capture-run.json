@@ -1,0 +1,559 @@
+{
+  "ranAt": "2026-06-06T05:29:19.176Z",
+  "startedAt": "2026-06-06T05:29:18.593Z",
+  "requestId": "9dfb98ac-67c8-4f0c-8d3a-cbec6e5efbdd",
+  "url": "http://127.0.0.1:51406/buddy/chat",
+  "browserRequest": {
+    "userId": "demo-user",
+    "mode": "COMPANION",
+    "personaKey": "ADAPTIVE_COMPANION",
+    "message": "What does Logos mean in John 1:1?"
+  },
+  "browserResponse": {
+    "httpStatus": 200,
+    "resOk": true,
+    "rawBody": "{\"ok\":true,\"reply\":{\"reply\":\"I'm having trouble reaching the AI service right now. Please try again in a moment.\",\"scripture\":[],\"mode\":\"companion\",\"confidence\":\"low\",\"memory_used\":false,\"safety_level\":\"standard\",\"admin_flags\":[\"core_connection_error\"],\"runtime\":{\"masterRoute\":\"core_connection_error\",\"openAiCalled\":false,\"connectionError\":\"401 Incorrect API key provided: sk-proj-********************************************************************************\",\"buildConnectionErrorReplyUsed\":true,\"companionPresentation\":{\"skipRelationshipEnrichment\":true,\"skipStudyPrompts\":true},\"buddyRuntime\":\"core_openai_first\",\"evidenceTopic\":\"messiah_logos\",\"routingHintsOnly\":true,\"currentIntent\":\"meaning_word_study\",\"historyAllowed\":false,\"validation\":{\"passed\":false,\"doctrineValidationResult\":\"skipped\",\"issues\":[\"401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.\"]},\"regenerated\":false,\"ownershipGuard\":{\"passed\":false,\"issues\":[\"openai_not_called\"],\"currentQuestionMatch\":0,\"studyLoopUsed\":false,\"templateUsed\":false,\"regenInstruction\":null,\"allowConnectionFallback\":true},\"directnessGuard\":{\"passed\":false,\"issues\":[\"not_openai_authored\",\"missing_word_study\"],\"forbiddenPhraseDetected\":false,\"forbiddenHits\":[],\"answerMatchesLatestQuestion\":false,\"correctionRepair\":true,\"historyAllowed\":false,\"regenInstruction\":\"Answer the latest user question directly. Use evidence silently. Do not use template language, study continuation, prior-topic continuation, or history unless asked.\"},\"coreDebug\":{\"runtimeUsed\":\"core_openai_first\",\"currentIntent\":\"meaning_word_study\",\"historyAllowed\":false,\"evidenceCardsUsed\":true,\"openaiCalled\":false,\"openaiResponseReceived\":false,\"finalAnswerAuthor\":\"connection_error\",\"templateUsed\":false,\"fallbackUsed\":true,\"studyFallbackUsed\":false,\"responderUsed\":false,\"relationshipEnrichmentUsed\":false,\"sourceGroundedResponderUsed\":false,\"sabbathHistoryDeepResponderUsed\":false,\"forbiddenPhraseDetected\":false,\"answerMatchesLatestQuestion\":false,\"regenerated\":false,\"routeUsed\":\"core_connection_error\",\"studyLoopUsed\":false,\"prayerTemplateUsed\":false,\"scriptureWitnessTemplateUsed\":false,\"doctrineValidatorUsed\":true,\"scriptureEvidenceUsed\":false,\"activeTopicUsedAsContextOnly\":true,\"evidenceTopic\":\"messiah_logos\",\"validationPassed\":false,\"validationIssues\":[\"401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.\"],\"errorMessage\":\"401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.\",\"approvedDoctrineFrozen\":true,\"discoveryReinforcementCount\":1,\"buildConnectionErrorReplyUsed\":true,\"correctionRepair\":true}},\"quality\":{\"score\":100,\"issues\":[],\"passed\":true},\"coreDebug\":{\"runtimeUsed\":\"core_openai_first\",\"currentIntent\":\"meaning_word_study\",\"historyAllowed\":false,\"evidenceCardsUsed\":true,\"openaiCalled\":false,\"openaiResponseReceived\":false,\"finalAnswerAuthor\":\"connection_error\",\"templateUsed\":false,\"fallbackUsed\":true,\"studyFallbackUsed\":false,\"responderUsed\":false,\"relationshipEnrichmentUsed\":false,\"sourceGroundedResponderUsed\":false,\"sabbathHistoryDeepResponderUsed\":false,\"forbiddenPhraseDetected\":false,\"answerMatchesLatestQuestion\":false,\"regenerated\":false,\"routeUsed\":\"core_connection_error\",\"studyLoopUsed\":false,\"prayerTemplateUsed\":false,\"scriptureWitnessTemplateUsed\":false,\"doctrineValidatorUsed\":true,\"scriptureEvidenceUsed\":false,\"activeTopicUsedAsContextOnly\":true,\"evidenceTopic\":\"messiah_logos\",\"validationPassed\":false,\"validationIssues\":[\"401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.\"],\"errorMessage\":\"401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.\",\"approvedDoctrineFrozen\":true,\"discoveryReinforcementCount\":1,\"buildConnectionErrorReplyUsed\":true,\"correctionRepair\":true},\"liveRequestTrace\":{\"ts\":\"2026-06-06T05:29:19.171Z\",\"messagePreview\":\"What does Logos mean in John 1:1?\",\"httpStatus\":200,\"latencyMs\":563,\"runtimeUsed\":\"core_openai_first\",\"currentIntent\":\"meaning_word_study\",\"historyAllowed\":false,\"routeUsed\":\"core_connection_error\",\"openaiCalled\":false,\"openaiResponseReceived\":false,\"finalAnswerAuthor\":\"connection_error\",\"templateUsed\":false,\"fallbackUsed\":true,\"studyFallbackUsed\":false,\"responderUsed\":false,\"forbiddenPhraseDetected\":false,\"answerMatchesLatestQuestion\":false,\"regenerated\":false,\"sourceGroundedResponderUsed\":false,\"sabbathHistoryDeepResponderUsed\":false,\"buildConnectionErrorReplyUsed\":true,\"relationshipEnrichmentUsed\":false,\"evidenceCardsUsed\":true,\"errorName\":\"OpenAIAuthError\",\"errorMessage\":\"401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. Yo\",\"memoryUsage\":{\"heapUsedMB\":40,\"rssMB\":137},\"violations\":[],\"replyPreview\":\"I'm having trouble reaching the AI service right now. Please try again in a moment.\"}}}",
+    "parsed": {
+      "ok": true,
+      "reply": {
+        "reply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+        "scripture": [],
+        "mode": "companion",
+        "confidence": "low",
+        "memory_used": false,
+        "safety_level": "standard",
+        "admin_flags": [
+          "core_connection_error"
+        ],
+        "runtime": {
+          "masterRoute": "core_connection_error",
+          "openAiCalled": false,
+          "connectionError": "401 Incorrect API key provided: sk-proj-********************************************************************************",
+          "buildConnectionErrorReplyUsed": true,
+          "companionPresentation": {
+            "skipRelationshipEnrichment": true,
+            "skipStudyPrompts": true
+          },
+          "buddyRuntime": "core_openai_first",
+          "evidenceTopic": "messiah_logos",
+          "routingHintsOnly": true,
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "validation": {
+            "passed": false,
+            "doctrineValidationResult": "skipped",
+            "issues": [
+              "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+            ]
+          },
+          "regenerated": false,
+          "ownershipGuard": {
+            "passed": false,
+            "issues": [
+              "openai_not_called"
+            ],
+            "currentQuestionMatch": 0,
+            "studyLoopUsed": false,
+            "templateUsed": false,
+            "regenInstruction": null,
+            "allowConnectionFallback": true
+          },
+          "directnessGuard": {
+            "passed": false,
+            "issues": [
+              "not_openai_authored",
+              "missing_word_study"
+            ],
+            "forbiddenPhraseDetected": false,
+            "forbiddenHits": [],
+            "answerMatchesLatestQuestion": false,
+            "correctionRepair": true,
+            "historyAllowed": false,
+            "regenInstruction": "Answer the latest user question directly. Use evidence silently. Do not use template language, study continuation, prior-topic continuation, or history unless asked."
+          },
+          "coreDebug": {
+            "runtimeUsed": "core_openai_first",
+            "currentIntent": "meaning_word_study",
+            "historyAllowed": false,
+            "evidenceCardsUsed": true,
+            "openaiCalled": false,
+            "openaiResponseReceived": false,
+            "finalAnswerAuthor": "connection_error",
+            "templateUsed": false,
+            "fallbackUsed": true,
+            "studyFallbackUsed": false,
+            "responderUsed": false,
+            "relationshipEnrichmentUsed": false,
+            "sourceGroundedResponderUsed": false,
+            "sabbathHistoryDeepResponderUsed": false,
+            "forbiddenPhraseDetected": false,
+            "answerMatchesLatestQuestion": false,
+            "regenerated": false,
+            "routeUsed": "core_connection_error",
+            "studyLoopUsed": false,
+            "prayerTemplateUsed": false,
+            "scriptureWitnessTemplateUsed": false,
+            "doctrineValidatorUsed": true,
+            "scriptureEvidenceUsed": false,
+            "activeTopicUsedAsContextOnly": true,
+            "evidenceTopic": "messiah_logos",
+            "validationPassed": false,
+            "validationIssues": [
+              "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+            ],
+            "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "approvedDoctrineFrozen": true,
+            "discoveryReinforcementCount": 1,
+            "buildConnectionErrorReplyUsed": true,
+            "correctionRepair": true
+          }
+        },
+        "quality": {
+          "score": 100,
+          "issues": [],
+          "passed": true
+        },
+        "coreDebug": {
+          "runtimeUsed": "core_openai_first",
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "evidenceCardsUsed": true,
+          "openaiCalled": false,
+          "openaiResponseReceived": false,
+          "finalAnswerAuthor": "connection_error",
+          "templateUsed": false,
+          "fallbackUsed": true,
+          "studyFallbackUsed": false,
+          "responderUsed": false,
+          "relationshipEnrichmentUsed": false,
+          "sourceGroundedResponderUsed": false,
+          "sabbathHistoryDeepResponderUsed": false,
+          "forbiddenPhraseDetected": false,
+          "answerMatchesLatestQuestion": false,
+          "regenerated": false,
+          "routeUsed": "core_connection_error",
+          "studyLoopUsed": false,
+          "prayerTemplateUsed": false,
+          "scriptureWitnessTemplateUsed": false,
+          "doctrineValidatorUsed": true,
+          "scriptureEvidenceUsed": false,
+          "activeTopicUsedAsContextOnly": true,
+          "evidenceTopic": "messiah_logos",
+          "validationPassed": false,
+          "validationIssues": [
+            "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+          ],
+          "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+          "approvedDoctrineFrozen": true,
+          "discoveryReinforcementCount": 1,
+          "buildConnectionErrorReplyUsed": true,
+          "correctionRepair": true
+        },
+        "liveRequestTrace": {
+          "ts": "2026-06-06T05:29:19.171Z",
+          "messagePreview": "What does Logos mean in John 1:1?",
+          "httpStatus": 200,
+          "latencyMs": 563,
+          "runtimeUsed": "core_openai_first",
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "routeUsed": "core_connection_error",
+          "openaiCalled": false,
+          "openaiResponseReceived": false,
+          "finalAnswerAuthor": "connection_error",
+          "templateUsed": false,
+          "fallbackUsed": true,
+          "studyFallbackUsed": false,
+          "responderUsed": false,
+          "forbiddenPhraseDetected": false,
+          "answerMatchesLatestQuestion": false,
+          "regenerated": false,
+          "sourceGroundedResponderUsed": false,
+          "sabbathHistoryDeepResponderUsed": false,
+          "buildConnectionErrorReplyUsed": true,
+          "relationshipEnrichmentUsed": false,
+          "evidenceCardsUsed": true,
+          "errorName": "OpenAIAuthError",
+          "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. Yo",
+          "memoryUsage": {
+            "heapUsedMB": 40,
+            "rssMB": 137
+          },
+          "violations": [],
+          "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+        }
+      }
+    }
+  },
+  "uiEvaluation": {
+    "httpStatus": 200,
+    "dataOk": true,
+    "payloadReply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+    "payloadReplyType": "string",
+    "payloadReplyIsFalsy": false,
+    "clientFallbackUsed": false,
+    "displayed": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+    "firstFalsyLocation": null
+  },
+  "serverCapture": {
+    "timestamp": "2026-06-06T05:29:19.172Z",
+    "requestId": "9dfb98ac-67c8-4f0c-8d3a-cbec6e5efbdd",
+    "userId": "demo-user",
+    "message": "What does Logos mean in John 1:1?",
+    "httpStatus": 200,
+    "responseBody": {
+      "ok": true,
+      "reply": {
+        "reply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+        "scripture": [],
+        "mode": "companion",
+        "confidence": "low",
+        "memory_used": false,
+        "safety_level": "standard",
+        "admin_flags": [
+          "core_connection_error"
+        ],
+        "runtime": {
+          "masterRoute": "core_connection_error",
+          "openAiCalled": false,
+          "connectionError": "401 Incorrect API key provided: sk-proj-********************************************************************************",
+          "buildConnectionErrorReplyUsed": true,
+          "companionPresentation": {
+            "skipRelationshipEnrichment": true,
+            "skipStudyPrompts": true
+          },
+          "buddyRuntime": "core_openai_first",
+          "evidenceTopic": "messiah_logos",
+          "routingHintsOnly": true,
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "validation": {
+            "passed": false,
+            "doctrineValidationResult": "skipped",
+            "issues": [
+              "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+            ]
+          },
+          "regenerated": false,
+          "ownershipGuard": {
+            "passed": false,
+            "issues": [
+              "openai_not_called"
+            ],
+            "currentQuestionMatch": 0,
+            "studyLoopUsed": false,
+            "templateUsed": false,
+            "regenInstruction": null,
+            "allowConnectionFallback": true
+          },
+          "directnessGuard": {
+            "passed": false,
+            "issues": [
+              "not_openai_authored",
+              "missing_word_study"
+            ],
+            "forbiddenPhraseDetected": false,
+            "forbiddenHits": [],
+            "answerMatchesLatestQuestion": false,
+            "correctionRepair": true,
+            "historyAllowed": false,
+            "regenInstruction": "Answer the latest user question directly. Use evidence silently. Do not use template language, study continuation, prior-topic continuation, or history unless asked."
+          },
+          "coreDebug": {
+            "runtimeUsed": "core_openai_first",
+            "currentIntent": "meaning_word_study",
+            "historyAllowed": false,
+            "evidenceCardsUsed": true,
+            "openaiCalled": false,
+            "openaiResponseReceived": false,
+            "finalAnswerAuthor": "connection_error",
+            "templateUsed": false,
+            "fallbackUsed": true,
+            "studyFallbackUsed": false,
+            "responderUsed": false,
+            "relationshipEnrichmentUsed": false,
+            "sourceGroundedResponderUsed": false,
+            "sabbathHistoryDeepResponderUsed": false,
+            "forbiddenPhraseDetected": false,
+            "answerMatchesLatestQuestion": false,
+            "regenerated": false,
+            "routeUsed": "core_connection_error",
+            "studyLoopUsed": false,
+            "prayerTemplateUsed": false,
+            "scriptureWitnessTemplateUsed": false,
+            "doctrineValidatorUsed": true,
+            "scriptureEvidenceUsed": false,
+            "activeTopicUsedAsContextOnly": true,
+            "evidenceTopic": "messiah_logos",
+            "validationPassed": false,
+            "validationIssues": [
+              "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+            ],
+            "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "approvedDoctrineFrozen": true,
+            "discoveryReinforcementCount": 1,
+            "buildConnectionErrorReplyUsed": true,
+            "correctionRepair": true
+          }
+        },
+        "quality": {
+          "score": 100,
+          "issues": [],
+          "passed": true
+        },
+        "coreDebug": {
+          "runtimeUsed": "core_openai_first",
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "evidenceCardsUsed": true,
+          "openaiCalled": false,
+          "openaiResponseReceived": false,
+          "finalAnswerAuthor": "connection_error",
+          "templateUsed": false,
+          "fallbackUsed": true,
+          "studyFallbackUsed": false,
+          "responderUsed": false,
+          "relationshipEnrichmentUsed": false,
+          "sourceGroundedResponderUsed": false,
+          "sabbathHistoryDeepResponderUsed": false,
+          "forbiddenPhraseDetected": false,
+          "answerMatchesLatestQuestion": false,
+          "regenerated": false,
+          "routeUsed": "core_connection_error",
+          "studyLoopUsed": false,
+          "prayerTemplateUsed": false,
+          "scriptureWitnessTemplateUsed": false,
+          "doctrineValidatorUsed": true,
+          "scriptureEvidenceUsed": false,
+          "activeTopicUsedAsContextOnly": true,
+          "evidenceTopic": "messiah_logos",
+          "validationPassed": false,
+          "validationIssues": [
+            "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+          ],
+          "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+          "approvedDoctrineFrozen": true,
+          "discoveryReinforcementCount": 1,
+          "buildConnectionErrorReplyUsed": true,
+          "correctionRepair": true
+        },
+        "liveRequestTrace": {
+          "ts": "2026-06-06T05:29:19.171Z",
+          "messagePreview": "What does Logos mean in John 1:1?",
+          "httpStatus": 200,
+          "latencyMs": 563,
+          "runtimeUsed": "core_openai_first",
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "routeUsed": "core_connection_error",
+          "openaiCalled": false,
+          "openaiResponseReceived": false,
+          "finalAnswerAuthor": "connection_error",
+          "templateUsed": false,
+          "fallbackUsed": true,
+          "studyFallbackUsed": false,
+          "responderUsed": false,
+          "forbiddenPhraseDetected": false,
+          "answerMatchesLatestQuestion": false,
+          "regenerated": false,
+          "sourceGroundedResponderUsed": false,
+          "sabbathHistoryDeepResponderUsed": false,
+          "buildConnectionErrorReplyUsed": true,
+          "relationshipEnrichmentUsed": false,
+          "evidenceCardsUsed": true,
+          "errorName": "OpenAIAuthError",
+          "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. Yo",
+          "memoryUsage": {
+            "heapUsedMB": 40,
+            "rssMB": 137
+          },
+          "violations": [],
+          "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+        }
+      }
+    },
+    "shape": {
+      "ok": true,
+      "reply": {
+        "reply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+        "scripture": [],
+        "mode": "companion",
+        "confidence": "low",
+        "memory_used": false,
+        "safety_level": "standard",
+        "admin_flags": [
+          "core_connection_error"
+        ],
+        "runtime": {
+          "masterRoute": "core_connection_error",
+          "openAiCalled": false,
+          "connectionError": "401 Incorrect API key provided: sk-proj-********************************************************************************",
+          "buildConnectionErrorReplyUsed": true,
+          "companionPresentation": {
+            "skipRelationshipEnrichment": true,
+            "skipStudyPrompts": true
+          },
+          "buddyRuntime": "core_openai_first",
+          "evidenceTopic": "messiah_logos",
+          "routingHintsOnly": true,
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "validation": {
+            "passed": false,
+            "doctrineValidationResult": "skipped",
+            "issues": [
+              "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+            ]
+          },
+          "regenerated": false,
+          "ownershipGuard": {
+            "passed": false,
+            "issues": [
+              "openai_not_called"
+            ],
+            "currentQuestionMatch": 0,
+            "studyLoopUsed": false,
+            "templateUsed": false,
+            "regenInstruction": null,
+            "allowConnectionFallback": true
+          },
+          "directnessGuard": {
+            "passed": false,
+            "issues": [
+              "not_openai_authored",
+              "missing_word_study"
+            ],
+            "forbiddenPhraseDetected": false,
+            "forbiddenHits": [],
+            "answerMatchesLatestQuestion": false,
+            "correctionRepair": true,
+            "historyAllowed": false,
+            "regenInstruction": "Answer the latest user question directly. Use evidence silently. Do not use template language, study continuation, prior-topic continuation, or history unless asked."
+          },
+          "coreDebug": {
+            "runtimeUsed": "core_openai_first",
+            "currentIntent": "meaning_word_study",
+            "historyAllowed": false,
+            "evidenceCardsUsed": true,
+            "openaiCalled": false,
+            "openaiResponseReceived": false,
+            "finalAnswerAuthor": "connection_error",
+            "templateUsed": false,
+            "fallbackUsed": true,
+            "studyFallbackUsed": false,
+            "responderUsed": false,
+            "relationshipEnrichmentUsed": false,
+            "sourceGroundedResponderUsed": false,
+            "sabbathHistoryDeepResponderUsed": false,
+            "forbiddenPhraseDetected": false,
+            "answerMatchesLatestQuestion": false,
+            "regenerated": false,
+            "routeUsed": "core_connection_error",
+            "studyLoopUsed": false,
+            "prayerTemplateUsed": false,
+            "scriptureWitnessTemplateUsed": false,
+            "doctrineValidatorUsed": true,
+            "scriptureEvidenceUsed": false,
+            "activeTopicUsedAsContextOnly": true,
+            "evidenceTopic": "messiah_logos",
+            "validationPassed": false,
+            "validationIssues": [
+              "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+            ],
+            "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+            "approvedDoctrineFrozen": true,
+            "discoveryReinforcementCount": 1,
+            "buildConnectionErrorReplyUsed": true,
+            "correctionRepair": true
+          }
+        },
+        "quality": {
+          "score": 100,
+          "issues": [],
+          "passed": true
+        },
+        "coreDebug": {
+          "runtimeUsed": "core_openai_first",
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "evidenceCardsUsed": true,
+          "openaiCalled": false,
+          "openaiResponseReceived": false,
+          "finalAnswerAuthor": "connection_error",
+          "templateUsed": false,
+          "fallbackUsed": true,
+          "studyFallbackUsed": false,
+          "responderUsed": false,
+          "relationshipEnrichmentUsed": false,
+          "sourceGroundedResponderUsed": false,
+          "sabbathHistoryDeepResponderUsed": false,
+          "forbiddenPhraseDetected": false,
+          "answerMatchesLatestQuestion": false,
+          "regenerated": false,
+          "routeUsed": "core_connection_error",
+          "studyLoopUsed": false,
+          "prayerTemplateUsed": false,
+          "scriptureWitnessTemplateUsed": false,
+          "doctrineValidatorUsed": true,
+          "scriptureEvidenceUsed": false,
+          "activeTopicUsedAsContextOnly": true,
+          "evidenceTopic": "messiah_logos",
+          "validationPassed": false,
+          "validationIssues": [
+            "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys."
+          ],
+          "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. You can find your API key at https://platform.openai.com/account/api-keys.",
+          "approvedDoctrineFrozen": true,
+          "discoveryReinforcementCount": 1,
+          "buildConnectionErrorReplyUsed": true,
+          "correctionRepair": true
+        },
+        "liveRequestTrace": {
+          "ts": "2026-06-06T05:29:19.171Z",
+          "messagePreview": "What does Logos mean in John 1:1?",
+          "httpStatus": 200,
+          "latencyMs": 563,
+          "runtimeUsed": "core_openai_first",
+          "currentIntent": "meaning_word_study",
+          "historyAllowed": false,
+          "routeUsed": "core_connection_error",
+          "openaiCalled": false,
+          "openaiResponseReceived": false,
+          "finalAnswerAuthor": "connection_error",
+          "templateUsed": false,
+          "fallbackUsed": true,
+          "studyFallbackUsed": false,
+          "responderUsed": false,
+          "forbiddenPhraseDetected": false,
+          "answerMatchesLatestQuestion": false,
+          "regenerated": false,
+          "sourceGroundedResponderUsed": false,
+          "sabbathHistoryDeepResponderUsed": false,
+          "buildConnectionErrorReplyUsed": true,
+          "relationshipEnrichmentUsed": false,
+          "evidenceCardsUsed": true,
+          "errorName": "OpenAIAuthError",
+          "errorMessage": "401 Incorrect API key provided: sk-proj-********************************************************************************************************************************************************nWEA. Yo",
+          "memoryUsage": {
+            "heapUsedMB": 40,
+            "rssMB": 137
+          },
+          "violations": [],
+          "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+        }
+      },
+      "replyType": "object",
+      "replyReply": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "replyReplyType": "string",
+      "replyReplyMissing": false,
+      "replyReplyEmptyString": false,
+      "replyUndefined": false,
+      "replyNull": false,
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "openaiCalled": false,
+      "openaiResponseReceived": false
+    }
+  },
+  "capturePath": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/data/live-response-capture.jsonl"
+}

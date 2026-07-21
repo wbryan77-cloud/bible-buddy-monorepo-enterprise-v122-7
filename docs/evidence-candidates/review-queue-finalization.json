@@ -1,0 +1,275 @@
+{
+  "ranAt": "2026-06-10T05:27:19.419Z",
+  "initialReviewQueueSize": 32,
+  "finalReviewQueueSize": 32,
+  "autoClearedCount": 0,
+  "goalBelow15Met": false,
+  "autoCleared": [],
+  "retained": [
+    {
+      "lessonTitle": "IOG — «¿Quién mató realmente a Jesús? ¡Adán!» 2026",
+      "doctrinePackCandidate": "iog_quin_mat_realmente",
+      "confidence": 0.019,
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "lessonTitle": "5 16 26 REAP WHAT YOU SOW",
+      "doctrinePackCandidate": "samuel",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "5 1 26 THE LORDS DETERMINATION",
+      "doctrinePackCandidate": "isaiah",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "MAY 2 2026 KING DAVID A MAN AFTER GODS HEART",
+      "doctrinePackCandidate": "samuel",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "4 24 26 SEEK GOD NOW TIME IS SHORT",
+      "doctrinePackCandidate": "isaiah",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "4 18 26 VENGEANCE IS THE LORDS",
+      "doctrinePackCandidate": "isaiah",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "3 28 26 GODS JUDGMENT",
+      "doctrinePackCandidate": "samuel",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "3 20 26 ABIB A FRESH BEGINNING",
+      "doctrinePackCandidate": "abib_fresh_beginning_revelation",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "3 7 26 BEWARE OF SPIRITS ALL ARE NOT OF GOD",
+      "doctrinePackCandidate": "samuel",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "2 27 26 FEAR GOD OR HELL FIRE and BORN AGAIN A MENTAL CHANGE ONLY OR A BODILY CHANGE TOO",
+      "doctrinePackCandidate": "lake_of_fire",
+      "confidence": 0.78,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "2 28 26 REMEMBER THE MISSION… TEACH",
+      "doctrinePackCandidate": "ezekiel",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "2 20 26 . HOW FRAIL I AM",
+      "doctrinePackCandidate": "isaiah",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "2 21 26 THE STATE OF GODS UNION. HATED NOW FLOURISHING SOON",
+      "doctrinePackCandidate": "isaiah",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "1 31 26 … AT THE LAST TRUMP…",
+      "doctrinePackCandidate": "joshua",
+      "confidence": 0.68,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "website",
+      "doctrinePackCandidate": "isaiah",
+      "confidence": 0.105,
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "lessonTitle": "locations",
+      "doctrinePackCandidate": "john",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "research",
+      "doctrinePackCandidate": "research_ecclesiastes_1213",
+      "confidence": 0.035,
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "lessonTitle": "Baltimore — website",
+      "doctrinePackCandidate": "isaiah",
+      "confidence": 0.023,
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "lessonTitle": "lessons",
+      "doctrinePackCandidate": "lessons_hebrews",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "lessonTitle": "Jacob & Esau",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "confidence": 0.88,
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "lessonTitle": "IOG - Stick To The Script - \"Deuteronomy 28: The Curse of Israel\"",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "confidence": 0.88,
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "lessonTitle": "IOG — \"Jesus en su templo; His Saints and Their Labors\" 2026",
+      "doctrinePackCandidate": "iog_jess_templo_sus",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95",
+        "normalized_chain_missing"
+      ]
+    },
+    {
+      "lessonTitle": "Feast Of Unleavened Bread 2022",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "Shows - The Israel of God",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "IOG — «Israel reemplazado por su hermano Esaú» 2026",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "IOG - \"Israel el cautivo: de Babilonia a Babilonia\" 2026",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: La última noche» 2026",
+      "doctrinePackCandidate": "feasts",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "IOG — «La Pascua: un festival pagano, no sagrado» (2026)",
+      "doctrinePackCandidate": "feasts",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "IOG — «La Fiesta de los Panes sin Levadura: Primera noche» 2026",
+      "doctrinePackCandidate": "feasts",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "Israel School of Excellence is Training up the Next Generation #isoe #education",
+      "doctrinePackCandidate": "jacob_israel_twelve_tribes",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "Emotional: I need comfort from Scripture.",
+      "doctrinePackCandidate": "word_of_god",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    },
+    {
+      "lessonTitle": "Challenge: Give me a clear yes or no from Scripture.",
+      "doctrinePackCandidate": "word_of_god",
+      "confidence": 0,
+      "reasons": [
+        "confidence_below_95"
+      ]
+    }
+  ],
+  "note": "No packets met confidence >= 0.95 with full traceability — queue retained per threshold"
+}

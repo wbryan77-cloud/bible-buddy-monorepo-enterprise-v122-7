@@ -1,0 +1,812 @@
+{
+  "ranAt": "2026-06-05T14:48:33.158Z",
+  "auditType": "emergency_response_ownership_trace",
+  "modes": [
+    "live_server_default",
+    "ownership_protected",
+    "master_rollback"
+  ],
+  "liveFailureCases": [
+    "live_pork_yesno",
+    "live_logos_meaning",
+    "live_sabbath_how",
+    "live_rough_day",
+    "live_holy_meaning"
+  ],
+  "sessionLogEntries": 441,
+  "traces": [
+    {
+      "id": "live_pork_yesno",
+      "message": "Can I eat pork? Yes or no?",
+      "userId": "trace-live_server_default-live_pork_yesno-1780670879699",
+      "modeId": "live_server_default",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": true,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": "dietary_law",
+      "evidenceCardTopics": [
+        "dietary_law"
+      ],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": true,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_logos_meaning",
+      "message": "What does Logos mean?",
+      "userId": "trace-live_server_default-live_logos_meaning-1780670881363",
+      "modeId": "live_server_default",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": true,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": "messiah_logos",
+      "evidenceCardTopics": [
+        "messiah_logos"
+      ],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_sabbath_how",
+      "message": "How do we keep the Sabbath holy?",
+      "userId": "trace-live_server_default-live_sabbath_how-1780670882999",
+      "modeId": "live_server_default",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": true,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": "sabbath",
+      "evidenceCardTopics": [
+        "sabbath"
+      ],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_rough_day",
+      "message": "Today has been a rough day. I had to let go of someone I love.",
+      "userId": "trace-live_server_default-live_rough_day-1780670884845",
+      "modeId": "live_server_default",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": null,
+      "evidenceCardTopics": [],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_holy_meaning",
+      "message": "What does holy mean?",
+      "userId": "trace-live_server_default-live_holy_meaning-1780670886651",
+      "modeId": "live_server_default",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": null,
+      "evidenceCardTopics": [],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "corr_not_my_question",
+      "message": "That's not my question",
+      "userId": "trace-live_server_default-correction-1780670888366",
+      "modeId": "live_server_default",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": null,
+      "evidenceCardTopics": [],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_pork_yesno",
+      "message": "Can I eat pork? Yes or no?",
+      "userId": "trace-ownership_protected-live_pork_yesno-1780670894220",
+      "modeId": "ownership_protected",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": true,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": "dietary_law",
+      "evidenceCardTopics": [
+        "dietary_law"
+      ],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": true,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_logos_meaning",
+      "message": "What does Logos mean?",
+      "userId": "trace-ownership_protected-live_logos_meaning-1780670895934",
+      "modeId": "ownership_protected",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": true,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": "messiah_logos",
+      "evidenceCardTopics": [
+        "messiah_logos"
+      ],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_sabbath_how",
+      "message": "How do we keep the Sabbath holy?",
+      "userId": "trace-ownership_protected-live_sabbath_how-1780670897534",
+      "modeId": "ownership_protected",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": true,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": "sabbath",
+      "evidenceCardTopics": [
+        "sabbath"
+      ],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_rough_day",
+      "message": "Today has been a rough day. I had to let go of someone I love.",
+      "userId": "trace-ownership_protected-live_rough_day-1780670899181",
+      "modeId": "ownership_protected",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": null,
+      "evidenceCardTopics": [],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_holy_meaning",
+      "message": "What does holy mean?",
+      "userId": "trace-ownership_protected-live_holy_meaning-1780670900919",
+      "modeId": "ownership_protected",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": null,
+      "evidenceCardTopics": [],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "corr_not_my_question",
+      "message": "That's not my question",
+      "userId": "trace-ownership_protected-correction-1780670902481",
+      "modeId": "ownership_protected",
+      "routeUsed": "core_connection_error",
+      "runtimeUsed": "core_openai_first",
+      "finalAnswerAuthor": "connection_error",
+      "templateUsed": false,
+      "fallbackUsed": true,
+      "responderUsed": "core_connection_error",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": true,
+      "loopGuardTriggered": false,
+      "evidenceTopic": null,
+      "evidenceCardTopics": [],
+      "adminFlags": [
+        "core_connection_error"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I had trouble connecting just now. Please try again in a moment.",
+      "apiError": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors."
+    },
+    {
+      "id": "live_pork_yesno",
+      "message": "Can I eat pork? Yes or no?",
+      "userId": "trace-master_rollback-live_pork_yesno-1780670907534",
+      "modeId": "master_rollback",
+      "routeUsed": "doctrine_general",
+      "runtimeUsed": "legacy",
+      "finalAnswerAuthor": "unknown",
+      "templateUsed": true,
+      "fallbackUsed": false,
+      "responderUsed": "doctrine_general",
+      "studyFallbackUsed": true,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": true,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": false,
+      "loopGuardTriggered": false,
+      "evidenceTopic": "dietary_law",
+      "evidenceCardTopics": [
+        "dietary_law"
+      ],
+      "adminFlags": [
+        "source_grounded_guardrail_used"
+      ],
+      "symptoms": {
+        "studyContinuation": true,
+        "sundayHistory": false,
+        "witnessTriplet": true,
+        "psalm46Only": false,
+        "missingYesNo": true,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "Let's begin with the passages themselves.\n\nLeviticus 11 establishes the matter, and Deuteronomy 14 confirms it alongside Scripture. Daniel 1 carries the theme forward across the biblical witness.\n\nWitness path: Leviticus 11 → Deuteronomy 14 → Daniel 1\n\nLet's answer this directly from Scripture.\n\nThe Bible gives the clean and unclean distinction in Leviticus 11 and Deuteronomy 14. Peter's vision sh",
+      "apiError": null
+    },
+    {
+      "id": "live_logos_meaning",
+      "message": "What does Logos mean?",
+      "userId": "trace-master_rollback-live_logos_meaning-1780670907712",
+      "modeId": "master_rollback",
+      "routeUsed": "doctrine_general",
+      "runtimeUsed": "legacy",
+      "finalAnswerAuthor": "unknown",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "responderUsed": "doctrine_general",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": true,
+      "evidenceCardsUsed": true,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": false,
+      "loopGuardTriggered": false,
+      "evidenceTopic": "messiah_logos",
+      "evidenceCardTopics": [
+        "messiah_logos"
+      ],
+      "adminFlags": [
+        "minimal_ownership_fallback"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I'm here with you. Tell me what you'd like help with, and I'll answer from Scripture as directly as I can.",
+      "apiError": null
+    },
+    {
+      "id": "live_sabbath_how",
+      "message": "How do we keep the Sabbath holy?",
+      "userId": "trace-master_rollback-live_sabbath_how-1780670909462",
+      "modeId": "master_rollback",
+      "routeUsed": "sabbath_history",
+      "runtimeUsed": "legacy",
+      "finalAnswerAuthor": "unknown",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "responderUsed": "sabbath_history",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": true,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": false,
+      "loopGuardTriggered": false,
+      "evidenceTopic": "sabbath",
+      "evidenceCardTopics": [
+        "sabbath"
+      ],
+      "adminFlags": [
+        "sabbath_history_deep"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": true,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou're asking the historical side — who changed Sabbath observance to Sunday and how that happened — not just what the Sabbath is.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandment identifies the seventh day as the Sabbath of the LORD your God.\nIsaiah 58:13-1",
+      "apiError": null
+    },
+    {
+      "id": "live_rough_day",
+      "message": "Today has been a rough day. I had to let go of someone I love.",
+      "userId": "trace-master_rollback-live_rough_day-1780670909544",
+      "modeId": "master_rollback",
+      "routeUsed": "doctrine_general",
+      "runtimeUsed": "legacy",
+      "finalAnswerAuthor": "unknown",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "responderUsed": "doctrine_general",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": true,
+      "evidenceCardsUsed": false,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": false,
+      "loopGuardTriggered": false,
+      "evidenceTopic": null,
+      "evidenceCardTopics": [],
+      "adminFlags": [
+        "minimal_ownership_fallback"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I'm here with you. Tell me what you'd like help with, and I'll answer from Scripture as directly as I can.",
+      "apiError": null
+    },
+    {
+      "id": "live_holy_meaning",
+      "message": "What does holy mean?",
+      "userId": "trace-master_rollback-live_holy_meaning-1780670911225",
+      "modeId": "master_rollback",
+      "routeUsed": "doctrine_general",
+      "runtimeUsed": "legacy",
+      "finalAnswerAuthor": "unknown",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "responderUsed": "doctrine_general",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": true,
+      "evidenceCardsUsed": false,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": false,
+      "loopGuardTriggered": false,
+      "evidenceTopic": null,
+      "evidenceCardTopics": [],
+      "adminFlags": [
+        "minimal_ownership_fallback"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": false,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I'm here with you. Tell me what you'd like help with, and I'll answer from Scripture as directly as I can.",
+      "apiError": null
+    },
+    {
+      "id": "corr_not_my_question",
+      "message": "That's not my question",
+      "userId": "trace-master_rollback-correction-1780670912870",
+      "modeId": "master_rollback",
+      "routeUsed": "sabbath_history",
+      "runtimeUsed": "legacy",
+      "finalAnswerAuthor": "unknown",
+      "templateUsed": false,
+      "fallbackUsed": false,
+      "responderUsed": "sabbath_history",
+      "studyFallbackUsed": false,
+      "topicContinuationUsed": false,
+      "relationshipEnrichmentUsed": false,
+      "evidenceCardsUsed": false,
+      "openaiCalled": false,
+      "openaiResponseReceived": false,
+      "regenerationTriggered": false,
+      "loopGuardTriggered": false,
+      "evidenceTopic": null,
+      "evidenceCardTopics": [],
+      "adminFlags": [
+        "sabbath_history_deep"
+      ],
+      "symptoms": {
+        "studyContinuation": false,
+        "sundayHistory": true,
+        "witnessTriplet": false,
+        "psalm46Only": false,
+        "missingYesNo": false,
+        "logosAskedSabbathAnswer": false,
+        "emotionalIgnored": false
+      },
+      "replyPreview": "I hear you — that wasn't your question. Let me answer what you actually asked, with Scripture first and history second.\n\nYou're right — I drifted back to the Sabbath definition. You asked a direct historical question, and I'll answer that now.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play a major role in changing common Christian observance from Sabbath to Sunday?\"",
+      "apiError": null
+    }
+  ],
+  "componentRankingRefined": [
+    { "component": "buildConnectionErrorReply", "responseCount": 168, "ownershipCount": 0, "interferenceCount": 168, "damageScore": 108.2 },
+    { "component": "masterBuddyRuntime.templateDispatch", "responseCount": 21, "ownershipCount": 0, "interferenceCount": 21, "damageScore": 18.5 },
+    { "component": "sabbathHistoryDeepResponder", "responseCount": 17, "ownershipCount": 0, "interferenceCount": 17, "damageScore": 15.0 },
+    { "component": "enrichResponseWithRelationshipIntelligence", "responseCount": 21, "ownershipCount": 0, "interferenceCount": 21, "damageScore": 14.3 },
+    { "component": "sourceGroundedResponder", "responseCount": 15, "ownershipCount": 0, "interferenceCount": 15, "damageScore": 10.2 },
+    { "component": "scriptureWitnessEngine", "responseCount": 10, "ownershipCount": 0, "interferenceCount": 10, "damageScore": 6.8 },
+    { "component": "companionDoctrinePresenter", "responseCount": 10, "ownershipCount": 0, "interferenceCount": 10, "damageScore": 6.8 },
+    { "component": "personalizedFallback", "responseCount": 8, "ownershipCount": 0, "interferenceCount": 8, "damageScore": 5.1 },
+    { "component": "companionLearningLayer.studyContinuation", "responseCount": 2, "ownershipCount": 0, "interferenceCount": 2, "damageScore": 1.4 },
+    { "component": "studyJourneyEngine", "responseCount": 2, "ownershipCount": 0, "interferenceCount": 2, "damageScore": 1.4 },
+    { "component": "openai.reasonFirstComposer", "responseCount": 184, "ownershipCount": 184, "interferenceCount": 0, "damageScore": 0.0 }
+  ],
+  "componentRanking": [
+    {
+      "component": "non_openai_unknown",
+      "responseCount": 256,
+      "ownershipCount": 0,
+      "interferenceCount": 256,
+      "damageScore": 174.1
+    },
+    {
+      "component": "buildConnectionErrorReply",
+      "responseCount": 159,
+      "ownershipCount": 0,
+      "interferenceCount": 159,
+      "damageScore": 108.2
+    },
+    {
+      "component": "openai.reasonFirstComposer",
+      "responseCount": 184,
+      "ownershipCount": 184,
+      "interferenceCount": 0,
+      "damageScore": 41.7
+    },
+    {
+      "component": "enrichResponseWithRelationshipIntelligence",
+      "responseCount": 21,
+      "ownershipCount": 0,
+      "interferenceCount": 21,
+      "damageScore": 14.3
+    },
+    {
+      "component": "sourceGroundedResponder",
+      "responseCount": 15,
+      "ownershipCount": 0,
+      "interferenceCount": 15,
+      "damageScore": 10.2
+    },
+    {
+      "component": "scriptureWitnessEngine",
+      "responseCount": 10,
+      "ownershipCount": 0,
+      "interferenceCount": 10,
+      "damageScore": 6.8
+    },
+    {
+      "component": "companionDoctrinePresenter",
+      "responseCount": 10,
+      "ownershipCount": 0,
+      "interferenceCount": 10,
+      "damageScore": 6.8
+    },
+    {
+      "component": "evidenceCards_without_openai",
+      "responseCount": 9,
+      "ownershipCount": 0,
+      "interferenceCount": 9,
+      "damageScore": 6.1
+    },
+    {
+      "component": "masterBuddyRuntime.templateDispatch",
+      "responseCount": 6,
+      "ownershipCount": 0,
+      "interferenceCount": 6,
+      "damageScore": 4.1
+    },
+    {
+      "component": "personalizedFallback",
+      "responseCount": 8,
+      "ownershipCount": 8,
+      "interferenceCount": 0,
+      "damageScore": 1.8
+    },
+    {
+      "component": "companionLearningLayer.studyContinuation",
+      "responseCount": 2,
+      "ownershipCount": 0,
+      "interferenceCount": 2,
+      "damageScore": 1.4
+    },
+    {
+      "component": "studyJourneyEngine",
+      "responseCount": 2,
+      "ownershipCount": 0,
+      "interferenceCount": 2,
+      "damageScore": 1.4
+    },
+    {
+      "component": "sabbathHistoryDeepResponder",
+      "responseCount": 2,
+      "ownershipCount": 0,
+      "interferenceCount": 2,
+      "damageScore": 1.4
+    },
+    {
+      "component": "sabbathHistoryDeepResponder_or_history_bleed",
+      "responseCount": 2,
+      "ownershipCount": 0,
+      "interferenceCount": 2,
+      "damageScore": 1.4
+    },
+    {
+      "component": "personalizedFallback_or_studySpeaker",
+      "responseCount": 1,
+      "ownershipCount": 0,
+      "interferenceCount": 1,
+      "damageScore": 0.7
+    },
+    {
+      "component": "scriptureWitnessEngine_or_template",
+      "responseCount": 1,
+      "ownershipCount": 0,
+      "interferenceCount": 1,
+      "damageScore": 0.7
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "part": 3,
+  "title": "Final IOG/ICOJ Governed-Knowledge Verification",
+  "icojScripturePipeline": {
+    "totalSourcesAvailable": 47,
+    "sourcesProcessed": 47,
+    "referencesExtracted": 910,
+    "autoApproved": 135,
+    "autoRejectedDuplicate": 14,
+    "autoRejectedInvalid": 3,
+    "unclassifiedNoTopic": 199,
+    "needsAdminReview": 559,
+    "promotedPrimaryWitnesses": 0,
+    "promotedSupportingWitnesses": 0,
+    "promotedCrossReferences": 135,
+    "productionReachableViaGraph": 110
+  },
+  "iogTranscripts": {
+    "totalRawFiles": 240,
+    "totalUniqueEpisodes": 120,
+    "sampledThisBatch": 5,
+    "deferredUnprocessed": 115,
+    "deferredReason": "Spoken auto-caption extraction requires natural-language chapter/verse detection; higher false-positive risk than structured ICOJ lists. Bounded proof sample run and NOT persisted to production this batch.",
+    "samplePersisted": false
+  },
+  "historicalVerification": {
+    "productionRecords": 13,
+    "productionRecordsApproved": 13,
+    "bibliographicInvestigation": {
+      "resolved": 8,
+      "unresolved": 4,
+      "ambiguous": 1
+    },
+    "licensingFindings": {
+      "PUBLIC_DOMAIN_ANCIENT_TEXT": 6,
+      "PUBLIC_DOMAIN_ANCIENT_TEXT_TRANSLATIONS_VARY": 1,
+      "PHYSICAL_ARTIFACT_ISRAEL_MUSEUM_ACADEMIC_PUBLICATIONS_VARY": 1,
+      "COPYRIGHTED_CITE_ONLY_NO_REPRODUCTION": 1,
+      "UNRESOLVED": 4
+    },
+    "knownGap": "Bibliographic-investigation resolution status does not yet sync back to historicalKnowledgeProvider approvalStatus field; no record demoted or removed; flagged for future batch."
+  },
+  "fixesMadeThisBatch": [
+    "Added UNCLASSIFIED_NO_TOPIC_MATCH audit-log visibility for previously invisible 199 unclassified candidates (services/iogIcojGovernedIngestion.js)",
+    "Added persisted-ID idempotency guard to prevent duplicate cross-reference appends on rerun (services/iogIcojGovernedIngestion.js)",
+    "Added bounded IOG transcript sample extraction (runBoundedIogTranscriptSample) reusing the existing governed pipeline, not a new pipeline"
+  ],
+  "productionRetrievalProof": "Live runBuddy() Sabbath cross-reference question returned doctrine_final_authority with 4 real cited witnesses; confirmed 110 IOG/ICOJ cross-references live in buildScriptureRelationshipGraph()",
+  "liveHotPathImpact": "None — ingestion/investigation engines are only invoked from offline scripts, never from routes/buddy.js"
+}

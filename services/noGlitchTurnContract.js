@@ -224,23 +224,15 @@ function classifyTurnContract({ message = '', state = {}, conceptMatch = null } 
     };
   }
 
-  if (m.length < 12) {
-    return {
-      category: 'unknown_or_incomplete',
-      blockRetrieval: true,
-      blockOpenAI: true,
-      needsClarifier: true,
-      conceptId: null,
-      strictTopic: null,
-    };
-  }
-
+  // A short current-turn request is not automatically incomplete.
+  // Only a true bare continuation without context receives a clarifier.
   return {
     category: 'complete_companion_question',
     blockRetrieval: false,
     blockOpenAI: false,
-    conceptId: concept?.id || null,
+    conceptId: null,
     strictTopic: null,
+    shortUtterance: m.length < 12,
   };
 }
 

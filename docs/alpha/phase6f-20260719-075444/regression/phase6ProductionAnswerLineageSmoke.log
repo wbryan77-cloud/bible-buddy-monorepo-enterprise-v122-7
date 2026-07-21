@@ -1,0 +1,10 @@
+PASS lineage_object_present
+PASS lineage_has_all_required_fields
+PASS lineage_primary_witness_matches_retrieved_scripture
+PASS lineage_scripture_provider_is_local_corpus_or_fallback
+PASS lineage_master_route_set
+PASS lineage_retrieval_mode_set
+PASS iog_icoj_never_primary_or_supporting_witness
+SKIP (informational): no IOG/ICOJ cross-reference attached to this particular topic today — discoverySources/approvalDecisions population verified structurally only.
+
+ALL PASS

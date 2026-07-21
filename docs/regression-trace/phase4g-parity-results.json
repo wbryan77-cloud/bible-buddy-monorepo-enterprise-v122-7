@@ -1,0 +1,623 @@
+{
+  "generatedAt": "2026-06-11T18:40:23.438Z",
+  "deployUrl": "https://bible-buddy-monorepo-enterprise-v122-7.onrender.com",
+  "localEnv": {
+    "label": "local",
+    "NODE_ENV": null,
+    "OPENAI_MODEL": "gpt-5.5",
+    "OPENAI_API_KEY": {
+      "present": true,
+      "len": 164,
+      "sha256_8": "a38b6209"
+    },
+    "BIBLEBUDDY_CHAT_TIMEOUT_MS": "55000 (default)",
+    "BIBLEBUDDY_STATE_TTL_MS": "86400000 (default)",
+    "BIBLEBUDDY_DISABLE_OPENAI": "unset",
+    "BUDDY_RUNTIME": "unset",
+    "BUDDY_TEMPLATE_PROSE": "unset",
+    "BUDDY_DISABLE_STUDY_FALLBACK": "unset",
+    "startCommand": "node server.js",
+    "dataDir": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/data",
+    "nodeVersion": "v26.0.0",
+    "heapMB": 11
+  },
+  "renderYamlEnv": {
+    "NODE_ENV": "production",
+    "BUDDY_RUNTIME": "legacy",
+    "BUDDY_TEMPLATE_PROSE": "0",
+    "BUDDY_DISABLE_STUDY_FALLBACK": "1",
+    "startCommand": "node server.js",
+    "plan": "standard",
+    "note": "Phase 4F vars not in render.yaml — use dashboard defaults"
+  },
+  "localHealth": {
+    "ok": true,
+    "at": "2026-06-11T18:40:23.442Z",
+    "uptimeMs": 4,
+    "heapUsedMB": 11.3,
+    "rssMB": 68.7,
+    "activeSessions": 0,
+    "activeDoctrineStates": 29,
+    "openAiCalls": 0,
+    "strictDoctrineCalls": 0,
+    "strictDoctrineOpenAiBlocked": 0,
+    "continuations": 0,
+    "errors": 0,
+    "timeouts": 0,
+    "fallbackCount": 0,
+    "averageLatencyMs": 0,
+    "maxLatencyMs": 0,
+    "totalRequests": 0,
+    "lastRequestAt": null,
+    "openAiDisabled": false,
+    "openAiConfigured": true
+  },
+  "remoteHealthSamples": [
+    {
+      "label": "startup",
+      "at": "2026-06-11T18:40:23.848Z",
+      "health": {
+        "status": 200,
+        "version": "v122.14.0 (platform unification foundation)"
+      },
+      "runtimeHealth": {
+        "status": 404,
+        "body": {
+          "ok": false,
+          "error": "Not found",
+          "path": "/api/runtime-health"
+        }
+      }
+    },
+    {
+      "label": "5min",
+      "at": "2026-06-11T18:40:24.050Z",
+      "health": {
+        "status": 200,
+        "version": "v122.14.0 (platform unification foundation)"
+      },
+      "runtimeHealth": {
+        "status": 404,
+        "body": {
+          "ok": false,
+          "error": "Not found",
+          "path": "/api/runtime-health"
+        }
+      }
+    }
+  ],
+  "localSmoke": [
+    {
+      "label": "acts10_initial",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 174,
+      "route": "doctrine_final_authority",
+      "openAiCalled": false,
+      "replyPreview": "Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean. Acts 10 is about people/Gentiles, not permission to eat unclean foods. Acts 10:14 shows Peter refusing un"
+    },
+    {
+      "label": "acts10_correction",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 93,
+      "route": "doctrine_correction_memory",
+      "openAiCalled": false,
+      "replyPreview": "You are right. I should not use 'primarily.' Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean. Acts 10 is about people/Gentiles, not permission to eat uncl"
+    },
+    {
+      "label": "acts10_challenge",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 101,
+      "route": "strict_doctrine_challenge_rejection",
+      "openAiCalled": false,
+      "replyPreview": "No. Acts 10 is about people and Gentiles, not permission to eat unclean foods. Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean."
+    },
+    {
+      "label": "acts10_verse_1",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 102,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "Here is another approved Scripture witness on this topic. Acts 11:1-18 records Peter explaining the vision concerned Gentiles, not unclean meat."
+    },
+    {
+      "label": "acts10_verse_2",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 97,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "acts10_verse_3",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 97,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "acts10_verse_4",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 99,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "acts10_verse_5",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 97,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "acts10_verse_6",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 97,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "acts10_verse_7",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 97,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "acts10_verse_8",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 101,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "acts10_verse_9",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 98,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "acts10_verse_10",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 97,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "death_initial",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 95,
+      "route": "doctrine_final_authority",
+      "openAiCalled": false,
+      "replyPreview": "Brother, Scripture teaches that the dead know nothing and are described as asleep until resurrection. Ecclesiastes 9:5 says the dead know not any thing. Psalm 146:4 says a man’s thoughts perish. Jesus"
+    },
+    {
+      "label": "death_verse_1",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 100,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "Here is another approved Scripture witness on this topic. Jesus called Lazarus’ death sleep in John 11:11-14."
+    },
+    {
+      "label": "death_verse_2",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 98,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "Here is another approved Scripture witness on this topic. Daniel 12:2 speaks of many who sleep in the dust awakening at the resurrection."
+    },
+    {
+      "label": "death_verse_3",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 99,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "Here is another approved Scripture witness on this topic. Paul speaks of those asleep until the Lord brings them in 1 Thessalonians 4:13-16."
+    },
+    {
+      "label": "death_verse_4",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 98,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "Here is another approved Scripture witness on this topic. 1 Corinthians 15 anchors hope in resurrection, not ongoing conscious life in death."
+    },
+    {
+      "label": "death_verse_5",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 100,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "death_verse_6",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 99,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "death_verse_7",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 100,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "death_verse_8",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 100,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "death_verse_9",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 100,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "death_verse_10",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 98,
+      "route": "doctrine_witness_inventory",
+      "openAiCalled": false,
+      "replyPreview": "I have shown the approved witness chain currently attached to this topic."
+    },
+    {
+      "label": "dietary",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 99,
+      "route": "doctrine_final_authority",
+      "openAiCalled": false,
+      "replyPreview": "Scripture distinguishes clean and unclean animals. Pork and shellfish are unclean. Acts 10 is about people/Gentiles, not permission to eat unclean foods. Leviticus 11 and Deuteronomy 14 distinguish cl"
+    },
+    {
+      "label": "memory",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 117,
+      "route": "doctrine_memory_recall",
+      "openAiCalled": false,
+      "replyPreview": "We were discussing what Scripture teaches about death and resurrection. I'll continue from the approved witness chain. Brother, Scripture teaches that the dead know nothing and are described as asleep"
+    },
+    {
+      "label": "before_that",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 90,
+      "route": "doctrine_memory_recall",
+      "openAiCalled": false,
+      "replyPreview": "Before that, we were discussing Acts 10 and Peter’s explanation of the vision. We were discussing what Scripture teaches about death and resurrection. I'll continue from the approved witness chain. Br"
+    },
+    {
+      "label": "openai_disabled",
+      "pass": true,
+      "failures": [],
+      "latencyMs": 90,
+      "route": "doctrine_final_authority",
+      "openAiCalled": false,
+      "replyPreview": "Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean. Acts 10 is about people/Gentiles, not permission to eat unclean foods. Acts 10:14 shows Peter refusing un"
+    }
+  ],
+  "remoteSmoke": [
+    {
+      "label": "remote_acts10_initial",
+      "pass": false,
+      "failures": [
+        "missing Acts 10 exact wording",
+        "OpenAI called",
+        "hedge phrase"
+      ],
+      "latencyMs": 20692,
+      "route": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "Acts 10 is a pivotal chapter that describes Peter's vision and the conversion of Cornelius, a Gentile. In this chapter, God reveals to Peter that he should not call any man common or unclean (Acts 10:"
+    },
+    {
+      "label": "remote_correction",
+      "pass": false,
+      "failures": [
+        "OpenAI called"
+      ],
+      "latencyMs": 4204,
+      "route": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "I used the term \"primarily\" to indicate that the vision in Acts 10, while touching on dietary laws, mainly focuses on God's acceptance of all people, not just the Jewish community. The key takeaway is"
+    },
+    {
+      "label": "remote_challenge",
+      "pass": false,
+      "failures": [
+        "OpenAI called"
+      ],
+      "latencyMs": 5961,
+      "route": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "Acts 10 does suggest a shift in understanding regarding clean and unclean food, but it primarily emphasizes God's acceptance of all people. In Acts 10:14, Peter is told not to call any man common or u"
+    },
+    {
+      "label": "remote_verse_1",
+      "pass": false,
+      "failures": [
+        "OpenAI called"
+      ],
+      "latencyMs": 9091,
+      "route": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "Another verse that supports the discussion on clean and unclean food is Acts 11:9, where Peter recounts God's message: \"But the voice answered me again from heaven, What God hath cleansed, that call n"
+    },
+    {
+      "label": "remote_verse_2",
+      "pass": false,
+      "failures": [
+        "OpenAI called"
+      ],
+      "latencyMs": 6653,
+      "route": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "Another verse that supports the discussion on clean and unclean food is Acts 11:9, where Peter recounts God's message: \"But the voice answered me again from heaven, What God hath cleansed, that call n"
+    },
+    {
+      "label": "remote_verse_3",
+      "pass": false,
+      "failures": [
+        "bad text: trouble reaching the AI",
+        "diagnostic leak"
+      ],
+      "latencyMs": 561,
+      "route": "core_connection_error",
+      "openAiCalled": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+    },
+    {
+      "label": "remote_verse_4",
+      "pass": false,
+      "failures": [
+        "bad text: trouble reaching the AI",
+        "diagnostic leak"
+      ],
+      "latencyMs": 934,
+      "route": "core_connection_error",
+      "openAiCalled": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+    },
+    {
+      "label": "remote_verse_5",
+      "pass": false,
+      "failures": [
+        "bad text: trouble reaching the AI",
+        "diagnostic leak"
+      ],
+      "latencyMs": 2399,
+      "route": "core_connection_error",
+      "openAiCalled": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+    },
+    {
+      "label": "remote_verse_6",
+      "pass": false,
+      "failures": [
+        "bad text: trouble reaching the AI",
+        "diagnostic leak"
+      ],
+      "latencyMs": 3017,
+      "route": "core_connection_error",
+      "openAiCalled": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+    },
+    {
+      "label": "remote_verse_7",
+      "pass": false,
+      "failures": [
+        "bad text: trouble reaching the AI",
+        "diagnostic leak"
+      ],
+      "latencyMs": 18723,
+      "route": "core_connection_error",
+      "openAiCalled": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+    },
+    {
+      "label": "remote_verse_8",
+      "pass": false,
+      "failures": [
+        "bad text: trouble reaching the AI",
+        "diagnostic leak"
+      ],
+      "latencyMs": 15067,
+      "route": "core_connection_error",
+      "openAiCalled": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+    },
+    {
+      "label": "remote_verse_9",
+      "pass": false,
+      "failures": [
+        "bad text: trouble reaching the AI",
+        "diagnostic leak"
+      ],
+      "latencyMs": 29806,
+      "route": "core_connection_error",
+      "openAiCalled": false,
+      "replyPreview": "I'm having trouble reaching the AI service right now. Please try again in a moment."
+    },
+    {
+      "label": "remote_verse_10",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 1926,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 107,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_1",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 191,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_2",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 268,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_3",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 89,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_4",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 141,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_5",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 133,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_6",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 94,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_7",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 77,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_8",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 77,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_9",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 140,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_death_v_10",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 100,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_dietary",
+      "pass": false,
+      "failures": [
+        "blank/short reply"
+      ],
+      "latencyMs": 85,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_memory",
+      "pass": false,
+      "failures": [
+        "blank/short reply",
+        "no memory recall"
+      ],
+      "latencyMs": 180,
+      "replyPreview": ""
+    },
+    {
+      "label": "remote_before",
+      "pass": false,
+      "failures": [
+        "blank/short reply",
+        "no before-that recall"
+      ],
+      "latencyMs": 106,
+      "replyPreview": ""
+    }
+  ]
+}

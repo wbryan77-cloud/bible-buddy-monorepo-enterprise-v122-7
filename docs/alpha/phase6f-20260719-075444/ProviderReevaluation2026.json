@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-07-19T15:35:00Z",
+  "verificationMethod": "Live web verification (API.Bible terms-and-conditions, Open Food Facts terms-of-use, both July 2026) plus current repository code inspection for already-integrated providers.",
+  "providers": [
+    { "category": "BIBLE_TEXT", "name": "Local public-domain KJV corpus", "founderAlphaNeed": "REQUIRED_MET", "disposition": "KEEP_AS_PRIMARY", "licensing": "Public domain", "notes": "Already primary path in canonicalScriptureProvider.js / bibleTextProvider.js." },
+    { "category": "BIBLE_TEXT", "name": "API.Bible", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "KEEP_AS_FALLBACK", "licensing": "Open-access/CC Bibles free for commercial use; copyrighted translations (e.g. NIV) require paid per-translation commercial license from $10/mo; no sub-licensing.", "notes": "Verified live July 2026. Only use open/public-domain Bibles under this provider; do not add paid copyrighted-translation licenses for Alpha." },
+    { "category": "BIBLE_TEXT", "name": "YouVersion Platform / Bible SDK", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DO_NOT_ADOPT", "licensing": "Partner-negotiated; restrictive on AI-regenerated redistribution", "notes": "No verified fit for AI-companion redistribution use case." },
+    { "category": "BIBLE_TEXT", "name": "bible-api.com (existing fallback)", "founderAlphaNeed": "REQUIRED_MET", "disposition": "KEEP_AS_FALLBACK", "licensing": "Public-domain/open translations only", "notes": "Already wired as tertiary fallback." },
+    { "category": "BIBLE_AUDIO_VIDEO", "name": "Bible Brain (Faith Comes By Hearing)", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "Free for qualifying non-commercial use; commercial terms vary, requires application" },
+    { "category": "BIBLE_AUDIO_VIDEO", "name": "YouVersion audio", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DO_NOT_ADOPT", "licensing": "Partner/licensing friction" },
+    { "category": "VOICE", "name": "OpenAI Realtime/audio", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "Standard commercial OpenAI API terms" },
+    { "category": "VOICE", "name": "Browser-native speech (Web Speech API)", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "PILOT_BEHIND_FLAG", "licensing": "Free, no vendor dependency" },
+    { "category": "AVATAR_PRESENCE", "name": "Animated local orb (non-video)", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "PILOT_BEHIND_FLAG", "licensing": "No third-party dependency" },
+    { "category": "AVATAR_PRESENCE", "name": "D-ID or similar video avatar", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DO_NOT_ADOPT", "licensing": "Per-minute commercial cost; conflicts with non-video companion identity" },
+    { "category": "ORIGINAL_LANGUAGE", "name": "OSHB", "founderAlphaNeed": "REQUIRED_MET", "disposition": "KEEP_AS_PRIMARY", "licensing": "CC0/CC BY" },
+    { "category": "ORIGINAL_LANGUAGE", "name": "Nestle 1904 / MorphGNT", "founderAlphaNeed": "REQUIRED_MET", "disposition": "KEEP_AS_PRIMARY", "licensing": "CC0 (biblicalhumanities.org)" },
+    { "category": "ORIGINAL_LANGUAGE", "name": "Strong's Hebrew/Greek Dictionaries", "founderAlphaNeed": "REQUIRED_MET", "disposition": "KEEP_AS_PRIMARY", "licensing": "CC BY-SA (Open Scriptures)" },
+    { "category": "ORIGINAL_LANGUAGE", "name": "STEPBible-derived data / MACULA", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "Not evaluated in depth — no verified coverage gap justifies adoption; current datasets already cover 66/66 books." },
+    { "category": "FOOD", "name": "Open Food Facts", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "PILOT_BEHIND_FLAG", "licensing": "ODbL + Database Contents License + CC BY-SA images; commercial use explicitly permitted; requires attribution + share-alike; no data-accuracy guarantee (crowd-sourced).", "notes": "Verified live July 2026." },
+    { "category": "FOOD", "name": "OCR label upload", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "N/A", "notes": "lib/ocr/index.js is still a hardcoded stub — confirmed during this batch." },
+    { "category": "HEALTH", "name": "Apple HealthKit", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "Requires native iOS integration + consent flows not present" },
+    { "category": "HEALTH", "name": "Android Health Connect", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "Same as above" },
+    { "category": "HEALTH", "name": "Google Fit", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DO_NOT_ADOPT", "licensing": "Consumer API being industry-wide deprecated in favor of Health Connect" },
+    { "category": "AUTH_DB_MEMORY", "name": "Current local JSON/JSONL stores", "founderAlphaNeed": "REQUIRED_MET", "disposition": "KEEP_AS_PRIMARY", "licensing": "N/A, self-hosted" },
+    { "category": "AUTH_DB_MEMORY", "name": "Supabase/Clerk/Auth0", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "N/A — no verified blocker" },
+    { "category": "AUTH_DB_MEMORY", "name": "Postgres/pgvector", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "N/A — current file-backed stores adequate at Alpha scale" },
+    { "category": "NOTIFICATIONS", "name": "Push", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "Not yet wired to a provider" },
+    { "category": "NOTIFICATIONS", "name": "Email", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "Not yet wired to a provider" },
+    { "category": "NOTIFICATIONS", "name": "SMS", "founderAlphaNeed": "NOT_REQUIRED", "disposition": "DEFER", "licensing": "Not yet wired to a provider" },
+    { "category": "COMPANION_REASONING", "name": "OpenAI API (GPT models)", "founderAlphaNeed": "REQUIRED_MET", "disposition": "KEEP_AS_PRIMARY", "licensing": "Standard commercial OpenAI API terms", "notes": "Verified safe degradation on missing key / outage during this batch's testing (falls to clarifier, never fabricates)." }
+  ],
+  "conclusion": "No new provider integration is required for Founder Alpha readiness. All providers with real exposure already have current, verified dispositions."
+}

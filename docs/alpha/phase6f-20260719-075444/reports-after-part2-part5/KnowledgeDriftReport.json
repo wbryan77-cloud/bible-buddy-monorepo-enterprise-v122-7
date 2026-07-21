@@ -1,0 +1,38 @@
+{
+  "changeId": "drift_1784474991306_0hngv3",
+  "timestamp": "2026-07-19T15:29:51.306Z",
+  "actorOrRule": "phase6e_analytics_build",
+  "affectedTopics": [],
+  "affectedReferences": [],
+  "before": {
+    "checksum": "2e8870ecaf3da612ecc4bcbc0d663ce28eaa3f86d760f7bc1a755024e1dc4c6a",
+    "takenAt": "2026-07-19T15:29:16.600Z"
+  },
+  "after": {
+    "checksum": "2e8870ecaf3da612ecc4bcbc0d663ce28eaa3f86d760f7bc1a755024e1dc4c6a",
+    "takenAt": "2026-07-19T15:29:51.305Z"
+  },
+  "riskLevel": "LOW_METADATA_ONLY",
+  "testsRequired": [],
+  "approvalRequired": false,
+  "isRollback": false,
+  "detail": {
+    "approvedCrossReferencesAdded": [],
+    "approvedCrossReferencesRemoved": [],
+    "topicChanges": [],
+    "historicalRecordsAdded": [],
+    "historicalRecordsRemoved": [],
+    "adminQueueCountsBefore": {
+      "approved": 34,
+      "pending_review": 477,
+      "archived": 54,
+      "rejected": 3
+    },
+    "adminQueueCountsAfter": {
+      "approved": 34,
+      "pending_review": 477,
+      "archived": 54,
+      "rejected": 3
+    }
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "records": [
+    {
+      "id": "hist_second_temple_destruction_ad70",
+      "title": "Destruction of the Second Temple (AD 70)",
+      "sourceName": "Josephus, The Wars of the Jews (Bellum Judaicum), Book VI",
+      "sourceType": "ANCIENT_HISTORIAN_ACCOUNT",
+      "author": "Flavius Josephus",
+      "date": "Written c. AD 75; describes events of AD 70",
+      "sourceLocation": "Public-domain English translation widely available (e.g. Whiston translation, 1737); this record cites the work by name only.",
+      "excerptOrSummary": "Josephus, a first-century Jewish historian who witnessed the siege, records that Roman forces under Titus destroyed the Second Temple in Jerusalem in AD 70, ending the Temple-based sacrificial system described throughout the Old Testament.",
+      "relatedScriptures": [
+        "Matthew 24:1-2",
+        "Luke 21:6",
+        "Mark 13:1-2"
+      ],
+      "relatedTopics": [
+        "kingdom",
+        "new_jerusalem"
+      ],
+      "historicalPeriod": "Second Temple Period, 1st century AD",
+      "provenance": "Named primary ancient source (Josephus), cited by title/author/book only — no verbatim text reproduced.",
+      "licensingStatus": "ORIGINAL_SUMMARY_NO_THIRD_PARTY_TEXT_REPRODUCED",
+      "trustTier": "TIER_1_PRIMARY_HISTORICAL_SOURCE",
+      "approvalStatus": "APPROVED",
+      "productionEligible": true,
+      "approvalReason": "Plain, checkable historical fact from a Tier 1/2 source; no doctrinal claim detected.",
+      "label": "SUPPLEMENTAL_HISTORICAL_INFORMATION"
+    },
+    {
+      "id": "hist_sabbath_synagogue_practice_2nd_temple",
+      "title": "Sabbath synagogue gathering in Second Temple Judaism",
+      "sourceName": "General academic consensus on Second Temple Jewish practice (e.g. Mishnah tractate Shabbat; Josephus, Antiquities)",
+      "sourceType": "ACADEMIC_REFERENCE",
+      "author": null,
+      "date": "Second Temple Period (c. 516 BC – AD 70) through the early Mishnaic period",
+      "sourceLocation": "Widely documented in standard reference works on Second Temple Judaism.",
+      "excerptOrSummary": "By the first century, weekly Sabbath gatherings for Scripture reading in local synagogues were an established Jewish practice, which is why the Gospels and Acts repeatedly describe Jesus and the apostles teaching in synagogues on the Sabbath.",
+      "relatedScriptures": [
+        "Luke 4:16",
+        "Acts 13:14",
+        "Acts 17:2"
+      ],
+      "relatedTopics": [
+        "sabbath"
+      ],
+      "historicalPeriod": "Second Temple Period, 1st century AD",
+      "provenance": "Academic consensus, no single copyrighted secondary work quoted.",
+      "licensingStatus": "ORIGINAL_SUMMARY_NO_THIRD_PARTY_TEXT_REPRODUCED",
+      "trustTier": "TIER_2_ACADEMIC_REFERENCE",
+      "approvalStatus": "APPROVED",
+      "productionEligible": true,
+      "approvalReason": "Plain, checkable historical fact from a Tier 1/2 source; no doctrinal claim detected.",
+      "label": "SUPPLEMENTAL_HISTORICAL_INFORMATION"
+    },
+    {
+      "id": "hist_passover_pilgrimage_jerusalem",
+      "title": "Passover pilgrimage practice in first-century Jerusalem",
+      "sourceName": "Josephus, The Wars of the Jews, Book VI; general academic consensus",
+      "sourceType": "ANCIENT_HISTORIAN_ACCOUNT",
+      "author": "Flavius Josephus",
+      "date": "1st century AD",
+      "sourceLocation": "Named source only; no verbatim text reproduced.",
+      "excerptOrSummary": "Josephus reports that Jerusalem's population swelled dramatically during Passover as Jewish pilgrims travelled from across the region to sacrifice and celebrate the feast at the Temple, consistent with the crowded, festival-week setting the Gospels describe around the crucifixion.",
+      "relatedScriptures": [
+        "John 11:55",
+        "Luke 2:41",
+        "Mark 14:1-2"
+      ],
+      "relatedTopics": [
+        "kingdom"
+      ],
+      "historicalPeriod": "Second Temple Period, 1st century AD",
+      "provenance": "Named primary ancient source (Josephus).",
+      "licensingStatus": "ORIGINAL_SUMMARY_NO_THIRD_PARTY_TEXT_REPRODUCED",
+      "trustTier": "TIER_1_PRIMARY_HISTORICAL_SOURCE",
+      "approvalStatus": "APPROVED",
+      "productionEligible": true,
+      "approvalReason": "Plain, checkable historical fact from a Tier 1/2 source; no doctrinal claim detected.",
+      "label": "SUPPLEMENTAL_HISTORICAL_INFORMATION"
+    },
+    {
+      "id": "hist_pentecost_jerusalem_pilgrim_festival",
+      "title": "Pentecost (Feast of Weeks) as a pilgrimage festival",
+      "sourceName": "General academic consensus on Second Temple Jewish festival calendar",
+      "sourceType": "ACADEMIC_REFERENCE",
+      "author": null,
+      "date": "Second Temple Period, 1st century AD",
+      "sourceLocation": "Widely documented in standard reference works on Jewish festivals.",
+      "excerptOrSummary": "Pentecost (Feast of Weeks, Shavuot) was one of three annual pilgrimage festivals in Second Temple Judaism, drawing Jewish visitors from across the Roman world to Jerusalem — which explains the international crowd of language groups present in the Acts 2 account.",
+      "relatedScriptures": [
+        "Acts 2:1",
+        "Acts 2:5",
+        "Acts 2:9-11"
+      ],
+      "relatedTopics": [
+        "holy_spirit"
+      ],
+      "historicalPeriod": "Second Temple Period, 1st century AD",
+      "provenance": "Academic consensus.",
+      "licensingStatus": "ORIGINAL_SUMMARY_NO_THIRD_PARTY_TEXT_REPRODUCED",
+      "trustTier": "TIER_2_ACADEMIC_REFERENCE",
+      "approvalStatus": "APPROVED",
+      "productionEligible": true,
+      "approvalReason": "Plain, checkable historical fact from a Tier 1/2 source; no doctrinal claim detected.",
+      "label": "SUPPLEMENTAL_HISTORICAL_INFORMATION"
+    },
+    {
+      "id": "hist_jewish_dietary_practice_2nd_temple",
+      "title": "Kosher dietary practice in Second Temple Judaism",
+      "sourceName": "General academic consensus; Mishnah tractate Chullin",
+      "sourceType": "ACADEMIC_REFERENCE",
+      "author": null,
+      "date": "Second Temple Period through Mishnaic codification (c. 200 AD)",
+      "sourceLocation": "Widely documented in standard reference works on Jewish dietary law.",
+      "excerptOrSummary": "Observant first-century Jews followed dietary distinctions rooted in the Torah's clean/unclean animal categories, a lived social practice that forms the historical backdrop for the New Testament's dietary-law discussions.",
+      "relatedScriptures": [
+        "Leviticus 11:1-47",
+        "Acts 10:14"
+      ],
+      "relatedTopics": [
+        "dietary_law",
+        "acts_10"
+      ],
+      "historicalPeriod": "Second Temple Period, 1st century AD",
+      "provenance": "Academic consensus.",
+      "licensingStatus": "ORIGINAL_SUMMARY_NO_THIRD_PARTY_TEXT_REPRODUCED",
+      "trustTier": "TIER_2_ACADEMIC_REFERENCE",
+      "approvalStatus": "APPROVED",
+      "productionEligible": true,
+      "approvalReason": "Plain, checkable historical fact from a Tier 1/2 source; no doctrinal claim detected.",
+      "label": "SUPPLEMENTAL_HISTORICAL_INFORMATION"
+    },
+    {
+      "id": "hist_sheol_hades_greek_translation_note",
+      "title": "Septuagint translation of Hebrew \"Sheol\" as Greek \"Hades\"",
+      "sourceName": "General academic consensus on Septuagint translation practice",
+      "sourceType": "ACADEMIC_REFERENCE",
+      "author": null,
+      "date": "Septuagint translated c. 3rd–2nd century BC",
+      "sourceLocation": "Widely documented in standard Septuagint scholarship.",
+      "excerptOrSummary": "When Jewish translators produced the Septuagint (the Greek Old Testament) roughly two centuries before Christ, they consistently rendered the Hebrew term \"Sheol\" using the Greek term \"Hades\" — the same Greek word later used in the New Testament — showing the two terms were treated as translation equivalents by the original translators themselves.",
+      "relatedScriptures": [
+        "Psalm 16:10",
+        "Acts 2:27"
+      ],
+      "relatedTopics": [
+        "death_state"
+      ],
+      "historicalPeriod": "Hellenistic Period, 3rd–2nd century BC",
+      "provenance": "Academic consensus (Septuagint studies).",
+      "licensingStatus": "ORIGINAL_SUMMARY_NO_THIRD_PARTY_TEXT_REPRODUCED",
+      "trustTier": "TIER_2_ACADEMIC_REFERENCE",
+      "approvalStatus": "APPROVED",
+      "productionEligible": true,
+      "approvalReason": "Plain, checkable historical fact from a Tier 1/2 source; no doctrinal claim detected.",
+      "label": "SUPPLEMENTAL_HISTORICAL_INFORMATION"
+    },
+    {
+      "id": "hist_qumran_dead_sea_scrolls_discovery",
+      "title": "Discovery of the Dead Sea Scrolls at Qumran (1947–1956)",
+      "sourceName": "General academic/archaeological consensus",
+      "sourceType": "ARCHAEOLOGICAL_RECORD",
+      "author": null,
+      "date": "Scrolls dated c. 3rd century BC – 1st century AD; discovered 1947–1956",
+      "sourceLocation": "Widely documented in standard archaeological reference works.",
+      "excerptOrSummary": "Beginning in 1947, a set of ancient Hebrew, Aramaic, and Greek manuscripts (including copies of Old Testament books centuries older than any previously known manuscript) were discovered in caves near Qumran by the Dead Sea, giving scholars a documented window into the Hebrew Bible's textual history in the centuries before and around the time of Christ.",
+      "relatedScriptures": [
+        "Isaiah 7:14"
+      ],
+      "relatedTopics": [],
+      "historicalPeriod": "Second Temple Period, 3rd century BC – 1st century AD (manuscripts); 1947–1956 (discovery)",
+      "provenance": "Academic/archaeological consensus.",
+      "licensingStatus": "ORIGINAL_SUMMARY_NO_THIRD_PARTY_TEXT_REPRODUCED",
+      "trustTier": "TIER_2_ACADEMIC_REFERENCE",
+      "approvalStatus": "APPROVED",
+      "productionEligible": true,
+      "approvalReason": "Plain, checkable historical fact from a Tier 1/2 source; no doctrinal claim detected.",
+      "label": "SUPPLEMENTAL_HISTORICAL_INFORMATION"
+    },
+    {
+      "id": "hist_herod_temple_construction_timeline",
+      "title": "Herod the Great's expansion of the Second Temple",
+      "sourceName": "Josephus, Antiquities of the Jews, Book XV",
+      "sourceType": "ANCIENT_HISTORIAN_ACCOUNT",
+      "author": "Flavius Josephus",
+      "date": "Construction began c. 20/19 BC",
+      "sourceLocation": "Named source only; no verbatim text reproduced.",
+      "excerptOrSummary": "Josephus records that Herod the Great began a major expansion and reconstruction of the Second Temple around 20/19 BC, a decades-long building project whose scale is reflected in the Gospel disciples' amazement at the Temple's stonework.",
+      "relatedScriptures": [
+        "Mark 13:1",
+        "John 2:20"
+      ],
+      "relatedTopics": [
+        "kingdom"
+      ],
+      "historicalPeriod": "Herodian Period, late 1st century BC",
+      "provenance": "Named primary ancient source (Josephus).",
+      "licensingStatus": "ORIGINAL_SUMMARY_NO_THIRD_PARTY_TEXT_REPRODUCED",
+      "trustTier": "TIER_1_PRIMARY_HISTORICAL_SOURCE",
+      "approvalStatus": "APPROVED",
+      "productionEligible": true,
+      "approvalReason": "Plain, checkable historical fact from a Tier 1/2 source; no doctrinal claim detected.",
+      "label": "SUPPLEMENTAL_HISTORICAL_INFORMATION"
+    }
+  ],
+  "summary": {
+    "generatedAt": "2026-07-19T09:53:20.555Z",
+    "totalRecords": 8,
+    "approvedCount": 8,
+    "productionEligibleCount": 8,
+    "needsAdminReviewCount": 0,
+    "byTrustTier": {
+      "TIER_1_PRIMARY_HISTORICAL_SOURCE": 3,
+      "TIER_2_ACADEMIC_REFERENCE": 5
+    },
+    "bySourceType": {
+      "ANCIENT_HISTORIAN_ACCOUNT": 3,
+      "ACADEMIC_REFERENCE": 4,
+      "ARCHAEOLOGICAL_RECORD": 1
+    },
+    "byLicensingStatus": {
+      "ORIGINAL_SUMMARY_NO_THIRD_PARTY_TEXT_REPRODUCED": 8
+    },
+    "byApprovalStatus": {
+      "APPROVED": 8
+    },
+    "byPeriod": {
+      "Second Temple Period, 1st century AD": 5,
+      "Hellenistic Period, 3rd–2nd century BC": 1,
+      "Second Temple Period, 3rd century BC – 1st century AD (manuscripts); 1947–1956 (discovery)": 1,
+      "Herodian Period, late 1st century BC": 1
+    },
+    "distinctTopicsCovered": 7,
+    "distinctPassagesCovered": 19,
+    "honestyNote": "8 historical record(s) exist in this batch — a deliberately small, conservative seed set. Breadth grows only through Admin review of source-investigation candidates (see HistoricalSourceInvestigation.json), never by bulk import."
+  }
+}

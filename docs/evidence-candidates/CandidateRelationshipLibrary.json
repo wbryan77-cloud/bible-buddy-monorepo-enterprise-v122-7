@@ -1,0 +1,301 @@
+{
+  "ranAt": "2026-06-10T04:19:07.139Z",
+  "relationships": [
+    {
+      "sourceTopic": "israel",
+      "targetTopic": "jacob",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.2,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Revelation"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceTopic": "jacob",
+      "targetTopic": "jacob_israel_twelve_tribes",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.4,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Revelation"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceTopic": "israel",
+      "targetTopic": "jacob_israel_twelve_tribes",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.4,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Revelation"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceTopic": "pentecost",
+      "targetTopic": "peter",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.25,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Writings",
+            "Gospels",
+            "Epistles",
+            "Revelation"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceTopic": "kingdom",
+      "targetTopic": "kingdom_of_god",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.5,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceTopic": "israel",
+      "targetTopic": "kingdom_of_god",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.5,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceTopic": "pentecost",
+      "targetTopic": "feasts",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceTopic": "sabbath",
+      "targetTopic": "feasts",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Former Prophets",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceTopic": "messiah",
+      "targetTopic": "messiah_logos",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.667,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceTopic": "gospel",
+      "targetTopic": "messiah_logos",
+      "relationshipType": "continuity",
+      "inferenceBasis": "inheritance_map_with_continuity_index",
+      "confidence": 0.667,
+      "evidence": [
+        {
+          "evidenceType": "inheritance_continuity_inference",
+          "parentSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ],
+          "childSections": [
+            "Torah",
+            "Latter Prophets",
+            "Writings",
+            "Gospels",
+            "Acts",
+            "Epistles",
+            "Revelation"
+          ]
+        }
+      ]
+    }
+  ],
+  "count": 10
+}

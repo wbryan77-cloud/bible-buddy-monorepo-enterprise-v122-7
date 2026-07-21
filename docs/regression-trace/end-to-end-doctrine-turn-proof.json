@@ -1,0 +1,156 @@
+{
+  "ranAt": "2026-06-07T23:03:48.999Z",
+  "clientTrace": {
+    "singletonNull": false,
+    "env": {
+      "OPENAI_API_KEY": {
+        "present": true,
+        "len": 164,
+        "prefix": "sk-proj",
+        "looksSk": true
+      },
+      "OPENAI_MODEL": "gpt-4.1-mini",
+      "OPENAI_ORG": null,
+      "OPENAI_ORGANIZATION": null,
+      "OPENAI_PROJECT": null,
+      "OPENAI_BASE_URL": null,
+      "NODE_ENV": null,
+      "BUDDY_RUNTIME": null,
+      "BUDDY_OPENAI_FIRST": null
+    },
+    "dotenv": {
+      "configCalled": true,
+      "envFileExists": false,
+      "envFilePath": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/.env"
+    },
+    "constructorArgs": {
+      "apiKeySource": "process.env.OPENAI_API_KEY",
+      "explicitBaseURL": false,
+      "explicitOrg": false,
+      "explicitProject": false
+    },
+    "clientMeta": {
+      "baseURL": "https://api.openai.com/v1",
+      "organization": null,
+      "project": null,
+      "timeout": 600000,
+      "maxRetries": 2
+    },
+    "runtimesUsingSingleton": [
+      "buddyBrain.js",
+      "reasonFirstComposer.js",
+      "openAiFirstCompanionRuntime.js (via composeReasonFirstReply)",
+      "masterBuddyRuntime.js",
+      "bibleBuddyLiteRuntime.js",
+      "minimalReasonFirstRuntime.js",
+      "reasonFirstLiteRuntime.js",
+      "shadowReasonFirstRuntime.js",
+      "adminBrain.js",
+      "contentInsight.js"
+    ],
+    "productionPath": "runBuddy → openAiFirstCompanionRuntime → composeReasonFirstReply → callOpenAI → openai.chat.completions.create"
+  },
+  "turn": {
+    "question": "What does Logos mean in John 1:1?",
+    "retrievalStarted": "2026-06-07T23:03:37.743Z",
+    "retrievalCompleted": "2026-06-07T23:03:37.751Z",
+    "evidencePackSize": 11258,
+    "evidenceRefs": [],
+    "composeStarted": "2026-06-07T23:03:37.751Z",
+    "composeCompleted": "2026-06-07T23:03:48.999Z",
+    "openaiCalled": true,
+    "openaiSuccess": true,
+    "claimsGenerated": [
+      {
+        "claimId": "c_inferred",
+        "claim": "In John 1:1, the word \"Logos\" is the Greek term translated as \"Word.\" It refers to Jesus Christ as the divine Word who was with God in the beginning and who is God Himself. This identifies Jesus not just as a messenger but as the eternal divine expression and agent of creation an",
+        "type": "doctrine",
+        "supportingScriptures": []
+      }
+    ],
+    "doctrineConclusion": "In John 1:1, the word \"Logos\" is the Greek term translated as \"Word.\" It refers to Jesus Christ as the divine Word who was with God in the beginning and who is God Himself. This identifies Jesus not just as a messenger but as the eternal divine expression and agent of creation an",
+    "validatorStarted": "2026-06-07T23:03:48.999Z",
+    "validatorCompleted": "2026-06-07T23:03:48.999Z",
+    "approvalGateStarted": "2026-06-07T23:03:48.999Z",
+    "approvalGateCompleted": "2026-06-07T23:03:48.999Z",
+    "finalAnswer": "In John 1:1, the word \"Logos\" is the Greek term translated as \"Word.\" It refers to Jesus Christ as the divine Word who was with God in the beginning and who is God Himself. This identifies Jesus not just as a messenger but as the eternal divine expression and agent of creation and revelation. This meaning is rooted in the continuity of Scripture from Genesis 1:1, where God's word brings creation into being, through prophetic promises like Isaiah 9:6 about the Messiah, to the New Testament affirmation that the Word became flesh in Jesus (John 1:14). Scripture does not state that directly.",
+    "memoryBefore": {
+      "rssMB": 72,
+      "heapUsedMB": 15,
+      "heapTotalMB": 21
+    },
+    "memoryAfter": {
+      "rssMB": 127,
+      "heapUsedMB": 26,
+      "heapTotalMB": 35
+    },
+    "promptBytes": 29571,
+    "errorMessage": null
+  },
+  "retrieval": {
+    "topic": "messiah_logos",
+    "effectiveTopic": "messiah_logos",
+    "cardIds": [
+      "messiahLogos"
+    ],
+    "catalogKeys": [],
+    "approvedRefCount": 0
+  },
+  "claimsPipeline": {
+    "rawOpenAIFields": {
+      "hasReply": true,
+      "claimsCount": 1,
+      "hasDoctrineConclusion": true,
+      "replyKeys": [
+        "scripture",
+        "claims",
+        "doctrineConclusion",
+        "mode",
+        "confidence",
+        "memory_used",
+        "suggested_settings_change",
+        "orb_state",
+        "safety_level",
+        "next_steps",
+        "admin_flags",
+        "runtime",
+        "quality",
+        "claimValidation"
+      ]
+    },
+    "claimsCount": 1,
+    "validator": {
+      "passed": false,
+      "skipped": false,
+      "unsupportedClaims": [
+        "In John 1:1, the word \"Logos\" is the Greek term translated as \"Word.\" It refers to Jesus Christ as the divine Word who was with God in the beginning and who is God Himself. This identifies Jesus not just as a messenger but as the eternal divine expression and agent of creation an"
+      ],
+      "contradictedClaims": [],
+      "claimResults": [
+        {
+          "claim": "In John 1:1, the word \"Logos\" is the Greek term translated as \"Word.\" It refers to Jesus Christ as the divine Word who was with God in the beginning and who is God Himself. This identifies Jesus not just as a messenger but as the eternal divine expression and agent of creation an",
+          "classification": "C",
+          "validatorDecision": "Rejected"
+        }
+      ]
+    },
+    "approval": {
+      "decision": "degraded",
+      "claimValidationPassed": false,
+      "claimDegraded": true,
+      "regenerated": true,
+      "admin_flags": [
+        "claim_validation_degraded"
+      ],
+      "masterRoute": "reason_first_openai",
+      "buildConnectionErrorReplyUsed": false
+    }
+  },
+  "failureClassification": {
+    "isDoctrineFailure": false,
+    "categories": [],
+    "primary": "NONE",
+    "errorMessage": null
+  },
+  "pipelineProven": true
+}

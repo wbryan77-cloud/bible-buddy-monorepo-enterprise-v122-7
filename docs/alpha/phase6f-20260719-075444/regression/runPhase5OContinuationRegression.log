@@ -1,0 +1,12 @@
+┌─────────┬───────────────────────────────┬────────────────────────────────────────────────┬──────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ (index) │ message                       │ route                                          │ fallback │ reply                                                                                                  │
+├─────────┼───────────────────────────────┼────────────────────────────────────────────────┼──────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'What does the app do?'       │ 'phase5l_app_identity'                         │ null     │ "BibleBuddy is a Scripture-grounded companion. I'm here to listen, pray with you, help you study the " │
+│ 1       │ 'Tell me more.'               │ 'conversation_owner_app_identity_continuation' │ null     │ 'BibleBuddy helps in a few simple ways: you can ask Bible questions, ask for prayer, talk through som' │
+│ 2       │ 'Can you pray with me?'       │ 'phase5k_prayer_companion'                     │ null     │ "Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentlen" │
+│ 3       │ 'I need a better prayer'      │ 'response_revision_prayer'                     │ null     │ 'Yes. Let me pray with more depth. Father, I come before You with a heart that needs Your peace, Your' │
+│ 4       │ "I'm nervous about tomorrow." │ 'phase5l_presence_nervous'                     │ null     │ "I hear that you're nervous. Pause and breathe for a moment. What's weighing on you most — a conversa" │
+│ 5       │ 'Decision'                    │ 'conversation_owner_prayer_continuation'       │ null     │ 'Yes. Let’s pray deeper. Father, I come to You needing peace, wisdom, and strength. Help me slow down' │
+│ 6       │ 'Stop.'                       │ 'conversation_owner_stop'                      │ null     │ "I hear you. I'll stop that topic. What do you want to talk about now?"                                │
+└─────────┴───────────────────────────────┴────────────────────────────────────────────────┴──────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+Phase 5O continuation regression PASS

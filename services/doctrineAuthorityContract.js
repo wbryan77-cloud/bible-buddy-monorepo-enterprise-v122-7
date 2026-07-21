@@ -139,7 +139,13 @@ const BASE_CONTRACTS = {
     topic: 'acts_10',
     strictMode: true,
     approvedWitnesses: ['Acts 10:14', 'Acts 10:28', 'Acts 10:34-35', 'Acts 11:1-18'],
-    supportingWitnesses: [],
+    // Phase 6F Part 2B — closes the reported NO_SUPPORTING_WITNESS /
+    // NO_OLD_TESTAMENT_WITNESS gaps. Acts 10:44-48 continues the same
+    // narrative (the Holy Spirit falling on Gentiles, confirming Peter's
+    // vision). Isaiah 56:6-7 is the OT witness Peter's own conclusion
+    // (Gentiles/people, not food) echoes: God including "the stranger"
+    // among His people. Neither changes acts10Strict or requiredConclusion.
+    supportingWitnesses: ['Acts 10:44-48', 'Isaiah 56:6-7'],
     cautionWitnesses: [],
     prohibitedWitnesses: [],
     commonMisreadings: [
@@ -254,7 +260,12 @@ const BASE_CONTRACTS = {
       'Romans 8:9',
       '1 Corinthians 12:4-11',
     ],
-    supportingWitnesses: [],
+    // Phase 6F Part 2B — closes NO_SUPPORTING_WITNESS / NO_OLD_TESTAMENT_WITNESS.
+    // Joel 2:28 is the OT prophecy Peter himself quotes as fulfilled in
+    // Acts 2:38 (already a primary witness here); Ezekiel 36:27 is the OT
+    // promise of God's Spirit put within believers. Both are OT witnesses
+    // to the same Spirit described in the NT primary witnesses above.
+    supportingWitnesses: ['Joel 2:28', 'Ezekiel 36:27'],
     cautionWitnesses: [],
     prohibitedWitnesses: [],
     commonMisreadings: ['Spirit as impersonal force only'],
@@ -276,7 +287,11 @@ const BASE_CONTRACTS = {
       'Acts 2:29-31',
       'Matthew 22:41-45',
     ],
-    supportingWitnesses: [],
+    // Phase 6F Part 2B — closes NO_SUPPORTING_WITNESS. Luke 1:32-33 is the
+    // angel Gabriel's own announcement that Jesus will be given "the
+    // throne of his father David" — directly ties the Davidic covenant
+    // (2 Samuel 7:12-16) to its Messianic fulfillment.
+    supportingWitnesses: ['Luke 1:32-33'],
     cautionWitnesses: [],
     prohibitedWitnesses: [],
     commonMisreadings: ['Davidic hope detached from Messiah'],
@@ -316,7 +331,12 @@ const BASE_CONTRACTS = {
       'John 3:13',
       'Isaiah 66:1',
     ],
-    supportingWitnesses: [],
+    // Phase 6F Part 2B — closes NO_SUPPORTING_WITNESS. Psalm 115:16 is
+    // already curated as a supporting witness for the same heavens/layers
+    // concept in bibleConceptConcordance.js (heaven_layers); added here so
+    // the strict-doctrine contract itself (not only the concordance
+    // concept) carries a supporting witness.
+    supportingWitnesses: ['Psalm 115:16'],
     cautionWitnesses: [],
     prohibitedWitnesses: [],
     commonMisreadings: ['Single heaven only without Scripture layers'],

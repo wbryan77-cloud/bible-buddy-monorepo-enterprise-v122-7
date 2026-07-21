@@ -1,0 +1,1200 @@
+{
+  "ranAt": "2026-06-09T06:49:55.682Z",
+  "queues": {
+    "queue95": [
+      {
+        "candidateId": "3e_0013",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0014",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0026",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0067",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0076",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0087",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0090",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0093",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0098",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0101",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0106",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Phase 2J-A Class C extraction"
+      },
+      {
+        "candidateId": "3e_0108",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0110",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0112",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0119",
+        "topic": "dietary_law",
+        "supportScore": 96,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      }
+    ],
+    "queue90": [
+      {
+        "candidateId": "3e_0008",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0009",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0010",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0018",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "camp": "Internal",
+        "sourceName": "Israel of God Lesson Archives"
+      },
+      {
+        "candidateId": "3e_0020",
+        "topic": "dietary_law",
+        "supportScore": 93,
+        "camp": "Internal",
+        "sourceName": "Israel of God Lesson Archives"
+      },
+      {
+        "candidateId": "3e_0021",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0022",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0024",
+        "topic": "dietary_law",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Phase 2J-A Class C extraction"
+      },
+      {
+        "candidateId": "3e_0027",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0032",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0060",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0061",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0062",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0073",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0081",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0089",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0095",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0099",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0103",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0105",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0107",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0117",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0118",
+        "topic": "sabbath",
+        "supportScore": 94,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0127",
+        "topic": "sabbath",
+        "supportScore": 93,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      }
+    ],
+    "queue80": [
+      {
+        "candidateId": "3e_0019",
+        "topic": "death_state",
+        "supportScore": 81,
+        "camp": "Internal",
+        "sourceName": "Israel of God Lesson Archives"
+      },
+      {
+        "candidateId": "3e_0068",
+        "topic": "death_state",
+        "supportScore": 80,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0082",
+        "topic": "messiah_logos",
+        "supportScore": 85,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      }
+    ],
+    "queue70": [
+      {
+        "candidateId": "3e_0034",
+        "topic": "death_state",
+        "supportScore": 75,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0054",
+        "topic": "death_state",
+        "supportScore": 73,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0056",
+        "topic": "holiness",
+        "supportScore": 73,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0071",
+        "topic": "death_state",
+        "supportScore": 73,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0078",
+        "topic": "death_state",
+        "supportScore": 71,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0085",
+        "topic": "death_state",
+        "supportScore": 73,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0091",
+        "topic": "holiness",
+        "supportScore": 74,
+        "camp": "Internal",
+        "sourceName": "Phase 2J-A Class C extraction"
+      },
+      {
+        "candidateId": "3e_0092",
+        "topic": "death_state",
+        "supportScore": 71,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0113",
+        "topic": "death_state",
+        "supportScore": 73,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0122",
+        "topic": "death_state",
+        "supportScore": 73,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      },
+      {
+        "candidateId": "3e_0124",
+        "topic": "death_state",
+        "supportScore": 73,
+        "camp": "Internal",
+        "sourceName": "Previously processed unified candidates"
+      }
+    ],
+    "queueBelow70": [
+      {
+        "candidateId": "3e_0001",
+        "topic": "iog_stick_the_script",
+        "supportScore": 25
+      },
+      {
+        "candidateId": "3e_0002",
+        "topic": "the_israel_god_research",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0003",
+        "topic": "the_israel_god_research",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0004",
+        "topic": "the_israel_god_research",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0005",
+        "topic": "home_israel_the_church",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0006",
+        "topic": "home_israel_the_church",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0007",
+        "topic": "home_israel_the_church",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0011",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3e_0012",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3e_0015",
+        "topic": "john",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3e_0016",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3e_0017",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3e_0023",
+        "topic": "john",
+        "supportScore": 52
+      },
+      {
+        "candidateId": "3e_0025",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3e_0028",
+        "topic": "open_topic_what_the",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0029",
+        "topic": "open_topic_what_the",
+        "supportScore": 44
+      },
+      {
+        "candidateId": "3e_0030",
+        "topic": "michael_archangel",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0031",
+        "topic": "great_tribulation",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0033",
+        "topic": "paul",
+        "supportScore": 43
+      },
+      {
+        "candidateId": "3e_0035",
+        "topic": "baptism",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0036",
+        "topic": "prayer",
+        "supportScore": 37
+      },
+      {
+        "candidateId": "3e_0037",
+        "topic": "covenants",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0038",
+        "topic": "mark_of_the_beast",
+        "supportScore": 37
+      },
+      {
+        "candidateId": "3e_0039",
+        "topic": "tithes",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0040",
+        "topic": "144000",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0041",
+        "topic": "marriage",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0042",
+        "topic": "open_topic_does_genesis",
+        "supportScore": 49
+      },
+      {
+        "candidateId": "3e_0043",
+        "topic": "noah",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0044",
+        "topic": "paul",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0045",
+        "topic": "open_topic_fear_god",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0046",
+        "topic": "open_topic_the_remnant",
+        "supportScore": 35
+      },
+      {
+        "candidateId": "3e_0047",
+        "topic": "feasts",
+        "supportScore": 67
+      },
+      {
+        "candidateId": "3e_0048",
+        "topic": "covenants",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0049",
+        "topic": "holy_spirit",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0050",
+        "topic": "open_topic_what_the",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0051",
+        "topic": "two_witnesses",
+        "supportScore": 31
+      },
+      {
+        "candidateId": "3e_0052",
+        "topic": "john",
+        "supportScore": 49
+      },
+      {
+        "candidateId": "3e_0053",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3e_0055",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3e_0057",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3e_0058",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3e_0059",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3e_0063",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3e_0064",
+        "topic": "paul",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3e_0065",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3e_0066",
+        "topic": "kingdom_of_god",
+        "supportScore": 43
+      },
+      {
+        "candidateId": "3e_0069",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3e_0070",
+        "topic": "death_state",
+        "supportScore": 63
+      },
+      {
+        "candidateId": "3e_0072",
+        "topic": "kingdom_of_god",
+        "supportScore": 37
+      },
+      {
+        "candidateId": "3e_0074",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3e_0075",
+        "topic": "death_state",
+        "supportScore": 60
+      },
+      {
+        "candidateId": "3e_0077",
+        "topic": "emotional",
+        "supportScore": 25
+      },
+      {
+        "candidateId": "3e_0079",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3e_0080",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3e_0083",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3e_0084",
+        "topic": "holiness",
+        "supportScore": 58
+      },
+      {
+        "candidateId": "3e_0086",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3e_0088",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3e_0094",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3e_0096",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3e_0097",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3e_0100",
+        "topic": "john",
+        "supportScore": 35
+      },
+      {
+        "candidateId": "3e_0102",
+        "topic": "death_state",
+        "supportScore": 46
+      },
+      {
+        "candidateId": "3e_0104",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3e_0109",
+        "topic": "heavens",
+        "supportScore": 45
+      },
+      {
+        "candidateId": "3e_0111",
+        "topic": "kingdom_of_god",
+        "supportScore": 38
+      },
+      {
+        "candidateId": "3e_0114",
+        "topic": "mixed_where_now_according",
+        "supportScore": 43
+      },
+      {
+        "candidateId": "3e_0115",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3e_0116",
+        "topic": "resurrection",
+        "supportScore": 40
+      },
+      {
+        "candidateId": "3e_0120",
+        "topic": "peter",
+        "supportScore": 47
+      },
+      {
+        "candidateId": "3e_0121",
+        "topic": "heavens",
+        "supportScore": 68
+      },
+      {
+        "candidateId": "3e_0123",
+        "topic": "john",
+        "supportScore": 43
+      },
+      {
+        "candidateId": "3e_0125",
+        "topic": "emotional_does_scripture_say",
+        "supportScore": 25
+      },
+      {
+        "candidateId": "3e_0126",
+        "topic": "prayer",
+        "supportScore": 25
+      }
+    ]
+  },
+  "scoreBuckets": {
+    "above95": 15,
+    "above90": 39,
+    "above80": 42,
+    "above70": 53,
+    "below70": 74
+  },
+  "executive": {
+    "sourcesProcessed": 16,
+    "sourcesFailed": 62,
+    "sourcesTotal": 78,
+    "youtubeVideosFound": 120,
+    "playlistsFound": 8,
+    "transcriptsFound": 0,
+    "lessonPagesProcessed": 4,
+    "handoutsProcessed": 96,
+    "qnaItemsProcessed": 0,
+    "totalQuestions": 420,
+    "scrubbedNewExtractions": 513,
+    "totalTopics": 139,
+    "totalScriptureChains": 127,
+    "totalGenesisRevelationExpansions": 58,
+    "totalParallelScriptures": 0,
+    "totalSupportingScriptures": 31,
+    "totalContinuityScriptures": 23,
+    "candidates95Plus": 15,
+    "candidates90Plus": 39,
+    "candidates80Plus": 42,
+    "strongestTopicPacks": [
+      {
+        "topic": "dietary_law",
+        "displayName": "Dietary Law",
+        "lessonTitle": "Dietary Law: Is pork clean according to Scripture?",
+        "supportScore": 96,
+        "strengthTier": "Very Strong",
+        "candidateCount": 17,
+        "questions": [
+          "Is pork clean according to Scripture?",
+          "Does Acts 10 permit eating unclean animals?",
+          "Clean and unclean foods in Scripture",
+          "Can I eat pork?",
+          "Does Acts 10 make pork clean?",
+          "What does the Bible say about clean and unclean food?",
+          "Can I eat pork and still be faithful?",
+          "I feel guilty eating unclean food. What does the Bible say?",
+          "Is pork a salvation issue? I am anxious.",
+          "Acts 10 proves pork is clean. Change my mind.",
+          "You are wrong about pork. Acts 10 is clear.",
+          "Leviticus is outdated. Pork is fine.",
+          "You did not answer my question about pork.",
+          "Everyone eats pork. Stop being legalistic.",
+          "Acts 11 confirms all food is clean now.",
+          "Give me a yes or no: can I eat pork?",
+          "But Acts 10 makes all foods clean."
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [],
+        "continuityScriptures": [
+          "Daniel 1:8",
+          "Deuteronomy 14",
+          "Leviticus 11",
+          "Isaiah 66:17",
+          "Acts 10:28",
+          "Acts 11:1-18"
+        ],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "sabbath",
+        "displayName": "Sabbath",
+        "lessonTitle": "Sabbath: Why do you keep the seventh-day Sabbath?",
+        "supportScore": 94,
+        "strengthTier": "Strong",
+        "candidateCount": 22,
+        "questions": [
+          "Why do you keep the seventh-day Sabbath?",
+          "Did the Sabbath change to Sunday?",
+          "What does Hebrews 4:9 mean about Sabbath rest?",
+          "Sabbath from Genesis to Revelation",
+          "What is the Sabbath day according to Scripture?",
+          "How do we keep the Sabbath holy?",
+          "Did early Christians keep gathering on the Sabbath for Scripture?",
+          "Why do we worship on the seventh day?",
+          "What is a Sabbath day according to Scripture?",
+          "Should I keep the Sabbath on Saturday?",
+          "What does holy mean in the Sabbath commandment?",
+          "How do I keep the Sabbath while working a job?",
+          "I want to keep Sabbath holy but my church meets Sunday.",
+          "Sabbath rest while caring for a sick parent?",
+          "Sunday replaced the Sabbath. Everyone knows that.",
+          "My pastor says Sabbath was nailed to the cross.",
+          "Constantine changed the Sabbath. Admit it.",
+          "Hebrews 4 means we do not need the seventh day anymore.",
+          "That was not my question about the Sabbath.",
+          "What scriptures support resting on the seventh day?",
+          "Did Jesus keep the Sabbath?",
+          "Continuity expansion: sabbath — commandment_keeping_saints"
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [
+          "Acts 13:42-44",
+          "Matthew 12:11-12",
+          "Exodus 31:13"
+        ],
+        "continuityScriptures": [
+          "Hebrews 4:9",
+          "Exodus 20:8-11",
+          "Isaiah 58:13-14",
+          "Acts 17:2",
+          "Luke 4:16"
+        ],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "messiah_logos",
+        "displayName": "Messiah Logos",
+        "lessonTitle": "Messiah & Logos: Please help me understand Logos. I am confused and sad.",
+        "supportScore": 85,
+        "strengthTier": "Good Support",
+        "candidateCount": 1,
+        "questions": [
+          "Please help me understand Logos. I am confused and sad."
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [
+          "Psalm 110:1",
+          "Isaiah 53:1-12",
+          "Hebrews 1:1-3"
+        ],
+        "continuityScriptures": [
+          "John 1:1-14",
+          "Colossians 1:15-17"
+        ],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "holiness",
+        "displayName": "Holiness",
+        "lessonTitle": "Holiness: What does holy mean?",
+        "supportScore": 68,
+        "strengthTier": "Research Needed",
+        "candidateCount": 3,
+        "questions": [
+          "What does holy mean?",
+          "Why does God allow pain if He is holy?",
+          "What does holy mean? I want to live right."
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [
+          "Psalm 24:3-4",
+          "Exodus 19:5-6",
+          "Leviticus 11:44-45",
+          "Hebrews 12:14",
+          "Leviticus 19:2",
+          "1 Peter 1:15-16"
+        ],
+        "continuityScriptures": [],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "feasts",
+        "displayName": "Feasts",
+        "lessonTitle": "Feast Days: What are the biblical feast days?",
+        "supportScore": 67,
+        "strengthTier": "Research Needed",
+        "candidateCount": 1,
+        "questions": [
+          "What are the biblical feast days?"
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [
+          "Exodus 12:1-14",
+          "1 Corinthians 5:7-8"
+        ],
+        "continuityScriptures": [
+          "Luke 22:14-20",
+          "Acts 2:1-4",
+          "Zechariah 14:16-19"
+        ],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "heavens",
+        "displayName": "Heavens",
+        "lessonTitle": "Heavens: What are the three heavens in Scripture?",
+        "supportScore": 65,
+        "strengthTier": "Research Needed",
+        "candidateCount": 9,
+        "questions": [
+          "What are the three heavens in Scripture?",
+          "What is the third heaven?",
+          "Where does Jesus say no man has ascended to heaven?",
+          "How many heavens are talked about in the Bible?",
+          "Explain heaven line upon line from Scripture only.",
+          "Does the Bible say believers go to the third heaven?",
+          "2 Corinthians 12:2 proves our eternal home is the third heaven.",
+          "The soul goes to heaven. Do not give me sleep metaphors.",
+          "Is it in heaven or on earth?"
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [
+          "John 8:21",
+          "Acts 2:34",
+          "Revelation 20:1-6",
+          "Revelation 21:1-3",
+          "Revelation 21:1",
+          "Matthew 5:5",
+          "Matthew 6:9-10",
+          "John 7:33-34"
+        ],
+        "continuityScriptures": [
+          "2 Corinthians 12:2",
+          "John 14:3",
+          "Acts 1:9-11",
+          "John 3:13"
+        ],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "death_state",
+        "displayName": "Death State",
+        "lessonTitle": "Death State & Resurrection: Do believers go to heaven when they die?",
+        "supportScore": 62,
+        "strengthTier": "Research Needed",
+        "candidateCount": 21,
+        "questions": [
+          "Do believers go to heaven when they die?",
+          "State of the dead line upon line",
+          "What does the Bible teach about the soul at death?",
+          "What happens when we die?",
+          "What is the state of the dead according to Scripture?",
+          "I am grieving and cannot sleep.",
+          "My father died. Where is he now?",
+          "My mom died. Is she in heaven now?",
+          "I am grieving. What does the Bible say about death?",
+          "My spouse died. Will I see them at resurrection?",
+          "My friend says we go to heaven when we die. What does Scripture say?",
+          "I am worried about my soul. What happens when we die?",
+          "My brother died. Third heaven or resurrection hope?",
+          "Grieving and wondering about the resurrection.",
+          "We go to heaven when we die. The Bible says so.",
+          "2 Corinthians 5:8 proves we go to heaven immediately at death.",
+          "Believers go to the third heaven when they die.",
+          "Prove from Scripture that we do not go to heaven at death.",
+          "My father died last week.",
+          "Where do believers go when they die?",
+          "I am grieving and feel far from God."
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [
+          "Daniel 12:2",
+          "1 Corinthians 15:51-55",
+          "Ecclesiastes 3:19-21",
+          "Daniel 12:2-3",
+          "Job 14:10-15",
+          "Psalm 6:5",
+          "Psalm 115:17",
+          "Psalm 146:3-4",
+          "Psalm 146:4"
+        ],
+        "continuityScriptures": [
+          "Ecclesiastes 9:5",
+          "John 11:11-14",
+          "1 Thessalonians 4:13-16"
+        ],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "open_topic_does_genesis",
+        "displayName": "Open Topic Does Genesis",
+        "lessonTitle": "Open Topic: Does Genesis teach a literal six-day creation?",
+        "supportScore": 49,
+        "strengthTier": "Research Needed",
+        "candidateCount": 1,
+        "questions": [
+          "Does Genesis teach a literal six-day creation?"
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [],
+        "continuityScriptures": [],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "peter",
+        "displayName": "Peter",
+        "lessonTitle": "Dietary Law: Peter said not to call anything unclean.",
+        "supportScore": 47,
+        "strengthTier": "Research Needed",
+        "candidateCount": 1,
+        "questions": [
+          "Peter said not to call anything unclean."
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [],
+        "continuityScriptures": [],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "john",
+        "displayName": "John",
+        "lessonTitle": "Messiah & Logos: Who is the Logos in John 1?",
+        "supportScore": 45,
+        "strengthTier": "Research Needed",
+        "candidateCount": 5,
+        "questions": [
+          "Who is the Logos in John 1?",
+          "What does Logos mean in John 1?",
+          "What does Logos mean in John 1:1?",
+          "John 14:3 means we go to heaven when we die.",
+          "How does John 13:33 fit with all this?"
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [],
+        "continuityScriptures": [],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "mixed_where_now_according",
+        "displayName": "Mixed Where Now According",
+        "lessonTitle": "Mixed: Where is he now according to Scripture?",
+        "supportScore": 43,
+        "strengthTier": "Research Needed",
+        "candidateCount": 1,
+        "questions": [
+          "Where is he now according to Scripture?"
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [],
+        "continuityScriptures": [],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "resurrection",
+        "displayName": "Resurrection",
+        "lessonTitle": "Death State & Resurrection: What is the first resurrection?",
+        "supportScore": 40,
+        "strengthTier": "Research Needed",
+        "candidateCount": 5,
+        "questions": [
+          "What is the first resurrection?",
+          "What does Scripture teach about resurrection?",
+          "My grandmother passed. Is she sleeping until resurrection?",
+          "So he is sleeping until the resurrection?",
+          "When is the resurrection?"
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [],
+        "continuityScriptures": [],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "kingdom_of_god",
+        "displayName": "Kingdom Of God",
+        "lessonTitle": "Kingdom of God: Where is the kingdom of God?",
+        "supportScore": 38,
+        "strengthTier": "Research Needed",
+        "candidateCount": 9,
+        "questions": [
+          "Where is the kingdom of God?",
+          "What is the kingdom of God?",
+          "What does Thy Kingdom Come mean?",
+          "Does Revelation teach the kingdom comes to earth?",
+          "Jesus said where I go ye cannot come. What does that mean?",
+          "Why would God allow suffering?",
+          "I lost my job. Where is the kingdom hope?",
+          "Can you explain the kingdom and comfort me about my loss?",
+          "You are just repeating old arguments about the kingdom."
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [],
+        "continuityScriptures": [],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "paul",
+        "displayName": "Paul",
+        "lessonTitle": "Sabbath: Did Paul teach against keeping the Sabbath?",
+        "supportScore": 38,
+        "strengthTier": "Research Needed",
+        "candidateCount": 3,
+        "questions": [
+          "Did Paul teach against keeping the Sabbath?",
+          "Faith and works in James and Paul",
+          "What is the third heaven Paul mentions?"
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [],
+        "continuityScriptures": [],
+        "camps": [
+          "Internal"
+        ]
+      },
+      {
+        "topic": "mark_of_the_beast",
+        "displayName": "Mark Of The Beast",
+        "lessonTitle": "Open Topic: What does Revelation teach about the mark of the beast?",
+        "supportScore": 37,
+        "strengthTier": "Research Needed",
+        "candidateCount": 1,
+        "questions": [
+          "What does Revelation teach about the mark of the beast?"
+        ],
+        "parallelScriptures": [],
+        "supportingScriptures": [],
+        "continuityScriptures": [],
+        "camps": [
+          "Internal"
+        ]
+      }
+    ],
+    "sourceCoveragePct": 4.7,
+    "corpusGrowthVsPhase3d": {
+      "questions": 253,
+      "topics": 82,
+      "chains": 7
+    },
+    "questionCountIncreased": true
+  }
+}

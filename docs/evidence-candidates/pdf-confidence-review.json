@@ -1,0 +1,757 @@
+{
+  "ranAt": "2026-06-10T00:31:00.611Z",
+  "reviews": [
+    {
+      "sourceId": "riches gains the doctrine of today",
+      "title": "Riches & Gains: The Doctrine of Today",
+      "score": 93,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 10,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "the book of life",
+      "title": "THE BOOK OF LIFE",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "the word of god",
+      "title": "THE WORD OF GOD",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "the spirit of god",
+      "title": "THE SPIRIT OF GOD",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "that man of sin",
+      "title": "THAT MAN OF SIN",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "whoredom aka fornication",
+      "title": "WHOREDOM AKA FORNICATION",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "rome is rising",
+      "title": "ROME IS RISING",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "5 16 26 reap what you sow",
+      "title": "5 16 26 REAP WHAT YOU SOW",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "killed for jesus",
+      "title": "KILLED FOR JESUS",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "5 1 26 the lords determination",
+      "title": "5 1 26 THE LORDS DETERMINATION",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "may 2 2026 king david a man after gods heart",
+      "title": "MAY 2 2026 KING DAVID A MAN AFTER GODS HEART",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "4 24 26 seek god now time is short",
+      "title": "4 24 26 SEEK GOD NOW TIME IS SHORT",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "the awakening of hebrews",
+      "title": "THE AWAKENING OF HEBREWS",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "back into egypt",
+      "title": "BACK INTO EGYPT",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "4 18 26 vengeance is the lords",
+      "title": "4 18 26 VENGEANCE IS THE LORDS",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "not easter ham",
+      "title": "NOT EASTER HAM",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "4 3 26 the unleavened bread journey begins",
+      "title": "4 3 26 THE UNLEAVENED BREAD JOURNEY BEGINS",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "sabbath eve 4 3 26 o jerusalem jerusalem",
+      "title": "Sabbath Eve 4 3 26 O JERUSALEM JERUSALEM",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "4 4 26 a little leaven w daily readings",
+      "title": "4 4 26 A LITTLE LEAVEN W daily readings",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "circumcision still good",
+      "title": "CIRCUMCISION STILL GOOD",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "3 28 26 gods judgment",
+      "title": "3 28 26 GODS JUDGMENT",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "3 20 26 abib a fresh beginning",
+      "title": "3 20 26 ABIB A FRESH BEGINNING",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "children are the future",
+      "title": "CHILDREN ARE THE FUTURE",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "fasting and praying",
+      "title": "FASTING AND PRAYING",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "3 14 26 jesus spoken of by david the prophet bro willie",
+      "title": "3 14 26 JESUS SPOKEN OF BY DAVID THE PROPHET Bro Willie",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "satan has deceived the whole world",
+      "title": "SATAN HAS DECEIVED THE \nWHOLE WORLD",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "3 7 26 beware of spirits all are not of god",
+      "title": "3 7 26 BEWARE OF SPIRITS ALL ARE NOT OF GOD",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "2 27 26 fear god or hell fire and born again a mental change only or a bodily change too",
+      "title": "2 27 26 FEAR GOD OR HELL FIRE and BORN AGAIN A MENTAL CHANGE ONLY OR A BODILY CHANGE TOO",
+      "score": 78,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 10,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "2 28 26 remember the mission teach",
+      "title": "2 28 26 REMEMBER THE MISSION… TEACH",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "2 20 26 how frail i am",
+      "title": "2 20 26 . HOW FRAIL I AM",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "2 21 26 the state of gods union hated now flourishing soon",
+      "title": "2 21 26 THE STATE OF GODS UNION. HATED NOW FLOURISHING SOON",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "2 13 26 neither democrats nor republicans can save black people israel",
+      "title": "2 13 26 NEITHER DEMOCRATS NOR REPUBLICANS CAN SAVE BLACK PEOPLE ISRAEL",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "the savior of israelites",
+      "title": "THE SAVIOR OF ISRAELITES",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "2 6 26 the foolishness of men vs women",
+      "title": "2 6 26 THE FOOLISHNESS OF MEN VS. WOMEN",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "the angels marrying women lie",
+      "title": "THE ANGELS  \nMARRYING WOMEN LIE",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "the gospel to all nations",
+      "title": "THE GOSPEL TO ALL NATIONS",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "1 31 26 at the last trump",
+      "title": "1 31 26 … AT THE LAST TRUMP…",
+      "score": 68,
+      "decision": "human_review_recommended",
+      "autoApproved": false,
+      "humanReviewRequired": true,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 0,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "whom we will answer to",
+      "title": "WHOM WE WILL ANSWER TO",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "greedy dog preachers",
+      "title": "GREEDY DOG PREACHERS",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "a whisperer will separate best friends",
+      "title": "A WHISPERER  \nWILL SEPARATE BEST FRIENDS",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "the times of the gentiles almost up",
+      "title": "THE TIMES OF THE GENTILES \nALMOST UP",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "the times of the gentiles almost up",
+      "title": "THE TIMES OF THE GENTILES \nALMOST UP",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "1 2 26 be content with what you have",
+      "title": "1 2 26 BE CONTENT WITH WHAT YOU HAVE",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "one way or another",
+      "title": "ONE WAY OR ANOTHER",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "12 26 25 modern religion is emotionalism not serving god",
+      "title": "12 26 25 MODERN RELIGION IS EMOTIONALISM NOT SERVING GOD",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "from baby in manger to killer",
+      "title": "FROM BABY IN MANGER TO KILLER",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    },
+    {
+      "sourceId": "thy kingdom come among israel",
+      "title": "THY KINGDOM COME AMONG ISRAEL",
+      "score": 83,
+      "decision": "auto_approved",
+      "autoApproved": true,
+      "humanReviewRequired": false,
+      "breakdown": {
+        "titlePresent": 25,
+        "scriptureChain": 25,
+        "sectionHeadings": 15,
+        "questionBlocks": 0,
+        "topicConsistency": 8,
+        "referenceConsistency": 10
+      }
+    }
+  ]
+}

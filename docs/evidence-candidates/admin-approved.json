@@ -1,0 +1,101 @@
+{
+  "phase": "2J-D",
+  "generatedAt": "2026-06-08T22:53:37.920Z",
+  "description": "Admin decision pipeline — staged only. Nothing applied to production.",
+  "humanApprovalRequired": true,
+  "productionApplied": false,
+  "autoApplied": false,
+  "decisions": [
+    {
+      "candidateId": "g2r_0002",
+      "decision": "approve_support_edge",
+      "reviewer": null,
+      "reviewedAt": null,
+      "recommendedAction": "approve_support_edge",
+      "supportScore": 98,
+      "topic": "death_state",
+      "question": "What is the state of the dead according to Scripture?",
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "notes": "Staged for promotion pending regression + human approval (score 98)"
+    },
+    {
+      "candidateId": "g2r_0044",
+      "decision": "approve_support_edge",
+      "reviewer": null,
+      "reviewedAt": null,
+      "recommendedAction": "approve_support_edge",
+      "supportScore": 97,
+      "topic": "messiah_logos",
+      "question": "What does Logos mean in John 1?",
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "notes": "Staged for promotion pending regression + human approval (score 97)"
+    },
+    {
+      "candidateId": "g2r_0011",
+      "decision": "approve_support_edge",
+      "reviewer": null,
+      "reviewedAt": null,
+      "recommendedAction": "approve_support_edge",
+      "supportScore": 96,
+      "topic": "sabbath",
+      "question": "What does holy mean in the Sabbath commandment?",
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "notes": "Staged for promotion pending regression + human approval (score 96)"
+    },
+    {
+      "candidateId": "g2r_0030",
+      "decision": "approve_support_edge",
+      "reviewer": null,
+      "reviewedAt": null,
+      "recommendedAction": "approve_support_edge",
+      "supportScore": 96,
+      "topic": "sabbath",
+      "question": "Hebrews 4 means we do not need the seventh day anymore.",
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "notes": "Staged for promotion pending regression + human approval (score 96)"
+    },
+    {
+      "candidateId": "g2r_0001",
+      "decision": "approve_card_ref",
+      "reviewer": null,
+      "reviewedAt": null,
+      "recommendedAction": "approve_card_ref",
+      "supportScore": 71,
+      "topic": "sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "notes": "Staged for card-ref promotion (Acts 13 / missing-ref cluster, score 71)"
+    },
+    {
+      "candidateId": "g2r_0010",
+      "decision": "approve_card_ref",
+      "reviewer": null,
+      "reviewedAt": null,
+      "recommendedAction": "approve_card_ref",
+      "supportScore": 62,
+      "topic": "sabbath",
+      "question": "What is a Sabbath day according to Scripture?",
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "notes": "Staged for card-ref promotion (Acts 13 / missing-ref cluster, score 62)"
+    },
+    {
+      "candidateId": "g2r_0036",
+      "decision": "approve_card_ref",
+      "reviewer": null,
+      "reviewedAt": null,
+      "recommendedAction": "approve_card_ref",
+      "supportScore": 62,
+      "topic": "sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "humanApprovalRequired": true,
+      "productionApplied": false,
+      "notes": "Staged for card-ref promotion (Acts 13 / missing-ref cluster, score 62)"
+    }
+  ]
+}

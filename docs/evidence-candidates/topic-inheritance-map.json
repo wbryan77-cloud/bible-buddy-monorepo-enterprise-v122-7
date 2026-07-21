@@ -1,0 +1,143 @@
+{
+  "ranAt": "2026-06-10T01:11:11.308Z",
+  "inheritance": [
+    {
+      "topic": "144000",
+      "dependsOn": [
+        "israel",
+        "twelve tribes",
+        "sealing",
+        "kingdom",
+        "revelation"
+      ],
+      "dependsOnObserved": [
+        "israel",
+        "kingdom",
+        "revelation"
+      ],
+      "confidence": 0.6,
+      "traceable": true
+    },
+    {
+      "topic": "jacob",
+      "dependsOn": [
+        "abraham",
+        "isaac",
+        "birthright",
+        "blessing",
+        "israel"
+      ],
+      "dependsOnObserved": [
+        "israel"
+      ],
+      "confidence": 0.2,
+      "traceable": true
+    },
+    {
+      "topic": "jacob_israel_twelve_tribes",
+      "dependsOn": [
+        "jacob",
+        "abraham",
+        "isaac",
+        "israel",
+        "twelve tribes"
+      ],
+      "dependsOnObserved": [
+        "jacob",
+        "israel"
+      ],
+      "confidence": 0.4,
+      "traceable": true
+    },
+    {
+      "topic": "peter",
+      "dependsOn": [
+        "disciples",
+        "apostles",
+        "pentecost",
+        "cornelius"
+      ],
+      "dependsOnObserved": [
+        "pentecost"
+      ],
+      "confidence": 0.25,
+      "traceable": true
+    },
+    {
+      "topic": "one_hundred_forty_four_thousand",
+      "dependsOn": [
+        "israel",
+        "twelve tribes",
+        "sealing",
+        "kingdom",
+        "revelation"
+      ],
+      "dependsOnObserved": [
+        "israel",
+        "kingdom",
+        "revelation"
+      ],
+      "confidence": 0.6,
+      "traceable": true
+    },
+    {
+      "topic": "kingdom_of_god",
+      "dependsOn": [
+        "kingdom",
+        "prophecy",
+        "covenant",
+        "israel"
+      ],
+      "dependsOnObserved": [
+        "kingdom",
+        "israel"
+      ],
+      "confidence": 0.5,
+      "traceable": true
+    },
+    {
+      "topic": "holy_spirit",
+      "dependsOn": [
+        "spirit of god",
+        "pentecost",
+        "prophecy"
+      ],
+      "dependsOnObserved": [
+        "spirit of god",
+        "pentecost"
+      ],
+      "confidence": 0.667,
+      "traceable": true
+    },
+    {
+      "topic": "feasts",
+      "dependsOn": [
+        "passover",
+        "pentecost",
+        "sabbath",
+        "leviticus 23"
+      ],
+      "dependsOnObserved": [
+        "pentecost",
+        "sabbath",
+        "leviticus 23"
+      ],
+      "confidence": 0.75,
+      "traceable": true
+    },
+    {
+      "topic": "messiah_logos",
+      "dependsOn": [
+        "messiah",
+        "prophecy",
+        "gospel"
+      ],
+      "dependsOnObserved": [
+        "messiah",
+        "gospel"
+      ],
+      "confidence": 0.667,
+      "traceable": true
+    }
+  ]
+}

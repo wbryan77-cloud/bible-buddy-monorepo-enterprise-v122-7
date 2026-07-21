@@ -1,91 +1,101 @@
 {
-  "timestamp": "2026-06-01T22:47:37.274Z",
+  "timestamp": "2026-06-03T21:56:54.796Z",
   "sprint": "2.14C",
   "results": [
     {
       "name": "TEST 1 — What is the Sabbath?",
       "passed": true,
       "failures": [],
-      "replyPreview": "Genesis 2:2-3 establishes the matter, and Exodus 20:8-11 confirms it alongside Scripture. Isaiah 58:13-14 carries the theme forward across the biblical witness.\n\nWitness path: Genesis 2:2-3 → Exodus 20:8-11 → Isaiah 58:13-14\n\nThat's a thoughtful question. Let's answer it directly from Scripture.\n\nDirect answer:\nThe Sabbath is the seventh day — the day God re",
+      "replyPreview": "The Sabbath is a day God set apart for rest and holy observance, originally established on the seventh day of creation. Scripture shows that God rested on the seventh day after creating the world and then blessed and sanctified it as a special day for mankind to also rest and keep holy. It is commanded in the Ten Commandments as a day to cease from labor and",
       "intent": "doctrinal_study",
       "intercept": null
     },
     {
       "name": "TEST 2 — Who changed Sabbath",
-      "passed": true,
-      "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou are asking who changed Sabbath observance from Saturday to Sunday — and whether that change came from Scripture or from later human authority.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandment identifies the seventh",
-      "intent": "sabbath_history",
-      "intercept": "sabbath_history_companion"
+      "passed": false,
+      "failures": [
+        "scripture",
+        "direct"
+      ],
+      "replyPreview": "You are wondering who historically changed Sabbath observance from Saturday to Sunday. The Bible clearly teaches the seventh day as Sabbath, but history shows that no biblical command changed it. Early Christians often met on Sunday, the first day of the week, commemorating Jesus' resurrection. In AD 321, Roman Emperor Constantine issued a civil law making S",
+      "intent": "doctrinal_study",
+      "intercept": null
     },
     {
       "name": "TEST 3 — Rome/Catholic change",
-      "passed": true,
-      "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYes — you are asking whether Rome and later Roman church authority were involved in establishing Sunday observance instead of the seventh-day Sabbath.\n\nDirect answer:\nYes — later papal and Roman church authority helped preserve and normalize Sunday observance across much of Western Christi",
-      "intent": "sabbath_history",
-      "intercept": "sabbath_history_companion"
+      "passed": false,
+      "failures": [
+        "yesAnswer"
+      ],
+      "replyPreview": "You’re asking if the change from Sabbath (seventh-day rest) to Sunday observance was performed by Rome or the Roman Catholic Church. Historically, early Christians in some regions began gathering on Sunday, the first day, to honor Christ’s resurrection, but many still observed the Sabbath. In AD 321, Emperor Constantine, the Roman Emperor, issued a civil law",
+      "intent": "companion",
+      "intercept": null
     },
     {
       "name": "TEST 4 — Historical evidence",
       "passed": true,
       "failures": [],
-      "replyPreview": "Let's answer that directly, with Scripture first and history second.\n\nYou want the historical evidence for how Sunday observance became common — not a repeat of the Sabbath definition.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play a major role in changing common Christian observance from Sabbath to Sunday?\" the historical ans",
-      "intent": "sabbath_history",
-      "intercept": "sabbath_history_companion"
+      "replyPreview": "You’re asking for the historical evidence about how the Sabbath was observed and how Sunday rest became established. Historically, early Christians often met on the first day of the week for fellowship and worship, but many still observed the seventh-day Sabbath. In AD 321, Emperor Constantine issued a civil law declaring Sunday, the venerable day of the Sun",
+      "intent": "companion",
+      "intercept": null
     },
     {
       "name": "TEST 5 — Correction",
-      "passed": true,
-      "failures": [],
-      "replyPreview": "I hear you — that wasn't your question. Let me answer what you actually asked, with Scripture first and history second.\n\nYou're right — I drifted back to the Sabbath definition. You asked a direct historical question, and I'll answer that now.\n\nDirect answer:\nSo if the question is, \"Did Rome/Roman Catholic authority play a major role in changing common Chris",
-      "intent": "sabbath_history",
-      "intercept": "sabbath_history_companion"
+      "passed": false,
+      "failures": [
+        "apology",
+        "historical"
+      ],
+      "replyPreview": "Thanks for clarifying. Could you please restate your exact question so I can respond directly to what you're asking?",
+      "intent": "companion",
+      "intercept": null
     },
     {
       "name": "TEST 6 — Why Sunday",
-      "passed": true,
-      "failures": [],
-      "replyPreview": "I hear what you're asking — not what the Sabbath is, but why many people keep Sunday instead.\n\nYou are asking why many Christians worship on Sunday rather than the biblical seventh-day Sabbath.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandment identifies the seventh day as the Sabbath of ",
-      "intent": "sabbath_history",
-      "intercept": "sabbath_history_companion"
+      "passed": false,
+      "failures": [
+        "companionTone"
+      ],
+      "replyPreview": "I sense you’re trying to understand why some people observe Sunday rather than the biblical seventh-day Sabbath. It can feel confusing or even painful when traditions differ from what the Bible clearly shows. Many who keep Sunday do so because it has become a longstanding practice in various Christian communities, often linked to commemorating Jesus’ resurre",
+      "intent": "companion",
+      "intercept": null
     },
     {
       "name": "TEST 7 — Comparison",
       "passed": true,
       "failures": [],
-      "replyPreview": "I hear what you're asking — not what the Sabbath is, but why many people keep Sunday instead.\n\nYou are asking why many Christians worship on Sunday rather than the biblical seventh-day Sabbath.\n\nScripture first:\n\nGenesis 2:2-3 — God rested on the seventh day and blessed it.\nExodus 20:8-11 — the fourth commandment identifies the seventh day as the Sabbath of ",
-      "intent": "sabbath_history",
-      "intercept": "sabbath_history_companion"
+      "replyPreview": "You are asking about the difference between the biblical Sabbath and Sunday observance. Biblically, the Sabbath is the seventh day of the week, established by God at Creation as a day of rest and holiness (Genesis 2:2-3; Exodus 20:8-11). This Sabbath is explicitly commanded to be kept on the seventh day, Saturday, as a memorial of God’s rest after creation a",
+      "intent": "doctrinal_study",
+      "intercept": null
     },
     {
       "name": "TEST 8 — Prayer",
       "passed": true,
       "failures": [],
-      "replyPreview": "I'm glad you asked to pray. Let's bring this before the Lord together.\n\nFather, we bring this need before You for I need help from the Lord.. You see what we cannot fully see. Please draw near with comfort, wisdom, and peace. Hold those who are hurting, guide those who are waiting, and help us trust You one step at a time. In Jesus' name, amen.\n\nPhilippians ",
-      "intent": "prayer",
+      "replyPreview": "I hear your heart reaching out for help from the Lord, and that desire itself is a precious first step. Let's take a moment to invite Him gently together. You might pray simply, \"Lord, I need Your help and guidance right now. Please be near me and strengthen me.\" God promises to hear and help those who call on Him sincerely.",
+      "intent": "companion",
       "intercept": null
     },
     {
       "name": "TEST 9 — Grief",
       "passed": true,
       "failures": [],
-      "replyPreview": "I'm really sorry for your loss. Tell me about her if you want — we can take this gently, one step at a time.\n\nPsalm 34:18 establishes the matter, and Matthew 5:4 confirms it alongside Scripture. Revelation 21:4 carries the theme forward across the biblical witness.\n\nIf you would like, we can pray together, sit with a comforting passage, or simply talk throug",
-      "intent": "emotional_support",
+      "replyPreview": "I'm so sorry for your loss. Losing a friend can leave a deep ache in the heart, and it's okay to feel that pain fully. If you'd like, I can gently share a comforting truth from Scripture or simply listen as you remember your friend.",
+      "intent": "companion",
       "intercept": null
     },
     {
       "name": "TEST 10 — Continue study",
       "passed": true,
       "failures": [],
-      "replyPreview": "Last time we were looking at Acts 17:2 in our Sabbath study, where Scripture builds this theme line upon line. Would you like to continue from there?",
-      "intent": "continue_study",
+      "replyPreview": "Continuing our study, we see the Sabbath framed in Exodus 20:8-11 as a day to remember God’s rest after creation, commanding rest from ordinary work and dedicating the day to Him. This command is rooted in creation itself, emphasizing God’s pattern for humanity. The prophet Isaiah later highlights the Sabbath as a delight and a holy day honoring God, not jus",
+      "intent": "doctrinal_study",
       "intercept": null
     }
   ],
   "scoring": {
     "scores": {
-      "questionUnderstanding": 97,
+      "questionUnderstanding": 70,
       "directness": 97,
       "depth": 97,
       "warmth": 96,
@@ -96,8 +106,8 @@
       "noCannedRepetition": 97,
       "noPrematureStudyPrompt": 97
     },
-    "overall": 97
+    "overall": 94
   },
-  "passed": 10,
+  "passed": 6,
   "total": 10
 }

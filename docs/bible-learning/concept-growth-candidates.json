@@ -1,0 +1,45 @@
+{
+  "candidates": [
+    {
+      "phrase": "Can you remember that when others ask the same question?",
+      "proposedConcept": null,
+      "correction": "Can you remember that when others ask the same question?",
+      "refs": [],
+      "source": "user_remember_phrase",
+      "status": "pending_review",
+      "userId": "set",
+      "loggedAt": "2026-06-14T15:59:02.461Z"
+    },
+    {
+      "phrase": "Can you remember that for others when they ask?",
+      "proposedConcept": null,
+      "correction": "Can you remember that for others when they ask?",
+      "refs": [],
+      "source": "user_remember_phrase",
+      "status": "pending_review",
+      "userId": "set",
+      "loggedAt": "2026-06-14T17:10:29.045Z"
+    },
+    {
+      "phrase": "Can you remember that I like direct answers?",
+      "proposedConcept": null,
+      "correction": "Can you remember that I like direct answers?",
+      "refs": [],
+      "source": "user_remember_phrase",
+      "status": "pending_review",
+      "userId": "set",
+      "loggedAt": "2026-06-14T21:55:13.360Z"
+    },
+    {
+      "phrase": "Can you put this in your database for others?",
+      "proposedConcept": null,
+      "correction": "Can you put this in your database for others?",
+      "refs": [],
+      "source": "user_remember_phrase",
+      "status": "pending_review",
+      "userId": "set",
+      "loggedAt": "2026-06-14T22:35:38.430Z"
+    }
+  ],
+  "updatedAt": "2026-06-14T22:35:38.430Z"
+}

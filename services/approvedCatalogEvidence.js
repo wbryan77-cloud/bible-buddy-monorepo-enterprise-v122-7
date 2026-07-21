@@ -18,7 +18,11 @@ const MESSAGE_CATALOG_TRIGGERS = [
   },
   {
     catalogKey: 'stateOfTheDead',
-    re: /\b(die|death|sleep in death|absent from the body|2 corinthians 5:8|soul|grave)\b/i,
+    re: /\b(die|died|dead|death|sleep in death|state of the dead|absent from the body|2 corinthians 5:8|soul|grave|resurrection)\b/i,
+  },
+  {
+    catalogKey: 'firstResurrection',
+    re: /\b(resurrection|raised|last trump|first resurrection)\b/i,
   },
 ];
 

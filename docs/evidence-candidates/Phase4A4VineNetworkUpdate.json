@@ -1,0 +1,82 @@
+{
+  "ranAt": "2026-06-10T07:26:30.784Z",
+  "phase": "4A.4",
+  "updates": [
+    {
+      "action": "david_node_created"
+    },
+    {
+      "action": "kingdom_child_david"
+    },
+    {
+      "action": "messiah_parent_david"
+    },
+    {
+      "action": "messiah_child_resurrection"
+    },
+    {
+      "action": "resurrection_child_millennial"
+    },
+    {
+      "action": "millennial_parent_resurrection"
+    }
+  ],
+  "davidNodeActive": true,
+  "kingdomPathExpected": "Kingdom → David → Messiah → Resurrection → Millennium → New Jerusalem",
+  "navigationCheck": {
+    "topicSequence": [
+      "kingdom_of_god",
+      "david",
+      "messiah_logos",
+      "resurrection",
+      "millennial_kingdom_kingdom_on_earth",
+      "new_jerusalem"
+    ],
+    "steps": [
+      {
+        "topic": "kingdom_of_god",
+        "nodeFound": true,
+        "connectedToPrevious": true,
+        "connectedToNext": true,
+        "pathwayNavigable": true
+      },
+      {
+        "topic": "david",
+        "nodeFound": true,
+        "connectedToPrevious": true,
+        "connectedToNext": true,
+        "pathwayNavigable": true
+      },
+      {
+        "topic": "messiah_logos",
+        "nodeFound": true,
+        "connectedToPrevious": true,
+        "connectedToNext": true,
+        "pathwayNavigable": true
+      },
+      {
+        "topic": "resurrection",
+        "nodeFound": true,
+        "connectedToPrevious": true,
+        "connectedToNext": true,
+        "pathwayNavigable": true
+      },
+      {
+        "topic": "millennial_kingdom_kingdom_on_earth",
+        "nodeFound": true,
+        "connectedToPrevious": true,
+        "connectedToNext": true,
+        "pathwayNavigable": true
+      },
+      {
+        "topic": "new_jerusalem",
+        "nodeFound": true,
+        "connectedToPrevious": true,
+        "connectedToNext": true,
+        "pathwayNavigable": true
+      }
+    ],
+    "fullyNavigable": true
+  },
+  "relationshipsInvented": false
+}

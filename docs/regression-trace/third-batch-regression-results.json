@@ -1,0 +1,56 @@
+{
+  "ranAt": "2026-06-09T04:10:43.779Z",
+  "phase": "2P",
+  "regressionPassed": true,
+  "ownership": {
+    "passed": true,
+    "violations": []
+  },
+  "memory": {
+    "passed": true,
+    "deltaMB": 0,
+    "rssMB": 171
+  },
+  "supportGraph": {
+    "passed": true,
+    "edgeCount": 52,
+    "batchEdges": [
+      "mat12_sabbath_do_good_batch3p",
+      "heb4_seventh_day_remains_batch3p",
+      "john1_who_is_logos_batch3p"
+    ]
+  },
+  "claimTraceability": {
+    "passed": true,
+    "sampleClass": "A"
+  },
+  "approvalGate": {
+    "passed": true,
+    "results": [
+      {
+        "candidateId": "exp_0011",
+        "passed": true
+      },
+      {
+        "candidateId": "exp_0023",
+        "passed": true
+      },
+      {
+        "candidateId": "rec_0010",
+        "passed": true
+      }
+    ]
+  },
+  "coverageVerification": {
+    "score": 71.3,
+    "projected": 72.5
+  },
+  "stress": {
+    "graphParticipationPct": 0,
+    "degradationRatePct": null
+  },
+  "approvedPackTopics": [
+    "sabbath",
+    "messiah_logos"
+  ]
+}

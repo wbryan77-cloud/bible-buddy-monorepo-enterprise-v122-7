@@ -1,0 +1,3 @@
+d34d9f0 release: establish BibleBuddy Founder Alpha baseline
+0962636 Sprint 2C C3: explicit Scripture handoff and routing guards.
+6ef4175 Alpha Runtime Freeze: stabilize companion ownership and doctrine routing

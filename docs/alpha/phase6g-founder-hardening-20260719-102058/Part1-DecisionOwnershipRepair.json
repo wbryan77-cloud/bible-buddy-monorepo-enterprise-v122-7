@@ -1,0 +1,42 @@
+{
+  "part": 1,
+  "title": "Decision Ownership Repair",
+  "failuresBefore": 3,
+  "rootCauses": [
+    "No dedicated ownership lane existed for ambiguous non-doctrinal decision prompts; orchestrator fell through to handled:false and generic reason_first_openai composition.",
+    "humanNeedDetector.js decision regex only matched literal words decision/decide/choice/discern/what should i do; did not match common should-I phrasing."
+  ],
+  "filesChanged": [
+    "services/bibleCompanionOrchestrator.js",
+    "services/humanNeedDetector.js",
+    "scripts/alpha/decisionOwnershipSmoke.js"
+  ],
+  "casesRepairedCount": 14,
+  "casesRepairedFailed": 0,
+  "originalThreeFailures": [
+    "decision_single_word",
+    "decision_not_bible",
+    "help_me_decide"
+  ],
+  "newRegressionCasesAdded": [
+    "decision_job_opportunity",
+    "decision_relationship",
+    "decision_financial",
+    "decision_medical",
+    "decision_legal",
+    "decision_faith_and_action",
+    "decision_family_forgiveness",
+    "decision_prayer_only_not_hijacked",
+    "decision_asked_again",
+    "decision_user_rejects_suggestion"
+  ],
+  "remainingConcerns": [
+    "Deterministic template intentionally trades personalization for predictable safety; future batch could layer optional OpenAI elaboration.",
+    "decision_medical intentionally still owned by pre-existing health_support lane, not new decision lane - verified safe by content assertion."
+  ],
+  "regressionConfirmedGreen": [
+    "scriptureFidelitySmoke",
+    "alphaCoreTruthSmoke",
+    "runPhase5OContinuationRegression"
+  ]
+}

@@ -1,0 +1,497 @@
+{
+  "ranAt": "2026-06-07T21:22:49.456Z",
+  "liveRan": false,
+  "pipelineClearance": {
+    "topicsWithAssets": 8,
+    "retrievalPass": 8,
+    "promptSendPass": 8,
+    "evidenceMissingTopics": ["holy"],
+    "conclusion": "Retrieval and prompt stages pass for 8/9 topics; live D-G unmeasured"
+  },
+  "topics": [
+    {
+      "topic": "third_heaven",
+      "label": "Third heaven",
+      "question": "What is the third heaven?",
+      "assetsExist": true,
+      "assetCardIds": [
+        "heavens"
+      ],
+      "retrievedEvidence": {
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "scriptureRefCount": 10,
+        "effectiveTopic": "heavens",
+        "approvedRefCount": 23,
+        "bindingRuleCount": 10
+      },
+      "evidenceSentToOpenAI": {
+        "promptEvidenceBytes": 14721,
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "scriptureRefCount": 10,
+        "cardsInPrompt": true
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": null,
+      "validatorDecision": null,
+      "finalAnswer": null,
+      "openaiCalled": false,
+      "finalAnswerAuthor": null,
+      "memoryBefore": {
+        "rssMB": 76,
+        "heapUsedMB": 19,
+        "heapTotalMB": 23
+      },
+      "memoryAfter": {
+        "rssMB": 76,
+        "heapUsedMB": 19,
+        "heapTotalMB": 23
+      },
+      "failureCodes": [],
+      "firstFailure": "LIVE_UNMEASURED",
+      "failureLocation": "Live compose layer — API key required",
+      "notes": [
+        "LIVE_UNMEASURED: OPENAI_API_KEY not set — stages D/E/F/G not observable"
+      ],
+      "liveBlocked": true
+    },
+    {
+      "topic": "kingdom",
+      "label": "Kingdom of God",
+      "question": "What is the kingdom of God?",
+      "assetsExist": true,
+      "assetCardIds": [
+        "kingdom"
+      ],
+      "retrievedEvidence": {
+        "cardIds": [
+          "kingdom"
+        ],
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "scriptureRefCount": 7,
+        "effectiveTopic": "kingdom",
+        "approvedRefCount": 24,
+        "bindingRuleCount": 10
+      },
+      "evidenceSentToOpenAI": {
+        "promptEvidenceBytes": 12319,
+        "cardIds": [
+          "kingdom"
+        ],
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "scriptureRefCount": 7,
+        "cardsInPrompt": true
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": null,
+      "validatorDecision": null,
+      "finalAnswer": null,
+      "openaiCalled": false,
+      "finalAnswerAuthor": null,
+      "memoryBefore": {
+        "rssMB": 82,
+        "heapUsedMB": 25,
+        "heapTotalMB": 30
+      },
+      "memoryAfter": {
+        "rssMB": 82,
+        "heapUsedMB": 25,
+        "heapTotalMB": 30
+      },
+      "failureCodes": [],
+      "firstFailure": "LIVE_UNMEASURED",
+      "failureLocation": "Live compose layer — API key required",
+      "notes": [
+        "LIVE_UNMEASURED: OPENAI_API_KEY not set — stages D/E/F/G not observable"
+      ],
+      "liveBlocked": true
+    },
+    {
+      "topic": "acts_10",
+      "label": "Acts 10",
+      "question": "Does Acts 10 make pork clean?",
+      "assetsExist": true,
+      "assetCardIds": [
+        "dietaryLaw"
+      ],
+      "retrievedEvidence": {
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 7,
+        "effectiveTopic": "dietary_law",
+        "approvedRefCount": 7,
+        "bindingRuleCount": 0
+      },
+      "evidenceSentToOpenAI": {
+        "promptEvidenceBytes": 12852,
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 7,
+        "cardsInPrompt": true
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": null,
+      "validatorDecision": null,
+      "finalAnswer": null,
+      "openaiCalled": false,
+      "finalAnswerAuthor": null,
+      "memoryBefore": {
+        "rssMB": 83,
+        "heapUsedMB": 18,
+        "heapTotalMB": 27
+      },
+      "memoryAfter": {
+        "rssMB": 83,
+        "heapUsedMB": 18,
+        "heapTotalMB": 27
+      },
+      "failureCodes": [],
+      "firstFailure": "LIVE_UNMEASURED",
+      "failureLocation": "Live compose layer — API key required",
+      "notes": [
+        "LIVE_UNMEASURED: OPENAI_API_KEY not set — stages D/E/F/G not observable"
+      ],
+      "liveBlocked": true
+    },
+    {
+      "topic": "pork",
+      "label": "Pork",
+      "question": "Can I eat pork?",
+      "assetsExist": true,
+      "assetCardIds": [
+        "dietaryLaw"
+      ],
+      "retrievedEvidence": {
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 7,
+        "effectiveTopic": "dietary_law",
+        "approvedRefCount": 7,
+        "bindingRuleCount": 0
+      },
+      "evidenceSentToOpenAI": {
+        "promptEvidenceBytes": 12754,
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 7,
+        "cardsInPrompt": true
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": null,
+      "validatorDecision": null,
+      "finalAnswer": null,
+      "openaiCalled": false,
+      "finalAnswerAuthor": null,
+      "memoryBefore": {
+        "rssMB": 83,
+        "heapUsedMB": 24,
+        "heapTotalMB": 32
+      },
+      "memoryAfter": {
+        "rssMB": 83,
+        "heapUsedMB": 24,
+        "heapTotalMB": 32
+      },
+      "failureCodes": [],
+      "firstFailure": "LIVE_UNMEASURED",
+      "failureLocation": "Live compose layer — API key required",
+      "notes": [
+        "LIVE_UNMEASURED: OPENAI_API_KEY not set — stages D/E/F/G not observable"
+      ],
+      "liveBlocked": true
+    },
+    {
+      "topic": "sabbath",
+      "label": "Sabbath",
+      "question": "How do we keep the Sabbath holy?",
+      "assetsExist": true,
+      "assetCardIds": [
+        "sabbath"
+      ],
+      "retrievedEvidence": {
+        "cardIds": [
+          "sabbath"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 8,
+        "effectiveTopic": "sabbath",
+        "approvedRefCount": 6,
+        "bindingRuleCount": 0
+      },
+      "evidenceSentToOpenAI": {
+        "promptEvidenceBytes": 11977,
+        "cardIds": [
+          "sabbath"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 8,
+        "cardsInPrompt": true
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": null,
+      "validatorDecision": null,
+      "finalAnswer": null,
+      "openaiCalled": false,
+      "finalAnswerAuthor": null,
+      "memoryBefore": {
+        "rssMB": 84,
+        "heapUsedMB": 18,
+        "heapTotalMB": 29
+      },
+      "memoryAfter": {
+        "rssMB": 84,
+        "heapUsedMB": 18,
+        "heapTotalMB": 29
+      },
+      "failureCodes": [],
+      "firstFailure": "LIVE_UNMEASURED",
+      "failureLocation": "Live compose layer — API key required",
+      "notes": [
+        "LIVE_UNMEASURED: OPENAI_API_KEY not set — stages D/E/F/G not observable"
+      ],
+      "liveBlocked": true
+    },
+    {
+      "topic": "death_state",
+      "label": "Death state",
+      "question": "What happens when we die?",
+      "assetsExist": true,
+      "assetCardIds": [
+        "deathState"
+      ],
+      "retrievedEvidence": {
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefCount": 6,
+        "effectiveTopic": "death_state",
+        "approvedRefCount": 17,
+        "bindingRuleCount": 4
+      },
+      "evidenceSentToOpenAI": {
+        "promptEvidenceBytes": 8912,
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefCount": 6,
+        "cardsInPrompt": true
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": null,
+      "validatorDecision": null,
+      "finalAnswer": null,
+      "openaiCalled": false,
+      "finalAnswerAuthor": null,
+      "memoryBefore": {
+        "rssMB": 85,
+        "heapUsedMB": 15,
+        "heapTotalMB": 27
+      },
+      "memoryAfter": {
+        "rssMB": 85,
+        "heapUsedMB": 15,
+        "heapTotalMB": 27
+      },
+      "failureCodes": [],
+      "firstFailure": "LIVE_UNMEASURED",
+      "failureLocation": "Live compose layer — API key required",
+      "notes": [
+        "LIVE_UNMEASURED: OPENAI_API_KEY not set — stages D/E/F/G not observable"
+      ],
+      "liveBlocked": true
+    },
+    {
+      "topic": "resurrection",
+      "label": "Resurrection",
+      "question": "What does Scripture teach about resurrection?",
+      "assetsExist": true,
+      "assetCardIds": [
+        "deathState"
+      ],
+      "retrievedEvidence": {
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefCount": 6,
+        "effectiveTopic": "resurrection_timeline",
+        "approvedRefCount": 17,
+        "bindingRuleCount": 4
+      },
+      "evidenceSentToOpenAI": {
+        "promptEvidenceBytes": 8962,
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefCount": 6,
+        "cardsInPrompt": true
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": null,
+      "validatorDecision": null,
+      "finalAnswer": null,
+      "openaiCalled": false,
+      "finalAnswerAuthor": null,
+      "memoryBefore": {
+        "rssMB": 85,
+        "heapUsedMB": 20,
+        "heapTotalMB": 31
+      },
+      "memoryAfter": {
+        "rssMB": 85,
+        "heapUsedMB": 20,
+        "heapTotalMB": 31
+      },
+      "failureCodes": [],
+      "firstFailure": "LIVE_UNMEASURED",
+      "failureLocation": "Live compose layer — API key required",
+      "notes": [
+        "LIVE_UNMEASURED: OPENAI_API_KEY not set — stages D/E/F/G not observable"
+      ],
+      "liveBlocked": true
+    },
+    {
+      "topic": "holy",
+      "label": "Holy",
+      "question": "What does holy mean?",
+      "assetsExist": false,
+      "assetCardIds": [],
+      "retrievedEvidence": {
+        "cardIds": [],
+        "catalogKeys": [],
+        "scriptureRefCount": 0,
+        "effectiveTopic": null,
+        "approvedRefCount": 0,
+        "bindingRuleCount": 0
+      },
+      "evidenceSentToOpenAI": {
+        "promptEvidenceBytes": 3520,
+        "cardIds": [],
+        "catalogKeys": [],
+        "scriptureRefCount": 0,
+        "cardsInPrompt": false
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": null,
+      "validatorDecision": null,
+      "finalAnswer": null,
+      "openaiCalled": false,
+      "finalAnswerAuthor": null,
+      "memoryBefore": {
+        "rssMB": 85,
+        "heapUsedMB": 14,
+        "heapTotalMB": 27
+      },
+      "memoryAfter": {
+        "rssMB": 85,
+        "heapUsedMB": 14,
+        "heapTotalMB": 27
+      },
+      "failureCodes": [
+        "A"
+      ],
+      "firstFailure": "A",
+      "failureLocation": "Approved asset layer — no frozen evidence for topic",
+      "notes": [
+        "No approved frozen card for this topic category",
+        "LIVE_UNMEASURED: OPENAI_API_KEY not set — stages D/E/F/G not observable"
+      ],
+      "liveBlocked": true
+    },
+    {
+      "topic": "logos",
+      "label": "Logos",
+      "question": "What does Logos mean in John 1:1?",
+      "assetsExist": true,
+      "assetCardIds": [
+        "messiahLogos"
+      ],
+      "retrievedEvidence": {
+        "cardIds": [
+          "messiahLogos"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 0,
+        "effectiveTopic": "messiah_logos",
+        "approvedRefCount": 10,
+        "bindingRuleCount": 0
+      },
+      "evidenceSentToOpenAI": {
+        "promptEvidenceBytes": 9680,
+        "cardIds": [
+          "messiahLogos"
+        ],
+        "catalogKeys": [],
+        "scriptureRefCount": 0,
+        "cardsInPrompt": true
+      },
+      "claimsGenerated": [],
+      "claimSupportFound": null,
+      "validatorDecision": null,
+      "finalAnswer": null,
+      "openaiCalled": false,
+      "finalAnswerAuthor": null,
+      "memoryBefore": {
+        "rssMB": 85,
+        "heapUsedMB": 20,
+        "heapTotalMB": 31
+      },
+      "memoryAfter": {
+        "rssMB": 85,
+        "heapUsedMB": 20,
+        "heapTotalMB": 31
+      },
+      "failureCodes": [],
+      "firstFailure": "LIVE_UNMEASURED",
+      "failureLocation": "Live compose layer — API key required",
+      "notes": [
+        "LIVE_UNMEASURED: OPENAI_API_KEY not set — stages D/E/F/G not observable"
+      ],
+      "liveBlocked": true
+    }
+  ],
+  "distribution": {
+    "A": 1,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 0,
+    "F": 0,
+    "G": 0,
+    "H": 0,
+    "LIVE_UNMEASURED": 8,
+    "NONE": 0
+  }
+}

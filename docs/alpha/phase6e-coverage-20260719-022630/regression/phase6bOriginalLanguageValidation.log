@@ -1,0 +1,14 @@
+PASS: Genesis 1:1 (HEBREW, 7 tokens)
+PASS: Exodus 3:14 (HEBREW, 15 tokens)
+PASS: Psalm 22:1 (HEBREW, 14 tokens)
+PASS: Isaiah 7:14 (HEBREW, 15 tokens)
+PASS: Daniel 2:4 (MIXED_HEBREW_ARAMAIC, 12 tokens)
+PASS: Matthew 1:23 (GREEK, 22 tokens)
+PASS: John 1:1 (GREEK, 17 tokens)
+PASS: John 3:16 (GREEK, 25 tokens)
+PASS: Romans 8:1 (GREEK, 8 tokens)
+PASS: Revelation 1:14-15 (GREEK, 38 tokens)
+PASS: out-of-corpus reference handled honestly (Tobit 1:1)
+
+11 passed, 0 failed
+exit=0

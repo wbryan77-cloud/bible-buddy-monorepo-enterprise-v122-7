@@ -1,0 +1,2347 @@
+{
+  "summary": {
+    "generatedAt": "2026-07-19T03:56:49.934Z",
+    "totalBooks": 66,
+    "fullTextAvailableBooks": 66,
+    "missingTextBooks": [],
+    "strongTopicCoverageBooks": [
+      "Genesis",
+      "Exodus",
+      "Deuteronomy",
+      "Psalms",
+      "Isaiah",
+      "Daniel",
+      "Matthew",
+      "Luke",
+      "John",
+      "Acts",
+      "Romans",
+      "1 Corinthians",
+      "2 Corinthians",
+      "Ephesians",
+      "Philippians",
+      "1 Thessalonians",
+      "Hebrews",
+      "James",
+      "1 Peter",
+      "1 John",
+      "2 John",
+      "3 John",
+      "Revelation"
+    ],
+    "limitedTopicCoverageBooks": [
+      "Leviticus",
+      "2 Samuel",
+      "Proverbs",
+      "Ecclesiastes",
+      "Mark",
+      "Galatians"
+    ],
+    "textOnlyBooks": [
+      "Numbers",
+      "Joshua",
+      "Judges",
+      "Ruth",
+      "1 Samuel",
+      "1 Kings",
+      "2 Kings",
+      "1 Chronicles",
+      "2 Chronicles",
+      "Ezra",
+      "Nehemiah",
+      "Esther",
+      "Job",
+      "Song of Solomon",
+      "Jeremiah",
+      "Lamentations",
+      "Ezekiel",
+      "Hosea",
+      "Joel",
+      "Amos",
+      "Obadiah",
+      "Jonah",
+      "Micah",
+      "Nahum",
+      "Habakkuk",
+      "Zephaniah",
+      "Haggai",
+      "Zechariah",
+      "Malachi",
+      "Colossians",
+      "2 Thessalonians",
+      "1 Timothy",
+      "2 Timothy",
+      "Titus",
+      "Philemon",
+      "2 Peter",
+      "Jude"
+    ],
+    "totalDoctrineTopics": 25,
+    "doctrinesWithSingleWitnessOnly": [],
+    "doctrinesLackingSupportingWitnesses": [
+      "acts_10",
+      "david",
+      "heavens",
+      "holy_spirit"
+    ],
+    "doctrinesLackingCrossReferences": [
+      "acts_10",
+      "david",
+      "death_state",
+      "fornication_sexual_sin",
+      "heaven_layers",
+      "heavens",
+      "holy_spirit",
+      "resurrection",
+      "ten_commandments"
+    ],
+    "doctrinesLackingOldTestamentLinks": [
+      "acts_10",
+      "faith_obedience",
+      "fornication_sexual_sin",
+      "holy_spirit",
+      "prayer_with_user",
+      "repentance",
+      "sexual_boundaries_dating"
+    ],
+    "doctrinesLackingNewTestamentLinks": [
+      "onan_seed_context"
+    ],
+    "doctrinesLackingOriginalLanguageSupport": [
+      "abomination_desolation",
+      "acts_10",
+      "dating_anxiety",
+      "david",
+      "death_state",
+      "dietary_law",
+      "faith_obedience",
+      "fornication_sexual_sin",
+      "heartbreak_comfort",
+      "heaven_layers",
+      "heavens",
+      "holy_spirit",
+      "kingdom",
+      "marriage_bed",
+      "new_jerusalem",
+      "onan_seed_context",
+      "overwhelmed_comfort",
+      "prayer_comfort",
+      "prayer_with_user",
+      "repentance",
+      "resurrection",
+      "sabbath",
+      "sexual_boundaries_dating",
+      "ten_commandments",
+      "third_heaven"
+    ],
+    "topicsScaffoldOnly": [],
+    "topicsDependentOnExternalProvider": [],
+    "topicsWithUnapprovedCandidateEvidence": []
+  },
+  "books": [
+    {
+      "bookNumber": 1,
+      "name": "Genesis",
+      "testament": "OLD",
+      "totalChapters": 50,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 8,
+      "primaryWitnessCount": 6,
+      "supportingWitnessCount": 2,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "sabbath",
+        "heavens",
+        "heaven_layers",
+        "marriage_bed",
+        "onan_seed_context",
+        "third_heaven"
+      ],
+      "doctrineTopicLinkCount": 6,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 2,
+      "name": "Exodus",
+      "testament": "OLD",
+      "totalChapters": 40,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 4,
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 1,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "sabbath",
+        "ten_commandments"
+      ],
+      "doctrineTopicLinkCount": 2,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 3,
+      "name": "Leviticus",
+      "testament": "OLD",
+      "totalChapters": 27,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 2,
+      "primaryWitnessCount": 2,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "dietary_law"
+      ],
+      "doctrineTopicLinkCount": 1,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "LIMITED_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 4,
+      "name": "Numbers",
+      "testament": "OLD",
+      "totalChapters": 36,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 5,
+      "name": "Deuteronomy",
+      "testament": "OLD",
+      "totalChapters": 34,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 9,
+      "primaryWitnessCount": 7,
+      "supportingWitnessCount": 2,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "dietary_law",
+        "sabbath",
+        "heavens",
+        "heaven_layers",
+        "ten_commandments",
+        "onan_seed_context",
+        "third_heaven"
+      ],
+      "doctrineTopicLinkCount": 7,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 6,
+      "name": "Joshua",
+      "testament": "OLD",
+      "totalChapters": 24,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 7,
+      "name": "Judges",
+      "testament": "OLD",
+      "totalChapters": 21,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 8,
+      "name": "Ruth",
+      "testament": "OLD",
+      "totalChapters": 4,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 9,
+      "name": "1 Samuel",
+      "testament": "OLD",
+      "totalChapters": 31,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 10,
+      "name": "2 Samuel",
+      "testament": "OLD",
+      "totalChapters": 24,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 1,
+      "primaryWitnessCount": 1,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "david"
+      ],
+      "doctrineTopicLinkCount": 1,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "LIMITED_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 11,
+      "name": "1 Kings",
+      "testament": "OLD",
+      "totalChapters": 22,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 12,
+      "name": "2 Kings",
+      "testament": "OLD",
+      "totalChapters": 25,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 13,
+      "name": "1 Chronicles",
+      "testament": "OLD",
+      "totalChapters": 29,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 14,
+      "name": "2 Chronicles",
+      "testament": "OLD",
+      "totalChapters": 36,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 15,
+      "name": "Ezra",
+      "testament": "OLD",
+      "totalChapters": 10,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 16,
+      "name": "Nehemiah",
+      "testament": "OLD",
+      "totalChapters": 13,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 17,
+      "name": "Esther",
+      "testament": "OLD",
+      "totalChapters": 10,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 18,
+      "name": "Job",
+      "testament": "OLD",
+      "totalChapters": 42,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 19,
+      "name": "Psalms",
+      "testament": "OLD",
+      "totalChapters": 150,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 10,
+      "primaryWitnessCount": 7,
+      "supportingWitnessCount": 3,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "death_state",
+        "kingdom",
+        "david",
+        "heaven_layers",
+        "prayer_comfort",
+        "heartbreak_comfort",
+        "overwhelmed_comfort",
+        "dating_anxiety"
+      ],
+      "doctrineTopicLinkCount": 8,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 20,
+      "name": "Proverbs",
+      "testament": "OLD",
+      "totalChapters": 31,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 1,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 1,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "kingdom"
+      ],
+      "doctrineTopicLinkCount": 1,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "LIMITED_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 21,
+      "name": "Ecclesiastes",
+      "testament": "OLD",
+      "totalChapters": 12,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 2,
+      "primaryWitnessCount": 2,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "death_state"
+      ],
+      "doctrineTopicLinkCount": 1,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "LIMITED_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 22,
+      "name": "Song of Solomon",
+      "testament": "OLD",
+      "totalChapters": 8,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 23,
+      "name": "Isaiah",
+      "testament": "OLD",
+      "totalChapters": 66,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 10,
+      "primaryWitnessCount": 4,
+      "supportingWitnessCount": 6,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "dietary_law",
+        "sabbath",
+        "kingdom",
+        "new_jerusalem",
+        "heavens",
+        "heaven_layers",
+        "heartbreak_comfort",
+        "overwhelmed_comfort",
+        "dating_anxiety"
+      ],
+      "doctrineTopicLinkCount": 9,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 24,
+      "name": "Jeremiah",
+      "testament": "OLD",
+      "totalChapters": 52,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 25,
+      "name": "Lamentations",
+      "testament": "OLD",
+      "totalChapters": 5,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 26,
+      "name": "Ezekiel",
+      "testament": "OLD",
+      "totalChapters": 48,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 27,
+      "name": "Daniel",
+      "testament": "OLD",
+      "totalChapters": 12,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 12,
+      "primaryWitnessCount": 8,
+      "supportingWitnessCount": 4,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "death_state",
+        "dietary_law",
+        "kingdom",
+        "resurrection",
+        "abomination_desolation"
+      ],
+      "doctrineTopicLinkCount": 5,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 28,
+      "name": "Hosea",
+      "testament": "OLD",
+      "totalChapters": 14,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 29,
+      "name": "Joel",
+      "testament": "OLD",
+      "totalChapters": 3,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 30,
+      "name": "Amos",
+      "testament": "OLD",
+      "totalChapters": 9,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 31,
+      "name": "Obadiah",
+      "testament": "OLD",
+      "totalChapters": 1,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 32,
+      "name": "Jonah",
+      "testament": "OLD",
+      "totalChapters": 4,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 33,
+      "name": "Micah",
+      "testament": "OLD",
+      "totalChapters": 7,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 34,
+      "name": "Nahum",
+      "testament": "OLD",
+      "totalChapters": 3,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 35,
+      "name": "Habakkuk",
+      "testament": "OLD",
+      "totalChapters": 3,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 36,
+      "name": "Zephaniah",
+      "testament": "OLD",
+      "totalChapters": 3,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 37,
+      "name": "Haggai",
+      "testament": "OLD",
+      "totalChapters": 2,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 38,
+      "name": "Zechariah",
+      "testament": "OLD",
+      "totalChapters": 14,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 39,
+      "name": "Malachi",
+      "testament": "OLD",
+      "totalChapters": 4,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 40,
+      "name": "Matthew",
+      "testament": "NEW",
+      "totalChapters": 28,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 12,
+      "primaryWitnessCount": 7,
+      "supportingWitnessCount": 5,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "sabbath",
+        "kingdom",
+        "david",
+        "fornication_sexual_sin",
+        "ten_commandments",
+        "marriage_bed",
+        "prayer_comfort",
+        "heartbreak_comfort",
+        "abomination_desolation",
+        "prayer_with_user",
+        "overwhelmed_comfort"
+      ],
+      "doctrineTopicLinkCount": 11,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 41,
+      "name": "Mark",
+      "testament": "NEW",
+      "totalChapters": 16,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 2,
+      "primaryWitnessCount": 1,
+      "supportingWitnessCount": 1,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "sabbath",
+        "abomination_desolation"
+      ],
+      "doctrineTopicLinkCount": 2,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "LIMITED_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 42,
+      "name": "Luke",
+      "testament": "NEW",
+      "totalChapters": 24,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 6,
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 3,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "sabbath",
+        "kingdom",
+        "abomination_desolation",
+        "repentance"
+      ],
+      "doctrineTopicLinkCount": 4,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 43,
+      "name": "John",
+      "testament": "NEW",
+      "totalChapters": 21,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 8,
+      "primaryWitnessCount": 6,
+      "supportingWitnessCount": 2,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "death_state",
+        "resurrection",
+        "holy_spirit",
+        "heavens",
+        "repentance",
+        "faith_obedience"
+      ],
+      "doctrineTopicLinkCount": 6,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 44,
+      "name": "Acts",
+      "testament": "NEW",
+      "totalChapters": 28,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 19,
+      "primaryWitnessCount": 13,
+      "supportingWitnessCount": 6,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "dietary_law",
+        "acts_10",
+        "sabbath",
+        "kingdom",
+        "resurrection",
+        "holy_spirit",
+        "david",
+        "fornication_sexual_sin",
+        "repentance"
+      ],
+      "doctrineTopicLinkCount": 9,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 45,
+      "name": "Romans",
+      "testament": "NEW",
+      "totalChapters": 16,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 3,
+      "primaryWitnessCount": 2,
+      "supportingWitnessCount": 1,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "holy_spirit",
+        "ten_commandments",
+        "faith_obedience"
+      ],
+      "doctrineTopicLinkCount": 3,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 46,
+      "name": "1 Corinthians",
+      "testament": "NEW",
+      "totalChapters": 16,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 7,
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 2,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "death_state",
+        "resurrection",
+        "holy_spirit",
+        "fornication_sexual_sin",
+        "marriage_bed",
+        "sexual_boundaries_dating"
+      ],
+      "doctrineTopicLinkCount": 6,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 47,
+      "name": "2 Corinthians",
+      "testament": "NEW",
+      "totalChapters": 13,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 4,
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 1,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "heavens",
+        "heaven_layers",
+        "third_heaven",
+        "repentance"
+      ],
+      "doctrineTopicLinkCount": 4,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 48,
+      "name": "Galatians",
+      "testament": "NEW",
+      "totalChapters": 6,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 2,
+      "primaryWitnessCount": 1,
+      "supportingWitnessCount": 1,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "fornication_sexual_sin",
+        "sexual_boundaries_dating"
+      ],
+      "doctrineTopicLinkCount": 2,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "LIMITED_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 49,
+      "name": "Ephesians",
+      "testament": "NEW",
+      "totalChapters": 6,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 3,
+      "primaryWitnessCount": 1,
+      "supportingWitnessCount": 2,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "fornication_sexual_sin",
+        "marriage_bed",
+        "sexual_boundaries_dating"
+      ],
+      "doctrineTopicLinkCount": 3,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 50,
+      "name": "Philippians",
+      "testament": "NEW",
+      "totalChapters": 4,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 3,
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "prayer_comfort",
+        "prayer_with_user",
+        "dating_anxiety"
+      ],
+      "doctrineTopicLinkCount": 3,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 51,
+      "name": "Colossians",
+      "testament": "NEW",
+      "totalChapters": 4,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 52,
+      "name": "1 Thessalonians",
+      "testament": "NEW",
+      "totalChapters": 5,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 4,
+      "primaryWitnessCount": 4,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "death_state",
+        "resurrection",
+        "fornication_sexual_sin",
+        "sexual_boundaries_dating"
+      ],
+      "doctrineTopicLinkCount": 4,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 53,
+      "name": "2 Thessalonians",
+      "testament": "NEW",
+      "totalChapters": 3,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 54,
+      "name": "1 Timothy",
+      "testament": "NEW",
+      "totalChapters": 6,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 55,
+      "name": "2 Timothy",
+      "testament": "NEW",
+      "totalChapters": 4,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 56,
+      "name": "Titus",
+      "testament": "NEW",
+      "totalChapters": 3,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 57,
+      "name": "Philemon",
+      "testament": "NEW",
+      "totalChapters": 1,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 58,
+      "name": "Hebrews",
+      "testament": "NEW",
+      "totalChapters": 13,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 6,
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 1,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "sabbath",
+        "new_jerusalem",
+        "fornication_sexual_sin",
+        "marriage_bed",
+        "sexual_boundaries_dating",
+        "faith_obedience"
+      ],
+      "doctrineTopicLinkCount": 6,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 59,
+      "name": "James",
+      "testament": "NEW",
+      "totalChapters": 5,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 3,
+      "primaryWitnessCount": 2,
+      "supportingWitnessCount": 1,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "prayer_comfort",
+        "prayer_with_user",
+        "faith_obedience"
+      ],
+      "doctrineTopicLinkCount": 3,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 60,
+      "name": "1 Peter",
+      "testament": "NEW",
+      "totalChapters": 5,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 5,
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "prayer_comfort",
+        "heartbreak_comfort",
+        "prayer_with_user",
+        "overwhelmed_comfort",
+        "dating_anxiety"
+      ],
+      "doctrineTopicLinkCount": 5,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 61,
+      "name": "2 Peter",
+      "testament": "NEW",
+      "totalChapters": 3,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 62,
+      "name": "1 John",
+      "testament": "NEW",
+      "totalChapters": 5,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 8,
+      "primaryWitnessCount": 6,
+      "supportingWitnessCount": 2,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "death_state",
+        "resurrection",
+        "holy_spirit",
+        "heavens",
+        "repentance",
+        "faith_obedience"
+      ],
+      "doctrineTopicLinkCount": 6,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 63,
+      "name": "2 John",
+      "testament": "NEW",
+      "totalChapters": 1,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 7,
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 2,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "death_state",
+        "resurrection",
+        "holy_spirit",
+        "heavens",
+        "faith_obedience"
+      ],
+      "doctrineTopicLinkCount": 5,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 64,
+      "name": "3 John",
+      "testament": "NEW",
+      "totalChapters": 1,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 7,
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 2,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "death_state",
+        "resurrection",
+        "holy_spirit",
+        "heavens",
+        "faith_obedience"
+      ],
+      "doctrineTopicLinkCount": 5,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    },
+    {
+      "bookNumber": 65,
+      "name": "Jude",
+      "testament": "NEW",
+      "totalChapters": 1,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 0,
+      "primaryWitnessCount": 0,
+      "supportingWitnessCount": 0,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [],
+      "doctrineTopicLinkCount": 0,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "TEXT_ONLY"
+    },
+    {
+      "bookNumber": 66,
+      "name": "Revelation",
+      "testament": "NEW",
+      "totalChapters": 22,
+      "kjvTextAvailable": true,
+      "localProviderAvailable": true,
+      "externalProviderDependence": false,
+      "indexedPassages": 10,
+      "primaryWitnessCount": 9,
+      "supportingWitnessCount": 1,
+      "crossReferenceCount": 0,
+      "doctrineTopicLinks": [
+        "sabbath",
+        "kingdom",
+        "new_jerusalem"
+      ],
+      "doctrineTopicLinkCount": 3,
+      "originalLanguageAvailable": false,
+      "historicalContextAvailable": false,
+      "coverageStatus": "STRONG_TOPIC_COVERAGE"
+    }
+  ],
+  "doctrineTopics": [
+    {
+      "topicId": "abomination_desolation",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.abomination_desolation"
+      ],
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 7,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "millennial_kingdom"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Daniel 9:27",
+        "Daniel 11:31",
+        "Daniel 12:11",
+        "Matthew 24:15",
+        "Mark 13:14"
+      ],
+      "supportingWitnesses": [
+        "Daniel 8:13",
+        "Luke 21:20"
+      ]
+    },
+    {
+      "topicId": "acts_10",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS",
+        "bibleConceptConcordance.CONCEPTS.acts_10",
+        "bibleConceptGraph.MERGED_GRAPH.acts_10"
+      ],
+      "primaryWitnessCount": 4,
+      "supportingWitnessCount": 0,
+      "independentPassageCount": 4,
+      "oldTestamentWitness": false,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [],
+      "crossReferenceCount": 0,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_SUPPORTING_WITNESS",
+        "NO_CROSS_REFERENCES",
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Acts 10:14",
+        "Acts 10:28",
+        "Acts 10:34-35",
+        "Acts 11:1-18"
+      ],
+      "supportingWitnesses": []
+    },
+    {
+      "topicId": "dating_anxiety",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.dating_anxiety"
+      ],
+      "primaryWitnessCount": 2,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 4,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "sexual_boundaries_dating"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Philippians 4:6-7",
+        "1 Peter 5:7"
+      ],
+      "supportingWitnesses": [
+        "Psalm 56:3",
+        "Isaiah 41:10"
+      ]
+    },
+    {
+      "topicId": "david",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS"
+      ],
+      "primaryWitnessCount": 4,
+      "supportingWitnessCount": 0,
+      "independentPassageCount": 4,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [],
+      "crossReferenceCount": 0,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_SUPPORTING_WITNESS",
+        "NO_CROSS_REFERENCES",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "2 Samuel 7:12-16",
+        "Psalm 89:3-4",
+        "Acts 2:29-31",
+        "Matthew 22:41-45"
+      ],
+      "supportingWitnesses": []
+    },
+    {
+      "topicId": "death_state",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS",
+        "bibleConceptConcordance.CONCEPTS.death_state",
+        "bibleConceptGraph.MERGED_GRAPH.death_state"
+      ],
+      "primaryWitnessCount": 7,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 7,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [],
+      "crossReferenceCount": 0,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_CROSS_REFERENCES",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Ecclesiastes 9:5",
+        "Ecclesiastes 9:10",
+        "Psalm 146:4",
+        "John 11:11-14",
+        "Daniel 12:2",
+        "1 Thessalonians 4:13-16",
+        "1 Corinthians 15"
+      ],
+      "supportingWitnesses": [
+        "Daniel 12:2",
+        "1 Corinthians 15"
+      ]
+    },
+    {
+      "topicId": "dietary_law",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS",
+        "bibleConceptConcordance.CONCEPTS.dietary_pork_unclean",
+        "bibleConceptGraph.MERGED_GRAPH.dietary_pork_unclean",
+        "bibleConceptGraph.MERGED_GRAPH.dietary_clean_unclean"
+      ],
+      "primaryWitnessCount": 9,
+      "supportingWitnessCount": 4,
+      "independentPassageCount": 9,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "dietary_pork_unclean",
+        "acts_10"
+      ],
+      "crossReferenceCount": 2,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Leviticus 11",
+        "Deuteronomy 14",
+        "Daniel 1:8-16",
+        "Acts 10:14",
+        "Acts 10:28",
+        "Acts 11:1-18",
+        "Isaiah 66:17",
+        "Leviticus 11:7-8",
+        "Deuteronomy 14:8"
+      ],
+      "supportingWitnesses": [
+        "Daniel 1:8-16",
+        "Acts 11:1-18",
+        "Acts 10:14",
+        "Acts 10:28"
+      ]
+    },
+    {
+      "topicId": "faith_obedience",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.faith_obedience"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 1,
+      "independentPassageCount": 4,
+      "oldTestamentWitness": false,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "repentance"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "James 2:17",
+        "Hebrews 11:1",
+        "Romans 1:5"
+      ],
+      "supportingWitnesses": [
+        "John 14:15"
+      ]
+    },
+    {
+      "topicId": "fornication_sexual_sin",
+      "sources": [
+        "bibleConceptConcordance.CONCEPTS.fornication_sexual_sin",
+        "bibleConceptGraph.MERGED_GRAPH.fornication_sexual_sin"
+      ],
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 3,
+      "independentPassageCount": 8,
+      "oldTestamentWitness": false,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [],
+      "crossReferenceCount": 0,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_CROSS_REFERENCES",
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "1 Corinthians 6:18",
+        "1 Thessalonians 4:3-5",
+        "Hebrews 13:4",
+        "Ephesians 5:3",
+        "Galatians 5:19-21"
+      ],
+      "supportingWitnesses": [
+        "Matthew 15:19",
+        "Acts 15:20",
+        "Acts 15:29"
+      ]
+    },
+    {
+      "topicId": "heartbreak_comfort",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.heartbreak_comfort"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 5,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "prayer_comfort",
+        "overwhelmed_comfort"
+      ],
+      "crossReferenceCount": 2,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Psalm 34:18",
+        "1 Peter 5:7",
+        "Psalm 147:3"
+      ],
+      "supportingWitnesses": [
+        "Isaiah 61:1-3",
+        "Matthew 5:4"
+      ]
+    },
+    {
+      "topicId": "heaven_layers",
+      "sources": [
+        "bibleConceptConcordance.CONCEPTS.heaven_layers",
+        "bibleConceptGraph.MERGED_GRAPH.heaven_layers"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 5,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [],
+      "crossReferenceCount": 0,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_CROSS_REFERENCES",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "2 Corinthians 12:2",
+        "Genesis 1:1",
+        "Deuteronomy 10:14"
+      ],
+      "supportingWitnesses": [
+        "Psalm 115:16",
+        "Isaiah 66:1"
+      ]
+    },
+    {
+      "topicId": "heavens",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS"
+      ],
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 0,
+      "independentPassageCount": 5,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [],
+      "crossReferenceCount": 0,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_SUPPORTING_WITNESS",
+        "NO_CROSS_REFERENCES",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Genesis 1:1",
+        "Deuteronomy 10:14",
+        "2 Corinthians 12:2",
+        "John 3:13",
+        "Isaiah 66:1"
+      ],
+      "supportingWitnesses": []
+    },
+    {
+      "topicId": "holy_spirit",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS"
+      ],
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 0,
+      "independentPassageCount": 5,
+      "oldTestamentWitness": false,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [],
+      "crossReferenceCount": 0,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_SUPPORTING_WITNESS",
+        "NO_CROSS_REFERENCES",
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "John 14:16-17",
+        "John 16:13",
+        "Acts 2:38",
+        "Romans 8:9",
+        "1 Corinthians 12:4-11"
+      ],
+      "supportingWitnesses": []
+    },
+    {
+      "topicId": "kingdom",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS",
+        "bibleConceptConcordance.CONCEPTS.kingdom_on_earth",
+        "bibleConceptGraph.MERGED_GRAPH.kingdom_on_earth",
+        "bibleConceptGraph.MERGED_GRAPH.millennial_kingdom"
+      ],
+      "primaryWitnessCount": 11,
+      "supportingWitnessCount": 5,
+      "independentPassageCount": 13,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "kingdom_on_earth"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Matthew 6:10",
+        "Luke 17:20-21",
+        "Revelation 21:1-3",
+        "Revelation 21:2",
+        "Daniel 2:44",
+        "Acts 1:6-7",
+        "Revelation 5:10",
+        "Daniel 7:27",
+        "Psalm 37:9-11",
+        "Matthew 5:5",
+        "Revelation 20:4-6"
+      ],
+      "supportingWitnesses": [
+        "Proverbs 10:30",
+        "Isaiah 11:9",
+        "Luke 17:20-21",
+        "Daniel 7:27",
+        "Revelation 5:10"
+      ]
+    },
+    {
+      "topicId": "marriage_bed",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.marriage_bed"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 5,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "fornication_sexual_sin"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Hebrews 13:4",
+        "Genesis 2:24",
+        "Matthew 19:5-6"
+      ],
+      "supportingWitnesses": [
+        "1 Corinthians 7:2-3",
+        "Ephesians 5:31-33"
+      ]
+    },
+    {
+      "topicId": "new_jerusalem",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS",
+        "bibleConceptGraph.MERGED_GRAPH.new_jerusalem"
+      ],
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 6,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "kingdom_on_earth",
+        "heaven_layers"
+      ],
+      "crossReferenceCount": 2,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Revelation 21:1-3",
+        "Revelation 21:2",
+        "Revelation 21:10-27",
+        "Isaiah 65:17-19",
+        "Revelation 22:1-5"
+      ],
+      "supportingWitnesses": [
+        "Isaiah 65:17-19",
+        "Hebrews 11:10"
+      ]
+    },
+    {
+      "topicId": "onan_seed_context",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.onan_seed_context"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 1,
+      "independentPassageCount": 4,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": false,
+      "crossReferenceTopicIds": [
+        "marriage_bed"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_NEW_TESTAMENT_WITNESS",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Genesis 38:9-10",
+        "Genesis 1:28",
+        "Deuteronomy 25:5-6"
+      ],
+      "supportingWitnesses": [
+        "Genesis 38:8"
+      ]
+    },
+    {
+      "topicId": "overwhelmed_comfort",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.overwhelmed_comfort"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 5,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "heartbreak_comfort"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Psalm 34:18",
+        "1 Peter 5:7",
+        "Psalm 55:22"
+      ],
+      "supportingWitnesses": [
+        "Isaiah 41:10",
+        "Matthew 11:28"
+      ]
+    },
+    {
+      "topicId": "prayer_comfort",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.prayer_comfort"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 5,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "heartbreak_comfort"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Philippians 4:6-7",
+        "Matthew 6:9-13",
+        "James 5:16"
+      ],
+      "supportingWitnesses": [
+        "Psalm 55:22",
+        "1 Peter 5:7"
+      ]
+    },
+    {
+      "topicId": "prayer_with_user",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.prayer_with_user"
+      ],
+      "primaryWitnessCount": 2,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 4,
+      "oldTestamentWitness": false,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "prayer_comfort"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Matthew 6:9-13",
+        "Philippians 4:6-7"
+      ],
+      "supportingWitnesses": [
+        "James 5:16",
+        "1 Peter 5:7"
+      ]
+    },
+    {
+      "topicId": "repentance",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.repentance"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 1,
+      "independentPassageCount": 4,
+      "oldTestamentWitness": false,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "faith_obedience"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Acts 2:38",
+        "1 John 1:9",
+        "Luke 13:3"
+      ],
+      "supportingWitnesses": [
+        "2 Corinthians 7:10"
+      ]
+    },
+    {
+      "topicId": "resurrection",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS"
+      ],
+      "primaryWitnessCount": 5,
+      "supportingWitnessCount": 1,
+      "independentPassageCount": 6,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [],
+      "crossReferenceCount": 0,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_CROSS_REFERENCES",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "1 Corinthians 15",
+        "1 Thessalonians 4:13-16",
+        "Daniel 12:2",
+        "John 11:25",
+        "Acts 24:15"
+      ],
+      "supportingWitnesses": [
+        "John 11:11-14"
+      ]
+    },
+    {
+      "topicId": "sabbath",
+      "sources": [
+        "doctrineAuthorityContract.BASE_CONTRACTS",
+        "bibleConceptConcordance.CONCEPTS.sabbath",
+        "bibleConceptGraph.MERGED_GRAPH.sabbath",
+        "bibleConceptGraph.MERGED_GRAPH.sabbath_seventh_day",
+        "bibleConceptGraph.MERGED_GRAPH.sabbath_how_to_keep"
+      ],
+      "primaryWitnessCount": 8,
+      "supportingWitnessCount": 6,
+      "independentPassageCount": 12,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "sabbath",
+        "sabbath_how_to_keep",
+        "sabbath_seventh_day"
+      ],
+      "crossReferenceCount": 3,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9",
+        "Revelation 14:12",
+        "Deuteronomy 5:12-15"
+      ],
+      "supportingWitnesses": [
+        "Exodus 31:13",
+        "Matthew 12:11-12",
+        "Acts 13:42-44",
+        "Mark 2:27-28",
+        "Luke 4:16",
+        "Deuteronomy 5:12-15"
+      ]
+    },
+    {
+      "topicId": "sexual_boundaries_dating",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.sexual_boundaries_dating"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 5,
+      "oldTestamentWitness": false,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "fornication_sexual_sin",
+        "marriage_bed"
+      ],
+      "crossReferenceCount": 2,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "1 Corinthians 6:18",
+        "1 Thessalonians 4:3-5",
+        "Hebrews 13:4"
+      ],
+      "supportingWitnesses": [
+        "Ephesians 5:3",
+        "Galatians 5:19-21"
+      ]
+    },
+    {
+      "topicId": "ten_commandments",
+      "sources": [
+        "bibleConceptConcordance.CONCEPTS.ten_commandments",
+        "bibleConceptGraph.MERGED_GRAPH.ten_commandments"
+      ],
+      "primaryWitnessCount": 3,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 5,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [],
+      "crossReferenceCount": 0,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_CROSS_REFERENCES",
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "Exodus 20",
+        "Deuteronomy 5",
+        "Exodus 34:28"
+      ],
+      "supportingWitnesses": [
+        "Matthew 5:17-19",
+        "Romans 13:9"
+      ]
+    },
+    {
+      "topicId": "third_heaven",
+      "sources": [
+        "bibleConceptGraph.MERGED_GRAPH.third_heaven"
+      ],
+      "primaryWitnessCount": 1,
+      "supportingWitnessCount": 2,
+      "independentPassageCount": 3,
+      "oldTestamentWitness": true,
+      "newTestamentWitness": true,
+      "crossReferenceTopicIds": [
+        "heaven_layers"
+      ],
+      "crossReferenceCount": 1,
+      "originalLanguageSupport": false,
+      "historicalSupport": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "productionRetrievalStatus": "LIVE_PRODUCTION",
+      "knownGaps": [
+        "NO_ORIGINAL_LANGUAGE_SUPPORT",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "primaryWitnesses": [
+        "2 Corinthians 12:2"
+      ],
+      "supportingWitnesses": [
+        "Deuteronomy 10:14",
+        "Genesis 1:1"
+      ]
+    }
+  ]
+}

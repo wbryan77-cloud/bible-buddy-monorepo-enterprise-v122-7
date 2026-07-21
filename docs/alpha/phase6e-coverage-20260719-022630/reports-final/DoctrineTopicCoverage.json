@@ -1,0 +1,1091 @@
+{
+  "topics": [
+    {
+      "topicId": "abomination_desolation",
+      "title": "abomination_desolation",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Daniel 9:27",
+        "Daniel 11:31",
+        "Daniel 12:11",
+        "Matthew 24:15",
+        "Mark 13:14"
+      ],
+      "supportingWitnesses": [
+        "Daniel 8:13",
+        "Luke 21:20"
+      ],
+      "crossReferences": [
+        "Daniel 9:27",
+        "Daniel 11:45",
+        "Matthew 24:3-8",
+        "Matthew 24:15-18",
+        "Matthew 24:21-22",
+        "Matthew 24:29-31",
+        "Matthew 24:6-7",
+        "Matthew 24:1-3",
+        "Matthew 24:32-33",
+        "Matthew 24:3-5",
+        "Matthew 24:11-14",
+        "Matthew 24:13",
+        "Matthew 24:3",
+        "Matthew 24:11"
+      ],
+      "oldTestamentWitnesses": 4,
+      "newTestamentWitnesses": 3,
+      "independentPassageCount": 7,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 95,
+      "qualityScore": 95
+    },
+    {
+      "topicId": "acts_10",
+      "title": "acts_10",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Acts 10:14",
+        "Acts 10:28",
+        "Acts 10:34-35",
+        "Acts 11:1-18"
+      ],
+      "supportingWitnesses": [],
+      "crossReferences": [
+        "Leviticus 11"
+      ],
+      "oldTestamentWitnesses": 0,
+      "newTestamentWitnesses": 4,
+      "independentPassageCount": 4,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": true,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_SUPPORTING_WITNESS",
+        "NO_OLD_TESTAMENT_WITNESS"
+      ],
+      "coverageScore": 60,
+      "qualityScore": 60
+    },
+    {
+      "topicId": "dating_anxiety",
+      "title": "dating_anxiety",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Philippians 4:6-7",
+        "1 Peter 5:7"
+      ],
+      "supportingWitnesses": [
+        "Psalm 56:3",
+        "Isaiah 41:10"
+      ],
+      "crossReferences": [
+        "Philippians 4:6-7"
+      ],
+      "oldTestamentWitnesses": 2,
+      "newTestamentWitnesses": 2,
+      "independentPassageCount": 4,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 85,
+      "qualityScore": 85
+    },
+    {
+      "topicId": "david",
+      "title": "david",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "2 Samuel 7:12-16",
+        "Psalm 89:3-4",
+        "Acts 2:29-31",
+        "Matthew 22:41-45"
+      ],
+      "supportingWitnesses": [],
+      "crossReferences": [
+        "Matthew 22:1-3",
+        "Matthew 22:10-14"
+      ],
+      "oldTestamentWitnesses": 2,
+      "newTestamentWitnesses": 2,
+      "independentPassageCount": 4,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_SUPPORTING_WITNESS",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 70,
+      "qualityScore": 70
+    },
+    {
+      "topicId": "death_state",
+      "title": "death_state",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Ecclesiastes 9:5",
+        "Ecclesiastes 9:10",
+        "Psalm 146:4",
+        "John 11:11-14",
+        "Daniel 12:2",
+        "1 Thessalonians 4:13-16",
+        "1 Corinthians 15"
+      ],
+      "supportingWitnesses": [
+        "Daniel 12:2",
+        "1 Corinthians 15"
+      ],
+      "crossReferences": [
+        "Daniel 12:1-2",
+        "Daniel 12:11-13",
+        "Ecclesiastes 9:12",
+        "Ecclesiastes 9:3-6",
+        "1 Thessalonians 4:6",
+        "1 Corinthians 15:50-53",
+        "1 Corinthians 15:42-44",
+        "1 Corinthians 15:1-2",
+        "Psalm 146:1-4",
+        "1 Corinthians 15:52",
+        "1 Thessalonians 4:13-17",
+        "1 Corinthians 15:51-54",
+        "Daniel 12:4-13",
+        "1 Corinthians 15:31-32"
+      ],
+      "oldTestamentWitnesses": 4,
+      "newTestamentWitnesses": 3,
+      "independentPassageCount": 7,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": true,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "relationshipTypesPresent": [
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [],
+      "coverageScore": 100,
+      "qualityScore": 100
+    },
+    {
+      "topicId": "dietary_law",
+      "title": "dietary_law",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Leviticus 11",
+        "Deuteronomy 14",
+        "Daniel 1:8-16",
+        "Acts 10:14",
+        "Acts 10:28",
+        "Acts 11:1-18",
+        "Isaiah 66:17",
+        "Leviticus 11:7-8",
+        "Deuteronomy 14:8"
+      ],
+      "supportingWitnesses": [
+        "Daniel 1:8-16",
+        "Acts 11:1-18",
+        "Acts 10:14",
+        "Acts 10:28"
+      ],
+      "crossReferences": [
+        "Leviticus 11",
+        "Leviticus 11",
+        "Leviticus 11",
+        "Isaiah 66:15-17",
+        "Deuteronomy 14:1-3",
+        "Deuteronomy 14:22-27",
+        "Deuteronomy 14:22-26"
+      ],
+      "oldTestamentWitnesses": 6,
+      "newTestamentWitnesses": 3,
+      "independentPassageCount": 9,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": true,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [],
+      "coverageScore": 100,
+      "qualityScore": 100
+    },
+    {
+      "topicId": "faith_obedience",
+      "title": "faith_obedience",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "James 2:17",
+        "Hebrews 11:1",
+        "Romans 1:5"
+      ],
+      "supportingWitnesses": [
+        "John 14:15"
+      ],
+      "crossReferences": [
+        "Acts 2:38",
+        "James 2:17",
+        "Hebrews 11:24-27",
+        "Romans 1:26-29",
+        "Hebrews 11:6",
+        "Hebrews 11:28",
+        "Romans 1:3-4",
+        "Hebrews 11:30",
+        "Romans 1:29-31"
+      ],
+      "oldTestamentWitnesses": 0,
+      "newTestamentWitnesses": 4,
+      "independentPassageCount": 4,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 75,
+      "qualityScore": 75
+    },
+    {
+      "topicId": "fornication_sexual_sin",
+      "title": "fornication_sexual_sin",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "1 Corinthians 6:18",
+        "1 Thessalonians 4:3-5",
+        "Hebrews 13:4",
+        "Ephesians 5:3",
+        "Galatians 5:19-21"
+      ],
+      "supportingWitnesses": [
+        "Matthew 15:19",
+        "Acts 15:20",
+        "Acts 15:29"
+      ],
+      "crossReferences": [
+        "Hebrews 13:4",
+        "1 Corinthians 6:18",
+        "1 Corinthians 6:12-18",
+        "1 Corinthians 6:9-11",
+        "Ephesians 5:15-16",
+        "Galatians 5:22-25",
+        "Galatians 5:1",
+        "Galatians 5:7-9",
+        "Galatians 5:16-21",
+        "Galatians 5:1-6",
+        "Hebrews 13:4-5"
+      ],
+      "oldTestamentWitnesses": 0,
+      "newTestamentWitnesses": 8,
+      "independentPassageCount": 8,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 85,
+      "qualityScore": 85
+    },
+    {
+      "topicId": "heartbreak_comfort",
+      "title": "heartbreak_comfort",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Psalm 34:18",
+        "1 Peter 5:7",
+        "Psalm 147:3"
+      ],
+      "supportingWitnesses": [
+        "Isaiah 61:1-3",
+        "Matthew 5:4"
+      ],
+      "crossReferences": [
+        "Philippians 4:6-7",
+        "Psalm 34:18",
+        "Psalm 34:18",
+        "Psalm 34:18",
+        "1 Peter 5:6-8"
+      ],
+      "oldTestamentWitnesses": 3,
+      "newTestamentWitnesses": 2,
+      "independentPassageCount": 5,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 95,
+      "qualityScore": 95
+    },
+    {
+      "topicId": "heaven_layers",
+      "title": "heaven_layers",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "2 Corinthians 12:2",
+        "Genesis 1:1",
+        "Deuteronomy 10:14"
+      ],
+      "supportingWitnesses": [
+        "Psalm 115:16",
+        "Isaiah 66:1"
+      ],
+      "crossReferences": [
+        "Revelation 21:1-3",
+        "2 Corinthians 12:2"
+      ],
+      "oldTestamentWitnesses": 4,
+      "newTestamentWitnesses": 1,
+      "independentPassageCount": 5,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 90,
+      "qualityScore": 90
+    },
+    {
+      "topicId": "heavens",
+      "title": "heavens",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Genesis 1:1",
+        "Deuteronomy 10:14",
+        "2 Corinthians 12:2",
+        "John 3:13",
+        "Isaiah 66:1"
+      ],
+      "supportingWitnesses": [],
+      "crossReferences": [
+        "John 3:3-5",
+        "John 3:6",
+        "2 Corinthians 12:19-20"
+      ],
+      "oldTestamentWitnesses": 3,
+      "newTestamentWitnesses": 2,
+      "independentPassageCount": 5,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_SUPPORTING_WITNESS",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 75,
+      "qualityScore": 75
+    },
+    {
+      "topicId": "holy_spirit",
+      "title": "holy_spirit",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "John 14:16-17",
+        "John 16:13",
+        "Acts 2:38",
+        "Romans 8:9",
+        "1 Corinthians 12:4-11"
+      ],
+      "supportingWitnesses": [],
+      "crossReferences": [
+        "John 16:1-3",
+        "Acts 2:32-35",
+        "John 14:25-30",
+        "Romans 8:19-25",
+        "Romans 8:29",
+        "Romans 8:18",
+        "Romans 8:36-38",
+        "Acts 2:32-36"
+      ],
+      "oldTestamentWitnesses": 0,
+      "newTestamentWitnesses": 5,
+      "independentPassageCount": 5,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": true,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_SUPPORTING_WITNESS",
+        "NO_OLD_TESTAMENT_WITNESS"
+      ],
+      "coverageScore": 70,
+      "qualityScore": 70
+    },
+    {
+      "topicId": "kingdom",
+      "title": "kingdom",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Matthew 6:10",
+        "Luke 17:20-21",
+        "Revelation 21:1-3",
+        "Revelation 21:2",
+        "Daniel 2:44",
+        "Acts 1:6-7",
+        "Revelation 5:10",
+        "Daniel 7:27",
+        "Psalm 37:9-11",
+        "Matthew 5:5",
+        "Revelation 20:4-6"
+      ],
+      "supportingWitnesses": [
+        "Proverbs 10:30",
+        "Isaiah 11:9",
+        "Luke 17:20-21",
+        "Daniel 7:27",
+        "Revelation 5:10"
+      ],
+      "crossReferences": [
+        "Revelation 21:1-3",
+        "Daniel 9:27",
+        "Revelation 20:4-6",
+        "Revelation 20:4-6",
+        "Revelation 21:10",
+        "Revelation 21:27",
+        "Revelation 20:11-15",
+        "Daniel 7:19-27",
+        "Daniel 7:1-3",
+        "Daniel 7:17-18",
+        "Daniel 7:4-7",
+        "Matthew 5:34-35",
+        "Revelation 21:5-6",
+        "Matthew 6:16-18",
+        "Revelation 20:1-3",
+        "Revelation 20:7-10",
+        "Luke 17:7-10",
+        "Acts 1:6",
+        "Revelation 5:9-10",
+        "Matthew 5:3-5",
+        "Psalm 37:7-11",
+        "Daniel 2:1",
+        "Daniel 2:31-45",
+        "Daniel 7:8",
+        "Daniel 2:34",
+        "Daniel 2:44-45",
+        "Daniel 7:21-27",
+        "Psalm 37:16"
+      ],
+      "oldTestamentWitnesses": 5,
+      "newTestamentWitnesses": 8,
+      "independentPassageCount": 13,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": true,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [],
+      "coverageScore": 100,
+      "qualityScore": 100
+    },
+    {
+      "topicId": "marriage_bed",
+      "title": "marriage_bed",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Hebrews 13:4",
+        "Genesis 2:24",
+        "Matthew 19:5-6"
+      ],
+      "supportingWitnesses": [
+        "1 Corinthians 7:2-3",
+        "Ephesians 5:31-33"
+      ],
+      "crossReferences": [
+        "Hebrews 13:4",
+        "1 Corinthians 6:18",
+        "Genesis 38:9-10",
+        "Matthew 19:13-15",
+        "Matthew 19:27-30"
+      ],
+      "oldTestamentWitnesses": 1,
+      "newTestamentWitnesses": 4,
+      "independentPassageCount": 5,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 95,
+      "qualityScore": 95
+    },
+    {
+      "topicId": "new_jerusalem",
+      "title": "new_jerusalem",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Revelation 21:1-3",
+        "Revelation 21:2",
+        "Revelation 21:10-27",
+        "Isaiah 65:17-19",
+        "Revelation 22:1-5"
+      ],
+      "supportingWitnesses": [
+        "Isaiah 65:17-19",
+        "Hebrews 11:10"
+      ],
+      "crossReferences": [
+        "Revelation 21:1-3",
+        "Revelation 21:1-3",
+        "Revelation 22:18-19",
+        "Revelation 22:12-15",
+        "Isaiah 65:17-25",
+        "Revelation 22:10-15"
+      ],
+      "oldTestamentWitnesses": 1,
+      "newTestamentWitnesses": 5,
+      "independentPassageCount": 6,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": true,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [],
+      "coverageScore": 100,
+      "qualityScore": 100
+    },
+    {
+      "topicId": "onan_seed_context",
+      "title": "onan_seed_context",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Genesis 38:9-10",
+        "Genesis 1:28",
+        "Deuteronomy 25:5-6"
+      ],
+      "supportingWitnesses": [
+        "Genesis 38:8"
+      ],
+      "crossReferences": [
+        "Genesis 38:9-10"
+      ],
+      "oldTestamentWitnesses": 4,
+      "newTestamentWitnesses": 0,
+      "independentPassageCount": 4,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_NEW_TESTAMENT_WITNESS",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 65,
+      "qualityScore": 65
+    },
+    {
+      "topicId": "overwhelmed_comfort",
+      "title": "overwhelmed_comfort",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Psalm 34:18",
+        "1 Peter 5:7",
+        "Psalm 55:22"
+      ],
+      "supportingWitnesses": [
+        "Isaiah 41:10",
+        "Matthew 11:28"
+      ],
+      "crossReferences": [
+        "Psalm 34:18",
+        "Psalm 34:18"
+      ],
+      "oldTestamentWitnesses": 3,
+      "newTestamentWitnesses": 2,
+      "independentPassageCount": 5,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 90,
+      "qualityScore": 90
+    },
+    {
+      "topicId": "prayer_comfort",
+      "title": "prayer_comfort",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Philippians 4:6-7",
+        "Matthew 6:9-13",
+        "James 5:16"
+      ],
+      "supportingWitnesses": [
+        "Psalm 55:22",
+        "1 Peter 5:7"
+      ],
+      "crossReferences": [
+        "Philippians 4:6-7",
+        "Psalm 34:18",
+        "Matthew 6:9-13",
+        "Philippians 4:1-3",
+        "Philippians 4:9-13"
+      ],
+      "oldTestamentWitnesses": 1,
+      "newTestamentWitnesses": 4,
+      "independentPassageCount": 5,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 95,
+      "qualityScore": 95
+    },
+    {
+      "topicId": "prayer_with_user",
+      "title": "prayer_with_user",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Matthew 6:9-13",
+        "Philippians 4:6-7"
+      ],
+      "supportingWitnesses": [
+        "James 5:16",
+        "1 Peter 5:7"
+      ],
+      "crossReferences": [
+        "Matthew 6:9-13"
+      ],
+      "oldTestamentWitnesses": 0,
+      "newTestamentWitnesses": 4,
+      "independentPassageCount": 4,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 75,
+      "qualityScore": 75
+    },
+    {
+      "topicId": "repentance",
+      "title": "repentance",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Acts 2:38",
+        "1 John 1:9",
+        "Luke 13:3"
+      ],
+      "supportingWitnesses": [
+        "2 Corinthians 7:10"
+      ],
+      "crossReferences": [
+        "Acts 2:38",
+        "James 2:17",
+        "Luke 13:24-27"
+      ],
+      "oldTestamentWitnesses": 0,
+      "newTestamentWitnesses": 4,
+      "independentPassageCount": 4,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 75,
+      "qualityScore": 75
+    },
+    {
+      "topicId": "resurrection",
+      "title": "resurrection",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "1 Corinthians 15",
+        "1 Thessalonians 4:13-16",
+        "Daniel 12:2",
+        "John 11:25",
+        "Acts 24:15"
+      ],
+      "supportingWitnesses": [
+        "John 11:11-14"
+      ],
+      "crossReferences": [],
+      "oldTestamentWitnesses": 1,
+      "newTestamentWitnesses": 5,
+      "independentPassageCount": 6,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_CROSS_REFERENCES",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 70,
+      "qualityScore": 70
+    },
+    {
+      "topicId": "sabbath",
+      "title": "sabbath",
+      "authorityDomain": "STRICT_DOCTRINE",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Genesis 2:2-3",
+        "Exodus 20:8-11",
+        "Isaiah 58:13-14",
+        "Luke 4:16",
+        "Acts 17:2",
+        "Hebrews 4:9",
+        "Revelation 14:12",
+        "Deuteronomy 5:12-15"
+      ],
+      "supportingWitnesses": [
+        "Exodus 31:13",
+        "Matthew 12:11-12",
+        "Acts 13:42-44",
+        "Mark 2:27-28",
+        "Luke 4:16",
+        "Deuteronomy 5:12-15"
+      ],
+      "crossReferences": [
+        "Exodus 20:8-11",
+        "Exodus 20:8-11",
+        "Luke 4:1-8",
+        "Exodus 20:1-5",
+        "Acts 17:2-3",
+        "Acts 17:10-11",
+        "Hebrews 4:12-13",
+        "Luke 4:1",
+        "Acts 17:16-17",
+        "Revelation 14:9-13",
+        "Exodus 20:1-3",
+        "Luke 4:1-4",
+        "Isaiah 58:4-6",
+        "Genesis 2:16-17",
+        "Revelation 14:9-12",
+        "Luke 4:14-22",
+        "Isaiah 58:1",
+        "Exodus 20:17"
+      ],
+      "oldTestamentWitnesses": 5,
+      "newTestamentWitnesses": 7,
+      "independentPassageCount": 12,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": true,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE",
+        "CROSS_REFERENCE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [],
+      "coverageScore": 100,
+      "qualityScore": 100
+    },
+    {
+      "topicId": "sexual_boundaries_dating",
+      "title": "sexual_boundaries_dating",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "1 Corinthians 6:18",
+        "1 Thessalonians 4:3-5",
+        "Hebrews 13:4"
+      ],
+      "supportingWitnesses": [
+        "Ephesians 5:3",
+        "Galatians 5:19-21"
+      ],
+      "crossReferences": [
+        "1 Corinthians 6:18",
+        "1 Corinthians 6:18",
+        "Philippians 4:6-7"
+      ],
+      "oldTestamentWitnesses": 0,
+      "newTestamentWitnesses": 5,
+      "independentPassageCount": 5,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_OLD_TESTAMENT_WITNESS",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 85,
+      "qualityScore": 85
+    },
+    {
+      "topicId": "ten_commandments",
+      "title": "ten_commandments",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "Exodus 20",
+        "Deuteronomy 5",
+        "Exodus 34:28"
+      ],
+      "supportingWitnesses": [
+        "Matthew 5:17-19",
+        "Romans 13:9"
+      ],
+      "crossReferences": [],
+      "oldTestamentWitnesses": 3,
+      "newTestamentWitnesses": 2,
+      "independentPassageCount": 5,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "HAS_NATURAL_LANGUAGE_DETECTION",
+      "relationshipTypesPresent": [],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_CROSS_REFERENCES",
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 80,
+      "qualityScore": 80
+    },
+    {
+      "topicId": "third_heaven",
+      "title": "third_heaven",
+      "authorityDomain": "CONCEPT_GRAPH",
+      "productionStatus": "LIVE_PRODUCTION",
+      "primaryWitnesses": [
+        "2 Corinthians 12:2"
+      ],
+      "supportingWitnesses": [
+        "Deuteronomy 10:14",
+        "Genesis 1:1"
+      ],
+      "crossReferences": [
+        "2 Corinthians 12:2"
+      ],
+      "oldTestamentWitnesses": 2,
+      "newTestamentWitnesses": 1,
+      "independentPassageCount": 3,
+      "originalLanguageCoverage": true,
+      "historicalCoverage": false,
+      "commonQuestionCoverage": "STRICT_TOPIC_ONLY",
+      "relationshipTypesPresent": [
+        "RELATED_DOCTRINE"
+      ],
+      "realProductionUsage": null,
+      "candidateEvidenceCount": 0,
+      "pendingReviewCount": 0,
+      "knownGaps": [
+        "NO_HISTORICAL_SUPPORT"
+      ],
+      "coverageScore": 70,
+      "qualityScore": 70
+    }
+  ],
+  "summary": {
+    "generatedAt": "2026-07-19T09:53:20.261Z",
+    "totalTopics": 25,
+    "noPrimaryWitness": [],
+    "oneWitnessOnly": [],
+    "lackingSupportingWitnesses": [
+      "acts_10",
+      "david",
+      "heavens",
+      "holy_spirit"
+    ],
+    "lackingCrossReferences": [
+      "resurrection",
+      "ten_commandments"
+    ],
+    "lackingOldTestamentWitnesses": [
+      "acts_10",
+      "faith_obedience",
+      "fornication_sexual_sin",
+      "holy_spirit",
+      "prayer_with_user",
+      "repentance",
+      "sexual_boundaries_dating"
+    ],
+    "lackingNewTestamentWitnesses": [
+      "onan_seed_context"
+    ],
+    "lackingOriginalLanguageSupport": [],
+    "lackingHistoricalSupport": [
+      "abomination_desolation",
+      "dating_anxiety",
+      "david",
+      "faith_obedience",
+      "fornication_sexual_sin",
+      "heartbreak_comfort",
+      "heaven_layers",
+      "heavens",
+      "marriage_bed",
+      "onan_seed_context",
+      "overwhelmed_comfort",
+      "prayer_comfort",
+      "prayer_with_user",
+      "repentance",
+      "resurrection",
+      "sexual_boundaries_dating",
+      "ten_commandments",
+      "third_heaven"
+    ],
+    "scaffoldOnlyTopics": [],
+    "dependentOnExternalProvider": [],
+    "averageCoverageScore": 84,
+    "originalLanguageCoverageHonestyNote": "This measures whether an original-language DATASET exists for the book containing this topic's witness (a data-availability fact, true for all 66 books as of Phase 6B). It is a narrower, more accurate replacement for the earlier Phase 6A report field of the same intent, which measured a different, stricter thing (whether the topic RECORD itself carries a structural cross-link into the original-language provider) and correctly reported that as not yet wired for any topic. Both statements are true; they measure different layers. See Part 4 (OriginalLanguageCoverage.md) for the per-book dataset detail this figure is derived from."
+  }
+}

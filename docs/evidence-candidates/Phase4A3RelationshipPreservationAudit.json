@@ -1,0 +1,20 @@
+{
+  "ranAt": "2026-06-10T06:51:36.652Z",
+  "phase": "4A.3",
+  "observedRelationshipCount": 4732,
+  "candidateRelationshipCount": 10,
+  "snapshotObservedCount": 4732,
+  "snapshotCandidateCount": 10,
+  "countsMatchSnapshot": true,
+  "promotionsDetected": 0,
+  "downgradesDetected": 0,
+  "candidateReviewOnlyFlagsPreserved": true,
+  "integrityViolations": 0,
+  "preserved": true,
+  "executiveAnswers": {
+    "observedRelationshipCount": 4732,
+    "candidateRelationshipCount": 10,
+    "anyPromotionsDetected": false,
+    "anyIntegrityViolationsDetected": false
+  }
+}

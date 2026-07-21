@@ -1,0 +1,152 @@
+{
+  "ranAt": "2026-07-20T13:50:21.425Z",
+  "buddyRuntime": "legacy",
+  "buddyOpenAiFirst": "default-on",
+  "openAiKeyPresent": true,
+  "passed": 10,
+  "failed": 0,
+  "results": [
+    {
+      "id": "1_relationship_loss",
+      "userId": "openai-first-regression-1_relationship_loss-1784555244851-0",
+      "message": "Today has been a tough day. I let go of someone that I truly love, but she hasn’t been right for years…",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "That sounds deeply painful — letting go of someone you truly love, especially after hoping for years that things might become right, can feel like grief and relief tangled together. You don’t have to pretend it doesn’t hurt just because the decision may have been necessary.\n\nFor ",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "2_correction_after_relationship",
+      "userId": "openai-first-regression-2_correction_after_relationship-1784555259021-1",
+      "message": "What’s flaring up again and you didn’t address what I just mentioned at all. Why?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "You’re right to call that out. I shouldn’t have said “flaring up again” — I don’t have enough context here to know what was flaring up, so that was an assumption on my part. And I didn’t address what you had just mentioned because I missed the actual point of your message and res",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "2b_correction_seeded_health_topic",
+      "userId": "openai-first-regression-2b_correction_seeded_health_topic-1784555272106-2",
+      "message": "What’s flaring up again and you didn’t address what I just mentioned at all. Why?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "You’re right — I missed what you actually said: “My knees hurt.” When I said something was “flaring up again,” that was my assumption, not something you told me. I should not have worded it that way, and I’m sorry.\n\nTo address what you mentioned: knee pain can come from strain, o",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "3_listen_first",
+      "userId": "openai-first-regression-3_listen_first-1784555282423-3",
+      "message": "I just want to talk for a minute. Please listen first.",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "Okay. I’m here with you, and I’ll listen first. No teaching, no fixing, no rushing. Take your time and say whatever you need to say.",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "4_same_script",
+      "userId": "openai-first-regression-4_same_script-1784555288210-4",
+      "message": "Why are you just giving me the same script over and over again?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "You’re right to call that out. If I’ve been giving you the same script over and over, that’s not helpful — it means I was over-relying on a repeated response pattern instead of actually responding to what you were saying in the moment.\n\nI’m sorry for that. I’ll slow down, answer ",
+      "adminFlags": [
+        "user_reported_repetitive_response_loop",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "5_alzheimers",
+      "userId": "openai-first-regression-5_alzheimers-1784555295552-5",
+      "message": "Mom has Alzheimer’s. What do I do?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "I’m really sorry. Hearing “Mom has Alzheimer’s” can feel like the floor just moved under you. You do not have to solve her whole future today — start with safety, support, and one faithful step at a time. Here’s what to do first: 1. Get a medical care plan in place. If she hasn’t",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "6_grief_what_do_i_do",
+      "userId": "openai-first-regression-6_grief_what_do_i_do-1784555321791-6",
+      "message": "I’m going through some grief what do I do?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "I’m really sorry you’re going through grief. When loss hits, it can feel like you’re supposed to “handle it,” but grief is not something you conquer in a day — it’s something you carry with God, one breath at a time. For right now, try this: don’t make yourself process everything",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "7_doctrine_after_grief_session",
+      "userId": "openai-first-regression-7_doctrine_after_grief_session-1784555338743-7",
+      "message": "Is the Logos spoken of in the Old Testament Jesus in the New Testament as well?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "Yes — in the New Testament, the Logos/“Word” is identified as Jesus, especially in John 1:1-14, where “the Word was made flesh.” One careful distinction: the Old Testament was not written in Greek, so Scripture does not state the Greek term “Logos” in the Old Testament directly. ",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "8_sabbath_definition",
+      "userId": "openai-first-regression-8_sabbath_definition-1784555406638-8",
+      "message": "What is a Sabbath day?",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "doctrine_final_authority",
+      "openAiCalled": false,
+      "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture.",
+      "adminFlags": [
+        "doctrine_final_authority",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    },
+    {
+      "id": "9_knees_health",
+      "userId": "openai-first-regression-9_knees_health-1784555407027-9",
+      "message": "My knees hurt again today",
+      "pass": true,
+      "failReason": null,
+      "masterRoute": "reason_first_openai",
+      "openAiCalled": true,
+      "replyPreview": "I’m sorry — knee pain coming back again today can be really discouraging, especially when you were probably hoping for a better day. For right now, try to be gentle with them: rest when you can, elevate your legs, and consider ice for swelling or warmth for stiffness — whichever ",
+      "adminFlags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,686 @@
+{
+  "ranAt": "2026-06-07T20:56:52.085Z",
+  "phase": "1a",
+  "openAiKeyPresent": false,
+  "memory": {
+    "startRssMB": 68,
+    "endRssMB": 147,
+    "deltaMB": 79
+  },
+  "tests": [
+    {
+      "question": "What is the third heaven?",
+      "id": "bae_01",
+      "message": "What is the third heaven?",
+      "expectCards": [
+        "heavens"
+      ],
+      "expectCatalog": [
+        "threeHeavens"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "definition",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "heavens",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "claimValidation": null,
+      "claims": [],
+      "retrievedEvidence": {
+        "cardIds": [
+          "heavens"
+        ],
+        "catalogKeys": [
+          "threeHeavens"
+        ],
+        "scriptureRefs": [
+          "Genesis 1:1",
+          "Genesis 1:6-8",
+          "Genesis 1:14-17",
+          "Deuteronomy 10:14",
+          "John 3:13",
+          "John 7:33-34",
+          "John 8:21",
+          "John 13:33",
+          "2 Corinthians 12:2",
+          "Acts 1:9-11"
+        ],
+        "effectiveTopic": "heavens",
+        "bindingRuleCount": 5,
+        "evidencePackBytes": 16276
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "doctrineTraceId": null,
+      "memoryBefore": {
+        "rssMB": 78,
+        "heapUsedMB": 16,
+        "heapTotalMB": 23
+      },
+      "memoryAfter": {
+        "rssMB": 128,
+        "heapUsedMB": 19,
+        "heapTotalMB": 36
+      },
+      "memoryDeltaMB": 50,
+      "regenerated": false
+    },
+    {
+      "question": "What is the kingdom of God and does it come to earth?",
+      "id": "bae_02",
+      "message": "What is the kingdom of God and does it come to earth?",
+      "expectCards": [
+        "kingdom"
+      ],
+      "expectCatalog": [
+        "kingdomComesToEarth"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "definition",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": null,
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "claimValidation": null,
+      "claims": [],
+      "retrievedEvidence": {
+        "cardIds": [
+          "kingdom"
+        ],
+        "catalogKeys": [
+          "kingdomComesToEarth"
+        ],
+        "scriptureRefs": [
+          "Matthew 6:9-10",
+          "John 14:3",
+          "Acts 1:9-11",
+          "Revelation 5:10",
+          "Revelation 11:15",
+          "Revelation 20:1-6",
+          "Revelation 21:1-3"
+        ],
+        "effectiveTopic": "kingdom",
+        "bindingRuleCount": 6,
+        "evidencePackBytes": 14079
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "doctrineTraceId": null,
+      "memoryBefore": {
+        "rssMB": 128,
+        "heapUsedMB": 22,
+        "heapTotalMB": 38
+      },
+      "memoryAfter": {
+        "rssMB": 138,
+        "heapUsedMB": 35,
+        "heapTotalMB": 61
+      },
+      "memoryDeltaMB": 10,
+      "regenerated": false
+    },
+    {
+      "question": "What happens when we die?",
+      "id": "bae_03",
+      "message": "What happens when we die?",
+      "expectCards": [
+        "deathState"
+      ],
+      "expectCatalog": [
+        "stateOfTheDead"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "definition",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": null,
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "claimValidation": null,
+      "claims": [],
+      "retrievedEvidence": {
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefs": [
+          "Matthew 12:40",
+          "Matthew 27:57-66",
+          "Matthew 28:1-6",
+          "Mark 16:1-6",
+          "Luke 24:1-6",
+          "John 20:1-8"
+        ],
+        "effectiveTopic": "death_state",
+        "bindingRuleCount": 0,
+        "evidencePackBytes": 10464
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "doctrineTraceId": null,
+      "memoryBefore": {
+        "rssMB": 138,
+        "heapUsedMB": 14,
+        "heapTotalMB": 39
+      },
+      "memoryAfter": {
+        "rssMB": 139,
+        "heapUsedMB": 21,
+        "heapTotalMB": 46
+      },
+      "memoryDeltaMB": 1,
+      "regenerated": false
+    },
+    {
+      "question": "Does Acts 10 make pork clean?",
+      "id": "bae_04",
+      "message": "Does Acts 10 make pork clean?",
+      "expectCards": [
+        "dietaryLaw"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "direct_yes_no",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "dietary_law",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "claimValidation": null,
+      "claims": [],
+      "retrievedEvidence": {
+        "cardIds": [
+          "dietaryLaw"
+        ],
+        "catalogKeys": [],
+        "scriptureRefs": [
+          "Leviticus 11:1-47",
+          "Deuteronomy 14:1-21",
+          "Daniel 1:8-16",
+          "Acts 10:14",
+          "Acts 10:28",
+          "Acts 11:1-18",
+          "Isaiah 66:17"
+        ],
+        "effectiveTopic": "dietary_law",
+        "bindingRuleCount": 0,
+        "evidencePackBytes": 14413
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "doctrineTraceId": null,
+      "memoryBefore": {
+        "rssMB": 139,
+        "heapUsedMB": 26,
+        "heapTotalMB": 50
+      },
+      "memoryAfter": {
+        "rssMB": 142,
+        "heapUsedMB": 16,
+        "heapTotalMB": 42
+      },
+      "memoryDeltaMB": 3,
+      "regenerated": false
+    },
+    {
+      "question": "How do we keep the Sabbath holy?",
+      "id": "bae_05",
+      "message": "How do we keep the Sabbath holy?",
+      "expectCards": [
+        "sabbath"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "how_to_practice",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "sabbath",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "claimValidation": null,
+      "claims": [],
+      "retrievedEvidence": {
+        "cardIds": [
+          "sabbath"
+        ],
+        "catalogKeys": [],
+        "scriptureRefs": [
+          "Genesis 2:2-3",
+          "Exodus 20:8-11",
+          "Leviticus 23:1-3",
+          "Isaiah 58:13-14",
+          "Luke 4:16",
+          "Acts 13:42-44",
+          "Acts 17:2",
+          "Hebrews 4:9"
+        ],
+        "effectiveTopic": "sabbath",
+        "bindingRuleCount": 0,
+        "evidencePackBytes": 13533
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "doctrineTraceId": null,
+      "memoryBefore": {
+        "rssMB": 142,
+        "heapUsedMB": 21,
+        "heapTotalMB": 46
+      },
+      "memoryAfter": {
+        "rssMB": 142,
+        "heapUsedMB": 17,
+        "heapTotalMB": 42
+      },
+      "memoryDeltaMB": 0,
+      "regenerated": false
+    },
+    {
+      "question": "What does Logos mean in John 1:1?",
+      "id": "bae_06",
+      "message": "What does Logos mean in John 1:1?",
+      "expectCards": [
+        "messiahLogos"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "meaning_word_study",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": false,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "messiah_logos",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "claimValidation": null,
+      "claims": [],
+      "retrievedEvidence": {
+        "cardIds": [
+          "messiahLogos"
+        ],
+        "catalogKeys": [],
+        "scriptureRefs": [],
+        "effectiveTopic": "messiah_logos",
+        "bindingRuleCount": 0,
+        "evidencePackBytes": 11258
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "doctrineTraceId": null,
+      "memoryBefore": {
+        "rssMB": 142,
+        "heapUsedMB": 21,
+        "heapTotalMB": 46
+      },
+      "memoryAfter": {
+        "rssMB": 142,
+        "heapUsedMB": 31,
+        "heapTotalMB": 51
+      },
+      "memoryDeltaMB": 0,
+      "regenerated": false
+    },
+    {
+      "question": "What does holy mean?",
+      "id": "bae_07",
+      "message": "What does holy mean?",
+      "thinEvidence": true,
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "meaning_word_study",
+        "historyAllowed": false,
+        "evidenceCardsUsed": false,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": false,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": false,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": null,
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 0,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "claimValidation": null,
+      "claims": [],
+      "retrievedEvidence": {
+        "cardIds": [],
+        "catalogKeys": [],
+        "scriptureRefs": [],
+        "effectiveTopic": null,
+        "bindingRuleCount": 0,
+        "evidencePackBytes": 5063
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "doctrineTraceId": null,
+      "memoryBefore": {
+        "rssMB": 142,
+        "heapUsedMB": 33,
+        "heapTotalMB": 53
+      },
+      "memoryAfter": {
+        "rssMB": 143,
+        "heapUsedMB": 22,
+        "heapTotalMB": 46
+      },
+      "memoryDeltaMB": 1,
+      "regenerated": false
+    },
+    {
+      "question": "What happens when we die — sleep in death and resurrection?",
+      "id": "bae_08",
+      "message": "What happens when we die — sleep in death and resurrection?",
+      "expectCards": [
+        "deathState"
+      ],
+      "expectCatalog": [
+        "stateOfTheDead"
+      ],
+      "passed": false,
+      "violations": [
+        "missing_openai_api_key"
+      ],
+      "apiFailure": true,
+      "dbg": {
+        "runtimeUsed": "core_openai_first",
+        "currentIntent": "definition",
+        "historyAllowed": false,
+        "evidenceCardsUsed": true,
+        "openaiCalled": false,
+        "openaiResponseReceived": false,
+        "finalAnswerAuthor": "connection_error",
+        "templateUsed": false,
+        "fallbackUsed": true,
+        "studyFallbackUsed": false,
+        "responderUsed": false,
+        "relationshipEnrichmentUsed": false,
+        "sourceGroundedResponderUsed": false,
+        "sabbathHistoryDeepResponderUsed": false,
+        "forbiddenPhraseDetected": false,
+        "answerMatchesLatestQuestion": true,
+        "regenerated": false,
+        "routeUsed": "core_connection_error",
+        "studyLoopUsed": false,
+        "prayerTemplateUsed": false,
+        "scriptureWitnessTemplateUsed": false,
+        "doctrineValidatorUsed": true,
+        "scriptureEvidenceUsed": true,
+        "activeTopicUsedAsContextOnly": true,
+        "evidenceTopic": "resurrection_timeline",
+        "validationPassed": false,
+        "validationIssues": [
+          "openai_unavailable"
+        ],
+        "errorMessage": "openai_unavailable",
+        "approvedDoctrineFrozen": true,
+        "discoveryReinforcementCount": 1,
+        "buildConnectionErrorReplyUsed": true,
+        "correctionRepair": true
+      },
+      "claimValidation": null,
+      "claims": [],
+      "retrievedEvidence": {
+        "cardIds": [
+          "deathState"
+        ],
+        "catalogKeys": [
+          "stateOfTheDead"
+        ],
+        "scriptureRefs": [
+          "Matthew 12:40",
+          "Matthew 27:57-66",
+          "Matthew 28:1-6",
+          "Mark 16:1-6",
+          "Luke 24:1-6",
+          "John 20:1-8"
+        ],
+        "effectiveTopic": "resurrection_timeline",
+        "bindingRuleCount": 0,
+        "evidencePackBytes": 11183
+      },
+      "finalAnswer": "I'm having trouble reaching the AI service right now. Please try again in a moment.",
+      "doctrineTraceId": null,
+      "memoryBefore": {
+        "rssMB": 143,
+        "heapUsedMB": 26,
+        "heapTotalMB": 50
+      },
+      "memoryAfter": {
+        "rssMB": 147,
+        "heapUsedMB": 24,
+        "heapTotalMB": 47
+      },
+      "memoryDeltaMB": 4,
+      "regenerated": false
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "total": 8,
+    "allPass": false,
+    "connectionErrors": 0,
+    "claimDegradedCount": 0,
+    "maxOpenaiAttempts": 0
+  }
+}

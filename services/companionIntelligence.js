@@ -44,11 +44,21 @@ function recordCompanionEvent(input = {}) {
 }
 
 function recordCompanionFeedback(input = {}) {
+  const testerId = input.testerId || input.userId || 'anonymous';
   const entry = {
     sessionId: input.sessionId || null,
-    userId: input.userId || 'anonymous',
-    helpful: input.helpful ?? null,
-    feltUnderstood: input.feltUnderstood ?? null,
+    testerId,
+    userId: input.userId || testerId,
+    cohort: input.cohort || null,
+    source: input.source || null,
+    feltHeard: input.feltHeard ?? null,
+    usefulness: input.usefulness ?? null,
+    biblicalFaithfulness: input.biblicalFaithfulness ?? null,
+    naturalness: input.naturalness ?? null,
+    wouldUseAgain: input.wouldUseAgain ?? null,
+    comment: sanitizeText(input.comment || input.suggestion || input.issue, 800),
+    helpful: input.helpful ?? (input.usefulness >= 4 ? true : input.usefulness <= 2 ? false : null),
+    feltUnderstood: input.feltUnderstood ?? (input.feltHeard >= 4 ? true : input.feltHeard <= 2 ? false : null),
     feltPeaceful: input.feltPeaceful ?? null,
     feltTooPreachy: input.feltTooPreachy ?? null,
     wantedMoreScripture: input.wantedMoreScripture ?? null,
