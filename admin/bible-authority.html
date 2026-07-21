@@ -30,11 +30,25 @@
     .sub-nav button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
     .sub-view { display: none; }
     .sub-view.active { display: block; }
+    #adminTokenBar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; padding: 10px 14px; border-radius: 8px; background: #fff; border: 1px solid #e5e7eb; font-size: 13px; }
+    #adminTokenBar.locked { border-color: #fca5a5; background: #fef2f2; }
+    #adminTokenBar input { flex: 0 1 260px; padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; }
+    #adminTokenBar button { padding: 6px 12px; border-radius: 6px; border: 1px solid #2563eb; background: #2563eb; color: #fff; cursor: pointer; font-size: 13px; }
+    #adminTokenStatus { color: #555; }
+    #adminTokenBar.locked #adminTokenStatus { color: #b91c1c; font-weight: 600; }
   </style>
 </head>
 <body>
   <h1>Bible Authority Command Center</h1>
   <p>Scripture review · Engineering health · Executive growth — separated surfaces.</p>
+
+  <div id="adminTokenBar">
+    <label for="adminTokenInput">Admin token:</label>
+    <input type="password" id="adminTokenInput" placeholder="Paste BIBLE_AUTHORITY_ADMIN_TOKEN" autocomplete="off" />
+    <button type="button" id="adminTokenSaveBtn">Save &amp; Reload Data</button>
+    <button type="button" id="adminTokenClearBtn">Clear</button>
+    <span id="adminTokenStatus">Enter the token to unlock Admin data (never sent anywhere except this server, never stored outside your browser).</span>
+  </div>
 
   <div class="nav">
     <a href="/admin">← Legacy Admin</a>

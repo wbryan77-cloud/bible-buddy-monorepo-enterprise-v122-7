@@ -1,6 +1,54 @@
 /* Phase 2K / 2N — Bible Authority Command Center UI */
 const API = '/admin/api/bible-authority/command-center';
 
+// FOUNDER ALPHA ADMIN SECURITY — BIBLE_AUTHORITY_ADMIN_TOKEN is now enforced
+// on every /admin/api/bible-authority/* route. This UI previously had no way
+// to send it, so every fetch below would 401 once the token was configured.
+// The token is entered once by the admin, kept only in this browser's
+// localStorage, and attached as an Authorization header on admin API calls.
+// It is never sent to, or requested from, anywhere but this same origin.
+const ADMIN_TOKEN_KEY = 'bb_admin_token';
+
+function getAdminToken() {
+  try {
+    return localStorage.getItem(ADMIN_TOKEN_KEY) || '';
+  } catch (_) {
+    return '';
+  }
+}
+
+function setAdminToken(token) {
+  try {
+    if (token) localStorage.setItem(ADMIN_TOKEN_KEY, token);
+    else localStorage.removeItem(ADMIN_TOKEN_KEY);
+  } catch (_) {
+    /* private-mode / storage disabled — non-fatal */
+  }
+}
+
+function setAdminTokenBannerLocked(locked) {
+  const bar = document.getElementById('adminTokenBar');
+  const status = document.getElementById('adminTokenStatus');
+  if (!bar || !status) return;
+  bar.classList.toggle('locked', !!locked);
+  status.textContent = locked
+    ? 'Admin token missing or incorrect — Admin data is locked. Paste the correct token above and click Save.'
+    : 'Admin data unlocked for this browser.';
+}
+
+async function adminFetch(url, options = {}) {
+  const token = getAdminToken();
+  const headers = Object.assign({}, options.headers || {});
+  if (token) headers.Authorization = `Bearer ${token}`;
+  const res = await fetch(url, Object.assign({}, options, { headers }));
+  if (res.status === 401) {
+    setAdminTokenBannerLocked(true);
+  } else if (token) {
+    setAdminTokenBannerLocked(false);
+  }
+  return res;
+}
+
 function showSection(id) {
   document.querySelectorAll('.section').forEach((el) => el.classList.remove('active'));
   document.querySelectorAll('.nav button').forEach((el) => el.classList.remove('active'));
@@ -164,8 +212,9 @@ const CLASSIFICATION_BADGE = {
 };
 
 async function loadPendingCandidates() {
-  const res = await fetch('/admin/api/bible-authority/review-queue');
+  const res = await adminFetch('/admin/api/bible-authority/review-queue');
   const data = await res.json();
+  if (data && data.ok === false) return;
   renderPendingCandidates(data.items || []);
 }
 
@@ -202,7 +251,7 @@ function renderPendingCandidates(items = []) {
     btn.addEventListener('click', async () => {
       const id = btn.getAttribute('data-id');
       const action = btn.getAttribute('data-action');
-      await fetch(`/admin/api/bible-authority/review-queue/${encodeURIComponent(id)}/${action}`, {
+      await adminFetch(`/admin/api/bible-authority/review-queue/${encodeURIComponent(id)}/${action}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ decidedBy: 'admin' }),
@@ -213,8 +262,9 @@ function renderPendingCandidates(items = []) {
 }
 
 async function load() {
-  const res = await fetch(API);
+  const res = await adminFetch(API);
   const data = await res.json();
+  if (data && data.ok === false) return;
   renderExecutive(data.areas.executiveGrowthDashboard);
   const sr = data.areas.scriptureAuthorityReview;
   renderScriptureReview(sr);
@@ -235,11 +285,11 @@ async function load() {
 async function loadFounderReadiness() {
   try {
     const [consoleRes, coverageRes, validatorRes, healthRes, lessonSubsRes] = await Promise.all([
-      fetch('/admin/api/bible-authority/founder-console'),
-      fetch('/admin/api/bible-authority/knowledge-coverage-dashboard'),
-      fetch('/admin/api/bible-authority/founder-readiness-report'),
+      adminFetch('/admin/api/bible-authority/founder-console'),
+      adminFetch('/admin/api/bible-authority/knowledge-coverage-dashboard'),
+      adminFetch('/admin/api/bible-authority/founder-readiness-report'),
       fetch('/api/runtime-health'),
-      fetch('/admin/api/bible-authority/lesson-alignment/submissions'),
+      adminFetch('/admin/api/bible-authority/lesson-alignment/submissions'),
     ]);
     const [consoleData, coverageData, validatorData, healthData, lessonSubsData] = await Promise.all([
       consoleRes.json(),
@@ -423,7 +473,7 @@ let intelRecommendationFilter = 'PENDING';
 async function loadFounderIntelligence() {
   try {
     document.getElementById('intelSummaryNarrative').textContent = 'Loading…';
-    const reportRes = await fetch('/admin/api/bible-authority/founder-intelligence');
+    const reportRes = await adminFetch('/admin/api/bible-authority/founder-intelligence');
     const report = await reportRes.json();
     if (!report.ok) throw new Error(report.error || 'Failed to load report');
     renderIntelSummary(report.dailyOperationalSummary);
@@ -477,8 +527,9 @@ const INTEL_PRIORITY_COLOR = { HIGH: '#dc2626', MEDIUM: '#d97706', LOW: '#6b7280
 
 async function loadIntelRecommendations() {
   const status = intelRecommendationFilter === 'ALL' ? '' : `?status=${intelRecommendationFilter}`;
-  const res = await fetch(`/admin/api/bible-authority/founder-intelligence/recommendations${status}`);
+  const res = await adminFetch(`/admin/api/bible-authority/founder-intelligence/recommendations${status}`);
   const data = await res.json();
+  if (data && data.ok === false) return;
   renderIntelRecommendations(data.recommendations || []);
 }
 
@@ -526,7 +577,7 @@ function renderIntelRecommendations(recs) {
       const decision = btn.getAttribute('data-decision');
       const flaggedFalsePositive = btn.getAttribute('data-fp') === '1';
       const note = window.prompt('Optional note for this decision:', '') || '';
-      await fetch(`/admin/api/bible-authority/founder-intelligence/recommendations/${encodeURIComponent(id)}/decision`, {
+      await adminFetch(`/admin/api/bible-authority/founder-intelligence/recommendations/${encodeURIComponent(id)}/decision`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ decision, decidedBy: 'admin', note, flaggedFalsePositive }),
@@ -538,8 +589,9 @@ function renderIntelRecommendations(recs) {
 }
 
 async function loadIntelEffectiveness() {
-  const res = await fetch('/admin/api/bible-authority/founder-intelligence/effectiveness');
+  const res = await adminFetch('/admin/api/bible-authority/founder-intelligence/effectiveness');
   const data = await res.json();
+  if (data && data.ok === false) return;
   const eff = data.effectiveness || {};
   const grid = document.getElementById('intelEffectiveness');
   if (!grid) return;
@@ -591,5 +643,21 @@ document.querySelectorAll('.link-drill').forEach((el) => {
 if (location.hash === '#scripture-review') showSection('scripture-review');
 if (location.hash === '#engineering') showSection('engineering');
 if (location.hash === '#executive') showSection('executive');
+
+const adminTokenInput = document.getElementById('adminTokenInput');
+if (adminTokenInput) {
+  adminTokenInput.value = getAdminToken();
+  document.getElementById('adminTokenSaveBtn').addEventListener('click', () => {
+    setAdminToken(adminTokenInput.value.trim());
+    setAdminTokenBannerLocked(false);
+    load();
+    loadFounderIntelligence();
+  });
+  document.getElementById('adminTokenClearBtn').addEventListener('click', () => {
+    setAdminToken('');
+    adminTokenInput.value = '';
+    setAdminTokenBannerLocked(true);
+  });
+}
 
 load();
