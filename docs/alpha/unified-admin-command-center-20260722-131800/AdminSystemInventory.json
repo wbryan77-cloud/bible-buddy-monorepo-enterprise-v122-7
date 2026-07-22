@@ -1,0 +1,198 @@
+{
+  "generatedAt": "2026-07-22T13:20:00-07:00",
+  "method": "Direct code inspection (Grep/Read) of the live repository working tree.",
+  "systems": [
+    {
+      "name": "Admin Dashboard Page",
+      "sourceFiles": ["admin/bible-authority.html", "admin/js/bible-authority.js"],
+      "route": "static via /admin (server.js:32)",
+      "exportedFunctions": [],
+      "authRequired": "per-call via adminFetch Bearer token",
+      "persistence": "none (page is static)",
+      "uiLocation": "self",
+      "knownLimitations": ["flat single page", "no left-nav", "no cross-tab drill-down", "no search"]
+    },
+    {
+      "name": "Founder Console",
+      "sourceFile": "services/founderAdminConsoleStatus.js",
+      "route": "GET /admin/api/bible-authority/founder-console",
+      "exportedFunctions": ["getBuildIdentity", "getProviderHealthSummary", "getPrivacyCapabilityStatus", "FEATURE_DISPOSITION", "getFounderConsoleStatus"],
+      "authRequired": "checkAdminAuth (BIBLE_AUTHORITY_ADMIN_TOKEN)",
+      "refreshBehavior": "computed live per request",
+      "persistence": "none",
+      "uiLocation": "Founder Readiness tab",
+      "knownLimitations": []
+    },
+    {
+      "name": "Command Center",
+      "sourceFile": "services/bibleAuthorityAdminCenter.js",
+      "route": "GET /admin/api/bible-authority/command-center",
+      "exportedFunctions": ["getAdminCommandCenter", "buildScriptureAuthorityReview", "buildEngineeringIntelligence", "buildExecutiveGrowthDashboard", "buildNotificationPlan"],
+      "authRequired": "checkAdminAuth",
+      "dataShape": "{ areas: { executiveGrowthDashboard, scriptureAuthorityReview, engineeringIntelligence } }",
+      "persistence": "reads existing JSON registries, no new writes",
+      "uiLocation": "Executive Growth / Scripture Review / Engineering tabs",
+      "knownLimitations": ["~6s typical latency"]
+    },
+    {
+      "name": "Knowledge Coverage",
+      "sourceFile": "services/knowledgeAnalyticsSnapshotStore.js",
+      "route": "GET /admin/api/bible-authority/knowledge-coverage-dashboard(/book/:bookName), /founder-knowledge-readiness",
+      "exportedFunctions": ["SNAPSHOT_DIR", "SNAPSHOT_NAMES", "writeSnapshot", "readSnapshot", "readAllSnapshots"],
+      "dataShape": "11 named snapshots: BibleBookCoverage, DoctrineTopicCoverage, WitnessQualityReport, OriginalLanguageCoverage, HistoricalCoverage, HistoricalSourceInvestigation, AdminQueueDiagnostics, RulesOptimizerReport, KnowledgePipelineAnalytics, KnowledgeDriftReport, FounderKnowledgeReadiness",
+      "authRequired": "checkAdminAuth",
+      "persistence": "data/analytics-snapshots/*.json (gitignored)",
+      "uiLocation": "Founder Readiness tab",
+      "knownLimitations": ["24h staleness flag, no auto-regeneration"]
+    },
+    {
+      "name": "Lesson Alignment",
+      "sourceFile": "services/lessonScriptureAlignmentAnalyzer.js",
+      "route": "POST /lesson-alignment/analyze, GET /lesson-alignment/limits, GET /lesson-alignment/submissions",
+      "exportedFunctions": ["MAX_TEXT_LENGTH", "MAX_REFERENCES_PER_ANALYSIS", "CLAIM_TYPE", "analyzeLessonText", "recordLessonAlignmentSubmission", "readLessonAlignmentSubmissions"],
+      "authRequired": "checkAdminAuth",
+      "persistence": "append-only JSONL via safeJsonlWriter",
+      "uiLocation": "Founder Readiness tab, submissions table",
+      "knownLimitations": ["paste-text only, no file upload"]
+    },
+    {
+      "name": "Founder Intelligence",
+      "sourceFiles": ["services/founderOperationalIntelligenceEngine.js", "services/founderIntelligenceRecommendationStore.js"],
+      "route": "GET /founder-intelligence, GET /founder-intelligence/recommendations, POST /founder-intelligence/recommendations/:id/decision, GET /founder-intelligence/effectiveness",
+      "exportedFunctions": ["buildKnowledgeContext", "computeTrendAnalysis", "computeRecurringPatterns", "resolveCoverageForReference", "matchFreeTextToTopicId", "humanizeTopicId", "correlateEvidenceForSubmission", "buildFounderOperationalIntelligenceReport", "syncRecommendations", "listRecommendations", "getRecommendation", "recordAdminDecision", "readDecisionsLog", "loadGrowthBaseline", "saveGrowthBaseline", "trackKnowledgeGrowth", "computeEffectivenessMetrics"],
+      "authRequired": "checkAdminAuth",
+      "persistence": "data/founder-intelligence/{recommendation-index.json, decisions.jsonl, growth-baseline.json}",
+      "uiLocation": "Founder Intelligence tab",
+      "knownLimitations": ["status enum has no explicit DEFER (PENDING serves that role)"]
+    },
+    {
+      "name": "Runtime Health",
+      "sourceFile": "services/runtimeHealthMonitor.js",
+      "route": "GET /api/runtime-health, GET /api/scripture-provider-health",
+      "exportedFunctions": ["recordRequestOutcome", "recordStrictDoctrineBypass", "recordRouteFallback", "recordContractHandled", "recordAlphaCapture", "recordAlphaFeedback", "recordFounderObservation", "setAlphaNotificationQueueCount", "getRuntimeHealthSnapshot", "getRuntimeHealthHistory", "persistSnapshot", "handleMemoryPressure", "sampleMemory"],
+      "authRequired": "none (public, aggregate-only)",
+      "persistence": "data/runtime-health.json, data/runtime-health-history.jsonl",
+      "uiLocation": "Founder Readiness tab",
+      "knownLimitations": []
+    },
+    {
+      "name": "Founder Feedback",
+      "sourceFile": "services/alphaFeedbackCapture.js",
+      "route": "POST /api/alpha/feedback, GET /api/alpha/feedback/tags (public capture); GET /admin/api/alpha/feedback (admin read)",
+      "exportedFunctions": ["recordFeedback", "readFeedback", "VALID_TAGS"],
+      "authRequired": "ALPHA_ADMIN_TOKEN or BETA_REVIEW_TOKEN on the admin read route (different token from BIBLE_AUTHORITY_ADMIN_TOKEN)",
+      "persistence": "append-only JSONL",
+      "uiLocation": "not currently rendered in bible-authority.html",
+      "knownLimitations": ["separate token from main Admin console — documented, not changed in this batch"]
+    },
+    {
+      "name": "Founder Observation / Telemetry",
+      "sourceFile": "services/runtimeHealthMonitor.js (metrics.observation)",
+      "route": "exposed via GET /api/runtime-health -> observation key",
+      "dataShape": "witnessRetrievalCount, historicalContextUsedCount, originalLanguageUsedCount, prayerUsageCount, lessonAlignmentUsageCount, continuationUsageCount, questionCategoryCounts, categoryTransitionCounts",
+      "authRequired": "none",
+      "persistence": "same as Runtime Health",
+      "uiLocation": "Founder Readiness tab (aggregate only)",
+      "knownLimitations": []
+    },
+    {
+      "name": "Recommendation Store (Founder Intelligence)",
+      "sourceFile": "services/founderIntelligenceRecommendationStore.js",
+      "seeAlso": "Founder Intelligence entry above"
+    },
+    {
+      "name": "Review Queue (legacy candidate scoring)",
+      "sourceFiles": ["services/supportGraphCandidateQueue.js", "services/knowledgeApprovalRulesEngine.js"],
+      "route": "GET /review-queue, POST /review-queue/bulk/:action, POST /review-queue/:id/:action",
+      "exportedFunctions": ["enqueueSupportGraphCandidate", "recordCandidateDecision", "readSupportGraphCandidates", "proposeCandidateFromUnverifiedClaim", "evaluateCandidates", "evaluateCandidate"],
+      "authRequired": "checkAdminAuth",
+      "uiLocation": "Scripture Authority Review -> Pending Candidates sub-view",
+      "knownLimitations": ["distinct system from Founder Intelligence recommendations - both tagged separately by sourceSystem in the new Decision Queue, never merged into one store"]
+    },
+    {
+      "name": "Approval Workflow",
+      "mechanisms": ["recordAdminDecision (Founder Intelligence)", "recordCandidateDecision (Review Queue)"],
+      "knownLimitations": ["two independent approval mechanisms, both already prevent automatic production mutation"]
+    },
+    {
+      "name": "Evidence Correlation",
+      "sourceFile": "services/founderOperationalIntelligenceEngine.js",
+      "exportedFunctions": ["correlateEvidenceForSubmission"],
+      "persistence": "none (read-only)"
+    },
+    {
+      "name": "Lineage",
+      "sourceFile": "routes/buddy.js",
+      "dataShape": "primaryWitness, supportingWitnesses, crossReferences, coreDebug",
+      "note": "Founder-facing chat lineage, not an Admin API; referenced not duplicated"
+    },
+    {
+      "name": "Audit History",
+      "existingMechanisms": [
+        {"sourceFile": "services/iogIcojGovernedIngestion.js", "functions": ["appendAuditLog", "readKnowledgeAuditLog"], "path": "data/knowledge-audit-log.jsonl", "route": "GET /knowledge-audit-log"},
+        {"sourceFile": "services/founderIntelligenceRecommendationStore.js", "functions": ["readDecisionsLog"], "path": "data/founder-intelligence/decisions.jsonl"}
+      ],
+      "gap": "no single unified cross-system Admin audit trail exists today — filled additively in Part 10"
+    },
+    {
+      "name": "Existing Admin Assistant Functionality",
+      "sourceFiles": ["routes/adminAssistant.js", "services/adminBrain.js", "services/projectBrain.js"],
+      "route": "POST /admin/assistant/assistant, GET /admin/assistant/project-brain",
+      "authRequired": "NONE (confirmed by grep - no checkAdminAuth call in routes/adminAssistant.js)",
+      "dataShape": "hardcoded planning-stage prompt over project-brain/modules.json, phases.json (unrelated to live Founder Alpha product data)",
+      "decision": "preserved unchanged; new AI Chief of Staff built as a separate, authenticated capability grounded in real Admin data, not a wrapper around this stub"
+    },
+    {
+      "name": "Authentication Middleware",
+      "instances": [
+        {"file": "routes/bibleAuthorityAdmin.js", "line": 40, "tokens": ["BIBLE_AUTHORITY_ADMIN_TOKEN", "ALPHA_ADMIN_TOKEN", "BETA_REVIEW_TOKEN"]},
+        {"file": "routes/alphaAdmin.js", "line": 19, "tokens": ["ALPHA_ADMIN_TOKEN", "BETA_REVIEW_TOKEN"]},
+        {"file": "routes/beta.js", "line": 20, "tokens": ["BETA_REVIEW_TOKEN"]}
+      ],
+      "knownLimitations": ["three independent implementations of the same check - documented duplication, out of scope to consolidate"]
+    },
+    {
+      "name": "Token Storage / Request Behavior",
+      "sourceFile": "admin/js/bible-authority.js",
+      "functions": ["getAdminToken", "setAdminToken", "adminFetch"],
+      "storage": "localStorage key bb_admin_token, never sent anywhere except this server, never in URL query, never logged"
+    },
+    {
+      "name": "Relationship / Cross-Reference Services",
+      "sourceFiles": ["scriptureRelationshipGraph.js", "verseGraphRelationships.js", "approvedSupportGraph.js", "canonicalRelationshipGraph.js", "and 14 others under services/"],
+      "note": "already composed and exposed via buildScriptureAuthorityReview -> relationshipGroups; new aggregation layer reuses that output"
+    }
+  ],
+  "fullRouteInventory": {
+    "basePath": "/admin/api/bible-authority",
+    "mountedAt": "server.js:140",
+    "routes": [
+      {"method": "GET", "path": "/command-center", "auth": true},
+      {"method": "GET", "path": "/scripture-review", "auth": true},
+      {"method": "GET", "path": "/engineering", "auth": true},
+      {"method": "GET", "path": "/executive", "auth": true},
+      {"method": "GET", "path": "/review-queue", "auth": true},
+      {"method": "POST", "path": "/review-queue/bulk/:action", "auth": true},
+      {"method": "POST", "path": "/review-queue/:id/:action", "auth": true},
+      {"method": "GET", "path": "/knowledge-audit-log", "auth": true},
+      {"method": "GET", "path": "/knowledge-coverage-dashboard", "auth": true},
+      {"method": "GET", "path": "/knowledge-coverage-dashboard/book/:bookName", "auth": true},
+      {"method": "GET", "path": "/founder-knowledge-readiness", "auth": true},
+      {"method": "POST", "path": "/lesson-alignment/analyze", "auth": true},
+      {"method": "GET", "path": "/lesson-alignment/limits", "auth": true},
+      {"method": "GET", "path": "/lesson-alignment/submissions", "auth": true},
+      {"method": "GET", "path": "/founder-console", "auth": true},
+      {"method": "GET", "path": "/provider-health", "auth": true},
+      {"method": "GET", "path": "/founder-readiness-report", "auth": true},
+      {"method": "GET", "path": "/founder-intelligence", "auth": true},
+      {"method": "GET", "path": "/founder-intelligence/recommendations", "auth": true},
+      {"method": "POST", "path": "/founder-intelligence/recommendations/:id/decision", "auth": true},
+      {"method": "GET", "path": "/founder-intelligence/effectiveness", "auth": true}
+    ]
+  },
+  "existingUiStructure": {
+    "sections": ["executive", "scripture-review", "engineering", "founder", "intelligence"],
+    "tabs": ["tab-executive", "tab-scripture", "tab-engineering", "tab-founder", "tab-intelligence"],
+    "scriptureReviewSubViews": ["sub-candidates", "sub-groups", "sub-coverage", "sub-readiness", "sub-packs", "sub-pending"]
+  }
+}

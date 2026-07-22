@@ -537,4 +537,187 @@ router.get('/founder-intelligence/effectiveness', (req, res) => {
   }
 });
 
+/**
+ * ============================================================
+ * UNIFIED ADMIN COMMAND CENTER — additive routes only.
+ *
+ * Every route below is READ-ONLY except the decision-queue action route,
+ * which only ever calls the SAME existing decision-recording functions
+ * used by the routes above (recordAdminDecision / recordCandidateDecision)
+ * or records a queue-overlay-only status with no production side effect.
+ * Nothing here replaces, wraps, or changes the behavior of any route
+ * above this line.
+ *
+ * Reversible behind ADMIN_UNIFIED_COMMAND_CENTER_ENABLED (defaults ON;
+ * set to "0" or "false" to instantly revert to the pre-existing Admin
+ * surface with zero code changes needed — see
+ * docs/alpha/.../AdminDeploymentAndRollback.md).
+ * ============================================================
+ */
+function unifiedCommandCenterEnabled() {
+  const flag = process.env.ADMIN_UNIFIED_COMMAND_CENTER_ENABLED;
+  return flag === undefined || flag === '' || flag === '1' || flag.toLowerCase() === 'true';
+}
+
+function checkUnifiedEnabled(req, res) {
+  if (!unifiedCommandCenterEnabled()) {
+    res.status(503).json({ ok: false, error: 'Unified Admin Command Center is disabled (ADMIN_UNIFIED_COMMAND_CENTER_ENABLED=0). All pre-existing Admin endpoints remain fully functional.' });
+    return false;
+  }
+  return true;
+}
+
+router.get('/unified/overview', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { buildAdminCommandCenterSummary } = require('../services/adminCommandCenterAggregator');
+    res.json(buildAdminCommandCenterSummary());
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.get('/unified/decision-queue', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { listDecisionQueue } = require('../services/adminDecisionQueue');
+    const { severity, category, status, sourceSystem, limit, offset } = req.query;
+    res.json(listDecisionQueue({
+      severity: severity || null,
+      category: category || null,
+      status: status || null,
+      sourceSystem: sourceSystem || null,
+      limit: Number(limit) || 50,
+      offset: Number(offset) || 0,
+    }));
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.post('/unified/decision-queue/:id/:action', express.json({ limit: '16kb' }), (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { applyDecisionQueueAction } = require('../services/adminDecisionQueue');
+    const { id, action } = req.params;
+    const { note, decidedBy } = req.body || {};
+    const result = applyDecisionQueueAction({ id, action, note: note || '', decidedBy: decidedBy || 'admin' });
+    if (!result.ok) return res.status(400).json(result);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.get('/unified/alerts', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { listAlerts } = require('../services/adminAlertCenter');
+    const { severity, category } = req.query;
+    res.json(listAlerts({ severity: severity || null, category: category || null }));
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.get('/unified/audit', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { readAdminAuditTrail } = require('../services/adminAuditTrail');
+    const { limit, offset, dateFrom, dateTo, action, category, status, sourceSystem, severity } = req.query;
+    res.json(readAdminAuditTrail({
+      limit: Number(limit) || 100,
+      offset: Number(offset) || 0,
+      dateFrom: dateFrom || null,
+      dateTo: dateTo || null,
+      action: action || null,
+      category: category || null,
+      status: status || null,
+      sourceSystem: sourceSystem || null,
+      severity: severity || null,
+    }));
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.get('/unified/briefing/daily', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { buildDailyBriefing } = require('../services/adminBriefingGenerator');
+    res.json({ ok: true, briefing: buildDailyBriefing() });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.get('/unified/briefing/weekly', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { buildWeeklyBriefing } = require('../services/adminBriefingGenerator');
+    res.json({ ok: true, briefing: buildWeeklyBriefing() });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.get('/unified/search', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { searchAdmin } = require('../services/adminGlobalSearch');
+    const { q, types, limit, offset } = req.query;
+    res.json(searchAdmin({
+      q: q || '',
+      types: types ? String(types).split(',') : null,
+      limit: Number(limit) || 25,
+      offset: Number(offset) || 0,
+    }));
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.post('/unified/assistant', express.json({ limit: '16kb' }), async (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { askChiefOfStaff } = require('../services/adminChiefOfStaff');
+    const { question } = req.body || {};
+    const answer = await askChiefOfStaff(question);
+    const { recordAdminAuditEvent } = require('../services/adminAuditTrail');
+    recordAdminAuditEvent({
+      action: 'AI_CHIEF_OF_STAFF_QUERY',
+      actionType: 'QUERY',
+      target: answer.matchedIntent,
+      sourceSystem: 'adminChiefOfStaff',
+      category: 'AI_ASSISTANT',
+      status: 'COMPLETED',
+      aiRecommendationInvolved: true,
+      confidenceAtDecision: answer.confidence || null,
+    });
+    res.json(answer);
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.get('/unified/capabilities', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { CAPABILITIES, FUTURE_ROLE_CAPABILITY_MAP, getCurrentActorCapabilities } = require('../services/adminCapabilities');
+    res.json({ ok: true, capabilities: CAPABILITIES, futureRoleCapabilityMap: FUTURE_ROLE_CAPABILITY_MAP, currentActorCapabilities: getCurrentActorCapabilities(req) });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
 module.exports = router;

@@ -36,6 +36,29 @@
     #adminTokenBar button { padding: 6px 12px; border-radius: 6px; border: 1px solid #2563eb; background: #2563eb; color: #fff; cursor: pointer; font-size: 13px; }
     #adminTokenStatus { color: #555; }
     #adminTokenBar.locked #adminTokenStatus { color: #b91c1c; font-weight: 600; }
+    /* UNIFIED_ADMIN_COMMAND_CENTER — additive styles only, reusing the
+       existing card/grid/table/badge language above. */
+    .cc-status-badge { font-size: 12px; padding: 2px 10px; border-radius: 999px; font-weight: 600; }
+    .cc-status-ok { background: #dcfce7; color: #166534; }
+    .cc-status-degraded { background: #fef9c3; color: #854d0e; }
+    .cc-status-unavailable { background: #fee2e2; color: #991b1b; }
+    .cc-severity-Critical { background: #fee2e2; color: #991b1b; }
+    .cc-severity-High { background: #ffedd5; color: #9a3412; }
+    .cc-severity-Medium { background: #fef9c3; color: #854d0e; }
+    .cc-severity-Low { background: #e5e7eb; color: #374151; }
+    .cc-badge { font-size: 11px; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
+    .cc-search-bar { display: flex; gap: 8px; margin-bottom: 12px; }
+    .cc-search-bar input { flex: 1; padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; }
+    .cc-search-bar button, .cc-assistant button { padding: 8px 14px; border-radius: 6px; border: 1px solid #2563eb; background: #2563eb; color: #fff; cursor: pointer; }
+    .cc-assistant textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; box-sizing: border-box; }
+    .cc-assistant .chip { display: inline-block; margin: 3px; padding: 4px 10px; border-radius: 999px; border: 1px solid #ccc; background: #fff; font-size: 12px; cursor: pointer; }
+    .cc-answer-box { margin-top: 10px; padding: 12px; border-radius: 8px; background: #f8fafc; border: 1px solid #e5e7eb; font-size: 13px; }
+    .cc-queue-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+    .cc-queue-filters select { padding: 6px; border-radius: 6px; border: 1px solid #ccc; font-size: 12px; }
+    .cc-actions button { margin: 2px; padding: 3px 8px; font-size: 11px; border-radius: 5px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
+    .cc-empty { color: #6b7280; font-style: italic; font-size: 13px; }
+    .cc-tooltip { border-bottom: 1px dotted #888; cursor: help; }
+    .cc-freshness { font-size: 11px; color: #6b7280; }
   </style>
 </head>
 <body>
@@ -52,7 +75,8 @@
 
   <div class="nav">
     <a href="/admin">← Legacy Admin</a>
-    <button type="button" id="tab-executive" class="active">Executive Growth</button>
+    <button type="button" id="tab-command-center" class="active">★ Command Center</button>
+    <button type="button" id="tab-executive">Executive Growth</button>
     <button type="button" id="tab-scripture">Scripture Authority Review</button>
     <button type="button" id="tab-engineering">Engineering Intelligence</button>
     <button type="button" id="tab-founder">Founder Readiness</button>
@@ -60,7 +84,85 @@
     <button type="button" id="refreshBtn">Refresh</button>
   </div>
 
-  <section id="executive" class="section active">
+  <!-- ============================================================
+       UNIFIED_ADMIN_COMMAND_CENTER — single primary entry point.
+       Consumes/coordinates the existing tabs below via drill-down links;
+       does not replace or recompute any of them. Reversible behind
+       ADMIN_UNIFIED_COMMAND_CENTER_ENABLED (server flag) — if disabled,
+       every endpoint this tab calls returns 503 and this tab shows an
+       explanatory empty state while every other tab keeps working exactly
+       as before.
+       ============================================================ -->
+  <section id="command-center" class="section active">
+    <div class="card">
+      <h2>Global Admin Search <span class="cc-tooltip" title="Searches recommendations, evidence candidates, lesson submissions, audit history, and runtime errors.">ⓘ</span></h2>
+      <div class="cc-search-bar">
+        <input type="text" id="ccSearchInput" placeholder="Search sessions, feedback, Scripture references, doctrine topics, recommendations, errors…" />
+        <button type="button" id="ccSearchBtn">Search</button>
+      </div>
+      <div id="ccSearchResults"></div>
+    </div>
+
+    <div class="card">
+      <h2>Executive Overview <span id="ccOverallStatusBadge" class="cc-status-badge"></span></h2>
+      <div id="ccExecutiveAnswers"></div>
+      <div id="ccExecutiveCards" class="grid" style="margin-top:12px;"></div>
+      <p class="cc-freshness" id="ccOverviewFreshness"></p>
+    </div>
+
+    <div class="card cc-assistant">
+      <h2>AI Chief of Staff <span class="cc-tooltip" title="Decision-support only — never auto-approves, never auto-publishes, never edits production data. Falls back to a deterministic summary if AI phrasing is unavailable.">ⓘ</span></h2>
+      <p>Ask about today's priorities, recent changes, response quality, or knowledge gaps. Every answer cites its source systems and states whether Admin approval is required.</p>
+      <div id="ccAssistantChips"></div>
+      <textarea id="ccAssistantInput" rows="2" placeholder="e.g. What needs my attention today?"></textarea>
+      <p><button type="button" id="ccAssistantAskBtn">Ask</button></p>
+      <div id="ccAssistantAnswer"></div>
+    </div>
+
+    <div class="card">
+      <h2>Prioritized Decision Queue</h2>
+      <div class="cc-queue-filters">
+        <select id="ccQueueSeverity"><option value="">All severities</option><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select>
+        <select id="ccQueueCategory"><option value="">All categories</option></select>
+        <select id="ccQueueStatus"><option value="">All statuses</option><option>New</option><option>Investigating</option><option>Ready for Decision</option><option>Approved</option><option>Rejected</option><option>Deferred</option><option>Resolved</option></select>
+        <button type="button" id="ccQueueRefreshBtn">Apply Filters</button>
+      </div>
+      <div id="ccQueueCounts" class="cc-freshness"></div>
+      <div id="ccQueueTable"></div>
+    </div>
+
+    <div class="card">
+      <h2>Alerts</h2>
+      <div id="ccAlerts"></div>
+    </div>
+
+    <div class="card">
+      <h2>Daily / Weekly Briefing</h2>
+      <div class="sub-nav">
+        <button type="button" id="cc-briefing-daily" class="active">Today</button>
+        <button type="button" id="cc-briefing-weekly">This Week</button>
+      </div>
+      <div id="ccBriefing"></div>
+    </div>
+
+    <div class="card">
+      <h2>Audit History</h2>
+      <div id="ccAudit"></div>
+    </div>
+
+    <div class="card">
+      <h2>Jump to a Specialized Area</h2>
+      <p>
+        <span class="link-drill" data-goto="founder">→ Users, Sessions &amp; Operations Health</span> ·
+        <span class="link-drill" data-goto="scripture-review">→ Scripture &amp; Knowledge</span> ·
+        <span class="link-drill" data-goto="founder">→ Lesson Alignment</span> ·
+        <span class="link-drill" data-goto="intelligence">→ Founder Intelligence</span> ·
+        <span class="link-drill" data-goto="engineering">→ Engineering / Operations</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="executive" class="section">
     <div class="card">
       <h2>Executive Growth Dashboard</h2>
       <div id="executiveMetrics" class="grid"></div>
