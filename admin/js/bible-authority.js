@@ -652,6 +652,7 @@ if (adminTokenInput) {
     setAdminTokenBannerLocked(false);
     load();
     loadFounderIntelligence();
+    if (typeof loadCommandCenter === 'function') loadCommandCenter();
   });
   document.getElementById('adminTokenClearBtn').addEventListener('click', () => {
     setAdminToken('');
@@ -661,3 +662,406 @@ if (adminTokenInput) {
 }
 
 load();
+
+/* ============================================================
+ * UNIFIED_ADMIN_COMMAND_CENTER — additive UI logic only.
+ *
+ * Every function below calls one of the new read-only (or
+ * decision-recording) /admin/api/bible-authority/unified/* endpoints,
+ * which themselves only ever call existing, already-tested services
+ * (see services/adminCommandCenterAggregator.js and friends). Nothing
+ * here recomputes analytics client-side or bypasses adminFetch's auth
+ * handling. If ADMIN_UNIFIED_COMMAND_CENTER_ENABLED=0 on the server,
+ * every call below receives a 503 and this tab shows an explanatory
+ * empty state — every OTHER tab on this page is completely unaffected.
+ * ============================================================ */
+const CC_BASE = '/admin/api/bible-authority/unified';
+
+function ccStatusBadgeClass(status) {
+  if (status === 'OK' || status === 'YES') return 'cc-status-ok';
+  if (status === 'DEGRADED' || status === 'NO_DATA') return 'cc-status-degraded';
+  return 'cc-status-unavailable';
+}
+
+function ccSeverityBadge(sev) {
+  return `<span class="cc-badge cc-severity-${sev || 'Low'}">${sev || 'Low'}</span>`;
+}
+
+function ccResolveDrillDown(target) {
+  const map = {
+    '#operations': 'founder',
+    '#decisions': 'command-center',
+    '#alerts': 'command-center',
+    '#executive': 'executive',
+    '#intelligence': 'intelligence',
+    '#scripture-review': 'scripture-review',
+    '#founder': 'founder',
+    '#users-sessions': 'founder',
+    '#lesson-alignment': 'founder',
+    '#engineering': 'engineering',
+  };
+  return map[target] || 'command-center';
+}
+
+function ccGoto(target) {
+  showSection(ccResolveDrillDown(target));
+}
+
+async function ccGet(path) {
+  const res = await adminFetch(`${CC_BASE}${path}`);
+  if (res.status === 503) {
+    return { ok: false, disabled: true, error: 'Unified Admin Command Center is disabled on this server (ADMIN_UNIFIED_COMMAND_CENTER_ENABLED=0). Every other tab is unaffected.' };
+  }
+  try {
+    return await res.json();
+  } catch (e) {
+    return { ok: false, error: 'Could not parse response.' };
+  }
+}
+
+async function ccPost(path, body) {
+  const res = await adminFetch(`${CC_BASE}${path}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body || {}),
+  });
+  if (res.status === 503) {
+    return { ok: false, disabled: true, error: 'Unified Admin Command Center is disabled on this server.' };
+  }
+  try {
+    return await res.json();
+  } catch (e) {
+    return { ok: false, error: 'Could not parse response.' };
+  }
+}
+
+function ccEmptyState(msg) {
+  return `<p class="cc-empty">${msg}</p>`;
+}
+
+function renderCCOverview(data) {
+  const badge = document.getElementById('ccOverallStatusBadge');
+  const answersEl = document.getElementById('ccExecutiveAnswers');
+  const cardsEl = document.getElementById('ccExecutiveCards');
+  const freshEl = document.getElementById('ccOverviewFreshness');
+
+  if (!data || data.ok === false) {
+    badge.textContent = '';
+    answersEl.innerHTML = ccEmptyState(data && data.error ? data.error : 'Executive Overview is unavailable right now.');
+    cardsEl.innerHTML = '';
+    freshEl.textContent = '';
+    return;
+  }
+
+  const es = data.executiveSummary || {};
+  badge.textContent = data.overallStatus || '';
+  badge.className = `cc-status-badge ${ccStatusBadgeClass(data.overallStatus)}`;
+
+  const answers = es.answers || {};
+  answersEl.innerHTML = `
+    <p><strong>Is BibleBuddy healthy?</strong> ${es.overallStatus || 'UNKNOWN'} (${es.criticalAlertCount || 0} critical / ${es.highAlertCount || 0} high alerts)</p>
+    <p><strong>Are users encountering problems?</strong> ${answers.usersEncounteringProblems || 'Unavailable.'}</p>
+    <p><strong>Are responses accurate &amp; Scripture-aligned?</strong> ${answers.responsesAccurateAndAligned || 'Unavailable.'}</p>
+    <p><strong>What decisions need attention?</strong> ${answers.decisionsRequiringAttention || 'Unavailable.'}</p>
+    <p><strong>What should I do today?</strong> ${answers.recommendedActionToday || 'Unavailable.'}</p>
+  `;
+
+  const sections = [
+    ['SYSTEM HEALTH', data.systemHealth, (d) => `${d.liveStatus} · ${d.totalRequests} req · ${d.failedRequests} failed · ${d.averageLatencyMs}ms avg`],
+    ['USER ACTIVITY', data.usersAndSessions, (d) => `${d.activeSessions} active session(s) · ${d.alphaActiveTesters} tester(s)`],
+    ['RESPONSE QUALITY', data.experienceQuality, (d) => `${d.alphaFlaggedDoctrineIssues || 0} flagged · fallback rate ${d.fallbackRate != null ? (d.fallbackRate * 100).toFixed(1) + '%' : 'n/a'}`],
+    ['SCRIPTURE & KNOWLEDGE', data.scriptureAndKnowledge, (d) => `${d.booksCoveredTotal ?? 'n/a'} book(s) tracked · ${d.pendingCandidatesTotal ?? 'n/a'} pending`],
+    ['LESSON ALIGNMENT', data.lessonAlignment, (d) => `${d.pendingReviewCount} needing review of ${d.recentSubmissionCount} recent`],
+    ['ADMIN DECISIONS', data.recommendations, (d) => `${d.totalOpenItems} open item(s)`],
+  ];
+
+  cardsEl.innerHTML = sections.map(([label, section, summarize]) => {
+    if (!section) return '';
+    const statusClass = ccStatusBadgeClass(section.status);
+    const body = section.status === 'OK' && section.data ? summarize(section.data) : (section.errors || []).join('; ') || 'No data yet.';
+    return `<div>
+      <div class="metric-label">${label} <span class="cc-status-badge ${statusClass}" style="font-size:10px;">${section.status}</span></div>
+      <div style="font-size:14px; margin-top:4px;">${body}</div>
+      <div class="cc-freshness">source: ${section.sourceSystem} · ${section.dataFreshness} · <span class="link-drill" data-goto-dynamic="${section.drillDownTarget}">drill down →</span></div>
+    </div>`;
+  }).join('');
+
+  cardsEl.querySelectorAll('[data-goto-dynamic]').forEach((el) => {
+    el.addEventListener('click', () => ccGoto(el.getAttribute('data-goto-dynamic')));
+  });
+
+  freshEl.textContent = `Generated at ${data.generatedAt}`;
+}
+
+async function loadCCOverview() {
+  const data = await ccGet('/overview');
+  renderCCOverview(data);
+}
+
+let ccQueueCategoryOptionsPopulated = false;
+function ccPopulateQueueCategoryOptions(byCategory) {
+  if (ccQueueCategoryOptionsPopulated) return;
+  const sel = document.getElementById('ccQueueCategory');
+  Object.keys(byCategory || {}).forEach((cat) => {
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = cat;
+    sel.appendChild(opt);
+  });
+  ccQueueCategoryOptionsPopulated = true;
+}
+
+const CC_QUEUE_ACTIONS = ['review', 'approve', 'reject', 'defer', 'investigate', 'resolve'];
+
+function renderCCQueue(data) {
+  const countsEl = document.getElementById('ccQueueCounts');
+  const tableEl = document.getElementById('ccQueueTable');
+  if (!data || data.ok === false) {
+    countsEl.textContent = '';
+    tableEl.innerHTML = ccEmptyState(data && data.error ? data.error : 'Decision Queue unavailable.');
+    return;
+  }
+  ccPopulateQueueCategoryOptions(data.counts.byCategory);
+  countsEl.textContent = `${data.total} total item(s) · showing ${data.items.length}`;
+
+  if (!data.items.length) {
+    tableEl.innerHTML = ccEmptyState('No items match the current filters.');
+    return;
+  }
+
+  let html = '<table><thead><tr><th>Severity</th><th>Title</th><th>Category</th><th>Status</th><th>Confidence</th><th>Updated</th><th>Actions</th></tr></thead><tbody>';
+  for (const item of data.items) {
+    html += `<tr>
+      <td>${ccSeverityBadge(item.severity)}</td>
+      <td><strong>${item.title}</strong><div class="candidate-detail">${item.summary || ''}</div></td>
+      <td>${item.category}</td>
+      <td>${item.status}</td>
+      <td>${item.confidence || 'n/a'}</td>
+      <td class="cc-freshness">${item.lastUpdatedAt || ''}</td>
+      <td class="cc-actions">${CC_QUEUE_ACTIONS.map((a) => `<button type="button" data-queue-action="${a}" data-queue-id="${item.id}">${a}</button>`).join('')}
+        <span class="link-drill" data-goto-dynamic="${item.drillDownTarget}">view →</span>
+      </td>
+    </tr>`;
+  }
+  html += '</tbody></table>';
+  tableEl.innerHTML = html;
+
+  tableEl.querySelectorAll('[data-queue-action]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const id = btn.getAttribute('data-queue-id');
+      const action = btn.getAttribute('data-queue-action');
+      let note = '';
+      if (action === 'reject' || action === 'defer') {
+        note = window.prompt(`Optional note for "${action}":`, '') || '';
+      }
+      btn.disabled = true;
+      const result = await ccPost(`/decision-queue/${id}/${action}`, { note, decidedBy: 'admin' });
+      btn.disabled = false;
+      if (!result.ok) {
+        alert(result.error || 'Action failed.');
+        return;
+      }
+      loadCCQueue();
+      loadCCAudit();
+    });
+  });
+  tableEl.querySelectorAll('[data-goto-dynamic]').forEach((el) => {
+    el.addEventListener('click', () => ccGoto(el.getAttribute('data-goto-dynamic')));
+  });
+}
+
+async function loadCCQueue() {
+  const severity = document.getElementById('ccQueueSeverity').value;
+  const category = document.getElementById('ccQueueCategory').value;
+  const status = document.getElementById('ccQueueStatus').value;
+  const params = new URLSearchParams();
+  if (severity) params.set('severity', severity);
+  if (category) params.set('category', category);
+  if (status) params.set('status', status);
+  params.set('limit', '25');
+  const data = await ccGet(`/decision-queue?${params.toString()}`);
+  renderCCQueue(data);
+}
+
+function renderCCAlerts(data) {
+  const el = document.getElementById('ccAlerts');
+  if (!data || data.ok === false) {
+    el.innerHTML = ccEmptyState(data && data.error ? data.error : 'Alerts unavailable.');
+    return;
+  }
+  if (!data.alerts.length) {
+    el.innerHTML = ccEmptyState('No active alerts.');
+    return;
+  }
+  el.innerHTML = data.alerts.map((a) => `
+    <div class="card" style="margin-bottom:8px; background:#fafafa;">
+      ${ccSeverityBadge(a.severity)} <strong>${a.category}</strong> — ${a.summary}
+      <div class="cc-freshness">occurrences: ${a.occurrenceCount} · first: ${a.firstDetected} · last: ${a.lastDetected}</div>
+      <div class="candidate-detail">Suggested action: ${a.suggestedAction}</div>
+    </div>
+  `).join('');
+}
+
+async function loadCCAlerts() {
+  const data = await ccGet('/alerts');
+  renderCCAlerts(data);
+}
+
+function renderCCAudit(data) {
+  const el = document.getElementById('ccAudit');
+  if (!data || data.ok === false) {
+    el.innerHTML = ccEmptyState(data && data.error ? data.error : 'Audit history unavailable.');
+    return;
+  }
+  if (!data.entries.length) {
+    el.innerHTML = ccEmptyState('No audit entries recorded yet.');
+    return;
+  }
+  let html = '<table><thead><tr><th>When</th><th>Action</th><th>Target</th><th>Source</th><th>Status</th><th>Note</th></tr></thead><tbody>';
+  for (const e of data.entries.slice(0, 25)) {
+    html += `<tr><td class="cc-freshness">${e.at}</td><td>${e.action}</td><td>${e.target || ''}</td><td>${e.sourceSystem}</td><td>${e.status}</td><td>${e.approvalReasonOrNote || ''}</td></tr>`;
+  }
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+async function loadCCAudit() {
+  const data = await ccGet('/audit?limit=25');
+  renderCCAudit(data);
+}
+
+function renderCCBriefing(kind, data) {
+  const el = document.getElementById('ccBriefing');
+  if (!data || data.ok === false) {
+    el.innerHTML = ccEmptyState(data && data.error ? data.error : 'Briefing unavailable.');
+    return;
+  }
+  const b = data.briefing;
+  if (kind === 'daily') {
+    el.innerHTML = `
+      <p><strong>Recommended actions today:</strong> ${(b.recommendedActionsToday || []).join(' ')}</p>
+      <p><strong>System health:</strong> ${b.systemHealth.liveStatus} · ${b.systemHealth.totalRequests} requests · ${b.systemHealth.errors} errors</p>
+      <p><strong>Active sessions:</strong> ${b.activeUsersAndSessions.activeSessions} · <strong>Founder testers:</strong> ${b.activeUsersAndSessions.alphaActiveTesters}</p>
+      <p><strong>Pending decisions:</strong> ${b.pendingDecisions}</p>
+      <p><strong>Window vs. yesterday:</strong> ${b.windowDeltaSinceYesterday.status === 'COMPUTED' ? `${b.windowDeltaSinceYesterday.requestsDelta} req / ${b.windowDeltaSinceYesterday.errorsDelta} err` : 'BASELINE_ESTABLISHING'}</p>
+    `;
+  } else {
+    el.innerHTML = `
+      <p><strong>Week-over-week:</strong> ${b.weekOverWeekActivity.status === 'COMPUTED' ? `${b.weekOverWeekActivity.requestsDelta} req / ${b.weekOverWeekActivity.errorsDelta} err` : 'BASELINE_ESTABLISHING'}</p>
+      <p><strong>Recommendation approval rate:</strong> ${b.recommendationAcceptance.approvalRate != null ? b.recommendationAcceptance.approvalRate + '%' : (b.recommendationAcceptance.approvalRateNote || 'n/a')}</p>
+      <p><strong>Governance activity:</strong> ${b.governanceActivity.decisionsThisWeek} decision(s) this week (of ${b.governanceActivity.totalDecisionsAllTime} all-time)</p>
+      <p><strong>Priorities for next week:</strong> ${(b.prioritiesForNextWeek || []).join(' ')}</p>
+    `;
+  }
+}
+
+async function loadCCBriefing(kind) {
+  const data = await ccGet(`/briefing/${kind}`);
+  renderCCBriefing(kind, data);
+}
+
+function renderCCSearchResults(data) {
+  const el = document.getElementById('ccSearchResults');
+  if (!data || data.ok === false) {
+    el.innerHTML = ccEmptyState(data && data.error ? data.error : 'Search unavailable.');
+    return;
+  }
+  if (data.reason) {
+    el.innerHTML = ccEmptyState(data.reason);
+    return;
+  }
+  if (!data.results.length) {
+    el.innerHTML = ccEmptyState('No matches found.');
+    return;
+  }
+  el.innerHTML = `<p class="cc-freshness">${data.total} result(s)</p>` + data.results.map((r) => `
+    <div class="candidate-detail" style="margin-bottom:6px;">
+      <span class="cc-badge" style="background:#e5e7eb;">${r.sourceSystem}</span> <strong>${r.title}</strong> — ${r.snippet}
+      <span class="link-drill" data-goto-dynamic="${r.drillDownTarget}">→</span>
+    </div>
+  `).join('');
+  el.querySelectorAll('[data-goto-dynamic]').forEach((link) => {
+    link.addEventListener('click', () => ccGoto(link.getAttribute('data-goto-dynamic')));
+  });
+}
+
+async function runCCSearch() {
+  const q = document.getElementById('ccSearchInput').value.trim();
+  if (!q) {
+    document.getElementById('ccSearchResults').innerHTML = '';
+    return;
+  }
+  const data = await ccGet(`/search?q=${encodeURIComponent(q)}&limit=15`);
+  renderCCSearchResults(data);
+}
+
+const CC_ASSISTANT_EXAMPLE_QUESTIONS = [
+  'What needs my attention today?',
+  'Summarize the last 24 hours.',
+  'Summarize this week for me.',
+  'Show only critical issues.',
+  'What knowledge gaps appear genuine?',
+  'Which recommendations are safest to approve?',
+];
+
+function renderCCAssistantAnswer(answer) {
+  const el = document.getElementById('ccAssistantAnswer');
+  if (!answer || answer.ok === false) {
+    el.innerHTML = ccEmptyState(answer && answer.error ? answer.error : 'The AI Chief of Staff is unavailable right now — try the Executive Overview or Decision Queue directly.');
+    return;
+  }
+  el.innerHTML = `
+    <div class="cc-answer-box">
+      <p><strong>Summary:</strong> ${answer.narrative || answer.summary}</p>
+      ${(answer.evidence || []).length ? `<p><strong>Evidence:</strong> ${answer.evidence.join(' · ')}</p>` : ''}
+      ${answer.impact ? `<p><strong>Impact:</strong> ${answer.impact}</p>` : ''}
+      <p><strong>Confidence:</strong> ${answer.confidence} &nbsp; <strong>Approval required:</strong> ${answer.requiredApproval ? 'Yes' : 'No'}</p>
+      ${answer.recommendedAction ? `<p><strong>Recommended action:</strong> ${answer.recommendedAction}</p>` : ''}
+      <p class="cc-freshness">Source systems: ${(answer.sourceSystems || []).join(', ')}${answer.aiPhrasingUnavailable ? ' · AI phrasing unavailable, showing deterministic facts' : ''}</p>
+      ${(answer.drillDownLinks || []).map((t) => `<span class="link-drill" data-goto-dynamic="${t}">${t.replace('#', '→ ')}</span>`).join(' ')}
+    </div>
+  `;
+  el.querySelectorAll('[data-goto-dynamic]').forEach((link) => {
+    link.addEventListener('click', () => ccGoto(link.getAttribute('data-goto-dynamic')));
+  });
+}
+
+async function askCCAssistant(question) {
+  const input = document.getElementById('ccAssistantInput');
+  const q = question || input.value.trim();
+  if (!q) return;
+  input.value = q;
+  document.getElementById('ccAssistantAnswer').innerHTML = ccEmptyState('Thinking…');
+  const answer = await ccPost('/assistant', { question: q });
+  renderCCAssistantAnswer(answer);
+}
+
+function loadCommandCenter() {
+  loadCCOverview();
+  loadCCQueue();
+  loadCCAlerts();
+  loadCCAudit();
+  loadCCBriefing('daily');
+}
+
+document.getElementById('tab-command-center').addEventListener('click', () => { showSection('command-center'); loadCommandCenter(); });
+document.getElementById('ccSearchBtn').addEventListener('click', runCCSearch);
+document.getElementById('ccSearchInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') runCCSearch(); });
+document.getElementById('ccQueueRefreshBtn').addEventListener('click', loadCCQueue);
+document.getElementById('ccAssistantAskBtn').addEventListener('click', () => askCCAssistant());
+document.getElementById('ccAssistantChips').innerHTML = CC_ASSISTANT_EXAMPLE_QUESTIONS.map((q) => `<span class="chip">${q}</span>`).join('');
+document.querySelectorAll('#ccAssistantChips .chip').forEach((chip) => {
+  chip.addEventListener('click', () => askCCAssistant(chip.textContent));
+});
+document.getElementById('cc-briefing-daily').addEventListener('click', (e) => {
+  document.querySelectorAll('#command-center .sub-nav button').forEach((b) => b.classList.remove('active'));
+  e.target.classList.add('active');
+  loadCCBriefing('daily');
+});
+document.getElementById('cc-briefing-weekly').addEventListener('click', (e) => {
+  document.querySelectorAll('#command-center .sub-nav button').forEach((b) => b.classList.remove('active'));
+  e.target.classList.add('active');
+  loadCCBriefing('weekly');
+});
+
+loadCommandCenter();

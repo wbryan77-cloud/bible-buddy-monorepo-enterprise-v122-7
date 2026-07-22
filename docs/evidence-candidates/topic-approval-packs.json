@@ -1,6 +1,6 @@
 {
   "phase": "2O",
-  "ranAt": "2026-07-20T13:55:11.545Z",
+  "ranAt": "2026-07-22T20:49:02.351Z",
   "topicApprovalPacks": [
     {
       "topic": "heavens",
@@ -9207,7 +9207,7 @@
     }
   ],
   "executiveGrowthV2": {
-    "snapshotAt": "2026-07-20T13:55:11.544Z",
+    "snapshotAt": "2026-07-22T20:49:02.344Z",
     "scriptureAuthorityCoverageScore": 71.3,
     "projectedCoverageScore": 72.5,
     "coverageGrowthRatePct": 1.7,
@@ -9229,7 +9229,7 @@
     "duplicateReductionHoursSaved": 2.3
   },
   "engineeringHealthV2": {
-    "snapshotAt": "2026-07-20T13:55:11.545Z",
+    "snapshotAt": "2026-07-22T20:49:02.351Z",
     "disclaimer": "Engineering metrics only — not used for scripture approval decisions.",
     "memory": {
       "passed": true,
