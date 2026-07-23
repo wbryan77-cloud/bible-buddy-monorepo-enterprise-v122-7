@@ -12,11 +12,21 @@
  * information are ever included in a result snippet.
  */
 
+const fs = require('fs');
+const path = require('path');
 const { readSupportGraphCandidates } = require('./supportGraphCandidateQueue');
 const { readLessonAlignmentSubmissions } = require('./lessonScriptureAlignmentAnalyzer');
 const { listRecommendations } = require('./founderIntelligenceRecommendationStore');
 const { readAdminAuditTrail } = require('./adminAuditTrail');
 const { getRuntimeHealthSnapshot } = require('./runtimeHealthMonitor');
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Enterprise Search
+// Deliverable 9: four additional providers over already-structured,
+// already-existing data. No new search engine/index technology — same
+// in-process filter-and-rank pattern as the five providers above.
+const { getApprovedTopics } = require('./approvedDoctrineRegistry');
+const { readAllSnapshots } = require('./knowledgeAnalyticsSnapshotStore');
+const { listArticles } = require('./helpCenterContentStore');
+const { readEscalations } = require('./userAssistanceEscalationStore');
 
 function matches(haystack, needle) {
   return String(haystack || '').toLowerCase().includes(needle);
@@ -100,12 +110,237 @@ function searchRuntimeErrors(q) {
     }));
 }
 
+// --- Documentation provider (Deliverable 9) ----------------------------
+// Filename/heading-level only in Phase 1, per the Enterprise Search Design
+// ("Sequencing Note" — full-text indexing is a Phase 2 item). Index is
+// built lazily and cached in-memory (not persisted to disk — no new
+// persistence mechanism) and refreshed at most every 10 minutes, bounded
+// to the first 2000 files visited so a very large docs/ tree can never
+// make a single search request scan unboundedly.
+const DOCS_ROOT = path.join(__dirname, '..', 'docs');
+let docsIndexCache = null;
+let docsIndexCacheAt = 0;
+const DOCS_INDEX_MAX_AGE_MS = 10 * 60 * 1000;
+const DOCS_INDEX_MAX_FILES = 2000;
+
+function buildDocumentationIndex() {
+  const index = [];
+  let visited = 0;
+  function walk(dir) {
+    if (visited >= DOCS_INDEX_MAX_FILES) return;
+    let entries;
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch (_) {
+      return;
+    }
+    for (const entry of entries) {
+      if (visited >= DOCS_INDEX_MAX_FILES) return;
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(full);
+      } else if (entry.isFile() && entry.name.endsWith('.md')) {
+        visited += 1;
+        let heading = entry.name;
+        try {
+          const firstLines = fs.readFileSync(full, 'utf8').slice(0, 500).split('\n');
+          const headingLine = firstLines.find((l) => l.trim().startsWith('#'));
+          if (headingLine) heading = headingLine.replace(/^#+\s*/, '').trim();
+        } catch (_) { /* filename-only fallback */ }
+        let mtime = null;
+        try {
+          mtime = fs.statSync(full).mtime.toISOString();
+        } catch (_) { /* optional */ }
+        index.push({ filePath: full.replace(path.join(__dirname, '..') + path.sep, ''), fileName: entry.name, heading, mtime });
+      }
+    }
+  }
+  walk(DOCS_ROOT);
+  return index;
+}
+
+function getDocumentationIndex() {
+  const now = Date.now();
+  if (!docsIndexCache || now - docsIndexCacheAt > DOCS_INDEX_MAX_AGE_MS) {
+    docsIndexCache = buildDocumentationIndex();
+    docsIndexCacheAt = now;
+  }
+  return docsIndexCache;
+}
+
+function searchDocumentation(q) {
+  const index = getDocumentationIndex();
+  return index
+    .filter((d) => matches(d.fileName, q) || matches(d.heading, q) || matches(d.filePath, q))
+    .map((d) => ({
+      sourceSystem: 'documentation',
+      resultType: 'documentation_article',
+      id: `documentation:${d.filePath}`,
+      title: d.heading,
+      snippet: d.filePath,
+      at: d.mtime,
+      drillDownTarget: '#command-center',
+    }));
+}
+
+// --- Knowledge provider (Deliverable 9) ---------------------------------
+// Reuses existing snapshot readers + the approved-doctrine registry —
+// no new analytics computed here.
+function searchKnowledge(q) {
+  const results = [];
+  try {
+    for (const topic of getApprovedTopics()) {
+      if (matches(topic, q)) {
+        results.push({
+          sourceSystem: 'knowledge',
+          resultType: 'approved_topic',
+          id: `knowledge:topic:${topic}`,
+          title: topic,
+          snippet: 'Approved, frozen doctrine topic.',
+          at: null,
+          drillDownTarget: '#scripture-review',
+        });
+      }
+    }
+  } catch (e) {
+    console.warn('[adminGlobalSearch] knowledge provider (topics) failed:', e.message);
+  }
+  try {
+    const snapshots = readAllSnapshots({});
+    for (const [name, snap] of Object.entries(snapshots)) {
+      if (matches(name, q) && snap && snap.ok) {
+        results.push({
+          sourceSystem: 'knowledge',
+          resultType: 'knowledge_snapshot',
+          id: `knowledge:snapshot:${name}`,
+          title: `${name} snapshot`,
+          snippet: snap.stale ? 'Stale snapshot — may need refresh.' : 'Current snapshot.',
+          at: snap.generatedAt || null,
+          drillDownTarget: '#founder',
+        });
+      }
+    }
+  } catch (e) {
+    console.warn('[adminGlobalSearch] knowledge provider (snapshots) failed:', e.message);
+  }
+  return results;
+}
+
+// --- Evidence provider (Deliverable 9) -----------------------------------
+// Reuses existing evidence-card modules + the approved cross-reference
+// log — read-only, bounded.
+const EVIDENCE_CARDS_DIR = path.join(__dirname, 'evidenceCards');
+let evidenceCardsCache = null;
+
+function loadEvidenceCards() {
+  if (evidenceCardsCache) return evidenceCardsCache;
+  const cards = [];
+  try {
+    const files = fs.readdirSync(EVIDENCE_CARDS_DIR).filter((f) => f.endsWith('.card.js'));
+    for (const f of files) {
+      try {
+        cards.push(require(path.join(EVIDENCE_CARDS_DIR, f)));
+      } catch (e) {
+        console.warn('[adminGlobalSearch] failed to load evidence card:', f, e.message);
+      }
+    }
+  } catch (e) {
+    console.warn('[adminGlobalSearch] evidence card directory scan failed:', e.message);
+  }
+  evidenceCardsCache = cards;
+  return cards;
+}
+
+const CROSS_REFERENCES_PATH = path.join(__dirname, '..', 'data', 'approved-cross-references.jsonl');
+
+function searchEvidence(q) {
+  const results = [];
+  for (const card of loadEvidenceCards()) {
+    const haystack = [card.topic, card.cardId, ...(card.primaryScriptures || []), ...(card.supportingScriptures || [])].join(' ');
+    if (matches(haystack, q)) {
+      results.push({
+        sourceSystem: 'evidence',
+        resultType: 'evidence_card',
+        id: `evidence:card:${card.cardId}`,
+        title: `Evidence card: ${card.topic}`,
+        snippet: (card.primaryScriptures || []).slice(0, 4).join('; '),
+        at: null,
+        drillDownTarget: '#scripture-review',
+      });
+    }
+  }
+  try {
+    if (fs.existsSync(CROSS_REFERENCES_PATH)) {
+      const lines = fs.readFileSync(CROSS_REFERENCES_PATH, 'utf8').trim().split('\n').filter(Boolean).slice(-500);
+      for (const line of lines) {
+        let rec;
+        try {
+          rec = JSON.parse(line);
+        } catch (_) {
+          continue;
+        }
+        if (matches(rec.extractedReference, q) || matches(rec.actualKjvText, q) || matches(rec.sourceDocument, q)) {
+          results.push({
+            sourceSystem: 'evidence',
+            resultType: 'cross_reference',
+            id: `evidence:xref:${rec.id}`,
+            title: rec.extractedReference || 'Cross-reference',
+            snippet: String(rec.actualKjvText || '').slice(0, 200),
+            at: null,
+            drillDownTarget: '#scripture-review',
+          });
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('[adminGlobalSearch] cross-reference scan failed:', e.message);
+  }
+  return results;
+}
+
+// --- Support provider (Deliverable 9 — sequenced behind Deliverable 7,
+// which has now shipped in this same batch) -------------------------------
+function searchSupport(q) {
+  const results = [];
+  for (const article of listArticles({ limit: 500 })) {
+    if (matches(article.title, q) || matches(article.body, q) || matches((article.tags || []).join(' '), q)) {
+      results.push({
+        sourceSystem: 'support',
+        resultType: 'help_center_article',
+        id: `support:article:${article.id}`,
+        title: article.title,
+        snippet: String(article.body || '').slice(0, 200),
+        at: article.updatedAt,
+        drillDownTarget: '#command-center',
+      });
+    }
+  }
+  for (const esc of readEscalations({ limit: 500 })) {
+    if (matches(esc.question, q)) {
+      results.push({
+        sourceSystem: 'support',
+        resultType: 'support_escalation',
+        id: `support:escalation:${esc.id}`,
+        title: esc.question,
+        snippet: `status=${esc.status}`,
+        at: esc.createdAt,
+        drillDownTarget: '#command-center',
+      });
+    }
+  }
+  return results;
+}
+
 const PROVIDERS = [
   searchRecommendations,
   searchReviewQueue,
   searchLessonAlignment,
   searchAuditHistory,
   searchRuntimeErrors,
+  searchDocumentation,
+  searchKnowledge,
+  searchEvidence,
+  searchSupport,
 ];
 
 function searchAdmin({ q = '', types = null, limit = 25, offset = 0 } = {}) {

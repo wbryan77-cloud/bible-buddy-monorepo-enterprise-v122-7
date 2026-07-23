@@ -796,6 +796,73 @@ function renderCCOverview(data) {
 async function loadCCOverview() {
   const data = await ccGet('/overview');
   renderCCOverview(data);
+  renderCCObservability(data);
+  renderCCNotifications(data);
+  renderCCUserAssistance(data);
+}
+
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B v2 — Operational Observability.
+// Renders from the observability slice already present in the /overview
+// payload (services/adminCommandCenterAggregator.js :: computeObservabilitySummary).
+// No additional network request — same reuse pattern as every other CC card.
+function renderCCObservability(overview) {
+  const gridEl = document.getElementById('ccObservabilityGrid');
+  const obs = overview && overview.observability;
+  if (!obs) {
+    gridEl.innerHTML = ccEmptyState('Observability data unavailable.');
+    return;
+  }
+  const tiles = [
+    {
+      label: 'Runtime',
+      lines: obs.runtimeMetrics ? [
+        `Status: ${obs.runtimeMetrics.liveStatus}`,
+        `${obs.runtimeMetrics.totalRequests} request(s) · ${obs.runtimeMetrics.failedRequests} failed`,
+        `Avg latency: ${obs.runtimeMetrics.averageLatencyMs}ms`,
+      ] : ['Unavailable'],
+    },
+    {
+      label: 'Decision Queue',
+      lines: obs.queueMetrics ? [
+        `${obs.queueMetrics.totalOpenItems} open item(s)`,
+        `Critical: ${obs.queueMetrics.bySeverity.Critical || 0} · High: ${obs.queueMetrics.bySeverity.High || 0}`,
+      ] : ['Unavailable'],
+    },
+    {
+      label: 'Knowledge Improvement',
+      lines: obs.recommendationMetrics ? [
+        `${obs.recommendationMetrics.totalRecommendations} recommendation(s)`,
+        `(admin approval required for all)`,
+      ] : ['Unavailable'],
+    },
+    {
+      label: 'User Assistance',
+      lines: obs.userAssistanceMetrics ? [
+        `${obs.userAssistanceMetrics.helpCenterArticles} article(s) published`,
+        `${obs.userAssistanceMetrics.escalationsPending} pending escalation(s)`,
+      ] : ['Unavailable'],
+    },
+    {
+      label: 'Notifications',
+      lines: obs.notificationMetrics ? [
+        obs.notificationMetrics.globalPaused ? 'Globally paused' : 'Active (per-category, disabled by default)',
+        `${obs.notificationMetrics.recentHistorySampleSize} recent dispatch record(s)`,
+      ] : ['Unavailable'],
+    },
+    {
+      label: 'Executive Summary',
+      lines: obs.executiveSummary ? [
+        `Overall: ${obs.executiveSummary.overallStatus}`,
+        `${obs.executiveSummary.criticalAlertCount} critical alert(s)`,
+      ] : ['Unavailable'],
+    },
+  ];
+  gridEl.innerHTML = tiles.map((t) => `
+    <div>
+      <div class="metric-label">${t.label.toUpperCase()}</div>
+      <div style="font-size:14px; margin-top:4px;">${t.lines.join('<br/>')}</div>
+    </div>
+  `).join('');
 }
 
 let ccQueueCategoryOptionsPopulated = false;
@@ -1002,6 +1069,8 @@ const CC_ASSISTANT_EXAMPLE_QUESTIONS = [
   'Show only critical issues.',
   'What knowledge gaps appear genuine?',
   'Which recommendations are safest to approve?',
+  'Any documentation gaps to review?',
+  'What is the user assistance status?',
 ];
 
 function renderCCAssistantAnswer(answer) {
@@ -1036,12 +1105,164 @@ async function askCCAssistant(question) {
   renderCCAssistantAnswer(answer);
 }
 
+/* ============================================================
+ * ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — additive UI logic only.
+ * Notifications + User Assistance Platform. Same ccGet/ccPost helpers,
+ * same empty-state pattern, same drill-down convention as every function
+ * above. Nothing here recomputes analytics client-side.
+ * ============================================================ */
+
+function renderCCNotifications(overview) {
+  const summaryEl = document.getElementById('ccNotificationsSummary');
+  const section = overview && overview.notifications;
+  if (!section || section.status !== 'OK' || !section.data) {
+    summaryEl.innerHTML = ccEmptyState((section && section.errors && section.errors.join('; ')) || 'Notifications data unavailable.');
+    return;
+  }
+  const d = section.data;
+  const providerLine = `Email provider: ${d.providers.email ? 'configured' : 'not configured (stub — safe no-op)'} · SMS provider: ${d.providers.sms ? 'configured' : 'not configured (stub — safe no-op)'}`;
+  const catRows = Object.entries(d.deliveryByCategory || {}).map(([cat, c]) => `<tr><td>${cat}</td><td>${c.attempted}</td><td>${c.delivered}</td><td>${c.queuedOnly}</td></tr>`).join('');
+  summaryEl.innerHTML = `
+    <p class="cc-freshness">${providerLine} · global paused: ${d.globalPaused ? 'yes' : 'no'}</p>
+    <table><thead><tr><th>Category</th><th>Attempted</th><th>Delivered</th><th>Queued only (in-app)</th></tr></thead>
+      <tbody>${catRows || '<tr><td colspan="4">No notification history recorded yet.</td></tr>'}</tbody></table>
+  `;
+  const sel = document.getElementById('ccNotifyCategory');
+  if (sel && !sel.dataset.populated) {
+    sel.innerHTML = (d.categories || []).map((c) => `<option value="${c}">${c.replace(/_/g, ' ')}</option>`).join('');
+    sel.dataset.populated = '1';
+  }
+}
+
+async function sendCCNotification() {
+  const category = document.getElementById('ccNotifyCategory').value;
+  const body = document.getElementById('ccNotifyBody').value.trim();
+  const resultEl = document.getElementById('ccNotifySendResult');
+  resultEl.textContent = 'Sending…';
+  const result = await ccPost('/notifications/send', { category, body: body || null });
+  if (!result.ok) {
+    resultEl.textContent = result.error || 'Send failed.';
+    return;
+  }
+  resultEl.textContent = `Attempted ${result.attempted}, delivered ${result.delivered} (queue_only counts as delivered in-app).`;
+  loadCCOverview();
+}
+
+function renderCCUserAssistance(overview) {
+  const summaryEl = document.getElementById('ccUserAssistanceSummary');
+  const section = overview && overview.userAssistance;
+  if (!section || section.status !== 'OK' || !section.data) {
+    summaryEl.innerHTML = ccEmptyState((section && section.errors && section.errors.join('; ')) || 'User Assistance data unavailable.');
+    return;
+  }
+  const { helpCenter, escalations } = section.data;
+  summaryEl.innerHTML = `<p>${helpCenter.total} Help Center article(s) (${helpCenter.faqCount} FAQ) · ${escalations.pending} pending escalation(s) · ${escalations.resolved} resolved · ${escalations.dismissed} dismissed</p>`;
+}
+
+async function loadHelpCenterArticles() {
+  const el = document.getElementById('ccHelpCenterArticles');
+  const res = await adminFetch('/api/support/articles?limit=100');
+  const data = await res.json();
+  if (!data || data.ok === false || !data.articles.length) {
+    el.innerHTML = ccEmptyState('No Help Center articles yet.');
+    return;
+  }
+  el.innerHTML = data.articles.map((a) => `
+    <div class="candidate-detail" style="margin-bottom:6px;">
+      <strong>${a.title}</strong> <span class="cc-badge">${a.category}</span> ${(a.tags || []).map((t) => `<span class="cc-badge" style="background:#e5e7eb;">${t}</span>`).join(' ')}
+      <br/>${a.body}
+    </div>
+  `).join('');
+}
+
+async function createHelpCenterArticle() {
+  const title = document.getElementById('ccArticleTitle').value.trim();
+  const category = document.getElementById('ccArticleCategory').value.trim() || 'general';
+  const tags = document.getElementById('ccArticleTags').value.split(',').map((t) => t.trim()).filter(Boolean);
+  const body = document.getElementById('ccArticleBody').value.trim();
+  if (!title || !body) {
+    alert('Title and body are required.');
+    return;
+  }
+  const res = await adminFetch('/api/support/articles', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ title, category, tags, body }),
+  });
+  const data = await res.json();
+  if (!data.ok) {
+    alert(data.error || 'Failed to publish article.');
+    return;
+  }
+  document.getElementById('ccArticleTitle').value = '';
+  document.getElementById('ccArticleCategory').value = '';
+  document.getElementById('ccArticleTags').value = '';
+  document.getElementById('ccArticleBody').value = '';
+  loadHelpCenterArticles();
+  loadCCOverview();
+}
+
+async function loadCCEscalations() {
+  const el = document.getElementById('ccEscalations');
+  const res = await adminFetch('/api/support/escalations');
+  const data = await res.json();
+  if (!data || data.ok === false || !data.escalations.length) {
+    el.innerHTML = ccEmptyState('No questions awaiting a reply.');
+    return;
+  }
+  el.innerHTML = data.escalations.map((e) => `
+    <div class="candidate-detail" style="margin-bottom:8px;">
+      <strong>${e.question}</strong> <span class="cc-freshness">${e.createdAt}</span>
+      <br/><small>${e.reason || ''}</small>
+      <p>
+        <input type="text" class="cc-escalation-reply" data-id="${e.id}" placeholder="Type a reply…" style="width:60%;" />
+        <button type="button" class="cc-escalation-resolve" data-id="${e.id}">Reply &amp; Resolve</button>
+        <button type="button" class="cc-escalation-dismiss" data-id="${e.id}">Dismiss</button>
+      </p>
+    </div>
+  `).join('');
+
+  el.querySelectorAll('.cc-escalation-resolve').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const id = btn.getAttribute('data-id');
+      const reply = el.querySelector(`.cc-escalation-reply[data-id="${id}"]`).value.trim();
+      if (!reply) { alert('Enter a reply first.'); return; }
+      await adminFetch(`/api/support/escalations/${encodeURIComponent(id)}/resolve`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reply, action: 'resolve', decidedBy: 'admin' }),
+      });
+      loadCCEscalations();
+      loadCCOverview();
+    });
+  });
+  el.querySelectorAll('.cc-escalation-dismiss').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const id = btn.getAttribute('data-id');
+      await adminFetch(`/api/support/escalations/${encodeURIComponent(id)}/resolve`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'dismiss', decidedBy: 'admin' }),
+      });
+      loadCCEscalations();
+      loadCCOverview();
+    });
+  });
+}
+
+const notifySendBtn = document.getElementById('ccNotifySendBtn');
+if (notifySendBtn) notifySendBtn.addEventListener('click', sendCCNotification);
+const articleCreateBtn = document.getElementById('ccArticleCreateBtn');
+if (articleCreateBtn) articleCreateBtn.addEventListener('click', createHelpCenterArticle);
+
 function loadCommandCenter() {
   loadCCOverview();
   loadCCQueue();
   loadCCAlerts();
   loadCCAudit();
   loadCCBriefing('daily');
+  loadHelpCenterArticles();
+  loadCCEscalations();
 }
 
 document.getElementById('tab-command-center').addEventListener('click', () => { showSection('command-center'); loadCommandCenter(); });

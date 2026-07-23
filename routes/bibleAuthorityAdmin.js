@@ -703,8 +703,104 @@ router.get('/unified/capabilities', (req, res) => {
   if (!checkAdminAuth(req, res)) return;
   if (!checkUnifiedEnabled(req, res)) return;
   try {
-    const { CAPABILITIES, FUTURE_ROLE_CAPABILITY_MAP, getCurrentActorCapabilities } = require('../services/adminCapabilities');
-    res.json({ ok: true, capabilities: CAPABILITIES, futureRoleCapabilityMap: FUTURE_ROLE_CAPABILITY_MAP, currentActorCapabilities: getCurrentActorCapabilities(req) });
+    const {
+      CAPABILITIES,
+      FUTURE_ROLE_CAPABILITY_MAP,
+      BATCH_NAMED_ROLE_ALIASES,
+      getCurrentActorCapabilities,
+      getCapabilitiesForNamedRole,
+    } = require('../services/adminCapabilities');
+    // ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B v2 — Future Role Readiness
+    // (batch objective 8). Surfaces the six batch-named roles (Founder,
+    // Administrator, Reviewer, Support, Operations, Engineering) and their
+    // resolved capability sets so the scaffold is API-discoverable, not just
+    // present in code. No enforcement change — current auth still grants
+    // every capability to the single admin credential (getCurrentActorCapabilities).
+    const namedRoleCapabilities = Object.keys(BATCH_NAMED_ROLE_ALIASES || {}).reduce((acc, namedRole) => {
+      acc[namedRole] = {
+        aliasesTo: BATCH_NAMED_ROLE_ALIASES[namedRole],
+        capabilities: getCapabilitiesForNamedRole(namedRole),
+      };
+      return acc;
+    }, {});
+    res.json({
+      ok: true,
+      capabilities: CAPABILITIES,
+      futureRoleCapabilityMap: FUTURE_ROLE_CAPABILITY_MAP,
+      namedRoleCapabilities,
+      currentActorCapabilities: getCurrentActorCapabilities(req),
+    });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Notification Framework
+// Admin visibility/action (Deliverable 8 "Admin Visibility"). Reuses the
+// existing unified-envelope + audit-trail pattern established above.
+router.get('/unified/notifications/history', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { readHistory } = require('../services/alphaNotificationScheduler');
+    const { limit } = req.query;
+    res.json({ ok: true, history: readHistory({ limit: Number(limit) || 200 }) });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+router.post('/unified/notifications/send', express.json({ limit: '16kb' }), async (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { dispatchCategoryNotification, NOTIFICATION_CATEGORIES } = require('../services/alphaNotificationScheduler');
+    const { category, body, onlyTesterId } = req.body || {};
+    if (!Object.values(NOTIFICATION_CATEGORIES).includes(category)) {
+      return res.status(400).json({ ok: false, error: `Unknown category. Expected one of: ${Object.values(NOTIFICATION_CATEGORIES).join(', ')}` });
+    }
+    const result = await dispatchCategoryNotification({ category, body: body || null, onlyTesterId: onlyTesterId || null });
+    const { recordAdminAuditEvent } = require('../services/adminAuditTrail');
+    recordAdminAuditEvent({
+      action: 'NOTIFICATION_CATEGORY_DISPATCH',
+      actionType: 'NOTE',
+      target: category,
+      sourceSystem: 'alphaNotificationScheduler',
+      category: 'NOTIFICATIONS',
+      status: 'COMPLETED',
+      resultingState: { attempted: result.attempted, delivered: result.delivered },
+    });
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Knowledge Improvement AI
+// (AI-4) — read-only, recommend-only report (Deliverable 5). Decisions on
+// individual recommendations are made through the existing unified
+// Decision Queue endpoints above (sourceSystem = 'knowledge-improvement'),
+// not through a second decision-recording endpoint here.
+router.get('/unified/knowledge-improvement', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { buildKnowledgeImprovementReport } = require('../services/knowledgeImprovementAdvisor');
+    res.json({ ok: true, report: buildKnowledgeImprovementReport() });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B v2 — Operational Observability
+// (batch objective 7). Reuses buildAdminCommandCenterSummary() internally —
+// no new metrics-collection engine, no duplicated computation.
+router.get('/unified/metrics', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { buildOperationalMetricsSummary } = require('../services/adminCommandCenterAggregator');
+    res.json(buildOperationalMetricsSummary());
   } catch (error) {
     res.status(500).json({ ok: false, error: error.message });
   }

@@ -11,7 +11,8 @@ const {
   NOTIFICATION_PREFS,
 } = require('../services/alphaTesterManager');
 const { recordFeedback, VALID_TAGS } = require('../services/alphaFeedbackCapture');
-const { subscribe, unsubscribe } = require('../services/alphaNotificationScheduler');
+const { subscribe, unsubscribe, NOTIFICATION_CATEGORIES } = require('../services/alphaNotificationScheduler');
+const { getCategoryPreferences, setCategoryPreference } = require('../services/alphaTesterManager');
 const { buildMemoryDisclosureReply } = require('../services/companionMemoryManager');
 
 const router = express.Router();
@@ -142,6 +143,32 @@ router.post('/notifications/unsubscribe', (req, res) => {
     if (!testerId) return res.status(400).json({ ok: false, error: 'testerId required' });
     const tester = unsubscribe(testerId);
     res.json({ ok: true, tester });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Notification Framework
+// per-category preference model (Deliverable 8). Extends, does not
+// replace, the /notifications/subscribe|unsubscribe endpoints above.
+router.get('/notifications/preferences/:testerId', (req, res) => {
+  try {
+    const testerId = String(req.params.testerId || '').trim();
+    if (!isActiveAlphaTester(testerId)) return res.status(403).json({ ok: false, error: 'Invalid tester' });
+    res.json({ ok: true, categories: NOTIFICATION_CATEGORIES, preferences: getCategoryPreferences(testerId) });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
+router.post('/notifications/preferences', (req, res) => {
+  try {
+    const testerId = String(req.body?.testerId || '').trim();
+    const { category, enabled } = req.body || {};
+    if (!isActiveAlphaTester(testerId)) return res.status(403).json({ ok: false, error: 'Invalid tester' });
+    const result = setCategoryPreference(testerId, category, !!enabled);
+    if (!result.ok) return res.status(400).json(result);
+    res.json(result);
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });
   }

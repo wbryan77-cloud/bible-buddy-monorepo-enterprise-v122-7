@@ -21,6 +21,37 @@ const TEST_FOCUS = [
 ];
 const NOTIFICATION_PREFS = ['morning', 'afternoon', 'evening', 'once_daily', 'twice_daily', 'off'];
 
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Notification Framework
+// category model (Deliverable 8). Extends, does not replace, the existing
+// slot-based (morning/afternoon/evening) preference above — that field
+// continues to control the existing Bible/prayer/lesson reminder prompts.
+// This new per-category map is additive: any tester record without it
+// falls back to DEFAULT_CATEGORY_PREFERENCES below, so existing testers
+// are completely unaffected until they explicitly change a preference.
+const NOTIFICATION_CATEGORIES = {
+  FEATURE_ANNOUNCEMENTS: 'feature_announcements',
+  MAINTENANCE_NOTICES: 'maintenance_notices',
+  SECURITY_ALERTS: 'security_alerts',
+  SUPPORT_REPLIES: 'support_replies',
+  BIBLE_REMINDERS: 'bible_reminders',
+  PRAYER_REMINDERS: 'prayer_reminders',
+  LESSON_REMINDERS: 'lesson_reminders',
+};
+
+// Per the batch: users control preferences; nothing is sent automatically
+// until enabled. Security alerts are the sole non-suppressible exception
+// (Deliverable 8 / Architecture Review Board Findings — "what should
+// never be automated: security-alert notification suppression").
+const DEFAULT_CATEGORY_PREFERENCES = {
+  [NOTIFICATION_CATEGORIES.FEATURE_ANNOUNCEMENTS]: false,
+  [NOTIFICATION_CATEGORIES.MAINTENANCE_NOTICES]: false,
+  [NOTIFICATION_CATEGORIES.SECURITY_ALERTS]: true, // always on; see getCategoryPreferences
+  [NOTIFICATION_CATEGORIES.SUPPORT_REPLIES]: false,
+  [NOTIFICATION_CATEGORIES.BIBLE_REMINDERS]: false,
+  [NOTIFICATION_CATEGORIES.PRAYER_REMINDERS]: false,
+  [NOTIFICATION_CATEGORIES.LESSON_REMINDERS]: false,
+};
+
 function load() {
   try {
     if (fs.existsSync(DATA_PATH)) {
@@ -195,12 +226,49 @@ function updateNotificationPreference(testerId, preference, paused = false) {
   return data.testers[idx];
 }
 
+/**
+ * Read this tester's per-category notification preference map, applying
+ * defaults (Deliverable 8) for any category never explicitly set. Security
+ * alerts are always reported true regardless of stored value — this is a
+ * read-time guarantee, not just a default, matching the "never
+ * suppressible" hard constraint.
+ */
+function getCategoryPreferences(testerId) {
+  const tester = getTester(testerId);
+  const stored = (tester && tester.categoryPreferences) || {};
+  const resolved = { ...DEFAULT_CATEGORY_PREFERENCES, ...stored };
+  resolved[NOTIFICATION_CATEGORIES.SECURITY_ALERTS] = true;
+  return resolved;
+}
+
+function setCategoryPreference(testerId, category, enabled) {
+  if (!Object.values(NOTIFICATION_CATEGORIES).includes(category)) {
+    return { ok: false, error: `Unknown notification category: ${category}` };
+  }
+  if (category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS) {
+    return { ok: false, error: 'Security alerts cannot be disabled by user preference.' };
+  }
+  const data = load();
+  const idx = data.testers.findIndex((t) => t.testerId === testerId);
+  if (idx < 0) return { ok: false, error: 'Tester not found' };
+  data.testers[idx].categoryPreferences = {
+    ...DEFAULT_CATEGORY_PREFERENCES,
+    ...(data.testers[idx].categoryPreferences || {}),
+    [category]: !!enabled,
+  };
+  data.testers[idx].updatedAt = new Date().toISOString();
+  save(data);
+  return { ok: true, categoryPreferences: getCategoryPreferences(testerId) };
+}
+
 module.exports = {
   DATA_PATH,
   AGE_RANGES,
   BIBLE_FAMILIARITY,
   TEST_FOCUS,
   NOTIFICATION_PREFS,
+  NOTIFICATION_CATEGORIES,
+  DEFAULT_CATEGORY_PREFERENCES,
   createInvite,
   getInviteLink,
   validateInviteToken,
@@ -210,5 +278,7 @@ module.exports = {
   listTesters,
   startTestSession,
   updateNotificationPreference,
+  getCategoryPreferences,
+  setCategoryPreference,
   load,
 };

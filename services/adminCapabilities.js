@@ -28,6 +28,17 @@ const CAPABILITIES = {
   ACT_ON_DECISION_QUEUE: 'ACT_ON_DECISION_QUEUE',
   APPROVE_RECOMMENDATIONS: 'APPROVE_RECOMMENDATIONS',
   MANAGE_LESSON_ALIGNMENT: 'MANAGE_LESSON_ALIGNMENT',
+  // ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — capabilities for the new
+  // Notification Framework, User Assistance Platform, and Knowledge
+  // Improvement AI surfaces. Purely additive to the vocabulary above;
+  // getCurrentActorCapabilities() below still returns every capability
+  // while only one credential exists — no current permission changes.
+  VIEW_NOTIFICATIONS: 'VIEW_NOTIFICATIONS',
+  MANAGE_NOTIFICATIONS: 'MANAGE_NOTIFICATIONS',
+  VIEW_USER_ASSISTANCE: 'VIEW_USER_ASSISTANCE',
+  MANAGE_HELP_CENTER: 'MANAGE_HELP_CENTER',
+  RESOLVE_SUPPORT_ESCALATIONS: 'RESOLVE_SUPPORT_ESCALATIONS',
+  VIEW_KNOWLEDGE_IMPROVEMENT: 'VIEW_KNOWLEDGE_IMPROVEMENT',
 };
 
 // Future roles (documented, not implemented as real logins). Each maps to
@@ -48,11 +59,16 @@ const FUTURE_ROLE_CAPABILITY_MAP = {
     CAPABILITIES.VIEW_SECURITY,
     CAPABILITIES.USE_GLOBAL_SEARCH,
     CAPABILITIES.USE_AI_CHIEF_OF_STAFF,
+    CAPABILITIES.VIEW_NOTIFICATIONS,
+    CAPABILITIES.MANAGE_NOTIFICATIONS,
   ],
   USER_SUPPORT: [
     CAPABILITIES.VIEW_EXECUTIVE_OVERVIEW,
     CAPABILITIES.VIEW_USERS_SESSIONS,
     CAPABILITIES.USE_GLOBAL_SEARCH,
+    CAPABILITIES.VIEW_USER_ASSISTANCE,
+    CAPABILITIES.MANAGE_HELP_CENTER,
+    CAPABILITIES.RESOLVE_SUPPORT_ESCALATIONS,
   ],
   LESSON_REVIEWER: [
     CAPABILITIES.VIEW_LESSON_ALIGNMENT,
@@ -64,6 +80,7 @@ const FUTURE_ROLE_CAPABILITY_MAP = {
     CAPABILITIES.VIEW_FOUNDER_INTELLIGENCE,
     CAPABILITIES.ACT_ON_DECISION_QUEUE,
     CAPABILITIES.APPROVE_RECOMMENDATIONS,
+    CAPABILITIES.VIEW_KNOWLEDGE_IMPROVEMENT,
   ],
   SECURITY_AND_COMPLIANCE: [
     CAPABILITIES.VIEW_SECURITY,
@@ -81,6 +98,31 @@ const FUTURE_ROLE_CAPABILITY_MAP = {
 };
 
 /**
+ * ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Role Preparation (batch
+ * item 8). The batch names six future roles explicitly: Founder,
+ * Administrator, Reviewer, Support, Operations, Engineering. Rather than
+ * invent a second, competing role vocabulary, this is a documented ALIAS
+ * layer over the roles already defined above (built in the prior
+ * "Unified Admin Command Center" batch) — one role vocabulary, not two.
+ * This does NOT implement full RBAC and does NOT change current
+ * permissions: exactly like FUTURE_ROLE_CAPABILITY_MAP above, it is
+ * inert until a future multi-credential auth layer is built.
+ */
+const BATCH_NAMED_ROLE_ALIASES = {
+  FOUNDER: 'OWNER_CEO',
+  ADMINISTRATOR: 'TECHNICAL_ADMINISTRATOR',
+  REVIEWER: 'CONTENT_REVIEWER',
+  SUPPORT: 'USER_SUPPORT',
+  OPERATIONS: 'TECHNICAL_ADMINISTRATOR',
+  ENGINEERING: 'TECHNICAL_ADMINISTRATOR',
+};
+
+function getCapabilitiesForNamedRole(namedRole) {
+  const target = BATCH_NAMED_ROLE_ALIASES[String(namedRole || '').toUpperCase()];
+  return target ? FUTURE_ROLE_CAPABILITY_MAP[target] || [] : [];
+}
+
+/**
  * Today there is exactly one credential and it grants every capability —
  * this function is the single seam a future multi-role auth layer would
  * change (look up the actor's real role -> FUTURE_ROLE_CAPABILITY_MAP)
@@ -90,4 +132,10 @@ function getCurrentActorCapabilities(/* req */) {
   return Object.values(CAPABILITIES);
 }
 
-module.exports = { CAPABILITIES, FUTURE_ROLE_CAPABILITY_MAP, getCurrentActorCapabilities };
+module.exports = {
+  CAPABILITIES,
+  FUTURE_ROLE_CAPABILITY_MAP,
+  BATCH_NAMED_ROLE_ALIASES,
+  getCurrentActorCapabilities,
+  getCapabilitiesForNamedRole,
+};

@@ -32,6 +32,12 @@ const { listRecommendations, recordAdminDecision } = require('./founderIntellige
 const { readSupportGraphCandidates, recordCandidateDecision, ADMIN_ACTIONS: REVIEW_QUEUE_ACTIONS } = require('./supportGraphCandidateQueue');
 const { readLessonAlignmentSubmissions } = require('./lessonScriptureAlignmentAnalyzer');
 const { recordAdminAuditEvent, readAdminAuditTrail } = require('./adminAuditTrail');
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — two additional sources,
+// following the exact same read/normalize/overlay pattern as the three
+// sources above. Neither introduces a second queue/store "of truth" — see
+// module header.
+const { listPendingEscalations, resolveEscalation } = require('./userAssistanceEscalationStore');
+const { buildKnowledgeImprovementReport } = require('./knowledgeImprovementAdvisor');
 
 const OVERLAY_DIR = path.join(__dirname, '..', 'data', 'admin-command-center');
 const OVERLAY_PATH = path.join(OVERLAY_DIR, 'decision-queue-overlay.json');
@@ -51,6 +57,9 @@ const TYPE = {
   RELATIONSHIP_LINK: 'Relationship Link',
   FEATURE_REQUEST: 'Feature Request',
   GOVERNANCE_REVIEW: 'Governance Review',
+  // ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B
+  SUPPORT_ESCALATION: 'Support Escalation',
+  KNOWLEDGE_IMPROVEMENT: 'Knowledge Improvement',
 };
 const STATUS = {
   NEW: 'New',
@@ -229,6 +238,70 @@ function buildDecisionQueueItems({ perSourceLimit = 200 } = {}) {
     console.warn('[adminDecisionQueue] lesson-alignment source failed:', e.message);
   }
 
+  // --- Source 4: User Assistance (AI-2) escalations needing review ---
+  try {
+    const escalations = listPendingEscalations({ limit: Math.min(perSourceLimit, 200) });
+    for (const esc of escalations) {
+      const id = `user-assistance:${esc.id}`;
+      const ov = overlay[id] || {};
+      items.push({
+        id,
+        sourceSystem: 'user-assistance',
+        nativeId: esc.id,
+        title: `User Assistance escalation: "${esc.question}"`,
+        summary: esc.reason || 'AI-2 could not answer this question confidently from the Help Center.',
+        category: TYPE.SUPPORT_ESCALATION,
+        severity: SEVERITY.LOW,
+        confidence: esc.confidence || 'LOW',
+        supportingEvidence: esc.bestGuessArticleId ? [`Best-guess article: ${esc.bestGuessArticleId}`] : [],
+        affectedCount: 1,
+        currentProductionCoverage: esc.bestGuessArticleId || null,
+        proposedAction: 'Reply to the user and optionally author/update a Help Center article.',
+        potentialImpact: 'A user did not receive an answer to an app-support question.',
+        requiredApproval: true,
+        createdAt: esc.createdAt,
+        lastUpdatedAt: ov.updatedAt || esc.createdAt,
+        status: ov.status || STATUS.NEW,
+        note: ov.note || null,
+        drillDownTarget: '#command-center',
+      });
+    }
+  } catch (e) {
+    console.warn('[adminDecisionQueue] user-assistance source failed:', e.message);
+  }
+
+  // --- Source 5: Knowledge Improvement AI (AI-4) recommendations ---
+  try {
+    const report = buildKnowledgeImprovementReport();
+    for (const rec of report.recommendations.slice(0, perSourceLimit)) {
+      const id = `knowledge-improvement:${rec.id}`;
+      const ov = overlay[id] || {};
+      items.push({
+        id,
+        sourceSystem: 'knowledge-improvement',
+        nativeId: rec.id,
+        title: rec.title,
+        summary: rec.suggestedAction,
+        category: TYPE.KNOWLEDGE_IMPROVEMENT,
+        severity: rec.confidence === 'HIGH' ? SEVERITY.MEDIUM : SEVERITY.LOW,
+        confidence: rec.confidence,
+        supportingEvidence: (rec.evidence || []).slice(0, 5).map((e) => (typeof e === 'string' ? e : JSON.stringify(e))),
+        affectedCount: rec.occurrenceCount || null,
+        currentProductionCoverage: null,
+        proposedAction: rec.suggestedAction,
+        potentialImpact: `${rec.type.replace(/_/g, ' ')} — recommendation only, never auto-applied.`,
+        requiredApproval: true,
+        createdAt: rec.generatedAt,
+        lastUpdatedAt: ov.updatedAt || rec.generatedAt,
+        status: ov.status || STATUS.NEW,
+        note: ov.note || null,
+        drillDownTarget: '#command-center',
+      });
+    }
+  } catch (e) {
+    console.warn('[adminDecisionQueue] knowledge-improvement source failed:', e.message);
+  }
+
   return items;
 }
 
@@ -310,9 +383,19 @@ function applyDecisionQueueAction({ id, action, note = '', decidedBy = 'admin' }
           return { ok: false, error: `Review queue does not support action "${reviewAction}".` };
         }
         underlyingResult = recordCandidateDecision({ candidateId: nativeId, action: reviewAction, decidedBy, note });
+      } else if (sourceSystem === 'user-assistance') {
+        // "Approve" == resolve (reply sent); "reject" == dismiss (no reply warranted).
+        underlyingResult = resolveEscalation({ id: nativeId, reply: note, resolvedBy: decidedBy, action: action === 'approve' ? 'resolve' : 'dismiss' });
+        if (!underlyingResult.ok) return underlyingResult;
       }
-      // lesson-alignment has no underlying approve/reject workflow — overlay only.
+      // lesson-alignment and knowledge-improvement have no underlying
+      // approve/reject workflow (the former has no decision object; the
+      // latter is recompute-only and never auto-applies) — overlay only.
       newStatus = action === 'approve' ? STATUS.APPROVED : STATUS.REJECTED;
+    } else if (action === 'resolve' && sourceSystem === 'user-assistance') {
+      underlyingResult = resolveEscalation({ id: nativeId, reply: note, resolvedBy: decidedBy, action: 'resolve' });
+      if (!underlyingResult.ok) return underlyingResult;
+      newStatus = STATUS.RESOLVED;
     } else if (action === 'defer') {
       newStatus = STATUS.DEFERRED;
     } else if (action === 'investigate') {

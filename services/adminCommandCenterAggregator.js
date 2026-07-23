@@ -28,6 +28,15 @@ const { readSupportGraphCandidates } = require('./supportGraphCandidateQueue');
 const { listDecisionQueue } = require('./adminDecisionQueue');
 const { listAlerts } = require('./adminAlertCenter');
 const { readAdminAuditTrail } = require('./adminAuditTrail');
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — three additional composed
+// sections (Notifications, User Assistance, Knowledge Improvement),
+// following the exact same buildSection() pattern as every section below.
+// No new orchestration engine — this extends the existing aggregator's
+// section list, per Blueprint Deliverable 3 §C.3/§C.4.
+const { getQueueReport, getCategoryDeliveryReport } = require('./alphaNotificationScheduler');
+const { getStats: getHelpCenterStats } = require('./helpCenterContentStore');
+const { getStats: getEscalationStats } = require('./userAssistanceEscalationStore');
+const { buildKnowledgeImprovementReport } = require('./knowledgeImprovementAdvisor');
 
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
@@ -298,6 +307,114 @@ function buildAuditSection() {
   });
 }
 
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Executive Operations Center
+// "Notifications" section (Blueprint Deliverable 3 §C.4 — "New section").
+function buildNotificationsSection() {
+  return buildSection({
+    sourceSystem: 'alphaNotificationScheduler',
+    drillDownTarget: '#command-center',
+    dataFreshness: 'LIVE',
+    fn: () => {
+      const queue = getQueueReport();
+      const delivery = getCategoryDeliveryReport({ limit: 500 });
+      return {
+        providers: queue.providers,
+        globalPaused: queue.globalPaused,
+        queuedCounts: queue.counts,
+        categories: delivery.categories,
+        userControlledCategories: delivery.userControlledCategories,
+        deliveryByCategory: delivery.byCategory,
+        recentHistorySampleSize: delivery.recentHistorySampleSize,
+      };
+    },
+  });
+}
+
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — User Assistance Platform
+// visibility (Deliverable 7 + AI-2, Deliverable 5).
+function buildUserAssistanceSection() {
+  return buildSection({
+    sourceSystem: 'helpCenterContentStore + userAssistanceEscalationStore',
+    drillDownTarget: '#command-center',
+    dataFreshness: 'LIVE',
+    fn: () => {
+      const helpCenter = getHelpCenterStats();
+      const escalations = getEscalationStats();
+      return { helpCenter, escalations };
+    },
+  });
+}
+
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Knowledge Improvement AI
+// (AI-4, Deliverable 5) visibility. Recommend-only — see module header of
+// services/knowledgeImprovementAdvisor.js for the hard constraints.
+function buildKnowledgeImprovementSection() {
+  return buildSection({
+    sourceSystem: 'knowledgeImprovementAdvisor',
+    drillDownTarget: '#command-center',
+    dataFreshness: 'LIVE',
+    fn: () => {
+      const report = buildKnowledgeImprovementReport();
+      return {
+        totalRecommendations: report.totalRecommendations,
+        byType: report.byType,
+        topRecommendations: report.recommendations.slice(0, 5).map((r) => ({ id: r.id, type: r.type, title: r.title, confidence: r.confidence })),
+      };
+    },
+  });
+}
+
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B v2 — Operational Observability.
+// Pure reshape of numbers the sections above ALREADY compute — this function
+// performs zero new data collection and calls no new subsystem. It exists so
+// "Runtime metrics / Queue metrics / Recommendation metrics / User Assistance
+// metrics / Notification metrics / Executive summaries" (batch objective 7)
+// have one explicit, discoverable shape instead of being implicit-only inside
+// each section. Reuses existing Runtime Health infrastructure per the
+// mandate — does not introduce a parallel metrics-collection engine.
+function computeObservabilitySummary(sections, executiveSummary) {
+  const health = sections.systemHealth.data;
+  const recs = sections.recommendations.data;
+  const know = sections.knowledgeImprovement.data;
+  const assist = sections.userAssistance.data;
+  const notif = sections.notifications.data;
+
+  return {
+    generatedAt: new Date().toISOString(),
+    runtimeMetrics: health ? {
+      liveStatus: health.liveStatus,
+      uptimeMs: health.uptimeMs,
+      totalRequests: health.totalRequests,
+      failedRequests: health.failedRequests,
+      averageLatencyMs: health.averageLatencyMs,
+      memoryPressureLevel: health.memoryPressureLevel,
+    } : null,
+    queueMetrics: recs ? {
+      totalOpenItems: recs.totalOpenItems,
+      bySeverity: recs.bySeverity,
+      byStatus: recs.byStatus,
+      byCategory: recs.byCategory,
+    } : null,
+    recommendationMetrics: know ? {
+      totalRecommendations: know.totalRecommendations,
+      byType: know.byType,
+    } : null,
+    userAssistanceMetrics: assist ? {
+      helpCenterArticles: assist.helpCenter ? assist.helpCenter.total : null,
+      helpCenterFaqCount: assist.helpCenter ? assist.helpCenter.faqCount : null,
+      escalationsPending: assist.escalations ? assist.escalations.pending : null,
+      escalationsResolved: assist.escalations ? assist.escalations.resolved : null,
+      escalationsDismissed: assist.escalations ? assist.escalations.dismissed : null,
+    } : null,
+    notificationMetrics: notif ? {
+      globalPaused: notif.globalPaused,
+      queuedCounts: notif.queuedCounts,
+      recentHistorySampleSize: notif.recentHistorySampleSize,
+    } : null,
+    executiveSummary,
+  };
+}
+
 function buildBuildSection() {
   return buildSection({
     sourceSystem: 'founderAdminConsoleStatus.getBuildIdentity',
@@ -359,8 +476,12 @@ function buildAdminCommandCenterSummary() {
     security: buildSecuritySection(),
     alerts: buildAlertsSection(),
     audit: buildAuditSection(),
+    notifications: buildNotificationsSection(),
+    userAssistance: buildUserAssistanceSection(),
+    knowledgeImprovement: buildKnowledgeImprovementSection(),
   };
   const executiveSummary = computeExecutiveSummary(sections);
+  const observability = computeObservabilitySummary(sections, executiveSummary);
   const overallStatus = Object.values(sections).some((s) => s.status === 'UNAVAILABLE')
     ? (Object.values(sections).every((s) => s.status === 'UNAVAILABLE') ? 'UNAVAILABLE' : 'DEGRADED')
     : 'OK';
@@ -371,7 +492,25 @@ function buildAdminCommandCenterSummary() {
     overallStatus,
     ...sections,
     executiveSummary,
+    observability,
   };
 }
 
-module.exports = { buildAdminCommandCenterSummary };
+/**
+ * Lean, purpose-built Operational Observability read — same underlying data
+ * as buildAdminCommandCenterSummary().observability, exposed standalone so
+ * external monitoring/API consumers don't need to fetch the full Command
+ * Center payload just to read metrics. Zero duplicated computation: this
+ * calls the exact same aggregator used by the Command Center.
+ */
+function buildOperationalMetricsSummary() {
+  const summary = buildAdminCommandCenterSummary();
+  return {
+    ok: true,
+    generatedAt: summary.generatedAt,
+    overallStatus: summary.overallStatus,
+    ...summary.observability,
+  };
+}
+
+module.exports = { buildAdminCommandCenterSummary, buildOperationalMetricsSummary };

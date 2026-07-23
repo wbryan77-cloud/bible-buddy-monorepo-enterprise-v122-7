@@ -266,6 +266,48 @@ const INTENTS = [
       });
     },
   },
+  // ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — AI Chief of Staff (AI-3)
+  // new responsibilities: documentation recommendations + administrative
+  // insight into the new User Assistance / Notification surfaces. Both
+  // intents follow the exact same grounded pattern as every intent above:
+  // call an existing data builder, never invent a fact.
+  {
+    id: 'documentation_recommendations',
+    test: /documentation (gap|recommendation)|missing (docs|documentation)|help center gap/i,
+    handle: () => {
+      const { buildKnowledgeImprovementReport } = require('./knowledgeImprovementAdvisor');
+      const report = buildKnowledgeImprovementReport();
+      const docGaps = report.recommendations.filter((r) => r.type === 'DOCUMENTATION_GAP' || r.type === 'RECURRING_SUPPORT_QUESTION');
+      return envelope({
+        summary: docGaps.length ? `${docGaps.length} documentation gap/improvement recommendation(s) identified from recurring, unanswered support questions.` : 'No documentation gaps identified from current escalation data.',
+        evidence: docGaps.slice(0, 5).map((r) => r.title),
+        confidence: docGaps.length ? 'MEDIUM' : 'LOW',
+        recommendedAction: docGaps.length ? 'Review Decision Queue filtered by category = Knowledge Improvement.' : null,
+        requiredApproval: true,
+        sourceSystems: ['knowledgeImprovementAdvisor'],
+        drillDownLinks: ['#command-center'],
+      });
+    },
+  },
+  {
+    id: 'user_assistance_status',
+    test: /user assistance|help center status|support escalations|ai support/i,
+    handle: () => {
+      const { getStats: getEscalationStats } = require('./userAssistanceEscalationStore');
+      const { getStats: getHelpCenterStats } = require('./helpCenterContentStore');
+      const escalations = getEscalationStats();
+      const helpCenter = getHelpCenterStats();
+      return envelope({
+        summary: `${helpCenter.total} Help Center article(s) published (${helpCenter.faqCount} tagged FAQ). ${escalations.pending} question(s) awaiting a reply from the User Assistance escalation queue.`,
+        evidence: [`Resolved: ${escalations.resolved}`, `Dismissed: ${escalations.dismissed}`],
+        confidence: 'HIGH',
+        recommendedAction: escalations.pending > 0 ? 'Review pending User Assistance escalations in the Decision Queue.' : null,
+        requiredApproval: false,
+        sourceSystems: ['helpCenterContentStore', 'userAssistanceEscalationStore'],
+        drillDownLinks: ['#command-center'],
+      });
+    },
+  },
   {
     id: 'critical_only',
     test: /only critical|critical issues only|show.*critical/i,

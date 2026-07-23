@@ -22,6 +22,11 @@ const { getRuntimeHealthSnapshot, getRuntimeHealthHistory } = require('./runtime
 const { listAlerts } = require('./adminAlertCenter');
 const { listDecisionQueue } = require('./adminDecisionQueue');
 const { computeEffectivenessMetrics, readDecisionsLog } = require('./founderIntelligenceRecommendationStore');
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Observability (item 7):
+// operational metrics for the two new Phase 1B platforms, reusing their
+// existing stats functions (no new analytics computed here).
+const { getQueueReport: getNotificationQueueReport } = require('./alphaNotificationScheduler');
+const { getStats: getEscalationStats } = require('./userAssistanceEscalationStore');
 
 function findHistoryEntryNear(history, targetMs) {
   if (!history.length) return null;
@@ -84,11 +89,27 @@ function buildDailyBriefing() {
     intelligence = { error: e.message };
   }
 
+  let notificationSummary = null;
+  try {
+    notificationSummary = getNotificationQueueReport();
+  } catch (e) {
+    notificationSummary = { error: e.message };
+  }
+  let userAssistanceSummary = null;
+  try {
+    userAssistanceSummary = getEscalationStats();
+  } catch (e) {
+    userAssistanceSummary = { error: e.message };
+  }
+
   const recommendedActionsToday = [];
   if ((alerts.counts.Critical || 0) > 0) recommendedActionsToday.push(`Resolve ${alerts.counts.Critical} Critical alert(s) first.`);
   if ((queue.counts.bySeverity?.High || 0) > 0) recommendedActionsToday.push(`Review ${queue.counts.bySeverity.High} High-severity Decision Queue item(s).`);
   if (intelligence && !intelligence.error && (intelligence.knowledgeOpportunities || []).length > 0) {
     recommendedActionsToday.push(`${intelligence.knowledgeOpportunities.length} knowledge opportunity/opportunities identified — review under Founder Intelligence.`);
+  }
+  if (userAssistanceSummary && !userAssistanceSummary.error && userAssistanceSummary.pending > 0) {
+    recommendedActionsToday.push(`${userAssistanceSummary.pending} User Assistance question(s) awaiting a reply.`);
   }
   if (recommendedActionsToday.length === 0) recommendedActionsToday.push('No urgent items. Routine review recommended.');
 
@@ -122,6 +143,8 @@ function buildDailyBriefing() {
     highPriorityRecommendations: queue.items.filter((i) => i.severity === 'High' || i.severity === 'Critical').slice(0, 10),
     securityIssues: alerts.alerts.filter((a) => a.category === 'Security Concern'),
     recommendedActionsToday,
+    notificationSummary,
+    userAssistanceSummary,
   };
 }
 

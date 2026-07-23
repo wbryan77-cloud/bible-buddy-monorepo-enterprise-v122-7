@@ -76,6 +76,49 @@
       border: 1px solid rgba(232,199,107,0.24);
     }
 
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(61,183,255,0.12);
+      color: var(--blue-soft);
+      font-size: 13px;
+      border: 1px solid rgba(61,183,255,0.24);
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — User Engagement
+       Platform (Deliverable 7): Help Center + FAQ + AI Support entry
+       point. Extends the existing static-page pattern (same .card/.pill
+       language) — no new frontend framework, no second app shell. */
+    .help-overlay {
+      position: fixed; inset: 0; background: rgba(3,7,15,0.72);
+      display: none; align-items: center; justify-content: center;
+      padding: 20px; z-index: 100;
+    }
+    .help-overlay.show { display: flex; }
+    .help-modal {
+      width: min(560px, 100%); max-height: 80vh; overflow-y: auto;
+      background: var(--panel-strong); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px; padding: 22px; box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+    }
+    .help-modal h2 { display: flex; justify-content: space-between; align-items: center; }
+    .help-close { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }
+    .help-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+    .help-tab { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.16); background: transparent; color: var(--muted); cursor: pointer; font-size: 13px; }
+    .help-tab.active { background: rgba(61,183,255,0.18); color: var(--blue-soft); border-color: rgba(61,183,255,0.3); }
+    .help-view { display: none; }
+    .help-view.active { display: block; }
+    .help-article { background: rgba(255,255,255,0.05); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
+    .help-article strong { display: block; margin-bottom: 4px; }
+    .help-article p { margin: 0; font-size: 13px; }
+    .help-ask-input { width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.16); background: rgba(0,0,0,0.2); color: var(--text); font-size: 14px; box-sizing: border-box; margin-bottom: 10px; }
+    .help-answer { background: rgba(140,242,194,0.08); border: 1px solid rgba(140,242,194,0.2); border-radius: 14px; padding: 12px 14px; font-size: 13px; }
+    .help-answer.escalated { background: rgba(255,122,122,0.08); border-color: rgba(255,122,122,0.2); }
+
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
@@ -637,8 +680,37 @@
           <span style="color: var(--muted); font-size: 13px;">Adaptive spiritual companion</span>
         </div>
       </div>
-      <a class="pill" href="/admin/">Admin Console</a>
+      <span style="display:flex; gap:10px;">
+        <button type="button" class="pill-btn" id="helpOpenBtn">Help &amp; Support</button>
+        <a class="pill" href="/admin/">Admin Console</a>
+      </span>
     </header>
+
+    <!-- ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — User Engagement
+         Platform (Deliverable 7 §2/§4). Help Center (read-only, admin-
+         authored) + AI Support (AI-2, services/userAssistanceAssistant.js).
+         Escalates to the existing Admin Decision Queue on low confidence
+         — no support-ticket system, no live human chat, per Deliverable 7
+         "What This Platform Deliberately Does NOT Include". -->
+    <div class="help-overlay" id="helpOverlay">
+      <div class="help-modal">
+        <h2>Help &amp; Support <button type="button" class="help-close" id="helpCloseBtn" aria-label="Close">×</button></h2>
+        <div class="help-tabs">
+          <button type="button" class="help-tab active" id="helpTabFaq">FAQs</button>
+          <button type="button" class="help-tab" id="helpTabAsk">Ask a question</button>
+        </div>
+        <div class="help-view active" id="helpViewFaq">
+          <p style="font-size:13px;">Answers curated by the BibleBuddy team. For Bible or Scripture questions, just ask Buddy directly in the chat.</p>
+          <div id="helpFaqList">Loading…</div>
+        </div>
+        <div class="help-view" id="helpViewAsk">
+          <p style="font-size:13px;">Ask about app features, your account, or how something works. (For Bible questions, use the chat instead.)</p>
+          <input type="text" class="help-ask-input" id="helpAskInput" placeholder="e.g. How do I turn off notifications?" />
+          <button type="button" class="pill-btn" id="helpAskBtn">Ask</button>
+          <div id="helpAskAnswer" style="margin-top:12px;"></div>
+        </div>
+      </div>
+    </div>
 
     <div class="diff-strip" role="list" aria-label="What makes BibleBuddy different">
       <span class="diff-chip" role="listitem">Scripture-first answers</span>
@@ -1119,6 +1191,82 @@
       markVisit();
     }
     initNoticeBanner();
+
+    // ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — User Engagement
+    // Platform (Deliverable 7). Calls the existing public /api/support/*
+    // surface only (routes/userAssistance.js) — no client-side answer
+    // fabrication, no new frontend framework.
+    function getOrCreateGuestId() {
+      try {
+        let id = window.localStorage.getItem('bb_guest_id');
+        if (!id) {
+          id = 'guest-' + Math.random().toString(36).slice(2, 10);
+          window.localStorage.setItem('bb_guest_id', id);
+        }
+        return id;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function showHelpTab(tab) {
+      document.querySelectorAll('.help-tab').forEach((el) => el.classList.remove('active'));
+      document.querySelectorAll('.help-view').forEach((el) => el.classList.remove('active'));
+      document.getElementById(tab === 'ask' ? 'helpTabAsk' : 'helpTabFaq').classList.add('active');
+      document.getElementById(tab === 'ask' ? 'helpViewAsk' : 'helpViewFaq').classList.add('active');
+    }
+
+    async function loadHelpFaqs() {
+      const el = document.getElementById('helpFaqList');
+      try {
+        const res = await fetch('/api/support/articles?tag=faq&limit=50');
+        const data = await res.json();
+        if (!data.ok || !data.articles.length) {
+          el.innerHTML = '<p>No FAQ articles yet.</p>';
+          return;
+        }
+        el.innerHTML = data.articles.map((a) =>
+          '<div class="help-article"><strong>' + a.title + '</strong><p>' + a.body + '</p></div>'
+        ).join('');
+      } catch (e) {
+        el.innerHTML = '<p>Could not load FAQs right now.</p>';
+      }
+    }
+
+    async function askHelpAssistant() {
+      const input = document.getElementById('helpAskInput');
+      const answerEl = document.getElementById('helpAskAnswer');
+      const q = input.value.trim();
+      if (!q) return;
+      answerEl.innerHTML = '<p>Thinking…</p>';
+      try {
+        const res = await fetch('/api/support/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: q, testerId: getOrCreateGuestId() }),
+        });
+        const data = await res.json();
+        const cls = data.escalated ? 'help-answer escalated' : 'help-answer';
+        answerEl.innerHTML = '<div class="' + cls + '">' + (data.answer || 'No answer available.') + '</div>';
+      } catch (e) {
+        answerEl.innerHTML = '<div class="help-answer escalated">Could not reach the Help Assistant right now — please try again shortly.</div>';
+      }
+    }
+
+    const helpOpenBtn = document.getElementById('helpOpenBtn');
+    const helpOverlay = document.getElementById('helpOverlay');
+    if (helpOpenBtn && helpOverlay) {
+      helpOpenBtn.addEventListener('click', () => {
+        helpOverlay.classList.add('show');
+        loadHelpFaqs();
+      });
+      document.getElementById('helpCloseBtn').addEventListener('click', () => helpOverlay.classList.remove('show'));
+      helpOverlay.addEventListener('click', (e) => { if (e.target === helpOverlay) helpOverlay.classList.remove('show'); });
+      document.getElementById('helpTabFaq').addEventListener('click', () => showHelpTab('faq'));
+      document.getElementById('helpTabAsk').addEventListener('click', () => showHelpTab('ask'));
+      document.getElementById('helpAskBtn').addEventListener('click', askHelpAssistant);
+      document.getElementById('helpAskInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') askHelpAssistant(); });
+    }
 
     // PHASE_6H Part — expose the existing (Admin-gated but open-when-
     // no-token, same as every other /admin/api/bible-authority/* route)

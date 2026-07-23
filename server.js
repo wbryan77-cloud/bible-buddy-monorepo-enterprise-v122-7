@@ -147,6 +147,10 @@ mountRoute('Alpha test routes', '/api/alpha', './routes/alphaTest');
 mountRoute('Alpha admin routes', '/admin/api/alpha', './routes/alphaAdmin');
 mountRoute('Platform unification routes', '/api/platform-unification', './routes/platformUnification');
 mountRoute('Bible Authority admin routes', '/admin/api/bible-authority', './routes/bibleAuthorityAdmin');
+// ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — User Assistance Platform
+// (Help Center + AI-2 + escalation review). Public read/ask surface plus
+// Admin authoring/resolution endpoints gated by the shared checkAdminAuth.
+mountRoute('User assistance routes', '/api/support', './routes/userAssistance');
 
 // Simple fallback analyze endpoint if routes/analyze is unavailable.
 app.post('/api/analyze/note', async (req, res) => {
