@@ -921,6 +921,37 @@ function finalizeBuddyResponse({
     console.warn('liveResponseOwner finalize skipped:', liveOwnerErr.message);
   }
 
+  // CORE_COMPANION_RECOVERY — single write point so every successful owner
+  // (strict, bible_wide, companion, OpenAI) leaves continuation memory for
+  // the next short follow-up. Skips connection-error / ask-again masks.
+  try {
+    const route = String(structured.runtime?.masterRoute || '');
+    const replyText = String(structured.reply || '');
+    const isErrorMask =
+      /core_connection_error|connection_error/i.test(route) ||
+      /ask your question again|trouble retrieving/i.test(replyText);
+    if (!isErrorMask && replyText.trim()) {
+      const { saveContinuationMemory } = require('./conversationContinuationMemory');
+      let need = null;
+      try {
+        const doctrineState = getDoctrineConversationState(userId);
+        const anchor = buildConversationAnchor({ userId, message, state: doctrineState });
+        need = detectHumanNeed(message, anchor, doctrineState);
+      } catch (_) {
+        /* non-fatal */
+      }
+      if (/app_identity/i.test(route)) need = 'app_identity';
+      saveContinuationMemory(userId, {
+        message,
+        answer: structured,
+        humanNeed: need,
+        route,
+      });
+    }
+  } catch (contMemErr) {
+    console.warn('continuation memory save skipped:', contMemErr.message);
+  }
+
   if (
     !hardCutover &&
     !activeConversationLock &&

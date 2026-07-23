@@ -1,0 +1,59 @@
+{
+  "incident": "CRITICAL_COMPANION_SCRIPTURE_CONVERSATION_AND_RUNTIME_ARCHITECTURE_FAILURE",
+  "readiness": "NOT_READY_FOR_FOUNDER_ALPHA",
+  "baselineCommit": "1a59160",
+  "branch": "recovery/core-companion-master-v1",
+  "preRecoveryTag": "recovery-pre-core-companion-v1.0.0",
+  "authoritativePath": [
+    "POST /buddy/chat",
+    "routes/buddy.js#handleBuddyChat",
+    "services/responseGuarantee.js#withBuddyChatGuarantee",
+    "services/buddyBrain.js#runBuddy",
+    "services/openAiFirstCompanionRuntime.js#runOpenAiFirstCompanionRuntime",
+    "services/bibleCompanionOrchestrator.js#runBibleCompanionOrchestrator",
+    "services/buddyBrain.js#finalizeBuddyResponse",
+    "services/liveResponseOwner.js#finalizeLiveResponse",
+    "JSON { ok, reply }"
+  ],
+  "repairs": [
+    {
+      "id": "continuation_memory_phase5k",
+      "files": [
+        "services/bibleCompanionOrchestrator.js",
+        "services/buddyBrain.js",
+        "services/conversationContinuationMemory.js"
+      ]
+    },
+    {
+      "id": "correction_owner",
+      "files": [
+        "services/responseRevisionOwner.js",
+        "services/humanNeedDetector.js"
+      ]
+    },
+    {
+      "id": "alpha_freeze",
+      "files": [
+        "services/coreCompanionIncident.js",
+        "services/releaseIntelligenceEngine.js"
+      ]
+    }
+  ],
+  "localGates": {
+    "phase5OContinuation": "PASS",
+    "founderMultiTurnCorpus": "PASS",
+    "scriptureFidelitySmoke": "PASS",
+    "decisionOwnershipSmoke": "PASS",
+    "releaseIntelligenceUnderIncident": "BLOCK"
+  },
+  "competingOwnersStillPresent": [
+    "responseRevisionOwner",
+    "conversationContinuationMemory",
+    "phase5OContinuationDuplicate",
+    "phase5KDepth",
+    "strictDoctrineGate",
+    "bibleWideReasoningEngine",
+    "openaiFallthrough"
+  ],
+  "note": "Ordered early-exits share one continuation-memory contract after repair. Shadow legacy paths remain for Stage 25 consolidation."
+}

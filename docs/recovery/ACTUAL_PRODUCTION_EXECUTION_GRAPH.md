@@ -1,0 +1,23 @@
+# Actual Production Execution Graph
+
+```mermaid
+flowchart TD
+  A[POST /buddy/chat] --> B[responseGuarantee]
+  B --> C[runBuddy hard cutover]
+  C --> D[openAiFirstCompanionRuntime]
+  D --> E[bibleCompanionOrchestrator]
+  E -->|revision/correction| F[companion structured]
+  E -->|continuation| F
+  E -->|phase5K| F
+  E -->|strict| G[strict structured]
+  E -->|bible_wide| H[bible_wide structured]
+  E -->|handled false| I[OpenAI compose or connection error]
+  F --> J[finalizeBuddyResponse + continuation memory write]
+  G --> J
+  H --> J
+  I --> J
+  J --> K[liveResponseOwner]
+  K --> L[JSON reply]
+```
+
+See `ACTUAL_PRODUCTION_EXECUTION_GRAPH.json` for machine-readable form.

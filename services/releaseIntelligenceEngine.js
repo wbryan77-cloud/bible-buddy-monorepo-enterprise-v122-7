@@ -140,6 +140,37 @@ function evaluateReleaseReadiness() {
   const reasons = [];
   let score = 100;
 
+  // CORE_COMPANION_RECOVERY Stage 0 — Founder Alpha freeze. Admin/ops health
+  // must never green-light Alpha while the companion incident is OPEN.
+  try {
+    const { isCoreCompanionIncidentOpen, getCoreCompanionIncident } = require('./coreCompanionIncident');
+    if (isCoreCompanionIncidentOpen()) {
+      const incident = getCoreCompanionIncident();
+      reasons.push({
+        points: -100,
+        reason: `OPEN incident ${incident.id}: ${incident.readiness}. Companion quality gates blocked.`,
+      });
+      return {
+        recommendation: 'BLOCK',
+        score: 0,
+        confidence: 'HIGH',
+        reasons,
+        generatedAt: new Date().toISOString(),
+        inputsUsed: {
+          coreCompanionIncident: incident,
+          founderReadinessReport: null,
+          runtimeHealthChecked: false,
+          decisionQueueBacklogChecked: false,
+        },
+        requiredApproval: true,
+        founderAlphaStatus: incident.readiness,
+        note: 'Founder Alpha is PAUSED. Admin health is not Companion readiness. This recommendation never deploys.',
+      };
+    }
+  } catch (_) {
+    /* if incident module missing, continue with normal scoring */
+  }
+
   const report = findLatestFounderReadinessReport();
   score += scoreFounderReadiness(report, reasons);
   score += scoreRuntimeHealth(reasons);

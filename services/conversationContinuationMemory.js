@@ -23,14 +23,37 @@ function getContinuationMemory(userId) {
 function saveContinuationMemory(userId, { message = '', answer = {}, humanNeed = null, route = null } = {}) {
   if (!userId || !answer?.reply) return null;
   const state = getDoctrineConversationState(userId);
+  const prior = state.conversationMemory || state.sessionMemory?.conversationMemory || null;
+  const resolvedRoute = route || answer.runtime?.masterRoute || null;
+  // CORE_COMPANION_RECOVERY — never let a short follow-up ("Tell me more.")
+  // overwrite the substantive need/topic with the weak label "continuation".
+  // Without this, a second follow-up loses app_identity/prayer/doctrine context.
+  let resolvedNeed =
+    humanNeed ||
+    answer.runtime?.liveTruthTrace?.orchestratorHumanNeed ||
+    answer.runtime?.contractDecision?.humanNeed ||
+    null;
+  if (/app_identity/i.test(String(resolvedRoute || ''))) resolvedNeed = 'app_identity';
+  else if (/prayer/i.test(String(resolvedRoute || '')) && (!resolvedNeed || resolvedNeed === 'continuation')) {
+    resolvedNeed = 'prayer';
+  } else if (
+    (!resolvedNeed || resolvedNeed === 'continuation') &&
+    prior?.lastHumanNeed &&
+    isContinuationTurn(message)
+  ) {
+    resolvedNeed = prior.lastHumanNeed;
+  }
+
   const memory = {
     lastUserMessage: message,
     lastReply: String(answer.reply || '').slice(0, 1200),
     lastReplySummary: String(answer.reply || '').slice(0, 260),
     lastScripture: answer.scripture || [],
-    lastHumanNeed: humanNeed || answer.runtime?.liveTruthTrace?.orchestratorHumanNeed || answer.runtime?.contractDecision?.humanNeed || null,
-    lastRoute: route || answer.runtime?.masterRoute || null,
-    lastDoctrineTopic: answer.runtime?.doctrineTopic || null,
+    lastHumanNeed: resolvedNeed,
+    lastRoute: resolvedRoute,
+    lastDoctrineTopic:
+      answer.runtime?.doctrineTopic ||
+      (isContinuationTurn(message) ? prior?.lastDoctrineTopic || null : null),
     updatedAt: new Date().toISOString(),
   };
 

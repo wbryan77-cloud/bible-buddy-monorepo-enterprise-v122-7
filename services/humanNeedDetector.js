@@ -53,6 +53,14 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
   if (/\b(why are you still saying yes|don'?t ever do|you didn'?t learn|don'?t say yes before)\b/i.test(m)) {
     return 'correction_repair';
   }
+  // CORE_COMPANION_RECOVERY — Founder correction patterns observed in live Alpha testing.
+  if (
+    /\b(does not say|doesn't say|did not say|didn't say|not say that|contradicting yourself|you are contradicting|you did not answer|you didn't answer|that verse does not|glitching|answer yes or no)\b/i.test(
+      m,
+    )
+  ) {
+    return 'correction_repair';
+  }
   if (/\b(what do i do about it|and then what do i do|decision|not about the bible|life decision)\b/i.test(m)) return 'next_steps';
   if (/\b(what we were talking about|about what we talked)\b/i.test(m) && (state.lastAnsweredConcept || state.sessionMemory?.activeConcept)) {
     return 'practical_words_to_say';

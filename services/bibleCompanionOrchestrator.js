@@ -1004,6 +1004,20 @@ async function runBibleCompanionOrchestrator({
       context: { ...conversationAnchor, message },
       answer: { reply: depthStructured.reply, scripture: depthStructured.scripture },
     });
+    // CORE_COMPANION_RECOVERY — Phase 5K (app identity, prayer, presence, wisdom)
+    // previously never wrote conversationMemory. Short follow-ups then fell
+    // through to OpenAI → core_connection_error / "ask again". Persist here so
+    // conversationContinuationMemory can own "Tell me more." / "Go deeper."
+    const depthNeed =
+      humanNeed === 'app_identity' || isAppIdentityQuestion(message)
+        ? 'app_identity'
+        : humanNeed || depthStructured.runtime?.orchestratorLane || null;
+    saveContinuationMemory(userId, {
+      message,
+      answer: depthStructured,
+      humanNeed: depthNeed,
+      route: depthStructured.runtime?.masterRoute || null,
+    });
     updateDoctrineConversationState(userId, {
       sessionMemory: {
         ...(mergedState.sessionMemory || {}),
