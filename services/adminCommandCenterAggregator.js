@@ -549,4 +549,10 @@ function buildOperationalMetricsSummary() {
   };
 }
 
-module.exports = { buildAdminCommandCenterSummary, buildOperationalMetricsSummary, invalidateAdminCommandCenterCache };
+// PHASE_3_AUTONOMOUS_OPERATIONS — exported so the new, separate
+// services/enterpriseIntelligenceAggregator.js can reuse the exact same
+// section envelope contract (status/lastUpdated/sourceSystem/dataFreshness/
+// errors/drillDownTarget/data) instead of re-implementing it. This aggregator
+// itself is untouched otherwise — zero risk to its existing 31/31 smoke
+// coverage.
+module.exports = { buildAdminCommandCenterSummary, buildOperationalMetricsSummary, invalidateAdminCommandCenterCache, buildSection };

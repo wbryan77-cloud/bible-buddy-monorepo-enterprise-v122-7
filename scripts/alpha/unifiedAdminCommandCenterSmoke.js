@@ -233,6 +233,51 @@ async function main() {
   }
 
   // ---------------------------------------------------------------
+  // ENTERPRISE INTELLIGENCE (Phase 3 — Autonomous Operations)
+  //
+  // Added during Phase 3 integration validation: the routes existed and
+  // were exercised live during that batch, but no regression test proved
+  // the 401 boundary specifically for these 6 routes (a confirmed gap
+  // found during validation — see docs/alpha/phase3-integration-validation-*
+  // for the full report). This closes that gap using the exact same
+  // request/record pattern as every other section above.
+  // ---------------------------------------------------------------
+  const ENTERPRISE_INTELLIGENCE_ROUTES = [
+    '/enterprise-intelligence',
+    '/enterprise-intelligence/release-readiness',
+    '/enterprise-intelligence/health-score',
+    '/enterprise-intelligence/anomalies',
+    '/enterprise-intelligence/developer-intelligence',
+    '/enterprise-intelligence/recommendation-learning',
+  ];
+  for (const routePath of ENTERPRISE_INTELLIGENCE_ROUTES) {
+    const anon = await get(`${API}${routePath}`);
+    record(`enterprise_intelligence_anonymous_rejected${routePath}`, anon.ok && anon.status === 401, `status=${anon.status}`);
+
+    const invalid = await get(`${API}${routePath}`, { token: 'definitely-not-the-real-token' });
+    record(`enterprise_intelligence_invalid_token_rejected${routePath}`, invalid.ok && invalid.status === 401, `status=${invalid.status}`);
+  }
+  {
+    // The consolidated summary is the slow path (real `npm outdated` +
+    // repo-wide file scan) — give it a longer timeout than the default.
+    const r = await get(`${API}/enterprise-intelligence?skipCache=1`, { token: TOKEN, timeoutMs: 30000 });
+    const ok = r.ok && r.status === 200 && r.json && r.json.sections;
+    record('enterprise_intelligence_authorized_returns_all_sections', !!ok, `sections=${ok ? Object.keys(r.json.sections).join(',') : 'none'}`);
+    const allSectionsHealthy = ok && Object.values(r.json.sections).every((s) => ['OK', 'UNAVAILABLE'].includes(s.status));
+    record('enterprise_intelligence_section_envelope_contract', !!allSectionsHealthy, 'every section carries a valid status from the shared buildSection envelope');
+  }
+  {
+    const r = await get(`${API}/enterprise-intelligence/release-readiness`, { token: TOKEN });
+    const ok = r.ok && r.status === 200 && r.json && ['GO', 'CAUTION', 'BLOCK'].includes(r.json.recommendation) && r.json.requiredApproval === true;
+    record('release_readiness_returns_valid_recommendation', !!ok, `recommendation=${r.json && r.json.recommendation}, requiredApproval=${r.json && r.json.requiredApproval}`);
+  }
+  {
+    const r = await get(`${API}/enterprise-intelligence/health-score`, { token: TOKEN });
+    const ok = r.ok && r.status === 200 && r.json && typeof r.json.score === 'number' && r.json.score >= 0 && r.json.score <= 100;
+    record('health_score_in_valid_range', !!ok, `score=${r.json && r.json.score}, grade=${r.json && r.json.grade}`);
+  }
+
+  // ---------------------------------------------------------------
   // SCALABILITY
   // ---------------------------------------------------------------
   {

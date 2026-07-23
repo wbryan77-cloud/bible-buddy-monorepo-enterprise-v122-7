@@ -812,4 +812,115 @@ router.get('/unified/metrics', (req, res) => {
   }
 });
 
+// PHASE_2_ENTERPRISE_OPTIMIZATION — Operational Intelligence (objective 4).
+// Historical trend over /unified/metrics's point-in-time snapshot. Reuses
+// services/operationalMetricsHistory.js, which itself reuses
+// buildOperationalMetricsSummary() — no second metrics-collection path.
+router.get('/unified/metrics/history', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { readHistory, summarizeTrend } = require('../services/operationalMetricsHistory');
+    const limit = Math.min(Number(req.query.limit) || 200, 5000);
+    const sinceMs = req.query.sinceHours ? Number(req.query.sinceHours) * 60 * 60 * 1000 : null;
+    const points = readHistory({ limit, sinceMs });
+    const trendFields = ['totalRequests', 'failedRequests', 'averageLatencyMs', 'totalOpenItems', 'totalRecommendations', 'escalationsPending', 'notificationsQueued'];
+    const trends = {};
+    for (const field of trendFields) {
+      trends[field] = summarizeTrend(field, { sinceMs: sinceMs || 24 * 60 * 60 * 1000 });
+    }
+    res.json({ ok: true, generatedAt: new Date().toISOString(), sampleCount: points.length, points, trends });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+// ENTERPRISE_AUTONOMOUS_OPERATIONS Phase 3 — Continuous Enterprise
+// Improvement. Every route below is GET-only and read-only: no route in
+// this section writes to any store, approves anything, or triggers a
+// deploy. Each is gated by the same checkAdminAuth + checkUnifiedEnabled
+// guard as every other /unified/* route.
+
+// Consolidated summary (objective 1: Enterprise Operations AI). Reuses
+// the same section-envelope contract as /unified/overview.
+router.get('/unified/enterprise-intelligence', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { buildEnterpriseIntelligenceSummary } = require('../services/enterpriseIntelligenceAggregator');
+    const skipCache = req.query.skipCache === '1' || req.query.skipCache === 'true';
+    res.json(buildEnterpriseIntelligenceSummary({ skipCache }));
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+// Release Intelligence (objective 5): GO / CAUTION / BLOCK recommendation.
+// Never deploys anything — read-only decision support.
+router.get('/unified/enterprise-intelligence/release-readiness', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { evaluateReleaseReadiness } = require('../services/releaseIntelligenceEngine');
+    res.json({ ok: true, ...evaluateReleaseReadiness() });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+// Operational Health Score (objective 1).
+router.get('/unified/enterprise-intelligence/health-score', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { computeOperationalHealthScore } = require('../services/operationalHealthScorer');
+    res.json({ ok: true, ...computeOperationalHealthScore() });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+// Production Anomaly Detector (objective 8). Advisory alerts only.
+router.get('/unified/enterprise-intelligence/anomalies', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { detectAnomalies } = require('../services/productionAnomalyDetector');
+    const sinceHours = req.query.sinceHours ? Number(req.query.sinceHours) : null;
+    res.json({ ok: true, ...detectAnomalies(sinceHours ? { lookbackMs: sinceHours * 60 * 60 * 1000 } : {}) });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+// Developer Intelligence (objective 7): outdated deps, possibly-unused
+// services, cited architectural-drift findings. Real `npm outdated` call
+// plus a repo-wide static scan — can take several seconds; cached 5min
+// upstream by buildEnterpriseIntelligenceSummary, uncached here for a
+// direct on-demand check.
+router.get('/unified/enterprise-intelligence/developer-intelligence', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { buildDeveloperIntelligenceReport } = require('../services/developerIntelligenceScanner');
+    res.json({ ok: true, ...buildDeveloperIntelligenceReport() });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
+// Operational Learning (objective 4): cross-source recommendation
+// approval/rejection history. Annotation only — never reorders or mutates
+// any stored recommendation.
+router.get('/unified/enterprise-intelligence/recommendation-learning', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  if (!checkUnifiedEnabled(req, res)) return;
+  try {
+    const { buildRecommendationLearningSummary } = require('../services/recommendationLearningEngine');
+    res.json({ ok: true, ...buildRecommendationLearningSummary() });
+  } catch (error) {
+    res.status(500).json({ ok: false, error: error.message });
+  }
+});
+
 module.exports = router;

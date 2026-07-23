@@ -324,6 +324,81 @@ const INTENTS = [
       });
     },
   },
+  // ENTERPRISE_AUTONOMOUS_OPERATIONS Phase 3 — AI Chief of Staff expansion.
+  // Four new responsibilities from the Phase 3 objectives: release
+  // readiness, operational health scoring, technical debt / architectural
+  // drift, and anomaly detection. Same grounded pattern as every intent
+  // above — each calls a net-new, but already-tested, deterministic
+  // service and never invents a fact.
+  {
+    id: 'release_readiness',
+    test: /release readiness|ready to (release|deploy|ship)|safe to (release|deploy|ship)|should (we|i) (release|deploy|ship)|go[\s/-]?no[\s/-]?go|deployment confidence/i,
+    handle: () => {
+      const { evaluateReleaseReadiness } = require('./releaseIntelligenceEngine');
+      const r = evaluateReleaseReadiness();
+      return envelope({
+        summary: `Release recommendation: ${r.recommendation} (score ${r.score}/100, confidence ${r.confidence}).`,
+        evidence: r.reasons.map((x) => x.reason),
+        impact: 'Informs whether now is a good time to release — never blocks or triggers a deploy itself.',
+        confidence: r.confidence,
+        recommendedAction: r.recommendation === 'GO' ? 'No blocking issues detected — a human may proceed with release at their discretion.' : 'Review the reasons above before deciding whether to release.',
+        requiredApproval: true,
+        sourceSystems: ['releaseIntelligenceEngine', 'runtimeHealthMonitor', 'adminDecisionQueue'],
+        drillDownLinks: ['#enterprise-intelligence'],
+      });
+    },
+  },
+  {
+    id: 'operational_health_score',
+    test: /operational health( score)?|overall health score|how healthy is/i,
+    handle: () => {
+      const { computeOperationalHealthScore } = require('./operationalHealthScorer');
+      const h = computeOperationalHealthScore();
+      return envelope({
+        summary: `Operational health score: ${h.score}/100 (grade ${h.grade}).`,
+        evidence: h.topConcerns.length ? h.topConcerns : ['No significant concerns across the 5 tracked factors.'],
+        confidence: 'MEDIUM',
+        recommendedAction: h.topConcerns[0] || null,
+        requiredApproval: false,
+        sourceSystems: ['operationalHealthScorer'],
+        drillDownLinks: ['#enterprise-intelligence'],
+      });
+    },
+  },
+  {
+    id: 'developer_intelligence',
+    test: /technical debt|architectural drift|outdated dependenc|unused service|developer intelligence|duplicate(d)? code/i,
+    handle: () => {
+      const { buildDeveloperIntelligenceReport } = require('./developerIntelligenceScanner');
+      const r = buildDeveloperIntelligenceReport();
+      return envelope({
+        summary: `${r.outdatedDependencies.count} outdated dependency(ies) (${r.outdatedDependencies.majorBehindCount} major version(s) behind), ${r.possiblyUnusedServices.findings.length} possibly-unused service file(s), ${r.architecturalDrift.knownFindings.length} known architectural-drift finding(s) on record.`,
+        evidence: r.architecturalDrift.knownFindings.map((f) => `${f.path}: ${f.summary}`),
+        confidence: r.outdatedDependencies.available ? 'MEDIUM' : 'LOW',
+        recommendedAction: 'Review Enterprise Intelligence > Developer Intelligence before scheduling any dependency upgrade or file removal.',
+        requiredApproval: true,
+        sourceSystems: ['developerIntelligenceScanner'],
+        drillDownLinks: ['#enterprise-intelligence'],
+      });
+    },
+  },
+  {
+    id: 'anomalies_today',
+    test: /any anomalies|anomaly detect|unusual (runtime )?behavior|degradation alert/i,
+    handle: () => {
+      const { detectAnomalies } = require('./productionAnomalyDetector');
+      const r = detectAnomalies();
+      return envelope({
+        summary: r.alerts.length ? `${r.alerts.length} anomaly(ies) detected against recent operational baselines.` : (r.note || 'No anomalies detected against recent operational baselines.'),
+        evidence: r.alerts.map((a) => a.detail),
+        confidence: r.sampleCount >= 10 ? 'MEDIUM' : 'LOW',
+        recommendedAction: r.alerts.length ? 'Review Enterprise Intelligence > Production Anomalies before taking any action.' : null,
+        requiredApproval: r.alerts.length > 0,
+        sourceSystems: ['productionAnomalyDetector', 'operationalMetricsHistory'],
+        drillDownLinks: ['#enterprise-intelligence'],
+      });
+    },
+  },
 ];
 
 function classifyIntent(question) {
