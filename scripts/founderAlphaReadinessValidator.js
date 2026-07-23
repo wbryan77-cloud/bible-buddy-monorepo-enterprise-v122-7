@@ -104,7 +104,7 @@ function countPassFail(output) {
   return { pass, fail };
 }
 
-function httpGetJson(urlPath, timeoutMs = 5000) {
+function httpGetJson(urlPath, timeoutMs = 5000, extraHeaders = {}) {
   return new Promise((resolve) => {
     let url;
     try {
@@ -113,7 +113,7 @@ function httpGetJson(urlPath, timeoutMs = 5000) {
       resolve({ ok: false, error: e.message });
       return;
     }
-    const req = http.get(url, { agent: false, headers: { Connection: 'close' } }, (res) => {
+    const req = http.get(url, { agent: false, headers: { Connection: 'close', ...extraHeaders } }, (res) => {
       let body = '';
       res.on('data', (chunk) => { body += chunk; });
       res.on('end', () => {
@@ -262,9 +262,29 @@ async function checkAdmin(serverUp) {
     '/admin/api/bible-authority/founder-console',
     '/admin/api/bible-authority/provider-health',
   ];
+  // SECURITY STABILIZATION (Phase 1A) — services/adminAuthMiddleware.js is
+  // now fail-closed unconditionally, so this reachability check must present
+  // a valid admin token to reach 200, exactly as any real Admin caller must.
+  // Before this fix, these calls reached 200 with no header at all only
+  // because every admin route failed OPEN when no token was configured —
+  // that was the vulnerability, not a legitimate test setup.
+  const adminToken =
+    process.env.BIBLE_AUTHORITY_ADMIN_TOKEN ||
+    process.env.ALPHA_ADMIN_TOKEN ||
+    process.env.BETA_REVIEW_TOKEN ||
+    '';
   const checks = [];
+  if (!adminToken) {
+    checks.push(check(
+      'admin_endpoints_reachable_with_token',
+      STATUS.SKIP,
+      'no admin token env var configured in this process — set BIBLE_AUTHORITY_ADMIN_TOKEN to exercise authenticated Admin reachability; anonymous reachability is covered (and required to be 401) by SECURITY_AND_PRIVACY checks below',
+    ));
+    return checks;
+  }
+  const authHeader = { Authorization: `Bearer ${adminToken}` };
   for (const ep of endpoints) {
-    const r = await httpGetJson(ep, 20000);
+    const r = await httpGetJson(ep, 20000, authHeader);
     checks.push(check(`admin_${ep}`, r.ok && r.status === 200 ? STATUS.PASS : STATUS.FAIL, r.ok ? `status=${r.status}` : r.error));
   }
   return checks;
@@ -330,21 +350,28 @@ function checkProviders() {
 async function checkSecurity(serverUp) {
   const checks = [];
   if (serverUp) {
+    // SECURITY STABILIZATION (Phase 1A) — services/adminAuthMiddleware.js is
+    // now fail-closed unconditionally: an unauthenticated request must be
+    // rejected (401) whether or not an admin token env var happens to be
+    // configured in this process. There is no longer a "no token configured
+    // = open" carve-out anywhere in the codebase, so this check no longer
+    // branches on whether a token is configured — it always expects 401.
     const r = await httpGetJson('/admin/api/bible-authority/command-center', 5000);
-    // Without any admin token configured locally, the route intentionally
-    // stays open (documented in .env.sample) — that's expected in a local
-    // dev/founder-test environment, not a violation. If a token IS
-    // configured, an unauthenticated request must be rejected.
-    const anyTokenConfigured = !!(
-      process.env.BIBLE_AUTHORITY_ADMIN_TOKEN ||
-      process.env.ALPHA_ADMIN_TOKEN ||
-      process.env.BETA_REVIEW_TOKEN ||
-      process.env.ADMIN_PASSWORD
-    );
-    if (anyTokenConfigured) {
-      checks.push(check('admin_requires_auth_when_token_configured', r.status === 401 || r.status === 403 ? STATUS.PASS : STATUS.FAIL, `status=${r.status}`));
-    } else {
-      checks.push(check('admin_auth_boundary', STATUS.WARN, 'no admin token env var configured — Admin routes are open in this environment (expected for local Founder testing, must be set before any shared/public deployment)'));
+    checks.push(check('admin_requires_auth_always', r.status === 401 || r.status === 403 ? STATUS.PASS : STATUS.FAIL, `status=${r.status}`));
+
+    // Spot-check the specific routes confirmed open during the Enterprise
+    // Architecture Review / Security Stabilization batch, so a future
+    // regression in any of them is caught here too.
+    const previouslyOpenRoutes = [
+      '/admin/api/alpha/feedback',
+      '/admin/api/alpha/summary',
+      '/admin/assistant/project-brain',
+      '/admin/api/selftest',
+      '/admin/api/providers',
+    ];
+    for (const route of previouslyOpenRoutes) {
+      const rr = await httpGetJson(route, 5000);
+      checks.push(check(`admin_requires_auth_${route}`, rr.status === 401 ? STATUS.PASS : STATUS.FAIL, `status=${rr.status}`));
     }
   } else {
     checks.push(check('admin_auth_boundary', STATUS.SKIP, `no server reachable at ${BASE_URL}`));

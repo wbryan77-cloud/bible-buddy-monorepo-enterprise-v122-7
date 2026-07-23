@@ -32,26 +32,16 @@ const router = express.Router();
 // triggers a recomputation from the request handler.
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
-// PHASE_6D.4 — role protection on Admin endpoints (same env-token pattern
-// already used by routes/alphaAdmin.js). No-op (open) only when no token is
-// configured, matching existing behavior elsewhere in the repo; set
-// BIBLE_AUTHORITY_ADMIN_TOKEN (or the shared ALPHA_ADMIN_TOKEN) in
-// production to require it.
-function checkAdminAuth(req, res) {
-  const token =
-    process.env.BIBLE_AUTHORITY_ADMIN_TOKEN ||
-    process.env.ALPHA_ADMIN_TOKEN ||
-    process.env.BETA_REVIEW_TOKEN ||
-    '';
-  if (!token) return true;
-  const header = req.headers.authorization || '';
-  const provided = header.startsWith('Bearer ') ? header.slice(7) : req.query.token || '';
-  if (provided !== token) {
-    res.status(401).json({ ok: false, error: 'Admin token required' });
-    return false;
-  }
-  return true;
-}
+// SECURITY STABILIZATION (Phase 1A) — role protection on Admin endpoints.
+// Delegates to the shared, fail-closed services/adminAuthMiddleware.js
+// module. Previously this file defined its own local copy of this check,
+// which (like the other two admin-auth implementations that used to exist)
+// granted OPEN access whenever no token env var was configured. This file's
+// own routes were unaffected in production (BIBLE_AUTHORITY_ADMIN_TOKEN was
+// already set), but the duplicated logic itself was the inconsistency that
+// left routes/alphaAdmin.js and routes/beta.js open. See
+// docs/alpha/security-stabilization-*/ for the full validation record.
+const { checkAdminAuth } = require('../services/adminAuthMiddleware');
 
 router.get('/command-center', (req, res) => {
   if (!checkAdminAuth(req, res)) return;

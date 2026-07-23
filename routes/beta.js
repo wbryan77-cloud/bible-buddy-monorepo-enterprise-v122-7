@@ -16,19 +16,20 @@ function parseRating(value) {
   return Math.round(n);
 }
 
-function checkReviewAuth(req, res) {
-  const token = process.env.BETA_REVIEW_TOKEN || '';
-  if (!token) {
-    return true;
-  }
-  const header = req.headers.authorization || '';
-  const provided = header.startsWith('Bearer ') ? header.slice(7) : req.query.token || '';
-  if (provided !== token) {
-    res.status(401).json({ ok: false, error: 'Review access requires valid token.' });
-    return false;
-  }
-  return true;
-}
+// SECURITY STABILIZATION (Phase 1A) — this file previously defined its own
+// checkReviewAuth() that only recognized BETA_REVIEW_TOKEN (never
+// BIBLE_AUTHORITY_ADMIN_TOKEN, which is the only one actually configured in
+// production) and granted OPEN access whenever that one variable was unset.
+// Confirmed live: /api/beta/review, /review/session/:id, and
+// /review/tester/:id were all reachable with zero authentication. Now
+// delegates to the shared, fail-closed module (checks
+// BIBLE_AUTHORITY_ADMIN_TOKEN first), preserving this file's exact prior
+// error-message text. /testers, /testers/:testerId, and /feedback below
+// remain intentionally public — they are end-user-facing (tester lookup for
+// the beta.html UI dropdown, and feedback submission), not admin surfaces,
+// and were never gated by checkReviewAuth even before this change.
+const { checkAdminAuth: checkReviewAuth } = require('../services/adminAuthMiddleware');
+const REVIEW_AUTH_OPTIONS = { errorMessage: 'Review access requires valid token.' };
 
 // GET /api/beta/testers — active testers for beta.html dropdown
 router.get('/testers', (req, res) => {
@@ -108,7 +109,7 @@ router.post('/feedback', (req, res) => {
 
 // GET /api/beta/review — session index with feedback snippets
 router.get('/review', (req, res) => {
-  if (!checkReviewAuth(req, res)) return;
+  if (!checkReviewAuth(req, res, REVIEW_AUTH_OPTIONS)) return;
   try {
     const index = listReviewIndex({
       cohort: req.query.cohort || null,
@@ -123,7 +124,7 @@ router.get('/review', (req, res) => {
 
 // GET /api/beta/review/session/:sessionId — transcript + feedback
 router.get('/review/session/:sessionId', (req, res) => {
-  if (!checkReviewAuth(req, res)) return;
+  if (!checkReviewAuth(req, res, REVIEW_AUTH_OPTIONS)) return;
   try {
     const bundle = getReviewBundle({ sessionId: req.params.sessionId });
     if (!bundle.transcript) {
@@ -137,7 +138,7 @@ router.get('/review/session/:sessionId', (req, res) => {
 
 // GET /api/beta/review/tester/:testerId — sessions for one tester
 router.get('/review/tester/:testerId', (req, res) => {
-  if (!checkReviewAuth(req, res)) return;
+  if (!checkReviewAuth(req, res, REVIEW_AUTH_OPTIONS)) return;
   try {
     const sessions = listSessionSummaries({
       testerId: req.params.testerId,

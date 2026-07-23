@@ -15,17 +15,17 @@ const { getRuntimeHealthSnapshot } = require('../services/runtimeHealthMonitor')
 
 const router = express.Router();
 
-function checkAdminAuth(req, res) {
-  const token = process.env.ALPHA_ADMIN_TOKEN || process.env.BETA_REVIEW_TOKEN || '';
-  if (!token) return true;
-  const header = req.headers.authorization || '';
-  const provided = header.startsWith('Bearer ') ? header.slice(7) : req.query.token || '';
-  if (provided !== token) {
-    res.status(401).json({ ok: false, error: 'Admin token required' });
-    return false;
-  }
-  return true;
-}
+// SECURITY STABILIZATION (Phase 1A) — this file previously defined its own
+// checkAdminAuth() that only recognized ALPHA_ADMIN_TOKEN/BETA_REVIEW_TOKEN
+// (never BIBLE_AUTHORITY_ADMIN_TOKEN, which is the only one actually
+// configured in production) and, like the other admin-auth implementations
+// that used to exist, granted OPEN access whenever neither of those two was
+// set. This was confirmed live: every route below was reachable with zero
+// authentication in production. Now delegates to the shared, fail-closed
+// module, which checks BIBLE_AUTHORITY_ADMIN_TOKEN first — closing this gap
+// with no production configuration change required. See
+// docs/alpha/security-stabilization-*/ for the full validation record.
+const { checkAdminAuth } = require('../services/adminAuthMiddleware');
 
 router.get('/summary', (req, res) => {
   if (!checkAdminAuth(req, res)) return;

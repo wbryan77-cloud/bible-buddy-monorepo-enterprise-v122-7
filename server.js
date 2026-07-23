@@ -91,12 +91,21 @@ app.get('/api/selftest', (req, res) => {
   res.json(buildSelfTestPayload());
 });
 
+// SECURITY STABILIZATION (Phase 1A) — these two /admin/api/* routes had no
+// authentication at all. Confirmed live and reachable anonymously. Neither
+// discloses user data, but both are under the /admin/ prefix and disclose
+// provider-configuration state, so they now require the same shared admin
+// token as every other admin surface for consistency and least privilege.
+const { checkAdminAuth } = require('./services/adminAuthMiddleware');
+
 app.get('/admin/api/selftest', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
   const base = buildSelfTestPayload();
   res.json({ version: APP_VERSION, health: 'ok', queue: base.queue });
 });
 
 app.get('/admin/api/providers', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
   res.json({ detail: computeProviderStatus().detail });
 });
 
