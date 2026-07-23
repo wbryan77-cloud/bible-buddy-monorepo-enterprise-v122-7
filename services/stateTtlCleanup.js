@@ -1,9 +1,22 @@
 /**
  * Phase 4F — TTL cleanup for doctrine/session state maps.
+ *
+ * PHASE_2_ENTERPRISE_OPTIMIZATION — Scalability (objective 1). This job
+ * previously did a raw `readFileSync` -> mutate -> `writeFileSync` on each
+ * state file, on an unsynchronized `setInterval` in every process. With one
+ * instance that is safe (Node's synchronous calls never interleave within a
+ * process); with two or more instances, each runs this cleanup on its own
+ * schedule against the SAME shared state files, which is exactly the
+ * lost-update race services/persistence/storageAdapter.js was built to
+ * close. `cleanupJsonUsers` below now goes through that adapter's
+ * lock-protected `updateJsonDocument` instead of bare `fs` calls — reusing
+ * the Persistence fix rather than inventing a second locking mechanism,
+ * per this batch's "do not introduce duplicate services" constraint.
  */
 
 const fs = require('fs');
 const path = require('path');
+const { getStorageAdapter } = require('./persistence/storageAdapter');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const DEFAULT_TTL_MS = Number(process.env.BIBLEBUDDY_STATE_TTL_MS || 24 * 60 * 60 * 1000);
@@ -59,56 +72,49 @@ function trimActiveConversationEntry(entry = {}) {
 function cleanupJsonUsers(fileName) {
   const filePath = path.join(DATA_DIR, fileName);
   if (!fs.existsSync(filePath)) return { file: fileName, removed: 0 };
+  const isFlatUserMap = fileName === 'active-conversation-state.json';
+  let removed = 0;
+  let errorMessage = null;
   try {
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    const isFlatUserMap = fileName === 'active-conversation-state.json';
-    const users = isFlatUserMap ? data : data.users || {};
-    let removed = 0;
-    for (const [userId, state] of Object.entries(users)) {
-      const ts = state.lastUpdatedAt || state.loggedAt || state.updatedAt;
-      const ageExpired = isFlatUserMap
-        ? Date.now() - (state.updatedAtMs || 0) > ACTIVE_CONVERSATION_TTL_MS
-        : isExpired(ts);
-      if (ageExpired) {
-        delete users[userId];
-        removed += 1;
-      } else if (isFlatUserMap) {
-        users[userId] = trimActiveConversationEntry(state);
-      } else {
-        users[userId] = trimUserDoctrineState(state);
+    getStorageAdapter().updateJsonDocument(filePath, (data) => {
+      const users = isFlatUserMap ? { ...(data || {}) } : { ...((data && data.users) || {}) };
+      for (const [userId, state] of Object.entries(users)) {
+        const ts = state.lastUpdatedAt || state.loggedAt || state.updatedAt;
+        const ageExpired = isFlatUserMap
+          ? Date.now() - (state.updatedAtMs || 0) > ACTIVE_CONVERSATION_TTL_MS
+          : isExpired(ts);
+        if (ageExpired) {
+          delete users[userId];
+          removed += 1;
+        } else if (isFlatUserMap) {
+          users[userId] = trimActiveConversationEntry(state);
+        } else {
+          users[userId] = trimUserDoctrineState(state);
+        }
       }
-    }
-    const keys = Object.keys(users);
-    if (keys.length > MAX_USERS_IN_STATE) {
-      const sorted = keys
-        .map((k) => ({
-          k,
-          t: isFlatUserMap
-            ? users[k].updatedAtMs || 0
-            : Date.parse(users[k].lastUpdatedAt || 0) || 0,
-        }))
-        .sort((a, b) => a.t - b.t);
-      const excess = sorted.slice(0, keys.length - MAX_USERS_IN_STATE);
-      for (const { k } of excess) {
-        delete users[k];
-        removed += 1;
+      const keys = Object.keys(users);
+      if (keys.length > MAX_USERS_IN_STATE) {
+        const sorted = keys
+          .map((k) => ({
+            k,
+            t: isFlatUserMap
+              ? users[k].updatedAtMs || 0
+              : Date.parse(users[k].lastUpdatedAt || 0) || 0,
+          }))
+          .sort((a, b) => a.t - b.t);
+        const excess = sorted.slice(0, keys.length - MAX_USERS_IN_STATE);
+        for (const { k } of excess) {
+          delete users[k];
+          removed += 1;
+        }
       }
-    }
-    if (!isFlatUserMap) data.users = users;
-    else Object.assign(data, users);
-    if (isFlatUserMap) {
-      const cleaned = {};
-      for (const [k, v] of Object.entries(users)) cleaned[k] = v;
-      fs.writeFileSync(filePath, JSON.stringify(cleaned, null, 2), 'utf8');
-    } else {
-      data.users = users;
-      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-    }
-    return { file: fileName, removed };
+      return isFlatUserMap ? users : { ...(data || {}), users };
+    }, isFlatUserMap ? {} : { users: {} });
   } catch (e) {
+    errorMessage = e.message;
     console.warn(`[stateTtl] cleanup failed ${fileName}:`, e.message);
-    return { file: fileName, removed: 0, error: e.message };
   }
+  return errorMessage ? { file: fileName, removed: 0, error: errorMessage } : { file: fileName, removed };
 }
 
 function runStateTtlCleanup() {

@@ -343,13 +343,51 @@ const PROVIDERS = [
   searchSupport,
 ];
 
+/**
+ * PHASE_2_ENTERPRISE_OPTIMIZATION — Performance (objective 3).
+ * The post-filter below matches a requested `types` value against EITHER
+ * `resultType` or `sourceSystem`, so this map lists every tag (both kinds)
+ * each provider can ever emit, fixed and enumerable by reading the literal
+ * `sourceSystem:`/`resultType:` values in each provider's own code above.
+ * searchAuditHistory is the one exception: its sourceSystem is copied from
+ * whatever originally recorded each audit entry (`e.sourceSystem ||
+ * 'unified-audit-trail'`), which is not knowable ahead of time — so it is
+ * deliberately left out of this map and always runs regardless of `types`,
+ * guaranteeing a narrow filter can never silently miss a valid audit
+ * result. Every other provider is skipped entirely (not run, not just
+ * filtered afterward) only when the requested `types` provably cannot
+ * match any tag it could ever produce.
+ */
+const PROVIDER_TAGS = new Map([
+  [searchRecommendations, ['founder-intelligence', 'recommendation']],
+  [searchReviewQueue, ['review-queue', 'evidence_candidate']],
+  [searchLessonAlignment, ['lesson-alignment', 'lesson_submission']],
+  [searchRuntimeErrors, ['runtime-health', 'error']],
+  [searchDocumentation, ['documentation', 'documentation_article']],
+  [searchKnowledge, ['knowledge', 'approved_topic', 'knowledge_snapshot']],
+  [searchEvidence, ['evidence', 'evidence_card', 'cross_reference']],
+  [searchSupport, ['support', 'help_center_article', 'support_escalation']],
+]);
+const ALWAYS_RUN_PROVIDERS = new Set([searchAuditHistory]);
+
+function providersToRun(types) {
+  if (!types || !types.length) return PROVIDERS;
+  const requested = new Set(types);
+  return PROVIDERS.filter((provider) => {
+    if (ALWAYS_RUN_PROVIDERS.has(provider)) return true;
+    const tags = PROVIDER_TAGS.get(provider);
+    if (!tags) return true; // unknown provider (future addition) — safe default is to run it
+    return tags.some((t) => requested.has(t));
+  });
+}
+
 function searchAdmin({ q = '', types = null, limit = 25, offset = 0 } = {}) {
   const query = String(q || '').trim().toLowerCase();
   if (!query) return { ok: true, total: 0, offset, limit, results: [], reason: 'Empty query.' };
   if (query.length < 2) return { ok: true, total: 0, offset, limit, results: [], reason: 'Query too short (minimum 2 characters).' };
 
   let results = [];
-  for (const provider of PROVIDERS) {
+  for (const provider of providersToRun(types)) {
     try {
       results = results.concat(provider(query));
     } catch (e) {

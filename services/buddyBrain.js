@@ -86,6 +86,19 @@ const DATA_DIR = path.join(__dirname, '..', 'data');
 const LOG_FILE = path.join(DATA_DIR, 'buddy-sessions.jsonl');
 const MEMORY_FILE = path.join(DATA_DIR, 'buddy-memory.json');
 const QA_FILE = path.join(DATA_DIR, 'buddy-quality-events.jsonl');
+// PHASE_2_ENTERPRISE_OPTIMIZATION — Scalability (objective 1).
+// Each entry is { turns: [...], syncedThroughBytes: number } instead of a
+// bare array. `syncedThroughBytes` records how much of LOG_FILE this cache
+// entry reflects. Before, once ANY entry existed for a user, getRecentSessions
+// trusted the cache forever and never looked at the file again — meaning a
+// second application instance (or this same process's cache surviving past
+// a sibling instance's writes) would permanently miss turns any OTHER
+// process appended for that user after this cache was first warmed. That is
+// a real correctness bug the moment more than one instance exists, on the
+// single hottest path in the product (Buddy Chat continuity/memory).
+// getRecentSessions() below now re-syncs from exactly the unread tail of the
+// file — not a full rescan — so it stays correct without giving up the
+// cache's performance benefit for the common (no new sibling writes) case.
 const RECENT_SESSION_CACHE = new Map();
 const MAX_SESSION_TURNS = Number(process.env.BIBLEBUDDY_MAX_SESSION_TURNS || 30);
 const MAX_SESSION_CACHE_USERS = Number(process.env.BIBLEBUDDY_MAX_SESSION_CACHE_USERS || 200);
@@ -141,8 +154,9 @@ function appendSession(entry) {
     /* non-fatal */
   }
   appendJsonl(LOG_FILE, entry);
-  const cached = RECENT_SESSION_CACHE.get(entry.userId) || [];
-  cached.push({
+  const existing = RECENT_SESSION_CACHE.get(entry.userId);
+  const turns = existing ? existing.turns : [];
+  turns.push({
     mode: entry.mode,
     message: String(entry.message || '').slice(0, 300),
     reply: String(entry.reply || '').slice(0, 400),
@@ -159,57 +173,145 @@ function appendSession(entry) {
     quality: entry.quality ? { score: entry.quality.score } : undefined,
     createdAt: entry.createdAt || new Date().toISOString(),
   });
-  RECENT_SESSION_CACHE.set(entry.userId, cached.slice(-MAX_SESSION_TURNS));
+  // This write is durable (appendJsonl/appendFileSync completed above)
+  // before we record the sync point, so syncedThroughBytes never claims to
+  // reflect bytes that are not actually on disk yet.
+  let syncedThroughBytes = 0;
+  try { syncedThroughBytes = fs.statSync(LOG_FILE).size; } catch (_) { /* best-effort */ }
+  RECENT_SESSION_CACHE.set(entry.userId, { turns: turns.slice(-MAX_SESSION_TURNS), syncedThroughBytes });
   trimRecentSessionCache();
+}
+
+/**
+ * Reads only the unread tail of LOG_FILE (from `fromBytes` to end-of-last-
+ * complete-line) and returns { entries, syncedThroughBytes }. Never reads
+ * past the last complete `\n` — a write from another process that is
+ * mid-flight when we stat() could otherwise hand us a torn trailing line.
+ * Bounded to bibliography-file-tail semantics already used elsewhere in
+ * this module (512KB windows), so a very large log still can't make a
+ * single request scan unboundedly.
+ */
+function readLogTailSince(fromBytes) {
+  const stat = fs.statSync(LOG_FILE);
+  if (stat.size <= fromBytes) return { entries: [], syncedThroughBytes: fromBytes };
+  const maxBytes = 512 * 1024;
+  const start = Math.max(fromBytes, stat.size - maxBytes);
+  const length = stat.size - start;
+  const fd = fs.openSync(LOG_FILE, 'r');
+  let text;
+  try {
+    const buf = Buffer.alloc(length);
+    fs.readSync(fd, buf, 0, length, start);
+    text = buf.toString('utf8');
+  } finally {
+    fs.closeSync(fd);
+  }
+  const lastNl = text.lastIndexOf('\n');
+  if (lastNl < 0) return { entries: [], syncedThroughBytes: fromBytes }; // no complete line yet in this window
+  const complete = text.slice(0, lastNl);
+  const syncedThroughBytes = start + lastNl + 1;
+  const entries = complete
+    .split('\n')
+    .filter(Boolean)
+    .map((line) => {
+      try { return JSON.parse(line); } catch (_) { return null; }
+    })
+    .filter(Boolean);
+  return { entries, syncedThroughBytes };
 }
 
 function appendQualityEvent(entry) {
   appendJsonl(QA_FILE, entry);
 }
 
-function getRecentSessions(userId, limit = 8) {
-  const cached = RECENT_SESSION_CACHE.get(userId);
-  if (cached?.length) {
-    return cached.slice(-limit);
+function scanFullLogForUser(userId, limit) {
+  const stat = fs.statSync(LOG_FILE);
+  const maxBytes = 512 * 1024;
+  let text = '';
+  if (stat.size > maxBytes) {
+    const fd = fs.openSync(LOG_FILE, 'r');
+    const buf = Buffer.alloc(maxBytes);
+    fs.readSync(fd, buf, 0, maxBytes, stat.size - maxBytes);
+    fs.closeSync(fd);
+    text = buf.toString('utf8');
+    const firstNl = text.indexOf('\n');
+    if (firstNl >= 0) text = text.slice(firstNl + 1);
+  } else {
+    text = fs.readFileSync(LOG_FILE, 'utf8');
   }
+  const lines = text.trim().split('\n').filter(Boolean).reverse();
+  const out = [];
+  for (const line of lines) {
+    const entry = JSON.parse(line);
+    if (entry.userId === userId) {
+      out.push({
+        mode: entry.mode,
+        message: entry.message,
+        reply: entry.reply,
+        safety: entry.safety,
+        runtime: {
+          ...(entry.runtime || {}),
+          ...(entry.structured?.runtime || {}),
+        },
+        quality: entry.quality,
+        createdAt: entry.createdAt,
+      });
+      if (out.length >= limit) break;
+    }
+  }
+  return { turns: out.reverse(), syncedThroughBytes: stat.size };
+}
 
+function getRecentSessions(userId, limit = 8) {
   try {
     if (!fs.existsSync(LOG_FILE)) return [];
-    const stat = fs.statSync(LOG_FILE);
-    const maxBytes = 512 * 1024;
-    let text = '';
-    if (stat.size > maxBytes) {
-      const fd = fs.openSync(LOG_FILE, 'r');
-      const buf = Buffer.alloc(maxBytes);
-      fs.readSync(fd, buf, 0, maxBytes, stat.size - maxBytes);
-      fs.closeSync(fd);
-      text = buf.toString('utf8');
-      const firstNl = text.indexOf('\n');
-      if (firstNl >= 0) text = text.slice(firstNl + 1);
-    } else {
-      text = fs.readFileSync(LOG_FILE, 'utf8');
+    const cached = RECENT_SESSION_CACHE.get(userId);
+    const currentSize = fs.statSync(LOG_FILE).size;
+
+    if (!cached) {
+      const fresh = scanFullLogForUser(userId, Math.max(limit, MAX_SESSION_TURNS));
+      RECENT_SESSION_CACHE.set(userId, fresh);
+      return fresh.turns.slice(-limit);
     }
-    const lines = text.trim().split('\n').filter(Boolean).reverse();
-    const out = [];
-    for (const line of lines) {
-      const entry = JSON.parse(line);
-      if (entry.userId === userId) {
-        out.push({
-          mode: entry.mode,
-          message: entry.message,
-          reply: entry.reply,
-          safety: entry.safety,
-          runtime: {
-            ...(entry.runtime || {}),
-            ...(entry.structured?.runtime || {}),
-          },
-          quality: entry.quality,
-          createdAt: entry.createdAt,
-        });
-        if (out.length >= limit) break;
-      }
+
+    if (currentSize < cached.syncedThroughBytes) {
+      // File was rotated/truncated (see safeJsonlWriter's size-based
+      // rotation) since this cache entry was built — our byte offset is no
+      // longer meaningful against the new file. Full rescan of what remains.
+      const fresh = scanFullLogForUser(userId, Math.max(limit, MAX_SESSION_TURNS));
+      RECENT_SESSION_CACHE.set(userId, fresh);
+      return fresh.turns.slice(-limit);
     }
-    return out.reverse();
+
+    if (currentSize === cached.syncedThroughBytes) {
+      // Fully in sync — no sibling process (or this one) has appended
+      // anything since this cache entry was last validated. Fast path.
+      return cached.turns.slice(-limit);
+    }
+
+    // currentSize > cached.syncedThroughBytes: something was appended since
+    // this cache entry was built — by this process (appendSession keeps
+    // syncedThroughBytes current on its own writes, so this branch mainly
+    // fires for OTHER processes' writes) or a sibling instance. Read only
+    // the unread tail rather than the whole file.
+    const { entries, syncedThroughBytes } = readLogTailSince(cached.syncedThroughBytes);
+    const newTurnsForUser = entries
+      .filter((entry) => entry.userId === userId)
+      .map((entry) => ({
+        mode: entry.mode,
+        message: entry.message,
+        reply: entry.reply,
+        safety: entry.safety,
+        runtime: { ...(entry.runtime || {}), ...(entry.structured?.runtime || {}) },
+        quality: entry.quality,
+        createdAt: entry.createdAt,
+      }));
+    const merged = {
+      turns: [...cached.turns, ...newTurnsForUser].slice(-MAX_SESSION_TURNS),
+      syncedThroughBytes,
+    };
+    RECENT_SESSION_CACHE.set(userId, merged);
+    return merged.turns.slice(-limit);
   } catch (_) {
     return [];
   }

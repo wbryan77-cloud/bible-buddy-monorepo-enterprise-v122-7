@@ -18,10 +18,21 @@
  * Authoring (create/update) is Admin-only at the route layer
  * (routes/bibleAuthorityAdmin.js, gated by the shared checkAdminAuth).
  * This module itself has no auth opinion — it is a plain data store.
+ *
+ * PHASE_2_ENTERPRISE_OPTIMIZATION — Persistence (objective 2), proof of
+ * concept. Migrated onto services/persistence/storageAdapter.js: reads and
+ * writes for this store now go through the shared adapter instead of raw
+ * `fs` calls. Behavior is identical (same file, same JSON shape, same
+ * every function signature below) — the only change is that concurrent
+ * create/update/delete calls across processes are now lock-protected
+ * instead of racing on a bare `writeFileSync`. Chosen as the first store to
+ * migrate because it is low-traffic, admin-authored, and not on the Buddy
+ * Chat hot path — see the Phase 2 migration runbook for why the ~20
+ * higher-traffic conversation-memory stores are sequenced later.
  */
 
-const fs = require('fs');
 const path = require('path');
+const { getStorageAdapter } = require('./persistence/storageAdapter');
 
 const DATA_PATH = path.join(__dirname, '..', 'data', 'help-center-articles.json');
 
@@ -101,28 +112,26 @@ function seedArticles() {
   ];
 }
 
-function ensureLoaded() {
-  const dir = path.dirname(DATA_PATH);
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-  if (!fs.existsSync(DATA_PATH)) {
-    fs.writeFileSync(DATA_PATH, JSON.stringify({ articles: seedArticles() }, null, 2), 'utf8');
-  }
-}
+const DEFAULT_DOCUMENT = () => ({ articles: seedArticles() });
 
 function load() {
-  ensureLoaded();
-  try {
-    const raw = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
-    return { articles: raw.articles || [] };
-  } catch (e) {
-    console.warn('[helpCenterContentStore] read failed, treating as empty:', e.message);
-    return { articles: [] };
-  }
+  const doc = getStorageAdapter().readJsonDocument(DATA_PATH, null);
+  if (doc && Array.isArray(doc.articles)) return doc;
+  // First run (no file yet) or a corrupt read — seed deterministically and
+  // persist so every subsequent reader (this or another process) converges
+  // on the same seed rather than each re-seeding independently.
+  const seeded = DEFAULT_DOCUMENT();
+  getStorageAdapter().writeJsonDocument(DATA_PATH, seeded);
+  return seeded;
 }
 
-function save(data) {
-  ensureLoaded();
-  fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2), 'utf8');
+/** Prefer this for any write that first reads the document — it is
+ * lock-protected against concurrent writers, unlike a bare load()+save(). */
+function update(mutatorFn) {
+  return getStorageAdapter().updateJsonDocument(DATA_PATH, (current) => {
+    const doc = current && Array.isArray(current.articles) ? current : DEFAULT_DOCUMENT();
+    return mutatorFn(doc);
+  }, DEFAULT_DOCUMENT());
 }
 
 function listArticles({ tag = null, category = null, query = null, limit = 100 } = {}) {
@@ -151,56 +160,64 @@ function slugify(title) {
 
 function createArticle({ title, body, category = 'general', tags = [], authoredBy = 'admin' } = {}) {
   if (!title || !body) return { ok: false, error: 'title and body are required.' };
-  const data = load();
-  let id = slugify(title);
-  let suffix = 1;
-  while (data.articles.some((a) => a.id === id)) {
-    id = `${slugify(title)}-${suffix}`;
-    suffix += 1;
-  }
-  const now = new Date().toISOString();
-  const article = {
-    id,
-    title: String(title).slice(0, 160),
-    category: String(category).slice(0, 60),
-    tags: Array.isArray(tags) ? tags.slice(0, 10) : [],
-    body: String(body).slice(0, 8000),
-    version: 1,
-    authoredBy,
-    createdAt: now,
-    updatedAt: now,
-  };
-  data.articles.push(article);
-  save(data);
-  return { ok: true, article };
+  let created = null;
+  update((data) => {
+    let id = slugify(title);
+    let suffix = 1;
+    while (data.articles.some((a) => a.id === id)) {
+      id = `${slugify(title)}-${suffix}`;
+      suffix += 1;
+    }
+    const now = new Date().toISOString();
+    created = {
+      id,
+      title: String(title).slice(0, 160),
+      category: String(category).slice(0, 60),
+      tags: Array.isArray(tags) ? tags.slice(0, 10) : [],
+      body: String(body).slice(0, 8000),
+      version: 1,
+      authoredBy,
+      createdAt: now,
+      updatedAt: now,
+    };
+    data.articles.push(created);
+    return data;
+  });
+  return { ok: true, article: created };
 }
 
 function updateArticle(id, updates = {}, { updatedBy = 'admin' } = {}) {
-  const data = load();
-  const idx = data.articles.findIndex((a) => a.id === id);
-  if (idx < 0) return { ok: false, error: 'Article not found.' };
-  const prev = data.articles[idx];
-  data.articles[idx] = {
-    ...prev,
-    title: updates.title !== undefined ? String(updates.title).slice(0, 160) : prev.title,
-    body: updates.body !== undefined ? String(updates.body).slice(0, 8000) : prev.body,
-    category: updates.category !== undefined ? String(updates.category).slice(0, 60) : prev.category,
-    tags: Array.isArray(updates.tags) ? updates.tags.slice(0, 10) : prev.tags,
-    version: (prev.version || 1) + 1,
-    updatedBy,
-    updatedAt: new Date().toISOString(),
-  };
-  save(data);
-  return { ok: true, article: data.articles[idx] };
+  let result = { ok: false, error: 'Article not found.' };
+  update((data) => {
+    const idx = data.articles.findIndex((a) => a.id === id);
+    if (idx < 0) return data;
+    const prev = data.articles[idx];
+    data.articles[idx] = {
+      ...prev,
+      title: updates.title !== undefined ? String(updates.title).slice(0, 160) : prev.title,
+      body: updates.body !== undefined ? String(updates.body).slice(0, 8000) : prev.body,
+      category: updates.category !== undefined ? String(updates.category).slice(0, 60) : prev.category,
+      tags: Array.isArray(updates.tags) ? updates.tags.slice(0, 10) : prev.tags,
+      version: (prev.version || 1) + 1,
+      updatedBy,
+      updatedAt: new Date().toISOString(),
+    };
+    result = { ok: true, article: data.articles[idx] };
+    return data;
+  });
+  return result;
 }
 
 function deleteArticle(id) {
-  const data = load();
-  const idx = data.articles.findIndex((a) => a.id === id);
-  if (idx < 0) return { ok: false, error: 'Article not found.' };
-  const [removed] = data.articles.splice(idx, 1);
-  save(data);
-  return { ok: true, removed };
+  let result = { ok: false, error: 'Article not found.' };
+  update((data) => {
+    const idx = data.articles.findIndex((a) => a.id === id);
+    if (idx < 0) return data;
+    const [removed] = data.articles.splice(idx, 1);
+    result = { ok: true, removed };
+    return data;
+  });
+  return result;
 }
 
 function getStats() {

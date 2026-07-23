@@ -138,6 +138,14 @@ try {
 } catch (e) {
   console.warn('State TTL cleanup not scheduled:', e.message);
 }
+
+try {
+  // PHASE_2_ENTERPRISE_OPTIMIZATION — Operational Intelligence (objective 4).
+  const { scheduleMetricsSnapshots } = require('./services/operationalMetricsHistory');
+  scheduleMetricsSnapshots();
+} catch (e) {
+  console.warn('Operational metrics snapshotting not scheduled:', e.message);
+}
 mountRoute('Content helper routes', '/admin/content', './routes/contentHelper');
 mountRoute('Realtime voice routes', '/api/realtime', './routes/realtime');
 mountRoute('Health signal routes', '/api/health/signals', './routes/healthSignals');

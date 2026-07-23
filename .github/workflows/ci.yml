@@ -1,0 +1,83 @@
+name: CI
+
+# PHASE_2_ENTERPRISE_OPTIMIZATION — Automation (objective 6).
+#
+# Two jobs, deliberately split by reliability:
+#   - `required`: syntax-checks every tracked .js file and runs the fully
+#     deterministic Phase 2 test suite (no live OpenAI call, no network) plus
+#     a real server boot + /health check. This is the hard gate.
+#   - `informational`: runs the full tests/*.test.js suite and the Admin
+#     Command Center smoke suite against a live server. Several of the
+#     pre-existing tests/*.test.js files (predating this batch, e.g.
+#     phase2Sprint26/2.10/2.11) exercise live OpenAI-backed runtime
+#     responses and were found, during this batch's regression pass, to
+#     already fail intermittently on the current `main` baseline (verified
+#     via `git stash` against a clean checkout — not something this batch
+#     introduced). Gating CI on them would make CI permanently red for
+#     pre-existing reasons unrelated to a given change, so this job reports
+#     results without failing the workflow. See
+#     docs/alpha/phase1b-enterprise-operations/13-ScalabilityAndPersistenceImplementation.md
+#     for the full writeup and `continue-on-error` below for the mechanism.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  required:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Syntax-check every tracked JS file
+        run: |
+          set -e
+          git ls-files '*.js' | while read -r f; do
+            node --check "$f"
+          done
+      - name: Run deterministic Phase 2 test suite
+        run: node tests/phase2EnterpriseOptimization.test.js
+      - name: Boot server and verify /health
+        run: |
+          PORT=8099 BIBLE_AUTHORITY_ADMIN_TOKEN=ci-placeholder-token node server.js &
+          SERVER_PID=$!
+          for i in $(seq 1 20); do
+            if curl -sf http://localhost:8099/health > /dev/null; then
+              echo "Server healthy."
+              kill $SERVER_PID
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Server did not become healthy in time."
+          kill $SERVER_PID || true
+          exit 1
+
+  informational:
+    runs-on: ubuntu-latest
+    needs: required
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Run full tests/*.test.js suite (informational — see workflow header)
+        run: npm test
+        continue-on-error: true
+      - name: Run Admin Command Center smoke suite against a local server
+        run: |
+          PORT=8098 BIBLE_AUTHORITY_ADMIN_TOKEN=ci-placeholder-token UNIFIED_ADMIN_COMMAND_CENTER_ENABLED=1 node server.js &
+          SERVER_PID=$!
+          sleep 5
+          CC_SMOKE_BASE_URL=http://localhost:8098 CC_SMOKE_TOKEN=ci-placeholder-token node scripts/alpha/unifiedAdminCommandCenterSmoke.js || true
+          kill $SERVER_PID || true
+        continue-on-error: true
