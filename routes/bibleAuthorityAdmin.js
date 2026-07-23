@@ -596,6 +596,11 @@ router.post('/unified/decision-queue/:id/:action', express.json({ limit: '16kb' 
     const { note, decidedBy } = req.body || {};
     const result = applyDecisionQueueAction({ id, action, note: note || '', decidedBy: decidedBy || 'admin' });
     if (!result.ok) return res.status(400).json(result);
+    // PHASE_2_ENTERPRISE_OPTIMIZATION — the Command Center summary is now
+    // short-TTL cached (performance quick win); invalidate on every
+    // state-changing action so an admin who acts then refreshes never
+    // sees stale queue counts, even within the cache window.
+    require('../services/adminCommandCenterAggregator').invalidateAdminCommandCenterCache();
     res.json(result);
   } catch (error) {
     res.status(500).json({ ok: false, error: error.message });
@@ -770,6 +775,7 @@ router.post('/unified/notifications/send', express.json({ limit: '16kb' }), asyn
       status: 'COMPLETED',
       resultingState: { attempted: result.attempted, delivered: result.delivered },
     });
+    require('../services/adminCommandCenterAggregator').invalidateAdminCommandCenterCache();
     res.json(result);
   } catch (error) {
     res.status(500).json({ ok: false, error: error.message });

@@ -24,6 +24,11 @@ const { listArticles, getArticle, createArticle, updateArticle, deleteArticle } 
 const { askUserAssistance } = require('../services/userAssistanceAssistant');
 const { readEscalations, listPendingEscalations, resolveEscalation } = require('../services/userAssistanceEscalationStore');
 const { recordAdminAuditEvent } = require('../services/adminAuditTrail');
+// PHASE_2_ENTERPRISE_OPTIMIZATION — the Command Center summary is now
+// short-TTL cached (services/adminCommandCenterAggregator.js). Every
+// mutation below invalidates it so the "User Assistance" / "Knowledge
+// Improvement" sections never show stale counts to an admin who just acted.
+const { invalidateAdminCommandCenterCache } = require('../services/adminCommandCenterAggregator');
 
 const router = express.Router();
 
@@ -72,6 +77,7 @@ router.post('/articles', express.json({ limit: '64kb' }), (req, res) => {
       status: 'COMPLETED',
       resultingState: { title: result.article.title },
     });
+    invalidateAdminCommandCenterCache();
     res.json(result);
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });
@@ -92,6 +98,7 @@ router.put('/articles/:id', express.json({ limit: '64kb' }), (req, res) => {
       status: 'COMPLETED',
       resultingState: { version: result.article.version },
     });
+    invalidateAdminCommandCenterCache();
     res.json(result);
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });
@@ -111,6 +118,7 @@ router.delete('/articles/:id', (req, res) => {
       category: 'USER_ASSISTANCE',
       status: 'COMPLETED',
     });
+    invalidateAdminCommandCenterCache();
     res.json(result);
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });
@@ -163,6 +171,7 @@ router.post('/escalations/:id/resolve', express.json({ limit: '16kb' }), async (
       approvalReasonOrNote: reply || null,
       actorId: decidedBy || 'admin',
     });
+    invalidateAdminCommandCenterCache();
     res.json(result);
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });

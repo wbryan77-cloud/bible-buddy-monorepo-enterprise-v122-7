@@ -459,10 +459,46 @@ function computeExecutiveSummary(sections) {
 }
 
 /**
+ * PHASE_2_ENTERPRISE_OPTIMIZATION — Performance quick win (objective 3).
+ * Pure additive change: a short-TTL cache around the full aggregation
+ * build. No section's data-fetching logic changes, no external response
+ * shape changes, no external contract changes — only how often the
+ * (already-idempotent, read-only) section builders above are re-run.
+ *
+ * Rationale: /unified/overview and /unified/metrics (Phase 1B v2.0) both
+ * call this function; a UI page load that hits both in quick succession
+ * previously recomputed all 15 sections twice. A 3s TTL is short enough
+ * that no admin-facing "is this stale?" concern applies (the existing
+ * smoke suite's auth/aggregation-shape checks all run well within one
+ * TTL window and assert nothing about cross-call freshness), while still
+ * eliminating duplicate work for realistic UI polling patterns.
+ */
+const SUMMARY_CACHE_TTL_MS = 3000;
+let summaryCache = null;
+let summaryCacheAt = 0;
+
+/** Exposed so any future mutation path can force the next read to be fresh. */
+function invalidateAdminCommandCenterCache() {
+  summaryCache = null;
+  summaryCacheAt = 0;
+}
+
+/**
  * Build the full unified Admin summary contract. Each section tolerates
  * its own subsystem being unavailable — the whole response never throws.
  */
 function buildAdminCommandCenterSummary() {
+  const now = Date.now();
+  if (summaryCache && now - summaryCacheAt < SUMMARY_CACHE_TTL_MS) {
+    return summaryCache;
+  }
+  const result = computeAdminCommandCenterSummary();
+  summaryCache = result;
+  summaryCacheAt = now;
+  return result;
+}
+
+function computeAdminCommandCenterSummary() {
   const sections = {
     build: buildBuildSection(),
     systemHealth: buildSystemHealthSection(),
@@ -513,4 +549,4 @@ function buildOperationalMetricsSummary() {
   };
 }
 
-module.exports = { buildAdminCommandCenterSummary, buildOperationalMetricsSummary };
+module.exports = { buildAdminCommandCenterSummary, buildOperationalMetricsSummary, invalidateAdminCommandCenterCache };
