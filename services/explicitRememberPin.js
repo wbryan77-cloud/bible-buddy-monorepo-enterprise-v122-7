@@ -16,6 +16,8 @@ const CAPTURE_PATTERNS = [
   /\bremember\s+this\s+marker\s*:\s*(.+)$/i,
   /\bremember\s+(?:this|that)\s+marker\s*:\s*(.+)$/i,
   /\bremember\s+that\s+my\s+favorite\s+verse\s+is\s+(.+)$/i,
+  /\bremember\s+this\s+for\s+later\s*:\s*(.+)$/i,
+  /\bremember\s+this\s+for\s+later[,;]\s*(.+)$/i,
   /\bremember\s+(?:this|that)\s*:\s*(.+)$/i,
   /\bremember\s+this\s+(?:fact|note|for\s+me)\s*:\s*(.+)$/i,
   /\bremember\s+that\s+(.+)$/i,
@@ -85,7 +87,26 @@ function isPinRecallQuery(message = '') {
   return RECALL_PATTERNS.some((re) => re.test(String(message || '')));
 }
 
+function isBareRememberForLater(message = '') {
+  return /^remember this for later\.?$/i.test(String(message || '').trim());
+}
+
 function tryAnswerPinRecall(userId, message = '') {
+  if (isBareRememberForLater(message)) {
+    return {
+      reply: 'What would you like me to remember for later? Say it in one short sentence and I will keep it.',
+      scripture: [],
+      mode: 'companion',
+      confidence: 'high',
+      memory_used: false,
+      runtime: {
+        masterRoute: 'explicit_remember_pin_prompt',
+        openAiCalled: false,
+        buddyRuntime: 'core_openai_first',
+        companionPresentation: { skipRelationshipEnrichment: true, skipStudyPrompts: true },
+      },
+    };
+  }
   if (!isPinRecallQuery(message)) return null;
   const pins = getPins(userId);
   const wantsFavorite = /\bfavorite\s+verse\b/i.test(message);

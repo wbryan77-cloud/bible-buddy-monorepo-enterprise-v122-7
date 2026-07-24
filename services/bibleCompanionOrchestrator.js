@@ -109,6 +109,22 @@ function buildClarificationReply(message = '', state = {}) {
   };
 }
 
+/** Multi-part user turns must not be owned by a single-concept bible_wide short-circuit. */
+function isMultiPartUserQuestion(message = '') {
+  const m = String(message || '').trim();
+  if (!m) return false;
+  if (/\btwo questions\b/i.test(m)) return true;
+  if ((m.match(/\?/g) || []).length >= 2) return true;
+  if (
+    /\b(how many|what are|what does|where will|where do)\b/i.test(m) &&
+    /\band\b/i.test(m) &&
+    /\b(what|where|how|when|why|second coming)\b/i.test(m)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 function tryContextualDraftBeforeClarification({
   userId,
   message,
@@ -1781,49 +1797,52 @@ async function runBibleCompanionOrchestrator({
   }
 
   if (reasoningPlan.answerLane === 'bible_wide' || routePlan.lane === 'bible_wide') {
-    const concept =
-      reasoningPlan.conceptNode ||
-      getConceptById(reasoningPlan.concept) ||
-      resolveConceptForMessage(message, userId);
-    if (concept) {
-      const wideAnswer = await buildBibleWideAnswer({
-        message,
-        concept,
-        userId,
-        userPreferences: reasoningPlan.userPreferences,
-        isContinuation: reasoningPlan.witnessPlan?.isContinuation,
-      });
-      if (wideAnswer) {
-        recordPendingQuestion(userId, message);
-        const structured = verifyOrchestratorOutput(
-          buildBibleWideStructured(wideAnswer, runtimeContext, safety),
-        );
-        structured.runtime = {
-          ...(structured.runtime || {}),
-          orchestratorLane: 'bible_wide',
-          phase5A: true,
-        };
-        recordAnswerTurnMemory(userId, message, structured);
-        return {
-          handled: true,
-          dispatch: 'bible_wide',
-          reasoningPlan,
-          ctx: {
-            structured,
-            userId,
-            mode,
-            personaKey,
-            message,
-            safety,
-            runtimeContext,
-            profile,
-            testerId,
-            sessionId,
-            cohort,
-            route: wideAnswer.masterRoute,
-            concept: wideAnswer.concept,
-          },
-        };
+    // GATE 3 — single-concept bible_wide must not silently drop a second question.
+    if (!isMultiPartUserQuestion(message)) {
+      const concept =
+        reasoningPlan.conceptNode ||
+        getConceptById(reasoningPlan.concept) ||
+        resolveConceptForMessage(message, userId);
+      if (concept) {
+        const wideAnswer = await buildBibleWideAnswer({
+          message,
+          concept,
+          userId,
+          userPreferences: reasoningPlan.userPreferences,
+          isContinuation: reasoningPlan.witnessPlan?.isContinuation,
+        });
+        if (wideAnswer) {
+          recordPendingQuestion(userId, message);
+          const structured = verifyOrchestratorOutput(
+            buildBibleWideStructured(wideAnswer, runtimeContext, safety),
+          );
+          structured.runtime = {
+            ...(structured.runtime || {}),
+            orchestratorLane: 'bible_wide',
+            phase5A: true,
+          };
+          recordAnswerTurnMemory(userId, message, structured);
+          return {
+            handled: true,
+            dispatch: 'bible_wide',
+            reasoningPlan,
+            ctx: {
+              structured,
+              userId,
+              mode,
+              personaKey,
+              message,
+              safety,
+              runtimeContext,
+              profile,
+              testerId,
+              sessionId,
+              cohort,
+              route: wideAnswer.masterRoute,
+              concept: wideAnswer.concept,
+            },
+          };
+        }
       }
     }
   }
