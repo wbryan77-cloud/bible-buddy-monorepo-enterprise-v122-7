@@ -1,0 +1,196 @@
+{
+  "releaseCommit": "bef9092",
+  "capturedAt": "2026-07-24T05:19:23.146Z",
+  "traces": [
+    {
+      "class": "explicit_verse",
+      "message": "What does John 3:16 say?",
+      "route": "bible_wide_reasoning",
+      "topic": null,
+      "intent": "companion",
+      "flags": [
+        "bible_wide_reasoning",
+        "concept_explicit_scripture_reference",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Scripture speaks directly to this. John 3:16 — \"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.\" (King James Version)."
+    },
+    {
+      "class": "chapter_ref",
+      "message": "What happens in Acts 10?",
+      "route": "bible_wide_reasoning",
+      "topic": null,
+      "intent": "companion",
+      "flags": [
+        "bible_wide_reasoning",
+        "concept_explicit_scripture_reference",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Scripture answers this when the passages below are taken together. Acts 10:28 — \"And he said unto them, Ye know how that it is an unlawful thing for a man that is a Jew to keep company, or come unto one of another nation; but God hath shewe"
+    },
+    {
+      "class": "doctrine",
+      "message": "What day is the biblical Sabbath?",
+      "route": "doctrine_final_authority",
+      "topic": null,
+      "intent": "doctrinal_study",
+      "flags": [
+        "doctrine_final_authority",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture."
+    },
+    {
+      "class": "historical",
+      "message": "Historically, when did Sunday worship become common? Separate history from Scripture.",
+      "route": "reason_first_openai",
+      "topic": null,
+      "intent": "study",
+      "flags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Historically, the shift to Sunday worship became more common after the resurrection of Jesus, as early Christians began gathering on the first day of the week to commemorate His resurrection. This practice was notably observed in the New Te"
+    },
+    {
+      "class": "original_language",
+      "message": "What does the Greek word agape mean in John 3:16?",
+      "route": "original_language_study",
+      "topic": null,
+      "intent": null,
+      "flags": [
+        "phase6b_original_language_study",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "KJV: For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. Original language (GREEK): Οὕτως γὰρ ἠγάπησεν ὁ Θεὸς τὸν κόσμον, ὥστε τὸν Υἱὸν τὸν μονογενῆ ἔ"
+    },
+    {
+      "class": "go_deeper_setup",
+      "message": "What does John 3:16 say?",
+      "route": "bible_wide_reasoning",
+      "topic": null,
+      "intent": "companion",
+      "flags": [
+        "bible_wide_reasoning",
+        "concept_explicit_scripture_reference",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Scripture speaks directly to this. John 3:16 — \"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.\" (King James Version)."
+    },
+    {
+      "class": "go_deeper",
+      "message": "Go deeper.",
+      "route": "response_revision_scripture_context",
+      "topic": null,
+      "intent": null,
+      "flags": [
+        "response_revision_owner",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Going deeper on what we were just discussing — not switching topics. Your question was: “What does John 3:16 say?.” Building from the prior answer: Scripture speaks directly to this. John 3:16 — \"For God so loved the world, that he gave his"
+    },
+    {
+      "class": "correction_setup",
+      "message": "What does Isaiah 66:17 say?",
+      "route": "bible_wide_reasoning",
+      "topic": null,
+      "intent": "companion",
+      "flags": [
+        "bible_wide_reasoning",
+        "concept_explicit_scripture_reference",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Scripture speaks directly to this. Isaiah 66:17 — \"They that sanctify themselves, and purify themselves in the gardens behind one tree in the midst, eating swine's flesh, and the abomination, and the mouse, shall be consumed together, saith"
+    },
+    {
+      "class": "correction",
+      "message": "No, I meant Acts 10, not Isaiah 66.",
+      "route": "bible_wide_reasoning",
+      "topic": null,
+      "intent": "companion",
+      "flags": [
+        "bible_wide_reasoning",
+        "concept_explicit_scripture_reference",
+        "bnc_phase5e",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Scripture answers this when the passages below are taken together. Acts 10 — \"There was a certain man in Caesarea called Cornelius, a centurion of the band called the Italian band, A devout man, and one that feared God with all his house, w"
+    },
+    {
+      "class": "multipart",
+      "message": "Two questions: What does Genesis 1:1 say, and what does John 3:16 say?",
+      "route": "reason_first_openai",
+      "topic": null,
+      "intent": "companion",
+      "flags": [
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Genesis 1:1 says, \"In the beginning God created the heaven and the earth.\" This verse establishes the foundational truth that God is the Creator of all things. John 3:16 states, \"For God so loved the world, that he gave his only begotten So"
+    },
+    {
+      "class": "emotional_scripture",
+      "message": "I feel anxious — can you pray with me for peace?",
+      "route": "phase5k_prayer_companion",
+      "topic": null,
+      "intent": null,
+      "flags": [
+        "phase5k_prayer",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fear. In Jesus' name, amen. Philippians 4:6-7 and James 1:5 are good Scriptures to hold onto."
+    },
+    {
+      "class": "state_of_dead",
+      "message": "According to Scripture, what is the state of the dead before resurrection?",
+      "route": "doctrine_final_authority",
+      "topic": null,
+      "intent": "doctrinal_study",
+      "flags": [
+        "doctrine_final_authority",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Brother, Scripture teaches that the dead know nothing and are described as asleep until resurrection. Ecclesiastes 9:5 says the dead know not any thing. Psalm 146:4 says a man’s thoughts perish. Jesus called death sleep in John 11:11-14. Pa"
+    },
+    {
+      "class": "resurrection_timing",
+      "message": "Did Jesus rise Sunday morning?",
+      "route": "resurrection_timing_source_grounded",
+      "topic": "resurrection_timeline",
+      "intent": null,
+      "flags": [
+        "source_grounded_guardrail_used",
+        "phase5l_live_owner",
+        "phase5m_live_owner"
+      ],
+      "fallback": null,
+      "replyPreview": "Direct answer: Scripture records that the women discovered the empty tomb toward dawn of the first day of the week — and that Jesus was already risen then. It does not state an exact Sunday-morning rising moment.\n\nExplicit Scripture:\nMatthe"
+    }
+  ]
+}

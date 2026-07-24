@@ -1,0 +1,34 @@
+Gate 4 Scripture Reasoning against https://bible-buddy-monorepo-enterprise-v122-7.onrender.com
+
+[PASS] A_john316 — bible_wide_reasoning | Scripture speaks directly to this. John 3:16 — "For God so loved the world, that he gave his only begotten Son, that who
+[PASS] A_genesis11 — bible_wide_reasoning | Scripture speaks directly to this. Genesis 1:1 — "In the beginning God created the heaven and the earth." (King James Ve
+[PASS] A_acts10 — bible_wide_reasoning | Scripture answers this when the passages below are taken together. Acts 10:28 — "And he said unto them, Ye know how that
+[PASS] A_isaiah66 — bible_wide_reasoning | Scripture speaks directly to this. Isaiah 66:15-17 — "For, behold, the LORD will come with fire, and with his chariots l
+[PASS] A_eccl95 — bible_wide_reasoning | Scripture speaks directly to this. Ecclesiastes 9:5 — "For the living know that they shall die: but the dead know not an
+[PASS] A_rev20 — reason_first_openai | Revelation 20 discusses both the millennium and the final judgment. It describes a thousand-year reign of Christ, during
+[PASS] A_lev23 — bible_wide_reasoning | Scripture speaks directly to this. Leviticus 23 — "And the LORD spake unto Moses, saying, Speak unto the children of Isr
+[PASS] A_1cor15 — bible_wide_reasoning | Scripture speaks directly to this. 1 Corinthians 15 — "Moreover, brethren, I declare unto you the gospel which I preache
+[PASS] A_matt1240 — bible_wide_reasoning | Scripture speaks directly to this. Matthew 12:40 — "For as Jonas was three days and three nights in the whale's belly; s
+[PASS] A_luke2343 — bible_wide_reasoning | Scripture speaks directly to this. Luke 23:43 — "And Jesus said unto him, Verily I say unto thee, To day shalt thou be w
+[PASS] B_sunday_morning — resurrection_timing_source_grounded | Direct answer: Scripture records that the women discovered the empty tomb toward dawn of the first day of the week — and t
+[PASS] B_three_days — resurrection_timing_source_grounded | Direct answer: Matthew 12:40 explicitly requires “three days and three nights.” A short Friday-afternoon-to-Sunday-morning
+[PASS] B_discovery_vs_event — resurrection_timing_source_grounded | Direct answer: In the Gospel wording, the first day of the week primarily marks the discovery of the empty tomb — and that
+[PASS] C_peter_eat_permission — doctrine_final_authority | No. Staying with Scripture, Peter explains the vision in Acts 10:28. God showed him not to call any man common or unclean. Acts 10 is
+[PASS] C_acts10_abolish — reason_first_openai | No, Acts 10 does not abolish the dietary law. Acts 10 is about God showing Peter that Gentiles are not to be considered unclean, as eviden
+[PASS] C_peter_interpretation — bible_wide_reasoning | Here are both passages, in Scripture’s own words, for comparison: Acts 10:28 — "And he said unto them, Ye know how that it is an unlawful
+[PASS] C_compare_isaiah66 — bible_wide_reasoning | Here are both passages, in Scripture’s own words, for comparison: Acts 10 — "There was a certain man in Caesarea called Cornelius, a cent
+[PASS] D_isaiah66_judgment — bible_wide_reasoning | Scripture speaks directly to this. Isaiah 66:17 — "They that sanctify themselves, and purify themselves in the gardens behind one tree in
+[PASS] E_sabbath_day — doctrine_final_authority | From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath est
+[PASS] E_jesus_sabbath — doctrine_final_authority | From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath est
+[PASS] E_history_vs_scripture — doctrine_final_authority | From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath est
+[PASS] F_state_of_dead — doctrine_final_authority | Brother, Scripture teaches that the dead know nothing and are described as asleep until resurrection. Ecclesiastes 9:5 says the dead 
+[PASS] G_how_to_pray — reason_first_openai | According to Jesus’ teaching, He provided a model for prayer in what is commonly known as the Lord's Prayer. In Matthew 6:9-13, He says, "
+[PASS] G_emotional_prayer — phase5k_prayer_companion | Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with l
+[PASS] H_agape — original_language_study | KJV: For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everl
+[PASS] I_go_deeper — response_revision_scripture_context | Going deeper on what we were just discussing — not switching topics. Your question was: “What does John 3:16 say?.” Buildi
+[PASS] I_correction_acts_not_isaiah — bible_wide_reasoning | Scripture answers this when the passages below are taken together. Acts 10 — "There was a certain man in Caesarea called Cornelius, a cen
+[PASS] J_multipart_two_refs — reason_first_openai | Genesis 1:1 states, "In the beginning God created the heaven and the earth." This verse introduces the concept of God as the Creator of al
+[PASS] J_multipart_three — reason_first_openai | Let's address your questions one by one: 1. **What day is the Sabbath?** The Sabbath is the seventh day of the week, which is Saturday. Th
+
+29/29 passed, 0 failed.
+SCRIPTURE_REASONING_CERTIFICATION PASS
