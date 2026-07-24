@@ -1,0 +1,21 @@
+Gate 7 UI/API/Production Parity against https://bible-buddy-monorepo-enterprise-v122-7.onrender.com
+
+[PASS] H_health_ok — {"ok":true,"version":"v122.14.0 (platform unification foundation)","time":"2026-07-24T05:48:32.994Z","releaseCommit":"0bfcbf7","releaseBranch":"main"}
+[PASS] S_app_identity_chat_stream — chat=phase5l_app_identity stream=phase5l_app_identity
+[PASS] S_john316_chat_stream — chat=bible_wide_reasoning stream=bible_wide_reasoning
+[PASS] S_sabbath_chat_stream — chat=doctrine_final_authority stream=doctrine_final_authority
+[PASS] S_go_deeper_same_session — response_revision_scripture_context | Going deeper on what we were just discussing — not switching topics. Your question was: “What does J
+[PASS] S_correction — bible_wide_reasoning | Scripture answers this when the passages below are taken together. Acts 10 — "There was a certain ma
+[PASS] S_memory_short — explicit_remember_pin | You asked me to remember that your favorite verse is my favorite verse is Psalm 23:1.
+[PASS] S_multipart — reason_first_openai | Genesis 1:1 says, "In the beginning God created the heaven and the earth." John 3:16 states, "For God so loved the world
+[PASS] S_prayer — phase5k_prayer_companion | Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentlen
+[PASS] S_malformed_no_crash — reason_first_openai | It seems like your message didn't come through. If you have a question or someth
+[PASS] S_session_isolation — explicit_remember_pin_honest_miss | I don’t have a favorite verse saved for you yet. If you want me to keep one, say: Remember that my f
+[PASS] S_same_session_return — explicit_remember_pin | You asked me to remember: my marker is GATE7_RETURN.
+[PASS] S_acts10_chat_stream_parity — chat=bible_wide_reasoning stream=bible_wide_reasoning
+[PASS] S_ui_html_surface — {"path":"/","status":200,"len":58242}
+[PASS] S_genesis_chat_stream_family — chat=bible_wide_reasoning stream=bible_wide_reasoning
+
+15/15 passed, 0 failed.
+releaseCommit=0bfcbf7
+UI_PARITY_CERTIFICATION PASS

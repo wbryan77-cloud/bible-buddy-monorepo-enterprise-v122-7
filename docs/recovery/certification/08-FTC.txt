@@ -1,0 +1,37 @@
+Founder Truth Corpus against https://bible-buddy-monorepo-enterprise-v122-7.onrender.com
+
+[PASS] A1_identity — phase5l_app_identity
+[PASS] A2_tell_me_more — response_revision_identity
+[PASS] A3_go_deeper — response_revision_identity
+[PASS] B1_heavens_multipart — reason_first_openai
+[PASS] C1_current_message_wins — resurrection_timing_source_grounded
+[PASS] D1_scripture_silence — reason_first_openai
+[PASS] E1_prayer — phase5k_prayer_companion
+[PASS] E2_better_prayer — response_revision_prayer
+[PASS] F1_correction_matthew28 — response_correction_matthew28_silence
+[PASS] G1_presence — phase5l_presence_nervous
+[PASS] H1_acts10_pork — reason_first_openai | No, Acts 10 does not make pork clean. In Leviticus 11 and Deuteronomy 14, swine is specifically listed as an unclean animal. While Acts 10 d
+[PASS] H2_pork_correction — response_correction_restate_dietary | You are right to demand a direct answer. Here it is clearly: No — Acts 10 does not make pork clean. Peter refused unclean food (Acts 10:14), and he explained th
+[PASS] H3_isaiah66 — bible_wide_reasoning | Scripture speaks directly to this. Isaiah 66:17 — "They that sanctify themselves, and purify themselves in the gardens behind one tree in th
+[PASS] I1_decision_bare — conversation_owner_life_decision
+[PASS] J1_stop — phase5o_stop_release
+[PASS] K1_appearance_contradicted — reason_first_openai
+[PASS] L1_john316 — bible_wide_reasoning
+[PASS] M1_rapid_topic_to_prayer — phase5k_prayer_companion
+[PASS] N1_contradiction_challenge — reason_first_openai | I understand your concern about contradictions. Can you clarify what specific points you're referring to? This will help me address your que
+[PASS] O1_state_of_the_dead — doctrine_final_authority | Brother, Scripture teaches that the dead know nothing and are described as asleep until resurrection. Ecclesiastes 9:5 says the dead know no
+[PASS] P1_sabbath_doctrine — doctrine_final_authority | From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath establishe
+[PASS] Q1_greek_agape_john316 — original_language_study | KJV: For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting
+[PASS] R1_historical_daniel3 — historical_context | Daniel 3 — "Nebuchadnezzar the king made an image of gold, whose height was threescore cubits, and the breadth thereof six cubits: he set it
+[PASS] S1_memory_forget_request — reason_first_openai | No, I cannot forget what you told me. I keep track of our conversations to provide you with the best support and guidance. If there’s anythi
+[PASS] T1_repeated_question — bible_wide_reasoning
+[PASS] U1_long_conversation_current_intent — resurrection_timing_source_grounded | Direct answer: Scripture shows Jesus was already risen before / when the first-day discovery happened. The first day of the week is when the
+[PASS] V1_claim_scripture_silent — resurrection_timing_source_grounded
+[PASS] V2_claim_explicit_scripture — bible_wide_reasoning
+[PASS] W1_no_openai_ask_again_on_doctrine — reason_first_openai | fallback=null
+[PASS] X1_hallucination_correction_appearance — bible_wide_reasoning | No — Scripture explicitly states the opposite of that. Revelation 1:14-15 — "His head and his hairs were white like wool, as white as snow; 
+[PASS] Y1_evidence_does_not_replace_scripture — doctrine_final_authority | Brother, Scripture teaches that the dead know nothing and are described as asleep until resurrection. Ecclesiastes 9:5 says the dead know no
+[PASS] Z1_scripture_silent_college_major — bible_companion_clarification | I want to make sure I answer the right thing. Are you asking about a Bible passage, a life situation, or something you want prayer for?
+
+32/32 passed, 0 failed.
+FOUNDER_TRUTH_CORPUS PASS

@@ -1,0 +1,21 @@
+---
+pid: 20409
+cwd: "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7"
+command: "cd /Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7\nexport BUDDY_URL=https://bible-buddy-monorepo-enterprise-v122-7.onrender.com\n# Serial Gate 4 alone (no parallel contention)\nnode scripts/runScriptureReasoningCertification.js 2>&1 | tee docs/recovery/certification/08-Gate4-serial-rerun.txt | tail -8\n"
+started_at: 2026-07-24T05:44:11.090Z
+running_for_ms: 65028    
+---
+[PASS] H_agape — original_language_study | KJV: For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everl
+[PASS] I_go_deeper — response_revision_scripture_context | Going deeper on what we were just discussing — not switching topics. Your question was: “What does John 3:16 say?.” Buildi
+[PASS] I_correction_acts_not_isaiah — bible_wide_reasoning | Scripture answers this when the passages below are taken together. Acts 10 — "There was a certain man in Caesarea called Cornelius, a cen
+[PASS] J_multipart_two_refs — reason_first_openai | Genesis 1:1 says, "In the beginning God created the heaven and the earth." This verse establishes the foundation of creation, affirming Go
+[PASS] J_multipart_three — reason_first_openai | 1. The Sabbath is the seventh day of the week, as established in Genesis 2:2-3, where God rested on the seventh day and sanctified it. Thi
+
+29/29 passed, 0 failed.
+SCRIPTURE_REASONING_CERTIFICATION PASS
+
+---
+exit_code: 0
+elapsed_ms: 69689
+ended_at: 2026-07-24T05:45:20.779Z
+---
