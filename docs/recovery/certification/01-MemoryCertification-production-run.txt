@@ -1,0 +1,47 @@
+Memory certification against https://bible-buddy-monorepo-enterprise-v122-7.onrender.com (maxTurns=25)
+
+[PASS] M1_prior_user_question — companion_doctrine_release
+[PASS] M1_prior_assistant_reply — reason_first_openai
+[PASS] M1_go_deeper — response_revision_scripture_context
+[PASS] M1_continue — phase5o_continuation_general
+[PASS] M2_correction_continuity — response_correction_restate_dietary
+[PASS] M3_topic_return — doctrine_final_authority
+[PASS] M3_conversation_reference — reason_first_openai
+[FAIL] M4_2_turn_explicit — bible_companion_clarification | recalled=false | invented=false | I want to make sure I answer the right thing. Are you asking about a Bible passa
+[FAIL] M4_5_turn_explicit — bible_companion_clarification | recalled=false | invented=false | I want to make sure I answer the right thing. Are you asking about a Bible passa
+[FAIL] M4_10_turn_explicit — bible_companion_clarification | recalled=false | invented=false | I want to make sure I answer the right thing. Are you asking about a Bible passa
+[FAIL] M4_25_turn_explicit — bible_companion_clarification | recalled=false | invented=false | I want to make sure I answer the right thing. Are you asking about a Bible passa
+[FAIL] M4b_25_marker_explicit — reason_first_openai | recalled=false | You asked me to remember: "Turn 19: briefly say hello and stay ready."
+[PASS] M5_memory_honesty — bible_wide_reasoning | Scripture speaks directly to this. Zechariah 14 — "Behold, the day of the LORD cometh, and thy spoil
+[PASS] M6_implicit_name — reason_first_openai | recalled=true | You told me to use the name Caleb in this chat.
+[PASS] M7_session_isolation — bible_companion_clarification | leaked=false | I want to make sure I answer the right thing. Are you asking about a Bible passage, a life situation
+[PASS] M8_pin_write_ok — John 11:35
+
+11/16 passed, 5 failed.
+[
+  {
+    "id": "M4_2_turn_explicit",
+    "pass": false,
+    "detail": "bible_companion_clarification | recalled=false | invented=false | I want to make sure I answer the right thing. Are you asking about a Bible passa"
+  },
+  {
+    "id": "M4_5_turn_explicit",
+    "pass": false,
+    "detail": "bible_companion_clarification | recalled=false | invented=false | I want to make sure I answer the right thing. Are you asking about a Bible passa"
+  },
+  {
+    "id": "M4_10_turn_explicit",
+    "pass": false,
+    "detail": "bible_companion_clarification | recalled=false | invented=false | I want to make sure I answer the right thing. Are you asking about a Bible passa"
+  },
+  {
+    "id": "M4_25_turn_explicit",
+    "pass": false,
+    "detail": "bible_companion_clarification | recalled=false | invented=false | I want to make sure I answer the right thing. Are you asking about a Bible passa"
+  },
+  {
+    "id": "M4b_25_marker_explicit",
+    "pass": false,
+    "detail": "reason_first_openai | recalled=false | You asked me to remember: \"Turn 19: briefly say hello and stay ready.\""
+  }
+]

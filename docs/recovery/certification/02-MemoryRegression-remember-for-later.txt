@@ -1,0 +1,4 @@
+ACK_ROUTE reason_first_openai
+RECALL_ROUTE explicit_remember_pin
+RECALL You asked me to remember: my study focus is the Beatitudes.
+REMEMBER_FOR_LATER_PASS true

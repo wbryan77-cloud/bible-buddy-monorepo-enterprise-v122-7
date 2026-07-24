@@ -1,0 +1,23 @@
+Memory certification against http://127.0.0.1:7272 (maxTurns=100)
+
+[PASS] M1_prior_user_question — companion_doctrine_release
+[PASS] M1_prior_assistant_reply — reason_first_openai
+[PASS] M1_go_deeper — response_revision_scripture_context
+[PASS] M1_continue — phase5o_continuation_general
+[PASS] M2_correction_continuity — response_correction_restate_dietary
+[PASS] M3_topic_return — doctrine_final_authority
+[PASS] M3_conversation_reference — reason_first_openai
+[PASS] M4_2_turn_explicit — explicit_remember_pin | recalled=true | invented=false | You asked me to remember that your favorite verse is Psalm 23:1.
+[PASS] M4_5_turn_explicit — explicit_remember_pin | recalled=true | invented=false | You asked me to remember that your favorite verse is Psalm 23:1.
+[PASS] M4_10_turn_explicit — explicit_remember_pin | recalled=true | invented=false | You asked me to remember that your favorite verse is Psalm 23:1.
+[PASS] M4_25_turn_explicit — explicit_remember_pin | recalled=true | invented=false | You asked me to remember that your favorite verse is Psalm 23:1.
+[PASS] M4_50_turn_explicit — explicit_remember_pin | recalled=true | invented=false | You asked me to remember that your favorite verse is Psalm 23:1.
+[PASS] M4_100_turn_explicit — explicit_remember_pin | recalled=true | invented=false | You asked me to remember that your favorite verse is Psalm 23:1.
+[PASS] M4b_25_marker_explicit — explicit_remember_pin | recalled=true | You asked me to remember: ALPHA_MARKER_NEHEMIAH_8.
+[PASS] M5_memory_honesty — bible_wide_reasoning | Scripture speaks directly to this. Zechariah 14 — "Behold, the day of the LORD cometh, and thy spoil
+[PASS] M6_implicit_name — reason_first_openai | recalled=true | You told me to use the name Caleb for you in this chat.
+[PASS] M7_session_isolation — explicit_remember_pin_honest_miss | leaked=false | I don’t have a favorite verse saved for you yet. If you want me to keep one, say: Remember that my f
+[PASS] M8_pin_write_ok — John 11:35
+
+18/18 passed, 0 failed.
+MEMORY_CERTIFICATION PASS
