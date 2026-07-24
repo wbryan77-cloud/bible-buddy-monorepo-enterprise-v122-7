@@ -524,6 +524,43 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   evidencePack.userMessage = message;
   evidencePack.userId = userId;
 
+  // CERTIFICATION_V5 — resurrection timing must not fall through to
+  // doctrine_final_authority (resurrection hope / death-sleep) or OpenAI
+  // tradition answers that confuse discovery with rising time.
+  {
+    const { detectSourceTopic, buildSourceGroundedReply } = require('./sourceGroundedResponder');
+    if (detectSourceTopic(message) === 'resurrection_timeline') {
+      const grounded = buildSourceGroundedReply({ message });
+      if (grounded?.reply) {
+        const structured = {
+          ...grounded,
+          runtime: {
+            ...(grounded.runtime || {}),
+            masterRoute: grounded.runtime?.masterRoute || 'resurrection_timing_source_grounded',
+            openAiCalled: false,
+            buddyRuntime: 'core_openai_first',
+            resurrectionTiming: true,
+          },
+        };
+        structured.quality = scoreCompanionQuality({ message, reply: structured.reply, runtimeContext });
+        annotateLiveTruthReturn(structured, null, 'resurrection_timing', message);
+        return H.finalizeBuddyResponse({
+          structured,
+          userId,
+          mode,
+          personaKey,
+          message,
+          safety,
+          runtimeContext,
+          profile,
+          testerId,
+          sessionId,
+          cohort,
+        });
+      }
+    }
+  }
+
   const orchestratorResult = await runBibleCompanionOrchestrator({
     H,
     userId,

@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-07-24T02:23:24.320Z",
+  "source": "data/approved-cross-references.jsonl",
+  "totalApprovedCrossRefs": 135,
+  "byTopic": {
+    "sabbath": 18,
+    "faith_obedience": 7,
+    "prayer_comfort": 2,
+    "kingdom": 32,
+    "death_state": 15,
+    "new_jerusalem": 7,
+    "abomination_desolation": 20,
+    "fornication_sexual_sin": 9,
+    "holy_spirit": 10,
+    "dietary_law": 6,
+    "marriage_bed": 2,
+    "heartbreak_comfort": 1,
+    "david": 2,
+    "heavens": 3,
+    "repentance": 1
+  },
+  "governanceStatus": "AUTO_APPROVED_CROSS_REFERENCE (settled; not reopened)",
+  "liveReachability": {
+    "reader": "services/scriptureAuthorityEngine.js readApprovedCrossReferences",
+    "relation": "iog_icoj_cross_reference",
+    "countedAsPrimarySupportingWitness": false,
+    "openaiComposerUsesRawIogProse": false,
+    "evidenceCardsPath": "services/evidenceCards + retrievalEvidencePack"
+  },
+  "dormant": [
+    "docs/evidence-candidates raw transcripts/PDFs",
+    "sandbox relationship-graph",
+    "admin-approved.json staged promotions (productionApplied false)"
+  ],
+  "sampleLiveTriggers": [
+    {
+      "topic": "sabbath",
+      "count": 18,
+      "question": "What is the Sabbath day according to Scripture?"
+    },
+    {
+      "topic": "dietary_law",
+      "count": 6,
+      "question": "Does Acts 10 make pork clean?"
+    },
+    {
+      "topic": "death_state",
+      "count": 15,
+      "question": "What is the state of the dead according to Scripture?"
+    },
+    {
+      "topic": "holy_spirit",
+      "count": 10,
+      "question": "Who is the Holy Spirit according to Scripture?"
+    }
+  ],
+  "certificationNote": "Indexed and reachable on bible_wide path as KJV xrefs. Full per-answer contribution telemetry still incomplete — E1 partially met."
+}

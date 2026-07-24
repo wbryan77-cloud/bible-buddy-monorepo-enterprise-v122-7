@@ -134,6 +134,23 @@ function detectDeathStateTopic(message = '') {
   return false;
 }
 
+function detectResurrectionTimelineTopic(message = '') {
+  const m = String(message || '').toLowerCase();
+  if (!m) return false;
+  // Timing / Gospel-account questions must not collapse into "resurrection hope / death sleep".
+  if (
+    /\b(three days and three nights|matthew\s*12:40|matthew\s*28|mark\s*16|luke\s*24|john\s*20|first day of the week|already risen|empty tomb|rose sunday|rise sunday|sunday morning|before the first day|discovery of the (empty )?tomb|when (mary|the women) (reached|came|arrived)|friday afternoon to sunday)\b/i.test(
+      m,
+    )
+  ) {
+    return true;
+  }
+  if (/\bresurrection\b/i.test(m) && /\b(sunday|timeline|chronology|when|timing|hour|moment|already|tomb|dawn|discovery)\b/i.test(m)) {
+    return true;
+  }
+  return false;
+}
+
 /**
  * Message-based strict topic detection (no session context).
  * Priority: acts_10 before dietary when both match (Acts 10 vision context).
@@ -151,6 +168,8 @@ function detectStrictTopicFromMessage(message = '') {
   if (/\bnew jerusalem\b/i.test(m)) return 'new_jerusalem';
   if (/\b(kingdom of heaven|kingdom of god|thy kingdom)\b/i.test(m)) return 'kingdom';
   if (/\b(holy spirit|spirit of god)\b/i.test(m)) return 'holy_spirit';
+  // CERTIFICATION_V5 — timing questions are not the resurrection-hope contract.
+  if (detectResurrectionTimelineTopic(m)) return null;
   if (/\bresurrection\b/i.test(m)) return 'resurrection';
   if (/\b(davidic covenant|king david)\b/i.test(m)) return 'david';
 
@@ -166,5 +185,6 @@ module.exports = {
   detectDietaryTopic,
   detectDeathStateTopic,
   detectKingdomOnEarthTopic,
+  detectResurrectionTimelineTopic,
   KINGDOM_ON_EARTH_PATTERNS,
 };

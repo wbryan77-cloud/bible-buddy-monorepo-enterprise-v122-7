@@ -23,7 +23,31 @@ function detectSourceTopic(message = '') {
     return 'traditions';
   }
 
-  if (hasAny(text, ['resurrection', 'three days and three nights', 'resurrection timeline', 'matthew 12:40', 'matthew 28', 'mark 16', 'luke 24', 'john 20', 'daniel 9:27', 'midst of the week', 'first day of the week'])) {
+  if (
+    hasAny(text, [
+      'resurrection',
+      'three days and three nights',
+      'resurrection timeline',
+      'matthew 12:40',
+      'matthew 28',
+      'mark 16',
+      'luke 24',
+      'john 20',
+      'daniel 9:27',
+      'midst of the week',
+      'first day of the week',
+      'already risen',
+      'empty tomb',
+      'rose sunday',
+      'rise sunday',
+      'sunday morning',
+      'before the first day',
+      'discovery of the empty tomb',
+      'when mary reached',
+      'when mary came',
+      'friday afternoon to sunday',
+    ])
+  ) {
     return 'resurrection_timeline';
   }
 
@@ -194,44 +218,150 @@ function traditionsReply() {
   );
 }
 
-function resurrectionReply() {
+function resurrectionReply(message = '') {
+  const m = String(message || '');
+
+  const scripture = [
+    { reference: 'Matthew 12:40', text: '', reason: 'three days and three nights' },
+    { reference: 'Matthew 28:1-6', text: 'He is not here: for he is risen, as he said.', reason: 'already risen at the women’s arrival' },
+    { reference: 'Mark 16:1-6', text: '', reason: 'women arrive; He is risen' },
+    { reference: 'Luke 24:1-7', text: '', reason: 'first day dawn; not here, is risen' },
+    { reference: 'John 20:1-10', text: '', reason: 'first day early; stone taken away' },
+    { reference: 'Luke 23:50-56', text: '', reason: 'burial before Sabbath; women rested' },
+  ];
+
+  // Direct answers for common Founder phrasings — claim categories labeled.
+  if (/\b(exact (moment|time|clock|hour|minute)|clock time|precise moment|exact second)\b/i.test(m)) {
+    return basePayload(
+      'resurrection_timeline',
+      [
+        'Direct answer: No — Scripture does not give the exact clock time / precise moment Jesus rose.',
+        '',
+        'Explicit Scripture:',
+        'Matthew 28:1-6 (and Mark 16 / Luke 24 / John 20) tell when the women arrived toward dawn of the first day and that He was already risen then.',
+        '',
+        'Scripture Silent:',
+        'The Gospels do not state the exact hour or minute of the rising itself. Discovery time is not the same as a revealed resurrection timestamp.',
+      ].join('\n'),
+      scripture,
+      [],
+      { masterRoute: 'resurrection_timing_source_grounded', claimGovernance: true },
+    );
+  }
+
+  if (/\balready risen when (mary|the women)|already gone when mary|was he already risen\b/i.test(m)) {
+    return basePayload(
+      'resurrection_timeline',
+      [
+        'Direct answer: Yes — according to the Gospel accounts, Jesus was already risen when the women reached the tomb.',
+        '',
+        'Explicit Scripture:',
+        'Matthew 28:1-6 — the women came toward dawn of the first day of the week, and the angel said He is risen; He is not here.',
+        'Mark 16:1-6 and Luke 24:1-7 record the same discovery: they arrive and find that He is already risen.',
+        'John 20:1 — early on the first day the stone is already taken away.',
+        '',
+        'Scripture Silent:',
+        'Those passages state the condition of the tomb at discovery. They do not give the exact clock time of the rising itself.',
+        '',
+        'Do not confuse the time of discovery with an exact resurrection timestamp Scripture does not provide.',
+      ].join('\n'),
+      scripture,
+      ['Compare Matthew 28:1-6 with Mark 16 and Luke 24 on the discovery wording.'],
+      { masterRoute: 'resurrection_timing_source_grounded', claimGovernance: true },
+    );
+  }
+
+  if (/\bdid jesus rise sunday|rose sunday morning|resurrection on sunday\b/i.test(m)) {
+    return basePayload(
+      'resurrection_timeline',
+      [
+        'Direct answer: Scripture records that the women discovered the empty tomb toward dawn of the first day of the week — and that Jesus was already risen then. It does not state an exact Sunday-morning rising moment.',
+        '',
+        'Explicit Scripture:',
+        'Matthew 28:1-6 — arrival toward dawn of the first day; “He is risen.”',
+        'Mark 16:1-6; Luke 24:1-7; John 20:1 — first-day discovery of the empty tomb.',
+        '',
+        'Comparison / reasoned inference:',
+        'If He was already risen when they arrived, the first-day visit describes discovery, not a proof of the exact rising minute.',
+        'Matthew 12:40 also requires “three days and three nights,” which challenges a short Friday-afternoon-to-Sunday-morning count when that count is pressed as exact.',
+        '',
+        'Scripture Silent:',
+        'The Gospels do not give a clock-hour for the resurrection event itself.',
+        '',
+        'Historical tradition that He “rose Sunday morning” must not be presented as if Matthew 28 stated the rising moment. The text states discovery and that He was already risen.',
+      ].join('\n'),
+      scripture,
+      ['Hold discovery wording (Matthew 28:1-6) separate from any later tradition about the exact rising hour.'],
+      { masterRoute: 'resurrection_timing_source_grounded', claimGovernance: true },
+    );
+  }
+
+  if (/\b(first day describe|resurrection or the discovery|discovery of the empty tomb)\b/i.test(m)) {
+    return basePayload(
+      'resurrection_timeline',
+      [
+        'Direct answer: In the Gospel wording, the first day of the week primarily marks the discovery of the empty tomb — and that Jesus was already risen — not a stated clock-time for the rising itself.',
+        '',
+        'Explicit Scripture: Matthew 28:1-6; Mark 16:1-6; Luke 24:1-7; John 20:1.',
+        'Scripture Silent: the exact minute/hour He rose.',
+      ].join('\n'),
+      scripture,
+      [],
+      { masterRoute: 'resurrection_timing_source_grounded', claimGovernance: true },
+    );
+  }
+
+  if (/\bfriday afternoon to sunday|three days and three nights\b/i.test(m)) {
+    return basePayload(
+      'resurrection_timeline',
+      [
+        'Direct answer: Matthew 12:40 explicitly requires “three days and three nights.” A short Friday-afternoon-to-Sunday-morning span is difficult to reconcile with that wording if pressed as an exact full count.',
+        '',
+        'Explicit Scripture:',
+        'Matthew 12:40 — three days and three nights in the heart of the earth.',
+        'Matthew 28:1-6 — toward dawn of the first day, He was already risen.',
+        'Luke 23:50-56 — burial before Sabbath; women rested the Sabbath day.',
+        '',
+        'Reasoned inference (not explicit timestamp):',
+        'Any full chronology that satisfies Matthew 12:40 must be tested against the burial, Sabbath rest, and already-risen discovery texts — without importing later church tradition as if it were the verse.',
+        '',
+        'Scripture Silent: the exact clock hour of the resurrection event.',
+      ].join('\n'),
+      scripture.concat([{ reference: 'Matthew 12:40', text: '', reason: 'three days and three nights' }]),
+      [],
+      { masterRoute: 'resurrection_timing_source_grounded', claimGovernance: true },
+    );
+  }
+
+  // Default: Sunday vs already-risen-before-first-day Founder question
   return basePayload(
     'resurrection_timeline',
     [
-      "Let's read Scripture line upon line before stating any chronology.",
+      'Direct answer: Scripture shows Jesus was already risen before / when the first-day discovery happened. The first day of the week is when the empty tomb is discovered — not a verse that states “He rose at Sunday morning o’clock.”',
       '',
-      'Anchor passages:',
-      '1. Matthew 12:40 — three days and three nights in the heart of the earth.',
-      '2. Daniel 9:27 — in the midst of the week he shall cause the sacrifice and the oblation to cease.',
-      '3. Matthew 28:1-6 — women came toward dawn on the first day of the week; He was already risen.',
-      '4. Mark 16:1-6, Luke 24:1-6, John 20:1-8 — resurrection accounts.',
+      'Explicit Scripture:',
+      '• Matthew 28:1-6 — women came toward dawn of the first day; the angel says He is risen; He is not here.',
+      '• Mark 16:1-6; Luke 24:1-7; John 20:1-10 — first-day arrival finds the tomb already empty / He is risen.',
+      '• Matthew 12:40 — three days and three nights (duration constraint).',
+      '• Luke 23:50-56 — burial before Sabbath; women rested on the Sabbath.',
       '',
-      'What these passages state explicitly:',
-      '• Daniel 9:27 places a decisive event in the middle of the week in prophetic Scripture.',
-      '• Matthew 12:40 requires three days and three nights, not a partial count.',
-      '• Matthew 28:1-6 records Christ already risen when the women arrived at dawn.',
+      'Comparison of Scripture:',
+      'All four Gospels agree the women find Him already risen at the first-day visit. That supports distinguishing discovery timing from an unstated exact rising minute.',
       '',
-      'Chronology (tested against the passages above):',
-      'Wednesday afternoon — Crucifixion',
-      'Before sunset — Burial',
-      'Thursday — Day 1 / Night 1',
-      'Friday — Day 2 / Night 2',
-      'Saturday — Day 3 / Night 3',
-      'Before dawn toward the first day of the week — Already risen (Matthew 28:1-6)',
+      'Reasoned inference (labeled):',
+      'Because He was already risen at dawn discovery, traditional wording that He “rose Sunday morning” as the discovery moment should not be treated as the explicit text. Chronologies that honor Matthew 12:40 must be argued carefully from the passages, not from later tradition alone.',
       '',
-      'This chronology is Scripture-first. Where the exact hour is not stated, that limit should be acknowledged rather than filled from later tradition.',
+      'Scripture Silent:',
+      'The exact hour/minute of the resurrection event is not stated.',
+      '',
+      'Do not answer the time of discovery as if it automatically proves the exact time of the rising.',
     ].join('\n'),
+    scripture,
     [
-      { reference: 'Daniel 9:27', text: '', reason: 'in the midst of the week; sacrifice and oblation cease' },
-      { reference: 'Matthew 12:40', text: '', reason: 'three days and three nights in the heart of the earth' },
-      { reference: 'Matthew 28:1-6', text: 'He is not here: for he is risen, as he said.', reason: 'already risen when women arrived at dawn' },
-      { reference: 'Mark 16:1-6', text: '', reason: 'resurrection account' },
-      { reference: 'Luke 24:1-6', text: '', reason: 'resurrection account' },
-      { reference: 'John 20:1-8', text: '', reason: 'resurrection account' },
+      'Keep discovery (first day dawn) separate from any claimed exact rising timestamp.',
+      'Read Matthew 12:40 with Matthew 28:1-6 and Luke 23:50-56 together.',
     ],
-    [
-      'Read Daniel 9:27, Matthew 12:40, and all four resurrection accounts together before forming a chronology.',
-    ]
+    { masterRoute: 'resurrection_timing_source_grounded', claimGovernance: true },
   );
 }
 
@@ -245,7 +375,7 @@ function buildSourceGroundedReply({ message, questionIntent = null } = {}) {
   if (topic === 'sabbath') return sabbathReply({ questionType, message });
   if (topic === 'feast_days') return feastDaysReply();
   if (topic === 'traditions') return traditionsReply();
-  if (topic === 'resurrection_timeline') return resurrectionReply();
+  if (topic === 'resurrection_timeline') return resurrectionReply(message);
   return null;
 }
 

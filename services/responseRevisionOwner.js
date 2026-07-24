@@ -164,18 +164,49 @@ function buildRevisionReply({ userId, message = '' } = {}) {
   }
 
   if (type === 'scripture') {
+    const priorReply = String(memory.lastReply || '').trim();
+    const priorQ = String(memory.lastUserMessage || '').trim();
+    const refs = scriptureRefs(memory);
+    const aboutDietary =
+      /acts\s*10|pork|unclean|dietary|leviticus 11|deuteronomy 14/i.test(priorReply) ||
+      /acts\s*10|pork|unclean/i.test(priorQ) ||
+      /dietary|acts_10/i.test(String(memory.lastRoute || ''));
+
+    if (aboutDietary) {
+      return {
+        revisionType: 'scripture',
+        route: 'response_revision_scripture',
+        reply:
+          'Yes. Here are more Scripture witnesses, staying with the Bible itself. Acts 10:14 shows Peter still refused unclean food. Acts 10:28 explains the vision was about not calling people common or unclean. Acts 11:1-18 repeats the matter as God receiving Gentiles. Leviticus 11 and Deuteronomy 14 remain the direct clean and unclean food chapters.',
+        scripture: [
+          { reference: 'Acts 10:14', theme: 'Peter refused unclean food' },
+          { reference: 'Acts 10:28', theme: 'vision explained as people' },
+          { reference: 'Acts 11:1-18', theme: 'Gentiles received' },
+          { reference: 'Leviticus 11', theme: 'clean and unclean' },
+          { reference: 'Deuteronomy 14', theme: 'clean and unclean' },
+        ],
+      };
+    }
+
+    const refLine = refs.length ? `Scripture already on the table: ${refs.slice(0, 6).join('; ')}.` : '';
+    const clipped = priorReply
+      ? priorReply.length > 700
+        ? `${priorReply.slice(0, 700).trim()}…`
+        : priorReply
+      : '';
     return {
       revisionType: 'scripture',
-      route: 'response_revision_scripture',
-      reply:
-        "Yes. Here are more Scripture witnesses, staying with the Bible itself. Acts 10:14 shows Peter still refused unclean food. Acts 10:28 explains the vision was about not calling people common or unclean. Acts 11:1-18 repeats the matter as God receiving Gentiles. Leviticus 11 and Deuteronomy 14 remain the direct clean and unclean food chapters.",
-      scripture: [
-        { reference: 'Acts 10:14', theme: 'Peter refused unclean food' },
-        { reference: 'Acts 10:28', theme: 'vision explained as people' },
-        { reference: 'Acts 11:1-18', theme: 'Gentiles received' },
-        { reference: 'Leviticus 11', theme: 'clean and unclean' },
-        { reference: 'Deuteronomy 14', theme: 'clean and unclean' },
-      ],
+      route: 'response_revision_scripture_context',
+      reply: [
+        'Going deeper on what we were just discussing — not switching topics.',
+        priorQ ? `Your question was: “${priorQ.slice(0, 180)}.”` : '',
+        clipped ? `Building from the prior answer:\n${clipped}` : '',
+        refLine,
+        'If you want another witness, name the passage or ask for a related verse on this same question.',
+      ]
+        .filter(Boolean)
+        .join('\n\n'),
+      scripture: memory.lastScripture || [],
     };
   }
 
@@ -186,6 +217,17 @@ function buildRevisionReply({ userId, message = '' } = {}) {
       reply:
         "BibleBuddy is meant to be a Scripture-grounded companion, not just a Bible search box. It should listen to what you are actually asking, pray with you, help you study line upon line and precept upon precept, and help apply Scripture to real-life situations. The goal is one steady voice: caring like a companion, careful with Scripture, and guarded from drifting into man-made tradition.",
       scripture: [],
+    };
+  }
+
+  const priorReply = String(memory.lastReply || '').trim();
+  if (priorReply) {
+    const clipped = priorReply.length > 800 ? `${priorReply.slice(0, 800).trim()}…` : priorReply;
+    return {
+      revisionType: 'explanation',
+      route: 'response_revision_explanation_context',
+      reply: `Going deeper on what we were just discussing:\n\n${clipped}\n\nWhat part should I open further — the Scripture itself, the comparison, or the practical application?`,
+      scripture: memory.lastScripture || [],
     };
   }
 
