@@ -16,13 +16,26 @@ function isYesNoQuestion(message = '') {
   return /\b(can we|can i|may we|should we|is it okay to|are we allowed to)\b/i.test(m);
 }
 
+function isMetaCorrectionMessage(message = '') {
+  return /\b(you did not answer|you didn't answer|not what i asked|contradicting yourself|you are contradicting|that verse does not|glitching|ask me the part)\b/i.test(
+    String(message || ''),
+  );
+}
+
 function inferPolarity(message = '', topic = '') {
   const m = String(message || '').toLowerCase();
   const t = String(topic || '').toLowerCase();
 
+  // CORE_COMPANION_CERTIFICATION — never force dietary yes/no polarity onto
+  // meta corrections ("you did not answer… about pork"). That was prepending
+  // "No. Staying with Scripture," onto correction replies in production.
+  if (isMetaCorrectionMessage(m)) return null;
+
   if (
     t === 'dietary_law' ||
-    /\b(pork|swine|shellfish|unclean food|eat pork)\b/i.test(m)
+    /\b(does acts\s*10 make pork|can we eat pork|is pork clean|eat pork|pork clean)\b/i.test(m) ||
+    (/\b(pork|swine|shellfish|unclean food)\b/i.test(m) &&
+      (isYesNoQuestion(m) || /\b(yes or no|clean\?|allowed)\b/i.test(m)))
   ) {
     return 'no';
   }
@@ -84,9 +97,47 @@ function buildSensoryDistinctionReply(message = '') {
   return 'Some people may like the taste, but that is different from whether Scripture says it is clean to eat. Staying with Scripture, pork is unclean in Leviticus 11 and Deuteronomy 14.';
 }
 
+function collapseDoctrineOpener(reply = '') {
+  let result = String(reply || '').trim();
+  if (!result) return result;
+
+  // Collapse duplicated doctrine openers from double polish passes.
+  // Do NOT strip "with Scripture," from inside "Staying with Scripture, Scripture…"
+  // — that historically produced "No. Staying Scripture answers…".
+  result = result
+    .replace(/^(No\.\s+Staying with Scripture,)(\s+with Scripture,)+/gi, '$1 ')
+    .replace(/^(No\.\s+Staying with Scripture,)\s+According to Scripture,\s*/gi, '$1 ')
+    .replace(/^(Yes\.\s+)?Staying with Scripture,(\s+with Scripture,)+/gi, '$1Staying with Scripture, ')
+    .replace(/\bNo\.\s+No\./gi, 'No.')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return result;
+}
+
+function applyDoctrineNoOpener(body = '') {
+  let text = String(body || '')
+    .replace(/^(yes|no)[—,\-–.\s]*/i, '')
+    .replace(/^(with Scripture|According to Scripture),\s*/i, '')
+    .replace(/^Staying with Scripture,\s*/i, '')
+    .trim();
+  if (!text) return 'No. Staying with Scripture.';
+  return `No. Staying with Scripture, ${text}`;
+}
+
 function applyYesNoPolarityGuard(reply = '', message = '', options = {}) {
   const { topic = '', scripture = [] } = options;
   const m = String(message || '');
+  if (isMetaCorrectionMessage(m)) {
+    return String(reply || '').trim();
+  }
+  if (
+    /^(you are right|thank you for catching|i hear the correction|i hear you — let me answer)/i.test(
+      String(reply || '').trim(),
+    )
+  ) {
+    return String(reply || '').trim();
+  }
   if (isTasteOrSensoryQuestion(m)) {
     const text = String(reply || '').trim();
     if (
@@ -102,13 +153,16 @@ function applyYesNoPolarityGuard(reply = '', message = '', options = {}) {
   }
 
   const polarity = inferPolarity(message, topic);
-  if (!polarity) return String(reply || '').trim();
+  if (!polarity) return collapseDoctrineOpener(reply);
 
   let result = String(reply || '').trim();
   if (!result) return result;
 
+  // Already has the canonical opener — collapse duplicates only.
+  // Never rewrite via /\bNo\.\s+staying\b/ → that matched inside
+  // "No. Staying with Scripture" and re-injected "with Scripture," each polish.
   if (/^No\.\s+Staying with Scripture/i.test(result)) {
-    return result.replace(/\bNo\.\s+staying\b/i, 'No. Staying with Scripture,').trim();
+    return collapseDoctrineOpener(result);
   }
 
   const startsYes = /^yes\b/i.test(result) || /^yes[—,\-–]/i.test(result);
@@ -116,20 +170,20 @@ function applyYesNoPolarityGuard(reply = '', message = '', options = {}) {
 
   if (polarity === 'no') {
     if (startsYes && !startsNo) {
-      result = result.replace(/^yes[—,\-–\s]*/i, '');
-      result = `No. Staying with Scripture, ${result}`;
+      result = applyDoctrineNoOpener(result);
     } else if (!startsNo) {
-      result = `No. Staying with Scripture, ${result}`;
+      result = applyDoctrineNoOpener(result);
     } else if (!/staying with scripture/i.test(result)) {
-      result = result.replace(/^no\.\s*/i, 'No. Staying with Scripture, ');
-    } else if (/^No\.\s+staying\b/i.test(result)) {
-      result = result.replace(/^No\.\s+staying\b/i, 'No. Staying with Scripture,');
+      result = applyDoctrineNoOpener(result);
+    } else if (/^No\.\s+Staying\b/i.test(result) && !/^No\.\s+Staying with Scripture/i.test(result)) {
+      // Repair historically broken "No. Staying Scripture…" form.
+      result = result.replace(/^No\.\s+Staying\s+/i, 'No. Staying with Scripture, ');
     }
   } else if (polarity === 'yes' && !startsYes && !startsNo) {
     result = `Yes. ${result}`;
   }
 
-  return result.replace(/\bNo\.\s+No\./i, 'No.').trim();
+  return collapseDoctrineOpener(result);
 }
 
 function formatDirectDoctrineReply(reply = '', message = '', options = {}) {

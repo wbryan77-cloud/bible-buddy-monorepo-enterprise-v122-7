@@ -1,0 +1,24 @@
+Founder Truth Corpus against http://127.0.0.1:7266
+
+[PASS] A1_identity — phase5l_app_identity
+[PASS] A2_tell_me_more — response_revision_identity
+[PASS] A3_go_deeper — response_revision_identity
+[PASS] B1_heavens_multipart — bible_wide_reasoning
+[PASS] C1_current_message_wins — bible_wide_reasoning
+[PASS] D1_scripture_silence — bible_wide_reasoning
+[PASS] E1_prayer — phase5k_prayer_companion
+[PASS] E2_better_prayer — response_revision_prayer
+[PASS] F1_correction_matthew28 — response_correction_matthew28_silence
+[PASS] G1_presence — phase5l_presence_nervous
+[PASS] H1_acts10_pork — bible_wide_reasoning | No. Staying with Scripture, Scripture answers this when the passages below are taken together. Acts 10:28 — "And he said unto them, Ye know 
+[PASS] H2_pork_correction — response_correction_restate_dietary | You are right to demand a direct answer. Here it is clearly: No — Acts 10 does not make pork clean. Peter refused unclean food (Acts 10:14), and he explained th
+[PASS] H3_isaiah66 — bible_wide_reasoning | Scripture speaks directly to this. Isaiah 66:17 — "They that sanctify themselves, and purify themselves in the gardens behind one tree in th
+[PASS] I1_decision_bare — conversation_owner_life_decision
+[PASS] J1_stop — phase5o_stop_release
+[PASS] K1_appearance_contradicted — bible_wide_reasoning
+[PASS] L1_john316 — bible_wide_reasoning
+[PASS] M1_rapid_topic_to_prayer — phase5k_prayer_companion
+[PASS] N1_contradiction_challenge — response_correction_contradiction | Thank you for catching that. If my last answer overstated the text, the Scripture itself is the authority — not my wording. Point me to the 
+
+19/19 passed, 0 failed.
+FOUNDER_TRUTH_CORPUS PASS

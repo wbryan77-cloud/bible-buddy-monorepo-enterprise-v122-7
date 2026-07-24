@@ -79,6 +79,38 @@ function buildCorrectionReply({ userId, message = '' } = {}) {
   }
 
   if (/you did not answer|you didn't answer|not what i asked/i.test(m)) {
+    const priorAnswered =
+      priorReply.length > 60 &&
+      (/^no\b|^yes\b/i.test(priorReply.trim()) ||
+        /acts\s*10|leviticus|deuteronomy|matthew|scripture speaks|staying with scripture/i.test(priorReply));
+    const aboutPork =
+      /pork|acts\s*10|unclean|swine/i.test(prior) || /pork|acts\s*10|unclean|swine/i.test(priorReply);
+
+    // If the prior turn already answered, restate — do not ask the user to repeat.
+    if (priorAnswered && aboutPork) {
+      return {
+        revisionType: 'correction_restate_prior',
+        route: 'response_correction_restate_dietary',
+        reply:
+          'You are right to demand a direct answer. Here it is clearly: No — Acts 10 does not make pork clean. Peter refused unclean food (Acts 10:14), and he explained the vision as God teaching him not to call people common or unclean (Acts 10:28). Leviticus 11 and Deuteronomy 14 still identify swine as unclean.',
+        scripture: [
+          { reference: 'Acts 10:14', theme: 'Peter refused unclean food' },
+          { reference: 'Acts 10:28', theme: 'vision about people' },
+          { reference: 'Leviticus 11', theme: 'clean and unclean' },
+          { reference: 'Deuteronomy 14', theme: 'clean and unclean' },
+        ],
+      };
+    }
+    if (priorAnswered) {
+      const clipped = priorReply.length > 900 ? `${priorReply.slice(0, 900).trim()}…` : priorReply.trim();
+      return {
+        revisionType: 'correction_restate_prior',
+        route: 'response_correction_restate_prior',
+        reply: `I hear you. Staying with your question — “${String(memory.lastUserMessage || '').slice(0, 200)}” — here is the direct answer again:\n\n${clipped}`,
+        scripture: memory.lastScripture || [],
+      };
+    }
+
     return {
       revisionType: 'correction_missed_question',
       route: 'response_correction_missed_question',

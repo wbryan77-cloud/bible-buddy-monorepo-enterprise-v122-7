@@ -255,7 +255,10 @@ function polishDoctrineOpener(reply = '', message = '') {
   let t = String(reply || '').trim();
   t = t.replace(/Absolutely\s*[—-]\s*staying with the Bible text:\s*/gi, '');
   t = t.replace(/Yes\s*[—-]\s*staying[^.]*[.:]?\s*/gi, '');
-  t = t.replace(/\bNo\.\s+Staying with Scripture,\s+with Scripture,\s*/gi, 'No. Staying with Scripture, ');
+  // Collapse duplicate openers only. Never strip "with Scripture," from inside
+  // "Staying with Scripture, Scripture answers…" (that produced "Staying Scripture").
+  t = t.replace(/^(No\.\s+Staying with Scripture,)(\s+with Scripture,)+/gi, '$1 ');
+  t = t.replace(/^(Yes\.\s+)?Staying with Scripture,(\s+with Scripture,)+/gi, '$1Staying with Scripture, ');
   t = t.replace(/\bScripture witnesses:\s*/gi, '');
   if (/^No\.\s+According to Scripture,\s*pork/i.test(t) && /\bpork and shellfish remain unclean\b/i.test(t)) {
     t = t.replace(/\s*According to Scripture, pork and shellfish remain unclean\.\s*/i, ' ');

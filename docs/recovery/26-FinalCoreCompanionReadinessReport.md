@@ -1,5 +1,9 @@
 # Final Core Companion Readiness Report
 
+> **SUPERSEDED for Founder Alpha GO/NO-GO (2026-07-24):**  
+> This document’s status `CORE_COMPANION_RECOVERED_READY_FOR_FOUNDER_REVIEW` means recovery work was ready for **personal Founder review**, not Alpha release certification.  
+> Authoritative RC decision lives in `docs/recovery/certification-v3/rc4/`. Do not treat this file as `GO_FOR_FOUNDER_ALPHA`.
+
 ## Decision
 
 **CORE_COMPANION_RECOVERED_READY_FOR_FOUNDER_REVIEW**
