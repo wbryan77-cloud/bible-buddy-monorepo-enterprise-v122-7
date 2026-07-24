@@ -113,11 +113,25 @@ function refInApproved(ref, approvedRefs = []) {
 }
 
 function matchesForbidden(text = '') {
+  const raw = String(text || '').trim();
+  if (!raw) return [];
+
+  // GATE 5 — evaluate forbidden patterns per sentence so a safe denial / "know not"
+  // in one sentence cannot excuse an unsupported claim in another.
+  const units = raw.split(/(?<=[.!?])\s+/).filter(Boolean);
+  const scopes = units.length ? units : [raw];
   const hits = [];
-  for (const rule of FORBIDDEN_CLAIM_RULES) {
-    for (const pattern of rule.patterns) {
-      if (pattern.test(text)) {
-        if (rule.unless && rule.unless.test(text)) continue;
+  const seen = new Set();
+
+  for (const unit of scopes) {
+    for (const rule of FORBIDDEN_CLAIM_RULES) {
+      for (const pattern of rule.patterns) {
+        pattern.lastIndex = 0;
+        if (!pattern.test(unit)) continue;
+        pattern.lastIndex = 0;
+        if (rule.unless && rule.unless.test(unit)) continue;
+        if (seen.has(rule.id)) break;
+        seen.add(rule.id);
         hits.push({ id: rule.id, issue: rule.issue, classification: rule.classification });
         break;
       }
