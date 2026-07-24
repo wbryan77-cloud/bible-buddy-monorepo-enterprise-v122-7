@@ -1,0 +1,10 @@
+PASS f_third_heaven_bad class=D
+PASS f_kingdom_heaven_bad class=D
+PASS f_acts10_bad class=D
+PASS f_third_heaven_good class=A
+PASS f_no_ascended_bad class=D
+PASS f_cannot_come_bad class=D
+PASS f_citation_without_support class=D
+PASS f_pork_citation_leviticus class=D
+PASS f_matt610_citation_kingdom_heaven class=D
+{"passed":9,"total":9,"allPass":true}

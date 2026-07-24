@@ -1,0 +1,30 @@
+Gate 5 Claim Verifier Certification
+Authoritative module: claimToScriptureValidator (NOT universalClaimVerifier)
+
+
+--- Offline adversarial (production validator functions) ---
+
+[PASS] OFF_unsupported_heaven_at_death — passed=false class=D
+[PASS] OFF_citation_mismatch_2cor12 — class=D
+[PASS] OFF_acts10_pork_clean — class=D
+[PASS] OFF_sunday_replaced_sabbath — class=D issues=["contradicted_sunday_replaced_sabbath"]
+[PASS] OFF_tradition_as_doctrine — class=C
+[PASS] OFF_one_bad_sentence_in_good_reply — passed=false degraded=Ecclesiastes 9:5 says the dead know not any thing.
+[PASS] OFF_correct_byte_stable — passed=true same=true
+[PASS] OFF_abstention_denial_phrase — degraded=Scripture does not state that directly. when they die.
+[PASS] OFF_no_infinite_degrade_loop — d1len=60 d2len=60
+[PASS] OFF_false_original_certainty_ascension — class=D
+[PASS] OFF_silence_overclaim_matt28 — passed=false
+
+--- Production /buddy/chat against https://bible-buddy-monorepo-enterprise-v122-7.onrender.com ---
+
+[PASS] PROD_preserve_john316 — bible_wide_reasoning | degraded=false | Scripture speaks directly to this. John 3:16 — "For God so loved the world, that he gave his only be
+[PASS] PROD_acts10_not_pork_clean — bible_wide_reasoning | flags=bible_wide_reasoning,concept_explicit_scripture_reference,bnc_phase5e,phase5l_live_owner,phase5m_live_owner | No. Staying with Scripture, Scripture ans
+[PASS] PROD_no_immediate_heaven_certainty — reason_first_openai | When Christians die, Scripture indicates they do not immediately go to heaven. Instead, they are described as sleeping until the resurrectio
+[PASS] PROD_sunday_not_replace_sabbath — doctrine_final_authority | From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath establishe
+[PASS] PROD_prayer_tone_preserved — phase5k_prayer_companion | Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentleness. Help me walk in
+[PASS] PROD_bypass_lane_documented — route=bible_wide_reasoning claimDegraded=false claimValidation=null bypassLikely=true
+[PASS] PROD_third_heaven_no_destination_overclaim — bible_wide_reasoning | Scripture speaks directly to this. 2 Corinthians 12:2 — "I knew a man in Christ above fourteen years ago, (whether in the body, I cannot tel
+
+18/18 passed, 0 failed.
+CLAIM_VERIFIER_CERTIFICATION PASS
