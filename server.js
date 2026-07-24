@@ -28,6 +28,16 @@ const DATA_DIR = path.join(__dirname, 'data');
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 
+// Public entry aliases (invitation / SMS / QR). Registered BEFORE static so
+// legacy admin/index.html and alpha-test.html cannot own these exact paths.
+// Does not change Companion runtime, Admin auth, or API security.
+app.get(['/alpha', '/alpha/', '/alpha-test', '/alpha-test/'], (req, res) => {
+  res.redirect(302, '/');
+});
+app.get(['/admin', '/admin/'], (req, res) => {
+  res.redirect(302, '/admin/bible-authority');
+});
+
 app.use(express.static(PUBLIC_DIR));
 app.use('/admin', express.static(ADMIN_DIR));
 // PII lives under data/ (sessions, feedback). Do not expose via public static file serving.
@@ -212,18 +222,11 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(ADMIN_DIR, 'index.html'));
-});
-
 app.get('/beta', (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'beta.html'));
 });
 
-app.get('/alpha', (req, res) => {
-  res.sendFile(path.join(ADMIN_DIR, 'alpha-test.html'));
-});
-
+// Internal alpha harness (not a public entry alias).
 app.get('/admin/alpha-test', (req, res) => {
   res.sendFile(path.join(ADMIN_DIR, 'alpha-test.html'));
 });
