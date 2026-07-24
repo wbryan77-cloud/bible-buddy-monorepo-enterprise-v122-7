@@ -1,4 +1,8 @@
 const { getBoundariesForTopic } = require('./doctrineBoundaries');
+const {
+  detectResurrectionTimelineTopic,
+  detectDeathStateTopic,
+} = require('./doctrineTopicDetector');
 
 function hasAny(text, terms) {
   return terms.some((term) => text.includes(term));
@@ -23,31 +27,24 @@ function detectSourceTopic(message = '') {
     return 'traditions';
   }
 
-  if (
-    hasAny(text, [
-      'resurrection',
-      'three days and three nights',
-      'resurrection timeline',
-      'matthew 12:40',
-      'matthew 28',
-      'mark 16',
-      'luke 24',
-      'john 20',
-      'daniel 9:27',
-      'midst of the week',
-      'first day of the week',
-      'already risen',
-      'empty tomb',
-      'rose sunday',
-      'rise sunday',
-      'sunday morning',
-      'before the first day',
-      'discovery of the empty tomb',
-      'when mary reached',
-      'when mary came',
-      'friday afternoon to sunday',
-    ])
-  ) {
+  // GATE 4 — do not treat bare "resurrection" as timeline ownership.
+  // "state of the dead before resurrection" and "what does 1 Cor 15 teach about
+  // resurrection" must not be hijacked by the Gospel-discovery timing lane.
+  // Align with detectResurrectionTimelineTopic (timing-shaped only).
+  if (detectDeathStateTopic(message) || /\bstate of the dead\b/i.test(text)) {
+    return null;
+  }
+  if (detectResurrectionTimelineTopic(message)) {
+    // Explicit "What does Matthew 12:40 say?" is a verse-content request unless
+    // the user also asks a timing question.
+    if (
+      /\bwhat does\s+matthew\s*12:40\b/i.test(text) &&
+      !/\b(when|timing|sunday|already risen|discovery|timeline|chronology|friday|three days and three nights)\b/i.test(
+        text,
+      )
+    ) {
+      return null;
+    }
     return 'resurrection_timeline';
   }
 
