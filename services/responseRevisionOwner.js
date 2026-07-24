@@ -43,6 +43,11 @@ function detectCorrectionRequest(message = '', memory = null) {
   const m = String(message || '').trim();
   if (!m) return false;
   if (!CORRECTION_RE.test(m)) return false;
+  // Allow pork/Acts-10 meta-corrections even when continuation memory is thin
+  // (ephemeral production hosts can miss the prior write between turns).
+  if (/pork|acts\s*10|unclean|swine/i.test(m) && /you did not answer|you didn't answer|not what i asked/i.test(m)) {
+    return true;
+  }
   // Prefer corrections that have prior conversation context; still allow
   // standalone "answer yes or no" when memory exists from the prior turn.
   return !!(memory && (memory.lastReply || memory.lastRoute || memory.lastScripture?.length));
@@ -84,10 +89,13 @@ function buildCorrectionReply({ userId, message = '' } = {}) {
       (/^no\b|^yes\b/i.test(priorReply.trim()) ||
         /acts\s*10|leviticus|deuteronomy|matthew|scripture speaks|staying with scripture/i.test(priorReply));
     const aboutPork =
-      /pork|acts\s*10|unclean|swine/i.test(prior) || /pork|acts\s*10|unclean|swine/i.test(priorReply);
+      /pork|acts\s*10|unclean|swine/i.test(prior) ||
+      /pork|acts\s*10|unclean|swine/i.test(priorReply) ||
+      /pork|acts\s*10|unclean|swine/i.test(m);
 
-    // If the prior turn already answered, restate — do not ask the user to repeat.
-    if (priorAnswered && aboutPork) {
+    // If the prior turn already answered, or the correction itself names pork/Acts 10,
+    // restate — do not ask the user to repeat (production memory can be thin on ephemeral hosts).
+    if (aboutPork && (priorAnswered || /pork|acts\s*10/i.test(m))) {
       return {
         revisionType: 'correction_restate_prior',
         route: 'response_correction_restate_dietary',

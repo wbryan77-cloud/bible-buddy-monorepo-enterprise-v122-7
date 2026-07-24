@@ -1,0 +1,15 @@
+Resurrection / Founder challenge against https://bible-buddy-monorepo-enterprise-v122-7.onrender.com
+
+[PASS] RT1_sunday_vs_already_risen — resurrection_timing_source_grounded | Direct answer: Scripture records that the women discovered the empty tomb toward dawn of the first day of the week — and t
+[PASS] RT2_sunday_morning — resurrection_timing_source_grounded | Direct answer: Scripture records that the women discovered the empty tomb toward dawn of the first day of the week — and t
+[PASS] RT3_already_risen_at_discovery — resurrection_timing_source_grounded | Direct answer: Yes — according to the Gospel accounts, Jesus was already risen when the women reached the tomb.
+
+Explicit 
+[PASS] RT4_discovery_vs_event — resurrection_timing_source_grounded | Direct answer: In the Gospel wording, the first day of the week primarily marks the discovery of the empty tomb — and that
+[PASS] RT5_three_days — resurrection_timing_source_grounded | Direct answer: Matthew 12:40 explicitly requires “three days and three nights.” A short Friday-afternoon-to-Sunday-morning
+[PASS] RT6_contradiction_challenge — resurrection_timing_source_grounded | Direct answer: Scripture shows Jesus was already risen before / when the first-day discovery happened. The first day of th
+[PASS] RT7_go_deeper_stays — response_revision_scripture_context | Going deeper on what we were just discussing — not switching topics. Your question was: “You just said he was already rise
+[PASS] JD1_go_deeper_not_acts10 — reason_first_openai | It sounds like you're seeking a deeper understanding of a particular topic or concept. Is there a specific area of Scripture or aspect of 
+
+8/8 passed, 0 failed.
+RESURRECTION_TIMING_CHALLENGE PASS
