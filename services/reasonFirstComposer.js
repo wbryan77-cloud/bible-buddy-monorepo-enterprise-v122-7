@@ -250,6 +250,12 @@ async function callOpenAI({ systemPrompt, userPayload, temperature = 0.72 }) {
       );
     }
     const raw = completion?.choices?.[0]?.message?.content || '';
+    // GATE 6 — empty model content is a transport/quality failure, not a successful compose.
+    // Treat as !ok so openAiFirstCompanionRuntime uses the connection/companion fallback path
+    // instead of shipping an empty or "[object Object]" reply.
+    if (!String(raw).trim()) {
+      return { ok: false, error: 'openai_empty_response', raw: null };
+    }
     return { ok: true, raw, error: null };
   } catch (e) {
     const err = String(e?.message || e);
