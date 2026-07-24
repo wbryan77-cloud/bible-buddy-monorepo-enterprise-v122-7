@@ -1,2 +1,1 @@
-require('dotenv').config();
-console.log('[Worker] v122.9 ready.');
+import dotenv from 'dotenv';dotenv.config();console.log('[Worker] v122.9 ready.');

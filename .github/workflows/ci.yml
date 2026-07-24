@@ -35,12 +35,41 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      # Root package.json is "type":"commonjs". Orphan ESM sources under lib/ and
+      # worker/ use import/export; bare `node --check file.js` therefore fails with
+      # "Cannot use import statement outside a module" even when the file is valid
+      # ESM. Validate those as modules via a temporary .mjs mirror (proven locally).
+      # Temp mirrors are unique (mktemp), never written into the repo, and always
+      # removed — including when node --check fails.
       - name: Syntax-check every tracked JS file
         run: |
-          set -e
-          git ls-files '*.js' | while read -r f; do
-            node --check "$f"
-          done
+          set -euo pipefail
+          is_esm() {
+            # Heuristic: top-of-file import/export (covers the orphan ESM stubs).
+            head -n 40 "$1" | grep -qE '^[[:space:]]*(import |export )'
+          }
+          # Process substitution keeps the loop in this shell (not a pipe subshell)
+          # so a failed check fails the step. Temp mirrors are unique, outside the
+          # repo, and always removed — including when node --check fails.
+          while IFS= read -r f; do
+            if is_esm "$f"; then
+              tmp_base="$(mktemp "${TMPDIR:-/tmp}/ci-syntax.XXXXXX")"
+              tmp="${tmp_base}.mjs"
+              mv "$tmp_base" "$tmp"
+              cp "$f" "$tmp"
+              set +e
+              node --check "$tmp"
+              check_status=$?
+              set -e
+              rm -f "$tmp"
+              if [ "$check_status" -ne 0 ]; then
+                echo "Syntax check failed for ESM file: $f" >&2
+                exit 1
+              fi
+            else
+              node --check "$f"
+            fi
+          done < <(git ls-files '*.js')
       - name: Run deterministic Phase 2 test suite
         run: node tests/phase2EnterpriseOptimization.test.js
       - name: Boot server and verify /health
