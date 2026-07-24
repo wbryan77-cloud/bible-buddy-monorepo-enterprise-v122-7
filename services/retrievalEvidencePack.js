@@ -135,7 +135,7 @@ function parseHistoricalFacts() {
   };
 }
 
-function buildConversationHistory(recentSessions = [], limit = 5) {
+function buildConversationHistory(recentSessions = [], limit = 30) {
   return recentSessions.slice(-limit).map((s, i) => ({
     turn: i + 1,
     user: String(s.message || '').slice(0, 500),
@@ -520,10 +520,19 @@ function buildRetrievalEvidencePack({
     correctionLedger,
   });
 
+  let explicitRememberPins = [];
+  try {
+    const { pinsForPrompt } = require('./explicitRememberPin');
+    explicitRememberPins = pinsForPrompt(userId);
+  } catch (_) {
+    explicitRememberPins = [];
+  }
+
   return {
     userMessage: message,
     mode,
     conversationHistory: buildConversationHistory(recentSessions),
+    explicitRememberPins,
     activeConversation: buildActiveConversationSummary(activeConversationRaw),
     routingHintsOnly: !!routingHintsOnly,
     threadLocal,

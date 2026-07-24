@@ -100,7 +100,8 @@ const QA_FILE = path.join(DATA_DIR, 'buddy-quality-events.jsonl');
 // file — not a full rescan — so it stays correct without giving up the
 // cache's performance benefit for the common (no new sibling writes) case.
 const RECENT_SESSION_CACHE = new Map();
-const MAX_SESSION_TURNS = Number(process.env.BIBLEBUDDY_MAX_SESSION_TURNS || 30);
+// CERTIFICATION_V6 Gate 2 — retain enough turns for long-horizon continuity (was 30).
+const MAX_SESSION_TURNS = Number(process.env.BIBLEBUDDY_MAX_SESSION_TURNS || 120);
 const MAX_SESSION_CACHE_USERS = Number(process.env.BIBLEBUDDY_MAX_SESSION_CACHE_USERS || 200);
 
 function trimRecentSessionCache() {

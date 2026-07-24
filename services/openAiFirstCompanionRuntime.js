@@ -461,7 +461,16 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
 
   const safety = H.classifySafety(message);
   const profile = H.getUserCompanionProfile(userId);
-  const recentSessions = H.getRecentSessions(userId, 8);
+  // CERTIFICATION_V6 Gate 2 — align fetch window with session retention (default 30).
+  const recentSessions = H.getRecentSessions(userId, 30);
+
+  // Persist explicit "Remember this marker: …" pins outside the short composer window.
+  try {
+    const { maybeCapturePin } = require('./explicitRememberPin');
+    maybeCapturePin(userId, message);
+  } catch (_) {
+    /* non-fatal */
+  }
 
   let runtimeContext = buildRuntimeContext({ message, mode, profile, recentSessions, safety });
   runtimeContext = H.enrichRuntimeContextWithMemory({ runtimeContext, userId, profile });
@@ -523,6 +532,44 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   });
   evidencePack.userMessage = message;
   evidencePack.userId = userId;
+
+  // CERTIFICATION_V6 Gate 2 — answer marker recall from durable pins (no confabulation).
+  {
+    const { tryAnswerPinRecall } = require('./explicitRememberPin');
+    const pinReply = tryAnswerPinRecall(userId, message);
+    if (pinReply?.reply) {
+      pinReply.quality = scoreCompanionQuality({ message, reply: pinReply.reply, runtimeContext });
+      pinReply.reply = polishFinalReply(pinReply.reply);
+      attachDebug(pinReply, {
+        runtimeUsed: 'core_openai_first',
+        openaiCalled: false,
+        finalAnswerAuthor: pinReply.runtime?.masterRoute || 'explicit_remember_pin',
+        fallbackUsed: false,
+        templateUsed: false,
+        responderUsed: false,
+        routeUsed: pinReply.runtime?.masterRoute || 'explicit_remember_pin',
+        doctrineValidatorUsed: false,
+        scriptureEvidenceUsed: false,
+        activeTopicUsedAsContextOnly: true,
+        currentIntent: 'memory_recall',
+        historyAllowed: true,
+      });
+      annotateLiveTruthReturn(pinReply, null, 'memory', message);
+      return H.finalizeBuddyResponse({
+        structured: pinReply,
+        userId,
+        mode,
+        personaKey,
+        message,
+        safety,
+        runtimeContext,
+        profile,
+        testerId,
+        sessionId,
+        cohort,
+      });
+    }
+  }
 
   // CERTIFICATION_V5 — resurrection timing must not fall through to
   // doctrine_final_authority (resurrection hope / death-sleep) or OpenAI

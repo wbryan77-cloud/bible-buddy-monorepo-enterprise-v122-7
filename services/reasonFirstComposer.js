@@ -190,7 +190,12 @@ function buildComposerSystemPrompt({
       composerBlock = `${composerBlock}\n\nUSER ANSWER PREFERENCES:\n- For permission questions, answer direct Yes or No first according to Scripture.\n- If Scripture forbids something, start with No.\n- If Scripture allows something, start with Yes.\n- Do not start with Yes when meaning No.`;
     }
   }
-  const evidenceJson = JSON.stringify(evidenceSlice);
+  // CERTIFICATION_V6 Gate 2 — do not invent remembered facts outside evidence.
+  composerBlock = `${composerBlock}\n\nMEMORY HONESTY:\n- If the user asks what marker/fact they asked you to remember, use explicitRememberPins or conversationHistory only.\n- If it is not present, say you do not have that marker — never invent one from a recent filler turn.`;
+  const evidenceJson = JSON.stringify({
+    ...evidenceSlice,
+    explicitRememberPins: evidencePack.explicitRememberPins || [],
+  });
   return `${base}\n\n${goldenSection}${composerBlock}\n\nEvidence pack (binding facts — doctrine must trace here):\n${evidenceJson}`;
 }
 
