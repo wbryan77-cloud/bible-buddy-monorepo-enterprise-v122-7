@@ -1890,7 +1890,8 @@ async function runBibleCompanionOrchestrator({
   }
 
   const postConcept = detectConceptFromGraph(message);
-  if (postConcept && !postConcept.strictTopic) {
+  // GATE 3 — same multi-part rule: do not let fallback bible_wide own a two-part turn.
+  if (postConcept && !postConcept.strictTopic && !isMultiPartUserQuestion(message)) {
     const wideAnswer = await buildBibleWideAnswer({
       message,
       concept: postConcept,
