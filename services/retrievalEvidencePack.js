@@ -439,6 +439,13 @@ function buildRetrievalEvidencePack({
     understanding,
     recentSessions,
   });
+  const { buildSemanticUnderstandingSnapshot } = require('./semanticUnderstandingSnapshot');
+  const semanticUnderstanding = buildSemanticUnderstandingSnapshot({
+    message,
+    questionIntent,
+    currentIntent: currentIntentResult.intent,
+    understanding,
+  });
   const intentConstraints = buildIntentEvidenceConstraints(currentIntentResult.intent);
   const threadLocal = buildThreadLocalMemory(recentSessions, message, understanding);
   const companionContext = retrieveCompanionContextTags(message, recentSessions);
@@ -584,6 +591,7 @@ function buildRetrievalEvidencePack({
     answerGuidance,
     currentIntent: currentIntentResult.intent,
     currentIntentReason: currentIntentResult.reason,
+    semanticUnderstanding,
     intentConstraints,
     intentComposerGuidance,
     historyAllowed: intentConstraints.historyAllowed,

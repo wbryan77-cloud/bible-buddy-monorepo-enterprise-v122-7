@@ -111,18 +111,7 @@ function buildClarificationReply(message = '', state = {}) {
 
 /** Multi-part user turns must not be owned by a single-concept bible_wide short-circuit. */
 function isMultiPartUserQuestion(message = '') {
-  const m = String(message || '').trim();
-  if (!m) return false;
-  if (/\btwo questions\b/i.test(m)) return true;
-  if ((m.match(/\?/g) || []).length >= 2) return true;
-  if (
-    /\b(how many|what are|what does|where will|where do)\b/i.test(m) &&
-    /\band\b/i.test(m) &&
-    /\b(what|where|how|when|why|second coming)\b/i.test(m)
-  ) {
-    return true;
-  }
-  return false;
+  return require('./semanticUnderstandingSnapshot').isMultiPartUserQuestion(message);
 }
 
 function tryContextualDraftBeforeClarification({
