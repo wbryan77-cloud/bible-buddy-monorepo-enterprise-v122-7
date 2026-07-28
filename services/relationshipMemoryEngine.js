@@ -90,7 +90,14 @@ function recordRelationshipSignal({ userId, message = '', state = {} } = {}) {
     rel.wantsPracticalWording = true;
   }
   if (/\bpray\b/i.test(m)) {
-    rel.lastPrayerRequest = m.slice(0, 120);
+    // Phase 7A — do not overwrite a concrete prior prayer subject with bare "pray again"
+    const isBareAgain = /\b(pray(?:\s+with\s+me)?\s+again|pray again)\b/i.test(m) &&
+      !/\b(for|about)\b/i.test(m);
+    if (!isBareAgain) {
+      rel.lastPrayerRequest = m.slice(0, 120);
+    } else if (!rel.lastPrayerRequest) {
+      rel.lastPrayerRequest = m.slice(0, 120);
+    }
   }
   if (shouldStorePreferenceMemory(m)) {
     recordUserCorrection(userId, m);
