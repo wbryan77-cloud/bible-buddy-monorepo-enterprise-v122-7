@@ -1,0 +1,20 @@
+{
+  "authoritativeOwner": "services/durableUserMemory.js",
+  "writers": [
+    { "file": "services/durableUserMemory.js", "role": "authoritative" },
+    { "file": "services/relationshipMemoryEngine.js", "role": "dual_write_caller" },
+    { "file": "services/runtimeRelationshipMemoryEngine.js", "role": "dual_write_caller" }
+  ],
+  "readers": [
+    { "file": "services/relationshipContextSelector.js", "role": "read_only_adapter" },
+    { "file": "services/relationshipSummaryEngine.js", "role": "derived_summary" },
+    { "file": "services/bibleCompanionOrchestrator.js", "role": "hydrate_flush_consumer" }
+  ],
+  "persistence": {
+    "interface": "services/persistence/storageAdapter.js",
+    "postgres": "services/persistence/postgresAdapter.js",
+    "table": "bible_buddy_documents",
+    "docKey": "data/durable-user-memory.json"
+  },
+  "duplicateAuthoritativeWriters": []
+}

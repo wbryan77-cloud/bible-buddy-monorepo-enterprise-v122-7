@@ -79,6 +79,7 @@ class PostgresStorageAdapter {
       throw new Error('PERSISTENCE=POSTGRES is set but DATABASE_URL is not configured.');
     }
     this._pool = new PgPool({ connectionString: process.env.DATABASE_URL, max: 5 });
+    this._schemaReady = null;
     return this._pool;
   }
 
@@ -89,7 +90,26 @@ class PostgresStorageAdapter {
     return path.relative(path.join(__dirname, '..', '..'), filePath).split(path.sep).join('/');
   }
 
+  /**
+   * Phase 7C.1 — ensure the existing generic document table exists.
+   * Idempotent; safe on every boot when DATABASE_URL is present.
+   */
+  async ensureSchema() {
+    if (this._schemaReady) return this._schemaReady;
+    const pool = this._getPool();
+    this._schemaReady = pool.query(`
+      CREATE TABLE IF NOT EXISTS bible_buddy_documents (
+        doc_key     TEXT PRIMARY KEY,
+        doc_value   JSONB NOT NULL,
+        updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+      )
+    `);
+    await this._schemaReady;
+    return true;
+  }
+
   async readJsonDocument(filePath, defaultValue) {
+    await this.ensureSchema();
     const pool = this._getPool();
     const key = this._keyFor(filePath);
     const { rows } = await pool.query('SELECT doc_value FROM bible_buddy_documents WHERE doc_key = $1', [key]);
@@ -97,6 +117,7 @@ class PostgresStorageAdapter {
   }
 
   async writeJsonDocument(filePath, value) {
+    await this.ensureSchema();
     const pool = this._getPool();
     const key = this._keyFor(filePath);
     await pool.query(
@@ -115,6 +136,7 @@ class PostgresStorageAdapter {
    * read-mutate-write with no stale-lock heuristics needed.
    */
   async updateJsonDocument(filePath, mutatorFn, defaultValue) {
+    await this.ensureSchema();
     const pool = this._getPool();
     const key = this._keyFor(filePath);
     const client = await pool.connect();

@@ -1,0 +1,8 @@
+{
+  "productionDurableRecords": 0,
+  "zeroDataLoss": true,
+  "schema": "bible_buddy_documents CREATE IF NOT EXISTS (auto on connect)",
+  "rollback": "unset DATABASE_URL -> FILE fallback",
+  "safeToActivateWhenUrlSet": true,
+  "reason": "Production never wrote durable Postgres docs; hasDatabaseUrl was false"
+}

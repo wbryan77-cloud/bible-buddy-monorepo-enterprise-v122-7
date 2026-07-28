@@ -1,0 +1,27 @@
+{
+  "totalActive": 4,
+  "burdens": 1,
+  "prayers": 2,
+  "extractedPerson": "dad",
+  "importantPeople": [
+    {
+      "label": "dad",
+      "confidence": "CURRENT_TURN",
+      "source": "message_kinship"
+    }
+  ],
+  "activeBurdensSample": [
+    {
+      "text": "surgery tomorrow",
+      "confidence": "CURRENT_CONVERSATION",
+      "source": "relationshipMemoryEngine.currentStruggle"
+    }
+  ],
+  "prayerLast": "Please pray for my dad. He has surgery tomorrow.",
+  "profileDumpRisk": false,
+  "staleUnrelatedForced": false,
+  "precisionOk": true,
+  "rankingOk": true,
+  "pass": true,
+  "note": "Under load, upsert supersession collapses same-subject records — context selection stays dad/surgery focused rather than dumping 100 facts."
+}
