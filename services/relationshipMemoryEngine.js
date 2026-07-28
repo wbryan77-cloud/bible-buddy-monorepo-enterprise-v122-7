@@ -113,6 +113,59 @@ function recordRelationshipSignal({ userId, message = '', state = {} } = {}) {
   data.users[userId] = rel;
   saveAll(data);
 
+  // Phase 7C — write through authoritative durableUserMemory
+  try {
+    const {
+      upsertMemory,
+      resolveBurden,
+      MEMORY_TYPES,
+      CONFIDENCE,
+      PROVENANCE,
+    } = require('./durableUserMemory');
+    const kinship = m.match(
+      /\b(?:my|our)\s+(dad|father|mom|mother|son|daughter|husband|wife|brother|sister)\b/i,
+    );
+    const person = kinship ? kinship[1].toLowerCase() : null;
+    if (rel.recentConcern === 'resolved') {
+      resolveBurden({ userId, subject: person, content: rel.currentStruggle || m });
+    } else if (rel.currentStruggle && rel.recentConcern === 'family_burden') {
+      upsertMemory({
+        userId,
+        memoryType: MEMORY_TYPES.ACTIVE_BURDEN,
+        subject: person,
+        relationship: person,
+        content: rel.currentStruggle,
+        confidence: CONFIDENCE.HIGH,
+        provenance: PROVENANCE.CURRENT_CONVERSATION,
+        consentStatus: /please remember|remember that/i.test(m) ? 'user_requested' : 'implied_conversation',
+        retentionScope: /please remember|remember that/i.test(m) ? 'long_term' : 'conversation',
+      });
+    }
+    if (person) {
+      upsertMemory({
+        userId,
+        memoryType: MEMORY_TYPES.IMPORTANT_PERSON,
+        subject: person,
+        relationship: person,
+        content: `known person: ${person}`,
+        confidence: CONFIDENCE.HIGH,
+        provenance: PROVENANCE.CURRENT_TURN,
+      });
+    }
+    if (rel.lastPrayerRequest) {
+      upsertMemory({
+        userId,
+        memoryType: MEMORY_TYPES.PRAYER_SUBJECT,
+        subject: person,
+        content: rel.lastPrayerRequest,
+        confidence: CONFIDENCE.HIGH,
+        provenance: PROVENANCE.CURRENT_CONVERSATION,
+      });
+    }
+  } catch (e) {
+    console.warn('[relationshipMemoryEngine] durable sync failed:', e.message);
+  }
+
   const sessionPatch = {};
   if (rel.familyConversationContext) {
     sessionPatch.sessionMemory = {
@@ -133,8 +186,18 @@ function getRelationshipContext({ userId } = {}) {
   const data = loadAll();
   const rel = data.users[userId] || defaultUserRel();
   const state = getDoctrineConversationState(userId);
+  let durableFields = {};
+  try {
+    durableFields = require('./durableUserMemory').buildCompanionFields(userId) || {};
+  } catch (_) {}
   return {
     ...rel,
+    currentStruggle: durableFields.currentStruggle || rel.currentStruggle,
+    recentConcern: durableFields.recentConcern || rel.recentConcern,
+    lastPrayerRequest: durableFields.lastPrayerRequest || rel.lastPrayerRequest,
+    importantPerson: durableFields.importantPerson || null,
+    durableBackend: durableFields.durableBackend || 'FILE',
+    durable: !!durableFields.durable,
     lastAnsweredConcept:
       state.lastAnsweredConcept ||
       state.turnMemory?.lastAnsweredConcept ||
@@ -215,6 +278,10 @@ function forgetUserMemory({ userId } = {}) {
   const data = loadAll();
   data.users[userId] = defaultUserRel();
   saveAll(data);
+  try {
+    const durable = require('./durableUserMemory');
+    durable.clearAllForUser(userId);
+  } catch (_) {}
   try {
     const { forgetMemory } = require('./companionMemoryManager');
     forgetMemory({ userId, scope: 'preferences' });

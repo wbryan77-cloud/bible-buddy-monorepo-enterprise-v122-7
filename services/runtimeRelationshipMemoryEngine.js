@@ -97,6 +97,36 @@ function saveRelationshipMemory({
 
   store[userId] = applyMemoryRetention(memories).slice(-MAX_STORED);
   writeStore(store);
+
+  // Phase 7C — mirror categorical facts into durableUserMemory (single durable owner)
+  try {
+    const {
+      upsertMemory,
+      MEMORY_TYPES,
+      CONFIDENCE,
+      PROVENANCE,
+    } = require('./durableUserMemory');
+    const typeMap = {
+      important_people: MEMORY_TYPES.IMPORTANT_PERSON,
+      prayer_requests: MEMORY_TYPES.PRAYER_SUBJECT,
+      health_concerns: MEMORY_TYPES.ACTIVE_BURDEN,
+      grief_events: MEMORY_TYPES.ACTIVE_BURDEN,
+      ongoing_goals: MEMORY_TYPES.SPIRITUAL_GOAL,
+      recurring_struggles: MEMORY_TYPES.ACTIVE_BURDEN,
+    };
+    const memoryType = typeMap[resolvedCategory];
+    if (memoryType) {
+      upsertMemory({
+        userId,
+        memoryType,
+        content: String(detail || issueText || '').slice(0, 220),
+        subject: issueText ? String(issueText).slice(0, 80) : null,
+        confidence: resolvedImportance === 'high' ? CONFIDENCE.HIGH : CONFIDENCE.MEDIUM,
+        provenance: PROVENANCE.SYSTEM_DERIVED_SUMMARY,
+        retentionScope: 'long_term',
+      });
+    }
+  } catch (_) {}
 }
 
 function getRelationshipMemory(userId, limit = 25) {

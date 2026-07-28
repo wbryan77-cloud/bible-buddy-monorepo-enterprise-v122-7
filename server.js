@@ -61,6 +61,12 @@ function computeProviderStatus() {
 }
 
 function buildSelfTestPayload() {
+  let durableMemory = null;
+  try {
+    durableMemory = require('./services/durableUserMemory').getStatus();
+  } catch (_) {
+    durableMemory = { owner: 'durableUserMemory', error: 'unavailable' };
+  }
   return {
     health: {
       ok: true,
@@ -68,6 +74,7 @@ function buildSelfTestPayload() {
       time: new Date().toISOString(),
       releaseCommit: RELEASE_COMMIT,
       releaseBranch: RELEASE_BRANCH,
+      durableMemory,
     },
     providers: computeProviderStatus(),
     queue: { ok: true, detail: 'not configured for production queue yet' },

@@ -706,10 +706,21 @@ async function runBibleCompanionOrchestrator({
   recentSessions,
 }) {
   const ingested = ingestUserMessage(userId, message);
+  // Phase 7C — hydrate durable user memory before care lanes (cross-instance authority)
+  try {
+    await require('./durableUserMemory').ensureHydrated(userId);
+  } catch (e) {
+    console.warn('[orchestrator] durable hydrate failed:', e.message);
+  }
   // Phase 7A — record relationship signals before any care-lane early return
   try {
     recordRelationshipSignal({ userId, message, state: getDoctrineConversationState(userId) });
   } catch (_) {}
+  try {
+    await require('./durableUserMemory').flushUser(userId);
+  } catch (e) {
+    console.warn('[orchestrator] durable flush failed:', e.message);
+  }
   const prefAckEarly = buildPreferenceAck(message, userId);
   if (prefAckEarly && /\bremember that i like direct/i.test(message)) {
     const structured = verifyOrchestratorOutput({

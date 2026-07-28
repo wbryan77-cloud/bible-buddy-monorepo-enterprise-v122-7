@@ -1,0 +1,11 @@
+{
+  "owner": "durableUserMemory",
+  "persistence": "storageAdapter + bible_buddy_documents when DATABASE_URL set",
+  "paths": [
+    { "path": "services/durableUserMemory.js", "role": "authoritative_durable" },
+    { "path": "services/relationshipMemoryEngine.js", "role": "session_mirror_dual_write" },
+    { "path": "services/runtimeRelationshipMemoryEngine.js", "role": "category_mirror" },
+    { "path": "services/relationshipContextSelector.js", "role": "read_only_adapter" },
+    { "path": "data/relationship-memory.json", "role": "non_authoritative_cache" }
+  ]
+}

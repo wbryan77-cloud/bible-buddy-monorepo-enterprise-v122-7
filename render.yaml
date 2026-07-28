@@ -55,11 +55,22 @@ services:
       - key: TIMEZONE
         value: America/Chicago
       - key: PERSISTENCE
+        # Phase 7C — when DATABASE_URL is set, durableUserMemory activates the
+        # existing bible_buddy_documents Postgres adapter. FILE/MEMORY remain
+        # non-authoritative local fallbacks for single-instance/dev.
         value: MEMORY
       - key: POSTGRES_PRISMA
         value: enabled
       - key: DATABASE_URL
         sync: false
+      # Required for cross-instance durable companion memory (Phase 7C Layer 2).
+      # Provision Render Postgres, apply:
+      #   CREATE TABLE IF NOT EXISTS bible_buddy_documents (
+      #     doc_key TEXT PRIMARY KEY,
+      #     doc_value JSONB NOT NULL,
+      #     updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+      #   );
+      # Then set DATABASE_URL in the dashboard.
       - key: REDIS_URL
         sync: false
       - key: EMAIL_PROVIDER

@@ -1,0 +1,53 @@
+{
+  "passed": 8,
+  "total": 8,
+  "status": {
+    "owner": "durableUserMemory",
+    "backend": "FILE",
+    "durable": false,
+    "docKey": "data/durable-user-memory.json",
+    "hasDatabaseUrl": false
+  },
+  "results": [
+    {
+      "id": "owner_named",
+      "pass": true,
+      "detail": "{\"owner\":\"durableUserMemory\",\"backend\":\"FILE\",\"durable\":false,\"docKey\":\"data/durable-user-memory.json\",\"hasDatabaseUrl\":false}"
+    },
+    {
+      "id": "survives_restart_sim",
+      "pass": true,
+      "detail": "{\"currentStruggle\":\"dad is in the hospital\",\"recentConcern\":\"family_burden\",\"lastPrayerRequest\":\"Please remember my dad is having surgery. Pray for dad.\",\"importantPerson\":null,\"resolvedBurden\":null,\"durableBackend\":\"FILE\",\"durable\":false}"
+    },
+    {
+      "id": "isolation",
+      "pass": true,
+      "detail": "{\"currentStruggle\":null,\"recentConcern\":null,\"lastPrayerRequest\":null,\"importantPerson\":null,\"resolvedBurden\":null,\"durableBackend\":\"FILE\",\"durable\":false}"
+    },
+    {
+      "id": "resolved",
+      "pass": true,
+      "detail": "{\"currentStruggle\":\"Dad is home now\",\"recentConcern\":\"resolved\",\"lastPrayerRequest\":\"Please remember my dad is having surgery. Pray for dad.\",\"importantPerson\":null,\"resolvedBurden\":\"Dad is home now\",\"durableBackend\":\"FILE\",\"durable\":false}"
+    },
+    {
+      "id": "correction_supersede",
+      "pass": true,
+      "detail": "[{\"memoryId\":\"859d972c2e77e8de\",\"userId\":\"p7c-a-1785211844327\",\"memoryType\":\"IMPORTANT_PERSON\",\"subject\":\"son\",\"relationship\":null,\"content\":\"son name William\",\"normalizedValue\":\"William\",\"status\":\"active\",\"confidence\":\"CONFIRMED\",\"provenance\":\"CURRENT_CONVERSATION\",\"sourceConversationId\":null,\"sourceMessageId\":null,\"createdAt\":\"2026-07-28T04:10:44.331Z\",\"updatedAt\":\"2026-07-28T04:10:44.331Z\",\"lastConfirmedAt\":\"2026-07-28T04:10:44.331Z\",\"expiresAt\":null,\"retentionScope\":\"long_term\",\"consentStatus\":\"implied_conversation\",\"sensitivityLevel\":\"standard\",\"isActive\":true,\"supersedesMemoryId\":null,\"deletedAt\":null}]"
+    },
+    {
+      "id": "deletion",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "engine_merge",
+      "pass": true,
+      "detail": "{\"struggle\":\"Please remember that my dad is in the hospital.\",\"prayer\":null,\"backend\":\"FILE\"}"
+    },
+    {
+      "id": "forget_clears_durable",
+      "pass": true,
+      "detail": "null"
+    }
+  ]
+}
