@@ -2,7 +2,7 @@
 
 **Mode:** Production Safe · Evidence Driven · Incremental · No Greenfield Rewrite  
 **Authorization:** Option D supersedes B, replaces C  
-**Status:** IN PROGRESS (Objective 1 COMPLETE locally; deploy + live replay pending)
+**Status:** Objectives 1–9 COMPLETE locally · **NOT CERTIFIED** on production until deploy + live suites
 
 ---
 
