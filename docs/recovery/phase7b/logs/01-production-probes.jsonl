@@ -1,0 +1,8 @@
+{"case":"A","route":"phase5k_prayer_companion","slice":"Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning surgery tomorrow. Give me wisdom, peace, courage, and gentleness. Help me walk i"}
+{"case":"B","route":"phase5k_prayer_companion","slice":"Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning surgery tomorrow. Give me wisdom, peace, courage, and gentleness. Help me walk i"}
+{"case":"C_gk","route":"reason_first_openai","slice":"The capital of France is Paris."}
+{"case":"C_pray","route":"phase5k_prayer_companion","slice":"Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning surgery tomorrow. Give me wisdom, peace, courage, and gentleness. Help me walk i"}
+{"case":"I","route":"phase7b_prayer_concise","slice":"Yes, I'll pray with you. Father, please be near my dad. Give peace and wisdom. In Jesus' name, amen."}
+{"case":"K","route":"phase7b_prayer_concise","slice":"Yes, I'll pray with you. Father, please be near my son. Give peace and wisdom. In Jesus' name, amen."}
+{"case":"H","route":"phase5k_prayer_companion","slice":"Yes, I'll pray with you. Father, please be near as I pray for my son. Please give comfort, wisdom, and peace. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fe"}
+{"case":"F","route":"reason_first_openai","slice":"Yes, let's thank God for bringing your dad home safely! It's a wonderful blessing. We can express our gratitude in prayer. Would you like me to lead us in a prayer of thanks?"}
