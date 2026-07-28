@@ -16,7 +16,7 @@ const {
 const ROUTE_OWNER =
   'POST /buddy/chat → routes/buddy.js → withBuddyChatGuarantee → runBuddy → openAiFirstCompanionRuntime → bibleCompanionOrchestrator';
 
-const DEFAULT_TIMEOUT_MS = Number(process.env.BIBLEBUDDY_CHAT_TIMEOUT_MS || 55000);
+const DEFAULT_TIMEOUT_MS = Number(process.env.BIBLEBUDDY_CHAT_TIMEOUT_MS || 75000);
 const COMPANION_SAFE_FALLBACK =
   'I want to stay with you on this. Could you ask your question again in one short sentence?';
 
