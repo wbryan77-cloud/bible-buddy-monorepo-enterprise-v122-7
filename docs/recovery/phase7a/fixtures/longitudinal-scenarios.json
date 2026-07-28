@@ -1,0 +1,12 @@
+{
+  "scenarios": [
+    { "id": "V1_pray_dad", "message": "Pray with me for my dad.", "expect": "personalized_prayer" },
+    { "id": "V2_remember", "message": "Please remember that I am worried about my dad.", "expect": "natural_remember_ack" },
+    { "id": "V3_recall", "message": "What do you remember about me?", "expect": "person_first_recall" },
+    { "id": "V4_pray_again", "message": "Pray with me again.", "expect": "prayer_not_revision" },
+    { "id": "V5_tears", "message": "John 3:16 made me cry.", "expect": "presence_before_dump" },
+    { "id": "V6_return", "message": "I'm back.", "expect": "continuity_without_profile_dump" },
+    { "id": "V7_unrelated", "message": "What is the capital of France?", "expect": "gk_no_burden_hijack" },
+    { "id": "V8_forget", "message": "Do not remember what I just said.", "expect": "forget_natural" }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "phase7a",
+  "owners": [
+    { "concern": "intent", "owner": "humanNeedDetector", "status": "extended" },
+    { "concern": "active_conversation", "owner": "activeConversationManager", "status": "preserved" },
+    { "concern": "continuation", "owner": "conversationContinuationMemory", "status": "preserved" },
+    { "concern": "relationship_memory", "owner": "relationshipMemoryEngine", "status": "extended" },
+    { "concern": "learning_candidates", "owner": "reflectionMemoryEngine", "status": "BNC_only_in_chat" },
+    { "concern": "context_selection", "owner": "relationshipContextSelector", "status": "added_adapter" },
+    { "concern": "prayer", "owner": "prayerCompanionEngine", "status": "extended" },
+    { "concern": "revision", "owner": "responseRevisionOwner", "status": "extended" },
+    { "concern": "orchestration", "owner": "bibleCompanionOrchestrator", "status": "extended" },
+    { "concern": "recall", "owner": "relationshipSummaryEngine", "status": "extended" },
+    { "concern": "polish", "owner": "companionReplyPolish", "status": "extended" },
+    { "concern": "quality", "owner": "scoreCompanionQuality", "status": "extended" }
+  ]
+}

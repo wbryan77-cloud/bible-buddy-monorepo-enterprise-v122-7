@@ -16,6 +16,12 @@ const CORRECTION_RE =
 function detectRevisionRequest(message = '', memory = null) {
   const m = String(message || '').trim();
   if (!m || !memory) return false;
+
+  // Phase 7A — prayer intent stays prayer (Case 4). "again" alone must not open revision menus.
+  if (/\b(pray|prayer)\b/i.test(m) && !/\b(better prayer|longer prayer|deeper prayer)\b/i.test(m)) {
+    return false;
+  }
+
   if (REVISION_RE.test(m)) return true;
 
   const shortWords = m.split(/\s+/).filter(Boolean).length <= 5;

@@ -130,11 +130,33 @@ function scoreCompanionQuality({ message = '', reply = '', runtimeContext = {} }
     readability: 100,
     responseProportionality: 100,
     naturalDialogue: 100,
+    opportunityQuality: 100,
   };
 
   if (runtimeContext?.loopRisk?.fallbackLoop && lower.includes('slow this down together')) {
     dimensions.conversationFlow -= 40;
     issues.push('fallback_loop_detected');
+  }
+
+  // Phase 7A — missed relational opportunity signals (evaluation only)
+  if (/\b(pray|prayer)\b/i.test(msg)) {
+    if (/\bdad|father|mom|mother|maya|son|daughter\b/i.test(msg) && !/\bdad|father|mom|mother|maya|son|daughter\b/i.test(lower)) {
+      dimensions.opportunityQuality -= 35;
+      dimensions.memoryContinuity -= 20;
+      issues.push('missed_prayer_personalization');
+    }
+  }
+  if (/\b(made me cry|tears|i'?m scared|feel hopeful|prayer was answered)\b/i.test(msg)) {
+    if (!/\b(with you|thank you for sharing|glad|here with you|stay with)\b/i.test(lower) && (lower.match(/\b(john|matthew|romans)\s+\d/gi) || []).length >= 1) {
+      dimensions.opportunityQuality -= 30;
+      dimensions.warmth -= 15;
+      issues.push('missed_emotional_presence');
+    }
+  }
+  if (/learning candidate|pending review|doctrine authority without review/i.test(text)) {
+    dimensions.opportunityQuality -= 50;
+    dimensions.naturalDialogue -= 40;
+    issues.push('admin_voice_leak');
   }
 
   if (/make sure i answer the right thing|bible passage, a life situation/i.test(text) &&

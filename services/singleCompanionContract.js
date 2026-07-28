@@ -425,7 +425,13 @@ function repairReplyIfContractBroken(draftReply = '', contract = {}) {
 
   if (FORBIDDEN_PHRASES.some((p) => p.re.test(draftReply) && (p.when(contract) || p.id === 'db_deny'))) {
     if (/\bi cannot modify a database\b/i.test(draftReply)) {
-      return { reply: LEARNING_ACK, scripture: [], repaired: true, repairLane: 'learning_ack' };
+      const { companionRememberAck } = require('./relationshipContextSelector');
+      return {
+        reply: companionRememberAck(message) || "I'll keep that in mind.",
+        scripture: [],
+        repaired: true,
+        repairLane: 'learning_ack',
+      };
     }
   }
 

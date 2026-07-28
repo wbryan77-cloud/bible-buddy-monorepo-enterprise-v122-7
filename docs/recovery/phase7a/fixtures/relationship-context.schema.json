@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BibleBuddyRelationshipContext",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "personIdentity": {
+      "type": "object",
+      "properties": {
+        "displayName": { "type": ["string", "null"] },
+        "confidence": { "type": "string" }
+      }
+    },
+    "importantPeople": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "confidence": { "type": "string" },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "activeBurdens": { "type": "array" },
+    "prayerContext": { "type": "object" },
+    "emotionalContext": { "type": ["string", "null"] },
+    "relevantPreferences": { "type": "object" },
+    "ongoingTopics": { "type": "object" },
+    "familyConversationContext": { "type": "boolean" },
+    "suggestedCareAction": { "type": ["string", "null"] },
+    "_meta": {
+      "type": "object",
+      "properties": {
+        "selector": { "const": "relationshipContextSelector" },
+        "noNewStore": { "const": true }
+      }
+    }
+  }
+}

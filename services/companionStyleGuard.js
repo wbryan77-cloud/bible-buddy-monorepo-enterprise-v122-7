@@ -57,7 +57,8 @@ function applyCompanionStyleGuard(structured = {}, context = {}) {
   const scripture = out.scripture || [];
 
   if (DB_DENY_RE.test(reply)) {
-    reply = LEARNING_ACK;
+    const { companionRememberAck } = require('./relationshipContextSelector');
+    reply = companionRememberAck(message) || "I'll keep that in mind.";
   }
   if (RETRIEVAL_ERROR_RE.test(reply) || CONNECTION_ERROR_RE.test(reply)) {
     reply =

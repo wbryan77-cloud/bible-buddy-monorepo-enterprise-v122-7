@@ -72,6 +72,14 @@ function recordRelationshipSignal({ userId, message = '', state = {} } = {}) {
     rel.currentStruggle = m.slice(0, 120);
     rel.recentConcern = 'emotional';
   }
+  // Phase 7A — capture person-centered burdens (worried about dad, mother is sick, etc.)
+  if (
+    /\b(worried about|anxious about|scared for|afraid for|pray(?:ing)? for|sick|ill|hospital|cancer|surgery)\b/i.test(m) &&
+    /\b(dad|father|mom|mother|son|daughter|husband|wife|brother|sister|friend|child|family)\b/i.test(m)
+  ) {
+    rel.currentStruggle = m.slice(0, 160);
+    rel.recentConcern = 'family_burden';
+  }
   if (FAMILY_CONTEXT_RE.test(m) || PRACTICAL_WORRY_RE.test(m)) {
     rel.familyConversationContext = true;
     rel.recentConcern = 'family_conversation';
@@ -169,18 +177,19 @@ function buildMemoryRecallReply({ userId, message = '' } = {}) {
   const ctx = getRelationshipContext({ userId });
   const items = [];
 
-  if (ctx.preferences?.directAnswerFirst) items.push('you prefer direct answers first');
-  if (ctx.preferences?.yesNoDirect) items.push('you want yes/no answered directly');
+  // Phase 7A — person-first before style prefs
+  if (ctx.currentStruggle) items.push(`you shared: ${String(ctx.currentStruggle).slice(0, 100)}`);
+  if (ctx.lastPrayerRequest) items.push(`you asked prayer about: ${String(ctx.lastPrayerRequest).slice(0, 100)}`);
   if (ctx.familyConversationContext) items.push('you were working through talking with family about Scripture');
   if (ctx.lastPracticalRequest) items.push('you asked for practical wording help');
-  if (ctx.currentStruggle) items.push('you shared something emotional recently');
-  if (ctx.lastPrayerRequest) items.push('you asked for prayer');
+  if (ctx.preferences?.directAnswerFirst) items.push('you prefer direct answers first');
+  if (ctx.preferences?.yesNoDirect) items.push('you want yes/no answered directly');
 
   if (items.length === 0) {
-    return 'In this conversation I mainly have session context — what we’ve discussed so far. I don’t store sensitive personal details long-term unless you ask me to remember a preference like answer style.';
+    return 'In this conversation I mainly have session context — what we’ve discussed so far. I don’t invent personal details. If you want me to remember something, say “please remember…” and I’ll keep it in mind.';
   }
 
-  return `Here's what I remember for you: ${items.join('; ')}. Session details stay with this conversation; answer-style preferences can carry across when stored.`;
+  return `Here’s what stands out about you: ${items.join('; ')}. If I missed something important, tell me and I’ll correct it.`;
 }
 
 function forgetUserMemory({ userId } = {}) {

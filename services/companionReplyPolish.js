@@ -47,6 +47,10 @@ function polishCompanionReply(reply = '') {
   }
 
   text = text.replace(/\[object Object\]/g, '').replace(/\s+\./g, '.');
+  // Phase 7A — never leak memory-governance admin voice
+  if (/learning candidate|pending review|doctrine authority without review/i.test(text)) {
+    text = "I'll remember that. Thank you for trusting me with it.";
+  }
 
   return text
     .replace(/[ \t]+\n/g, '\n')

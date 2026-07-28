@@ -132,8 +132,8 @@ function tryContextualDraftBeforeClarification({
       intentCategory: 'app_identity',
     };
   }
-  if (humanNeed === 'prayer' || /\b(pray with me|can you pray)\b/i.test(message)) {
-    const prayer = buildPrayerCompanionResponse({ message, anchor });
+  if (humanNeed === 'prayer' || /\b(pray with me|can you pray|pray for|pray about|pray again)\b/i.test(message)) {
+    const prayer = buildPrayerCompanionResponse({ message, anchor, userId });
     if (prayer?.reply) {
       return { ...prayer, intentCategory: 'prayer_request' };
     }
@@ -484,8 +484,8 @@ function runPhase5KDepthLane({
     );
   }
 
-  if (humanNeed === 'prayer') {
-    const prayer = buildPrayerCompanionResponse({ message, anchor });
+  if (humanNeed === 'prayer' || /\b(pray with me|can you pray|pray for|pray about|pray again)\b/i.test(message)) {
+    const prayer = buildPrayerCompanionResponse({ message, anchor, userId });
     return verifyOrchestratorOutput(
       {
         reply: prayer.reply,
@@ -494,12 +494,14 @@ function runPhase5KDepthLane({
         confidence: 'high',
         memory_used: true,
         safety_level: safety?.level || 'standard',
-        admin_flags: ['phase5k_prayer'],
+        admin_flags: ['phase5k_prayer', prayer.personalized ? 'phase7a_personalized_prayer' : 'phase7a_generic_prayer'],
         runtime: {
           masterRoute: prayer.masterRoute,
           openAiCalled: false,
           orchestratorLane: 'prayer_companion',
           phase5K: true,
+          prayerPersonalized: !!prayer.personalized,
+          prayerPerson: prayer.prayerPerson || null,
         },
       },
       { message, isPrayer: true, prayerFallback: prayer.reply },
@@ -742,12 +744,70 @@ async function runBibleCompanionOrchestrator({
       },
     };
   }
+
+  // Phase 7A Case 2 — personal remember/forget before learning-candidate admin voice.
+  {
+    const {
+      isPersonalRememberRequest,
+      isForgetRequest,
+      companionRememberAck,
+      notePersonalRemember,
+    } = require('./relationshipContextSelector');
+    if (isPersonalRememberRequest(message) || isForgetRequest(message)) {
+      if (isForgetRequest(message)) {
+        try {
+          require('./relationshipMemoryEngine').forgetUserMemory({ userId });
+        } catch (_) {}
+      } else {
+        notePersonalRemember(userId, message);
+        try {
+          require('./explicitRememberPin').maybeCapturePin(userId, message);
+        } catch (_) {}
+      }
+      const structured = verifyOrchestratorOutput({
+        reply: companionRememberAck(message),
+        scripture: [],
+        mode: 'companion',
+        confidence: 'high',
+        memory_used: true,
+        safety_level: safety?.level || 'standard',
+        admin_flags: ['phase7a_personal_remember'],
+        runtime: {
+          masterRoute: 'companion_personal_remember',
+          openAiCalled: false,
+          orchestratorLane: 'personal_remember',
+        },
+      });
+      recordUserTurn(userId, message, 'companion');
+      return {
+        handled: true,
+        dispatch: 'companion',
+        reasoningPlan: { answerLane: 'companion' },
+        ctx: {
+          structured,
+          userId,
+          mode,
+          personaKey,
+          message,
+          safety,
+          runtimeContext,
+          profile,
+          testerId,
+          sessionId,
+          cohort,
+          route: 'companion_personal_remember',
+        },
+      };
+    }
+  }
+
   if (
     ingested.learningCandidate &&
     ingested.learningAck &&
     /\b(remember|database|when others ask|for others)\b/i.test(message) &&
     !/\bremember that i like direct/i.test(message)
   ) {
+    // True BNC / admin learning only — personal remember already returned above.
     const structured = verifyOrchestratorOutput({
       reply: ingested.learningAck,
       scripture: [],
@@ -1632,6 +1692,72 @@ async function runBibleCompanionOrchestrator({
           sessionId,
           cohort,
           route: 'companion_state_engine',
+          routePlan,
+        },
+      };
+    }
+  }
+
+  // PHASE_6B — Original-Language Knowledge System early exit.
+  // Phase 7A Case 5 — emotional / celebration presence before verse dump.
+  {
+    const {
+      isEmotionalScriptureResponse,
+      isCelebrationOrPresenceMoment,
+    } = require('./relationshipContextSelector');
+    const askingForInfo = /\b(what (does|do|is|are)|why|how|explain|mean|tell me about)\b/i.test(message);
+    if (
+      !askingForInfo &&
+      (isEmotionalScriptureResponse(message) ||
+        (isCelebrationOrPresenceMoment(message) &&
+          /\b(cry|tears|hopeful|grateful|answered|scared|afraid|overwhelmed|praise god|hallelujah)\b/i.test(message)))
+    ) {
+      const scared = /\b(scared|afraid|overwhelmed)\b/i.test(message);
+      const joyful = /\b(hopeful|grateful|answered|praise god|hallelujah|cry|tears)\b/i.test(message);
+      const reply = scared
+        ? 'I’m with you in this. Fear doesn’t mean your faith is gone — take one breath. If you want, we can pray, hold a short verse together, or just sit with it for a moment.'
+        : joyful
+          ? 'Thank you for sharing that. I’m glad you’re letting this moment land — stay with it. If you want, we can sit with Scripture together, or I can simply keep listening.'
+          : 'Thank you for trusting me with that. I’m here with you. We can go slowly — pray, hold a verse, or just keep talking.';
+      const structured = verifyOrchestratorOutput({
+        reply,
+        scripture: [],
+        mode: 'companion',
+        confidence: 'high',
+        memory_used: false,
+        safety_level: safety?.level || 'standard',
+        admin_flags: ['phase7a_celebration_presence'],
+        runtime: {
+          masterRoute: 'companion_celebration_presence',
+          openAiCalled: false,
+          orchestratorLane: 'celebration_presence',
+        },
+      });
+      recordUserTurn(userId, message, 'companion');
+      recordAnswerTurnMemory(userId, message, structured);
+      saveContinuationMemory(userId, {
+        message,
+        answer: structured,
+        humanNeed: 'emotional_support',
+        route: 'companion_celebration_presence',
+      });
+      return {
+        handled: true,
+        dispatch: 'companion',
+        reasoningPlan: { answerLane: 'companion' },
+        ctx: {
+          structured,
+          userId,
+          mode,
+          personaKey,
+          message,
+          safety,
+          runtimeContext,
+          profile,
+          testerId,
+          sessionId,
+          cohort,
+          route: 'companion_celebration_presence',
           routePlan,
         },
       };

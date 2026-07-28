@@ -35,14 +35,50 @@ function buildRelationshipSummary({ userId, message = '', state = {} } = {}) {
 }
 
 function formatRecallReply({ userId, message = '', state = {} } = {}) {
-  const summary = buildRelationshipSummary({ userId, message, state });
-  if (!summary.summaryParts.length) {
-    return 'In this conversation I mainly have session context — what we’ve discussed so far. I don’t store sensitive personal details long-term unless you ask me to remember a preference like answer style.';
+  const { selectRelationshipContext } = require('./relationshipContextSelector');
+  const { getRelationshipContext } = require('./relationshipMemoryEngine');
+  const rel = getRelationshipContext({ userId });
+  const care = selectRelationshipContext({ userId, message });
+  const personParts = [];
+
+  if (care.importantPeople?.[0]?.label) {
+    personParts.push(`you asked prayer concerning ${care.importantPeople[0].label}`);
   }
-  const prefs = summary.preferences?.directAnswerFirst
-    ? 'I also remember you prefer direct answers with Scripture support.'
-    : '';
-  return `In this conversation, I remember ${summary.summaryParts.join('; ')}.${prefs ? ` ${prefs}` : ''}`;
+  if (rel.currentStruggle) {
+    personParts.push(`you shared: ${String(rel.currentStruggle).slice(0, 100)}`);
+  } else if (care.activeBurdens?.[0]?.text) {
+    personParts.push(String(care.activeBurdens[0].text).slice(0, 100));
+  }
+  if (rel.lastPrayerRequest) {
+    personParts.push(`you asked: ${String(rel.lastPrayerRequest).slice(0, 100)}`);
+  }
+  if (care.ongoingTopics?.conversationObjective) {
+    personParts.push(`we were focused on: ${String(care.ongoingTopics.conversationObjective).slice(0, 80)}`);
+  }
+
+  const summary = buildRelationshipSummary({ userId, message, state });
+  for (const p of summary.summaryParts || []) {
+    if (!personParts.some((x) => x.includes(String(p).slice(0, 20)))) personParts.push(p);
+  }
+
+  const prefBits = [];
+  if (summary.preferences?.directAnswerFirst || care.relevantPreferences?.directAnswerFirst) {
+    prefBits.push('you prefer direct answers with Scripture support');
+  }
+
+  if (!personParts.length && !prefBits.length) {
+    return 'In this conversation I mainly have what we’ve discussed so far. I don’t invent personal details — if you want me to remember something specific, just say “please remember…” and I’ll keep it in mind.';
+  }
+
+  const lines = [];
+  if (personParts.length) {
+    lines.push(`Here’s what stands out about you from our conversation: ${personParts.slice(0, 4).join('; ')}.`);
+  }
+  if (prefBits.length) {
+    lines.push(`For how I answer: ${prefBits.join('; ')}.`);
+  }
+  lines.push('If I missed something important, tell me and I’ll correct it.');
+  return lines.join(' ');
 }
 
 module.exports = {

@@ -1,0 +1,89 @@
+{
+  "passed": 14,
+  "total": 15,
+  "results": [
+    {
+      "id": "U1_extract_dad",
+      "pass": true,
+      "detail": "dad extracted"
+    },
+    {
+      "id": "U2_extract_maya",
+      "pass": true,
+      "detail": "Maya extracted"
+    },
+    {
+      "id": "U3_prayer_dad",
+      "pass": true,
+      "detail": "Yes, I'll pray with you.\n\nFather, please be near as I pray for my dad. Please give comfort, wisdom, and peace. Give me wisdom, peace, courag"
+    },
+    {
+      "id": "U4_prayer_maya",
+      "pass": true,
+      "detail": "Yes, I'll pray with you.\n\nFather, please be near as I pray for Maya. Please give comfort, wisdom, and peace. Give me wisdom, peace, courage,"
+    },
+    {
+      "id": "U5_pray_again_not_revision",
+      "pass": true,
+      "detail": "revision blocked for prayer again"
+    },
+    {
+      "id": "U6_remember_natural",
+      "pass": true,
+      "detail": "I'll remember that. Thank you for trusting me with it."
+    },
+    {
+      "id": "U7_polish_admin",
+      "pass": true,
+      "detail": "I'll remember that. Thank you for trusting me with it."
+    },
+    {
+      "id": "L1_pray_dad",
+      "pass": true,
+      "detail": "phase5k_prayer_companion | Yes, I'll pray with you. Father, please be near as I pray for my dad. Please give comfort, wisdom, and peace. Give me wisdom, peace, courage, and gentleness. He",
+      "route": "phase5k_prayer_companion"
+    },
+    {
+      "id": "L2_pray_again",
+      "pass": true,
+      "detail": "phase5k_prayer_companion | Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fear. In Jesus'",
+      "route": "phase5k_prayer_companion"
+    },
+    {
+      "id": "L3_remember",
+      "pass": true,
+      "detail": "companion_personal_remember | I'll remember that. Thank you for trusting me with it.",
+      "route": "companion_personal_remember"
+    },
+    {
+      "id": "L4_recall_person",
+      "pass": true,
+      "detail": "relationship_memory_recall | Here’s what stands out about you from our conversation: you shared: I am worried about my dad.; you prefer direct answers first; you shared something emotional recently. For how I answer: you prefer d",
+      "route": "relationship_memory_recall"
+    },
+    {
+      "id": "L5_celebration",
+      "pass": true,
+      "detail": "companion_celebration_presence | Thank you for sharing that. I’m glad you’re letting this moment land — stay with it. If you want, we can sit with Scripture together, or I can simply keep liste",
+      "route": "companion_celebration_presence"
+    },
+    {
+      "id": "L6_presence_scared",
+      "pass": true,
+      "detail": "companion_celebration_presence | I’m with you in this. Fear doesn’t mean your faith is gone — take one breath. If you want, we can pray, hold a short verse together, or just sit with it for a m",
+      "route": "companion_celebration_presence"
+    },
+    {
+      "id": "L7_gk_intact",
+      "pass": false,
+      "detail": "core_connection_error | I want to stay with you on this. Could you ask your question again in one short sentence?",
+      "route": "core_connection_error"
+    },
+    {
+      "id": "L8_forget_natural",
+      "pass": true,
+      "detail": "companion_personal_remember | Alright — I won't hold onto that. Thank you for telling me.",
+      "route": "companion_personal_remember"
+    }
+  ]
+}
