@@ -706,6 +706,10 @@ async function runBibleCompanionOrchestrator({
   recentSessions,
 }) {
   const ingested = ingestUserMessage(userId, message);
+  // Phase 7A — record relationship signals before any care-lane early return
+  try {
+    recordRelationshipSignal({ userId, message, state: getDoctrineConversationState(userId) });
+  } catch (_) {}
   const prefAckEarly = buildPreferenceAck(message, userId);
   if (prefAckEarly && /\bremember that i like direct/i.test(message)) {
     const structured = verifyOrchestratorOutput({

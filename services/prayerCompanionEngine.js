@@ -20,11 +20,14 @@ function resolvePrayerFocus({ message = '', anchor = {}, relationshipContext = n
     fromPrior?.person ||
     ctx?.importantPeople?.[0]?.label ||
     null;
-  const burden =
-    (ctx?.activeBurdens || []).map((b) => b.text).find(Boolean) ||
+  const burdenRaw =
+    (ctx?.activeBurdens || [])
+      .map((b) => b.text)
+      .find((t) => t && !/^emotional context:/i.test(t) && !/^hi[, ]/i.test(t)) ||
     (/\bhospital|sick|ill|cancer|surgery|scared|afraid|worried|anxious\b/i.test(m)
       ? m.match(/\b(hospital|sick|ill|scared|afraid|worried|anxious)[^.?!]{0,40}/i)?.[0]
       : null);
+  const burden = burdenRaw ? String(burdenRaw).replace(/\s+/g, ' ').trim().slice(0, 70) : null;
 
   const personPhrase = (() => {
     if (!person) return null;

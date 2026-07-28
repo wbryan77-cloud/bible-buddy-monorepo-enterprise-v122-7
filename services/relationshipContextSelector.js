@@ -81,13 +81,27 @@ function selectRelationshipContext({ userId = '', message = '' } = {}) {
   const prayerSubject = extractPrayerSubjectFromMessage(message);
   const displayName = extractDisplayName(message);
 
+  // Prefer current-turn extract; else recover last prayer subject from continuation
+  const priorPrayerSubject =
+    prayerSubject ||
+    extractPrayerSubjectFromMessage(rel.lastPrayerRequest || '') ||
+    extractPrayerSubjectFromMessage(cont?.lastUserMessage || '');
+
   const activeBurdens = [];
   if (rel.currentStruggle) {
-    activeBurdens.push({
-      text: String(rel.currentStruggle).slice(0, 160),
-      confidence: CONFIDENCE.CURRENT_CONVERSATION,
-      source: 'relationshipMemoryEngine.currentStruggle',
-    });
+    const struggle = String(rel.currentStruggle).slice(0, 160);
+    // Keep burdens short and care-relevant — not full greetings dumped into prayer
+    const compact =
+      struggle.match(/\b((?:dad|father|mom|mother|son|daughter)[^.!?]{0,60}(?:hospital|sick|ill|scared|worried)[^.!?]{0,40})/i)?.[0] ||
+      struggle.match(/\b((?:hospital|sick|ill|cancer|surgery|worried about|scared)[^.!?]{0,60})/i)?.[0] ||
+      (/^hi[, ]|my name is/i.test(struggle) ? null : struggle);
+    if (compact) {
+      activeBurdens.push({
+        text: compact.slice(0, 100),
+        confidence: CONFIDENCE.CURRENT_CONVERSATION,
+        source: 'relationshipMemoryEngine.currentStruggle',
+      });
+    }
   }
   if (active?.emotionalContext && active.emotionalContext !== 'neutral') {
     activeBurdens.push({
@@ -98,9 +112,12 @@ function selectRelationshipContext({ userId = '', message = '' } = {}) {
   }
 
   const prayerContext = {
-    lastRequest: rel.lastPrayerRequest || null,
-    subjectFromMessage: prayerSubject,
-    confidence: prayerSubject?.confidence || (rel.lastPrayerRequest ? CONFIDENCE.CURRENT_CONVERSATION : CONFIDENCE.UNKNOWN),
+    lastRequest: rel.lastPrayerRequest || (/\bpray\b/i.test(String(cont?.lastUserMessage || '')) ? cont.lastUserMessage : null),
+    subjectFromMessage: prayerSubject || priorPrayerSubject,
+    confidence:
+      prayerSubject?.confidence ||
+      priorPrayerSubject?.confidence ||
+      (rel.lastPrayerRequest ? CONFIDENCE.CURRENT_CONVERSATION : CONFIDENCE.UNKNOWN),
   };
 
   const personIdentity = {
@@ -109,12 +126,25 @@ function selectRelationshipContext({ userId = '', message = '' } = {}) {
   };
 
   const importantPeople = [];
-  if (prayerSubject?.person) {
+  const personLabel = prayerSubject?.person || priorPrayerSubject?.person;
+  if (personLabel) {
     importantPeople.push({
-      label: prayerSubject.person,
-      confidence: prayerSubject.confidence,
-      source: prayerSubject.source,
+      label: personLabel,
+      confidence: (prayerSubject || priorPrayerSubject).confidence,
+      source: (prayerSubject || priorPrayerSubject).source,
     });
+  }
+
+  // Recover person from prior prayer reply when memory is cold (ephemeral hosts)
+  if (!importantPeople.length && /\bpray(?:\s+with\s+me)?\s+again\b/i.test(String(message || ''))) {
+    const fromReply = String(cont?.lastReply || '').match(/\bpray for my (dad|father|mom|mother|son|daughter)\b/i);
+    if (fromReply) {
+      importantPeople.push({
+        label: fromReply[1],
+        confidence: CONFIDENCE.RECENT_CONVERSATION,
+        source: 'continuation.lastReply',
+      });
+    }
   }
 
   return {
