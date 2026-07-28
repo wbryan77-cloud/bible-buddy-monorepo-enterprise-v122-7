@@ -1,15 +1,25 @@
 # 73 — Production Relational Validation
 
-**Status:** Pending deploy of Phase 7A commit.
+**Certified production commit:** `4f9bc62`  
+**Health check:** `/health.releaseCommit` = `4f9bc62`  
+**Probe log:** `logs/01-production-probes.jsonl`
 
-## Plan
+## Case results (live)
 
-1. Deploy commit; confirm `/health.releaseCommit` matches.
-2. Re-run Cases 1–6 on production with unique userId.
-3. Run `scripts/runPhase7ARelationalRegression.js` locally against same code tip.
-4. Spot-check GK, historical, Scripture control prompts.
-5. Capture `logs/01-production-probes.jsonl`.
+| Case | Result | Route | Notes |
+|---|---|---|---|
+| C1 Prayer | **PASS** | `phase5k_prayer_companion` | Prays for dad + hospital burden; no greeting dump |
+| C2 Remember | **PASS** | `companion_personal_remember` | Natural ack; no admin language |
+| C3 Recall | **PASS** | `relationship_memory_recall` | Person-first (dad / worry / prayer) |
+| C4 Pray again | **PASS** | `phase5k_prayer_companion` | Stays prayer; reuses dad (after overwrite fix) |
+| C5 Celebration | **PASS** | `companion_celebration_presence` | Presence before verse dump |
+| C6 Return | **PASS** | `reason_first_openai` | Continuity without profile dump |
+| GK control | **PASS** | `reason_first_openai` | Paris |
 
-## Results
+## Local corpus
 
-_Filled after deploy._
+`scripts/runPhase7ARelationalRegression.js` → **15/15** prior to final hotfix; unit confirmed pray-again subject retention.
+
+## Residual
+
+File-backed relationship memory remains host-local (Render). Sticky instance behavior is sufficient for sequential chat; shared durable memory is out of Phase 7A scope (no new DB).
