@@ -163,6 +163,7 @@ function buildComposerSystemPrompt({
         answerGuidance: evidencePack.answerGuidance,
         currentIntent: evidencePack.currentIntent,
         intentComposerGuidance: evidencePack.intentComposerGuidance,
+        semanticUnderstanding: evidencePack.semanticUnderstanding,
         historyAllowed: evidencePack.historyAllowed,
       };
 
@@ -319,6 +320,21 @@ async function composeReasonFirstReply({
     regenInstruction: regenInstruction || null,
     intentComposerGuidance: evidencePack.intentComposerGuidance || null,
     currentIntent: evidencePack.currentIntent || null,
+    // Phase 6X Obj2 — conversation intelligence visible to composer (mixed intent, outstanding Qs)
+    semanticUnderstanding: evidencePack.semanticUnderstanding
+      ? {
+          primaryIntent: evidencePack.semanticUnderstanding.primaryIntent,
+          secondaryIntents: evidencePack.semanticUnderstanding.secondaryIntents,
+          mixedIntent: evidencePack.semanticUnderstanding.mixedIntent,
+          outstandingQuestions: evidencePack.semanticUnderstanding.outstandingQuestions,
+          conversationObjective: evidencePack.semanticUnderstanding.conversationObjective,
+          requestedFormat: evidencePack.semanticUnderstanding.requestedFormat,
+          requestedEvidence: evidencePack.semanticUnderstanding.requestedEvidence,
+          requestedDepth: evidencePack.semanticUnderstanding.requestedDepth,
+          emotionalContext: evidencePack.semanticUnderstanding.emotionalContext,
+          latestMessagePriority: evidencePack.semanticUnderstanding.latestMessagePriority,
+        }
+      : null,
     ecpEnabled: isEcpEnabled(),
   };
 

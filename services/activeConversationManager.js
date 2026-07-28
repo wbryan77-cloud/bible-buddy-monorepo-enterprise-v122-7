@@ -89,6 +89,15 @@ function updateActiveConversation({
   frustrationMode = false,
   strictAnswerMode = false,
   correctionCount = null,
+  // Phase 6X Obj2 — conversation intelligence (extends thread state; does not replace ledger)
+  outstandingQuestions = undefined,
+  conversationObjective = undefined,
+  preferredFormat = undefined,
+  preferredEvidence = undefined,
+  emotionalContext = undefined,
+  rejectedInterpretation = undefined,
+  acceptedCorrection = undefined,
+  companionMode = undefined,
 } = {}) {
   if (!userId) return null;
   const state = readState();
@@ -156,6 +165,29 @@ function updateActiveConversation({
     frustrationMode: frustrationMode || prev?.frustrationMode || false,
     strictAnswerMode: nextStrictAnswerMode,
     correctionCount: nextCorrectionCount,
+    outstandingQuestions:
+      outstandingQuestions !== undefined ? outstandingQuestions : prev?.outstandingQuestions || null,
+    conversationObjective:
+      conversationObjective !== undefined
+        ? conversationObjective
+        : prev?.conversationObjective || null,
+    preferredFormat: preferredFormat !== undefined ? preferredFormat : prev?.preferredFormat || null,
+    preferredEvidence:
+      preferredEvidence !== undefined ? preferredEvidence : prev?.preferredEvidence || null,
+    emotionalContext:
+      emotionalContext !== undefined ? emotionalContext : prev?.emotionalContext || null,
+    // Corrections immediately replace prior interpretation; clear when not in correction mode
+    rejectedInterpretation: isCorrection
+      ? rejectedInterpretation !== undefined
+        ? rejectedInterpretation
+        : prev?.rejectedInterpretation || null
+      : null,
+    acceptedCorrection: isCorrection
+      ? acceptedCorrection !== undefined
+        ? acceptedCorrection
+        : prev?.acceptedCorrection || null
+      : null,
+    companionMode: companionMode !== undefined ? companionMode : prev?.companionMode || null,
   };
   entry.conversationAge = Date.now() - entry.startedAtMs;
 

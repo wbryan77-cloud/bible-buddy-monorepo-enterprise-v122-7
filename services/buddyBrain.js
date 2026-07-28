@@ -1052,13 +1052,24 @@ function recordActiveConversationTurn({ userId, message, structured, doctrineTop
   if (!topic) return;
 
   try {
+    const sem = runtimeContext.semanticUnderstanding || structured.runtime?.semanticUnderstanding || null;
+    const ledger = runtimeContext.correctionLedger || structured.runtime?.correctionLedger || null;
     updateActiveConversation({
       userId,
       topic,
       questionType: runtimeContext.questionIntent?.questionType || structured.runtime?.questionIntent?.questionType || null,
-      depth: runtimeContext.questionIntent?.requestedDepth || 'standard',
+      depth: runtimeContext.questionIntent?.requestedDepth || sem?.requestedDepth || 'standard',
       message,
       answerTopic: topic,
+      outstandingQuestions: Array.isArray(sem?.outstandingQuestions) ? sem.outstandingQuestions : [],
+      conversationObjective: sem?.conversationObjective || null,
+      preferredFormat: sem?.requestedFormat || null,
+      preferredEvidence: sem?.requestedEvidence || null,
+      emotionalContext: sem?.emotionalContext || null,
+      correctionMode: !!(ledger && ledger.active),
+      rejectedInterpretation: ledger?.active ? ledger.priorAssistantQuote || null : null,
+      acceptedCorrection: ledger?.active ? ledger.correctedIntent || null : null,
+      companionMode: runtimeContext.companionMode || structured.runtime?.companionMode || null,
     });
   } catch (_) {}
 }

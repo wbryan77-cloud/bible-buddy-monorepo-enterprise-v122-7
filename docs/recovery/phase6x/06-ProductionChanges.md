@@ -22,3 +22,18 @@ Incremental production modifications only. Unrelated admin/server dirty worktree
 ## OBJ2+ 
 
 Pending.
+
+---
+
+## OBJ2 — Conversation intelligence wire-through (2026-07-27)
+
+| Field | Value |
+|---|---|
+| **Reason** | Outstanding questions / prefs / correction replace were computed but not durable or composer-visible |
+| **Subsystem** | Conversation thread + reason-first composer (extend; no replacement) |
+| **Root cause** | `semanticUnderstanding` stopped at the pack; active conversation lacked intelligence fields |
+| **Implementation** | Composer userPayload + evidence slice include slim semanticUnderstanding; activeConversation persists outstandingQuestions, conversationObjective, preferredFormat/Evidence, emotionalContext, rejectedInterpretation, acceptedCorrection; openAiFirst copies pack → runtimeContext; buddyBrain records on finalize |
+| **Files** | `services/reasonFirstComposer.js`, `services/activeConversationManager.js`, `services/buddyBrain.js`, `services/openAiFirstCompanionRuntime.js`, `tests/phase6xObj2ConversationIntelligence.test.js` |
+| **Regression evidence** | Obj2 unit PASS; Obj1 still PASS |
+| **Expected improvement** | Stale-topic already message-wins; mixed-intent and corrections now visible to composer and thread |
+| **Architecture** | Extend only — auth/streaming/memory ownership/claim verifier untouched; go-deeper P2 deferred |

@@ -44,3 +44,35 @@ Requires deploy of this commit tip. Post-deploy: replay FTC B1 / Gate 3 G8 multi
 ## Objectives 2–9
 
 Pending sequential execution per Option D Rule 4.
+
+---
+
+## Objective 2 — Conversation Intelligence — COMPLETE (local)
+
+### Evidence
+- Obj2 audit: state fragmented across `activeConversationManager`, correction ledger, and pack `semanticUnderstanding`; no verified production FAIL (go-deeper concurrent flake remains unreproduced P2)
+- Gap: `outstandingQuestions` / format / evidence prefs were ephemeral and not passed to `reasonFirstComposer`; corrections soft-replaced via ledger only
+
+### Root cause
+Conversation intelligence fields were computed (Obj1) but not wired into durable thread state or composer userPayload, so mixed-intent carryover and preferred style/evidence could not influence the live reply or next-turn thread context.
+
+### Implementation (smallest change)
+| Item | Detail |
+|---|---|
+| **Reason** | Make outstanding questions, objective, prefs, and correction replace visible without a new Conversation Intelligence store |
+| **Subsystem** | `reasonFirstComposer`, `activeConversationManager`, `buddyBrain` record turn, `openAiFirstCompanionRuntime` runtimeContext |
+| **Root cause** | Pack intelligence not surfaced to composer or thread persistence |
+| **Change** | Pass slim `semanticUnderstanding` into composer payloads; persist intelligence fields on active conversation; on correction set `rejectedInterpretation` / `acceptedCorrection`; clear those on non-correction |
+| **Not done** | No new CI store; no concurrent file-lock for go-deeper P2 until repro |
+
+### Regression evidence (local)
+- `node tests/phase6xObj2ConversationIntelligence.test.js` → **PASS**
+- Obj1 unit still **PASS**
+- Syntax check on touched services → OK
+
+### Expected behavioral improvement
+Composer sees mixed intent / outstanding questions / preferred evidence; thread retains those for continuity; corrections immediately overwrite rejected interpretation fields.
+
+### Live production
+Requires deploy of Obj2 tip. Post-deploy: FTC continuity + Gate 3 correction probes; serial go-deeper still expected green.
+

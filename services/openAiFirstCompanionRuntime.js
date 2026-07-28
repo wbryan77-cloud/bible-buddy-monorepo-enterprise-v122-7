@@ -532,6 +532,9 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   });
   evidencePack.userMessage = message;
   evidencePack.userId = userId;
+  // Phase 6X Obj2 — surface pack intelligence on runtime for thread persistence
+  runtimeContext.semanticUnderstanding = evidencePack.semanticUnderstanding || null;
+  runtimeContext.correctionLedger = evidencePack.correctionLedger || null;
 
   // CERTIFICATION_V6 Gate 2 — answer marker recall from durable pins (no confabulation).
   {
