@@ -76,3 +76,30 @@ Composer sees mixed intent / outstanding questions / preferred evidence; thread 
 ### Live production
 Requires deploy of Obj2 tip. Post-deploy: FTC continuity + Gate 3 correction probes; serial go-deeper still expected green.
 
+---
+
+## Objective 3 — Unified Evidence Broker — COMPLETE (local)
+
+### Evidence
+- BF-10 mitigated; E1 PARTIAL utilization; dual-path audit: bible_wide consulted approved IOG/ICOJ xrefs, OpenAI pack did not
+- Users never needed to say “IOG”; gap was path ownership, not keyword gate
+
+### Root cause
+`readApprovedCrossReferences` wired only in `scriptureAuthorityEngine`; `retrievalEvidencePack` never auto-consulted the same store.
+
+### Implementation
+| Item | Detail |
+|---|---|
+| **Reason** | Make approved repositories consistently consulted on the live OpenAI pack path |
+| **Subsystem** | Evidence broker (`retrievalEvidencePack`) — extend, do not replace |
+| **Root cause** | Dual retrieval owners; pack missing approved xref consult |
+| **Change** | `retrieveApprovedCrossReferenceEvidence`; attach to pack + supplemental scripture refs; `brokerConsult` telemetry; composer evidence slice |
+| **Not done** | KJV hydrate; history/OL phrase-gate redesign; second broker |
+
+### Regression
+`tests/phase6xObj3EvidenceBroker.test.js` PASS; Obj1/Obj2 still PASS.
+
+### Docs
+`10-EvidenceBrokerVerification.md`, `14-IOGRetrievalVerification.md`, `15-ICOJRetrievalVerification.md`
+
+

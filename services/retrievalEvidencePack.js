@@ -293,6 +293,44 @@ function retrieveScriptureEvidence(topic, { companionTopic = null, suppressDoctr
   return { topic, title: catalog?.title || null, references: refs.slice(0, 12), source: refs.length ? 'doctrine_chain' : null };
 }
 
+/**
+ * Phase 6X Obj3 — auto-consult approved IOG/ICOJ cross-refs by topic.
+ * Same store as scriptureAuthorityEngine; no org-name keyword gate.
+ * Additive only — never counted as primary witnesses.
+ */
+function retrieveApprovedCrossReferenceEvidence(topic = null) {
+  const empty = { consulted: true, topic: topic || null, references: [], count: 0, source: 'iog_icoj_approved_cross_refs' };
+  if (!topic) return { ...empty, consulted: false, reason: 'no_topic' };
+  try {
+    const { readApprovedCrossReferences } = require('./iogIcojGovernedIngestion');
+    const governed = readApprovedCrossReferences({ topic });
+    const references = [];
+    const seen = new Set();
+    for (const g of governed) {
+      const ref = g.extractedReference || g.normalizedReference;
+      if (!ref || seen.has(ref)) continue;
+      seen.add(ref);
+      references.push({
+        reference: ref,
+        relation: 'iog_icoj_cross_reference',
+        discoverySource: g.discoverySource || 'IOG/ICOJ',
+        sourceDocument: g.sourceDocument || null,
+        theme: topic,
+        supplemental: true,
+      });
+    }
+    return {
+      consulted: true,
+      topic,
+      references: references.slice(0, 8),
+      count: references.length,
+      source: 'iog_icoj_approved_cross_refs',
+    };
+  } catch (_) {
+    return { ...empty, consulted: false, reason: 'store_unavailable' };
+  }
+}
+
 function retrieveMemoryEvidence({
   userId,
   message,
@@ -495,6 +533,20 @@ function buildRetrievalEvidencePack({
     suppressDoctrineChain: suppressDoctrine && !companionTopic,
   });
 
+  const approvedCrossReferences = retrieveApprovedCrossReferenceEvidence(effectiveTopic || topic);
+  if (approvedCrossReferences.references.length && Array.isArray(scripture.references)) {
+    const seen = new Set(scripture.references.map((r) => (typeof r === 'string' ? r : r.reference)));
+    for (const xref of approvedCrossReferences.references) {
+      if (seen.has(xref.reference)) continue;
+      seen.add(xref.reference);
+      scripture.references.push(xref);
+      if (scripture.references.length >= 16) break;
+    }
+    if (!scripture.source && approvedCrossReferences.count) {
+      scripture.source = 'approved_cross_references';
+    }
+  }
+
   const bibleOnlyMode = detectBibleOnlyMode(message);
   const doctrineSnippets = buildDoctrineEvidenceSnippets(effectiveTopic || topic, message);
   const approvedCatalogEvidence = buildApprovedCatalogEvidence({
@@ -559,6 +611,18 @@ function buildRetrievalEvidencePack({
     effectiveTopic,
     memory: slimMemorySlice(memory),
     scripture,
+    approvedCrossReferences,
+    brokerConsult: {
+      localKjvText: false,
+      localKjvReferences: Array.isArray(scripture.references) && scripture.references.length > 0,
+      doctrineCards: evidenceCards.length,
+      approvedCatalog: !!approvedCatalogEvidence.wired,
+      approvedCrossReferences: approvedCrossReferences.count,
+      approvedCrossReferencesTopic: approvedCrossReferences.topic,
+      history: !!includeHistory,
+      originalLanguageHints: Array.isArray(concordanceHints) ? concordanceHints.length : 0,
+      memory: Array.isArray(memory?.snippets) ? memory.snippets.length : 0,
+    },
     bibleOnlyMode,
     evidenceAuthority,
     approvedCatalogEvidence,
@@ -609,6 +673,7 @@ module.exports = {
   buildActiveConversationSummary,
   buildThreadLocalMemory,
   retrieveScriptureEvidence,
+  retrieveApprovedCrossReferenceEvidence,
   retrieveMemoryEvidence,
   parseHistoricalFacts,
   COMPANION_SCRIPTURE_STUBS,

@@ -37,3 +37,18 @@ Pending.
 | **Regression evidence** | Obj2 unit PASS; Obj1 still PASS |
 | **Expected improvement** | Stale-topic already message-wins; mixed-intent and corrections now visible to composer and thread |
 | **Architecture** | Extend only — auth/streaming/memory ownership/claim verifier untouched; go-deeper P2 deferred |
+
+---
+
+## OBJ3 — Evidence broker approved-xref auto-consult (2026-07-27)
+
+| Field | Value |
+|---|---|
+| **Reason** | Approved IOG/ICOJ xrefs consulted on bible_wide but not OpenAI pack → inconsistent repository use |
+| **Subsystem** | `retrievalEvidencePack` (unified broker) |
+| **Root cause** | Dual-path; pack never called `readApprovedCrossReferences` |
+| **Implementation** | Topic auto-consult + supplemental scripture refs + `brokerConsult` + composer evidence fields |
+| **Files** | `services/retrievalEvidencePack.js`, `services/reasonFirstComposer.js`, `tests/phase6xObj3EvidenceBroker.test.js`, docs 10/14/15 |
+| **Regression evidence** | Obj3 unit PASS (sabbath xrefs without org keyword); Obj1/2 PASS |
+| **Expected improvement** | Doctrine/topic turns on OpenAI path receive approved internal xrefs automatically |
+| **Architecture** | Broker extended, not replaced |
