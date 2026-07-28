@@ -1,0 +1,106 @@
+{
+  "passed": 20,
+  "total": 20,
+  "results": [
+    {
+      "id": "U_mother_possessive",
+      "pass": true,
+      "detail": "mother not mother's"
+    },
+    {
+      "id": "U_stop_the",
+      "pass": true,
+      "detail": "no person \"the\""
+    },
+    {
+      "id": "U_short_need",
+      "pass": true,
+      "detail": "short prayer → prayer need"
+    },
+    {
+      "id": "U_not_revision",
+      "pass": true,
+      "detail": "pray again not revision"
+    },
+    {
+      "id": "U_vague_clarifier",
+      "pass": true,
+      "detail": "I’d like to pray with you — can you name who or what you’d like us to bring before God? I don’t want to guess."
+    },
+    {
+      "id": "U_short_prayer",
+      "pass": true,
+      "detail": "Yes, I'll pray with you.\n\nFather, please be near my dad. Give peace and wisdom. In Jesus' name, amen."
+    },
+    {
+      "id": "U_no_advice",
+      "pass": true,
+      "detail": "Yes, I'll pray with you.\n\nFather, please be near my son. Give peace and wisdom. In Jesus' name, amen."
+    },
+    {
+      "id": "L_A_mother",
+      "pass": true,
+      "detail": "phase5k_prayer_companion | Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning "
+    },
+    {
+      "id": "L_B_again",
+      "pass": true,
+      "detail": "phase5k_prayer_companion | Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning "
+    },
+    {
+      "id": "L_C_gk",
+      "pass": true,
+      "detail": "The capital of France is Paris."
+    },
+    {
+      "id": "L_C_pray_after_gk",
+      "pass": true,
+      "detail": "phase5k_prayer_companion | Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning "
+    },
+    {
+      "id": "L_E_change",
+      "pass": true,
+      "detail": "phase5k_prayer_companion | Yes, I'll pray with you. Father, please be near as I pray for my mother. Please give comfort, wisdom, and peace. Give me wisdom, peace, cour"
+    },
+    {
+      "id": "L_F_thanks",
+      "pass": true,
+      "detail": "reason_first_openai | Yes — thank God. I’m so glad Dad is home now. Father, thank You for bringing Dad home. Thank You for Your mercy, Your ca"
+    },
+    {
+      "id": "L_F_recall_resolved",
+      "pass": true,
+      "detail": "Here’s what stands out about you from our conversation: you asked prayer concerning mother; you shared an update: Dad is home now. Let's thank God.; you asked: "
+    },
+    {
+      "id": "L_H_vague",
+      "pass": true,
+      "detail": "phase7b_prayer_clarifier | I’d like to pray with you — can you name who or what you’d like us to bring before God? I don’t want to guess."
+    },
+    {
+      "id": "L_I_short",
+      "pass": true,
+      "detail": "phase7b_prayer_concise | Yes, I'll pray with you. Father, please be near my dad. Give peace and wisdom. In Jesus' name, amen."
+    },
+    {
+      "id": "L_K_no_advice",
+      "pass": true,
+      "detail": "phase7b_prayer_concise | Yes, I'll pray with you. Father, please be near my son. Give peace and wisdom. In Jesus' name, amen."
+    },
+    {
+      "id": "L_forget_no_dad",
+      "pass": true,
+      "detail": "In this conversation I have what we’ve discussed so far. I don’t invent personal details — if you want me to remember something specific, just say “please remem"
+    },
+    {
+      "id": "L_photosynthesis",
+      "pass": true,
+      "detail": "Photosynthesis is the process plants, algae, and some bacteria use to make food from sunlight. In si"
+    },
+    {
+      "id": "L_app",
+      "pass": true,
+      "detail": "BibleBuddy is a Scripture-grounded companion. I'm here to listen, pray with you, help you study the "
+    }
+  ]
+}

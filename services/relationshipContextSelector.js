@@ -1,10 +1,11 @@
 /**
- * Phase 7A — Relationship context selector (adapter only).
- * Assembles care-relevant context from EXISTING stores. No new persistence.
+ * Phase 7A/7B — Relationship context selector (thin adapter).
+ * Assembles care-relevant context from EXISTING stores.
+ * Does not persist, route, compose final replies, or invent memory.
  * Provenance/confidence for safe, non-confabulating use.
  */
 
-const { getRelationshipContext, recordRelationshipSignal } = require('./relationshipMemoryEngine');
+const { getRelationshipContext } = require('./relationshipMemoryEngine');
 const { getContinuationMemory } = require('./conversationContinuationMemory');
 const { getActiveConversation } = require('./activeConversationManager');
 
@@ -17,22 +18,33 @@ const CONFIDENCE = {
   UNKNOWN: 'UNKNOWN',
 };
 
+const PERSON_STOPWORDS =
+  /^(me|us|this|that|it|him|her|them|you|the|a|an|thing|things|what|whatever|someone|somebody|anyone|something)$/i;
+
+function normalizePersonLabel(raw = '') {
+  return String(raw || '')
+    .replace(/['’]s$/i, '')
+    .replace(/[^a-zA-Z\-]/g, '')
+    .trim();
+}
+
 function extractPrayerSubjectFromMessage(message = '') {
   const m = String(message || '');
-  const forPerson = m.match(
-    /\bpray(?:\s+with\s+me)?\s+(?:for|about)\s+(?:my\s+)?([a-z][a-z\-']{1,40})(?:\s|'s|\.|,|\?|$)/i,
-  );
-  if (forPerson) {
-    const raw = forPerson[1].toLowerCase();
-    if (!/^(me|us|this|that|it|him|her|them|you)$/.test(raw)) {
-      return { person: forPerson[1], confidence: CONFIDENCE.CURRENT_TURN, source: 'message' };
-    }
-  }
+  // Prefer kinship first so "my mother's surgery" → mother (not "mother's")
   const kinship = m.match(
     /\b(?:my|our)\s+(dad|father|mom|mother|son|daughter|husband|wife|brother|sister|friend|child|children|parents?)\b/i,
   );
   if (kinship) {
-    return { person: kinship[1], confidence: CONFIDENCE.CURRENT_TURN, source: 'message_kinship' };
+    return { person: kinship[1].toLowerCase(), confidence: CONFIDENCE.CURRENT_TURN, source: 'message_kinship' };
+  }
+  const forPerson = m.match(
+    /\bpray(?:er)?(?:\s+with\s+me)?\s+(?:for|about)\s+(?:my\s+)?([a-z][a-z\-']{1,40})(?:\s|'s|\.|,|\?|$)/i,
+  );
+  if (forPerson) {
+    const cleaned = normalizePersonLabel(forPerson[1]);
+    if (cleaned && !PERSON_STOPWORDS.test(cleaned)) {
+      return { person: cleaned, confidence: CONFIDENCE.CURRENT_TURN, source: 'message' };
+    }
   }
   return null;
 }
@@ -51,7 +63,7 @@ function isPersonalRememberRequest(message = '') {
 }
 
 function isForgetRequest(message = '') {
-  return /\b(do not remember|don'?t remember|forget what i|forget that|do not save)\b/i.test(
+  return /\b(do not remember|don'?t remember|forget what i|forget that|do not save|forget what i said about)\b/i.test(
     String(message || ''),
   );
 }
@@ -71,6 +83,22 @@ function isEmotionalScriptureResponse(message = '') {
   );
 }
 
+function isVaguePriorPrayerAsk(message = '') {
+  return /\bpray(?:er)?\b.+\b(the thing|what i (told|mentioned|said)|last week|before)\b/i.test(String(message || ''));
+}
+
+function compactBurdenText(struggle = '') {
+  const s = String(struggle || '').trim();
+  if (!s) return null;
+  if (/^hi[, ]|my name is|^actually,?\s+pray|^please just pray|^pray for|^pray about/i.test(s)) return null;
+  if (/\bpray\b/i.test(s) && !/\b(hospital|sick|ill|worried|scared|surgery|cancer)\b/i.test(s)) return null;
+  return (
+    s.match(/\b((?:dad|father|mom|mother|son|daughter)[^.!?]{0,60}(?:hospital|sick|ill|scared|worried|home now|recovered)[^.!?]{0,40})/i)?.[0] ||
+    s.match(/\b((?:hospital|sick|ill|cancer|surgery|worried about|scared)[^.!?]{0,60})/i)?.[0] ||
+    null
+  );
+}
+
 /**
  * @returns {object} slim care context for prayer/presence/recall/return
  */
@@ -81,20 +109,14 @@ function selectRelationshipContext({ userId = '', message = '' } = {}) {
   const prayerSubject = extractPrayerSubjectFromMessage(message);
   const displayName = extractDisplayName(message);
 
-  // Prefer current-turn extract; else recover last prayer subject from continuation
   const priorPrayerSubject =
     prayerSubject ||
     extractPrayerSubjectFromMessage(rel.lastPrayerRequest || '') ||
     extractPrayerSubjectFromMessage(cont?.lastUserMessage || '');
 
   const activeBurdens = [];
-  if (rel.currentStruggle) {
-    const struggle = String(rel.currentStruggle).slice(0, 160);
-    // Keep burdens short and care-relevant — not full greetings dumped into prayer
-    const compact =
-      struggle.match(/\b((?:dad|father|mom|mother|son|daughter)[^.!?]{0,60}(?:hospital|sick|ill|scared|worried)[^.!?]{0,40})/i)?.[0] ||
-      struggle.match(/\b((?:hospital|sick|ill|cancer|surgery|worried about|scared)[^.!?]{0,60})/i)?.[0] ||
-      (/^hi[, ]|my name is/i.test(struggle) ? null : struggle);
+  if (rel.currentStruggle && rel.recentConcern !== 'resolved') {
+    const compact = compactBurdenText(rel.currentStruggle);
     if (compact) {
       activeBurdens.push({
         text: compact.slice(0, 100),
@@ -102,13 +124,6 @@ function selectRelationshipContext({ userId = '', message = '' } = {}) {
         source: 'relationshipMemoryEngine.currentStruggle',
       });
     }
-  }
-  if (active?.emotionalContext && active.emotionalContext !== 'neutral') {
-    activeBurdens.push({
-      text: `emotional context: ${active.emotionalContext}`,
-      confidence: CONFIDENCE.CURRENT_CONVERSATION,
-      source: 'activeConversation.emotionalContext',
-    });
   }
 
   const prayerContext = {
@@ -118,6 +133,7 @@ function selectRelationshipContext({ userId = '', message = '' } = {}) {
       prayerSubject?.confidence ||
       priorPrayerSubject?.confidence ||
       (rel.lastPrayerRequest ? CONFIDENCE.CURRENT_CONVERSATION : CONFIDENCE.UNKNOWN),
+    vaguePriorAsk: isVaguePriorPrayerAsk(message),
   };
 
   const personIdentity = {
@@ -135,7 +151,6 @@ function selectRelationshipContext({ userId = '', message = '' } = {}) {
     });
   }
 
-  // Recover person from prior prayer reply when memory is cold (ephemeral hosts)
   if (!importantPeople.length && /\bpray(?:\s+with\s+me)?\s+again\b/i.test(String(message || ''))) {
     const fromReply = String(cont?.lastReply || '').match(/\bpray for my (dad|father|mom|mother|son|daughter)\b/i);
     if (fromReply) {
@@ -163,10 +178,12 @@ function selectRelationshipContext({ userId = '', message = '' } = {}) {
       conversationObjective: active?.conversationObjective || null,
     },
     familyConversationContext: !!rel.familyConversationContext,
+    burdenResolved: rel.recentConcern === 'resolved',
     suggestedCareAction: null,
     _meta: {
       selector: 'relationshipContextSelector',
       noNewStore: true,
+      noPersist: true,
     },
   };
 }
@@ -181,23 +198,16 @@ function companionRememberAck(message = '') {
   return "I'll remember that. Thank you for trusting me with it.";
 }
 
-function notePersonalRemember(userId, message = '') {
-  if (!userId) return;
-  try {
-    const raw = String(message || '');
-    const content = raw
-      .replace(/^(please\s+)?remember(\s+that)?\s+/i, '')
-      .replace(/^keep in mind(\s+that)?\s+/i, '')
-      .trim()
-      .slice(0, 240);
-    recordRelationshipSignal({
-      userId,
-      message: content || raw.slice(0, 240),
-      event: 'personal_remember_request',
-    });
-  } catch (_) {
-    /* never block chat */
-  }
+/**
+ * Strip remember framing for the memory owner to persist — selector does not write.
+ */
+function personalRememberContent(message = '') {
+  const raw = String(message || '');
+  return raw
+    .replace(/^(please\s+)?remember(\s+that)?\s+/i, '')
+    .replace(/^keep in mind(\s+that)?\s+/i, '')
+    .trim()
+    .slice(0, 240);
 }
 
 module.exports = {
@@ -209,6 +219,8 @@ module.exports = {
   isForgetRequest,
   isCelebrationOrPresenceMoment,
   isEmotionalScriptureResponse,
+  isVaguePriorPrayerAsk,
   companionRememberAck,
-  notePersonalRemember,
+  personalRememberContent,
+  compactBurdenText,
 };

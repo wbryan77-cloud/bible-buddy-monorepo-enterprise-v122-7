@@ -124,7 +124,7 @@ function applyProtectedCompanionReroute(orchestratorResult, humanNeed, { userId,
     reply = identity.reply;
     masterRoute = identity.masterRoute || 'app_identity';
   } else if (humanNeed === 'prayer') {
-    const prayer = buildPrayerCompanionResponse({ message, anchor });
+    const prayer = buildPrayerCompanionResponse({ message, anchor, userId });
     reply = prayer.reply;
     scripture = prayer.scripture || [];
     masterRoute = prayer.masterRoute || 'prayer_companion';

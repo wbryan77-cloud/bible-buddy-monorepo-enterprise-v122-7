@@ -755,7 +755,7 @@ async function runBibleCompanionOrchestrator({
       isPersonalRememberRequest,
       isForgetRequest,
       companionRememberAck,
-      notePersonalRemember,
+      personalRememberContent,
     } = require('./relationshipContextSelector');
     if (isPersonalRememberRequest(message) || isForgetRequest(message)) {
       if (isForgetRequest(message)) {
@@ -763,8 +763,13 @@ async function runBibleCompanionOrchestrator({
           require('./relationshipMemoryEngine').forgetUserMemory({ userId });
         } catch (_) {}
       } else {
-        notePersonalRemember(userId, message);
         try {
+          const content = personalRememberContent(message) || String(message).slice(0, 240);
+          require('./relationshipMemoryEngine').recordRelationshipSignal({
+            userId,
+            message: content,
+            event: 'personal_remember_request',
+          });
           require('./explicitRememberPin').maybeCapturePin(userId, message);
         } catch (_) {}
       }

@@ -44,8 +44,10 @@ function formatRecallReply({ userId, message = '', state = {} } = {}) {
   if (care.importantPeople?.[0]?.label) {
     personParts.push(`you asked prayer concerning ${care.importantPeople[0].label}`);
   }
-  if (rel.currentStruggle) {
+  if (rel.currentStruggle && rel.recentConcern !== 'resolved') {
     personParts.push(`you shared: ${String(rel.currentStruggle).slice(0, 100)}`);
+  } else if (rel.recentConcern === 'resolved' && rel.currentStruggle) {
+    personParts.push(`you shared an update: ${String(rel.currentStruggle).slice(0, 100)}`);
   } else if (care.activeBurdens?.[0]?.text) {
     personParts.push(String(care.activeBurdens[0].text).slice(0, 100));
   }

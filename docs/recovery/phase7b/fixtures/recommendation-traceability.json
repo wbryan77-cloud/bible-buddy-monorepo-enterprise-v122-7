@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    { "id": "6x_semantic", "status": "implemented_active" },
+    { "id": "6y_historical_causation", "status": "implemented_active" },
+    { "id": "6zb_wire_care_lanes", "status": "implemented_active" },
+    { "id": "7a_selector_thin", "status": "implemented_incomplete_then_repaired_7b" },
+    { "id": "7a_prayer_personalization", "status": "implemented_active" },
+    { "id": "durable_cross_instance_memory", "status": "still_unresolved_topology" },
+    { "id": "resolved_burden", "status": "repaired_7b" },
+    { "id": "short_no_advice_prayer", "status": "repaired_7b" },
+    { "id": "multi_subject_prayer", "status": "deferred" }
+  ]
+}

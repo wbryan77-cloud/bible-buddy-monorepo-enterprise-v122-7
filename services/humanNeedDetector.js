@@ -65,7 +65,7 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
   if (/\b(what we were talking about|about what we talked)\b/i.test(m) && (state.lastAnsweredConcept || state.sessionMemory?.activeConcept)) {
     return 'practical_words_to_say';
   }
-  if (/\b(pray with me|can you pray|let's pray|pray for me|pray for my|pray about|pray with me again|pray again|deeper prayer|better prayer|beeter prayer|give me a deeper prayer|prayer as i asked)\b/i.test(m)) return 'prayer';
+  if (/\b(pray with me|can you pray|let's pray|pray for me|pray for my|pray about|pray with me again|pray again|short prayer|brief prayer|just a (short |quick )?prayer|prayer for|deeper prayer|better prayer|beeter prayer|give me a deeper prayer|prayer as i asked)\b/i.test(m)) return 'prayer';
   if (/\bwhat verse should i remember|give me a verse\b/i.test(m)) return 'one_anchor_verse';
   if (/\bhow (do|should|can) i explain|how do i tell|what should i say|help me talk to|how should i respond\b/i.test(m)) {
     return 'practical_words_to_say';

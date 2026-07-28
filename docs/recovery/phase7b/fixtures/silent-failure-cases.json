@@ -1,0 +1,9 @@
+{
+  "cases": [
+    { "id": "possessive_mother", "prompt": "Please pray for my mother's surgery tomorrow.", "failure": "pray for mother's", "fixed": true },
+    { "id": "person_the", "prompt": "Pray about the thing I mentioned before.", "failure": "pray for the", "fixed": true },
+    { "id": "short_prayer_bible_wide", "prompt": "Just a short prayer for my dad.", "failure": "empty bible_wide", "fixed": true },
+    { "id": "burden_dump", "prompt": "Actually, pray for my mother instead.", "failure": "burden=full instruction", "fixed": true },
+    { "id": "stale_crisis", "prompt": "Dad is home now.", "failure": "still active hospital burden", "fixed": true }
+  ]
+}

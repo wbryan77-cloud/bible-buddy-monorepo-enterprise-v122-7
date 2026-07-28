@@ -68,12 +68,17 @@ function recordRelationshipSignal({ userId, message = '', state = {} } = {}) {
   const rel = data.users[userId];
   const signal = { message: m.slice(0, 160), at: new Date().toISOString() };
 
-  if (/\boverwhelmed|discouraged|sad|bad day|crashing\b/i.test(m)) {
+  // Phase 7B — resolved / updated burdens supersede active crisis framing
+  if (
+    /\b(home now|recovered|getting better|doing better|out of (the )?hospital|healed|better now|resolved)\b/i.test(m) &&
+    /\b(dad|father|mom|mother|son|daughter|husband|wife|brother|sister|friend|child|family|he|she)\b/i.test(m)
+  ) {
+    rel.recentConcern = 'resolved';
+    rel.currentStruggle = m.slice(0, 160);
+  } else if (/\boverwhelmed|discouraged|sad|bad day|crashing\b/i.test(m)) {
     rel.currentStruggle = m.slice(0, 120);
     rel.recentConcern = 'emotional';
-  }
-  // Phase 7A — capture person-centered burdens (worried about dad, mother is sick, etc.)
-  if (
+  } else if (
     /\b(worried about|anxious about|scared for|afraid for|pray(?:ing)? for|sick|ill|hospital|cancer|surgery)\b/i.test(m) &&
     /\b(dad|father|mom|mother|son|daughter|husband|wife|brother|sister|friend|child|family)\b/i.test(m)
   ) {
@@ -184,8 +189,12 @@ function buildMemoryRecallReply({ userId, message = '' } = {}) {
   const ctx = getRelationshipContext({ userId });
   const items = [];
 
-  // Phase 7A — person-first before style prefs
-  if (ctx.currentStruggle) items.push(`you shared: ${String(ctx.currentStruggle).slice(0, 100)}`);
+  // Phase 7A — person-first before style prefs; skip resolved crises as active burdens
+  if (ctx.currentStruggle && ctx.recentConcern !== 'resolved') {
+    items.push(`you shared: ${String(ctx.currentStruggle).slice(0, 100)}`);
+  } else if (ctx.recentConcern === 'resolved' && ctx.currentStruggle) {
+    items.push(`you shared an update: ${String(ctx.currentStruggle).slice(0, 100)}`);
+  }
   if (ctx.lastPrayerRequest) items.push(`you asked prayer about: ${String(ctx.lastPrayerRequest).slice(0, 100)}`);
   if (ctx.familyConversationContext) items.push('you were working through talking with family about Scripture');
   if (ctx.lastPracticalRequest) items.push('you asked for practical wording help');
@@ -206,10 +215,16 @@ function forgetUserMemory({ userId } = {}) {
   const data = loadAll();
   data.users[userId] = defaultUserRel();
   saveAll(data);
+  try {
+    const { forgetMemory } = require('./companionMemoryManager');
+    forgetMemory({ userId, scope: 'preferences' });
+  } catch (_) {
+    /* best-effort */
+  }
   return {
     cleared: true,
     reply:
-      "I've cleared what I stored about your companion context and session signals. Your answer-style preferences in this session are reset — tell me again if you want direct answers or other preferences.",
+      "I've cleared what I stored about your companion context for this conversation. If you want a preference kept later — like shorter answers — just tell me again.",
   };
 }
 
