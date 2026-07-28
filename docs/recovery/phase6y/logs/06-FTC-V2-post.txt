@@ -1,0 +1,10 @@
+Founder Truth Corpus V2 against https://bible-buddy-monorepo-enterprise-v122-7.onrender.com
+
+[PASS] V2-GK-01_capital_france — reason_first_openai
+[PASS] V2-GK-02_photosynthesis — reason_first_openai
+[PASS] V2-GK-03_first_president — reason_first_openai
+[PASS] V2-SC-01_john_1_1 — bible_wide_reasoning
+[PASS] V2-UB-01_unknown_bible — bible_companion_clarification
+[PASS] V2-MP-01_heavens_multipart — reason_first_openai
+
+V2 summary: 6/6 PASS (0 FAIL)

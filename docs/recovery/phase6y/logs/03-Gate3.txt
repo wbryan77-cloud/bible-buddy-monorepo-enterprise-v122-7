@@ -1,0 +1,21 @@
+Conversation governance against https://bible-buddy-monorepo-enterprise-v122-7.onrender.com
+
+[PASS] G1_app_identity — phase5l_app_identity | BibleBuddy is a Scripture-grounded companion. I'm here to listen, pray with you, help you study the Bible line upon line
+[PASS] G2_identity_go_deeper — response_revision_identity | BibleBuddy is meant to be a Scripture-grounded companion, not just a Bible search box. It should listen to what you are 
+[PASS] G3_john316_explicit — bible_wide_reasoning | Scripture speaks directly to this. John 3:16 — "For God so loved the world, that he gave his only begotten Son, that who
+[PASS] G4_acts10 — reason_first_openai | No, Acts 10 does not make pork clean. The clean and unclean distinctions established in Leviticus 11 and Deuteronomy 14 
+[PASS] G5_remember_owner — ack=reason_first_openai bare=explicit_remember_pin_prompt recall=explicit_remember_pin | You asked me to remember: my study focus is the Beatitudes.
+[PASS] G6_continue_owner — phase5o_continuation_general | Scripture speaks directly to this. John 3:16 — "For God so loved the world, that he gave his only begotten Son, that who
+[PASS] G7_correction_owner — response_correction_restate_dietary | You are right to demand a direct answer. Here it is clearly: No — Acts 10 does not make pork clean. Peter refused unclea
+[FAIL] G8_multipart — reason_first_openai | According to Scripture, the heavens are described in layered ways, encompassing the firmament or sky, the celestial region, and the third he
+[PASS] G9_prayer — phase5k_prayer_companion | Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentleness. Help me walk in
+[PASS] G10_life_advice — reason_first_openai | Deciding on a job offer can be a significant decision, and it's important to consider various aspects before making your
+
+9/10 passed, 1 failed.
+[
+  {
+    "id": "G8_multipart",
+    "pass": false,
+    "detail": "reason_first_openai | According to Scripture, the heavens are described in layered ways, encompassing the firmament or sky, the celestial region, and the third he"
+  }
+]
