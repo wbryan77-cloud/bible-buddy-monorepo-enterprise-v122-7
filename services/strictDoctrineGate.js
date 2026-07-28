@@ -253,6 +253,11 @@ function runStrictDoctrineGate({
 }
 
 function mustBlockOpenAi(evidencePack, userId, message = '', routePlan = null) {
+  const { isExplicitHistoricalCausationAsk } = require('./historicalCausationAsk');
+  if (isExplicitHistoricalCausationAsk(message)) {
+    if (evidencePack) evidencePack.doctrineStrict = { enabled: false };
+    return false;
+  }
   const plan =
     routePlan ||
     planCompanionDoctrineRouting({

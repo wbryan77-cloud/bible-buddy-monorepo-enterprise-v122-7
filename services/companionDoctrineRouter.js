@@ -436,6 +436,29 @@ function planCompanionDoctrineRouting({ userId, message, recentSessions = [], ru
     };
   }
 
+  // Phase 6Y — historical causation (who changed Sabbath, Constantine, etc.)
+  // must not be owned by doctrine_final_authority Scripture templates.
+  {
+    const { isExplicitHistoricalCausationAsk } = require('./historicalCausationAsk');
+    if (isExplicitHistoricalCausationAsk(m)) {
+      return {
+        intent: 'historical_causation',
+        humanNeed,
+        lane: 'companion',
+        strictTopic: null,
+        bibleConceptId: bibleConcept?.id || null,
+        clearDoctrine,
+        releaseReason: 'explicit_historical_causation',
+        useActiveDoctrineTopic: false,
+        useActiveBibleConcept: false,
+        companionReleaseReply: null,
+        immediateCompanionReply: false,
+        protectedHumanNeed: false,
+        historyCausationAsk: true,
+      };
+    }
+  }
+
   let lane = 'companion';
   let strictTopic = null;
   let bibleConceptId = bibleConcept?.id || null;

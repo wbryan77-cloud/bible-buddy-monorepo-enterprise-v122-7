@@ -255,6 +255,11 @@ function buildFinalAuthorityStructured(authority, runtimeContext = {}, safety = 
 }
 
 function resolveFinalAuthorityForPack({ userId, message, evidencePack, recentSessions = [] }) {
+  const { isExplicitHistoricalCausationAsk } = require('./historicalCausationAsk');
+  if (isExplicitHistoricalCausationAsk(message)) {
+    return { handled: false, reason: 'explicit_historical_causation' };
+  }
+
   const topic =
     evidencePack.doctrineStrict?.strictTopic ||
     resolveStrictTopic(evidencePack);
