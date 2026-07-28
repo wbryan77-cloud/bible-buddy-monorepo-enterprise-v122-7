@@ -102,4 +102,39 @@ Requires deploy of Obj2 tip. Post-deploy: FTC continuity + Gate 3 correction pro
 ### Docs
 `10-EvidenceBrokerVerification.md`, `14-IOGRetrievalVerification.md`, `15-ICOJRetrievalVerification.md`
 
+---
+
+## Objectives 4–8 — COMPLETE (local)
+
+### Obj4 Truth classification
+Extended `truthClassificationGuidance` into reason-first composer. Categories never merge. Docs: `13-HistoricalClassificationVerification.md`.
+
+### Obj5 Response composer
+Composition order + anti-verbosity in `COMPOSER_INSTRUCTION`; polish strips transactional openers. Composer not replaced.
+
+### Obj6 General knowledge
+**FAIL evidence:** capital of France / photosynthesis → clarifier on production.  
+**Root cause:** over-broad `UNKNOWN_BIBLE_RE`.  
+**Repair:** `isUnknownBiblePhraseAsk` + `GENERAL_FACTUAL` intent. Docs: `11-OpenAIRoutingAudit.md`, `12-GeneralKnowledgeRecovery.md`.
+
+### Obj7–8 Companion engine / quality
+Tone guidance + polish; measurable `scoreCompanionQuality` dimensions. Docs: `09-CompanionQualityReport.md`.
+
+### Regression
+`tests/phase6xObj4to6.test.js` PASS; Obj1–3 still PASS.
+
+---
+
+## Objective 9 — Founder Truth Corpus V2 — COMPLETE (artifact)
+
+`08-FounderTruthCorpusV2.md` + `scripts/runFounderTruthCorpusV2.js` (live after deploy).
+
+---
+
+## Certification status
+
+**NOT YET GO_FOR_FOUNDER_ALPHA under Option D** until production deploy + live FTC + V2 + prior Gate suites pass on the new tip.
+
+Auth / streaming / memory ownership / claim verifier / certified runtime path: preserved (extend-only).
+
 

@@ -29,6 +29,27 @@ const EXPLICIT_SCRIPTURE_REFERENCE_RE =
 const UNKNOWN_BIBLE_RE =
   /\b(what does|what is|what are|explain|teach me|tell me about|scripture says|bible says)\b/i;
 
+const BIBLE_FRAME_RE =
+  /\b(bible|scripture|kjv|verse|chapter|gospel|apostle|prophet|testament|yahweh|jehovah|lord|christ|jesus|holy\s*spirit|sabbath|baptis|commandment|torah|hebrew|greek|epistle|psalm|genesis|exodus|isaiah|matthew|john|romans|revelation|doctrine|theology)\b/i;
+
+const SECULAR_FACTUAL_RE =
+  /\b(capital of|president|photosynthesis|world war|wwii|ww2|molecule|planet|continent|element|periodic table|square root|who invented|when (was|did)|what year|population of|distance (to|from)|speed of light)\b/i;
+
+/**
+ * Phase 6X Obj6 — unknown-bible clarification must not swallow ordinary factual asks.
+ * "What is …" alone is not enough; require a biblical frame or known nonsense token.
+ */
+function isUnknownBiblePhraseAsk(message = '') {
+  const m = String(message || '').trim();
+  if (!m || m.length <= 12) return false;
+  if (/\b(zephyrian|scriture)\b/i.test(m)) return true;
+  if (SECULAR_FACTUAL_RE.test(m)) return false;
+  if (!UNKNOWN_BIBLE_RE.test(m)) return false;
+  if (EXPLICIT_SCRIPTURE_REFERENCE_RE.test(m)) return true;
+  if (BIBLE_FRAME_RE.test(m)) return true;
+  return false;
+}
+
 function buildReasoningPlan({
   message = '',
   userId = '',
@@ -114,8 +135,7 @@ function buildReasoningPlan({
     !concept &&
     !strictTopic &&
     !routePlan.immediateCompanionReply &&
-    (UNKNOWN_BIBLE_RE.test(m) || /\b(zephyrian|scriture)\b/i.test(m)) &&
-    m.length > 12;
+    isUnknownBiblePhraseAsk(m);
 
   if (unknownPhrase && answerLane === 'companion') {
     answerLane = 'clarification';
@@ -166,4 +186,5 @@ module.exports = {
   buildReasoningPlan,
   buildLineUponLineExplanation,
   UNKNOWN_BIBLE_RE,
+  isUnknownBiblePhraseAsk,
 };

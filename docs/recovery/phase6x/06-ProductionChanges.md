@@ -52,3 +52,47 @@ Pending.
 | **Regression evidence** | Obj3 unit PASS (sabbath xrefs without org keyword); Obj1/2 PASS |
 | **Expected improvement** | Doctrine/topic turns on OpenAI path receive approved internal xrefs automatically |
 | **Architecture** | Broker extended, not replaced |
+
+---
+
+## OBJ4 — Truth classification guidance (2026-07-27)
+
+| Field | Value |
+|---|---|
+| **Reason** | BF-14 open structure — reason-first prose lacked mandatory category presentation |
+| **Subsystem** | Composer presentation guidance |
+| **Root cause** | Specialty lanes labeled; OpenAI path did not |
+| **Implementation** | `truthClassificationGuidance.js` appended to composer system block |
+| **Regression** | Obj4–6 unit PASS |
+
+## OBJ5 — Response composer behavior (2026-07-27)
+
+| Field | Value |
+|---|---|
+| **Reason** | Walls of text / formal / transactional residuals |
+| **Subsystem** | `reasonFirstComposer` + `companionReplyPolish` |
+| **Implementation** | Default section order; strip transactional openers entirely |
+| **Architecture** | Composer extended, not replaced |
+
+## OBJ6 — General knowledge recovery (2026-07-27)
+
+| Field | Value |
+|---|---|
+| **Reason** | Production FAIL: “what is capital/photosynthesis” → clarifier |
+| **Subsystem** | `bibleReasoningEngine` + `currentMessageIntent` |
+| **Root cause** | `UNKNOWN_BIBLE_RE` matched any “what is” |
+| **Implementation** | Biblical-frame gate; `general_factual` intent; skip bible-only stack |
+| **Regression** | Unit PASS; live V2 after deploy |
+
+## OBJ7–8 — Companion tone + quality scoring (2026-07-27)
+
+| Field | Value |
+|---|---|
+| **Subsystem** | Tone instruction + `scoreCompanionQuality` dimensions |
+| **Implementation** | Measurable CQ dimensions; critical caps for clarifier/loop/walls |
+
+## OBJ9 — Founder Truth Corpus V2 (2026-07-27)
+
+| Field | Value |
+|---|---|
+| **Implementation** | `08-FounderTruthCorpusV2.md` + `scripts/runFounderTruthCorpusV2.js` |

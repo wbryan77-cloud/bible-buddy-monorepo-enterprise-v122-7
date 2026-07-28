@@ -49,8 +49,12 @@ const INTENTS = {
   EMOTIONAL_COMPANION: 'emotional_companion',
   PRACTICAL_LIFE_HELP: 'practical_life_help',
   ADMIN_DEBUG: 'admin_debug',
+  GENERAL_FACTUAL: 'general_factual',
   UNCLEAR: 'unclear',
 };
+
+const GENERAL_FACTUAL_RE =
+  /\b(capital of|president of|first (us |u\.s\. )?president|photosynthesis|world war|wwii|ww2|molecule|planet earth|continent|periodic table|square root|who invented|what year did|population of|speed of light|distance (to|from)|who was the first)\b/i;
 
 function classifyCurrentMessageIntent(message = '', context = {}) {
   const msg = String(message || '').trim();
@@ -65,6 +69,11 @@ function classifyCurrentMessageIntent(message = '', context = {}) {
 
   if (HISTORY_RE.test(msg)) {
     return { intent: INTENTS.HISTORY_QUESTION, reason: 'explicit_history_ask' };
+  }
+
+  // Phase 6X Obj6 — ordinary secular facts before definition/doctrine catch-alls
+  if (GENERAL_FACTUAL_RE.test(msg) && !/\b(bible|scripture|jesus|christ|sabbath|kjv)\b/i.test(msg)) {
+    return { intent: INTENTS.GENERAL_FACTUAL, reason: 'ordinary_factual_question' };
   }
 
   if (isYesNoQuestion(msg)) {
@@ -84,6 +93,13 @@ function classifyCurrentMessageIntent(message = '', context = {}) {
   }
 
   if (DEFINITION_RE.test(msg)) {
+    const hasBibleFrame =
+      /\b(bible|scripture|kjv|verse|jesus|christ|god|lord|sabbath|gospel|apostle|commandment|baptis|holy spirit)\b/i.test(
+        msg,
+      ) || /\b(genesis|exodus|matthew|john|romans|revelation|psalm)\b/i.test(msg);
+    if (!hasBibleFrame) {
+      return { intent: INTENTS.GENERAL_FACTUAL, reason: 'secular_definition_question' };
+    }
     return { intent: INTENTS.DEFINITION, reason: 'definition_question' };
   }
 
@@ -119,6 +135,7 @@ function buildIntentEvidenceConstraints(intent) {
     INTENTS.DEFINITION,
     INTENTS.DOCTRINE_EXPLANATION,
     INTENTS.CORRECTION_REPAIR,
+    INTENTS.GENERAL_FACTUAL,
   ].includes(intent);
 
   return {
@@ -157,6 +174,11 @@ function buildIntentComposerGuidance(intentResult, message = '', evidencePack = 
     lines.push('History may support the answer because the user asked a history question.');
   } else {
     lines.push('Do not lead with Constantine, Laodicea, or Saturday-to-Sunday history.');
+  }
+  if (intent === INTENTS.GENERAL_FACTUAL) {
+    lines.push(
+      'Ordinary factual question: answer directly from general knowledge. Clearly label Historical Context vs Biblical Teaching vs Inference/Opinion when mixed. Do not force a Bible-only refusal or clarifier.',
+    );
   }
   if (intent === INTENTS.EMOTIONAL_COMPANION) {
     lines.push('Listen and reflect first; Scripture lightly if helpful.');

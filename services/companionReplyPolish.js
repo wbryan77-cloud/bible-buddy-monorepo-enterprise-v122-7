@@ -14,6 +14,19 @@ function dedupePhrasePattern(text, pattern) {
 function polishCompanionReply(reply = '') {
   let text = stripInternalRuntimeLabels(String(reply || ''));
 
+  const stripEntirely = [
+    /That's a thoughtful question\.?\s*/gi,
+    /Let's build this carefully[^.\n]*\.\s*/gi,
+    /Let's stay close to (the text|Scripture)[^.\n]*\.\s*/gi,
+    /Let's explore that together\.?\s*/gi,
+    /I appreciate you (asking|sharing)[^.\n]*\.\s*/gi,
+    /As an AI[^.\n]*\.\s*/gi,
+    /I('m| am) (just )?an AI[^.\n]*\.\s*/gi,
+  ];
+  for (const pattern of stripEntirely) {
+    text = text.replace(pattern, '');
+  }
+
   const patterns = [
     /You've been walking a study journey[^?\n]+?\?/gi,
     /Next in your study journey:[^\n.]+\./gi,
@@ -25,10 +38,6 @@ function polishCompanionReply(reply = '') {
     /You've been studying general[^.\n]*[.!?]/gi,
     /We can continue that study[^.\n]*[.!?]/gi,
     /If it would help, we could continue your study[^.\n]*[.!?]/gi,
-    /That's a thoughtful question\.?/gi,
-    /Let's build this carefully[^.\n]*\./gi,
-    /Let's stay close to (the text|Scripture)[^.\n]*\./gi,
-    /Let's explore that together\.?/gi,
     /Thank you for (telling|sharing|bringing)[^.\n]*\./gi,
     /You mentioned recently that[^.\n]*\./gi,
   ];

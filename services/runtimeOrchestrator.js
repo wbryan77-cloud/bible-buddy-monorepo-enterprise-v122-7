@@ -111,27 +111,92 @@ Runtime context:\n${JSON.stringify(runtimeContext, null, 2)}
 `.trim();
 }
 
-function scoreCompanionQuality({ reply = '', runtimeContext = {} }) {
-  const lower = String(reply).toLowerCase();
+function scoreCompanionQuality({ message = '', reply = '', runtimeContext = {} } = {}) {
+  const text = String(reply || '');
+  const lower = text.toLowerCase();
+  const msg = String(message || '').toLowerCase();
   const issues = [];
-  let score = 100;
+  const dimensions = {
+    intentUnderstanding: 100,
+    conversationFlow: 100,
+    warmth: 100,
+    helpfulness: 100,
+    memoryContinuity: 100,
+    correctionRecovery: 100,
+    scriptureFidelity: 100,
+    evidenceClarity: 100,
+    historicalClarity: 100,
+    formatting: 100,
+    readability: 100,
+    responseProportionality: 100,
+    naturalDialogue: 100,
+  };
 
   if (runtimeContext?.loopRisk?.fallbackLoop && lower.includes('slow this down together')) {
-    score -= 30;
+    dimensions.conversationFlow -= 40;
     issues.push('fallback_loop_detected');
   }
 
+  if (/make sure i answer the right thing|bible passage, a life situation/i.test(text) &&
+      /\b(capital of|photosynthesis|president|world war|what year)\b/i.test(msg)) {
+    dimensions.intentUnderstanding -= 50;
+    dimensions.helpfulness -= 40;
+    issues.push('factual_question_clarifier');
+  }
+
   if (runtimeContext?.doctrinalMode) {
-    if (!lower.includes('scripture') && !lower.includes('biblical')) {
-      score -= 10;
+    if (!lower.includes('scripture') && !lower.includes('biblical') && !/\b(genesis|exodus|matthew|john|romans)\b/i.test(lower)) {
+      dimensions.scriptureFidelity -= 15;
       issues.push('missing_bible_grounding');
     }
   }
 
+  if (/historical context/i.test(text) && /scripture (explicitly )?(says|states)/i.test(text)) {
+    // rewarded — categories present
+  } else if (/constantine|laodicea/i.test(text) && !/historical context|supplemental/i.test(text)) {
+    dimensions.historicalClarity -= 20;
+    dimensions.evidenceClarity -= 10;
+    issues.push('history_unlabeled');
+  }
+
+  const wordCount = text.split(/\s+/).filter(Boolean).length;
+  if (wordCount > 420) {
+    dimensions.responseProportionality -= 25;
+    dimensions.readability -= 15;
+    issues.push('wall_of_text');
+  }
+  if (wordCount < 3 && msg.includes('?')) {
+    dimensions.helpfulness -= 20;
+    issues.push('too_thin');
+  }
+
+  if (/\bi apologize|i'm sorry(?!,?\s*(to hear|for your))/i.test(text) && !/grief|sorry for your loss/i.test(msg)) {
+    dimensions.naturalDialogue -= 10;
+    issues.push('unnecessary_apology');
+  }
+  if (/that's a thoughtful question|let's explore that together|let's build this carefully/i.test(text)) {
+    dimensions.warmth -= 10;
+    dimensions.naturalDialogue -= 10;
+    issues.push('transactional_opener');
+  }
+
+  if (/\n{4,}/.test(text) || text.length > 3500) {
+    dimensions.formatting -= 15;
+    issues.push('formatting_dense');
+  }
+
+  const dimScores = Object.values(dimensions);
+  let score = Math.round(dimScores.reduce((a, b) => a + Math.max(0, b), 0) / dimScores.length);
+  // Critical failures dominate the headline score
+  if (issues.includes('factual_question_clarifier')) score = Math.min(score, 55);
+  if (issues.includes('fallback_loop_detected')) score = Math.min(score, 60);
+  if (issues.includes('wall_of_text')) score = Math.min(score, 75);
+
   return {
-    score: Math.max(0, score),
+    score: Math.max(0, Math.min(100, score)),
+    dimensions,
     issues,
-    passed: score >= 70
+    passed: score >= 70,
   };
 }
 

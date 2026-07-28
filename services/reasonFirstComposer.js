@@ -26,6 +26,7 @@ const { buildDoctrineStrictComposerInstruction } = require('./doctrineAuthorityC
 const { buildFinalityComposerInstruction } = require('./doctrineFinalityMode');
 const { buildCorrectionPromptAppendix } = require('./doctrineCorrectionMemory');
 const { getUserAnswerPreferences } = require('./userCorrectionMemory');
+const { buildTruthClassificationGuidance } = require('./truthClassificationGuidance');
 
 const SPECIFICITY_HINT =
   'Prefer specific details from the thread over general summaries. Use the user\'s wording where natural — not as a fixed opening template.';
@@ -49,6 +50,18 @@ function applyPersonFirstCompanionHierarchy(systemPrompt = '') {
 const COMPOSER_INSTRUCTION = `
 Answer the user's latest message. Choose the right kind of response — not a complete mini-essay every turn.
 Listen first when the user is sharing pain or uncertainty; answer directly when they ask a clear question or correction.
+
+Default composition order (omit sections that do not apply; never pad):
+1) Direct Answer first
+2) Relevant Scripture (when the question is biblical)
+3) Historical Context only when appropriate / requested
+4) Original Language only when requested or clearly needed
+5) Supporting References (brief)
+6) What Scripture Explicitly Says / Scripture Does Not Explicitly State (when teaching doctrine)
+7) Natural Closing (one short line — no transactional wrap-up)
+
+Answer first. Explain second. Support third. Expand only when asked or clearly needed.
+Reduce walls of text, repeated wording, duplicate explanations, overly formal language, and transactional closings.
 Use Scripture naturally when it helps; do not stack multiple verses mechanically.
 Do not teach Sunday as biblical Sabbath, heaven at death, law abolished, dietary law abolished,
 or man-made tradition as biblical command. History may explain practice but may not override Scripture.
@@ -63,6 +76,8 @@ COMPANION TONE (prompt guidance only — you still author the final reply):
 - Bring Scripture gently when it helps; do not stack verses mechanically.
 - Avoid therapy claims, diagnosis labels, or stock empathy openers.
 - When the user shares pain, acknowledge it in one concrete line, then Scripture.
+- Prefer humility and patience over robotic apologies or refusals.
+- Do not dump information; keep pacing conversational.
 `.trim();
 
 const BIBLE_ONLY_AUTHORITY_INSTRUCTION = `
@@ -173,6 +188,23 @@ function buildComposerSystemPrompt({
   let composerBlock = isEcpEnabled() && !coreRestoration ? buildEcpComposerInstruction() : COMPOSER_INSTRUCTION;
   if (coreRestoration) {
     composerBlock = `${COMPOSER_INSTRUCTION}\n\n${BIBLE_ONLY_AUTHORITY_INSTRUCTION}\n\n${CLAIM_EXTRACTION_INSTRUCTION}\n\n${CORE_RESTORATION_INSTRUCTION}\n\n${COMPANION_TONE_INSTRUCTION}`;
+  }
+  // Phase 6X Obj4 — category presentation (never merge Historical into Explicit Scripture)
+  {
+    const truthBlock = buildTruthClassificationGuidance({
+      currentIntent: evidencePack.currentIntent || '',
+      historyIncluded: !!(evidencePack.history && evidencePack.history.included),
+      originalLanguage: !!(
+        evidencePack.semanticUnderstanding?.requestedEvidence || []
+      ).includes?.('original_language'),
+    });
+    if (truthBlock) composerBlock = `${composerBlock}\n\n${truthBlock}`;
+  }
+  // Phase 6X Obj6 — do not stack bible-only doctrine pressure on ordinary factual asks
+  if (evidencePack.currentIntent === 'general_factual' && coreRestoration) {
+    composerBlock = `${COMPOSER_INSTRUCTION}\n\n${COMPANION_TONE_INSTRUCTION}\n\n${buildTruthClassificationGuidance({
+      currentIntent: 'general_factual',
+    })}`;
   }
   const doctrineStrictBlock = buildDoctrineStrictComposerInstruction(evidencePack);
   if (doctrineStrictBlock) {
