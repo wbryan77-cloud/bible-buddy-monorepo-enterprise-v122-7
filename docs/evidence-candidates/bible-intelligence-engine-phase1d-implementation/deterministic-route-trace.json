@@ -1,0 +1,13 @@
+{
+  "probe": "Explain the Sabbath.",
+  "firstIncorrectStage": {
+    "file": "services/doctrineFinalAuthorityEngine.js",
+    "functions": [
+      "buildFinalAuthorityAnswer",
+      "buildGenericFinalAnswer"
+    ],
+    "symptom": "From the approved Scripture witnesses... fixed stamp; VLP unused"
+  },
+  "postRepairComposer": "composeDeterministicDoctrineReply",
+  "finalOwner": "finalizeBuddyResponse"
+}

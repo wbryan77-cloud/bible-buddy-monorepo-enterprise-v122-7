@@ -956,7 +956,11 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     });
     if (authority) {
       return returnStrictDoctrineStructured(H, {
-        structured: buildFinalAuthorityStructured(authority, runtimeContext, safety),
+        structured: buildFinalAuthorityStructured(authority, runtimeContext, safety, {
+          evidencePack,
+          message,
+          userId,
+        }),
         userId,
         mode,
         personaKey,
@@ -1130,7 +1134,11 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
             message,
           });
           if (blockAuthority) {
-            structured = buildFinalAuthorityStructured(blockAuthority, runtimeContext, safety);
+            structured = buildFinalAuthorityStructured(blockAuthority, runtimeContext, safety, {
+              evidencePack,
+              message,
+              userId,
+            });
             structured.reply = polishFinalReply(structured.reply);
             doctrineStrictRegenerated = true;
             doctrineStrictValidation = validateDoctrineStrictReply({

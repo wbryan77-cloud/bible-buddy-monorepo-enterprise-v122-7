@@ -1,0 +1,8 @@
+{
+  "currentMessage": "currentMessageIntent/companionDoctrineRouter",
+  "doctrineDecision": "doctrineFinalAuthorityEngine",
+  "evidenceObject": "verifiedLessonPacket",
+  "deterministicComposition": "composeDeterministicDoctrineReply",
+  "finalResponse": "finalizeBuddyResponse",
+  "formatter": "polishFinalReply"
+}

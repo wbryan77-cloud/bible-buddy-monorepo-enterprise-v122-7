@@ -175,15 +175,16 @@ function buildFinalAuthorityAnswer({ topic, contract, userId, message = '' } = {
   else if (topic === 'kingdom' && detectKingdomOnEarthTopic(message)) base = buildKingdomOnEarthFinalAnswer(message);
   else base = buildGenericFinalAnswer(topic, c);
 
-  let reply = base.reply;
+  // seedReply = legacy template prose (decision evidence only; not final composition)
+  let seedReply = base.reply;
   if (userId) {
-    reply = applyCorrectionsToReply(reply, userId, topic);
+    seedReply = applyCorrectionsToReply(seedReply, userId, topic);
     if (topic === 'acts_10' || topic === 'dietary_law') {
-      reply = applyCorrectionsToReply(reply, userId, 'acts_10');
+      seedReply = applyCorrectionsToReply(seedReply, userId, 'acts_10');
     }
   }
 
-  reply = formatDirectDoctrineReply(reply, message, {
+  seedReply = formatDirectDoctrineReply(seedReply, message, {
     topic,
     scripture: (base.scriptureWitnesses || []).map((r) => ({ reference: r })),
     userId,
@@ -192,7 +193,8 @@ function buildFinalAuthorityAnswer({ topic, contract, userId, message = '' } = {
 
   return {
     ...base,
-    reply,
+    seedReply,
+    reply: seedReply,
     allowedWitnesses: c.approvedWitnesses || base.scriptureWitnesses,
     supportingWitnesses: c.supportingWitnesses || [],
     forbiddenClaims: c.prohibitedClaims || [],
@@ -200,6 +202,154 @@ function buildFinalAuthorityAnswer({ topic, contract, userId, message = '' } = {
     noDoctrineReasoning: true,
     finalAuthority: true,
     scripture: (base.scriptureWitnesses || []).map((r) => ({ reference: r, theme: topic })),
+  };
+}
+
+/**
+ * Phase 1D — doctrine decision contract (immutable authority fields).
+ * Does not own final conversational prose.
+ */
+function buildDoctrineDecisionContract(authority = {}, evidencePack = null, message = '') {
+  const packet = evidencePack?.verifiedLessonPacket || null;
+  const msg = String(message || '');
+  return {
+    doctrinalConclusion: authority.finalConclusion || null,
+    requiredWitnesses: authority.scriptureWitnesses || authority.allowedWitnesses || [],
+    prohibitedClaims: authority.forbiddenClaims || [],
+    forbiddenPhrases: authority.forbiddenPhrases || [],
+    topic: authority.topic || null,
+    explicitScripture: authority.scriptureWitnesses || [],
+    governanceLocks: {
+      noDoctrineReasoning: true,
+      finalAuthority: true,
+      openAiMayDetermineDoctrine: false,
+      openAiMayApproveEvidence: false,
+    },
+    responseRequirements: {
+      directAnswerFirst: isYesNoQuestion(msg),
+      shortAnswer: /\b(short|brief|briefly|concise)\b/i.test(msg),
+      scriptureOnly: /\bscripture only\b/i.test(msg),
+      goDeeper: /\b(go deeper|more detail|explain more|deeper)\b/i.test(msg),
+      followUpFocus:
+        /\bwhat (do|did|does) (they|those|the)\b/i.test(msg) ||
+        /\bnot merely when\b/i.test(msg) ||
+        /\bi asked\b/i.test(msg),
+    },
+    packetPresent: !!packet,
+    passageRoleCount: Array.isArray(packet?.passageRoles) ? packet.passageRoles.length : 0,
+    evidenceLimitations: packet?.prohibitedOverstatements || [],
+  };
+}
+
+function pickWitnessPresentation(authority, packet, limit = 4) {
+  const witnesses = authority.scriptureWitnesses || authority.allowedWitnesses || [];
+  const roles = Array.isArray(packet?.passageRoles) ? packet.passageRoles : [];
+  // Prefer packet-ordered / role-ranked witnesses; never expose role schema names to users.
+  const ranked = [];
+  const seen = new Set();
+  for (const role of roles) {
+    const ref = String(role.reference || '').trim();
+    if (!ref) continue;
+    const hit = witnesses.find((w) => {
+      const wNorm = String(w).toLowerCase();
+      const rNorm = ref.toLowerCase();
+      return wNorm.includes(rNorm) || rNorm.includes(wNorm) || wNorm.startsWith(rNorm.slice(0, 12));
+    });
+    const key = String(hit || ref);
+    if (seen.has(key.toLowerCase())) continue;
+    seen.add(key.toLowerCase());
+    ranked.push(key);
+    if (ranked.length >= limit) break;
+  }
+  for (const w of witnesses) {
+    if (ranked.length >= limit) break;
+    const key = String(w);
+    if (seen.has(key.toLowerCase())) continue;
+    seen.add(key.toLowerCase());
+    ranked.push(key);
+  }
+  return ranked.slice(0, limit);
+}
+
+/**
+ * Phase 1D — subordinate deterministic composer (not a new engine).
+ * Locks doctrinal conclusion; shapes prose from current message + VLP.
+ */
+function composeDeterministicDoctrineReply({
+  authority = null,
+  evidencePack = null,
+  message = '',
+  userId = null,
+} = {}) {
+  if (!authority || !authority.finalConclusion) {
+    return { reply: authority?.reply || '', doctrineDecision: null };
+  }
+
+  const packet = evidencePack?.verifiedLessonPacket || null;
+  const decision = buildDoctrineDecisionContract(authority, evidencePack, message);
+  const msg = String(message || '');
+  const conclusion = authority.finalConclusion;
+  const witnessLimit = decision.responseRequirements.shortAnswer ? 2 : decision.responseRequirements.goDeeper ? 6 : 4;
+  const witnessLines = pickWitnessPresentation(authority, packet, witnessLimit);
+  const witnessBlock = witnessLines.length ? `Scripture witnesses: ${witnessLines.join('; ')}.` : '';
+
+  let usedPacketComposition = false;
+  let reply;
+  if (decision.responseRequirements.scriptureOnly) {
+    reply = `${witnessBlock} ${conclusion}`.trim();
+    usedPacketComposition = !!packet;
+  } else if (decision.responseRequirements.shortAnswer) {
+    reply = `${conclusion}${witnessLines.length ? ` (${witnessLines.join('; ')})` : ''}`;
+    usedPacketComposition = !!packet;
+  } else if (decision.responseRequirements.followUpFocus) {
+    reply = `Direct answer to your follow-up: ${conclusion} ${witnessBlock}`.trim();
+    usedPacketComposition = !!packet;
+  } else if (packet) {
+    // Packet present: compose from decision + VLP roles/witnesses (never stamp fixed template)
+    reply = `Direct answer: ${conclusion} ${witnessBlock}`.trim();
+    usedPacketComposition = true;
+  } else {
+    // Fallback: seed template when packet absent (backward compatible)
+    reply = authority.seedReply || authority.reply || conclusion;
+  }
+
+  if (decision.responseRequirements.goDeeper && packet?.scriptureBlocks?.length) {
+    const excerpts = packet.scriptureBlocks.slice(0, 2).map((b) => {
+      const text = String(b.text || '').replace(/\s+/g, ' ').trim().slice(0, 180);
+      return text ? `${b.reference}: ${text}` : b.reference;
+    });
+    if (excerpts.length) {
+      reply = `${reply} Supporting text: ${excerpts.join(' ')}`;
+      usedPacketComposition = true;
+    }
+  }
+
+  if (userId) {
+    reply = applyCorrectionsToReply(reply, userId, authority.topic);
+    if (authority.topic === 'acts_10' || authority.topic === 'dietary_law') {
+      reply = applyCorrectionsToReply(reply, userId, 'acts_10');
+    }
+  }
+
+  reply = formatDirectDoctrineReply(reply, message, {
+    topic: authority.topic,
+    scripture: (authority.scriptureWitnesses || []).map((r) => ({ reference: r })),
+    userId,
+    userPreferences: require('./userCorrectionMemory').getUserAnswerPreferences(userId),
+  });
+
+  // Governance: conclusion must remain visible
+  const clip = conclusion.slice(0, Math.min(48, conclusion.length)).toLowerCase();
+  if (clip && !String(reply).toLowerCase().includes(clip)) {
+    reply = `${conclusion} ${reply}`;
+  }
+
+  return {
+    reply,
+    doctrineDecision: {
+      ...decision,
+      composedFromVerifiedLessonPacket: usedPacketComposition,
+    },
   };
 }
 
@@ -230,9 +380,18 @@ function validateWarmthAgainstAuthority(warmReply = '', authority = {}) {
   return { passed: violations.length === 0, violations };
 }
 
-function buildFinalAuthorityStructured(authority, runtimeContext = {}, safety = {}) {
+function buildFinalAuthorityStructured(authority, runtimeContext = {}, safety = {}, opts = {}) {
+  const { evidencePack = null, message = '', userId = null } = opts || {};
+  const composed = composeDeterministicDoctrineReply({
+    authority,
+    evidencePack,
+    message,
+    userId,
+  });
+  const reply = composed?.reply || authority.reply;
+  const fromPacket = !!composed?.doctrineDecision?.composedFromVerifiedLessonPacket;
   return {
-    reply: authority.reply,
+    reply,
     scripture: authority.scripture || [],
     mode: 'companion',
     confidence: 'high',
@@ -242,6 +401,8 @@ function buildFinalAuthorityStructured(authority, runtimeContext = {}, safety = 
     admin_flags: ['doctrine_final_authority'],
     finalConclusion: authority.finalConclusion,
     doctrineFinalAuthority: true,
+    doctrineDecision: composed?.doctrineDecision || null,
+    doctrineComposedFromPacket: fromPacket,
     runtime: {
       emotion: runtimeContext?.emotion,
       intent: runtimeContext?.intent || 'study',
@@ -250,6 +411,8 @@ function buildFinalAuthorityStructured(authority, runtimeContext = {}, safety = 
       buddyRuntime: 'core_openai_first',
       doctrineTopic: authority.topic,
       noDoctrineReasoning: true,
+      doctrineComposedFromPacket: fromPacket,
+      doctrineDecisionTopic: authority.topic || null,
     },
   };
 }
@@ -301,6 +464,8 @@ module.exports = {
   isInitialDoctrineQuestion,
   buildFinalAuthorityAnswer,
   buildFinalAuthorityStructured,
+  buildDoctrineDecisionContract,
+  composeDeterministicDoctrineReply,
   resolveFinalAuthorityForPack,
   validateWarmthAgainstAuthority,
   buildOpenAiWarmthPayload,

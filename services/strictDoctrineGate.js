@@ -207,7 +207,11 @@ function runStrictDoctrineGate({
     recentSessions,
   });
   if (finalAuth.handled) {
-    const structured = buildFinalAuthorityStructured(finalAuth.authority, runtimeContext, safety);
+    const structured = buildFinalAuthorityStructured(finalAuth.authority, runtimeContext, safety, {
+      evidencePack,
+      message,
+      userId,
+    });
     return {
       handled: true,
       structured: finalizeStrictStructured(structured, finalAuth.topic, userId, message, 'doctrine_final_authority'),

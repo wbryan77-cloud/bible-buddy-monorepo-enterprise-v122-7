@@ -1,0 +1,19 @@
+{
+  "doctrinalConclusion": "required",
+  "requiredWitnesses": "required",
+  "prohibitedClaims": "optional",
+  "forbiddenPhrases": "optional",
+  "governanceLocks": {
+    "noDoctrineReasoning": true,
+    "openAiMayDetermineDoctrine": false,
+    "openAiMayApproveEvidence": false
+  },
+  "responseRequirements": [
+    "directAnswerFirst",
+    "shortAnswer",
+    "scriptureOnly",
+    "goDeeper",
+    "followUpFocus"
+  ],
+  "packetSchema": "verified-lesson-packet-v1"
+}

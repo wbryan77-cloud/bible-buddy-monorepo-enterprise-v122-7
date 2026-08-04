@@ -1,0 +1,11 @@
+{
+  "rollbackCommit": "5e04333",
+  "files": [
+    "services/doctrineFinalAuthorityEngine.js",
+    "services/strictDoctrineGate.js",
+    "services/openAiFirstCompanionRuntime.js",
+    "tests/phase1dDeterministicVlpComposition.test.js",
+    "scripts/runBiePhase1dStatefulValidation.js"
+  ],
+  "method": "git revert <implementation_sha> or restore listed files from 5e04333"
+}

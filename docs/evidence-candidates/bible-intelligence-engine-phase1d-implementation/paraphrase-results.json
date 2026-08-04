@@ -1,0 +1,148 @@
+{
+  "summary": {
+    "noFixedStampOnPacketDoctrine": true,
+    "paraphraseGeneralizes": true
+  },
+  "paraphrases": [
+    {
+      "id": "sabbath_explain",
+      "variants": [
+        {
+          "text": "Explain the Sabbath.",
+          "latencyMs": 409,
+          "reply": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3 (primary_text); Exodus 20:8-11 (command); Isaiah 58:13-14 (limitation); Luke 4:16 (historical_event).",
+          "fixedStamp": false,
+          "composedFromPacket": true,
+          "masterRoute": "doctrine_final_authority",
+          "conclusionStable": true
+        },
+        {
+          "text": "What does Scripture teach about the Sabbath?",
+          "latencyMs": 392,
+          "reply": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3 (primary_text); Exodus 20:8-11 (command); Isaiah 58:13-14 (limitation); Luke 4:16 (historical_event).",
+          "fixedStamp": false,
+          "composedFromPacket": true,
+          "masterRoute": "doctrine_final_authority",
+          "conclusionStable": true
+        },
+        {
+          "text": "Tell me about the seventh-day Sabbath.",
+          "latencyMs": 398,
+          "reply": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3 (primary_text); Exodus 20:8-11 (command); Isaiah 58:13-14 (limitation); Luke 4:16 (historical_event).",
+          "fixedStamp": false,
+          "composedFromPacket": true,
+          "masterRoute": "doctrine_final_authority",
+          "conclusionStable": true
+        },
+        {
+          "text": "Can you explain Sabbath briefly?",
+          "latencyMs": 391,
+          "reply": "The seventh day is the Sabbath established at creation and commanded in Scripture. (Genesis 2:2-3 (primary_text); Exodus 20:8-11 (command))",
+          "fixedStamp": false,
+          "composedFromPacket": true,
+          "masterRoute": "doctrine_final_authority",
+          "conclusionStable": true
+        },
+        {
+          "text": "Scripture only — what about the Sabbath?",
+          "latencyMs": 398,
+          "reply": "Scripture witnesses: Genesis 2:2-3 (primary_text); Exodus 20:8-11 (command); Isaiah 58:13-14 (limitation); Luke 4:16 (historical_event). The seventh day is the Sabbath established at creation and commanded in Scripture.",
+          "fixedStamp": false,
+          "composedFromPacket": true,
+          "masterRoute": "doctrine_final_authority",
+          "conclusionStable": true
+        },
+        {
+          "text": "go deeper on the Sabbath please",
+          "latencyMs": 394,
+          "reply": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3 (primary_text); Exodus 20:8-11 (command); Isaiah 58:13-14 (limitation); Luke 4:16 (historical_event). Supporting text: genesis 2:2-3: And on the seventh day God ended his work which he had made; and he rested on the seventh day from all his work which he had made. And God blessed the seventh day, and sanctified i exodus 20:8-11: Remember the sabbath day, to keep it holy. Six days shalt thou labour, and do all thy work: But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work",
+          "fixedStamp": false,
+          "composedFromPacket": true,
+          "masterRoute": "doctrine_final_authority",
+          "conclusionStable": true
+        },
+        {
+          "text": "I asked about the Sabbath, not Sunday.",
+          "latencyMs": 401,
+          "reply": "Direct answer to your follow-up: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3 (primary_text); Exodus 20:8-11 (command); Isaiah 58:13-14 (limitation); Luke 4:16 (historical_event).",
+          "fixedStamp": false,
+          "composedFromPacket": true,
+          "masterRoute": "doctrine_final_authority",
+          "conclusionStable": true
+        },
+        {
+          "text": "explain sabbath real quick",
+          "latencyMs": 399,
+          "reply": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3 (primary_text); Exodus 20:8-11 (command); Isaiah 58:13-14 (limitation); Luke 4:16 (historical_event).",
+          "fixedStamp": false,
+          "composedFromPacket": true,
+          "masterRoute": "doctrine_final_authority",
+          "conclusionStable": true
+        }
+      ],
+      "generalizationPass": true,
+      "fixedStampCount": 0
+    },
+    {
+      "id": "resurrection_count",
+      "variants": [
+        {
+          "text": "How many resurrections are described in the Bible?",
+          "latencyMs": 35538,
+          "reply": "From the Scripture passages provided here, one resurrection is described: the resurrection of Jesus Christ. Matthew 28:6, Mark 16:6, and Luke 24:6 all testify that Jesus was no longer in the tomb because He was risen. We would need to bring in the wider resurrection passages to answer that fully.",
+          "fixedStamp": false,
+          "composedFromPacket": false,
+          "masterRoute": "reason_first_openai",
+          "conclusionStable": true
+        },
+        {
+          "text": "How many resurrections does the Bible describe?",
+          "latencyMs": 33188,
+          "reply": "From the Scripture passages provided here, the Bible directly describes one resurrection event: the resurrection of Jesus Christ. What these passages do show clearly is that Jesus foretold His burial and resurrection, was laid in the tomb, and afterward the witnesses found the tomb empty: “He is not here: for he is risen” (Matthew 28:6, KJV). So the careful answer from the available Scripture is: one confirmed resurrection event here — Christ’s resurrection — but not a complete count of every resurrection described in the whole Bible.",
+          "fixedStamp": false,
+          "composedFromPacket": false,
+          "masterRoute": "reason_first_openai",
+          "conclusionStable": true
+        },
+        {
+          "text": "Bible: number of resurrections?",
+          "latencyMs": 35039,
+          "reply": "Direct answer: from the Scripture passages available here, one resurrection is directly shown — the resurrection of Jesus Christ. A Bible-wide total number of all resurrections is not established by these passages; Scripture does not state that directly. What these passages explicitly say: Jesus foretold being in “the heart of the earth” three days and three nights, His tomb was sealed, and afterward the women found the tomb empty because “he is risen.” Matthew, Mark, Luke, and John all witness to that same resurrection event.",
+          "fixedStamp": false,
+          "composedFromPacket": false,
+          "masterRoute": "reason_first_openai",
+          "conclusionStable": true
+        },
+        {
+          "text": "Answer only — how many resurrections?",
+          "latencyMs": 24600,
+          "reply": "One. Scripture does not state that directly.",
+          "fixedStamp": false,
+          "composedFromPacket": false,
+          "masterRoute": "reason_first_openai",
+          "conclusionStable": false
+        },
+        {
+          "text": "I asked how many resurrections, not Jesus rising alone.",
+          "latencyMs": 32747,
+          "reply": "You’re right — you asked how many resurrections, not just Jesus rising alone. With the Scripture passages available here, I can only say this directly: these passages record one resurrection event — Jesus’ resurrection. They do not state the total number of resurrections in the whole Bible. Scripture does not state that directly in the passages provided here. What these texts do show is that Jesus said He would be “three days and three nights in the heart of the earth” and that, when the women came to the sepulchre, He was already risen. But the count of all resurrections would require other resurrection passages beyond this set.",
+          "fixedStamp": false,
+          "composedFromPacket": false,
+          "masterRoute": "reason_first_openai",
+          "conclusionStable": true
+        },
+        {
+          "text": "how many resurrections r in the bible",
+          "latencyMs": 31776,
+          "reply": "In the resurrection-timeline passages provided, Scripture clearly records one resurrection event: Jesus Christ rising from the dead. What Scripture explicitly says: Jesus said He would be “three days and three nights in the heart of the earth” (Matthew 12:40), and the Gospel accounts then say, “He is risen” (Matthew 28:6; Mark 16:6; Luke 24:6). John 20:1-8 also records the empty sepulchre and the linen clothes left behind. So the direct answer from this evidence is: one resurrection is shown here — the resurrection of Jesus. A full Bible-wide count would need a wider set of passages than the ones provided.",
+          "fixedStamp": false,
+          "composedFromPacket": false,
+          "masterRoute": "reason_first_openai",
+          "conclusionStable": true
+        }
+      ],
+      "generalizationPass": true,
+      "fixedStampCount": 0
+    }
+  ]
+}
