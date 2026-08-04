@@ -1,0 +1,320 @@
+{
+  "health": {
+    "ok": true,
+    "version": "v122.14.0 (platform unification foundation)",
+    "time": "2026-08-04T23:16:31.186Z",
+    "releaseCommit": "c7d054c",
+    "releaseBranch": "main",
+    "durableMemory": {
+      "owner": "durableUserMemory",
+      "backend": "POSTGRES",
+      "durable": true,
+      "docKey": "data/durable-user-memory.json",
+      "hasDatabaseUrl": true
+    }
+  },
+  "phase1b": [
+    {
+      "userId": "phase1d-prod-b8b93b4f7d",
+      "message": "What does this app do?",
+      "latencyMs": 276,
+      "ok": true,
+      "reply": "BibleBuddy is a Scripture-grounded companion. I'm here to listen, pray with you, help you study the Bible line upon line, and talk through real-life situations with Scripture as the foundation. I'm not here to force you or pressure you. You can ask Bible questions, ask for prayer, talk through something hard, or ask for a verse to hold onto.",
+      "replyLen": 343,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": false,
+      "preview": "BibleBuddy is a Scripture-grounded companion. I'm here to listen, pray with you, help you study the Bible line upon line, and talk through real-life situations with Scripture as the foundation. I'm not here to force you or pressure you. You can ask Bible questions, ask for prayer",
+      "id": 1
+    },
+    {
+      "userId": "phase1d-prod-e12dd60878",
+      "message": "Explain the Sabbath.",
+      "latencyMs": 210,
+      "ok": true,
+      "reply": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.",
+      "replyLen": 184,
+      "fixedStamp": false,
+      "directAnswer": true,
+      "historical": false,
+      "preview": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.",
+      "id": 2
+    },
+    {
+      "userId": "phase1d-prod-63f8bc3ffe",
+      "message": "Does Acts 10 abolish dietary law?",
+      "latencyMs": 168,
+      "ok": true,
+      "reply": "Scripture answers this when the passages below are taken together. Acts 10:28 \u2014 \"And he said unto them, Ye know how that it is an unlawful thing for a man that is a Jew to keep company, or come unto one of another nation; but God hath shewed me that I should not call any man common or unclean.\" (King James Version). Acts 10:14 \u2014 \"But Peter said, Not so, Lord; for I have never eaten any thing that is common or unclean.\" (King James Version). Acts 10:34-35 \u2014 \"Then Peter opened his mouth, and said, Of a truth I perceive that God is no respecter of persons: But in every nation he that feareth him, and worketh righteousness, is accepted with him.\" (King James Version). Acts 11:1-18 \u2014 \"And the apostles and brethren that were in Judaea heard that the Gentiles had also received the word of God. And when Peter was come up to Jerusalem, they that were of the circumcision contended with him, Saying, Thou wentest in to men uncircumcised, and didst eat with them. But Peter rehearsed the matter from the beginning, and expounded it by order unto them, saying, I was in the city of Joppa praying: and in a trance I saw a vision, A certain vessel descend, as it had been a great sheet, let down from heaven by four corners; and it came even to me: Upon the which when I had fastened mine eyes, I considered, and saw fourfooted beasts of the earth, and wild beasts, and creeping things, and fowls of the air. And I heard a voice saying unto me, Arise, Peter; slay and eat. But I said, Not so, Lord: for nothing common or unclean hath at any time entered into my mouth. But the voice answered me again from heaven, What God hath cleansed, that call not thou common. And this was done three times: and all were drawn up again into heaven. And, behold, immediately there were three men already come unto the house where I was, sent from Caesarea unto me. And the Spirit bade me go with them, nothing doubting. Moreover these six brethren accompanied me, and we entered into the man's house: And he shewed us how he had seen an angel in his house, which stood and said unto him, Send men to Joppa, and call for Simon, whose surname is Peter; Who shall tell thee words, whereby thou and all thy house shall be saved. And as I began to speak, the Holy Ghost fell on them, as on us at the beginning. Then remembered I the word of the Lord, how that he said, John indeed baptized with water; but ye shall be baptized with the Holy Ghost. Forasmuch then as God gave them the like gift as he did unto us, who believed on the Lord Jesus Christ; what was I, that I could withstand God? When they heard these things, they held their peace, and glorified God, saying, Then hath God also to the Gentiles granted repentance unto life.\" (King James Version). Taken together, Acts 10:28, Acts 10:14, Acts 10:34-35 and Acts 11:1-18 give this answer; no single verse alone was treated as the full picture. These passages together, not any single verse in isolation, establish this answer.",
+      "replyLen": 2966,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": false,
+      "preview": "Scripture answers this when the passages below are taken together. Acts 10:28 \u2014 \"And he said unto them, Ye know how that it is an unlawful thing for a man that is a Jew to keep company, or come unto one of another nation; but God hath shewed me that I should not call any man comm",
+      "id": 3
+    },
+    {
+      "userId": "phase1d-prod-f58a35b689",
+      "message": "What happens after death?",
+      "latencyMs": 169,
+      "ok": true,
+      "reply": "Direct answer: The dead know nothing, their thoughts perish, and Scripture describes death as sleep until resurrection. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+      "replyLen": 202,
+      "fixedStamp": false,
+      "directAnswer": true,
+      "historical": false,
+      "preview": "Direct answer: The dead know nothing, their thoughts perish, and Scripture describes death as sleep until resurrection. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+      "id": 4
+    },
+    {
+      "userId": "phase1d-prod-bb64dc34f9",
+      "message": "Who are the Israelites?",
+      "latencyMs": 9799,
+      "ok": true,
+      "reply": "The Israelites are the descendants of Jacob, who was also known as Israel. They are associated with the twelve tribes that descended from his sons. In the Bible, they are God's chosen people, called to live in accordance with His laws and to be a light to the nations. The story of their formation and covenant with God is a central theme throughout the Old Testament, starting from the patriarchs, particularly Abraham, Isaac, and Jacob. The term 'Israelites' is often used in the context of their journey from slavery in Egypt, their time in the wilderness, and their eventual settlement in the Promised Land, as outlined in books like Exodus and Joshua. The Israelites are considered foundational to the Jewish faith and identity today. Scripture does not state that directly.",
+      "replyLen": 779,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": false,
+      "preview": "The Israelites are the descendants of Jacob, who was also known as Israel. They are associated with the twelve tribes that descended from his sons. In the Bible, they are God's chosen people, called to live in accordance with His laws and to be a light to the nations. The story o",
+      "id": 5
+    },
+    {
+      "userId": "phase1d-prod-44176ab9c3",
+      "message": "Explain Jeremiah 10.",
+      "latencyMs": 238,
+      "ok": true,
+      "reply": "Scripture speaks directly to this. Jeremiah 10 \u2014 \"Hear ye the word which the LORD speaketh unto you, O house of Israel: Thus saith the LORD, Learn not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them. For the customs of the people are vain: for one cutteth a tree out of the forest, the work of the hands of the workman, with the axe. They deck it with silver and with gold; they fasten it with nails and with hammers, that it move not. They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good. Forasmuch as there is none like unto thee, O LORD; thou art great, and thy name is great in might. Who would not fear thee, O King of nations? for to thee doth it appertain: forasmuch as among all the wise men of the nations, and in all their kingdoms, there is none like unto thee. But they are altogether brutish and foolish: the stock is a doctrine of vanities. Silver spread into plates is brought from Tarshish, and gold from Uphaz, the work of the workman, and of the hands of the founder: blue and purple is their clothing: they are all the work of cunning men. But the LORD is the true God, he is the living God, and an everlasting king: at his wrath the earth shall tremble, and the nations shall not be able to abide his indignation. Thus shall ye say unto them, The gods that have not made the heavens and the earth, even they shall perish from the earth, and from under these heavens. He hath made the earth by his power, he hath established the world by his wisdom, and hath stretched out the heavens by his discretion. When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures. Every man is brutish in his knowledge: every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them. They are vanity, and the work of errors: in the time of their visitation they shall perish. The portion of Jacob is not like them: for he is the former of all things; and Israel is the rod of his inheritance: The LORD of hosts is his name. Gather up thy wares out of the land, O inhabitant of the fortress. For thus saith the LORD, Behold, I will sling out the inhabitants of the land at this once, and will distress them, that they may find it so. Woe is me for my hurt! my wound is grievous: but I said, Truly this is a grief, and I must bear it. My tabernacle is spoiled, and all my cords are broken: my children are gone forth of me, and they are not: there is none to stretch forth my tent any more, and to set up my curtains. For the pastors are become brutish, and have not sought the LORD: therefore they shall not prosper, and all their flocks shall be scattered. Behold, the noise of the bruit is come, and a great commotion out of the north country, to make the cities of Judah desolate, and a den of dragons. O LORD, I know that the way of man is not in himself: it is not in man that walketh to direct his steps. O LORD, correct me, but with judgment; not in thine anger, lest thou bring me to nothing. Pour out thy fury upon the heathen that know thee not, and upon the families that call not on thy name: for they have eaten up Jacob, and devoured him, and consumed him, and have made his habitation desolate.\" (King James Version).",
+      "replyLen": 3537,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": false,
+      "preview": "Scripture speaks directly to this. Jeremiah 10 \u2014 \"Hear ye the word which the LORD speaketh unto you, O house of Israel: Thus saith the LORD, Learn not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them. For the customs of the ",
+      "id": 6
+    },
+    {
+      "userId": "phase1d-prod-db50c4c3d1",
+      "message": "Why do Christians celebrate Sunday?",
+      "latencyMs": 4669,
+      "ok": true,
+      "reply": "Christians celebrate Sunday as a day of worship because it is believed to be the day of Jesus Christ's resurrection. While early Christians initially gathered on both the Sabbath (Saturday) and Sunday, Emperor Constantine established Sunday as a day of rest in AD 321. This was later reinforced by church councils, which encouraged Christians to honor Sunday as the Lord's Day. Over time, this practice became the norm in much of Western Christianity, though it was not mandated by explicit biblical command to replace the Sabbath. For example, in the early church, believers gathered for fellowship and worship on the first day of the week (Acts 20:7). However, the transition to Sunday observance was influenced by both civil and ecclesiastical authority rather than directly by Scripture. In summary, while the resurrection of Christ on Sunday is a key reason for its observance, historical developments played a significant role in establishing Sunday as the primary day of Christian worship.",
+      "replyLen": 996,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": true,
+      "preview": "Christians celebrate Sunday as a day of worship because it is believed to be the day of Jesus Christ's resurrection. While early Christians initially gathered on both the Sabbath (Saturday) and Sunday, Emperor Constantine established Sunday as a day of rest in AD 321. This was la",
+      "id": 7
+    },
+    {
+      "userId": "phase1d-prod-ac759a2030",
+      "message": "How should I forgive someone?",
+      "latencyMs": 9655,
+      "ok": true,
+      "reply": "To forgive someone, you can start by recognizing the hurt and choosing to release that burden. Jesus teaches us about forgiveness in Matthew 6:14-15, where He says, \"For if ye forgive men their trespasses, your heavenly Father will also forgive you: But if ye forgive not men their trespasses, neither will your Father forgive your trespasses.\" This emphasizes the importance of forgiving others as a reflection of the forgiveness we receive from God. Additionally, Ephesians 4:32 encourages us to be kind and forgiving, stating, \"And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you.\" This reminds us that our forgiveness should mirror God's mercy towards us. As you think about this process, consider praying for the strength to forgive and for the person who hurt you, asking God to help you heal and let go of any resentment.",
+      "replyLen": 893,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": false,
+      "preview": "To forgive someone, you can start by recognizing the hurt and choosing to release that burden. Jesus teaches us about forgiveness in Matthew 6:14-15, where He says, \"For if ye forgive men their trespasses, your heavenly Father will also forgive you: But if ye forgive not men thei",
+      "id": 8
+    },
+    {
+      "userId": "phase1d-prod-c7cecb3e4b",
+      "message": "How do faith and works work together?",
+      "latencyMs": 8561,
+      "ok": true,
+      "reply": "Faith and works are interconnected in the life of a believer. Scripture teaches that faith is the foundation for salvation, and genuine faith naturally produces good works as a response to that salvation. For instance, James 2:17 states, \"Even so faith, if it hath not works, is dead, being alone.\" This emphasizes that true faith will manifest itself through actions. Additionally, Ephesians 2:8-10 explains that we are saved by grace through faith, and then we are created for good works: \"For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.\" Thus, works are not a means to earn salvation but rather a result of a living faith in Christ.",
+      "replyLen": 716,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": false,
+      "preview": "Faith and works are interconnected in the life of a believer. Scripture teaches that faith is the foundation for salvation, and genuine faith naturally produces good works as a response to that salvation. For instance, James 2:17 states, \"Even so faith, if it hath not works, is d",
+      "id": 9
+    },
+    {
+      "userId": "phase1d-prod-cf367d5af9",
+      "message": "I'm depressed.\nCan you help me?",
+      "latencyMs": 7279,
+      "ok": true,
+      "reply": "I'm really sorry to hear that you're feeling this way. It's important to talk about it. In the Bible, we find comfort in passages like Psalm 34:18, which says, \"The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.\" This reminds us that God is close to those who are hurting. He sees your pain and wants to help you through it. Taking a moment to pray can be a good step: you might say something like, 'Lord, I feel overwhelmed and need Your comfort and guidance.' This can help you feel connected to God in your struggles. If you'd like, we can also look at specific Scriptures together that can bring you hope and peace.",
+      "replyLen": 667,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": false,
+      "preview": "I'm really sorry to hear that you're feeling this way. It's important to talk about it. In the Bible, we find comfort in passages like Psalm 34:18, which says, \"The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.\" This reminds us tha",
+      "id": 10
+    }
+  ],
+  "stateful": {
+    "sabbath_depth": [
+      {
+        "userId": "phase1d-seq-sabbath_depth-06a4e155",
+        "message": "Explain the Sabbath.",
+        "latencyMs": 302,
+        "ok": true,
+        "reply": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.",
+        "replyLen": 184,
+        "fixedStamp": false,
+        "directAnswer": true,
+        "historical": false,
+        "preview": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.",
+        "i": 1
+      },
+      {
+        "userId": "phase1d-seq-sabbath_depth-06a4e155",
+        "message": "Give me the short version.",
+        "latencyMs": 8401,
+        "ok": true,
+        "reply": "The Sabbath is the seventh day of the week, established at creation as a day of rest. It is commanded in Scripture, specifically in Genesis 2:2-3 and Exodus 20:8-11, where God instructs His people to keep it holy.",
+        "replyLen": 213,
+        "fixedStamp": false,
+        "directAnswer": false,
+        "historical": false,
+        "preview": "The Sabbath is the seventh day of the week, established at creation as a day of rest. It is commanded in Scripture, specifically in Genesis 2:2-3 and Exodus 20:8-11, where God instructs His people to keep it holy.",
+        "i": 2
+      },
+      {
+        "userId": "phase1d-seq-sabbath_depth-06a4e155",
+        "message": "Go deeper.",
+        "latencyMs": 222,
+        "ok": true,
+        "reply": "Going deeper on what we were just discussing \u2014 not switching topics. Your question was: \u201cGive me the short version..\u201d Building from the prior answer: The Sabbath is the seventh day of the week, established at creation as a day of rest. It is commanded in Scripture, specifically in Genesis 2:2-3 and Exodus 20:8-11, where God instructs His people to keep it holy. Scripture already on the table: Genesis 2:2-3; Exodus 20:8-11. If you want another witness, name the passage or ask for a related verse on this same question.",
+        "replyLen": 522,
+        "fixedStamp": false,
+        "directAnswer": false,
+        "historical": false,
+        "preview": "Going deeper on what we were just discussing \u2014 not switching topics. Your question was: \u201cGive me the short version..\u201d Building from the prior answer: The Sabbath is the seventh day of the week, established at creation as a day of rest. It is commanded in Scripture, specifically i",
+        "i": 3
+      },
+      {
+        "userId": "phase1d-seq-sabbath_depth-06a4e155",
+        "message": "Why do many Christians observe different holidays today?",
+        "latencyMs": 6634,
+        "ok": true,
+        "reply": "Many Christians observe different holidays today due to historical developments and varying interpretations of Scripture and tradition. After the early church began to spread, different cultural influences and regional practices shaped how holidays were celebrated. For instance, the establishment of Easter and Christmas arose from a desire to celebrate critical events in the life of Jesus while also accommodating local customs. Ultimately, traditions evolved over time, leading to a diversity of observances within Christianity. Additionally, many holidays, such as Easter, are not explicitly commanded in Scripture but are based on historical events and have been adopted by various Christian denominations. This has led to differences in observance and emphasis on particular holidays across different faith communities.",
+        "replyLen": 826,
+        "fixedStamp": false,
+        "directAnswer": false,
+        "historical": true,
+        "preview": "Many Christians observe different holidays today due to historical developments and varying interpretations of Scripture and tradition. After the early church began to spread, different cultural influences and regional practices shaped how holidays were celebrated. For instance, ",
+        "i": 4
+      }
+    ],
+    "resurrection_follow": [
+      {
+        "userId": "phase1d-seq-resurrection_follow-330b84d1",
+        "message": "What happens to those in the first resurrection?",
+        "latencyMs": 195,
+        "ok": true,
+        "reply": "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+        "replyLen": 194,
+        "fixedStamp": false,
+        "directAnswer": true,
+        "historical": false,
+        "preview": "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+        "i": 1
+      },
+      {
+        "userId": "phase1d-seq-resurrection_follow-330b84d1",
+        "message": "I asked what they do, not merely when they rise.",
+        "latencyMs": 5336,
+        "ok": true,
+        "reply": "In the first resurrection, believers will be transformed and given glorified bodies, as described in 1 Corinthians 15:52, which states, \"In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed.\" They will reign with Christ, as indicated in Revelation 20:4: \"And I saw thrones, and they sat upon them, and judgment was given unto them: and I saw the souls of them that were beheaded for the witness of Jesus, and for the word of God... and they lived and reigned with Christ a thousand years.\" These passages show that the resurrected believers will not only rise but will actively participate in Christ's kingdom reign.",
+        "replyLen": 720,
+        "fixedStamp": false,
+        "directAnswer": false,
+        "historical": false,
+        "preview": "In the first resurrection, believers will be transformed and given glorified bodies, as described in 1 Corinthians 15:52, which states, \"In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we sha",
+        "i": 2
+      },
+      {
+        "userId": "phase1d-seq-resurrection_follow-330b84d1",
+        "message": "Explain it briefly.",
+        "latencyMs": 8690,
+        "ok": true,
+        "reply": "In the first resurrection, believers will be transformed and given glorified bodies. This is described in 1 Corinthians 15:52, where it states, \"In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed.\" They will then reign with Christ, as indicated in Revelation 20:4: \"And I saw thrones, and they sat upon them, and judgment was given unto them... and they lived and reigned with Christ a thousand years.\"",
+        "replyLen": 508,
+        "fixedStamp": false,
+        "directAnswer": false,
+        "historical": false,
+        "preview": "In the first resurrection, believers will be transformed and given glorified bodies. This is described in 1 Corinthians 15:52, where it states, \"In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, an",
+        "i": 3
+      }
+    ]
+  },
+  "critical": [
+    {
+      "userId": "phase1d-crit-959c3fb3",
+      "message": "Explain the Sabbath.",
+      "latencyMs": 191,
+      "ok": true,
+      "reply": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.",
+      "replyLen": 184,
+      "fixedStamp": false,
+      "directAnswer": true,
+      "historical": false,
+      "preview": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.",
+      "id": 1
+    },
+    {
+      "userId": "phase1d-crit-959c3fb3",
+      "message": "Explain it briefly.",
+      "latencyMs": 9746,
+      "ok": true,
+      "reply": "The Sabbath is the seventh day of the week, established at creation as a day of rest. It is commanded in Scripture to be kept holy. Key verses include Genesis 2:2-3, which states that God rested on the seventh day, and Exodus 20:8-11, which commands the observance of the Sabbath as a day of rest, mirroring God's own rest.",
+      "replyLen": 323,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": false,
+      "preview": "The Sabbath is the seventh day of the week, established at creation as a day of rest. It is commanded in Scripture to be kept holy. Key verses include Genesis 2:2-3, which states that God rested on the seventh day, and Exodus 20:8-11, which commands the observance of the Sabbath ",
+      "id": 2
+    },
+    {
+      "userId": "phase1d-prod-c34e216171",
+      "message": "Why do Christians celebrate Sunday?",
+      "latencyMs": 3065,
+      "ok": true,
+      "reply": "Christians celebrate Sunday, often referred to as the 'Lord's Day,' in remembrance of the resurrection of Jesus Christ, which occurred on the first day of the week. Early Christians began gathering on this day for worship and fellowship. This practice became more formalized over time, especially after Emperor Constantine, in AD 321, declared Sunday a day of rest across the Roman Empire, aligning with the growing Christian community. The Council of Laodicea around AD 364 encouraged Christians to honor this day, which led to its establishment as a normal day of worship in much of Western Christianity. It's important to note that this transition did not come from an explicit biblical command to change the Sabbath from Saturday to Sunday, but rather from historical developments and church authority over time.",
+      "replyLen": 816,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": true,
+      "preview": "Christians celebrate Sunday, often referred to as the 'Lord's Day,' in remembrance of the resurrection of Jesus Christ, which occurred on the first day of the week. Early Christians began gathering on this day for worship and fellowship. This practice became more formalized over ",
+      "id": 3
+    },
+    {
+      "userId": "phase1d-prod-e75a6825e3",
+      "message": "What happened to Jerusalem under Rome?",
+      "latencyMs": 6761,
+      "ok": true,
+      "reply": "In AD 70, Jerusalem faced a devastating siege led by Roman forces under General Titus. The city was captured, and the Second Temple was destroyed, marking a significant turning point in Jewish history. This destruction ended the Temple-based sacrificial system that had been central to Jewish worship. Josephus, a Jewish historian who witnessed these events, documented this destruction in his work, *The Wars of the Jews*. This event fulfilled Jesus' prophecy about the Temple's destruction, as noted in Matthew 24:1-2, where He tells His disciples that not one stone would be left upon another. The fall of Jerusalem led to the scattering of many Jewish people and marked the beginning of a new phase in the relationship between Rome and the Jewish population, as well as the early Christians who were also affected by these events.",
+      "replyLen": 834,
+      "fixedStamp": false,
+      "directAnswer": false,
+      "historical": true,
+      "preview": "In AD 70, Jerusalem faced a devastating siege led by Roman forces under General Titus. The city was captured, and the Second Temple was destroyed, marking a significant turning point in Jewish history. This destruction ended the Temple-based sacrificial system that had been centr",
+      "id": 4
+    }
+  ],
+  "comparison": {
+    "preChangeSha": "5e04333",
+    "postChangeSha": "c7d054c",
+    "q2_sabbath": {
+      "pre_doctrineTemplate": true,
+      "post_fixedStamp": false,
+      "post_directAnswer": true,
+      "post_preview": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.",
+      "improved": true
+    },
+    "phase1b_fixedStamp_count": 0,
+    "stateful_fixedStamp_count": 0,
+    "sunday_historical": true,
+    "dimensions": {
+      "direct_answer_accuracy": "IMPROVED",
+      "vlp_utilization": "IMPROVED",
+      "doctrine_fidelity": "HELD",
+      "historical_routing": "HELD",
+      "follow_up_handling": "IMPROVED"
+    }
+  }
+}

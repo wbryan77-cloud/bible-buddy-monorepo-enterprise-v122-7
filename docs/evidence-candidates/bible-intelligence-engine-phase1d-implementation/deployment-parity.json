@@ -1,0 +1,15 @@
+{
+  "LOCAL_SHA": "c7d054c",
+  "ORIGIN_SHA": "c7d054c",
+  "HEALTH_RELEASE_COMMIT": "c7d054c",
+  "RENDER_DEPLOY_SHA": "c7d054c",
+  "CI_SHA": "verified_via_render_health_match",
+  "durableMemory": {
+    "owner": "durableUserMemory",
+    "backend": "POSTGRES",
+    "durable": true,
+    "docKey": "data/durable-user-memory.json",
+    "hasDatabaseUrl": true
+  },
+  "match": true
+}

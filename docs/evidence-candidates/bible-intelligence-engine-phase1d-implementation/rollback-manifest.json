@@ -7,5 +7,7 @@
     "tests/phase1dDeterministicVlpComposition.test.js",
     "scripts/runBiePhase1dStatefulValidation.js"
   ],
-  "method": "git revert <implementation_sha> or restore listed files from 5e04333"
+  "method": "git revert <implementation_sha> or restore listed files from 5e04333",
+  "implementationSha": "c7d054c",
+  "preChangeSha": "5e04333"
 }
