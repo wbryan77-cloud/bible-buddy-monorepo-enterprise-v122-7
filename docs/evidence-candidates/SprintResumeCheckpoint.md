@@ -9,80 +9,53 @@ BibleBuddy = first runtime client.
 
 ## Completed and Frozen
 
-- Study Chain Engine
-- HT-4 Stabilization
-- Schema Readiness
-- Lesson Engine
-- Historical Citation Resolution
-- Historical Corpus Freeze
-- BIE Phase 1 Knowledge Foundation
-- Phase 1A Runtime Adapter (working tree; **not deployed**)
-- Phase 1B Runtime Intelligence Validation
-- Phase 1C Governed Knowledge Activation repairs (working tree; **not deployed**)
-- Phase 1D Preflight / Ownership / Book audits (**parity stop**)
+- Study Chain Engine · HT-4 · Schema Readiness · Lesson Engine
+- Historical Citation Resolution · Historical Corpus Freeze
+- BIE Phase 1 / 1A / 1B / 1C (now **deployed**)
+- Production parity deploy batch (`04de40d`)
 
 ## Certifications
 
 | Phase | Result |
 |---|---|
-| 1 | RUNTIME_ADAPTER_CONFIRMED |
 | 1A | RUNTIME_ADAPTER_FIXED |
 | 1B | RUNTIME_IMPROVED |
 | 1C | KNOWLEDGE_ACTIVATION_PARTIALLY_COMPLETE |
-| 1D | **PHASE_1D_NO_GO** |
+| 1D preflight | PHASE_1D_NO_GO (superseded by parity deploy) |
+| Production parity deploy | **PHASE_1D_READY** |
 
 ## Current Verified Production State
 
-- Prior `/health.releaseCommit` = `0d7c63b` (pre–Phase 1A–1C deploy)
-- Phase 1A–1C runtime adapters being committed for production parity deploy
-- See `docs/evidence-candidates/bie-production-parity-deploy/`
+- `/health.releaseCommit` = `04de40d`
+- origin/main = `04de40d`
+- durableMemory = POSTGRES / durable true
+- VLP adapter + history provider wire + OL attach **deployed**
 
 ## Current Response Ownership
 
-- Final funnel: `finalizeBuddyResponse` (one)
-- Doctrine decision: `doctrineFinalAuthorityEngine` (strict)
-- Composition: **split** — deterministic templates vs OpenAI composer
+- Final funnel: `finalizeBuddyResponse`
+- Doctrine decision: `doctrineFinalAuthorityEngine`
+- Composition: still split (templates vs OpenAI)
 
 ## Current Deterministic Composition State
 
-- Fixed prose templates remain
-- VLP-structured deterministic composition **not implemented** (blocked by parity)
+- Fixed prose templates **still active** on strict doctrine routes
+- Next engineering: Defect D1 (consume VLP without lowering governance)
 
 ## Active Knowledge Families (production)
 
-KJV · approved cross-refs · Evidence Cards · doctrine contracts · conversation/durable memory (Postgres) · companion/prayer/emotional lanes
+KJV · xrefs · Evidence Cards · VLP attach · history when relevant · OL when relevant · durable Postgres memory · companion lanes
 
 ## Inactive Knowledge Families
 
-Live VLP/StudyChain/Lesson attach (undeployed) · historical provider pack wire (undeployed) · OL pack attach (undeployed) · Phase 5D books · support graph NEEDS_ADMIN_REVIEW
-
-## Governed Book Status
-
-World Scope / Last Two Million Years / Jasher → INDEXED_ONLY or EDITION_UNRESOLVED — no factual runtime activation
-
-## Documented Evidence Limits
-
-Missing book/ICOJ bodies · unresolved editions · Phase 1A–1C uncommitted · CI tooling unavailable in agent environment
-
-## Remaining Conversation Defects
-
-Deterministic fixed-prose follow-ups · undeployed Phase 1C history/OL listening improvements
+Support graph NEEDS_ADMIN_REVIEW · Phase 5D books INDEXED_ONLY · durable VERIFIED study-chain ledger load
 
 ## Exact Next Engineering Bottleneck
 
-1. **Commit & deploy Phase 1A–1C** until LOCAL = CI = DEPLOY = `/health.releaseCommit`
-2. Re-enter Phase 1D Objectives 3–10
-3. Implement Defect D1: deterministic routes consume VLP for contextual prose without lowering doctrine governance
+Deterministic doctrine routes: `buildFinalAuthorityAnswer` fixed prose instead of VLP-contextual composition
 
 ## Do Not Reopen Without New Evidence
 
-- Historical corpus expansion without new acquisitions
-- AUTO_APPROVE expansion
-- Schema / Lesson architecture redesign
-- Parallel Bible Intelligence engines
+Corpus expansion without acquisitions · AUTO_APPROVE expansion · parallel engines
 
----
-
-Philosophy: **Evidence → One Patch → Regression → Next Bottleneck**
-
-Artifacts: `docs/evidence-candidates/bible-intelligence-engine-phase1d/`
+Artifacts: `docs/evidence-candidates/bie-production-parity-deploy/`

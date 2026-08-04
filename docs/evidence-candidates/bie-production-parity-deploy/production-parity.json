@@ -1,0 +1,14 @@
+{
+  "localHead": "04de40d34b2cce5a4d0ca2a04df9ad2723aa0963",
+  "originMain": "04de40d34b2cce5a4d0ca2a04df9ad2723aa0963",
+  "healthReleaseCommit": "04de40d",
+  "parityOk": true,
+  "certification": "PHASE_1D_READY",
+  "durableMemory": {
+    "owner": "durableUserMemory",
+    "backend": "POSTGRES",
+    "durable": true,
+    "docKey": "data/durable-user-memory.json",
+    "hasDatabaseUrl": true
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "at": "2026-08-04T22:47:45.728Z",
+  "healthReleaseCommit": "04de40d",
+  "durableMemory": {
+    "owner": "durableUserMemory",
+    "backend": "POSTGRES",
+    "durable": true,
+    "docKey": "data/durable-user-memory.json",
+    "hasDatabaseUrl": true
+  },
+  "results": [
+    {
+      "questionId": 1,
+      "question": "What does this app do?",
+      "httpStatus": 200,
+      "reply": "BibleBuddy is a Scripture-grounded companion. I'm here to listen, pray with you, help you study the Bible line upon line, and talk through real-life situations with Scripture as the foundation. I'm not here to force you or pressure you. You can ask Bible questions, ask for prayer, talk through something hard, or ask for a verse to hold onto.",
+      "replyLen": 343,
+      "signals": {
+        "looksHistorical": false,
+        "looksDoctrineTemplate": false,
+        "looksOL": false,
+        "looksAppIdentity": true,
+        "looksCare": true,
+        "citationLike": false,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "phase5l_app_identity",
+      "localPhase1bOpenAi": false,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "BibleBuddy is a Scripture-grounded companion. I'm here to listen, pray with you, help you study the Bible line upon line, and talk through real-life situations with Scripture as the foundation. I'm no",
+      "repliesSimilarToLocalB": true
+    },
+    {
+      "questionId": 2,
+      "question": "Explain the Sabbath.",
+      "httpStatus": 200,
+      "reply": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture.",
+      "replyLen": 181,
+      "signals": {
+        "looksHistorical": false,
+        "looksDoctrineTemplate": true,
+        "looksOL": false,
+        "looksAppIdentity": false,
+        "looksCare": false,
+        "citationLike": true,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "doctrine_final_authority",
+      "localPhase1bOpenAi": false,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "From the approved Scripture witnesses (Genesis 2:2-3; Exodus 20:8-11; Isaiah 58:13-14; Luke 4:16), The seventh day is the Sabbath established at creation and commanded in Scripture.",
+      "repliesSimilarToLocalB": true
+    },
+    {
+      "questionId": 3,
+      "question": "Does Acts 10 abolish dietary law?",
+      "httpStatus": 200,
+      "reply": "Scripture answers this when the passages below are taken together. Acts 10:28 — \"And he said unto them, Ye know how that it is an unlawful thing for a man that is a Jew to keep company, or come unto one of another nation; but God hath shewed me that I should not call any man common or unclean.\" (King James Version). Acts 10:14 — \"But Peter said, Not so, Lord; for I have never eaten any thing that is common or unclean.\" (King James Version). Acts 10:34-35 — \"Then Peter opened his mouth, and said, Of a truth I perceive that God is no respecter of persons: But in every nation he that feareth him, and worketh righteousness, is accepted with him.\" (King James Version). Acts 11:1-18 — \"And the apostles and brethren that were in Judaea heard that the Gentiles had also received the word of God. And when Peter was come up to Jerusalem, they that were of the circumcision contended with him, Saying",
+      "replyLen": 2966,
+      "signals": {
+        "looksHistorical": false,
+        "looksDoctrineTemplate": false,
+        "looksOL": false,
+        "looksAppIdentity": false,
+        "looksCare": true,
+        "citationLike": true,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "bible_wide_reasoning",
+      "localPhase1bOpenAi": false,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "Scripture answers this when the passages below are taken together. Acts 10:28 — \"And he said unto them, Ye know how that it is an unlawful thing for a man that is a Jew to keep company, or come unto o",
+      "repliesSimilarToLocalB": true
+    },
+    {
+      "questionId": 4,
+      "question": "What happens after death?",
+      "httpStatus": 200,
+      "reply": "Brother, Scripture teaches that the dead know nothing and are described as asleep until resurrection. Ecclesiastes 9:5 says the dead know not any thing. Psalm 146:4 says a man’s thoughts perish. Jesus called death sleep in John 11:11-14. Paul speaks of those asleep until the Lord comes in 1 Thessalonians 4:13-16. Daniel 12:2 and 1 Corinthians 15 anchor hope in resurrection.",
+      "replyLen": 376,
+      "signals": {
+        "looksHistorical": false,
+        "looksDoctrineTemplate": false,
+        "looksOL": false,
+        "looksAppIdentity": false,
+        "looksCare": false,
+        "citationLike": true,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "doctrine_final_authority",
+      "localPhase1bOpenAi": false,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "Brother, Scripture teaches that the dead know nothing and are described as asleep until resurrection. Ecclesiastes 9:5 says the dead know not any thing. Psalm 146:4 says a man’s thoughts perish. Jesus",
+      "repliesSimilarToLocalB": true
+    },
+    {
+      "questionId": 5,
+      "question": "Who are the Israelites?",
+      "httpStatus": 200,
+      "reply": "The Israelites are the descendants of Jacob, who was also known as Israel. They are the people chosen by God to be in a covenant relationship with Him, as outlined in the Scriptures. Their story begins in the book of Genesis and continues throughout the Bible, where they are often referred to as God's chosen people. Key passages include Exodus, where they are led out of Egypt, and the establishment of their laws and identity as a nation in the Promised Land. Scripture does not state that directly.",
+      "replyLen": 502,
+      "signals": {
+        "looksHistorical": false,
+        "looksDoctrineTemplate": false,
+        "looksOL": false,
+        "looksAppIdentity": false,
+        "looksCare": false,
+        "citationLike": false,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "reason_first_openai",
+      "localPhase1bOpenAi": true,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "The direct answer is: Scripture does not state that directly in the approved evidence available to me in this turn. I don’t want to pretend I have the needed KJV passages attached when they aren’t her",
+      "repliesSimilarToLocalB": false
+    },
+    {
+      "questionId": 6,
+      "question": "Explain Jeremiah 10.",
+      "httpStatus": 200,
+      "reply": "Scripture speaks directly to this. Jeremiah 10 — \"Hear ye the word which the LORD speaketh unto you, O house of Israel: Thus saith the LORD, Learn not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them. For the customs of the people are vain: for one cutteth a tree out of the forest, the work of the hands of the workman, with the axe. They deck it with silver and with gold; they fasten it with nails and with hammers, that it move not. They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good. Forasmuch as there is none like unto thee, O LORD; thou art great, and thy name is great in might. Who would not fear thee, O King of nations? for to thee doth it appertain: forasmuch as among all the wise men of the nat",
+      "replyLen": 3537,
+      "signals": {
+        "looksHistorical": false,
+        "looksDoctrineTemplate": false,
+        "looksOL": false,
+        "looksAppIdentity": false,
+        "looksCare": false,
+        "citationLike": false,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "bible_wide_reasoning",
+      "localPhase1bOpenAi": false,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "Scripture speaks directly to this. Jeremiah 10 — \"Hear ye the word which the LORD speaketh unto you, O house of Israel: Thus saith the LORD, Learn not the way of the heathen, and be not dismayed at th",
+      "repliesSimilarToLocalB": true
+    },
+    {
+      "questionId": 7,
+      "question": "Why do Christians celebrate Sunday?",
+      "httpStatus": 200,
+      "reply": "Christians celebrate Sunday because it is traditionally recognized as the Lord's Day, commemorating the resurrection of Jesus Christ. Historically, early Christians began gathering for worship on the first day of the week, which is Sunday, to honor this significant event. This practice evolved over time. In AD 321, Emperor Constantine declared Sunday a day of rest across the Roman Empire, further solidifying its observance among Christians. By the Council of Laodicea around AD 364, there was a push to discourage Sabbath rest on Saturday, promoting Sunday as the day for worship instead. Thus, Sunday observance became a standard practice in much of Western Christianity, rooted in both cultural and ecclesiastical developments rather than a direct biblical command changing the Sabbath.",
+      "replyLen": 792,
+      "signals": {
+        "looksHistorical": true,
+        "looksDoctrineTemplate": false,
+        "looksOL": false,
+        "looksAppIdentity": false,
+        "looksCare": false,
+        "citationLike": false,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "reason_first_openai",
+      "localPhase1bOpenAi": true,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "Christians celebrate Sunday because, historically, many came to associate the first day of the week with Jesus’ resurrection, and over time church practice and civil law strengthened Sunday worship as",
+      "repliesSimilarToLocalB": false
+    },
+    {
+      "questionId": 8,
+      "question": "How should I forgive someone?",
+      "httpStatus": 200,
+      "reply": "Forgiving someone can be a challenging process, but it’s an important step for healing. Biblically, we see the call to forgive in Matthew 6:14-15, where it states, \"For if ye forgive men their trespasses, your heavenly Father will also forgive you: But if ye forgive not men their trespasses, neither will your Father forgive your trespasses.\" This emphasizes the connection between our willingness to forgive others and our own forgiveness from God. Additionally, Ephesians 4:32 encourages us to forgive as well: \"And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you.\" This verse reminds us to approach forgiveness with kindness and a heart like God's. To begin the process of forgiveness, consider praying for the strength to let go of resentment, and ask God to help you see the person through His eyes. You might also want to reflec",
+      "replyLen": 987,
+      "signals": {
+        "looksHistorical": false,
+        "looksDoctrineTemplate": false,
+        "looksOL": false,
+        "looksAppIdentity": false,
+        "looksCare": true,
+        "citationLike": true,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "reason_first_openai",
+      "localPhase1bOpenAi": true,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "Forgiving someone means you bring the hurt into the light before God, choose not to repay them with bitterness or revenge, and release the matter into God’s hands one honest step at a time. It does no",
+      "repliesSimilarToLocalB": false
+    },
+    {
+      "questionId": 9,
+      "question": "How do faith and works work together?",
+      "httpStatus": 200,
+      "reply": "Faith and works are closely interconnected in the life of a believer. Scripture teaches that faith is the foundation of our relationship with God, while works are the expression of that faith. For instance, James 2:17 states, \"Even so faith, if it hath not works, is dead, being alone.\" This suggests that genuine faith naturally produces good works. On the other hand, Ephesians 2:8-10 explains that we are saved by grace through faith, and that we are created for good works. Thus, works are not the means of salvation but a response to the faith that one has in Christ. They demonstrate the authenticity of that faith.",
+      "replyLen": 621,
+      "signals": {
+        "looksHistorical": false,
+        "looksDoctrineTemplate": false,
+        "looksOL": false,
+        "looksAppIdentity": false,
+        "looksCare": false,
+        "citationLike": true,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "reason_first_openai",
+      "localPhase1bOpenAi": true,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "Direct answer: I should answer this from Scripture, but in this turn I wasn’t given any approved KJV passages to build the doctrine from. Scripture does not state that directly. So I don’t want to inv",
+      "repliesSimilarToLocalB": false
+    },
+    {
+      "questionId": 10,
+      "question": "I'm depressed.\nCan you help me?",
+      "httpStatus": 200,
+      "reply": "I hear you—feeling depressed can be really heavy to carry. It’s important to know that you’re not alone in this. The Bible offers comfort, and one passage that might resonate is Psalm 34:18, which says, \"The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.\" This verse reminds us that God is close to those who are struggling and offers His support. Taking a moment to reflect on this can be a step towards healing. Consider finding a quiet space and spending a few moments in prayer, expressing your feelings to God. You can say something like, \"Lord, I am feeling weighed down by depression. Please help me find peace and comfort in You.\" Would you like to talk more about what you're experiencing?",
+      "replyLen": 746,
+      "signals": {
+        "looksHistorical": false,
+        "looksDoctrineTemplate": false,
+        "looksOL": false,
+        "looksAppIdentity": false,
+        "looksCare": true,
+        "citationLike": true,
+        "halluFlags": []
+      },
+      "localPhase1bRoute": "reason_first_openai",
+      "localPhase1bOpenAi": true,
+      "localPhase1bVlp": true,
+      "localReplyPreview": "Yes — I can help you sit with this right now. I’m really sorry you’re feeling depressed; that can make even simple things feel heavy. First, let’s make this moment a little safer and smaller: 1. Put b",
+      "repliesSimilarToLocalB": false
+    }
+  ]
+}
