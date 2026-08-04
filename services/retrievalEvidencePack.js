@@ -135,6 +135,103 @@ function parseHistoricalFacts() {
   };
 }
 
+function isSundaySabbathHistoryAsk(message = '') {
+  const text = String(message || '');
+  return (
+    /\b(sunday|sabbath|constantine|laodicea|saturday to sunday)\b/i.test(text) &&
+    /\b(history|historical|changed?|change|worship|celebrate|constantine|laodicea)\b/i.test(text)
+  );
+}
+
+function slimGovernedHistoricalRecord(record) {
+  if (!record || !record.productionEligible) return null;
+  return {
+    id: record.id,
+    title: record.title,
+    sourceName: record.sourceName,
+    sourceType: record.sourceType,
+    summary: String(record.excerptOrSummary || '').slice(0, 500),
+    trustTier: record.trustTier,
+    approvalStatus: record.approvalStatus,
+    productionEligible: true,
+    relatedScriptures: (record.relatedScriptures || []).slice(0, 4),
+    relatedTopics: (record.relatedTopics || []).slice(0, 4),
+    provenance: record.provenance || null,
+    licensingStatus: record.licensingStatus || null,
+    label: record.label || 'HISTORICAL_CONTEXT_NOT_SCRIPTURE',
+    authorityNote: 'Historical context — secondary to Scripture; does not establish doctrine.',
+  };
+}
+
+/**
+ * BIE Phase 1C — attach productionEligible historical provider records (bounded).
+ * Does not ingest Phase 5D book bodies; does not promote NEEDS_ADMIN_REVIEW.
+ */
+function buildGovernedHistoryAttachment({ message = '', topic = null, effectiveTopic = null } = {}) {
+  const { getHistoricalContextForTopic, getHistoricalContextForReference, getAllHistoricalRecords } =
+    require('./historicalKnowledgeProvider');
+  const seen = new Set();
+  const governedRecords = [];
+
+  function pushAll(rows) {
+    for (const r of rows || []) {
+      if (!r || seen.has(r.id)) continue;
+      const slim = slimGovernedHistoricalRecord(r);
+      if (!slim) continue;
+      seen.add(r.id);
+      governedRecords.push(slim);
+      if (governedRecords.length >= 4) return;
+    }
+  }
+
+  const topicId = effectiveTopic || topic;
+  if (topicId) pushAll(getHistoricalContextForTopic(topicId, { productionOnly: true }));
+
+  const refMatches = String(message || '').match(
+    /\b(?:Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Matthew|Mark|Luke|John|Acts|Romans|Isaiah|Jeremiah|Ezekiel|Daniel|Zechariah|Psalm|Psalms|Revelation)\s+\d+:\d+(?:-\d+)?/gi,
+  );
+  for (const ref of refMatches || []) {
+    if (governedRecords.length >= 4) break;
+    pushAll(getHistoricalContextForReference(ref, { productionOnly: true }));
+  }
+
+  // Keyword topic bridges for provider seeds (no full-corpus scan)
+  const lower = String(message || '').toLowerCase();
+  if (governedRecords.length < 4) {
+    if (/\bjerusalem\b/.test(lower) && /\brome\b/.test(lower)) {
+      pushAll(
+        getAllHistoricalRecords({ productionOnly: true }).filter((r) =>
+          /temple|jerusalem|titus|ad 70/i.test(`${r.title} ${r.excerptOrSummary}`),
+        ),
+      );
+    }
+    if (/\b(passover|easter)\b/.test(lower)) {
+      pushAll(getHistoricalContextForTopic('kingdom', { productionOnly: true }));
+    }
+    if (/\b(dietary|kosher|unclean|acts\s*10)\b/.test(lower)) {
+      pushAll(getHistoricalContextForTopic('dietary_law', { productionOnly: true }));
+    }
+  }
+
+  const sundayFacts = isSundaySabbathHistoryAsk(message) ? parseHistoricalFacts() : null;
+  return {
+    included: true,
+    focus: detectQuestionFocus(message),
+    sourceClass: 'historical_secondary',
+    authorityNote:
+      'Historical material clarifies context only. It does not replace Scripture or automatically establish doctrine.',
+    governedRecords,
+    governedRecordCount: governedRecords.length,
+    providerWired: true,
+    phase5dBooksActivated: false,
+    phase5dBooksReason: 'corpus_frozen_or_candidate_only',
+    ...(sundayFacts || {
+      distinction: 'Historical developments are not the same as biblical commands.',
+      tier: 'historical_secondary',
+    }),
+  };
+}
+
 function buildConversationHistory(recentSessions = [], limit = 30) {
   return recentSessions.slice(-limit).map((s, i) => ({
     turn: i + 1,
@@ -424,10 +521,21 @@ function isExplicitHistoricalQuestion(message = '') {
     /\blaodicea\b/i.test(text) ||
     /\bwho changed\b/i.test(text) ||
     /\bwhy (do|does|did).*\b(sunday|sabbath)\b/i.test(text) ||
+    /\bcelebrate sunday\b/i.test(text) ||
     /\bhistorical evidence\b/i.test(text) ||
+    /\bhistorical (background|context|parallel)\b/i.test(text) ||
+    /\bhistory behind\b/i.test(text) ||
     /\bhow did this change\b/i.test(text) ||
     /\broman catholic\b/i.test(text) ||
-    /\bsaturday to sunday\b/i.test(text)
+    /\bsaturday to sunday\b/i.test(text) ||
+    /\btransatlantic\b/i.test(text) ||
+    /\bslave (ships?|trade)\b/i.test(text) ||
+    /\bassyrian captivity\b/i.test(text) ||
+    /\bbabylonian captivity\b/i.test(text) ||
+    /\bjerusalem under rome\b/i.test(text) ||
+    /\bdispersion\b/i.test(text) ||
+    /\bholocaust\b/i.test(text) ||
+    /\bwhat happened (to|during|after)\b/i.test(text)
   );
 }
 
@@ -503,14 +611,16 @@ function buildRetrievalEvidencePack({
   const practicalSabbathHow = isPracticalSabbathHowQuestion(message);
   const explicitHistorical = isExplicitHistoricalQuestion(message);
 
+  // BIE Phase 1C — history intent alone may open the historical channel; provider fills body.
   const includeHistory =
     intentConstraints.historyAllowed &&
     !practicalSabbathHow &&
-    explicitHistorical &&
     !suppressDoctrine &&
-    understanding.shouldUseHistory &&
+    understanding.requestedAnswerType !== 'wording_explanation' &&
     understanding.shouldUseHistory !== 'minimal' &&
-    understanding.requestedAnswerType !== 'wording_explanation';
+    (explicitHistorical ||
+      understanding.shouldUseHistory === 'targeted' ||
+      intentConstraints.historyAllowed);
 
   const boundaries = getBoundariesForTopic(topic || '');
   const forbiddenTeachings = FORBIDDEN_TEACHINGS.map((t) => t.boundary);
@@ -545,6 +655,43 @@ function buildRetrievalEvidencePack({
     if (!scripture.source && approvedCrossReferences.count) {
       scripture.source = 'approved_cross_references';
     }
+  }
+
+  // BIE Phase 1C — APPROVED book-to-book relationships (bounded metadata; not Phase 5D books)
+  let approvedBookRelationships = {
+    consulted: true,
+    count: 0,
+    relationships: [],
+    source: 'approved-book-relationships.jsonl',
+  };
+  try {
+    const { readApprovedBookRelationships } = require('./scriptureRelationshipGraph');
+    const topicKey = String(effectiveTopic || topic || '').toLowerCase();
+    const rows = (readApprovedBookRelationships() || [])
+      .filter((r) => r && (r.approvalStatus === 'APPROVED' || r.productionEligible !== false))
+      .filter((r) => {
+        if (!topicKey) return false;
+        const topics = (r.topicIds || []).map((t) => String(t).toLowerCase());
+        return topics.includes(topicKey);
+      })
+      .slice(0, 5)
+      .map((r) => ({
+        sourceReference: r.sourceReference,
+        targetReference: r.targetReference,
+        relationshipType: r.relationshipType,
+        topicIds: r.topicIds || [],
+        reason: r.reason,
+        approvalStatus: r.approvalStatus || 'APPROVED',
+        productionEligible: r.productionEligible !== false,
+      }));
+    approvedBookRelationships = {
+      consulted: true,
+      count: rows.length,
+      relationships: rows,
+      source: 'approved-book-relationships.jsonl',
+    };
+  } catch (_) {
+    /* optional */
   }
 
   const bibleOnlyMode = detectBibleOnlyMode(message);
@@ -627,7 +774,11 @@ function buildRetrievalEvidencePack({
     evidenceAuthority,
     approvedCatalogEvidence,
     history: includeHistory
-      ? { included: true, focus: detectQuestionFocus(message), ...parseHistoricalFacts() }
+      ? buildGovernedHistoryAttachment({
+          message,
+          topic,
+          effectiveTopic,
+        })
       : {
           included: false,
           reason: suppressDoctrine
@@ -635,7 +786,10 @@ function buildRetrievalEvidencePack({
             : understanding.requestedAnswerType === 'wording_explanation'
               ? 'wording_question'
               : 'not_historical',
+          governedRecords: [],
+          providerWired: false,
         },
+    approvedBookRelationships,
     studyState:
       intentConstraints.suppressStudyState || isNewQuestionOverridesProfile(message)
         ? { suppressed: true, reason: 'current_intent_overrides_study_state' }
@@ -676,5 +830,7 @@ module.exports = {
   retrieveApprovedCrossReferenceEvidence,
   retrieveMemoryEvidence,
   parseHistoricalFacts,
+  buildGovernedHistoryAttachment,
+  isExplicitHistoricalQuestion,
   COMPANION_SCRIPTURE_STUBS,
 };

@@ -1,0 +1,23 @@
+{
+  "defects": [
+    "A_history_gate_provider",
+    "B_original_language_attach",
+    "C_deterministic_packet_lineage"
+  ],
+  "filesChanged": [
+    "services/currentMessageIntent.js",
+    "services/reasoningSnapshot.js",
+    "services/retrievalEvidencePack.js",
+    "services/originalLanguageResponseFormatter.js",
+    "services/openAiFirstCompanionRuntime.js",
+    "services/evidencePackSlimmer.js",
+    "services/reasonFirstComposer.js",
+    "tests/phase1cKnowledgeActivation.test.js"
+  ],
+  "tests": [
+    "tests/phase1cKnowledgeActivation.test.js",
+    "tests/runtimeVerifiedLessonPacketAdapter.test.js",
+    "tests/lessonEngine.test.js",
+    "tests/studyChainEvaluation.test.js"
+  ]
+}

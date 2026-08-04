@@ -1,0 +1,25 @@
+{
+  "support_graph": {
+    "stage": "Approval",
+    "file": "services/supportGraphCandidateQueue.js",
+    "reason": "NEEDS_ADMIN_REVIEW"
+  },
+  "three_books": {
+    "stage": "Corpus Freeze / missing bodies",
+    "file": "docs/evidence-candidates/historical-source-recovery-phase5d/",
+    "reason": "CANDIDATE_ONLY"
+  },
+  "icoj_bodies": {
+    "stage": "Source acquisition",
+    "reason": "SOURCE_BODY_UNAVAILABLE"
+  },
+  "durable_verified_study_chains": {
+    "stage": "Runtime Selection",
+    "file": "attachVerifiedLessonPacketToEvidencePack",
+    "reason": "ephemeral only"
+  },
+  "production_deploy": {
+    "stage": "GATE 7",
+    "reason": "not deployed in this phase"
+  }
+}

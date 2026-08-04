@@ -1,0 +1,47 @@
+{
+  "note": "Pack+adapter+prompt build only (no OpenAI roundtrip in this measurement)",
+  "samples": [
+    {
+      "q": "Why do Christians celebrate Sunday?",
+      "latencyMs": 15,
+      "payloadApproxBytes": 17991
+    },
+    {
+      "q": "What was the transatlantic slave trade?",
+      "latencyMs": 3,
+      "payloadApproxBytes": 17008
+    },
+    {
+      "q": "What happened to Jerusalem under Rome?",
+      "latencyMs": 1,
+      "payloadApproxBytes": 20920
+    },
+    {
+      "q": "What Hebrew word is translated forever in Leviticus 23?",
+      "latencyMs": 89,
+      "payloadApproxBytes": 53264
+    },
+    {
+      "q": "Explain the Sabbath.",
+      "latencyMs": 8,
+      "payloadApproxBytes": 43294
+    },
+    {
+      "q": "Does Acts 10 abolish dietary law?",
+      "latencyMs": 5,
+      "payloadApproxBytes": 48695
+    },
+    {
+      "q": "What does Deuteronomy 28:68 explicitly say?",
+      "latencyMs": 1,
+      "payloadApproxBytes": 16443
+    },
+    {
+      "q": "Explain the history behind Sunday worship.",
+      "latencyMs": 4,
+      "payloadApproxBytes": 46084
+    }
+  ],
+  "maxLatencyMs": 89,
+  "maxPayloadBytes": 53264
+}

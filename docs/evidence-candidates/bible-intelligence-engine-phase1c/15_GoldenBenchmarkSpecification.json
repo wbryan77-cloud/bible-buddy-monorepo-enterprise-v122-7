@@ -1,0 +1,67 @@
+{
+  "version": "bie-phase1c-golden-v1",
+  "extends": "Founder Truth Corpus",
+  "families": "A-Z as specified in Phase 1C Objective 11",
+  "cases": [
+    {
+      "id": "1C-A-01",
+      "family": "A",
+      "q": "What does this app do?",
+      "expectOwner": "companionIdentityEngine"
+    },
+    {
+      "id": "1C-C-01",
+      "family": "C",
+      "q": "Explain the Sabbath.",
+      "expectOwner": "doctrine_final_authority",
+      "expectHistory": false
+    },
+    {
+      "id": "1C-G-01",
+      "family": "G",
+      "q": "Why do Christians celebrate Sunday?",
+      "expectHistory": true
+    },
+    {
+      "id": "1C-G-02",
+      "family": "G",
+      "q": "What happened to Jerusalem under Rome?",
+      "expectGovernedHistory": true
+    },
+    {
+      "id": "1C-G-03",
+      "family": "G",
+      "q": "What was the transatlantic slave trade?",
+      "expectHistory": true,
+      "expectPhase5d": false
+    },
+    {
+      "id": "1C-F-01",
+      "family": "F",
+      "q": "What Hebrew word is translated forever in Leviticus 23?",
+      "expectLanguage": true
+    },
+    {
+      "id": "1C-D-01",
+      "family": "D",
+      "q": "Does Acts 10 abolish dietary law?",
+      "expectIogXrefOrBibleWide": true
+    },
+    {
+      "id": "1C-H-01",
+      "family": "H",
+      "note": "IOG via approvedCrossReferences when topic matches"
+    },
+    {
+      "id": "1C-I-01",
+      "family": "I",
+      "note": "Phase 5D books remain INDEXED_ONLY until bodies/Admin"
+    },
+    {
+      "id": "1C-J-01",
+      "family": "J",
+      "q": "What is the capital of France?",
+      "expectGeneral": true
+    }
+  ]
+}

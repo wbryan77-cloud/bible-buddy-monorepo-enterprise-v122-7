@@ -7,7 +7,11 @@ const CORRECTION_RE =
   /\b(not (my|what i) (question|asking|meant)|didn'?t ask|not what i asked|won'?t you answer|you didn'?t answer|that was not my question|that wasn'?t my question|you repeated|wrong answer|you('re| are) not listening|not answering)\b/i;
 
 const HISTORY_RE =
-  /\b(who changed|constantine|laodicea|saturday to sunday|historical evidence|how did (the )?sabbath change|why (do|does|did).*\b(sunday|sabbath)\b.*\b(change|worship)\b|when did.*change|roman catholic.*change)\b/i;
+  /\b(who changed|constantine|laodicea|saturday to sunday|historical evidence|how did (the )?sabbath change|why (do|does|did).*\b(sunday|sabbath)\b.*\b(change|worship|celebrate)\b|why (do|does|did) (christians|people|we).*\bsunday\b|celebrate sunday|when did.*change|roman catholic.*change)\b/i;
+
+/** BIE Phase 1C — ordinary/historical asks that must not fall through to doctrine_explanation. */
+const BROAD_HISTORY_RE =
+  /\b(transatlantic|slave ships?|slave trade|holocaust|assyrian captivity|babylonian captivity|jerusalem under rome|under rome|dispersion|historical (background|parallel|context|evidence)|history behind|historical question|what happened (to|during|after)|what was the (transatlantic|assyrian|babylonian)|easter and passover|christmas tradition|feast of tabernacles)\b/i;
 
 function isYesNoQuestion(message = '') {
   const t = String(message || '');
@@ -67,7 +71,7 @@ function classifyCurrentMessageIntent(message = '', context = {}) {
     return { intent: INTENTS.CORRECTION_REPAIR, reason: 'user_correction' };
   }
 
-  if (HISTORY_RE.test(msg)) {
+  if (HISTORY_RE.test(msg) || BROAD_HISTORY_RE.test(msg)) {
     return { intent: INTENTS.HISTORY_QUESTION, reason: 'explicit_history_ask' };
   }
 

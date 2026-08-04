@@ -182,6 +182,11 @@ function buildComposerSystemPrompt({
         intentComposerGuidance: evidencePack.intentComposerGuidance,
         semanticUnderstanding: evidencePack.semanticUnderstanding,
         historyAllowed: evidencePack.historyAllowed,
+        verifiedLessonPacket: evidencePack.verifiedLessonPacket || null,
+        approvedCrossReferences: evidencePack.approvedCrossReferences || null,
+        approvedBookRelationships: evidencePack.approvedBookRelationships || null,
+        languageEvidence: evidencePack.languageEvidence || null,
+        originalLanguageStudy: evidencePack.originalLanguageStudy || null,
       };
 
   const goldenSection = goldenBlock && !coreRestoration ? `${goldenBlock}\n\n` : '';
@@ -352,6 +357,10 @@ async function composeReasonFirstReply({
       understanding: evidencePack.understanding,
       companionContext: evidencePack.companionContext,
       answerGuidance: evidencePack.answerGuidance,
+      verifiedLessonPacket: evidencePack.verifiedLessonPacket || null,
+      approvedBookRelationships: evidencePack.approvedBookRelationships || null,
+      languageEvidence: evidencePack.languageEvidence || null,
+      originalLanguageStudy: evidencePack.originalLanguageStudy || null,
     },
     regenInstruction: regenInstruction || null,
     intentComposerGuidance: evidencePack.intentComposerGuidance || null,

@@ -18,7 +18,8 @@
  * never generates Scripture or linguistic content itself.
  */
 
-const RE_ORIGINAL_LANGUAGE_REQUEST = /\boriginal\s+(language|hebrew|aramaic|greek|text|wording)\b|\b(original\s+language|hebrew|aramaic|greek)\b.*\b(word|study|text|gloss|lemma|morpholog|transliterat|strong'?s|behind|underlying|wording)\b|\b(word|study|text|gloss|lemma|morpholog|transliterat|strong'?s|behind|underlying|wording)\b.*\b(original\s+language|hebrew|aramaic|greek)\b/i;
+const RE_ORIGINAL_LANGUAGE_REQUEST =
+  /\boriginal\s+(language|hebrew|aramaic|greek|text|wording)\b|\b(original\s+language|hebrew|aramaic|greek)\b.*\b(word|study|text|gloss|lemma|morpholog|transliterat|strong'?s|behind|underlying|wording|translated|translation)\b|\b(word|study|text|gloss|lemma|morpholog|transliterat|strong'?s|behind|underlying|wording|translated|translation)\b.*\b(original\s+language|hebrew|aramaic|greek)\b|\bwhat (hebrew|greek|aramaic) word\b|\b(hebrew|greek) wording\b|\bliteral gloss\b/i;
 
 function isOriginalLanguageRequest(message = '') {
   return RE_ORIGINAL_LANGUAGE_REQUEST.test(String(message || ''));

@@ -27,13 +27,23 @@ const WORDING_PATTERNS = [
 
 const HISTORICAL_EVIDENCE_PATTERNS = [
   /\bhistorical evidence\b/i,
+  /\bhistorical (background|context|parallel)\b/i,
+  /\bhistory behind\b/i,
   /\bconstantine\b/i,
   /\blaodicea\b/i,
   /\bwho changed\b/i,
   /\bdid rome\b/i,
   /\bwhy (do|does|did) (people|christians|we)\b.*\b(sunday|sabbath)\b/i,
+  /\bcelebrate sunday\b/i,
   /\bwhy should we keep sunday\b/i,
   /\bday of worship\b/i,
+  /\btransatlantic\b/i,
+  /\bslave (ships?|trade)\b/i,
+  /\bassyrian captivity\b/i,
+  /\bbabylonian captivity\b/i,
+  /\bjerusalem under rome\b/i,
+  /\bdispersion\b/i,
+  /\bholocaust\b/i,
 ];
 
 function inferQuestionType(message = '', questionIntent = {}, followUp = {}, activeConversation = null) {

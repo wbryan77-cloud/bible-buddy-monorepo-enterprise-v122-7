@@ -1,0 +1,53 @@
+{
+  "budgetNote": "No full books; governedRecords capped at 4; OL tokens capped at 24; VLP nested",
+  "samples": [
+    {
+      "q": "Why do Christians celebrate Sunday?",
+      "bytes": 17991,
+      "governed": 0,
+      "lang": false
+    },
+    {
+      "q": "What was the transatlantic slave trade?",
+      "bytes": 17008,
+      "governed": 0,
+      "lang": false
+    },
+    {
+      "q": "What happened to Jerusalem under Rome?",
+      "bytes": 20920,
+      "governed": 4,
+      "lang": false
+    },
+    {
+      "q": "What Hebrew word is translated forever in Leviticus 23?",
+      "bytes": 53264,
+      "governed": 0,
+      "lang": true
+    },
+    {
+      "q": "Explain the Sabbath.",
+      "bytes": 43294,
+      "governed": 0,
+      "lang": false
+    },
+    {
+      "q": "Does Acts 10 abolish dietary law?",
+      "bytes": 48695,
+      "governed": 0,
+      "lang": false
+    },
+    {
+      "q": "What does Deuteronomy 28:68 explicitly say?",
+      "bytes": 16443,
+      "governed": 0,
+      "lang": false
+    },
+    {
+      "q": "Explain the history behind Sunday worship.",
+      "bytes": 46084,
+      "governed": 1,
+      "lang": false
+    }
+  ]
+}

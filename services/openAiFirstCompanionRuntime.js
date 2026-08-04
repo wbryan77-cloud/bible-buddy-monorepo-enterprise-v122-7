@@ -48,6 +48,136 @@ const {
   getUserAnswerPreferences,
 } = require('./userCorrectionMemory');
 const { runBibleCompanionOrchestrator } = require('./bibleCompanionOrchestrator');
+
+/**
+ * BIE Phase 1A — Runtime adapter (smallest wiring).
+ * Builds a Verified Lesson Packet from the live evidence pack and attaches it
+ * nested on evidencePack for composer/OpenAI payload survival.
+ * Does not modify Lesson Engine / Study Chain / schema / governance — only calls them.
+ */
+let _topicWitnessRegistryCache = null;
+function pickOriginalLanguageReference(message = '', refs = []) {
+  const msg = String(message || '');
+  const verseInMessage = msg.match(
+    /\b(?:Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Matthew|Mark|Luke|John|Acts|Romans|Isaiah|Jeremiah|Ezekiel|Daniel|Zechariah|Psalm|Psalms|Revelation|1\s*Corinthians|2\s*Corinthians|Hebrews|1\s*Thessalonians|Revelation)\s+\d+:\d+(?:-\d+)?/i,
+  );
+  if (verseInMessage) return verseInMessage[0].replace(/\s+/g, ' ').trim();
+  // Chapter-only asks (e.g. Leviticus 23 forever) — prefer a representative verse in that chapter
+  const chapterInMessage = msg.match(/\b(Leviticus)\s+(23)\b/i);
+  if (chapterInMessage) return 'Leviticus 23:21';
+  for (const ref of refs) {
+    if (/:\d+/.test(ref) && !/:\d+-\d+/.test(ref) && !/\d+:\d+-\d+/.test(ref)) return ref;
+    const m = String(ref).match(/^(.+?\d+:\d+)/);
+    if (m) return m[1];
+  }
+  return refs[0] || null;
+}
+
+async function attachVerifiedLessonPacketToEvidencePack(evidencePack, message = '') {
+  if (!evidencePack || typeof evidencePack !== 'object') return evidencePack;
+  if (evidencePack.verifiedLessonPacket) return evidencePack;
+  try {
+    const { buildVerifiedLessonPacket, assembleLessonFromStudyChain } = require('./lessonEngine');
+    const { evaluateStudyChain } = require('./studyChainEvaluation');
+    const { buildTopicWitnessRegistry } = require('./topicWitnessRegistry');
+    const { RULES_DECISION } = require('./iogIcojGovernedIngestion');
+
+    const topic = evidencePack.effectiveTopic || evidencePack.topic || 'unknown';
+    const refs = [];
+    for (const r of evidencePack.scripture?.references || []) {
+      const ref =
+        typeof r === 'string'
+          ? r
+          : r.reference || r.normalizedReference || r.displayReference || null;
+      if (ref) refs.push(String(ref));
+    }
+    if (!_topicWitnessRegistryCache) _topicWitnessRegistryCache = buildTopicWitnessRegistry();
+
+    const chain = evaluateStudyChain(
+      {
+        corpus: 'RuntimeAdapter',
+        sourceDocument: String(topic),
+        sourceLocation: 'openAiFirstCompanionRuntime.attachVerifiedLessonPacketToEvidencePack',
+        sourceTopic: String(topic),
+        scriptureReferencesSourceOrder: refs.slice(0, 40),
+        originalEvaluatorDecisions: [
+          { matchKind: 'SAME_BOOK_ONLY', rulesDecision: RULES_DECISION.NEEDS_ADMIN_REVIEW },
+        ],
+      },
+      { registry: _topicWitnessRegistryCache },
+    );
+    const lesson = assembleLessonFromStudyChain(chain);
+    const packet = buildVerifiedLessonPacket(lesson, message || evidencePack.userMessage || null);
+    packet.openAiMayApproveEvidence = false;
+    packet.openAiMayDetermineDoctrine = false;
+    packet.productionActivation = false;
+    packet.persist = false;
+
+    // BIE Phase 1C — fill existing languageEvidence field when OL-relevant (no schema change)
+    try {
+      const { isOriginalLanguageRequest } = require('./originalLanguageResponseFormatter');
+      const { getPassageStudy } = require('./originalLanguageProvider');
+      const olAsk =
+        isOriginalLanguageRequest(message || evidencePack.userMessage || '') ||
+        (evidencePack.semanticUnderstanding?.requestedEvidence || []).includes('original_language');
+      const studyRef = pickOriginalLanguageReference(message || evidencePack.userMessage || '', refs);
+      if (olAsk && studyRef) {
+        const study = await getPassageStudy({ reference: studyRef, baselineTranslation: 'KJV' });
+        if (study && study.ok) {
+          const bounded = {
+            reference: study.reference,
+            sourceLanguage: study.sourceLanguage,
+            kjvText: study.kjvText || null,
+            originalText: study.originalText || null,
+            literalRendering: study.literalRendering || null,
+            tokens: (study.tokens || []).slice(0, 24).map((t) => ({
+              surface: t.surface,
+              lemma: t.lemma,
+              morphology: t.morphology,
+              strongs: t.strongs,
+              literalGloss: t.literalGloss,
+              transliteration: t.transliteration,
+            })),
+            provenance: study.provenance || null,
+            limitations: study.limitations || [],
+            authorityNote:
+              'Original-language support is bounded and secondary to full Scripture context; it does not silently override doctrine.',
+          };
+          packet.languageEvidence = [bounded];
+          packet.languageStatus = 'ATTACHED_BOUNDED';
+          evidencePack.languageEvidence = [bounded];
+          evidencePack.originalLanguageStudy = bounded;
+        } else if (study) {
+          evidencePack.originalLanguageStudy = {
+            reference: study.reference,
+            ok: false,
+            limitations: study.limitations || [study.error || 'study_unavailable'],
+          };
+        }
+      }
+    } catch (_) {
+      /* OL attach is best-effort */
+    }
+
+    evidencePack.verifiedLessonPacket = packet;
+    evidencePack.verifiedLessonPacketAttach = {
+      attached: true,
+      studyChainId: chain.studyChainId || null,
+      lessonId: lesson.lessonId || null,
+      passageRoleCount: (packet.passageRoles || []).length,
+      scriptureBlockCount: (packet.scriptureBlocks || []).length,
+      hierarchyPreserved: true,
+      languageEvidenceAttached: Array.isArray(packet.languageEvidence) && packet.languageEvidence.length > 0,
+    };
+  } catch (err) {
+    evidencePack.verifiedLessonPacket = null;
+    evidencePack.verifiedLessonPacketAttach = {
+      attached: false,
+      error: String(err && err.message ? err.message : err),
+    };
+  }
+  return evidencePack;
+}
 const { validateFinalityReply, stripFinalityViolations } = require('./doctrineFinalityMode');
 const { applyDoctrineErrorFirewall, mapInternalErrorToUserMessage } = require('./doctrineErrorFirewall');
 const { applyDoctrineFinalityPipeline } = require('./doctrineFinalityContract');
@@ -235,6 +365,41 @@ function polishFinalReply(reply = '', polishCtx = {}) {
   return polishCompanionReply(sanitizeDoctrineResponse(text));
 }
 
+/**
+ * BIE Phase 1C — deterministic routes may consume already-attached packet/history
+ * without changing doctrine conclusions (labeled historical appendix only).
+ */
+function appendGovernedHistoricalAppendix(reply, evidencePack) {
+  const records = evidencePack?.history?.governedRecords || [];
+  if (!evidencePack?.history?.included || !records.length) return String(reply || '');
+  const text = String(reply || '');
+  if (/Historical context \(governed/i.test(text)) return text;
+  const lines = records.slice(0, 3).map(
+    (r) =>
+      `- ${r.title} (Source: ${r.sourceName}): ${r.summary} [${r.label || 'HISTORICAL_CONTEXT_NOT_SCRIPTURE'} — does not establish doctrine]`,
+  );
+  return `${text}\n\nHistorical context (governed, secondary to Scripture):\n${lines.join('\n')}`;
+}
+
+function attachPacketLineageToRuntime(out, evidencePack) {
+  const packet = evidencePack?.verifiedLessonPacket || null;
+  out.runtime = {
+    ...(out.runtime || {}),
+    verifiedLessonPacketAttached: !!packet,
+    verifiedLessonPacketLessonId: packet?.lesson?.lessonId || null,
+    verifiedLessonPacketPassageRoles: Array.isArray(packet?.passageRoles)
+      ? packet.passageRoles.length
+      : 0,
+    governedHistoryCount: (evidencePack?.history?.governedRecords || []).length,
+    languageEvidenceAttached: !!(
+      packet?.languageEvidence?.length || evidencePack?.languageEvidence?.length
+    ),
+    approvedBookRelationshipCount: evidencePack?.approvedBookRelationships?.count || 0,
+    iogIcojApprovedCrossRefCount: evidencePack?.approvedCrossReferences?.count || 0,
+  };
+  return out;
+}
+
 function returnBibleWideStructured(H, ctx) {
   const {
     structured,
@@ -250,11 +415,13 @@ function returnBibleWideStructured(H, ctx) {
     cohort,
     route,
     concept,
+    evidencePack,
   } = ctx;
 
   recordUserTurn(userId, message, 'bible_wide');
 
   let out = structured;
+  out.reply = appendGovernedHistoricalAppendix(out.reply, evidencePack);
   out.reply = polishFinalReply(out.reply, {
     message,
     topic: concept,
@@ -271,6 +438,7 @@ function returnBibleWideStructured(H, ctx) {
     bibleWideReasoning: true,
     bibleConcept: concept,
   };
+  out = attachPacketLineageToRuntime(out, evidencePack);
 
   attachDebug(out, {
     runtimeUsed: 'core_openai_first',
@@ -394,6 +562,7 @@ function returnStrictDoctrineStructured(H, ctx) {
   recordUserTurn(userId, message, 'strict_doctrine');
 
   let out = structured;
+  out.reply = appendGovernedHistoricalAppendix(out.reply, evidencePack);
   out.reply = polishFinalReply(out.reply, {
     message,
     topic,
@@ -409,6 +578,7 @@ function returnStrictDoctrineStructured(H, ctx) {
     evidencePack,
   });
   out.quality = scoreCompanionQuality({ message, reply: out.reply, runtimeContext });
+  out = attachPacketLineageToRuntime(out, evidencePack);
 
   attachDebug(out, {
     runtimeUsed: 'core_openai_first',
@@ -532,6 +702,8 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   });
   evidencePack.userMessage = message;
   evidencePack.userId = userId;
+  // BIE Phase 1A/1C — attach Verified Lesson Packet (+ bounded OL when relevant)
+  await attachVerifiedLessonPacketToEvidencePack(evidencePack, message);
   // Phase 6X Obj2 — surface pack intelligence on runtime for thread persistence
   runtimeContext.semanticUnderstanding = evidencePack.semanticUnderstanding || null;
   runtimeContext.correctionLedger = evidencePack.correctionLedger || null;
@@ -697,7 +869,11 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   liveTruthTrace.protectedHumanNeed = !!routePlanForTrace?.protectedHumanNeed;
 
   if (resolvedOrchestratorResult.handled) {
-    const ctx = { ...resolvedOrchestratorResult.ctx, liveTruthTrace };
+    const ctx = {
+      ...resolvedOrchestratorResult.ctx,
+      liveTruthTrace,
+      evidencePack: resolvedOrchestratorResult.ctx?.evidencePack || evidencePack,
+    };
     if (resolvedOrchestratorResult.dispatch === 'strict') {
       logPhase4d1CircuitBreaker({
         userId,
@@ -1250,6 +1426,8 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
     },
   };
 
+  structured = attachPacketLineageToRuntime(structured, evidencePack);
+
   attachDebug(structured, {
     runtimeUsed: 'core_openai_first',
     currentIntent,
@@ -1344,4 +1522,5 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
 
 module.exports = {
   runOpenAiFirstCompanionRuntime,
+  attachVerifiedLessonPacketToEvidencePack,
 };

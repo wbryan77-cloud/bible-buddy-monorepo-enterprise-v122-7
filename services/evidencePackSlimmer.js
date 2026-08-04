@@ -45,6 +45,13 @@ function slimEvidencePackForComposer(evidencePack = {}) {
     currentIntent: evidencePack.currentIntent,
     intentComposerGuidance: evidencePack.intentComposerGuidance,
     historyAllowed: evidencePack.historyAllowed,
+    // BIE Phase 1A — nested Verified Lesson Packet (hierarchy preserved; not flattened to prose)
+    verifiedLessonPacket: evidencePack.verifiedLessonPacket || null,
+    // BIE Phase 1C — governed knowledge activation (bounded pass-through)
+    approvedCrossReferences: evidencePack.approvedCrossReferences || null,
+    approvedBookRelationships: evidencePack.approvedBookRelationships || null,
+    languageEvidence: evidencePack.languageEvidence || null,
+    originalLanguageStudy: evidencePack.originalLanguageStudy || null,
   };
 }
 
