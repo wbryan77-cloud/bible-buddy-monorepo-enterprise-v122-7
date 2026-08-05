@@ -1,0 +1,31 @@
+{
+  "endpoint": "POST /buddy/chat",
+  "stages": [
+    {
+      "file": "routes/buddy.js",
+      "fn": "handleBuddyChat"
+    },
+    {
+      "file": "services/responseGuarantee.js",
+      "fn": "withBuddyChatGuarantee"
+    },
+    {
+      "file": "services/buddyBrain.js",
+      "fn": "runBuddy"
+    },
+    {
+      "file": "services/openAiFirstCompanionRuntime.js",
+      "fn": "runOpenAiFirstCompanionRuntime"
+    },
+    {
+      "file": "services/bibleCompanionOrchestrator.js",
+      "fn": "runBibleCompanionOrchestrator"
+    },
+    {
+      "file": "services/liveResponseOwner.js",
+      "fn": "finalizeLiveResponse",
+      "finalOwner": true
+    }
+  ],
+  "stream": "POST /buddy/stream shares runtime + scheduleFounderExperienceInstrumentation"
+}

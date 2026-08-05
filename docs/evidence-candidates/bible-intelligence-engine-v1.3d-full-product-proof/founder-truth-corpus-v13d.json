@@ -1,0 +1,6 @@
+{
+  "runner": "scripts/runFounderTruthCorpus.js",
+  "cases": 32,
+  "production_sha": "bbb6b2a",
+  "result": "32/32 PASS"
+}

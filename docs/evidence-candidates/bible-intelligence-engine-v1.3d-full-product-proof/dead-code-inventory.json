@@ -1,0 +1,11 @@
+{
+  "retain_pending_proof": [
+    "services/masterBuddyRuntime.js",
+    "services/reasonFirstBuddyRuntime.js",
+    "services/reasonFirstLiteRuntime.js",
+    "services/shadowReasonFirstRuntime.js",
+    "services/bibleBuddyLiteRuntime.js",
+    "services/companionConversationExperimentRuntime.js"
+  ],
+  "deleted": []
+}
