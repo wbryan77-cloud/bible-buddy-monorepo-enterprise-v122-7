@@ -15,7 +15,7 @@ All nonmutating V1.3 work completed: corpus reconstruction (40 records), master 
 | Role | SHA |
 |---|---|
 | Pre-change | `45f44c4` |
-| Implementation (Mission Control/aging/docs) | _(fill after commit)_ |
+| Implementation (Mission Control/aging/docs) | `dc7c4f2` |
 | Production baseline measured on | `45f44c4` |
 
 ## Rollback

@@ -1,5 +1,25 @@
 {
-  "preChange": "45f44c4",
-  "baselineHealth": "45f44c4",
-  "note": "Update after Mission Control deploy"
+  "LOCAL_SHA": "dc7c4f2",
+  "ORIGIN_SHA": "dc7c4f2",
+  "HEALTH_RELEASE_COMMIT": "dc7c4f2",
+  "parity": true,
+  "durableMemory": {
+    "owner": "durableUserMemory",
+    "backend": "POSTGRES",
+    "durable": true,
+    "docKey": "data/durable-user-memory.json",
+    "hasDatabaseUrl": true
+  },
+  "mc_daily": 401,
+  "mc_weekly": 401,
+  "aging": 401,
+  "feedback": 401,
+  "sabbath": {
+    "status": 200,
+    "latencyMs": 273,
+    "direct": true,
+    "fixedStamp": false
+  },
+  "auth_gates": true,
+  "no_behavior_regression": true
 }
