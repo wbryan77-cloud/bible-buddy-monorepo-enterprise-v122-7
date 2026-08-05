@@ -113,6 +113,41 @@ function buildDailyBriefing() {
   }
   if (recommendedActionsToday.length === 0) recommendedActionsToday.push('No urgent items. Routine review recommended.');
 
+  let founderExperience = null;
+  try {
+    const { runDiscoveryPass } = require('./discoveryEngine');
+    const { buildRankedRecommendations } = require('./recommendationIntelligence');
+    const { getStatus } = require('./founderExperienceDurableStore');
+    const disc = runDiscoveryPass({ persist: false });
+    // sync ranking without awaiting durable writes for briefing speed
+    const topFailures = (disc.discoveries || [])
+      .filter((d) => String(d.discoveryType).includes('FAILURE') || String(d.discoveryType).includes('BREAK'))
+      .sort((a, b) => b.recurrenceCount - a.recurrenceCount)
+      .slice(0, 5);
+    const successes = (disc.discoveries || [])
+      .filter((d) => String(d.discoveryType).includes('SUCCESS') || String(d.discoveryType).includes('GAIN'))
+      .slice(0, 5);
+    if (topFailures.length) {
+      recommendedActionsToday.unshift(
+        `Founder Experience: review ${topFailures.length} recurring failure pattern(s); top=${topFailures[0].behaviorFamily}`,
+      );
+    }
+    founderExperience = {
+      durable: getStatus(),
+      discoveryCount: disc.discoveryCount,
+      recommendationEligible: disc.recommendationEligible,
+      highestImpactFailures: topFailures,
+      strongestAnswers: successes,
+      topThreeRecommendedActions: recommendedActionsToday.slice(0, 3),
+      mode: 'SHADOW',
+      productionMutation: false,
+    };
+    // Fire-and-forget ranked package refresh for Admin queue
+    buildRankedRecommendations({ persist: true }).catch(() => {});
+  } catch (e) {
+    founderExperience = { error: e.message };
+  }
+
   return {
     generatedAt: new Date().toISOString(),
     windowDeltaSinceYesterday: delta,
@@ -145,6 +180,7 @@ function buildDailyBriefing() {
     recommendedActionsToday,
     notificationSummary,
     userAssistanceSummary,
+    founderExperience,
   };
 }
 
@@ -190,7 +226,25 @@ function buildWeeklyBriefing() {
       ...(alerts.counts.Critical ? [`Resolve ${alerts.counts.Critical} Critical alert(s).`] : []),
       ...(alerts.counts.High ? [`Address ${alerts.counts.High} High-severity alert(s).`] : []),
       'Continue reviewing the Decision Queue in severity order.',
+      'Review Founder Experience discoveries and suppress unchanged rejected recommendations.',
     ],
+    founderExperienceLearning: (() => {
+      try {
+        const { runDiscoveryPass } = require('./discoveryEngine');
+        const { listLearningRecords } = require('./learningRecordStore');
+        const disc = runDiscoveryPass({ persist: false });
+        const records = listLearningRecords({ limit: 200 });
+        return {
+          discoveryCount: disc.discoveryCount,
+          learningRecords: records.length,
+          rejectedPreserved: records.filter((r) => r.adminStatus === 'REJECTED').length,
+          approved: records.filter((r) => r.adminStatus === 'APPROVED').length,
+          recommendationEligible: disc.recommendationEligible,
+        };
+      } catch (e) {
+        return { error: e.message };
+      }
+    })(),
   };
 }
 

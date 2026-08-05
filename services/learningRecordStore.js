@@ -133,6 +133,17 @@ function createLearningRecord(input = {}) {
   };
   saveIndex(index);
 
+  setImmediate(() => {
+    try {
+      const { upsertById, DOC, MAX } = require('./founderExperienceDurableStore');
+      upsertById(DOC.learningRecords, 'learningRecordId', record, MAX.learningRecords).catch((err) => {
+        console.warn('[learningRecordStore] durable upsert failed:', err.message);
+      });
+    } catch (err) {
+      console.warn('[learningRecordStore] durable wire failed:', err.message);
+    }
+  });
+
   appendExperienceEvent({
     eventType: 'LEARNING_RECORD_CREATED',
     learningRecordId: record.learningRecordId,
@@ -199,7 +210,36 @@ function transitionLearningRecord(learningRecordId, nextStatus, { actor = 'admin
     }
   }
   saveIndex(index);
-  return { ok: true, learningRecordId, adminStatus: nextStatus };
+
+  const transition = {
+    transitionId: crypto.randomUUID(),
+    learningRecordId,
+    toStatus: nextStatus,
+    actor,
+    note,
+    at: new Date().toISOString(),
+    productionMutation: false,
+    evidenceActivated: false,
+  };
+  setImmediate(() => {
+    try {
+      const { appendItem, upsertById, DOC, MAX } = require('./founderExperienceDurableStore');
+      appendItem(DOC.recommendationTransitions, transition, MAX.recommendationTransitions).catch(() => {});
+      upsertById(
+        DOC.recommendations,
+        'learningRecordId',
+        {
+          learningRecordId,
+          adminStatus: nextStatus,
+          lastTransitionAt: transition.at,
+          lastActor: actor,
+        },
+        MAX.recommendations,
+      ).catch(() => {});
+    } catch (_) {}
+  });
+
+  return { ok: true, learningRecordId, adminStatus: nextStatus, productionMutation: false };
 }
 
 module.exports = {

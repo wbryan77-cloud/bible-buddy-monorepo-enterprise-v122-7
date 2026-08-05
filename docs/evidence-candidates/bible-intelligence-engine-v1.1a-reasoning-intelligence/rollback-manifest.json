@@ -1,0 +1,4 @@
+{
+  "rollbackCommit": "5499149",
+  "method": "git revert <impl>"
+}

@@ -1,0 +1,158 @@
+/**
+ * BIE v1.1A — Durable projections for Founder Experience Loop records.
+ * Uses EXISTING bible_buddy_documents via storageAdapter (no second DB product).
+ * File JSON is offline/local fallback only when DATABASE_URL is absent.
+ */
+
+const path = require('path');
+const { getStorageAdapter, FileStorageAdapter } = require('./persistence/storageAdapter');
+
+const ROOT = path.join(__dirname, '..');
+const DOC = {
+  experienceEvents: path.join(ROOT, 'data/founder-experience/experience-events.json'),
+  learningRecords: path.join(ROOT, 'data/founder-experience/learning-records.json'),
+  evaluationResults: path.join(ROOT, 'data/founder-experience/evaluation-results.json'),
+  recommendations: path.join(ROOT, 'data/founder-experience/recommendations.json'),
+  recommendationTransitions: path.join(ROOT, 'data/founder-experience/recommendation-transitions.json'),
+  discoveries: path.join(ROOT, 'data/founder-experience/discoveries.json'),
+  relationships: path.join(ROOT, 'data/founder-experience/relationships.json'),
+  hypotheses: path.join(ROOT, 'data/founder-experience/hypotheses.json'),
+  predictions: path.join(ROOT, 'data/founder-experience/predictions.json'),
+  costLedger: path.join(ROOT, 'data/founder-experience/cost-ledger.json'),
+  calibration: path.join(ROOT, 'data/founder-experience/evaluator-calibration.json'),
+};
+
+const MAX = {
+  experienceEvents: 8000,
+  learningRecords: 4000,
+  evaluationResults: 4000,
+  recommendations: 2000,
+  recommendationTransitions: 4000,
+  discoveries: 2000,
+  relationships: 5000,
+  hypotheses: 2000,
+  predictions: 2000,
+  costLedger: 8000,
+  calibration: 4000,
+};
+
+let backendInfo = null;
+
+function resolveBackend() {
+  const hasDb = !!String(process.env.DATABASE_URL || '').trim();
+  if (hasDb) {
+    try {
+      const storage = require('./persistence/storageAdapter');
+      storage.resetStorageAdapterForTests();
+      const prev = process.env.PERSISTENCE;
+      process.env.PERSISTENCE = 'POSTGRES';
+      const adapter = storage.getStorageAdapter();
+      if (adapter.kind === 'POSTGRES') {
+        return { kind: 'POSTGRES', adapter, durable: true };
+      }
+      if (prev !== undefined) process.env.PERSISTENCE = prev;
+    } catch (e) {
+      console.warn('[founderExperienceDurableStore] Postgres unavailable:', e.message);
+    }
+  }
+  return { kind: 'FILE', adapter: new FileStorageAdapter(), durable: false };
+}
+
+function getBackend() {
+  if (!backendInfo) backendInfo = resolveBackend();
+  return backendInfo;
+}
+
+function resetFounderExperienceDurableForTests() {
+  backendInfo = null;
+  try {
+    require('./persistence/storageAdapter').resetStorageAdapterForTests();
+  } catch (_) {}
+}
+
+function emptyDoc() {
+  return { schemaVersion: 'bie-fel-durable-v1', items: [], updatedAt: null };
+}
+
+function trimItems(items, max) {
+  if (items.length <= max) return items;
+  return items.slice(items.length - max);
+}
+
+async function appendItem(docPath, item, maxItems) {
+  const { adapter, kind, durable } = getBackend();
+  const mutator = (cur) => {
+    const base = cur && typeof cur === 'object' ? cur : emptyDoc();
+    const items = Array.isArray(base.items) ? base.items.slice() : [];
+    items.push(item);
+    return {
+      schemaVersion: 'bie-fel-durable-v1',
+      items: trimItems(items, maxItems),
+      updatedAt: new Date().toISOString(),
+      backend: kind,
+      durable,
+    };
+  };
+  if (kind === 'POSTGRES' && typeof adapter.updateJsonDocument === 'function') {
+    return adapter.updateJsonDocument(docPath, mutator, emptyDoc());
+  }
+  // File adapter: sync updateJsonDocument
+  return Promise.resolve(adapter.updateJsonDocument(docPath, mutator, emptyDoc()));
+}
+
+async function readItems(docPath) {
+  const { adapter, kind } = getBackend();
+  const doc = await Promise.resolve(adapter.readJsonDocument(docPath, emptyDoc()));
+  return {
+    backend: kind,
+    durable: getBackend().durable,
+    items: Array.isArray(doc?.items) ? doc.items : [],
+    updatedAt: doc?.updatedAt || null,
+  };
+}
+
+async function upsertById(docPath, idField, record, maxItems) {
+  const { adapter, kind, durable } = getBackend();
+  const mutator = (cur) => {
+    const base = cur && typeof cur === 'object' ? cur : emptyDoc();
+    const items = Array.isArray(base.items) ? base.items.slice() : [];
+    const id = record[idField];
+    const idx = items.findIndex((x) => x && x[idField] === id);
+    if (idx >= 0) items[idx] = { ...items[idx], ...record, updatedAt: new Date().toISOString() };
+    else items.push({ ...record, updatedAt: new Date().toISOString() });
+    return {
+      schemaVersion: 'bie-fel-durable-v1',
+      items: trimItems(items, maxItems),
+      updatedAt: new Date().toISOString(),
+      backend: kind,
+      durable,
+    };
+  };
+  if (kind === 'POSTGRES' && typeof adapter.updateJsonDocument === 'function') {
+    return adapter.updateJsonDocument(docPath, mutator, emptyDoc());
+  }
+  return Promise.resolve(adapter.updateJsonDocument(docPath, mutator, emptyDoc()));
+}
+
+function getStatus() {
+  const b = getBackend();
+  return {
+    owner: 'founderExperienceDurableStore',
+    backend: b.kind,
+    durable: b.durable,
+    hasDatabaseUrl: !!process.env.DATABASE_URL,
+    documents: Object.keys(DOC),
+  };
+}
+
+module.exports = {
+  DOC,
+  MAX,
+  getBackend,
+  getStatus,
+  resetFounderExperienceDurableForTests,
+  appendItem,
+  readItems,
+  upsertById,
+  emptyDoc,
+};

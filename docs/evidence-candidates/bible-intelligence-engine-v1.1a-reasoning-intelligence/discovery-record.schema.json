@@ -1,0 +1,10 @@
+{
+  "title": "DiscoveryRecord",
+  "required": [
+    "discoveryId",
+    "discoveryType",
+    "behaviorFamily",
+    "recurrenceCount",
+    "recommendationEligibility"
+  ]
+}

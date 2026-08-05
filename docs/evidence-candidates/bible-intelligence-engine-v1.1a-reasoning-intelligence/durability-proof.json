@@ -1,0 +1,22 @@
+{
+  "store": "founderExperienceDurableStore",
+  "adapter": "bible_buddy_documents via storageAdapter",
+  "documents": [
+    "experience-events",
+    "learning-records",
+    "evaluation-results",
+    "recommendations",
+    "recommendation-transitions",
+    "discoveries",
+    "relationships",
+    "hypotheses",
+    "predictions",
+    "cost-ledger",
+    "evaluator-calibration"
+  ],
+  "restartSurvival": "YES when POSTGRES",
+  "redeploySurvival": "YES when POSTGRES",
+  "multiInstance": "YES when POSTGRES (FOR UPDATE)",
+  "fileOnlyInsufficient": "CONFIRMED for v1.1 pre-1.1A JSONL",
+  "userMemoryDoesNotImplyFelDurability": "CONFIRMED \u2014 separate doc keys required and added"
+}

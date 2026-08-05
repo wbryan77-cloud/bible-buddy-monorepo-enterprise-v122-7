@@ -1,0 +1,21 @@
+{
+  "paths": [
+    "deterministic_doctrine",
+    "openai_composition",
+    "historical",
+    "original_language",
+    "general_knowledge",
+    "emotional",
+    "prayer",
+    "memory",
+    "correction",
+    "follow_up",
+    "scripture_only",
+    "history_only",
+    "fallback",
+    "provider_error"
+  ],
+  "instrumentation": "post-response setImmediate captureTurnInstrumentation + grounding + shadow + cost",
+  "coverage": "ACTIVE for /buddy/chat success path; error path emits via responseGuarantee/live capture; streaming uses separate route",
+  "gap": "streaming/timeout-specific FEL events still thinner than chat success path"
+}

@@ -1,0 +1,9 @@
+{
+  "title": "PredictionRecord",
+  "required": [
+    "predictionId",
+    "probabilityBand",
+    "numericProbabilityShown",
+    "mode"
+  ]
+}

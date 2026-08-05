@@ -1,0 +1,8 @@
+{
+  "secretsStored": false,
+  "defaultTelemetry": "ANONYMIZED_TELEMETRY",
+  "feedbackAuth": "checkAdminAuth fail-closed",
+  "companionCannotMutateAdmin": true,
+  "fingerprints": "sha256 truncated",
+  "rawPrivateMinimized": true
+}

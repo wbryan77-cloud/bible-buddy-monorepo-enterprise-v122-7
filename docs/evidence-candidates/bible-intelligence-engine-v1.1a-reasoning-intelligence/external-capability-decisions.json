@@ -1,0 +1,24 @@
+{
+  "openaiEvalsGraders": {
+    "claim": "OpenAI Evals platform deprecated",
+    "status": "SUPPORTED_AND_NARROWED",
+    "official": "https://developers.openai.com/api/docs/deprecations",
+    "announced": "2026-06-03",
+    "readOnly": "2026-10-31",
+    "shutdown": "2026-11-30",
+    "scope": "Evals dashboard/API and graders used in eval workflows \u2014 not all OpenAI evaluation concepts",
+    "adoption": "REJECTED \u2014 build internal registry; privacy + vendor lifecycle"
+  },
+  "otelGenAI": {
+    "adoption": "DESIGN_REFERENCE"
+  },
+  "langsmith": {
+    "adoption": "DESIGN_REFERENCE"
+  },
+  "pgVector": {
+    "adoption": "DEFERRED"
+  },
+  "openaiVectorStore": {
+    "adoption": "REJECTED_FOR_AUTHORITY"
+  }
+}

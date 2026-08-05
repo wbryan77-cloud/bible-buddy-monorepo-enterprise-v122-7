@@ -1,0 +1,5 @@
+{
+  "maxSynchronousLearningOverheadMs": 5,
+  "dailyEvaluationBudgetUsd": 5,
+  "qualityFirst": true
+}

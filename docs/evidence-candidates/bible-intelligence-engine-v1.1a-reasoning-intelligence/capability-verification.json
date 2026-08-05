@@ -1,0 +1,67 @@
+{
+  "asOf": "2026-08-05T01:01:14.091101+00:00",
+  "preChangeSha": "5499149",
+  "components": {
+    "experienceEventLedger": {
+      "class": "PRODUCTION_ACTIVE_BUT_INCOMPLETE",
+      "note": "v1.1 FILE JSONL; v1.1A dual-writes durable doc"
+    },
+    "experienceTraceAdapter": {
+      "class": "PRODUCTION_ACTIVE",
+      "note": "async post-response from buddy.js"
+    },
+    "learningRecordStore": {
+      "class": "PRODUCTION_ACTIVE_BUT_INCOMPLETE",
+      "note": "v1.1 FILE; v1.1A durable upsert"
+    },
+    "founderExperienceFeedback": {
+      "class": "PRODUCTION_ACTIVE",
+      "note": "admin-auth API"
+    },
+    "evaluationRegistry": {
+      "class": "PRODUCTION_ACTIVE",
+      "note": "file registry + durable calibration runs"
+    },
+    "claimGroundingEvaluator": {
+      "class": "SHADOW_ONLY",
+      "note": "async evaluator; not user-visible"
+    },
+    "retrievalShadowLab": {
+      "class": "SHADOW_ONLY"
+    },
+    "experienceWatchers": {
+      "class": "SHADOW_ONLY",
+      "mutating": false
+    },
+    "founderExperienceDurableStore": {
+      "class": "PRODUCTION_ACTIVE",
+      "backend": "POSTGRES when DATABASE_URL"
+    },
+    "discoveryEngine": {
+      "class": "SHADOW_ONLY"
+    },
+    "relationshipProjection": {
+      "class": "SHADOW_ONLY"
+    },
+    "causalHypothesisEngine": {
+      "class": "SHADOW_ONLY"
+    },
+    "predictiveRiskEngine": {
+      "class": "SHADOW_ONLY"
+    },
+    "recommendationIntelligence": {
+      "class": "SHADOW_ONLY"
+    },
+    "costLedger": {
+      "class": "PRODUCTION_ACTIVE",
+      "note": "async estimates"
+    },
+    "evaluatorCalibration": {
+      "class": "TEST_ONLY",
+      "note": "seed calibration suite"
+    },
+    "adminBriefingGenerator.founderExperience": {
+      "class": "PRODUCTION_ACTIVE"
+    }
+  }
+}

@@ -233,6 +233,13 @@ async function handleBuddyChat({ body, res, requestId }) {
         requestId,
         persist: true,
       });
+      const { recordTurnCost } = require('../services/costLedger');
+      recordTurnCost({
+        requestId,
+        route: reply?.runtime?.masterRoute || null,
+        runtime: reply?.runtime || {},
+        latencyMs,
+      }).catch(() => {});
     } catch (felErr) {
       console.warn('[founderExperience] instrumentation skipped:', felErr.message);
     }

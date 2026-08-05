@@ -1,0 +1,9 @@
+{
+  "mode": "SHADOW",
+  "discoveries": 27,
+  "edges": 70,
+  "hypotheses": 27,
+  "predictions": 16,
+  "recommendations": 19,
+  "productionMutation": false
+}

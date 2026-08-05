@@ -1,0 +1,12 @@
+{
+  "factors": [
+    "userImpact",
+    "founderImpact",
+    "recurrence",
+    "severity",
+    "confidence",
+    "reversibility",
+    "evidenceCompleteness"
+  ],
+  "suppressUnchangedRejections": true
+}

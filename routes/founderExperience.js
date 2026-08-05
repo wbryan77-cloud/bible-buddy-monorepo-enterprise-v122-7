@@ -13,6 +13,15 @@ const { getEvaluationRegistry, listEvaluators } = require('../services/evaluatio
 const { runRecurringFailureWatcher } = require('../services/experienceWatchers');
 const { runRetrievalShadowCompare } = require('../services/retrievalShadowLab');
 const { evaluateClaimGrounding } = require('../services/claimGroundingEvaluator');
+const { runDiscoveryPass } = require('../services/discoveryEngine');
+const { buildRelationshipProjection } = require('../services/relationshipProjection');
+const { runHypothesisPass } = require('../services/causalHypothesisEngine');
+const { runPredictiveRiskPass } = require('../services/predictiveRiskEngine');
+const { buildRankedRecommendations } = require('../services/recommendationIntelligence');
+const { runCalibrationSuite } = require('../services/evaluatorCalibration');
+const { buildCostBaseline, BUDGET_POLICY } = require('../services/costLedger');
+const { getStatus: getDurableStatus } = require('../services/founderExperienceDurableStore');
+const { readExperienceEventsDurable } = require('../services/experienceEventLedger');
 
 const router = express.Router();
 
@@ -110,6 +119,54 @@ router.post('/grounding/evaluate', (req, res) => {
       persist: body.persist !== false,
     }),
   );
+});
+
+router.get('/durable/status', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  res.json({ ok: true, status: getDurableStatus() });
+});
+
+router.get('/durable/events', async (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  try {
+    const out = await readExperienceEventsDurable({
+      limit: Math.min(Number(req.query.limit || 100), 500),
+      eventType: req.query.eventType || null,
+      traceId: req.query.traceId || null,
+    });
+    res.json({ ok: true, ...out });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
+router.post('/intelligence/run', async (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  try {
+    const discoveries = runDiscoveryPass({ persist: true });
+    const relationships = buildRelationshipProjection({ persist: true });
+    const hypotheses = runHypothesisPass({ persist: true });
+    const predictions = runPredictiveRiskPass({ persist: true });
+    const recommendations = await buildRankedRecommendations({ persist: true });
+    const calibration = runCalibrationSuite({ persist: true });
+    const cost = await buildCostBaseline();
+    res.json({
+      ok: true,
+      mode: 'SHADOW',
+      productionMutation: false,
+      durable: getDurableStatus(),
+      discoveries,
+      relationships,
+      hypotheses,
+      predictions,
+      recommendations,
+      calibration,
+      cost,
+      budgetPolicy: BUDGET_POLICY,
+    });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
 });
 
 module.exports = router;

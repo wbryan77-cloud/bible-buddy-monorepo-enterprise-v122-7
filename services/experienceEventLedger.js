@@ -155,6 +155,17 @@ function appendExperienceEvent(input = {}) {
       },
     };
     fs.appendFileSync(LEDGER_PATH, `${JSON.stringify(event)}\n`, 'utf8');
+    // v1.1A — durable projection (Postgres bible_buddy_documents when available)
+    setImmediate(() => {
+      try {
+        const { appendItem, DOC, MAX } = require('./founderExperienceDurableStore');
+        appendItem(DOC.experienceEvents, event, MAX.experienceEvents).catch((err) => {
+          console.warn('[experienceEventLedger] durable append failed:', err.message);
+        });
+      } catch (err) {
+        console.warn('[experienceEventLedger] durable wire failed:', err.message);
+      }
+    });
     return { ok: true, event };
   } catch (e) {
     console.warn('[experienceEventLedger] append failed:', e.message);
@@ -175,10 +186,37 @@ function readExperienceEvents({ limit = 200, eventType = null, traceId = null } 
   }
 }
 
+async function readExperienceEventsDurable({ limit = 200, eventType = null, traceId = null } = {}) {
+  const { readItems, DOC } = require('./founderExperienceDurableStore');
+  const durable = await readItems(DOC.experienceEvents);
+  let rows = durable.items || [];
+  if (eventType) rows = rows.filter((r) => r.eventType === String(eventType).toUpperCase());
+  if (traceId) rows = rows.filter((r) => r.traceId === traceId || r.turnId === traceId);
+  return {
+    backend: durable.backend,
+    durable: durable.durable,
+    events: rows.slice(-Math.max(1, limit)),
+  };
+}
+
 function reconstructTraceLineage(traceId) {
   const events = readExperienceEvents({ limit: 2000, traceId });
   return {
     traceId,
+    eventCount: events.length,
+    eventTypes: events.map((e) => e.eventType),
+    releaseCommits: [...new Set(events.map((e) => e.releaseCommit).filter(Boolean))],
+    finalResponseOwners: [...new Set(events.map((e) => e.finalResponseOwner).filter(Boolean))],
+    events,
+  };
+}
+
+async function reconstructTraceLineageDurable(traceId) {
+  const { events, backend, durable } = await readExperienceEventsDurable({ limit: 5000, traceId });
+  return {
+    traceId,
+    backend,
+    durable,
     eventCount: events.length,
     eventTypes: events.map((e) => e.eventType),
     releaseCommits: [...new Set(events.map((e) => e.releaseCommit).filter(Boolean))],
@@ -193,7 +231,9 @@ module.exports = {
   LEDGER_PATH,
   appendExperienceEvent,
   readExperienceEvents,
+  readExperienceEventsDurable,
   reconstructTraceLineage,
+  reconstructTraceLineageDurable,
   fingerprint,
   redactExcerpt,
   anonymizedSessionKey,

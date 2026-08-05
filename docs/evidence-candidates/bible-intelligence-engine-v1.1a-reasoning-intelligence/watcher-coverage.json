@@ -1,0 +1,10 @@
+{
+  "defaultMode": "SHADOW",
+  "autonomousMutation": false,
+  "families": [
+    "QUALITY_DRIFT",
+    "REPEATED_FAILURE",
+    "COST_DRIFT",
+    "RETRIEVAL_DRIFT"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "CausalHypothesis",
+  "required": [
+    "hypothesisId",
+    "discoveryId",
+    "falsificationCondition",
+    "alternativeExplanations"
+  ]
+}
