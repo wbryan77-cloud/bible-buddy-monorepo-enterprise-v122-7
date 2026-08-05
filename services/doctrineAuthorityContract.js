@@ -230,19 +230,26 @@ const BASE_CONTRACTS = {
   resurrection: {
     topic: 'resurrection',
     strictMode: true,
+    // Chronology witnesses already present in deathResurrectionKingdomCatalog / deathState.card.
     approvedWitnesses: [
-      '1 Corinthians 15',
-      '1 Thessalonians 4:13-16',
+      'Revelation 20:4-6',
+      'Revelation 20:5',
+      'John 5:28-29',
+      '1 Thessalonians 4:13-17',
+      '1 Corinthians 15:51-54',
       'Daniel 12:2',
-      'John 11:25',
       'Acts 24:15',
     ],
-    supportingWitnesses: ['John 11:11-14'],
+    supportingWitnesses: ['John 11:25', 'John 11:11-14', 'Revelation 20:11-15', '1 Corinthians 15'],
     cautionWitnesses: [],
     prohibitedWitnesses: [],
-    commonMisreadings: ['Immediate conscious existence after death without resurrection'],
+    commonMisreadings: [
+      'Immediate conscious existence after death without resurrection',
+      'Collapsing first/second resurrection chronology into Jesus’ personal Gospel resurrection only',
+      'Answering “rest of the dead” with death-state sleep instead of Revelation 20:5',
+    ],
     requiredConclusion:
-      'Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead.',
+      'Scripture distinguishes Jesus’ resurrection from the resurrection of the dead: Revelation 20 describes a first resurrection of those who reign with Christ a thousand years, and says the rest of the dead lived not again until the thousand years were finished; John 5 and Daniel 12 also speak of resurrection unto life and unto judgment.',
     forbiddenPhrases: [...FORBIDDEN_PHRASES],
     minimumWitnessCount: 2,
     yesNoDirectnessRequired: false,

@@ -153,6 +153,62 @@ function buildDeathStateFinalAnswer() {
   };
 }
 
+/**
+ * V1.3A — resurrection chronology from existing governed witnesses.
+ * Focuses conclusion by current message; does not hard-code Founder wording.
+ */
+function buildResurrectionFinalAnswer(message = '', contract = null) {
+  const c = contract || BASE_CONTRACTS.resurrection;
+  const m = String(message || '');
+  const baseConclusion =
+    c.requiredConclusion ||
+    'Scripture distinguishes Jesus’ resurrection from the resurrection of the dead: Revelation 20 describes a first resurrection of those who reign with Christ a thousand years, and says the rest of the dead lived not again until the thousand years were finished; John 5 and Daniel 12 also speak of resurrection unto life and unto judgment.';
+
+  const chronologyWitnesses = [
+    'Revelation 20:4-6',
+    'Revelation 20:5',
+    'John 5:28-29',
+    '1 Thessalonians 4:13-17',
+    '1 Corinthians 15:51-54',
+    'Daniel 12:2',
+    'Acts 24:15',
+  ];
+
+  let finalConclusion = baseConclusion;
+  let focusWitnesses = chronologyWitnesses.slice();
+
+  if (/\brest of the dead\b/i.test(m)) {
+    finalConclusion =
+      'Revelation 20:5 says the rest of the dead lived not again until the thousand years were finished; that is distinct from the first resurrection of those who reign with Christ.';
+    focusWitnesses = ['Revelation 20:5', 'Revelation 20:4-6', 'John 5:28-29', 'Daniel 12:2'];
+  } else if (/\b(what do (they|those|the (saints|righteous|people)) do|after (they|the saints) (are )?raised|reign with)\b/i.test(m)) {
+    finalConclusion =
+      'Those of the first resurrection are gathered to Christ and reign with Him; Revelation 20:4-6 and 1 Thessalonians 4 describe that hope.';
+    focusWitnesses = ['Revelation 20:4-6', '1 Thessalonians 4:13-17', '1 Corinthians 15:51-54', 'Revelation 20:5'];
+  } else if (/\bfirst resurrection\b/i.test(m)) {
+    finalConclusion =
+      'In the first resurrection, God’s people who are Christ’s are raised to life and reign with Him; Revelation 20:4-6 calls this the first resurrection, with 1 Thessalonians 4 and 1 Corinthians 15 describing the gathering of the dead in Christ.';
+    focusWitnesses = ['Revelation 20:4-6', '1 Thessalonians 4:13-17', '1 Corinthians 15:51-54', 'John 5:28-29'];
+  } else if (/\bsecond resurrection\b/i.test(m) || /\braised again\b/i.test(m)) {
+    finalConclusion =
+      'Scripture does not teach that the same first-resurrection saints are raised again in the second; Revelation 20 distinguishes the first resurrection from the rest of the dead who live after the thousand years, and John 5 / Daniel 12 speak of resurrection unto life and unto judgment.';
+    focusWitnesses = ['Revelation 20:4-6', 'Revelation 20:5', 'John 5:28-29', 'Daniel 12:2'];
+  } else if (/\bhow many resurrections\b/i.test(m) || /\bresurrection chronology\b/i.test(m)) {
+    finalConclusion =
+      'Scripture speaks of Jesus’ resurrection and of the resurrection of the dead in ordered witness: a first resurrection of the righteous who reign with Christ, and the rest of the dead afterward (Revelation 20; John 5; Daniel 12) — not a single collapsed answer.';
+    focusWitnesses = ['Revelation 20:4-6', 'Revelation 20:5', 'John 5:28-29', 'Daniel 12:2', '1 Thessalonians 4:13-17'];
+  }
+
+  const witnessText = focusWitnesses.slice(0, 4).join('; ');
+  return {
+    finalConclusion,
+    reply: `Direct answer: ${finalConclusion} Scripture witnesses: ${witnessText}.`,
+    scriptureWitnesses: focusWitnesses,
+    topic: 'resurrection',
+    chronologyFocus: true,
+  };
+}
+
 function buildGenericFinalAnswer(topic, contract) {
   const witnesses = (contract.approvedWitnesses || []).slice(0, 4);
   const witnessText = witnesses.join('; ');
@@ -172,6 +228,7 @@ function buildFinalAuthorityAnswer({ topic, contract, userId, message = '' } = {
   if (topic === 'acts_10') base = buildActs10FinalAnswer();
   else if (topic === 'death_state') base = buildDeathStateFinalAnswer();
   else if (topic === 'dietary_law') base = buildDietaryLawFinalAnswer(message);
+  else if (topic === 'resurrection') base = buildResurrectionFinalAnswer(message, c);
   else if (topic === 'kingdom' && detectKingdomOnEarthTopic(message)) base = buildKingdomOnEarthFinalAnswer(message);
   else base = buildGenericFinalAnswer(topic, c);
 
@@ -241,25 +298,52 @@ function buildDoctrineDecisionContract(authority = {}, evidencePack = null, mess
   };
 }
 
-function pickWitnessPresentation(authority, packet, limit = 4) {
+function isGospelDiscoveryWitness(ref = '') {
+  const r = String(ref || '').toLowerCase();
+  return /\b(matthew\s*12:40|matthew\s*27|matthew\s*28|mark\s*16|luke\s*24|john\s*20)\b/.test(r);
+}
+
+function pickWitnessPresentation(authority, packet, limit = 4, message = '') {
   const witnesses = authority.scriptureWitnesses || authority.allowedWitnesses || [];
   const roles = Array.isArray(packet?.passageRoles) ? packet.passageRoles : [];
-  // Prefer packet-ordered / role-ranked witnesses; never expose role schema names to users.
+  const chronologyFocus =
+    authority.topic === 'resurrection' &&
+    (authority.chronologyFocus ||
+      /\b(first resurrection|second resurrection|rest of the dead|how many resurrections|resurrection chronology|reign with)\b/i.test(
+        String(message || ''),
+      ));
+
   const ranked = [];
   const seen = new Set();
+
+  // For resurrection chronology, prefer contract/authority witnesses first so Gospel
+  // discovery packet roles cannot hijack first/second-resurrection answers.
+  if (chronologyFocus) {
+    for (const w of witnesses) {
+      if (ranked.length >= limit) break;
+      const key = String(w);
+      if (isGospelDiscoveryWitness(key)) continue;
+      if (seen.has(key.toLowerCase())) continue;
+      seen.add(key.toLowerCase());
+      ranked.push(key);
+    }
+  }
+
   for (const role of roles) {
+    if (ranked.length >= limit) break;
     const ref = String(role.reference || '').trim();
     if (!ref) continue;
+    if (chronologyFocus && isGospelDiscoveryWitness(ref)) continue;
     const hit = witnesses.find((w) => {
       const wNorm = String(w).toLowerCase();
       const rNorm = ref.toLowerCase();
       return wNorm.includes(rNorm) || rNorm.includes(wNorm) || wNorm.startsWith(rNorm.slice(0, 12));
     });
     const key = String(hit || ref);
+    if (chronologyFocus && !hit && isGospelDiscoveryWitness(key)) continue;
     if (seen.has(key.toLowerCase())) continue;
     seen.add(key.toLowerCase());
     ranked.push(key);
-    if (ranked.length >= limit) break;
   }
   for (const w of witnesses) {
     if (ranked.length >= limit) break;
@@ -290,7 +374,7 @@ function composeDeterministicDoctrineReply({
   const msg = String(message || '');
   const conclusion = authority.finalConclusion;
   const witnessLimit = decision.responseRequirements.shortAnswer ? 2 : decision.responseRequirements.goDeeper ? 6 : 4;
-  const witnessLines = pickWitnessPresentation(authority, packet, witnessLimit);
+  const witnessLines = pickWitnessPresentation(authority, packet, witnessLimit, msg);
   const witnessBlock = witnessLines.length ? `Scripture witnesses: ${witnessLines.join('; ')}.` : '';
 
   let usedPacketComposition = false;
@@ -473,4 +557,5 @@ module.exports = {
   buildActs10FinalAnswer,
   buildDeathStateFinalAnswer,
   buildDietaryLawFinalAnswer,
+  buildResurrectionFinalAnswer,
 };

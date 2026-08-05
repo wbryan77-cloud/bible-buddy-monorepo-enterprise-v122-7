@@ -124,7 +124,18 @@ function detectKingdomOnEarthTopic(message = '') {
   return matchesAny(message, KINGDOM_ON_EARTH_PATTERNS);
 }
 
+function detectResurrectionChronologyTopic(message = '') {
+  const m = String(message || '');
+  if (!m) return false;
+  // Saint / Revelation chronology — not death-state sleep and not Jesus Gospel discovery timing.
+  return /\b(first resurrection|second resurrection|rest of the dead|how many resurrections|resurrection chronology|thousand years|reign with christ|dead in christ)\b/i.test(
+    m,
+  ) || (/\bresurrection\b/i.test(m) && /\b(revelation\s*20|john\s*5:28|daniel\s*12:2)\b/i.test(m));
+}
+
 function detectDeathStateTopic(message = '') {
+  // Chronology asks about the rest of the dead / first resurrection must not take death_state sleep.
+  if (detectResurrectionChronologyTopic(message)) return false;
   if (matchesAny(message, DEATH_STATE_PATTERNS)) {
     if (/\bresurrection\b/i.test(message) && !/\b(death|die|dead|asleep|sleep)\b/i.test(message)) {
       return false;
@@ -137,6 +148,8 @@ function detectDeathStateTopic(message = '') {
 function detectResurrectionTimelineTopic(message = '') {
   const m = String(message || '').toLowerCase();
   if (!m) return false;
+  // Saint / Revelation chronology is owned by the resurrection doctrine contract.
+  if (detectResurrectionChronologyTopic(message)) return false;
   // Timing / Gospel-account questions must not collapse into "resurrection hope / death sleep".
   if (
     /\b(three days and three nights|matthew\s*12:40|matthew\s*28|mark\s*16|luke\s*24|john\s*20|first day of the week|already risen|empty tomb|rose sunday|rise sunday|sunday morning|before the first day|discovery of the (empty )?tomb|when (mary|the women) (reached|came|arrived)|friday afternoon to sunday)\b/i.test(
@@ -161,6 +174,8 @@ function detectStrictTopicFromMessage(message = '') {
 
   if (detectActs10Topic(m)) return 'acts_10';
   if (detectDietaryTopic(m)) return 'dietary_law';
+  // Chronology before death_state so "rest of the dead" is not sleep-pack hijacked.
+  if (detectResurrectionChronologyTopic(m)) return 'resurrection';
   if (detectDeathStateTopic(m)) return 'death_state';
 
   if (detectKingdomOnEarthTopic(m)) return 'kingdom';
@@ -186,5 +201,6 @@ module.exports = {
   detectDeathStateTopic,
   detectKingdomOnEarthTopic,
   detectResurrectionTimelineTopic,
+  detectResurrectionChronologyTopic,
   KINGDOM_ON_EARTH_PATTERNS,
 };

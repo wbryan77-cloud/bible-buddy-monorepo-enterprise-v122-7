@@ -1,5 +1,5 @@
 {
-  "status": "RESURRECTION_REPAIR_APPROVAL_REQUIRED",
+  "status": "IMPLEMENTATION_IN_PROGRESS",
   "decision": "EVIDENCE_SUFFICIENT_FOR_REPAIR",
   "behaviorFamily": "resurrection_chronology",
   "firstIncorrectStage": "DOCTRINE_CONTRACT",
@@ -19,5 +19,6 @@
   "rollback": "git revert <impl-sha>",
   "resumeAt": "STAGE_3_OBJECTIVE_7",
   "baselineSHA": "72bd8df",
-  "awaiting": "APPROVE | REJECT | DEFER | NEEDS_MORE_EVIDENCE"
+  "awaiting": "APPROVE | REJECT | DEFER | NEEDS_MORE_EVIDENCE",
+  "founderDecision": "APPROVE"
 }
