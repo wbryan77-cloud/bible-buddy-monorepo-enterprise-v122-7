@@ -1,4 +1,6 @@
 {
-  "pre": "41b3b44",
-  "post": "PENDING_DEPLOY"
+  "LOCAL_SHA": "34fe95c",
+  "ORIGIN_MAIN_SHA": "34fe95c",
+  "HEALTH_RELEASE_COMMIT": "34fe95c",
+  "parity": true
 }

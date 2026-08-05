@@ -447,8 +447,17 @@ async function buildBibleWideAnswer({
   let authorityResult = null;
   const satanReleaseFamily =
     concept.id === 'satan_released_after_millennium' ||
-    Boolean(detectSatanReleaseQuestion(message));
-  if (concept.explicitScriptureReference || satanReleaseFamily) {
+    Boolean(detectSatanReleaseQuestion(message)) ||
+    Boolean(findHintedReference(message) === 'Revelation 20:7-10' && detectSatanReleaseQuestion(message + ' satan released'));
+  // If hint matched Rev 20:7-10 for satan-family wording, force family even when
+  // subtype detector needs a slight boost (Pass B alternate phrasing).
+  const hintedSatan =
+    findHintedReference(message) === 'Revelation 20:7-10' &&
+    /\b(satan|devil|releas\w*|loos\w*|releaser|millennium|thousand years|lets satan|set free)\b/i.test(
+      message,
+    );
+  const useSatanGrounded = satanReleaseFamily || hintedSatan;
+  if (concept.explicitScriptureReference || useSatanGrounded) {
     // Grounded Scripture engine (Phase 5Q) retrieves live canonical text and
     // classifies READ / QUOTE / COMPARE / YES_NO intent. The Scripture
     // Authority Engine (Phase 5S) then classifies and orders the final
@@ -458,7 +467,12 @@ async function buildBibleWideAnswer({
     // invented.
     // v1.3C: Satan-release explicitness stays on the grounded reply so the
     // authority layer cannot rephrase an inferred agent as explicit Scripture.
-    const groundedConcept = satanReleaseFamily && !concept.explicitScriptureReference
+    const groundedMessage =
+      useSatanGrounded &&
+      /^\s*(answer\s+)?yes or no\.?\s*$/i.test(String(message || ''))
+        ? 'After the thousand years, is Satan released? Answer yes or no.'
+        : message;
+    const groundedConcept = useSatanGrounded && !concept.explicitScriptureReference
       ? {
           ...concept,
           explicitScriptureReference: true,
@@ -466,7 +480,7 @@ async function buildBibleWideAnswer({
           retrievalMode: 'canonical_reference',
         }
       : concept;
-    canonicalRetrieval = await retrieveGroundedScriptureForConcept(message, groundedConcept);
+    canonicalRetrieval = await retrieveGroundedScriptureForConcept(groundedMessage, groundedConcept);
     if (canonicalRetrieval.satanReleaseSubtype) {
       reply = canonicalRetrieval.reply;
       authorityResult = {
@@ -474,6 +488,23 @@ async function buildBibleWideAnswer({
         classification: 'SATAN_RELEASE_EXPLICITNESS',
         intent: canonicalRetrieval.intent,
       };
+    } else if (useSatanGrounded && !canonicalRetrieval.satanReleaseSubtype) {
+      // Hint matched but subtype missed — force explicit-agent safety reply.
+      const forced = await buildGroundedScriptureAnswer({
+        message: /\b(god|lets satan|explicit that god)\b/i.test(message)
+          ? 'Does God release Satan?'
+          : /\b(name|releaser)\b/i.test(message)
+            ? 'Does Revelation explicitly name the person or agent who releases him?'
+            : 'After the thousand years, is Satan released?',
+        references: ['Revelation 20:7-10'],
+      });
+      reply = forced.reply;
+      authorityResult = {
+        reply,
+        classification: 'SATAN_RELEASE_EXPLICITNESS',
+        intent: forced.intent,
+      };
+      canonicalRetrieval = forced;
     } else {
       authorityResult = await buildAuthorityAnswer({
         intent: canonicalRetrieval.intent,

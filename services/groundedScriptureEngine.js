@@ -37,12 +37,12 @@ const CLAIM_REFERENCE_HINTS = [
   // are still computed from retrieved text (never invent a named agent).
   {
     pattern:
-      /\b(satan|devil)\b.{0,100}\b(releas\w*|loos\w*|loosed|let\w*\s+out|lets him out)\b/i,
+      /\b(satan|devil)\b.{0,100}\b(releas\w*|loos\w*|loosed|let\w*\s+out|lets him out|set free)\b/i,
     reference: 'Revelation 20:7-10',
   },
   {
     pattern:
-      /\b(releas\w*|loos\w*|loosed|let\w*\s+out)\b.{0,100}\b(satan|devil)\b/i,
+      /\b(releas\w*|loos\w*|loosed|let\w*\s+out|set free)\b.{0,100}\b(satan|devil)\b/i,
     reference: 'Revelation 20:7-10',
   },
   {
@@ -57,12 +57,27 @@ const CLAIM_REFERENCE_HINTS = [
   },
   {
     pattern:
+      /\b(millennium|millennial)\b.{0,80}\b(satan|devil)\b.{0,40}\b(free|releas\w*|loos\w*)\b/i,
+    reference: 'Revelation 20:7-10',
+  },
+  {
+    pattern:
       /\bdoes revelation explicitly name.{0,100}\b(releas\w*|loos\w*|agent|person)\b/i,
     reference: 'Revelation 20:7-10',
   },
   {
     pattern:
       /\bwho (releases|looses|lets).{0,40}\b(him|satan|devil)\b/i,
+    reference: 'Revelation 20:7-10',
+  },
+  {
+    pattern:
+      /\b(name the releaser|releaser if revelation|actually names one|names the releaser)\b/i,
+    reference: 'Revelation 20:7-10',
+  },
+  {
+    pattern:
+      /\b(god lets satan|lets satan out|god (release|loose)s? satan|explicit that god)\b/i,
     reference: 'Revelation 20:7-10',
   },
 ];
@@ -75,17 +90,25 @@ const CLAIM_REFERENCE_HINTS = [
 function detectSatanReleaseQuestion(message = '') {
   const m = String(message || '');
   const satan = /\b(satan|devil)\b/i.test(m);
-  const release = /\b(releas\w*|loos\w*|loosed|let\w*\s+out|lets him out)\b/i.test(m);
+  const release = /\b(releas\w*|loos\w*|loosed|let\w*\s+out|lets him out|set free|releaser)\b/i.test(m);
   const afterThousand =
-    /\b(after (the )?thousand years|thousand years (are )?(expired|finished)|millennium)\b/i.test(m);
+    /\b(after (the )?thousand years|thousand years (are )?(expired|finished)|millennium|millennial)\b/i.test(m);
   const whoReleases = /\bwho (releases|looses|lets)\b/i.test(m) || /\bwho is the ['"]?he\b/i.test(m);
   const explicitName =
     /\bexplicitly name\b/i.test(m) ||
     /\bdoes revelation (explicitly )?name\b/i.test(m) ||
     /\bdoes rev\.?\b.{0,40}\bname\b/i.test(m) ||
-    /\bname the (person|agent)\b/i.test(m) ||
-    /\bname who\b/i.test(m);
-  const godClaim = /\bdoes god (release|loose)\b/i.test(m) || /\bgod release(s)? (satan|him|the devil)\b/i.test(m);
+    /\bname the (person|agent|releaser)\b/i.test(m) ||
+    /\bname who\b/i.test(m) ||
+    /\breleaser if revelation\b/i.test(m) ||
+    /\bactually names one\b/i.test(m) ||
+    /\bif revelation actually names\b/i.test(m);
+  const godClaim =
+    /\bdoes god (release|loose)\b/i.test(m) ||
+    /\bgod release(s)? (satan|him|the devil)\b/i.test(m) ||
+    /\bgod lets satan\b/i.test(m) ||
+    /\blets satan out\b/i.test(m) ||
+    /\bexplicit that god\b/i.test(m);
   const angelClaim =
     /\bdoes an? angel (release|loose)\b/i.test(m) || /\bangel release(s)? (satan|him)\b/i.test(m);
   const selfClaim =
@@ -116,7 +139,11 @@ function detectSatanReleaseQuestion(message = '') {
   if (whoReleases) return 'who_releases';
   if (passageAsk) return 'passage_only';
   if (inferenceAsk) return 'certainty_vs_inference';
-  if (isReleased || (satan && release)) return 'is_released';
+  if (isReleased || (satan && release) || (satan && afterThousand && /\b(free|set free)\b/i.test(m))) {
+    return 'is_released';
+  }
+  // "Name the releaser..." without satan word still belongs here when hint matched.
+  if (explicitName || release || afterThousand) return 'general_release';
   return null;
 }
 

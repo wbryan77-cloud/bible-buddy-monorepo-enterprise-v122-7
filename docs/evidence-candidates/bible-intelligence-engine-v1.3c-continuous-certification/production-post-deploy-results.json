@@ -1,7 +1,288 @@
 {
-  "family": "satan_release_explicitness",
-  "state": "TO_BE_FILLED",
-  "reason": "Repair is locally validated but no post-deploy production probe has been run.",
-  "required_fields": ["production_sha", "health_sha", "replay_turns_1_17", "critical_score", "raw_evidence_path", "timestamp"],
-  "acceptance": "No asserted named releasing agent; no Matthew 6:10 kingdom hijack; resurrection chronology retained."
+  "uid": "v13c-post-05ad4205",
+  "production_sha": "34fe95c",
+  "phase": "post_deploy",
+  "turns": [
+    {
+      "n": 1,
+      "q": "After the thousand years, is Satan released?",
+      "reply": "Yes. Revelation 20:7-10 says: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them. And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.\" Revelation states that Satan shall be loosed after the thousand years.",
+      "flags": {
+        "starts_yes_no": true,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 2,
+      "q": "Answer yes or no.",
+      "reply": "Yes. Scripture does not state that directly.",
+      "flags": {
+        "starts_yes_no": true,
+        "mentions_rev20": false,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 3,
+      "q": "Who releases him?",
+      "reply": "Revelation 20:7-10 says: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them. And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.\" Revelation says Satan shall be loosed; it does not explicitly name who looses him. Revelation 20:1-3 earlier describes an angel binding Satan; applying that binding agent to the later release is inference, not the wording of the release statement.",
+      "flags": {
+        "starts_yes_no": false,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": true
+      }
+    },
+    {
+      "n": 4,
+      "q": "Does Revelation explicitly name the person or agent who releases him?",
+      "reply": "No. Revelation 20:7-10 says: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them. And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.\" The release statement does not explicitly name the person or agent who looses him.",
+      "flags": {
+        "starts_yes_no": true,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": true
+      }
+    },
+    {
+      "n": 5,
+      "q": "What does the passage actually say?",
+      "reply": "Revelation 20:7-10 states: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them.\" This passage describes the releasing of Satan after the thousand years and his subsequent actions.",
+      "flags": {
+        "starts_yes_no": false,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 6,
+      "q": "Are you stating Scripture or inference?",
+      "reply": "I am stating Scripture. The references I've provided come directly from Revelation 20:7-10, which details the release of Satan after the thousand years.",
+      "flags": {
+        "starts_yes_no": false,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 7,
+      "q": "Who is the 'he' or implied actor?",
+      "reply": "In Revelation 20:7-10, the implied actor who releases Satan is not explicitly named. The verse states: \"And when the thousand years are expired, Satan shall be loosed out of his prison.\" Although the passage describes the action of Satan being loosed, it does not clarify who or what causes this release. Thus, the 'he' or implied actor remains unspecified in this context.",
+      "flags": {
+        "starts_yes_no": false,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": true
+      }
+    },
+    {
+      "n": 8,
+      "q": "Does God release Satan?",
+      "reply": "No \u2014 Scripture does not explicitly state that God releases Satan. Revelation 20:7-10 says: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them. And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.\" Naming God as the releasing agent is inference beyond the wording of this verse.",
+      "flags": {
+        "starts_yes_no": true,
+        "mentions_rev20": true,
+        "overclaims_god_releases": true,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": true
+      }
+    },
+    {
+      "n": 9,
+      "q": "Does an angel release Satan?",
+      "reply": "No \u2014 Revelation 20:7 does not name an angel as the one who releases Satan. Revelation 20:7-10 says: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them. And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.\" Revelation 20:1-3 earlier describes an angel binding Satan; applying that binding agent to the later release is inference, not the wording of the release statement.",
+      "flags": {
+        "starts_yes_no": true,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 10,
+      "q": "Does Satan release himself?",
+      "reply": "No. Revelation 20:7-10 says: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them. And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.\" The wording is that Satan shall be loosed \u2014 it does not say he releases himself.",
+      "flags": {
+        "starts_yes_no": true,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 11,
+      "q": "What can we say with certainty?",
+      "reply": "What we can say with certainty from Scripture, particularly Revelation 20:7-10, is that after the thousand years, Satan will be loosed from his prison. The passage explicitly states that he will deceive the nations and gather them for battle, although it does not clarify who or what causes this release. Hence, we know that Satan is released but not the agent responsible for that action.",
+      "flags": {
+        "starts_yes_no": false,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 12,
+      "q": "Give me the short answer.",
+      "reply": "No, Revelation does not specify who releases Satan after the thousand years.",
+      "flags": {
+        "starts_yes_no": true,
+        "mentions_rev20": false,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 13,
+      "q": "Give me Scripture only.",
+      "reply": "Revelation 20:7-10 states: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them.\"",
+      "flags": {
+        "starts_yes_no": false,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 14,
+      "q": "When is the first resurrection relative to the thousand years?",
+      "reply": "Direct answer: In the first resurrection, God\u2019s people who are Christ\u2019s are raised to life and reign with Him; Revelation 20:4-6 calls this the first resurrection, with 1 Thessalonians 4 and 1 Corinthians 15 describing the gathering of the dead in Christ. Scripture witnesses: Revelation 20:4-6; 1 Thessalonians 4:13-17; 1 Corinthians 15:51-54; John 5:28-29.",
+      "flags": {
+        "starts_yes_no": false,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 15,
+      "q": "Back to Satan's release after the thousand years \u2014 who releases him?",
+      "reply": "Revelation 20:7-10 says: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them. And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.\" Revelation says Satan shall be loosed; it does not explicitly name who looses him. Revelation 20:1-3 earlier describes an angel binding Satan; applying that binding agent to the later release is inference, not the wording of the release statement.",
+      "flags": {
+        "starts_yes_no": false,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": true
+      }
+    },
+    {
+      "n": 16,
+      "q": "Don't claim the text names God if it doesn't \u2014 correct that.",
+      "reply": "You're right to point that out. Revelation 20:7-10 does not specifically state that God is the one who releases Satan. It simply mentions that Satan shall be loosed from his prison after the thousand years without naming the agent of that action. Thank you for your patience as we clarify this point.",
+      "flags": {
+        "starts_yes_no": false,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": false
+      }
+    },
+    {
+      "n": 17,
+      "q": "after thousand years satan loosed who lets him out answer yes or no does rev name who",
+      "reply": "No. Revelation 20:7-10 says: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them. And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.\" The release statement does not explicitly name the person or agent who looses him.",
+      "flags": {
+        "starts_yes_no": true,
+        "mentions_rev20": true,
+        "overclaims_god_releases": false,
+        "clarifier": false,
+        "kingdom_hijack": false,
+        "says_not_named": true
+      }
+    }
+  ],
+  "critical": [
+    {
+      "id": "t1_yes_release",
+      "pass": true
+    },
+    {
+      "id": "t2_yes_no",
+      "pass": true
+    },
+    {
+      "id": "t3_no_god_overclaim",
+      "pass": true
+    },
+    {
+      "id": "t4_not_named",
+      "pass": true
+    },
+    {
+      "id": "t8_no_god_overclaim",
+      "pass": false
+    },
+    {
+      "id": "t9_no_god_overclaim",
+      "pass": true
+    },
+    {
+      "id": "t14_resurrection",
+      "pass": true
+    },
+    {
+      "id": "t15_return",
+      "pass": true
+    },
+    {
+      "id": "t17_no_kingdom_hijack",
+      "pass": true
+    }
+  ],
+  "passB": [
+    {
+      "n": 1,
+      "q": "Once the millennium ends, is the devil set free again? Yes or no.",
+      "reply": "Yes, the devil is set free again after the millennium. Revelation 20:7-8 states, \"And when the thousand years are expired, Satan shall be loosed out of his prison, and shall go out to deceive the nations...\" This indicates that he will be released to mislead the nations once more.",
+      "pass": true
+    },
+    {
+      "n": 2,
+      "q": "Name the releaser if Revelation actually names one.",
+      "reply": "The releaser named in the Book of Revelation is Satan. Revelation 20:7 states, \"And when the thousand years are expired, Satan shall be loosed out of his prison.\" This passage clearly identifies Satan as the one who is released after the millennium.",
+      "pass": false
+    },
+    {
+      "n": 3,
+      "q": "Is it explicit that God lets Satan out, or is that reading into the verse?",
+      "reply": "Yes, it is explicit that God lets Satan out. Revelation 20:7 states, \"And when the thousand years are expired, Satan shall be loosed out of his prison.\" This indicates that God allows Satan to be released after the millennium.",
+      "pass": false
+    }
+  ],
+  "critical_pass_rate": 0.8888888888888888,
+  "passB_pass_rate": 0.3333333333333333
 }
