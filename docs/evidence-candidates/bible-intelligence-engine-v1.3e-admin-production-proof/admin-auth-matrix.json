@@ -1,0 +1,400 @@
+{
+  "production_sha": "133c6bb",
+  "local_sha": "133c6bb",
+  "parity": true,
+  "security": {
+    "adminAuthConfigured": "PRESENT",
+    "token_in_health_payload": "NOT_DETECTED",
+    "probe_env_token": "PRESENT",
+    "authorized_with_probe_token": "MISMATCH",
+    "query_token_support": "DESIGNED_IN_MIDDLEWARE",
+    "hardcoded_token_in_admin_js": "NOT_DETECTED"
+  },
+  "matrix": [
+    {
+      "case": "no_token",
+      "path": "/api/founder-experience/mission-control/daily",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/api/founder-experience/mission-control/daily",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/api/founder-experience/mission-control/daily",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/api/founder-experience/mission-control/daily",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "no_token",
+      "path": "/api/founder-experience/mission-control/weekly",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/api/founder-experience/mission-control/weekly",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/api/founder-experience/mission-control/weekly",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/api/founder-experience/mission-control/weekly",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "no_token",
+      "path": "/api/founder-experience/learning-records",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/api/founder-experience/learning-records",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/api/founder-experience/learning-records",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/api/founder-experience/learning-records",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "no_token",
+      "path": "/api/founder-experience/events",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/api/founder-experience/events",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/api/founder-experience/events",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/api/founder-experience/events",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "no_token",
+      "path": "/api/founder-experience/durable/status",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/api/founder-experience/durable/status",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/api/founder-experience/durable/status",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/api/founder-experience/durable/status",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "no_token",
+      "path": "/admin/api/bible-authority/command-center",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/admin/api/bible-authority/command-center",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/admin/api/bible-authority/command-center",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/admin/api/bible-authority/command-center",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "no_token",
+      "path": "/admin/api/bible-authority/unified/overview",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/admin/api/bible-authority/unified/overview",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/admin/api/bible-authority/unified/overview",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/admin/api/bible-authority/unified/overview",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "no_token",
+      "path": "/admin/api/bible-authority/unified/decision-queue",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/admin/api/bible-authority/unified/decision-queue",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/admin/api/bible-authority/unified/decision-queue",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/admin/api/bible-authority/unified/decision-queue",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "no_token",
+      "path": "/admin/api/bible-authority/review-queue",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/admin/api/bible-authority/review-queue",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/admin/api/bible-authority/review-queue",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/admin/api/bible-authority/review-queue",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "no_token",
+      "path": "/admin/api/bible-authority/founder-intelligence/recommendations",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "wrong_token",
+      "path": "/admin/api/bible-authority/founder-intelligence/recommendations",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "malformed",
+      "path": "/admin/api/bible-authority/founder-intelligence/recommendations",
+      "status": 401,
+      "pass": true,
+      "result": "FAIL_CLOSED",
+      "error_generic": true,
+      "secret_in_error": false
+    },
+    {
+      "case": "probe_env_token",
+      "path": "/admin/api/bible-authority/founder-intelligence/recommendations",
+      "status": 401,
+      "pass": false,
+      "result": "MISMATCH_OR_DENIED",
+      "error_generic": true,
+      "secret_in_error": false
+    }
+  ],
+  "pages": [
+    {
+      "path": "/admin/login.html",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/admin/bible-authority.html",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/admin",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/chat.html",
+      "status": 200,
+      "pass": true
+    }
+  ],
+  "unauthorized_all_401": true,
+  "authorized_proven": false,
+  "blocker": "PROBE_TOKEN_MISMATCH_WITH_RENDER"
+}

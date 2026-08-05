@@ -1,0 +1,6 @@
+{
+  "revert": [
+    "server.js adminAuthConfigured field"
+  ],
+  "auth_middleware": "unchanged"
+}

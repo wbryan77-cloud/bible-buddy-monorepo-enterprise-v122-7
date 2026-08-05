@@ -1,0 +1,13 @@
+{
+  "repairs": [
+    {
+      "id": "adminAuthConfigured_health",
+      "state": "REPAIRED_AND_VALIDATED",
+      "sha": "133c6bb"
+    },
+    {
+      "id": "authorized_admin_proof",
+      "state": "BLOCKED_WITH_EXACT_REASON"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "adminAuthConfigured": "PRESENT",
+  "token_in_health_payload": "NOT_DETECTED",
+  "probe_env_token": "PRESENT",
+  "authorized_with_probe_token": "MISMATCH",
+  "query_token_support": "DESIGNED_IN_MIDDLEWARE",
+  "hardcoded_token_in_admin_js": "NOT_DETECTED"
+}
