@@ -371,6 +371,15 @@ function resolveConceptForMessage(message = '', userId = '') {
     lastBibleConcept: state.lastBibleConcept,
   };
 
+  // v1.3C — bare yes/no after a satan-release answer must continue that family.
+  if (
+    /^\s*(answer\s+)?yes or no\.?\s*$/i.test(String(message || '')) &&
+    (state.activeBibleConcept === 'satan_released_after_millennium' ||
+      state.lastAnsweredConcept === 'satan_released_after_millennium')
+  ) {
+    return getGraphNode('satan_released_after_millennium');
+  }
+
   const followUp = resolveFollowUpContext(message, context);
   if (followUp?.isActorQuestion) {
     return { actorFollowUp: followUp };
@@ -578,7 +587,16 @@ async function buildBibleWideAnswer({
   const allUsed = [...used, ...effectiveWitnesses];
 
   if (userId) {
-    setActiveBibleConcept(userId, concept.id, message, allUsed);
+    const persistId =
+      (typeof useSatanGrounded !== 'undefined' && useSatanGrounded) ||
+      canonicalRetrieval?.satanReleaseSubtype
+        ? 'satan_released_after_millennium'
+        : concept.id === 'explicit_scripture_reference' &&
+            (canonicalRetrieval?.satanReleaseSubtype ||
+              (effectiveWitnesses || []).some((r) => /Revelation\s*20:7/i.test(String(r))))
+          ? 'satan_released_after_millennium'
+          : concept.id;
+    setActiveBibleConcept(userId, persistId, message, allUsed);
   }
 
   return {

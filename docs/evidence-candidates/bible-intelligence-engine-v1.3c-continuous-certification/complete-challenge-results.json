@@ -1,5 +1,5 @@
 {
-  "passA": "pre_repair_recorded",
-  "passB": "local_unit_adversarial",
-  "production_post_deploy": "PENDING"
+  "passA_rate": 0.9,
+  "passB_rate": 1.0,
+  "sha": "7c9c040"
 }

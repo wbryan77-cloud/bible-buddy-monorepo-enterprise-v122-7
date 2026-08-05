@@ -242,6 +242,15 @@ function shouldUseActiveBibleConcept(message = '', context = {}) {
   if (matchesAny(m, STOP_RELEASE_PATTERNS)) return false;
   if (matchesAny(m, EMOTIONAL_SUPPORT_PATTERNS)) return false;
   if (matchesAny(m, MEMORY_RECALL_PATTERNS)) return false;
+  // v1.3C — bare yes/no continues satan-release explicitness family.
+  if (
+    /^\s*(answer\s+)?yes or no\.?\s*$/i.test(m) &&
+    (context.activeBibleConcept === 'satan_released_after_millennium' ||
+      context.lastAnsweredConcept === 'satan_released_after_millennium' ||
+      context.lastBibleConcept === 'satan_released_after_millennium')
+  ) {
+    return true;
+  }
   return CONTINUATION_PHRASE_RE.test(m);
 }
 
