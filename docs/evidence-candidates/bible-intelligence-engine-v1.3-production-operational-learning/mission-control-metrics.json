@@ -1,0 +1,215 @@
+{
+  "daily": {
+    "schemaVersion": "bie-mission-control-daily-v1",
+    "generatedAt": "2026-08-05T07:52:47.633Z",
+    "mode": "SHADOW_AGGREGATION",
+    "productionMutation": false,
+    "autonomousApproval": false,
+    "privacy": {
+      "rawPrivateConversationBrowser": false,
+      "secretsIncluded": false,
+      "rawSystemPromptsIncluded": false,
+      "sensitiveContent": "redacted_or_summarized_refs_only"
+    },
+    "productionReleaseAndHealth": {
+      "runtimeHealth": {
+        "liveStatus": "normal",
+        "totalRequests": 0,
+        "errors": 0,
+        "averageLatencyMs": 0,
+        "activeSessions": 0
+      },
+      "founderExperienceDurable": {
+        "owner": "founderExperienceDurableStore",
+        "backend": "FILE",
+        "durable": false,
+        "hasDatabaseUrl": false,
+        "documents": [
+          "experienceEvents",
+          "learningRecords",
+          "evaluationResults",
+          "recommendations",
+          "recommendationTransitions",
+          "discoveries",
+          "relationships",
+          "hypotheses",
+          "predictions",
+          "costLedger",
+          "calibration"
+        ]
+      }
+    },
+    "conversations": {
+      "totalRequests": 0,
+      "evaluatedApprox": 55,
+      "acceptedApprox": 2,
+      "rejectedApprox": 12,
+      "correctedApprox": 0
+    },
+    "experience": {
+      "trustGains": 0,
+      "trustBreaks": 1,
+      "strongestCompanionMoment": null,
+      "highestImpactFailure": {
+        "behaviorFamily": "feasts_v11a",
+        "discoveryId": "disc_bdfe029ab331eacb26d9",
+        "recurrenceCount": 16,
+        "severity": "high"
+      }
+    },
+    "learning": {
+      "discoveryCount": 41,
+      "recommendationEligible": 22,
+      "unresolvedAdminDecisions": 265,
+      "pendingBySeverity": {
+        "Medium": 28,
+        "Low": 237
+      }
+    },
+    "costLatency": {
+      "baseline": {
+        "budgetPolicy": {
+          "maxSynchronousLearningOverheadMs": 5,
+          "dailyEvaluationBudgetUsd": 5,
+          "dailyWatcherBudgetUsd": 1,
+          "maxCostPerConversationUsd": 0.15,
+          "maxCostPerAcceptedAnswerUsd": 0.25,
+          "maxDatabaseGrowthMbPerDay": 50,
+          "alertThresholds": {
+            "conversationCostUsd": 0.2,
+            "dailyEvalUsd": 4
+          },
+          "controls": [
+            "deterministic_before_model",
+            "async_post_response_evaluation",
+            "evaluate_founder_rejected_and_critical",
+            "sample_routine_successes",
+            "dedupe_identical_eval_work",
+            "cache_immutable_evidence_refs",
+            "reuse_retrieval_within_request",
+            "bounded_context_budgets",
+            "expensive_watchers_off_when_idle",
+            "retain_high_value_traces_longer"
+          ]
+        },
+        "status": "SYNC_SNAPSHOT",
+        "qualityReductionForCost": false
+      },
+      "note": "Estimates only until provider usage fields are wired"
+    },
+    "topThreeEvidenceBackedPriorities": [
+      {
+        "priority": 1,
+        "kind": "behavior_family",
+        "title": "Review feasts_v11a",
+        "reason": "RECURRING_FAILURE recurrence=16",
+        "evidence": {
+          "discoveryId": "disc_bdfe029ab331eacb26d9",
+          "supportingEventIds": [
+            "ef53fc6a-833c-48d3-b2ca-dc71c9516211",
+            "e22ef2d9-cd03-4f24-b4fd-36144e8ec8d7",
+            "911f1be8-94ae-4b5d-8927-c837c19c0a36",
+            "15005a43-93f1-4a48-8713-53ff3efd664d",
+            "94eda282-c64a-4144-845c-c295a4887b66"
+          ]
+        },
+        "requiresAdminDecision": true,
+        "autoImplement": false
+      },
+      {
+        "priority": 2,
+        "kind": "routine",
+        "title": "Operate Founder mark → Admin decision → smallest repair → measure",
+        "reason": "No urgent automated item; continue governed loop",
+        "requiresAdminDecision": true,
+        "autoImplement": false
+      },
+      {
+        "priority": 3,
+        "kind": "routine",
+        "title": "Operate Founder mark → Admin decision → smallest repair → measure",
+        "reason": "No urgent automated item; continue governed loop",
+        "requiresAdminDecision": true,
+        "autoImplement": false
+      }
+    ],
+    "drillDownOwners": [
+      "experienceEventLedger",
+      "learningRecordStore",
+      "discoveryEngine",
+      "recommendationIntelligence",
+      "adminDecisionQueue",
+      "costLedger",
+      "founderExperienceDurableStore"
+    ]
+  },
+  "weekly": {
+    "schemaVersion": "bie-mission-control-weekly-v1",
+    "generatedAt": "2026-08-05T07:52:47.792Z",
+    "mode": "SHADOW_AGGREGATION",
+    "productionMutation": false,
+    "dailySnapshot": {
+      "highestImpactFailure": {
+        "behaviorFamily": "feasts_v11a",
+        "discoveryId": "disc_bdfe029ab331eacb26d9",
+        "recurrenceCount": 16,
+        "severity": "high"
+      },
+      "topThree": [
+        {
+          "priority": 1,
+          "kind": "behavior_family",
+          "title": "Review feasts_v11a",
+          "reason": "RECURRING_FAILURE recurrence=16",
+          "evidence": {
+            "discoveryId": "disc_bdfe029ab331eacb26d9",
+            "supportingEventIds": [
+              "ef53fc6a-833c-48d3-b2ca-dc71c9516211",
+              "e22ef2d9-cd03-4f24-b4fd-36144e8ec8d7",
+              "911f1be8-94ae-4b5d-8927-c837c19c0a36",
+              "15005a43-93f1-4a48-8713-53ff3efd664d",
+              "94eda282-c64a-4144-845c-c295a4887b66"
+            ]
+          },
+          "requiresAdminDecision": true,
+          "autoImplement": false
+        },
+        {
+          "priority": 2,
+          "kind": "routine",
+          "title": "Operate Founder mark → Admin decision → smallest repair → measure",
+          "reason": "No urgent automated item; continue governed loop",
+          "requiresAdminDecision": true,
+          "autoImplement": false
+        },
+        {
+          "priority": 3,
+          "kind": "routine",
+          "title": "Operate Founder mark → Admin decision → smallest repair → measure",
+          "reason": "No urgent automated item; continue governed loop",
+          "requiresAdminDecision": true,
+          "autoImplement": false
+        }
+      ]
+    },
+    "qualityTrendByRelease": {
+      "status": "BASELINE_ESTABLISHING",
+      "note": "Populate from outcome-learning after Admin-approved repairs"
+    },
+    "recommendationOutcomes": {
+      "byAdminStatus": {
+        "READY_FOR_ADMIN_REVIEW": 49,
+        "APPROVED": 2,
+        "REJECTED": 4
+      },
+      "rejectedMustStayRejectedUnlessNewEvidence": true
+    },
+    "recommendedNextOperationalCycle": "Founder mark on resurrection chronology family → Admin APPROVE/REJECT → smallest owner repair → same-case measure",
+    "privacy": {
+      "rawPrivateConversationBrowser": false,
+      "secretsIncluded": false,
+      "rawSystemPromptsIncluded": false,
+      "sensitiveContent": "redacted_or_summarized_refs_only"
+    }
+  }
+}

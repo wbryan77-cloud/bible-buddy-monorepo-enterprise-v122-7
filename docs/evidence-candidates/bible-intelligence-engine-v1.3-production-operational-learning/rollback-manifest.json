@@ -1,0 +1,11 @@
+{
+  "files": [
+    "services/founderMissionControl.js",
+    "services/knowledgeAgingShadow.js",
+    "services/adminBriefingGenerator.js",
+    "routes/founderExperience.js",
+    "tests/bieV13MissionControlAndAging.test.js"
+  ],
+  "command": "git revert <impl-sha>",
+  "responseBehaviorChanged": false
+}

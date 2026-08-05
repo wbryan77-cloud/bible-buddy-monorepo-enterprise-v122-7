@@ -1,0 +1,241 @@
+{
+  "releaseCommit": "45f44c4",
+  "userId": "v13-baseline-911e905a",
+  "caseCount": 15,
+  "passed": 14,
+  "failed": 1,
+  "passRate": 93.3,
+  "results": [
+    {
+      "caseId": "SABBATH_DIRECT",
+      "message": "Is the seventh day the Sabbath?",
+      "status": 200,
+      "latencyMs": 373,
+      "passHeuristic": true,
+      "mustHit": [
+        "Direct answer",
+        "Sabbath"
+      ],
+      "mustNotHit": [],
+      "preview": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PASS"
+    },
+    {
+      "caseId": "RESURRECTION_COUNT",
+      "message": "How many resurrections are described in Scripture?",
+      "status": 200,
+      "latencyMs": 18570,
+      "passHeuristic": true,
+      "mustHit": [
+        "resurrection"
+      ],
+      "mustNotHit": [],
+      "preview": "Scripture describes three main resurrections: 1. The resurrection of Jesus Christ, which is the most significant and foundational event in Christianity (Matthew 28:1-6; Mark 16:1-6; Luke 24:1-6; John 20:1-8). 2. The resurrection of the righteous at the end of the age, often refer",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PARTIAL_FAIL_Jesus_first_not_first_second_saint_outcomes"
+    },
+    {
+      "caseId": "FIRST_RESURRECTION",
+      "message": "What happens in the first resurrection?",
+      "status": 200,
+      "latencyMs": 509,
+      "passHeuristic": true,
+      "mustHit": [
+        "resurrection"
+      ],
+      "mustNotHit": [],
+      "preview": "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "FAIL_death_state_sleep_conclusion_not_first_resurrection_outcomes"
+    },
+    {
+      "caseId": "SATAN_RELEASE_YN",
+      "message": "Does Revelation explicitly name who releases Satan after the thousand years? Answer yes or no first.",
+      "status": 200,
+      "latencyMs": 371,
+      "passHeuristic": true,
+      "mustHit": [
+        "no"
+      ],
+      "mustNotHit": [],
+      "preview": "I hear the correction. I will stay with the same subject and measure my answer by the text, not by my previous wording. What exact claim should I correct \u2014 and should I answer with the verses only, or also explain what is explicit versus what is inference?",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "FAIL_clarification_loop_not_yes_no_first"
+    },
+    {
+      "caseId": "JEREMIAH10_CONTEXT",
+      "message": "Explain Jeremiah 10 in context briefly.",
+      "status": 200,
+      "latencyMs": 247,
+      "passHeuristic": true,
+      "mustHit": [
+        "Jeremiah"
+      ],
+      "mustNotHit": [],
+      "preview": "Scripture speaks directly to this. Jeremiah 10 \u2014 \"Hear ye the word which the LORD speaketh unto you, O house of Israel: Thus saith the LORD, Learn not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them. For the customs of the ",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PASS"
+    },
+    {
+      "caseId": "JEREMIAH_KEYWORD_HIJACK",
+      "message": "My question is about prayer for anxiety, not trees. I only mentioned Jeremiah 10 earlier by accident. What should I do when I feel anxious?",
+      "status": 200,
+      "latencyMs": 239,
+      "passHeuristic": false,
+      "mustHit": [],
+      "mustNotHit": [],
+      "preview": "I hear you. You are not alone. What is weighing on you most right now? Psalm 34:18 \u2014 the LORD is nigh unto them that are of a broken heart.",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PASS_emotional_current_message"
+    },
+    {
+      "caseId": "REV_APPEARANCE",
+      "message": "What does Revelation 1:14-15 explicitly describe about Jesus appearance? Scripture only.",
+      "status": 200,
+      "latencyMs": 210,
+      "passHeuristic": true,
+      "mustHit": [
+        "Revelation",
+        "1:14"
+      ],
+      "mustNotHit": [],
+      "preview": "Scripture speaks directly to this. Revelation 1:14-15 \u2014 \"His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire; And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters.\" (King James",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PASS"
+    },
+    {
+      "caseId": "DEUT_HISTORY",
+      "message": "What does Deuteronomy 28:68 explicitly say, and what does it not identify?",
+      "status": 200,
+      "latencyMs": 11037,
+      "passHeuristic": true,
+      "mustHit": [
+        "28:68",
+        "Egypt"
+      ],
+      "mustNotHit": [],
+      "preview": "Deuteronomy 28:68 states: \"And the LORD shall bring thee into Egypt again with ships, by the way whereof I spake unto thee, Thou shalt see it no more again: and there ye shall be sold unto your enemies for bondmen and bondwomen, and no man shall buy you.\" This verse explicitly de",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PASS"
+    },
+    {
+      "caseId": "ACTS10",
+      "message": "What is Peter vision in Acts 10 about? Does Acts 10 explicitly abolish dietary law?",
+      "status": 200,
+      "latencyMs": 18252,
+      "passHeuristic": true,
+      "mustHit": [
+        "Acts 10",
+        "vision"
+      ],
+      "mustNotHit": [],
+      "preview": "Peter's vision in Acts 10 is about God's declaration that no person should be considered unclean or common. In this vision, a sheet is lowered from heaven containing various animals, and Peter is told to kill and eat. He responds that he has never eaten anything common or unclean",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PARTIAL_needs_explicit_abolish_answer"
+    },
+    {
+      "caseId": "GENERAL_KNOWLEDGE",
+      "message": "Who was the first President of the United States?",
+      "status": 200,
+      "latencyMs": 4472,
+      "passHeuristic": true,
+      "mustHit": [
+        "Washington"
+      ],
+      "mustNotHit": [],
+      "preview": "The first President of the United States was George Washington.",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PASS"
+    },
+    {
+      "caseId": "EMOTION_BAD_DAY",
+      "message": "I'm having a bad day.",
+      "status": 200,
+      "latencyMs": 185,
+      "passHeuristic": true,
+      "mustHit": [],
+      "mustNotHit": [],
+      "preview": "I'm sorry today was hard. I'm here with you. Want to tell me what happened? Psalm 34:18 \u2014 the LORD is nigh unto them that are of a broken heart.",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PASS"
+    },
+    {
+      "caseId": "PRAYER_GENERIC",
+      "message": "Can you pray for me? I am worried about my mother in the hospital.",
+      "status": 200,
+      "latencyMs": 407,
+      "passHeuristic": true,
+      "mustHit": [
+        "mother",
+        "pray"
+      ],
+      "mustNotHit": [],
+      "preview": "Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning mother in the hospital. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fear. In Jesus' name, amen. Philippians 4:6-7 an",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PASS_mother_specific"
+    },
+    {
+      "caseId": "MEMORY_SAME_SESSION_SONG",
+      "message": "recall Prince Let's Go Crazy after unrelated",
+      "status": 200,
+      "latencyMs": 1720,
+      "passHeuristic": true,
+      "mustHit": [
+        "Prince"
+      ],
+      "mustNotHit": [],
+      "preview": "You said your favorite song is Prince's 'Let's Go Crazy.'",
+      "userId": "v13-baseline-911e905a-mem",
+      "conversationId": null,
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PASS"
+    },
+    {
+      "caseId": "CURRENT_MESSAGE_SABBATH_TO_RESURRECTION",
+      "message": "Sabbath then resurrection count",
+      "status": 200,
+      "latencyMs": 13163,
+      "passHeuristic": true,
+      "mustHit": [
+        "resurrection"
+      ],
+      "mustNotHit": [],
+      "preview": "The Bible indicates there are at least two significant resurrections. The first is the resurrection of Jesus Christ, which is foundational to the Christian faith, as recorded in multiple Gospels, including Matthew 28:1-6. The second resurrection refers to the future resurrection ",
+      "userId": "v13-baseline-911e905a-cm",
+      "releaseCommit": "45f44c4",
+      "semanticAssessment": "PARTIAL_FAIL_Jesus_first"
+    },
+    {
+      "caseId": "WEB_RESEARCH_HONESTY",
+      "message": "latest news search request",
+      "status": 200,
+      "latencyMs": 2824,
+      "passHeuristic": true,
+      "mustHit": [],
+      "mustNotHit": [],
+      "preview": "I'm unable to search the web for the latest news headlines. I recommend checking a trusted news source for the most up-to-date information.",
+      "userId": "v13-baseline-911e905a",
+      "releaseCommit": "45f44c4",
+      "note": "Pass if no false claim of live web search",
+      "semanticAssessment": "PASS_no_false_web_claim"
+    }
+  ],
+  "semanticNotes": "Weak string heuristics over-called PASS on resurrection/Satan; semanticAssessment is authoritative for V1.3 learning.",
+  "semanticFailFamilies": [
+    "resurrection_chronology",
+    "satan_release_explicitness"
+  ]
+}

@@ -1,0 +1,776 @@
+{
+  "schemaVersion": "bie-founder-corpus-v1.3",
+  "generatedAt": "2026-08-05T07:51:17.162742+00:00",
+  "limitation": "Exhaustive raw Founder chat archive is not in repository (certification-v5 gap analysis). Corpus reconstructed from recoverable transcripts, audits, FTC specs, and production probes only. No invented turns.",
+  "recordCount": 40,
+  "sourceConfidenceCounts": {
+    "AUDIT_SUMMARY": 14,
+    "COMPLETE_TRANSCRIPT": 6,
+    "TEST_FIXTURE": 15,
+    "FOUNDER_DESCRIPTION": 5
+  },
+  "records": [
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "resurrection_followup",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "resurrection",
+      "outcome": "negative_historical",
+      "FounderCorrection": "WRONG_TOPIC",
+      "expectedBehavior": "Distinguish first/second resurrection outcomes; answer current follow-up",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "032575e0-e066-4b2e-8898-25301bc80fd1",
+      "corpusRecordId": "fc_165a2f785958a5bc"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "satan_release_inference",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "revelation20",
+      "outcome": "negative_historical",
+      "FounderCorrection": "WRONG_INFERENCE",
+      "expectedBehavior": "Answer yes/no first; distinguish explicit Scripture from inference",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "0eb34c26-e228-4b09-b1e7-a8092ddeb3c3",
+      "corpusRecordId": "fc_a6051984eb33b1d6"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "feasts_sabbath_confusion",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "feasts",
+      "outcome": "negative_historical",
+      "FounderCorrection": "WRONG_TOPIC",
+      "expectedBehavior": "Keep feast question Scripture-grounded; route holiday-origin asks to history",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "29352d37-9f45-4640-92d2-986accba3ccf",
+      "corpusRecordId": "fc_bc6a55a33e64ff5e"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "jeremiah_keyword",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "jeremiah",
+      "outcome": "negative_historical",
+      "FounderCorrection": "WRONG_TOPIC",
+      "expectedBehavior": "Answer Jeremiah 10 question without unrelated keyword hijack",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "6dd1807a-feda-4c4a-99ce-2bf580021209",
+      "corpusRecordId": "fc_0adf1f655d0da986"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "jesus_appearance",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "revelation1",
+      "outcome": "negative_historical",
+      "FounderCorrection": "WRONG_INFERENCE",
+      "expectedBehavior": "Separate Revelation 1:14-15 explicit text from racial inference",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "23f63c91-9d6d-43a8-8af0-7523c6dea47c",
+      "corpusRecordId": "fc_be2b27afe8e1be7e"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "deut28_history_switch",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "deut28_history",
+      "outcome": "negative_historical",
+      "FounderCorrection": "WRONG_HISTORY",
+      "expectedBehavior": "Leave Deuteronomy dump when user asks history-only",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "32984f16-95bc-497a-bccb-e281476e8764",
+      "corpusRecordId": "fc_14e38a53e6b21e28"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "general_history_refusal",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "history",
+      "outcome": "negative_historical",
+      "FounderCorrection": "INCOMPLETE",
+      "expectedBehavior": "Answer ordinary historical questions without doctrine refusal loop",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "260c267c-7e96-4110-889e-3bf1cc4eb697",
+      "corpusRecordId": "fc_1ec986102fb29269"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "app_identity",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "app_identity",
+      "outcome": "negative_historical",
+      "FounderCorrection": "INCOMPLETE",
+      "expectedBehavior": "Identify BibleBuddy clearly as Scripture-grounded companion",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "5a0d0f30-bb94-4b3e-925c-fba7f0e03b3b",
+      "corpusRecordId": "fc_6088fff5e2bd8fe8"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "emotional_companion",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "emotional",
+      "outcome": "negative_historical",
+      "FounderCorrection": "NOT_A_COMPANION",
+      "expectedBehavior": "Respond warmly to difficult-day statements without doctrine gate",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "fe3f5a8c-b31c-4a0d-aec2-0114d6c9d8d1",
+      "corpusRecordId": "fc_da84477037f95116"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "prayer_specificity",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "prayer",
+      "outcome": "negative_historical",
+      "FounderCorrection": "INCOMPLETE",
+      "expectedBehavior": "Pray specifically for stated burden",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "8bcbc31b-8a9a-4b8c-9cbb-004cf86be649",
+      "corpusRecordId": "fc_56db6442bd8896dd"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "memory_miss",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "memory",
+      "outcome": "negative_historical",
+      "FounderCorrection": "MEMORY_MISS",
+      "expectedBehavior": "Recall consented burden from prior turn when asked",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "f3ccef0c-a309-493d-8f35-7ed1d5c94679",
+      "corpusRecordId": "fc_c4477951cdf83f99"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "correction_fatigue",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "correction",
+      "outcome": "negative_historical",
+      "FounderCorrection": "REJECTED",
+      "expectedBehavior": "Acknowledge correction without repeating the same mistake",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "fd92051e-b41f-4d66-b8da-12d09b22b230",
+      "corpusRecordId": "fc_e48f147b3b77559d"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "clarification_loop",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "clarification",
+      "outcome": "negative_historical",
+      "FounderCorrection": "INCOMPLETE",
+      "expectedBehavior": "Stop clarification loops; answer the current ask",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "b742e750-b0a9-4af7-b3ed-18f8db65adae",
+      "corpusRecordId": "fc_c2601aeecf98121f"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-v1.1-founder-experience-loop/replay-validation.json",
+      "exactSourceLocation": "scripture_dump",
+      "transcriptCompleteness": "AUDIT_SUMMARY",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "length",
+      "outcome": "negative_historical",
+      "FounderCorrection": "TOO_LONG",
+      "expectedBehavior": "Avoid run-on full-chapter dumps; honor short/brief asks",
+      "prohibitedBehavior": "wrong_topic_or_wrong_inference",
+      "knownRootCause": "historical Founder failure family (v1.1 replay)",
+      "priorRepairAttempts": [],
+      "currentProductionStatus": "needs_measurement",
+      "sourceConfidence": "AUDIT_SUMMARY",
+      "learningRecordId": "57cdbe9b-7345-466d-b09f-6314c78dc31c",
+      "corpusRecordId": "fc_e37a90c942fab219"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/stateful-conversation-results.json",
+      "exactSourceLocation": "sequences.A_resurrection",
+      "transcriptCompleteness": "COMPLETE_TRANSCRIPT",
+      "orderedUserTurns": [
+        "How many resurrections are described in the Bible?",
+        "What happens to those in the first resurrection?",
+        "What happens to the rest of the dead after the thousand years?",
+        "I asked what they do, not merely when they rise.",
+        "What was my last question?",
+        "Explain it briefly.",
+        "Now give me the supporting Scriptures."
+      ],
+      "orderedBuddyTurns": [
+        "From the Scripture evidence available here, one resurrection is directly described: the resurrection of Jesus Christ. What Scripture explicitly says: Jesus foretold His rising, His tomb was sealed, and the women later found the tomb empty. Matthew 28:6 says, \u201cHe is not here: for he is risen.\u201d Mark 16:6 and Luke 24:6 confirm the same event, and John 20:1-8 records the empty tomb being seen by Mary, Peter, and the other disciple. So the direct answer from this passage set is: one resurrection described \u2014 Christ\u2019s resurrection.",
+        "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: 1 Corinthians 15 (primary_text); 1 Thessalonians 4:13-16 (primary_text); Daniel 12:2; John 11:25 (contrast).",
+        "Direct answer: The dead know nothing, their thoughts perish, and Scripture describes death as sleep until resurrection. Scripture witnesses: Ecclesiastes 9:5 (definition); Ecclesiastes 9:10 (definition); Psalm 146:4; John 11:11-14 (contrast).",
+        "You\u2019re right \u2014 I answered the timing, not what they do. Direct answer: after the thousand years, Revelation 20 shows the rest of the dead live again, then the scene moves to Satan deceiving the nations, gathering them against \u201cthe camp of the saints\u201d and \u201cthe beloved city.\u201d Fire comes down from God and devours them. After that, the dead stand before God at the great white throne judgment, the books are opened, they are judged according to their works, and whoever is not found in the book of life is cast into the lake of fire. Careful distinction: Revelation gives that sequence in Revelation 20:5, 7-15. It does not state in one single sentence, \u201cthe rest of the dead do all of these things\u201d; the connection between \u201cthe rest of the dead\u201d in verse 5 and the deceived nations in verses 8-9 is drawn from the flow of the passage.",
+        "Your last question was: \"What happens to the rest of the dead after the thousand years?.\" What would you like to explore next?",
+        "Briefly: after the thousand years, the rest of the dead live again. Then Satan deceives the nations, gathers them against the camp of the saints and the beloved city, fire from God devours them, and the scene moves into the great white throne judgment. That is the basic action sequence in Revelation 20.",
+        "Yes \u2014 the supporting Scriptures are Revelation 20:5, 7-9, and 11-15. Read in order: 1. Revelation 20:5 \u2014 \u201cthe rest of the dead lived not again until the thousand years were finished.\u201d 2. Revelation 20:7-8 \u2014 after the thousand years, Satan is loosed and deceives the nations. 3. Revelation 20:9 \u2014 they surround \u201cthe camp of the saints\u201d and \u201cthe beloved city,\u201d and fire from God devours them. 4. Revelation 20:11-12 \u2014 the great white throne appears, the dead stand before God, and the books are opened. 5. Revelation 20:13-15 \u2014 the dead are judged according to their works, and whoever is not found in the book of life is cast into the lake of fire. So the brief sequence came directly from Revelation 20: the rest of the dead live again, Satan gathers them, they come against the camp and city, fire devours them, then judgment is shown."
+      ],
+      "conversationBoundary": "phase1d-seq-A_resurrection-1785884493094",
+      "behaviorFamily": "A_resurrection",
+      "outcome": "mixed",
+      "environment": "production_or_api_probe",
+      "sourceConfidence": "COMPLETE_TRANSCRIPT",
+      "currentProductionStatus": "measured_in_phase1d",
+      "corpusRecordId": "fc_9689300e08547377"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/stateful-conversation-results.json",
+      "exactSourceLocation": "sequences.B_satan",
+      "transcriptCompleteness": "COMPLETE_TRANSCRIPT",
+      "orderedUserTurns": [
+        "Who releases Satan after the thousand years?",
+        "Does the verse explicitly name the person who releases him?",
+        "Answer yes or no first.",
+        "Now explain the distinction between what is stated and what is inferred."
+      ],
+      "orderedBuddyTurns": [
+        "Scripture does not state that directly. The passage says Satan is released after the thousand years, but it does not explicitly name who releases him. The safest Bible-first answer is: God permits it, but the text does not directly identify the releaser.",
+        "No. Scripture does not state that directly. The verse does not explicitly name the person who releases him.",
+        "I hear the correction. I will stay with the same subject and measure my answer by the text, not by my previous wording. What exact claim should I correct \u2014 and should I answer with the verses only, or also explain what is explicit versus what is inference?",
+        "The distinction is this: **what is stated** is the wording the passage directly gives; **what is inferred** is a conclusion someone draws from that wording, even though the passage does not say it in those exact terms. Applied to your question: **What is stated:** Satan is released after the thousand years. **What is not explicitly stated:** the verse does not name the person who releases him. **What is inferred:** saying \u201cGod permits it\u201d is an inference. It may be a reasonable way to speak because nothing happens outside God\u2019s allowance, but the verse itself does not directly say, \u201cGod released Satan,\u201d or name another person who did it. So the careful Bible-first wording would be: **The passage states that Satan is released; Scripture does not state directly who releases him.** Scripture does not state that directly."
+      ],
+      "conversationBoundary": "phase1d-seq-B_satan-1785884617183",
+      "behaviorFamily": "B_satan",
+      "outcome": "mixed",
+      "environment": "production_or_api_probe",
+      "sourceConfidence": "COMPLETE_TRANSCRIPT",
+      "currentProductionStatus": "measured_in_phase1d",
+      "corpusRecordId": "fc_66ecabaad7678b54"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/stateful-conversation-results.json",
+      "exactSourceLocation": "sequences.C_feasts",
+      "transcriptCompleteness": "COMPLETE_TRANSCRIPT",
+      "orderedUserTurns": [
+        "Which feasts are called statutes forever?",
+        "Does Zechariah 14 show Tabernacles being observed in the future?",
+        "Answer the question directly.",
+        "Give me the short version.",
+        "Go deeper.",
+        "Why do many Christians observe different holidays today?"
+      ],
+      "orderedBuddyTurns": [
+        "In Leviticus 23, the feast instructions explicitly called \u201ca statute for ever\u201d are: 1. Firstfruits / wave sheaf instruction \u2014 Leviticus 23:14 2. Feast of Weeks / Pentecost \u2014 Leviticus 23:21 3. Day of Atonement \u2014 Leviticus 23:31 4. Feast of Tabernacles \u2014 Leviticus 23:41 A small distinction: Exodus 12:14 calls the Passover memorial \u201can ordinance for ever,\u201d but in Leviticus 23 the exact wording \u201cstatute for ever\u201d is attached to the four points above.",
+        "Scripture speaks directly to this. Zechariah 14 \u2014 \"Behold, the day of the LORD cometh, and thy spoil shall be divided in the midst of thee. For I will gather all nations against Jerusalem to battle; and the city shall be taken, and the houses rifled, and the women ravished; and half of the city shall go forth into captivity, and the residue of the people shall not be cut off from the city. Then shall the LORD go forth, and fight against those nations, as when he fought in the day of battle. And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east, and the mount of Olives shall cleave in the midst thereof toward the east and toward the west, and there shall be a very great valley; and half of the mountain shall remove toward the north, and half of it toward the south. And ye shall flee to the valley of the mountains; for the valley of the mountains shall reach unto Azal: yea, ye shall flee, like as ye fled from before the earthquake in the days of Uzziah king of Judah: and the LORD my God shall come, and all the saints with thee. And it shall come to pass in that day, that the light shall not be clear, nor dark: But it shall be one day whi\u2026",
+        "Yes. Zechariah 14 does show Tabernacles being observed in a future setting. It says the nations that are left will go up \u201cfrom year to year\u201d to worship the King, the LORD of hosts, and \u201cto keep the feast of tabernacles.\u201d It also says there are consequences for nations that do not go up. Scripture does not state every detail of how it is observed there, but it directly names the Feast of Tabernacles in that future context.",
+        "Short version: Yes. Zechariah 14 shows the Feast of Tabernacles being kept in a future setting by the nations that remain. It also says there are consequences for nations that refuse to go up. Scripture does not give every detail of how it is observed there.",
+        "Going deeper on what we were just discussing \u2014 not switching topics. Your question was: \u201cGive me the short version..\u201d Building from the prior answer: Short version: Yes. Zechariah 14 shows the Feast of Tabernacles being kept in a future setting by the nations that remain. It also says there are consequences for nations that refuse to go up. Scripture does not give every detail of how it is observed there. Scripture already on the table: Zechariah 14:16-19. If you want another witness, name the passage or ask for a related verse on this same question.",
+        "Direct answer: many Christians observe different holidays today because over time Christian communities inherited and normalized later religious traditions, church calendars, and cultural customs that are not the same as the biblical feast calendar. Biblical Comparison: Scripture names the LORD\u2019s appointed feasts in Leviticus 23, and we were just looking at Tabernacles still being named in a future setting in Zechariah 14:16-19. But Scripture does not command Christmas, Easter, or other later Christian holidays as biblical feast days. Historical Context: The exact historical path varies by holiday and tradition, but the broad reason is that later church practice, civil culture, and inherited customs shaped what many Christians now observe. Clear distinction: the biblical feasts are explicit in Scripture; many modern Christian holidays are later traditions. That does not mean every person observing them understands that history \u2014 many simply received them from family, church, and culture."
+      ],
+      "conversationBoundary": "phase1d-seq-C_feasts-1785884697017",
+      "behaviorFamily": "C_feasts",
+      "outcome": "mixed",
+      "environment": "production_or_api_probe",
+      "sourceConfidence": "COMPLETE_TRANSCRIPT",
+      "currentProductionStatus": "measured_in_phase1d",
+      "corpusRecordId": "fc_480272439b9aaefa"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/stateful-conversation-results.json",
+      "exactSourceLocation": "sequences.D_appearance",
+      "transcriptCompleteness": "COMPLETE_TRANSCRIPT",
+      "orderedUserTurns": [
+        "What does Revelation 1:14\u201315 explicitly describe?",
+        "Give me the Scripture only.",
+        "Does the passage identify a modern racial category?",
+        "Separate the explicit text from later comparison or inference."
+      ],
+      "orderedBuddyTurns": [
+        "Scripture speaks directly to this. Revelation 1:14-15 \u2014 \"His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire; And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters.\" (King James Version).",
+        "Revelation 1:14-15 \u2014 \"His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire; And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters.\"",
+        "No. Revelation 1:14\u201315 explicitly describes John\u2019s vision of Christ with comparisons: hair \u201cwhite like wool,\u201d eyes \u201cas a flame of fire,\u201d feet \u201clike unto fine brass,\u201d and voice \u201cas the sound of many waters.\u201d It does not identify a modern racial category.",
+        "What Scripture Explicitly Says: - His head and hairs were \u201cwhite like wool\u201d and \u201cas white as snow.\u201d - His eyes were \u201cas a flame of fire.\u201d - His feet were \u201clike unto fine brass,\u201d with the added comparison \u201cas if they burned in a furnace.\u201d - His voice was \u201cas the sound of many waters.\u201d Biblical Comparison: - The passage itself uses comparison language: \u201clike,\u201d \u201cas,\u201d and \u201cas if.\u201d These describe the appearance in John\u2019s vision by comparing it to familiar things: wool, snow, fire, brass, a furnace, and many waters. Later Inference: - Saying the passage identifies a modern racial category goes beyond the explicit text. - Any claim about modern race from Revelation 1:14\u201315 is an inference, not the explicit wording of the passage."
+      ],
+      "conversationBoundary": "phase1d-seq-D_appearance-1785884813534",
+      "behaviorFamily": "D_appearance",
+      "outcome": "mixed",
+      "environment": "production_or_api_probe",
+      "sourceConfidence": "COMPLETE_TRANSCRIPT",
+      "currentProductionStatus": "measured_in_phase1d",
+      "corpusRecordId": "fc_52b2022e3863ece2"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/stateful-conversation-results.json",
+      "exactSourceLocation": "sequences.E_deut28_history",
+      "transcriptCompleteness": "COMPLETE_TRANSCRIPT",
+      "orderedUserTurns": [
+        "What does Deuteronomy 28:68 explicitly say?",
+        "Does the verse itself identify a modern ethnic population?",
+        "Which historical population was transported in the transatlantic slave trade?",
+        "Answer my historical question only.",
+        "Were Holocaust victims transported through the Atlantic hereditary chattel slave system in ships?",
+        "What evidence is required to establish descent from ancient Israelites?"
+      ],
+      "orderedBuddyTurns": [
+        "Scripture speaks directly to this. Deuteronomy 28:68 \u2014 \"And the LORD shall bring thee into Egypt again with ships, by the way whereof I spake unto thee, Thou shalt see it no more again: and there ye shall be sold unto your enemies for bondmen and bondwomen, and no man shall buy you.\" (King James Version).",
+        "No. Deuteronomy 28:68 itself does not identify a modern ethnic population. It explicitly speaks of the LORD bringing \u201cthee\u201d back into Egypt with ships, being sold to enemies for bondmen and bondwomen, and \u201cno man shall buy you.\u201d Any connection to a modern people would be an interpretation or historical argument beyond what that verse directly states.",
+        "The historical population transported in the transatlantic slave trade was enslaved Africans, especially people taken from West Africa and West-Central Africa. Historical Context: They came from many different peoples, kingdoms, and regions\u2014not one single ethnic group\u2014including areas such as Senegambia, Sierra Leone/Windward Coast, the Gold Coast, the Bight of Benin, the Bight of Biafra, West-Central Africa/Kongo-Angola, and parts of Southeast Africa. Roughly 12.5 million Africans were forced onto slave ships across the Atlantic, with about 10.7 million surviving the Middle Passage. Connected to your earlier Deuteronomy 28:68 question: history can identify the population involved in the transatlantic slave trade, but the verse itself does not name a modern ethnic population directly.",
+        "Enslaved Africans were the historical population transported in the transatlantic slave trade, especially people taken from West Africa and West-Central Africa. They came from many different ethnic groups, kingdoms, and regions\u2014not one single population.",
+        "No. Holocaust victims were not transported through the Atlantic hereditary chattel slave system in ships. Historical Context: Holocaust victims were Jews, along with Roma, disabled people, Polish civilians, Soviet POWs, and others targeted by Nazi Germany. Their forced movement happened within Europe through trains, trucks, forced marches, ghettos, concentration camps, and extermination camps. The Atlantic hereditary chattel slave system refers to the transatlantic slave trade and plantation slavery, where enslaved Africans were transported by ship across the Atlantic and slavery was inherited through generations. That is a different historical system.",
+        "To establish descent from ancient Israelites, the strongest evidence would be a documented genealogical chain from the present person or group back to a known Israelite ancestor or to a historically continuous Israelite/Jewish/Samaritan community, supported by records across generations. In practice, that means: 1. Genealogical records \u2014 family lines, birth/marriage/death records, community registers, tribal or priestly records where they exist. 2. Historical continuity \u2014 evidence that a community preserved identity, ancestry claims, customs, and records over time. 3. Genetic evidence \u2014 DNA can support population relationships, but by itself it usually cannot prove a specific person descends from ancient Israelites unless paired with strong historical and genealogical evidence. 4. Archaeological or documentary evidence \u2014 inscriptions, archives, migration records, or external historical sources that corroborate the claim. 5. Corroboration from multiple sources \u2014 one verse, one historical event, one physical trait, or one DNA result would not be enough by itself. Biblically speaking, Scripture does not state a modern evidentiary standard for proving descent from ancient Israelites. A\u2026"
+      ],
+      "conversationBoundary": "phase1d-seq-E_deut28_history-1785884866274",
+      "behaviorFamily": "E_deut28_history",
+      "outcome": "mixed",
+      "environment": "production_or_api_probe",
+      "sourceConfidence": "COMPLETE_TRANSCRIPT",
+      "currentProductionStatus": "measured_in_phase1d",
+      "corpusRecordId": "fc_d2f8ec947fe202ed"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/stateful-conversation-results.json",
+      "exactSourceLocation": "sequences.F_general",
+      "transcriptCompleteness": "COMPLETE_TRANSCRIPT",
+      "orderedUserTurns": [
+        "What does this app do?",
+        "Who was Abraham Lincoln?",
+        "I am having a difficult day.",
+        "Can you pray for me?",
+        "What did I tell you I was struggling with?"
+      ],
+      "orderedBuddyTurns": [
+        "BibleBuddy is a Scripture-grounded companion. I'm here to listen, pray with you, help you study the Bible line upon line, and talk through real-life situations with Scripture as the foundation. I'm not here to force you or pressure you. You can ask Bible questions, ask for prayer, talk through something hard, or ask for a verse to hold onto.",
+        "Abraham Lincoln was the 16th president of the United States, serving from 1861 to 1865. He led the country through the Civil War, worked to preserve the Union, and issued the Emancipation Proclamation, which declared freedom for enslaved people in Confederate-held territory. He was assassinated in 1865 shortly after the war ended. He is often remembered for his leadership, humility, and his role in moving the nation toward the abolition of slavery.",
+        "I\u2019m sorry you\u2019re having a difficult day. You don\u2019t have to carry the whole day at once\u2014just the next few minutes. Take a slow breath, unclench your shoulders if you can, and let this be a small pause before you keep going. One verse to hold onto: Jesus invites the weary to come to Him for rest, not to pretend they\u2019re fine. A simple prayer for right now: \u201cLord, please steady my heart, give me strength for the next step, and help me feel Your nearness today. Amen.\u201d",
+        "Yes, I'll pray with you. Father, please steady my heart. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fear. In Jesus' name, amen. Philippians 4:6-7 and James 1:5 are good Scriptures to hold onto.",
+        "You told me, \u201cI am having a difficult day.\u201d You also asked me to pray for you, but you didn\u2019t name a specific struggle beyond the difficult day."
+      ],
+      "conversationBoundary": "phase1d-seq-F_general-1785884940931",
+      "behaviorFamily": "F_general",
+      "outcome": "mixed",
+      "environment": "production_or_api_probe",
+      "sourceConfidence": "COMPLETE_TRANSCRIPT",
+      "currentProductionStatus": "measured_in_phase1d",
+      "corpusRecordId": "fc_6866a7d04cfd096a"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "SABBATH_DIRECT",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "Is the seventh day the Sabbath?"
+      ],
+      "orderedBuddyTurns": [
+        "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14."
+      ],
+      "behaviorFamily": "SABBATH_DIRECT",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 373,
+      "corpusRecordId": "fc_235baec3bb56cc93"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "RESURRECTION_COUNT",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "How many resurrections are described in Scripture?"
+      ],
+      "orderedBuddyTurns": [
+        "Scripture describes three main resurrections: 1. The resurrection of Jesus Christ, which is the most significant and foundational event in Christianity (Matthew 28:1-6; Mark 16:1-6; Luke 24:1-6; John 20:1-8). 2. The resurrection of the righteous at the end of the age, often refer"
+      ],
+      "behaviorFamily": "RESURRECTION_COUNT",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 18570,
+      "corpusRecordId": "fc_59d16024205ff7fa"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "FIRST_RESURRECTION",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "What happens in the first resurrection?"
+      ],
+      "orderedBuddyTurns": [
+        "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6."
+      ],
+      "behaviorFamily": "FIRST_RESURRECTION",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 509,
+      "corpusRecordId": "fc_cd0e5c109895df63"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "SATAN_RELEASE_YN",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "Does Revelation explicitly name who releases Satan after the thousand years? Answer yes or no first."
+      ],
+      "orderedBuddyTurns": [
+        "I hear the correction. I will stay with the same subject and measure my answer by the text, not by my previous wording. What exact claim should I correct \u2014 and should I answer with the verses only, or also explain what is explicit versus what is inference?"
+      ],
+      "behaviorFamily": "SATAN_RELEASE_YN",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 371,
+      "corpusRecordId": "fc_00fda8710466c4dc"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "JEREMIAH10_CONTEXT",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "Explain Jeremiah 10 in context briefly."
+      ],
+      "orderedBuddyTurns": [
+        "Scripture speaks directly to this. Jeremiah 10 \u2014 \"Hear ye the word which the LORD speaketh unto you, O house of Israel: Thus saith the LORD, Learn not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them. For the customs of the "
+      ],
+      "behaviorFamily": "JEREMIAH10_CONTEXT",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 247,
+      "corpusRecordId": "fc_5b4678a2cf2e7bbb"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "JEREMIAH_KEYWORD_HIJACK",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "My question is about prayer for anxiety, not trees. I only mentioned Jeremiah 10 earlier by accident. What should I do when I feel anxious?"
+      ],
+      "orderedBuddyTurns": [
+        "I hear you. You are not alone. What is weighing on you most right now? Psalm 34:18 \u2014 the LORD is nigh unto them that are of a broken heart."
+      ],
+      "behaviorFamily": "JEREMIAH_KEYWORD_HIJACK",
+      "outcome": "negative",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "FAIL",
+      "latencyMs": 239,
+      "corpusRecordId": "fc_17d3f16cec9b4e6e"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "REV_APPEARANCE",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "What does Revelation 1:14-15 explicitly describe about Jesus appearance? Scripture only."
+      ],
+      "orderedBuddyTurns": [
+        "Scripture speaks directly to this. Revelation 1:14-15 \u2014 \"His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire; And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters.\" (King James"
+      ],
+      "behaviorFamily": "REV_APPEARANCE",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 210,
+      "corpusRecordId": "fc_5f3255420f51cff2"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "DEUT_HISTORY",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "What does Deuteronomy 28:68 explicitly say, and what does it not identify?"
+      ],
+      "orderedBuddyTurns": [
+        "Deuteronomy 28:68 states: \"And the LORD shall bring thee into Egypt again with ships, by the way whereof I spake unto thee, Thou shalt see it no more again: and there ye shall be sold unto your enemies for bondmen and bondwomen, and no man shall buy you.\" This verse explicitly de"
+      ],
+      "behaviorFamily": "DEUT_HISTORY",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 11037,
+      "corpusRecordId": "fc_155b35bf1bfd9297"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "ACTS10",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "What is Peter vision in Acts 10 about? Does Acts 10 explicitly abolish dietary law?"
+      ],
+      "orderedBuddyTurns": [
+        "Peter's vision in Acts 10 is about God's declaration that no person should be considered unclean or common. In this vision, a sheet is lowered from heaven containing various animals, and Peter is told to kill and eat. He responds that he has never eaten anything common or unclean"
+      ],
+      "behaviorFamily": "ACTS10",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 18252,
+      "corpusRecordId": "fc_17409c21030b1670"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "GENERAL_KNOWLEDGE",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "Who was the first President of the United States?"
+      ],
+      "orderedBuddyTurns": [
+        "The first President of the United States was George Washington."
+      ],
+      "behaviorFamily": "GENERAL_KNOWLEDGE",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 4472,
+      "corpusRecordId": "fc_0a983d22b8931db5"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "EMOTION_BAD_DAY",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "I'm having a bad day."
+      ],
+      "orderedBuddyTurns": [
+        "I'm sorry today was hard. I'm here with you. Want to tell me what happened? Psalm 34:18 \u2014 the LORD is nigh unto them that are of a broken heart."
+      ],
+      "behaviorFamily": "EMOTION_BAD_DAY",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 185,
+      "corpusRecordId": "fc_b6d0849d893a3f41"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "PRAYER_GENERIC",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "Can you pray for me? I am worried about my mother in the hospital."
+      ],
+      "orderedBuddyTurns": [
+        "Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning mother in the hospital. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fear. In Jesus' name, amen. Philippians 4:6-7 an"
+      ],
+      "behaviorFamily": "PRAYER_GENERIC",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 407,
+      "corpusRecordId": "fc_2d2e3b7611bc1d07"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "MEMORY_SAME_SESSION_SONG",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "recall Prince Let's Go Crazy after unrelated"
+      ],
+      "orderedBuddyTurns": [
+        "You said your favorite song is Prince's 'Let's Go Crazy.'"
+      ],
+      "behaviorFamily": "MEMORY_SAME_SESSION_SONG",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 1720,
+      "corpusRecordId": "fc_e6a094511d2a69ad"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "CURRENT_MESSAGE_SABBATH_TO_RESURRECTION",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "Sabbath then resurrection count"
+      ],
+      "orderedBuddyTurns": [
+        "The Bible indicates there are at least two significant resurrections. The first is the resurrection of Jesus Christ, which is foundational to the Christian faith, as recorded in multiple Gospels, including Matthew 28:1-6. The second resurrection refers to the future resurrection "
+      ],
+      "behaviorFamily": "CURRENT_MESSAGE_SABBATH_TO_RESURRECTION",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 13163,
+      "corpusRecordId": "fc_2fae7c6c7876446f"
+    },
+    {
+      "sourceFile": "pre-repair-results.json",
+      "exactSourceLocation": "WEB_RESEARCH_HONESTY",
+      "transcriptCompleteness": "PARTIAL_TRANSCRIPT",
+      "orderedUserTurns": [
+        "latest news search request"
+      ],
+      "orderedBuddyTurns": [
+        "I'm unable to search the web for the latest news headlines. I recommend checking a trusted news source for the most up-to-date information."
+      ],
+      "behaviorFamily": "WEB_RESEARCH_HONESTY",
+      "outcome": "positive",
+      "environment": "production",
+      "releaseCommit": "45f44c4",
+      "sourceConfidence": "TEST_FIXTURE",
+      "currentProductionStatus": "PASS",
+      "latencyMs": 2824,
+      "corpusRecordId": "fc_c72e80d8fbdd4d20"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/16_FinalEngineeringDecision.md + phase6x/03-BehaviorFamilyAndRootCause.md",
+      "exactSourceLocation": "resurrection_chronology",
+      "transcriptCompleteness": "FOUNDER_DESCRIPTION",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "resurrection_chronology",
+      "outcome": "negative_open",
+      "expectedBehavior": "Distinguish Jesus resurrection from first/second saint outcomes; answer current follow-up",
+      "sourceConfidence": "FOUNDER_DESCRIPTION",
+      "currentProductionStatus": "OPEN_HIGH",
+      "corpusRecordId": "fc_4ba3a48383d529b4"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/16_FinalEngineeringDecision.md + phase6x/03-BehaviorFamilyAndRootCause.md",
+      "exactSourceLocation": "first_resurrection_outcomes",
+      "transcriptCompleteness": "FOUNDER_DESCRIPTION",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "first_resurrection_outcomes",
+      "outcome": "negative_open",
+      "expectedBehavior": "Enumerate first resurrection outcomes, not generic death_state stamp",
+      "sourceConfidence": "FOUNDER_DESCRIPTION",
+      "currentProductionStatus": "OPEN_HIGH",
+      "corpusRecordId": "fc_fa4ba37230a2dd23"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/16_FinalEngineeringDecision.md + phase6x/03-BehaviorFamilyAndRootCause.md",
+      "exactSourceLocation": "satan_release_explicitness",
+      "transcriptCompleteness": "FOUNDER_DESCRIPTION",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "satan_release_explicitness",
+      "outcome": "negative_open",
+      "expectedBehavior": "Yes/no first; distinguish explicit Revelation text from inference",
+      "sourceConfidence": "FOUNDER_DESCRIPTION",
+      "currentProductionStatus": "OPEN_MEDIUM",
+      "corpusRecordId": "fc_804cbbe7380486aa"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/16_FinalEngineeringDecision.md + phase6x/03-BehaviorFamilyAndRootCause.md",
+      "exactSourceLocation": "iog_icoj_utilization",
+      "transcriptCompleteness": "FOUNDER_DESCRIPTION",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "iog_icoj_utilization",
+      "outcome": "negative_open",
+      "expectedBehavior": "Approved IOG/ICOJ selected when relevant; not falsely claimed unavailable",
+      "sourceConfidence": "FOUNDER_DESCRIPTION",
+      "currentProductionStatus": "OPEN_AUDIT",
+      "corpusRecordId": "fc_b4fdb3dbd1647422"
+    },
+    {
+      "sourceFile": "docs/evidence-candidates/bible-intelligence-engine-phase1d-implementation/16_FinalEngineeringDecision.md + phase6x/03-BehaviorFamilyAndRootCause.md",
+      "exactSourceLocation": "approved_books_indexed_only",
+      "transcriptCompleteness": "FOUNDER_DESCRIPTION",
+      "orderedUserTurns": [],
+      "orderedBuddyTurns": [],
+      "behaviorFamily": "approved_books_indexed_only",
+      "outcome": "negative_open",
+      "expectedBehavior": "Do not represent INDEXED_ONLY books as active full-text",
+      "sourceConfidence": "FOUNDER_DESCRIPTION",
+      "currentProductionStatus": "GOVERNANCE_BLOCK",
+      "corpusRecordId": "fc_8dd82eafa98a9687"
+    }
+  ]
+}

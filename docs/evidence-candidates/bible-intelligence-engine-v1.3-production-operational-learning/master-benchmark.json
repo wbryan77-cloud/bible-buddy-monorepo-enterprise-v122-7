@@ -1,0 +1,512 @@
+{
+  "schemaVersion": "bie-master-benchmark-v1.3",
+  "owner": "Founder Truth Corpus + Golden Benchmark (extended coverage map; not a competing universe)",
+  "ftcOwner": "scripts/runFounderTruthCorpus.js",
+  "goldenOwner": "docs/evidence-candidates/bible-intelligence-engine-phase1c/15_GoldenBenchmarkSpecification.json",
+  "coverageMap": {
+    "A": "App identity",
+    "B": "Everyday conversation",
+    "C": "Direct Scripture",
+    "D": "Doctrine",
+    "E": "Multi-witness Scripture",
+    "F": "Scripture silence",
+    "G": "History",
+    "H": "Mixed Scripture/history",
+    "I": "Original language",
+    "J": "IOG/ICOJ",
+    "K": "Approved books",
+    "L": "General knowledge",
+    "M": "Emotional support",
+    "N": "Prayer",
+    "O": "Correction recovery",
+    "P": "Continuation",
+    "Q": "Topic shifts",
+    "R": "Interruptions",
+    "S": "Multi-part",
+    "T": "Simplify",
+    "U": "Go deeper",
+    "V": "Current-message reference",
+    "W": "Memory write",
+    "X": "Memory recall",
+    "Y": "Memory correction",
+    "Z": "Memory deletion",
+    "AA": "Do-not-remember",
+    "AB": "Cross-session memory",
+    "AC": "Cross-device memory",
+    "AD": "Long conversation",
+    "AE": "Response mutation",
+    "AF": "Provenance/citations",
+    "AG": "Companion warmth",
+    "AH": "Trust gain",
+    "AI": "Trust break",
+    "AJ": "Production parity",
+    "AK": "Cost/latency"
+  },
+  "criticalCaseCount": 15,
+  "cases": [
+    {
+      "caseId": "BM_SABBATH",
+      "coverageCode": "C",
+      "coverageLabel": "Direct Scripture",
+      "originalWording": "Is the seventh day the Sabbath?",
+      "paraphrases": [
+        "Is the seventh day the Sabbath?"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "doctrineFinalAuthorityEngine",
+      "expectedDirectAnswer": "direct Sabbath yes + witnesses",
+      "prohibitedOutput": "fixed approved-witnesses stamp",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "SABBATH_DIRECT",
+        "message": "Is the seventh day the Sabbath?",
+        "status": 200,
+        "latencyMs": 373,
+        "passHeuristic": true,
+        "mustHit": [
+          "Direct answer",
+          "Sabbath"
+        ],
+        "mustNotHit": [],
+        "preview": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.",
+        "userId": "v13-baseline-911e905a",
+        "releaseCommit": "45f44c4"
+      }
+    },
+    {
+      "caseId": "BM_RES_COUNT",
+      "coverageCode": "D",
+      "coverageLabel": "Doctrine",
+      "originalWording": "How many resurrections are described in Scripture?",
+      "paraphrases": [
+        "How many resurrections are described in Scripture?"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "openAiFirstCompanionRuntime/doctrine",
+      "expectedDirectAnswer": "distinguish Jesus vs first/second saint resurrections",
+      "prohibitedOutput": "Jesus-only collapse",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "RESURRECTION_COUNT",
+        "message": "How many resurrections are described in Scripture?",
+        "status": 200,
+        "latencyMs": 18570,
+        "passHeuristic": true,
+        "mustHit": [
+          "resurrection"
+        ],
+        "mustNotHit": [],
+        "preview": "Scripture describes three main resurrections: 1. The resurrection of Jesus Christ, which is the most significant and foundational event in Christianity (Matthew 28:1-6; Mark 16:1-6; Luke 24:1-6; John 20:1-8). 2. The resurrection of the righteous at the end of the age, often refer",
+        "userId": "v13-baseline-911e905a",
+        "releaseCommit": "45f44c4"
+      }
+    },
+    {
+      "caseId": "BM_FIRST_RES",
+      "coverageCode": "E",
+      "coverageLabel": "Multi-witness Scripture",
+      "originalWording": "What happens in the first resurrection?",
+      "paraphrases": [
+        "What happens in the first resurrection?"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "doctrineFinalAuthorityEngine",
+      "expectedDirectAnswer": "first-resurrection outcomes",
+      "prohibitedOutput": "generic death_state conclusion only",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "FIRST_RESURRECTION",
+        "message": "What happens in the first resurrection?",
+        "status": 200,
+        "latencyMs": 509,
+        "passHeuristic": true,
+        "mustHit": [
+          "resurrection"
+        ],
+        "mustNotHit": [],
+        "preview": "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+        "userId": "v13-baseline-911e905a",
+        "releaseCommit": "45f44c4"
+      }
+    },
+    {
+      "caseId": "BM_SATAN_YN",
+      "coverageCode": "D",
+      "coverageLabel": "Doctrine",
+      "originalWording": "Does Revelation explicitly name who releases Satan? Yes/no first.",
+      "paraphrases": [
+        "Does Revelation explicitly name who releases Satan? Yes/no first."
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "doctrine/openai",
+      "expectedDirectAnswer": "yes/no first + explicit vs inference",
+      "prohibitedOutput": "inference as explicit",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "SATAN_RELEASE_YN",
+        "message": "Does Revelation explicitly name who releases Satan after the thousand years? Answer yes or no first.",
+        "status": 200,
+        "latencyMs": 371,
+        "passHeuristic": true,
+        "mustHit": [
+          "no"
+        ],
+        "mustNotHit": [],
+        "preview": "I hear the correction. I will stay with the same subject and measure my answer by the text, not by my previous wording. What exact claim should I correct \u2014 and should I answer with the verses only, or also explain what is explicit versus what is inference?",
+        "userId": "v13-baseline-911e905a",
+        "releaseCommit": "45f44c4"
+      }
+    },
+    {
+      "caseId": "BM_JER10",
+      "coverageCode": "C",
+      "coverageLabel": "Direct Scripture",
+      "originalWording": "Explain Jeremiah 10 briefly in context.",
+      "paraphrases": [
+        "Explain Jeremiah 10 briefly in context."
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "scripture",
+      "expectedDirectAnswer": "Jeremiah 10 context",
+      "prohibitedOutput": "unrelated keyword hijack",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": null
+    },
+    {
+      "caseId": "BM_ANXIETY_NOT_JER",
+      "coverageCode": "Q",
+      "coverageLabel": "Topic shifts",
+      "originalWording": "Anxiety question after accidental Jeremiah mention",
+      "paraphrases": [
+        "Anxiety question after accidental Jeremiah mention"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "companion",
+      "expectedDirectAnswer": "address anxiety/presence",
+      "prohibitedOutput": "trees/idol chapter dump",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": null
+    },
+    {
+      "caseId": "BM_REV_APPEAR",
+      "coverageCode": "C",
+      "coverageLabel": "Direct Scripture",
+      "originalWording": "Revelation 1:14-15 Scripture only",
+      "paraphrases": [
+        "Revelation 1:14-15 Scripture only"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "scripture",
+      "expectedDirectAnswer": "explicit vision imagery",
+      "prohibitedOutput": "racial inference / mission redirect",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "REV_APPEARANCE",
+        "message": "What does Revelation 1:14-15 explicitly describe about Jesus appearance? Scripture only.",
+        "status": 200,
+        "latencyMs": 210,
+        "passHeuristic": true,
+        "mustHit": [
+          "Revelation",
+          "1:14"
+        ],
+        "mustNotHit": [],
+        "preview": "Scripture speaks directly to this. Revelation 1:14-15 \u2014 \"His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire; And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters.\" (King James",
+        "userId": "v13-baseline-911e905a",
+        "releaseCommit": "45f44c4"
+      }
+    },
+    {
+      "caseId": "BM_DEUT68",
+      "coverageCode": "H",
+      "coverageLabel": "Mixed Scripture/history",
+      "originalWording": "Deut 28:68 explicit vs not identified",
+      "paraphrases": [
+        "Deut 28:68 explicit vs not identified"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "scripture+history",
+      "expectedDirectAnswer": "explicit text then limits",
+      "prohibitedOutput": "history as Scripture",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": null
+    },
+    {
+      "caseId": "BM_ACTS10",
+      "coverageCode": "D",
+      "coverageLabel": "Doctrine",
+      "originalWording": "Acts 10 vision / dietary law",
+      "paraphrases": [
+        "Acts 10 vision / dietary law"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "doctrine",
+      "expectedDirectAnswer": "vision about persons; not explicit abolish",
+      "prohibitedOutput": "dietary abolish claim",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "ACTS10",
+        "message": "What is Peter vision in Acts 10 about? Does Acts 10 explicitly abolish dietary law?",
+        "status": 200,
+        "latencyMs": 18252,
+        "passHeuristic": true,
+        "mustHit": [
+          "Acts 10",
+          "vision"
+        ],
+        "mustNotHit": [],
+        "preview": "Peter's vision in Acts 10 is about God's declaration that no person should be considered unclean or common. In this vision, a sheet is lowered from heaven containing various animals, and Peter is told to kill and eat. He responds that he has never eaten anything common or unclean",
+        "userId": "v13-baseline-911e905a",
+        "releaseCommit": "45f44c4"
+      }
+    },
+    {
+      "caseId": "BM_GK_WASHINGTON",
+      "coverageCode": "L",
+      "coverageLabel": "General knowledge",
+      "originalWording": "First US President",
+      "paraphrases": [
+        "First US President"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "openai general",
+      "expectedDirectAnswer": "Washington without forced verses",
+      "prohibitedOutput": "forced Scripture",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": null
+    },
+    {
+      "caseId": "BM_EMOTION",
+      "coverageCode": "M",
+      "coverageLabel": "Emotional support",
+      "originalWording": "I'm having a bad day.",
+      "paraphrases": [
+        "I'm having a bad day."
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "companion",
+      "expectedDirectAnswer": "warm presence first",
+      "prohibitedOutput": "admin/learning-candidate language",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "EMOTION_BAD_DAY",
+        "message": "I'm having a bad day.",
+        "status": 200,
+        "latencyMs": 185,
+        "passHeuristic": true,
+        "mustHit": [],
+        "mustNotHit": [],
+        "preview": "I'm sorry today was hard. I'm here with you. Want to tell me what happened? Psalm 34:18 \u2014 the LORD is nigh unto them that are of a broken heart.",
+        "userId": "v13-baseline-911e905a",
+        "releaseCommit": "45f44c4"
+      }
+    },
+    {
+      "caseId": "BM_PRAYER_BURDEN",
+      "coverageCode": "N",
+      "coverageLabel": "Prayer",
+      "originalWording": "Pray for mother in hospital",
+      "paraphrases": [
+        "Pray for mother in hospital"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": true,
+      "expectedOwner": "prayer",
+      "expectedDirectAnswer": "specific burden",
+      "prohibitedOutput": "generic prayer",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "PRAYER_GENERIC",
+        "message": "Can you pray for me? I am worried about my mother in the hospital.",
+        "status": 200,
+        "latencyMs": 407,
+        "passHeuristic": true,
+        "mustHit": [
+          "mother",
+          "pray"
+        ],
+        "mustNotHit": [],
+        "preview": "Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning mother in the hospital. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fear. In Jesus' name, amen. Philippians 4:6-7 an",
+        "userId": "v13-baseline-911e905a",
+        "releaseCommit": "45f44c4"
+      }
+    },
+    {
+      "caseId": "BM_MEM_SONG",
+      "coverageCode": "X",
+      "coverageLabel": "Memory recall",
+      "originalWording": "Prince Let's Go Crazy recall",
+      "paraphrases": [
+        "Prince Let's Go Crazy recall"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": true,
+      "expectedOwner": "durableUserMemory/conversation",
+      "expectedDirectAnswer": "recall song",
+      "prohibitedOutput": "fabricated song",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "MEMORY_SAME_SESSION_SONG",
+        "message": "recall Prince Let's Go Crazy after unrelated",
+        "status": 200,
+        "latencyMs": 1720,
+        "passHeuristic": true,
+        "mustHit": [
+          "Prince"
+        ],
+        "mustNotHit": [],
+        "preview": "You said your favorite song is Prince's 'Let's Go Crazy.'",
+        "userId": "v13-baseline-911e905a-mem",
+        "conversationId": null,
+        "releaseCommit": "45f44c4"
+      }
+    },
+    {
+      "caseId": "BM_CM_SABBATH_RES",
+      "coverageCode": "V",
+      "coverageLabel": "Current-message reference",
+      "originalWording": "Sabbath then resurrection count",
+      "paraphrases": [
+        "Sabbath then resurrection count"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "current-message",
+      "expectedDirectAnswer": "answer resurrection",
+      "prohibitedOutput": "stale Sabbath answer",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": null
+    },
+    {
+      "caseId": "BM_WEB",
+      "coverageCode": "L",
+      "coverageLabel": "General knowledge",
+      "originalWording": "Latest news web search",
+      "paraphrases": [
+        "Latest news web search"
+      ],
+      "multiTurnVariationsRequired": 3,
+      "voiceVariantRequired": true,
+      "correctionSequenceRequired": true,
+      "topicShiftRequired": true,
+      "interruptionReturnRequired": true,
+      "memorySequenceWhereRelevant": false,
+      "expectedOwner": "general knowledge",
+      "expectedDirectAnswer": "honest no live browse",
+      "prohibitedOutput": "false searched-web claim",
+      "hardCodedExactString": false,
+      "localResult": null,
+      "apiResult": null,
+      "productionResult": {
+        "caseId": "WEB_RESEARCH_HONESTY",
+        "message": "latest news search request",
+        "status": 200,
+        "latencyMs": 2824,
+        "passHeuristic": true,
+        "mustHit": [],
+        "mustNotHit": [],
+        "preview": "I'm unable to search the web for the latest news headlines. I recommend checking a trusted news source for the most up-to-date information.",
+        "userId": "v13-baseline-911e905a",
+        "releaseCommit": "45f44c4",
+        "note": "Pass if no false claim of live web search"
+      }
+    }
+  ],
+  "preRepairProductionPassRate": 93.3,
+  "note": "Paraphrase/multi-turn matrices already owned by FTC/multi-turn runners; V1.3 links production probes to families without inventing Founder wording."
+}

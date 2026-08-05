@@ -1,0 +1,40 @@
+{
+  "status": "PENDING_PRODUCTION_ADMIN_AUTH",
+  "reason": "Local BIBLE_AUTHORITY_ADMIN_TOKEN is configured but does not authorize production Admin routes (401). No production Admin secret disclosed or guessed.",
+  "localRejectSuppressProof": {
+    "ok": true,
+    "listedStatus": "REJECTED",
+    "suppressedUnchanged": true,
+    "note": "V1.2A loop verified locally with Admin-equivalent transitionLearningRecord"
+  },
+  "productionAuthenticatedProbes": {
+    "durable_status": 401,
+    "feedback": 401,
+    "mission_control_daily_unauth": 401
+  },
+  "selectedRecommendation": {
+    "family": "resurrection_chronology",
+    "severity": "high",
+    "adminStatus": "READY_FOR_ADMIN_REVIEW",
+    "productionMutation": false,
+    "evidence": [
+      "phase1d FinalEngineeringDecision",
+      "stateful A_resurrection",
+      "production FIRST_RESURRECTION semantic miss (death_state sleep conclusion)",
+      "production RESURRECTION_COUNT Jesus-first OpenAI answer"
+    ],
+    "owner": "doctrineFinalAuthorityEngine / VLP content / openAiFirstCompanionRuntime (only if routing proven)",
+    "recommendation": "Smallest repair after APPROVED: differentiate first/second saint resurrection outcomes from death_state sleep pack and Jesus-resurrection collapse; no prompt rewrite"
+  },
+  "requiredAction": "APPROVED | REJECTED | DEFERRED | NEEDS_MORE_EVIDENCE",
+  "manualStep": [
+    "Use production Admin Command Center token (Render env), not local-only token",
+    "Open Decision Queue / Founder Experience learning records",
+    "Inspect resurrection_chronology package + pre-repair FIRST_RESURRECTION preview",
+    "Record APPROVED or REJECTED with note",
+    "Only after APPROVED: implement 12_ProposedMinimalChangeSet.md",
+    "Redeploy and re-run same-case production measure"
+  ],
+  "v12aRejectSuppressProbeProduction": "BLOCKED_TOKEN_MISMATCH",
+  "v12aRejectSuppressProbeLocal": "PASS"
+}

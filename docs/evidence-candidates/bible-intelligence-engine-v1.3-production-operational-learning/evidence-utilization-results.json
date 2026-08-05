@@ -1,0 +1,8 @@
+{
+  "kjvDoctrine": "ACTIVE",
+  "vlpComposition": "ACTIVE_ON_DOCTRINE_ROUTES",
+  "iogIcoj": "INDEXED_OR_PARTIAL_UTILIZATION",
+  "approvedBooks": "INDEXED_ONLY_NOT_FULLTEXT",
+  "reviewRequiredBlocked": true,
+  "rejectedBlocked": true
+}

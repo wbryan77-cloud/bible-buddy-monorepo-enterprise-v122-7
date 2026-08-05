@@ -1,0 +1,20 @@
+{
+  "releaseCommit": "45f44c4",
+  "responseBehaviorChanged": false,
+  "selectedFamilies": [
+    {
+      "family": "resurrection_chronology",
+      "severity": "high",
+      "adminStatus": "READY_FOR_ADMIN_REVIEW"
+    },
+    {
+      "family": "satan_release_explicitness",
+      "severity": "medium",
+      "adminStatus": "NEEDS_MORE_EVIDENCE"
+    }
+  ],
+  "localRejectSuppress": true,
+  "productionAdminDecision": "BLOCKED_TOKEN_MISMATCH",
+  "discoveriesObserved": 41,
+  "recommendationPackages": 22
+}

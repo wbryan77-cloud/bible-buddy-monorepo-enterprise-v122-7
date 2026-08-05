@@ -169,4 +169,34 @@ router.post('/intelligence/run', async (req, res) => {
   }
 });
 
+router.get('/mission-control/daily', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  try {
+    const { buildFounderMissionControlDaily } = require('../services/founderMissionControl');
+    res.json({ ok: true, missionControl: buildFounderMissionControlDaily() });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
+router.get('/mission-control/weekly', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  try {
+    const { buildFounderMissionControlWeekly } = require('../services/founderMissionControl');
+    res.json({ ok: true, missionControl: buildFounderMissionControlWeekly() });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
+router.get('/knowledge-aging/shadow', (req, res) => {
+  if (!checkAdminAuth(req, res)) return;
+  try {
+    const { runKnowledgeAgingPass } = require('../services/knowledgeAgingShadow');
+    res.json({ ok: true, aging: runKnowledgeAgingPass({ limit: Number(req.query.limit) || 200 }) });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
 module.exports = router;

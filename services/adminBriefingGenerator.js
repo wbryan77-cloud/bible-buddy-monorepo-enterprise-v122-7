@@ -181,6 +181,13 @@ function buildDailyBriefing() {
     notificationSummary,
     userAssistanceSummary,
     founderExperience,
+    founderMissionControl: (() => {
+      try {
+        return require('./founderMissionControl').buildFounderMissionControlDaily();
+      } catch (e) {
+        return { error: e.message };
+      }
+    })(),
   };
 }
 
@@ -241,6 +248,13 @@ function buildWeeklyBriefing() {
           approved: records.filter((r) => r.adminStatus === 'APPROVED').length,
           recommendationEligible: disc.recommendationEligible,
         };
+      } catch (e) {
+        return { error: e.message };
+      }
+    })(),
+    founderMissionControlWeekly: (() => {
+      try {
+        return require('./founderMissionControl').buildFounderMissionControlWeekly();
       } catch (e) {
         return { error: e.message };
       }

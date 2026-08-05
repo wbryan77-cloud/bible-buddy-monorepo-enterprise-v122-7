@@ -1,0 +1,6 @@
+{
+  "sameSessionSong": true,
+  "crossSession": "NOT_FULLY_EXERCISED",
+  "postgresDurableUserMemory": true,
+  "overreachObserved": false
+}

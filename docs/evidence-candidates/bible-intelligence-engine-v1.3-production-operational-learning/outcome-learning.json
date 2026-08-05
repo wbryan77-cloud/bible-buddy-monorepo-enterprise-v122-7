@@ -1,0 +1,7 @@
+{
+  "status": "NO_REPAIR_IMPLEMENTED",
+  "reason": "Awaiting production Admin approval",
+  "preRepairRelease": "45f44c4",
+  "postRepairRelease": null,
+  "recommendationOutcome": null
+}
