@@ -63,6 +63,28 @@ function behaviorFamilyKey({ behaviorFamily, failurePattern, expectedBehavior } 
     .slice(0, 20);
 }
 
+function findLearningRecordRaw(learningRecordId) {
+  try {
+    if (!learningRecordId || !fs.existsSync(STORE_PATH)) return null;
+    const lines = fs.readFileSync(STORE_PATH, 'utf8').trim().split('\n').filter(Boolean);
+    for (let i = lines.length - 1; i >= 0; i -= 1) {
+      const row = JSON.parse(lines[i]);
+      if (row.learningRecordId === learningRecordId) return row;
+    }
+  } catch (_) {}
+  return null;
+}
+
+function indexEntryByLearningRecordId(learningRecordId) {
+  const index = loadIndex();
+  for (const key of Object.keys(index)) {
+    if (index[key] && index[key].learningRecordId === learningRecordId) {
+      return { key, entry: index[key], index };
+    }
+  }
+  return { key: null, entry: null, index };
+}
+
 function createLearningRecord(input = {}) {
   ensureDir();
   const familyKey = behaviorFamilyKey(input);
@@ -71,6 +93,9 @@ function createLearningRecord(input = {}) {
     const existingId = index[familyKey].learningRecordId;
     index[familyKey].recurrenceCount = (index[familyKey].recurrenceCount || 1) + 1;
     index[familyKey].lastSeenAt = new Date().toISOString();
+    if (input.packageFingerprint) {
+      index[familyKey].packageFingerprint = input.packageFingerprint;
+    }
     saveIndex(index);
     appendExperienceEvent({
       eventType: 'LEARNING_RECORD_CREATED',
@@ -101,6 +126,8 @@ function createLearningRecord(input = {}) {
     expectedBehavior: input.expectedBehavior || null,
     affectedOwner: input.affectedOwner || null,
     candidateRepair: input.candidateRepair || null,
+    discoveryId: input.discoveryId || null,
+    packageFingerprint: input.packageFingerprint || null,
     evidence: input.evidence || [],
     confidence: input.confidence || 'medium',
     counterexamples: input.counterexamples || [],
@@ -130,6 +157,7 @@ function createLearningRecord(input = {}) {
     firstSeenAt: record.createdAt,
     lastSeenAt: record.createdAt,
     adminStatus: record.adminStatus,
+    packageFingerprint: record.packageFingerprint,
   };
   saveIndex(index);
 
@@ -161,12 +189,32 @@ function createLearningRecord(input = {}) {
 function listLearningRecords({ limit = 100, status = null } = {}) {
   try {
     if (!fs.existsSync(STORE_PATH)) return [];
+    const index = loadIndex();
+    const byId = {};
+    for (const key of Object.keys(index)) {
+      const entry = index[key];
+      if (entry && entry.learningRecordId) byId[entry.learningRecordId] = entry;
+    }
+    // Append-only JSONL holds creation snapshot; index/transitions hold current Admin state.
     let rows = fs
       .readFileSync(STORE_PATH, 'utf8')
       .trim()
       .split('\n')
       .filter(Boolean)
-      .map((l) => JSON.parse(l));
+      .map((l) => {
+        const row = JSON.parse(l);
+        const overlay = byId[row.learningRecordId];
+        if (!overlay) return row;
+        return {
+          ...row,
+          adminStatus: overlay.adminStatus || row.adminStatus,
+          recurrenceCount: overlay.recurrenceCount ?? row.recurrenceCount,
+          updatedAt: overlay.lastSeenAt || row.updatedAt,
+          packageFingerprint: overlay.packageFingerprint || row.packageFingerprint || null,
+          measuredOutcome:
+            overlay.measuredOutcome !== undefined ? overlay.measuredOutcome : row.measuredOutcome,
+        };
+      });
     if (status) rows = rows.filter((r) => r.adminStatus === status);
     return rows.slice(-limit).reverse();
   } catch (_) {
@@ -174,7 +222,11 @@ function listLearningRecords({ limit = 100, status = null } = {}) {
   }
 }
 
-function transitionLearningRecord(learningRecordId, nextStatus, { actor = 'admin', note = null } = {}) {
+function transitionLearningRecord(
+  learningRecordId,
+  nextStatus,
+  { actor = 'admin', note = null, packageFingerprint = null, measuredOutcome = null } = {},
+) {
   if (!ADMIN_STATUS.includes(nextStatus)) {
     return { ok: false, reason: 'invalid_status' };
   }
@@ -187,11 +239,21 @@ function transitionLearningRecord(learningRecordId, nextStatus, { actor = 'admin
         : nextStatus === 'DEFERRED'
           ? 'ADMIN_RECOMMENDATION_DEFERRED'
           : 'ADMIN_RECOMMENDATION_CREATED';
+  const raw = findLearningRecordRaw(learningRecordId);
+  const { key, entry, index } = indexEntryByLearningRecordId(learningRecordId);
+  const resolvedFingerprint =
+    packageFingerprint || entry?.packageFingerprint || raw?.packageFingerprint || null;
+
   appendExperienceEvent({
     eventType,
     learningRecordId,
     recommendationLinkage: learningRecordId,
-    adminOutcome: { status: nextStatus, actor, note },
+    adminOutcome: {
+      status: nextStatus,
+      actor,
+      note,
+      packageFingerprint: resolvedFingerprint,
+    },
     governanceStatus: nextStatus,
     privacyScope: 'INTERNAL_GOVERNANCE',
     authenticatedActorClass: 'admin',
@@ -202,14 +264,25 @@ function transitionLearningRecord(learningRecordId, nextStatus, { actor = 'admin
       productionBehaviorChanged: false,
     },
   });
-  const index = loadIndex();
-  for (const key of Object.keys(index)) {
-    if (index[key].learningRecordId === learningRecordId) {
-      index[key].adminStatus = nextStatus;
-      index[key].lastSeenAt = new Date().toISOString();
-    }
+  if (key && index[key]) {
+    index[key].adminStatus = nextStatus;
+    index[key].lastSeenAt = new Date().toISOString();
+    if (resolvedFingerprint) index[key].packageFingerprint = resolvedFingerprint;
+    if (measuredOutcome !== null) index[key].measuredOutcome = measuredOutcome;
+    saveIndex(index);
+  } else {
+    // Transition for a record not yet indexed — keep status recoverable via synthetic key.
+    const syntheticKey = `id:${learningRecordId}`;
+    index[syntheticKey] = {
+      learningRecordId,
+      adminStatus: nextStatus,
+      lastSeenAt: new Date().toISOString(),
+      packageFingerprint: resolvedFingerprint,
+      measuredOutcome,
+      recurrenceCount: raw?.recurrenceCount || 1,
+    };
+    saveIndex(index);
   }
-  saveIndex(index);
 
   const transition = {
     transitionId: crypto.randomUUID(),
@@ -217,6 +290,7 @@ function transitionLearningRecord(learningRecordId, nextStatus, { actor = 'admin
     toStatus: nextStatus,
     actor,
     note,
+    packageFingerprint: resolvedFingerprint,
     at: new Date().toISOString(),
     productionMutation: false,
     evidenceActivated: false,
@@ -231,15 +305,38 @@ function transitionLearningRecord(learningRecordId, nextStatus, { actor = 'admin
         {
           learningRecordId,
           adminStatus: nextStatus,
+          packageFingerprint: resolvedFingerprint,
           lastTransitionAt: transition.at,
           lastActor: actor,
         },
         MAX.recommendations,
       ).catch(() => {});
+      upsertById(
+        DOC.learningRecords,
+        'learningRecordId',
+        {
+          learningRecordId,
+          adminStatus: nextStatus,
+          packageFingerprint: resolvedFingerprint,
+          measuredOutcome,
+          behaviorFamily: raw?.behaviorFamily || null,
+          expectedBehavior: raw?.expectedBehavior || null,
+          candidateRepair: raw?.candidateRepair || null,
+          discoveryId: raw?.discoveryId || null,
+          lastTransitionAt: transition.at,
+        },
+        MAX.learningRecords,
+      ).catch(() => {});
     } catch (_) {}
   });
 
-  return { ok: true, learningRecordId, adminStatus: nextStatus, productionMutation: false };
+  return {
+    ok: true,
+    learningRecordId,
+    adminStatus: nextStatus,
+    packageFingerprint: resolvedFingerprint,
+    productionMutation: false,
+  };
 }
 
 module.exports = {
@@ -250,4 +347,5 @@ module.exports = {
   listLearningRecords,
   transitionLearningRecord,
   behaviorFamilyKey,
+  findLearningRecordRaw,
 };

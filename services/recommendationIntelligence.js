@@ -44,22 +44,40 @@ function fingerprintPackage(pkg) {
     .slice(0, 20);
 }
 
+/** Reconstruct the same fingerprint used for package identity / rejection suppression. */
+function fingerprintFromLearningRecord(lr = {}) {
+  if (lr.packageFingerprint) return lr.packageFingerprint;
+  const discoveryId =
+    lr.discoveryId ||
+    (Array.isArray(lr.evidence) && lr.evidence.find((e) => e && e.discoveryId)?.discoveryId) ||
+    null;
+  return fingerprintPackage({
+    behaviorFamily: lr.behaviorFamily,
+    smallestProposedRepair: lr.candidateRepair,
+    discoveryId,
+    expectedBehaviorChange: lr.expectedBehavior,
+  });
+}
+
+function collectRejectedFingerprints(learning, priorTransitions) {
+  const rejected = new Set();
+  for (const lr of learning.filter((x) => x.adminStatus === 'REJECTED')) {
+    rejected.add(fingerprintFromLearningRecord(lr));
+  }
+  for (const t of priorTransitions.items || []) {
+    if (t.toStatus === 'REJECTED' && t.packageFingerprint) {
+      rejected.add(t.packageFingerprint);
+    }
+  }
+  return rejected;
+}
+
 async function buildRankedRecommendations({ persist = true } = {}) {
   const discoveries = runDiscoveryPass({ persist: false }).discoveries || [];
   const hypotheses = runHypothesisPass({ persist: false }).hypotheses || [];
   const learning = listLearningRecords({ limit: 300 });
   const priorTransitions = await readItems(DOC.recommendationTransitions);
-  const rejectedFingerprints = new Set(
-    learning
-      .filter((lr) => lr.adminStatus === 'REJECTED')
-      .map((lr) =>
-        crypto
-          .createHash('sha256')
-          .update(`${lr.behaviorFamily}|${lr.expectedBehavior || ''}`)
-          .digest('hex')
-          .slice(0, 20),
-      ),
-  );
+  const rejectedFingerprints = collectRejectedFingerprints(learning, priorTransitions);
 
   const packages = [];
   for (const d of discoveries.filter((x) => x.recommendationEligibility)) {
@@ -119,6 +137,8 @@ async function buildRankedRecommendations({ persist = true } = {}) {
         expectedBehavior: pkg.expectedBehaviorChange,
         affectedOwner: d.suspectedOwner,
         candidateRepair: smallestRepair,
+        discoveryId: d.discoveryId,
+        packageFingerprint: pkg.packageFingerprint,
         evidence: [{ kind: 'discovery', discoveryId: d.discoveryId }],
         confidence: d.confidence,
         sourceEventIds: d.supportingEventIds || [],
@@ -147,4 +167,6 @@ module.exports = {
   scoreRecommendation,
   buildRankedRecommendations,
   fingerprintPackage,
+  fingerprintFromLearningRecord,
+  collectRejectedFingerprints,
 };
