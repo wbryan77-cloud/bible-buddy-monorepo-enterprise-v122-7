@@ -11,7 +11,7 @@ const { getContinuationMemory } = require('./conversationContinuationMemory');
 const REVISION_RE =
   /\b(better|deeper|expand|more scriptures|more detail|try again|explain further|go deeper|longer prayer|clarify|clarification|rewrite|reword)\b/i;
 const CORRECTION_RE =
-  /\b(does not say|doesn't say|did not say|didn't say|not say that|contradicting yourself|you are contradicting|you did not answer|you didn't answer|that verse does not|glitching|answer yes or no|that's not what i asked|not what i asked)\b/i;
+  /\b(does not say|doesn't say|did not say|didn't say|not say that|contradicting yourself|you are contradicting|you did not answer|you didn't answer|that verse does not|glitching|that's not what i asked|not what i asked)\b/i;
 
 function detectRevisionRequest(message = '', memory = null) {
   const m = String(message || '').trim();

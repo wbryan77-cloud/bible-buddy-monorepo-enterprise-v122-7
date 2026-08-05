@@ -127,10 +127,16 @@ function detectKingdomOnEarthTopic(message = '') {
 function detectResurrectionChronologyTopic(message = '') {
   const m = String(message || '');
   if (!m) return false;
+  // Satan-release / binding questions are not first/second-resurrection chronology.
+  if (/\b(satan|devil|loosed|released|bound)\b/i.test(m)) return false;
   // Saint / Revelation chronology — not death-state sleep and not Jesus Gospel discovery timing.
-  return /\b(first resurrection|second resurrection|rest of the dead|how many resurrections|resurrection chronology|thousand years|reign with christ|dead in christ)\b/i.test(
-    m,
-  ) || (/\bresurrection\b/i.test(m) && /\b(revelation\s*20|john\s*5:28|daniel\s*12:2)\b/i.test(m));
+  return (
+    /\b(first resurrection|second resurrection|rest of the dead|how many resurrections|resurrection chronology|dead in christ)\b/i.test(
+      m,
+    ) ||
+    (/\breign with christ\b/i.test(m) && /\b(resurrection|raised)\b/i.test(m)) ||
+    (/\bresurrection\b/i.test(m) && /\b(revelation\s*20|john\s*5:28|daniel\s*12:2)\b/i.test(m))
+  );
 }
 
 function detectDeathStateTopic(message = '') {

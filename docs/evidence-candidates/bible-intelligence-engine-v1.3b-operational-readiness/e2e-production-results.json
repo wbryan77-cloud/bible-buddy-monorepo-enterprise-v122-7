@@ -1,0 +1,90 @@
+{
+  "releaseCommit": "d01270b",
+  "durableMemory": {
+    "owner": "durableUserMemory",
+    "backend": "POSTGRES",
+    "durable": true,
+    "docKey": "data/durable-user-memory.json",
+    "hasDatabaseUrl": true
+  },
+  "passed": 11,
+  "total": 12,
+  "passRate": 91.7,
+  "results": [
+    {
+      "caseId": "SABBATH",
+      "pass": true,
+      "latencyMs": 230,
+      "preview": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14."
+    },
+    {
+      "caseId": "RESURRECTION_FIRST",
+      "pass": true,
+      "latencyMs": 306,
+      "preview": "Direct answer: In the first resurrection, God\u2019s people who are Christ\u2019s are raised to life and reign with Him; Revelation 20:4-6 calls this the first resurrection, with 1 Thessalonians 4 and 1 Corinthians 15 describing the gathering of the dead in Christ. Scripture witnesses: Rev"
+    },
+    {
+      "caseId": "RESURRECTION_REST",
+      "pass": true,
+      "latencyMs": 255,
+      "preview": "Direct answer: Revelation 20:5 says the rest of the dead lived not again until the thousand years were finished; that is distinct from the first resurrection of those who reign with Christ. Scripture witnesses: Revelation 20:5; Revelation 20:4-6; John 5:28-29; Daniel 12:2."
+    },
+    {
+      "caseId": "DEATH_STATE",
+      "pass": true,
+      "latencyMs": 254,
+      "preview": "Direct answer: The dead know nothing, their thoughts perish, and Scripture describes death as sleep until resurrection. Scripture witnesses: Ecclesiastes 9:5; Ecclesiastes 9:10; Psalm 146:4; John 11:11-14."
+    },
+    {
+      "caseId": "SATAN_RELEASE",
+      "pass": false,
+      "latencyMs": 167,
+      "preview": "I hear the correction. I will stay with the same subject and measure my answer by the text, not by my previous wording. What exact claim should I correct \u2014 and should I answer with the verses only, or also explain what is explicit versus what is inference?"
+    },
+    {
+      "caseId": "ACTS10",
+      "pass": true,
+      "latencyMs": 19090,
+      "preview": "Peter's vision in Acts 10 is about God's acceptance of Gentiles into the faith, rather than an outright abolition of dietary laws. In his vision, Peter sees a sheet containing various animals and is told to kill and eat. Peter responds that he has never eaten anything common or u"
+    },
+    {
+      "caseId": "JEREMIAH10",
+      "pass": true,
+      "latencyMs": 416,
+      "preview": "Scripture speaks directly to this. Jeremiah 10 \u2014 \"Hear ye the word which the LORD speaketh unto you, O house of Israel: Thus saith the LORD, Learn not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them. For the customs of the "
+    },
+    {
+      "caseId": "GENERAL_GK",
+      "pass": true,
+      "latencyMs": 7382,
+      "preview": "The first President of the United States was George Washington."
+    },
+    {
+      "caseId": "EMOTION",
+      "pass": true,
+      "latencyMs": 252,
+      "preview": "I'm sorry today was hard. I'm here with you. Want to tell me what happened? Psalm 34:18 \u2014 the LORD is nigh unto them that are of a broken heart."
+    },
+    {
+      "caseId": "PRAYER",
+      "pass": true,
+      "latencyMs": 356,
+      "preview": "Yes, I'll pray with you. Father, please be near as I pray for my mother. Please bring comfort and Your peace concerning mother in the hospital. Give me wisdom, peace, courage, and gentleness. Help me walk in truth with love and not fear. In Jesus' name, amen. Philippians 4:6-7 an"
+    },
+    {
+      "caseId": "WEB_HONESTY",
+      "pass": true,
+      "latencyMs": 6605,
+      "preview": "I can't search the web for today's top news headlines, but I can help you with any specific topics or questions you have in mind. How can I assist you today?"
+    },
+    {
+      "caseId": "MEMORY_SAME_SESSION",
+      "pass": true,
+      "latencyMs": 3253,
+      "preview": "You said your favorite song is Prince's 'Let's Go Crazy.' It's such an uplifting and energetic choice!"
+    }
+  ],
+  "failed": [
+    "SATAN_RELEASE"
+  ]
+}
