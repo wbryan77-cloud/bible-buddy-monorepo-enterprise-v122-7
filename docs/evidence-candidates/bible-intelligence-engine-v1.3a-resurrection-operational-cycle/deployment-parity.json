@@ -1,0 +1,7 @@
+{
+  "LOCAL_SHA": "2aca4fc",
+  "ORIGIN_SHA": "2aca4fc",
+  "HEALTH_RELEASE_COMMIT": "2aca4fc",
+  "parity": true,
+  "durableMemory": "POSTGRES"
+}

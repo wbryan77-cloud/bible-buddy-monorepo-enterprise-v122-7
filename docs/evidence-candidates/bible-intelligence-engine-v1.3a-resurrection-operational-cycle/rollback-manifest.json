@@ -1,0 +1,9 @@
+{
+  "rollback": "git revert 2aca4fc",
+  "files": [
+    "services/doctrineAuthorityContract.js",
+    "services/doctrineFinalAuthorityEngine.js",
+    "services/doctrineTopicDetector.js",
+    "tests/bieV13aResurrectionChronology.test.js"
+  ]
+}

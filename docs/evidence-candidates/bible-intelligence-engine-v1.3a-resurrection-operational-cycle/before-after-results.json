@@ -1,0 +1,20 @@
+{
+  "baselineSHA": "72bd8df",
+  "implementationSHA": "2aca4fc",
+  "productionSHA": "2aca4fc",
+  "preCriticalNotes": {
+    "Q2_FIRST": "generic hope + Gospel witnesses",
+    "Q4_REST": "death_state sleep",
+    "Q5": "generic hope",
+    "Q1": "Jesus+future OpenAI",
+    "Q10": "Jesus first-day hijack"
+  },
+  "postPassRate": 100.0,
+  "postPassed": 9,
+  "postTotal": 9,
+  "adjacentPreserved": {
+    "SABBATH": true,
+    "DEATH_STATE": true
+  },
+  "outcome": "SUCCESSFUL"
+}

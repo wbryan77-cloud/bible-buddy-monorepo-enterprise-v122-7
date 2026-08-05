@@ -6,15 +6,12 @@
 ## Certifications
 | Phase | Result |
 |---|---|
-| 1D | PHASE_1D_PARTIALLY_COMPLETE |
-| v1.1 FEL | BIE_V1_1_FOUNDER_EXPERIENCE_LOOP_PARTIALLY_COMPLETE |
-| v1.1A | BIE_V1_1A_REASONING_INTELLIGENCE_PARTIALLY_COMPLETE |
-| v1.2 | SMALLEST_IMPLEMENTATION_READY |
 | v1.2A | RECURSIVE_LOOP_COMPLETE |
-| **v1.3** | **V1_3_ADMIN_APPROVAL_REQUIRED** |
+| v1.3 | V1_3_ADMIN_APPROVAL_REQUIRED |
+| **v1.3A** | **RESURRECTION_OPERATIONAL_CYCLE_COMPLETE** |
 
 ## Exact Next Bottleneck
-Production-authenticated Admin decision on `resurrection_chronology` → if APPROVED, implement smallest existing-owner repair from `12_ProposedMinimalChangeSet.md` → same-case production measure. No new architecture sprint.
+Next Founder-marked family (e.g. `satan_release_explicitness`) through Evidence → Approve → Smallest existing-owner repair → Measure. No new architecture sprint.
 
-Evidence: `docs/evidence-candidates/bible-intelligence-engine-v1.3-production-operational-learning/`
-Baseline health measured: `45f44c4` · semantic misses: resurrection_chronology, satan_release_explicitness
+Evidence: `docs/evidence-candidates/bible-intelligence-engine-v1.3a-resurrection-operational-cycle/`
+SHA: baseline `72bd8df` → impl/prod `2aca4fc`

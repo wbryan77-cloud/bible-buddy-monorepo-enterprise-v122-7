@@ -1,7 +1,5 @@
 # BIE V1.3A — Resurrection Operational Cycle
 
-**Status:** `RESURRECTION_REPAIR_APPROVAL_REQUIRED`
+Certification: **RESURRECTION_OPERATIONAL_CYCLE_COMPLETE**
 
-Files 00–06 complete. Files 07–19 deferred until Founder replies **APPROVE**.
-
-Checkpoint: `APPROVAL_CHECKPOINT.json`
+Implementation / production: `2aca4fc`
