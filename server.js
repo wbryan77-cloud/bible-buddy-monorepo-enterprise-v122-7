@@ -67,6 +67,14 @@ function buildSelfTestPayload() {
   } catch (_) {
     durableMemory = { owner: 'durableUserMemory', error: 'unavailable' };
   }
+  // v1.3E — boolean presence only. Never expose token values or names of
+  // fallback secrets beyond a single configured/missing signal.
+  let adminAuthConfigured = false;
+  try {
+    adminAuthConfigured = !!require('./services/adminAuthMiddleware').resolveAdminToken();
+  } catch (_) {
+    adminAuthConfigured = false;
+  }
   return {
     health: {
       ok: true,
@@ -75,6 +83,7 @@ function buildSelfTestPayload() {
       releaseCommit: RELEASE_COMMIT,
       releaseBranch: RELEASE_BRANCH,
       durableMemory,
+      adminAuthConfigured,
     },
     providers: computeProviderStatus(),
     queue: { ok: true, detail: 'not configured for production queue yet' },
