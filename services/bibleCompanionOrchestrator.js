@@ -769,7 +769,8 @@ async function runBibleCompanionOrchestrator({
       personalRememberContent,
     } = require('./relationshipContextSelector');
     if (isPersonalRememberRequest(message) || isForgetRequest(message)) {
-      if (isForgetRequest(message)) {
+      const forgetting = isForgetRequest(message);
+      if (forgetting) {
         try {
           require('./relationshipMemoryEngine').forgetUserMemory({ userId });
         } catch (_) {}
@@ -784,6 +785,9 @@ async function runBibleCompanionOrchestrator({
           require('./explicitRememberPin').maybeCapturePin(userId, message);
         } catch (_) {}
       }
+      const masterRoute = forgetting
+        ? 'companion_personal_forget'
+        : 'companion_personal_remember';
       const structured = verifyOrchestratorOutput({
         reply: companionRememberAck(message),
         scripture: [],
@@ -791,11 +795,11 @@ async function runBibleCompanionOrchestrator({
         confidence: 'high',
         memory_used: true,
         safety_level: safety?.level || 'standard',
-        admin_flags: ['phase7a_personal_remember'],
+        admin_flags: [forgetting ? 'phase7a_personal_forget' : 'phase7a_personal_remember'],
         runtime: {
-          masterRoute: 'companion_personal_remember',
+          masterRoute,
           openAiCalled: false,
-          orchestratorLane: 'personal_remember',
+          orchestratorLane: forgetting ? 'personal_forget' : 'personal_remember',
         },
       });
       recordUserTurn(userId, message, 'companion');
@@ -815,7 +819,7 @@ async function runBibleCompanionOrchestrator({
           testerId,
           sessionId,
           cohort,
-          route: 'companion_personal_remember',
+          route: masterRoute,
         },
       };
     }

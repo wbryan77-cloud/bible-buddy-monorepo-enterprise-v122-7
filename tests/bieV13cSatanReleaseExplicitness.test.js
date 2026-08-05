@@ -137,6 +137,10 @@ describe('BIE v1.3C satan release explicitness', () => {
         m: 'Is it explicit that God lets Satan out, or is that reading into the verse?',
         re: /^No\b/i,
       },
+      {
+        m: 'After the millennium ends, does Revelation name who frees Satan? Yes or no.',
+        re: /^No\b/i,
+      },
     ];
     for (const c of cases) {
       assert.equal(findHintedReference(c.m), 'Revelation 20:7-10');

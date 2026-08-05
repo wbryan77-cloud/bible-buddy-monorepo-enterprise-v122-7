@@ -63,7 +63,7 @@ function isPersonalRememberRequest(message = '') {
 }
 
 function isForgetRequest(message = '') {
-  return /\b(do not remember|don'?t remember|forget what i|forget that|do not save|forget what i said about)\b/i.test(
+  return /\b(do not remember|don'?t remember|forget what i|forget that|can you forget|please forget|do not save|forget what i said about|forget what you know)\b/i.test(
     String(message || ''),
   );
 }
@@ -190,7 +190,7 @@ function selectRelationshipContext({ userId = '', message = '' } = {}) {
 
 function companionRememberAck(message = '') {
   if (isForgetRequest(message)) {
-    return "Alright — I won't hold onto that. Thank you for telling me.";
+    return "Alright — I'll forget that and clear it from memory. Thank you for telling me.";
   }
   if (/\bprefer\b|\bshorter answers\b|\bdirect answers\b/i.test(message)) {
     return "I'll keep that in mind for how I answer you.";

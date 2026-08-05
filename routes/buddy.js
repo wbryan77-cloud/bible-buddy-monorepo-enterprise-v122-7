@@ -55,6 +55,66 @@ function recordFounderObservationSafely(reply, payload, sessionKey) {
   }
 }
 
+// BIE v1.3D — shared async FEL instrumentation for /chat and /stream.
+// Telemetry/shadow only; never mutates the user-visible reply.
+function scheduleFounderExperienceInstrumentation({
+  requestId,
+  userId,
+  sessionId,
+  message,
+  reply,
+  payload,
+  latencyMs,
+  clientType = 'biblebuddy',
+}) {
+  setImmediate(() => {
+    try {
+      const { captureTurnInstrumentation } = require('../services/experienceTraceAdapter');
+      const { evaluateClaimGrounding } = require('../services/claimGroundingEvaluator');
+      const { runRetrievalShadowCompare } = require('../services/retrievalShadowLab');
+      captureTurnInstrumentation({
+        requestId,
+        userId,
+        sessionId,
+        message,
+        reply,
+        latencyMs,
+        clientType,
+      });
+      const replyText = typeof payload?.reply === 'string' ? payload.reply : String(payload?.reply || '');
+      const evidenceRefs = Array.isArray(payload?.scripture)
+        ? payload.scripture.map((s) => s.reference || s).filter(Boolean)
+        : [];
+      evaluateClaimGrounding({
+        replyText,
+        evidenceRefs,
+        historical: /Historical context:/i.test(replyText),
+        requestId,
+        persist: true,
+      });
+      runRetrievalShadowCompare({
+        message,
+        productionPack: {
+          scriptureRefs: evidenceRefs,
+          historyIncluded: !!reply?.runtime?.historyAllowed,
+          originalLanguage: !!reply?.runtime?.originalLanguageUsed,
+        },
+        requestId,
+        persist: true,
+      });
+      const { recordTurnCost } = require('../services/costLedger');
+      recordTurnCost({
+        requestId,
+        route: reply?.runtime?.masterRoute || null,
+        runtime: reply?.runtime || {},
+        latencyMs,
+      }).catch(() => {});
+    } catch (felErr) {
+      console.warn('[founderExperience] instrumentation skipped:', felErr.message);
+    }
+  });
+}
+
 const router = express.Router();
 
 function emitBuddyChatJson(res, { requestId, userId, message, httpStatus, body }) {
@@ -197,52 +257,15 @@ async function handleBuddyChat({ body, res, requestId }) {
     body: { ok: true, reply: payload },
   });
 
-  // BIE v1.1 — async Founder Experience instrumentation (no reply mutation).
-  setImmediate(() => {
-    try {
-      const { captureTurnInstrumentation } = require('../services/experienceTraceAdapter');
-      const { evaluateClaimGrounding } = require('../services/claimGroundingEvaluator');
-      const { runRetrievalShadowCompare } = require('../services/retrievalShadowLab');
-      captureTurnInstrumentation({
-        requestId,
-        userId,
-        sessionId,
-        message,
-        reply,
-        latencyMs,
-        clientType: 'biblebuddy',
-      });
-      const replyText = typeof payload.reply === 'string' ? payload.reply : String(payload.reply || '');
-      const evidenceRefs = Array.isArray(payload.scripture)
-        ? payload.scripture.map((s) => s.reference || s).filter(Boolean)
-        : [];
-      evaluateClaimGrounding({
-        replyText,
-        evidenceRefs,
-        historical: /Historical context:/i.test(replyText),
-        requestId,
-        persist: true,
-      });
-      runRetrievalShadowCompare({
-        message,
-        productionPack: {
-          scriptureRefs: evidenceRefs,
-          historyIncluded: !!reply?.runtime?.historyAllowed,
-          originalLanguage: !!reply?.runtime?.originalLanguageUsed,
-        },
-        requestId,
-        persist: true,
-      });
-      const { recordTurnCost } = require('../services/costLedger');
-      recordTurnCost({
-        requestId,
-        route: reply?.runtime?.masterRoute || null,
-        runtime: reply?.runtime || {},
-        latencyMs,
-      }).catch(() => {});
-    } catch (felErr) {
-      console.warn('[founderExperience] instrumentation skipped:', felErr.message);
-    }
+  scheduleFounderExperienceInstrumentation({
+    requestId,
+    userId,
+    sessionId,
+    message,
+    reply,
+    payload,
+    latencyMs,
+    clientType: 'biblebuddy',
   });
 }
 
@@ -349,9 +372,35 @@ router.post('/stream', async (req, res) => {
     if (process.env.BUDDY_LIVE_TRACE === '1') {
       donePayload.liveRequestTrace = trace;
     }
+    const streamLatencyMs = Date.now() - started;
+    const streamRequestId = req.headers['x-request-id'] || crypto.randomUUID();
     recordFounderObservationSafely(raw, donePayload, hashSessionKey(userId, sessionId));
+    if (isActiveAlphaTester(testerId)) {
+      try {
+        captureAlphaTurn({
+          testerId,
+          sessionId,
+          message,
+          reply: donePayload,
+          latencyMs: streamLatencyMs,
+          messageId: streamRequestId,
+        });
+      } catch (captureErr) {
+        console.warn('[alphaCapture] stream skipped:', captureErr.message);
+      }
+    }
     send('done', donePayload);
     res.end();
+    scheduleFounderExperienceInstrumentation({
+      requestId: streamRequestId,
+      userId,
+      sessionId,
+      message,
+      reply: raw,
+      payload: donePayload,
+      latencyMs: streamLatencyMs,
+      clientType: 'biblebuddy_stream',
+    });
   } catch (e) {
     console.error('Buddy stream error:', e);
     try {

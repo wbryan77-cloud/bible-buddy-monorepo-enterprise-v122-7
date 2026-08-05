@@ -1,0 +1,28 @@
+{
+  "token_present": true,
+  "token_len": 16,
+  "probes": [
+    {
+      "path": "/api/founder-experience/mission-control/daily",
+      "status": 401,
+      "ok": false,
+      "reason": "Unauthorized"
+    },
+    {
+      "path": "/admin/api/bible-authority/command-center",
+      "status": 401,
+      "ok": false,
+      "reason": "Unauthorized"
+    },
+    {
+      "path": "/health",
+      "status": 200,
+      "ok": true,
+      "body_prefix": "{\"health\":{\"ok\":true,\"version\":\"v122.14.0 (platform unification foundation)\",\"time\":\"2026-08-05T23:14:36.927Z\",\"releaseC"
+    }
+  ],
+  "unauthorized": {
+    "status": 401,
+    "fail_closed": true
+  }
+}

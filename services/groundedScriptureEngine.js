@@ -37,12 +37,17 @@ const CLAIM_REFERENCE_HINTS = [
   // are still computed from retrieved text (never invent a named agent).
   {
     pattern:
-      /\b(satan|devil)\b.{0,100}\b(releas\w*|loos\w*|loosed|let\w*\s+out|lets him out|set free)\b/i,
+      /\b(satan|devil)\b.{0,100}\b(releas\w*|loos\w*|loosed|frees?|let\w*\s+out|lets him out|set free)\b/i,
     reference: 'Revelation 20:7-10',
   },
   {
     pattern:
-      /\b(releas\w*|loos\w*|loosed|let\w*\s+out|set free)\b.{0,100}\b(satan|devil)\b/i,
+      /\b(releas\w*|loos\w*|loosed|frees?|let\w*\s+out|set free)\b.{0,100}\b(satan|devil)\b/i,
+    reference: 'Revelation 20:7-10',
+  },
+  {
+    pattern:
+      /\bdoes revelation\b.{0,60}\bname\b.{0,60}\b(frees?|releas\w*|loos\w*|agent|person)\b/i,
     reference: 'Revelation 20:7-10',
   },
   {
@@ -90,13 +95,15 @@ const CLAIM_REFERENCE_HINTS = [
 function detectSatanReleaseQuestion(message = '') {
   const m = String(message || '');
   const satan = /\b(satan|devil)\b/i.test(m);
-  const release = /\b(releas\w*|loos\w*|loosed|let\w*\s+out|lets him out|set free|releaser)\b/i.test(m);
+  const release = /\b(releas\w*|loos\w*|loosed|frees?|let\w*\s+out|lets him out|set free|releaser)\b/i.test(m);
   const afterThousand =
     /\b(after (the )?thousand years|thousand years (are )?(expired|finished)|millennium|millennial)\b/i.test(m);
-  const whoReleases = /\bwho (releases|looses|lets)\b/i.test(m) || /\bwho is the ['"]?he\b/i.test(m);
+  const whoReleases =
+    /\bwho (releases|looses|lets|frees)\b/i.test(m) || /\bwho is the ['"]?he\b/i.test(m);
   const explicitName =
     /\bexplicitly name\b/i.test(m) ||
     /\bdoes revelation (explicitly )?name\b/i.test(m) ||
+    /\bdoes revelation\b.{0,60}\bname\b/i.test(m) ||
     /\bdoes rev\.?\b.{0,40}\bname\b/i.test(m) ||
     /\bname the (person|agent|releaser)\b/i.test(m) ||
     /\bname who\b/i.test(m) ||

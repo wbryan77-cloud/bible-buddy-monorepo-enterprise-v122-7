@@ -46,7 +46,12 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
   const m = String(message || '').trim();
   if (APP_IDENTITY_RE.test(m)) return 'app_identity';
   if (/\bwhat do you remember\b/i.test(m)) return 'memory_recall';
-  if (/\bforget\b/i.test(m) && /\b(preference|that|remember|memory)\b/i.test(m)) return 'memory_update';
+  if (
+    /\bforget\b/i.test(m) &&
+    /\b(preference|that|remember|memory|told you|what i|what you know)\b/i.test(m)
+  ) {
+    return 'memory_update';
+  }
   if (/\b(that's not what i asked|not what i asked|why won'?t you answer)\b/i.test(m)) {
     return 'correction_repair';
   }
