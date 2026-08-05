@@ -123,6 +123,33 @@ describe('BIE v1.3C satan release explicitness', () => {
     );
   });
 
+  it('7. adversarial Pass B wording stays grounded', async () => {
+    const cases = [
+      {
+        m: 'Once the millennium ends, is the devil set free again? Yes or no.',
+        re: /^Yes\b/i,
+      },
+      {
+        m: 'Name the releaser if Revelation actually names one.',
+        re: /^No\b/i,
+      },
+      {
+        m: 'Is it explicit that God lets Satan out, or is that reading into the verse?',
+        re: /^No\b/i,
+      },
+    ];
+    for (const c of cases) {
+      assert.equal(findHintedReference(c.m), 'Revelation 20:7-10');
+      const ans = await buildGroundedScriptureAnswer({
+        message: c.m,
+        references: ['Revelation 20:7-10'],
+      });
+      assert.match(ans.reply, c.re, c.m);
+      assert.doesNotMatch(ans.reply, /Yes,\s*God releases Satan/i);
+      assert.doesNotMatch(ans.reply, /releaser named.*is Satan/i);
+    }
+  });
+
   it('8. bare Answer yes or no continues satan-release with Yes', async () => {
     const { buildBibleWideAnswer } = require('../services/bibleWideReasoningEngine');
     const uid = `v13c-yn-${Date.now()}`;

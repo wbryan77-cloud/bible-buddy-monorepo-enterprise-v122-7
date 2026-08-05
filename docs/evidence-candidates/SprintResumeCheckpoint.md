@@ -7,11 +7,16 @@
 | Phase | Result |
 |---|---|
 | v1.3A | RESURRECTION_OPERATIONAL_CYCLE_COMPLETE |
-| **v1.3B** | **OPERATIONAL_READINESS_COMPLETE** |
+| v1.3B | OPERATIONAL_READINESS_COMPLETE |
 | **v1.3C** | **BIBLE_INTELLIGENCE_PARTIALLY_CERTIFIED** |
 
+## v1.3C outcome
+- Family `satan_release_explicitness`: **REPAIRED_AND_VALIDATED** on production
+- Production SHA / health: `5a954e3`
+- Pass A critical: 9/9 · Pass B: 3/3 · Unit: 8/8
+- No new doctrine contract; grounded Revelation 20 path via existing owners
+
 ## Exact Next Bottleneck
-Production post-deploy `satan_release_explicitness` adversarial stability, then Admin production auth-token parity (or next Founder-marked family). The family is repaired and locally validated (6/6), but production validation is **PENDING_DEPLOY**; no production pass is claimed.
+`admin_production_auth_parity` (or next Founder-marked measured family). No new architecture sprint.
 
 Evidence: `docs/evidence-candidates/bible-intelligence-engine-v1.3c-continuous-certification/`
-Pre-repair production SHA: `41b3b44` · `HEAD=origin/main=health`

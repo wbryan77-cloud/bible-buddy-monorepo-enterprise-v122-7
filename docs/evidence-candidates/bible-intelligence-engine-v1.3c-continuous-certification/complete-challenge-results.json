@@ -1,5 +1,43 @@
 {
-  "passA_rate": 0.9,
+  "sha": "5a954e3",
+  "passA_rate": 1.0,
   "passB_rate": 1.0,
-  "sha": "7c9c040"
+  "checks": [
+    {
+      "id": "t1",
+      "pass": true
+    },
+    {
+      "id": "t2",
+      "pass": true
+    },
+    {
+      "id": "t3",
+      "pass": true
+    },
+    {
+      "id": "t4",
+      "pass": true
+    },
+    {
+      "id": "t5",
+      "pass": true
+    },
+    {
+      "id": "t6",
+      "pass": true
+    },
+    {
+      "id": "t7",
+      "pass": true
+    },
+    {
+      "id": "t8",
+      "pass": true
+    },
+    {
+      "id": "t9",
+      "pass": true
+    }
+  ]
 }
