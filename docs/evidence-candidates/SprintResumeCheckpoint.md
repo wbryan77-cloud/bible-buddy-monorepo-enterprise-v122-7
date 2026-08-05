@@ -6,12 +6,11 @@
 ## Certifications
 | Phase | Result |
 |---|---|
-| v1.2A | RECURSIVE_LOOP_COMPLETE |
-| v1.3 | V1_3_ADMIN_APPROVAL_REQUIRED |
-| **v1.3A** | **RESURRECTION_OPERATIONAL_CYCLE_COMPLETE** |
+| v1.3A | RESURRECTION_OPERATIONAL_CYCLE_COMPLETE |
+| **v1.3B** | **OPERATIONAL_READINESS_COMPLETE** |
 
 ## Exact Next Bottleneck
-Next Founder-marked family (e.g. `satan_release_explicitness`) through Evidence → Approve → Smallest existing-owner repair → Measure. No new architecture sprint.
+`satan_release_explicitness` content quality (if still weak) via Evidence→Approve→smallest existing-owner repair — or next Founder-marked family. No new architecture sprint.
 
-Evidence: `docs/evidence-candidates/bible-intelligence-engine-v1.3a-resurrection-operational-cycle/`
-SHA: baseline `72bd8df` → impl/prod `2aca4fc`
+Evidence: `docs/evidence-candidates/bible-intelligence-engine-v1.3b-operational-readiness/`
+SHA: `4547c4b` · health `4547c4b`
