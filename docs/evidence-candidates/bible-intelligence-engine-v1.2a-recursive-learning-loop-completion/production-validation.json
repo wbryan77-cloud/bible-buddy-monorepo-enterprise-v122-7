@@ -1,0 +1,32 @@
+{
+  "checks": {
+    "health_ok": true,
+    "sabbath": {
+      "status": 200,
+      "latencyMs": 428,
+      "direct": true,
+      "fixedStamp": false,
+      "preview": "{\"ok\": true, \"reply\": {\"reply\": \"Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus 23:1-3; Isaiah 58:13-14.\", "
+    },
+    "no_behavior_regression": true,
+    "durable_status_unauth": 401,
+    "feedback_unauth": 401,
+    "intelligence_unauth": 401,
+    "auth_gates": true
+  },
+  "releaseCommit": "f8956db",
+  "durableMemory": {
+    "owner": "durableUserMemory",
+    "backend": "POSTGRES",
+    "durable": true,
+    "docKey": "data/durable-user-memory.json",
+    "hasDatabaseUrl": true
+  },
+  "LOCAL_SHA": "f8956db",
+  "ORIGIN_SHA": "f8956db",
+  "HEALTH_RELEASE_COMMIT": "f8956db",
+  "parity": true,
+  "admin_token_probe": "NOT_RUN_NO_SECRET",
+  "learning_loop_local": "PASS_4_4",
+  "note": "Admin-authenticated reject\u2192suppress in production needs admin token; local loop + SHA parity + auth + Sabbath completed."
+}
