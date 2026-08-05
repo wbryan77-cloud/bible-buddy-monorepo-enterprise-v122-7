@@ -1,0 +1,23 @@
+{
+  "LOCAL_SHA": "d8b584a",
+  "ORIGIN_SHA": "d8b584a",
+  "HEALTH_RELEASE_COMMIT": "d8b584a",
+  "durableUserMemory": {
+    "owner": "durableUserMemory",
+    "backend": "POSTGRES",
+    "durable": true,
+    "docKey": "data/durable-user-memory.json",
+    "hasDatabaseUrl": true
+  },
+  "sabbath": {
+    "latencyMs": 439,
+    "direct": true,
+    "fixedStamp": false,
+    "preview": "Direct answer: The seventh day is the Sabbath established at creation and commanded in Scripture. Scripture witnesses: Genesis 2:2-3; Exodus 20:8-11; leviticus "
+  },
+  "feedbackAuth": 401,
+  "intelligenceAuth": 401,
+  "durableStatusAuth": 401,
+  "match": true,
+  "noBehaviorRegression": true
+}
