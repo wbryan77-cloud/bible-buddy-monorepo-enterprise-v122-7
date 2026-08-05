@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "bie-v1.3a-resurrection-evidence-v1",
+  "generatedAt": "2026-08-05T15:45:10.558820+00:00",
+  "productionRelease": "72bd8df",
+  "records": [
+    {
+      "id": "prod_q2",
+      "class": "PRODUCTION_TRANSCRIPT",
+      "message": "What happens to God\u2019s people in the first resurrection?",
+      "preview": "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+      "failure": "generic_resurrection_conclusion_plus_gospel_witnesses"
+    },
+    {
+      "id": "prod_q4",
+      "class": "PRODUCTION_TRANSCRIPT",
+      "message": "What happens to the rest of the dead?",
+      "preview": "Direct answer: The dead know nothing, their thoughts perish, and Scripture describes death as sleep until resurrection. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+      "failure": "death_state_sleep_instead_of_rev20_rest"
+    },
+    {
+      "id": "prod_q5",
+      "class": "PRODUCTION_TRANSCRIPT",
+      "message": "Are God\u2019s people raised again in the second resurrection?",
+      "preview": "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+      "failure": "generic_hope_not_yes_no_chronology"
+    },
+    {
+      "id": "prod_q1",
+      "class": "PRODUCTION_TRANSCRIPT",
+      "message": "By the Bible, how many resurrections are there?",
+      "preview": "According to the Bible, there are two main resurrections mentioned: the resurrection of Jesus Christ and the future resurrection of the dead. Jesus' resurrection is described in several passages, such as Matthew 28:1-6, where it recounts how He rose from the dead on the third day. The future resurrection is hinted at in passages like John 5:28-29, which speaks of the dead hearing His voice and coming forth, some to life and some to judgment. In summary, the resurrection of Jesus is a completed e",
+      "failure": "jesus_plus_future_not_first_second_saint_chronology"
+    },
+    {
+      "id": "prod_q10",
+      "class": "PRODUCTION_TRANSCRIPT",
+      "message": "Give the short version of the resurrection chronology.",
+      "preview": "Direct answer: Scripture shows Jesus was already risen before / when the first-day discovery happened. The first day of the week is when the empty tomb is discovered \u2014 not a verse that states \u201cHe rose at Sunday morning o\u2019clock.\u201d  Explicit Scripture: \u2022 Matthew 28:1-6 \u2014 women came toward dawn of the first day; the angel says He is risen; He is not here. \u2022 Mark 16:1-6; Luke 24:1-7; John 20:1-10 \u2014 first-day arrival finds the tomb already empty / He is risen. \u2022 Matthew 12:40 \u2014 three days and three ni",
+      "failure": "jesus_first_day_discovery_hijack"
+    },
+    {
+      "id": "v13_baseline_first",
+      "class": "PRODUCTION_TRANSCRIPT",
+      "source": "v1.3 pre-repair",
+      "failure": "same_generic_conclusion"
+    },
+    {
+      "id": "phase1d_stateful",
+      "class": "FOUNDER_TRANSCRIPT",
+      "source": "phase1d-implementation/stateful-conversation-results.json",
+      "family": "resurrection"
+    },
+    {
+      "id": "v11_replay",
+      "class": "AUDIT_SUMMARY",
+      "source": "v1.1 replay-validation resurrection_followup",
+      "mark": "WRONG_TOPIC"
+    }
+  ]
+}

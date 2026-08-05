@@ -1,0 +1,176 @@
+{
+  "releaseCommit": "72bd8df",
+  "userId": "v13a-res-73b78fc7",
+  "conversationId": null,
+  "caseCount": 12,
+  "results": [
+    {
+      "caseId": "Q1_COUNT",
+      "message": "By the Bible, how many resurrections are there?",
+      "latencyMs": 14669,
+      "preview": "According to the Bible, there are two main resurrections mentioned: the resurrection of Jesus Christ and the future resurrection of the dead. Jesus' resurrection is described in several passages, such as Matthew 28:1-6, where it recounts how He rose from the dead on the third day. The future resurrection is hinted at in passages like John 5:28-29, which speaks of the dead hearing His voice and coming forth, some to life and some to judgment. In summary, the resurrection of Jesus is a completed e",
+      "flags": {
+        "mentions_first": false,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": true,
+        "death_sleep_generic": false,
+        "direct_answer": false
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q2_FIRST",
+      "message": "What happens to God\u2019s people in the first resurrection?",
+      "latencyMs": 560,
+      "preview": "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+      "flags": {
+        "mentions_first": false,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": true,
+        "direct_answer": true
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q3_WHAT_DO",
+      "message": "What do they do after they are raised?",
+      "latencyMs": 11187,
+      "preview": "After they are raised, God's people will be gathered to Christ and will reign with Him. This is described in several passages: - **1 Thessalonians 4:16-17** states that the dead in Christ will rise first, and then those who are alive will be caught up together with them in the clouds to meet the Lord. - **Revelation 20:4-6** explains that those who are part of the first resurrection will reign with Christ for a thousand years. - **1 Corinthians 15:51-54** describes how the mortal will put on imm",
+      "flags": {
+        "mentions_first": true,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": false,
+        "direct_answer": false
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q4_REST",
+      "message": "What happens to the rest of the dead?",
+      "latencyMs": 714,
+      "preview": "Direct answer: The dead know nothing, their thoughts perish, and Scripture describes death as sleep until resurrection. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+      "flags": {
+        "mentions_first": false,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": true,
+        "direct_answer": true
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q5_RAISED_AGAIN",
+      "message": "Are God\u2019s people raised again in the second resurrection?",
+      "latencyMs": 276,
+      "preview": "Direct answer: Resurrection is the hope Scripture gives; death is described as sleep until God raises the dead. Scripture witnesses: matthew 12:40; matthew 27:57-66; matthew 28:1-6; mark 16:1-6.",
+      "flags": {
+        "mentions_first": false,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": true,
+        "direct_answer": true
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q6_CORRECTION",
+      "message": "I asked what the people do, not only when they rise.",
+      "latencyMs": 6027,
+      "preview": "After they are raised, God's people will be gathered to Christ and will reign with Him for a thousand years. This is described in **Revelation 20:4-6**, which states that they will reign with Christ. Additionally, **1 Thessalonians 4:16-17** explains that the dead in Christ will rise first, and then those who are alive will be caught up together with them to meet the Lord in the air. This gathering signifies a special union with Christ and a time of reigning with Him.",
+      "flags": {
+        "mentions_first": true,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": false,
+        "direct_answer": false
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q7_LAST",
+      "message": "What was my last question?",
+      "latencyMs": 262,
+      "preview": "Your last question was: \"Are God\u2019s people raised again in the second resurrection?.\" What would you like to explore next?",
+      "flags": {
+        "mentions_first": false,
+        "mentions_second_or_rest": true,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": false,
+        "direct_answer": false
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q8_HISTORY",
+      "message": "Who was George Washington?",
+      "latencyMs": 2938,
+      "preview": "George Washington was the first President of the United States, serving from 1789 to 1797. He is often referred to as the \"Father of His Country\" for his leadership during the American Revolutionary War and his role in the founding of the nation. Washington was also a prominent general in the Continental Army and played a crucial role in the drafting of the U.S. Constitution.",
+      "flags": {
+        "mentions_first": false,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": false,
+        "direct_answer": false
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q9_RETURN",
+      "message": "Returning to Scripture: what happens in the first resurrection according to Revelation 20?",
+      "latencyMs": 187,
+      "preview": "Scripture speaks directly to this. Revelation 20 \u2014 \"And I saw an angel come down from heaven, having the key of the bottomless pit and a great chain in his hand. And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years, And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season. And I ",
+      "flags": {
+        "mentions_first": true,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": false,
+        "direct_answer": false
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q10_SHORT",
+      "message": "Give the short version of the resurrection chronology.",
+      "latencyMs": 155,
+      "preview": "Direct answer: Scripture shows Jesus was already risen before / when the first-day discovery happened. The first day of the week is when the empty tomb is discovered \u2014 not a verse that states \u201cHe rose at Sunday morning o\u2019clock.\u201d  Explicit Scripture: \u2022 Matthew 28:1-6 \u2014 women came toward dawn of the first day; the angel says He is risen; He is not here. \u2022 Mark 16:1-6; Luke 24:1-7; John 20:1-10 \u2014 first-day arrival finds the tomb already empty / He is risen. \u2022 Matthew 12:40 \u2014 three days and three ni",
+      "flags": {
+        "mentions_first": false,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": true,
+        "death_sleep_generic": false,
+        "direct_answer": true
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q11_SCRIPTURE_ONLY",
+      "message": "Scripture only: Revelation 20 on the first resurrection and the rest of the dead.",
+      "latencyMs": 298,
+      "preview": "Scripture speaks directly to this. Revelation 20 \u2014 \"And I saw an angel come down from heaven, having the key of the bottomless pit and a great chain in his hand. And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years, And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season. And I ",
+      "flags": {
+        "mentions_first": true,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": false,
+        "direct_answer": false
+      },
+      "conversationId": null
+    },
+    {
+      "caseId": "Q12_EXPLICIT_VS_INFERENCE",
+      "message": "What does Revelation 20 explicitly say versus what is inferred about who is raised when?",
+      "latencyMs": 195,
+      "preview": "No \u2014 Scripture does not explicitly state that. Revelation 20 \u2014 \"And I saw an angel come down from heaven, having the key of the bottomless pit and a great chain in his hand. And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years, And cast him into the bottomless pit, and shut him up, and set a seal upon him, that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little se",
+      "flags": {
+        "mentions_first": true,
+        "mentions_second_or_rest": false,
+        "jesus_personal_only_risk": false,
+        "death_sleep_generic": false,
+        "direct_answer": false
+      },
+      "conversationId": null
+    }
+  ]
+}

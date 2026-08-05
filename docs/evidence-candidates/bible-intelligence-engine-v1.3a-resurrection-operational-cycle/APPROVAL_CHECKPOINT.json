@@ -1,0 +1,23 @@
+{
+  "status": "RESURRECTION_REPAIR_APPROVAL_REQUIRED",
+  "decision": "EVIDENCE_SUFFICIENT_FOR_REPAIR",
+  "behaviorFamily": "resurrection_chronology",
+  "firstIncorrectStage": "DOCTRINE_CONTRACT",
+  "existingOwner": {
+    "primary": "services/doctrineAuthorityContract.js :: BASE_CONTRACTS.resurrection",
+    "secondary": "services/doctrineFinalAuthorityEngine.js :: buildFinalAuthorityAnswer / composeDeterministicDoctrineReply"
+  },
+  "proposedSmallestRepair": "Enrich resurrection doctrine contract with already-governed chronology witnesses (Rev 20 / John 5 / existing catalog) and ensure final-authority composition prefers those witnesses for first/second/rest-of-dead asks\u2014without new runtime, prompt rewrite, or hard-coded Founder answers. Preserve death_state sleep answers for true death-state questions and Jesus personal-resurrection timing ownership.",
+  "doctrineImpact": "BOUNDED \u2014 complete incomplete resurrection contract from existing Scripture witnesses already in catalog/card; no new doctrinal invention; no Scripture mutation",
+  "filesProposed": [
+    "services/doctrineAuthorityContract.js",
+    "services/doctrineFinalAuthorityEngine.js",
+    "tests (focused resurrection + existing phase1d/FEL)"
+  ],
+  "focusedTests": "original 12-turn sequence + paraphrases + death_state adjacent + Jesus resurrection adjacent + Sabbath preserve",
+  "fullRegressions": "phase1d, bieV11, bieV11a, bieV12a, bieV13 MC, doctrine suites",
+  "rollback": "git revert <impl-sha>",
+  "resumeAt": "STAGE_3_OBJECTIVE_7",
+  "baselineSHA": "72bd8df",
+  "awaiting": "APPROVE | REJECT | DEFER | NEEDS_MORE_EVIDENCE"
+}
