@@ -110,6 +110,19 @@ describe('BIE v1.3C satan release explicitness', () => {
     assert.doesNotMatch(who.reply, /^God releases Satan/i);
   });
 
+  it('6. router sends satan-release yes/no to bible_wide, not companion correction', () => {
+    const plan = planCompanionDoctrineRouting({
+      userId: `v13c-route-${Date.now()}`,
+      message:
+        'Does Revelation explicitly name who releases Satan after the thousand years? Answer yes or no.',
+    });
+    assert.notEqual(plan.intent, 'user_correction');
+    assert.ok(
+      plan.lane === 'bible_wide' || plan.bibleConceptId === 'satan_released_after_millennium',
+      `unexpected plan: ${JSON.stringify(plan)}`,
+    );
+  });
+
   it('7. adversarial Pass B wording stays grounded', async () => {
     const cases = [
       {
