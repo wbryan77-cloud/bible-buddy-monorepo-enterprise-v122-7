@@ -1,0 +1,14 @@
+{
+  "experienceEvents": "services/experienceEventLedger.js",
+  "traceNormalization": "services/experienceTraceAdapter.js",
+  "learningRecords": "services/learningRecordStore.js",
+  "founderFeedback": "services/founderExperienceFeedback.js",
+  "evaluationRegistry": "services/evaluationRegistry.js",
+  "claimGrounding": "services/claimGroundingEvaluator.js",
+  "retrievalShadow": "services/retrievalShadowLab.js",
+  "watchers": "services/experienceWatchers.js",
+  "adminRecommendations": "services/adminDecisionQueue.js",
+  "finalResponse": "finalizeBuddyResponse",
+  "doctrineDecision": "services/doctrineFinalAuthorityEngine.js",
+  "durableMemory": "services/durableUserMemory.js"
+}

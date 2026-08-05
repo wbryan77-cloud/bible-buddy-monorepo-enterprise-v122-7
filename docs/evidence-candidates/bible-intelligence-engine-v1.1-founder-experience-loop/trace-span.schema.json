@@ -1,0 +1,10 @@
+{
+  "$id": "trace-span",
+  "title": "TraceSpan",
+  "type": "object",
+  "required": [
+    "name",
+    "owner",
+    "status"
+  ]
+}

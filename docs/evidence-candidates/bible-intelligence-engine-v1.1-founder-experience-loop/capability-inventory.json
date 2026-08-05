@@ -1,0 +1,41 @@
+{
+  "inventoryVersion": "1",
+  "asOf": "2026-08-05T00:11:22.118865+00:00",
+  "ACTIVE_AND_SUFFICIENT": [
+    "adminDecisionQueue",
+    "durableUserMemory",
+    "founderIntelligenceRecommendationStore",
+    "runtimeHealthMonitor",
+    "studyChainEvaluation",
+    "lessonEngine",
+    "doctrineFinalAuthorityEngine"
+  ],
+  "ACTIVE_BUT_INCOMPLETE": [
+    "liveRequestTrace",
+    "liveTruthTrace",
+    "learningSignals",
+    "distributedRegressions"
+  ],
+  "DUPLICATED": [
+    "relationshipMemoryx3",
+    "correctionMemoriesx3",
+    "feedbackStoresx3"
+  ],
+  "MISSING_BEFORE_V11": [
+    "experienceEventLedger",
+    "evaluationRegistry",
+    "unifiedLearningRecords",
+    "watchersFacade"
+  ],
+  "ADDED_IN_V11": [
+    "experienceEventLedger",
+    "experienceTraceAdapter",
+    "learningRecordStore",
+    "founderExperienceFeedback",
+    "evaluationRegistry",
+    "claimGroundingEvaluator",
+    "retrievalShadowLab",
+    "experienceWatchers",
+    "routes/founderExperience"
+  ]
+}

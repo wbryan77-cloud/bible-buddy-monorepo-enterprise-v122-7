@@ -38,6 +38,7 @@ const { recordAdminAuditEvent, readAdminAuditTrail } = require('./adminAuditTrai
 // module header.
 const { listPendingEscalations, resolveEscalation } = require('./userAssistanceEscalationStore');
 const { buildKnowledgeImprovementReport } = require('./knowledgeImprovementAdvisor');
+const { listLearningRecords, transitionLearningRecord } = require('./learningRecordStore');
 
 const OVERLAY_DIR = path.join(__dirname, '..', 'data', 'admin-command-center');
 const OVERLAY_PATH = path.join(OVERLAY_DIR, 'decision-queue-overlay.json');
@@ -60,6 +61,8 @@ const TYPE = {
   // ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B
   SUPPORT_ESCALATION: 'Support Escalation',
   KNOWLEDGE_IMPROVEMENT: 'Knowledge Improvement',
+  // BIE v1.1 Founder Experience Loop
+  FOUNDER_EXPERIENCE: 'Founder Experience',
 };
 const STATUS = {
   NEW: 'New',
@@ -270,6 +273,41 @@ function buildDecisionQueueItems({ perSourceLimit = 200 } = {}) {
     console.warn('[adminDecisionQueue] user-assistance source failed:', e.message);
   }
 
+  // --- Source 5b: BIE v1.1 Founder Experience learning records ---
+  try {
+    const records = listLearningRecords({ limit: Math.min(perSourceLimit, 200) });
+    for (const rec of records) {
+      if (['APPROVED', 'REJECTED', 'RETIRED', 'SUPERSEDED'].includes(rec.adminStatus)) continue;
+      const id = `founder-experience:${rec.learningRecordId}`;
+      const ov = overlay[id] || {};
+      items.push({
+        id,
+        sourceSystem: 'founder-experience',
+        nativeId: rec.learningRecordId,
+        title: `Founder Experience: ${rec.behaviorFamily || 'learning candidate'}`,
+        summary: rec.expectedBehavior || rec.failureOrSuccessPattern || 'Governed learning candidate',
+        category: TYPE.FOUNDER_EXPERIENCE,
+        severity: rec.confidence === 'high' ? SEVERITY.MEDIUM : SEVERITY.LOW,
+        confidence: rec.confidence || null,
+        supportingEvidence: (rec.evidence || []).slice(0, 5).map((e) => (typeof e === 'string' ? e : JSON.stringify(e))),
+        affectedCount: rec.recurrenceCount || 1,
+        currentProductionCoverage: rec.affectedOwner || null,
+        proposedAction: rec.candidateRepair || 'Review learning candidate; do not auto-implement.',
+        potentialImpact: 'Improves future governed behavior only after Admin approval + implementation + validation.',
+        requiredApproval: true,
+        createdAt: rec.createdAt,
+        lastUpdatedAt: ov.updatedAt || rec.updatedAt || rec.createdAt,
+        status: ov.status || STATUS.READY_FOR_DECISION,
+        note: ov.note || null,
+        drillDownTarget: '#command-center',
+        autoPublishProhibited: true,
+        mutationProhibited: true,
+      });
+    }
+  } catch (e) {
+    console.warn('[adminDecisionQueue] founder-experience source failed:', e.message);
+  }
+
   // --- Source 5: Knowledge Improvement AI (AI-4) recommendations ---
   try {
     const report = buildKnowledgeImprovementReport();
@@ -387,6 +425,16 @@ function applyDecisionQueueAction({ id, action, note = '', decidedBy = 'admin' }
         // "Approve" == resolve (reply sent); "reject" == dismiss (no reply warranted).
         underlyingResult = resolveEscalation({ id: nativeId, reply: note, resolvedBy: decidedBy, action: action === 'approve' ? 'resolve' : 'dismiss' });
         if (!underlyingResult.ok) return underlyingResult;
+      } else if (sourceSystem === 'founder-experience') {
+        // Approval records intent only — never auto-implements or activates evidence.
+        underlyingResult = transitionLearningRecord(
+          nativeId,
+          action === 'approve' ? 'APPROVED' : 'REJECTED',
+          { actor: decidedBy, note },
+        );
+        if (!underlyingResult.ok) return underlyingResult;
+        underlyingResult.productionMutation = false;
+        underlyingResult.evidenceActivated = false;
       }
       // lesson-alignment and knowledge-improvement have no underlying
       // approve/reject workflow (the former has no decision object; the
@@ -397,6 +445,9 @@ function applyDecisionQueueAction({ id, action, note = '', decidedBy = 'admin' }
       if (!underlyingResult.ok) return underlyingResult;
       newStatus = STATUS.RESOLVED;
     } else if (action === 'defer') {
+      if (sourceSystem === 'founder-experience') {
+        transitionLearningRecord(nativeId, 'DEFERRED', { actor: decidedBy, note });
+      }
       newStatus = STATUS.DEFERRED;
     } else if (action === 'investigate') {
       newStatus = STATUS.INVESTIGATING;

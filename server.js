@@ -167,6 +167,7 @@ mountRoute('Content helper routes', '/admin/content', './routes/contentHelper');
 mountRoute('Realtime voice routes', '/api/realtime', './routes/realtime');
 mountRoute('Health signal routes', '/api/health/signals', './routes/healthSignals');
 mountRoute('Learning signal routes', '/api/learning', './routes/learningSignals');
+mountRoute('Founder Experience Loop routes', '/api/founder-experience', './routes/founderExperience');
 mountRoute('Beta routes', '/api/beta', './routes/beta');
 mountRoute('Alpha test routes', '/api/alpha', './routes/alphaTest');
 mountRoute('Alpha admin routes', '/admin/api/alpha', './routes/alphaAdmin');

@@ -1,0 +1,11 @@
+{
+  "$id": "learning-record",
+  "title": "LearningRecord",
+  "type": "object",
+  "required": [
+    "learningRecordId",
+    "behaviorFamily",
+    "adminStatus",
+    "mutationProhibited"
+  ]
+}

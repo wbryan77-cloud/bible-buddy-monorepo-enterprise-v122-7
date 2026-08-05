@@ -1,0 +1,22 @@
+{
+  "stages": [
+    "OBSERVED",
+    "CORRELATED",
+    "DRAFT_RECOMMENDATION",
+    "DUPLICATE_CHECKED",
+    "EVIDENCE_CHECKED",
+    "READY_FOR_ADMIN_REVIEW",
+    "APPROVED",
+    "REJECTED",
+    "DEFERRED",
+    "IMPLEMENTED_IN_SHADOW",
+    "VALIDATED_LOCALLY",
+    "DEPLOYED",
+    "VALIDATED_IN_PRODUCTION",
+    "PROMOTED",
+    "ROLLED_BACK",
+    "SUPERSEDED",
+    "RETIRED"
+  ],
+  "adminAICannotSelfApprove": true
+}

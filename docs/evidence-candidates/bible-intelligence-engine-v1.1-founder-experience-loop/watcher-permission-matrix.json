@@ -1,0 +1,10 @@
+{
+  "modes": [
+    "OFF",
+    "SHADOW",
+    "ADVISORY",
+    "ADMIN_REVIEW"
+  ],
+  "autonomousMutation": false,
+  "defaultMode": "SHADOW"
+}

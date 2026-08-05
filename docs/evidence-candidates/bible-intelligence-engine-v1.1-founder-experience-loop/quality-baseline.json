@@ -1,0 +1,13 @@
+{
+  "baselineVersion": "bie-v1.1-baseline-1",
+  "note": "Initial baseline; no improvement claim until later comparable run",
+  "metrics": [
+    "current_question_accuracy",
+    "direct_answer_accuracy",
+    "scripture_fidelity",
+    "claim_grounding",
+    "founder_acceptance",
+    "latency",
+    "cost"
+  ]
+}

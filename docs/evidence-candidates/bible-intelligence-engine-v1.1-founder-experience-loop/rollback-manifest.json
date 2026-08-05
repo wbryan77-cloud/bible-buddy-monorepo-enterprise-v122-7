@@ -1,0 +1,20 @@
+{
+  "rollbackCommit": "38fb5ca",
+  "files": [
+    "services/experienceEventLedger.js",
+    "services/experienceTraceAdapter.js",
+    "services/learningRecordStore.js",
+    "services/founderExperienceFeedback.js",
+    "services/evaluationRegistry.js",
+    "services/claimGroundingEvaluator.js",
+    "services/retrievalShadowLab.js",
+    "services/experienceWatchers.js",
+    "routes/founderExperience.js",
+    "routes/buddy.js",
+    "server.js",
+    "services/adminDecisionQueue.js",
+    "tests/bieV11FounderExperienceLoop.test.js",
+    "scripts/runBieV11FounderReplayValidation.js"
+  ],
+  "method": "git revert implementation SHA"
+}

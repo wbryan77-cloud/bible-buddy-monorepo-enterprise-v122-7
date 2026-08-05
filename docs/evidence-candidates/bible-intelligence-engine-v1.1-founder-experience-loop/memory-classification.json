@@ -1,0 +1,27 @@
+{
+  "TURN_MEMORY": {
+    "owner": "turn ephemeral"
+  },
+  "CONVERSATION_MEMORY": {
+    "owner": "activeConversationManager"
+  },
+  "RELATIONSHIP_MEMORY": {
+    "owner": "durableUserMemory",
+    "isolation": "per-user"
+  },
+  "FOUNDER_EXPERIENCE_MEMORY": {
+    "owner": "learningRecordStore"
+  },
+  "INSTITUTIONAL_KNOWLEDGE": {
+    "owner": "governed Scripture/history/OL/VLP"
+  },
+  "PROCEDURAL_MEMORY": {
+    "owner": "doctrine/response contracts"
+  },
+  "EVALUATION_MEMORY": {
+    "owner": "evaluationRegistry"
+  },
+  "REJECTED_AND_NEGATIVE": {
+    "owner": "REJECTED learning records + evidence rejections"
+  }
+}

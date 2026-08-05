@@ -1,0 +1,11 @@
+{
+  "$id": "experience-event",
+  "title": "ExperienceEvent",
+  "type": "object",
+  "required": [
+    "eventId",
+    "eventType",
+    "timestamp",
+    "schemaVersion"
+  ]
+}

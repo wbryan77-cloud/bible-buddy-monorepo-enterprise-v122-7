@@ -1,0 +1,33 @@
+{
+  "biblebuddy": {
+    "may": [
+      "retrieve approved knowledge",
+      "compose answers",
+      "read consented memory",
+      "write bounded outcomes",
+      "emit anonymized events"
+    ],
+    "mayNot": [
+      "approve knowledge",
+      "change doctrine",
+      "publish recommendations",
+      "deploy",
+      "activate evidence"
+    ]
+  },
+  "admin": {
+    "may": [
+      "observe",
+      "evaluate",
+      "approve/reject/defer learning records",
+      "manage governance workflows"
+    ],
+    "mayNot": [
+      "self-approve autonomously",
+      "change Scripture",
+      "create doctrine",
+      "activate evidence without approval",
+      "deploy without workflow"
+    ]
+  }
+}

@@ -196,6 +196,47 @@ async function handleBuddyChat({ body, res, requestId }) {
     httpStatus: 200,
     body: { ok: true, reply: payload },
   });
+
+  // BIE v1.1 — async Founder Experience instrumentation (no reply mutation).
+  setImmediate(() => {
+    try {
+      const { captureTurnInstrumentation } = require('../services/experienceTraceAdapter');
+      const { evaluateClaimGrounding } = require('../services/claimGroundingEvaluator');
+      const { runRetrievalShadowCompare } = require('../services/retrievalShadowLab');
+      captureTurnInstrumentation({
+        requestId,
+        userId,
+        sessionId,
+        message,
+        reply,
+        latencyMs,
+        clientType: 'biblebuddy',
+      });
+      const replyText = typeof payload.reply === 'string' ? payload.reply : String(payload.reply || '');
+      const evidenceRefs = Array.isArray(payload.scripture)
+        ? payload.scripture.map((s) => s.reference || s).filter(Boolean)
+        : [];
+      evaluateClaimGrounding({
+        replyText,
+        evidenceRefs,
+        historical: /Historical context:/i.test(replyText),
+        requestId,
+        persist: true,
+      });
+      runRetrievalShadowCompare({
+        message,
+        productionPack: {
+          scriptureRefs: evidenceRefs,
+          historyIncluded: !!reply?.runtime?.historyAllowed,
+          originalLanguage: !!reply?.runtime?.originalLanguageUsed,
+        },
+        requestId,
+        persist: true,
+      });
+    } catch (felErr) {
+      console.warn('[founderExperience] instrumentation skipped:', felErr.message);
+    }
+  });
 }
 
 // POST /buddy/chat  -> main Bible Buddy endpoint for the app
