@@ -28,6 +28,7 @@ const {
   findHintedReference,
   buildExplicitReferenceConceptShape,
   buildGroundedScriptureAnswer,
+  detectSatanReleaseQuestion,
 } = require('./groundedScriptureEngine');
 const { buildAuthorityAnswer } = require('./scriptureAuthorityEngine');
 
@@ -444,7 +445,10 @@ async function buildBibleWideAnswer({
   let reply;
   let canonicalRetrieval = null;
   let authorityResult = null;
-  if (concept.explicitScriptureReference) {
+  const satanReleaseFamily =
+    concept.id === 'satan_released_after_millennium' ||
+    Boolean(detectSatanReleaseQuestion(message));
+  if (concept.explicitScriptureReference || satanReleaseFamily) {
     // Grounded Scripture engine (Phase 5Q) retrieves live canonical text and
     // classifies READ / QUOTE / COMPARE / YES_NO intent. The Scripture
     // Authority Engine (Phase 5S) then classifies and orders the final
@@ -452,18 +456,37 @@ async function buildBibleWideAnswer({
     // supporting Scripture -> brief explanation -> conclusion) from that
     // same retrieved text only — never from the doctrine graph, never
     // invented.
-    canonicalRetrieval = await retrieveGroundedScriptureForConcept(message, concept);
-    authorityResult = await buildAuthorityAnswer({
-      intent: canonicalRetrieval.intent,
-      claimText: canonicalRetrieval.claimText,
-      successes: canonicalRetrieval.successes,
-      failures: canonicalRetrieval.failures,
-      concept,
-      requestedMinimum: 2,
-      retrievalMode: concept.retrievalMode || 'canonical_reference',
-      masterRoute: isContinuation ? 'bible_wide_continuation' : 'bible_wide_reasoning',
-    });
-    reply = authorityResult.reply;
+    // v1.3C: Satan-release explicitness stays on the grounded reply so the
+    // authority layer cannot rephrase an inferred agent as explicit Scripture.
+    const groundedConcept = satanReleaseFamily && !concept.explicitScriptureReference
+      ? {
+          ...concept,
+          explicitScriptureReference: true,
+          canonicalReferences: ['Revelation 20:7-10'],
+          retrievalMode: 'canonical_reference',
+        }
+      : concept;
+    canonicalRetrieval = await retrieveGroundedScriptureForConcept(message, groundedConcept);
+    if (canonicalRetrieval.satanReleaseSubtype) {
+      reply = canonicalRetrieval.reply;
+      authorityResult = {
+        reply,
+        classification: 'SATAN_RELEASE_EXPLICITNESS',
+        intent: canonicalRetrieval.intent,
+      };
+    } else {
+      authorityResult = await buildAuthorityAnswer({
+        intent: canonicalRetrieval.intent,
+        claimText: canonicalRetrieval.claimText,
+        successes: canonicalRetrieval.successes,
+        failures: canonicalRetrieval.failures,
+        concept: groundedConcept,
+        requestedMinimum: 2,
+        retrievalMode: groundedConcept.retrievalMode || 'canonical_reference',
+        masterRoute: isContinuation ? 'bible_wide_continuation' : 'bible_wide_reasoning',
+      });
+      reply = authorityResult.reply;
+    }
   } else if (isContinuation || CONTINUATION_PHRASE_RE.test(message)) {
     if (witnesses.length) {
       reply = `Here is another Scripture witness on this topic: ${witnesses.join('; ')}.`;

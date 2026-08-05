@@ -1,0 +1,7 @@
+{
+  "family": "satan_release_explicitness",
+  "state": "TO_BE_FILLED",
+  "reason": "Repair is locally validated but no post-deploy production probe has been run.",
+  "required_fields": ["production_sha", "health_sha", "replay_turns_1_17", "critical_score", "raw_evidence_path", "timestamp"],
+  "acceptance": "No asserted named releasing agent; no Matthew 6:10 kingdom hijack; resurrection chronology retained."
+}

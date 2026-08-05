@@ -54,8 +54,9 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
     return 'correction_repair';
   }
   // CORE_COMPANION_RECOVERY — Founder correction patterns observed in live Alpha testing.
+  // Bare "answer yes or no" is a style preference, not a correction (v1.3C).
   if (
-    /\b(does not say|doesn't say|did not say|didn't say|not say that|contradicting yourself|you are contradicting|you did not answer|you didn't answer|that verse does not|glitching|answer yes or no)\b/i.test(
+    /\b(does not say|doesn't say|did not say|didn't say|not say that|contradicting yourself|you are contradicting|you did not answer|you didn't answer|that verse does not|glitching)\b/i.test(
       m,
     )
   ) {

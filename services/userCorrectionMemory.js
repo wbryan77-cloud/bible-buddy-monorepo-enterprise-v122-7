@@ -50,9 +50,13 @@ const CORRECTION_PATTERNS = [
     label: 'direct_answers_first',
   },
   {
+    // Preference-only: bare "answer yes or no" records style preference but
+    // must NOT classify the turn as a user_correction (v1.3C — that hijacked
+    // satan-release and other new yes/no Scripture questions into companion).
     re: /\banswer yes or no\b/i,
     preference: { yesNoDirect: true },
     label: 'yes_no_direct',
+    preferenceOnly: true,
   },
   {
     re: /\bthat is confusing\b/i,
@@ -215,7 +219,9 @@ function buildCorrectionAcknowledgment(message = '') {
 }
 
 function isCorrectionMessage(message = '') {
-  return CORRECTION_PATTERNS.some((p) => p.re.test(String(message || '')));
+  return CORRECTION_PATTERNS.some(
+    (p) => !p.preferenceOnly && p.re.test(String(message || '')),
+  );
 }
 
 function clearUserPreferences(userId) {

@@ -1,0 +1,14 @@
+{
+  "family": "satan_release_explicitness",
+  "baseline": {"production_sha":"41b3b44","critical_score":"5/6","state":"PROVEN_PRODUCTION_FAILURE"},
+  "repair": {
+    "state":"REPAIRED_AND_VALIDATED_LOCAL",
+    "owners":["services/userCorrectionMemory.js","services/humanNeedDetector.js","services/bibleConceptGraph.js","services/groundedScriptureEngine.js","services/bibleWideReasoningEngine.js"],
+    "doctrine_contract_changed":false,
+    "approval_pause_required":false,
+    "local_test":"tests/bieV13cSatanReleaseExplicitness.test.js: 6/6 PASS",
+    "adjacent_test":"bieV13b: PASS"
+  },
+  "production_validation":{"state":"PENDING_DEPLOY","post_deploy_results":"TO_BE_FILLED"},
+  "next_bottleneck":"production satan_release adversarial stability, then Admin production auth token parity"
+}

@@ -1,0 +1,12 @@
+{
+  "repair_family": "satan_release_explicitness",
+  "rollback_strategy": "Revert the five service-file changes together, preserving unrelated working-tree changes; rerun v1.3C and adjacent v1.3B tests.",
+  "files": [
+    {"path":"services/userCorrectionMemory.js","revert":"remove preferenceOnly handling for bare answer yes or no"},
+    {"path":"services/humanNeedDetector.js","revert":"restore prior correction_repair pattern only if rolling back the entire repair"},
+    {"path":"services/bibleConceptGraph.js","revert":"remove satan_released_after_millennium node, order, and concordance override"},
+    {"path":"services/groundedScriptureEngine.js","revert":"remove Satan-release hints, detector, reply builder, and exports"},
+    {"path":"services/bibleWideReasoningEngine.js","revert":"restore normal authority rewrite path"}
+  ],
+  "verification": ["node tests/bieV13cSatanReleaseExplicitness.test.js","run adjacent bieV13b suite"]
+}

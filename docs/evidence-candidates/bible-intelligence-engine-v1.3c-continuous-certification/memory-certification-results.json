@@ -1,0 +1,6 @@
+{
+  "durableMemory": "ACTIVE",
+  "backend": "POSTGRES",
+  "newStore": false,
+  "reprovenThisBatch": false
+}

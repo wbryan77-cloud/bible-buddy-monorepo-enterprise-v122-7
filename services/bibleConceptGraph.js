@@ -228,6 +228,28 @@ const GRAPH_EXTENSIONS = {
     directAnswer:
       'Paul mentions being caught up to the third heaven in 2 Corinthians 12:2. Scripture distinguishes heavenly realms without replacing the promise of God’s kingdom on earth.',
   },
+  // v1.3C — Satan release after the millennium must outrank bare "thousand
+  // years" → millennial_kingdom, or imperfect speech falls into kingdom
+  // witnesses (Matthew 6:10) and OpenAI overclaims a named releasing agent.
+  satan_released_after_millennium: {
+    id: 'satan_released_after_millennium',
+    strictTopic: null,
+    polarity: null,
+    relatedConcepts: ['millennial_kingdom'],
+    forbiddenConfusions: ['named releasing agent as explicit Scripture'],
+    synonyms: [
+      /\b(satan|devil)\b.{0,80}\b(releas\w*|loos\w*|loosed|let\w*\s+out)\b/i,
+      /\b(releas\w*|loos\w*|loosed)\b.{0,80}\b(satan|devil)\b/i,
+      /\bafter (the )?thousand years.{0,60}\b(satan|devil)\b/i,
+      /\b(satan|devil)\b.{0,60}\bafter (the )?thousand years\b/i,
+      /\bwho (releases|looses|lets).{0,40}\b(satan|devil|him)\b/i,
+      /\bdoes revelation explicitly name.{0,80}\b(releas\w*|loos\w*)\b/i,
+    ],
+    directWitnesses: ['Revelation 20:7-10', 'Revelation 20:1-3'],
+    supportingWitnesses: [],
+    directAnswer:
+      'Revelation 20:7 says that when the thousand years are expired, Satan shall be loosed out of his prison. That verse does not explicitly name who looses him. Naming God, an angel, or Satan himself as the releasing agent goes beyond the wording of verse 7; earlier verses describe an angel binding him, but applying that to the release is inference, not the explicit release statement.',
+  },
   millennial_kingdom: {
     id: 'millennial_kingdom',
     strictTopic: 'kingdom',
@@ -354,6 +376,7 @@ const DETECTION_ORDER = [
   'dietary_clean_unclean',
   'kingdom_on_earth',
   'new_jerusalem',
+  'satan_released_after_millennium',
   'millennial_kingdom',
   'death_state',
   'sabbath_seventh_day',
@@ -381,7 +404,17 @@ function detectConceptFromGraph(message = '') {
   if (!m) return null;
 
   const fromConcordance = detectBibleConcept(m);
-  if (fromConcordance) return enrichNode(fromConcordance.id);
+  if (fromConcordance) {
+    // Concordance "thousand years" must not beat satan-release wording.
+    if (
+      fromConcordance.id === 'millennial_kingdom' &&
+      MERGED_GRAPH.satan_released_after_millennium &&
+      matchesNode(m, MERGED_GRAPH.satan_released_after_millennium)
+    ) {
+      return enrichNode('satan_released_after_millennium');
+    }
+    return enrichNode(fromConcordance.id);
+  }
 
   for (const id of DETECTION_ORDER) {
     const node = MERGED_GRAPH[id];

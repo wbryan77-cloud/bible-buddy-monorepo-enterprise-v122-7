@@ -1,0 +1,18 @@
+{
+  "certification": "BIBLE_INTELLIGENCE_PARTIALLY_CERTIFIED",
+  "source": "v1.3B operational-readiness and SprintResumeCheckpoint.md",
+  "capabilities": [
+    {"name":"openai_first_runtime","owner":"openAiFirstCompanionRuntime","status":"ACTIVE_PARTIAL","evidence":"v1.3B; FEL stream gap"},
+    {"name":"strict_doctrine","owner":"strictDoctrineGate/doctrineFinalAuthority","status":"ACTIVE","evidence":"v1.3B"},
+    {"name":"resurrection_chronology","owner":"doctrine v1.3A","status":"ACTIVE","evidence":"v1.3B"},
+    {"name":"satan_release_explicitness","owner":"groundedScriptureEngine/bibleWideReasoningEngine","status":"ACTIVE_PARTIAL","evidence":"6/6 local; production PENDING_DEPLOY"},
+    {"name":"fel_observe_learn","owner":"experience*/learningRecordStore","status":"ACTIVE_PARTIAL","evidence":"Admin token and stream gaps"},
+    {"name":"recommendations","owner":"recommendationIntelligence","status":"SHADOW_BY_DESIGN","evidence":"v1.3B"},
+    {"name":"mission_control","owner":"founderMissionControl","status":"SHADOW_BY_DESIGN","evidence":"Admin-gated"},
+    {"name":"durable_memory","owner":"durableUserMemory","status":"ACTIVE","evidence":"Postgres health"},
+    {"name":"iog","owner":"IOG","status":"INDEXED_ONLY","evidence":"not promoted"},
+    {"name":"icoj","owner":"ICOJ","status":"INDEXED_ONLY","evidence":"not promoted"},
+    {"name":"books","owner":"books index","status":"INDEXED_ONLY","evidence":"not promoted"},
+    {"name":"legacy_runtimes","owner":"masterBuddyRuntime et al.","status":"DEAD_CODE","evidence":"OpenAI-first hard-cut"}
+  ]
+}

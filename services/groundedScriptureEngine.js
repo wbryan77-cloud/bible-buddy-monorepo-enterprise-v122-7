@@ -33,7 +33,123 @@ const CLAIM_REFERENCE_HINTS = [
     pattern: /\b(white skin|blue eyes|fine straight hair)\b.{0,120}\bjesus\b/i,
     reference: 'Revelation 1:14-15',
   },
+  // v1.3C — Satan release explicitness: identify Rev 20:7-10 only; answers
+  // are still computed from retrieved text (never invent a named agent).
+  {
+    pattern:
+      /\b(satan|devil)\b.{0,100}\b(releas\w*|loos\w*|loosed|let\w*\s+out|lets him out)\b/i,
+    reference: 'Revelation 20:7-10',
+  },
+  {
+    pattern:
+      /\b(releas\w*|loos\w*|loosed|let\w*\s+out)\b.{0,100}\b(satan|devil)\b/i,
+    reference: 'Revelation 20:7-10',
+  },
+  {
+    pattern:
+      /\bafter (the )?thousand years\b.{0,80}\b(satan|devil)\b/i,
+    reference: 'Revelation 20:7-10',
+  },
+  {
+    pattern:
+      /\b(satan|devil)\b.{0,80}\bafter (the )?thousand years\b/i,
+    reference: 'Revelation 20:7-10',
+  },
+  {
+    pattern:
+      /\bdoes revelation explicitly name.{0,100}\b(releas\w*|loos\w*|agent|person)\b/i,
+    reference: 'Revelation 20:7-10',
+  },
+  {
+    pattern:
+      /\bwho (releases|looses|lets).{0,40}\b(him|satan|devil)\b/i,
+    reference: 'Revelation 20:7-10',
+  },
 ];
+
+/**
+ * Narrow question-family detector for Satan’s release after the millennium.
+ * Returns a subtype used only to shape YES/NO / explicit-vs-inference wording
+ * against retrieved Revelation 20 text — never supplies a doctrinal agent.
+ */
+function detectSatanReleaseQuestion(message = '') {
+  const m = String(message || '');
+  const satan = /\b(satan|devil)\b/i.test(m);
+  const release = /\b(releas\w*|loos\w*|loosed|let\w*\s+out|lets him out)\b/i.test(m);
+  const afterThousand =
+    /\b(after (the )?thousand years|thousand years (are )?(expired|finished)|millennium)\b/i.test(m);
+  const whoReleases = /\bwho (releases|looses|lets)\b/i.test(m) || /\bwho is the ['"]?he\b/i.test(m);
+  const explicitName =
+    /\bexplicitly name\b/i.test(m) ||
+    /\bdoes revelation (explicitly )?name\b/i.test(m) ||
+    /\bdoes rev\.?\b.{0,40}\bname\b/i.test(m) ||
+    /\bname the (person|agent)\b/i.test(m) ||
+    /\bname who\b/i.test(m);
+  const godClaim = /\bdoes god (release|loose)\b/i.test(m) || /\bgod release(s)? (satan|him|the devil)\b/i.test(m);
+  const angelClaim =
+    /\bdoes an? angel (release|loose)\b/i.test(m) || /\bangel release(s)? (satan|him)\b/i.test(m);
+  const selfClaim =
+    /\bdoes satan release himself\b/i.test(m) || /\bsatan release himself\b/i.test(m);
+  const passageAsk =
+    /\bwhat does the passage actually say\b/i.test(m) ||
+    /\bgive me scripture only\b/i.test(m) ||
+    /\bscripture only\b/i.test(m);
+  const inferenceAsk =
+    /\bscripture or inference\b/i.test(m) ||
+    /\bstating scripture or inference\b/i.test(m) ||
+    /\bwhat can we say with certainty\b/i.test(m);
+  const isReleased =
+    /\bis satan released\b/i.test(m) ||
+    /\bsatan (is |shall be )?(released|loosed)\b/i.test(m) ||
+    (satan && afterThousand && (release || /\?\s*$/.test(m.trim())));
+
+  if (!(satan || whoReleases || explicitName) && !release) return null;
+  if (!(satan || release || afterThousand || whoReleases || explicitName)) return null;
+  // Require satan/release signal unless this is a follow-up already hinted.
+  if (!satan && !release && !explicitName && !whoReleases) return null;
+  if (satan && !release && !afterThousand && !explicitName && !whoReleases && !godClaim) return null;
+
+  if (explicitName) return 'explicit_agent_named';
+  if (godClaim) return 'god_releases_claim';
+  if (angelClaim) return 'angel_releases_claim';
+  if (selfClaim) return 'self_releases_claim';
+  if (whoReleases) return 'who_releases';
+  if (passageAsk) return 'passage_only';
+  if (inferenceAsk) return 'certainty_vs_inference';
+  if (isReleased || (satan && release)) return 'is_released';
+  return null;
+}
+
+function buildSatanReleaseGroundedReply({ subtype, successes, failures }) {
+  if (!successes.length) return buildFailureReply(failures);
+
+  const primary =
+    successes.find((r) => /20:7/i.test(r.reference)) || successes[0];
+  const quoted = `${primary.reference} says: "${primary.text}"`;
+  const bindingNote =
+    'Revelation 20:1-3 earlier describes an angel binding Satan; applying that binding agent to the later release is inference, not the wording of the release statement.';
+
+  switch (subtype) {
+    case 'is_released':
+      return `Yes. ${quoted} Revelation states that Satan shall be loosed after the thousand years.`;
+    case 'explicit_agent_named':
+      return `No. ${quoted} The release statement does not explicitly name the person or agent who looses him.`;
+    case 'god_releases_claim':
+      return `No — Scripture does not explicitly state that God releases Satan. ${quoted} Naming God as the releasing agent is inference beyond the wording of this verse.`;
+    case 'angel_releases_claim':
+      return `No — Revelation 20:7 does not name an angel as the one who releases Satan. ${quoted} ${bindingNote}`;
+    case 'self_releases_claim':
+      return `No. ${quoted} The wording is that Satan shall be loosed — it does not say he releases himself.`;
+    case 'who_releases':
+      return `${quoted} Revelation says Satan shall be loosed; it does not explicitly name who looses him. ${bindingNote}`;
+    case 'passage_only':
+      return quoted;
+    case 'certainty_vs_inference':
+      return `Scripture: ${quoted} Certainty from that wording: Satan is loosed after the thousand years. Not stated explicitly: who looses him. ${bindingNote}`;
+    default:
+      return `Revelation addresses Satan’s release after the thousand years. ${quoted} The text does not explicitly name who looses him.`;
+  }
+}
 
 function findHintedReference(message = '') {
   const m = String(message || '');
@@ -194,17 +310,42 @@ function buildClaimReply({ intent, claimText, successes, failures }) {
  * Scripture text.
  */
 async function buildGroundedScriptureAnswer({ message = '', references = [] } = {}) {
+  const satanSubtype = detectSatanReleaseQuestion(message);
   const { intent, claimText } = classifyScriptureRequest(message);
-  const results = await fetchCanonicalScriptureForReferences(references);
+  const refs =
+    references.length > 0
+      ? references
+      : satanSubtype
+        ? ['Revelation 20:7-10']
+        : [];
+  const results = await fetchCanonicalScriptureForReferences(refs);
   const successes = results.filter((r) => r.ok);
   const failures = results.filter((r) => !r.ok);
+
+  if (satanSubtype) {
+    const reply = buildSatanReleaseGroundedReply({
+      subtype: satanSubtype,
+      successes,
+      failures,
+    });
+    return {
+      intent: 'YES_NO',
+      claimText: satanSubtype,
+      references: refs,
+      results,
+      successes,
+      failures,
+      reply,
+      satanReleaseSubtype: satanSubtype,
+    };
+  }
 
   const reply =
     (intent === 'YES_NO' || intent === 'COMPARE') && claimText
       ? buildClaimReply({ intent, claimText, successes, failures })
       : buildReadOrQuoteReply(successes, failures);
 
-  return { intent, claimText, references, results, successes, failures, reply };
+  return { intent, claimText, references: refs, results, successes, failures, reply };
 }
 
 module.exports = {
@@ -214,4 +355,5 @@ module.exports = {
   classifyScriptureRequest,
   isClaimSupportedByText,
   buildGroundedScriptureAnswer,
+  detectSatanReleaseQuestion,
 };
