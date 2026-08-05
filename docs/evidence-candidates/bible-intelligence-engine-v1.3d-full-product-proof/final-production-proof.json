@@ -1,0 +1,61 @@
+{
+  "production_sha": "bbb6b2a",
+  "post_deploy_cases": [
+    {
+      "id": "S1_memory_forget_request",
+      "input": "Can you forget what I told you?",
+      "reply": "Alright \u2014 I'll forget that and clear it from memory. Thank you for telling me.",
+      "latencyMs": 172,
+      "pass": true,
+      "family": "memory_forget"
+    },
+    {
+      "id": "PASSB_satan_frees",
+      "input": "After the millennium ends, does Revelation name who frees Satan? Yes or no.",
+      "reply": "No. Revelation 20:7-10 says: \"And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea. And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from God out of heaven, and devoured them. And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.\" The release statement does not explicitly name the person or agent who looses him.",
+      "latencyMs": 166,
+      "pass": true,
+      "family": "satan_release"
+    }
+  ],
+  "memory_five_facts": [
+    {
+      "write": "Remember that my favorite song is Prince, Let's Go Crazy.",
+      "ask": "What is my favorite song?",
+      "reply": "Your favorite song is Prince, \"Let's Go Crazy.\"",
+      "pass": true,
+      "latencyMs": 2302
+    },
+    {
+      "write": "Please remember to call me Jordan.",
+      "ask": "What name should you use for me?",
+      "reply": "You asked me to call you Jordan. I'll remember that.",
+      "pass": true,
+      "latencyMs": 1649
+    },
+    {
+      "write": "Remember that I prefer short answers.",
+      "ask": "What answer length do I prefer?",
+      "reply": "You prefer short answers.",
+      "pass": true,
+      "latencyMs": 1822
+    },
+    {
+      "write": "Remember that I am studying the Sabbath right now.",
+      "ask": "What am I studying?",
+      "reply": "You are studying the Sabbath right now.",
+      "pass": true,
+      "latencyMs": 2086
+    },
+    {
+      "write": "Please remember my prayer burden for my mother's recovery.",
+      "ask": "What prayer burden did I share?",
+      "reply": "You shared a prayer burden for your mother's recovery.",
+      "pass": true,
+      "latencyMs": 2138
+    }
+  ],
+  "memory_five_rate": 1.0,
+  "satan_family_pass": true,
+  "critical_repair_pass": true
+}

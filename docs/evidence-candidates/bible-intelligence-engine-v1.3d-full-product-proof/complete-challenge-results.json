@@ -1,0 +1,14 @@
+{
+  "passB": {
+    "passed": 5,
+    "total": 6,
+    "failed": [
+      "satan_frees_overclaim"
+    ]
+  },
+  "passC_sabbath": {
+    "passed": 3,
+    "total": 3
+  },
+  "source": "answer-proof-results.json"
+}

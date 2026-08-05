@@ -1,0 +1,27 @@
+{
+  "production_sha": "bbb6b2a",
+  "repairs": [
+    {
+      "id": "stream_fel_parity",
+      "owner": "routes/buddy.js",
+      "state": "REPAIRED_AND_VALIDATED"
+    },
+    {
+      "id": "memory_forget_ack",
+      "owner": "relationshipContextSelector.js",
+      "state": "REPAIRED_AND_VALIDATED",
+      "proof": "founder_corpus_S1_PASS"
+    },
+    {
+      "id": "satan_frees_routing",
+      "owner": "groundedScriptureEngine.js",
+      "state": "REPAIRED_AND_VALIDATED",
+      "proof": "production_PASS"
+    },
+    {
+      "id": "admin_auth_parity",
+      "state": "BLOCKED_WITH_EXACT_REASON",
+      "reason": "Render secret mismatch"
+    }
+  ]
+}

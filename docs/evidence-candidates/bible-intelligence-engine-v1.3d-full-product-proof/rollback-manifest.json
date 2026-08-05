@@ -1,0 +1,5 @@
+{
+  "rollback_tested": "UNKNOWN",
+  "strategy": "deploy previously healthy revision",
+  "preserve_evidence": true
+}

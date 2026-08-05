@@ -1,0 +1,26 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/chat.html",
+      "status": 200
+    },
+    {
+      "path": "/admin/login.html",
+      "status": 200
+    },
+    {
+      "path": "/admin/bible-authority.html",
+      "status": 200
+    },
+    {
+      "path": "/health",
+      "status": 200
+    }
+  ],
+  "full_interactive_journey": "UNKNOWN",
+  "authorized_admin_mutations": "UNKNOWN"
+}

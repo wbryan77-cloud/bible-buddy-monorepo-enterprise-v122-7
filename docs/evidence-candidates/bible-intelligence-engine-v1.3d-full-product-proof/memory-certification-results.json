@@ -1,0 +1,7 @@
+{
+  "passed": 16,
+  "total": 16,
+  "result": "MEMORY_CERTIFICATION PASS",
+  "forget_corpus_case": "FAILED_PRE_REPAIR_PENDING_RETEST",
+  "source": "memory-cert-run.log"
+}

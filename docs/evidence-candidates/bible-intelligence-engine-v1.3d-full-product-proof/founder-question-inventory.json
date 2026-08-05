@@ -1,0 +1,8 @@
+{
+  "total": 32,
+  "passed": 31,
+  "failed": [
+    "S1_memory_forget_request"
+  ],
+  "source": "founder-corpus-run.log"
+}

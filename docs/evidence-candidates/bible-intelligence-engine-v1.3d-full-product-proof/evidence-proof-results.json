@@ -1,0 +1,8 @@
+{
+  "iog_smoke": "PARTIAL",
+  "note": "rejected_candidates_never_in_production_evidence FAIL is duplicate-reject overlap with already-approved refs (autoRejectedDuplicate). Not silent promotion of unsupported claims into chat answers. CLOSED_NOT_A_DEFECT for answer governance; smoke assertion over-strict for duplicates.",
+  "leaked_refs_are_canonical_verses": true,
+  "chat_corpus_rejected_leak_observed": false,
+  "books": "INDEXED_ONLY",
+  "testimony": "INDEXED_ONLY"
+}

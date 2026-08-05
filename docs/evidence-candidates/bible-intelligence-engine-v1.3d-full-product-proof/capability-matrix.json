@@ -1,0 +1,13 @@
+{
+  "chat": {
+    "logical_owner": "services/liveResponseOwner.js#finalizeLiveResponse",
+    "transport_owner": "routes/buddy.js",
+    "status": "EVIDENCED"
+  },
+  "stream_fel": {
+    "status": "LOCAL_REPAIRED_PENDING_DEPLOY_VALIDATION"
+  },
+  "admin_auth": {
+    "status": "EXPECTED_CONFIG_GAP"
+  }
+}
