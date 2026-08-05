@@ -18,7 +18,7 @@ Intentionally deferred / external-reference-only:
 
 ## Gates
 
-1 Reuse PASS · 2 Shared core PASS · 3 Event ledger PASS · 4 Traceability PASS · 5 Evaluation PASS · 6 Retrieval PASS (shadow) · 7 Memory PASS · 8 Governance PASS · 9 Admin PASS · 10 Privacy PASS · 11 Performance PASS (async) · 12 Replay PASS · 13 Regression PASS · 14 Production (pending deploy fill)
+1 Reuse PASS · 2 Shared core PASS · 3 Event ledger PASS · 4 Traceability PASS · 5 Evaluation PASS · 6 Retrieval PASS (shadow) · 7 Memory PASS · 8 Governance PASS · 9 Admin PASS · 10 Privacy PASS · 11 Performance PASS (async) · 12 Replay PASS · 13 Regression PASS · 14 Production PASS
 
 ## Exact next bottleneck
 
