@@ -1,0 +1,30 @@
+{
+  "present": true,
+  "len": 16,
+  "len_strip": 16,
+  "leading_ws": false,
+  "trailing_ws": false,
+  "contains_lf": false,
+  "contains_cr": false,
+  "sha12": "17d6bfe05d1b",
+  "sha12_strip": "17d6bfe05d1b",
+  "strip_changes_value": false,
+  "health_sha": "bd57ab0",
+  "adminAuthConfigured": true,
+  "attempts": [
+    {
+      "label": "raw_sanitized_for_http",
+      "status": 401
+    },
+    {
+      "label": "stripped",
+      "status": 401
+    },
+    {
+      "label": "bearer_lower",
+      "status": 401
+    }
+  ],
+  "middleware_trims": false,
+  "middleware_bearer_case_sensitive": true
+}
