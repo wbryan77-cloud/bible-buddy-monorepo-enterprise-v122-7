@@ -67,13 +67,17 @@ function buildSelfTestPayload() {
   } catch (_) {
     durableMemory = { owner: 'durableUserMemory', error: 'unavailable' };
   }
-  // v1.3E — boolean presence only. Never expose token values or names of
-  // fallback secrets beyond a single configured/missing signal.
+  // v1.3E/F — presence + short fingerprint only. Never expose token values.
   let adminAuthConfigured = false;
+  let adminAuthFingerprint = null;
   try {
-    adminAuthConfigured = !!require('./services/adminAuthMiddleware').resolveAdminToken();
+    const adminAuth = require('./services/adminAuthMiddleware');
+    const token = adminAuth.resolveAdminToken();
+    adminAuthConfigured = !!token;
+    adminAuthFingerprint = adminAuth.adminAuthFingerprint(token);
   } catch (_) {
     adminAuthConfigured = false;
+    adminAuthFingerprint = null;
   }
   return {
     health: {
@@ -84,6 +88,7 @@ function buildSelfTestPayload() {
       releaseBranch: RELEASE_BRANCH,
       durableMemory,
       adminAuthConfigured,
+      adminAuthFingerprint,
     },
     providers: computeProviderStatus(),
     queue: { ok: true, detail: 'not configured for production queue yet' },
