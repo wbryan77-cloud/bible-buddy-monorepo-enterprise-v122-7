@@ -1,0 +1,10 @@
+{
+  "production_sha": "e528a5a",
+  "prod_fingerprint": "9d04dcfc8c6d",
+  "probe_fingerprint": "17d6bfe05d1b",
+  "fingerprint_match": false,
+  "root_cause": "CONFIGURATION_VALUE_MISMATCH",
+  "repository_hardening": "REPAIRED_AND_VALIDATED",
+  "certification": "CONFIGURATION_ACTION_REQUIRED",
+  "founder_corpus_boundary": "32/32"
+}

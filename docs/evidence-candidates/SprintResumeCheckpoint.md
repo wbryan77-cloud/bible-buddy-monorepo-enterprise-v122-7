@@ -3,13 +3,16 @@
 ## Certifications
 | Phase | Result |
 |---|---|
-| v1.3D | BIBLEBUDDY_PARTIALLY_PROVEN |
-| **v1.3E** | **BIBLEBUDDY_ADMIN_ACTION_REQUIRED** |
+| v1.3E | BIBLEBUDDY_ADMIN_ACTION_REQUIRED |
+| **v1.3F** | **CONFIGURATION_ACTION_REQUIRED** |
 
-## Blocker
-Production `adminAuthConfigured: PRESENT` on SHA `133c6bb`, but probe-env `BIBLE_AUTHORITY_ADMIN_TOKEN` does not match Render.
+## Root cause (proven)
+Production `adminAuthFingerprint` `9d04dcfc8c6d` ≠ probe `17d6bfe05d1b`.
 
 ## Founder action
-Set agent/local env `BIBLE_AUTHORITY_ADMIN_TOKEN` equal to Render value (do not paste in chat). Reply `CONTINUE`.
+Set agent env `BIBLE_AUTHORITY_ADMIN_TOKEN` equal to Render value until fingerprints MATCH. Reply `CONTINUE`.
 
-Evidence: `docs/evidence-candidates/bible-intelligence-engine-v1.3e-admin-production-proof/`
+## Repo hardening shipped
+`e528a5a` — trim + Bearer normalize + fingerprint on health.
+
+Evidence: `docs/evidence-candidates/bible-intelligence-engine-v1.3f-admin-parity-certification/`
