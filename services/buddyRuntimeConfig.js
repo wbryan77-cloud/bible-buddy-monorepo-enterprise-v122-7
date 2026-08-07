@@ -54,7 +54,9 @@ function logStartupDiagnostics() {
     console.warn('WARN: BUDDY_TEMPLATE_PROSE=1 on production — study template prose may speak.');
   }
   if (cfg.nodeEnv === 'production' && !cfg.openAiFirstEnabled) {
-    console.warn('WARN: BUDDY_OPENAI_FIRST=0 — masterBuddyRuntime template responders active.');
+    console.warn(
+      'WARN: BUDDY_OPENAI_FIRST=0 is ignored by hard cutover — openAiFirstCompanionRuntime remains the only live path.'
+    );
   }
   if (!cfg.openAiKeyPresent) {
     console.warn('WARN: OPENAI_API_KEY missing — all turns will use connection error path.');

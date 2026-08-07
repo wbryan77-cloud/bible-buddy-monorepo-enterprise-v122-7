@@ -175,7 +175,7 @@ const ROUTE_OWNERS = {
   open_general: {
     intent: 'open_general',
     owner: 'personalizedFallback',
-    module: 'masterBuddyRuntime',
+    module: 'openAiFirstCompanionRuntime',
     allowedMemory: 'relevant_only',
     allowedStudyPrompt: 'only_if_user_asks',
     allowedHistory: false,

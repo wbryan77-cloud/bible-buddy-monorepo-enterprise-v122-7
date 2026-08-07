@@ -6,9 +6,6 @@ const {
   buildRuntimeInstructions,
   scoreCompanionQuality,
 } = require('./runtimeOrchestrator');
-const { runDoctrineRuntimePipeline } = require('./doctrineRuntimePipeline');
-const { orchestrateBuddyRuntime } = require('./retrievalFirstBuddyOrchestrator');
-const { presentCompanionDoctrine } = require('./companionDoctrinePresenter');
 const { saveConversationState, buildConversationStateContext } = require('./runtimeConversationStateEngine');
 const { saveContinuityMemory } = require('./continuityMemoryRuntime');
 const { savePrayerContinuity, buildPrayerContinuityContext } = require('./runtimePrayerContinuityEngine');
