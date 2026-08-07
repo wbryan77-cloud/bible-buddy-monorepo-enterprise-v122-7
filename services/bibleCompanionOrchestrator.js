@@ -1269,6 +1269,64 @@ async function runBibleCompanionOrchestrator({
 
   const relationshipContext = buildRelationshipContext({ userId, message, state: mergedState });
 
+  // Phase 6Y / Sprint 2.REPAIR — explicit historical-causation asks (who changed
+  // Sabbath, historical evidence, Constantine, etc.) must be owned by the
+  // existing sabbathHistoryCompanion before phase5i doctrine-companion prose
+  // answers the WHAT-is-Sabbath definition instead.
+  {
+    const { isExplicitHistoricalCausationAsk } = require('./historicalCausationAsk');
+    const sabbathish =
+      /\b(sabbath|sunday|saturday|seventh[-\s]?day)\b/i.test(message) ||
+      /\b(sabbath|sunday|saturday|seventh[-\s]?day)\b/i.test(
+        String(mergedState?.activeTopic || mergedState?.lastDoctrineTopic || '')
+      ) ||
+      conceptMatchEarly?.strictTopic === 'sabbath' ||
+      conceptMatchEarly?.id === 'sabbath_seventh_day';
+    if (isExplicitHistoricalCausationAsk(message) && sabbathish) {
+      const { buildSabbathHistoryResponse } = require('./sabbathHistoryCompanion');
+      const structured = verifyOrchestratorOutput(
+        buildSabbathHistoryResponse({
+          userId,
+          message,
+          recentSessions: Array.isArray(runtimeContext?.recentSessions)
+            ? runtimeContext.recentSessions
+            : [],
+          correction: !!companionIntent?.isCorrection || /not my question|historically/i.test(message),
+          runtimeContext,
+          profile,
+          questionIntent: runtimeContext?.questionIntent || null,
+        }),
+        { message }
+      );
+      recordAnswerTurnMemory(userId, message, structured);
+      recordUserTurn(userId, message, 'companion');
+      return {
+        handled: true,
+        dispatch: 'companion',
+        reasoningPlan: {
+          answerLane: 'companion',
+          historyCausationAsk: true,
+          companionIntent,
+        },
+        ctx: {
+          structured,
+          userId,
+          mode,
+          personaKey,
+          message,
+          safety,
+          runtimeContext,
+          profile,
+          testerId,
+          sessionId,
+          cohort,
+          route: 'sabbath_history_companion',
+          blockClarification: true,
+        },
+      };
+    }
+  }
+
   if (shouldRunPhase5I(companionIntent, relationshipContext)) {
     const phase5i = runPhase5ICompanionPipeline({
       userId,
