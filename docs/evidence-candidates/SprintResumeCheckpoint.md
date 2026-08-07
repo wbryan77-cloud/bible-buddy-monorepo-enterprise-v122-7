@@ -1,46 +1,44 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**V1.4C SPRINT_IMPLEMENTATION_CLOSED** for the Sabbath-history orchestrator wire.
+**V1.5 IMPLEMENTATION_COMPLETE** — Sabbath-history wire + runtime hygiene closed on production.
 
 | Field | Value |
 |---|---|
-| Implementation SHA | `3f60eba` |
-| origin/main | `3f60eba` |
-| Production `/health.releaseCommit` | `3f60eba` |
+| Hygiene / orphan cleanup SHA | `773bff8` |
+| Sabbath-history wire SHA | `3f60eba` (ancestor) |
+| origin/main | `773bff8` |
+| Production `/health.releaseCommit` | `773bff8` |
 | Parity | YES |
 
 ## COMPLETED_AND_DEPLOYED
-- Sabbath historical routing → existing `sabbathHistoryCompanion` (`bibleCompanionOrchestrator.js`)
+- Sabbath historical routing → `sabbathHistoryCompanion` (`3f60eba`)
+- Dead `buddyBrain` imports removed (`773bff8`)
+- Runtime cutover warn corrected (`773bff8`)
+- `routeOwnershipTable.open_general` module aligned (`773bff8`)
+- Orphan runtimes deleted: `masterBuddyRuntime`, `doctrineCompanionPath`, `reasonFirstBuddyRuntime` (`773bff8`)
 - Admin auth normalize + fingerprint (`e528a5a`)
-- Admin token parity certification (V1.3K human local probe — DO_NOT_REOPEN)
-- Resurrection chronology / Satan-release / forget / durable Postgres owners (prior + retained)
+- Admin token parity (V1.3K — DO_NOT_REOPEN)
+- Resurrection / Satan-release / forget / durable Postgres / FEL / MC owners retained
 
 ## IMPLEMENTED_PENDING_RELEASE
-- None for evidence-qualified production repairs from this handoff.
-
-## WORKING_TREE_HYGIENE_NOT_IN_RELEASE (optional)
-- `buddyBrain.js` dead imports
-- `buddyRuntimeConfig.js` warn text
-- `routeOwnershipTable.js` module label
-- Orphan deletes: `masterBuddyRuntime.js`, `doctrineCompanionPath.js`, `reasonFirstBuddyRuntime.js`
+- None (evidence-qualified).
 
 ## GOVERNANCE_BLOCKED / EVIDENCE_BLOCKED
-- Unapproved IOG/ICOJ / edition-unresolved book claims
+- Unapproved IOG/ICOJ / edition-unresolved claims
 - Isolated Admin mutation probe endpoint (intentionally absent)
 
-## DEFERRED
+## DEFERRED_WITH_VALID_REASON
 - Dual relationship-memory consolidation
-- Render unused env cleanup
-- Mass orphan quarantine
-- Expanding `historicalCausationAsk` beyond current detector (paraphrases that do not match)
-
-## DEAD_CODE_PENDING_SAFE_REMOVAL
-- Orphan runtimes listed above (0 requirers; deferred from minimal release)
+- Render unused env cleanup (no dashboard edits)
+- Expanding `historicalCausationAsk` paraphrases beyond proven detector
+- Real-record Admin lifecycle DEFER/APPROVE/REJECT proof (next bottleneck)
+- G2R regenerated docs / sample-env doc tweaks still local (documentation only)
 
 ## NEXT_MEASURED_BOTTLENECK
-**Real-record Admin lifecycle** (DEFER/APPROVE/REJECT + suppression on recommendation-produced ids) using existing routes only — not Admin token parity, not Sabbath history.
+**Real-record Admin lifecycle** (DEFER/APPROVE/REJECT + suppression) on existing recommendation-produced ids — existing routes only.
 
 ## DO_NOT_REOPEN_WITHOUT_NEW_EVIDENCE
-- Admin token / Cursor agent env parity investigation
-- Creating a synthetic Admin mutation test route
+- Admin token / Cursor agent env parity
+- Synthetic Admin mutation test route
+- Architecture / duplicate runtime redesign

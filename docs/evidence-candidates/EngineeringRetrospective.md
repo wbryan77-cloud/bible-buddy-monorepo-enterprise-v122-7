@@ -22,6 +22,10 @@ Concrete instance closed in V1.4C: Sabbath-history wire in `bibleCompanionOrches
 ## What worked this closure
 
 - Minimal staged file (`git add -- path` only).
-- Optional hygiene deferred to keep blast radius small.
+- Optional hygiene deferred to keep blast radius small on V1.4C, then closed in V1.5 once Sabbath wire was already shipped.
 - SHA parity gate before claiming deploy success.
 - Retrying flaky HTTP/2 timeouts without weakening tests.
+
+## V1.5 follow-through
+
+After Sabbath wire was `IMPLEMENTED_AND_DEPLOYED`, remaining `IMPLEMENTED_NOT_COMMITTED` hygiene (dead imports, truthful cutover warn, ownership table label, 0-requirer orphan deletes) was staged explicitly, committed as `773bff8`, deployed, and re-proven on production (history owner + doctrine Sabbath still correct). Documentation/G2R churn stayed excluded.
