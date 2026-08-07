@@ -1,44 +1,48 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**V1.5 IMPLEMENTATION_COMPLETE** — Sabbath-history wire + runtime hygiene closed on production.
+**V1.6 ENGINEERING_SPRINT_COMPLETE**
 
 | Field | Value |
 |---|---|
-| Hygiene / orphan cleanup SHA | `773bff8` |
-| Sabbath-history wire SHA | `3f60eba` (ancestor) |
-| origin/main | `773bff8` |
-| Production `/health.releaseCommit` | `773bff8` |
-| Parity | YES |
+| HEAD / origin/main | `a7e02ae` |
+| Production `/health.releaseCommit` | `a7e02ae` |
+| Deployment parity | **YES** |
+| Admin auth | Configured (`adminAuthFingerprint` `9d04dcfc8c6d`) |
 
-## COMPLETED_AND_DEPLOYED
-- Sabbath historical routing → `sabbathHistoryCompanion` (`3f60eba`)
-- Dead `buddyBrain` imports removed (`773bff8`)
-- Runtime cutover warn corrected (`773bff8`)
-- `routeOwnershipTable.open_general` module aligned (`773bff8`)
-- Orphan runtimes deleted: `masterBuddyRuntime`, `doctrineCompanionPath`, `reasonFirstBuddyRuntime` (`773bff8`)
-- Admin auth normalize + fingerprint (`e528a5a`)
-- Admin token parity (V1.3K — DO_NOT_REOPEN)
-- Resurrection / Satan-release / forget / durable Postgres / FEL / MC owners retained
+## COMPLETED_AND_DEPLOYED (engineering)
+| Subsystem | Commit | Regression / proof |
+|---|---|---|
+| Sabbath-history wire | `3f60eba` | Sprint2 8/8; prod `sabbath_history_companion`; Gate4 29/29 |
+| Runtime hygiene / orphan deletes | `773bff8` | Focused units; prod history+doctrine still correct |
+| Admin auth normalize + fingerprint | `e528a5a` | Health signal + V1.3K proof |
+| Admin token parity certification | V1.3K (ops) | `admin-proof.json` overall PASS — **DO_NOT_REOPEN** |
+| Admin lifecycle **owners** (DEFER/APPROVE/REJECT/suppress/audit/MC) | Existing | V1.5A/B — **NO IMPLEMENTATION REQUIRED** |
+| FTC / Memory / Resurrection (post Sabbath deploy) | on `3f60eba` line | 32/32, 16/16, 8/8 |
 
-## IMPLEMENTED_PENDING_RELEASE
-- None (evidence-qualified).
+## NO IMPLEMENTATION GAPS
+No evidence-qualified production-code repairs remain uncommitted or undeployed.
 
-## GOVERNANCE_BLOCKED / EVIDENCE_BLOCKED
-- Unapproved IOG/ICOJ / edition-unresolved claims
-- Isolated Admin mutation probe endpoint (intentionally absent)
+Working tree may still hold documentation/G2R regeneration noise and untracked evidence packs — **not** implementation gaps.
 
-## DEFERRED_WITH_VALID_REASON
+## DEFERRED (not engineering blockers)
 - Dual relationship-memory consolidation
-- Render unused env cleanup (no dashboard edits)
-- Expanding `historicalCausationAsk` paraphrases beyond proven detector
-- Real-record Admin lifecycle DEFER/APPROVE/REJECT proof (next bottleneck)
-- G2R regenerated docs / sample-env doc tweaks still local (documentation only)
+- Render unused env cleanup
+- `historicalCausationAsk` paraphrase expansion
+- Mass further orphan quarantine beyond shipped deletes
+- Local G2R/doc sample churn
 
-## NEXT_MEASURED_BOTTLENECK
-**Real-record Admin lifecycle** (DEFER/APPROVE/REJECT + suppression) on existing recommendation-produced ids — existing routes only.
+## OPERATIONAL (not engineering)
+- Real-record Admin lifecycle **operator certification** (defer→approve/reject→intelligence/run suppress→audit/MC)
+- Named RESTORE action absent (re-transition only)
+
+## NEXT ENGINEERING SPRINT
+**None required for Admin lifecycle.**  
+Next **product** work: operator Admin lifecycle certification.  
+Next **engineering** candidate only if new measured defect appears (e.g. proven dual-memory divergence).
 
 ## DO_NOT_REOPEN_WITHOUT_NEW_EVIDENCE
-- Admin token / Cursor agent env parity
+- Admin token / Cursor agent env investigation
 - Synthetic Admin mutation test route
-- Architecture / duplicate runtime redesign
+- Architecture / duplicate-runtime redesign
+- Broad repository architecture audits

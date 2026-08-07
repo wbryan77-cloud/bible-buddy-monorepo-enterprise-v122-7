@@ -1,31 +1,26 @@
 # EngineeringRetrospective.md
 
-## Recurring failure addressed: AUDIT_WITHOUT_IMPLEMENTATION
+## Recurring failure closed: AUDIT_WITHOUT_IMPLEMENTATION
 
-Pattern observed across V1.3E–V1.4B:
+Across V1.3E–V1.4B, verified repairs often stopped at local green / Markdown “READY” without commit+deploy+production proof.
 
-evidence → proposed repair → local green → working tree / Markdown “READY” → production unchanged.
-
-Concrete instance closed in V1.4C: Sabbath-history wire in `bibleCompanionOrchestrator.js` was local-only until commit `3f60eba` + deploy parity `/health.releaseCommit=3f60eba` + production behavior proof.
+Closed instances:
+- Sabbath-history orchestrator wire → `3f60eba` deployed + production owner proof
+- Runtime hygiene / orphan deletes → `773bff8` deployed
+- Admin parity → V1.3K secure local proof (ops), not another agent-env loop
 
 ## Permanent prevention rules
 
-1. Evidence sufficient → implementation decision required (implement, defer with reason, or block with reason).
-2. Implemented locally → commit status required before calling complete.
+1. Evidence sufficient → implement, defer-with-reason, or block-with-reason.
+2. Implemented locally → commit status required.
 3. Committed → deploy status required.
-4. Deployed → production behavior proof required (`/health.releaseCommit` + same behavior family).
-5. Reports may never certify an uncommitted repair as complete.
-6. Every sprint ends with recommendation-to-production reconciliation.
+4. Deployed → `/health.releaseCommit` parity + behavior proof.
+5. Reports never certify uncommitted repairs as complete.
+6. Every sprint ends with recommendation→production reconciliation.
 7. Local green ≠ production green.
 8. Working-tree code ≠ shipped code.
+9. Admin lifecycle engineering can be complete while **operator certification** remains — do not invent routes to satisfy mutation probes.
 
-## What worked this closure
+## V1.6 sprint closure
 
-- Minimal staged file (`git add -- path` only).
-- Optional hygiene deferred to keep blast radius small on V1.4C, then closed in V1.5 once Sabbath wire was already shipped.
-- SHA parity gate before claiming deploy success.
-- Retrying flaky HTTP/2 timeouts without weakening tests.
-
-## V1.5 follow-through
-
-After Sabbath wire was `IMPLEMENTED_AND_DEPLOYED`, remaining `IMPLEMENTED_NOT_COMMITTED` hygiene (dead imports, truthful cutover warn, ownership table label, 0-requirer orphan deletes) was staged explicitly, committed as `773bff8`, deployed, and re-proven on production (history owner + doctrine Sabbath still correct). Documentation/G2R churn stayed excluded.
+Repository production code has **no** evidence-qualified implementation gaps. HEAD = origin/main = production `a7e02ae`. Remaining Admin lifecycle work is operational certification on real records, not engineering.
