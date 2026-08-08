@@ -392,7 +392,7 @@ const VALID_ACTIONS = new Set(['review', 'approve', 'reject', 'defer', 'assign',
  * otherwise records the action only in the overlay + unified audit trail.
  * Never triggers any production knowledge mutation itself.
  */
-function applyDecisionQueueAction({ id, action, note = '', decidedBy = 'admin' } = {}) {
+function applyDecisionQueueAction({ id, action, note = '', decidedBy = 'admin', flaggedFalsePositive = false } = {}) {
   if (!id || !VALID_ACTIONS.has(action)) {
     return { ok: false, error: `Unknown or missing action. Expected one of: ${[...VALID_ACTIONS].join(', ')}` };
   }
@@ -413,6 +413,7 @@ function applyDecisionQueueAction({ id, action, note = '', decidedBy = 'admin' }
           decision: action === 'approve' ? 'APPROVED' : 'REJECTED',
           decidedBy,
           note,
+          flaggedFalsePositive: action === 'reject' ? !!flaggedFalsePositive : false,
         });
         if (!underlyingResult.ok) return underlyingResult;
       } else if (sourceSystem === 'review-queue') {
@@ -466,21 +467,22 @@ function applyDecisionQueueAction({ id, action, note = '', decidedBy = 'admin' }
     status: newStatus,
     note: note || (previous && previous.note) || null,
     decidedBy,
+    flaggedFalsePositive: action === 'reject' ? !!flaggedFalsePositive : !!(previous && previous.flaggedFalsePositive),
     updatedAt: new Date().toISOString(),
-    history: [...((previous && previous.history) || []), { action, note, decidedBy, at: new Date().toISOString() }],
+    history: [...((previous && previous.history) || []), { action: flaggedFalsePositive ? 'false_positive' : action, note, decidedBy, at: new Date().toISOString() }],
   };
   overlay[id] = updated;
   saveOverlay(overlay);
 
   const auditRecord = recordAdminAuditEvent({
-    action: `DECISION_QUEUE_${action.toUpperCase()}`,
-    actionType: action.toUpperCase(),
+    action: `DECISION_QUEUE_${flaggedFalsePositive ? 'FALSE_POSITIVE' : action.toUpperCase()}`,
+    actionType: flaggedFalsePositive ? 'FALSE_POSITIVE' : action.toUpperCase(),
     target: id,
     sourceSystem,
     category: 'DECISION_QUEUE',
     status: 'COMPLETED',
     previousState: previous ? { status: previous.status } : null,
-    resultingState: { status: newStatus },
+    resultingState: { status: newStatus, flaggedFalsePositive: !!flaggedFalsePositive },
     approvalReasonOrNote: note || null,
     actorId: decidedBy,
   });

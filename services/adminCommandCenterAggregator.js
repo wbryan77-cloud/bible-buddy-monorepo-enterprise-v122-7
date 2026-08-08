@@ -239,8 +239,15 @@ function buildRecommendationsSection() {
     dataFreshness: 'LIVE',
     fn: () => {
       const queue = listDecisionQueue({ limit: 10 });
+      const OPEN_STATUSES = new Set(['New', 'Investigating', 'Ready for Decision', 'Deferred']);
+      const byStatus = queue.counts.byStatus || {};
+      const totalOpenItems = Object.entries(byStatus).reduce(
+        (n, [status, count]) => (OPEN_STATUSES.has(status) ? n + count : n),
+        0,
+      );
       return {
-        totalOpenItems: queue.total,
+        totalOpenItems,
+        totalQueueItems: queue.total,
         bySeverity: queue.counts.bySeverity,
         byStatus: queue.counts.byStatus,
         byCategory: queue.counts.byCategory,
@@ -440,12 +447,14 @@ function computeExecutiveSummary(sections) {
     responsesAccurateAndAligned: sections.experienceQuality.status === 'OK'
       ? `${sections.experienceQuality.data.alphaFlaggedDoctrineIssues || 0} flagged doctrine issue(s); fallback rate ${sections.experienceQuality.data.fallbackRate != null ? (sections.experienceQuality.data.fallbackRate * 100).toFixed(1) + '%' : 'unknown'}.`
       : 'Unavailable this request.',
-    decisionsRequiringAttention: recs ? `${recs.totalOpenItems} item(s) in the Decision Queue (${recs.bySeverity.Critical || 0} Critical, ${recs.bySeverity.High || 0} High).` : 'Unavailable this request.',
+    decisionsRequiringAttention: recs ? `${recs.totalOpenItems} open / ${recs.totalQueueItems != null ? recs.totalQueueItems : recs.totalOpenItems} total in the Decision Queue (${recs.bySeverity.Critical || 0} Critical, ${recs.bySeverity.High || 0} High).` : 'Unavailable this request.',
     recommendedActionToday: criticalAlertCount > 0
       ? 'Resolve Critical alerts first (see Alerts).'
       : (recs && (recs.bySeverity.High || 0) > 0)
         ? 'Review High-severity Decision Queue items.'
-        : 'No urgent action required — review the daily briefing for routine items.',
+        : (recs && recs.totalOpenItems > 0)
+          ? 'Review open Decision Queue items (most are Medium/Low — clear Critical/High filters if the queue looks empty).'
+          : 'No urgent action required — review the daily briefing for routine items.',
   };
 
   return {

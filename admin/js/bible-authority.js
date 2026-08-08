@@ -49,6 +49,41 @@ async function adminFetch(url, options = {}) {
   return res;
 }
 
+/**
+ * Parse an admin/API Response as JSON without throwing on HTML error pages.
+ * Returns { ok, data, error, status, contentType }.
+ */
+async function parseAdminJson(res, label = 'request') {
+  const status = res.status;
+  const contentType = String(res.headers.get('content-type') || '');
+  const text = await res.text();
+  const trimmed = (text || '').trim();
+  if (!trimmed) {
+    return { ok: false, data: null, error: `${label}: empty response (HTTP ${status})`, status, contentType };
+  }
+  if (trimmed.charAt(0) === '<' || contentType.includes('text/html')) {
+    return {
+      ok: false,
+      data: null,
+      error: `${label}: expected JSON but received HTML (HTTP ${status}). Check auth, route, and deployment.`,
+      status,
+      contentType,
+    };
+  }
+  try {
+    const data = JSON.parse(trimmed);
+    return { ok: true, data, error: null, status, contentType };
+  } catch (e) {
+    return {
+      ok: false,
+      data: null,
+      error: `${label}: invalid JSON (HTTP ${status}): ${e.message}`,
+      status,
+      contentType,
+    };
+  }
+}
+
 function showSection(id) {
   document.querySelectorAll('.section').forEach((el) => el.classList.remove('active'));
   document.querySelectorAll('.nav button').forEach((el) => el.classList.remove('active'));
@@ -263,7 +298,13 @@ function renderPendingCandidates(items = []) {
 
 async function load() {
   const res = await adminFetch(API);
-  const data = await res.json();
+  const parsed = await parseAdminJson(res, 'command-center');
+  if (!parsed.ok) {
+    const summary = document.getElementById('founderValidatorSummary');
+    if (summary) summary.textContent = 'Command Center load failed: ' + parsed.error;
+    return;
+  }
+  const data = parsed.data;
   if (data && data.ok === false) return;
   renderExecutive(data.areas.executiveGrowthDashboard);
   const sr = data.areas.scriptureAuthorityReview;
@@ -283,30 +324,49 @@ async function load() {
 // matching the rest of this page's style. No new analytics, no new
 // pipeline — pure read/render.
 async function loadFounderReadiness() {
+  const summaryEl = document.getElementById('founderValidatorSummary');
   try {
-    const [consoleRes, coverageRes, validatorRes, healthRes, lessonSubsRes] = await Promise.all([
-      adminFetch('/admin/api/bible-authority/founder-console'),
-      adminFetch('/admin/api/bible-authority/knowledge-coverage-dashboard'),
-      adminFetch('/admin/api/bible-authority/founder-readiness-report'),
-      fetch('/api/runtime-health'),
-      adminFetch('/admin/api/bible-authority/lesson-alignment/submissions'),
-    ]);
-    const [consoleData, coverageData, validatorData, healthData, lessonSubsData] = await Promise.all([
-      consoleRes.json(),
-      coverageRes.json(),
-      validatorRes.json(),
-      healthRes.json(),
-      lessonSubsRes.json(),
-    ]);
-    renderFounderBuild(consoleData);
-    renderFounderFeatureTable(consoleData.featureDisposition || []);
-    renderFounderCoverage(coverageData.overview || {});
-    renderFounderValidator(validatorData);
-    renderFounderSystemHealth(healthData);
-    renderFounderObservation(healthData.observation || {});
-    renderLessonSubmissions(lessonSubsData.submissions || []);
+    const requests = [
+      ['founder-console', adminFetch('/admin/api/bible-authority/founder-console')],
+      ['knowledge-coverage-dashboard', adminFetch('/admin/api/bible-authority/knowledge-coverage-dashboard')],
+      ['founder-readiness-report', adminFetch('/admin/api/bible-authority/founder-readiness-report')],
+      ['runtime-health', adminFetch('/api/runtime-health')],
+      ['lesson-alignment/submissions', adminFetch('/admin/api/bible-authority/lesson-alignment/submissions')],
+    ];
+    const responses = await Promise.all(requests.map(([, p]) => p));
+    const parsed = await Promise.all(
+      responses.map((res, i) => parseAdminJson(res, requests[i][0])),
+    );
+    const failures = parsed.filter((p) => !p.ok);
+    if (failures.length) {
+      if (summaryEl) {
+        summaryEl.textContent = 'Founder Readiness partial/complete load failure: '
+          + failures.map((f) => f.error).join(' | ');
+      }
+    }
+
+    const [consoleParsed, coverageParsed, validatorParsed, healthParsed, lessonParsed] = parsed;
+    if (consoleParsed.ok && consoleParsed.data) {
+      renderFounderBuild(consoleParsed.data);
+      renderFounderFeatureTable(consoleParsed.data.featureDisposition || []);
+    }
+    if (coverageParsed.ok && coverageParsed.data) {
+      renderFounderCoverage(coverageParsed.data.overview || {});
+    }
+    if (validatorParsed.ok) {
+      renderFounderValidator(validatorParsed.data);
+    }
+    if (healthParsed.ok && healthParsed.data) {
+      renderFounderSystemHealth(healthParsed.data);
+      renderFounderObservation(healthParsed.data.observation || {});
+    }
+    if (lessonParsed.ok && lessonParsed.data) {
+      renderLessonSubmissions(lessonParsed.data.submissions || []);
+    }
   } catch (error) {
-    document.getElementById('founderValidatorSummary').textContent = 'Could not load Founder Readiness data: ' + error.message;
+    if (summaryEl) {
+      summaryEl.textContent = 'Could not load Founder Readiness data: ' + error.message;
+    }
   }
 }
 
@@ -622,7 +682,10 @@ async function loadIntelEffectiveness() {
 document.getElementById('tab-executive').addEventListener('click', () => showSection('executive'));
 document.getElementById('tab-scripture').addEventListener('click', () => showSection('scripture-review'));
 document.getElementById('tab-engineering').addEventListener('click', () => showSection('engineering'));
-document.getElementById('tab-founder').addEventListener('click', () => showSection('founder'));
+document.getElementById('tab-founder').addEventListener('click', () => {
+  showSection('founder');
+  loadFounderReadiness();
+});
 document.getElementById('tab-intelligence').addEventListener('click', () => { showSection('intelligence'); loadFounderIntelligence(); });
 document.getElementById('refreshBtn').addEventListener('click', load);
 
@@ -635,7 +698,13 @@ document.getElementById('sub-pending').addEventListener('click', () => showSubVi
 
 document.querySelectorAll('.link-drill').forEach((el) => {
   el.addEventListener('click', () => {
+    const dynamic = el.getAttribute('data-goto-dynamic');
+    if (dynamic) {
+      ccGoto(dynamic);
+      return;
+    }
     const target = el.getAttribute('data-goto');
+    if (!target) return;
     showSection(target === 'scripture' ? 'scripture-review' : target);
   });
 });
@@ -692,6 +761,9 @@ function ccResolveDrillDown(target) {
     '#operations': 'founder',
     '#decisions': 'command-center',
     '#alerts': 'command-center',
+    '#notifications': 'command-center',
+    '#user-assistance': 'command-center',
+    '#command-center': 'command-center',
     '#executive': 'executive',
     '#intelligence': 'intelligence',
     '#scripture-review': 'scripture-review',
@@ -703,8 +775,79 @@ function ccResolveDrillDown(target) {
   return map[target] || 'command-center';
 }
 
+/** In-page anchors for Executive drill-downs (hash targets that are not top-level section ids). */
+function ccResolveScrollTarget(target) {
+  const map = {
+    '#decisions': 'cc-decision-queue',
+    '#alerts': 'cc-alerts',
+    '#operations': 'cc-operations',
+    '#users-sessions': 'cc-users-sessions',
+    '#lesson-alignment': 'cc-lesson-alignment',
+    '#notifications': 'cc-notifications',
+    '#user-assistance': 'cc-user-assistance',
+  };
+  return map[target] || null;
+}
+
 function ccGoto(target) {
-  showSection(ccResolveDrillDown(target));
+  if (!target) return;
+  const normalized = target.charAt(0) === '#' ? target : `#${target}`;
+  const sectionId = ccResolveDrillDown(normalized);
+  showSection(sectionId);
+
+  if (sectionId === 'founder') {
+    loadFounderReadiness();
+  }
+  if (sectionId === 'intelligence' && typeof loadFounderIntelligence === 'function') {
+    try { loadFounderIntelligence(); } catch (_) { /* intelligence refresh best-effort */ }
+  }
+  if (normalized === '#decisions' || normalized === '#alerts') {
+    ccResetQueueFilters();
+    if (typeof loadCCQueue === 'function') loadCCQueue();
+    if (normalized === '#alerts' && typeof loadCCAlerts === 'function') loadCCAlerts();
+  }
+
+  const scrollId = ccResolveScrollTarget(normalized);
+  const flash = (el) => {
+    if (!el) return;
+    el.classList.add('cc-drill-flash');
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.setTimeout(() => el.classList.remove('cc-drill-flash'), 1600);
+  };
+
+  // Two-frame + short delay so section display:block layout completes before scroll.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      window.setTimeout(() => {
+        if (scrollId) flash(document.getElementById(scrollId));
+        else {
+          const section = document.getElementById(sectionId);
+          if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 40);
+    });
+  });
+
+  try {
+    if (location.hash !== normalized) history.replaceState(null, '', normalized);
+  } catch (_) { /* ignore */ }
+}
+
+function ccResetQueueFilters() {
+  const severity = document.getElementById('ccQueueSeverity');
+  const category = document.getElementById('ccQueueCategory');
+  const status = document.getElementById('ccQueueStatus');
+  if (severity) severity.value = '';
+  if (category) category.value = '';
+  if (status) status.value = '';
+}
+
+function ccQueueFiltersActive() {
+  return !!(
+    (document.getElementById('ccQueueSeverity') || {}).value ||
+    (document.getElementById('ccQueueCategory') || {}).value ||
+    (document.getElementById('ccQueueStatus') || {}).value
+  );
 }
 
 async function ccGet(path) {
@@ -712,11 +855,9 @@ async function ccGet(path) {
   if (res.status === 503) {
     return { ok: false, disabled: true, error: 'Unified Admin Command Center is disabled on this server (ADMIN_UNIFIED_COMMAND_CENTER_ENABLED=0). Every other tab is unaffected.' };
   }
-  try {
-    return await res.json();
-  } catch (e) {
-    return { ok: false, error: 'Could not parse response.' };
-  }
+  const parsed = await parseAdminJson(res, `unified${path}`);
+  if (!parsed.ok) return { ok: false, error: parsed.error };
+  return parsed.data;
 }
 
 async function ccPost(path, body) {
@@ -728,11 +869,9 @@ async function ccPost(path, body) {
   if (res.status === 503) {
     return { ok: false, disabled: true, error: 'Unified Admin Command Center is disabled on this server.' };
   }
-  try {
-    return await res.json();
-  } catch (e) {
-    return { ok: false, error: 'Could not parse response.' };
-  }
+  const parsed = await parseAdminJson(res, `unified${path}`);
+  if (!parsed.ok) return { ok: false, error: parsed.error };
+  return parsed.data;
 }
 
 function ccEmptyState(msg) {
@@ -772,7 +911,7 @@ function renderCCOverview(data) {
     ['RESPONSE QUALITY', data.experienceQuality, (d) => `${d.alphaFlaggedDoctrineIssues || 0} flagged · fallback rate ${d.fallbackRate != null ? (d.fallbackRate * 100).toFixed(1) + '%' : 'n/a'}`],
     ['SCRIPTURE & KNOWLEDGE', data.scriptureAndKnowledge, (d) => `${d.booksCoveredTotal ?? 'n/a'} book(s) tracked · ${d.pendingCandidatesTotal ?? 'n/a'} pending`],
     ['LESSON ALIGNMENT', data.lessonAlignment, (d) => `${d.pendingReviewCount} needing review of ${d.recentSubmissionCount} recent`],
-    ['ADMIN DECISIONS', data.recommendations, (d) => `${d.totalOpenItems} open item(s)`],
+    ['ADMIN DECISIONS', data.recommendations, (d) => `${d.totalOpenItems} open · ${d.totalQueueItems != null ? d.totalQueueItems : d.totalOpenItems} in queue`],
   ];
 
   cardsEl.innerHTML = sections.map(([label, section, summarize]) => {
@@ -815,6 +954,7 @@ function renderCCObservability(overview) {
   const tiles = [
     {
       label: 'Runtime',
+      target: '#operations',
       lines: obs.runtimeMetrics ? [
         `Status: ${obs.runtimeMetrics.liveStatus}`,
         `${obs.runtimeMetrics.totalRequests} request(s) · ${obs.runtimeMetrics.failedRequests} failed`,
@@ -823,6 +963,7 @@ function renderCCObservability(overview) {
     },
     {
       label: 'Decision Queue',
+      target: '#decisions',
       lines: obs.queueMetrics ? [
         `${obs.queueMetrics.totalOpenItems} open item(s)`,
         `Critical: ${obs.queueMetrics.bySeverity.Critical || 0} · High: ${obs.queueMetrics.bySeverity.High || 0}`,
@@ -830,6 +971,7 @@ function renderCCObservability(overview) {
     },
     {
       label: 'Knowledge Improvement',
+      target: '#intelligence',
       lines: obs.recommendationMetrics ? [
         `${obs.recommendationMetrics.totalRecommendations} recommendation(s)`,
         `(admin approval required for all)`,
@@ -837,6 +979,7 @@ function renderCCObservability(overview) {
     },
     {
       label: 'User Assistance',
+      target: '#user-assistance',
       lines: obs.userAssistanceMetrics ? [
         `${obs.userAssistanceMetrics.helpCenterArticles} article(s) published`,
         `${obs.userAssistanceMetrics.escalationsPending} pending escalation(s)`,
@@ -844,6 +987,7 @@ function renderCCObservability(overview) {
     },
     {
       label: 'Notifications',
+      target: '#notifications',
       lines: obs.notificationMetrics ? [
         obs.notificationMetrics.globalPaused ? 'Globally paused' : 'Active (per-category, disabled by default)',
         `${obs.notificationMetrics.recentHistorySampleSize} recent dispatch record(s)`,
@@ -851,6 +995,7 @@ function renderCCObservability(overview) {
     },
     {
       label: 'Executive Summary',
+      target: '#decisions',
       lines: obs.executiveSummary ? [
         `Overall: ${obs.executiveSummary.overallStatus}`,
         `${obs.executiveSummary.criticalAlertCount} critical alert(s)`,
@@ -861,8 +1006,12 @@ function renderCCObservability(overview) {
     <div>
       <div class="metric-label">${t.label.toUpperCase()}</div>
       <div style="font-size:14px; margin-top:4px;">${t.lines.join('<br/>')}</div>
+      <div class="cc-freshness"><span class="link-drill" data-goto-dynamic="${t.target}">drill down →</span></div>
     </div>
   `).join('');
+  gridEl.querySelectorAll('[data-goto-dynamic]').forEach((el) => {
+    el.addEventListener('click', () => ccGoto(el.getAttribute('data-goto-dynamic')));
+  });
 }
 
 let ccQueueCategoryOptionsPopulated = false;
@@ -889,23 +1038,33 @@ function renderCCQueue(data) {
     return;
   }
   ccPopulateQueueCategoryOptions(data.counts.byCategory);
-  countsEl.textContent = `${data.total} total item(s) · showing ${data.items.length}`;
+  const filterNote = ccQueueFiltersActive() ? ' (filters active)' : '';
+  countsEl.textContent = `${data.total} matching item(s) · showing ${data.items.length}${filterNote}`;
 
   if (!data.items.length) {
-    tableEl.innerHTML = ccEmptyState('No items match the current filters.');
+    if (ccQueueFiltersActive()) {
+      tableEl.innerHTML = `${ccEmptyState('No items match the current filters.')}<p class="cc-freshness"><button type="button" id="ccQueueClearInlineBtn">Clear Filters</button> — most items are Medium/Low severity; Critical/High often match none.</p>`;
+      const clearBtn = document.getElementById('ccQueueClearInlineBtn');
+      if (clearBtn) clearBtn.addEventListener('click', () => { ccResetQueueFilters(); loadCCQueue(); });
+    } else {
+      tableEl.innerHTML = ccEmptyState('No decision-queue items available.');
+    }
     return;
   }
 
-  let html = '<table><thead><tr><th>Severity</th><th>Title</th><th>Category</th><th>Status</th><th>Confidence</th><th>Updated</th><th>Actions</th></tr></thead><tbody>';
+  let html = '<table><thead><tr><th>Id</th><th>Severity</th><th>Title</th><th>Category</th><th>Status</th><th>Confidence</th><th>Updated</th><th>Actions</th></tr></thead><tbody>';
   for (const item of data.items) {
+    const actions = CC_QUEUE_ACTIONS.slice();
+    if (item.sourceSystem === 'founder-intelligence') actions.push('false_positive');
     html += `<tr>
+      <td class="cc-freshness" title="${item.id}">${item.id}</td>
       <td>${ccSeverityBadge(item.severity)}</td>
       <td><strong>${item.title}</strong><div class="candidate-detail">${item.summary || ''}</div></td>
       <td>${item.category}</td>
       <td>${item.status}</td>
       <td>${item.confidence || 'n/a'}</td>
       <td class="cc-freshness">${item.lastUpdatedAt || ''}</td>
-      <td class="cc-actions">${CC_QUEUE_ACTIONS.map((a) => `<button type="button" data-queue-action="${a}" data-queue-id="${item.id}">${a}</button>`).join('')}
+      <td class="cc-actions">${actions.map((a) => `<button type="button" data-queue-action="${a}" data-queue-id="${item.id}">${a === 'false_positive' ? 'false positive' : a}</button>`).join('')}
         <span class="link-drill" data-goto-dynamic="${item.drillDownTarget}">view →</span>
       </td>
     </tr>`;
@@ -916,13 +1075,18 @@ function renderCCQueue(data) {
   tableEl.querySelectorAll('[data-queue-action]').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const id = btn.getAttribute('data-queue-id');
-      const action = btn.getAttribute('data-queue-action');
+      let action = btn.getAttribute('data-queue-action');
       let note = '';
-      if (action === 'reject' || action === 'defer') {
+      let flaggedFalsePositive = false;
+      if (action === 'false_positive') {
+        action = 'reject';
+        flaggedFalsePositive = true;
+        note = window.prompt('Optional note for false positive:', '') || 'Flagged false positive';
+      } else if (action === 'reject' || action === 'defer') {
         note = window.prompt(`Optional note for "${action}":`, '') || '';
       }
       btn.disabled = true;
-      const result = await ccPost(`/decision-queue/${id}/${action}`, { note, decidedBy: 'admin' });
+      const result = await ccPost(`/decision-queue/${id}/${action}`, { note, decidedBy: 'admin', flaggedFalsePositive });
       btn.disabled = false;
       if (!result.ok) {
         alert(result.error || 'Action failed.');
@@ -930,6 +1094,7 @@ function renderCCQueue(data) {
       }
       loadCCQueue();
       loadCCAudit();
+      loadCCOverview();
     });
   });
   tableEl.querySelectorAll('[data-goto-dynamic]').forEach((el) => {
@@ -1256,6 +1421,9 @@ const articleCreateBtn = document.getElementById('ccArticleCreateBtn');
 if (articleCreateBtn) articleCreateBtn.addEventListener('click', createHelpCenterArticle);
 
 function loadCommandCenter() {
+  // Browser form restore can leave Severity=Critical/High selected; those
+  // filters commonly match zero while Executive Overview stays unfiltered.
+  ccResetQueueFilters();
   loadCCOverview();
   loadCCQueue();
   loadCCAlerts();
@@ -1269,6 +1437,12 @@ document.getElementById('tab-command-center').addEventListener('click', () => { 
 document.getElementById('ccSearchBtn').addEventListener('click', runCCSearch);
 document.getElementById('ccSearchInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') runCCSearch(); });
 document.getElementById('ccQueueRefreshBtn').addEventListener('click', loadCCQueue);
+const ccQueueClearBtn = document.getElementById('ccQueueClearBtn');
+if (ccQueueClearBtn) ccQueueClearBtn.addEventListener('click', () => { ccResetQueueFilters(); loadCCQueue(); });
+['ccQueueSeverity', 'ccQueueCategory', 'ccQueueStatus'].forEach((id) => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('change', loadCCQueue);
+});
 document.getElementById('ccAssistantAskBtn').addEventListener('click', () => askCCAssistant());
 document.getElementById('ccAssistantChips').innerHTML = CC_ASSISTANT_EXAMPLE_QUESTIONS.map((q) => `<span class="chip">${q}</span>`).join('');
 document.querySelectorAll('#ccAssistantChips .chip').forEach((chip) => {
@@ -1286,3 +1460,8 @@ document.getElementById('cc-briefing-weekly').addEventListener('click', (e) => {
 });
 
 loadCommandCenter();
+
+// Honor deep-link hashes from Executive drill-downs / bookmarks.
+if (location.hash && location.hash !== '#') {
+  window.setTimeout(() => ccGoto(location.hash), 120);
+}

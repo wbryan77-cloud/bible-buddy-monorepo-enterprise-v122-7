@@ -593,8 +593,14 @@ router.post('/unified/decision-queue/:id/:action', express.json({ limit: '16kb' 
   try {
     const { applyDecisionQueueAction } = require('../services/adminDecisionQueue');
     const { id, action } = req.params;
-    const { note, decidedBy } = req.body || {};
-    const result = applyDecisionQueueAction({ id, action, note: note || '', decidedBy: decidedBy || 'admin' });
+    const { note, decidedBy, flaggedFalsePositive } = req.body || {};
+    const result = applyDecisionQueueAction({
+      id,
+      action,
+      note: note || '',
+      decidedBy: decidedBy || 'admin',
+      flaggedFalsePositive: !!flaggedFalsePositive,
+    });
     if (!result.ok) return res.status(400).json(result);
     // PHASE_2_ENTERPRISE_OPTIMIZATION — the Command Center summary is now
     // short-TTL cached (performance quick win); invalidate on every

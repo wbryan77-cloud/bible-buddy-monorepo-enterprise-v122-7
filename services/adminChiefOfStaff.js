@@ -202,7 +202,7 @@ const INTENTS = [
         summary: `${safe.length} High-confidence, Low-severity, not-yet-decided item(s) are the safest candidates to review first.`,
         evidence: safe.slice(0, 5).map((i) => i.title),
         confidence: 'MEDIUM',
-        recommendedAction: safe.length ? 'Open the Decision Queue filtered by confidence=HIGH, severity=Low.' : 'No clearly "safe" items currently pending.',
+        recommendedAction: safe.length ? 'Open the Decision Queue (clear Critical/High severity filters — most safe items are Low/Medium).' : 'No clearly "safe" items currently pending.',
         requiredApproval: true,
         sourceSystems: ['adminDecisionQueue'],
         drillDownLinks: ['#decisions'],

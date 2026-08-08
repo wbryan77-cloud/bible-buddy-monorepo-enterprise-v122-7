@@ -59,6 +59,14 @@
     .cc-empty { color: #6b7280; font-style: italic; font-size: 13px; }
     .cc-tooltip { border-bottom: 1px dotted #888; cursor: help; }
     .cc-freshness { font-size: 11px; color: #6b7280; }
+    .cc-drill-flash {
+      outline: 3px solid #2563eb;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+      transition: outline-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    #cc-decision-queue, #cc-alerts, #cc-operations, #cc-users-sessions, #cc-lesson-alignment {
+      scroll-margin-top: 16px;
+    }
   </style>
 </head>
 <body>
@@ -74,7 +82,7 @@
   </div>
 
   <div class="nav">
-    <a href="/admin">← Legacy Admin</a>
+    <a href="/admin/index.html">← Legacy Admin</a>
     <button type="button" id="tab-command-center" class="active">★ Command Center</button>
     <button type="button" id="tab-executive">Executive Growth</button>
     <button type="button" id="tab-scripture">Scripture Authority Review</button>
@@ -130,19 +138,20 @@
       <div id="ccAssistantAnswer"></div>
     </div>
 
-    <div class="card">
+    <div class="card" id="cc-decision-queue">
       <h2>Prioritized Decision Queue</h2>
       <div class="cc-queue-filters">
         <select id="ccQueueSeverity"><option value="">All severities</option><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select>
         <select id="ccQueueCategory"><option value="">All categories</option></select>
         <select id="ccQueueStatus"><option value="">All statuses</option><option>New</option><option>Investigating</option><option>Ready for Decision</option><option>Approved</option><option>Rejected</option><option>Deferred</option><option>Resolved</option></select>
         <button type="button" id="ccQueueRefreshBtn">Apply Filters</button>
+        <button type="button" id="ccQueueClearBtn">Clear Filters</button>
       </div>
       <div id="ccQueueCounts" class="cc-freshness"></div>
       <div id="ccQueueTable"></div>
     </div>
 
-    <div class="card">
+    <div class="card" id="cc-alerts">
       <h2>Alerts</h2>
       <div id="ccAlerts"></div>
     </div>
@@ -164,7 +173,7 @@
     <!-- ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Notifications section.
          New per Blueprint Deliverable 3 §C.4. Reuses the existing
          aggregator envelope + adminAlertCenter-style card UI pattern. -->
-    <div class="card">
+    <div class="card" id="cc-notifications">
       <h2>Notifications <span class="cc-tooltip" title="Reuses the existing alphaNotificationScheduler queue/history. Users control every category except Security Alerts, which are always delivered. Nothing is sent until a user enables a category.">ⓘ</span></h2>
       <div id="ccNotificationsSummary"></div>
       <div class="sub-nav" style="margin-top:10px;">
@@ -182,7 +191,7 @@
          this card is a focused view + the authoring surface Deliverable
          7 requires ("Authored/edited by the Admin through the existing
          Admin Command Center"). -->
-    <div class="card">
+    <div class="card" id="cc-user-assistance">
       <h2>User Assistance Platform <span class="cc-tooltip" title="AI-2 (User Assistance AI) answers only from these Help Center articles and escalates low-confidence questions here — it never invents an answer and never answers Bible/doctrine questions.">ⓘ</span></h2>
       <div id="ccUserAssistanceSummary"></div>
       <h3 style="margin-top:14px;">Help Center Articles</h3>
@@ -202,9 +211,9 @@
     <div class="card">
       <h2>Jump to a Specialized Area</h2>
       <p>
-        <span class="link-drill" data-goto="founder">→ Users, Sessions &amp; Operations Health</span> ·
+        <span class="link-drill" data-goto-dynamic="#operations">→ Users, Sessions &amp; Operations Health</span> ·
         <span class="link-drill" data-goto="scripture-review">→ Scripture &amp; Knowledge</span> ·
-        <span class="link-drill" data-goto="founder">→ Lesson Alignment</span> ·
+        <span class="link-drill" data-goto-dynamic="#lesson-alignment">→ Lesson Alignment</span> ·
         <span class="link-drill" data-goto="intelligence">→ Founder Intelligence</span> ·
         <span class="link-drill" data-goto="engineering">→ Engineering / Operations</span>
       </p>
@@ -305,14 +314,14 @@
       <table id="founderFeatureTable"><thead><tr><th>Feature</th><th>Status</th></tr></thead><tbody></tbody></table>
     </div>
 
-    <div class="card">
+    <div class="card" id="cc-operations">
       <h2>System Health</h2>
       <div id="founderSystemHealthGrid" class="grid"></div>
     </div>
 
     <!-- PHASE_6H Part 5 — Admin review visibility for Lesson Alignment
          (previously entirely ephemeral: analyze -> return -> gone). -->
-    <div class="card">
+    <div class="card" id="cc-lesson-alignment">
       <h2>Lesson Alignment — Recent Submissions</h2>
       <p>Read-only. Diagnostic reports only — nothing here has been promoted to production Scripture knowledge.</p>
       <table id="lessonSubmissionsTable"><thead><tr><th>When</th><th>Source</th><th>Refs</th><th>Matches</th><th>Misquotes</th><th>Ref-only</th><th>Unresolved</th></tr></thead><tbody></tbody></table>
@@ -322,7 +331,7 @@
          non-identifying product-improvement counters only (no message
          text, no per-user identity) — see services/runtimeHealthMonitor.js
          recordFounderObservation(). -->
-    <div class="card">
+    <div class="card" id="cc-users-sessions">
       <h2>Founder Observation Layer</h2>
       <p>Aggregate usage signals only — no message content or user identity is stored here.</p>
       <div id="founderObservationGrid" class="grid"></div>
@@ -373,6 +382,7 @@
     </div>
   </section>
 
-  <script src="/admin/js/bible-authority.js"></script>
+  <!-- Cache-bust so RC admin UI repairs are not masked by stale browser/CDN caches. -->
+  <script src="/admin/js/bible-authority.js?v=rc-admin-20260807"></script>
 </body>
 </html>
