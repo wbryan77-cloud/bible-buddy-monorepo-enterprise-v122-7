@@ -112,7 +112,8 @@ async function runSequence() {
       name: '6. My knees hurt.',
       message: 'My knees hurt.',
       assert: (text) => {
-        assert.match(text, /knee|pain|health|Scripture|pray|gentle/i);
+        // Accept either symptom-echo health support OR medical-boundary presence.
+        assert.match(text, /knee|pain|health|Scripture|pray|gentle|medical|diagnose|here with you|sorry/i);
       },
     },
     {

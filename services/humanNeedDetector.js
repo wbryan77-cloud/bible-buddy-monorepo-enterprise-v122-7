@@ -15,7 +15,14 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
     return 'emotional_support';
   }
 
-  if (/\b(grief|grieving|heartbreak|rough day|tough day|let go of someone|someone i love|broken heart|discouraged|overwhelmed)\b/i.test(sprint1a6Message)) {
+  // Align with services/griefCompanionResponse.js GRIEF_PATTERNS so plain
+  // bereavement lines (e.g. "I lost a friend") never fall through to
+  // clarification_needed via classifyCompanionIntent.
+  if (
+    /\b(grief|grieving|heartbreak|rough day|tough day|let go of someone|someone i love|broken heart|discouraged|overwhelmed|lost a friend|lost my (friend|mother|father|child|spouse|parent|brother|sister|son|daughter|husband|wife)|passed away)\b/i.test(
+      sprint1a6Message,
+    )
+  ) {
     return 'emotional_support';
   }
 
@@ -76,7 +83,15 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
   if (/\bhow (do|should|can) i explain|how do i tell|what should i say|help me talk to|how should i respond\b/i.test(m)) {
     return 'practical_words_to_say';
   }
-  if (/\b(grief|lost (someone|my)|funeral|died)\b/i.test(m)) return 'grief_comfort';
+  if (
+    /\b(grief|lost (someone|my)|lost a friend|lost my (friend|mother|father|child|spouse|parent|brother|sister|son|daughter|husband|wife)|funeral|died|passed away)\b/i.test(
+      m,
+    )
+  ) {
+    // Prefer emotional_support: orchestrator + OpenAI-first already lane on it.
+    // grief_comfort remains a valid alias for older routeOwnershipTable entries.
+    return 'emotional_support';
+  }
   if (/\b(overwhelmed|anxious|nervous|bad day)\b/i.test(m) && !/\b(can we eat|what is|scripture says)\b/i.test(m)) {
     return anchor.currentRelationshipContext === 'family' && /\bnervous\b/i.test(m)
       ? 'emotional_support'

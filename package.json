@@ -12,6 +12,7 @@
     "postinstall": "node -e \"console.log('postinstall ok')\"",
     "founder-alpha:validate": "node -r dotenv/config scripts/founderAlphaReadinessValidator.js",
     "admin-command-center:smoke": "node -r dotenv/config scripts/alpha/unifiedAdminCommandCenterSmoke.js",
+    "certify:product": "node scripts/runFullProductCertificationGate.js",
     "test": "node scripts/runAllTests.js",
     "postdeploy:verify": "node -r dotenv/config scripts/postDeployVerification.js"
   },

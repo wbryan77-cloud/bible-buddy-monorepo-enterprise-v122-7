@@ -88,7 +88,8 @@ function shouldBlockGenericClarification(message = '', state = {}, humanNeed = n
     humanNeed === 'practical_words_to_say' ||
     humanNeed === 'next_steps' ||
     humanNeed === 'anxiety_support' ||
-    humanNeed === 'emotional_support'
+    humanNeed === 'emotional_support' ||
+    humanNeed === 'grief_comfort'
   ) {
     return true;
   }
@@ -551,7 +552,7 @@ function runPhase5KDepthLane({
     }
   }
 
-  if (humanNeed === 'emotional_support' || humanNeed === 'anxiety_support') {
+  if (humanNeed === 'emotional_support' || humanNeed === 'anxiety_support' || humanNeed === 'grief_comfort') {
     const guidance = buildPracticalGuidance({
       concept: anchor.currentDoctrineConcept || conceptMatch?.id,
       message,

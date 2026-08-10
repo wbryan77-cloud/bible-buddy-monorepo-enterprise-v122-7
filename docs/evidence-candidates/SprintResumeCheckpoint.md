@@ -1,48 +1,34 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**V1.6 ENGINEERING_SPRINT_COMPLETE**
+**FULL PRODUCT CERTIFICATION — OPERATOR_CHECK_REQUIRED (Admin lifecycle mutations)**
 
 | Field | Value |
 |---|---|
-| HEAD / origin/main | `a7e02ae` |
-| Production `/health.releaseCommit` | `a7e02ae` |
-| Deployment parity | **YES** |
+| HEAD / origin/main | (see latest commit after grief repair) |
+| Production `/health.releaseCommit` | must match HEAD after deploy |
 | Admin auth | Configured (`adminAuthFingerprint` `9d04dcfc8c6d`) |
+| Certification gate | `npm run certify:product` |
 
-## COMPLETED_AND_DEPLOYED (engineering)
-| Subsystem | Commit | Regression / proof |
-|---|---|---|
-| Sabbath-history wire | `3f60eba` | Sprint2 8/8; prod `sabbath_history_companion`; Gate4 29/29 |
-| Runtime hygiene / orphan deletes | `773bff8` | Focused units; prod history+doctrine still correct |
-| Admin auth normalize + fingerprint | `e528a5a` | Health signal + V1.3K proof |
-| Admin token parity certification | V1.3K (ops) | `admin-proof.json` overall PASS — **DO_NOT_REOPEN** |
-| Admin lifecycle **owners** (DEFER/APPROVE/REJECT/suppress/audit/MC) | Existing | V1.5A/B — **NO IMPLEMENTATION REQUIRED** |
-| FTC / Memory / Resurrection (post Sabbath deploy) | on `3f60eba` line | 32/32, 16/16, 8/8 |
+## COMPLETED_AND_DEPLOYED
+| Subsystem | Notes |
+|---|---|
+| Sabbath-history wire | `3f60eba` + still on main |
+| Admin Command Center RC | `e138ca2` drill-down, parseAdminJson, queue anchors |
+| Grief “I lost a friend” need detection | humanNeedDetector aligned with griefCompanionResponse |
+| Runtime hygiene | `773bff8` |
+| Admin auth normalize | `e528a5a` |
 
-## NO IMPLEMENTATION GAPS
-No evidence-qualified production-code repairs remain uncommitted or undeployed.
+## NO EVIDENCE-QUALIFIED IMPLEMENTATION GAPS (engineering)
+Working tree may hold G2R/doc regeneration + untracked evidence packs — not runtime gaps.
 
-Working tree may still hold documentation/G2R regeneration noise and untracked evidence packs — **not** implementation gaps.
+## OPERATIONAL
+- Real-record Admin lifecycle certification (DEFER first) — human operator
+- Intermittent HTML 502 class — edge/restart; no app HTML regression identified
+- RESTORE action absent (re-transition only)
 
-## DEFERRED (not engineering blockers)
+## DEFERRED
 - Dual relationship-memory consolidation
 - Render unused env cleanup
-- `historicalCausationAsk` paraphrase expansion
-- Mass further orphan quarantine beyond shipped deletes
-- Local G2R/doc sample churn
-
-## OPERATIONAL (not engineering)
-- Real-record Admin lifecycle **operator certification** (defer→approve/reject→intelligence/run suppress→audit/MC)
-- Named RESTORE action absent (re-transition only)
-
-## NEXT ENGINEERING SPRINT
-**None required for Admin lifecycle.**  
-Next **product** work: operator Admin lifecycle certification.  
-Next **engineering** candidate only if new measured defect appears (e.g. proven dual-memory divergence).
-
-## DO_NOT_REOPEN_WITHOUT_NEW_EVIDENCE
-- Admin token / Cursor agent env investigation
-- Synthetic Admin mutation test route
-- Architecture / duplicate-runtime redesign
-- Broad repository architecture audits
+- Staggered Admin Save&Reload fan-out (optional resilience)
+- Graceful SIGTERM drain (optional)
