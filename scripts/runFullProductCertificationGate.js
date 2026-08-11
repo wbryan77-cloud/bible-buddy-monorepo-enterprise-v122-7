@@ -64,6 +64,9 @@ async function main() {
   const admin = runNode('tests/humanNeedGriefFriend.test.js');
   record('humanNeed_grief_friend', admin.code === 0, admin.code === 0 ? '' : admin.out.slice(-400));
 
+  const helpDoc = runNode('tests/helpCenterDocumentationContract.test.js');
+  record('help_documentation_contract', helpDoc.code === 0, helpDoc.code === 0 ? '' : helpDoc.out.slice(-400));
+
   // Inline Admin RC static contract
   const js = fs.readFileSync(path.join(ROOT, 'admin/js/bible-authority.js'), 'utf8');
   const html = fs.readFileSync(path.join(ROOT, 'admin/bible-authority.html'), 'utf8');

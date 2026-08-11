@@ -36,6 +36,26 @@ const { getStorageAdapter } = require('./persistence/storageAdapter');
 
 const DATA_PATH = path.join(__dirname, '..', 'data', 'help-center-articles.json');
 
+/** Canonical Getting Started body — must not overclaim exclusive Bible-text answering. */
+const GETTING_STARTED_BODY =
+  'Tap the chat orb to start talking with Buddy. You can ask Bible questions, request a verse, ask for a prayer, or just talk about your day. When Buddy quotes Scripture, it retrieves the actual Bible text rather than inventing verse wording. Some answers also include historical context or pastoral encouragement — those parts are labeled separately from Scripture quotation.';
+
+const GETTING_STARTED_OVERCLAIM_RE =
+  /Buddy always answers Scripture questions from the Bible text itself/i;
+
+function repairKnownDocumentationOverclaims(doc) {
+  let changed = false;
+  for (const article of doc.articles || []) {
+    if (article.id === 'getting-started' && GETTING_STARTED_OVERCLAIM_RE.test(String(article.body || ''))) {
+      article.body = GETTING_STARTED_BODY;
+      article.updatedAt = new Date().toISOString();
+      article.version = Number(article.version || 1) + 1;
+      changed = true;
+    }
+  }
+  return changed;
+}
+
 function seedArticles() {
   const now = new Date().toISOString();
   return [
@@ -44,7 +64,7 @@ function seedArticles() {
       title: 'Getting started with BibleBuddy',
       category: 'onboarding',
       tags: ['faq', 'onboarding', 'navigation'],
-      body: 'Tap the chat orb to start talking with Buddy. You can ask Bible questions, request a verse, ask for a prayer, or just talk about your day. Buddy always answers Scripture questions from the Bible text itself — never from invented text.',
+      body: GETTING_STARTED_BODY,
       version: 1,
       createdAt: now,
       updatedAt: now,
@@ -116,7 +136,26 @@ const DEFAULT_DOCUMENT = () => ({ articles: seedArticles() });
 
 function load() {
   const doc = getStorageAdapter().readJsonDocument(DATA_PATH, null);
-  if (doc && Array.isArray(doc.articles)) return doc;
+  if (doc && Array.isArray(doc.articles)) {
+    // Persisted installs keep seed-era wording until Admin edits; repair the
+    // known documentation overclaim in-place so deploy activates the contract.
+    if (
+      doc.articles.some(
+        (a) => a.id === 'getting-started' && GETTING_STARTED_OVERCLAIM_RE.test(String(a.body || ''))
+      )
+    ) {
+      return getStorageAdapter().updateJsonDocument(
+        DATA_PATH,
+        (current) => {
+          const next = current && Array.isArray(current.articles) ? current : DEFAULT_DOCUMENT();
+          repairKnownDocumentationOverclaims(next);
+          return next;
+        },
+        DEFAULT_DOCUMENT()
+      );
+    }
+    return doc;
+  }
   // First run (no file yet) or a corrupt read — seed deterministically and
   // persist so every subsequent reader (this or another process) converges
   // on the same seed rather than each re-seeding independently.
