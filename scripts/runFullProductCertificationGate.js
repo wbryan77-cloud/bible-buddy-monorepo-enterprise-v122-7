@@ -67,6 +67,9 @@ async function main() {
   const helpDoc = runNode('tests/helpCenterDocumentationContract.test.js');
   record('help_documentation_contract', helpDoc.code === 0, helpDoc.code === 0 ? '' : helpDoc.out.slice(-400));
 
+  const deferLife = runNode('tests/decisionQueueDeferLifecycle.test.js');
+  record('decision_queue_defer_lifecycle', deferLife.code === 0, deferLife.code === 0 ? '' : deferLife.out.slice(-400));
+
   // Inline Admin RC static contract
   const js = fs.readFileSync(path.join(ROOT, 'admin/js/bible-authority.js'), 'utf8');
   const html = fs.readFileSync(path.join(ROOT, 'admin/bible-authority.html'), 'utf8');
