@@ -117,7 +117,18 @@ async function main() {
   // C. Optional production read-only
   const prodUrl = (process.env.CERTIFY_PROD_URL || '').replace(/\/$/, '');
   if (prodUrl) {
-    const health = await fetchJson(`${prodUrl}/health`);
+    async function settledProdCheck(path, { allowStatuses = [200], expectJson = true } = {}) {
+      const first = await fetchJson(`${prodUrl}${path}`);
+      const infraHit = first.status === 502 || first.status === 503 || first.status === 0 || first.error === 'timeout'
+        || (expectJson && first.isHtml && first.status >= 500);
+      if (!infraHit) return { ...first, infraWindow: false, attempt: 1 };
+      // Do not convert deploy/edge blips into product FAILs — wait and rerun once.
+      await new Promise((r) => setTimeout(r, 2500));
+      const second = await fetchJson(`${prodUrl}${path}`);
+      return { ...second, infraWindow: true, attempt: 2, priorStatus: first.status };
+    }
+
+    const health = await settledProdCheck('/health');
     let healthOk = false;
     let sha = null;
     try {
@@ -127,19 +138,35 @@ async function main() {
     } catch (_) {
       healthOk = false;
     }
-    record('prod_health_json', healthOk, `sha=${sha}`);
+    record(
+      'prod_health_json',
+      healthOk,
+      `sha=${sha}${health.infraWindow ? ` INFRASTRUCTURE_WINDOW_INCONCLUSIVE_THEN_RETRY prior=${health.priorStatus}` : ''}`,
+    );
 
-    const overview = await fetchJson(`${prodUrl}/admin/api/bible-authority/unified/overview`);
+    const overview = await settledProdCheck('/admin/api/bible-authority/unified/overview', { allowStatuses: [401] });
     record(
       'prod_unified_overview_json_not_html',
       overview.status === 401 && !overview.isHtml && overview.contentType.includes('json'),
-      `status=${overview.status}`,
+      `status=${overview.status}${overview.infraWindow ? ` INFRASTRUCTURE_WINDOW_INCONCLUSIVE_THEN_RETRY prior=${overview.priorStatus}` : ''}`,
     );
 
-    const page = await fetchJson(`${prodUrl}/admin/bible-authority`);
+    const page = await settledProdCheck('/admin/bible-authority', { expectJson: false });
     record(
       'prod_admin_page_assets',
       page.status === 200 && page.body.includes('cc-decision-queue') && page.body.includes('rc-admin-20260807'),
+      page.infraWindow ? `INFRASTRUCTURE_WINDOW_INCONCLUSIVE_THEN_RETRY prior=${page.priorStatus}` : '',
+    );
+
+    // Thin-adapter contract for governed DEFER operator (no business-logic duplication)
+    const op = fs.readFileSync(path.join(ROOT, 'scripts/adminGovernedDeferOperator.js'), 'utf8');
+    record(
+      'governed_operator_thin_adapter',
+      op.includes("require('../services/adminAuthMiddleware')")
+        && op.includes('unified/decision-queue')
+        && !op.includes('applyDecisionQueueAction')
+        && !op.includes("|| 'test-admin-token'")
+        && op.includes('CONFIRM_DEFER'),
     );
   } else {
     record('prod_checks', true, 'SKIPPED (set CERTIFY_PROD_URL to enable)');

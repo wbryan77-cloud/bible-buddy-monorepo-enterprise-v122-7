@@ -29,7 +29,7 @@
 const https = require('https');
 const http = require('http');
 const readline = require('readline');
-const { createHash } = require('crypto');
+const { adminAuthFingerprint } = require('../services/adminAuthMiddleware');
 
 const BASE = (process.env.CERTIFY_PROD_URL || process.env.CC_SMOKE_BASE_URL || '').replace(/\/$/, '');
 const TOKEN = String(process.env.BIBLE_AUTHORITY_ADMIN_TOKEN || process.env.CC_SMOKE_TOKEN || '').trim();
@@ -37,8 +37,7 @@ const WANT_ID = process.env.DEFER_CANDIDATE_ID || 'founder-experience:8d1e5cca-9
 const MODE = process.argv.includes('--defer') ? 'defer' : 'preflight';
 
 function fingerprint(token) {
-  if (!token) return null;
-  return createHash('sha256').update(String(token).trim(), 'utf8').digest('hex').slice(0, 12);
+  return adminAuthFingerprint(token || null);
 }
 
 function request(method, path, { token = null, body = null, timeoutMs = 45000 } = {}) {
