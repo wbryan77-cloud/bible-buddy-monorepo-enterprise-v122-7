@@ -298,5 +298,19 @@ app.listen(PORT, () => {
     } catch (err) {
       console.warn('[learningRecordStore] durable hydrate wire failed:', err && err.message ? err.message : err);
     }
+    try {
+      const { hydrateAdminAuditFromDurableIfNeeded } = require('./services/adminAuditTrail');
+      hydrateAdminAuditFromDurableIfNeeded()
+        .then((r) => {
+          if (r && r.hydrated) {
+            console.log(`[adminAuditTrail] hydrated ${r.count} audit entries from durable (${r.backend})`);
+          }
+        })
+        .catch((err) => {
+          console.warn('[adminAuditTrail] durable hydrate failed:', err && err.message ? err.message : err);
+        });
+    } catch (err) {
+      console.warn('[adminAuditTrail] durable hydrate wire failed:', err && err.message ? err.message : err);
+    }
   });
 });

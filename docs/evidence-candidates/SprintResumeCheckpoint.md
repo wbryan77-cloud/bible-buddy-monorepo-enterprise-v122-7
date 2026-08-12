@@ -1,21 +1,20 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**EMPTY_QUEUE_ROOT_CAUSE_PROVEN** — production DEFER of local wantId is obsolete
+**POST-51f0072 VERIFIED** — queue recovered to `total:1` FE row; follow-on durability repairs pending deploy
 
 | Field | Value |
 |---|---|
-| Production snapshot | `data/bb-admin-production-readonly-snapshot.json` → queue `total:0` (real) |
-| Target `8d1e5cca-…` | **LOCAL/EVIDENCE ONLY** — never in production snapshot |
-| Auth | Solved (fingerprint match; not the blocker) |
+| Production SHA (at verify) | `51f0072` |
+| Preflight after | `queueTotal:1`, FE `d5226484-…` Ready, `emptyStore:false` |
+| Before | `queueTotal:0` |
+| Old wantId `8d1e5cca` | **NOT recovered** — HISTORICAL_RECOVERY_NOT_POSSIBLE |
 
-## Root cause
-Decision Queue federates gitignored `data/` files. Render ≠ local disk. Certify `queue_open_total` was **local_only**.
-
-## Repair (local; commit/deploy pending)
-- `learningRecordStore` durable → JSONL hydrate on boot
-- Operator preflight `queueTotal`/`emptyStore`
-- Certify + hydrate/empty-source tests
+## Classification
+- A HISTORICAL_DATA_NOT_DURABLE (most pre-hydrate local FE/queue data)
+- C CURRENT_CODE_FIXED (learning hydrate — verified by 0→1)
+- C CURRENT_CODE_FIXED (follow-on: FE adminStatus→queue status; audit dual-write+hydrate) — commit/deploy next
+- E HISTORICAL_TARGET `8d1e5cca` NOT recoverable
 
 ## Do not
-Re-DEFER the local wantId on production. Generate/select a **production-native** FE candidate after hydrate deploy if durable FE rows exist.
+DEFER obsolete local wantId · treat local certify totals as production

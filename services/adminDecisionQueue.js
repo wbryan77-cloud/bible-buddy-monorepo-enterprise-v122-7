@@ -130,6 +130,24 @@ function baseNativeStatusToQueueStatus(nativeStatus) {
   return STATUS.NEW;
 }
 
+/** Map learning-record adminStatus → queue status (authoritative when overlay absent). */
+function learningAdminStatusToQueueStatus(adminStatus) {
+  const s = String(adminStatus || '').toUpperCase();
+  if (s === 'DEFERRED') return STATUS.DEFERRED;
+  if (s === 'APPROVED') return STATUS.APPROVED;
+  if (s === 'REJECTED') return STATUS.REJECTED;
+  if (
+    s === 'OBSERVED'
+    || s === 'CORRELATED'
+    || s === 'DRAFT_RECOMMENDATION'
+    || s === 'DUPLICATE_CHECKED'
+    || s === 'EVIDENCE_CHECKED'
+  ) {
+    return STATUS.NEW;
+  }
+  return STATUS.READY_FOR_DECISION;
+}
+
 /**
  * Build the normalized, merged queue. Bounded by `limit` per source
  * (Part 14 scalability — never an unbounded scan of every historical
@@ -297,7 +315,9 @@ function buildDecisionQueueItems({ perSourceLimit = 200 } = {}) {
         requiredApproval: true,
         createdAt: rec.createdAt,
         lastUpdatedAt: ov.updatedAt || rec.updatedAt || rec.createdAt,
-        status: ov.status || STATUS.READY_FOR_DECISION,
+        // Prefer overlay when present; otherwise honor durable learning adminStatus
+        // so DEFER/APPROVE survive redeploy after JSONL hydrate (overlay is ephemeral).
+        status: ov.status || learningAdminStatusToQueueStatus(rec.adminStatus),
         note: ov.note || null,
         drillDownTarget: '#command-center',
         autoPublishProhibited: true,
@@ -501,4 +521,5 @@ module.exports = {
   listDecisionQueue,
   applyDecisionQueueAction,
   getDecisionQueueItemAuditHistory,
+  learningAdminStatusToQueueStatus,
 };

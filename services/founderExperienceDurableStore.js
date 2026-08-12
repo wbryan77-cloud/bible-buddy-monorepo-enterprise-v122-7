@@ -20,6 +20,8 @@ const DOC = {
   predictions: path.join(ROOT, 'data/founder-experience/predictions.json'),
   costLedger: path.join(ROOT, 'data/founder-experience/cost-ledger.json'),
   calibration: path.join(ROOT, 'data/founder-experience/evaluator-calibration.json'),
+  // Unified Admin audit — same dual-write helper; not a second audit product.
+  adminUnifiedAudit: path.join(ROOT, 'data/admin-command-center/unified-audit-durable.json'),
 };
 
 const MAX = {
@@ -34,6 +36,7 @@ const MAX = {
   predictions: 2000,
   costLedger: 8000,
   calibration: 4000,
+  adminUnifiedAudit: 8000,
 };
 
 let backendInfo = null;

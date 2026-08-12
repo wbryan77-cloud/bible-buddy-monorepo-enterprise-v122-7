@@ -76,6 +76,9 @@ async function main() {
   const hydrate = runNode('tests/learningRecordDurableHydrate.test.js');
   record('learning_record_durable_hydrate', hydrate.code === 0, hydrate.code === 0 ? '' : hydrate.out.slice(-500));
 
+  const govDur = runNode('tests/governanceDurabilityFollowOn.test.js');
+  record('governance_durability_follow_on', govDur.code === 0, govDur.code === 0 ? '' : govDur.out.slice(-400));
+
   // Inline Admin RC static contract
   const js = fs.readFileSync(path.join(ROOT, 'admin/js/bible-authority.js'), 'utf8');
   const html = fs.readFileSync(path.join(ROOT, 'admin/bible-authority.html'), 'utf8');

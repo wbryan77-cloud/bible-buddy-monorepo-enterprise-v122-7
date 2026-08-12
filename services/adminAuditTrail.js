@@ -20,6 +20,11 @@
  *   - Never store private Founder content (prayer text, lesson bodies) —
  *     only references/ids/counts.
  *   - Append-only through ordinary application use (no update/delete API).
+ *
+ * Durability (post-51f0072 follow-on):
+ *   JSONL on disk is ephemeral on Render. Dual-write projections into
+ *   founderExperienceDurableStore (Postgres when DATABASE_URL is set) and
+ *   hydrate JSONL on boot when empty — same pattern as learningRecordStore.
  */
 
 const fs = require('fs');
@@ -54,24 +59,72 @@ function nextCorrelationId() {
   return `aud_${Date.now().toString(36)}_${sequenceCounter}`;
 }
 
+function ensureAuditDir() {
+  if (!fs.existsSync(AUDIT_DIR)) fs.mkdirSync(AUDIT_DIR, { recursive: true });
+}
+
+function jsonlAuditCount() {
+  try {
+    if (!fs.existsSync(AUDIT_LOG_PATH)) return 0;
+    return fs.readFileSync(AUDIT_LOG_PATH, 'utf8').trim().split('\n').filter(Boolean).length;
+  } catch (_) {
+    return 0;
+  }
+}
+
+function dualWriteAuditDurable(record) {
+  setImmediate(() => {
+    try {
+      const { appendItem, DOC, MAX } = require('./founderExperienceDurableStore');
+      appendItem(DOC.adminUnifiedAudit, record, MAX.adminUnifiedAudit).catch((err) => {
+        console.warn('[adminAuditTrail] durable append failed:', err && err.message ? err.message : err);
+      });
+    } catch (err) {
+      console.warn('[adminAuditTrail] durable wire failed:', err && err.message ? err.message : err);
+    }
+  });
+}
+
+/**
+ * After Render redeploy, ephemeral JSONL audit is empty while durable projections
+ * may still hold prior Admin actions. Hydrate JSONL from durable when empty.
+ */
+async function hydrateAdminAuditFromDurableIfNeeded() {
+  const existing = jsonlAuditCount();
+  if (existing > 0) {
+    return { ok: true, hydrated: false, reason: 'jsonl_present', existing };
+  }
+  let items = [];
+  let backend = 'UNKNOWN';
+  try {
+    const { readItems, DOC } = require('./founderExperienceDurableStore');
+    const result = await readItems(DOC.adminUnifiedAudit);
+    items = Array.isArray(result.items) ? result.items : [];
+    backend = result.backend || 'UNKNOWN';
+  } catch (err) {
+    return {
+      ok: false,
+      hydrated: false,
+      reason: 'durable_read_failed',
+      error: err && err.message ? err.message : String(err),
+    };
+  }
+  if (!items.length) {
+    return { ok: true, hydrated: false, reason: 'durable_empty', backend };
+  }
+  ensureAuditDir();
+  const lines = items
+    .filter((r) => r && typeof r === 'object')
+    .map((r) => JSON.stringify(r));
+  if (!lines.length) {
+    return { ok: true, hydrated: false, reason: 'durable_items_invalid', backend };
+  }
+  fs.writeFileSync(AUDIT_LOG_PATH, `${lines.join('\n')}\n`, 'utf8');
+  return { ok: true, hydrated: true, count: lines.length, backend };
+}
+
 /**
  * Record one Admin action into the unified audit trail.
- *
- * @param {object} entry
- * @param {string} entry.action - e.g. 'DECISION_QUEUE_APPROVE', 'SEARCH', 'AI_QUERY'
- * @param {string} entry.actionType - REVIEW | APPROVE | REJECT | DEFER | ASSIGN | INVESTIGATE | RESOLVE | NOTE | QUERY | READ
- * @param {string} entry.target - the item/resource id or path acted on
- * @param {string} entry.sourceSystem - which underlying system owns this item
- * @param {string} [entry.result] - outcome description
- * @param {*} [entry.previousState]
- * @param {*} [entry.resultingState]
- * @param {string} [entry.approvalReasonOrNote]
- * @param {string} [entry.actorId] - defaults to 'admin' (single-admin mode today)
- * @param {boolean} [entry.aiRecommendationInvolved]
- * @param {string} [entry.confidenceAtDecision]
- * @param {string} [entry.rollbackReference]
- * @param {string} [entry.category] - for filtering (e.g. 'KNOWLEDGE', 'LESSON_ALIGNMENT', 'SECURITY')
- * @param {string} [entry.severity]
  */
 function recordAdminAuditEvent(entry = {}) {
   const record = {
@@ -94,6 +147,7 @@ function recordAdminAuditEvent(entry = {}) {
     rollbackReference: entry.rollbackReference || null,
   };
   appendJsonlSafe(AUDIT_LOG_PATH, record);
+  dualWriteAuditDurable(record);
   return record;
 }
 
@@ -162,4 +216,6 @@ module.exports = {
   AUDIT_LOG_PATH,
   recordAdminAuditEvent,
   readAdminAuditTrail,
+  hydrateAdminAuditFromDurableIfNeeded,
+  jsonlAuditCount,
 };
