@@ -1,34 +1,21 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**FULL PRODUCT CERTIFICATION — OPERATOR_CHECK_REQUIRED (Admin lifecycle mutations)**
+**EMPTY_QUEUE_ROOT_CAUSE_PROVEN** — production DEFER of local wantId is obsolete
 
 | Field | Value |
 |---|---|
-| HEAD / origin/main | (see latest commit after grief repair) |
-| Production `/health.releaseCommit` | must match HEAD after deploy |
-| Admin auth | Configured (`adminAuthFingerprint` `9d04dcfc8c6d`) |
-| Certification gate | `npm run certify:product` |
+| Production snapshot | `data/bb-admin-production-readonly-snapshot.json` → queue `total:0` (real) |
+| Target `8d1e5cca-…` | **LOCAL/EVIDENCE ONLY** — never in production snapshot |
+| Auth | Solved (fingerprint match; not the blocker) |
 
-## COMPLETED_AND_DEPLOYED
-| Subsystem | Notes |
-|---|---|
-| Sabbath-history wire | `3f60eba` + still on main |
-| Admin Command Center RC | `e138ca2` drill-down, parseAdminJson, queue anchors |
-| Grief “I lost a friend” need detection | humanNeedDetector aligned with griefCompanionResponse |
-| Runtime hygiene | `773bff8` |
-| Admin auth normalize | `e528a5a` |
+## Root cause
+Decision Queue federates gitignored `data/` files. Render ≠ local disk. Certify `queue_open_total` was **local_only**.
 
-## NO EVIDENCE-QUALIFIED IMPLEMENTATION GAPS (engineering)
-Working tree may hold G2R/doc regeneration + untracked evidence packs — not runtime gaps.
+## Repair (local; commit/deploy pending)
+- `learningRecordStore` durable → JSONL hydrate on boot
+- Operator preflight `queueTotal`/`emptyStore`
+- Certify + hydrate/empty-source tests
 
-## OPERATIONAL
-- Real-record Admin lifecycle certification (DEFER first) — human operator
-- Intermittent HTML 502 class — edge/restart; no app HTML regression identified
-- RESTORE action absent (re-transition only)
-
-## DEFERRED
-- Dual relationship-memory consolidation
-- Render unused env cleanup
-- Staggered Admin Save&Reload fan-out (optional resilience)
-- Graceful SIGTERM drain (optional)
+## Do not
+Re-DEFER the local wantId on production. Generate/select a **production-native** FE candidate after hydrate deploy if durable FE rows exist.

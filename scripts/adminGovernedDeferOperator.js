@@ -33,7 +33,8 @@ const { adminAuthFingerprint } = require('../services/adminAuthMiddleware');
 
 const BASE = (process.env.CERTIFY_PROD_URL || process.env.CC_SMOKE_BASE_URL || '').replace(/\/$/, '');
 const TOKEN = String(process.env.BIBLE_AUTHORITY_ADMIN_TOKEN || process.env.CC_SMOKE_TOKEN || '').trim();
-const WANT_ID = process.env.DEFER_CANDIDATE_ID || 'founder-experience:8d1e5cca-9edf-4995-9907-238903166163';
+// Prefer an explicit production-native id. Do NOT default to a local/evidence-only UUID.
+const WANT_ID = String(process.env.DEFER_CANDIDATE_ID || '').trim();
 const MODE = process.argv.includes('--defer') ? 'defer' : 'preflight';
 
 function fingerprint(token) {
@@ -153,16 +154,28 @@ async function main() {
   }
   const candidates = Array.isArray(queue.json?.items) ? queue.json.items : [];
 
-  let target = candidates.find((i) => i && i.id === WANT_ID);
+  let target = WANT_ID ? candidates.find((i) => i && i.id === WANT_ID) : null;
   if (!target) {
     target = candidates.find((i) => isSafeDeferCandidate(i).ok);
   }
-  const safety = target ? isSafeDeferCandidate(target) : { ok: false, reason: 'no candidate' };
+  const safety = target ? isSafeDeferCandidate(target) : {
+    ok: false,
+    reason: WANT_ID ? 'wantId not in returned page (emptyStore, filters, or local-only id)' : 'no safe candidate (set DEFER_CANDIDATE_ID to a production-native id)',
+  };
 
+  // Surface envelope totals/counts so empty-page vs empty-store is diagnosable.
+  // Production Decision Queue is federated from instance-local data/ files; a
+  // true total:0 means empty sources on that host — not an auth failure.
   console.log(JSON.stringify({
     phase: 'preflight_candidate',
     queueHttpStatus: queue.status,
+    queueOk: queue.json?.ok === true,
+    queueTotal: typeof queue.json?.total === 'number' ? queue.json.total : null,
+    queueCounts: queue.json?.counts || null,
+    queueOffset: queue.json?.offset ?? null,
+    queueLimit: queue.json?.limit ?? null,
     candidateCount: candidates.length,
+    emptyStore: (typeof queue.json?.total === 'number' ? queue.json.total : candidates.length) === 0,
     target: target ? {
       id: target.id,
       title: target.title,
@@ -175,6 +188,11 @@ async function main() {
     notificationExpected: 'NONE',
     missionControlChangeExpected: 'NO_CHANGE_EXPECTED_FOR_MEDIUM_FE_DEFER',
     auditEntryExpected: 'DECISION_QUEUE_DEFER',
+    note: safety.ok
+      ? null
+      : (typeof queue.json?.total === 'number' && queue.json.total === 0
+        ? 'Production decision-queue sources are empty on this host (ephemeral data/ or never seeded). Local gitignored data/ is not deployed.'
+        : 'Wanted id not in returned page; check filters/pagination or emptyStore.'),
   }, null, 2));
 
   if (MODE === 'preflight') {

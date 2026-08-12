@@ -70,6 +70,12 @@ async function main() {
   const deferLife = runNode('tests/decisionQueueDeferLifecycle.test.js');
   record('decision_queue_defer_lifecycle', deferLife.code === 0, deferLife.code === 0 ? '' : deferLife.out.slice(-400));
 
+  const emptySem = runNode('tests/decisionQueueEmptySourcesSemantics.test.js');
+  record('decision_queue_empty_source_contract', emptySem.code === 0, emptySem.code === 0 ? '' : emptySem.out.slice(-400));
+
+  const hydrate = runNode('tests/learningRecordDurableHydrate.test.js');
+  record('learning_record_durable_hydrate', hydrate.code === 0, hydrate.code === 0 ? '' : hydrate.out.slice(-500));
+
   // Inline Admin RC static contract
   const js = fs.readFileSync(path.join(ROOT, 'admin/js/bible-authority.js'), 'utf8');
   const html = fs.readFileSync(path.join(ROOT, 'admin/bible-authority.html'), 'utf8');
@@ -86,12 +92,15 @@ async function main() {
   const queue = listDecisionQueue({ limit: 25 });
   const OPEN = new Set(['New', 'Investigating', 'Ready for Decision', 'Deferred']);
   const open = Object.entries(queue.counts.byStatus || {}).reduce((n, [s, c]) => (OPEN.has(s) ? n + c : n), 0);
+  // LOCAL semantics only — gitignored data/ is not deployed to Render. Production
+  // may legitimately return total:0 after redeploy; do not treat local totals as
+  // production queue population proof.
   record(
     'queue_open_total_semantics',
     summary.recommendations?.data?.totalQueueItems === queue.total
       && summary.recommendations?.data?.totalOpenItems === open
       && open <= queue.total,
-    `open=${open} total=${queue.total}`,
+    `local_only open=${open} total=${queue.total}`,
   );
   const authRes = { statusCode: null, body: null, status(c) { this.statusCode = c; return this; }, json(b) { this.body = b; } };
   record('admin_auth_fail_closed_json', checkAdminAuth({ headers: {} }, authRes) === false && authRes.statusCode === 401 && authRes.body?.ok === false);

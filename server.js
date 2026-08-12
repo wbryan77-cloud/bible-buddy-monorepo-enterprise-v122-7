@@ -279,4 +279,24 @@ const { logStartupDiagnostics } = require('./services/buddyRuntimeConfig');
 app.listen(PORT, () => {
   console.log(`Bible Buddy ${APP_VERSION} listening on port ${PORT}`);
   logStartupDiagnostics();
+  // Governance durability: JSONL learning records are ephemeral on Render disk.
+  // Dual-write already projects into founderExperienceDurableStore — hydrate on
+  // boot so Decision Queue / FE Admin reads recover after redeploy when durable
+  // projections exist. No-op when JSONL already populated or durable is empty.
+  setImmediate(() => {
+    try {
+      const { hydrateLearningRecordsFromDurableIfNeeded } = require('./services/learningRecordStore');
+      hydrateLearningRecordsFromDurableIfNeeded()
+        .then((r) => {
+          if (r && r.hydrated) {
+            console.log(`[learningRecordStore] hydrated ${r.count} learning records from durable (${r.backend})`);
+          }
+        })
+        .catch((err) => {
+          console.warn('[learningRecordStore] durable hydrate failed:', err && err.message ? err.message : err);
+        });
+    } catch (err) {
+      console.warn('[learningRecordStore] durable hydrate wire failed:', err && err.message ? err.message : err);
+    }
+  });
 });

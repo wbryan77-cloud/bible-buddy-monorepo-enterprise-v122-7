@@ -8,10 +8,101 @@ const path = require('path');
 const crypto = require('crypto');
 const { appendExperienceEvent } = require('./experienceEventLedger');
 
-const DATA_DIR = path.join(__dirname, '..', 'data', 'founder-experience');
+// Optional test override — production uses the canonical data/ path.
+const DATA_DIR = process.env.BIBLEBUDDY_LEARNING_RECORD_DIR
+  ? path.resolve(process.env.BIBLEBUDDY_LEARNING_RECORD_DIR)
+  : path.join(__dirname, '..', 'data', 'founder-experience');
 const STORE_PATH = path.join(DATA_DIR, 'learning-records.jsonl');
 const INDEX_PATH = path.join(DATA_DIR, 'learning-record-index.json');
 const SCHEMA_VERSION = 'bie-learning-record-v1';
+
+function jsonlRecordCount() {
+  try {
+    if (!fs.existsSync(STORE_PATH)) return 0;
+    return fs.readFileSync(STORE_PATH, 'utf8').trim().split('\n').filter(Boolean).length;
+  } catch (_) {
+    return 0;
+  }
+}
+
+/**
+ * Dual-write already projects learning records into founderExperienceDurableStore
+ * (Postgres when DATABASE_URL is set). After Render redeploy the JSONL on disk is
+ * empty while durable projections may still exist. Hydrate JSONL/index from durable
+ * so Decision Queue / Admin listLearningRecords can see FE candidates again.
+ *
+ * No-op when JSONL already has rows. Never invents records.
+ */
+async function hydrateLearningRecordsFromDurableIfNeeded() {
+  const existing = jsonlRecordCount();
+  if (existing > 0) {
+    return { ok: true, hydrated: false, reason: 'jsonl_present', existing };
+  }
+
+  let items = [];
+  let backend = 'UNKNOWN';
+  try {
+    const { readItems, DOC } = require('./founderExperienceDurableStore');
+    const result = await readItems(DOC.learningRecords);
+    items = Array.isArray(result.items) ? result.items : [];
+    backend = result.backend || 'UNKNOWN';
+  } catch (err) {
+    return {
+      ok: false,
+      hydrated: false,
+      reason: 'durable_read_failed',
+      error: err && err.message ? err.message : String(err),
+    };
+  }
+
+  if (!items.length) {
+    return { ok: true, hydrated: false, reason: 'durable_empty', backend };
+  }
+
+  ensureDir();
+  const index = loadIndex();
+  const lines = [];
+  for (const item of items) {
+    if (!item || !item.learningRecordId) continue;
+    const record = {
+      schemaVersion: SCHEMA_VERSION,
+      learningRecordId: item.learningRecordId,
+      familyKey: item.familyKey || behaviorFamilyKey(item),
+      behaviorFamily: item.behaviorFamily || 'unclassified',
+      failureOrSuccessPattern:
+        item.failureOrSuccessPattern || item.failurePattern || item.successPattern || null,
+      expectedBehavior: item.expectedBehavior || null,
+      candidateRepair: item.candidateRepair || null,
+      discoveryId: item.discoveryId || null,
+      packageFingerprint: item.packageFingerprint || null,
+      adminStatus: item.adminStatus || 'READY_FOR_ADMIN_REVIEW',
+      recurrenceCount: item.recurrenceCount || 1,
+      createdAt: item.createdAt || item.updatedAt || item.lastTransitionAt || new Date().toISOString(),
+      updatedAt: item.updatedAt || item.lastTransitionAt || new Date().toISOString(),
+      mutationProhibited: true,
+      autoPublishProhibited: true,
+      autoDoctrineProhibited: true,
+      hydratedFromDurable: true,
+    };
+    lines.push(JSON.stringify(record));
+    index[record.familyKey] = {
+      learningRecordId: record.learningRecordId,
+      recurrenceCount: record.recurrenceCount,
+      firstSeenAt: record.createdAt,
+      lastSeenAt: record.updatedAt,
+      adminStatus: record.adminStatus,
+      packageFingerprint: record.packageFingerprint || null,
+    };
+  }
+
+  if (!lines.length) {
+    return { ok: true, hydrated: false, reason: 'durable_items_invalid', backend };
+  }
+
+  fs.writeFileSync(STORE_PATH, `${lines.join('\n')}\n`, 'utf8');
+  saveIndex(index);
+  return { ok: true, hydrated: true, count: lines.length, backend };
+}
 
 const ADMIN_STATUS = Object.freeze([
   'OBSERVED',
@@ -343,9 +434,13 @@ module.exports = {
   SCHEMA_VERSION,
   ADMIN_STATUS,
   STORE_PATH,
+  INDEX_PATH,
+  DATA_DIR,
   createLearningRecord,
   listLearningRecords,
   transitionLearningRecord,
   behaviorFamilyKey,
   findLearningRecordRaw,
+  hydrateLearningRecordsFromDurableIfNeeded,
+  jsonlRecordCount,
 };
