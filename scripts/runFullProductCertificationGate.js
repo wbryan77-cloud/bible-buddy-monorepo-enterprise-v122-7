@@ -79,6 +79,9 @@ async function main() {
   const govDur = runNode('tests/governanceDurabilityFollowOn.test.js');
   record('governance_durability_follow_on', govDur.code === 0, govDur.code === 0 ? '' : govDur.out.slice(-400));
 
+  const restart = runNode('tests/governanceRestartSurvival.test.js');
+  record('governance_restart_survival', restart.code === 0, restart.code === 0 ? '' : restart.out.slice(-500));
+
   // Inline Admin RC static contract
   const js = fs.readFileSync(path.join(ROOT, 'admin/js/bible-authority.js'), 'utf8');
   const html = fs.readFileSync(path.join(ROOT, 'admin/bible-authority.html'), 'utf8');
