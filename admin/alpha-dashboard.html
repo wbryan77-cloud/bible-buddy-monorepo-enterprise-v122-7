@@ -28,11 +28,32 @@
   <table id="topics"><thead><tr><th>Topic</th><th>Count</th></tr></thead><tbody></tbody></table>
   <h2>Feedback tags</h2>
   <table id="tags"><thead><tr><th>Tag</th><th>Count</th></tr></thead><tbody></tbody></table>
+  <h2>Recent response feedback</h2>
+  <table id="recentFb">
+    <thead>
+      <tr>
+        <th>When</th>
+        <th>Tag</th>
+        <th>Message</th>
+        <th>Session</th>
+        <th>Source</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
   <pre id="aggregateOut"></pre>
   <script>
     function authHeaders() {
       const t = document.getElementById('token').value;
       return t ? { Authorization: 'Bearer ' + t } : {};
+    }
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
     }
     document.getElementById('loadBtn').onclick = async () => {
       const r = await fetch('/admin/api/alpha/summary', { headers: authHeaders() });
@@ -52,9 +73,30 @@
         ['Alpha feedback', j.health.alpha.feedbackCount],
       ].map(([k,v]) => '<div class="card"><h3>'+k+'</h3><div class="val">'+v+'</div></div>').join('');
       const tb = document.querySelector('#topics tbody');
-      tb.innerHTML = (j.topTopics||[]).map((t) => '<tr><td>'+t.topic+'</td><td>'+t.count+'</td></tr>').join('');
+      tb.innerHTML = (j.topTopics||[]).map((t) => '<tr><td>'+esc(t.topic)+'</td><td>'+t.count+'</td></tr>').join('');
       const tg = document.querySelector('#tags tbody');
-      tg.innerHTML = Object.entries(j.feedbackTags||{}).map(([k,v]) => '<tr><td>'+k+'</td><td>'+v+'</td></tr>').join('');
+      tg.innerHTML = Object.entries(j.feedbackTags||{}).map(([k,v]) => '<tr><td>'+esc(k)+'</td><td>'+v+'</td></tr>').join('');
+
+      const fr = await fetch('/admin/api/alpha/feedback?limit=40', { headers: authHeaders() });
+      const fj = await fr.json();
+      const rtb = document.querySelector('#recentFb tbody');
+      if (!fj.ok) {
+        rtb.innerHTML = '<tr><td colspan="6">' + esc(fj.error || 'Could not load feedback') + '</td></tr>';
+      } else {
+        const rows = (fj.feedback || []).slice().reverse();
+        rtb.innerHTML = rows.length
+          ? rows.map((f) =>
+              '<tr>' +
+              '<td>' + esc((f.timestamp || '').slice(0, 19)) + '</td>' +
+              '<td>' + esc(f.tag) + '</td>' +
+              '<td><code>' + esc(f.messageId || '—') + '</code></td>' +
+              '<td><code>' + esc(f.sessionId || '—') + '</code></td>' +
+              '<td>' + esc(f.source || 'alpha') + '</td>' +
+              '<td>' + esc(f.optionalComment || '') + '</td>' +
+              '</tr>'
+            ).join('')
+          : '<tr><td colspan="6">No feedback recorded yet.</td></tr>';
+      }
     };
     document.getElementById('aggregateBtn').onclick = async () => {
       const r = await fetch('/admin/api/alpha/aggregate-issues', { method: 'POST', headers: authHeaders() });

@@ -254,7 +254,13 @@ async function handleBuddyChat({ body, res, requestId }) {
     userId,
     message,
     httpStatus: 200,
-    body: { ok: true, reply: payload },
+    body: {
+      ok: true,
+      reply: payload,
+      // Sprint C — stable response identity for per-message feedback correlation
+      messageId: requestId,
+      sessionId: sessionId || null,
+    },
   });
 
   scheduleFounderExperienceInstrumentation({
@@ -409,6 +415,41 @@ router.post('/stream', async (req, res) => {
       );
       res.end();
     } catch (_) {}
+  }
+});
+
+// Sprint C — in-chat per-response feedback (Companion Chat guests).
+// Reuses alphaFeedbackCapture durable owner; does not invent a second store.
+// Client cannot set Admin/governance/learning authority fields.
+router.post('/feedback', (req, res) => {
+  try {
+    const body = req.body || {};
+    const { recordFeedback } = require('../services/alphaFeedbackCapture');
+    const result = recordFeedback({
+      testerId: body.testerId || body.userId,
+      sessionId: body.sessionId,
+      messageId: body.messageId,
+      tag: body.tag,
+      optionalComment: body.comment || body.optionalComment,
+      source: 'companion_chat',
+    });
+    if (!result.ok) {
+      return res.status(400).json(result);
+    }
+    return res.json({
+      ok: true,
+      alreadyRecorded: !!result.alreadyRecorded,
+      entry: {
+        feedbackId: result.entry.feedbackId,
+        messageId: result.entry.messageId,
+        sessionId: result.entry.sessionId,
+        tag: result.entry.tag,
+        timestamp: result.entry.timestamp,
+        source: result.entry.source,
+      },
+    });
+  } catch (e) {
+    return res.status(500).json({ ok: false, error: e.message || 'Feedback failed' });
   }
 });
 

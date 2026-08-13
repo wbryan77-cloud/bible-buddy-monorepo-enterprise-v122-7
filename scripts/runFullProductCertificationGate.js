@@ -91,6 +91,9 @@ async function main() {
   const sprintBGov = runNode('tests/sprintBGovernanceAndPrefsDurability.test.js');
   record('sprint_b_governance_prefs_durability', sprintBGov.code === 0, sprintBGov.code === 0 ? '' : sprintBGov.out.slice(-800));
 
+  const sprintC = runNode('tests/sprintCInChatFeedback.test.js');
+  record('sprint_c_in_chat_feedback', sprintC.code === 0, sprintC.code === 0 ? '' : sprintC.out.slice(-800));
+
   // Inline Admin RC static contract
   const js = fs.readFileSync(path.join(ROOT, 'admin/js/bible-authority.js'), 'utf8');
   const html = fs.readFileSync(path.join(ROOT, 'admin/bible-authority.html'), 'utf8');

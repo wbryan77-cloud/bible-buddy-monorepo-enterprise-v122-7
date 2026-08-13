@@ -360,6 +360,74 @@
       color: var(--text);
     }
 
+    /* Sprint C — per-response feedback (lightweight, under Buddy replies) */
+    .response-feedback {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .response-feedback .fb-label {
+      width: 100%;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 2px;
+    }
+    .response-feedback button.fb-btn {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 12px;
+      min-height: 36px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: var(--text);
+    }
+    .response-feedback button.fb-btn:hover:not(:disabled) {
+      border-color: rgba(61,183,255,0.35);
+      color: var(--blue-soft);
+    }
+    .response-feedback button.fb-btn.selected {
+      border-color: rgba(140,242,194,0.45);
+      color: var(--ok);
+      background: rgba(140,242,194,0.1);
+    }
+    .response-feedback button.fb-btn:disabled {
+      opacity: 0.7;
+      cursor: default;
+    }
+    .response-feedback .fb-status {
+      width: 100%;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .response-feedback .fb-status.ok { color: var(--ok); }
+    .response-feedback .fb-status.err { color: var(--danger); }
+    .response-feedback .fb-comment {
+      width: 100%;
+      display: none;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .response-feedback .fb-comment.show { display: flex; }
+    .response-feedback .fb-comment input {
+      flex: 1;
+      min-width: 140px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+    .response-feedback .fb-comment button {
+      font-size: 12px;
+      padding: 8px 12px;
+      min-height: 36px;
+    }
+
     .quick-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -997,10 +1065,13 @@
       return details;
     }
 
-    function addMessage(kind, text, scripture = [], lineage = null) {
+    function addMessage(kind, text, scripture = [], lineage = null, messageId = null) {
       removeThinkingBubble();
       const div = document.createElement('div');
       div.className = `msg ${kind}`;
+      if (kind === 'buddy' && messageId) {
+        div.dataset.messageId = messageId;
+      }
 
       if (kind === 'buddy') {
         const { mainText, sections } = extractLabeledSections(text);
@@ -1032,12 +1103,159 @@
         }
         const lineageEl = buildLineageDisclosure(lineage);
         if (lineageEl) div.appendChild(lineageEl);
+        if (messageId) {
+          div.appendChild(buildResponseFeedback(messageId));
+        }
       } else {
         div.textContent = text;
       }
 
       messages.appendChild(div);
       messages.scrollTop = messages.scrollHeight;
+    }
+
+    function buildResponseFeedback(messageId) {
+      const wrap = document.createElement('div');
+      wrap.className = 'response-feedback';
+      wrap.setAttribute('role', 'group');
+      wrap.setAttribute('aria-label', 'Feedback on this response');
+      wrap.dataset.messageId = messageId;
+
+      const label = document.createElement('p');
+      label.className = 'fb-label';
+      label.textContent = 'Was this response helpful?';
+      wrap.appendChild(label);
+
+      const helpfulBtn = document.createElement('button');
+      helpfulBtn.type = 'button';
+      helpfulBtn.className = 'fb-btn';
+      helpfulBtn.textContent = 'Helpful';
+      helpfulBtn.setAttribute('aria-pressed', 'false');
+
+      const notHelpfulBtn = document.createElement('button');
+      notHelpfulBtn.type = 'button';
+      notHelpfulBtn.className = 'fb-btn';
+      notHelpfulBtn.textContent = 'Not helpful';
+      notHelpfulBtn.setAttribute('aria-pressed', 'false');
+
+      const status = document.createElement('p');
+      status.className = 'fb-status';
+      status.setAttribute('aria-live', 'polite');
+
+      const commentRow = document.createElement('div');
+      commentRow.className = 'fb-comment';
+      const commentInput = document.createElement('input');
+      commentInput.type = 'text';
+      commentInput.maxLength = 500;
+      commentInput.placeholder = 'Optional note (why?)';
+      commentInput.setAttribute('aria-label', 'Optional feedback note');
+      const sendCommentBtn = document.createElement('button');
+      sendCommentBtn.type = 'button';
+      sendCommentBtn.className = 'secondary';
+      sendCommentBtn.textContent = 'Send note';
+      const skipCommentBtn = document.createElement('button');
+      skipCommentBtn.type = 'button';
+      skipCommentBtn.className = 'secondary';
+      skipCommentBtn.textContent = 'Skip';
+      commentRow.appendChild(commentInput);
+      commentRow.appendChild(sendCommentBtn);
+      commentRow.appendChild(skipCommentBtn);
+
+      let submitted = false;
+      let pendingTag = null;
+
+      function setBusy(busy) {
+        helpfulBtn.disabled = busy || submitted;
+        notHelpfulBtn.disabled = busy || submitted;
+        sendCommentBtn.disabled = busy || submitted;
+        skipCommentBtn.disabled = busy || submitted;
+        commentInput.disabled = busy || submitted;
+      }
+
+      function markSelected(tag) {
+        helpfulBtn.classList.toggle('selected', tag === 'helpful');
+        notHelpfulBtn.classList.toggle('selected', tag === 'not_helpful');
+        helpfulBtn.setAttribute('aria-pressed', tag === 'helpful' ? 'true' : 'false');
+        notHelpfulBtn.setAttribute('aria-pressed', tag === 'not_helpful' ? 'true' : 'false');
+      }
+
+      async function submitFeedback(tag, optionalComment) {
+        if (submitted) return;
+        setBusy(true);
+        status.className = 'fb-status';
+        status.textContent = 'Saving…';
+        try {
+          const guestId = getOrCreateGuestId();
+          if (!guestId) throw new Error('Could not create a local guest id');
+          const res = await fetch('/buddy/feedback', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              testerId: guestId,
+              sessionId: getOrCreateChatSessionId(),
+              messageId,
+              tag,
+              optionalComment: optionalComment || '',
+            }),
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok || !data.ok) {
+            throw new Error(data.error || ('Server returned status ' + res.status));
+          }
+          submitted = true;
+          markSelected(tag);
+          commentRow.classList.remove('show');
+          status.className = 'fb-status ok';
+          status.textContent = data.alreadyRecorded
+            ? 'Thanks — your feedback was already recorded for this response.'
+            : 'Thanks — your feedback was recorded.';
+          setBusy(false);
+        } catch (err) {
+          status.className = 'fb-status err';
+          status.textContent = (err && err.message ? err.message : 'Could not save feedback.') + ' Tap to retry.';
+          setBusy(false);
+          pendingTag = tag;
+        }
+      }
+
+      helpfulBtn.addEventListener('click', () => {
+        if (submitted) return;
+        commentRow.classList.remove('show');
+        submitFeedback('helpful', '');
+      });
+      notHelpfulBtn.addEventListener('click', () => {
+        if (submitted) return;
+        if (pendingTag && status.classList.contains('err')) {
+          submitFeedback(pendingTag, commentInput.value.trim());
+          return;
+        }
+        pendingTag = 'not_helpful';
+        markSelected('not_helpful');
+        commentRow.classList.add('show');
+        status.className = 'fb-status';
+        status.textContent = 'Optional: add a short note, or skip.';
+        commentInput.focus();
+      });
+      sendCommentBtn.addEventListener('click', () => {
+        if (submitted) return;
+        submitFeedback('not_helpful', commentInput.value.trim());
+      });
+      skipCommentBtn.addEventListener('click', () => {
+        if (submitted) return;
+        submitFeedback('not_helpful', '');
+      });
+      commentInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          sendCommentBtn.click();
+        }
+      });
+
+      wrap.appendChild(helpfulBtn);
+      wrap.appendChild(notHelpfulBtn);
+      wrap.appendChild(commentRow);
+      wrap.appendChild(status);
+      return wrap;
     }
 
     function toggle(el) {
@@ -1108,7 +1326,8 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            userId: 'demo-user',
+            userId: getOrCreateGuestId() || 'demo-user',
+            sessionId: getOrCreateChatSessionId(),
             mode: 'COMPANION',
             personaKey: 'ADAPTIVE_COMPANION',
             message
@@ -1137,7 +1356,7 @@
           primaryWitness: payload.primaryWitness,
           answerLineage: payload.answerLineage,
           coreDebug: payload.coreDebug,
-        });
+        }, data.messageId || null);
         markVisit();
         window.setTimeout(() => setOrb('completed'), 3600);
         window.setTimeout(() => setOrb('idle'), 5200);
@@ -1229,6 +1448,19 @@
         return id;
       } catch (e) {
         return null;
+      }
+    }
+
+    function getOrCreateChatSessionId() {
+      try {
+        let id = window.sessionStorage.getItem('bb_chat_session_id');
+        if (!id) {
+          id = 'sess-' + Math.random().toString(36).slice(2, 12);
+          window.sessionStorage.setItem('bb_chat_session_id', id);
+        }
+        return id;
+      } catch (e) {
+        return 'sess-local';
       }
     }
 

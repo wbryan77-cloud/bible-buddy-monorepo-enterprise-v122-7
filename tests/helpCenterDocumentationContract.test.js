@@ -33,7 +33,11 @@ function main() {
 
   const fb = getArticle('how-do-i-give-feedback');
   assert.ok(fb, 'feedback article present');
-  assert.ok(/Help Assistant|alpha\/beta feedback/i.test(fb.body), 'honest feedback path');
+  assert.ok(/Helpful or Not helpful/i.test(fb.body), 'describes in-chat feedback controls');
+  assert.ok(/does not instantly change/i.test(fb.body), 'honest non-learning claim');
+  assert.ok(!/There is not yet a per-response/i.test(fb.body), 'stale missing-control wording removed');
+  assert.ok(!/BibleBuddy learned from this/i.test(fb.body), 'no false learning claim');
+  assert.ok(!/feedback control near a response/i.test(fb.body), 'no legacy overclaim phrasing');
 
   const np = getArticle('notification-preferences');
   assert.ok(np, 'notification article present');

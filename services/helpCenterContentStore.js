@@ -112,7 +112,7 @@ const NOTIFICATION_PREFS_BODY =
   'In this Founder Alpha build, notification category preferences are available to onboarded alpha testers (feature announcements, maintenance notices, Bible/prayer/lesson reminders). Security alerts stay on. There is not yet a general in-app notification preferences screen for every visitor — nothing is sent until an alpha preference is turned on.';
 
 const FEEDBACK_BODY =
-  'In Companion Chat on this Founder Alpha build, you can ask the Help Assistant about something that felt off, or use alpha/beta feedback tooling if you are an onboarded tester. There is not yet a per-response rating control on every public chat message. Feedback that reaches the team helps improve BibleBuddy.';
+  'After Buddy answers in Companion Chat, you can tap Helpful or Not helpful under that response. You may add an optional short note. Feedback is recorded for the team to review — it does not instantly change BibleBuddy’s answers, and it does not mean a person has replied to you yet. You can also ask the Help Assistant if something feels off.';
 
 function repairKnownDocumentationOverclaims(doc) {
   let changed = false;
@@ -137,7 +137,13 @@ function repairKnownDocumentationOverclaims(doc) {
       }
     }
     if (article.id === 'how-do-i-give-feedback') {
-      if (/feedback control near a response/i.test(String(article.body || ''))) {
+      const body = String(article.body || '');
+      if (
+        /There is not yet a per-response/i.test(body) ||
+        /feedback control near a response/i.test(body) ||
+        /BibleBuddy learned from this/i.test(body) ||
+        /We've fixed the answer/i.test(body)
+      ) {
         article.body = FEEDBACK_BODY;
         article.updatedAt = new Date().toISOString();
         article.version = Number(article.version || 1) + 1;
@@ -234,7 +240,14 @@ function needsDocumentationRepair(doc) {
       return true;
     }
     if (a.id === 'notification-preferences' && /Use the notification preferences screen/i.test(body)) return true;
-    if (a.id === 'how-do-i-give-feedback' && /feedback control near a response/i.test(body)) return true;
+    if (
+      a.id === 'how-do-i-give-feedback' &&
+      (/feedback control near a response/i.test(body) ||
+        /There is not yet a per-response/i.test(body) ||
+        /BibleBuddy learned from this/i.test(body))
+    ) {
+      return true;
+    }
     return false;
   });
 }
