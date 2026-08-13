@@ -1392,11 +1392,16 @@ async function loadCCEscalations() {
       const id = btn.getAttribute('data-id');
       const reply = el.querySelector(`.cc-escalation-reply[data-id="${id}"]`).value.trim();
       if (!reply) { alert('Enter a reply first.'); return; }
-      await adminFetch(`/api/support/escalations/${encodeURIComponent(id)}/resolve`, {
+      const res = await adminFetch(`/api/support/escalations/${encodeURIComponent(id)}/resolve`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ reply, action: 'resolve', decidedBy: 'admin' }),
       });
+      const parsed = await parseAdminJson(res, 'escalation-resolve');
+      if (!res.ok || !parsed.ok || (parsed.data && parsed.data.ok === false)) {
+        alert((parsed.data && parsed.data.error) || parsed.error || `Resolve failed (${res.status}).`);
+        return;
+      }
       loadCCEscalations();
       loadCCOverview();
     });
@@ -1404,11 +1409,16 @@ async function loadCCEscalations() {
   el.querySelectorAll('.cc-escalation-dismiss').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const id = btn.getAttribute('data-id');
-      await adminFetch(`/api/support/escalations/${encodeURIComponent(id)}/resolve`, {
+      const res = await adminFetch(`/api/support/escalations/${encodeURIComponent(id)}/resolve`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'dismiss', decidedBy: 'admin' }),
       });
+      const parsed = await parseAdminJson(res, 'escalation-dismiss');
+      if (!res.ok || !parsed.ok || (parsed.data && parsed.data.ok === false)) {
+        alert((parsed.data && parsed.data.error) || parsed.error || `Dismiss failed (${res.status}).`);
+        return;
+      }
       loadCCEscalations();
       loadCCOverview();
     });

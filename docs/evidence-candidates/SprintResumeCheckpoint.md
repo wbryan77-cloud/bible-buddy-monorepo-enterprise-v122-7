@@ -1,30 +1,32 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**POST-0211d99 POLISH PASS CLOSED**
+**PRODUCT EXPERIENCE SPRINT CLOSED**
 
 | Field | Value |
 |---|---|
-| Closed runtime baseline | `0211d99` |
-| This pass | notification test hygiene (deterministic provider boundary) |
-| Certification | `npm run certify:product` **28/28 PASS ×3** |
+| Prior runtime baseline | `0211d99` |
+| Prior test/docs | `abb9f59` |
+| This sprint | Help/UX/Admin honesty + Help Ask FAQ routing |
+| Certification | (see final gate after commit) |
 | Release blockers | **NONE** |
 | Production DEFER | **NOT REQUIRED** |
 
-## This pass
-- Strengthened `notificationEmailDispatchContract` to stub `fetch` — proves Resend path + payload without live network/401.
-- Lesson-alignment history: **DEFER** (diagnostic / regenerable; no promote).
-- Notification delivery history: **DEFER** (Admin observability only; not correctness-critical).
-- Sabbath cold-ask: **NO routing defect** — optional Founder copy polish only.
-- Medical/life-decision: **NO safety defect** — dual safe phrasings; optional normalize polish.
-- Parallel-test isolation: **not reproduced** under `--test-concurrency=2` — leave P3.
+## Implemented (Class B/C)
+- Help Ask: how-to FAQs mentioning Bible/prayer no longer redirected to Companion
+- Help seed/repair: feedback FAQ, notification FAQ, getting-started CTA honesty
+- Public orb: tap focuses chat composer (no dead “tap to talk” promise)
+- Escalation copy: no false guest reply-inbox promise
+- Admin escalation Resolve/Dismiss: surface failures via parseAdminJson
+- Strengthened `helpCenterDocumentationContract` tests
 
-## DO NOT REOPEN (unless new contradictory evidence)
-- Sprint A / FI / SG / alpha-pref / Help / FE durability
-- emailOrPhone dispatch routing (behavior)
-- Admin 401 fail-closed
-- production DEFER ceremony
+## Founder decisions honored (not reopened)
+- No lesson-alignment / notification-history durability
+- Sabbath/medical routing baseline kept; no doctrinal rewrite
+- Parallel-test isolation not forced (unreproduced)
+
+## DO NOT REOPEN
+- Prior durability/governance closures unless new contradictory evidence
 
 ## Next
-Founder optional: Sabbath copy, medical phrasing unify, lesson/notif history retention policy.
-**Stop until Founder requests next work.**
+Optional polish only; wait for Founder for new product scope.

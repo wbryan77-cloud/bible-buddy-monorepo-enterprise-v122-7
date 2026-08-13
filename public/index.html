@@ -735,9 +735,9 @@
       <div class="card orb-wrap">
         <span class="pill">Bible-first • opt-in • companion-led</span>
         <h1>Meet Buddy where life actually happens.</h1>
-        <p>Tap the orb to talk, pray, reflect, or read. Buddy listens first, adapts gently, and stays grounded in the lessons and truth of the Bible.</p>
+        <p>Type in the chat below — or tap the orb to jump there — to talk, pray, reflect, or read. Buddy listens first, adapts gently, and stays grounded in the lessons and truth of the Bible.</p>
 
-        <div id="orbStage" class="orb-stage" data-state="idle">
+        <div id="orbStage" class="orb-stage" data-state="idle" role="button" tabindex="0" aria-label="Focus the chat composer to talk with Buddy" title="Tap to focus the chat box">
           <div class="orb-ring"></div>
           <div class="orb-ring two"></div>
           <div class="orb-ring three"></div>
@@ -822,6 +822,29 @@
     const orbCaption = document.getElementById('orbCaption');
     const messages = document.getElementById('messages');
     const input = document.getElementById('messageInput');
+
+    function focusChatComposer() {
+      const chatCard = document.querySelector('.card.chat');
+      if (chatCard && typeof chatCard.scrollIntoView === 'function') {
+        chatCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      if (input) {
+        input.focus();
+        if (typeof setOrb === 'function') setOrb('listening');
+      }
+    }
+    if (orbStage) {
+      orbStage.addEventListener('click', (ev) => {
+        if (ev.target && ev.target.closest && ev.target.closest('.mic-btn')) return;
+        focusChatComposer();
+      });
+      orbStage.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          focusChatComposer();
+        }
+      });
+    }
 
     // PHASE_6H — expanded orb vocabulary. Each state maps to a real moment
     // in the request lifecycle: listening (user just sent something) →

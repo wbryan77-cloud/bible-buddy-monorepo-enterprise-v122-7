@@ -27,6 +27,9 @@ const { enqueueEscalation } = require('./userAssistanceEscalationStore');
 
 const BIBLE_DOCTRINE_PATTERN = /\b(bible|scripture|verse|god|jesus|christ|holy spirit|pray(er)?|doctrine|salvation|sin|gospel|heaven|hell|faith|worship|church|apostle|prophet|testament|genesis|revelation|psalm|proverbs)\b/i;
 const SCRIPTURE_REFERENCE_PATTERN = /\b[1-3]?\s?[A-Za-z]+\s+\d{1,3}(:\d{1,3}(-\d{1,3})?)?\b/;
+/** App how-to / FAQ questions that mention Bible/prayer keywords but belong to Help Center. */
+const APP_HELP_HOWTO_PATTERN =
+  /\b(how (do|can|to)|where (do|can)|turn (on|off)|control|getting started|feedback|notification|preferences?|help center|ask buddy|ask a bible question|pray with me)\b/i;
 
 const LOW_CONFIDENCE_THRESHOLD = 2; // minimum keyword-overlap score to answer confidently
 
@@ -52,9 +55,13 @@ function scoreArticle(article, questionTokens) {
  * heuristic (keyword + Scripture-reference pattern) — false positives
  * (over-referring to Companion AI) are the safe failure direction; this
  * module must never itself attempt to answer Bible content.
+ *
+ * App how-to FAQs that merely mention "Bible" or "pray" (e.g. "How do I ask
+ * a Bible question?") are Help Center navigation, not doctrine content.
  */
 function isBibleOrDoctrineQuestion(question) {
   const q = String(question || '');
+  if (APP_HELP_HOWTO_PATTERN.test(q)) return false;
   return BIBLE_DOCTRINE_PATTERN.test(q) || SCRIPTURE_REFERENCE_PATTERN.test(q);
 }
 
@@ -120,7 +127,8 @@ function askUserAssistance({ question, testerId = null } = {}) {
 
   return envelope({
     answered: false,
-    answer: "I don't have a confident answer for that in the Help Center yet. I've sent your question to the BibleBuddy team for review — you'll be able to see a reply once it's answered.",
+    answer:
+      "I don't have a confident answer for that in the Help Center yet. I've sent your question to the BibleBuddy team for review. There isn't an in-app reply inbox for guests yet — if you are an alpha tester with notifications enabled, you may receive a support reply there; otherwise the team will use this to improve Help.",
     confidence: 'LOW',
     escalated: true,
     escalationId: escalation.id,

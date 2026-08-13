@@ -103,19 +103,46 @@ async function hydrateHelpCenterFromDurableIfNeeded() {
 
 /** Canonical Getting Started body — must not overclaim exclusive Bible-text answering. */
 const GETTING_STARTED_BODY =
-  'Tap the chat orb to start talking with Buddy. You can ask Bible questions, request a verse, ask for a prayer, or just talk about your day. When Buddy quotes Scripture, it retrieves the actual Bible text rather than inventing verse wording. Some answers also include historical context or pastoral encouragement — those parts are labeled separately from Scripture quotation.';
+  'Type a message in the chat box below (or tap the orb to jump there) to start talking with Buddy. You can ask Bible questions, request a verse, ask for a prayer, or just talk about your day. When Buddy quotes Scripture, it retrieves the actual Bible text rather than inventing verse wording. Some answers also include historical context or pastoral encouragement — those parts are labeled separately from Scripture quotation.';
 
 const GETTING_STARTED_OVERCLAIM_RE =
   /Buddy always answers Scripture questions from the Bible text itself/i;
 
+const NOTIFICATION_PREFS_BODY =
+  'In this Founder Alpha build, notification category preferences are available to onboarded alpha testers (feature announcements, maintenance notices, Bible/prayer/lesson reminders). Security alerts stay on. There is not yet a general in-app notification preferences screen for every visitor — nothing is sent until an alpha preference is turned on.';
+
+const FEEDBACK_BODY =
+  'In Companion Chat on this Founder Alpha build, you can ask the Help Assistant about something that felt off, or use alpha/beta feedback tooling if you are an onboarded tester. There is not yet a per-response rating control on every public chat message. Feedback that reaches the team helps improve BibleBuddy.';
+
 function repairKnownDocumentationOverclaims(doc) {
   let changed = false;
   for (const article of doc.articles || []) {
-    if (article.id === 'getting-started' && GETTING_STARTED_OVERCLAIM_RE.test(String(article.body || ''))) {
-      article.body = GETTING_STARTED_BODY;
-      article.updatedAt = new Date().toISOString();
-      article.version = Number(article.version || 1) + 1;
-      changed = true;
+    if (article.id === 'getting-started') {
+      if (
+        GETTING_STARTED_OVERCLAIM_RE.test(String(article.body || '')) ||
+        /Tap the chat orb to start talking/i.test(String(article.body || ''))
+      ) {
+        article.body = GETTING_STARTED_BODY;
+        article.updatedAt = new Date().toISOString();
+        article.version = Number(article.version || 1) + 1;
+        changed = true;
+      }
+    }
+    if (article.id === 'notification-preferences') {
+      if (/Use the notification preferences screen/i.test(String(article.body || ''))) {
+        article.body = NOTIFICATION_PREFS_BODY;
+        article.updatedAt = new Date().toISOString();
+        article.version = Number(article.version || 1) + 1;
+        changed = true;
+      }
+    }
+    if (article.id === 'how-do-i-give-feedback') {
+      if (/feedback control near a response/i.test(String(article.body || ''))) {
+        article.body = FEEDBACK_BODY;
+        article.updatedAt = new Date().toISOString();
+        article.version = Number(article.version || 1) + 1;
+        changed = true;
+      }
     }
   }
   return changed;
@@ -159,7 +186,7 @@ function seedArticles() {
       title: 'How do I control my notifications?',
       category: 'account',
       tags: ['faq', 'notifications', 'account'],
-      body: 'You control every notification category except security alerts, which are always delivered. Use the notification preferences screen (or ask Buddy) to turn on/off feature announcements, maintenance notices, Bible/prayer/lesson reminders. Nothing is sent until you turn a category on.',
+      body: NOTIFICATION_PREFS_BODY,
       version: 1,
       createdAt: now,
       updatedAt: now,
@@ -189,7 +216,7 @@ function seedArticles() {
       title: 'How do I give feedback on a response?',
       category: 'support',
       tags: ['faq', 'feedback'],
-      body: 'Use the feedback control near a response to rate it and optionally add a tag/comment describing what was off (for example, "too generic" or "didn\'t answer my question"). This feeds directly into the team\'s review process.',
+      body: FEEDBACK_BODY,
       version: 1,
       createdAt: now,
       updatedAt: now,
@@ -199,16 +226,25 @@ function seedArticles() {
 
 const DEFAULT_DOCUMENT = () => ({ articles: seedArticles() });
 
+function needsDocumentationRepair(doc) {
+  const articles = doc?.articles || [];
+  return articles.some((a) => {
+    const body = String(a.body || '');
+    if (a.id === 'getting-started' && (GETTING_STARTED_OVERCLAIM_RE.test(body) || /Tap the chat orb to start talking/i.test(body))) {
+      return true;
+    }
+    if (a.id === 'notification-preferences' && /Use the notification preferences screen/i.test(body)) return true;
+    if (a.id === 'how-do-i-give-feedback' && /feedback control near a response/i.test(body)) return true;
+    return false;
+  });
+}
+
 function load() {
   const doc = getStorageAdapter().readJsonDocument(DATA_PATH, null);
   if (doc && Array.isArray(doc.articles)) {
-    // Persisted installs keep seed-era wording until Admin edits; repair the
-    // known documentation overclaim in-place so deploy activates the contract.
-    if (
-      doc.articles.some(
-        (a) => a.id === 'getting-started' && GETTING_STARTED_OVERCLAIM_RE.test(String(a.body || ''))
-      )
-    ) {
+    // Persisted installs keep seed-era wording until Admin edits; repair known
+    // documentation overclaims in-place so deploy activates the contract.
+    if (needsDocumentationRepair(doc)) {
       return update((current) => {
         repairKnownDocumentationOverclaims(current);
         return current;
