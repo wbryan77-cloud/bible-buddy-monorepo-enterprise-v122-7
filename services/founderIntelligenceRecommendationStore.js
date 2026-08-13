@@ -61,6 +61,120 @@ function saveIndex(index) {
   }
 }
 
+function dualWriteFiDisposition(entry) {
+  if (!entry || !entry.id) return;
+  setImmediate(() => {
+    try {
+      const { upsertById, DOC, MAX } = require('./founderExperienceDurableStore');
+      upsertById(
+        DOC.founderIntelligenceDispositions,
+        'id',
+        {
+          id: entry.id,
+          status: entry.status,
+          decidedAt: entry.decidedAt || null,
+          decidedBy: entry.decidedBy || null,
+          note: entry.note || null,
+          flaggedFalsePositive: !!entry.flaggedFalsePositive,
+          firstSeenAt: entry.firstSeenAt || null,
+          lastSeenAt: entry.lastSeenAt || null,
+          timesSeen: entry.timesSeen || 1,
+          type: entry.latest?.type || entry.type || null,
+          title: entry.latest?.title || entry.title || null,
+          latest: entry.latest || null,
+        },
+        MAX.founderIntelligenceDispositions
+      ).catch((err) => {
+        console.warn('[founderIntelligenceStore] durable disposition failed:', err && err.message ? err.message : err);
+      });
+    } catch (err) {
+      console.warn('[founderIntelligenceStore] durable disposition wire failed:', err && err.message ? err.message : err);
+    }
+  });
+}
+
+function dualWriteFiDecisionLog(row) {
+  setImmediate(() => {
+    try {
+      const { appendItem, DOC, MAX } = require('./founderExperienceDurableStore');
+      appendItem(DOC.founderIntelligenceDecisions, row, MAX.founderIntelligenceDecisions).catch((err) => {
+        console.warn('[founderIntelligenceStore] durable decision log failed:', err && err.message ? err.message : err);
+      });
+    } catch (err) {
+      console.warn('[founderIntelligenceStore] durable decision log wire failed:', err && err.message ? err.message : err);
+    }
+  });
+}
+
+/**
+ * syncRecommendations keeps status when the index file exists. After Render
+ * redeploy the index is gone and REJECTED resurfaces as PENDING — violating
+ * that contract. Hydrate dispositions from durable when the index is empty.
+ */
+async function hydrateFounderIntelligenceFromDurableIfNeeded() {
+  const existing = loadIndex();
+  if (Object.keys(existing).length > 0) {
+    return { ok: true, hydrated: false, reason: 'index_present', existing: Object.keys(existing).length };
+  }
+  let items = [];
+  let backend = 'UNKNOWN';
+  try {
+    const { readItems, DOC } = require('./founderExperienceDurableStore');
+    const result = await readItems(DOC.founderIntelligenceDispositions);
+    items = Array.isArray(result.items) ? result.items : [];
+    backend = result.backend || 'UNKNOWN';
+  } catch (err) {
+    return {
+      ok: false,
+      hydrated: false,
+      reason: 'durable_read_failed',
+      error: err && err.message ? err.message : String(err),
+    };
+  }
+  if (!items.length) {
+    return { ok: true, hydrated: false, reason: 'durable_empty', backend };
+  }
+  const index = {};
+  for (const item of items) {
+    if (!item || !item.id) continue;
+    index[item.id] = {
+      id: item.id,
+      status: item.status || STATUS.PENDING,
+      decidedAt: item.decidedAt || null,
+      decidedBy: item.decidedBy || null,
+      note: item.note || null,
+      flaggedFalsePositive: !!item.flaggedFalsePositive,
+      firstSeenAt: item.firstSeenAt || item.decidedAt || new Date().toISOString(),
+      lastSeenAt: item.lastSeenAt || item.decidedAt || new Date().toISOString(),
+      timesSeen: item.timesSeen || 1,
+      latest: item.latest || { type: item.type || null, title: item.title || null },
+      hydratedFromDurable: true,
+    };
+  }
+  if (!Object.keys(index).length) {
+    return { ok: true, hydrated: false, reason: 'durable_items_invalid', backend };
+  }
+  saveIndex(index);
+
+  // Restore decisions JSONL when empty
+  try {
+    const emptyLog = !fs.existsSync(DECISIONS_LOG_PATH) || !fs.readFileSync(DECISIONS_LOG_PATH, 'utf8').trim();
+    if (emptyLog) {
+      const { readItems, DOC } = require('./founderExperienceDurableStore');
+      const log = await readItems(DOC.founderIntelligenceDecisions);
+      const lines = (log.items || []).filter((r) => r && r.recommendationId).map((r) => JSON.stringify(r));
+      if (lines.length) {
+        ensureDataDir();
+        fs.writeFileSync(DECISIONS_LOG_PATH, `${lines.join('\n')}\n`, 'utf8');
+      }
+    }
+  } catch (_) {
+    /* best-effort audit restore */
+  }
+
+  return { ok: true, hydrated: true, count: Object.keys(index).length, backend };
+}
+
 /**
  * Merge freshly generated recommendations into the persisted index.
  * Returns the full merged list (each entry annotated with id/status/
@@ -140,7 +254,7 @@ function recordAdminDecision({ id, decision, decidedBy = 'admin', note = '', fla
   index[id].flaggedFalsePositive = !!flaggedFalsePositive;
   saveIndex(index);
 
-  appendJsonlSafe(DECISIONS_LOG_PATH, {
+  const decisionRow = {
     recommendationId: id,
     type: index[id].latest?.type,
     title: index[id].latest?.title,
@@ -148,7 +262,10 @@ function recordAdminDecision({ id, decision, decidedBy = 'admin', note = '', fla
     decidedBy,
     note: String(note || '').slice(0, 400),
     flaggedFalsePositive: !!flaggedFalsePositive,
-  });
+  };
+  appendJsonlSafe(DECISIONS_LOG_PATH, decisionRow);
+  dualWriteFiDisposition(index[id]);
+  dualWriteFiDecisionLog(decisionRow);
 
   return { ok: true, recommendation: index[id] };
 }
@@ -284,6 +401,8 @@ function computeEffectivenessMetrics(currentCoverageSnapshot = null) {
 
 module.exports = {
   STATUS,
+  INDEX_PATH,
+  DECISIONS_LOG_PATH,
   stableRecommendationId,
   syncRecommendations,
   listRecommendations,
@@ -292,4 +411,5 @@ module.exports = {
   readDecisionsLog,
   trackKnowledgeGrowth,
   computeEffectivenessMetrics,
+  hydrateFounderIntelligenceFromDurableIfNeeded,
 };

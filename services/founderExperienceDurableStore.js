@@ -26,6 +26,11 @@ const DOC = {
   userAssistanceEscalations: path.join(ROOT, 'data/user-assistance/escalations-durable.json'),
   alphaFeedback: path.join(ROOT, 'data/alpha/alpha-feedback-durable.json'),
   helpCenterArticles: path.join(ROOT, 'data/help-center/articles-durable.json'),
+  // Sprint B Class C — Admin/user decisions that existing contracts keep across re-observe
+  founderIntelligenceDispositions: path.join(ROOT, 'data/founder-intelligence/dispositions-durable.json'),
+  founderIntelligenceDecisions: path.join(ROOT, 'data/founder-intelligence/decisions-durable.json'),
+  supportGraphDecisions: path.join(ROOT, 'data/support-graph/decisions-durable.json'),
+  alphaTesters: path.join(ROOT, 'data/alpha/alpha-testers-durable.json'),
 };
 
 const MAX = {
@@ -44,6 +49,10 @@ const MAX = {
   userAssistanceEscalations: 4000,
   alphaFeedback: 8000,
   helpCenterArticles: 2000,
+  founderIntelligenceDispositions: 4000,
+  founderIntelligenceDecisions: 8000,
+  supportGraphDecisions: 8000,
+  alphaTesters: 2000,
 };
 
 let backendInfo = null;

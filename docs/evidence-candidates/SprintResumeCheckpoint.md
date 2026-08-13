@@ -1,51 +1,37 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**SPRINT B CLOSED** — `PRODUCT / ARCHITECTURE DURABILITY DECISIONS + UX RECONCILIATION`
+**SPRINT B EVIDENCE-TO-IMPLEMENTATION CLOSED**
 
 | Field | Value |
 |---|---|
-| Sprint A runtime SHA | `c2cc61e` |
-| Sprint B baseline | `9832782` |
-| Sprint B runtime | notification email dispatch fix (this commit) |
-| Certification | `npm run certify:product` **27/27 PASS ×3** |
+| Prior Sprint A runtime | `c2cc61e` |
+| Sprint B email fix | `db8668a` |
+| Class C durability runtime | (this commit) |
+| Certification | `npm run certify:product` **28/28 PASS ×3** |
 | Release blockers | **NONE** |
 | Production DEFER | **NOT REQUIRED** |
 
-## Sprint A (ACCEPTED — do not reopen)
-- Escalations / alpha-feedback / Help Admin-edit durability
-- FE learning / adminStatus / audit / boot hydrate (prior)
-- See HISTORICAL below
+## Implemented this pass (Class C)
+- FI dispositions: dual-write + hydrate — REJECTED/FP survive redeploy (keeps sync status contract)
+- SG Admin decisions: dual-write + hydrate — overlays survive redeploy
+- Alpha tester prefs/consent store: dual-write + hydrate — user prefs survive redeploy
+- Regression: `tests/sprintBGovernanceAndPrefsDurability.test.js`
+- Gate: `sprint_b_governance_prefs_durability`
+- Prior Sprint B: notification emailOrPhone → Resend path (`db8668a`)
 
-## Sprint B COMPLETED
-### Engineering repair (ordinary code defect)
-- Notification email dispatch: queue set `emailOrPhone` but dispatch required `item.email` → silently `queue_only`
-- Fix: resolve email/phone from `emailOrPhone`; populate fields on queue builders
-- Regression: `tests/notificationEmailDispatchContract.test.js`
-- Gate: `notification_email_dispatch_contract`
+## Still Founder/product (not Class C)
+- Lesson-alignment history durability (diagnostic / regenerable)
+- Notification delivery history durability (operational)
+- Sabbath cold-ask wording polish
+- Medical/life-decision wording polish
+- Historical Render exit-1 logs
 
-### Investigations (no durability architecture added)
-| Target | Result |
-|---|---|
-| Support Graph | Production edges = code SoT; Admin decisions JSONL = **F** (product) |
-| Founder Intelligence | Findings regenerable; REJECTED/dedupe status JSON = **F** (product) |
-| Lesson alignment | Diagnostic-only; no production promote; history = **F** |
-| Notification prefs/history | Same-disk OK; redeploy durability = **F**; email path = **G fixed** |
-| Sabbath cold-ask | Routing contracts **NO_ISSUE**; wording = **UX/PRODUCT** |
-| Medical/life-decision | Safety contracts **NO_ISSUE**; wording = **UX/PRODUCT** |
+## DO NOT REOPEN
+- Sprint A escalations/feedback/Help durability
+- FE learning/adminStatus/audit/hydrate
+- queue empty RCA / 8d1e5cca / /tmp token handoff
+- Unauthenticated Admin 401 (fail-closed — correct)
 
-## NOT BLOCKERS
-- Production DEFER
-- P2 durability of SG/FI/lesson/notif history (await Founder choice)
-- Sabbath / medical wording preferences
-- Historical Render exit-1 / health-timeout logs
-- Optional parallel-test isolation (P3)
-
-## HISTORICAL / DO NOT REOPEN
-- `8d1e5cca` candidate; `/tmp` evidence; Admin-token Cursor-env RCA
-- Production empty-queue RCA; Sprint A durability repairs
-- FE governance durability
-
-## Next work
-Founder decisions in `NextSprintEngineeringBacklog.md` (P2 recommendations).
-**Do not begin next sprint without explicit Founder request.**
+## Next
+See `NextSprintEngineeringBacklog.md`. Stop until Founder requests next work.

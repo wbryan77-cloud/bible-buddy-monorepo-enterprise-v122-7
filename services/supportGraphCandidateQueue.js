@@ -145,7 +145,70 @@ function recordCandidateDecision({
     decidedAt: new Date().toISOString(),
   };
   fs.appendFileSync(DECISIONS_PATH, `${JSON.stringify(decision)}\n`, 'utf8');
+  dualWriteSgDecision(decision);
   return decision;
+}
+
+function dualWriteSgDecision(decision) {
+  setImmediate(() => {
+    try {
+      const { appendItem, DOC, MAX } = require('./founderExperienceDurableStore');
+      appendItem(DOC.supportGraphDecisions, decision, MAX.supportGraphDecisions).catch((err) => {
+        console.warn('[supportGraphCandidateQueue] durable decision failed:', err && err.message ? err.message : err);
+      });
+    } catch (err) {
+      console.warn('[supportGraphCandidateQueue] durable decision wire failed:', err && err.message ? err.message : err);
+    }
+  });
+}
+
+/**
+ * Admin decisions overlay candidate status. After Render redeploy the JSONL
+ * is empty and dispositions disappear — hydrate when decisions file is empty.
+ */
+async function hydrateSupportGraphDecisionsFromDurableIfNeeded() {
+  let existing = 0;
+  try {
+    if (fs.existsSync(DECISIONS_PATH)) {
+      existing = fs.readFileSync(DECISIONS_PATH, 'utf8').trim().split('\n').filter(Boolean).length;
+    }
+  } catch (_) {
+    existing = 0;
+  }
+  if (existing > 0) {
+    return { ok: true, hydrated: false, reason: 'jsonl_present', existing };
+  }
+  let items = [];
+  let backend = 'UNKNOWN';
+  try {
+    const { readItems, DOC } = require('./founderExperienceDurableStore');
+    const result = await readItems(DOC.supportGraphDecisions);
+    items = Array.isArray(result.items) ? result.items : [];
+    backend = result.backend || 'UNKNOWN';
+  } catch (err) {
+    return {
+      ok: false,
+      hydrated: false,
+      reason: 'durable_read_failed',
+      error: err && err.message ? err.message : String(err),
+    };
+  }
+  if (!items.length) {
+    return { ok: true, hydrated: false, reason: 'durable_empty', backend };
+  }
+  ensureQueueDir();
+  // Latest-by-candidateId wins (same overlay semantics as readDecisionsById)
+  const byId = new Map();
+  for (const d of items) {
+    if (!d || !d.candidateId) continue;
+    byId.set(d.candidateId, d);
+  }
+  const lines = [...byId.values()].map((d) => JSON.stringify(d));
+  if (!lines.length) {
+    return { ok: true, hydrated: false, reason: 'durable_items_invalid', backend };
+  }
+  fs.writeFileSync(DECISIONS_PATH, `${lines.join('\n')}\n`, 'utf8');
+  return { ok: true, hydrated: true, count: lines.length, backend };
 }
 
 function readSupportGraphCandidates({ limit = 100, status = null } = {}) {
@@ -198,4 +261,5 @@ module.exports = {
   readSupportGraphCandidates,
   proposeCandidateFromUnverifiedClaim,
   recordCandidateDecision,
+  hydrateSupportGraphDecisionsFromDurableIfNeeded,
 };

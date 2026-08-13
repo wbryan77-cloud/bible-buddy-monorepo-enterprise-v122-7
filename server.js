@@ -354,5 +354,47 @@ app.listen(PORT, () => {
     } catch (err) {
       console.warn('[helpCenterContentStore] durable hydrate wire failed:', err && err.message ? err.message : err);
     }
+    try {
+      const { hydrateFounderIntelligenceFromDurableIfNeeded } = require('./services/founderIntelligenceRecommendationStore');
+      hydrateFounderIntelligenceFromDurableIfNeeded()
+        .then((r) => {
+          if (r && r.hydrated) {
+            console.log(`[founderIntelligenceStore] hydrated ${r.count} dispositions from durable (${r.backend})`);
+          }
+        })
+        .catch((err) => {
+          console.warn('[founderIntelligenceStore] durable hydrate failed:', err && err.message ? err.message : err);
+        });
+    } catch (err) {
+      console.warn('[founderIntelligenceStore] durable hydrate wire failed:', err && err.message ? err.message : err);
+    }
+    try {
+      const { hydrateSupportGraphDecisionsFromDurableIfNeeded } = require('./services/supportGraphCandidateQueue');
+      hydrateSupportGraphDecisionsFromDurableIfNeeded()
+        .then((r) => {
+          if (r && r.hydrated) {
+            console.log(`[supportGraphCandidateQueue] hydrated ${r.count} decisions from durable (${r.backend})`);
+          }
+        })
+        .catch((err) => {
+          console.warn('[supportGraphCandidateQueue] durable hydrate failed:', err && err.message ? err.message : err);
+        });
+    } catch (err) {
+      console.warn('[supportGraphCandidateQueue] durable hydrate wire failed:', err && err.message ? err.message : err);
+    }
+    try {
+      const { hydrateAlphaTestersFromDurableIfNeeded } = require('./services/alphaTesterManager');
+      hydrateAlphaTestersFromDurableIfNeeded()
+        .then((r) => {
+          if (r && r.hydrated) {
+            console.log(`[alphaTesterManager] hydrated ${r.count} alpha testers from durable (${r.backend})`);
+          }
+        })
+        .catch((err) => {
+          console.warn('[alphaTesterManager] durable hydrate failed:', err && err.message ? err.message : err);
+        });
+    } catch (err) {
+      console.warn('[alphaTesterManager] durable hydrate wire failed:', err && err.message ? err.message : err);
+    }
   });
 });

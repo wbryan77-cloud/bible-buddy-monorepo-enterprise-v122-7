@@ -88,6 +88,9 @@ async function main() {
   const notifEmail = runNode('tests/notificationEmailDispatchContract.test.js');
   record('notification_email_dispatch_contract', notifEmail.code === 0, notifEmail.code === 0 ? '' : notifEmail.out.slice(-500));
 
+  const sprintBGov = runNode('tests/sprintBGovernanceAndPrefsDurability.test.js');
+  record('sprint_b_governance_prefs_durability', sprintBGov.code === 0, sprintBGov.code === 0 ? '' : sprintBGov.out.slice(-800));
+
   // Inline Admin RC static contract
   const js = fs.readFileSync(path.join(ROOT, 'admin/js/bible-authority.js'), 'utf8');
   const html = fs.readFileSync(path.join(ROOT, 'admin/bible-authority.html'), 'utf8');
