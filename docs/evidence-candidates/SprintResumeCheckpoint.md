@@ -1,54 +1,51 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**SPRINT A CLOSED** — `NON-REGENERABLE USER/ADMIN STATE DURABILITY`
+**SPRINT B CLOSED** — `PRODUCT / ARCHITECTURE DURABILITY DECISIONS + UX RECONCILIATION`
 
 | Field | Value |
 |---|---|
-| Previous closure SHA | `8096e54` |
 | Sprint A runtime SHA | `c2cc61e` |
-| SHA parity (local=origin=production) | **YES** |
-| Certification | `npm run certify:product` **26/26 PASS ×3** |
+| Sprint B baseline | `9832782` |
+| Sprint B runtime | notification email dispatch fix (this commit) |
+| Certification | `npm run certify:product` **27/27 PASS ×3** |
 | Release blockers | **NONE** |
 | Production DEFER | **NOT REQUIRED** |
 
-## Previous sprint (ACCEPTED — do not reopen)
-- FE durable learning / adminStatus / audit / boot hydrate
-- queue 0→1 production recovery
-- certification 25/25 on `8096e54`
-- See historical notes below
+## Sprint A (ACCEPTED — do not reopen)
+- Escalations / alpha-feedback / Help Admin-edit durability
+- FE learning / adminStatus / audit / boot hydrate (prior)
+- See HISTORICAL below
 
-## Sprint A COMPLETED
-- User-assistance escalations: dual-write + boot hydrate via `founderExperienceDurableStore`
-- Alpha-feedback: dual-write + boot hydrate via same durable store
-- Help Center Admin edits: dual-write article set + hydrate before seed fallback
-- Restart-survival regression: `tests/sprintANonRegenerableDurability.test.js`
-- Certification gate extended with `sprint_a_non_regenerable_durability`
-- Boot wiring in `server.js` (non-blocking hydrate)
+## Sprint B COMPLETED
+### Engineering repair (ordinary code defect)
+- Notification email dispatch: queue set `emailOrPhone` but dispatch required `item.email` → silently `queue_only`
+- Fix: resolve email/phone from `emailOrPhone`; populate fields on queue builders
+- Regression: `tests/notificationEmailDispatchContract.test.js`
+- Gate: `notification_email_dispatch_contract`
 
-## NOT BLOCKERS / OUT OF SCOPE
-- Production DEFER ceremony
-- P2 product/architecture history stores (SG/FI/lesson-alignment/notifications)
-- Sabbath cold-ask / medical wording preferences
-- Historical Render exit-1 / health-timeout logs (need log evidence)
+### Investigations (no durability architecture added)
+| Target | Result |
+|---|---|
+| Support Graph | Production edges = code SoT; Admin decisions JSONL = **F** (product) |
+| Founder Intelligence | Findings regenerable; REJECTED/dedupe status JSON = **F** (product) |
+| Lesson alignment | Diagnostic-only; no production promote; history = **F** |
+| Notification prefs/history | Same-disk OK; redeploy durability = **F**; email path = **G fixed** |
+| Sabbath cold-ask | Routing contracts **NO_ISSUE**; wording = **UX/PRODUCT** |
+| Medical/life-decision | Safety contracts **NO_ISSUE**; wording = **UX/PRODUCT** |
+
+## NOT BLOCKERS
+- Production DEFER
+- P2 durability of SG/FI/lesson/notif history (await Founder choice)
+- Sabbath / medical wording preferences
+- Historical Render exit-1 / health-timeout logs
 - Optional parallel-test isolation (P3)
 
 ## HISTORICAL / DO NOT REOPEN
-- Candidate `founder-experience:8d1e5cca-…`
-- Pre-durability ephemeral queue/audit history
-- `/tmp` evidence-file agent visibility handoff
-- Admin-token / Cursor-env visibility RCA
-- Production empty-queue RCA (repaired in prior sprint)
-
-## Subsystem closure (Sprint A)
-| Area | Status |
-|---|---|
-| USER (escalations + feedback durability) | CLOSED |
-| ADMIN (Help edits + escalation disposition durability) | CLOSED |
-| ENGINEERING | CLOSED |
-| GOVERNANCE | unchanged (prior CLOSED_WITH_OPTIONAL_PROD_DEFER) |
-| INFRASTRUCTURE | historical logs only |
+- `8d1e5cca` candidate; `/tmp` evidence; Admin-token Cursor-env RCA
+- Production empty-queue RCA; Sprint A durability repairs
+- FE governance durability
 
 ## Next work
-Remaining candidates: see `docs/evidence-candidates/NextSprintEngineeringBacklog.md` (P1 Sprint A items done; P2/P3 remain).
-**Do not begin next sprint without an explicit Founder request.**
+Founder decisions in `NextSprintEngineeringBacklog.md` (P2 recommendations).
+**Do not begin next sprint without explicit Founder request.**

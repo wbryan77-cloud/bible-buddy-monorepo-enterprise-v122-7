@@ -41,6 +41,21 @@ function hasSmsProvider() {
   return !!(process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN);
 }
 
+/** Queue builders historically set `emailOrPhone`; dispatch required `email`. */
+function resolveEmailAddress(item = {}) {
+  if (item.email) return String(item.email).trim();
+  const v = String(item.emailOrPhone || '').trim();
+  if (v.includes('@')) return v;
+  return null;
+}
+
+function resolvePhoneNumber(item = {}) {
+  if (item.phone) return String(item.phone).trim();
+  const v = String(item.emailOrPhone || '').trim();
+  if (!v || v.includes('@')) return null;
+  return v;
+}
+
 function loadPrefs() {
   try {
     if (fs.existsSync(PREFS_PATH)) return JSON.parse(fs.readFileSync(PREFS_PATH, 'utf8'));
@@ -86,6 +101,9 @@ function buildNotificationQueue({ slot = 'morning' } = {}) {
       slot,
       body,
       channel: hasSmsProvider() && t.emailOrPhone?.match(/\d{10}/) ? 'sms' : hasEmailProvider() ? 'email' : 'queue_only',
+      emailOrPhone: t.emailOrPhone || null,
+      email: resolveEmailAddress({ emailOrPhone: t.emailOrPhone }),
+      phone: resolvePhoneNumber({ emailOrPhone: t.emailOrPhone }),
       scheduledAt: new Date().toISOString(),
     });
   }
@@ -108,15 +126,19 @@ function buildNotificationQueue({ slot = 'morning' } = {}) {
  */
 async function dispatchNotification(item) {
   const result = { ...item, sent: false, provider: 'none', at: new Date().toISOString() };
+  const emailTo = resolveEmailAddress(item);
+  const phoneTo = resolvePhoneNumber(item) || item.emailOrPhone || null;
 
-  if (item.channel === 'email' && hasEmailProvider() && item.email) {
-    const sendResult = await sendEmailResend({ to: item.email, subject: item.subject || 'BibleBuddy', html: item.html, text: item.body });
+  if (item.channel === 'email' && hasEmailProvider() && emailTo) {
+    const sendResult = await sendEmailResend({ to: emailTo, subject: item.subject || 'BibleBuddy', html: item.html, text: item.body });
     result.provider = 'resend';
+    result.to = emailTo;
     result.sent = !!sendResult.sent;
     result.note = sendResult.sent ? 'Delivered via Resend.' : (sendResult.error || 'Email dispatch attempted — provider reported not-sent.');
-  } else if (item.channel === 'sms' && hasSmsProvider()) {
-    const sendResult = await sendSmsTwilio({ to: item.phone || item.emailOrPhone, body: item.body });
+  } else if (item.channel === 'sms' && hasSmsProvider() && phoneTo) {
+    const sendResult = await sendSmsTwilio({ to: phoneTo, body: item.body });
     result.provider = 'twilio';
+    result.to = phoneTo;
     result.sent = !!sendResult.sent;
     result.note = sendResult.sent ? 'Delivered via Twilio.' : (sendResult.error || 'SMS dispatch attempted — provider reported not-sent.');
   } else {
@@ -185,6 +207,8 @@ function buildCategoryNotificationQueue({ category, body = null, onlyTesterId = 
       subject: `BibleBuddy — ${category.replace(/_/g, ' ')}`,
       channel: hasSmsProvider() && t.emailOrPhone?.match(/\d{10}/) ? 'sms' : hasEmailProvider() ? 'email' : 'queue_only',
       emailOrPhone: t.emailOrPhone,
+      email: resolveEmailAddress({ emailOrPhone: t.emailOrPhone }),
+      phone: resolvePhoneNumber({ emailOrPhone: t.emailOrPhone }),
       scheduledAt: new Date().toISOString(),
     });
   }
@@ -269,6 +293,8 @@ module.exports = {
   PROMPTS,
   buildNotificationQueue,
   dispatchNotification,
+  resolveEmailAddress,
+  resolvePhoneNumber,
   subscribe,
   unsubscribe,
   getQueueReport,
