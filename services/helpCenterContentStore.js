@@ -29,12 +29,77 @@
  * migrate because it is low-traffic, admin-authored, and not on the Buddy
  * Chat hot path — see the Phase 2 migration runbook for why the ~20
  * higher-traffic conversation-memory stores are sequenced later.
+
+ * Durability (Sprint A): local JSON is ephemeral on Render. Dual-write the
+ * article set into founderExperienceDurableStore (Postgres when DATABASE_URL
+ * is set) and hydrate the local file on boot when empty — so Admin edits
+ * survive redeploy. Seed content remains the empty-file fallback when durable
+ * is also empty. Not a second Help Center.
  */
 
+const fs = require('fs');
 const path = require('path');
 const { getStorageAdapter } = require('./persistence/storageAdapter');
 
 const DATA_PATH = path.join(__dirname, '..', 'data', 'help-center-articles.json');
+
+function helpFilePresent() {
+  try {
+    if (!fs.existsSync(DATA_PATH)) return false;
+    const raw = fs.readFileSync(DATA_PATH, 'utf8');
+    if (!raw.trim()) return false;
+    const doc = JSON.parse(raw);
+    return Array.isArray(doc?.articles) && doc.articles.length > 0;
+  } catch (_) {
+    return false;
+  }
+}
+
+function dualWriteHelpDurable(doc) {
+  setImmediate(() => {
+    try {
+      const { replaceAllItems, DOC, MAX } = require('./founderExperienceDurableStore');
+      const articles = Array.isArray(doc?.articles) ? doc.articles : [];
+      replaceAllItems(DOC.helpCenterArticles, articles, MAX.helpCenterArticles).catch((err) => {
+        console.warn('[helpCenterContentStore] durable replace failed:', err && err.message ? err.message : err);
+      });
+    } catch (err) {
+      console.warn('[helpCenterContentStore] durable wire failed:', err && err.message ? err.message : err);
+    }
+  });
+}
+
+/**
+ * After Render redeploy the local Help file is gone. Durable projections may
+ * still hold Admin-authored articles. Hydrate before load() would re-seed.
+ * Seed remains the fallback only when durable is also empty.
+ */
+async function hydrateHelpCenterFromDurableIfNeeded() {
+  if (helpFilePresent()) {
+    return { ok: true, hydrated: false, reason: 'file_present' };
+  }
+  let items = [];
+  let backend = 'UNKNOWN';
+  try {
+    const { readItems, DOC } = require('./founderExperienceDurableStore');
+    const result = await readItems(DOC.helpCenterArticles);
+    items = Array.isArray(result.items) ? result.items : [];
+    backend = result.backend || 'UNKNOWN';
+  } catch (err) {
+    return {
+      ok: false,
+      hydrated: false,
+      reason: 'durable_read_failed',
+      error: err && err.message ? err.message : String(err),
+    };
+  }
+  if (!items.length) {
+    return { ok: true, hydrated: false, reason: 'durable_empty', backend };
+  }
+  const doc = { articles: items };
+  getStorageAdapter().writeJsonDocument(DATA_PATH, doc);
+  return { ok: true, hydrated: true, count: items.length, backend };
+}
 
 /** Canonical Getting Started body — must not overclaim exclusive Bible-text answering. */
 const GETTING_STARTED_BODY =
@@ -144,15 +209,10 @@ function load() {
         (a) => a.id === 'getting-started' && GETTING_STARTED_OVERCLAIM_RE.test(String(a.body || ''))
       )
     ) {
-      return getStorageAdapter().updateJsonDocument(
-        DATA_PATH,
-        (current) => {
-          const next = current && Array.isArray(current.articles) ? current : DEFAULT_DOCUMENT();
-          repairKnownDocumentationOverclaims(next);
-          return next;
-        },
-        DEFAULT_DOCUMENT()
-      );
+      return update((current) => {
+        repairKnownDocumentationOverclaims(current);
+        return current;
+      });
     }
     return doc;
   }
@@ -161,16 +221,19 @@ function load() {
   // on the same seed rather than each re-seeding independently.
   const seeded = DEFAULT_DOCUMENT();
   getStorageAdapter().writeJsonDocument(DATA_PATH, seeded);
+  dualWriteHelpDurable(seeded);
   return seeded;
 }
 
 /** Prefer this for any write that first reads the document — it is
  * lock-protected against concurrent writers, unlike a bare load()+save(). */
 function update(mutatorFn) {
-  return getStorageAdapter().updateJsonDocument(DATA_PATH, (current) => {
+  const nextDoc = getStorageAdapter().updateJsonDocument(DATA_PATH, (current) => {
     const doc = current && Array.isArray(current.articles) ? current : DEFAULT_DOCUMENT();
     return mutatorFn(doc);
   }, DEFAULT_DOCUMENT());
+  dualWriteHelpDurable(nextDoc);
+  return nextDoc;
 }
 
 function listArticles({ tag = null, category = null, query = null, limit = 100 } = {}) {
@@ -276,4 +339,6 @@ module.exports = {
   updateArticle,
   deleteArticle,
   getStats,
+  hydrateHelpCenterFromDurableIfNeeded,
+  helpFilePresent,
 };

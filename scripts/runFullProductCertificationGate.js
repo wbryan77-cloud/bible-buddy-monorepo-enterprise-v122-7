@@ -82,6 +82,9 @@ async function main() {
   const restart = runNode('tests/governanceRestartSurvival.test.js');
   record('governance_restart_survival', restart.code === 0, restart.code === 0 ? '' : restart.out.slice(-500));
 
+  const sprintA = runNode('tests/sprintANonRegenerableDurability.test.js');
+  record('sprint_a_non_regenerable_durability', sprintA.code === 0, sprintA.code === 0 ? '' : sprintA.out.slice(-800));
+
   // Inline Admin RC static contract
   const js = fs.readFileSync(path.join(ROOT, 'admin/js/bible-authority.js'), 'utf8');
   const html = fs.readFileSync(path.join(ROOT, 'admin/bible-authority.html'), 'utf8');

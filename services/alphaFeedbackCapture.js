@@ -1,7 +1,13 @@
 /**
  * Phase 5J — Alpha feedback capture (in-chat tags).
+ *
+ * Durability (Sprint A): JSONL on disk is ephemeral on Render. Dual-write
+ * projections into founderExperienceDurableStore (Postgres when DATABASE_URL
+ * is set) and hydrate JSONL on boot when empty — same pattern as
+ * learningRecordStore / adminAuditTrail.
  */
 
+const fs = require('fs');
 const path = require('path');
 const { appendJsonlSafe } = require('./safeJsonlWriter');
 const { isActiveAlphaTester } = require('./alphaTesterManager');
@@ -38,6 +44,67 @@ function normalizeTag(tag = '') {
   return null;
 }
 
+function jsonlFeedbackCount() {
+  try {
+    if (!fs.existsSync(FEEDBACK_PATH)) return 0;
+    return fs.readFileSync(FEEDBACK_PATH, 'utf8').trim().split('\n').filter(Boolean).length;
+  } catch (_) {
+    return 0;
+  }
+}
+
+function dualWriteFeedbackDurable(entry) {
+  setImmediate(() => {
+    try {
+      const { appendItem, DOC, MAX } = require('./founderExperienceDurableStore');
+      appendItem(DOC.alphaFeedback, entry, MAX.alphaFeedback).catch((err) => {
+        console.warn('[alphaFeedbackCapture] durable append failed:', err && err.message ? err.message : err);
+      });
+    } catch (err) {
+      console.warn('[alphaFeedbackCapture] durable wire failed:', err && err.message ? err.message : err);
+    }
+  });
+}
+
+/**
+ * After Render redeploy, ephemeral JSONL feedback is empty while durable
+ * projections may still hold user-submitted tags. Hydrate when empty.
+ */
+async function hydrateAlphaFeedbackFromDurableIfNeeded() {
+  const existing = jsonlFeedbackCount();
+  if (existing > 0) {
+    return { ok: true, hydrated: false, reason: 'jsonl_present', existing };
+  }
+  let items = [];
+  let backend = 'UNKNOWN';
+  try {
+    const { readItems, DOC } = require('./founderExperienceDurableStore');
+    const result = await readItems(DOC.alphaFeedback);
+    items = Array.isArray(result.items) ? result.items : [];
+    backend = result.backend || 'UNKNOWN';
+  } catch (err) {
+    return {
+      ok: false,
+      hydrated: false,
+      reason: 'durable_read_failed',
+      error: err && err.message ? err.message : String(err),
+    };
+  }
+  if (!items.length) {
+    return { ok: true, hydrated: false, reason: 'durable_empty', backend };
+  }
+  const dir = path.dirname(FEEDBACK_PATH);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  const lines = items
+    .filter((r) => r && typeof r === 'object' && r.tag)
+    .map((r) => JSON.stringify(r));
+  if (!lines.length) {
+    return { ok: true, hydrated: false, reason: 'durable_items_invalid', backend };
+  }
+  fs.writeFileSync(FEEDBACK_PATH, `${lines.join('\n')}\n`, 'utf8');
+  return { ok: true, hydrated: true, count: lines.length, backend };
+}
+
 function recordFeedback({
   testerId = '',
   sessionId = '',
@@ -63,12 +130,12 @@ function recordFeedback({
   };
 
   appendJsonlSafe(FEEDBACK_PATH, entry);
+  dualWriteFeedbackDurable(entry);
   recordAlphaFeedback({ tag: normalizedTag, testerId });
   return { ok: true, entry };
 }
 
 function readFeedback({ limit = 500, tag = null } = {}) {
-  const fs = require('fs');
   try {
     if (!fs.existsSync(FEEDBACK_PATH)) return [];
     const lines = fs.readFileSync(FEEDBACK_PATH, 'utf8').trim().split('\n').filter(Boolean);
@@ -94,4 +161,6 @@ module.exports = {
   recordFeedback,
   readFeedback,
   normalizeTag,
+  hydrateAlphaFeedbackFromDurableIfNeeded,
+  jsonlFeedbackCount,
 };

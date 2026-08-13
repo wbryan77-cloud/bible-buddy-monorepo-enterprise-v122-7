@@ -12,6 +12,11 @@
  *
  * Same file-based, bounded, safe-append pattern as
  * services/supportGraphCandidateQueue.js.
+ *
+ * Durability (Sprint A): JSONL on disk is ephemeral on Render. Dual-write
+ * projections into founderExperienceDurableStore (Postgres when DATABASE_URL
+ * is set) and hydrate JSONL on boot when empty — same pattern as
+ * learningRecordStore / adminAuditTrail.
  */
 
 const fs = require('fs');
@@ -23,6 +28,66 @@ const QUEUE_PATH = path.join(__dirname, '..', 'data', 'user-assistance-escalatio
 function ensureDir() {
   const dir = path.dirname(QUEUE_PATH);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+}
+
+function jsonlEscalationCount() {
+  try {
+    if (!fs.existsSync(QUEUE_PATH)) return 0;
+    return fs.readFileSync(QUEUE_PATH, 'utf8').trim().split('\n').filter(Boolean).length;
+  } catch (_) {
+    return 0;
+  }
+}
+
+function dualWriteEscalationDurable(record) {
+  setImmediate(() => {
+    try {
+      const { upsertById, DOC, MAX } = require('./founderExperienceDurableStore');
+      upsertById(DOC.userAssistanceEscalations, 'id', record, MAX.userAssistanceEscalations).catch((err) => {
+        console.warn('[userAssistanceEscalationStore] durable upsert failed:', err && err.message ? err.message : err);
+      });
+    } catch (err) {
+      console.warn('[userAssistanceEscalationStore] durable wire failed:', err && err.message ? err.message : err);
+    }
+  });
+}
+
+/**
+ * After Render redeploy, ephemeral JSONL is empty while durable projections
+ * may still hold pending/resolved escalations. Hydrate when empty.
+ */
+async function hydrateEscalationsFromDurableIfNeeded() {
+  const existing = jsonlEscalationCount();
+  if (existing > 0) {
+    return { ok: true, hydrated: false, reason: 'jsonl_present', existing };
+  }
+  let items = [];
+  let backend = 'UNKNOWN';
+  try {
+    const { readItems, DOC } = require('./founderExperienceDurableStore');
+    const result = await readItems(DOC.userAssistanceEscalations);
+    items = Array.isArray(result.items) ? result.items : [];
+    backend = result.backend || 'UNKNOWN';
+  } catch (err) {
+    return {
+      ok: false,
+      hydrated: false,
+      reason: 'durable_read_failed',
+      error: err && err.message ? err.message : String(err),
+    };
+  }
+  if (!items.length) {
+    return { ok: true, hydrated: false, reason: 'durable_empty', backend };
+  }
+  ensureDir();
+  const lines = items
+    .filter((r) => r && typeof r === 'object' && r.id)
+    .map((r) => JSON.stringify(r));
+  if (!lines.length) {
+    return { ok: true, hydrated: false, reason: 'durable_items_invalid', backend };
+  }
+  fs.writeFileSync(QUEUE_PATH, `${lines.join('\n')}\n`, 'utf8');
+  return { ok: true, hydrated: true, count: lines.length, backend };
 }
 
 function readAllEscalations({ limit = 2000 } = {}) {
@@ -79,6 +144,7 @@ function enqueueEscalation({ question, testerId = null, bestGuessArticleId = nul
     resolvedBy: null,
   };
   appendJsonlSafe(QUEUE_PATH, record);
+  dualWriteEscalationDurable(record);
   return record;
 }
 
@@ -94,6 +160,7 @@ function resolveEscalation({ id, reply, resolvedBy = 'admin', action = 'resolve'
     resolvedBy,
   };
   appendJsonlSafe(QUEUE_PATH, record);
+  dualWriteEscalationDurable(record);
   return { ok: true, escalation: record };
 }
 
@@ -118,4 +185,6 @@ module.exports = {
   resolveEscalation,
   listPendingEscalations,
   getStats,
+  hydrateEscalationsFromDurableIfNeeded,
+  jsonlEscalationCount,
 };

@@ -1,49 +1,53 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**SPRINT CLOSED** — `ENGINEERING STOP CONDITION REACHED`
+**SPRINT A CLOSED** — `NON-REGENERABLE USER/ADMIN STATE DURABILITY`
 
 | Field | Value |
 |---|---|
-| CLOSURE_SHA / PRODUCTION | `8096e54` |
-| SHA parity (local=origin=production) | **YES** |
-| Certification | `npm run certify:product` **25/25 PASS** |
+| Previous closure SHA | `8096e54` |
+| Sprint A runtime commits | (see git log after push) |
+| Certification | `npm run certify:product` **26/26 PASS ×3** |
 | Release blockers | **NONE** |
-| Overall | **CLOSED_WITH_MINOR_RISKS** |
+| Production DEFER | **NOT REQUIRED** |
 
-## COMPLETED (do not reopen without contradictory evidence)
-- User-side repairs + regression coverage (grief, Sabbath historical, Help contract, BIE families)
-- Admin RC / auth fingerprint / fail-closed JSON
-- FE durable learning + boot hydration (`51f0072`)
-- FE durable `adminStatus` → reconstructed queue status (`a42a83c`)
-- Admin durable audit dual-write + hydrate (`a42a83c`)
-- Production queue recovery evidence `0→1` after hydration
-- Governance restart-survival integration (`8096e54`)
-- Certification 25/25 + SHA parity on `8096e54`
+## Previous sprint (ACCEPTED — do not reopen)
+- FE durable learning / adminStatus / audit / boot hydrate
+- queue 0→1 production recovery
+- certification 25/25 on `8096e54`
+- See historical notes below
 
-## NOT BLOCKERS (explicitly out of this sprint)
-- Production DEFER ceremony (optional; **do not require**)
-- Sabbath cold-ask copy preference
-- Medical / life-decision wording preference
+## Sprint A COMPLETED
+- User-assistance escalations: dual-write + boot hydrate via `founderExperienceDurableStore`
+- Alpha-feedback: dual-write + boot hydrate via same durable store
+- Help Center Admin edits: dual-write article set + hydrate before seed fallback
+- Restart-survival regression: `tests/sprintANonRegenerableDurability.test.js`
+- Certification gate extended with `sprint_a_non_regenerable_durability`
+- Boot wiring in `server.js` (non-blocking hydrate)
+
+## NOT BLOCKERS / OUT OF SCOPE
+- Production DEFER ceremony
+- P2 product/architecture history stores (SG/FI/lesson-alignment/notifications)
+- Sabbath cold-ask / medical wording preferences
 - Historical Render exit-1 / health-timeout logs (need log evidence)
-- Optional parallel-test isolation for learning-record fixtures
+- Optional parallel-test isolation (P3)
 
 ## HISTORICAL / DO NOT REOPEN
-- Candidate `founder-experience:8d1e5cca-…` (non-recoverable)
-- Pre-durability ephemeral queue/audit history that cannot be recovered
+- Candidate `founder-experience:8d1e5cca-…`
+- Pre-durability ephemeral queue/audit history
 - `/tmp` evidence-file agent visibility handoff
-- Admin-token / Cursor-env visibility RCA (V1.3h–j)
-- Production empty-queue RCA already repaired via hydration + FE durability
+- Admin-token / Cursor-env visibility RCA
+- Production empty-queue RCA (repaired in prior sprint)
 
-## Subsystem closure
+## Subsystem closure (Sprint A)
 | Area | Status |
 |---|---|
-| USER | CLOSED |
-| ADMIN | CLOSED |
+| USER (escalations + feedback durability) | CLOSED |
+| ADMIN (Help edits + escalation disposition durability) | CLOSED |
 | ENGINEERING | CLOSED |
-| GOVERNANCE | CLOSED_WITH_OPTIONAL_PROD_DEFER |
+| GOVERNANCE | unchanged (prior CLOSED_WITH_OPTIONAL_PROD_DEFER) |
 | INFRASTRUCTURE | historical logs only |
 
 ## Next work
-See `docs/evidence-candidates/NextSprintEngineeringBacklog.md`.  
-**Do not begin next sprint from this checkpoint without an explicit Founder request.**
+Remaining candidates: see `docs/evidence-candidates/NextSprintEngineeringBacklog.md` (P1 Sprint A items done; P2/P3 remain).
+**Do not begin next sprint without an explicit Founder request.**

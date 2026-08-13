@@ -312,5 +312,47 @@ app.listen(PORT, () => {
     } catch (err) {
       console.warn('[adminAuditTrail] durable hydrate wire failed:', err && err.message ? err.message : err);
     }
+    try {
+      const { hydrateEscalationsFromDurableIfNeeded } = require('./services/userAssistanceEscalationStore');
+      hydrateEscalationsFromDurableIfNeeded()
+        .then((r) => {
+          if (r && r.hydrated) {
+            console.log(`[userAssistanceEscalationStore] hydrated ${r.count} escalations from durable (${r.backend})`);
+          }
+        })
+        .catch((err) => {
+          console.warn('[userAssistanceEscalationStore] durable hydrate failed:', err && err.message ? err.message : err);
+        });
+    } catch (err) {
+      console.warn('[userAssistanceEscalationStore] durable hydrate wire failed:', err && err.message ? err.message : err);
+    }
+    try {
+      const { hydrateAlphaFeedbackFromDurableIfNeeded } = require('./services/alphaFeedbackCapture');
+      hydrateAlphaFeedbackFromDurableIfNeeded()
+        .then((r) => {
+          if (r && r.hydrated) {
+            console.log(`[alphaFeedbackCapture] hydrated ${r.count} feedback entries from durable (${r.backend})`);
+          }
+        })
+        .catch((err) => {
+          console.warn('[alphaFeedbackCapture] durable hydrate failed:', err && err.message ? err.message : err);
+        });
+    } catch (err) {
+      console.warn('[alphaFeedbackCapture] durable hydrate wire failed:', err && err.message ? err.message : err);
+    }
+    try {
+      const { hydrateHelpCenterFromDurableIfNeeded } = require('./services/helpCenterContentStore');
+      hydrateHelpCenterFromDurableIfNeeded()
+        .then((r) => {
+          if (r && r.hydrated) {
+            console.log(`[helpCenterContentStore] hydrated ${r.count} help articles from durable (${r.backend})`);
+          }
+        })
+        .catch((err) => {
+          console.warn('[helpCenterContentStore] durable hydrate failed:', err && err.message ? err.message : err);
+        });
+    } catch (err) {
+      console.warn('[helpCenterContentStore] durable hydrate wire failed:', err && err.message ? err.message : err);
+    }
   });
 });

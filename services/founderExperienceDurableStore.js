@@ -22,6 +22,10 @@ const DOC = {
   calibration: path.join(ROOT, 'data/founder-experience/evaluator-calibration.json'),
   // Unified Admin audit — same dual-write helper; not a second audit product.
   adminUnifiedAudit: path.join(ROOT, 'data/admin-command-center/unified-audit-durable.json'),
+  // Sprint A — non-regenerable user/Admin state (same dual-write/hydrate pattern).
+  userAssistanceEscalations: path.join(ROOT, 'data/user-assistance/escalations-durable.json'),
+  alphaFeedback: path.join(ROOT, 'data/alpha/alpha-feedback-durable.json'),
+  helpCenterArticles: path.join(ROOT, 'data/help-center/articles-durable.json'),
 };
 
 const MAX = {
@@ -37,6 +41,9 @@ const MAX = {
   costLedger: 8000,
   calibration: 4000,
   adminUnifiedAudit: 8000,
+  userAssistanceEscalations: 4000,
+  alphaFeedback: 8000,
+  helpCenterArticles: 2000,
 };
 
 let backendInfo = null;
@@ -137,6 +144,22 @@ async function upsertById(docPath, idField, record, maxItems) {
   return Promise.resolve(adapter.updateJsonDocument(docPath, mutator, emptyDoc()));
 }
 
+/** Replace the full items array (Help Center article set, etc.). */
+async function replaceAllItems(docPath, items, maxItems) {
+  const { adapter, kind, durable } = getBackend();
+  const next = {
+    schemaVersion: 'bie-fel-durable-v1',
+    items: trimItems(Array.isArray(items) ? items.slice() : [], maxItems),
+    updatedAt: new Date().toISOString(),
+    backend: kind,
+    durable,
+  };
+  if (kind === 'POSTGRES' && typeof adapter.writeJsonDocument === 'function') {
+    return adapter.writeJsonDocument(docPath, next);
+  }
+  return Promise.resolve(adapter.writeJsonDocument(docPath, next));
+}
+
 function getStatus() {
   const b = getBackend();
   return {
@@ -157,5 +180,6 @@ module.exports = {
   appendItem,
   readItems,
   upsertById,
+  replaceAllItems,
   emptyDoc,
 };
