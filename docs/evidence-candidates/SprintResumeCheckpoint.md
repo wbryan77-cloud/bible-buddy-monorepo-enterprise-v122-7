@@ -1,37 +1,30 @@
 # SprintResumeCheckpoint.md
 
 ## Status
-**SPRINT B EVIDENCE-TO-IMPLEMENTATION CLOSED**
+**POST-0211d99 POLISH PASS CLOSED**
 
 | Field | Value |
 |---|---|
-| Prior Sprint A runtime | `c2cc61e` |
-| Sprint B email fix | `db8668a` |
-| Class C durability runtime | (this commit) |
+| Closed runtime baseline | `0211d99` |
+| This pass | notification test hygiene (deterministic provider boundary) |
 | Certification | `npm run certify:product` **28/28 PASS ×3** |
 | Release blockers | **NONE** |
 | Production DEFER | **NOT REQUIRED** |
 
-## Implemented this pass (Class C)
-- FI dispositions: dual-write + hydrate — REJECTED/FP survive redeploy (keeps sync status contract)
-- SG Admin decisions: dual-write + hydrate — overlays survive redeploy
-- Alpha tester prefs/consent store: dual-write + hydrate — user prefs survive redeploy
-- Regression: `tests/sprintBGovernanceAndPrefsDurability.test.js`
-- Gate: `sprint_b_governance_prefs_durability`
-- Prior Sprint B: notification emailOrPhone → Resend path (`db8668a`)
+## This pass
+- Strengthened `notificationEmailDispatchContract` to stub `fetch` — proves Resend path + payload without live network/401.
+- Lesson-alignment history: **DEFER** (diagnostic / regenerable; no promote).
+- Notification delivery history: **DEFER** (Admin observability only; not correctness-critical).
+- Sabbath cold-ask: **NO routing defect** — optional Founder copy polish only.
+- Medical/life-decision: **NO safety defect** — dual safe phrasings; optional normalize polish.
+- Parallel-test isolation: **not reproduced** under `--test-concurrency=2` — leave P3.
 
-## Still Founder/product (not Class C)
-- Lesson-alignment history durability (diagnostic / regenerable)
-- Notification delivery history durability (operational)
-- Sabbath cold-ask wording polish
-- Medical/life-decision wording polish
-- Historical Render exit-1 logs
-
-## DO NOT REOPEN
-- Sprint A escalations/feedback/Help durability
-- FE learning/adminStatus/audit/hydrate
-- queue empty RCA / 8d1e5cca / /tmp token handoff
-- Unauthenticated Admin 401 (fail-closed — correct)
+## DO NOT REOPEN (unless new contradictory evidence)
+- Sprint A / FI / SG / alpha-pref / Help / FE durability
+- emailOrPhone dispatch routing (behavior)
+- Admin 401 fail-closed
+- production DEFER ceremony
 
 ## Next
-See `NextSprintEngineeringBacklog.md`. Stop until Founder requests next work.
+Founder optional: Sabbath copy, medical phrasing unify, lesson/notif history retention policy.
+**Stop until Founder requests next work.**
