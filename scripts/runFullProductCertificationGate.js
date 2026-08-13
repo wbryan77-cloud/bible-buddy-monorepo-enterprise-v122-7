@@ -94,6 +94,9 @@ async function main() {
   const sprintC = runNode('tests/sprintCInChatFeedback.test.js');
   record('sprint_c_in_chat_feedback', sprintC.code === 0, sprintC.code === 0 ? '' : sprintC.out.slice(-800));
 
+  const healthTrace = runNode('tests/operationalHealthScoreTraceability.test.js');
+  record('operational_health_score_traceability', healthTrace.code === 0, healthTrace.code === 0 ? '' : healthTrace.out.slice(-500));
+
   // Inline Admin RC static contract
   const js = fs.readFileSync(path.join(ROOT, 'admin/js/bible-authority.js'), 'utf8');
   const html = fs.readFileSync(path.join(ROOT, 'admin/bible-authority.html'), 'utf8');

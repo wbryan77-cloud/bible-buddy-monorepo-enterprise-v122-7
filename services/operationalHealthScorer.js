@@ -10,6 +10,11 @@
  * machine-learned model — so every point lost is traceable to a specific,
  * named factor. Consistent with "the AI recommends... human approval
  * remains authoritative": this score informs a human, it does not act.
+ *
+ * Rounding contract (post-Sprint-C reconciliation): each factor awards an
+ * integer point value. That same integer is both (a) recorded in
+ * factors[].awarded and (b) added into the total. The displayed factors
+ * therefore always sum exactly to score — no hidden fractional remainder.
  */
 
 const WEIGHTS = {
@@ -20,6 +25,10 @@ const WEIGHTS = {
   escalationsPending: 15,
 };
 
+function awardPoints(raw) {
+  return Math.round(Math.max(0, raw));
+}
+
 function scoreErrorRate(snap, factors) {
   const totalRequests = snap.totalRequests || 0;
   const errors = snap.errors || 0;
@@ -28,8 +37,8 @@ function scoreErrorRate(snap, factors) {
     return WEIGHTS.errorRate;
   }
   const errorRate = errors / totalRequests;
-  const awarded = Math.max(0, WEIGHTS.errorRate * (1 - Math.min(errorRate / 0.2, 1)));
-  factors.push({ factor: 'errorRate', weight: WEIGHTS.errorRate, awarded: Math.round(awarded), detail: `${(errorRate * 100).toFixed(1)}% error rate over ${totalRequests} requests (0% = full credit, 20%+ = zero credit).` });
+  const awarded = awardPoints(WEIGHTS.errorRate * (1 - Math.min(errorRate / 0.2, 1)));
+  factors.push({ factor: 'errorRate', weight: WEIGHTS.errorRate, awarded, detail: `${(errorRate * 100).toFixed(1)}% error rate over ${totalRequests} requests (0% = full credit, 20%+ = zero credit).` });
   return awarded;
 }
 
@@ -43,8 +52,8 @@ function scoreLatencyTrend(factors) {
     }
     const pctChange = trend.first > 0 ? (trend.last - trend.first) / trend.first : 0;
     // Latency getting worse (positive % change) costs credit; improving or flat costs nothing.
-    const awarded = Math.max(0, WEIGHTS.latencyTrend * (1 - Math.min(Math.max(pctChange, 0) / 0.5, 1)));
-    factors.push({ factor: 'latencyTrend', weight: WEIGHTS.latencyTrend, awarded: Math.round(awarded), detail: `Average latency changed ${(pctChange * 100).toFixed(0)}% over the last 24h (first=${trend.first}ms, last=${trend.last}ms).` });
+    const awarded = awardPoints(WEIGHTS.latencyTrend * (1 - Math.min(Math.max(pctChange, 0) / 0.5, 1)));
+    factors.push({ factor: 'latencyTrend', weight: WEIGHTS.latencyTrend, awarded, detail: `Average latency changed ${(pctChange * 100).toFixed(0)}% over the last 24h (first=${trend.first}ms, last=${trend.last}ms).` });
     return awarded;
   } catch (e) {
     factors.push({ factor: 'latencyTrend', weight: WEIGHTS.latencyTrend, awarded: WEIGHTS.latencyTrend, detail: `History unavailable (${e.message}) — full credit given by default rather than penalizing for a missing signal.` });
@@ -54,8 +63,8 @@ function scoreLatencyTrend(factors) {
 
 function scoreMemoryPressure(snap, factors) {
   const level = snap.memoryPressureLevel || 'normal';
-  const awarded = level === 'critical' ? 0 : level === 'warn' ? WEIGHTS.memoryPressure * 0.4 : WEIGHTS.memoryPressure;
-  factors.push({ factor: 'memoryPressure', weight: WEIGHTS.memoryPressure, awarded: Math.round(awarded), detail: `Memory pressure level: ${level}.` });
+  const awarded = awardPoints(level === 'critical' ? 0 : level === 'warn' ? WEIGHTS.memoryPressure * 0.4 : WEIGHTS.memoryPressure);
+  factors.push({ factor: 'memoryPressure', weight: WEIGHTS.memoryPressure, awarded, detail: `Memory pressure level: ${level}.` });
   return awarded;
 }
 
@@ -67,8 +76,8 @@ function scoreDecisionQueueBacklog(factors) {
     const high = queue.counts?.bySeverity?.High || 0;
     // Each open Critical costs 5 points (up to the full weight), each High costs 1.
     const penalty = Math.min(WEIGHTS.decisionQueueBacklog, critical * 5 + high * 1);
-    const awarded = WEIGHTS.decisionQueueBacklog - penalty;
-    factors.push({ factor: 'decisionQueueBacklog', weight: WEIGHTS.decisionQueueBacklog, awarded: Math.round(awarded), detail: `${critical} Critical, ${high} High severity item(s) open in the Decision Queue.` });
+    const awarded = awardPoints(WEIGHTS.decisionQueueBacklog - penalty);
+    factors.push({ factor: 'decisionQueueBacklog', weight: WEIGHTS.decisionQueueBacklog, awarded, detail: `${critical} Critical, ${high} High severity item(s) open in the Decision Queue.` });
     return awarded;
   } catch (e) {
     factors.push({ factor: 'decisionQueueBacklog', weight: WEIGHTS.decisionQueueBacklog, awarded: WEIGHTS.decisionQueueBacklog, detail: `Decision Queue unavailable (${e.message}) — full credit given by default.` });
@@ -82,8 +91,8 @@ function scoreEscalationsPending(factors) {
     const stats = getStats();
     const pending = stats.pending || 0;
     // 0 pending = full credit; 20+ pending = zero credit; linear between.
-    const awarded = Math.max(0, WEIGHTS.escalationsPending * (1 - Math.min(pending / 20, 1)));
-    factors.push({ factor: 'escalationsPending', weight: WEIGHTS.escalationsPending, awarded: Math.round(awarded), detail: `${pending} pending User Assistance escalation(s) awaiting an admin.` });
+    const awarded = awardPoints(WEIGHTS.escalationsPending * (1 - Math.min(pending / 20, 1)));
+    factors.push({ factor: 'escalationsPending', weight: WEIGHTS.escalationsPending, awarded, detail: `${pending} pending User Assistance escalation(s) awaiting an admin.` });
     return awarded;
   } catch (e) {
     factors.push({ factor: 'escalationsPending', weight: WEIGHTS.escalationsPending, awarded: WEIGHTS.escalationsPending, detail: `Escalation store unavailable (${e.message}) — full credit given by default.` });
@@ -116,7 +125,7 @@ function computeOperationalHealthScore() {
   total += scoreDecisionQueueBacklog(factors);
   total += scoreEscalationsPending(factors);
 
-  const score = Math.round(Math.max(0, Math.min(100, total)));
+  const score = Math.max(0, Math.min(100, total));
   const weakestFactors = [...factors].sort((a, b) => (a.awarded / a.weight) - (b.awarded / b.weight)).slice(0, 2);
 
   return {
@@ -129,4 +138,4 @@ function computeOperationalHealthScore() {
   };
 }
 
-module.exports = { computeOperationalHealthScore };
+module.exports = { computeOperationalHealthScore, awardPoints, WEIGHTS };
