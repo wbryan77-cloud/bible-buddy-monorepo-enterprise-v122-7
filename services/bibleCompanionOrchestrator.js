@@ -776,6 +776,12 @@ async function runBibleCompanionOrchestrator({
         try {
           require('./relationshipMemoryEngine').forgetUserMemory({ userId });
         } catch (_) {}
+        // Explicit remember pins must clear on personal forget (same contract as
+        // forgetMemory scope=all). Without this, companion_personal_forget acks
+        // but leaves pins in the local/durable pin store.
+        try {
+          require('./explicitRememberPin').clearPinsForUser(userId);
+        } catch (_) {}
       } else {
         try {
           const content = personalRememberContent(message) || String(message).slice(0, 240);

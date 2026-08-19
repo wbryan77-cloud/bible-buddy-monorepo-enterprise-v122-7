@@ -33,6 +33,25 @@ describe('BIE v1.3D memory forget + satan frees routing', () => {
     assert.equal(getPins(userId).length, 0);
   });
 
+  it('1c. companion personal forget path clears explicit remember pins', async () => {
+    const { maybeCapturePin, getPins, tryAnswerPinRecall } = require('../services/explicitRememberPin');
+    const { runBuddy } = require('../services/buddyBrain');
+    const userId = `prealpha-pin-forget-live-${Date.now()}`;
+    maybeCapturePin(userId, 'Remember that my favorite verse is John 11:35.');
+    assert.ok(getPins(userId).length >= 1);
+    const out = await runBuddy({
+      userId,
+      mode: 'companion',
+      personaKey: 'pastor',
+      message: 'Please forget what I told you.',
+    });
+    const nested = out && out.reply && typeof out.reply === 'object' ? out.reply : out;
+    assert.equal(nested?.runtime?.masterRoute, 'companion_personal_forget');
+    assert.equal(getPins(userId).length, 0);
+    const miss = tryAnswerPinRecall(userId, 'What is my favorite verse?');
+    assert.equal(miss.runtime.masterRoute, 'explicit_remember_pin_honest_miss');
+  });
+
   it('2. frees-Satan wording routes to grounded Rev 20 path', () => {
     const msg =
       'After the millennium ends, does Revelation name who frees Satan? Yes or no.';
