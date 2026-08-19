@@ -115,7 +115,7 @@ const FEEDBACK_BODY =
   'After Buddy answers in Companion Chat, you can tap Helpful or Not helpful under that response. You may add an optional short note. Feedback is recorded for the team to review — it does not instantly change BibleBuddy’s answers, and it does not mean a person has replied to you yet. You can also ask the Help Assistant if something feels off.';
 
 const STRUCTURED_STUDY_BODY =
-  'If you ask for an explicit Bible study — for example “Help me study forgiveness” or “Give me a Bible study on the Sabbath” — Buddy may reply with a Scripture-first study outline: theme, key King James passages, how they connect, and short reflection prompts. Ordinary questions like “What is the Sabbath?” stay conversational. Prayer, grief, and medical concerns still use their normal care paths. Structured study quotes retrieved Scripture; it does not invent verses or by itself change doctrine.';
+  'If you ask for an explicit Bible study — for example “Help me study forgiveness” or “Give me a Bible study on the Sabbath” — Buddy may reply with a Scripture-first study outline: theme, key King James passages, how they connect, and short reflection prompts. Ordinary questions like “What is the Sabbath?” stay conversational. Prayer, grief, and medical concerns still use their normal care paths. Structured study quotes retrieved Scripture; it does not invent verses or by itself change doctrine. If there is not enough retrieved Scripture for a study outline, Buddy answers in normal conversation instead.';
 
 function ensureSeedArticlesPresent(doc) {
   let changed = false;
@@ -171,7 +171,8 @@ function repairKnownDocumentationOverclaims(doc) {
       if (
         !body.trim() ||
         /every answer is a structured lesson/i.test(body) ||
-        /Verified Lesson Packet/i.test(body)
+        /Verified Lesson Packet/i.test(body) ||
+        !/not enough retrieved Scripture/i.test(body)
       ) {
         article.body = STRUCTURED_STUDY_BODY;
         article.updatedAt = new Date().toISOString();
@@ -291,7 +292,9 @@ function needsDocumentationRepair(doc) {
     }
     if (
       a.id === 'how-do-i-get-a-bible-study' &&
-      (/every answer is a structured lesson/i.test(body) || /Verified Lesson Packet/i.test(body))
+      (/every answer is a structured lesson/i.test(body) ||
+        /Verified Lesson Packet/i.test(body) ||
+        !/not enough retrieved Scripture/i.test(body))
     ) {
       return true;
     }

@@ -524,13 +524,170 @@ function detectExplicitStructuredStudyIntent(message = '') {
   }
   return (
     /\bhelp me study\b/i.test(m) ||
+    /\b(can|could) we study\b/i.test(m) ||
     /\bgive me (a |an )?(bible |scripture )?study\b/i.test(m) ||
+    /\bshow me (a |an )?(bible |scripture )?study\b/i.test(m) ||
     /\b(bible|scripture) study (on|about|of|for)\b/i.test(m) ||
     /\bstudy guide (on|about|for)\b/i.test(m) ||
     /\bwalk me through (studying|a study of)\b/i.test(m) ||
+    /\b(walk|take) me through (the )?(bible|scriptures?) (on|about|for)\b/i.test(m) ||
     /\blet[\u2019']?s study\b/i.test(m) ||
     /\bi want (a |to do a )?(bible |scripture )?study (on|about)\b/i.test(m)
   );
+}
+
+/**
+ * Curated KJV seed refs for common explicit-study themes when the doctrine
+ * catalog has no chain. Verses are verified via getLocalPassage before use —
+ * never invented text.
+ */
+const STRUCTURED_STUDY_SEED_REFS = {
+  forgiveness: ['Matthew 6:14-15', 'Matthew 18:21-22', 'Ephesians 4:32', 'Colossians 3:13', 'Psalm 103:12', '1 John 1:9'],
+  faith: ['Hebrews 11:1', 'Hebrews 11:6', 'Romans 10:17', 'Ephesians 2:8-9', 'James 2:17', 'Mark 11:22'],
+  grace: ['Ephesians 2:8-9', 'Romans 3:24', 'Romans 5:1-2', 'Titus 2:11', '2 Corinthians 12:9', 'John 1:16'],
+  prayer: ['Philippians 4:6-7', 'Matthew 6:9-13', '1 Thessalonians 5:17', 'James 5:16', 'Luke 18:1', 'Psalm 145:18'],
+  salvation: ['John 3:16', 'Acts 4:12', 'Romans 10:9-10', 'Ephesians 2:8-9', 'Acts 16:31', 'Titus 3:5'],
+  temptation: ['1 Corinthians 10:13', 'James 1:12-15', 'Matthew 4:1-11', 'Hebrews 4:15', 'Matthew 26:41', 'James 4:7'],
+  love: ['1 Corinthians 13:4-7', 'John 13:34-35', '1 John 4:7-8', 'Matthew 22:37-39', 'Romans 13:10', 'John 15:12'],
+  hope: ['Romans 15:13', 'Hebrews 6:19', 'Romans 5:5', '1 Peter 1:3', 'Jeremiah 29:11', 'Psalm 42:11'],
+  suffering: ['Romans 8:18', '1 Peter 4:12-13', '2 Corinthians 1:3-4', 'James 1:2-4', 'Romans 5:3-5', 'John 16:33'],
+  peace: ['John 14:27', 'Philippians 4:6-7', 'Isaiah 26:3', 'Romans 5:1', 'Colossians 3:15', 'Psalm 29:11'],
+  wisdom: ['James 1:5', 'Proverbs 9:10', 'Proverbs 3:5-6', 'James 3:17', 'Colossians 2:3', 'Psalm 111:10'],
+  repentance: ['Acts 3:19', '2 Corinthians 7:10', 'Luke 15:7', 'Acts 17:30', 'Proverbs 28:13', 'Ezekiel 18:30'],
+  sabbath: ['Genesis 2:2-3', 'Exodus 20:8-11', 'Isaiah 58:13-14', 'Luke 4:16', 'Mark 2:27-28', 'Hebrews 4:9-10'],
+  resurrection: ['Matthew 28:5-7', '1 Corinthians 15:3-4', '1 Corinthians 15:20-22', 'John 11:25-26', 'Romans 6:4', 'Acts 2:24'],
+};
+
+const STUDY_TOPIC_ALIASES = {
+  resurrected: 'resurrection',
+  'jesus resurrection': 'resurrection',
+  'the resurrection': 'resurrection',
+  'resurrection of jesus': 'resurrection',
+  resurrect: 'resurrection',
+  sabbaths: 'sabbath',
+  'the sabbath': 'sabbath',
+  forgive: 'forgiveness',
+  forgiving: 'forgiveness',
+  praying: 'prayer',
+  pray: 'prayer',
+  save: 'salvation',
+  saved: 'salvation',
+  temptations: 'temptation',
+  'christian suffering': 'suffering',
+  'suffering in the bible': 'suffering',
+};
+
+function humanizeStudyTheme(topic = '') {
+  const pretty = {
+    sabbath: 'the Sabbath',
+    resurrection: 'the resurrection of Jesus',
+    resurrection_timeline: 'the resurrection of Jesus',
+    forgiveness: 'forgiveness',
+    faith: 'faith',
+    grace: 'grace',
+    prayer: 'prayer',
+    salvation: 'salvation',
+    temptation: 'temptation',
+    love: 'love',
+    hope: 'hope',
+    suffering: 'suffering',
+    peace: 'peace',
+    wisdom: 'wisdom',
+    repentance: 'repentance',
+  };
+  const parts = String(topic || '')
+    .trim()
+    .toLowerCase()
+    .replace(/_timeline/g, '_resurrection')
+    .split(/[_\s]+/)
+    .filter(Boolean);
+  // Collapse duplicated slug noise (e.g. forgiveness_forgiveness_forgiveness).
+  const unique = [];
+  for (const p of parts) {
+    if (!unique.includes(p)) unique.push(p);
+  }
+  let key = unique.join('_');
+  for (const candidate of unique) {
+    if (pretty[candidate] || STRUCTURED_STUDY_SEED_REFS[candidate]) {
+      key = candidate;
+      break;
+    }
+  }
+  if (unique.includes('resurrection')) key = 'resurrection';
+  if (pretty[key]) return pretty[key];
+  return key
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .trim() || 'this topic';
+}
+
+function extractStructuredStudyTopicKey(message = '') {
+  let m = String(message || '').toLowerCase();
+  m = m
+    .replace(/[?.!,]/g, ' ')
+    .replace(/\b(help me study|can we study|could we study|give me (a |an )?(bible |scripture )?study|show me (a |an )?(bible |scripture )?study|bible study|scripture study|study guide|walk me through studying|walk me through a study of|walk me through the bible|take me through the scriptures?|let[\u2019']?s study|i want (a |to do a )?(bible |scripture )?study|together|in the bible|please)\b/gi, ' ')
+    .replace(/\b(on|about|of|for|the|a|an)\b/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!m) return null;
+  if (STUDY_TOPIC_ALIASES[m]) return STUDY_TOPIC_ALIASES[m];
+  for (const [alias, key] of Object.entries(STUDY_TOPIC_ALIASES)) {
+    if (m.includes(alias)) return key;
+  }
+  if (STRUCTURED_STUDY_SEED_REFS[m]) return m;
+  for (const key of Object.keys(STRUCTURED_STUDY_SEED_REFS)) {
+    if (m.includes(key)) return key;
+  }
+  // Doctrine catalog topics (e.g. dietary_law via keywords elsewhere) — keep simple slug
+  const slug = m.replace(/\s+/g, '_');
+  return slug.length <= 40 ? slug : null;
+}
+
+function buildVerifiedSeedReferences(topicKey) {
+  const seeds = STRUCTURED_STUDY_SEED_REFS[topicKey] || [];
+  const refs = [];
+  const seen = new Set();
+  for (const ref of seeds) {
+    const local = getLocalPassage(ref);
+    if (!local.ok || !local.text) continue;
+    const key = String(ref).toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    refs.push({ reference: ref, theme: topicKey });
+  }
+  return refs;
+}
+
+/**
+ * When explicit study is requested but the live pack has no usable KJV chain,
+ * inject curated seed references (corpus-verified) and clear any empty packet
+ * so attachVerifiedLessonPacket can rebuild.
+ */
+function enrichEvidencePackForStructuredStudy(evidencePack, message = '') {
+  if (!evidencePack || typeof evidencePack !== 'object') {
+    return { enriched: false, reason: 'no_pack' };
+  }
+  if (!detectExplicitStructuredStudyIntent(message)) {
+    return { enriched: false, reason: 'not_study_intent' };
+  }
+  if (packetUsableForStructuredStudy(evidencePack.verifiedLessonPacket)) {
+    return { enriched: false, reason: 'already_usable', topicKey: evidencePack.effectiveTopic || evidencePack.topic || null };
+  }
+  const topicKey = extractStructuredStudyTopicKey(message);
+  if (!topicKey) return { enriched: false, reason: 'no_topic' };
+  const refs = buildVerifiedSeedReferences(topicKey);
+  if (!refs.length) return { enriched: false, reason: 'no_verified_seeds', topicKey };
+  evidencePack.topic = topicKey;
+  evidencePack.effectiveTopic = topicKey;
+  evidencePack.scripture = {
+    topic: topicKey,
+    title: humanizeStudyTheme(topicKey),
+    references: refs,
+    source: 'structured_study_seed',
+  };
+  delete evidencePack.verifiedLessonPacket;
+  delete evidencePack.verifiedLessonPacketAttach;
+  return { enriched: true, topicKey, referenceCount: refs.length };
 }
 
 function packetUsableForStructuredStudy(packet = null) {
@@ -543,6 +700,14 @@ function packetUsableForStructuredStudy(packet = null) {
   return blocks.length >= 1;
 }
 
+function userFacingStudySummary(topicLabel, lesson = {}, packet = null) {
+  const raw = String(lesson.lessonSummary || packet?.lesson?.lessonSummary || '').trim();
+  if (raw && !/roles:|contribute to studying|cross-book passages/i.test(raw)) {
+    return raw;
+  }
+  return `These King James passages are gathered for a Scripture-first study of ${topicLabel}.`;
+}
+
 /**
  * User-facing structured study (no Admin/governance jargon, no raw JSON).
  * Scripture blocks are quoted verbatim from local KJV retrieval.
@@ -552,34 +717,35 @@ function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = 
   const blocks = (p.scriptureBlocks || []).filter(
     (b) => b && b.reference && String(b.text || '').trim().length > 12,
   );
-  const topic =
-    p.topic?.lessonTitle ||
+  const rawTopic =
     p.topic?.normalizedTopic ||
     lesson.normalizedTopic ||
+    p.topic?.lessonTitle ||
     'this topic';
+  const topicLabel = humanizeStudyTheme(rawTopic);
   const lines = [];
-  lines.push(`Study theme: ${topic}`);
+  lines.push(`Study theme: ${topicLabel}`);
   lines.push('');
   if (question && String(question).trim()) {
     lines.push(`Your study request: ${String(question).trim()}`);
     lines.push('');
   }
   lines.push('What Scripture shows');
-  lines.push(
-    lesson.lessonSummary ||
-      p.lesson?.lessonSummary ||
-      `These King James passages are gathered for a Scripture-first study of ${topic}.`,
-  );
+  lines.push(userFacingStudySummary(topicLabel, lesson, p));
   lines.push('');
   lines.push('Key passages (King James Version)');
   lines.push('');
-  blocks.slice(0, 8).forEach((b, i) => {
+  blocks.slice(0, 6).forEach((b, i) => {
     lines.push(`${i + 1}. ${b.displayReference || b.reference}`);
     lines.push(`“${String(b.text).trim()}”`);
-    if (b.roleExplanation) lines.push(b.roleExplanation);
+    if (b.roleExplanation && !/Opens the lesson subject/i.test(b.roleExplanation)) {
+      lines.push(b.roleExplanation);
+    }
     lines.push('');
   });
-  const connections = (p.connections || []).filter((c) => c && c.sentence).slice(0, 6);
+  const connections = (p.connections || [])
+    .filter((c) => c && c.sentence && !/Opens the lesson subject/i.test(c.sentence))
+    .slice(0, 5);
   if (connections.length) {
     lines.push('How these passages connect');
     connections.forEach((c) => lines.push(`- ${c.sentence}`));
@@ -588,7 +754,7 @@ function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = 
   const hist = (p.historicalEvidence || []).filter((h) => h && h.note);
   if (hist.length) {
     lines.push('Historical context (supplemental — not Scripture)');
-    hist.slice(0, 4).forEach((h) => {
+    hist.slice(0, 3).forEach((h) => {
       const attr = h.attribution ? ` (${h.attribution})` : '';
       lines.push(`- ${h.note}${attr}`);
     });
@@ -601,12 +767,11 @@ function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = 
     if (lang.literalRendering) lines.push(`Literal study rendering: ${lang.literalRendering}`);
     lines.push('');
   }
-  const reflections = lesson.reflectionQuestions || p.lesson?.reflectionQuestions || [];
-  if (reflections.length) {
-    lines.push('For reflection');
-    reflections.slice(0, 3).forEach((q) => lines.push(`- ${q}`));
-    lines.push('');
-  }
+  lines.push('For reflection');
+  lines.push(`- What do these passages say about ${topicLabel}?`);
+  lines.push('- Which passage defines, commands, or clarifies the subject most clearly?');
+  lines.push('- What would it look like to live this out this week?');
+  lines.push('');
   lines.push(
     'This is a Scripture study outline from retrieved King James text. It does not invent verses, and it does not by itself change BibleBuddy doctrine or knowledge.',
   );
@@ -701,6 +866,10 @@ module.exports = {
   renderUserFacingStructuredStudy,
   detectExplicitStructuredStudyIntent,
   packetUsableForStructuredStudy,
+  enrichEvidencePackForStructuredStudy,
+  extractStructuredStudyTopicKey,
+  humanizeStudyTheme,
+  STRUCTURED_STUDY_SEED_REFS,
   validateLessonFormat,
   repairLessonFormat,
   buildScriptureBlocks,

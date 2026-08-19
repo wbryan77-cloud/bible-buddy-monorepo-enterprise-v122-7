@@ -23,13 +23,49 @@ describe('Sprint D structured Scripture study', () => {
     assert.equal(detectExplicitStructuredStudyIntent('Help me study forgiveness'), true);
     assert.equal(detectExplicitStructuredStudyIntent('Give me a Bible study on the Sabbath'), true);
     assert.equal(detectExplicitStructuredStudyIntent('Let’s study prayer in Scripture'), true);
+    assert.equal(detectExplicitStructuredStudyIntent('Can we study forgiveness together?'), true);
+    assert.equal(detectExplicitStructuredStudyIntent('Show me a study about faith.'), true);
+    assert.equal(detectExplicitStructuredStudyIntent('Walk me through the Bible on grace.'), true);
     assert.equal(detectExplicitStructuredStudyIntent('What is the Sabbath?'), false);
     assert.equal(detectExplicitStructuredStudyIntent('What does the Bible say about forgiveness?'), false);
+    assert.equal(detectExplicitStructuredStudyIntent('Explain forgiveness.'), false);
+    assert.equal(detectExplicitStructuredStudyIntent('I want to understand resurrection more deeply.'), false);
     assert.equal(detectExplicitStructuredStudyIntent('I lost my friend'), false);
     assert.equal(detectExplicitStructuredStudyIntent('Pray for me'), false);
     assert.equal(detectExplicitStructuredStudyIntent('My knees hurt'), false);
     assert.equal(detectHumanNeed('I lost my friend'), 'emotional_support');
     assert.equal(detectHumanNeed('My knees hurt'), 'health_support');
+  });
+
+  it('seed enrichment activates study for common topics outside doctrine catalog', async () => {
+    const message = 'Help me study forgiveness.';
+    const pack = buildRetrievalEvidencePack({
+      userId: 'sprint-d-forgiveness',
+      message,
+      mode: 'companion',
+      recentSessions: [],
+      runtimeContext: {},
+      profile: {},
+      safety: {},
+      routingHintsOnly: true,
+    });
+    await attachVerifiedLessonPacketToEvidencePack(pack, message);
+    // Catalog usually has no forgiveness chain → attach may be empty.
+    const study = await tryBuildStructuredStudyReply(pack, message);
+    assert.equal(study.ok, true, JSON.stringify(study));
+    assert.match(study.reply, /^Study theme: forgiveness\s*$/im);
+    assert.doesNotMatch(study.reply, /Study theme:.*forgiveness\s+forgiveness/i);
+    assert.match(study.reply, /Matthew 6:14/i);
+    assert.ok((study.scripture || []).length >= 3);
+    assert.doesNotMatch(study.reply, /roles:|contribute to studying/i);
+    assert.doesNotMatch(study.reply, /resurrection_timeline_resurrection/i);
+    // KJV integrity
+    const { getLocalPassage } = require('../services/localKjvCorpusProvider');
+    for (const s of study.scripture) {
+      const local = getLocalPassage(s.reference);
+      assert.equal(local.ok, true, s.reference);
+      assert.equal(String(local.text).replace(/\s+/g, ' ').trim(), String(s.text).replace(/\s+/g, ' ').trim());
+    }
   });
 
   it('user-facing renderer quotes KJV blocks and hides Admin jargon', () => {
@@ -78,14 +114,15 @@ describe('Sprint D structured Scripture study', () => {
     // Default attach remains inactive until study path activates.
     assert.equal(pack.verifiedLessonPacket.productionActivation, false);
 
-    const study = tryBuildStructuredStudyReply(pack, message);
+    const study = await tryBuildStructuredStudyReply(pack, message);
     if (!packetUsableForStructuredStudy(pack.verifiedLessonPacket)) {
       assert.ok(study === null || study.fallback === true);
       return;
     }
     assert.equal(study.ok, true);
-    assert.match(study.reply, /Study theme:/i);
+    assert.match(study.reply, /Study theme: the Sabbath/i);
     assert.match(study.reply, /Key passages/i);
+    assert.doesNotMatch(study.reply, /roles:|contribute to studying/i);
     assert.ok((study.scripture || []).length >= 1);
     assert.equal(study.runtime.masterRoute, 'structured_scripture_study');
     assert.equal(study.runtime.verifiedLessonPacketActivated, true);
@@ -108,7 +145,7 @@ describe('Sprint D structured Scripture study', () => {
       routingHintsOnly: true,
     });
     await attachVerifiedLessonPacketToEvidencePack(pack, message);
-    const study = tryBuildStructuredStudyReply(pack, message);
+    const study = await tryBuildStructuredStudyReply(pack, message);
     assert.equal(study, null);
     assert.equal(pack.verifiedLessonPacket?.productionActivation, false);
   });
@@ -126,7 +163,7 @@ describe('Sprint D structured Scripture study', () => {
         routingHintsOnly: true,
       });
       await attachVerifiedLessonPacketToEvidencePack(pack, 'Help me study forgiveness');
-      const study = tryBuildStructuredStudyReply(pack, message);
+      const study = await tryBuildStructuredStudyReply(pack, message);
       assert.equal(study, null, `protected should not study: ${message}`);
     }
   });

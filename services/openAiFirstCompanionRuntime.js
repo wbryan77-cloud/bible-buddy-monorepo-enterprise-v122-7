@@ -184,11 +184,13 @@ async function attachVerifiedLessonPacketToEvidencePack(evidencePack, message = 
  * study intents only. Reuses attached VLP/Study Chain; does not invent
  * Scripture; does not activate doctrine; protected routes stay higher priority.
  */
-function tryBuildStructuredStudyReply(evidencePack, message = '') {
+async function tryBuildStructuredStudyReply(evidencePack, message = '') {
   const {
     detectExplicitStructuredStudyIntent,
     packetUsableForStructuredStudy,
     renderUserFacingStructuredStudy,
+    enrichEvidencePackForStructuredStudy,
+    humanizeStudyTheme,
   } = require('./lessonEngine');
 
   if (!detectExplicitStructuredStudyIntent(message)) {
@@ -215,12 +217,19 @@ function tryBuildStructuredStudyReply(evidencePack, message = '') {
     /* historical detector optional */
   }
 
+  // Enrich empty catalog packs with corpus-verified seed refs, then rebuild VLP.
+  const enrich = enrichEvidencePackForStructuredStudy(evidencePack, message);
+  if (enrich.enriched) {
+    await attachVerifiedLessonPacketToEvidencePack(evidencePack, message);
+  }
+
   const packet = evidencePack && evidencePack.verifiedLessonPacket;
   if (!packetUsableForStructuredStudy(packet)) {
     return {
       ok: false,
       fallback: true,
       reason: 'packet_not_usable',
+      enrichReason: enrich.reason || null,
     };
   }
 
@@ -228,11 +237,12 @@ function tryBuildStructuredStudyReply(evidencePack, message = '') {
   packet.productionActivation = true;
   packet.userFacingStructuredStudy = true;
 
+  const theme = humanizeStudyTheme(packet.topic?.normalizedTopic || enrich.topicKey || 'this topic');
   const reply = renderUserFacingStructuredStudy(
     {
       lessonSummary: packet.lesson?.lessonSummary,
       reflectionQuestions: [
-        `What do these passages say about ${packet.topic?.normalizedTopic || 'this topic'}?`,
+        `What do these passages say about ${theme}?`,
         'Which passage defines, commands, or clarifies the subject most clearly?',
         'What would it look like to live this out this week?',
       ],
@@ -244,7 +254,7 @@ function tryBuildStructuredStudyReply(evidencePack, message = '') {
 
   const scripture = (packet.scriptureBlocks || [])
     .filter((b) => b && b.reference && b.text)
-    .slice(0, 8)
+    .slice(0, 6)
     .map((b) => ({
       reference: b.displayReference || b.reference,
       text: b.text,
@@ -267,7 +277,8 @@ function tryBuildStructuredStudyReply(evidencePack, message = '') {
       structuredStudy: true,
       verifiedLessonPacketActivated: true,
       lessonId: packet.lesson?.lessonId || null,
-      topic: packet.topic?.normalizedTopic || null,
+      topic: packet.topic?.normalizedTopic || enrich.topicKey || null,
+      studySeedUsed: !!enrich.enriched,
       companionPresentation: { skipRelationshipEnrichment: true, skipStudyPrompts: true },
     },
   };
@@ -882,7 +893,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   // Protected pastoral/medical/prayer/historical-causation paths remain higher priority
   // (checked inside tryBuildStructuredStudyReply / left to orchestrator).
   {
-    const studyAttempt = tryBuildStructuredStudyReply(evidencePack, message);
+    const studyAttempt = await tryBuildStructuredStudyReply(evidencePack, message);
     if (studyAttempt && studyAttempt.ok) {
       const structured = {
         reply: studyAttempt.reply,
