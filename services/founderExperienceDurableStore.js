@@ -31,6 +31,8 @@ const DOC = {
   founderIntelligenceDecisions: path.join(ROOT, 'data/founder-intelligence/decisions-durable.json'),
   supportGraphDecisions: path.join(ROOT, 'data/support-graph/decisions-durable.json'),
   alphaTesters: path.join(ROOT, 'data/alpha/alpha-testers-durable.json'),
+  // Unused Alpha invite tokens — survive redeploy (hydrate must not wipe).
+  alphaInvites: path.join(ROOT, 'data/alpha/alpha-invites-durable.json'),
   // Explicit "Remember that…" pins — redeploy-surviving (same dual-write/hydrate pattern).
   explicitRememberPins: path.join(ROOT, 'data/explicit-remember-pins-durable.json'),
 };
@@ -55,6 +57,7 @@ const MAX = {
   founderIntelligenceDecisions: 8000,
   supportGraphDecisions: 8000,
   alphaTesters: 2000,
+  alphaInvites: 2000,
   explicitRememberPins: 4000,
 };
 

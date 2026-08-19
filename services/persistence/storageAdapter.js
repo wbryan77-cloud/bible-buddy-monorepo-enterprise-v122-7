@@ -174,7 +174,14 @@ function getStorageAdapter() {
       // to the (default) FILE path if it is never installed.
       const { PostgresStorageAdapter } = require('./postgresAdapter');
       activeAdapter = new PostgresStorageAdapter();
-      console.warn('[storageAdapter] PERSISTENCE=POSTGRES selected — this adapter is a scaffold that has NOT been run against a live database in this environment. See services/persistence/postgresAdapter.js header before relying on it in production.');
+      // Production uses this path whenever DATABASE_URL drives PERSISTENCE=POSTGRES
+      // (durableUserMemory / founderExperienceDurableStore). Warning is informational
+      // once only — adapter is the live durable owner, not an unused scaffold.
+      if (!process.env.BIBLEBUDDY_SILENCE_PG_ADAPTER_NOTICE) {
+        console.log(
+          '[storageAdapter] PERSISTENCE=POSTGRES active — using shared pg Pool (bible_buddy_documents). Background pool errors are handled so idle disconnects do not exit the process.',
+        );
+      }
       return activeAdapter;
     } catch (e) {
       console.error('[storageAdapter] PERSISTENCE=POSTGRES requested but the adapter could not be loaded, falling back to FILE:', e.message);

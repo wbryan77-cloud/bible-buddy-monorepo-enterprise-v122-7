@@ -76,8 +76,12 @@ function dualWriteAlphaTesters(data) {
     try {
       const { replaceAllItems, DOC, MAX } = require('./founderExperienceDurableStore');
       const testers = Array.isArray(data?.testers) ? data.testers : [];
+      const invites = Array.isArray(data?.invites) ? data.invites : [];
       replaceAllItems(DOC.alphaTesters, testers, MAX.alphaTesters).catch((err) => {
-        console.warn('[alphaTesterManager] durable replace failed:', err && err.message ? err.message : err);
+        console.warn('[alphaTesterManager] durable testers replace failed:', err && err.message ? err.message : err);
+      });
+      replaceAllItems(DOC.alphaInvites, invites, MAX.alphaInvites).catch((err) => {
+        console.warn('[alphaTesterManager] durable invites replace failed:', err && err.message ? err.message : err);
       });
     } catch (err) {
       console.warn('[alphaTesterManager] durable wire failed:', err && err.message ? err.message : err);
@@ -88,14 +92,16 @@ function dualWriteAlphaTesters(data) {
 /**
  * Alpha tester records hold user-authored consent + notification preferences.
  * After Render redeploy the file is empty and prefs reset to defaults — hydrate
- * when the store is missing/empty.
+ * when the store is missing/empty. Restores both testers AND unused invites.
  */
 async function hydrateAlphaTestersFromDurableIfNeeded() {
   let present = false;
   try {
     if (fs.existsSync(DATA_PATH)) {
       const doc = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
-      present = Array.isArray(doc?.testers) && doc.testers.length > 0;
+      present =
+        (Array.isArray(doc?.testers) && doc.testers.length > 0) ||
+        (Array.isArray(doc?.invites) && doc.invites.length > 0);
     }
   } catch (_) {
     present = false;
@@ -103,13 +109,21 @@ async function hydrateAlphaTestersFromDurableIfNeeded() {
   if (present) {
     return { ok: true, hydrated: false, reason: 'file_present' };
   }
-  let items = [];
+  let testers = [];
+  let invites = [];
   let backend = 'UNKNOWN';
   try {
     const { readItems, DOC } = require('./founderExperienceDurableStore');
-    const result = await readItems(DOC.alphaTesters);
-    items = Array.isArray(result.items) ? result.items : [];
-    backend = result.backend || 'UNKNOWN';
+    const testerResult = await readItems(DOC.alphaTesters);
+    testers = Array.isArray(testerResult.items) ? testerResult.items : [];
+    backend = testerResult.backend || 'UNKNOWN';
+    try {
+      const inviteResult = await readItems(DOC.alphaInvites);
+      invites = Array.isArray(inviteResult.items) ? inviteResult.items : [];
+      if (inviteResult.backend) backend = inviteResult.backend;
+    } catch (_) {
+      invites = [];
+    }
   } catch (err) {
     return {
       ok: false,
@@ -118,15 +132,23 @@ async function hydrateAlphaTestersFromDurableIfNeeded() {
       error: err && err.message ? err.message : String(err),
     };
   }
-  if (!items.length) {
+  if (!testers.length && !invites.length) {
     return { ok: true, hydrated: false, reason: 'durable_empty', backend };
   }
-  const next = { testers: items.slice(-MAX_TESTERS), invites: [] };
-  // Write without dual-write recursion noise: write file then explicit durable ok
+  const next = {
+    testers: testers.slice(-MAX_TESTERS),
+    invites: invites.slice(-MAX_TESTERS),
+  };
   const dir = path.dirname(DATA_PATH);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(DATA_PATH, JSON.stringify(next, null, 2), 'utf8');
-  return { ok: true, hydrated: true, count: items.length, backend };
+  return {
+    ok: true,
+    hydrated: true,
+    count: next.testers.length,
+    inviteCount: next.invites.length,
+    backend,
+  };
 }
 
 function generateToken() {
@@ -155,6 +177,7 @@ function createInvite({ label = '', createdBy = 'admin' } = {}) {
 
 function getInviteLink(inviteToken, baseUrl = '') {
   const base = baseUrl || process.env.ALPHA_TESTER_BASE_URL || process.env.PUBLIC_APP_URL || '';
+  // Public path /alpha?token= redirects to onboarding while preserving token.
   const path = `/alpha?token=${encodeURIComponent(inviteToken)}`;
   return base ? `${base.replace(/\/$/, '')}${path}` : path;
 }

@@ -1,99 +1,130 @@
 /**
- * PHASE_2_ENTERPRISE_OPTIMIZATION — Persistence (objective 2).
+ * Postgres JSON-document adapter for bible_buddy_documents.
  *
- * ============================================================================
- * STATUS: SCAFFOLD / EXPERIMENTAL. NOT VERIFIED AGAINST A LIVE DATABASE.
- * ============================================================================
- * This environment has no `DATABASE_URL` credential and no reachable
- * Postgres instance (render.yaml declares it as `sync: false` — set only in
- * the Render dashboard, never available to this process). Every line below
- * is standard, defensible `pg` usage, but it has not been exercised against
- * a real database, migration, or connection pool in this engagement, and it
- * must not be treated as "tested" or "production ready" on that basis
- * alone. Do not enable `PERSISTENCE=POSTGRES` in production until it has
- * been run against a real staging database with the schema below applied
- * and at least the same regression suite this repo already has passing
- * against it.
+ * Canonical pg Pool owner for the runtime. Production uses this path when
+ * DATABASE_URL is set (via storageAdapter PERSISTENCE=POSTGRES).
  *
- * WHY IT EXISTS ANYWAY: `services/persistence/storageAdapter.js` defines the
- * interface (`readJsonDocument` / `writeJsonDocument` / `updateJsonDocument`)
- * every store in this codebase can be migrated to call instead of touching
- * `fs` directly. Writing the second implementation of that interface now —
- * even unverified — is what makes the interface itself trustworthy: if it
- * can only ever have one implementation, it isn't really an abstraction.
- * `getStorageAdapter()` in storageAdapter.js only activates this class if an
- * operator explicitly sets `PERSISTENCE=POSTGRES`; the default everywhere
- * remains the fully-verified `FileStorageAdapter`.
- *
- * SUGGESTED SCHEMA (one generic table, mirroring every existing store's
- * "one JSON document per key" shape — deliberately not a bespoke table per
- * store, so migrating a new store never requires a schema change):
- *
- *   CREATE TABLE IF NOT EXISTS bible_buddy_documents (
- *     doc_key     TEXT PRIMARY KEY,
- *     doc_value   JSONB NOT NULL,
- *     updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
- *   );
- *
- * `doc_key` should be the same relative path each store already uses today
- * (e.g. "data/help-center-articles.json") so the migration script can be a
- * literal `INSERT ... SELECT` from the existing file contents, and so the
- * FILE and POSTGRES adapters stay drop-in-compatible with each other.
- *
- * KNOWN GAP, DISCLOSED RATHER THAN HIDDEN: every method here is `async`
- * (real DB drivers require it) while `FileStorageAdapter`'s methods and
- * every existing store's public functions (`listArticles`, `createArticle`,
- * etc.) are synchronous. Swapping this adapter in is therefore NOT a
- * zero-further-change drop-in today — the calling store (and, one layer up,
- * its route handler) must also be made `async`/`await`-based first. That is
- * a mechanical, low-risk change per store (Express already supports async
- * handlers) but it is a second, explicit step in the migration runbook
- * (docs/alpha/phase1b-enterprise-operations/13-ScalabilityAndPersistenceImplementation.md),
- * not something this scaffold silently papers over.
+ * CRITICAL: idle/background Client "error" events MUST be handled on the Pool.
+ * Unhandled pool errors terminate Node (Render exit status 1). See Alpha P0
+ * repair — "Connection terminated unexpectedly" / Unhandled 'error' event.
  */
 
 const path = require('path');
 
+/** Module-level singleton — one Pool per process, shared by all adapter instances. */
+let sharedPool = null;
+let poolErrorHandlerAttached = false;
+
+function releaseCommitShort() {
+  const c = process.env.RENDER_GIT_COMMIT || process.env.GIT_COMMIT || '';
+  return c ? String(c).slice(0, 7) : null;
+}
+
+function logLifecycle(event, extra = {}) {
+  const payload = {
+    event,
+    at: new Date().toISOString(),
+    pid: process.pid,
+    releaseCommit: releaseCommitShort(),
+    ...extra,
+  };
+  console.log(JSON.stringify(payload));
+}
+
+function attachPoolBackgroundErrorHandler(pool) {
+  if (!pool || typeof pool.on !== 'function') return false;
+  if (pool.__biblebuddyPgErrorHandlerAttached) return true;
+  pool.__biblebuddyPgErrorHandlerAttached = true;
+  pool.on('error', (err) => {
+    // Idle client disconnected — Pool discards it; process must stay alive.
+    logLifecycle('POSTGRES_BACKGROUND_CONNECTION_ERROR', {
+      errorName: err && err.name ? err.name : 'Error',
+      errorCode: err && err.code ? err.code : null,
+      errorMessage: err && err.message ? String(err.message).slice(0, 160) : 'unknown',
+      category: 'idle_or_background_client',
+    });
+  });
+  return true;
+}
+
+function createSharedPool() {
+  if (sharedPool) return sharedPool;
+  let PgPool;
+  try {
+    ({ Pool: PgPool } = require('pg'));
+  } catch (e) {
+    throw new Error(
+      `PERSISTENCE=POSTGRES is set but the "pg" package is not installed. Run "npm install pg" (already declared as an optionalDependency) before using this adapter. Original error: ${e.message}`,
+    );
+  }
+  if (!process.env.DATABASE_URL) {
+    throw new Error('PERSISTENCE=POSTGRES is set but DATABASE_URL is not configured.');
+  }
+  // Keep max conservative for Render single-instance + managed Postgres.
+  // Do not tune without measured concurrency evidence.
+  sharedPool = new PgPool({
+    connectionString: process.env.DATABASE_URL,
+    max: 5,
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 10000,
+  });
+
+  if (!poolErrorHandlerAttached) {
+    poolErrorHandlerAttached = true;
+    attachPoolBackgroundErrorHandler(sharedPool);
+  }
+
+  return sharedPool;
+}
+
+/**
+ * Drain and close the shared pool (graceful shutdown).
+ * Safe to call when pool was never created.
+ */
+async function endSharedPool() {
+  if (!sharedPool) {
+    return { ended: false, reason: 'no_pool' };
+  }
+  const pool = sharedPool;
+  sharedPool = null;
+  poolErrorHandlerAttached = false;
+  try {
+    await pool.end();
+    return { ended: true };
+  } catch (err) {
+    return {
+      ended: false,
+      reason: 'end_failed',
+      error: err && err.message ? err.message : String(err),
+    };
+  }
+}
+
+/** Test helper: drop singleton without ending (or after end). */
+function resetSharedPoolForTests() {
+  sharedPool = null;
+  poolErrorHandlerAttached = false;
+}
+
+/** Expose pool for tests / diagnostics (not for query bypass). */
+function getSharedPoolForTests() {
+  return sharedPool;
+}
+
 class PostgresStorageAdapter {
   constructor() {
     this.kind = 'POSTGRES';
-    // Intentionally lazy/deferred: never `require('pg')` or open a
-    // connection at module-load time. This constructor only runs when an
-    // operator has explicitly opted in via PERSISTENCE=POSTGRES.
-    this._pool = null;
+    this._schemaReady = null;
   }
 
   _getPool() {
-    if (this._pool) return this._pool;
-    let PgPool;
-    try {
-      // `pg` is an optionalDependency (see package.json) — never required by
-      // the default FILE path, so its absence never breaks a normal install.
-      ({ Pool: PgPool } = require('pg'));
-    } catch (e) {
-      throw new Error(
-        `PERSISTENCE=POSTGRES is set but the "pg" package is not installed. Run "npm install pg" (already declared as an optionalDependency) before using this adapter. Original error: ${e.message}`
-      );
-    }
-    if (!process.env.DATABASE_URL) {
-      throw new Error('PERSISTENCE=POSTGRES is set but DATABASE_URL is not configured.');
-    }
-    this._pool = new PgPool({ connectionString: process.env.DATABASE_URL, max: 5 });
-    this._schemaReady = null;
-    return this._pool;
+    return createSharedPool();
   }
 
   _keyFor(filePath) {
-    // Normalize to the same relative key regardless of which machine's
-    // absolute path produced it, so FILE -> POSTGRES migration is a literal
-    // copy of each store's existing path.
     return path.relative(path.join(__dirname, '..', '..'), filePath).split(path.sep).join('/');
   }
 
-  /**
-   * Phase 7C.1 — ensure the existing generic document table exists.
-   * Idempotent; safe on every boot when DATABASE_URL is present.
-   */
   async ensureSchema() {
     if (this._schemaReady) return this._schemaReady;
     const pool = this._getPool();
@@ -124,17 +155,11 @@ class PostgresStorageAdapter {
       `INSERT INTO bible_buddy_documents (doc_key, doc_value, updated_at)
        VALUES ($1, $2, now())
        ON CONFLICT (doc_key) DO UPDATE SET doc_value = $2, updated_at = now()`,
-      [key, value]
+      [key, value],
     );
     return value;
   }
 
-  /**
-   * Uses a real transaction + row lock (`FOR UPDATE`) instead of the
-   * FileStorageAdapter's advisory file lock — this is the actual advantage
-   * a real database gives over files: correct, atomic, cross-instance
-   * read-mutate-write with no stale-lock heuristics needed.
-   */
   async updateJsonDocument(filePath, mutatorFn, defaultValue) {
     await this.ensureSchema();
     const pool = this._getPool();
@@ -142,19 +167,26 @@ class PostgresStorageAdapter {
     const client = await pool.connect();
     try {
       await client.query('BEGIN');
-      const { rows } = await client.query('SELECT doc_value FROM bible_buddy_documents WHERE doc_key = $1 FOR UPDATE', [key]);
+      const { rows } = await client.query(
+        'SELECT doc_value FROM bible_buddy_documents WHERE doc_key = $1 FOR UPDATE',
+        [key],
+      );
       const current = rows.length ? rows[0].doc_value : defaultValue;
       const next = await mutatorFn(current);
       await client.query(
         `INSERT INTO bible_buddy_documents (doc_key, doc_value, updated_at)
          VALUES ($1, $2, now())
          ON CONFLICT (doc_key) DO UPDATE SET doc_value = $2, updated_at = now()`,
-        [key, next]
+        [key, next],
       );
       await client.query('COMMIT');
       return next;
     } catch (e) {
-      await client.query('ROLLBACK');
+      try {
+        await client.query('ROLLBACK');
+      } catch (_) {
+        /* ignore rollback failure */
+      }
       throw e;
     } finally {
       client.release();
@@ -162,4 +194,12 @@ class PostgresStorageAdapter {
   }
 }
 
-module.exports = { PostgresStorageAdapter };
+module.exports = {
+  PostgresStorageAdapter,
+  createSharedPool,
+  endSharedPool,
+  resetSharedPoolForTests,
+  getSharedPoolForTests,
+  attachPoolBackgroundErrorHandler,
+  logLifecycle,
+};

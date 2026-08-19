@@ -31,7 +31,13 @@ fs.mkdirSync(DATA_DIR, { recursive: true });
 // Public entry aliases (invitation / SMS / QR). Registered BEFORE static so
 // legacy admin/index.html and alpha-test.html cannot own these exact paths.
 // Does not change Companion runtime, Admin auth, or API security.
+// Preserve invite token: /alpha?token=… must not drop the query (redirect to
+// the existing Alpha onboarding surface that reads `token`).
 app.get(['/alpha', '/alpha/', '/alpha-test', '/alpha-test/'], (req, res) => {
+  const token = req.query && req.query.token != null ? String(req.query.token).trim() : '';
+  if (token) {
+    return res.redirect(302, `/admin/alpha-test?token=${encodeURIComponent(token)}`);
+  }
   res.redirect(302, '/');
 });
 app.get(['/admin', '/admin/'], (req, res) => {
@@ -276,7 +282,24 @@ app.use((error, req, res, next) => {
 
 const { logStartupDiagnostics } = require('./services/buddyRuntimeConfig');
 
-app.listen(PORT, () => {
+const APP_SHUTDOWN_TIMEOUT_MS = Number(process.env.APP_SHUTDOWN_TIMEOUT_MS || 20000);
+
+function lifecycleLog(event, extra = {}) {
+  console.log(
+    JSON.stringify({
+      event,
+      at: new Date().toISOString(),
+      pid: process.pid,
+      node: process.version,
+      releaseCommit: RELEASE_COMMIT,
+      ...extra,
+    }),
+  );
+}
+
+lifecycleLog('PROCESS_STARTED');
+
+const server = app.listen(PORT, () => {
   console.log(`Bible Buddy ${APP_VERSION} listening on port ${PORT}`);
   logStartupDiagnostics();
   // Governance durability: JSONL learning records are ephemeral on Render disk.
@@ -411,4 +434,68 @@ app.listen(PORT, () => {
       console.warn('[explicitRememberPin] durable hydrate wire failed:', err && err.message ? err.message : err);
     }
   });
+});
+let shuttingDown = false;
+
+async function gracefulShutdown(signal) {
+  if (shuttingDown) return;
+  shuttingDown = true;
+  lifecycleLog('SHUTDOWN_SIGNAL_RECEIVED', { signal });
+  lifecycleLog('HTTP_DRAIN_STARTED');
+
+  const forceTimer = setTimeout(() => {
+    lifecycleLog('SHUTDOWN_FORCE_EXIT', { reason: 'timeout', timeoutMs: APP_SHUTDOWN_TIMEOUT_MS });
+    process.exit(1);
+  }, APP_SHUTDOWN_TIMEOUT_MS);
+  if (typeof forceTimer.unref === 'function') forceTimer.unref();
+
+  await new Promise((resolve) => {
+    server.close((err) => {
+      if (err) {
+        lifecycleLog('HTTP_DRAIN_ERROR', { errorMessage: String(err.message || err).slice(0, 120) });
+      }
+      resolve();
+    });
+  });
+
+  lifecycleLog('POSTGRES_POOL_DRAIN_STARTED');
+  try {
+    const { endSharedPool } = require('./services/persistence/postgresAdapter');
+    const ended = await endSharedPool();
+    lifecycleLog('POSTGRES_POOL_DRAIN_COMPLETE', ended);
+  } catch (err) {
+    lifecycleLog('POSTGRES_POOL_DRAIN_ERROR', {
+      errorMessage: err && err.message ? String(err.message).slice(0, 120) : 'unknown',
+    });
+  }
+
+  lifecycleLog('SHUTDOWN_COMPLETE', { signal, exitCode: 0 });
+  clearTimeout(forceTimer);
+  process.exit(0);
+}
+
+process.on('SIGTERM', () => {
+  gracefulShutdown('SIGTERM').catch((err) => {
+    console.error('[shutdown] SIGTERM handler failed:', err && err.message ? err.message : err);
+    process.exit(1);
+  });
+});
+process.on('SIGINT', () => {
+  gracefulShutdown('SIGINT').catch((err) => {
+    console.error('[shutdown] SIGINT handler failed:', err && err.message ? err.message : err);
+    process.exit(1);
+  });
+});
+
+process.on('uncaughtException', (err) => {
+  lifecycleLog('UNCAUGHT_EXCEPTION', {
+    errorName: err && err.name,
+    errorMessage: err && err.message ? String(err.message).slice(0, 200) : 'unknown',
+  });
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason) => {
+  const msg = reason && reason.message ? reason.message : String(reason);
+  lifecycleLog('UNHANDLED_REJECTION', { errorMessage: String(msg).slice(0, 200) });
 });
