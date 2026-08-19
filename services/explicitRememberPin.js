@@ -83,6 +83,15 @@ function getPins(userId) {
   return Array.isArray(store[userId]) ? store[userId] : [];
 }
 
+function clearPinsForUser(userId) {
+  if (!userId) return false;
+  const store = readStore();
+  if (!Object.prototype.hasOwnProperty.call(store, userId)) return false;
+  delete store[userId];
+  writeStore(store);
+  return true;
+}
+
 function isPinRecallQuery(message = '') {
   return RECALL_PATTERNS.some((re) => re.test(String(message || '')));
 }
@@ -154,6 +163,7 @@ function pinsForPrompt(userId) {
 module.exports = {
   maybeCapturePin,
   getPins,
+  clearPinsForUser,
   tryAnswerPinRecall,
   isPinRecallQuery,
   isMarkerRecallQuery: isPinRecallQuery,

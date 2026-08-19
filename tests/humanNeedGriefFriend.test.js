@@ -13,6 +13,9 @@ const cases = [
   ['My mother passed away.', 'emotional_support'],
   ['What is the Sabbath?', (v) => v !== 'emotional_support'],
   ['My knees hurt.', 'health_support'],
+  ['My chest has been hurting too.', 'health_support'],
+  ["I'm angry at God.", 'emotional_support'],
+  ["I'm thinking about quitting my job.", 'open_life'],
 ];
 
 let failed = 0;

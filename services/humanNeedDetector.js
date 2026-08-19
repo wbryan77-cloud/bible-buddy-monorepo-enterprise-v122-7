@@ -30,8 +30,12 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
     return 'health_support';
   }
 
-  if (/\b(knee|knees|hurt|hurts|pain|aching|ache|flare|flaring|sore|injury|doctor|medicine|blood pressure|cholesterol)\b/i.test(sprint1a6Message)) {
+  if (/\b(knee|knees|hurt|hurts|hurting|pain|aching|ache|flare|flaring|sore|injury|doctor|medicine|blood pressure|cholesterol|chest pain|chest hurt)\b/i.test(sprint1a6Message)) {
     return 'health_support';
+  }
+
+  if (/\b(angry at god|mad at god|upset with god|blame god|blaming god)\b/i.test(sprint1a6Message)) {
+    return 'emotional_support';
   }
 
   // PHASE_6G: broadened beyond the literal word "decision" to also catch the
@@ -44,6 +48,7 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
   // decision-support net, it does not narrow doctrine routing.
   if (
     (/\b(decision|decide|choice|discern|what should i do)\b/i.test(sprint1a6Message) ||
+      /\b(quitt?ing (my )?job|leave my job|resign(ing)? from (my )?job)\b/i.test(sprint1a6Message) ||
       (/\bshould i\b/i.test(sprint1a6Message) && !/\b(how should i|what should i say)\b/i.test(sprint1a6Message))) &&
     !/\b(bible|scripture|sabbath|pork|acts 10|commandments?|baptis|tithe|tithing)\b/i.test(sprint1a6Message)
   ) {

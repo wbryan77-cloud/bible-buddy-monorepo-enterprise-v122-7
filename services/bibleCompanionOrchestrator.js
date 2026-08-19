@@ -84,6 +84,7 @@ function shouldBlockGenericClarification(message = '', state = {}, humanNeed = n
   if (isAppIdentityQuestion(message)) return true;
   if (/\b(pray with me|can you pray|please pray|will you pray)\b/i.test(message)) return true;
   if (humanNeed === 'app_identity' || humanNeed === 'prayer' || humanNeed === 'memory_recall') return true;
+  if (humanNeed === 'doctrine_answer' || humanNeed === 'health_support' || humanNeed === 'open_life') return true;
   if (
     humanNeed === 'practical_words_to_say' ||
     humanNeed === 'next_steps' ||

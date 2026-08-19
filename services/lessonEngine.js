@@ -708,6 +708,13 @@ function userFacingStudySummary(topicLabel, lesson = {}, packet = null) {
   return `These King James passages are gathered for a Scripture-first study of ${topicLabel}.`;
 }
 
+/** Internal Study Chain role templates — never show these verbatim to users. */
+function isInternalRoleBlurb(text = '') {
+  return /^(Opens the lesson subject|Helps define the subject|States a command|Gives instructional|Explains or develops|Provides an example|Records a historical|Gives prophetic|Shows fulfillment|Warns concerning|Shows consequence|States blessing|States a promise|Provides contrast|Limits or qualifies|Notes an exception|Applies the subject|Supports the subject|Balances or clarifies|Clarifies the subject|Provides thematic|Supplies covenant|Language context placeholder|Historical context placeholder|Contributes to the study)\b/i.test(
+    String(text || '').trim(),
+  );
+}
+
 /**
  * User-facing structured study (no Admin/governance jargon, no raw JSON).
  * Scripture blocks are quoted verbatim from local KJV retrieval.
@@ -738,24 +745,34 @@ function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = 
   blocks.slice(0, 6).forEach((b, i) => {
     lines.push(`${i + 1}. ${b.displayReference || b.reference}`);
     lines.push(`“${String(b.text).trim()}”`);
-    if (b.roleExplanation && !/Opens the lesson subject/i.test(b.roleExplanation)) {
+    if (b.roleExplanation && !isInternalRoleBlurb(b.roleExplanation)) {
       lines.push(b.roleExplanation);
     }
     lines.push('');
   });
   const connections = (p.connections || [])
-    .filter((c) => c && c.sentence && !/Opens the lesson subject/i.test(c.sentence))
+    .filter((c) => c && c.sentence && !isInternalRoleBlurb(c.sentence))
     .slice(0, 5);
+  lines.push('How these passages connect');
   if (connections.length) {
-    lines.push('How these passages connect');
     connections.forEach((c) => lines.push(`- ${c.sentence}`));
-    lines.push('');
+  } else if (blocks.length >= 2) {
+    lines.push(
+      `- Read these passages together: each one speaks to ${topicLabel} from a different angle in Scripture.`,
+    );
+  } else {
+    lines.push(`- This passage speaks directly to ${topicLabel}.`);
   }
+  lines.push('');
   const hist = (p.historicalEvidence || []).filter((h) => h && h.note);
   if (hist.length) {
     lines.push('Historical context (supplemental — not Scripture)');
     hist.slice(0, 3).forEach((h) => {
-      const attr = h.attribution ? ` (${h.attribution})` : '';
+      const rawAttr = String(h.attribution || '').trim();
+      const attr =
+        rawAttr && !/historicalEvidenceLayer|thin topic notes|not network-verified/i.test(rawAttr)
+          ? ` (${rawAttr})`
+          : '';
       lines.push(`- ${h.note}${attr}`);
     });
     lines.push('');

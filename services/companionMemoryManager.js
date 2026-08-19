@@ -165,6 +165,16 @@ function forgetMemory({ userId, scope = 'all' } = {}) {
     clearedRel = relResult.cleared;
   }
 
+  let clearedPins = false;
+  if (scope === 'all') {
+    try {
+      const { clearPinsForUser } = require('./explicitRememberPin');
+      clearedPins = !!clearPinsForUser(userId);
+    } catch (_) {
+      clearedPins = false;
+    }
+  }
+
   if (scope === 'preferences') {
     return {
       cleared: clearedPrefs,
@@ -174,7 +184,7 @@ function forgetMemory({ userId, scope = 'all' } = {}) {
   }
 
   return {
-    cleared: clearedPrefs || clearedRel,
+    cleared: clearedPrefs || clearedRel || clearedPins,
     reply:
       "I've cleared what I stored about your companion context and preferences for this account. Session details from earlier in this chat may still be in play until we move on — tell me again what you'd like me to remember.",
   };

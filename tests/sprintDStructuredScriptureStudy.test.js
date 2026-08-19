@@ -58,6 +58,10 @@ describe('Sprint D structured Scripture study', () => {
     assert.match(study.reply, /Matthew 6:14/i);
     assert.ok((study.scripture || []).length >= 3);
     assert.doesNotMatch(study.reply, /roles:|contribute to studying/i);
+    assert.doesNotMatch(study.reply, /States a command or required practice/i);
+    assert.doesNotMatch(study.reply, /Helps define the subject at/i);
+    assert.doesNotMatch(study.reply, /historicalEvidenceLayer/i);
+    assert.match(study.reply, /How these passages connect/i);
     assert.doesNotMatch(study.reply, /resurrection_timeline_resurrection/i);
     // KJV integrity
     const { getLocalPassage } = require('../services/localKjvCorpusProvider');
@@ -123,6 +127,8 @@ describe('Sprint D structured Scripture study', () => {
     assert.match(study.reply, /Study theme: the Sabbath/i);
     assert.match(study.reply, /Key passages/i);
     assert.doesNotMatch(study.reply, /roles:|contribute to studying/i);
+    assert.doesNotMatch(study.reply, /States a command or required practice/i);
+    assert.doesNotMatch(study.reply, /historicalEvidenceLayer/i);
     assert.ok((study.scripture || []).length >= 1);
     assert.equal(study.runtime.masterRoute, 'structured_scripture_study');
     assert.equal(study.runtime.verifiedLessonPacketActivated, true);
@@ -175,6 +181,14 @@ describe('Sprint D structured Scripture study', () => {
     assert.match(article.body, /conversational/i);
     assert.doesNotMatch(article.body, /every answer is a structured lesson/i);
     assert.doesNotMatch(article.body, /Verified Lesson Packet/i);
+  });
+
+  it('Study CTA uses explicit structured-study phrasing', () => {
+    const fs = require('fs');
+    const path = require('path');
+    const html = fs.readFileSync(path.join(__dirname, '../public/index.html'), 'utf8');
+    assert.match(html, /onclick="quickAsk\('Help me study grace\.'\)"/);
+    assert.doesNotMatch(html, /study the Bible more deeply/i);
   });
 
   it('packetUsable rejects empty / blocked packets', () => {

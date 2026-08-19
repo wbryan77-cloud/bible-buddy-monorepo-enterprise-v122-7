@@ -22,6 +22,17 @@ describe('BIE v1.3D memory forget + satan frees routing', () => {
     assert.match(ack, /forget|memory/i);
   });
 
+  it('1b. forgetMemory(scope=all) clears explicit remember pins', () => {
+    const { maybeCapturePin, getPins } = require('../services/explicitRememberPin');
+    const { forgetMemory } = require('../services/companionMemoryManager');
+    const userId = `prealpha-pin-forget-${Date.now()}`;
+    maybeCapturePin(userId, 'Remember that my favorite book of the Bible is Romans.');
+    assert.ok(getPins(userId).length >= 1);
+    const result = forgetMemory({ userId, scope: 'all' });
+    assert.equal(result.cleared, true);
+    assert.equal(getPins(userId).length, 0);
+  });
+
   it('2. frees-Satan wording routes to grounded Rev 20 path', () => {
     const msg =
       'After the millennium ends, does Revelation name who frees Satan? Yes or no.';
