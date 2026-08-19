@@ -441,6 +441,8 @@ function buildVerifiedLessonPacket(lesson = {}, question = null) {
 
 /**
  * Deterministic user-facing lesson markdown (no OpenAI).
+ * Includes Admin/governance review headings — for offline/dev validation.
+ * Live Companion Chat uses renderUserFacingStructuredStudy instead.
  */
 function renderLessonMarkdown(lesson = {}, packet = null) {
   const p = packet || buildVerifiedLessonPacket(lesson);
@@ -505,6 +507,110 @@ function renderLessonMarkdown(lesson = {}, packet = null) {
   lines.push(`_Source reading order preserved. Recommended order is separate metadata and is not shown as a replacement._`);
   lines.push('');
   return lines.join('\n');
+}
+
+/**
+ * Explicit Scripture-study request (Product Sprint D).
+ * Prefer clear study language; ordinary Q&A stays conversational.
+ */
+function detectExplicitStructuredStudyIntent(message = '') {
+  const m = String(message || '').trim();
+  if (!m || m.length > 500) return false;
+  // Protected / non-study shapes — never treat as structured study.
+  if (/\b(pray(er|ing)?\b|lost (my|a)|passed away|knees hurt|doctor|diagnose)\b/i.test(m)) {
+    // Allow "help me study prayer in Scripture" but not "pray for me"
+    if (/\b(pray for me|pray with me|can we pray|let'?s pray)\b/i.test(m)) return false;
+    if (/\b(lost (my|a) |passed away|knees hurt|see a doctor)\b/i.test(m)) return false;
+  }
+  return (
+    /\bhelp me study\b/i.test(m) ||
+    /\bgive me (a |an )?(bible |scripture )?study\b/i.test(m) ||
+    /\b(bible|scripture) study (on|about|of|for)\b/i.test(m) ||
+    /\bstudy guide (on|about|for)\b/i.test(m) ||
+    /\bwalk me through (studying|a study of)\b/i.test(m) ||
+    /\blet[\u2019']?s study\b/i.test(m) ||
+    /\bi want (a |to do a )?(bible |scripture )?study (on|about)\b/i.test(m)
+  );
+}
+
+function packetUsableForStructuredStudy(packet = null) {
+  if (!packet || typeof packet !== 'object') return false;
+  const readiness = packet.lesson?.teachingReadiness || '';
+  if (readiness === 'BLOCKED_OR_REJECTED') return false;
+  const blocks = (packet.scriptureBlocks || []).filter(
+    (b) => b && b.reference && String(b.text || '').trim().length > 12,
+  );
+  return blocks.length >= 1;
+}
+
+/**
+ * User-facing structured study (no Admin/governance jargon, no raw JSON).
+ * Scripture blocks are quoted verbatim from local KJV retrieval.
+ */
+function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = '') {
+  const p = packet || buildVerifiedLessonPacket(lesson, question);
+  const blocks = (p.scriptureBlocks || []).filter(
+    (b) => b && b.reference && String(b.text || '').trim().length > 12,
+  );
+  const topic =
+    p.topic?.lessonTitle ||
+    p.topic?.normalizedTopic ||
+    lesson.normalizedTopic ||
+    'this topic';
+  const lines = [];
+  lines.push(`Study theme: ${topic}`);
+  lines.push('');
+  if (question && String(question).trim()) {
+    lines.push(`Your study request: ${String(question).trim()}`);
+    lines.push('');
+  }
+  lines.push('What Scripture shows');
+  lines.push(
+    lesson.lessonSummary ||
+      p.lesson?.lessonSummary ||
+      `These King James passages are gathered for a Scripture-first study of ${topic}.`,
+  );
+  lines.push('');
+  lines.push('Key passages (King James Version)');
+  lines.push('');
+  blocks.slice(0, 8).forEach((b, i) => {
+    lines.push(`${i + 1}. ${b.displayReference || b.reference}`);
+    lines.push(`“${String(b.text).trim()}”`);
+    if (b.roleExplanation) lines.push(b.roleExplanation);
+    lines.push('');
+  });
+  const connections = (p.connections || []).filter((c) => c && c.sentence).slice(0, 6);
+  if (connections.length) {
+    lines.push('How these passages connect');
+    connections.forEach((c) => lines.push(`- ${c.sentence}`));
+    lines.push('');
+  }
+  const hist = (p.historicalEvidence || []).filter((h) => h && h.note);
+  if (hist.length) {
+    lines.push('Historical context (supplemental — not Scripture)');
+    hist.slice(0, 4).forEach((h) => {
+      const attr = h.attribution ? ` (${h.attribution})` : '';
+      lines.push(`- ${h.note}${attr}`);
+    });
+    lines.push('');
+  }
+  const lang = (p.languageEvidence || [])[0];
+  if (lang && (lang.literalRendering || lang.originalText)) {
+    lines.push('Original-language note (bounded, secondary to full Scripture context)');
+    if (lang.reference) lines.push(`Passage: ${lang.reference}`);
+    if (lang.literalRendering) lines.push(`Literal study rendering: ${lang.literalRendering}`);
+    lines.push('');
+  }
+  const reflections = lesson.reflectionQuestions || p.lesson?.reflectionQuestions || [];
+  if (reflections.length) {
+    lines.push('For reflection');
+    reflections.slice(0, 3).forEach((q) => lines.push(`- ${q}`));
+    lines.push('');
+  }
+  lines.push(
+    'This is a Scripture study outline from retrieved King James text. It does not invent verses, and it does not by itself change BibleBuddy doctrine or knowledge.',
+  );
+  return lines.join('\n').trim();
 }
 
 function titleCaseRole(role) {
@@ -592,6 +698,9 @@ module.exports = {
   buildPassageRoleDetails,
   buildVerifiedLessonPacket,
   renderLessonMarkdown,
+  renderUserFacingStructuredStudy,
+  detectExplicitStructuredStudyIntent,
+  packetUsableForStructuredStudy,
   validateLessonFormat,
   repairLessonFormat,
   buildScriptureBlocks,

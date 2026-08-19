@@ -114,8 +114,24 @@ const NOTIFICATION_PREFS_BODY =
 const FEEDBACK_BODY =
   'After Buddy answers in Companion Chat, you can tap Helpful or Not helpful under that response. You may add an optional short note. Feedback is recorded for the team to review — it does not instantly change BibleBuddy’s answers, and it does not mean a person has replied to you yet. You can also ask the Help Assistant if something feels off.';
 
-function repairKnownDocumentationOverclaims(doc) {
+const STRUCTURED_STUDY_BODY =
+  'If you ask for an explicit Bible study — for example “Help me study forgiveness” or “Give me a Bible study on the Sabbath” — Buddy may reply with a Scripture-first study outline: theme, key King James passages, how they connect, and short reflection prompts. Ordinary questions like “What is the Sabbath?” stay conversational. Prayer, grief, and medical concerns still use their normal care paths. Structured study quotes retrieved Scripture; it does not invent verses or by itself change doctrine.';
+
+function ensureSeedArticlesPresent(doc) {
   let changed = false;
+  if (!doc.articles) doc.articles = [];
+  const byId = new Set(doc.articles.map((a) => a.id));
+  for (const seed of seedArticles()) {
+    if (!byId.has(seed.id)) {
+      doc.articles.push(seed);
+      changed = true;
+    }
+  }
+  return changed;
+}
+
+function repairKnownDocumentationOverclaims(doc) {
+  let changed = ensureSeedArticlesPresent(doc);
   for (const article of doc.articles || []) {
     if (article.id === 'getting-started') {
       if (
@@ -145,6 +161,19 @@ function repairKnownDocumentationOverclaims(doc) {
         /We've fixed the answer/i.test(body)
       ) {
         article.body = FEEDBACK_BODY;
+        article.updatedAt = new Date().toISOString();
+        article.version = Number(article.version || 1) + 1;
+        changed = true;
+      }
+    }
+    if (article.id === 'how-do-i-get-a-bible-study') {
+      const body = String(article.body || '');
+      if (
+        !body.trim() ||
+        /every answer is a structured lesson/i.test(body) ||
+        /Verified Lesson Packet/i.test(body)
+      ) {
+        article.body = STRUCTURED_STUDY_BODY;
         article.updatedAt = new Date().toISOString();
         article.version = Number(article.version || 1) + 1;
         changed = true;
@@ -227,6 +256,16 @@ function seedArticles() {
       createdAt: now,
       updatedAt: now,
     },
+    {
+      id: 'how-do-i-get-a-bible-study',
+      title: 'How do I get a structured Bible study?',
+      category: 'features',
+      tags: ['faq', 'bible', 'study'],
+      body: STRUCTURED_STUDY_BODY,
+      version: 1,
+      createdAt: now,
+      updatedAt: now,
+    },
   ];
 }
 
@@ -234,6 +273,8 @@ const DEFAULT_DOCUMENT = () => ({ articles: seedArticles() });
 
 function needsDocumentationRepair(doc) {
   const articles = doc?.articles || [];
+  const ids = new Set(articles.map((a) => a.id));
+  if (seedArticles().some((s) => !ids.has(s.id))) return true;
   return articles.some((a) => {
     const body = String(a.body || '');
     if (a.id === 'getting-started' && (GETTING_STARTED_OVERCLAIM_RE.test(body) || /Tap the chat orb to start talking/i.test(body))) {
@@ -245,6 +286,12 @@ function needsDocumentationRepair(doc) {
       (/feedback control near a response/i.test(body) ||
         /There is not yet a per-response/i.test(body) ||
         /BibleBuddy learned from this/i.test(body))
+    ) {
+      return true;
+    }
+    if (
+      a.id === 'how-do-i-get-a-bible-study' &&
+      (/every answer is a structured lesson/i.test(body) || /Verified Lesson Packet/i.test(body))
     ) {
       return true;
     }

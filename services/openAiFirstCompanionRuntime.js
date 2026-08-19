@@ -178,6 +178,101 @@ async function attachVerifiedLessonPacketToEvidencePack(evidencePack, message = 
   }
   return evidencePack;
 }
+
+/**
+ * Product Sprint D — user-visible structured Scripture study for EXPLICIT
+ * study intents only. Reuses attached VLP/Study Chain; does not invent
+ * Scripture; does not activate doctrine; protected routes stay higher priority.
+ */
+function tryBuildStructuredStudyReply(evidencePack, message = '') {
+  const {
+    detectExplicitStructuredStudyIntent,
+    packetUsableForStructuredStudy,
+    renderUserFacingStructuredStudy,
+  } = require('./lessonEngine');
+
+  if (!detectExplicitStructuredStudyIntent(message)) {
+    return null;
+  }
+
+  const need = detectHumanNeed(message);
+  if (
+    need === 'emotional_support' ||
+    need === 'health_support' ||
+    need === 'prayer' ||
+    need === 'grief_comfort' ||
+    need === 'anxiety_support' ||
+    need === 'open_life' ||
+    need === 'next_steps'
+  ) {
+    return null;
+  }
+
+  try {
+    const { isExplicitHistoricalCausationAsk } = require('./historicalCausationAsk');
+    if (isExplicitHistoricalCausationAsk(message)) return null;
+  } catch (_) {
+    /* historical detector optional */
+  }
+
+  const packet = evidencePack && evidencePack.verifiedLessonPacket;
+  if (!packetUsableForStructuredStudy(packet)) {
+    return {
+      ok: false,
+      fallback: true,
+      reason: 'packet_not_usable',
+    };
+  }
+
+  // Mark activation only for this user-visible study turn (packet otherwise stays inactive).
+  packet.productionActivation = true;
+  packet.userFacingStructuredStudy = true;
+
+  const reply = renderUserFacingStructuredStudy(
+    {
+      lessonSummary: packet.lesson?.lessonSummary,
+      reflectionQuestions: [
+        `What do these passages say about ${packet.topic?.normalizedTopic || 'this topic'}?`,
+        'Which passage defines, commands, or clarifies the subject most clearly?',
+        'What would it look like to live this out this week?',
+      ],
+      normalizedTopic: packet.topic?.normalizedTopic,
+    },
+    packet,
+    message,
+  );
+
+  const scripture = (packet.scriptureBlocks || [])
+    .filter((b) => b && b.reference && b.text)
+    .slice(0, 8)
+    .map((b) => ({
+      reference: b.displayReference || b.reference,
+      text: b.text,
+      translation: 'KJV',
+    }));
+
+  return {
+    ok: true,
+    reply,
+    scripture,
+    mode: 'study',
+    confidence: 'high',
+    memory_used: false,
+    orb_state: 'speaking',
+    safety_level: 'standard',
+    runtime: {
+      masterRoute: 'structured_scripture_study',
+      openAiCalled: false,
+      buddyRuntime: 'core_openai_first',
+      structuredStudy: true,
+      verifiedLessonPacketActivated: true,
+      lessonId: packet.lesson?.lessonId || null,
+      topic: packet.topic?.normalizedTopic || null,
+      companionPresentation: { skipRelationshipEnrichment: true, skipStudyPrompts: true },
+    },
+  };
+}
+
 const { validateFinalityReply, stripFinalityViolations } = require('./doctrineFinalityMode');
 const { applyDoctrineErrorFirewall, mapInternalErrorToUserMessage } = require('./doctrineErrorFirewall');
 const { applyDoctrineFinalityPipeline } = require('./doctrineFinalityContract');
@@ -781,6 +876,59 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
         });
       }
     }
+  }
+
+  // Product Sprint D — explicit study intent → structured Scripture study (VLP-backed).
+  // Protected pastoral/medical/prayer/historical-causation paths remain higher priority
+  // (checked inside tryBuildStructuredStudyReply / left to orchestrator).
+  {
+    const studyAttempt = tryBuildStructuredStudyReply(evidencePack, message);
+    if (studyAttempt && studyAttempt.ok) {
+      const structured = {
+        reply: studyAttempt.reply,
+        scripture: studyAttempt.scripture || [],
+        mode: 'study',
+        confidence: studyAttempt.confidence || 'high',
+        memory_used: false,
+        orb_state: 'speaking',
+        safety_level: 'standard',
+        runtime: studyAttempt.runtime,
+      };
+      structured.quality = scoreCompanionQuality({ message, reply: structured.reply, runtimeContext });
+      structured.reply = polishFinalReply(structured.reply);
+      attachDebug(structured, {
+        runtimeUsed: 'core_openai_first',
+        openaiCalled: false,
+        finalAnswerAuthor: 'structured_scripture_study',
+        fallbackUsed: false,
+        templateUsed: false,
+        responderUsed: false,
+        routeUsed: 'structured_scripture_study',
+        doctrineValidatorUsed: false,
+        scriptureEvidenceUsed: true,
+        activeTopicUsedAsContextOnly: true,
+        currentIntent: 'structured_study',
+        historyAllowed: false,
+        verifiedLessonPacketActivated: true,
+      });
+      annotateLiveTruthReturn(structured, null, 'structured_study', message);
+      return H.finalizeBuddyResponse({
+        structured,
+        userId,
+        mode: 'study',
+        personaKey,
+        message,
+        safety,
+        runtimeContext,
+        profile,
+        doctrineTopic: evidencePack.topic,
+        testerId,
+        sessionId,
+        cohort,
+      });
+    }
+    // If explicit study was requested but packet unusable, fall through to
+    // normal conversational path (honest fallback — do not invent a lesson).
   }
 
   const orchestratorResult = await runBibleCompanionOrchestrator({
@@ -1531,4 +1679,5 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
 module.exports = {
   runOpenAiFirstCompanionRuntime,
   attachVerifiedLessonPacketToEvidencePack,
+  tryBuildStructuredStudyReply,
 };

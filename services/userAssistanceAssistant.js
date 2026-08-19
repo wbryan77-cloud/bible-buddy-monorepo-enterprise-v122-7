@@ -29,7 +29,7 @@ const BIBLE_DOCTRINE_PATTERN = /\b(bible|scripture|verse|god|jesus|christ|holy s
 const SCRIPTURE_REFERENCE_PATTERN = /\b[1-3]?\s?[A-Za-z]+\s+\d{1,3}(:\d{1,3}(-\d{1,3})?)?\b/;
 /** App how-to / FAQ questions that mention Bible/prayer keywords but belong to Help Center. */
 const APP_HELP_HOWTO_PATTERN =
-  /\b(how (do|can|to)|where (do|can)|turn (on|off)|control|getting started|feedback|notification|preferences?|help center|ask buddy|ask a bible question|pray with me)\b/i;
+  /\b(how (do|can|to)|where (do|can)|turn (on|off)|control|getting started|feedback|notification|preferences?|help center|ask buddy|ask a bible question|pray with me|bible study|structured study)\b/i;
 
 const LOW_CONFIDENCE_THRESHOLD = 2; // minimum keyword-overlap score to answer confidently
 

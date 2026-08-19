@@ -39,6 +39,12 @@ function main() {
   assert.ok(!/BibleBuddy learned from this/i.test(fb.body), 'no false learning claim');
   assert.ok(!/feedback control near a response/i.test(fb.body), 'no legacy overclaim phrasing');
 
+  const studyHelp = getArticle('how-do-i-get-a-bible-study');
+  assert.ok(studyHelp, 'structured study help article present');
+  assert.ok(/Help me study|Bible study on/i.test(studyHelp.body), 'study trigger examples');
+  assert.ok(!/every answer is a structured lesson/i.test(studyHelp.body), 'no global lesson overclaim');
+  assert.ok(!/Verified Lesson Packet/i.test(studyHelp.body), 'no internal VLP jargon in Help');
+
   const np = getArticle('notification-preferences');
   assert.ok(np, 'notification article present');
   assert.ok(/alpha tester/i.test(np.body), 'notifications scoped to alpha');
