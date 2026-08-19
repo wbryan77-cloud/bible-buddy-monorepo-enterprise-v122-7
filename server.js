@@ -396,5 +396,19 @@ app.listen(PORT, () => {
     } catch (err) {
       console.warn('[alphaTesterManager] durable hydrate wire failed:', err && err.message ? err.message : err);
     }
+    try {
+      const { hydrateExplicitRememberPinsFromDurableIfNeeded } = require('./services/explicitRememberPin');
+      hydrateExplicitRememberPinsFromDurableIfNeeded()
+        .then((r) => {
+          if (r && r.hydrated) {
+            console.log(`[explicitRememberPin] hydrated ${r.count} users from durable (${r.backend})`);
+          }
+        })
+        .catch((err) => {
+          console.warn('[explicitRememberPin] durable hydrate failed:', err && err.message ? err.message : err);
+        });
+    } catch (err) {
+      console.warn('[explicitRememberPin] durable hydrate wire failed:', err && err.message ? err.message : err);
+    }
   });
 });

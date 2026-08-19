@@ -1,6 +1,13 @@
 /**
- * Explicit user "remember …" pins that must survive short conversation windows.
+ * Explicit user "remember …" pins that must survive short conversation windows
+ * and (Sprint A pattern) Render redeploy via founderExperienceDurableStore.
+ *
+ * Local hot cache: data/explicit-remember-pins.json (ephemeral on Render).
+ * Durable owner: founderExperienceDurableStore DOC.explicitRememberPins
+ *   (Postgres when DATABASE_URL is set; file projection offline).
+ *
  * Durable facts requested by the user — not preference-style answer tuning.
+ * Does not invent implicit permanent memory or store full transcripts.
  */
 
 const fs = require('fs');
@@ -50,6 +57,105 @@ function writeStore(store) {
   }
 }
 
+function localUserCount() {
+  return Object.keys(readStore()).length;
+}
+
+/**
+ * Dual-write one user's pin list to the approved durable owner (best-effort).
+ * Empty pins array clears durable so forget survives redeploy.
+ */
+function scheduleDualWriteUserPins(userId, pins) {
+  if (!userId) return;
+  const payload = {
+    userId: String(userId),
+    pins: Array.isArray(pins) ? pins : [],
+    updatedAt: new Date().toISOString(),
+  };
+  setImmediate(() => {
+    try {
+      const { upsertById, DOC, MAX } = require('./founderExperienceDurableStore');
+      upsertById(DOC.explicitRememberPins, 'userId', payload, MAX.explicitRememberPins).catch((err) => {
+        console.warn(
+          '[explicitRememberPin] durable dual-write failed:',
+          err && err.message ? err.message : err,
+        );
+      });
+    } catch (err) {
+      console.warn(
+        '[explicitRememberPin] durable dual-write wire failed:',
+        err && err.message ? err.message : err,
+      );
+    }
+  });
+}
+
+/** Awaitable dual-write (tests). */
+async function dualWriteUserPinsNow(userId, pins) {
+  if (!userId) return null;
+  const { upsertById, DOC, MAX } = require('./founderExperienceDurableStore');
+  return upsertById(
+    DOC.explicitRememberPins,
+    'userId',
+    {
+      userId: String(userId),
+      pins: Array.isArray(pins) ? pins : [],
+      updatedAt: new Date().toISOString(),
+    },
+    MAX.explicitRememberPins,
+  );
+}
+
+/**
+ * After Render redeploy, ephemeral local pin file is empty while durable
+ * projections may still hold explicit user memory. Hydrate when empty.
+ */
+async function hydrateExplicitRememberPinsFromDurableIfNeeded() {
+  const existing = localUserCount();
+  if (existing > 0) {
+    return { ok: true, hydrated: false, reason: 'local_present', existing };
+  }
+  let items = [];
+  let backend = 'UNKNOWN';
+  try {
+    const { readItems, DOC } = require('./founderExperienceDurableStore');
+    const result = await readItems(DOC.explicitRememberPins);
+    items = Array.isArray(result.items) ? result.items : [];
+    backend = result.backend || 'UNKNOWN';
+  } catch (err) {
+    return {
+      ok: false,
+      hydrated: false,
+      reason: 'durable_read_failed',
+      error: err && err.message ? err.message : String(err),
+    };
+  }
+  if (!items.length) {
+    return { ok: true, hydrated: false, reason: 'durable_empty', backend };
+  }
+  const store = {};
+  for (const item of items) {
+    if (!item || typeof item !== 'object' || !item.userId) continue;
+    const pins = Array.isArray(item.pins) ? item.pins.slice(0, MAX_PINS_PER_USER) : [];
+    if (!pins.length) continue;
+    store[String(item.userId)] = pins;
+  }
+  if (!Object.keys(store).length) {
+    return { ok: true, hydrated: false, reason: 'durable_items_empty_pins', backend };
+  }
+  writeStore(store);
+  return { ok: true, hydrated: true, count: Object.keys(store).length, backend };
+}
+
+/** Test helper: wipe local pin file only (simulates ephemeral disk loss). */
+function wipeLocalPinStoreForTests() {
+  try {
+    if (fs.existsSync(STORE_PATH)) fs.unlinkSync(STORE_PATH);
+  } catch (_) {
+    /* ignore */
+  }
+}
+
 function extractPinText(message = '') {
   const text = String(message || '').trim();
   if (!text || PREFERENCE_SKIP.test(text)) return null;
@@ -74,6 +180,7 @@ function maybeCapturePin(userId, message = '') {
   const next = [entry, ...list.filter((p) => p.text !== pinText)].slice(0, MAX_PINS_PER_USER);
   store[userId] = next;
   writeStore(store);
+  scheduleDualWriteUserPins(userId, next);
   return entry;
 }
 
@@ -86,10 +193,14 @@ function getPins(userId) {
 function clearPinsForUser(userId) {
   if (!userId) return false;
   const store = readStore();
-  if (!Object.prototype.hasOwnProperty.call(store, userId)) return false;
-  delete store[userId];
-  writeStore(store);
-  return true;
+  const had = Object.prototype.hasOwnProperty.call(store, userId);
+  if (had) {
+    delete store[userId];
+    writeStore(store);
+  }
+  // Always clear durable for this user so forget survives redeploy / hydrate.
+  scheduleDualWriteUserPins(userId, []);
+  return had;
 }
 
 function isPinRecallQuery(message = '') {
@@ -169,4 +280,8 @@ module.exports = {
   isMarkerRecallQuery: isPinRecallQuery,
   pinsForPrompt,
   extractPinText,
+  hydrateExplicitRememberPinsFromDurableIfNeeded,
+  dualWriteUserPinsNow,
+  wipeLocalPinStoreForTests,
+  STORE_PATH,
 };
