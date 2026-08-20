@@ -4,9 +4,14 @@
  * Canonical pg Pool owner for the runtime. Production uses this path when
  * DATABASE_URL is set (via storageAdapter PERSISTENCE=POSTGRES).
  *
- * CRITICAL: idle/background Client "error" events MUST be handled on the Pool.
- * Unhandled pool errors terminate Node (Render exit status 1). See Alpha P0
- * repair — "Connection terminated unexpectedly" / Unhandled 'error' event.
+ * CRITICAL error-handling contract (node-pg / pg-pool):
+ * - Idle clients in the pool: Pool removes them and emits pool 'error'.
+ *   We MUST listen via pool.on('error') or Node exits (Render status 1).
+ * - Checked-out clients (pool.connect): pg-pool REMOVES the idle listener.
+ *   Application MUST listen on the Client until release(), or a background
+ *   TCP disconnect ("Connection terminated unexpectedly") becomes
+ *   UNCAUGHT_EXCEPTION → process.exit(1). Observed on b43a3f4 @ 19:28 PDT.
+ * - pool.query() attaches a one-shot client error listener internally.
  */
 
 const path = require('path');
@@ -45,6 +50,36 @@ function attachPoolBackgroundErrorHandler(pool) {
     });
   });
   return true;
+}
+
+/**
+ * Attach a checked-out Client error listener so TCP death cannot become
+ * uncaughtException. Returns a disposer that removes the listener.
+ * Does not release the client — caller owns release().
+ */
+function attachCheckedOutClientErrorHandler(client, meta = {}) {
+  if (!client || typeof client.on !== 'function') {
+    return () => {};
+  }
+  const onError = (err) => {
+    logLifecycle('POSTGRES_CHECKED_OUT_CLIENT_ERROR', {
+      errorName: err && err.name ? err.name : 'Error',
+      errorCode: err && err.code ? err.code : null,
+      errorMessage: err && err.message ? String(err.message).slice(0, 160) : 'unknown',
+      category: 'checked_out_client',
+      ...meta,
+    });
+  };
+  client.on('error', onError);
+  return () => {
+    try {
+      if (typeof client.removeListener === 'function') {
+        client.removeListener('error', onError);
+      }
+    } catch (_) {
+      /* ignore */
+    }
+  };
 }
 
 function createSharedPool() {
@@ -165,6 +200,20 @@ class PostgresStorageAdapter {
     const pool = this._getPool();
     const key = this._keyFor(filePath);
     const client = await pool.connect();
+    // pg-pool removes idle 'error' listener on checkout — attach ours until release.
+    let clientFatal = null;
+    const onClientError = (err) => {
+      clientFatal = err || clientFatal;
+      logLifecycle('POSTGRES_CHECKED_OUT_CLIENT_ERROR', {
+        errorName: err && err.name ? err.name : 'Error',
+        errorCode: err && err.code ? err.code : null,
+        errorMessage: err && err.message ? String(err.message).slice(0, 160) : 'unknown',
+        category: 'checked_out_client',
+        op: 'updateJsonDocument',
+        docKey: String(key).slice(0, 80),
+      });
+    };
+    client.on('error', onClientError);
     try {
       await client.query('BEGIN');
       const { rows } = await client.query(
@@ -189,7 +238,17 @@ class PostgresStorageAdapter {
       }
       throw e;
     } finally {
-      client.release();
+      try {
+        client.removeListener('error', onClientError);
+      } catch (_) {
+        /* ignore */
+      }
+      try {
+        // Pass error into release so pg-pool purges the dead client.
+        client.release(clientFatal || undefined);
+      } catch (_) {
+        /* ignore double-release / already-ended */
+      }
     }
   }
 }
@@ -201,5 +260,6 @@ module.exports = {
   resetSharedPoolForTests,
   getSharedPoolForTests,
   attachPoolBackgroundErrorHandler,
+  attachCheckedOutClientErrorHandler,
   logLifecycle,
 };
