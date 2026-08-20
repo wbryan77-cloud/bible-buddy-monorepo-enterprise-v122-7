@@ -789,9 +789,7 @@ function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = 
   lines.push('- Which passage defines, commands, or clarifies the subject most clearly?');
   lines.push('- What would it look like to live this out this week?');
   lines.push('');
-  lines.push(
-    'This is a Scripture study outline from retrieved King James text. It does not invent verses, and it does not by itself change BibleBuddy doctrine or knowledge.',
-  );
+  lines.push('This is a Scripture study outline from retrieved King James text.');
   return lines.join('\n').trim();
 }
 

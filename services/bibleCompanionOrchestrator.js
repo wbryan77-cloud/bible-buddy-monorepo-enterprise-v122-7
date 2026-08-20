@@ -790,7 +790,45 @@ async function runBibleCompanionOrchestrator({
             message: content,
             event: 'personal_remember_request',
           });
-          require('./explicitRememberPin').maybeCapturePin(userId, message);
+          const captured = require('./explicitRememberPin').maybeCapturePin(userId, message);
+          if (!captured) {
+            // Never claim success if the pin was not stored.
+            const structuredMiss = verifyOrchestratorOutput({
+              reply:
+                "I couldn't save that as a lasting memory yet. Try: Remember that … followed by the exact fact you want me to keep.",
+              scripture: [],
+              mode: 'companion',
+              confidence: 'high',
+              memory_used: false,
+              safety_level: safety?.level || 'standard',
+              admin_flags: ['phase7a_personal_remember_miss'],
+              runtime: {
+                masterRoute: 'companion_personal_remember_miss',
+                openAiCalled: false,
+                orchestratorLane: 'personal_remember_miss',
+              },
+            });
+            recordUserTurn(userId, message, 'companion');
+            return {
+              handled: true,
+              dispatch: 'companion',
+              reasoningPlan: { answerLane: 'companion' },
+              ctx: {
+                structured: structuredMiss,
+                userId,
+                mode,
+                personaKey,
+                message,
+                safety,
+                runtimeContext,
+                profile,
+                testerId,
+                sessionId,
+                cohort,
+                route: 'companion_personal_remember_miss',
+              },
+            };
+          }
         } catch (_) {}
       }
       const masterRoute = forgetting

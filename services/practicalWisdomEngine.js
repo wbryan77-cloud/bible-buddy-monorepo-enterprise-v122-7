@@ -58,10 +58,17 @@ function buildPracticalWisdomResponse({ message = '', anchor = {}, conceptId = n
     }
   }
 
-  if (/tell (her|him)|not ready|boundary|what should i say/i.test(m) || anchor.currentGoal === 'set_boundary') {
+  const writingHelp =
+    /\b(give me (a |the )?(text|message|draft)|write (me )?(a )?(text|message)|copy(\s*and\s*|\s*)paste|final text|make that (text|message)|use the text|warmer|more human|improve (that|the|it)|tell (her|him)|not ready|boundary|what should i say)\b/i.test(
+      m,
+    ) || anchor.currentGoal === 'set_boundary';
+
+  if (writingHelp) {
     const boundary = buildBoundaryScript({ situation: m });
+    const body = boundary.reply.replace(/^I hear you\.\s*/i, '').trim();
+    const alreadyDraft = /^here is a text/i.test(body);
     return {
-      reply: `You could say:\n\n${boundary.reply.replace(/^I hear you\.\s*/i, '')}`,
+      reply: alreadyDraft ? body : `You could say:\n\n${body}`,
       scripture: boundary.scripture,
       masterRoute: 'phase5k_practical_wisdom_boundary',
     };

@@ -68,6 +68,32 @@ function resolvePrayerFocus({ message = '', anchor = {}, relationshipContext = n
       personalized: true,
     };
   }
+  if (/\b(passed away|grief|grieving|funeral|lost my (father|mother|dad|mom|parent)|father just passed)\b/i.test(m)) {
+    return {
+      focus: 'comfort me in grief. Hold me as I mourn, and guide my next steps with Your mercy',
+      person: null,
+      personalized: true,
+    };
+  }
+  if (/\bgrace\b/i.test(m)) {
+    return {
+      focus: 'help me receive and rest in Your grace, and grow in understanding it',
+      person: null,
+      personalized: true,
+    };
+  }
+  const topicRaw = String(
+    anchor.currentDoctrineConcept || anchor.currentTopic || anchor.currentRelationshipContext || '',
+  )
+    .replace(/_/g, ' ')
+    .trim();
+  if (topicRaw && !/^(family|conversation|unknown)$/i.test(topicRaw) && topicRaw.length < 48) {
+    return {
+      focus: `steady my heart as I seek You concerning ${topicRaw}`,
+      person: null,
+      personalized: true,
+    };
+  }
   if (anchor.currentRelationshipContext === 'family') {
     return { focus: 'steady my heart as I talk with family', person: null, personalized: false };
   }

@@ -93,7 +93,7 @@ describe('alpha invite route + durability', () => {
     assert.equal(vB.used, false);
   });
 
-  it('/alpha?token= redirects to alpha-test preserving token', async () => {
+  it('/alpha?token= redirects to public product with alphaToken', async () => {
     const port = 34701 + Math.floor(Math.random() * 200);
     const child = spawn(process.execPath, ['server.js'], {
       cwd: ROOT,
@@ -131,8 +131,9 @@ describe('alpha invite route + durability', () => {
     } catch (_) {}
     assert.equal(loc.status, 302);
     assert.ok(
-      loc.location.includes('/admin/alpha-test') && loc.location.includes(encodeURIComponent(token)),
+      loc.location.startsWith('/?alphaToken=') && loc.location.includes(encodeURIComponent(token)),
       loc.location,
     );
+    assert.ok(!loc.location.includes('/admin/alpha-test'), 'must not send testers to stripped alpha-test harness');
   });
 });

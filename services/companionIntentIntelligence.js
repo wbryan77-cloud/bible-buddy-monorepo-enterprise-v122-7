@@ -37,7 +37,8 @@ const EMOTIONAL_RE =
 const LEARNING_RE =
   /\b(put (it |this )?in your database|when others ask|for others to|learning candidate)\b/i;
 const PREFERENCE_RE = /\bremember that i (like|want|prefer)\b/i;
-const BOUNDARY_TELL_RE = /\b(how do i tell (her|him)|if i'?m not ready.{0,40}tell (her|him))\b/i;
+const BOUNDARY_TELL_RE =
+  /\b(how do i tell (her|him)|if i'?m not ready.{0,40}tell (her|him)|give me (a |the )?(text|message)|write (me )?(a )?(text|message)|copy(\s*and\s*|\s*)paste|final text|make that (text|message)|use the text|warmer|more human)\b/i;
 const FAMILY_EXPLAIN_RE =
   /\b(how (should|do|can) i explain|but how do i explain|how do i tell (my |the )?(family|them))\b/i;
 const FAMILY_DISAGREE_RE = /\b(what if my family|family (still )?disagree)/i;

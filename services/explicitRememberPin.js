@@ -158,11 +158,26 @@ function wipeLocalPinStoreForTests() {
 
 function extractPinText(message = '') {
   const text = String(message || '').trim();
-  if (!text || PREFERENCE_SKIP.test(text)) return null;
+  if (!text) return null;
+  // Explicit "Remember that…" must win over preference-skip (e.g. "Remember that I prefer…").
   for (const re of CAPTURE_PATTERNS) {
     const m = text.match(re);
-    if (m?.[1]) return String(m[1]).trim().replace(/[.!?]+$/, '').trim();
+    if (m?.[1]) {
+      const fact = String(m[1]).trim().replace(/[.!?]+$/, '').trim();
+      if (!fact) return null;
+      // Do not pin meta/recall instructions as the remembered fact.
+      if (
+        /\b(what (did )?i (ask you to )?remember|find the remembered|the remembered (statement|fact)|what marker)\b/i.test(
+          fact,
+        )
+      ) {
+        return null;
+      }
+      return fact;
+    }
   }
+  // Non-explicit preference chatter is not a pin.
+  if (PREFERENCE_SKIP.test(text)) return null;
   return null;
 }
 

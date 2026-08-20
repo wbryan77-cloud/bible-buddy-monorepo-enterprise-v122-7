@@ -7,6 +7,34 @@ const { classifyCompanionIntent } = require('./companionIntentIntelligence');
 const APP_IDENTITY_RE =
   /\b(what is (the )?purpose of this app|what is this app|what does (the )?app do|what does this app do|what can this app do|how does this app work|are you trying to convert|why are you here|what do you do|are you (just )?quoting bible|closed.?minded)\b/i;
 
+/**
+ * Writing / drafting / revision help — texts, copy-paste, "make that warmer".
+ * Must beat temptation_boundary / doctrine-only intercepts when the user is
+ * asking Buddy to help communicate a conviction, not only teach Scripture.
+ */
+function isWritingHelpRequest(message = '') {
+  const m = String(message || '');
+  if (!m.trim()) return false;
+  if (
+    /\b(give me (a |the )?(text|message|draft|script)|write (me |a |an )?(text|message|draft)|draft (a |me )?(text|message)|text (to|for) (tell|her|him|them)|copy(\s*and\s*|\s*)paste|final text|usable text)\b/i.test(
+      m,
+    )
+  ) {
+    return true;
+  }
+  if (
+    /\b(make that (text|message)|use the text|improve (that|the|it)|warmer|more human|revise (that|the|it)|rewrite (that|the|it)|edit (that|the) (text|message))\b/i.test(
+      m,
+    )
+  ) {
+    return true;
+  }
+  if (/\bwhat should i (say|text|write)\b/i.test(m) && /\b(her|him|them|girl|message|massage|fornicat|sex)\b/i.test(m)) {
+    return true;
+  }
+  return false;
+}
+
 function detectHumanNeed(message = '', anchor = {}, state = {}) {
   // sprint1a6_human_need_guard
   const sprint1a6Message = String(message || '').trim();
@@ -104,7 +132,11 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
         ? 'emotional_support'
         : 'anxiety_support';
   }
-  if (/\b(fornication|sex with|strings attached|not ready)\b/i.test(m)) return 'temptation_boundary';
+  if (/\b(fornication|sex with|strings attached|not ready)\b/i.test(m) && !isWritingHelpRequest(m)) {
+    return 'temptation_boundary';
+  }
+  // Writing/drafting help (texts, revisions) must not be swallowed by doctrine-only lanes.
+  if (isWritingHelpRequest(m)) return 'practical_words_to_say';
   if (/\b(family disagree|family still disagree|still disagree)\b/i.test(m)) return 'conflict_guidance';
 
   const intent = classifyCompanionIntent({ message: m, state });
@@ -116,5 +148,6 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
 
 module.exports = {
   detectHumanNeed,
+  isWritingHelpRequest,
   APP_IDENTITY_RE,
 };

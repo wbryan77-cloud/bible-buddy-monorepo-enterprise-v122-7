@@ -736,9 +736,78 @@
       .diff-strip { gap: 6px; }
       .diff-chip { font-size: 11.5px; padding: 5px 10px; }
     }
+
+    /* Alpha invite onboarding — overlays product shell; does not replace it */
+    .alpha-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(5, 9, 20, 0.72);
+      backdrop-filter: blur(8px);
+    }
+    .alpha-overlay.show { display: flex; }
+    .alpha-modal {
+      width: min(440px, 100%);
+      max-height: min(92vh, 720px);
+      overflow: auto;
+      background: linear-gradient(160deg, rgba(16, 28, 48, 0.98), rgba(8, 17, 31, 0.98));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 22px 20px 20px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    }
+    .alpha-modal h2 { margin: 0 0 8px; font-size: 1.35rem; color: var(--gold); }
+    .alpha-modal p { margin: 0 0 14px; color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
+    .alpha-modal label { display: block; font-size: 0.8rem; margin: 10px 0 4px; color: var(--muted); }
+    .alpha-modal input, .alpha-modal select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font: inherit;
+    }
+    .alpha-check { display: flex; gap: 10px; align-items: flex-start; margin: 12px 0; font-size: 0.88rem; color: var(--muted); line-height: 1.4; }
+    .alpha-check input { width: auto; margin-top: 3px; }
+    .alpha-error { color: var(--danger); font-size: 0.88rem; margin-bottom: 8px; display: none; }
+    .alpha-error.show { display: block; }
+    .alpha-modal .alpha-start {
+      width: 100%;
+      margin-top: 14px;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue), #2a7fff);
+      color: #041018;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+  <div id="alphaOverlay" class="alpha-overlay" aria-hidden="true">
+    <div class="alpha-modal" role="dialog" aria-labelledby="alphaHeading">
+      <h2 id="alphaHeading">Welcome to BibleBuddy Alpha</h2>
+      <p>You were invited to try the real BibleBuddy experience. A few details help us attribute feedback — then you get the normal companion.</p>
+      <div id="alphaInviteError" class="alpha-error"></div>
+      <label for="alphaName">Name</label>
+      <input id="alphaName" autocomplete="name" />
+      <label for="alphaAge">Age range</label>
+      <select id="alphaAge"></select>
+      <label for="alphaRole">Role (optional)</label>
+      <input id="alphaRole" placeholder="friend, family, church member…" />
+      <div class="alpha-check"><input type="checkbox" id="alphaConsent" /> <span>I consent to Alpha testing. Conversations may be reviewed to improve the app.</span></div>
+      <div class="alpha-check"><input type="checkbox" id="alphaNda" /> <span>I will keep this Alpha confidential and will not share the invite link or screenshots publicly.</span></div>
+      <p style="font-size:0.8rem;">BibleBuddy is not a pastor, therapist, doctor, or legal advisor.</p>
+      <button type="button" class="alpha-start" id="alphaStartBtn">Enter BibleBuddy</button>
+    </div>
+  </div>
   <main class="app">
     <header>
       <div class="brand">
@@ -750,7 +819,7 @@
       </div>
       <span style="display:flex; gap:10px;">
         <button type="button" class="pill-btn" id="helpOpenBtn">Help &amp; Support</button>
-        <a class="pill" href="/admin/">Admin Console</a>
+        <a class="pill" href="/admin/bible-authority" id="adminConsoleLink" title="Founder/Admin only">Admin</a>
       </span>
     </header>
 
@@ -1440,6 +1509,8 @@
     // fabrication, no new frontend framework.
     function getOrCreateGuestId() {
       try {
+        const alphaId = window.localStorage.getItem('bb_alpha_tester_id');
+        if (alphaId && String(alphaId).trim()) return String(alphaId).trim();
         let id = window.localStorage.getItem('bb_guest_id');
         if (!id) {
           id = 'guest-' + Math.random().toString(36).slice(2, 10);
@@ -1450,6 +1521,140 @@
         return null;
       }
     }
+
+    function syncAdminLinkVisibility() {
+      const link = document.getElementById('adminConsoleLink');
+      if (!link) return;
+      try {
+        // Alpha testers must not see Admin entry; Founder private path remains /admin/bible-authority
+        const isAlpha = !!window.localStorage.getItem('bb_alpha_tester_id');
+        link.style.display = isAlpha ? 'none' : '';
+      } catch (_) {
+        link.style.display = '';
+      }
+    }
+
+    async function initAlphaInviteIfPresent() {
+      const params = new URLSearchParams(location.search);
+      const alphaToken = (params.get('alphaToken') || params.get('token') || '').trim();
+      const overlay = document.getElementById('alphaOverlay');
+      const errEl = document.getElementById('alphaInviteError');
+      if (!overlay) return;
+
+      syncAdminLinkVisibility();
+
+      // Returning Alpha tester — product shell only, no harness
+      try {
+        const existing = window.localStorage.getItem('bb_alpha_tester_id');
+        if (existing && !alphaToken) {
+          syncAdminLinkVisibility();
+          return;
+        }
+      } catch (_) {}
+
+      if (!alphaToken) return;
+
+      overlay.classList.add('show');
+      overlay.setAttribute('aria-hidden', 'false');
+
+      function showErr(msg) {
+        if (!errEl) return;
+        errEl.textContent = msg || 'Invite error';
+        errEl.classList.add('show');
+      }
+
+      try {
+        const r = await fetch('/api/alpha/invite/' + encodeURIComponent(alphaToken));
+        const j = await r.json();
+        if (!j.ok) {
+          showErr(j.error || 'Invalid invite');
+          return;
+        }
+        const age = document.getElementById('alphaAge');
+        if (age && Array.isArray(j.options?.ageRanges)) {
+          age.innerHTML = j.options.ageRanges
+            .map((o) => '<option value="' + o + '">' + String(o).replace(/_/g, ' ') + '</option>')
+            .join('');
+        }
+        // Already redeemed — attach identity and enter product
+        if (j.used && j.tester?.testerId) {
+          try {
+            window.localStorage.setItem('bb_alpha_tester_id', j.tester.testerId);
+            if (j.tester.name) window.localStorage.setItem('bb_alpha_tester_name', j.tester.name);
+          } catch (_) {}
+          await fetch('/api/alpha/session/start', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ testerId: j.tester.testerId, sessionId: getOrCreateChatSessionId() }),
+          }).catch(() => {});
+          overlay.classList.remove('show');
+          overlay.setAttribute('aria-hidden', 'true');
+          history.replaceState({}, '', '/');
+          syncAdminLinkVisibility();
+          return;
+        }
+      } catch (e) {
+        showErr('Could not validate invite. Check your connection and try again.');
+        return;
+      }
+
+      const startBtn = document.getElementById('alphaStartBtn');
+      if (!startBtn) return;
+      startBtn.addEventListener('click', async () => {
+        const consent = document.getElementById('alphaConsent');
+        const nda = document.getElementById('alphaNda');
+        if (!consent?.checked || !nda?.checked) {
+          showErr('Please accept consent and confidentiality.');
+          return;
+        }
+        errEl?.classList.remove('show');
+        startBtn.disabled = true;
+        try {
+          const body = {
+            inviteToken: alphaToken,
+            name: document.getElementById('alphaName')?.value || '',
+            ageRange: document.getElementById('alphaAge')?.value || '',
+            role: document.getElementById('alphaRole')?.value || '',
+            deviceType: /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+            bibleFamiliarity: 'beginner',
+            testFocus: 'all_areas',
+            notificationPreference: 'off',
+            consentAccepted: true,
+            ndaAccepted: true,
+          };
+          const r = await fetch('/api/alpha/onboard', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+          });
+          const j = await r.json();
+          if (!j.ok) {
+            showErr(j.error || 'Onboarding failed');
+            startBtn.disabled = false;
+            return;
+          }
+          try {
+            window.localStorage.setItem('bb_alpha_tester_id', j.testerId);
+            if (j.tester?.name) window.localStorage.setItem('bb_alpha_tester_name', j.tester.name);
+          } catch (_) {}
+          await fetch('/api/alpha/session/start', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ testerId: j.testerId, sessionId: getOrCreateChatSessionId() }),
+          }).catch(() => {});
+          overlay.classList.remove('show');
+          overlay.setAttribute('aria-hidden', 'true');
+          history.replaceState({}, '', '/');
+          syncAdminLinkVisibility();
+        } catch (e) {
+          showErr('Could not complete onboarding. Please try again.');
+          startBtn.disabled = false;
+        }
+      });
+    }
+
+    initAlphaInviteIfPresent();
 
     function getOrCreateChatSessionId() {
       try {

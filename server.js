@@ -30,13 +30,12 @@ fs.mkdirSync(DATA_DIR, { recursive: true });
 
 // Public entry aliases (invitation / SMS / QR). Registered BEFORE static so
 // legacy admin/index.html and alpha-test.html cannot own these exact paths.
-// Does not change Companion runtime, Admin auth, or API security.
-// Preserve invite token: /alpha?token=… must not drop the query (redirect to
-// the existing Alpha onboarding surface that reads `token`).
+// Alpha invites land on the NORMAL public product shell with attribution
+// token — not the stripped /admin/alpha-test harness.
 app.get(['/alpha', '/alpha/', '/alpha-test', '/alpha-test/'], (req, res) => {
   const token = req.query && req.query.token != null ? String(req.query.token).trim() : '';
   if (token) {
-    return res.redirect(302, `/admin/alpha-test?token=${encodeURIComponent(token)}`);
+    return res.redirect(302, `/?alphaToken=${encodeURIComponent(token)}`);
   }
   res.redirect(302, '/');
 });
