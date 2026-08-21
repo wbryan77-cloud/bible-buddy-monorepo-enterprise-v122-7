@@ -82,6 +82,35 @@ function resolvePrayerFocus({ message = '', anchor = {}, relationshipContext = n
       personalized: true,
     };
   }
+  // "Pray with me about that" — recover topic from recent conversation when message is vague.
+  let topicFromMemory = '';
+  if (userId && /\b(about that|pray with me|can you pray|would you pray)\b/i.test(m)) {
+    try {
+      const { getContinuationMemory } = require('./conversationContinuationMemory');
+      const mem = getContinuationMemory(userId);
+      const hay = `${mem?.lastUserMessage || ''} ${mem?.lastReplySummary || ''} ${mem?.lastDoctrineTopic || ''}`;
+      if (/\bgrace\b/i.test(hay)) topicFromMemory = 'grace';
+      else if (mem?.lastDoctrineTopic) {
+        topicFromMemory = String(mem.lastDoctrineTopic).replace(/_/g, ' ').trim().slice(0, 40);
+      }
+    } catch (_) {
+      /* optional */
+    }
+  }
+  if (topicFromMemory === 'grace' || /\bgrace\b/i.test(String(anchor.currentDoctrineConcept || ''))) {
+    return {
+      focus: 'help me receive and rest in Your grace, and grow in understanding it',
+      person: null,
+      personalized: true,
+    };
+  }
+  if (topicFromMemory) {
+    return {
+      focus: `steady my heart as I seek You concerning ${topicFromMemory}`,
+      person: null,
+      personalized: true,
+    };
+  }
   const topicRaw = String(
     anchor.currentDoctrineConcept || anchor.currentTopic || anchor.currentRelationshipContext || '',
   )

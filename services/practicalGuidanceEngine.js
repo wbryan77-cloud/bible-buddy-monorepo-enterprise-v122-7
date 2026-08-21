@@ -76,18 +76,42 @@ function buildFamilyExplanation({ concept = null } = {}) {
   return null;
 }
 
-function buildBoundaryScript({ situation = '' } = {}) {
+function buildBoundaryScript({ situation = '', priorDraft = '' } = {}) {
   const s = String(situation).toLowerCase();
+  const prior = String(priorDraft || '').trim();
+  const wantsFinal =
+    /\b(final text|copy(\s*and\s*|\s*)paste|give me the (final )?text)\b/i.test(s);
+  const wantsProfessional = /\b(more )?professional\b/i.test(s);
   const wantsWarmRevision =
-    /\b(warmer|more human|improve|final text|copy(\s*and\s*|\s*)paste|use the text|revise|rewrite)\b/i.test(s);
+    /\b(warmer|more human|improve|revise|rewrite|use the text)\b/i.test(s) && !wantsProfessional;
   const sexualBoundary =
-    /sex|fornicat|strings|not ready|dating|girl|massage|her\b|commit fornication|outside of marriage/i.test(s);
-  if (sexualBoundary || wantsWarmRevision) {
-    // Warm, copyable draft — conviction preserved without replacing the ask
-    // with a theology lecture. Wording is illustrative, not a fixed slogan.
-    const draft = wantsWarmRevision
-      ? "I want to be honest with you because I respect you and I've enjoyed getting to know you. I know we talked about the massage, and I can feel things might become more physical. My faith in God matters to me, and I don't want to put either of us in a place where I compromise what I believe about sex outside of marriage. I'm not judging you or rejecting you — I just want to be clear and treat you with respect. I hope you can understand."
-      : "I care about you, and I want to be honest. I'm not ready to cross into sex outside of marriage — my faith in God matters to me, and I want to honor that for both of us. I'm not judging you. I'd rather slow down and stay respectful than do something I believe is wrong.";
+    /sex|fornicat|strings|not ready|dating|girl|massage|her\b|commit fornication|outside of marriage/i.test(
+      s,
+    ) || /sex|fornicat|massage|faith|marriage/i.test(prior);
+
+  if (sexualBoundary || wantsWarmRevision || wantsProfessional || wantsFinal || prior) {
+    let draft;
+    if (wantsProfessional) {
+      draft =
+        "I want to be clear and respectful. After we talked about the massage, I realized things could become more physical. My faith in God is important to me, and I am not willing to have sex outside of marriage. This is not a judgment of you — it is a boundary I need to honor. I hope you can understand, and I still want to treat you with respect.";
+    } else if (wantsWarmRevision || (prior && /\bimprove\b/i.test(s))) {
+      draft =
+        "I want to be honest with you because I respect you and I've enjoyed getting to know you. I know we talked about the massage, and I can feel things might become more physical. My faith in God matters to me, and I don't want to put either of us in a place where I compromise what I believe about sex outside of marriage. I'm not judging you or rejecting you — I just want to be clear and treat you with respect. I hope you can understand.";
+    } else if (wantsFinal && prior) {
+      // Prefer a clean copyable artifact — strip meta wrappers from prior draft.
+      draft = prior
+        .replace(/^here is a text[^\n]*\n+/i, '')
+        .replace(/^you could say:\s*/i, '')
+        .replace(/^["'“]+|["'”]+$/g, '')
+        .trim();
+      if (draft.length < 40) {
+        draft =
+          "I want to be honest with you because I respect you and I've enjoyed getting to know you. I know we talked about the massage, and I can feel things might become more physical. My faith in God matters to me, and I don't want to put either of us in a place where I compromise what I believe about sex outside of marriage. I'm not judging you or rejecting you — I just want to be clear and treat you with respect. I hope you can understand.";
+      }
+    } else {
+      draft =
+        "I care about you, and I want to be honest. I'm not ready to cross into sex outside of marriage — my faith in God matters to me, and I want to honor that for both of us. I'm not judging you. I'd rather slow down and stay respectful than do something I believe is wrong.";
+    }
     return {
       reply: `Here is a text you can copy and send:\n\n${draft}`,
       scripture: [

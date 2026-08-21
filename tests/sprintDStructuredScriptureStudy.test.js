@@ -53,8 +53,8 @@ describe('Sprint D structured Scripture study', () => {
     // Catalog usually has no forgiveness chain → attach may be empty.
     const study = await tryBuildStructuredStudyReply(pack, message);
     assert.equal(study.ok, true, JSON.stringify(study));
-    assert.match(study.reply, /^Study theme: forgiveness\s*$/im);
-    assert.doesNotMatch(study.reply, /Study theme:.*forgiveness\s+forgiveness/i);
+    assert.match(study.reply, /^Forgiveness\s*$/im);
+    assert.doesNotMatch(study.reply, /Study theme:/i);
     assert.match(study.reply, /Matthew 6:14/i);
     assert.ok((study.scripture || []).length >= 3);
     assert.doesNotMatch(study.reply, /roles:|contribute to studying/i);
@@ -91,7 +91,7 @@ describe('Sprint D structured Scripture study', () => {
       governanceStatus: 'CANDIDATE_ONLY',
     };
     const md = renderUserFacingStructuredStudy({}, packet, 'Help me study forgiveness');
-    assert.match(md, /Study theme:/);
+    assert.match(md, /^Forgiveness\s*$/im);
     assert.match(md, /Matthew 6:14/);
     assert.match(md, /For if ye forgive men/);
     assert.match(md, /King James/);
@@ -124,7 +124,7 @@ describe('Sprint D structured Scripture study', () => {
       return;
     }
     assert.equal(study.ok, true);
-    assert.match(study.reply, /Study theme: the Sabbath/i);
+    assert.match(study.reply, /^The Sabbath\s*$/im);
     assert.match(study.reply, /Key passages/i);
     assert.doesNotMatch(study.reply, /roles:|contribute to studying/i);
     assert.doesNotMatch(study.reply, /States a command or required practice/i);

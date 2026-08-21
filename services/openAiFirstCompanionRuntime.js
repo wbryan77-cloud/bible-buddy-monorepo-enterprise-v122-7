@@ -184,7 +184,7 @@ async function attachVerifiedLessonPacketToEvidencePack(evidencePack, message = 
  * study intents only. Reuses attached VLP/Study Chain; does not invent
  * Scripture; does not activate doctrine; protected routes stay higher priority.
  */
-async function tryBuildStructuredStudyReply(evidencePack, message = '') {
+async function tryBuildStructuredStudyReply(evidencePack, message = '', userId = '') {
   const {
     detectExplicitStructuredStudyIntent,
     packetUsableForStructuredStudy,
@@ -237,19 +237,36 @@ async function tryBuildStructuredStudyReply(evidencePack, message = '') {
   packet.productionActivation = true;
   packet.userFacingStructuredStudy = true;
 
+  let preferShorter = false;
+  if (userId) {
+    try {
+      const { getPins } = require('./explicitRememberPin');
+      const pins = getPins(userId) || [];
+      preferShorter = pins.some((p) => /\bshorter\b/i.test(String(p.text || '')) && /\bstud/i.test(String(p.text || '')));
+    } catch (_) {
+      preferShorter = false;
+    }
+  }
+
   const theme = humanizeStudyTheme(packet.topic?.normalizedTopic || enrich.topicKey || 'this topic');
   const reply = renderUserFacingStructuredStudy(
     {
       lessonSummary: packet.lesson?.lessonSummary,
-      reflectionQuestions: [
-        `What do these passages say about ${theme}?`,
-        'Which passage defines, commands, or clarifies the subject most clearly?',
-        'What would it look like to live this out this week?',
-      ],
+      reflectionQuestions: preferShorter
+        ? [
+            `What do these passages say about ${theme}?`,
+            'What would it look like to live this out this week?',
+          ]
+        : [
+            `What do these passages say about ${theme}?`,
+            'Which passage defines, commands, or clarifies the subject most clearly?',
+            'What would it look like to live this out this week?',
+          ],
       normalizedTopic: packet.topic?.normalizedTopic,
     },
     packet,
     message,
+    { preferShorter },
   );
 
   const scripture = (packet.scriptureBlocks || [])
@@ -893,7 +910,7 @@ async function runOpenAiFirstCompanionRuntime(H, inputOrUserId, modeArg, persona
   // Protected pastoral/medical/prayer/historical-causation paths remain higher priority
   // (checked inside tryBuildStructuredStudyReply / left to orchestrator).
   {
-    const studyAttempt = await tryBuildStructuredStudyReply(evidencePack, message);
+    const studyAttempt = await tryBuildStructuredStudyReply(evidencePack, message, userId);
     if (studyAttempt && studyAttempt.ok) {
       const structured = {
         reply: studyAttempt.reply,

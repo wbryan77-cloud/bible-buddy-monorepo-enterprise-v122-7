@@ -218,6 +218,11 @@ function completeOnboarding({ inviteToken, intake = {}, consentAccepted, ndaAcce
     return { ok: false, error: 'Consent and confidentiality agreement are required.' };
   }
 
+  const sanitized = sanitizeIntake(intake);
+  if (!sanitized.name) {
+    return { ok: false, error: 'Preferred name is required.' };
+  }
+
   const validation = validateInviteToken(inviteToken);
   if (!validation.valid) return { ok: false, error: validation.error };
 
@@ -229,7 +234,7 @@ function completeOnboarding({ inviteToken, intake = {}, consentAccepted, ndaAcce
     if (idx >= 0) {
       data.testers[idx] = {
         ...data.testers[idx],
-        ...sanitizeIntake(intake),
+        ...sanitized,
         consentAccepted: true,
         ndaAccepted: true,
         consentAt: new Date().toISOString(),
@@ -241,7 +246,6 @@ function completeOnboarding({ inviteToken, intake = {}, consentAccepted, ndaAcce
   }
 
   testerId = generateTesterId();
-  const sanitized = sanitizeIntake(intake);
   const tester = {
     testerId,
     inviteToken,

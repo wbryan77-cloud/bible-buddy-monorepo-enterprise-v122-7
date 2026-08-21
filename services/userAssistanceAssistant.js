@@ -46,6 +46,17 @@ function scoreArticle(article, questionTokens) {
   const haystackSet = new Set(haystack);
   let score = 0;
   for (const t of questionTokens) if (haystackSet.has(t)) score += 1;
+  // Boost human-contact / phone-support FAQs for contact intent.
+  const qJoined = questionTokens.join(' ');
+  if (
+    article.id === 'how-do-i-contact-a-person' &&
+    /\b(phone|call|human|person|people|customer|support|contact|physical|real)\b/.test(qJoined)
+  ) {
+    score += 4;
+  }
+  if (article.id === 'how-do-i-give-feedback' && /\b(feedback|helpful|not helpful|rate)\b/.test(qJoined)) {
+    score += 3;
+  }
   return score;
 }
 

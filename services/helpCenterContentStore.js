@@ -114,6 +114,9 @@ const NOTIFICATION_PREFS_BODY =
 const FEEDBACK_BODY =
   'After Buddy answers in Companion Chat, you can tap Helpful or Not helpful under that response. You may add an optional short note. Feedback is recorded for the team to review — it does not instantly change BibleBuddy’s answers, and it does not mean a person has replied to you yet. You can also ask the Help Assistant if something feels off.';
 
+const HUMAN_SUPPORT_BODY =
+  'BibleBuddy Alpha does not offer phone customer service or a live human hotline. There is no phone number to call for product support in this build. To reach the team: (1) use Helpful / Not helpful under a Buddy reply and optionally add a short note, or (2) ask a question here in Help & Support — low-confidence questions are escalated for human review. Feedback and escalations are reviewed by the Founder/Admin team; they are not an instant chat with a person.';
+
 const STRUCTURED_STUDY_BODY =
   'If you ask for an explicit Bible study — for example “Help me study forgiveness” or “Give me a Bible study on the Sabbath” — Buddy may reply with a Scripture-first study outline: theme, key King James passages, how they connect, and short reflection prompts. Ordinary questions like “What is the Sabbath?” stay conversational. Prayer, grief, and medical concerns still use their normal care paths. Structured study quotes retrieved Scripture; it does not invent verses or by itself change doctrine. If there is not enough retrieved Scripture for a study outline, Buddy answers in normal conversation instead.';
 
@@ -175,6 +178,15 @@ function repairKnownDocumentationOverclaims(doc) {
         !/not enough retrieved Scripture/i.test(body)
       ) {
         article.body = STRUCTURED_STUDY_BODY;
+        article.updatedAt = new Date().toISOString();
+        article.version = Number(article.version || 1) + 1;
+        changed = true;
+      }
+    }
+    if (article.id === 'how-do-i-contact-a-person') {
+      const body = String(article.body || '');
+      if (!body.trim() || !/does not offer phone/i.test(body)) {
+        article.body = HUMAN_SUPPORT_BODY;
         article.updatedAt = new Date().toISOString();
         article.version = Number(article.version || 1) + 1;
         changed = true;
@@ -258,6 +270,16 @@ function seedArticles() {
       updatedAt: now,
     },
     {
+      id: 'how-do-i-contact-a-person',
+      title: 'Can I talk to a real person or get phone support?',
+      category: 'support',
+      tags: ['faq', 'support', 'contact', 'phone', 'human', 'customer-service'],
+      body: HUMAN_SUPPORT_BODY,
+      version: 1,
+      createdAt: now,
+      updatedAt: now,
+    },
+    {
       id: 'how-do-i-get-a-bible-study',
       title: 'How do I get a structured Bible study?',
       category: 'features',
@@ -296,6 +318,9 @@ function needsDocumentationRepair(doc) {
         /Verified Lesson Packet/i.test(body) ||
         !/not enough retrieved Scripture/i.test(body))
     ) {
+      return true;
+    }
+    if (a.id === 'how-do-i-contact-a-person' && !/does not offer phone/i.test(body)) {
       return true;
     }
     return false;

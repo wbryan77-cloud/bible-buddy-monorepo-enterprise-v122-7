@@ -719,7 +719,7 @@ function isInternalRoleBlurb(text = '') {
  * User-facing structured study (no Admin/governance jargon, no raw JSON).
  * Scripture blocks are quoted verbatim from local KJV retrieval.
  */
-function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = '') {
+function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = '', options = {}) {
   const p = packet || buildVerifiedLessonPacket(lesson, question);
   const blocks = (p.scriptureBlocks || []).filter(
     (b) => b && b.reference && String(b.text || '').trim().length > 12,
@@ -731,29 +731,34 @@ function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = 
     'this topic';
   const topicLabel = humanizeStudyTheme(rawTopic);
   const lines = [];
-  lines.push(`Study theme: ${topicLabel}`);
+  lines.push(String(topicLabel).charAt(0).toUpperCase() + String(topicLabel).slice(1));
   lines.push('');
   if (question && String(question).trim()) {
     lines.push(`Your study request: ${String(question).trim()}`);
     lines.push('');
   }
   lines.push('What Scripture shows');
+  lines.push('');
   lines.push(userFacingStudySummary(topicLabel, lesson, p));
   lines.push('');
   lines.push('Key passages (King James Version)');
   lines.push('');
-  blocks.slice(0, 6).forEach((b, i) => {
+  const maxBlocks = options.preferShorter ? 3 : 6;
+  blocks.slice(0, maxBlocks).forEach((b, i) => {
     lines.push(`${i + 1}. ${b.displayReference || b.reference}`);
-    lines.push(`“${String(b.text).trim()}”`);
-    if (b.roleExplanation && !isInternalRoleBlurb(b.roleExplanation)) {
-      lines.push(b.roleExplanation);
-    }
     lines.push('');
+    lines.push(`“${String(b.text).trim()}”`);
+    lines.push('');
+    if (!options.preferShorter && b.roleExplanation && !isInternalRoleBlurb(b.roleExplanation)) {
+      lines.push(b.roleExplanation);
+      lines.push('');
+    }
   });
   const connections = (p.connections || [])
     .filter((c) => c && c.sentence && !isInternalRoleBlurb(c.sentence))
-    .slice(0, 5);
+    .slice(0, options.preferShorter ? 2 : 5);
   lines.push('How these passages connect');
+  lines.push('');
   if (connections.length) {
     connections.forEach((c) => lines.push(`- ${c.sentence}`));
   } else if (blocks.length >= 2) {
@@ -764,30 +769,39 @@ function renderUserFacingStructuredStudy(lesson = {}, packet = null, question = 
     lines.push(`- This passage speaks directly to ${topicLabel}.`);
   }
   lines.push('');
-  const hist = (p.historicalEvidence || []).filter((h) => h && h.note);
-  if (hist.length) {
-    lines.push('Historical context (supplemental — not Scripture)');
-    hist.slice(0, 3).forEach((h) => {
-      const rawAttr = String(h.attribution || '').trim();
-      const attr =
-        rawAttr && !/historicalEvidenceLayer|thin topic notes|not network-verified/i.test(rawAttr)
-          ? ` (${rawAttr})`
-          : '';
-      lines.push(`- ${h.note}${attr}`);
-    });
-    lines.push('');
-  }
-  const lang = (p.languageEvidence || [])[0];
-  if (lang && (lang.literalRendering || lang.originalText)) {
-    lines.push('Original-language note (bounded, secondary to full Scripture context)');
-    if (lang.reference) lines.push(`Passage: ${lang.reference}`);
-    if (lang.literalRendering) lines.push(`Literal study rendering: ${lang.literalRendering}`);
-    lines.push('');
+  if (!options.preferShorter) {
+    const hist = (p.historicalEvidence || []).filter((h) => h && h.note);
+    if (hist.length) {
+      lines.push('Historical context (supplemental — not Scripture)');
+      lines.push('');
+      hist.slice(0, 3).forEach((h) => {
+        const rawAttr = String(h.attribution || '').trim();
+        const attr =
+          rawAttr && !/historicalEvidenceLayer|thin topic notes|not network-verified/i.test(rawAttr)
+            ? ` (${rawAttr})`
+            : '';
+        lines.push(`- ${h.note}${attr}`);
+      });
+      lines.push('');
+    }
+    const lang = (p.languageEvidence || [])[0];
+    if (lang && (lang.literalRendering || lang.originalText)) {
+      lines.push('Original-language note (bounded, secondary to full Scripture context)');
+      lines.push('');
+      if (lang.reference) lines.push(`Passage: ${lang.reference}`);
+      if (lang.literalRendering) lines.push(`Literal study rendering: ${lang.literalRendering}`);
+      lines.push('');
+    }
   }
   lines.push('For reflection');
+  lines.push('');
   lines.push(`- What do these passages say about ${topicLabel}?`);
-  lines.push('- Which passage defines, commands, or clarifies the subject most clearly?');
-  lines.push('- What would it look like to live this out this week?');
+  if (!options.preferShorter) {
+    lines.push('- Which passage defines, commands, or clarifies the subject most clearly?');
+    lines.push('- What would it look like to live this out this week?');
+  } else {
+    lines.push('- What would it look like to live this out this week?');
+  }
   lines.push('');
   lines.push('This is a Scripture study outline from retrieved King James text.');
   return lines.join('\n').trim();

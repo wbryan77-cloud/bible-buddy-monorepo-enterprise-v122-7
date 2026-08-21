@@ -23,7 +23,7 @@ function isWritingHelpRequest(message = '') {
     return true;
   }
   if (
-    /\b(make that (text|message)|use the text|improve (that|the|it)|warmer|more human|revise (that|the|it)|rewrite (that|the|it)|edit (that|the) (text|message))\b/i.test(
+    /\b(make that (text|message)|use the text|improve (that|the|it)|warmer|more human|more professional|professional|shorten (it|that)|revise (that|the|it)|rewrite (that|the|it)|edit (that|the) (text|message)|final (text|version|draft)|copy.?paste)\b/i.test(
       m,
     )
   ) {
@@ -33,6 +33,23 @@ function isWritingHelpRequest(message = '') {
     return true;
   }
   return false;
+}
+
+/** Explicit ask for Scripture's moral/doctrinal position (not generic life coaching). */
+function isExplicitBiblicalPositionAsk(message = '') {
+  const m = String(message || '');
+  return /\b(biblically|biblical|according to (the )?bible|what does (the )?bible say|what does scripture say|does the bible (say|allow|permit|forbid)|is .{0,40} a sin)\b/i.test(
+    m,
+  );
+}
+
+/** Sexual morality / fornication asks — must not fall into open_life Proverbs coaching. */
+function isSexualMoralityAsk(message = '') {
+  const m = String(message || '');
+  if (isWritingHelpRequest(m)) return false;
+  return /\b(have sex|sex with|fornicat|sexual (sin|immorality)|sleep with (her|him)|go to bed with|commit fornication)\b/i.test(
+    m,
+  );
 }
 
 function detectHumanNeed(message = '', anchor = {}, state = {}) {
@@ -66,19 +83,20 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
     return 'emotional_support';
   }
 
-  // PHASE_6G: broadened beyond the literal word "decision" to also catch the
-  // very common "should I ___" personal-decision phrasing (job, money,
-  // relationships, etc.). This still only fires as a last resort inside the
-  // orchestrator (after strict-doctrine and Bible-concept detection have
-  // already had first refusal), so a genuine doctrine question phrased as
-  // "should I ___" (e.g. Sabbath/dietary/commandments) is still claimed by
-  // the doctrine engine first — this only widens the *non-doctrinal*
-  // decision-support net, it does not narrow doctrine routing.
-  if (
+  // Sexual morality / explicit biblical position before open_life "should I" coaching.
+  // Founder evidence: "Should I have sex" / "But biblical should I…" were swallowed
+  // by open_life → Proverbs 3:5-6 instead of fornication doctrine.
+  if (isSexualMoralityAsk(sprint1a6Message) || isExplicitBiblicalPositionAsk(sprint1a6Message)) {
+    // Fall through to doctrine/temptation lanes below — do not return open_life.
+  } else if (
+    // PHASE_6G: "should I ___" personal-decision phrasing (job, money, etc.).
+    // Must not claim biblical/moral "should I" asks (handled above).
     (/\b(decision|decide|choice|discern|what should i do)\b/i.test(sprint1a6Message) ||
       /\b(quitt?ing (my )?job|leave my job|resign(ing)? from (my )?job)\b/i.test(sprint1a6Message) ||
       (/\bshould i\b/i.test(sprint1a6Message) && !/\b(how should i|what should i say)\b/i.test(sprint1a6Message))) &&
-    !/\b(bible|scripture|sabbath|pork|acts 10|commandments?|baptis|tithe|tithing)\b/i.test(sprint1a6Message)
+    !/\b(bible|biblical|biblically|scripture|sabbath|pork|acts 10|commandments?|baptis|tithe|tithing|fornicat|have sex|sex with|adulter)\b/i.test(
+      sprint1a6Message,
+    )
   ) {
     return 'open_life';
   }
@@ -132,8 +150,12 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
         ? 'emotional_support'
         : 'anxiety_support';
   }
-  if (/\b(fornication|sex with|strings attached|not ready)\b/i.test(m) && !isWritingHelpRequest(m)) {
-    return 'temptation_boundary';
+  if (isSexualMoralityAsk(m) || (/\b(fornication|sex with|strings attached|not ready)\b/i.test(m) && !isWritingHelpRequest(m))) {
+    // Prefer doctrine_answer so concept graph / 1 Cor 6:18 can own the reply.
+    return 'doctrine_answer';
+  }
+  if (isExplicitBiblicalPositionAsk(m)) {
+    return 'doctrine_answer';
   }
   // Writing/drafting help (texts, revisions) must not be swallowed by doctrine-only lanes.
   if (isWritingHelpRequest(m)) return 'practical_words_to_say';
@@ -149,5 +171,7 @@ function detectHumanNeed(message = '', anchor = {}, state = {}) {
 module.exports = {
   detectHumanNeed,
   isWritingHelpRequest,
+  isExplicitBiblicalPositionAsk,
+  isSexualMoralityAsk,
   APP_IDENTITY_RE,
 };

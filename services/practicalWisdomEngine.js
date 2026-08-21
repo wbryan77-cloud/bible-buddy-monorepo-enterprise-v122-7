@@ -26,6 +26,19 @@ function resolvePracticalConceptId(conceptId, anchor = {}, state = {}) {
   return null;
 }
 
+function extractPriorDraftText(state = {}) {
+  const mem = state.conversationMemory || state.sessionMemory?.conversationMemory || {};
+  const raw = String(mem.lastReply || '');
+  if (!raw) return '';
+  // Prefer the copyable body after our draft header.
+  const m = raw.match(/here is a text[^\n]*\n+([\s\S]+)/i);
+  if (m?.[1]) return m[1].trim().slice(0, 900);
+  if (/you could say/i.test(raw)) {
+    return raw.replace(/^[\s\S]*you could say:\s*/i, '').replace(/^['"]|['"]$/g, '').trim().slice(0, 900);
+  }
+  return raw.slice(0, 900);
+}
+
 function buildPracticalWisdomResponse({ message = '', anchor = {}, conceptId = null, state = {} } = {}) {
   const id = resolvePracticalConceptId(conceptId, anchor, state);
   const m = String(message || '');
@@ -35,7 +48,7 @@ function buildPracticalWisdomResponse({ message = '', anchor = {}, conceptId = n
     FAMILY_EXPLAIN_RE.test(m) ||
     anchor.currentPracticalNeed === 'gentle_explanation';
 
-  if (wantsFamilyWording) {
+  if (wantsFamilyWording && !/\b(text|message|draft|copy|professional|warmer|final text)\b/i.test(m)) {
     if (!id) {
       return {
         reply: "I hear you. What is the situation with your son? Tell me what happened and what you want him to understand, and I’ll help you say it with truth, love, and wisdom.",
@@ -59,12 +72,13 @@ function buildPracticalWisdomResponse({ message = '', anchor = {}, conceptId = n
   }
 
   const writingHelp =
-    /\b(give me (a |the )?(text|message|draft)|write (me )?(a )?(text|message)|copy(\s*and\s*|\s*)paste|final text|make that (text|message)|use the text|warmer|more human|improve (that|the|it)|tell (her|him)|not ready|boundary|what should i say)\b/i.test(
+    /\b(give me (a |the )?(text|message|draft)|write (me )?(a )?(text|message)|copy(\s*and\s*|\s*)paste|final text|final version|make that (text|message)|use the text|warmer|more human|more professional|professional|improve (that|the|it)|shorten|tell (her|him)|not ready|boundary|what should i say)\b/i.test(
       m,
     ) || anchor.currentGoal === 'set_boundary';
 
   if (writingHelp) {
-    const boundary = buildBoundaryScript({ situation: m });
+    const priorDraft = extractPriorDraftText(state);
+    const boundary = buildBoundaryScript({ situation: m, priorDraft });
     const body = boundary.reply.replace(/^I hear you\.\s*/i, '').trim();
     const alreadyDraft = /^here is a text/i.test(body);
     return {
@@ -79,4 +93,5 @@ function buildPracticalWisdomResponse({ message = '', anchor = {}, conceptId = n
 
 module.exports = {
   buildPracticalWisdomResponse,
+  extractPriorDraftText,
 };

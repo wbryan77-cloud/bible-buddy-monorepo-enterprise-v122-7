@@ -95,18 +95,38 @@
        point. Extends the existing static-page pattern (same .card/.pill
        language) — no new frontend framework, no second app shell. */
     .help-overlay {
-      position: fixed; inset: 0; background: rgba(3,7,15,0.72);
-      display: none; align-items: center; justify-content: center;
-      padding: 20px; z-index: 100;
+      position: fixed; inset: 0;
+      background: rgba(2, 6, 14, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: none; align-items: flex-start; justify-content: center;
+      padding: max(16px, env(safe-area-inset-top)) 14px max(16px, env(safe-area-inset-bottom));
+      z-index: 120;
+      overflow-y: auto;
+      overscroll-behavior: contain;
     }
     .help-overlay.show { display: flex; }
+    body.help-open { overflow: hidden; touch-action: none; }
     .help-modal {
-      width: min(560px, 100%); max-height: 80vh; overflow-y: auto;
-      background: var(--panel-strong); border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 24px; padding: 22px; box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+      width: min(560px, 100%);
+      max-height: min(88vh, 720px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: #0d1728;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 22px;
+      padding: 20px 18px 22px;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.55);
+      margin: auto;
+      position: relative;
+      isolation: isolate;
     }
-    .help-modal h2 { display: flex; justify-content: space-between; align-items: center; }
-    .help-close { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }
+    .help-modal h2 { display: flex; justify-content: space-between; align-items: center; margin-top: 0; gap: 12px; }
+    .help-close {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16);
+      color: var(--text); font-size: 22px; line-height: 1; cursor: pointer;
+      width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0;
+    }
     .help-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
     .help-tab { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.16); background: transparent; color: var(--muted); cursor: pointer; font-size: 13px; }
     .help-tab.active { background: rgba(61,183,255,0.18); color: var(--blue-soft); border-color: rgba(61,183,255,0.3); }
@@ -252,11 +272,13 @@
     }
 
     .msg {
-      padding: 13px 15px;
+      padding: 14px 16px;
       border-radius: 18px;
       max-width: 88%;
       white-space: pre-wrap;
-      line-height: 1.48;
+      line-height: 1.55;
+      margin: 4px 0 10px;
+      word-break: break-word;
     }
 
     .msg.buddy.thinking .mini-orb-inline {
@@ -317,11 +339,12 @@
     }
 
     .scripture {
-      margin-top: 8px;
-      padding-top: 8px;
+      margin-top: 12px;
+      padding: 10px 0 4px;
       border-top: 1px solid rgba(255,255,255,0.12);
       color: #ffe6a3;
       font-size: 13px;
+      line-height: 1.5;
     }
 
     .composer {
@@ -794,12 +817,12 @@
   <div id="alphaOverlay" class="alpha-overlay" aria-hidden="true">
     <div class="alpha-modal" role="dialog" aria-labelledby="alphaHeading">
       <h2 id="alphaHeading">Welcome to BibleBuddy Alpha</h2>
-      <p>You were invited to try the real BibleBuddy experience. A few details help us attribute feedback — then you get the normal companion.</p>
+      <p>You were invited to try the real BibleBuddy experience. Tell us how to address you — then you get the normal companion.</p>
       <div id="alphaInviteError" class="alpha-error"></div>
-      <label for="alphaName">Name</label>
-      <input id="alphaName" autocomplete="name" />
-      <label for="alphaAge">Age range</label>
-      <select id="alphaAge"></select>
+      <label for="alphaName">Preferred name <span style="color:var(--danger)">*</span></label>
+      <input id="alphaName" autocomplete="name" required />
+      <label for="alphaAge">Age range (optional)</label>
+      <select id="alphaAge"><option value="">Prefer not to say</option></select>
       <label for="alphaRole">Role (optional)</label>
       <input id="alphaRole" placeholder="friend, family, church member…" />
       <div class="alpha-check"><input type="checkbox" id="alphaConsent" /> <span>I consent to Alpha testing. Conversations may be reviewed to improve the app.</span></div>
@@ -819,7 +842,6 @@
       </div>
       <span style="display:flex; gap:10px;">
         <button type="button" class="pill-btn" id="helpOpenBtn">Help &amp; Support</button>
-        <a class="pill" href="/admin/bible-authority" id="adminConsoleLink" title="Founder/Admin only">Admin</a>
       </span>
     </header>
 
@@ -849,16 +871,7 @@
       </div>
     </div>
 
-    <div class="diff-strip" role="list" aria-label="What makes BibleBuddy different">
-      <span class="diff-chip" role="listitem">Scripture-first answers</span>
-      <span class="diff-chip" role="listitem">Genesis-to-Revelation reasoning</span>
-      <span class="diff-chip" role="listitem">Multiple witnesses</span>
-      <span class="diff-chip" role="listitem">Visible answer lineage</span>
-      <span class="diff-chip" role="listitem">Original-language study</span>
-      <span class="diff-chip" role="listitem">Historical context</span>
-      <span class="diff-chip" role="listitem">Prayer &amp; companion conversation</span>
-      <span class="diff-chip" role="listitem">Governed doctrine, truth before speculation</span>
-    </div>
+    <!-- Capability claims live in Help/About — not the Alpha primary chrome -->
 
     <div id="noticeBanner" class="notice-banner" role="status" aria-live="polite">
       <span id="noticeText">Welcome back. Want to continue where you left off, or ask for today's verse?</span>
@@ -918,7 +931,7 @@
       </div>
     </section>
 
-    <section class="settings">
+    <section class="settings" id="futureFeaturesPanel" hidden aria-hidden="true">
       <div class="setting-card">
         <h2>Companion Presence</h2>
         <p>Buddy's orb responds live to this chat right now. Proactive check-ins are planned for a later release.</p>
@@ -939,7 +952,7 @@
       </div>
     </section>
 
-    <section class="card lesson-section" style="margin-top: 24px;" aria-labelledby="lessonHeading">
+    <section class="card lesson-section" id="founderPreviewSection" hidden aria-hidden="true" style="margin-top: 24px;" aria-labelledby="lessonHeading">
       <h2 id="lessonHeading">Scripture Alignment — Founder Preview</h2>
       <p>Paste a paragraph from a sermon or Bible-study lesson. Buddy checks every Scripture reference and quotation against the actual KJV text — never against opinion — and flags anything misquoted or unresolved.</p>
       <label for="lessonText" class="visually-hidden">Lesson or sermon text to check</label>
@@ -1523,15 +1536,37 @@
     }
 
     function syncAdminLinkVisibility() {
-      const link = document.getElementById('adminConsoleLink');
-      if (!link) return;
+      // Admin chrome removed from product surface — Founders use /admin/bible-authority directly.
+      // Alpha invite alone never grants Admin authorization (server checkAdminAuth).
+    }
+
+    function applyFounderPreviewGate() {
+      const params = new URLSearchParams(location.search);
+      const founder =
+        params.get('founder') === '1' ||
+        params.get('founderPreview') === '1';
       try {
-        // Alpha testers must not see Admin entry; Founder private path remains /admin/bible-authority
-        const isAlpha = !!window.localStorage.getItem('bb_alpha_tester_id');
-        link.style.display = isAlpha ? 'none' : '';
-      } catch (_) {
-        link.style.display = '';
-      }
+        if (founder) window.sessionStorage.setItem('bb_founder_preview', '1');
+      } catch (_) {}
+      let show = founder;
+      try {
+        show = show || window.sessionStorage.getItem('bb_founder_preview') === '1';
+      } catch (_) {}
+      // Never show Founder diagnostics to ordinary Alpha testers
+      try {
+        if (window.localStorage.getItem('bb_alpha_tester_id')) show = false;
+      } catch (_) {}
+      ['futureFeaturesPanel', 'founderPreviewSection'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (show) {
+          el.hidden = false;
+          el.setAttribute('aria-hidden', 'false');
+        } else {
+          el.hidden = true;
+          el.setAttribute('aria-hidden', 'true');
+        }
+      });
     }
 
     async function initAlphaInviteIfPresent() {
@@ -1542,12 +1577,14 @@
       if (!overlay) return;
 
       syncAdminLinkVisibility();
+      applyFounderPreviewGate();
 
       // Returning Alpha tester — product shell only, no harness
       try {
         const existing = window.localStorage.getItem('bb_alpha_tester_id');
         if (existing && !alphaToken) {
           syncAdminLinkVisibility();
+          applyFounderPreviewGate();
           return;
         }
       } catch (_) {}
@@ -1572,9 +1609,11 @@
         }
         const age = document.getElementById('alphaAge');
         if (age && Array.isArray(j.options?.ageRanges)) {
-          age.innerHTML = j.options.ageRanges
-            .map((o) => '<option value="' + o + '">' + String(o).replace(/_/g, ' ') + '</option>')
-            .join('');
+          age.innerHTML =
+            '<option value="">Prefer not to say</option>' +
+            j.options.ageRanges
+              .map((o) => '<option value="' + o + '">' + String(o).replace(/_/g, ' ') + '</option>')
+              .join('');
         }
         // Already redeemed — attach identity and enter product
         if (j.used && j.tester?.testerId) {
@@ -1603,6 +1642,11 @@
       startBtn.addEventListener('click', async () => {
         const consent = document.getElementById('alphaConsent');
         const nda = document.getElementById('alphaNda');
+        const nameVal = String(document.getElementById('alphaName')?.value || '').trim();
+        if (!nameVal) {
+          showErr('Please enter a preferred name.');
+          return;
+        }
         if (!consent?.checked || !nda?.checked) {
           showErr('Please accept consent and confidentiality.');
           return;
@@ -1612,7 +1656,7 @@
         try {
           const body = {
             inviteToken: alphaToken,
-            name: document.getElementById('alphaName')?.value || '',
+            name: nameVal,
             ageRange: document.getElementById('alphaAge')?.value || '',
             role: document.getElementById('alphaRole')?.value || '',
             deviceType: /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
@@ -1647,6 +1691,7 @@
           overlay.setAttribute('aria-hidden', 'true');
           history.replaceState({}, '', '/');
           syncAdminLinkVisibility();
+          applyFounderPreviewGate();
         } catch (e) {
           showErr('Could not complete onboarding. Please try again.');
           startBtn.disabled = false;
@@ -1655,6 +1700,7 @@
     }
 
     initAlphaInviteIfPresent();
+    applyFounderPreviewGate();
 
     function getOrCreateChatSessionId() {
       try {
@@ -1718,10 +1764,19 @@
     if (helpOpenBtn && helpOverlay) {
       helpOpenBtn.addEventListener('click', () => {
         helpOverlay.classList.add('show');
+        document.body.classList.add('help-open');
         loadHelpFaqs();
       });
-      document.getElementById('helpCloseBtn').addEventListener('click', () => helpOverlay.classList.remove('show'));
-      helpOverlay.addEventListener('click', (e) => { if (e.target === helpOverlay) helpOverlay.classList.remove('show'); });
+      document.getElementById('helpCloseBtn').addEventListener('click', () => {
+        helpOverlay.classList.remove('show');
+        document.body.classList.remove('help-open');
+      });
+      helpOverlay.addEventListener('click', (e) => {
+        if (e.target === helpOverlay) {
+          helpOverlay.classList.remove('show');
+          document.body.classList.remove('help-open');
+        }
+      });
       document.getElementById('helpTabFaq').addEventListener('click', () => showHelpTab('faq'));
       document.getElementById('helpTabAsk').addEventListener('click', () => showHelpTab('ask'));
       document.getElementById('helpAskBtn').addEventListener('click', askHelpAssistant);
