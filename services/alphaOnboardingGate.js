@@ -11,10 +11,14 @@
  */
 function resolveAlphaOnboardingGate({
   alphaToken = '',
+  alphaInviteCode = '',
+  inviteLocator = '',
   existingTesterId = null,
   invite = null,
 } = {}) {
-  const token = String(alphaToken || '').trim();
+  const token = String(
+    inviteLocator || alphaInviteCode || alphaToken || '',
+  ).trim();
   const existing = existingTesterId ? String(existingTesterId).trim() : '';
 
   if (!token) {

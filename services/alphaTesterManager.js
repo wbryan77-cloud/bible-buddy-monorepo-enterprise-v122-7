@@ -159,11 +159,102 @@ function generateTesterId() {
   return `alpha-${crypto.randomBytes(6).toString('hex')}`;
 }
 
+/** Crockford-like alphabet — no 0/O/1/I/L to reduce transcription errors. */
+const PUBLIC_CODE_ALPHABET = '23456789ABCDEFGHJKMNPQRSTVWXYZ';
+const PUBLIC_CODE_RE = /^BB-[23456789ABCDEFGHJKMNPQRSTVWXYZ]{5}$/i;
+
+function normalizePublicInviteCode(code = '') {
+  return String(code || '')
+    .trim()
+    .toUpperCase()
+    .replace(/\s+/g, '');
+}
+
+function isPublicInviteCodeFormat(code = '') {
+  return PUBLIC_CODE_RE.test(normalizePublicInviteCode(code));
+}
+
+/**
+ * Non-sequential public alias (e.g. BB-7K4M2). Locator only — not the auth secret.
+ * ~32^5 ≈ 33M codes; collision checked against existing invites.
+ */
+function generatePublicInviteCode(existingInvites = []) {
+  const used = new Set(
+    (existingInvites || [])
+      .map((i) => normalizePublicInviteCode(i && i.publicInviteCode))
+      .filter(Boolean),
+  );
+  for (let attempt = 0; attempt < 32; attempt += 1) {
+    const bytes = crypto.randomBytes(5);
+    let body = '';
+    for (let i = 0; i < 5; i += 1) {
+      body += PUBLIC_CODE_ALPHABET[bytes[i] % PUBLIC_CODE_ALPHABET.length];
+    }
+    const code = `BB-${body}`;
+    if (!used.has(code)) return code;
+  }
+  throw new Error('Could not allocate a unique public invite code');
+}
+
+function inviteAccessBlocked(invite) {
+  if (!invite) return { blocked: true, error: 'Invalid invite link.' };
+  if (invite.revoked === true || invite.revokedAt) {
+    return { blocked: true, error: 'This invite has been revoked.' };
+  }
+  if (invite.expiresAt) {
+    const exp = Date.parse(invite.expiresAt);
+    if (Number.isFinite(exp) && Date.now() > exp) {
+      return { blocked: true, error: 'This invite has expired.' };
+    }
+  }
+  return { blocked: false };
+}
+
+function findInviteInDurableByPredicate(predicate) {
+  try {
+    const durablePath = path.join(__dirname, '..', 'data', 'alpha', 'alpha-invites-durable.json');
+    if (fs.existsSync(durablePath)) {
+      const durable = JSON.parse(fs.readFileSync(durablePath, 'utf8'));
+      const items = Array.isArray(durable?.items) ? durable.items : Array.isArray(durable) ? durable : [];
+      const hit = items.find((i) => i && predicate(i));
+      if (hit) return hit;
+    }
+  } catch (_) {
+    /* continue */
+  }
+  try {
+    const { getStorageAdapter } = require('./persistence/storageAdapter');
+    const { DOC } = require('./founderExperienceDurableStore');
+    const adapter = getStorageAdapter();
+    const doc = adapter.readJsonDocument(DOC.alphaInvites, null);
+    const items = Array.isArray(doc?.items) ? doc.items : [];
+    return items.find((i) => i && predicate(i)) || null;
+  } catch (_) {
+    return null;
+  }
+}
+
+function mergeInviteIntoLocal(data, invite) {
+  if (!invite || !invite.inviteToken) return data;
+  const exists = (data.invites || []).some((i) => i.inviteToken === invite.inviteToken);
+  if (!exists) {
+    data.invites = [...(data.invites || []), invite].slice(-MAX_TESTERS);
+    try {
+      save(data);
+    } catch (_) {
+      /* non-fatal */
+    }
+  }
+  return data;
+}
+
 function createInvite({ label = '', createdBy = 'admin' } = {}) {
   const data = load();
   const inviteToken = generateToken();
+  const publicInviteCode = generatePublicInviteCode(data.invites || []);
   const invite = {
     inviteToken,
+    publicInviteCode,
     label: String(label).slice(0, 80),
     createdBy: String(createdBy).slice(0, 40),
     createdAt: new Date().toISOString(),
@@ -176,60 +267,71 @@ function createInvite({ label = '', createdBy = 'admin' } = {}) {
 }
 
 function getInviteLink(inviteToken, baseUrl = '') {
-  const base =
-    baseUrl ||
-    process.env.ALPHA_TESTER_BASE_URL ||
-    process.env.PUBLIC_APP_URL ||
-    process.env.RENDER_EXTERNAL_URL ||
-    '';
-  // Public path /alpha?token= redirects to onboarding while preserving token.
+  const { resolvePublicAlphaOrigin } = require('./publicAlphaOrigin');
+  const resolved = resolvePublicAlphaOrigin(baseUrl);
+  const base = resolved.ok ? resolved.origin : '';
+  // Legacy secure-token URL — kept for backward compatibility only.
   const path = `/alpha?token=${encodeURIComponent(inviteToken)}`;
-  return base ? `${base.replace(/\/$/, '')}${path}` : path;
+  return base ? `${base}${path}` : path;
+}
+
+function getFriendlyInviteLink(publicInviteCode, baseUrl = '') {
+  const { resolvePublicAlphaOrigin } = require('./publicAlphaOrigin');
+  const code = normalizePublicInviteCode(publicInviteCode);
+  if (!isPublicInviteCodeFormat(code)) {
+    throw new Error('Invalid public invite code');
+  }
+  const resolved = resolvePublicAlphaOrigin(baseUrl);
+  const base = resolved.ok ? resolved.origin : '';
+  const path = `/alpha/${encodeURIComponent(code)}`;
+  return base ? `${base}${path}` : path;
 }
 
 function validateInviteToken(token) {
   const normalized = String(token || '').trim();
   if (!normalized) return { valid: false, error: 'Invalid invite link.' };
 
-  const data = load();
+  let data = load();
   let invite = (data.invites || []).find((i) => i.inviteToken === normalized);
 
-  // Multi-instance / redeploy: invite may exist in durable store before local file catches up.
   if (!invite) {
-    try {
-      const durablePath = path.join(__dirname, '..', 'data', 'alpha', 'alpha-invites-durable.json');
-      if (fs.existsSync(durablePath)) {
-        const durable = JSON.parse(fs.readFileSync(durablePath, 'utf8'));
-        const items = Array.isArray(durable?.items) ? durable.items : Array.isArray(durable) ? durable : [];
-        invite = items.find((i) => i && i.inviteToken === normalized) || null;
-      }
-    } catch (_) {
-      invite = null;
-    }
-    if (!invite) {
-      try {
-        const { getStorageAdapter } = require('./persistence/storageAdapter');
-        const { DOC } = require('./founderExperienceDurableStore');
-        const adapter = getStorageAdapter();
-        const doc = adapter.readJsonDocument(DOC.alphaInvites, null);
-        const items = Array.isArray(doc?.items) ? doc.items : [];
-        invite = items.find((i) => i && i.inviteToken === normalized) || null;
-      } catch (_) {
-        invite = null;
-      }
-    }
-    if (invite) {
-      data.invites = [...(data.invites || []), invite].slice(-MAX_TESTERS);
-      // Persist merge so subsequent reads hit local file; dual-write stays consistent.
-      try {
-        save(data);
-      } catch (_) {
-        /* non-fatal */
-      }
-    }
+    invite = findInviteInDurableByPredicate((i) => i.inviteToken === normalized);
+    if (invite) data = mergeInviteIntoLocal(data, invite);
   }
 
   if (!invite) return { valid: false, error: 'Invalid invite link.' };
+  const blocked = inviteAccessBlocked(invite);
+  if (blocked.blocked) return { valid: false, error: blocked.error };
+
+  if (invite.used && invite.testerId) {
+    const tester = (data.testers || []).find((t) => t.testerId === invite.testerId);
+    return { valid: true, used: true, invite, tester };
+  }
+  return { valid: true, used: false, invite };
+}
+
+function validateInviteByPublicCode(code) {
+  const normalized = normalizePublicInviteCode(code);
+  if (!isPublicInviteCodeFormat(normalized)) {
+    return { valid: false, error: 'Invalid invite link.' };
+  }
+
+  let data = load();
+  let invite = (data.invites || []).find(
+    (i) => normalizePublicInviteCode(i.publicInviteCode) === normalized,
+  );
+
+  if (!invite) {
+    invite = findInviteInDurableByPredicate(
+      (i) => normalizePublicInviteCode(i.publicInviteCode) === normalized,
+    );
+    if (invite) data = mergeInviteIntoLocal(data, invite);
+  }
+
+  if (!invite) return { valid: false, error: 'Invalid invite link.' };
+  const blocked = inviteAccessBlocked(invite);
+  if (blocked.blocked) return { valid: false, error: blocked.error };
+
   if (invite.used && invite.testerId) {
     const tester = (data.testers || []).find((t) => t.testerId === invite.testerId);
     return { valid: true, used: true, invite, tester };
@@ -257,7 +359,7 @@ function sanitizeIntake(body = {}) {
   };
 }
 
-function completeOnboarding({ inviteToken, intake = {}, consentAccepted, ndaAccepted } = {}) {
+function completeOnboarding({ inviteToken, inviteCode, intake = {}, consentAccepted, ndaAccepted } = {}) {
   if (!consentAccepted || !ndaAccepted) {
     return { ok: false, error: 'Consent and confidentiality agreement are required.' };
   }
@@ -267,7 +369,14 @@ function completeOnboarding({ inviteToken, intake = {}, consentAccepted, ndaAcce
     return { ok: false, error: 'Preferred name is required.' };
   }
 
-  const validation = validateInviteToken(inviteToken);
+  let resolvedToken = String(inviteToken || '').trim();
+  if (!resolvedToken && inviteCode) {
+    const byCode = validateInviteByPublicCode(inviteCode);
+    if (!byCode.valid) return { ok: false, error: byCode.error };
+    resolvedToken = byCode.invite.inviteToken;
+  }
+
+  const validation = validateInviteToken(resolvedToken);
   if (!validation.valid) return { ok: false, error: validation.error };
 
   const data = load();
@@ -292,7 +401,7 @@ function completeOnboarding({ inviteToken, intake = {}, consentAccepted, ndaAcce
   testerId = generateTesterId();
   const tester = {
     testerId,
-    inviteToken,
+    inviteToken: resolvedToken,
     ...sanitized,
     consentAccepted: true,
     ndaAccepted: true,
@@ -306,7 +415,7 @@ function completeOnboarding({ inviteToken, intake = {}, consentAccepted, ndaAcce
   };
 
   data.testers.push(tester);
-  const inv = (data.invites || []).find((i) => i.inviteToken === inviteToken);
+  const inv = (data.invites || []).find((i) => i.inviteToken === resolvedToken);
   if (inv) {
     inv.used = true;
     inv.testerId = testerId;
@@ -401,7 +510,12 @@ module.exports = {
   DEFAULT_CATEGORY_PREFERENCES,
   createInvite,
   getInviteLink,
+  getFriendlyInviteLink,
   validateInviteToken,
+  validateInviteByPublicCode,
+  isPublicInviteCodeFormat,
+  normalizePublicInviteCode,
+  generatePublicInviteCode,
   completeOnboarding,
   getTester,
   isActiveAlphaTester,

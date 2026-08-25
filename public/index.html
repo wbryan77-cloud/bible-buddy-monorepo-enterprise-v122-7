@@ -1616,7 +1616,9 @@
     async function initAlphaInviteIfPresent() {
       const gateApi = window.BibleBuddyAlphaGate;
       const params = new URLSearchParams(location.search);
+      const alphaInviteCode = (params.get('alphaInvite') || '').trim().toUpperCase();
       const alphaToken = (params.get('alphaToken') || params.get('token') || '').trim();
+      const inviteLocator = alphaInviteCode || alphaToken;
       const overlay = document.getElementById('alphaOverlay');
       const errEl = document.getElementById('alphaInviteError');
       if (!overlay || !gateApi) return;
@@ -1629,15 +1631,17 @@
         existing = window.localStorage.getItem('bb_alpha_tester_id');
       } catch (_) {}
 
-      // Immediate gate decision before any network — invite token must block anonymous chat.
+      // Immediate gate decision before any network — invite locator must block anonymous chat.
       let gate = gateApi.resolveAlphaOnboardingGate({
+        inviteLocator,
+        alphaInviteCode,
         alphaToken,
         existingTesterId: existing,
-        invite: alphaToken ? 'pending' : null,
+        invite: inviteLocator ? 'pending' : null,
       });
       applyAlphaGate(gate);
 
-      if (!alphaToken) {
+      if (!inviteLocator) {
         // returning_local or anonymous_no_invite
         return;
       }
@@ -1649,12 +1653,17 @@
       }
 
       try {
-        const r = await fetch('/api/alpha/invite/' + encodeURIComponent(alphaToken));
+        const validateUrl = alphaInviteCode
+          ? '/api/alpha/invite-code/' + encodeURIComponent(alphaInviteCode)
+          : '/api/alpha/invite/' + encodeURIComponent(alphaToken);
+        const r = await fetch(validateUrl);
         const j = await r.json();
         try {
           existing = window.localStorage.getItem('bb_alpha_tester_id');
         } catch (_) {}
         gate = gateApi.resolveAlphaOnboardingGate({
+          inviteLocator,
+          alphaInviteCode,
           alphaToken,
           existingTesterId: existing,
           invite: j,
@@ -1690,7 +1699,7 @@
         // onboard_required — keep gate open; wire start button
       } catch (e) {
         gate = gateApi.resolveAlphaOnboardingGate({
-          alphaToken,
+          inviteLocator,
           existingTesterId: existing,
           invite: { ok: false, error: 'Could not validate invite. Check your connection and try again.' },
         });
@@ -1717,7 +1726,8 @@
         startBtn.disabled = true;
         try {
           const body = {
-            inviteToken: alphaToken,
+            inviteCode: alphaInviteCode || undefined,
+            inviteToken: alphaInviteCode ? undefined : alphaToken,
             name: nameVal,
             ageRange: document.getElementById('alphaAge')?.value || '',
             role: document.getElementById('alphaRole')?.value || '',

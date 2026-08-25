@@ -35,6 +35,7 @@ fs.mkdirSync(DATA_DIR, { recursive: true });
 app.get(['/alpha', '/alpha/', '/alpha-test', '/alpha-test/'], (req, res) => {
   const token = req.query && req.query.token != null ? String(req.query.token).trim() : '';
   if (token) {
+    // Legacy secure-token URL — preserved for migration; new invites use /alpha/:code.
     return res.redirect(302, `/?alphaToken=${encodeURIComponent(token)}`);
   }
   // Fail closed: never silently drop into anonymous product without an invite token.
@@ -48,9 +49,35 @@ app.get(['/alpha', '/alpha/', '/alpha-test', '/alpha-test/'], (req, res) => {
 a{color:#78d9ff}</style></head>
 <body>
   <h1>Alpha invite required</h1>
-  <p>This page only works with a personal BibleBuddy Alpha invitation link. Opening it without an invite token does not start a tester session.</p>
-  <p>Ask the Founder for a fresh invite, or open the full link you were sent (it includes a secure token).</p>
+  <p>This page only works with a personal BibleBuddy Alpha invitation link. Opening it without an invite code does not start a tester session.</p>
+  <p>Ask the Founder for a fresh invite, or open the full link you were sent (for example <code>/alpha/BB-XXXXX</code>).</p>
 </body></html>`);
+});
+
+// Friendly invite locator — public code is NOT the auth secret; maps server-side
+// to the high-entropy inviteToken. Never put the raw token in the redirect URL.
+app.get('/alpha/:publicInviteCode', (req, res) => {
+  const {
+    isPublicInviteCodeFormat,
+    normalizePublicInviteCode,
+    validateInviteByPublicCode,
+  } = require('./services/alphaTesterManager');
+  const code = normalizePublicInviteCode(req.params.publicInviteCode);
+  const fail = (status, title, message) =>
+    res.status(status).type('html').send(`<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>${title}</title>
+<style>body{font-family:system-ui,sans-serif;background:#08111f;color:#f7f3e8;padding:32px;line-height:1.5}</style></head>
+<body><h1>${title}</h1><p>${message}</p></body></html>`);
+
+  if (!isPublicInviteCodeFormat(code)) {
+    return fail(400, 'Invalid Alpha invite', 'That invite link is not valid. Ask the Founder for a fresh invitation.');
+  }
+  const result = validateInviteByPublicCode(code);
+  if (!result.valid) {
+    return fail(404, 'Alpha invite unavailable', result.error || 'This invite is not valid.');
+  }
+  return res.redirect(302, `/?alphaInvite=${encodeURIComponent(code)}`);
 });
 app.get(['/admin', '/admin/'], (req, res) => {
   res.redirect(302, '/admin/bible-authority');

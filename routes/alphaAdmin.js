@@ -4,9 +4,11 @@ const path = require('path');
 const {
   createInvite,
   getInviteLink,
+  getFriendlyInviteLink,
   listTesters,
   load,
 } = require('../services/alphaTesterManager');
+const { resolvePublicAlphaOrigin } = require('../services/publicAlphaOrigin');
 const { readCaptures } = require('../services/alphaConversationCapture');
 const { readFeedback } = require('../services/alphaFeedbackCapture');
 const { getQueueReport, readHistory } = require('../services/alphaNotificationScheduler');
@@ -104,12 +106,32 @@ router.post('/invites', (req, res) => {
     const invite = createInvite({ label: req.body?.label, createdBy: req.body?.createdBy || 'admin' });
     const hostBase =
       req.body?.baseUrl ||
+      process.env.PUBLIC_ALPHA_ORIGIN ||
       process.env.ALPHA_TESTER_BASE_URL ||
       process.env.PUBLIC_APP_URL ||
       process.env.RENDER_EXTERNAL_URL ||
       `${req.protocol}://${req.get('host')}`;
-    const link = getInviteLink(invite.inviteToken, hostBase);
-    res.json({ ok: true, invite, link });
+    const originInfo = resolvePublicAlphaOrigin(hostBase);
+    const originForLinks = originInfo.ok ? originInfo.origin : hostBase;
+    // Tester-facing Copy Invite action uses the friendly URL only (no raw token).
+    const link = getFriendlyInviteLink(invite.publicInviteCode, originForLinks);
+    const legacyTokenLink = getInviteLink(invite.inviteToken, originForLinks);
+    res.json({
+      ok: true,
+      invite: {
+        publicInviteCode: invite.publicInviteCode,
+        label: invite.label,
+        createdAt: invite.createdAt,
+        used: invite.used,
+        // Internal diagnostic only — not used for tester-facing Copy Invite.
+        inviteToken: invite.inviteToken,
+      },
+      link,
+      friendlyLink: link,
+      legacyTokenLink,
+      publicOrigin: originInfo.ok ? originInfo.origin : null,
+      publicOriginStatus: originInfo.reason,
+    });
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });
   }

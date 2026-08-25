@@ -1,6 +1,7 @@
 const express = require('express');
 const {
   validateInviteToken,
+  validateInviteByPublicCode,
   completeOnboarding,
   getTester,
   isActiveAlphaTester,
@@ -24,6 +25,35 @@ router.get('/invite/:token', (req, res) => {
     res.json({
       ok: true,
       used: result.used,
+      publicInviteCode: result.invite?.publicInviteCode || null,
+      tester: result.tester
+        ? {
+            testerId: result.tester.testerId,
+            name: result.tester.name,
+            onboarded: !!result.tester.onboardedAt,
+          }
+        : null,
+      options: {
+        ageRanges: AGE_RANGES,
+        bibleFamiliarity: BIBLE_FAMILIARITY,
+        testFocus: TEST_FOCUS,
+        notificationPrefs: NOTIFICATION_PREFS,
+      },
+    });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
+/** Friendly-code validation — never returns the underlying inviteToken to the client. */
+router.get('/invite-code/:code', (req, res) => {
+  try {
+    const result = validateInviteByPublicCode(req.params.code);
+    if (!result.valid) return res.status(404).json({ ok: false, error: result.error });
+    res.json({
+      ok: true,
+      used: result.used,
+      publicInviteCode: result.invite?.publicInviteCode || null,
       tester: result.tester
         ? {
             testerId: result.tester.testerId,
@@ -48,6 +78,7 @@ router.post('/onboard', (req, res) => {
     const body = req.body || {};
     const result = completeOnboarding({
       inviteToken: body.inviteToken || body.token,
+      inviteCode: body.inviteCode || body.publicInviteCode,
       intake: body,
       consentAccepted: !!body.consentAccepted,
       ndaAccepted: !!body.ndaAccepted,

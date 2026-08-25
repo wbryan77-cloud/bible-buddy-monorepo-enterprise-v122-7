@@ -4,7 +4,7 @@
 (function (global) {
   function resolveAlphaOnboardingGate(opts) {
     opts = opts || {};
-    var token = String(opts.alphaToken || '').trim();
+    var token = String(opts.inviteLocator || opts.alphaInviteCode || opts.alphaToken || '').trim();
     var existing = opts.existingTesterId ? String(opts.existingTesterId).trim() : '';
     var invite = opts.invite;
 
