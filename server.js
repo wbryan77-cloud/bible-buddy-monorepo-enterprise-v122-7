@@ -37,7 +37,20 @@ app.get(['/alpha', '/alpha/', '/alpha-test', '/alpha-test/'], (req, res) => {
   if (token) {
     return res.redirect(302, `/?alphaToken=${encodeURIComponent(token)}`);
   }
-  res.redirect(302, '/');
+  // Fail closed: never silently drop into anonymous product without an invite token.
+  res
+    .status(400)
+    .type('html')
+    .send(`<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BibleBuddy Alpha — Invite required</title>
+<style>body{font-family:system-ui,sans-serif;background:#08111f;color:#f7f3e8;padding:32px;line-height:1.5}
+a{color:#78d9ff}</style></head>
+<body>
+  <h1>Alpha invite required</h1>
+  <p>This page only works with a personal BibleBuddy Alpha invitation link. Opening it without an invite token does not start a tester session.</p>
+  <p>Ask the Founder for a fresh invite, or open the full link you were sent (it includes a secure token).</p>
+</body></html>`);
 });
 app.get(['/admin', '/admin/'], (req, res) => {
   res.redirect(302, '/admin/bible-authority');

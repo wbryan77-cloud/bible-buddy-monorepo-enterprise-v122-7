@@ -176,15 +176,59 @@ function createInvite({ label = '', createdBy = 'admin' } = {}) {
 }
 
 function getInviteLink(inviteToken, baseUrl = '') {
-  const base = baseUrl || process.env.ALPHA_TESTER_BASE_URL || process.env.PUBLIC_APP_URL || '';
+  const base =
+    baseUrl ||
+    process.env.ALPHA_TESTER_BASE_URL ||
+    process.env.PUBLIC_APP_URL ||
+    process.env.RENDER_EXTERNAL_URL ||
+    '';
   // Public path /alpha?token= redirects to onboarding while preserving token.
   const path = `/alpha?token=${encodeURIComponent(inviteToken)}`;
   return base ? `${base.replace(/\/$/, '')}${path}` : path;
 }
 
 function validateInviteToken(token) {
+  const normalized = String(token || '').trim();
+  if (!normalized) return { valid: false, error: 'Invalid invite link.' };
+
   const data = load();
-  const invite = (data.invites || []).find((i) => i.inviteToken === token);
+  let invite = (data.invites || []).find((i) => i.inviteToken === normalized);
+
+  // Multi-instance / redeploy: invite may exist in durable store before local file catches up.
+  if (!invite) {
+    try {
+      const durablePath = path.join(__dirname, '..', 'data', 'alpha', 'alpha-invites-durable.json');
+      if (fs.existsSync(durablePath)) {
+        const durable = JSON.parse(fs.readFileSync(durablePath, 'utf8'));
+        const items = Array.isArray(durable?.items) ? durable.items : Array.isArray(durable) ? durable : [];
+        invite = items.find((i) => i && i.inviteToken === normalized) || null;
+      }
+    } catch (_) {
+      invite = null;
+    }
+    if (!invite) {
+      try {
+        const { getStorageAdapter } = require('./persistence/storageAdapter');
+        const { DOC } = require('./founderExperienceDurableStore');
+        const adapter = getStorageAdapter();
+        const doc = adapter.readJsonDocument(DOC.alphaInvites, null);
+        const items = Array.isArray(doc?.items) ? doc.items : [];
+        invite = items.find((i) => i && i.inviteToken === normalized) || null;
+      } catch (_) {
+        invite = null;
+      }
+    }
+    if (invite) {
+      data.invites = [...(data.invites || []), invite].slice(-MAX_TESTERS);
+      // Persist merge so subsequent reads hit local file; dual-write stays consistent.
+      try {
+        save(data);
+      } catch (_) {
+        /* non-fatal */
+      }
+    }
+  }
+
   if (!invite) return { valid: false, error: 'Invalid invite link.' };
   if (invite.used && invite.testerId) {
     const tester = (data.testers || []).find((t) => t.testerId === invite.testerId);

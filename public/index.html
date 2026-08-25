@@ -764,15 +764,22 @@
     .alpha-overlay {
       position: fixed;
       inset: 0;
-      z-index: 80;
+      z-index: 200;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 18px;
-      background: rgba(5, 9, 20, 0.72);
-      backdrop-filter: blur(8px);
+      padding: max(16px, env(safe-area-inset-top)) 14px max(16px, env(safe-area-inset-bottom));
+      background: rgba(2, 6, 14, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      overscroll-behavior: contain;
     }
     .alpha-overlay.show { display: flex; }
+    body.alpha-gate-open { overflow: hidden; touch-action: none; }
+    body.alpha-gate-open main.app {
+      pointer-events: none;
+      user-select: none;
+    }
     .alpha-modal {
       width: min(440px, 100%);
       max-height: min(92vh, 720px);
@@ -817,10 +824,10 @@
   <div id="alphaOverlay" class="alpha-overlay" aria-hidden="true">
     <div class="alpha-modal" role="dialog" aria-labelledby="alphaHeading">
       <h2 id="alphaHeading">Welcome to BibleBuddy Alpha</h2>
-      <p>You were invited to try the real BibleBuddy experience. Tell us how to address you — then you get the normal companion.</p>
+      <p>You were invited to try the real BibleBuddy experience. What should Buddy call you?</p>
       <div id="alphaInviteError" class="alpha-error"></div>
       <label for="alphaName">Preferred name <span style="color:var(--danger)">*</span></label>
-      <input id="alphaName" autocomplete="name" required />
+      <input id="alphaName" autocomplete="name" required placeholder="What should Buddy call you?" />
       <label for="alphaAge">Age range (optional)</label>
       <select id="alphaAge"><option value="">Prefer not to say</option></select>
       <label for="alphaRole">Role (optional)</label>
@@ -966,6 +973,7 @@
     </section>
   </main>
 
+  <script src="/js/alphaOnboardingGate.js"></script>
   <script>
     const orbStage = document.getElementById('orbStage');
     const orbStatus = document.getElementById('orbStatus');
@@ -1379,6 +1387,7 @@
 
     async function sendMessage(event) {
       event.preventDefault();
+      if (document.body.classList.contains('alpha-gate-open')) return;
       if (isSending) return; // Founder Alpha fix: block double-submit (Enter + click, or rapid double-click) from firing two live requests.
       const message = input.value.trim();
       if (!message) return;
@@ -1522,6 +1531,8 @@
     // fabrication, no new frontend framework.
     function getOrCreateGuestId() {
       try {
+        // While an Alpha invite gate is open, do not mint anonymous guest identity.
+        if (document.body.classList.contains('alpha-gate-open')) return null;
         const alphaId = window.localStorage.getItem('bb_alpha_tester_id');
         if (alphaId && String(alphaId).trim()) return String(alphaId).trim();
         let id = window.localStorage.getItem('bb_guest_id');
@@ -1538,6 +1549,39 @@
     function syncAdminLinkVisibility() {
       // Admin chrome removed from product surface — Founders use /admin/bible-authority directly.
       // Alpha invite alone never grants Admin authorization (server checkAdminAuth).
+    }
+
+    function setAlphaGateOpen(open) {
+      if (open) document.body.classList.add('alpha-gate-open');
+      else document.body.classList.remove('alpha-gate-open');
+    }
+
+    function clearStaleAlphaIdentity() {
+      try {
+        window.localStorage.removeItem('bb_alpha_tester_id');
+        window.localStorage.removeItem('bb_alpha_tester_name');
+      } catch (_) {}
+    }
+
+    function applyAlphaGate(gate) {
+      const overlay = document.getElementById('alphaOverlay');
+      if (!overlay) return;
+      if (gate.clearStaleTesterId) clearStaleAlphaIdentity();
+      if (gate.showOnboarding) {
+        setAlphaGateOpen(true);
+        overlay.classList.add('show');
+        overlay.setAttribute('aria-hidden', 'false');
+      } else {
+        setAlphaGateOpen(false);
+        overlay.classList.remove('show');
+        overlay.setAttribute('aria-hidden', 'true');
+      }
+      if (gate.bindTesterId) {
+        try {
+          window.localStorage.setItem('bb_alpha_tester_id', gate.bindTesterId);
+          if (gate.testerName) window.localStorage.setItem('bb_alpha_tester_name', gate.testerName);
+        } catch (_) {}
+      }
     }
 
     function applyFounderPreviewGate() {
@@ -1570,29 +1614,33 @@
     }
 
     async function initAlphaInviteIfPresent() {
+      const gateApi = window.BibleBuddyAlphaGate;
       const params = new URLSearchParams(location.search);
       const alphaToken = (params.get('alphaToken') || params.get('token') || '').trim();
       const overlay = document.getElementById('alphaOverlay');
       const errEl = document.getElementById('alphaInviteError');
-      if (!overlay) return;
+      if (!overlay || !gateApi) return;
 
       syncAdminLinkVisibility();
       applyFounderPreviewGate();
 
-      // Returning Alpha tester — product shell only, no harness
+      let existing = null;
       try {
-        const existing = window.localStorage.getItem('bb_alpha_tester_id');
-        if (existing && !alphaToken) {
-          syncAdminLinkVisibility();
-          applyFounderPreviewGate();
-          return;
-        }
+        existing = window.localStorage.getItem('bb_alpha_tester_id');
       } catch (_) {}
 
-      if (!alphaToken) return;
+      // Immediate gate decision before any network — invite token must block anonymous chat.
+      let gate = gateApi.resolveAlphaOnboardingGate({
+        alphaToken,
+        existingTesterId: existing,
+        invite: alphaToken ? 'pending' : null,
+      });
+      applyAlphaGate(gate);
 
-      overlay.classList.add('show');
-      overlay.setAttribute('aria-hidden', 'false');
+      if (!alphaToken) {
+        // returning_local or anonymous_no_invite
+        return;
+      }
 
       function showErr(msg) {
         if (!errEl) return;
@@ -1603,10 +1651,21 @@
       try {
         const r = await fetch('/api/alpha/invite/' + encodeURIComponent(alphaToken));
         const j = await r.json();
-        if (!j.ok) {
-          showErr(j.error || 'Invalid invite');
+        try {
+          existing = window.localStorage.getItem('bb_alpha_tester_id');
+        } catch (_) {}
+        gate = gateApi.resolveAlphaOnboardingGate({
+          alphaToken,
+          existingTesterId: existing,
+          invite: j,
+        });
+        applyAlphaGate(gate);
+
+        if (gate.phase === 'invalid_invite') {
+          showErr(gate.error || j.error || 'Invalid invite');
           return;
         }
+
         const age = document.getElementById('alphaAge');
         if (age && Array.isArray(j.options?.ageRanges)) {
           age.innerHTML =
@@ -1615,25 +1674,28 @@
               .map((o) => '<option value="' + o + '">' + String(o).replace(/_/g, ' ') + '</option>')
               .join('');
         }
-        // Already redeemed — attach identity and enter product
-        if (j.used && j.tester?.testerId) {
-          try {
-            window.localStorage.setItem('bb_alpha_tester_id', j.tester.testerId);
-            if (j.tester.name) window.localStorage.setItem('bb_alpha_tester_name', j.tester.name);
-          } catch (_) {}
+
+        if (gate.phase === 'returning_bound' || gate.phase === 'returning_invite') {
           await fetch('/api/alpha/session/start', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ testerId: j.tester.testerId, sessionId: getOrCreateChatSessionId() }),
+            body: JSON.stringify({ testerId: gate.bindTesterId, sessionId: getOrCreateChatSessionId() }),
           }).catch(() => {});
-          overlay.classList.remove('show');
-          overlay.setAttribute('aria-hidden', 'true');
           history.replaceState({}, '', '/');
           syncAdminLinkVisibility();
+          applyFounderPreviewGate();
           return;
         }
+
+        // onboard_required — keep gate open; wire start button
       } catch (e) {
-        showErr('Could not validate invite. Check your connection and try again.');
+        gate = gateApi.resolveAlphaOnboardingGate({
+          alphaToken,
+          existingTesterId: existing,
+          invite: { ok: false, error: 'Could not validate invite. Check your connection and try again.' },
+        });
+        applyAlphaGate(gate);
+        showErr(gate.error);
         return;
       }
 
@@ -1687,6 +1749,7 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ testerId: j.testerId, sessionId: getOrCreateChatSessionId() }),
           }).catch(() => {});
+          setAlphaGateOpen(false);
           overlay.classList.remove('show');
           overlay.setAttribute('aria-hidden', 'true');
           history.replaceState({}, '', '/');

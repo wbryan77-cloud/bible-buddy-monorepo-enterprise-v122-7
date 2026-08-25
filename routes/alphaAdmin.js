@@ -102,7 +102,13 @@ router.post('/invites', (req, res) => {
   if (!checkAdminAuth(req, res)) return;
   try {
     const invite = createInvite({ label: req.body?.label, createdBy: req.body?.createdBy || 'admin' });
-    const link = getInviteLink(invite.inviteToken, req.body?.baseUrl);
+    const hostBase =
+      req.body?.baseUrl ||
+      process.env.ALPHA_TESTER_BASE_URL ||
+      process.env.PUBLIC_APP_URL ||
+      process.env.RENDER_EXTERNAL_URL ||
+      `${req.protocol}://${req.get('host')}`;
+    const link = getInviteLink(invite.inviteToken, hostBase);
     res.json({ ok: true, invite, link });
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });
