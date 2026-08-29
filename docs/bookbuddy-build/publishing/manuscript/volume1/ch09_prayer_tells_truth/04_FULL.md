@@ -1,5 +1,7 @@
 # Chapter — Prayer that tells the truth
 
+Owen had begun wanting a Name instead of a collage. Naomi’s midweek showed what comes next: once you stop editing God, you may discover you have also been editing your prayers.
+
 Naomi’s public prayer sounded like someone who had never doubted God.
 
 Midweek service. Soft lights. A laptop on a stool with lyrics she already knew by heart. When the leader nodded her way, she stood and spoke in clean sentences: gratitude for the gathering, trust for “whatever You’re doing,” a soft “Your will be done,” an amen that made two people nod as if she had settled something in the room. In the lobby a woman squeezed her arm and whispered, *That was so anointed.* Naomi smiled the smile she had practiced since youth group—warm, closed, finished.
@@ -42,7 +44,7 @@ There is also a quieter cousin of performance: the prayer that never risks speci
 
 ## You’ve probably heard this before
 
-Modern honesty tools are often useful. Journals help people name what they feel. Mindfulness apps teach attention to the inner weather. Therapists invite unedited speech in a safe room. Those can be **THEMATIC_PARALLELS**: humans notice that buried truth corrodes, and that naming pain can be a first mercy.
+Modern honesty tools are often useful. Journals help people name what they feel. Mindfulness apps teach attention to the inner weather. Therapists invite unedited speech in a safe room. Those can rhyme with Scripture without replacing it: humans notice that buried truth corrodes, and that naming pain can be a first mercy.
 
 But several popular religious cousins contradict Scripture:
 
@@ -148,15 +150,7 @@ Immediate context: enter rest by faith; the living word exposes; nothing is hidd
 
 ### What the word actually says (*parrēsia*)
 
-In Hebrews 4:16 the governed Nestle 1904 Greek uses **παρρησίας** (*parrēsias*) for the “boldly” of approach:
-
-- **Primary text path:** Nestle1904 → Hebrews 4:16 → *μετὰ παρρησίας*  
-- **Lemma:** *παρρησία* (Strong’s G3954)  
-- **Gloss range:** openness; frankness; confidence of speech; freedom to speak  
-- **Plain English:** come with open speech—able to say what is true  
-- **KJV:** “come boldly”
-
-This does not mean rude irreverence. It means you are not required to smuggle your real life past a security checkpoint of fake piety. The throne is called a throne of **grace**. Mercy and help are the aim in time of need—not a standing ovation for eloquence.
+In Hebrews 4:16 the Nestle 1904 Greek uses **παρρησίας** (*parrēsias*) from *parrēsia* (G3954)—openness, frankness, confidence of speech, freedom to speak. “Come boldly” means come with open speech—able to say what is true. This does not mean rude irreverence. It means you are not required to smuggle your real life past a security checkpoint of fake piety. The throne is called a throne of **grace**. Mercy and help are the aim in time of need—not a standing ovation for eloquence.
 
 ---
 
@@ -188,14 +182,11 @@ That continuity also protects you from two modern traps: treating prayer as a pr
 
 ## A named frame: the prayer that tells the truth
 
-One portable BookBuddy frame for this chapter:
+One portable frame for this chapter:
 
 **The prayer that tells the truth.**
 
-- One audience: the Father, through the Son, by the Spirit—not the lobby.  
-- One register: honest enough for Psalms, simple enough for Matthew 6, bold enough for Hebrews 4.  
-- One refusal: prayer as audition.  
-- One aim: mercy and help in time of need—not a brand of faith.
+One audience: the Father, through the Son, by the Spirit—not the lobby. One register: honest enough for Psalms, simple enough for Matthew 6, bold enough for Hebrews 4. One refusal: prayer as audition. One aim: mercy and help in time of need—not a brand of faith.
 
 Naomi’s breakthrough would not be becoming a better public pray-er.
 

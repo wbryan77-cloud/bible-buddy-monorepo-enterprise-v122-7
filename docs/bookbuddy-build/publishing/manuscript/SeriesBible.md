@@ -1,14 +1,15 @@
 # Series Bible — BibleBuddy publishing
 
 **Purpose:** Keep flagship and companions from repeating stories, frames, and Scripture chains unnecessarily.  
-**Flagship status:** Volume 1 TOC frozen — editorial polish pass in progress; see `volume1/Volume1_INDEX.md`.  
-**Through-line ledger:** `SeriesThroughLine.md`
+**Flagship status:** Volume 1 TOC **CONTENT FROZEN** at `942322c`; **EDITORIAL FREEZE** `e0b2fba` (pushed); master strengthening + **final narrative/God-discovery surgical pass** complete — awaiting Founder final review before master freeze commit.  
+**Through-line ledger:** `SeriesThroughLine.md`  
+**Narrative map:** `volume1/Volume1_NarrativeArcMap.md` · `volume1/Volume1_GodDiscoveryArc.md`
 
 ## Volumes
 
 | Volume | Working title | Status | Notes |
 |---|---|---|---|
-| V1 Flagship | BibleBuddy Life Guide | **CONTENT FROZEN** + editorial polish | See `volume1/Volume1_EditorialFreezeReport.md` |
+| V1 Flagship | BibleBuddy Life Guide | Final narrative pass done (uncommitted) | See `volume1/Volume1_FinalNarrativeQA.md` |
 | C1 | Money, Work & Prosperity | NOT STARTED | Deepen kitchen-table themes; new stories |
 | C2 | Relationships & Family | NOT STARTED | Deepen dating/parenting; new stories |
 | C3 | When Life Hurts | NOT STARTED — **recommended next** | Deepen grief/resilience; new stories |
@@ -46,14 +47,14 @@ Prefer a human story moment over a promotional teaser. No melodramatic cliffhang
 - Steward’s table / seek-first (money)
 - Lock + welcome mat (relationships)
 - Garrisoned peace / honest petition (mind)
-- Next faithful inch (discipline)
+- Next faithful inch (discipline) — **Nora**
 - Beloved before brand (identity)
 - The God Scripture keeps introducing (theology)
 - The Keepable Rule (rule of life)
 - Unbranded Mark (legacy)
 - Monday Mercy (close)
 - Prayer that tells the truth
-- Honest hope (pain)
+- Honest hope (pain) — **Lena** (grief)
 
 ## Authority (all volumes)
 
@@ -61,5 +62,5 @@ Scripture controlling. Secondary sources classified. Four Winds: VERIFIED/QUALIF
 
 ## Next controlled build (when Founder directs)
 
-**Recommended:** Companion C3 *When Life Hurts* (see `SeriesThroughLine.md` and FinalFreezeReport why).  
+**Recommended:** Companion C3 *When Life Hurts* (see `SeriesThroughLine.md`).  
 Do not start until Founder directs.

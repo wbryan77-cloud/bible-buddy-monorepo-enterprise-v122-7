@@ -161,17 +161,7 @@ Wisdom is not a prosperity coupon. It is a refusal of clenched living. Generosit
 
 ## What the word actually says (original language)
 
-In Matthew 20:26–28, Nestle1904 uses *diakonos* / *diakoneō* language for the one who serves:
-
-- **Primary text path:** Nestle1904 → Matthew 20:26–28 → *διάκονος* / *διακονέω*  
-- **Lemma:** *diakonos* (G1249) / *diakoneō* (G1247)  
-- **Gloss range:** servant, minister; to serve, wait upon  
-- **Plain English:** greatness among you looks like useful service  
-- **KJV:** “minister… servant… to minister”
-
-The point is not a softer synonym for “leader with better optics.” It is status inverted: greatness measured by useful service, patterned on the Son who gives His life. Helen did not need a Greek word to feel the sting. She needed it to refuse a modern dodge—calling platform dominance “servant leadership” while refusing actual *diakonia*.
-
-OL here is load-bearing only as a guardrail: service means service.
+In Matthew 20:26–28, the Nestle 1904 Greek uses *diakonos* / *diakoneō* language (G1249 / G1247)—servant, minister; to serve, wait upon. Greatness among you looks like useful service. The point is not a softer synonym for “leader with better optics.” It is status inverted: greatness measured by useful service, patterned on the Son who gives His life. Helen did not need a Greek word to feel the sting. She needed it to refuse a modern dodge—calling platform dominance “servant leadership” while refusing actual *diakonia*. Service means service.
 
 ---
 
@@ -205,9 +195,7 @@ For ninety minutes she folded sleeves, checked zippers, and wrote *Boys 10–12*
 
 Halfway through, someone upstairs mentioned filming “servant leadership content.” Sam snorted softly. Helen felt the old itch—prove the morning counted—then put the phone deeper in her pocket until the zipper teeth snagged fabric. The itch did not make her evil. It made her honest about which gospel she was tempted to serve.
 
-In the parking lot afterward her phone offered three ways to “share your service.” She put it in the glove box. The coat was already on a child. The mark did not need a campaign to finish existing.
-
-That is the difference influencer-gospel cannot metabolize: service that loves a neighbor can be complete before content begins. If the only service that counts is the service that scales on a feed, you are no longer asking what God prepared. You are asking what the algorithm can baptize. Helen drove home with foil letters still scratching her wrist and a quieter sentence than any impact statement: *I can leave a mark without leaving a trail of myself.*
+In the parking lot afterward her phone offered three ways to “share your service.” She put it in the glove box. The coat was already on a child. The mark did not need a campaign to finish existing. Helen drove home with foil letters still scratching her wrist and a quieter sentence than any impact statement: *I can leave a mark without leaving a trail of myself.*
 
 ---
 
@@ -224,7 +212,7 @@ That is the difference influencer-gospel cannot metabolize: service that loves a
 
 ## The Unbranded Mark — a portable frame
 
-**The Unbranded Mark** is BookBuddy shorthand for fruit God prepared that does not require a campaign to be real.
+**The Unbranded Mark** names fruit God prepared that does not require a campaign to be real.
 
 It has three tests Helen started writing on a receipt in the garage:
 
@@ -236,7 +224,7 @@ If a “legacy plan” fails those tests, it may still be a brand.
 
 The coat basement passed. The service reel had failed the boast test while still helping someone—which is how branded legacy confuses you: mixed fruit, mixed hunger. Influencer-gospel says the hunger for proof is just “stewardship of story.” The Unbranded Mark says: steward the neighbor first; let witness follow without becoming the point.
 
-Lena’s next faithful inch and Marisol’s Keepable Rule are cousins: small, honest, keepable. The Unbranded Mark asks the same family of questions about impact.
+Nora’s next faithful inch and Marisol’s Keepable Rule are cousins: small, honest, keepable. The Unbranded Mark asks the same family of questions about impact.
 
 ---
 
@@ -296,6 +284,8 @@ Walking to the car, tote bag still itching her wrist, she tore a strip of foil l
 Outside, the sky was ordinary gray. Inside her chest, something smaller had shifted: she was less interested in being remembered as a light, and more willing to be salt in a room that would never trend.
 
 That is a mark.
+
+And marks, if they are real, still have to survive a Monday—the day after the inspiring resolve, when the tote bag itches and the inbox does not convert and beginning again is either theater or mercy. Helen’s Tuesday pointed forward without finishing the walk: fruit without a brand still needs a keepable return.
 
 Not a brand.
 

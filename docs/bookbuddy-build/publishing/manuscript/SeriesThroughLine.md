@@ -47,12 +47,14 @@ Commercial alternate (Founder may approve): **V1 → C1 → C2 → C3 → C4** i
 |---|---|---|
 | Maya — tabs, Mom health scare, grocery ordinary | ch00, ch12 | C3: waiting-room / fear that faithfulness is not a force field |
 | Lena — grief, chip aisle, honest hope | ch06 | C3 primary deepening (new stories; do not clone) |
+| Nora — sticky notes, next faithful inch | ch03 | Discipline deepeners; distinct from grief Lena |
 | Jordan — kitchen-table money | ch04 | C1 deepening |
 | Ava — lock / welcome mat | ch05 | C2 deepening |
 | Owen — collage-god | ch08 | C4 deepening |
 | Malik — anxious mind as cousin to suffering | ch01, echo ch06 | Accent in C3 or mind-adjacent material |
+| Andre — speech-as-deity counter-scene | ch01 | Manifestation precision echo |
 
-**FLAG (Founder):** Two characters named Lena (discipline ch03; grief ch06). May be intentional ensemble coincidence or accidental collision. Do not silently merge/rename without Founder call.
+**Resolved:** Discipline character formerly also named Lena is now **Nora** (ch03 + callbacks). Grief **Lena** remains ch06 / C3 hinge.
 
 ---
 
@@ -70,7 +72,7 @@ Commercial alternate (Founder may approve): **V1 → C1 → C2 → C3 → C4** i
 
 ## 8. Current recommended reading / build order
 
-1. **V1 Flagship** — *BibleBuddy Life Guide* (CONTENT + editorial polish in progress)  
+1. **V1 Flagship** — *BibleBuddy Life Guide* (editorial freeze `e0b2fba`; final narrative pass awaiting Founder final review)  
 2. **C3 When Life Hurts** — recommended next build  
 3. **C1 Money, Work & Prosperity**  
 4. **C2 Relationships & Family**  
@@ -83,9 +85,9 @@ Do **not** begin C3 until Founder directs.
 ## 9. Sequence decisions requiring Founder approval
 
 1. Confirm **C3 after V1** vs commercial **C1 after V1**.  
-2. Resolve **dual Lena** naming.  
+2. Approve master-strengthening commit when review passes.  
 3. Approve whether published editions include optional separable preview (`NextBookPreview_Optional.md`) after the literary ending.  
-4. Approve editorial-freeze commit of polish pass (separate from this file’s definition).
+4. Approve entry into DESIGN/FORMATTING after master manuscript freeze.
 
 ---
 

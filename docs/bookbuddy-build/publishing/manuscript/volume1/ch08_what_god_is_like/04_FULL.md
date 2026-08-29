@@ -44,9 +44,15 @@ It will walk a Genesis-to-Revelation arc with key passages in context—so ordin
 
 ---
 
-## The cost of a collage-god
+## The night the collage failed
 
-Collage-gods are convenient until life asks for a Person.
+Two nights after the dinner—before he bought the thin Bible—Owen woke at 1:40 a.m. with the leftover-pasta smell still in the fridge and the friend’s question still unanswered. He tried the collage again, whispering borrowed lines into the dark: *God is love. The universe has my back. Everything happens for a reason.* The phrases arrived like apps opening. None of them held.
+
+What he wanted, suddenly, was not a better slogan. He wanted to know whether there was a Person who could be named without costume—holy enough that evil mattered, merciful enough that Owen was not crushed for needing mercy. He sat on the edge of the bed with his elbows on his knees and admitted, without an audience:
+
+*I do not know You. I have been introducing a mashup.*
+
+That was not theology class. It was the cost of collage: loneliness with religious vocabulary. In the morning he would find the bookstore Bible. First he needed the wound to tell the truth.
 
 When Owen’s cousin got sick, “the universe” offered atmosphere and no covenant. When he scrolled past injustice videos at midnight, the soft mascot god offered vibes and no court. When shame woke him at 4 a.m., the examiner-only god offered glare and no mercy thick enough to stay. He toggled between versions the way some people toggle playlists—depending on the mood they needed God to match.
 
@@ -62,7 +68,7 @@ He needed to stop editing.
 
 ## You’ve probably heard this before
 
-Humans keep reaching for a high God, a moral order, a Creator behind the world. In English conversation you will hear echoes: a First Cause in philosophy talk; a merciful Lord in neighbor religions described in popular summaries; a “higher power” in recovery rooms. Those overlaps can be, at most, **THEMATIC_PARALLELS**: people sense they are not ultimate.
+Humans keep reaching for a high God, a moral order, a Creator behind the world. In English conversation you will hear echoes: a First Cause in philosophy talk; a merciful Lord in neighbor religions described in popular summaries; a “higher power” in recovery rooms. Those can rhyme with Scripture without replacing it: people sense they are not ultimate.
 
 Use the parallel carefully. Do not crown it.
 
@@ -105,11 +111,11 @@ The Bible does not begin with Owen’s feelings. It begins with God acting:
 
 > “In the beginning God created the heaven and the earth.” (Genesis 1:1, KJV)
 
-Immediate context: Genesis 1 unfolds ordered days, speech that forms, blessing on creatures, and humankind made in God’s image (Genesis 1:1–31). This is not a local mascot inventing a village. It is the Creator of heaven and earth. EXPLICIT: God creates. Inference we should not force here: a full modern science debate. The text’s claim is theological and cosmic before it is laboratory.
+Immediate context: Genesis 1 unfolds ordered days, speech that forms, blessing on creatures, and humankind made in God’s image (Genesis 1:1–31). This is not a local mascot inventing a village. It is the Creator of heaven and earth. The text says God creates. What we should not force here is a full modern science debate. The claim is theological and cosmic before it is laboratory.
 
 If your “God” cannot create, you are already negotiating with a smaller word.
 
-Owen had treated “Creator” like church wallpaper. Genesis makes it load-bearing: you are creature; He is not your peer project.
+Owen had treated “Creator” like church wallpaper. Genesis makes it load-bearing: you are creature; He is not your peer project. On the drive home from dinner he had almost said, “God is… big?” and hated how thin it sounded. Genesis 1 gave him a better thinness: not small talk, but a first true sentence—God made heaven and earth, and Owen was not the author of either.
 
 ---
 
@@ -123,52 +129,29 @@ Immediate context: Exodus 32–34—idolatry, broken tablets, intercession, rene
 
 ### What the word actually says (*ḥesed*)
 
-In Exodus 34:6–7 the governed Hebrew witness (OSHB path) carries **חֶסֶד** (*ḥesed*) among the words rendered “goodness” / mercy-loyalty in the wider confession tradition:
-
-- **Primary text path:** OSHB → Exodus 34:6 → *ḥesed* (Strong’s H2617)  
-- **Gloss range:** covenant loyalty; steadfast love; lovingkindness; faithful mercy  
-- **Plain English:** not a mood—loyal love that keeps faith with His people  
-- **KJV nearby rendering:** “goodness” / “mercy” language in the proclamation
-
-This does not mean God is a sentimental mascot. *Ḥesed* is love with backbone—love that binds itself in promise.
+In Exodus 34:6–7 the Hebrew text (OSHB) carries **חֶסֶד** (*ḥesed*, H2617) among the words rendered “goodness” and mercy-loyalty in the wider confession tradition. *Ḥesed* is not a mood. It is covenant loyalty—steadfast love, lovingkindness, faithful mercy that keeps faith with His people. This does not mean God is a sentimental mascot. *Ḥesed* is love with backbone—love that binds itself in promise.
 
 Holiness without *ḥesed* becomes cruelty theater. *Ḥesed* without holiness becomes permission slip. Scripture refuses both amputations.
 
+Owen sat with that longer than he expected. He had wanted a God who would be useful—calm him, approve him, never complicate him. Exodus 34 would not shrink to usefulness. The Name was beautiful in a way that unsettled him: mercy with a backbone, justice that would not pretend evil was pretend. For a minute he forgot the dinner question and felt something rarer than information—*wonder*. Not trivia. Recognition that this God had been naming Himself long before Owen needed a better answer at a table.
+
 ---
 
-## What Scripture actually says — covenant-keeping
+## What Scripture actually says — faithful Judge who keeps covenant
 
-God’s love is not a random hug. It moves in covenant—promise, people, faithfulness across generations. Deuteronomy presses Israel to remember:
+God’s love is not a random hug. It moves in covenant—promise, people, faithfulness across generations:
 
 > “Know therefore that the Lord thy God, he is God, the faithful God, which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations.” (Deuteronomy 7:9, KJV)
 
 Immediate context: Israel is reminded why they were chosen—not for size, but for love and oath (Deuteronomy 7:6–11). Covenant-keeping means God does not ghost His word when feelings shift.
 
-Owen had treated commitment language as corporate HR. Scripture treats it as God’s reliability.
-
----
-
-## What Scripture actually says — judges evil
-
-A God who never judges is not kinder. He is indifferent.
-
-The prophets will not let oppression wear religious perfume. Amos, for example, thunders against those who “swallow up the needy” and cheat with false balances (Amos 8:4–6, KJV context in Amos 8). Isaiah calls people to “cease to do evil; Learn to do well; seek judgment, relieve the oppressed…” (Isaiah 1:16–17, KJV), in a chapter where religious assemblies are rejected when hands are full of blood (Isaiah 1:10–20).
-
-EXPLICIT: God opposes injustice and empty religion. Inference to refuse: that anger at evil means God is only wrath with no mercy. The same Bible that judges also invites washing and reason together (Isaiah 1:18).
-
-If your collage-god never says “no,” victims have no court.
-
----
-
-## What Scripture actually says — merciful
-
-Mercy is not a later Christian invention pasted onto a mean Old Testament. It is already in the Name at Sinai. The Psalms sing it without embarrassment:
+And a God who never judges is not kinder. He is indifferent. The prophets will not let oppression wear religious perfume. Amos thunders against those who “swallow up the needy” and cheat with false balances (Amos 8:4–6). Isaiah calls people to “cease to do evil; Learn to do well; seek judgment, relieve the oppressed…” (Isaiah 1:16–17, KJV), in a chapter where religious assemblies are rejected when hands are full of blood (Isaiah 1:10–20). The same Bible that judges also invites washing and reason together (Isaiah 1:18).
 
 > “The Lord is merciful and gracious, slow to anger, and plenteous in mercy.” (Psalm 103:8, KJV)
 
-Immediate context: Psalm 103 blesses the Lord for forgiveness, healing, redemption, and fatherly pity (Psalm 103:1–14). Mercy here is not denial of sin; it is God’s willing goodness toward the frail.
+Psalm 103 blesses the Lord for forgiveness, healing, redemption, and fatherly pity (Psalm 103:1–14). Mercy here is not denial of sin; it is God’s willing goodness toward the frail. Jonah knew this mercy and hated it when it reached Nineveh (Jonah 3–4). That is how you know biblical mercy is not Owen’s private preference engine.
 
-Jonah knew this mercy and hated it when it reached Nineveh (Jonah 3–4). That is how you know biblical mercy is not Owen’s private preference engine. Sometimes mercy offends our scorekeeping.
+If your collage-god never says “no,” victims have no court. If your collage-god never keeps covenant, hope has no spine.
 
 ---
 
@@ -178,7 +161,7 @@ Knowing God is not only collecting attributes. In the fullness of the story, God
 
 > “In the beginning was the Word, and the Word was with God, and the Word was God… And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.” (John 1:1, 14, KJV)
 
-Immediate context: John 1:1–18—creation through the Word, light and darkness, John the Baptist’s witness, grace and truth in Jesus Christ, God made known. EXPLICIT: the Word is God; the Word becomes flesh. This is not optional garnish on generic spirituality. It is the center of Christian knowing.
+Immediate context: John 1:1–18—creation through the Word, light and darkness, John the Baptist’s witness, grace and truth in Jesus Christ, God made known. The Word is God; the Word becomes flesh. This is not optional garnish on generic spirituality. It is the center of Christian knowing.
 
 If “God” for you never arrives in Jesus, you are still negotiating with a silhouette.
 
@@ -202,7 +185,7 @@ Notice what the apostolic summary insists on: “according to the scriptures” 
 
 The story does not end in private spirituality.
 
-Revelation shows the Lamb and the King, judgment and renewal, God dwelling with His people, tears wiped away, all things made new (Revelation 21:1–5; see also the rider called Faithful and True in Revelation 19:11–16). Immediate context: vision for churches under pressure; worship; warning; hope. EXPLICIT: history is going somewhere under God’s rule. Inference to refuse: that every newspaper headline is a decoder ring you must master before trusting God.
+Revelation shows the Lamb and the King, judgment and renewal, God dwelling with His people, tears wiped away, all things made new (Revelation 21:1–5; see also the rider called Faithful and True in Revelation 19:11–16). Immediate context: vision for churches under pressure; worship; warning; hope. History is going somewhere under God’s rule. What that does not require is treating every newspaper headline as a decoder ring you must master before trusting God.
 
 The coming King means Owen’s collage is not the final editor of reality.
 
@@ -260,14 +243,11 @@ If that still feels like too many words, hold one accessible sentence for the we
 
 ## A named frame: the God Scripture keeps introducing
 
-One portable BookBuddy frame for this chapter:
+One portable frame for this chapter:
 
 **The God Scripture keeps introducing.**
 
-- Not the vibe you prefer.  
-- Not the examiner you fear into silence.  
-- Not the political mascot.  
-- The Creator, holy and steadfast in love, covenant-true, just, merciful, known in Jesus crucified and risen, coming as King.
+Not the vibe you prefer. Not the examiner you fear into silence. Not the political mascot. The Creator, holy and steadfast in love, covenant-true, just, merciful, known in Jesus crucified and risen, coming as King.
 
 Owen’s breakthrough would not be becoming the person with the fastest doctrine answers at dinner.
 
@@ -320,8 +300,14 @@ He still flinched when the word *holy* landed too close.
 
 But he was no longer only stalling with “mystery” as a shield.
 
-He had begun—creature before Creator, sinner before mercy, reader before the Word made flesh—
+He had begun—creature before Creator, sinner before mercy, reader before the Word made flesh—and something in him had shifted from needing a better answer at dinner to wanting to know this God. Knowing would require speech that was not performance. The next honest room was prayer.
 
-with the God the Bible keeps showing,
+That is how collage ends:
+
+not with a cooler mashup,
+
+but with a Name—
+
+the God the Bible keeps showing,
 
 not the one his fear kept editing.

@@ -56,9 +56,9 @@ They know you want a story that makes you say, “That’s me.”
 
 They know you want something to *do* on Monday morning—not only something to admire on Sunday.
 
-Those craft instincts are worth learning—how a page earns trust, how a story returns to a person, how a principle sticks—without turning Scripture into a product. The goal is not to imitate a brand. The goal is to serve a reader who is already drowning in brands.
+Those instincts matter—starting where you hurt, earning trust, returning to a person, leaving something you can try—without turning Scripture into a product. The goal is not to imitate a brand. The goal is to serve a reader who is already drowning in brands.
 
-But craft is not truth.
+But warmth is not the same as truth.
 
 A memorable framework can still be half-true.
 
@@ -66,61 +66,33 @@ A warm story can still lead you toward a thin god.
 
 A practical tip can still leave out repentance, covenant, holiness, mercy, judgment, resurrection, and the living Lord.
 
-So this book will often say, out loud:
+So this book will often pause and say, out loud: you’ve probably heard this before; here is why it attracts people; here is what Scripture actually says in context; here is what this does *not* mean; and here is one believable next step.
 
-- “You’ve probably heard this before…”
-- “Here is why it attracts people…”
-- “Here is what Scripture actually says in context…”
-- “Here is what this does *not* mean…”
-- “Here is one believable next step…”
-
-If a chapter never makes you feel seen, it has failed the craft. If it makes you feel seen and then replaces God with technique, it has failed the faith. We are aiming for both: recognition without reduction.
+If a chapter never makes you feel seen, something has gone wrong. If it makes you feel seen and then replaces God with technique, something more serious has gone wrong. We are aiming for both: recognition without reduction.
 
 ---
 
 ## How we will handle Scripture
 
-When this book opens the Bible, it will try to do four honest things:
+When this book opens the Bible, we will read the passage in its own setting—not as a floating slogan. When a claim is big enough, we will follow the whole story of God from Genesis to Revelation, not only one favorite verse. We will look at Hebrew or Greek only when English hides something important—never by “modernizing the KJV” and calling that original language. And we will keep clear what the text itself says from what we are offering as history, interpretation, or a practical suggestion.
 
-1. **Read the passage in its immediate setting** — not as a floating slogan you can stick on a water bottle and call discipleship.  
-2. **Follow the theme across Genesis to Revelation** when the claim is big enough to need the whole story of God, not only one favorite verse.  
-3. **Look at Hebrew or Greek only when it clarifies meaning**, using the same governed original-language sources BibleBuddy already trusts (OSHB for Hebrew/Aramaic; Nestle 1904 for Greek)—not by “modernizing the KJV” and calling that original language.  
-4. **Separate layers of confidence** — what the text says explicitly, what multiple passages support, what is reasoned inference, what is historical context, and what remains disputed.
+You should never have to wonder whether a line is Scripture, history, interpretation, or advice for Monday.
 
-You should never have to wonder whether a line is Scripture, history, interpretation, or a practical suggestion.
-
-We will quote the King James Version as the controlling English text for biblical conclusions in these pages. Where original-language study matters, you will see an honest chain: primary text → lemma → gloss → plain English → KJV comparison. Where we compare modern ideas, philosophies, or religious texts, we will classify the relationship carefully—documented influence, thematic parallel, contradiction, or unknown—rather than manufacturing a conspiracy of “the Bible said it first” when the evidence is only resemblance.
+We will quote the King James Version as the controlling English text for biblical conclusions in these pages.
 
 ---
 
 ## How we will handle other wisdom
 
-Philosophers, religious texts, and modern guides will appear when they help name a human problem or show that people across centuries keep colliding with the same realities: desire, fear, money, friendship, discipline, death, hope.
+Philosophers, religious texts, and modern guides will appear when they help name a human problem—desire, fear, money, friendship, discipline, death, hope. Similarity is not proof of borrowing. Where the resemblance is only thematic, we will say so. Where Scripture contradicts a popular promise—especially guarantees of riches, magical speech, or self-salvation—we will say that clearly too. No secondary source outranks Scripture, and no resemblance gets dressed up as “the Bible said it first” when the evidence is only a shared ache.
 
-Similarity is not proof of borrowing.
-
-Chronology can show what came earlier. Chronology alone cannot prove that a later writer “got it from the Bible.”
-
-Where the evidence is only thematic, we will say so.
-
-Where Scripture contradicts a popular promise—especially guarantees of riches, magical speech, or self-salvation—we will say that clearly too.
-
-You will not be asked to sneer at every non-Christian insight. You will be asked not to baptize every insight as if it were gospel. That is a narrower path, and it is the one this book walks.
+You will not be asked to sneer at every non-Christian insight. You will be asked not to baptize every insight as if it were gospel.
 
 ---
 
 ## Who this is for
 
-This book is for the reader who is:
-
-- intimidated by the Bible but hungry for God;  
-- skeptical of religious performance;  
-- financially stressed;  
-- lonely or dating in a swipe culture;  
-- parenting while exhausted;  
-- grieving;  
-- trying to build discipline without becoming cruel to yourself;  
-- tired of advice that never becomes a life.
+This book is for the reader who is intimidated by the Bible but hungry for God; skeptical of religious performance; financially stressed; lonely or dating in a swipe culture; parenting while exhausted; grieving; trying to build discipline without becoming cruel to yourself; or simply tired of advice that never becomes a life.
 
 If you already know a lot of Bible, you are still welcome—if you are willing to enter through ordinary human life again. Expertise is not the enemy. Contempt for ordinary questions is.
 
@@ -146,23 +118,15 @@ You may also meet new faces along the way—parents in a school hallway, friends
 
 ### A short map of what’s ahead
 
-Think of the chapters as rooms off one hallway, not as twelve unrelated seminars:
+Think of the chapters as rooms off one hallway:
 
 1. **Mind & becoming** — when the night won’t quiet; who you’re becoming without self-salvation.  
-2. **Ordinary faithfulness & money** — small obedience without hustle religion; stewardship at a kitchen table without prosperity guarantees.  
+2. **Ordinary faithfulness & money** — small obedience without hustle religion; stewardship without prosperity guarantees.  
 3. **People & pain** — who you let close; suffering that refuses slogan hope.  
-4. **Meeting God** — opening Scripture without drowning; what God is like from Genesis to Revelation; prayer that tells the truth.  
+4. **Meeting God** — opening Scripture without drowning; what God is like; prayer that tells the truth.  
 5. **A keepable life** — a rule you can keep; a mark that isn’t a brand; beginning again on Monday morning.
 
-You do not have to memorize the map. You only need to know the journey has a shape: life first, then Scripture, then a step you can actually take.
-
-Then we will walk into Scripture without rushing.
-
-Then we will tell you what a passage does *not* mean, because half-truths often travel faster than truth.
-
-Then we will leave you with something small enough to try within twenty-four to seventy-two hours.
-
-Change, in this book, is not a brand promise. It is the slow fruit of truth meeting a willing life under God.
+You do not have to memorize the map. The shape is simple: life first, then Scripture, then a step you can actually take. Change, in this book, is not a brand promise. It is the slow fruit of truth meeting a willing life under God.
 
 ---
 
@@ -196,19 +160,11 @@ You will not be asked to pretend that Monday is easy. You will be asked not to l
 
 ---
 
-## A word about evidence and “the Bible said it first”
-
-You will meet older philosophies, religious texts, and modern frameworks in this series. When ideas resemble each other, we will not manufacture a conspiracy of influence. We will classify carefully—from documented influence to thematic parallel to contradiction to unknown.
-
-Research sources used elsewhere in BibleBuddy’s larger work may inform historical or prophetic questions in later volumes **only after verification**. No research book gets to outrank Scripture. No footnote becomes doctrine by enthusiasm. In these pilot chapters we lean first on Scripture in context, and we keep secondary comparison honest and limited.
-
----
-
 ---
 
 ## Companions, not mascots
 
-Maya, Jordan, Ava, Malik, and others in these pages are not mascots for lessons. They are companions designed so you can say “that is me” before anyone teaches you. Their stories deepen across chapters without becoming soap opera. You are allowed to recognize yourself in more than one of them. Most real lives are not single-topic.
+Maya, Jordan, Ava, Malik, and others in these pages are not mascots for lessons. They are companions—people you can recognize yourself in before anyone teaches you. Their stories deepen across chapters without becoming soap opera. You are allowed to see yourself in more than one of them. Most real lives are not single-topic.
 
 If a story does not match your demographics, stay anyway. Recognition is about the inner pressure, not the exact props. A kitchen table can be anyone’s. A sleepless mind can be anyone’s. A grief that refuses slogans can be anyone’s.
 
@@ -216,15 +172,7 @@ If a story does not match your demographics, stay anyway. Recognition is about t
 
 ## The authority order, said simply
 
-When a chapter reaches a biblical conclusion, this is the order we intend:
-
-1. What the KJV passage says in its immediate setting  
-2. What governed Hebrew or Greek clarifies when a word is load-bearing  
-3. What the wider biblical story supports from Genesis to Revelation  
-4. What remains inference, pastoral application, or disputed  
-5. What modern ideas rhyme with, contradict, or merely resemble  
-
-You should be able to argue with us at any layer without being gaslit into thinking a practical tip was a verse.
+When a chapter reaches a biblical conclusion, Scripture in the King James Version comes first, read in its own setting. Hebrew or Greek may clarify a load-bearing word. The wider story of God from Genesis to Revelation may confirm what one passage begins. After that come inference, pastoral application, and disputed questions—and only then the modern ideas that rhyme with, contradict, or merely resemble the text. You should be able to argue with us at any of those layers without being told a practical tip was a verse.
 
 ## How to read this book
 
@@ -234,7 +182,7 @@ If a chapter finds you, stay there a few days before rushing on. Transformation 
 
 You do not have to agree with every sentence to benefit from an honest encounter with a passage. You do have to open the passage. Do not let this book become a substitute Bible. Let it be a companion that walks you back to the text, then back to your Monday.
 
-If you are reading with a spouse, a friend, a small group, or alone at a kitchen table after the kids are asleep, the same rule applies: recognition first, then truth, then one next step. Do not try to renovate your whole life in one sitting. Faithfulness is rarely theatrical.
+If you are reading with a spouse, a friend, a small group, or alone at a kitchen table after the kids are asleep, the same invitation holds: recognition first, then truth, then one next step. Do not try to renovate your whole life in one sitting. Faithfulness is rarely theatrical.
 
 ---
 
@@ -267,9 +215,9 @@ It will promise—and then try to keep the promise—to take your real life seri
 
 Maya did not need a five-year spiritual plan before she bought milk.
 
-She needed a first honest act.
+She needed a first honest act—something small enough to try before the week turned over.
 
-**Do this within 48 hours:**
+**If you can, try this within 48 hours:**
 
 1. Name, in one sentence, the open tab that is loudest in your life right now (money, loneliness, anxiety, grief, direction, family—whatever is true).  
 2. Open one short passage slowly—Psalm 139:1–6, or Matthew 6:25–34, or Philippians 4:4–7—and write what the text actually says before you write what you wish it said.  
@@ -278,7 +226,7 @@ She needed a first honest act.
 
 That is not the whole journey.
 
-It is how journeys that stay honest usually begin.
+It is how honest journeys usually begin.
 
 ---
 

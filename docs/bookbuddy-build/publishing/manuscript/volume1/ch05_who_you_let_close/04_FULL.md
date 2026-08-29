@@ -29,23 +29,9 @@ Ava locked the phone and whispered the real question:
 
 *How do I choose someone without losing myself—and without treating a human being like a shopping cart?*
 
----
+Belonging. Fear of being too much or not enough. Desire and holiness. Whether loneliness gets a vote. Whether God is involved in ordinary affection. Whether her parents’ marriage—beautiful or broken—still scripted her hope. The swipe was never only about the swipe. Online dating did not invent confusion; it industrialized it. Endless options can feel like hope while quietly training the heart to evaluate people as inventory.
 
-## What are you really asking?
-
-Dating questions are rarely only about dating. They are about:
-
-- belonging;  
-- fear of being too much or not enough;  
-- desire and holiness;  
-- discernment;  
-- whether loneliness gets a vote;  
-- whether God is involved in ordinary affection;  
-- whether your parents’ marriage—beautiful or broken—still scripts your hope.
-
-Online dating did not invent confusion. It industrialized it. Endless options can feel like hope while quietly training the heart to evaluate people as inventory.
-
-And “who you let close” is larger than romance. Friends shape the week. Family can heal or haunt. Parenting—when it arrives—makes closeness costly in a new way. The heart has more doors than the apps admit.
+And “who you let close” is larger than romance. Friends shape the week. Family can heal or haunt. A parent in a school hallway, apologizing by text for last night’s sharp tone, learns the same lesson from another door: closeness costs when small people need your nervous system to be less of a storm. The heart has more doors than the apps admit. This chapter keeps dating as the spine—and lets the other doors stay in view.
 
 ---
 
@@ -74,16 +60,6 @@ He liked that she laughed at his jokes. She liked that he remembered her sister�
 Scripture does not demand modern dating labels. It does confront **using people without covenantal responsibility**. Ambiguity can be a kindness while discerning. It can also be a strategy for keeping options warm while a human heart stays half-open in the cold.
 
 If your connections chronically die in the fog, the problem may not be “the apps.” The problem may be a discipleship issue: love without truth, desire without promise, nearness without courage.
-
----
-
-## Microstory: a parenting hallway (closeness with a different cost)
-
-On a Thursday afternoon, Jordan stood outside his daughter’s classroom with other parents who smelled like office coffee and hurried perfume. A mom he barely knew said, lightly, “You just have to be their safe place.” It was true enough to sting. Jordan thought of the night before—the banking app, the sharp tone he had used about shoes left in the hallway, the way his son’s face had closed like a door.
-
-Who you let close is not only who you date. It is who you become when small people need your nervous system to be less of a storm. Scripture’s call to love is not romantic wallpaper. It is the daily refusal to make the nearest hearts pay for your unmanaged fear.
-
-Jordan texted his wife from the hallway: *I’m sorry about last night. Can we reset at dinner—no phones?* Closeness repaired in ordinary sentences.
 
 ---
 
@@ -144,8 +120,6 @@ Ava noticed this on a Sunday afternoon when she realized she had spent more emot
 
 ---
 
----
-
 ## A Saturday that smelled like other people’s plans
 
 Ava walked to the farmer’s market alone because staying home felt like admitting defeat. She bought peaches she did not need. She watched a couple share a pastry and felt the old arithmetic: *everyone else is further along.*
@@ -178,8 +152,6 @@ A revolving door with a sale sign is not openness. It is exhaustion marketed as 
 
 ---
 
----
-
 ## When family is the closeness that hurts
 
 Not every “who you let close” problem is romantic. Some readers need wisdom for a parent who criticizes every choice, a sibling who only calls in crisis, or a child whose needs arrive before your maturity feels ready. Scripture’s household codes and wisdom sayings do not give modern psychology manuals, but they do give direction: honor, truth-telling, patience, discipline without cruelty, refusal of revenge, and the primacy of love that “seeketh not her own.”
@@ -187,22 +159,6 @@ Not every “who you let close” problem is romantic. Some readers need wisdom 
 If closeness is unsafe because of abuse, seek help. Guarding your heart includes getting out of harm’s way. Covenant faithfulness is not the same as unlimited access for someone who destroys.
 
 For ordinary strained family love, try one concrete repair this week: an apology without a lecture, a boundary without a speech, a visit without a debate topic. Small doors open more often than dramatic speeches.
-
-## Monday morning — what to do now
-
-Ava did not need a husband by Friday. She needed a cleaner heart posture.
-
-**Do this within 72 hours:**
-
-1. Write two lists:  
-   - **Character non-negotiables** (truthfulness, repentance capacity, kindness under stress, respect for God, financial honesty, etc.)  
-   - **Preference flexibles** (height, hobby overlap, aesthetic vibe)  
-2. Take one intentional fast from swiping long enough to feel what loneliness tries to make you decide.  
-3. Ask a trusted mature believer—not the group chat alone—to tell you what patterns they see in who you choose.  
-4. Name one non-romantic closeness to strengthen this week (friend, sibling, church community).  
-5. Pray Psalm 139 honesty: search me, know me, lead me—before you ask God to “send someone.”
-
----
 
 ---
 
@@ -220,14 +176,7 @@ Guarding the heart (Proverbs 4:23) includes guarding decision-points. The questi
 
 You do not need to turn every coffee into an engagement rehearsal. You do need a direction of travel. Scripture’s high view of marriage as covenant should make casual use of people look strange—not because dating must be Victorian, but because humans are not disposable.
 
-Ask questions early enough to be kind:
-
-- How do you handle conflict?  
-- What does repentance look like for you?  
-- How do you talk about people not in the room?  
-- What is your relationship to money, truth, and God when no one is clapping?
-
-Chemistry cannot answer those. Time and courage can.
+A few questions asked early enough to be kind: How do you handle conflict? What does repentance look like for you? How do you talk about people not in the room? What is your relationship to money, truth, and God when no one is clapping? Chemistry cannot answer those. Time and courage can.
 
 ### Family scripts
 
@@ -243,8 +192,6 @@ Genesis gives companionship as gift. Torah and prophets confront betrayal and pr
 
 If your relationship ethic is only “what feels mutual,” you will drift. If it is only “what looks Christian on paper,” you may miss kindness. Scripture holds desire, holiness, covenant, and neighbor-love together. That is heavier than a swipe. It is also more human.
 
-
-
 ---
 
 ## Family microstory: the grocery aisle
@@ -257,6 +204,15 @@ Scripture’s wisdom about the tongue, patience, and not provoking children to w
 
 Dating and family are not separate planets. Both ask whether love will be patient and kind when it costs you (1 Corinthians 13)—read first as correction to a gifted, fractious church, then as a mirror for every intimate bond.
 
+---
+
+## Monday morning — what to do now
+
+Ava did not need a husband by Friday. She needed a cleaner heart posture.
+
+Within a few days, try what fits: separate **character non-negotiables** (truthfulness, repentance capacity, kindness under stress, respect for God, financial honesty) from **preference flexibles** (height, hobby overlap, aesthetic vibe). Take one intentional pause from swiping long enough to feel what loneliness tries to make you decide. Ask a trusted mature believer—not the group chat alone—what patterns they see in who you choose. Name one non-romantic closeness to strengthen this week. Pray Psalm 139 honesty—search me, know me, lead me—before you ask God to “send someone.”
+
+---
 
 ## Story return
 
@@ -271,3 +227,5 @@ Then she texted her friend from church: *Want to walk Wednesday? I need real peo
 Who you let close is never only romance.
 
 It is discipleship by proximity—kitchen laughter if it comes, and Tuesday faithfulness either way.
+
+By now the book’s first movement has walked through mind, becoming, small faithfulness, money, and closeness. Ava’s door was one more human room. What none of those rooms can finish—what they only expose—is the ache that arrives when love, honesty, and Monday steps still leave a wound that will not tidy itself. Life can open the Bible’s questions. Sometimes life also opens the deeper one: *Who is God when the people I love cannot fix what hurts?*

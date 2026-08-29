@@ -87,16 +87,7 @@ Immediate context matters. Matthew 6 is not a wealth seminar. It is a call away 
 
 ### What the word actually says (*zēteō*)
 
-In the governed Greek source BibleBuddy uses (Nestle 1904), the opening verb of Matthew 6:33 is **ζητεῖτε** (*zēteite*).
-
-- **Primary text path:** Nestle1904 → Matt 6:33 → form *ζητεῖτε*  
-- **Lemma:** *ζητέω* (*zēteō*), Strong’s G2212  
-- **Gloss (Strong’s):** to seek (literally or figuratively); KJV range includes seek, desire, endeavour, enquire  
-- **Morphology note:** present imperative—keep seeking / be about seeking  
-- **Plain English:** pursue / strive after as a directed priority  
-- **KJV:** “seek ye first…”
-
-The priority is not a mental mood. It is directed pursuit: God’s kingdom and righteousness first. Provision is attached as the Father’s care, not as a technique you bend heaven with. Seeking is active. It is not passive spiritual laziness. It is also not a prosperity formula. The object of seeking controls the meaning: kingdom and righteousness, not cashflow as lord.
+In the Greek text (Nestle 1904), the opening verb of Matthew 6:33 is **ζητεῖτε** (*zēteite*). The Greek behind “seek ye first” is *zēteō* (G2212)—to seek, pursue, strive after as a directed priority. The form is a present imperative: keep seeking; be about seeking. The priority is not a mental mood. It is directed pursuit: God’s kingdom and righteousness first. Provision is attached as the Father’s care, not as a technique you bend heaven with. Seeking is active. It is not passive spiritual laziness. It is also not a prosperity formula. The object of seeking controls the meaning: kingdom and righteousness, not cashflow as lord.
 
 Line upon line, Scripture holds several truths together without flattening them into one slogan:
 
@@ -198,8 +189,6 @@ Denise listened. She did not say “I told you so” about the knocking car. She
 
 Halfway through, their daughter wandered in half-asleep, asked for water, and left again. Jordan almost hid the paper. Denise shook her head once—softly, not as a lecture. Truth in front of children, when it is calm, can be a kind of catechism: money is real, fear is nameable, God is not embarrassed by invoices.
 
-That conversation was stewardship. Not a seminar. Not a manifestation. Two people telling the truth under God.
-
 If you are single, the table still counts. Invite a trusted friend or mentor into the numbers if secrecy has become a trap. Shame grows in private. Wisdom often arrives in shared light.
 
 ### Greed’s quieter costumes
@@ -259,7 +248,7 @@ If your feed tells you that forgetfulness is faith—“don’t acknowledge lack
 
 ## What “added unto you” does and does not promise
 
-Matthew 6:33 ends with a promise that anxious hearts cling to: “all these things shall be added unto you.” In context, “these things” are the needs Jesus just named—food, drink, clothing—set against Gentile anxiety and in light of the Father’s knowledge (Matthew 6:31–32). EXPLICIT: the Father cares for necessary provision as you seek His kingdom and righteousness. NOT EXPLICIT: a guarantee of surplus, status, or insulation from lean seasons. Saints in Scripture know hunger and plenty (Philippians 4:12). Faithfulness can include both.
+Matthew 6:33 ends with a promise that anxious hearts cling to: “all these things shall be added unto you.” In context, “these things” are the needs Jesus just named—food, drink, clothing—set against Gentile anxiety and in light of the Father’s knowledge (Matthew 6:31–32). The Father cares for necessary provision as you seek His kingdom and righteousness. What the verse does not promise is a guarantee of surplus, status, or insulation from lean seasons. Saints in Scripture know hunger and plenty (Philippians 4:12). Faithfulness can include both.
 
 If someone uses Matthew 6:33 to sell you a lifestyle, they are preaching a different sermon than the one on the mount.
 

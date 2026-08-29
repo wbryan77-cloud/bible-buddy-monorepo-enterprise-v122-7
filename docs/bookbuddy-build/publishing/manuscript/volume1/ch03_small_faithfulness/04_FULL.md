@@ -1,6 +1,6 @@
 # Chapter — Small faithfulness (discipline without hustle religion)
 
-Lena’s sticky notes were peeling off the fridge like failed prophecies.
+Nora’s sticky notes were peeling off the fridge like failed prophecies.
 
 *4:30 wake-up. Scripture before phone. Gym. No sugar. Inbox zero. Become new.*
 
@@ -8,7 +8,7 @@ The handwriting had been confident on Sunday night. By Wednesday the alarm had l
 
 *No days off. Be the kind of person who doesn’t quit.*
 
-Lena set the phone face-down. The sticky notes curled at the corners. Somewhere under the performance sat a quieter want she was almost afraid to admit:
+Nora set the phone face-down. The sticky notes curled at the corners. Somewhere under the performance sat a quieter want she was almost afraid to admit:
 
 *I want to grow. I do not want hustle religion. And I am tired of treating God like a coach who only loves winners.*
 
@@ -28,7 +28,7 @@ You may be waking up to the difference between faithfulness and theater.
 - Can small obedience matter when my feed only celebrates transformations?  
 - How do I want change without making technique my savior?
 
-Lena’s wound was not merely weak willpower. It was a confusion of **worth** with **output**. She had baptized ambition until ordinary faithfulness felt too small to count—and then she despised herself when the spectacle collapsed.
+Nora’s wound was not merely weak willpower. It was a confusion of **worth** with **output**. She had baptized ambition until ordinary faithfulness felt too small to count—and then she despised herself when the spectacle collapsed.
 
 This chapter will not sell you a new personality by Monday.
 
@@ -56,7 +56,7 @@ Scripture will not agree that you save yourself by streaks, slogans, or shame.
 
 ### Attempt A — The cathedral plan
 
-Lena built a twenty-one-day overhaul because big numbers felt holy. She printed a tracker. She told two friends. She lasted five days and called herself a liar on day six.
+Nora built a twenty-one-day overhaul because big numbers felt holy. She printed a tracker. She told two friends. She lasted five days and called herself a liar on day six.
 
 The plan was not evil. The theology underneath was thin: *If I can become impressive quickly, I will finally feel permitted to belong.*
 
@@ -80,7 +80,7 @@ She needed a different measure: **the next faithful inch under God.**
 
 Hustle religion rarely announces itself as heresy. It arrives as urgency.
 
-Lena’s jaw hurt from clenching through “motivational” sermons. Her sleep got thinner the more spiritual her tracker looked. She started avoiding prayer on missed days the way some people avoid mirrors after a binge—same shame engine, different vocabulary. That is how you know a practice has become a courtroom: you cannot bring failure into it without disappearing.
+Nora’s jaw hurt from clenching through “motivational” sermons. Her sleep got thinner the more spiritual her tracker looked. She started avoiding prayer on missed days the way some people avoid mirrors after a binge—same shame engine, different vocabulary. That is how you know a practice has become a courtroom: you cannot bring failure into it without disappearing.
 
 Scripture’s diligence does not require that disappearing act. Proverbs can rebuke laziness and still leave room for a Father who receives the weary. Hebrews can call you to endure and still call you a son or daughter while you limp. Galatians can name temperance as fruit and still refuse fleshly self-salvation.
 
@@ -90,7 +90,7 @@ If your “discipline” makes you hide from God, it is not Christian formation.
 
 ## Microstory: Malik’s sentence, overheard
 
-At church coffee, Lena overheard Malik tell someone—quietly, without a microphone—*I stopped asking for a personal brand for my soul. I’m trying to do the next faithful thing I can see.*
+At church coffee, Nora overheard Malik tell someone—quietly, without a microphone—*I stopped asking for a personal brand for my soul. I’m trying to do the next faithful thing I can see.*
 
 She did not know his whole story. She only knew the sentence landed like clean water. It did not smell like the 4 a.m. club. It smelled like a kitchen light at 2 a.m. and a person refusing to lie.
 
@@ -100,7 +100,7 @@ Sometimes God uses a borrowed sentence to unhook you from a false gospel you alm
 
 ## Microstory: the hallway inch
 
-On a Thursday between meetings, Lena’s coworker asked if she could cover a ten-minute front-desk gap—no glory, just a phone and a sign-in sheet. Lena almost said no because it would “break her focus block.” Then she heard how holy the refusal sounded and how small the ask was. She covered the desk. She answered two calls. She pointed a lost delivery person toward shipping. Nobody tracked it. Nobody needed to.
+On a Thursday between meetings, Nora’s coworker asked if she could cover a ten-minute front-desk gap—no glory, just a phone and a sign-in sheet. Nora almost said no because it would “break her focus block.” Then she heard how holy the refusal sounded and how small the ask was. She covered the desk. She answered two calls. She pointed a lost delivery person toward shipping. Nobody tracked it. Nobody needed to.
 
 Walking back, she realized the sticky-note cathedral had trained her to treat interruptions as enemies of becoming. Small faithfulness treated the interruption as the assignment that was actually in front of her. The inch was not impressive. It was keepable. That is often how Luke 16’s “least” arrives when you are busy inventing a more spiritual least.
 
@@ -118,15 +118,7 @@ If your imagination only counts dramatic reinventions, Jesus’ words will feel 
 
 ### What the word actually says (*pistós*)
 
-Nestle 1904 at Luke 16:10 uses **πιστός** (*pistos*):
-
-- **Primary text path:** Nestle1904 → Luke 16:10 → *πιστός*  
-- **Lemma:** *πιστός* (Strong’s G4103)  
-- **Gloss range:** faithful, trustworthy, reliable  
-- **Plain English:** the one trustworthy in a little is also trustworthy in much  
-- **KJV:** “faithful in that which is least…”
-
-Faithfulness here is relational reliability under assignment—not a vibe, not a brand, not a streak screenshot.
+Nestle 1904 at Luke 16:10 uses **πιστός** (*pistos*, G4103)—faithful, trustworthy, reliable. Jesus is naming relational reliability under assignment: the one trustworthy in a little is also trustworthy in much. Faithfulness here is not a vibe, not a brand, not a streak screenshot.
 
 ---
 
@@ -156,7 +148,7 @@ Proverbs also names a modern feeling with ancient accuracy: wanting without movi
 
 > “The soul of the sluggard desireth, and hath nothing…” (Proverbs 13:4a, KJV)
 
-Desire alone is not faithfulness. Lena’s sticky notes were full of desire. Manifestation culture weaponizes desire and calls the weapon faith. Scripture honors desire that turns into obedient steps under God—and confronts desire that only collects fantasies. The correction is not “want less.” The correction is “stop coronating wanting, and steward the inch.”
+Desire alone is not faithfulness. Nora’s sticky notes were full of desire. Manifestation culture weaponizes desire and calls the weapon faith. Scripture honors desire that turns into obedient steps under God—and confronts desire that only collects fantasies. The correction is not “want less.” The correction is “stop coronating wanting, and steward the inch.”
 
 ---
 
@@ -208,7 +200,7 @@ Small faithfulness sits inside that story.
 
 ## A named frame: the next faithful inch
 
-One portable BookBuddy frame for this chapter:
+One portable frame for this chapter:
 
 **The next faithful inch.**
 
@@ -273,7 +265,7 @@ Inches compound. That observation is allowed as human craft. What is not allowed
 
 ## Monday morning — what to do now
 
-Lena did not need a new mythology before breakfast. She needed an inch.
+Nora did not need a new mythology before breakfast. She needed an inch.
 
 **Within 72 hours:**
 
@@ -289,13 +281,13 @@ If anxiety or depression is eating your capacity, the faithful inch may be askin
 
 Some habit teaching says you change by claiming a new identity (“I am a runner”). As **mechanic**, noticing that self-story shapes behavior can be useful. As **gospel**, it collapses. Christian identity is received in Christ before it is performed in habits: beloved, forgiven, indwelt, called. From that gift, you practice inches. You do not invent a shinier self by mantra and then ask God to rubber-stamp it.
 
-Lena’s fridge notes had been identity theater. The new card was stewardship language. That shift is the chapter’s hinge.
+Nora’s fridge notes had been identity theater. The new card was stewardship language. That shift is the chapter’s hinge.
 
 ---
 
 ## Story return
 
-Saturday morning Lena pulled the curled sticky notes off the fridge. The adhesive left little gray rectangles, like ghosts of a self she had tried to force into being.
+Saturday morning Nora pulled the curled sticky notes off the fridge. The adhesive left little gray rectangles, like ghosts of a self she had tried to force into being.
 
 She wrote one line on a fresh card and stuck it at eye level:
 
@@ -313,7 +305,7 @@ That afternoon she texted Ava—not for accountability theater, for companionshi
 
 Ava wrote back: *Please. I’m tired of performing growth.*
 
-Lena looked at the fridge again. One card. One inch. Enough room for God to be God.
+Nora looked at the fridge again. One card. One inch. Enough room for God to be God.
 
 Sometimes the most spiritual refusal available is not quitting effort.
 
@@ -322,3 +314,5 @@ It is quitting the false gospel that said only spectacular obedience counts—
 and practicing, under the Father’s eye,
 
 **the next faithful inch.**
+
+An inch on a fridge card is one thing. An inch at a kitchen table with overdue numbers is another—where faithfulness meets fear about provision, and God must be more than a coach for streaks.

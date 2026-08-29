@@ -57,21 +57,9 @@ Formation is what you do when the feeling thins.
 
 ---
 
-## Light callbacks (not rehashes)
+## Residues that travel into a kitchen
 
-You do not need every chapter replayed. You need the sentences that can travel into a kitchen:
-
-- Lena’s **next faithful inch** when streaks collapse.  
-- Marisol’s **Keepable Rule** when structure becomes theater or drift.  
-- Helen’s **Unbranded Mark** when impact tries to become a brand.  
-- Camila’s beginner door when Scripture feels like drowning.  
-- Naomi’s honest prayer when performance prayer dies.  
-- Tessa’s beloved-before-brand when identity becomes self-salvation.  
-- Jordan’s money-on-the-table honesty, Ava’s who-you-let-close courage, Malik’s pain that refuses tidy answers—ensemble echoes, not new openings.
-
-Maya is not those people.
-
-She is the person who has to begin again with groceries still groceries.
+You do not need every chapter replayed. You need the sentences that can travel into a kitchen: Nora’s next faithful inch; Marisol’s Keepable Rule; Helen’s Unbranded Mark; Camila’s beginner door; Naomi’s honest prayer; Tessa’s beloved-before-brand; Jordan’s table honesty; Ava’s lock and welcome mat; Malik’s unfinished kitchen; Lena’s chip-aisle grief; Owen’s Name instead of a collage. Maya is not those people. She is the person who has to begin again with groceries still groceries—carrying their residues without needing their whole stories retold.
 
 ---
 
@@ -143,15 +131,7 @@ Psalm 51 models confession that asks for a clean heart without pretending the fa
 
 ## What the word actually says (original language)
 
-In Galatians 5:25, Nestle1904 uses *stoicheō*:
-
-- **Primary text path:** Nestle1904 → Galatians 5:25 → *στοιχέω*  
-- **Lemma:** *stoicheō* (G4748)  
-- **Gloss range:** to walk in line, keep in step, follow in order  
-- **Plain English:** if we live by the Spirit, let us also keep in step with the Spirit  
-- **KJV:** “walk in the Spirit”
-
-Monday Mercy is not a mood. It is a step. Maya did not need Greek to start. She needed Greek as a guardrail against a modern dodge: calling any warm intention “walking in the Spirit” while the body remains unmoved toward justice, mercy, and humility.
+In Galatians 5:25, the Nestle 1904 Greek uses *stoicheō* (G4748)—to walk in line, keep in step, follow in order. If we live by the Spirit, Paul says, let us also keep in step with the Spirit. Monday Mercy is not a mood. It is a step. Maya did not need Greek to start. She needed Greek as a guardrail against a modern dodge: calling any warm intention “walking in the Spirit” while the body remains unmoved toward justice, mercy, and humility.
 
 ---
 
@@ -194,7 +174,7 @@ It refuses to let the list veto the walk.
 
 ## Monday Mercy — a portable frame
 
-**Monday Mercy** is BookBuddy shorthand for beginning again under God’s morning compassions with a keepable walk—without reinvention theater.
+**Monday Mercy** names beginning again under God’s morning compassions with a keepable walk—without reinvention theater.
 
 It has four hinges Maya wrote on a receipt while coffee cooled:
 
@@ -268,23 +248,7 @@ She put her hand on the cart handle and breathed.
 
 It was not a cliffhanger. It was a true human remainder.
 
----
-
-## Emotional landing — what this book was always for
-
-If you came here wanting a life that works and a God who is real, you were never crazy for that hunger.
-
-You were hungry for something Scripture can actually meet—without slogan gods, without self-help verses taped over wounds, without demanding you become a different species before Monday counts.
-
-Remember the introduction’s refusal: this book would not promise wealth, a spouse, unbroken calm, or a painless faith. It would promise to take your real life seriously, open Scripture in context, refuse slogan gods, and leave a next step small enough to attempt. Monday Mercy is that promise kept in kitchen form—grocery bag still ordinary, cracked Bible still cracked, God still not imaginary.
-
-The people in these pages—Maya, Lena, Marisol, Helen, Camila, Naomi, Tessa, Owen, and the household of ordinary strugglers—were never mascots. They were recognition devices. “That is me” before “here is a lecture.”
-
-You are allowed to finish this book unfinished.
-
-Unfinished is where walking happens.
-
-And unfinished, sometimes, is where the next honest question rises—not because this book withheld its answer, but because life itself keeps asking more of a person who has finally begun to listen.
+If you came here wanting a life that works and a God who is real, you were never crazy for that hunger. The kitchens and unpaid bills were doors. Behind them was a Person—and wanting to know Him is not failure of a practical book; it is the deeper work finishing its job. You are allowed to finish unfinished. Unfinished is where walking happens—and where the next honest question may rise because life itself asked it.
 
 ---
 

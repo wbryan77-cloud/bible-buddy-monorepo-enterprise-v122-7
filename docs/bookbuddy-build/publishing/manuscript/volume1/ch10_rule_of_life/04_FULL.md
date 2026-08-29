@@ -1,12 +1,12 @@
 # Chapter — A rule of life you can actually keep
 
-Marisol’s Sunday night calendar looked holy and already doomed.
+By Wednesday the color blocks had become accusations.
 
-Laptop open. Phone open. A tablet propped against the fruit bowl like a third witness. She had color-blocked the week into righteousness: 5:00 a.m. “monastery hour,” fasting windows, two Bible plans, journaling prompts, gym, inbox triage, a mentoring call, a midweek group, Saturday “digital silence,” and a yellow block labeled *Become Consistent*—as if the calendar itself could manufacture a soul.
+Marisol stood at the sink with cold water running over a pan and whispered what Sunday night’s cathedral week had already proved: *I either live like a monk on paper, or I quit structure and call the wreckage freedom.*
 
-By Wednesday the blocks had become accusations. She missed monastery hour twice, ate toast during a fasting window because her blood sugar dipped and her pride did not want to admit need, and opened Instagram “for one minute” during digital silence. On Friday she stood at the sink with cold water running over a pan and whispered:
+Sunday had looked holy and already doomed. Laptop open. Phone open. A tablet propped against the fruit bowl like a third witness. She had color-blocked the week into righteousness: 5:00 a.m. “monastery hour,” fasting windows, two Bible plans, journaling prompts, gym, inbox triage, a mentoring call, a midweek group, Saturday “digital silence,” and a yellow block labeled *Become Consistent*—as if the calendar itself could manufacture a soul.
 
-*I either live like a monk on paper, or I quit structure and call the wreckage freedom.*
+She missed monastery hour twice. She ate toast during a fasting window because her blood sugar dipped and her pride did not want to admit need. She opened Instagram “for one minute” during digital silence. By Friday the plan was not a companion. It was a scoreboard. Failure felt like exile.
 
 Burned plans and quiet Sundays do not prove you are undisciplined. They often prove you tried a shape that could not survive real life.
 
@@ -14,21 +14,11 @@ You may be waking up to the difference between a spectacle-system and
 
 **the Keepable Rule.**
 
----
-
-## What are you really asking?
-
-“I can’t keep a spiritual routine” often covers better questions:
-
-- Is any structure legalism—or can structure be love with a spine?  
-- If I rest, am I drifting—or obeying limits God designed?  
-- Does God only smile at impressive schedules?  
-- How do prayer, Scripture, community, rest, and ordinary work live together without turning into theater?  
-- What do I do when I fail by day four—quit, shame-spiral, or return?
+“I can’t keep a spiritual routine” often covers better questions. Is any structure legalism—or can structure be love with a spine? If I rest, am I drifting—or obeying limits God designed? Does God only smile at impressive schedules? How do prayer, Scripture, community, rest, and ordinary work live together without turning into theater? What do I do when I fail by day four—quit, shame-spiral, or return?
 
 Marisol’s wound was not that she wanted order. Order can be mercy. Her wound was confusing **worth** with **calendar perfection**, then swinging to the opposite pole: burn the plan, romanticize drift, and pretend emptiness is authenticity.
 
-There is a body-cost to both poles. Overload clenched her jaw through “spiritual” mornings she did not enjoy. Drift made her Sundays feel wide and strangely sad—like a room with the furniture sold. After a missed morning she would skip the next three, not from rebellion but from the quiet dread of admitting she had fallen off again. The rule had become a scoreboard. Failure felt like exile.
+There is a body-cost to both poles. Overload clenched her jaw through “spiritual” mornings she did not enjoy. Drift made her Sundays feel wide and strangely sad—like a room with the furniture sold. After a missed morning she would skip the next three, not from rebellion but from the quiet dread of admitting she had fallen off again.
 
 Scripture’s rhythms do not require that exile.
 
@@ -55,25 +45,15 @@ Mechanics may help.
 
 God remains Lord.
 
-Lena learned a cousin lesson about the next faithful inch. This chapter is not her fridge sticky notes again. It is Marisol’s calendar—and the question of a whole week lived under God without theater.
+The next faithful inch belongs elsewhere in this book’s world. This chapter is Marisol’s calendar—and the question of a whole week lived under God without theater.
 
 ---
 
-## Failure lab: two poles that feel spiritual
+## Failure lab: cathedral or ash
 
-### Pole A — The cathedral week
+Marisol built Rule of Life 3.0 because complexity felt holy. Seven tabs. Color legend. A friend group chat titled *Anchor & Ascend*. She lasted four days and called herself a fraud on day five. The plan was not evil. The theology underneath was thin: *If my week looks impressive, I will finally feel permitted to belong.*
 
-Marisol built Rule of Life 3.0 because complexity felt holy. Seven tabs. Color legend. A friend group chat titled *Anchor & Ascend*. She lasted four days and called herself a fraud on day five.
-
-The plan was not evil. The theology underneath was thin: *If my week looks impressive, I will finally feel permitted to belong.*
-
-### Pole B — The honest quit that wasn’t honesty
-
-After the crash she nearly deleted every spiritual app and announced, to herself, *I’m done with religious performance.* What she meant was: *I am done being measured by a schedule I invented and then worshipped.*
-
-Quitting spectacle can be wise.
-
-Quitting prayer, Scripture, people, rest, and honest work because spectacle failed is how drift baptizes itself as freedom.
+After the crash she nearly deleted every spiritual app and announced, to herself, *I’m done with religious performance.* What she meant was: *I am done being measured by a schedule I invented and then worshipped.* Quitting spectacle can be wise. Quitting prayer, Scripture, people, rest, and honest work because spectacle failed is how drift baptizes itself as freedom.
 
 What she needed was not a louder Sunday night.
 
@@ -129,7 +109,7 @@ Jesus, confronting Sabbath misuse, says:
 
 > “The sabbath was made for man, and not man for the sabbath: Therefore the Son of man is Lord also of the sabbath.” (Mark 2:27–28, KJV)
 
-Immediate context: grain fields, hunger, Pharisee accusation (Mark 2:23–28). EXPLICIT: Sabbath serves human good under Christ’s lordship—not human sacrifice to a rule. Inference to refuse: that Jesus cancels all rhythm. He frees rhythm from tyranny; He does not baptize exhaustion as holiness.
+Immediate context: grain fields, hunger, Pharisee accusation (Mark 2:23–28). Sabbath serves human good under Christ’s lordship—not human sacrifice to a rule. That does not mean Jesus cancels all rhythm. He frees rhythm from tyranny; He does not baptize exhaustion as holiness.
 
 If your “rule of life” cannot rest, it is not Christian formation. It is religiousized panic with better fonts.
 
@@ -163,15 +143,7 @@ Immediate context: Pentecost, repentance, baptism, glad sharing, daily life in t
 
 ### What the word actually says (*koinōnia*)
 
-Nestle 1904 at Acts 2:42 uses **κοινωνίᾳ** (*koinōnia*):
-
-- **Primary text path:** Nestle1904 → Acts 2:42 → *κοινωνίᾳ*  
-- **Lemma:** *κοινωνία* (Strong’s G2842)  
-- **Gloss range:** fellowship; sharing; participation; partnership  
-- **Plain English:** shared life—not merely shared content  
-- **KJV:** “fellowship”
-
-A Keepable Rule that never touches other believers is easier to fake and easier to abandon. Community is not garnish. It is one of Scripture’s ordinary means of staying awake.
+Nestle 1904 at Acts 2:42 uses **κοινωνίᾳ** (*koinōnia*, G2842)—fellowship, sharing, participation, partnership. The word names shared life, not merely shared content. A Keepable Rule that never touches other believers is easier to fake and easier to abandon. Community is not garnish. It is one of Scripture’s ordinary means of staying awake.
 
 Work belongs too—without becoming righteousness. “And whatsoever ye do, do it heartily, as to the Lord, and not unto men” (Colossians 3:23, KJV), in a household-code context (Colossians 3:18–25), relocates labor under Christ’s eye. Diligence can be worship. Diligence cannot be savior.
 
@@ -230,7 +202,7 @@ These five are not a trademarked ladder. They are a keepable spine.
 
 ## A named frame: the Keepable Rule
 
-One portable BookBuddy frame for this chapter:
+One portable frame for this chapter:
 
 **The Keepable Rule.**
 
@@ -242,13 +214,7 @@ Five lines, ordinary week, under God:
 4. **Rest** — a protected limit; Sabbath mercy, not laziness theater.  
 5. **Work** — heartily unto the Lord; refuse productivity-as-righteousness.
 
-Rules:
-
-- Small enough to survive a normal Tuesday.  
-- Honest enough to confess a miss without quitting.  
-- Communal enough that you are not your only accountability.  
-- Flexible enough to revise without shame theater.  
-- Refusing manifestation and hustle religion.
+Keep it small enough to survive a normal Tuesday; honest enough to confess a miss without quitting; communal enough that you are not your only accountability; flexible enough to revise without shame theater; refusing manifestation and hustle religion.
 
 Marisol’s breakthrough would not be a prettier spreadsheet.
 
@@ -268,34 +234,6 @@ It would be a week with a spine and a Father.
 
 ---
 
-## Monday morning — build a Keepable Rule (72 hours)
-
-Within 24–72 hours, do this on one page:
-
-1. Write five lines only: **Pray / Scripture / People / Rest / Work.**  
-2. Make each line **specific and small** (example: pray 5 true sentences; read Mark 1; text one believer; phone off after 10; do tomorrow’s work as unto the Lord for one focused hour).  
-3. Practice for **72 hours**.  
-4. When you miss, confess without theater—then do the next keepable act.  
-5. Tell one trusted person: *I’m practicing a Keepable Rule—not Rule of Life 3.0.* If you have no such person, ask God for one. Naomi needed honest prayer; you may need honest rhythm.
-
-### Keepable Rule — Monday practices you can actually touch
-
-If “five lines” still feels abstract, make Monday concrete enough to survive a real inbox:
-
-- **Pray (before phone):** three sentences only—*Here I am. Here is what is loud. Help me keep five lines without theater.*  
-- **Scripture (ten minutes, one place):** open Mark 1 or a short Psalm; underline one phrase that is actually on the page; refuse verse roulette as a mood machine.  
-- **People (one real contact):** text or call one believer with no streak language—*Want to check in this week without scoring each other?*  
-- **Rest (one protected limit):** choose a clock time phone goes in a drawer, or one evening block you will not apologize for; rest is cadence, not a prize for crushing six days.  
-- **Work (one focused block):** sixty minutes unto the Lord on the next faithful task; when the block ends, stop calling unfinished email a spiritual verdict.
-
-That is not Rule of Life 4.0. That is a Keepable Rule with fingerprints.
-
-Optional reflection (not an altar-call paste): *Father, order my week under You. Save me from spectacle and from drift. Teach me to keep five lines with mercy. Amen.*
-
-If despair or compulsive overwork is unsafe, seek wise human help. A Keepable Rule is formation, not a substitute for care.
-
----
-
 ## Anti-legalism scene: the Tuesday accusation
 
 Tuesday morning Marisol missed her Scripture line because a coworker crisis ate the ten minutes. By noon her chest had already filed charges: *See? Fake again.* She almost “repented” by stacking a harsher evening—double reading, no dinner joy, a private vow that smelled like punishment dressed as holiness.
@@ -304,7 +242,27 @@ Then she remembered Mark 2: the Sabbath was made for man, not man for the Sabbat
 
 That night she read ten minutes. No makeup reading. No announcement to the group chat. Legalism would have demanded a spectacle of repair. Mercy asked for return.
 
-If your Keepable Rule cannot survive a miss without becoming a courtroom, it has quietly become Pole A again. Anti-legalism is not anti-practice. It is refusing to let practice become the god that measures whether you may still belong.
+If your Keepable Rule cannot survive a miss without becoming a courtroom, it has quietly become the cathedral week again. Anti-legalism is not anti-practice. It is refusing to let practice become the god that measures whether you may still belong.
+
+---
+
+## Monday morning — one Keepable Rule you can touch
+
+Within 24–72 hours, one page, five lines only: **Pray / Scripture / People / Rest / Work.** Make each line specific and small enough for a real inbox.
+
+- **Pray (before phone):** three sentences only—*Here I am. Here is what is loud. Help me keep five lines without theater.*  
+- **Scripture (ten minutes, one place):** open Mark 1 or a short Psalm; underline one phrase that is actually on the page; refuse verse roulette as a mood machine.  
+- **People (one real contact):** text or call one believer with no streak language—*Want to check in this week without scoring each other?*  
+- **Rest (one protected limit):** choose a clock time phone goes in a drawer, or one evening block you will not apologize for; rest is cadence, not a prize for crushing six days.  
+- **Work (one focused block):** sixty minutes unto the Lord on the next faithful task; when the block ends, stop calling unfinished email a spiritual verdict.
+
+Practice for seventy-two hours. When you miss, confess without theater—then do the next keepable act. Tell one trusted person: *I’m practicing a Keepable Rule—not Rule of Life 3.0.* If you have no such person, ask God for one.
+
+Optional reflection (not an altar-call paste): *Father, order my week under You. Save me from spectacle and from drift. Teach me to keep five lines with mercy. Amen.*
+
+If despair or compulsive overwork is unsafe, seek wise human help. A Keepable Rule is formation, not a substitute for care.
+
+That is not Rule of Life 4.0. That is a Keepable Rule with fingerprints.
 
 ---
 

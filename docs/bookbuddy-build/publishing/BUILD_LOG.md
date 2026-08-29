@@ -167,3 +167,26 @@ See `gates/Gate8_ControlledBuild.md` — **ch00–ch12 all STYLE-FROZEN**.
 - Production/runtime unchanged. Unrelated dirty tree untouched.
 - **Do not commit/push until Founder reviews editorial freeze report.**
 
+---
+
+## Master manuscript strengthening (2026-08-28)
+
+- Baseline editorial freeze: `e0b2fba` (already committed/pushed).
+- Developmental pass: methodology scrub, Nora rename, OL restraint, template variation, Andre manifestation scene, ch12 door preserved.
+- Reports: `Volume1_MasterDevelopmentalDiagnosis.md`, `SevenBenchmarkCraftAudit`, `ReaderPanelAudit`, `ScriptureIntegrityAudit`, `CharacterContinuity`, `DesignOpportunities`, `MasterStrengtheningNotes`, `MasterManuscriptQA` (94), `MasterManuscriptFreezeRecommendation`.
+- Words ~40,870 → ~40,197. Production/runtime unchanged. Unrelated dirty tree untouched.
+- **Do not commit/push until Founder reviews. Do not start C3. Design/formatting only after master commit.**
+
+---
+
+## Final narrative / God-discovery surgical pass (2026-08-29)
+
+- Founder accepted Recommendation B; sharpened objective: emotional journey that makes readers want to know the God of the Bible.
+- 10 surgical packages: act turns, chapter propulsion, Owen wonder night, ch08 compression, Maya/Camila continuity, ch12 help→know-God shift; C3 door preserved.
+- Reports: `Volume1_NarrativeArcMap.md`, `GodDiscoveryArc`, `StoryEmotionAudit`, `FinalSurgicalPassNotes`, `FinalNarrativeQA`.
+- Words ~40,197 → ~40,744. Acquisitions sim 84 → 88. Seven-benchmark composite ~90.
+- Production/runtime unchanged. Unrelated dirty tree untouched.
+- **STOP for Founder + independent review before freeze commit. No formatting. No C3.**
+
+
+
