@@ -14,7 +14,7 @@ She whispered, without meaning to sound rebellious:
 
 *God, I don’t know how to talk to You without performing.*
 
-If that is you, you are not uniquely broken.
+That kind of shame does not make you uniquely broken. It makes you ready for a truer kind of prayer.
 
 You may be overdue for a different kind of prayer—
 
@@ -251,7 +251,7 @@ Often they are more.
 
 ## Monday morning — what to do now
 
-Naomi did not need a new prayer aesthetic by sunrise. She needed an unperformed sentence.
+Naomi did not need a new prayer aesthetic before the next midweek. She needed an unperformed sentence.
 
 **Within 72 hours:**
 
@@ -275,7 +275,7 @@ Then she prayed without a thesis:
 
 *I’m lonely in a friendship I don’t know how to repair. I’m scared about money. I sounded anointed on Wednesday and empty in the car. I don’t want to perform. Be merciful to me. Teach me to want Your name and Your kingdom more than my reputation. Give me today’s bread. Help me forgive. I need You.*
 
-Nothing cinematic happened.
+No fireworks. Just a quieter room inside her.
 
 The fridge hummed. A neighbor slammed a door. Her shoulders dropped half an inch.
 
@@ -283,7 +283,7 @@ She texted no one a praise report. She wrote one line in a notebook she did not 
 
 *Told Him the truth. Still here.*
 
-The next midweek she declined when someone asked her to “just close us in prayer” with that look that meant *make it beautiful*. She said, gently, “Not tonight—I’m practicing smaller honesty.” It felt awkward. It also felt like oxygen. On the drive home she did not wait for the parking lot crisis. She prayed one publican sentence at a red light and meant it.
+The next midweek she declined when someone asked her to “just close us in prayer” with that look that meant *make it beautiful*. She said, gently, “Not tonight—I’m practicing smaller honesty.” It cost her a little social shine. It also returned her to herself. On the drive home she did not wait for the parking lot crisis. She prayed one publican sentence at a red light and meant it.
 
 Sometimes the most spiritual prayer available is not the one that impresses the room.
 

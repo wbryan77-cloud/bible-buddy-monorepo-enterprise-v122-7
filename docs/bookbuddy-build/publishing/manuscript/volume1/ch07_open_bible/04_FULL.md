@@ -36,7 +36,7 @@ The Bible itself is surprisingly gentle with people who need help understanding.
 
 ## You’ve probably heard this before
 
-Modern Bible helps are often excellent: maps, timelines, reading plans, plain introductions, audio Bibles for tired eyes. Accessibility books exist because intimidation is real. Public-domain teachers like James M. Gray and D. L. Moody spent enormous energy helping ordinary readers approach Scripture with method—reading, revisiting, asking questions—not with mystical gatekeeping. Classification: **THEMATIC_PARALLEL_ONLY** on method and hunger for the text; they are not a second canon.
+Modern Bible helps are often excellent: maps, timelines, reading plans, plain introductions, audio Bibles for tired eyes. Accessibility books exist because intimidation is real. Public-domain teachers like James M. Gray and D. L. Moody spent enormous energy helping ordinary readers approach Scripture with method—reading, revisiting, asking questions—not with mystical gatekeeping. Keep their hunger for the text. Do not treat them as a second canon.
 
 Use helps. Do not let helps replace the text.
 

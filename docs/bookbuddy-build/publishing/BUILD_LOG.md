@@ -154,3 +154,16 @@ See `gates/Gate8_ControlledBuild.md` — **ch00–ch12 all STYLE-FROZEN**.
 - FLAGSHIP_VOLUME1_STYLE_FROZEN=true; CONTENT_FROZEN=true; READY_FOR_EDITORIAL_POLISH=true.
 - RECOMMENDED_NEXT_BUILD=companion_C3_when_life_hurts (do not start until Founder directs).
 - Still no commit/push executed.
+
+---
+
+## Editorial polish + Series through-line (2026-08-28)
+
+- Phase 2–8 editorial polish on V1 `04_FULL.md` (conservative line edit; doctrine unchanged).
+- Reports: `manuscript/volume1/Volume1_EditorialDiagnosis.md`, `Volume1_EditorialPolishNotes.md`, `Volume1_ReadAloudQA.md`, `Volume1_ReaderExperienceQA.md`, `Volume1_PublishingQA.md`, `Volume1_EditorialFreezeReport.md`.
+- Series: `manuscript/SeriesThroughLine.md`; `SeriesBible.md` ending rule; optional `NextBookPreview_Optional.md`.
+- Word count ~40,598 → ~40,870. FINAL_PUBLISHING_QA_SCORE=93.
+- RECOMMENDED_NEXT_BUILD remains companion_C3_when_life_hurts — **not started**.
+- Production/runtime unchanged. Unrelated dirty tree untouched.
+- **Do not commit/push until Founder reviews editorial freeze report.**
+

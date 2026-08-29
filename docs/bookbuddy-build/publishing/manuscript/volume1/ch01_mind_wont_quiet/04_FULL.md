@@ -167,10 +167,10 @@ Scripture can affirm vision written and waited for under God (Habakkuk 2:2–3),
 
 So:
 
-- **Overlap (THEMATIC_PARALLEL_ONLY):** hope, prayer, speech integrity, action, patience.  
+- **Overlap (useful rhyme):** hope, prayer, speech integrity, action, patience.  
 - **Contradiction:** speech as creative deity; denial of providence; refusal of lament; purpose as self-deification.
 
-Older Stoic counsel about controlling what you can control is useful as a sorting tool and dangerous as a religion. Influence class: **THEMATIC_PARALLEL_ONLY**. Scripture trains responsibility *and* dependence. You steward today. You do not become God of outcomes.
+Older Stoic counsel about controlling what you can control is useful as a sorting tool and dangerous as a religion. Keep the sorting. Refuse the religion. Scripture trains responsibility *and* dependence. You steward today. You do not become God of outcomes.
 
 ---
 

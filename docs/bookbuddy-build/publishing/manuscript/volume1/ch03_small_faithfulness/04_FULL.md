@@ -38,9 +38,9 @@ It will try to relocate diligence under God.
 
 ## You’ve probably heard this before
 
-Habit writers and productivity culture often notice something true: repeated small acts shape a life; environments matter; drift is real; unfinished intentions pile up like laundry. Older moralists praised thrift and industry for similar human reasons. Stoic teachers urged self-command. Those overlaps can be **THEMATIC_PARALLELS**: humans keep rediscovering that what you repeatedly do forms you.
+Habit writers and productivity culture often notice something true: repeated small acts shape a life; environments matter; drift is real; unfinished intentions pile up like laundry. Older moralists praised thrift and industry for similar human reasons. Stoic teachers urged self-command. Those overlaps can rhyme with Scripture without replacing it: humans keep rediscovering that what you repeatedly do forms you.
 
-Use the parallel. Do not crown it.
+Keep what is useful. Do not crown it as gospel.
 
 Manifestation culture says desire plus speech can create reality. Hustle religion says grind is godliness and rest is suspect. Brand-identity coaching says you become disciplined by declaring a more impressive self into the mirror. Some Christian content simply baptizes the same engine and calls the exhaust “anointing.”
 
@@ -273,7 +273,7 @@ Inches compound. That observation is allowed as human craft. What is not allowed
 
 ## Monday morning — what to do now
 
-Lena did not need a new mythology by sunrise. She needed an inch.
+Lena did not need a new mythology before breakfast. She needed an inch.
 
 **Within 72 hours:**
 
@@ -305,7 +305,7 @@ No 4:30 mythology. No manifestation script. No “become new” slogan pretendin
 
 She opened Mark. She got distracted once and came back. She walked. The air was cold enough to make her eyes water. On the stairs she whispered, awkwardly, *I have treated consistency like a savior. I don’t want that. Help me be faithful in the least.*
 
-Nothing cinematic happened.
+No spotlight. No montage.
 
 Something honest did.
 

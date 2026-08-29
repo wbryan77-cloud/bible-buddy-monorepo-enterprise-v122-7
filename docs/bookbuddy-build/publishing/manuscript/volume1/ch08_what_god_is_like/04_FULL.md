@@ -14,7 +14,7 @@ Every phrase felt borrowed from a bumper sticker or a youth-group poster. Under 
 
 *I talk about God. I do not know how to introduce Him without sounding either childish or fake.*
 
-If that is you, you are not uniquely dense.
+Feeling lost in the names of God does not make you dense. It makes you honest enough to ask for a clearer picture.
 
 You may be overdue for a different posture—
 
@@ -68,7 +68,7 @@ Use the parallel carefully. Do not crown it.
 
 This chapter does **not** claim that other faiths “borrowed” the Bible, or that chronology proves dependence. Chronology is not discipleship. Parallel feeling is not identical doctrine.
 
-Where a claim would require reading Arabic (or another original language) to adjudicate a non-biblical scripture’s wording: **ORIGINAL_LANGUAGE_SOURCE_MISSING**. English witnesses and secondhand summaries are not enough to settle those texts. Honesty is part of reverence.
+Where a claim would require reading Arabic (or another original language) to adjudicate a non-biblical scripture’s wording, honesty requires saying so: English witnesses and secondhand summaries are not enough to settle those texts. Honesty is part of reverence.
 
 Two popular collage-gods **contradict** Scripture’s self-revelation:
 
@@ -312,7 +312,7 @@ He wrote seven uneven sentences in a notes app. No one would call them anointed.
 
 The rain had stopped. The apartment upstairs thumped a bass line. Ordinary world continued.
 
-The next week someone at work asked, lightly, “You religious?” Owen did not deliver a TED Talk. He said, “I’m learning who God is from the Bible’s story—not from my mashup.” It felt awkward. It also felt like oxygen.
+The next week someone at work asked, lightly, “You religious?” Owen did not deliver a TED Talk. He said, “I’m learning who God is from the Bible’s story—not from my mashup.” It felt awkward. It also felt like telling the truth without a costume.
 
 He still could not win a theology fight in twelve seconds.
 

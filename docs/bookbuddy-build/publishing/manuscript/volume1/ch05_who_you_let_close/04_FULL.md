@@ -61,7 +61,7 @@ The biblical frame asks more:
 
 **What kind of love is this? What covenant is love aiming toward? What does holiness require when desire is loud?**
 
-Influence class for most dating-system advice vs Scripture: **THEMATIC_PARALLEL_ONLY** on discernment and communication; **CONTRADICTION** where sex is treated as consequence-free or where God is used as a vending machine for a spouse.
+Relative to Scripture, most dating-system advice can overlap on discernment and communication, and it contradicts where sex is treated as consequence-free or where God is used as a vending machine for a spouse.
 
 ---
 

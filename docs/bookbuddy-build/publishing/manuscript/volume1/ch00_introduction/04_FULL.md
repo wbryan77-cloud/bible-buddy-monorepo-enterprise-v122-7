@@ -56,7 +56,7 @@ They know you want a story that makes you say, “That’s me.”
 
 They know you want something to *do* on Monday morning—not only something to admire on Sunday.
 
-Those craft instincts are worth learning. In preparing this series we studied how some of the most readable practical books earn trust—how they open, how they pace, how they return to a person, how they make a principle stick—without copying their voices or their protected stories. The goal is not to imitate a brand. The goal is to serve a reader who is already drowning in brands.
+Those craft instincts are worth learning—how a page earns trust, how a story returns to a person, how a principle sticks—without turning Scripture into a product. The goal is not to imitate a brand. The goal is to serve a reader who is already drowning in brands.
 
 But craft is not truth.
 
@@ -305,13 +305,9 @@ Welcome.
 
 ---
 
-## A second glance at Maya
+## One more thing before you turn the page
 
-Before we leave the parking lot, stay with her one more minute.
+If you are holding this book with the same mix of hope and suspicion Maya carried into that aisle, you are not behind. You are honest. Honesty is a better doorway than performance.
 
-Maya finally opened the door. Cold air. Cart wheels somewhere. A child arguing about cereal. Ordinary life did not pause for her spiritual hunger, and that is part of the point. God is not only found in retreat centers. The God of Genesis speaks worlds into being; the God of Exodus hears groans; the God of the Psalms receives unfinished prayers; the God who puts on flesh in the Gospels walks into ordinary towns; the God of Acts forms a people; the God of Revelation makes all things new. From Genesis to Revelation, He is not allergic to grocery lists.
-
-She put the Bible in the cart—not as a prop, as a decision. She still did not know where she would start reading. That is fine. Beginning is allowed to be awkward.
-
-If you are holding this book with the same mix of hope and suspicion, you are not behind. You are honest. Honesty is a better doorway than performance.
+From Genesis to Revelation, the God of Scripture is not allergic to grocery lists. Beginning is allowed to be awkward.
 

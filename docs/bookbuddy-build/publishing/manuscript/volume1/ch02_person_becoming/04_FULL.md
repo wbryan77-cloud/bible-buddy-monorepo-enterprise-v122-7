@@ -46,7 +46,7 @@ There is a particular loneliness to remakes. Each new version promises arrival. 
 
 Modern identity talk is not all wrong.
 
-Habit teachers notice that self-story shapes behavior—“I am a runner” can support running. Therapists help people leave false names they were given by shame. Purpose coaches urge clarity about vocation. Stoic voices long before apps urged agency over what is yours to govern. Those can be **THEMATIC_PARALLELS**: humans notice that aimlessness hurts, that lies about the self destroy, and that practiced life forms character.
+Habit teachers notice that self-story shapes behavior—“I am a runner” can support running. Therapists help people leave false names they were given by shame. Purpose coaches urge clarity about vocation. Stoic voices long before apps urged agency over what is yours to govern. Those can rhyme with Scripture without replacing it: humans notice that aimlessness hurts, that lies about the self destroy, and that practiced life forms character.
 
 But several popular scripts contradict Scripture when they become a rival gospel:
 
@@ -242,7 +242,7 @@ Lena, elsewhere in this book’s world, learned to trade a twenty-one-day cathed
 
 ## Monday morning — what to do now
 
-Tessa did not need Identity 5.0 by sunrise. She needed the order restored.
+Tessa did not need Identity 5.0 before breakfast. She needed the order restored.
 
 **Within 72 hours:**
 

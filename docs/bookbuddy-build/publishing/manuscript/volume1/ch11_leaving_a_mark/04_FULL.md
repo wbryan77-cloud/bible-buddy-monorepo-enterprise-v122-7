@@ -12,7 +12,7 @@ She stared at the cursor. It blinked like a tiny accusation. She deleted the lin
 
 *I am afraid of dying unnoticed. And I keep calling that fear a calling.*
 
-If that is you, you are not vain for wanting your life to count.
+Wanting your life to count is not vanity by itself. The question is what kind of mark you are aiming at.
 
 You may be waking up to the difference between a brand and
 
@@ -38,9 +38,9 @@ Tessa had learned a cousin lesson about being beloved before brand. This chapter
 
 ## You’ve probably heard this before
 
-Ambition culture and influencer ethics often notice something true: humans want their days to mean something; stories travel; generosity can inspire; neglect of the next generation is real. Those overlaps can be **THEMATIC_PARALLELS**: the ache to matter is human.
+Ambition culture and influencer ethics often notice something true: humans want their days to mean something; stories travel; generosity can inspire; neglect of the next generation is real. Those overlaps can rhyme with Scripture without replacing it: the ache to matter is human.
 
-Use the parallel. Do not crown it.
+Keep what is useful. Do not crown it as gospel.
 
 Several popular cousins **contradict** Scripture when they become a gospel:
 
@@ -254,9 +254,9 @@ Lena’s next faithful inch and Marisol’s Keepable Rule are cousins: small, ho
 
 ## Body-cost of branded legacy
 
-Helen’s jaw hurt after galas. Her sleep thinned on nights she refreshed metrics for “kingdom content.” She started resenting Mateo’s tutoring hour the way some people resent prayer on missed days—same shame engine: *If it doesn’t make me feel impressive, maybe it isn’t spiritual.*
+Helen’s jaw hurt after galas. Her sleep thinned on nights she refreshed metrics for “kingdom content.” She caught herself resenting Mateo’s tutoring hour—not because the hour was wrong, but because it did not photograph well. If the work did not make her feel impressive, a quiet voice asked whether it still counted as spiritual.
 
-That is how you know legacy has become a courtroom.
+That is how you know legacy has become a scoreboard.
 
 Scripture’s fruit does not require that disappearing act. You can do good without filming the good. You can want your children’s children to know God without treating your biography like a product launch. You can fail to trend and still walk in something prepared.
 

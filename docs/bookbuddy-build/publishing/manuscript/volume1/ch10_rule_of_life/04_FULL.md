@@ -8,7 +8,7 @@ By Wednesday the blocks had become accusations. She missed monastery hour twice,
 
 *I either live like a monk on paper, or I quit structure and call the wreckage freedom.*
 
-If that is you, you are not uniquely undisciplined.
+Burned plans and quiet Sundays do not prove you are undisciplined. They often prove you tried a shape that could not survive real life.
 
 You may be waking up to the difference between a spectacle-system and
 
@@ -28,9 +28,9 @@ You may be waking up to the difference between a spectacle-system and
 
 Marisol’s wound was not that she wanted order. Order can be mercy. Her wound was confusing **worth** with **calendar perfection**, then swinging to the opposite pole: burn the plan, romanticize drift, and pretend emptiness is authenticity.
 
-There is a body-cost to both poles. Overload clenched her jaw through “spiritual” mornings she did not enjoy. Drift made her Sundays feel wide and strangely sad—like a room with the furniture sold. She started avoiding prayer on missed days the way some people avoid mirrors after a binge—same shame engine, different vocabulary. That is how you know a practice has become a courtroom: you cannot bring failure into it without disappearing.
+There is a body-cost to both poles. Overload clenched her jaw through “spiritual” mornings she did not enjoy. Drift made her Sundays feel wide and strangely sad—like a room with the furniture sold. After a missed morning she would skip the next three, not from rebellion but from the quiet dread of admitting she had fallen off again. The rule had become a scoreboard. Failure felt like exile.
 
-Scripture’s rhythms do not require that disappearing act.
+Scripture’s rhythms do not require that exile.
 
 This chapter will not sell you a monastery cosplay kit.
 
@@ -40,9 +40,9 @@ It will try to relocate rhythm under God—anti-hustle, anti-legalism, anti-“n
 
 ## You’ve probably heard this before
 
-Habit writers and productivity culture often notice something true: repeated practices shape a week; environments matter; intention without a container evaporates. Older moralists praised ordered days for similar human reasons. Those overlaps can be **THEMATIC_PARALLELS**: humans rediscover that life needs a shape.
+Habit writers and productivity culture often notice something true: repeated practices shape a week; environments matter; intention without a container evaporates. Older moralists praised ordered days for similar human reasons. Those overlaps can rhyme with Scripture without replacing it: humans rediscover that life needs a shape.
 
-Use the parallel. Do not crown it.
+Keep what is useful. Do not crown it as gospel.
 
 Several popular cousins **contradict** Scripture when they become a gospel:
 
@@ -107,7 +107,7 @@ Sometimes God uses a friend’s unfinished sentence to unhook you from a false c
 
 On the walk home Marisol passed a gym window full of New Year posters even though it was not January—*No days off. Become unstoppable.* She almost laughed. The posters and her deleted monastery hour were cousins. Both treated the human body like a project that must never receive mercy.
 
-She bought groceries instead. Bread. Eggs. The expensive oat milk she always debated. Ordinary provision. A Keepable Rule would have to fit a life that still needed milk.
+She bought groceries instead. Bread. Eggs. A bag of oranges she had meant to buy for two weeks. Ordinary provision. A Keepable Rule would have to fit a life that still needed fruit on the counter.
 
 ---
 

@@ -61,7 +61,7 @@ And a fifth, louder in some pulpits and feeds:
 
 That is where the biblical story pushes back—not against wisdom, but against the fantasy of control and the commercialization of promise.
 
-Influence class for most modern money frameworks relative to Scripture: **THEMATIC_PARALLEL_ONLY** on diligence and behavior; **CONTRADICTION** when they promise control, guaranteed riches, or a reduced god.
+Relative to Scripture, most modern money frameworks can overlap on diligence and behavior, and they contradict when they promise control, guaranteed riches, or a reduced god.
 
 ---
 
@@ -150,7 +150,7 @@ Planning remains. Sovereignty remains. Remove either and you get either chaos or
 | You can secure your future if you’re smart enough | Riches are uncertain; God alone is trust-worthy (1 Timothy 6:17) |
 | “God wants you rich” as a blanket promise | Scripture promises care and warns greed; it does not guarantee lifestyle elevation |
 
-Public-domain echo (not authority): older self-development writers talked about thrift, character, and industrious habits because societies keep rediscovering that waste and impulsiveness destroy households. Useful as historical rhyme. Not a second canon. When an older book praises thought-power as creative force, Scripture still requires “If the Lord will.” Classification: **THEMATIC_PARALLEL_ONLY** on thrift; **CONTRADICTION** on thought as deity.
+Public-domain echo (not authority): older self-development writers talked about thrift, character, and industrious habits because societies keep rediscovering that waste and impulsiveness destroy households. Useful as historical rhyme. Not a second canon. When an older book praises thought-power as creative force, Scripture still requires “If the Lord will.” Keep the thrift wisdom. Refuse thought-as-deity.
 
 ---
 
@@ -169,7 +169,7 @@ Public-domain echo (not authority): older self-development writers talked about 
 
 ## Monday morning — what to do now
 
-Jordan did not need a new personality by sunrise. He needed a first honest act.
+Jordan did not need a new personality before breakfast. He needed a first honest act.
 
 **Do this within 48 hours:**
 

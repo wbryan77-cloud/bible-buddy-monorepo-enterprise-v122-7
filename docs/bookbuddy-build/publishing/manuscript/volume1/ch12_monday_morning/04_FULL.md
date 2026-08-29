@@ -38,9 +38,9 @@ It will try to give you a keepable return—the introduction’s doorway, walked
 
 ## You’ve probably heard this before
 
-Fresh-start culture notices something true: weeks have hinges; humans need mercy cycles; unfinished intentions pile up. Those overlaps can be **THEMATIC_PARALLELS**.
+Fresh-start culture notices something true: weeks have hinges; humans need mercy cycles; unfinished intentions pile up. Those overlaps can rhyme with Scripture without replacing it.
 
-Use the parallel. Do not crown it.
+Keep what is useful. Do not crown it as gospel.
 
 Several popular cousins **contradict** Scripture when they become a gospel:
 
@@ -213,9 +213,11 @@ Maya’s cathedral plans failed because they tried to finish the Christian life 
 
 If you can only do hinge one on a brutal morning, do hinge one. Mercy that requires a perfect checklist is not mercy.
 
-### A note on companions
+### What Monday Mercy does not finish
 
-Companion volumes (Money, Relationships, When Life Hurts, Who Is God?) will go deeper where this flagship only opens doors. Do not punish yourself for needing a companion later. Flagship is the shared hallway. Companions are the rooms. Monday Mercy is how you walk the hallway again tomorrow without demanding every room be finished tonight.
+Monday Mercy keeps you walking. It does not pretend every room of a human life is finished in one hallway. Money still needs tables. Relationships still need courage. Grief still needs longer sitting than one chapter can hold. Theology still deepens across a lifetime. That is not a failure of this book. It is the shape of being human under God.
+
+You are allowed to need more time with a wound without treating that need as unfinished homework from these pages. This flagship kept its promise. Life may still open another question.
 
 ---
 
@@ -226,9 +228,7 @@ Companion volumes (Money, Relationships, When Life Hurts, Who Is God?) will go d
 1. **Delete one false label** — Change *Become Consistent* (or your version) to something true: *Begin again* or *Monday Mercy*.  
 2. **One slow passage** — Lamentations 3:22–24, or Micah 6:6–8, or Galatians 5:22–25. Write what the text says before you write what you wish.  
 3. **One embodied Mic 6:8 act** — Pay what you owe if you can; apologize without speech; feed someone; refuse one unjust shortcut; show mercy where you usually show precision; walk humbly by telling God the truth without performance.  
-4. **One neighbor-sized Unbranded Mark** — Help one person without posting.  
-5. **One keepable inch of rule** — Pray briefly, open Scripture briefly, contact one safe human, rest without earning it, work unto the Lord in one task—Marisol’s five lines in miniature, not cathedral form.  
-6. **Optional return prayer (short):** *Father, mercies are new. Here is where I am. Teach me to walk. Amen.*
+4. **One neighbor-sized Unbranded Mark** — Help one person without posting.
 
 That list is not a new religion.
 
@@ -260,6 +260,14 @@ Her mother’s voicemail was still a knot. Elias was still fog. Rent was still r
 
 On the way to checkout Maya passed a display of journals labeled *New Year New You* in August, which felt on-brand for an age that sells restart every month. She did not buy one. She already had a cracked-spine Bible and a receipt with four hinges.
 
+Near the pharmacy she stopped without meaning to. A woman her mother’s age was waiting for a prescription, phone pressed to her ear, saying softly, “I know. I’m scared too.” Maya’s own unreturned voicemail rose in her chest—not as unfinished spiritual homework from a book, but as the ordinary fear that understanding does not erase. She had learned how to begin again. The health scare was still a health scare. Faithfulness had not become a force field.
+
+She put her hand on the cart handle and breathed.
+
+*God, thank You for Monday Mercy. And when life still hurts—when the right next step does not remove the ache—meet me there too.*
+
+It was not a cliffhanger. It was a true human remainder.
+
 ---
 
 ## Emotional landing — what this book was always for
@@ -270,11 +278,13 @@ You were hungry for something Scripture can actually meet—without slogan gods,
 
 Remember the introduction’s refusal: this book would not promise wealth, a spouse, unbroken calm, or a painless faith. It would promise to take your real life seriously, open Scripture in context, refuse slogan gods, and leave a next step small enough to attempt. Monday Mercy is that promise kept in kitchen form—grocery bag still ordinary, cracked Bible still cracked, God still not imaginary.
 
-The companions in these pages—Maya, Lena, Marisol, Helen, Camila, Naomi, Tessa, Owen, and the pilots’ household of ordinary strugglers—were never mascots. They were recognition devices. “That is me” before “here is a lecture.”
+The people in these pages—Maya, Lena, Marisol, Helen, Camila, Naomi, Tessa, Owen, and the household of ordinary strugglers—were never mascots. They were recognition devices. “That is me” before “here is a lecture.”
 
 You are allowed to finish this book unfinished.
 
 Unfinished is where walking happens.
+
+And unfinished, sometimes, is where the next honest question rises—not because this book withheld its answer, but because life itself keeps asking more of a person who has finally begun to listen.
 
 ---
 
@@ -303,7 +313,15 @@ That night Maya washed the pan. The alarm label now read *Monday Mercy.* She did
 
 She called her mother. Not a perfect call. A true one. Two pauses too long. One laugh that cracked. One *I don’t know what I’m doing, but I’m not disappearing.* Her mother said, “Okay. That’s enough for today,” which was not theology class and somehow still mercy.
 
-Before sleep Maya opened Lamentations 3 and read the morning mercies in a kitchen that smelled like dish soap. She did not close every tab. She closed the day.
+After they hung up, Maya sat with the quiet that follows a kept promise. The book’s central walk had landed: recognition, Scripture, a keepable return. Then the quieter reality surfaced—the one Lena’s chip aisle had already named for anyone willing to hear it.
+
+Understanding helps you live.
+
+Living what you understand does not always stop life from hurting.
+
+Her mother’s health was still uncertain. Elias was still fog. Rent was still rent. None of that canceled Monday Mercy. It simply meant the Word that had met her in ordinary groceries would also have to meet her in fear, waiting rooms, and unanswered medical questions—not as a slogan, as a foundation that does not move when circumstances do.
+
+Before sleep she opened Lamentations 3 and read the morning mercies in a kitchen that smelled like dish soap. She did not close every tab. She closed the day.
 
 Outside, the gray sky had not become stained glass. Inside, the emotional arc of the book completed its only honest shape: not a miracle ending, but a door that opens again—grocery bag, cracked Bible, real questions, and a God who is actually there when Monday arrives looking like Monday.
 
@@ -312,3 +330,5 @@ Begin again.
 Not as a brand.
 
 As a walk.
+
+And when the walk leads into pain that one Monday cannot finish, you will not be starting from nowhere. You will already know the God whose mercies are new—and whose Word remains when the ache remains too.

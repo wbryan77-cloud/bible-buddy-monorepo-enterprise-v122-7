@@ -43,7 +43,7 @@ Clinical grief support, trauma care, and medical help are not competitors with f
 
 Modern resilience talk often helps by naming stages, nervous-system realities, and the need for community. Books born from extreme suffering remind us that meaning can be sought when comfort is gone. Stoic teachers urge endurance and the sorting of what is in our power.
 
-Those can be **THEMATIC_PARALLELS**: humans notice that despair can be faced with courage, and that purpose can steady a person under pressure.
+Those can rhyme with Scripture without replacing it: humans notice that despair can be faced with courage, and that purpose can steady a person under pressure.
 
 But resilience culture can become a new performance: bounce back attractively. Stoic courage can center the autonomous self. Meaning-as-attitude can sound profound and still leave you alone with your willpower.
 
@@ -51,7 +51,7 @@ Scripture offers something sterner and kinder:
 
 **God enters suffering; He does not merely coach you through it from a distance. And hope is not a denial of ashes.**
 
-Classification for Stoic endurance and secular meaning-under-suffering vs the gospel: **THEMATIC_PARALLEL_ONLY** on courage and honesty; **CONTRADICTION** where the self becomes savior or where lament is treated as weakness.
+Those can rhyme with courage and honesty under pressure. They contradict the gospel where the self becomes savior or where lament is treated as weakness.
 
 ---
 
