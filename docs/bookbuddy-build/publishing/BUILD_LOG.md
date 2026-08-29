@@ -188,5 +188,15 @@ See `gates/Gate8_ControlledBuild.md` — **ch00–ch12 all STYLE-FROZEN**.
 - Production/runtime unchanged. Unrelated dirty tree untouched.
 - **STOP for Founder + independent review before freeze commit. No formatting. No C3.**
 
+---
+
+## Phase 1 — Interior design architecture (2026-08-29)
+
+- Frozen baseline: `b2d4e63208946e796244c6d5815fc2dba3769d6c` (master manuscript freeze).
+- Created `publishing/design/` + `publishing/design/volume1/` Phase 1 Design Bible suite (reader experience, systems, production, Phase 2 prototype spec).
+- Controlling doc: `design/volume1/Volume1_InteriorDesignBible.md`.
+- Recommended direction: **C — BookBuddy Signature Hybrid**; trim **6×9**; prototypes ch00/ch06/ch08/ch12.
+- Manuscript `04_FULL.md` **unchanged**. Production/runtime unchanged. Unrelated dirty tree untouched.
+- **STOP for Founder + ChatGPT design review. No Phase 1 commit yet. No prototypes yet. No C3.**
 
 
