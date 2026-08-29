@@ -1,0 +1,306 @@
+{
+  "generated": "2026-08-28-final",
+  "files": 60,
+  "items": [
+    {
+      "path": "01_PUBLIC_DOMAIN_SELF_DEVELOPMENT/As_a_Man_Thinketh_James_Allen.epub",
+      "bytes": 81509,
+      "sha256": "1762121216e4662d41094c962788ffa653e0ca327bb5733e989c41c4cbde0592"
+    },
+    {
+      "path": "01_PUBLIC_DOMAIN_SELF_DEVELOPMENT/Self_Help_Samuel_Smiles.epub",
+      "bytes": 590183,
+      "sha256": "b9eb1f316586ba7aa3491356a8255e54a7fce77c2c1d4d193f2bdcf1454f5f4a"
+    },
+    {
+      "path": "01_PUBLIC_DOMAIN_SELF_DEVELOPMENT/The_Science_of_Getting_Rich_Wallace_D_Wattles.epub",
+      "bytes": 183752,
+      "sha256": "71fd673177f007c71a15e0d5d2fffc303002c8d96ab24923010eef1289d7b493"
+    },
+    {
+      "path": "01_PUBLIC_DOMAIN_SELF_DEVELOPMENT/Thrift_Samuel_Smiles.epub",
+      "bytes": 336933,
+      "sha256": "5a2d36c2f577ca91948977ba0a898ee15d8759ac9ce0e79a49e70890bf398576"
+    },
+    {
+      "path": "02_PUBLIC_DOMAIN_BIBLE_STUDY/Bible_Readings_for_the_Home_Circle.epub",
+      "bytes": 25148884,
+      "sha256": "a1877418bf9a0a4b96f23f1b62b344872a42c8ab848e57f8984fc694dd5d7d59"
+    },
+    {
+      "path": "02_PUBLIC_DOMAIN_BIBLE_STUDY/How_to_Master_the_English_Bible_James_M_Gray.epub",
+      "bytes": 101185,
+      "sha256": "5f38eda695e3592cdaed7281c32583fa37a181d6991063e5ce1e376de1bf0e16"
+    },
+    {
+      "path": "02_PUBLIC_DOMAIN_BIBLE_STUDY/Pleasure_and_Profit_in_Bible_Study_D_L_Moody.epub",
+      "bytes": 286401,
+      "sha256": "c27b90e6fb3280abf6c1c37f7aca0f4d1d329c5eafe9044b5904fb2e9cf59aa4"
+    },
+    {
+      "path": "03_PUBLIC_DOMAIN_COMPARATIVE_RELIGION/Analects_of_Confucius_James_Legge.epub",
+      "bytes": 135227,
+      "sha256": "c9d217139b9df19881abaf4384f65187d1d0995af5ea449139802738375ad301"
+    },
+    {
+      "path": "03_PUBLIC_DOMAIN_COMPARATIVE_RELIGION/Bhagavad_Gita_The_Song_Celestial_Edwin_Arnold.epub",
+      "bytes": 131042,
+      "sha256": "a5740249bf75c0f2751ed2a8e96742071dd6ee9acb902dec34ed57a8e0e8e359"
+    },
+    {
+      "path": "03_PUBLIC_DOMAIN_COMPARATIVE_RELIGION/Dhammapada_Max_Muller_Translation.epub",
+      "bytes": 112318,
+      "sha256": "dbd66aa859b981f01c2d83d1fd3a88003e5874e739ab8fb5fc78dba25a1b37ef"
+    },
+    {
+      "path": "03_PUBLIC_DOMAIN_COMPARATIVE_RELIGION/Tao_Teh_King_James_Legge.epub",
+      "bytes": 91302,
+      "sha256": "6574e169244eecd9d84e3d3630cd00d113eea3a24787c6710c05bef05197ba0f"
+    },
+    {
+      "path": "03_PUBLIC_DOMAIN_COMPARATIVE_RELIGION/The_Koran_Rodwell_Translation.epub",
+      "bytes": 516590,
+      "sha256": "d8a1918a0ee440d24f0f0c3e15aedbf7c4e2afa3a3729dc1fd738f6010dddf3d"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/7_Habits_Stephen_R_Covey_25th_Anniversary.pdf",
+      "bytes": 4626938,
+      "sha256": "134cd41db553b85332f0e1901e2a8d533399e6bf15dc9115513364069cb34cdb"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/Atomic_Habits_James_Clear_Internet_Archive_OCR.epub",
+      "bytes": 313463,
+      "sha256": "d94f220e908f3c84ee5ede2e2070887bfb17fabe4d0a44c6e545079b04be4529"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/How_to_Not_Die_Alone_Logan_Ury.epub",
+      "bytes": 776258,
+      "sha256": "757ba84dc06792f8d25e928cb3ca7304f96b47a4b7f0185126086ed9004579b6"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/How_to_Talk_So_Kids_Will_Listen_Faber_Mazlish.epub",
+      "bytes": 3390043,
+      "sha256": "ce36e2fc54c43de09397d2b78f963dfece5b03202d980ba26e4ed8585489ab77"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/How_to_Win_Friends_Dale_Carnegie_Internet_Archive_OCR.epub",
+      "bytes": 137452329,
+      "sha256": "e47a38441cecee2fdd4218ec405e81b586bd93b4b5edef66272ba4991d933ba8"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/Mans_Search_for_Meaning_Viktor_Frankl_Internet_Archive_OCR.epub",
+      "bytes": 155032,
+      "sha256": "1d80b00e1395a3bd36796d79a863f844ee011605c7880cc7e3c2f09bcdfdfb7f"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/Modern_Romance_Ansari_Klinenberg.epub",
+      "bytes": 2670560,
+      "sha256": "a09fedb131c7dd9421fc19df8feee06039211bd9c18e04acd025e339d9822ff8"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/Rich_Dad_Poor_Dad_Robert_Kiyosaki.pdf",
+      "bytes": 11863018,
+      "sha256": "fd9524dc101170b03c47ae28f45a54341547faff0d7d536aab59af819241d028"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/The_Bible_For_Dummies_Geoghegan_Homan.azw",
+      "bytes": 3359469,
+      "sha256": "9b26c77e0117dbdf892b9fe237e6940098b3ae3b9a23046796a7af8f7cd6cd85"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/The_Power_of_Habit_Charles_Duhigg_Internet_Archive_OCR.epub",
+      "bytes": 1153759,
+      "sha256": "cff7c00944001e2a7702cdf6a385555826f723994b4823304d0ac5f774780022"
+    },
+    {
+      "path": "04_MODERN_BESTSELLER_BENCHMARKS/The_Psychology_of_Money_Morgan_Housel.epub",
+      "bytes": 1028007,
+      "sha256": "5a7a037e7c0f9edbe710e85758f6a26f267ba7b627f4e1ce98249f237d13e4e9"
+    },
+    {
+      "path": "05_EXCLUDED_OR_PENDING/How_to_Win_Friends_LCP_LOCKED_EXCLUDE.lcpl",
+      "bytes": 2940,
+      "sha256": "ef38b765ecde47a1a0fc5ed350e8a0c35a6ac9441455286a2781b3c144492da7"
+    },
+    {
+      "path": "05_EXCLUDED_OR_PENDING/I_Will_Teach_You_to_Be_Rich_UPLOADED_SUMMARY_ONLY.pdf",
+      "bytes": 2326518,
+      "sha256": "9cb3ceb40e462602d9cd3a017edff9ea179ced2bff92c9b9eb17a2c009c7502d"
+    },
+    {
+      "path": "05_EXCLUDED_OR_PENDING/The_Whole_Brain_Child_UPLOADED_PREVIEW_ONLY.pdf",
+      "bytes": 34837,
+      "sha256": "298972732f79fdcce712a41f9028227ef8f3723c0f61b2bda21d88cdf3596670"
+    },
+    {
+      "path": "06_HANDOFF/BOOKBUDDY_PHASE_1_CURSOR_MASTER_PROMPT.md",
+      "bytes": 30587,
+      "sha256": "22a19d9ca936ed4198ad6fb87ba2c217342a19cdf51066e2a590b1143fa84beb"
+    },
+    {
+      "path": "06_HANDOFF/BOOKBUDDY_PRE_CURSOR_DIAGNOSIS.md",
+      "bytes": 5584,
+      "sha256": "2cd9223c63e0f8f1947f64b7aeb46cead70b8b6600e1c52a789c3dae21c8a3a0"
+    },
+    {
+      "path": "06_HANDOFF/OPTIONAL_SOURCE_EXPANSION_AND_ACQUISITION.md",
+      "bytes": 5199,
+      "sha256": "975e6ba24153ca89d8c3e62d923aad499930eddf94cc6ebff7b9e4e69c77b58a"
+    },
+    {
+      "path": "06_HANDOFF/README_CURSOR_HANDOFF.md",
+      "bytes": 1700,
+      "sha256": "8a87c96fadd57d4fe7326a7b23f72e466f48b84356343d8840650ed4ba1dfc96"
+    },
+    {
+      "path": "06_HANDOFF/SOURCE_REGISTRY.json",
+      "bytes": 18149,
+      "sha256": "2e432ea44b8dbca7d58251ed68611ff4b62fb1e3639f6c581116315959cb6a3d"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/7_Habits_Stephen_R_Covey_25th_Anniversary.txt",
+      "bytes": 756117,
+      "sha256": "f435b77c2ae769cfa4b5d3af1ccb50cf72bb7b11090c856aba194f88f7e73318"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Analects_of_Confucius_James_Legge.md",
+      "bytes": 184840,
+      "sha256": "ed01e08b142bb655fedafeabe7266d618b7733e361f1bbfbc78a7c11a418871d"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/As_a_Man_Thinketh_James_Allen.md",
+      "bytes": 69354,
+      "sha256": "338d612d966636cbeab3f0eb5585e4aec41befb2ec348aeb4fd15850f1aace06"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Atomic_Habits_James_Clear_Internet_Archive_OCR.md",
+      "bytes": 434784,
+      "sha256": "6ed2041634b86ffc60c7900350ba99b2fdd86e89497574beae944552edd29493"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Bhagavad_Gita_The_Song_Celestial_Edwin_Arnold.md",
+      "bytes": 148226,
+      "sha256": "0f494a6157246eb4c60c83ee26effa99b64222a0ec0a1ea862eeb780ed46cf6d"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Bible_Readings_for_the_Home_Circle.md",
+      "bytes": 3006996,
+      "sha256": "35684e51f513d30d3363ee5974b00634ce505a66605e468dc87cfd8c901d6f16"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Dhammapada_Max_Muller_Translation.md",
+      "bytes": 95869,
+      "sha256": "9988823670e90f4fb8c65381b68457c11b152c5dc961e85347a6cb1f9caab160"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/How_to_Master_the_English_Bible_James_M_Gray.md",
+      "bytes": 94397,
+      "sha256": "251bc2500a62211eabde14c58b4b1bd60f7efba1acd0634090a7b2cb3ef0f8d0"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/How_to_Not_Die_Alone_Logan_Ury.md",
+      "bytes": 537300,
+      "sha256": "3dc14a65271766eec4cdae3da43bfe36e36aa8701e2d5a10e04ad61bf52490f2"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/How_to_Talk_So_Kids_Will_Listen_Faber_Mazlish.md",
+      "bytes": 497482,
+      "sha256": "ac5ae2840309df772e26deb4b69d153fa5aa3789805b17e4aec41692e70bd597"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/How_to_Win_Friends_Dale_Carnegie_Internet_Archive_OCR.md",
+      "bytes": 464868,
+      "sha256": "44daffda452a178baed516c6720e65a80988735727d02628bfe4430d8cb93930"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/I_Will_Teach_You_to_Be_Rich_UPLOADED_SUMMARY_ONLY.txt",
+      "bytes": 69353,
+      "sha256": "448173c14f9f4a672b564ab53da065f8fcaf3000e3c005f0dd5180faf43acef4"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Mans_Search_for_Meaning_Viktor_Frankl_Internet_Archive_OCR.md",
+      "bytes": 265795,
+      "sha256": "11a34d20cd99158bd4a2743ca529e4f29baf000e5f64fce76a9a03887407f371"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Modern_Romance_Ansari_Klinenberg.md",
+      "bytes": 446513,
+      "sha256": "afe6cdeaf72cb8512b6b1dd7d498abbd5020cc40e72a03113cea63add334ee7d"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Pleasure_and_Profit_in_Bible_Study_D_L_Moody.md",
+      "bytes": 195976,
+      "sha256": "8b892bc74bc2833c819a84bd8b987eabed5457382b5978f5576f478aeea40188"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Rich_Dad_Poor_Dad_Robert_Kiyosaki.txt",
+      "bytes": 431162,
+      "sha256": "fb6056612b93b55ecd32cc16219f45b0a8402fb9d83df7be3e5f8feef9e7783e"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Self_Help_Samuel_Smiles.md",
+      "bytes": 873411,
+      "sha256": "836a697f3af06bdb0fb74f846dbea43e9596a96a5ed806a9f3e90df4094c8374"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Tao_Teh_King_James_Legge.md",
+      "bytes": 82219,
+      "sha256": "184a727ca41ae0c5b2c1ca5bf77765b96853798ddf7230749064c8dda993e502"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/The_Bible_For_Dummies_Geoghegan_Homan.md",
+      "bytes": 943099,
+      "sha256": "302b7890081d3f63e04b8800954e6f674595d9bfb75874451b3262068132c29e"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/The_Four_Winds_of_Heaven_The_Israel_of_God_Henry_Buie.txt",
+      "bytes": 229105,
+      "sha256": "4e3607f8d2322e65954de4b34d8d9dab883489811d9d8fa96ec9069b0278bc5e"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/The_Koran_Rodwell_Translation.md",
+      "bytes": 1124069,
+      "sha256": "7046ee51851721bca0f230858048917194e0ef55f31170f04e0f7a6b241d30ba"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/The_Power_of_Habit_Charles_Duhigg_Internet_Archive_OCR.md",
+      "bytes": 765867,
+      "sha256": "49b251e96fed01ad8348deccbecea5f17e00fa1092d294623800b04de15f0e26"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/The_Psychology_of_Money_Morgan_Housel.md",
+      "bytes": 345595,
+      "sha256": "ccf445c4e89a77a773a64aad28f07df810a9e793023fae11354ee7ade3fa0720"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/The_Science_of_Getting_Rich_Wallace_D_Wattles.md",
+      "bytes": 178861,
+      "sha256": "25e1c6256be42f0f7ee045246f116096d9cda69c0f3851b50d74a7c42dc20e88"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/The_Whole_Brain_Child_UPLOADED_PREVIEW_ONLY.txt",
+      "bytes": 1860,
+      "sha256": "2c84b93a121d5378faf666003e66ddbf40d2cbf6dcdfab259edb7598c2950e64"
+    },
+    {
+      "path": "07_CURSOR_TEXT_DERIVATIVES/Thrift_Samuel_Smiles.md",
+      "bytes": 740815,
+      "sha256": "4aeea9083016c742ad8baf28c6d1fa325a761a1116ff52abc3c755b398e062da"
+    },
+    {
+      "path": "08_BIBLEBUDDY_EVIDENCE_SOURCES/The_Four_Winds_of_Heaven_The_Israel_of_God_Henry_Buie.pdf",
+      "bytes": 3774064,
+      "sha256": "633a83f9e8bd349218490016a75b395f2ac3e75e8bf56bf3fba24263a5c40ac9"
+    },
+    {
+      "path": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY_PENDING/PUBLIC_DOMAIN_PHILOSOPHY_SOURCE_REGISTRY.json",
+      "bytes": 1832,
+      "sha256": "c6eadce8c3ff982996b2eb1f6b5f5047f073ddb91c61f4c0f7e9af9f0dbce6ac"
+    },
+    {
+      "path": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY_PENDING/README_DOWNLOAD_OR_CURSOR_FETCH.md",
+      "bytes": 919,
+      "sha256": "103d4fa15f38875bb13c6d7ba3b707f8aaa812a98cc123b9cf9f412f9e5ff2ad"
+    }
+  ]
+}

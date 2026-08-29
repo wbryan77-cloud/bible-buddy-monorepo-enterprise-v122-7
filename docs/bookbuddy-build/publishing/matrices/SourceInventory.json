@@ -1,0 +1,307 @@
+{
+  "generated": "2026-08-28",
+  "gate": 1,
+  "source_collection": "CLOSED",
+  "derivative_count": 32,
+  "excluded": [
+    {
+      "file": "How_to_Win_Friends_LCP_LOCKED_EXCLUDE.lcpl",
+      "reason": "LCP encrypted; use OCR derivative"
+    }
+  ],
+  "items": [
+    {
+      "file": "7_Habits_Stephen_R_Covey_25th_Anniversary.txt",
+      "role": "PRIMARY_CRAFT",
+      "status": "FULL",
+      "bytes": 756117,
+      "words": 122929,
+      "sha256_16": "f435b77c2ae769cf",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/7_Habits_Stephen_R_Covey_25th_Anniversary.txt"
+    },
+    {
+      "file": "Analects_of_Confucius_James_Legge.md",
+      "role": "COMPARATIVE_RELIGION",
+      "status": "FULL_EN_WITNESS",
+      "bytes": 184840,
+      "words": 32565,
+      "sha256_16": "ed01e08b142bb655",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Analects_of_Confucius_James_Legge.md"
+    },
+    {
+      "file": "Art_of_War_Sun_Tzu_Lionel_Giles_Gutenberg_132.md",
+      "role": "PHILOSOPHY_STRATEGY",
+      "status": "FULL",
+      "bytes": 336383,
+      "words": 58697,
+      "sha256_16": "bc2da380e6f574c2",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Art_of_War_Sun_Tzu_Lionel_Giles_Gutenberg_132.md"
+    },
+    {
+      "file": "As_a_Man_Thinketh_James_Allen.md",
+      "role": "PD_SELF_DEV",
+      "status": "FULL",
+      "bytes": 69354,
+      "words": 10969,
+      "sha256_16": "338d612d966636cb",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/As_a_Man_Thinketh_James_Allen.md"
+    },
+    {
+      "file": "Atomic_Habits_James_Clear_Internet_Archive_OCR.md",
+      "role": "PRIMARY_CRAFT",
+      "status": "FULL_OCR",
+      "bytes": 434784,
+      "words": 71356,
+      "sha256_16": "6ed2041634b86ffc",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Atomic_Habits_James_Clear_Internet_Archive_OCR.md"
+    },
+    {
+      "file": "Bhagavad_Gita_The_Song_Celestial_Edwin_Arnold.md",
+      "role": "COMPARATIVE_RELIGION",
+      "status": "FULL_EN_WITNESS",
+      "bytes": 148226,
+      "words": 23471,
+      "sha256_16": "0f494a6157246eb4",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Bhagavad_Gita_The_Song_Celestial_Edwin_Arnold.md"
+    },
+    {
+      "file": "Bible_Readings_for_the_Home_Circle.md",
+      "role": "PD_BIBLE_STUDY",
+      "status": "FULL",
+      "bytes": 3006996,
+      "words": 352890,
+      "sha256_16": "35684e51f513d30d",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Bible_Readings_for_the_Home_Circle.md"
+    },
+    {
+      "file": "Dhammapada_Max_Muller_Translation.md",
+      "role": "COMPARATIVE_RELIGION",
+      "status": "FULL_EN_WITNESS",
+      "bytes": 95869,
+      "words": 15845,
+      "sha256_16": "9988823670e90f4f",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Dhammapada_Max_Muller_Translation.md"
+    },
+    {
+      "file": "Enchiridion_Epictetus_Higginson_Gutenberg_45109.md",
+      "role": "PHILOSOPHY_STRATEGY",
+      "status": "FULL",
+      "bytes": 84912,
+      "words": 14507,
+      "sha256_16": "e6e4563fa6d298a6",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Enchiridion_Epictetus_Higginson_Gutenberg_45109.md"
+    },
+    {
+      "file": "Essays_Counsels_Civil_Moral_Francis_Bacon_Gutenberg_575.md",
+      "role": "PHILOSOPHY_STRATEGY",
+      "status": "FULL",
+      "bytes": 347186,
+      "words": 56358,
+      "sha256_16": "79de2580a4eb8281",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Essays_Counsels_Civil_Moral_Francis_Bacon_Gutenberg_575.md"
+    },
+    {
+      "file": "How_to_Master_the_English_Bible_James_M_Gray.md",
+      "role": "PD_BIBLE_STUDY",
+      "status": "FULL",
+      "bytes": 94397,
+      "words": 16133,
+      "sha256_16": "251bc2500a62211e",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/How_to_Master_the_English_Bible_James_M_Gray.md"
+    },
+    {
+      "file": "How_to_Not_Die_Alone_Logan_Ury.md",
+      "role": "SECONDARY_MODERN",
+      "status": "FULL",
+      "bytes": 537300,
+      "words": 86090,
+      "sha256_16": "3dc14a65271766ee",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/How_to_Not_Die_Alone_Logan_Ury.md"
+    },
+    {
+      "file": "How_to_Talk_So_Kids_Will_Listen_Faber_Mazlish.md",
+      "role": "SECONDARY_MODERN",
+      "status": "FULL",
+      "bytes": 497482,
+      "words": 84377,
+      "sha256_16": "ac5ae2840309df77",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/How_to_Talk_So_Kids_Will_Listen_Faber_Mazlish.md"
+    },
+    {
+      "file": "How_to_Win_Friends_Dale_Carnegie_Internet_Archive_OCR.md",
+      "role": "PRIMARY_CRAFT",
+      "status": "FULL_OCR",
+      "bytes": 464868,
+      "words": 82741,
+      "sha256_16": "44daffda452a178b",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/How_to_Win_Friends_Dale_Carnegie_Internet_Archive_OCR.md"
+    },
+    {
+      "file": "I_Will_Teach_You_to_Be_Rich_UPLOADED_SUMMARY_ONLY.txt",
+      "role": "SECONDARY_MODERN",
+      "status": "SUMMARY_ONLY",
+      "bytes": 69353,
+      "words": 10491,
+      "sha256_16": "448173c14f9f4a67",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/I_Will_Teach_You_to_Be_Rich_UPLOADED_SUMMARY_ONLY.txt"
+    },
+    {
+      "file": "Mans_Search_for_Meaning_Viktor_Frankl_Internet_Archive_OCR.md",
+      "role": "PRIMARY_CRAFT",
+      "status": "FULL_OCR",
+      "bytes": 265795,
+      "words": 46559,
+      "sha256_16": "11a34d20cd99158b",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Mans_Search_for_Meaning_Viktor_Frankl_Internet_Archive_OCR.md"
+    },
+    {
+      "file": "Meditations_Marcus_Aurelius_Gutenberg_2680.md",
+      "role": "PHILOSOPHY_STRATEGY",
+      "status": "FULL",
+      "bytes": 489042,
+      "words": 80703,
+      "sha256_16": "55089b9d51e1e406",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Meditations_Marcus_Aurelius_Gutenberg_2680.md"
+    },
+    {
+      "file": "Modern_Romance_Ansari_Klinenberg.md",
+      "role": "SECONDARY_MODERN",
+      "status": "FULL",
+      "bytes": 446513,
+      "words": 76893,
+      "sha256_16": "afe6cdeaf72cb851",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Modern_Romance_Ansari_Klinenberg.md"
+    },
+    {
+      "file": "Nicomachean_Ethics_Aristotle_Gutenberg_8438.md",
+      "role": "PHILOSOPHY_STRATEGY",
+      "status": "FULL",
+      "bytes": 664725,
+      "words": 117303,
+      "sha256_16": "8963e4e6f4ef3d5d",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Nicomachean_Ethics_Aristotle_Gutenberg_8438.md"
+    },
+    {
+      "file": "Pleasure_and_Profit_in_Bible_Study_D_L_Moody.md",
+      "role": "PD_BIBLE_STUDY",
+      "status": "FULL",
+      "bytes": 195976,
+      "words": 34899,
+      "sha256_16": "8b892bc74bc2833c",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Pleasure_and_Profit_in_Bible_Study_D_L_Moody.md"
+    },
+    {
+      "file": "Republic_of_Plato_Jowett_Gutenberg_55201.md",
+      "role": "PHILOSOPHY_STRATEGY",
+      "status": "FULL",
+      "bytes": 1560463,
+      "words": 258902,
+      "sha256_16": "dc2089e99b7b0031",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Republic_of_Plato_Jowett_Gutenberg_55201.md"
+    },
+    {
+      "file": "Rich_Dad_Poor_Dad_Robert_Kiyosaki.txt",
+      "role": "PRIMARY_CRAFT",
+      "status": "FULL",
+      "bytes": 431162,
+      "words": 66701,
+      "sha256_16": "fb6056612b93b55e",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Rich_Dad_Poor_Dad_Robert_Kiyosaki.txt"
+    },
+    {
+      "file": "Self_Help_Samuel_Smiles.md",
+      "role": "PD_SELF_DEV",
+      "status": "FULL",
+      "bytes": 873411,
+      "words": 143914,
+      "sha256_16": "836a697f3af06bdb",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Self_Help_Samuel_Smiles.md"
+    },
+    {
+      "file": "Tao_Teh_King_James_Legge.md",
+      "role": "COMPARATIVE_RELIGION",
+      "status": "FULL_EN_WITNESS",
+      "bytes": 82219,
+      "words": 13952,
+      "sha256_16": "184a727ca41ae0c5",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Tao_Teh_King_James_Legge.md"
+    },
+    {
+      "file": "The_Bible_For_Dummies_Geoghegan_Homan.md",
+      "role": "PRIMARY_CRAFT",
+      "status": "FULL",
+      "bytes": 943099,
+      "words": 158139,
+      "sha256_16": "302b7890081d3f63",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/The_Bible_For_Dummies_Geoghegan_Homan.md"
+    },
+    {
+      "file": "The_Four_Winds_of_Heaven_The_Israel_of_God_Henry_Buie.txt",
+      "role": "BIBLEBUDDY_EVIDENCE",
+      "status": "FULL",
+      "bytes": 229105,
+      "words": 41577,
+      "sha256_16": "4e3607f8d2322e65",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/The_Four_Winds_of_Heaven_The_Israel_of_God_Henry_Buie.txt"
+    },
+    {
+      "file": "The_Koran_Rodwell_Translation.md",
+      "role": "COMPARATIVE_RELIGION",
+      "status": "FULL_EN_WITNESS",
+      "bytes": 1124069,
+      "words": 206560,
+      "sha256_16": "7046ee51851721bc",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/The_Koran_Rodwell_Translation.md"
+    },
+    {
+      "file": "The_Power_of_Habit_Charles_Duhigg_Internet_Archive_OCR.md",
+      "role": "PRIMARY_CRAFT",
+      "status": "FULL_OCR",
+      "bytes": 765867,
+      "words": 123545,
+      "sha256_16": "49b251e96fed01ad",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/The_Power_of_Habit_Charles_Duhigg_Internet_Archive_OCR.md"
+    },
+    {
+      "file": "The_Psychology_of_Money_Morgan_Housel.md",
+      "role": "SECONDARY_MODERN",
+      "status": "FULL",
+      "bytes": 345595,
+      "words": 55366,
+      "sha256_16": "ccf445c4e89a77a7",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/The_Psychology_of_Money_Morgan_Housel.md"
+    },
+    {
+      "file": "The_Science_of_Getting_Rich_Wallace_D_Wattles.md",
+      "role": "PD_SELF_DEV",
+      "status": "FULL",
+      "bytes": 178861,
+      "words": 27471,
+      "sha256_16": "25e1c6256be42f0f",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/The_Science_of_Getting_Rich_Wallace_D_Wattles.md"
+    },
+    {
+      "file": "The_Whole_Brain_Child_UPLOADED_PREVIEW_ONLY.txt",
+      "role": "SECONDARY_MODERN",
+      "status": "PREVIEW_ONLY",
+      "bytes": 1860,
+      "words": 276,
+      "sha256_16": "2c84b93a121d5378",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/The_Whole_Brain_Child_UPLOADED_PREVIEW_ONLY.txt"
+    },
+    {
+      "file": "Thrift_Samuel_Smiles.md",
+      "role": "PD_SELF_DEV",
+      "status": "FULL",
+      "bytes": 740815,
+      "words": 125259,
+      "sha256_16": "4aeea9083016c742",
+      "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/07_CURSOR_TEXT_DERIVATIVES/Thrift_Samuel_Smiles.md"
+    }
+  ],
+  "rules": {
+    "copyrighted_stories": "mechanics only; original stories required",
+    "partial_sources": "orientation only; no full-book structural claims",
+    "comparative_original_language": "mark ORIGINAL_LANGUAGE_SOURCE_MISSING if exact term required"
+  }
+}

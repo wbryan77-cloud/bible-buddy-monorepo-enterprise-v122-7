@@ -1,0 +1,186 @@
+{
+  "rule": "BookBuddy manuscript may use VERIFIED/QUALIFIED only",
+  "eligible_count": 14,
+  "eligible": [
+    {
+      "claim_id": "FW-003",
+      "status": "QUALIFIED",
+      "chapter": 1,
+      "claim_type": "kingdom_identification",
+      "claim_wording": "Lion with eagle wings is Babylon under Nebuchadnezzar (605\u2013562 BC), head of gold.",
+      "matched_biblebuddy_object": {
+        "path": "services/runtimeHistoricalReferenceLayer.js",
+        "id": "kingdom_prophecy_history",
+        "refs": [
+          "Babylonian Empire records"
+        ]
+      }
+    },
+    {
+      "claim_id": "FW-005",
+      "status": "QUALIFIED",
+      "chapter": 1,
+      "claim_type": "kingdom_identification",
+      "claim_wording": "Bear with three ribs is Medo-Persian Empire; Darius the Mede ignored by history; Cyrus reigned ~550\u2013530 BC.",
+      "matched_biblebuddy_object": {
+        "path": "services/runtimeHistoricalReferenceLayer.js",
+        "id": "kingdom_prophecy_history",
+        "refs": [
+          "Medo-Persian historical references"
+        ]
+      }
+    },
+    {
+      "claim_id": "FW-006",
+      "status": "QUALIFIED",
+      "chapter": 1,
+      "claim_type": "kingdom_identification",
+      "claim_wording": "Goat\u2019s notable horn is Alexander; he defeated Persia ~334 BC; died 323 BC; four horns = Lysimachus, Ptolemy, Cassander, Seleucus.",
+      "matched_biblebuddy_object": {
+        "path": "services/runtimeHistoricalReferenceLayer.js",
+        "id": "kingdom_prophecy_history",
+        "refs": [
+          "Greek Empire references"
+        ]
+      }
+    },
+    {
+      "claim_id": "FW-007",
+      "status": "QUALIFIED",
+      "chapter": 1,
+      "claim_type": "chronology_kingdom",
+      "claim_wording": "After Cassander (d. 297) and Lysimachus (d. 281), north=Seleucid Syria and south=Ptolemaic Egypt; room left for Rome.",
+      "matched_biblebuddy_object": {
+        "path": "services/runtimeHistoricalReferenceLayer.js",
+        "id": "kingdom_prophecy_history"
+      }
+    },
+    {
+      "claim_id": "FW-009",
+      "status": "QUALIFIED",
+      "chapter": 1,
+      "claim_type": "historical_event",
+      "claim_wording": "Pompey took Syria 64 BC ending Seleucids; Actium 31 BC ended Ptolemaic Egypt; Octavian became Augustus; empire quiet order ~31 BC\u2013235 AD.",
+      "matched_biblebuddy_object": {
+        "path": "services/historicalReferenceIndex.js",
+        "id": "romanHistory"
+      }
+    },
+    {
+      "claim_id": "FW-010",
+      "status": "QUALIFIED",
+      "chapter": 1,
+      "claim_type": "church_history",
+      "claim_wording": "Constantine supported Christianity; in 321 AD prohibited business on Sunday except necessary agricultural labor; died 337 after Christian baptism.",
+      "matched_biblebuddy_object": {
+        "path": "services/historicalEvidenceLayer.js",
+        "id": "buildHistoricalEvidence('sabbath')",
+        "refs": [
+          "Roman imperial Sunday legislation references"
+        ]
+      }
+    },
+    {
+      "claim_id": "FW-011",
+      "status": "VERIFIED",
+      "chapter": 1,
+      "claim_type": "historical_event",
+      "claim_wording": "Rome collapsed 476 AD when Romulus Augustulus was deposed by Herulians under Odoacer.",
+      "matched_biblebuddy_object": {
+        "path": "docs/evidence-candidates/bible-intelligence-engine-v1.3c-continuous-certification/14_BookEvidenceReassessment.md",
+        "id": "World Scope / Last Two Million Years INDEXED_ONLY",
+        "note": "reuse governed INDEXED_ONLY records; do not duplicate"
+      }
+    },
+    {
+      "claim_id": "FW-016",
+      "status": "VERIFIED",
+      "chapter": 2,
+      "claim_type": "historical_event",
+      "claim_wording": "Lateran Treaty 11 Feb 1929 created Vatican City; ended Italian state\u2013papacy conflict under Mussolini/Pius XI.",
+      "matched_biblebuddy_object": {
+        "path": "services/historicalReferenceIndex.js",
+        "id": "romanHistory"
+      }
+    },
+    {
+      "claim_id": "FW-021",
+      "status": "VERIFIED",
+      "chapter": 6,
+      "claim_type": "scripture_citation",
+      "claim_wording": "Gabriel promised Jesus the throne of David in Jerusalem; reign over house of Jacob forever (Luke 1:32-33).",
+      "matched_biblebuddy_object": {
+        "path": "services/deathResurrectionKingdomCatalog.js",
+        "id": "kingdomComesToEarth",
+        "approved_topic": "david"
+      }
+    },
+    {
+      "claim_id": "FW-039",
+      "status": "QUALIFIED",
+      "chapter": "Commentary",
+      "claim_type": "doctrine_assertion",
+      "claim_wording": "All NT Scriptures have OT mates; faith comes by hearing the word; prove spirits by knowledge of God\u2019s word.",
+      "matched_biblebuddy_object": {
+        "path": "services/iogIcojGovernedIngestion.js",
+        "id": "governed cross-ref pipeline + readApprovedCrossReferences",
+        "governance": "docs/recovery/certification-v5/11-IOG-ICOJ-Utilization*"
+      }
+    },
+    {
+      "claim_id": "FW-041",
+      "status": "VERIFIED",
+      "chapter": "Footnotes/Bibliography",
+      "claim_type": "encyclopedia_citation",
+      "claim_wording": "Four Winds historical apparatus relies on Grolier, World Scope, Last Two Million Years, Salvadori Pictorial History, Atlas of the Bible, New Catholic Encyclopedia, KJV.",
+      "matched_biblebuddy_object": {
+        "path": "docs/evidence-candidates/bible-intelligence-engine-phase1c/09_ApprovedBooksActivationAudit.md",
+        "id": "World Scope / Last Two Million Years / Jasher INDEXED_ONLY",
+        "also": "14_BookEvidenceReassessment.md"
+      }
+    },
+    {
+      "claim_id": "FW-042",
+      "status": "VERIFIED",
+      "chapter": 1,
+      "claim_type": "source_identity",
+      "claim_wording": "Book begins in Daniel 7 and ends in Revelation as Bible companionship using KJV verse-citation method.",
+      "matched_biblebuddy_object": {
+        "path": "docs/bookbuddy-build/BookBuddy_CURSOR_BUILD_FINAL_2026-08-28/SOURCE_MANIFEST_FINAL.json",
+        "id": "four_winds evidence/research source"
+      }
+    },
+    {
+      "claim_id": "FW-045",
+      "status": "QUALIFIED",
+      "chapter": 6,
+      "claim_type": "scripture_citation",
+      "claim_wording": "Paul speaks of three heavens; project for reader to locate them in Bible.",
+      "matched_biblebuddy_object": {
+        "path": "services/deathResurrectionKingdomCatalog.js",
+        "id": "threeHeavens",
+        "approved_topic": "heavens"
+      }
+    },
+    {
+      "claim_id": "FW-048",
+      "status": "QUALIFIED",
+      "chapter": 13,
+      "claim_type": "historical_event",
+      "claim_wording": "Roman general Titus destroyed Jerusalem and sanctuary in 70 AD, fulfilling part of Daniel 9 desolations.",
+      "matched_biblebuddy_object": {
+        "path": "services/historicalReferenceIndex.js",
+        "id": "josephus",
+        "also": "services/runtimeHistoricalReferenceLayer.js second_temple_period / judea_and_jerusalem",
+        "evidence": "docs/alpha/phase6e-coverage-*/HistoricalSourceInvestigation.json"
+      }
+    }
+  ],
+  "held_status_counts": {
+    "DISPUTED": 13,
+    "PARTIAL": 9,
+    "NEEDS_ADMIN_REVIEW": 12,
+    "UNVERIFIABLE": 1,
+    "UNVERIFIED": 1
+  }
+}

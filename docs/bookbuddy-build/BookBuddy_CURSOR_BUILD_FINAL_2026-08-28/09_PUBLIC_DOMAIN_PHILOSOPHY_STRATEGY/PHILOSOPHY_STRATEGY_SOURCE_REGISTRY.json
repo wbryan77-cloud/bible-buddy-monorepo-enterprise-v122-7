@@ -1,0 +1,62 @@
+[
+  {
+    "title": "The Essays or Counsels, Civil and Moral",
+    "creator": "Francis Bacon",
+    "gutenberg_id": "575",
+    "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Essays_Counsels_Civil_Moral_Francis_Bacon_Gutenberg_575.epub",
+    "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Essays_Counsels_Civil_Moral_Francis_Bacon_Gutenberg_575.md",
+    "word_count_estimate": 56431,
+    "status": "FULL_LOCAL_READABLE",
+    "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+  },
+  {
+    "title": "The Republic of Plato",
+    "creator": "Plato",
+    "gutenberg_id": "55201",
+    "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Republic_of_Plato_Jowett_Gutenberg_55201.epub",
+    "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Republic_of_Plato_Jowett_Gutenberg_55201.md",
+    "word_count_estimate": 256193,
+    "status": "FULL_LOCAL_READABLE",
+    "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+  },
+  {
+    "title": "The Nicomachean ethics of Aristotle",
+    "creator": "Aristotle",
+    "gutenberg_id": "8438",
+    "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Nicomachean_Ethics_Aristotle_Gutenberg_8438.epub",
+    "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Nicomachean_Ethics_Aristotle_Gutenberg_8438.md",
+    "word_count_estimate": 117365,
+    "status": "FULL_LOCAL_READABLE",
+    "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+  },
+  {
+    "title": "The Enchiridion",
+    "creator": "Epictetus",
+    "gutenberg_id": "45109",
+    "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Enchiridion_Epictetus_Higginson_Gutenberg_45109.epub",
+    "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Enchiridion_Epictetus_Higginson_Gutenberg_45109.md",
+    "word_count_estimate": 14354,
+    "status": "FULL_LOCAL_READABLE",
+    "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+  },
+  {
+    "title": "Meditations",
+    "creator": "Emperor of Rome Marcus Aurelius",
+    "gutenberg_id": "2680",
+    "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Meditations_Marcus_Aurelius_Gutenberg_2680.epub",
+    "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Meditations_Marcus_Aurelius_Gutenberg_2680.md",
+    "word_count_estimate": 80798,
+    "status": "FULL_LOCAL_READABLE",
+    "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+  },
+  {
+    "title": "The Art of War",
+    "creator": "active 6th century B.C. Sunzi",
+    "gutenberg_id": "132",
+    "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Art_of_War_Sun_Tzu_Lionel_Giles_Gutenberg_132.epub",
+    "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Art_of_War_Sun_Tzu_Lionel_Giles_Gutenberg_132.md",
+    "word_count_estimate": 58604,
+    "status": "FULL_LOCAL_READABLE",
+    "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+  }
+]

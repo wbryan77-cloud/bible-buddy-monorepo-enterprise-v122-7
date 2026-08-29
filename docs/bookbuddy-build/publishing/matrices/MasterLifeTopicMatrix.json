@@ -1,0 +1,50 @@
+{
+  "generated": "2026-08-28",
+  "note": "Seed matrix for pilot-critical topics; expand per chapter in Gate 8.",
+  "topics": [
+    {
+      "id": "money-stewardship",
+      "reader_question": "I'm broke / anxious about money. What do I do?",
+      "felt_problem": "shame, scarcity fear, confusion about God's will and wealth",
+      "modern_teaching_high_level": "cashflow clarity, habits, assets vs liabilities, abundance mindset",
+      "philosophy_parallel": "Aristotle habit/virtue; Bacon counsel; thrift tradition",
+      "primary_kjv": ["Matthew 6:25-34", "Proverbs 21:5", "Proverbs 22:7", "Luke 12:15-21", "1 Timothy 6:6-19"],
+      "ol_notes": "Matthew 6:33 zēteō seek; priority kingdom/righteousness",
+      "g2r": "Provision and warning from Deut 8 through prophets, Jesus, apostolic contentment, Revelation critique of Babylon commerce",
+      "four_winds": "NOT_USED_UNVERIFIED",
+      "scripture_establishes": "diligence, honesty, anti-greed, trust, generosity, no life-in-possessions",
+      "scripture_does_not_establish": "guaranteed riches; magical speech prosperity",
+      "practical_action": "honest numbers + one stewardship act + prayer",
+      "confidence": "HIGH for core ethics; MEDIUM for any specific finance tactic"
+    },
+    {
+      "id": "dating-discernment",
+      "reader_question": "Why do I keep choosing the wrong person / how do I date wisely?",
+      "felt_problem": "loneliness, choice overload, consumer romance",
+      "modern_teaching_high_level": "attachment patterns, slow dating, standards, online dynamics",
+      "primary_kjv": ["Proverbs 4:23", "1 Corinthians 13", "1 Corinthians 6:18-20", "Genesis 2", "Ephesians 5:25-33"],
+      "ol_notes": "optional pending load-bearing lemma",
+      "g2r": "covenant faithfulness motif from Genesis marriage gift through prophets to Revelation wedding hope",
+      "four_winds": "NOT_USED",
+      "scripture_establishes": "heart-guarding, holy desire, covenantal love character",
+      "scripture_does_not_establish": "swipe tactics; spouse manifestation formulas",
+      "practical_action": "character vs preference lists; pause; counsel",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "anxiety-trust",
+      "reader_question": "My mind won't turn off at night.",
+      "felt_problem": "rumination, fear, spiritual slogans that don't land",
+      "modern_teaching_high_level": "habit loops, attention, meaning under suffering; Stoic control dichotomy",
+      "philosophy_parallel": "Epictetus control; Marcus duty — THEMATIC_PARALLEL_ONLY",
+      "primary_kjv": ["Philippians 4:5-7", "Proverbs 3:5-6", "Psalm 42:5", "Matthew 6:25-34", "John 14:27"],
+      "ol_notes": "merimnaō anxious care; bāṭaḥ trust",
+      "g2r": "fear and God's presence from Genesis through Psalms, Jesus' peace, New Creation hope",
+      "four_winds": "NOT_USED",
+      "scripture_establishes": "prayerful petition, trust, honest lament, peace as God's guarding",
+      "scripture_does_not_establish": "anxiety always equals sin; no clinical care needed",
+      "practical_action": "two-column steward/entrust; specific prayer list; help-seeking if needed",
+      "confidence": "HIGH"
+    }
+  ]
+}

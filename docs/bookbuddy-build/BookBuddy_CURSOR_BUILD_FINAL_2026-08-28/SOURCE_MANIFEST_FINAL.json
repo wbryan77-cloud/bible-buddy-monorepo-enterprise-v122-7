@@ -1,0 +1,117 @@
+{
+  "generated": "2026-08-28-final-cursor-drop",
+  "controlling_instruction": "START_HERE_CURSOR_FINAL_MASTER.md",
+  "counts": {
+    "full_design_research_sources": 29,
+    "full_biblebuddy_evidence_sources": 1,
+    "total_full_active_sources": 30,
+    "partial_summary_preview_sources": 2,
+    "primary_craft_benchmarks": 7,
+    "secondary_full_modern_sources": 4,
+    "public_domain_pre_philosophy": 12,
+    "public_domain_philosophy_strategy": 6
+  },
+  "primary_craft_benchmarks": [
+    "The 7 Habits of Highly Effective People \u2014 Stephen R. Covey",
+    "Atomic Habits \u2014 James Clear",
+    "How to Win Friends and Influence People \u2014 Dale Carnegie",
+    "Rich Dad Poor Dad \u2014 Robert T. Kiyosaki",
+    "Man's Search for Meaning \u2014 Viktor E. Frankl",
+    "The Power of Habit \u2014 Charles Duhigg",
+    "The Bible For Dummies \u2014 Jeffrey Geoghegan & Michael Homan"
+  ],
+  "secondary_full_modern": [
+    "The Psychology of Money \u2014 Morgan Housel",
+    "How to Not Die Alone \u2014 Logan Ury",
+    "Modern Romance \u2014 Aziz Ansari with Eric Klinenberg",
+    "How to Talk So Kids Will Listen & Listen So Kids Will Talk \u2014 Adele Faber & Elaine Mazlish"
+  ],
+  "partial_sources": [
+    {
+      "title": "I Will Teach You to Be Rich \u2014 Ramit Sethi",
+      "status": "SUMMARY_ONLY",
+      "use": "orientation/concept map only"
+    },
+    {
+      "title": "The Whole-Brain Child \u2014 Daniel J. Siegel & Tina Payne Bryson",
+      "status": "PREVIEW_ONLY",
+      "use": "orientation/metadata only"
+    }
+  ],
+  "biblebuddy_evidence": [
+    {
+      "title": "The Four Winds of Heaven: Plus an Analysis of the Rapture, Saved and Born Again",
+      "status": "FULL",
+      "class": "BIBLEBUDDY_EVIDENCE_RESEARCH_SOURCE"
+    }
+  ],
+  "philosophy_strategy": [
+    {
+      "title": "The Essays or Counsels, Civil and Moral",
+      "creator": "Francis Bacon",
+      "gutenberg_id": "575",
+      "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Essays_Counsels_Civil_Moral_Francis_Bacon_Gutenberg_575.epub",
+      "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Essays_Counsels_Civil_Moral_Francis_Bacon_Gutenberg_575.md",
+      "word_count_estimate": 56431,
+      "status": "FULL_LOCAL_READABLE",
+      "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+    },
+    {
+      "title": "The Republic of Plato",
+      "creator": "Plato",
+      "gutenberg_id": "55201",
+      "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Republic_of_Plato_Jowett_Gutenberg_55201.epub",
+      "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Republic_of_Plato_Jowett_Gutenberg_55201.md",
+      "word_count_estimate": 256193,
+      "status": "FULL_LOCAL_READABLE",
+      "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+    },
+    {
+      "title": "The Nicomachean ethics of Aristotle",
+      "creator": "Aristotle",
+      "gutenberg_id": "8438",
+      "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Nicomachean_Ethics_Aristotle_Gutenberg_8438.epub",
+      "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Nicomachean_Ethics_Aristotle_Gutenberg_8438.md",
+      "word_count_estimate": 117365,
+      "status": "FULL_LOCAL_READABLE",
+      "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+    },
+    {
+      "title": "The Enchiridion",
+      "creator": "Epictetus",
+      "gutenberg_id": "45109",
+      "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Enchiridion_Epictetus_Higginson_Gutenberg_45109.epub",
+      "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Enchiridion_Epictetus_Higginson_Gutenberg_45109.md",
+      "word_count_estimate": 14354,
+      "status": "FULL_LOCAL_READABLE",
+      "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+    },
+    {
+      "title": "Meditations",
+      "creator": "Emperor of Rome Marcus Aurelius",
+      "gutenberg_id": "2680",
+      "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Meditations_Marcus_Aurelius_Gutenberg_2680.epub",
+      "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Meditations_Marcus_Aurelius_Gutenberg_2680.md",
+      "word_count_estimate": 80798,
+      "status": "FULL_LOCAL_READABLE",
+      "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+    },
+    {
+      "title": "The Art of War",
+      "creator": "active 6th century B.C. Sunzi",
+      "gutenberg_id": "132",
+      "local_epub": "09_PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY/Art_of_War_Sun_Tzu_Lionel_Giles_Gutenberg_132.epub",
+      "cursor_derivative": "07_CURSOR_TEXT_DERIVATIVES/Art_of_War_Sun_Tzu_Lionel_Giles_Gutenberg_132.md",
+      "word_count_estimate": 58604,
+      "status": "FULL_LOCAL_READABLE",
+      "use_class": "PUBLIC_DOMAIN_PHILOSOPHY_STRATEGY"
+    }
+  ],
+  "rules": {
+    "scripture_authority": "Scripture remains controlling authority.",
+    "modern_books": "Craft/story/reader psychology and modern-life ideas; not doctrine.",
+    "copyrighted_stories": "Extract mechanics; create original stories. Do not lightly rename/adapt protected anecdotes.",
+    "philosophy": "Compare themes and chronology; do not infer biblical borrowing from similarity.",
+    "four_winds": "Verify claim-by-claim and attach only to existing BibleBuddy evidence/history/precept structures; no parallel subsystem."
+  }
+}
