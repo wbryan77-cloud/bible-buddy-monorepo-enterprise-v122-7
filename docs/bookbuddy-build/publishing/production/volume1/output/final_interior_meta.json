@@ -1,0 +1,78 @@
+{
+  "pages": 200,
+  "arabic_start_pdf_page": 5,
+  "chapter_pdf_pages": {
+    "00": 5,
+    "01": 18,
+    "02": 33,
+    "03": 48,
+    "04": 64,
+    "05": 79,
+    "06": 93,
+    "07": 108,
+    "08": 122,
+    "09": 139,
+    "10": 154,
+    "11": 169,
+    "12": 184
+  },
+  "quiet_pdf_page": 199,
+  "back_pdf_page": 200,
+  "titles": [
+    [
+      "00",
+      "You are not crazy for wanting a life that works and a God who is real"
+    ],
+    [
+      "01",
+      "When your mind won\u2019t quiet, and your life won\u2019t aim"
+    ],
+    [
+      "02",
+      "The person you\u2019re becoming"
+    ],
+    [
+      "03",
+      "Small faithfulness (discipline without hustle religion)"
+    ],
+    [
+      "04",
+      "Money on the kitchen table (and the prosperity that isn\u2019t a guarantee)"
+    ],
+    [
+      "05",
+      "Who you let close"
+    ],
+    [
+      "06",
+      "When the pain does not resolve on schedule"
+    ],
+    [
+      "07",
+      "How to open the Bible without drowning"
+    ],
+    [
+      "08",
+      "What God is like from Genesis to Revelation"
+    ],
+    [
+      "09",
+      "Prayer that tells the truth"
+    ],
+    [
+      "10",
+      "A rule of life you can actually keep"
+    ],
+    [
+      "11",
+      "Leaving a mark that isn\u2019t a brand"
+    ],
+    [
+      "12",
+      "Beginning again on Monday morning"
+    ]
+  ],
+  "manuscript_hash_unchanged": true,
+  "running_heads": "OMITTED_BY_DESIGN",
+  "folios": "centered Arabic from Introduction; openers + quiet/back suppressed"
+}

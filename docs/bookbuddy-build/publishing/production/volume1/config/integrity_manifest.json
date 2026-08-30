@@ -1,0 +1,132 @@
+[
+  {
+    "order": 1,
+    "chapter": "00",
+    "folder": "ch00_introduction",
+    "short_title": "Introduction",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch00_introduction/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/00_ch00_introduction_DERIVED.md",
+    "sha256": "9a0d33dde5d395b43e4f917dfa0cfd9d615b7a339b64cb4bd701e9c786bdc559",
+    "bytes": 16113
+  },
+  {
+    "order": 2,
+    "chapter": "01",
+    "folder": "ch01_mind_wont_quiet",
+    "short_title": "When your mind won\u2019t quiet",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch01_mind_wont_quiet/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/01_ch01_mind_wont_quiet_DERIVED.md",
+    "sha256": "f5a5c650a1fcb87a24d680dae29d93c01f82e2104995436164fa140e5158af1f",
+    "bytes": 20307
+  },
+  {
+    "order": 3,
+    "chapter": "02",
+    "folder": "ch02_person_becoming",
+    "short_title": "The person you\u2019re becoming",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch02_person_becoming/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/02_ch02_person_becoming_DERIVED.md",
+    "sha256": "5cb409fd73602eb21354c0dc17faa25a22922c08d2b4f437da21262332b9d2c8",
+    "bytes": 19078
+  },
+  {
+    "order": 4,
+    "chapter": "03",
+    "folder": "ch03_small_faithfulness",
+    "short_title": "Small faithfulness",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch03_small_faithfulness/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/03_ch03_small_faithfulness_DERIVED.md",
+    "sha256": "0cdd2d459eebba8714915cd6186306158b46ad6ddf8343b3457ad1f61914cb1c",
+    "bytes": 18942
+  },
+  {
+    "order": 5,
+    "chapter": "04",
+    "folder": "ch04_money_kitchen_table",
+    "short_title": "Money on the kitchen table",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch04_money_kitchen_table/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/04_ch04_money_kitchen_table_DERIVED.md",
+    "sha256": "e2f17fcbe665b645eea24051dcb4db54fcb976ed64c14665c82eff90454dee2c",
+    "bytes": 19695
+  },
+  {
+    "order": 6,
+    "chapter": "05",
+    "folder": "ch05_who_you_let_close",
+    "short_title": "Who you let close",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch05_who_you_let_close/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/05_ch05_who_you_let_close_DERIVED.md",
+    "sha256": "8610bb18f99fad77b97f2b726fd63e1e4974851ba922ebf7a4d60021f7f139ec",
+    "bytes": 18366
+  },
+  {
+    "order": 7,
+    "chapter": "06",
+    "folder": "ch06_when_life_hurts",
+    "short_title": "When life hurts",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch06_when_life_hurts/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/06_ch06_when_life_hurts_DERIVED.md",
+    "sha256": "b9fb98b992613bfad521344265058a92c8deaf92f5e68a532e55c6246bb4fa8d",
+    "bytes": 19395
+  },
+  {
+    "order": 8,
+    "chapter": "07",
+    "folder": "ch07_open_bible",
+    "short_title": "How to open the Bible",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch07_open_bible/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/07_ch07_open_bible_DERIVED.md",
+    "sha256": "9ee3697bda6756b357e83d85558b2abcb19e73e7da09c9cd876e1688c7ec6414",
+    "bytes": 17689
+  },
+  {
+    "order": 9,
+    "chapter": "08",
+    "folder": "ch08_what_god_is_like",
+    "short_title": "What God is like",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch08_what_god_is_like/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/08_ch08_what_god_is_like_DERIVED.md",
+    "sha256": "691f403305b1dcc6bffcf37f44e39259741e5660782736bd35f6521ecc2cc817",
+    "bytes": 21464
+  },
+  {
+    "order": 10,
+    "chapter": "09",
+    "folder": "ch09_prayer_tells_truth",
+    "short_title": "Prayer that tells the truth",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch09_prayer_tells_truth/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/09_ch09_prayer_tells_truth_DERIVED.md",
+    "sha256": "342e290a47688aaada1df0ee6b6edff646b3f5a0e217e32b1b33a0bec8175b3a",
+    "bytes": 18003
+  },
+  {
+    "order": 11,
+    "chapter": "10",
+    "folder": "ch10_rule_of_life",
+    "short_title": "A rule of life",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch10_rule_of_life/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/10_ch10_rule_of_life_DERIVED.md",
+    "sha256": "4c0bf8ab3f2b52fbd780c1a790543bf16cbf9499cafc88d382254b91fdb6232d",
+    "bytes": 19253
+  },
+  {
+    "order": 12,
+    "chapter": "11",
+    "folder": "ch11_leaving_a_mark",
+    "short_title": "Leaving a mark",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch11_leaving_a_mark/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/11_ch11_leaving_a_mark_DERIVED.md",
+    "sha256": "059273bafc4ae785abc99b5d3707e4fbe27f38ed35fa03a861cd3b2b55723121",
+    "bytes": 19154
+  },
+  {
+    "order": 13,
+    "chapter": "12",
+    "folder": "ch12_monday_morning",
+    "short_title": "Beginning again on Monday morning",
+    "source": "docs/bookbuddy-build/publishing/manuscript/volume1/ch12_monday_morning/04_FULL.md",
+    "derived": "docs/bookbuddy-build/publishing/production/volume1/derived/12_ch12_monday_morning_DERIVED.md",
+    "sha256": "1a44a41bf6bbcd36a0b0dd2dfee7951149e51757bb785817d1d32e19243c66f1",
+    "bytes": 18909
+  }
+]
