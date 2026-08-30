@@ -1,0 +1,27 @@
+{
+  "margins": {
+    "TOP": "0.75in",
+    "BOTTOM": "0.90in",
+    "INSIDE": "0.90in",
+    "OUTSIDE": "0.80in",
+    "note": "Inside 0.90in models safe zone for ~280\u2013340pp (above KDP 301\u2013500 min 0.625in). Not locked for final."
+  },
+  "body_candidates": [
+    "Baskerville (Direction A)",
+    "Georgia (Direction C)"
+  ],
+  "heading_companions": [
+    "Baskerville small-caps furniture (A)",
+    "Georgia/Charter small-caps cues (C)"
+  ],
+  "ol_fonts": [
+    "Arial Unicode MS",
+    "NewPeninimMT"
+  ],
+  "trim": "6x9in",
+  "pdf_a_pages": 52,
+  "pdf_c_pages": 53,
+  "pdf_a": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/bookbuddy-build/publishing/design/volume1/prototypes/direction-a-quiet-literary/rendered/Volume1_DirectionA_Prototype.pdf",
+  "pdf_c": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/bookbuddy-build/publishing/design/volume1/prototypes/direction-c-bookbuddy-signature/rendered/Volume1_DirectionC_Prototype.pdf",
+  "pdf_accent": "/Users/william/Documents/bible-buddy-monorepo-enterprise-v122-7/docs/bookbuddy-build/publishing/design/volume1/prototypes/direction-c-bookbuddy-signature/rendered/Volume1_DirectionC_AccentSample.pdf"
+}

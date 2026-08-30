@@ -11,16 +11,26 @@ Classifications: `LOCKED` · `RECOMMENDED` · `FOUNDER_DECISION_REQUIRED` · `EX
 
 | Decision | Status | Value |
 |---|---|---|
-| Design direction | RECOMMENDED | **C — BookBuddy Signature Hybrid** (foil A in Phase 2) |
-| Primary trim | RECOMMENDED | **6 × 9** |
-| Secondary trim | RECOMMENDED | 5.5 × 8.5 |
+| Design direction | **LOCKED** | **C — BookBuddy Signature Hybrid**; A = restraint governor only |
+| Primary trim | **LOCKED** | **6 × 9** |
+| Secondary trim | RECOMMENDED | 5.5 × 8.5 fallback only |
 | Page range estimate | RECOMMENDED | ~280–340 pp at 6×9 (non-exact) |
-| Body typography character | RECOMMENDED | Warm long-form serif |
-| Font lock / license | FOUNDER_DECISION_REQUIRED + EXTERNAL_VERIFICATION | Candidates only in Typography Strategy |
-| Chapter opening system | RECOMMENDED | Hybrid Option C |
+| Body typography character | **LOCKED character** / font license PENDING | Warm long-form serif (Georgia prototype) |
+| Font lock / license | FOUNDER_DECISION_REQUIRED + EXTERNAL_VERIFICATION | System Georgia ≠ commercial clearance |
+| Chapter opening system | **LOCKED** | Hybrid Option C + A governor |
 | Drop cap | DEFER_TO_PHASE_2_PROTOTYPE | Default off; optional ch00 trial |
 | Recto chapter starts | RECOMMENDED | Yes |
 | Act labels printed | LOCKED (no) | Never unless Founder later approves |
+| Lena treatment | **LOCKED** | Option 2 subtle isolation |
+| Scripture treatment | **LOCKED** | C indented KJV; rare hairline |
+| Reflection system | **LOCKED** | Space-first; pure-space / Consider / Try this |
+| OL system | **LOCKED** | Inline default; restrained insight if load-bearing |
+| Diagrams / images | **LOCKED** | None currently required |
+| Color | **LOCKED strategy** | Grayscale-primary; accent not finalized |
+| Phase 2 prototype chapters | **DONE** | ch00, ch06, ch08, ch12 |
+| Phase 2 commit | FOUNDER_DECISION_REQUIRED | Allowlist prepared; do not auto-commit |
+| Full interior | LOCKED (no until authorized) | Font/tool clearance first |
+| C3 start | LOCKED (no) | Not authorized |
 
 ## Scripture / OL / reflection / callouts
 

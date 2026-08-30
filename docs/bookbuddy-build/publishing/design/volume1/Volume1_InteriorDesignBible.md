@@ -1,12 +1,15 @@
 # Volume 1 — Interior Design Bible
 
-**Status:** PHASE 1 CONTROLLING DOCUMENT  
+**Status:** PHASE 2 FOUNDER LOCK — controlling document  
 **Date:** 2026-08-29  
 **Frozen manuscript:** `b2d4e63208946e796244c6d5815fc2dba3769d6c`  
+**Phase 1 design commit:** `511a7ea2ba4834d0793650520ed5907b95fdf02b`  
 **Words:** ~40,744  
 **Working title:** *BibleBuddy Life Guide* (WORKING — not FINAL)
 
 This document is sufficient for a professional designer or production system to understand Volume 1’s interior intent. Detail lives in sibling files; this file controls.
+
+**Founder Phase 2 lock:** Primary **Direction C (BookBuddy Signature Hybrid)** with **Direction A (Quiet Literary) as restraint governor** — not an average. See `Volume1_Phase2FounderDecision.md` · `Volume1_Phase2PrototypeLock.md`.
 
 ---
 
@@ -21,28 +24,26 @@ Not: Markdown printout, AI PDF, church handout, worksheet, corporate report, tex
 
 ## 3. What design must accomplish
 
-Support: LIFE → QUESTION → SCRIPTURE → GOD DISCOVERY → REFLECTION → CHOICE → LIVED CHANGE  
-Serve story, Scripture, comprehension, emotion, reflection — never overpower them.
+Support: LIFE → PAIN → QUESTION → DISCOVERY → SCRIPTURE → GOD → UNDERSTANDING → CHOICE → FIRST FAITHFUL STEP  
+
+Serve story, Scripture, comprehension, emotion, reflection — never overpower them. The page serves the encounter; the page is not the encounter.
 
 ## 4. What design must never do
 
 See `Volume1_DesignFailureModes.md`. Especially: commercialize Lena; worksheet the book; costume-change acts; silent-edit frozen text; copy benchmark trade dress; companion-catalog the last spread.
 
-## 5. Recommended design direction
+## 5. Design direction (FOUNDER LOCKED)
 
-### DIRECTION A — Quiet Literary
-Austere serif; deep sinks; minimal artifacts; scarce pull quotes.  
-**Advantages:** dignity, timelessness. **Risks:** under-serving practical readers. **Fit:** B, C, D.
+### PRIMARY — DIRECTION C — BookBuddy Signature Hybrid (**LOCKED**)
+Literary openers + warm readable serif body + demoted house H2 furniture + scarce Key Idea artifacts + Scripture dignity + space-led reflection + rare load-bearing OL insight.
+
+### RESTRAINT GOVERNOR — DIRECTION A — Quiet Literary (**LOCKED ROLE**)
+Vetoes workbook chrome, callout spam, poster grief, routine verse boxes, academic OL walls, over-designed navigation. Supplies white-space discipline and literary credibility.
 
 ### DIRECTION B — Contemporary Practical
-Clearer sans titles; more artifact cards; denser application.  
-**Advantages:** E-reader clarity. **Risks:** self-help clone; workbook drift. **Fit:** E, A — dangerous for C.
+**Not selected** for Volume 1 production path.
 
-### DIRECTION C — BookBuddy Signature Hybrid (**RECOMMENDED**)
-Literary openers + warm serif body + demoted house H2 furniture + scarce Key Idea artifacts (Keepable Rule, Monday Mercy) + Scripture dignity + space-led reflection.  
-**Advantages:** serves A–E; series-scalable. **Risks:** drifting toward B if cards multiply. **Fit:** best overall.
-
-Phase 2 compares **C vs A** on four prototype chapters.
+**Rule:** Do not average A and C into a generic middle.
 
 ## 6. Page architecture
 
@@ -53,7 +54,9 @@ Phase 2 compares **C vs A** on four prototype chapters.
 
 ## 7. Typography
 
-Warm long-form **body serif**; restrained titles; small-caps strategy for repeated H2 furniture; Scripture in same family; candidates not locked: `Volume1_TypographyStrategy.md`
+Warm long-form **body serif** (Direction C character; Georgia used in prototype).  
+Final commercial font **not license-locked** — see `Volume1_Phase2TypographyQA.md` / Production Readiness.  
+Small-caps strategy for repeated H2 furniture; Scripture in same family; Hebrew/Greek via capable companion faces.
 
 ## 8. Headings
 
@@ -61,19 +64,21 @@ House H2 repetition is a **visual** problem. Demote furniture; quiet “Story re
 
 ## 9. Stories
 
-Story-first immersion; no chrome on opening pages; no portraits; Maya continuity via editorial rhyme; Lena quietest register; peak line restrained by default: `Volume1_StoryDesignSystem.md`
+Story-first immersion; no chrome on opening pages; no portraits; Maya continuity via editorial rhyme; Lena quietest register.  
+
+**Lena lock:** Option 2 — subtle isolation for “I’m still here. It’s still hard. God is still God.” — then immediate return to ordinary narrative type. Not poster / giant pull quote / inspirational card.
 
 ## 10. Scripture
 
-KJV blocks with indent + air; boxes rare; highest density in ch06/01/04/08/09 needs breathing room: `Volume1_ScriptureDesignSystem.md`
+Direction C indented KJV; hierarchy via space, indent, type, citation; **rare** hairline for load-bearing discovery only; Scripture-in-story stays narrative-integrated. Boxes/shading/icons avoided.
 
 ## 11. Original language
 
-Short discovery insets; illuminating not seminary; Unicode Greek/Hebrew; demote Strong’s chrome: `Volume1_OriginalLanguageDesignSystem.md`
+Default inline. Restrained dedicated insight only when load-bearing (retain for Owen / Exod 34 / *ḥesed* if Hebrew QA passes). Discovery — not language textbook.
 
 ## 12. Reflection
 
-Space-first; human labels if any (Consider / Pray honestly / Try this); scarcity (&lt;~12 labeled book-wide); ch06 = space only: `Volume1_ReflectionDesignSystem.md`
+Space-first. Maximum three normal behaviors: **pure-space** · **Consider** · **Try this**. Not workbook panels. ch06 prefers space over labeled chrome.
 
 ## 13. Application
 
@@ -132,9 +137,10 @@ FROZEN ≠ DESIGN COPY. Text errors → MANUSCRIPT_CHANGE_REQUEST only: `Volume1
 
 Constants vs variables: `../BookBuddy_BookSeriesDesignBible.md`
 
-## 27. Phase 2 prototypes
+## 27. Phase 2 prototypes + lock
 
-ch00 · ch06 · ch08 · ch12 — two directions (C primary, A foil): `Volume1_PrototypeSelection.md`, `Volume1_Phase2PrototypeSpecification.md`
+ch00 · ch06 · ch08 · ch12 rendered; Founder locked C+A-governor.  
+Artifacts: `prototypes/` · `Volume1_Phase2FounderDecision.md` · `Volume1_Phase2PrototypeLock.md` · `Volume1_Phase2FinalQA.md`
 
 ## 28. Title / packaging
 
@@ -142,9 +148,9 @@ Working title only; questions deferred: `Volume1_TitlePackagingQuestions.md`
 
 ## 29. Decisions
 
-`Volume1_Phase1DecisionRegister.md`
+`Volume1_Phase1DecisionRegister.md` · `Volume1_Phase2FounderDecision.md` · `Volume1_Phase2ProductionReadiness.md`
 
-## 30. Design QA matrix (prototype target: no dimension &lt; 90; do not inflate)
+## 30. Design QA matrix (prototype target: no dimension &lt; 90 on hard floors; do not inflate)
 
 | Dimension | Intent |
 |---|---|
@@ -182,8 +188,10 @@ Craft benchmarks informed psychology of reading — not copy, not dress, not quo
 
 ---
 
-## Phase 1 exit
+## Phase status
 
-**READY_FOR_FOUNDER_DESIGN_REVIEW**  
-`READY_FOR_PHASE1_COMMIT=false`  
-`READY_FOR_PHASE2_PROTOTYPES=false` until Founder + ChatGPT authorize.
+- Phase 1 design system: **committed + pushed** (`511a7ea`)  
+- Phase 2 prototypes + Founder lock docs: **ready for Founder-authorized commit** (do not auto-commit)  
+- Full interior / cover / C3: **not authorized** until Founder opens Phase 3 after font/tool clearance  
+
+`READY_FOR_FULL_INTERIOR_PRODUCTION=false` until tool + font license locked.

@@ -197,6 +197,29 @@ See `gates/Gate8_ControlledBuild.md` — **ch00–ch12 all STYLE-FROZEN**.
 - Controlling doc: `design/volume1/Volume1_InteriorDesignBible.md`.
 - Recommended direction: **C — BookBuddy Signature Hybrid**; trim **6×9**; prototypes ch00/ch06/ch08/ch12.
 - Manuscript `04_FULL.md` **unchanged**. Production/runtime unchanged. Unrelated dirty tree untouched.
-- **STOP for Founder + ChatGPT design review. No Phase 1 commit yet. No prototypes yet. No C3.**
+- Phase 1 committed locally: `511a7ea` — *BookBuddy: establish Volume 1 interior design system* (not pushed).
+
+---
+
+## Phase 2 — Representative interior prototypes (2026-08-29)
+
+- Derived sources only under `design/volume1/prototypes/` (no `04_FULL.md` edits).
+- Rendered 6×9 PDFs: Direction A (Baskerville) ~52 pp; Direction C (Georgia) ~53 pp; accent sample secondary.
+- Margins: top 0.75 / bottom 0.90 / inside 0.90 / outside 0.80 (safe for ~280–340 pp).
+- Comparison + Founder review guide + QA/panel scores written; Phase 2 **uncommitted**.
+- Production/runtime unchanged. Unrelated dirty tree untouched. C3 not started.
+- **STOP for Founder + ChatGPT prototype review. No Phase 2 commit. No push. No full interior.**
+
+---
+
+## Phase 2 — Founder design decision + system hardening (2026-08-29)
+
+- Founder locked: **Direction C** primary + **Direction A** restraint governor (not averaged).
+- Locks: 6×9; grayscale-primary; Lena Option 2; C Scripture; space-first reflection (3 behaviors); OL inline default + restrained *ḥesed*; no diagrams/images required.
+- Docs: FounderDecision, PrototypeLock, ProductionReadiness, Typography/Scripture/OL/Accessibility QA, PrintEPUBStrategy, FinalQA, ProductionCorrectionRequests (0).
+- Interior Design Bible updated to encode locks. Prototypes remain under `design/volume1/prototypes/`.
+- KDP/Ingram margin guidance verified at Help/guide level; font license still EXTERNAL.
+- Manuscript `04_FULL.md` unchanged. Runtime unchanged. Unrelated dirty tree untouched.
+- **STOP — Founder must authorize Phase 2 commit separately. No push. No full interior. No cover. No C3.**
 
 
