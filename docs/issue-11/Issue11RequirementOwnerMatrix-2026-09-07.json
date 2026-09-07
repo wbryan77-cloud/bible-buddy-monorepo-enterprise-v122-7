@@ -1,0 +1,25 @@
+{
+  "issue": 11,
+  "auditDate": "2026-09-07",
+  "status": "open_verification_closure",
+  "rules": {
+    "noParallelSystems": true,
+    "productionChangesAllowedByAudit": false,
+    "closeOnlyAfterVerifiedAcceptance": true,
+    "targetedTestsTwiceBeforeClosure": true,
+    "fullRegressionRequired": true
+  },
+  "requirements": [
+    {"id":1,"original":"admin testing dashboard","currentOwner":"Unified Admin Command Center","disposition":"superseded_consolidate","verification":"map original cards/metrics to current command center"},
+    {"id":2,"original":"quality metrics API","currentOwner":"alpha feedback + unified metrics + Founder Experience Loop","disposition":"partially_superseded","verification":"prove original metrics and qualitative fields or add smallest missing contract"},
+    {"id":3,"original":"resource upload UI","currentOwner":"unproven","disposition":"gap_candidate","verification":"prove current metadata submission UI/path"},
+    {"id":4,"original":"resource review API","currentOwner":"resource ingestion review + unified Research Console/Human Review","disposition":"likely_superseded_partial","verification":"end-to-end submit/note/approval/no-auto-ingestion proof"},
+    {"id":5,"original":"OCR/transcript pipeline","currentOwner":"unproven","disposition":"gap_candidate","verification":"search extraction owners; if absent create provider-neutral interface only"},
+    {"id":6,"original":"vector memory runtime","currentOwner":"topic embeddings + canonical/relationship/continuation + durable Postgres memory","disposition":"superseded","verification":"delete/export/correct/forget and ownership boundaries"},
+    {"id":7,"original":"knowledge graph/reference linking","currentOwner":"verse/relationship/cross-book/canonical/support graph architecture","disposition":"superseded_evolved","verification":"provenance/review-state/reference-linking governance"},
+    {"id":8,"original":"retrieval orchestration","currentOwner":"retrieval-first/canonical/semantic orchestrators + shadow retrieval eval","disposition":"superseded_evolved","verification":"source-first/approved-only/source-types/provenance/uncertainty routing"},
+    {"id":9,"original":"human review moderation states","currentOwner":"Research Console → Human Review → Approval Workflow → Regression → Staging → Promotion","disposition":"superseded_stronger_governance","verification":"map legacy states and prove no promotion without authorized review"}
+  ],
+  "leadingGapCandidates": ["resource upload/metadata completeness","OCR/transcript extraction completeness","exact original testing-metric coverage"],
+  "nextGate": "file_route_service_inventory_and_targeted_test_mapping"
+}
