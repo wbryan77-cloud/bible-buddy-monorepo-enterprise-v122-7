@@ -4,6 +4,7 @@ const path = require('path');
 const crypto = require('crypto');
 const { buildResourceIngestionReview } = require('../services/resourceIngestionReview');
 const { checkAdminAuth } = require('../services/adminAuthMiddleware');
+const { appendResourceReviewEvent } = require('../services/resourceReviewDurableStore');
 
 const router = express.Router();
 
@@ -11,10 +12,19 @@ function queuePath() {
   return process.env.RESOURCE_REVIEW_QUEUE_PATH || path.join(__dirname, '..', 'data', 'resource-review-queue.jsonl');
 }
 
-function appendQueueRow(row) {
-  const file = queuePath();
-  fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.appendFileSync(file, `${JSON.stringify(row)}\n`, 'utf8');
+function appendLocalAuditRow(row) {
+  try {
+    const file = queuePath();
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.appendFileSync(file, `${JSON.stringify(row)}\n`, 'utf8');
+  } catch (error) {
+    console.warn('[resourceReview] local audit append failed:', error.message);
+  }
+}
+
+async function persistReviewRow(row) {
+  await appendResourceReviewEvent(row);
+  appendLocalAuditRow(row);
 }
 
 function clean(value, max = 4000) {
@@ -30,7 +40,7 @@ router.get('/review-plan', (req, res) => {
   }
 });
 
-router.post('/submit', (req, res) => {
+router.post('/submit', async (req, res) => {
   if (!checkAdminAuth(req, res)) return;
   try {
     const plan = buildResourceIngestionReview();
@@ -57,17 +67,19 @@ router.post('/submit', (req, res) => {
       return res.status(400).json({ ok: false, error: 'Unsupported resource_type' });
     }
 
+    const now = new Date().toISOString();
     const row = {
       id: `resource_${crypto.randomUUID()}`,
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
+      type: 'resource_submission',
+      created_at: now,
+      updated_at: now,
       status: 'pending_human_review',
       human_review_required: true,
       approved_for_knowledge_ingestion: false,
       metadata,
       review_notes: [],
     };
-    appendQueueRow(row);
+    await persistReviewRow(row);
 
     return res.status(201).json({
       ok: true,
@@ -75,11 +87,12 @@ router.post('/submit', (req, res) => {
       ingestion: { allowed: false, reason: 'Human approval required before knowledge ingestion' },
     });
   } catch (error) {
-    return res.status(500).json({ ok: false, error: 'Unable to record resource metadata' });
+    console.error('[resourceReview] durable submission persistence failed:', error.message);
+    return res.status(503).json({ ok: false, error: 'Unable to durably record resource metadata' });
   }
 });
 
-router.post('/review-note', (req, res) => {
+router.post('/review-note', async (req, res) => {
   if (!checkAdminAuth(req, res)) return;
   try {
     const resourceId = clean(req.body && req.body.resource_id, 200);
@@ -94,10 +107,11 @@ router.post('/review-note', (req, res) => {
       created_at: new Date().toISOString(),
       changes_approval_state: false,
     };
-    appendQueueRow(row);
+    await persistReviewRow(row);
     return res.status(201).json({ ok: true, review_note: row });
   } catch (error) {
-    return res.status(500).json({ ok: false, error: 'Unable to record review note' });
+    console.error('[resourceReview] durable review-note persistence failed:', error.message);
+    return res.status(503).json({ ok: false, error: 'Unable to durably record review note' });
   }
 });
 
