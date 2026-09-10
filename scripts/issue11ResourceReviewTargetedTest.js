@@ -11,6 +11,19 @@ async function run() {
     'server.js must fail-soft mount the Issue #11 resource review route'
   );
 
+  const adminUiPath = path.join(__dirname, '..', 'admin', 'resources.html');
+  assert.ok(fs.existsSync(adminUiPath), 'Issue #11 resource review Admin UI must exist');
+  const adminUi = fs.readFileSync(adminUiPath, 'utf8');
+  for (const requiredFragment of [
+    '/admin/resources/review-plan',
+    '/admin/resources/submit',
+    '/admin/resources/review-note',
+    'Submit for human review',
+    'does not approve or ingest it',
+  ]) {
+    assert.ok(adminUi.includes(requiredFragment), `Admin UI must preserve ${requiredFragment}`);
+  }
+
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'bible-buddy-issue11-'));
   const queueFile = path.join(tmpDir, 'resource-review-queue.jsonl');
   process.env.BIBLE_AUTHORITY_ADMIN_TOKEN = 'issue11-test-token';
@@ -81,11 +94,12 @@ async function run() {
 
     console.log(JSON.stringify({
       ok: true,
-      targetedTest: 'GOAL-BB-ISSUE11 resource review human gate + server wiring',
-      assertions: 13,
+      targetedTest: 'GOAL-BB-ISSUE11 resource review UI + human gate + server wiring',
+      assertions: 19,
       persistedRows: rows.length,
       finalApprovalState: rows[0].approved_for_knowledge_ingestion,
       serverMounted: true,
+      adminUiPresent: true,
     }));
   } finally {
     await new Promise((resolve) => server.close(resolve));
