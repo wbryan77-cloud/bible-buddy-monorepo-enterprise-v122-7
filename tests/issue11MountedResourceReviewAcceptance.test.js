@@ -1,7 +1,9 @@
 'use strict';
 
 const assert = require('assert');
+const fs = require('fs');
 const net = require('net');
+const os = require('os');
 const path = require('path');
 const { spawn } = require('child_process');
 
@@ -44,16 +46,25 @@ async function stopChild(child) {
 }
 
 async function run() {
+  const root = path.join(__dirname, '..');
   const port = await reservePort();
   const token = 'issue11-mounted-acceptance-token';
   const base = `http://127.0.0.1:${port}`;
   const output = [];
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'bible-buddy-issue11-mounted-'));
+  const localQueuePath = path.join(tmpDir, 'resource-review-queue.jsonl');
+  const durablePath = path.join(root, 'data', 'resource-review', 'queue-durable.json');
+  const durableExisted = fs.existsSync(durablePath);
+  const durableBackup = durableExisted ? fs.readFileSync(durablePath, 'utf8') : null;
+
   const child = spawn(process.execPath, ['server.js'], {
-    cwd: path.join(__dirname, '..'),
+    cwd: root,
     env: {
       ...process.env,
       PORT: String(port),
       BIBLE_AUTHORITY_ADMIN_TOKEN: token,
+      RESOURCE_REVIEW_QUEUE_PATH: localQueuePath,
+      PERSISTENCE: 'FILE',
       NODE_ENV: 'test',
     },
     stdio: ['ignore', 'pipe', 'pipe'],
@@ -64,17 +75,14 @@ async function run() {
   try {
     await waitForHealth(base, child, output);
 
-    // Proves the real server.js static Admin surface is reachable.
     const ui = await fetch(`${base}/admin/resources.html`);
     assert.strictEqual(ui.status, 200, 'mounted Admin resource-review UI must be reachable');
     const uiText = await ui.text();
     assert.ok(/resource/i.test(uiText) && /review/i.test(uiText), 'Admin resource-review UI must identify its purpose');
 
-    // Proves the real server.js mount fails closed without Admin authentication.
     const unauth = await fetch(`${base}/admin/resources/review-plan`);
     assert.strictEqual(unauth.status, 401, 'mounted resource-review API must fail closed without Admin auth');
 
-    // Proves authenticated access reaches the actual mounted Issue #11 review service.
     const plan = await fetch(`${base}/admin/resources/review-plan`, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -87,29 +95,81 @@ async function run() {
       'mounted review plan must preserve human final authority',
     );
 
-    // Missing metadata must still fail before any queue/persistence success is reported.
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    };
+
     const missing = await fetch(`${base}/admin/resources/submit`, {
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
+      headers,
       body: JSON.stringify({ title: 'Incomplete Issue #11 resource' }),
     });
     assert.strictEqual(missing.status, 400, 'mounted submit path must reject incomplete metadata');
 
+    // Real server submission: valid metadata may be recorded, but it must remain
+    // pending human review and must never become knowledge-ingestion approved here.
+    const submitted = await fetch(`${base}/admin/resources/submit`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        title: 'Issue #11 mounted acceptance resource',
+        author_or_speaker: 'Acceptance Test',
+        summary: 'Non-production metadata proving the mounted review path.',
+        language: 'en',
+        category: 'testing',
+        resource_type: 'pdf_documents',
+        source_links: ['https://example.invalid/issue11-mounted-acceptance'],
+      }),
+    });
+    assert.strictEqual(submitted.status, 201, 'valid metadata must enter the mounted review queue');
+    const submittedBody = await submitted.json();
+    assert.strictEqual(submittedBody.ok, true);
+    assert.strictEqual(submittedBody.resource.status, 'pending_human_review');
+    assert.strictEqual(submittedBody.resource.human_review_required, true);
+    assert.strictEqual(submittedBody.resource.approved_for_knowledge_ingestion, false);
+    assert.deepStrictEqual(submittedBody.ingestion, {
+      allowed: false,
+      reason: 'Human approval required before knowledge ingestion',
+    });
+
+    assert.ok(fs.existsSync(localQueuePath), 'mounted submission must create the configured local audit queue');
+    const localRows = fs.readFileSync(localQueuePath, 'utf8').trim().split('\n').filter(Boolean).map(JSON.parse);
+    assert.strictEqual(localRows.length, 1, 'exactly one valid submission must be written to the local audit queue');
+    assert.strictEqual(localRows[0].id, submittedBody.resource.id);
+    assert.strictEqual(localRows[0].approved_for_knowledge_ingestion, false);
+
+    assert.ok(fs.existsSync(durablePath), 'mounted submission must create/update the durable review projection');
+    const durableDoc = JSON.parse(fs.readFileSync(durablePath, 'utf8'));
+    const durableEvent = durableDoc.items.find((item) => item && item.id === submittedBody.resource.id);
+    assert.ok(durableEvent, 'submitted resource must be present in durable review projection');
+    assert.strictEqual(durableEvent.status, 'pending_human_review');
+    assert.strictEqual(durableEvent.human_review_required, true);
+    assert.strictEqual(durableEvent.approved_for_knowledge_ingestion, false);
+
     console.log(JSON.stringify({
       ok: true,
-      targetedTest: 'GOAL-BB-ISSUE11 mounted resource review acceptance',
-      assertions: 7,
+      targetedTest: 'GOAL-BB-ISSUE11 mounted resource review end-to-end acceptance',
+      assertions: 20,
       uiStatus: ui.status,
       unauthStatus: unauth.status,
       authenticatedPlanStatus: plan.status,
       missingMetadataStatus: missing.status,
-      humanReviewRequired: true,
+      validSubmissionStatus: submitted.status,
+      finalReviewStatus: submittedBody.resource.status,
+      durableProjectionVerified: true,
+      knowledgeIngestionAllowed: submittedBody.ingestion.allowed,
     }));
   } finally {
     await stopChild(child);
+    fs.rmSync(tmpDir, { recursive: true, force: true });
+    if (durableExisted) {
+      fs.mkdirSync(path.dirname(durablePath), { recursive: true });
+      fs.writeFileSync(durablePath, durableBackup, 'utf8');
+    } else {
+      try { fs.unlinkSync(durablePath); } catch (_) {}
+      try { fs.rmdirSync(path.dirname(durablePath)); } catch (_) {}
+    }
   }
 }
 
