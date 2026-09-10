@@ -1,15 +1,12 @@
-# GOAL-BB-ISSUE11 — Testing Readiness Evidence Baseline
+# GOAL-BB-ISSUE11 — Testing Readiness Evidence
 
 Date: 2026-09-10
 Baseline default-branch commit: `1b4609a8549c0b5fed659f18b97573cda2497095`
+Canonical branch: `issue-11-testing-readiness-recovery-20260910`
 Issue: #11 — Testing Readiness Build — Admin Dashboard, Resource Upload, OCR, Retrieval, and Human Review
-Status: SYSTEM WORK IN PROGRESS
+Status: SYSTEM WORK IN PROGRESS — DO NOT CLOSE
 
-## Purpose
-
-Reconcile the May 21, 2026 Issue #11 specification against the current repository before adding code. This evidence packet prevents duplicate infrastructure and preserves the existing human-review/source-governance boundary.
-
-## Acceptance criteria from Issue #11
+## Acceptance criteria
 
 1. Render boots.
 2. Admin can open testing dashboard.
@@ -20,121 +17,108 @@ Reconcile the May 21, 2026 Issue #11 specification against the current repositor
 7. Nothing is ingested into knowledge systems without human approval.
 8. All new routes fail soft.
 
-## Current direct evidence
+## Directly verified Issue #11 progress
 
-### Existing review service — VERIFIED PRESENT
+### Resource review governance
 
-`services/resourceIngestionReview.js` exists on the baseline. It defines the resource-review plan, required/optional metadata, alignment severity, admin review packet, tester/admin signals and moderation rules. Its workflow explicitly places `admin_or_reviewer_review` and `approval_or_rejection` before `future_knowledge_ingestion`. Its moderation rules include `Do not auto-publish unreviewed materials.` and `Require human approval before knowledge ingestion.`
+`services/resourceIngestionReview.js` remains the canonical human-review policy seam. It requires human approval before knowledge ingestion, prohibits auto-publishing unreviewed material, and keeps AI review advisory rather than authoritative.
 
-This is the current known-good governance seam. New Issue #11 work must reuse it rather than create a parallel review policy.
+### Resource review API and mounted application path
 
-### Resource Review API — VERIFIED MISSING AT ISSUE-SPECIFIED PATH
+The canonical branch implements `routes/resourceReview.js` and mounts it through the existing fail-soft `mountRoute(...)` pattern at `/admin/resources`.
 
-`routes/resourceReview.js` returns Not Found on the baseline.
-
-Therefore the Issue #11-specified endpoints are not currently implemented at that path:
+The route exposes only the Issue #11 review-intake surface:
 - `GET /admin/resources/review-plan`
 - `POST /admin/resources/submit`
 - `POST /admin/resources/review-note`
 
-This is path-specific evidence, not a claim that no equivalent functionality exists elsewhere. Equivalent current routes must still be cross-checked before implementation.
+Resource submissions enter `pending_human_review`, retain `human_review_required: true`, retain `approved_for_knowledge_ingestion: false`, and return `ingestion.allowed: false`. Review notes do not change approval state.
 
-### Resource Upload UI — VERIFIED MISSING AT ISSUE-SPECIFIED PATH
+### Admin resource-review UI
 
-`admin/resources.html` returns Not Found on the baseline.
+`admin/resources.html` exists on the canonical branch and provides authenticated review-plan access, metadata submission, source/usage notes and review-note controls. The UI explicitly states that submission does not approve or ingest material into Bible Buddy knowledge systems.
 
-This is path-specific evidence only. Existing admin surfaces must be checked for equivalent functionality before adding this page.
+### Resource review persistence
 
-### Testing Dashboard UI — VERIFIED MISSING AT ISSUE-SPECIFIED PATH
+`services/resourceReviewDurableStore.js` reuses the repository's existing persistence adapter. The resource-review route awaits durable persistence before reporting success and returns a fail-closed error when durable persistence fails. JSONL remains only a local audit copy.
 
-`admin/testing.html` returns Not Found on the baseline.
+### OCR / transcript extraction
 
-### Quality Metrics route — VERIFIED MISSING AT ISSUE-SPECIFIED PATH
+The baseline contained the Issue #11 future-extraction markers and `pdf-parse`, but no directly proven executable Issue #11 extraction owner. The canonical branch therefore adds the smallest provider-neutral `services/ocrTranscriptPipeline.js` seam. It outputs review candidates only and never approves knowledge ingestion. Targeted coverage includes unsupported type, parser/provider failure, empty extraction, metadata preservation and successful PDF/transcript extraction into pending human review.
 
-`routes/qualityMetrics.js` returns Not Found on the baseline.
+### Metrics / feedback crosswalk
 
-Current metrics must be crosswalked against the newer Admin Command Center/runtime-health/feedback architecture before creating any replacement route.
+The current architecture already owns session count, latency, errors, helpfulness, pacing and Admin recommendations through the Alpha/Admin/runtime-health stack; no duplicate `qualityMetrics.js` stack was created. Direct `felt_understood` and `felt_peaceful` structured Alpha feedback signals were added to the existing canonical feedback owner, preserving the existing durable projection and without broadening public guest-feedback permissions.
 
-### Admin Command Center aggregator — VERIFIED PRESENT
+## Executed acceptance evidence
 
-`services/adminCommandCenterAggregator.js` is present on the baseline. It is therefore the first current architecture owner to inspect for Issue #11 metric equivalence rather than assuming the May `qualityMetrics.js` design remains authoritative.
+### Resource-review mounted end-to-end acceptance — VERIFIED GREEN
 
-### OCR/transcript pipeline — ISSUE-SPECIFIED PATH VERIFIED MISSING
+Artifact: `tests/issue11MountedResourceReviewAcceptance.test.js`
+Verified head: `a2e35f1e0621872b1ff1b1e803400cb90614ead4`
+GitHub Actions CI run: `34531239770`
+Result: **SUCCESS**
 
-`services/ocrTranscriptPipeline.js` returns Not Found on the baseline.
+This acceptance test starts the actual `server.js` application rather than mounting the router in an isolated test app. It verifies:
+- Admin resource-review UI is reachable;
+- unauthenticated review API access fails with `401`;
+- authenticated review-plan access succeeds;
+- missing required metadata fails with `400`;
+- a valid resource submission succeeds;
+- submitted resource remains `pending_human_review`;
+- `human_review_required` remains true;
+- `approved_for_knowledge_ingestion` remains false;
+- `ingestion.allowed` remains false;
+- local audit persistence contains the submitted resource;
+- durable review projection contains the same resource and preserves the no-ingestion state.
 
-This does not prove extraction is absent repository-wide. The next step is to inspect current services/routes for OCR, PDF/text extraction, transcript processing, provider adapters, or ingestion helpers before building the provider-neutral seam.
+This upgrades the resource upload/review route/UI requirement from static or isolated evidence to **real application-mounted CI evidence**.
 
-### Server routing — VERIFIED CURRENT MOUNT SET DOES NOT INCLUDE ISSUE-SPECIFIED ROUTES
+### Additional Issue #11 safeguards already present on canonical branch
 
-`server.js` defines a fail-soft `mountRoute(label, mountPath, requirePath)` helper and mounts current routes including AI tester, Analyze, Admin assistant, Buddy, Runtime health, Content helper, Realtime voice, health/learning/founder-experience, Beta, Alpha, platform-unification, Bible Authority and User Assistance routes.
+- `tests/issue11ResourceReviewGuardrails.test.js`
+- `scripts/issue11ResourceReviewTargetedTest.js`
+- `tests/issue11ExtractionReviewGate.test.js`
+- `tests/issue11MetricsOwnerCharacterization.test.js`
+- `tests/issue11ResourceReviewNoIngestionPath.test.js`
+- `tests/issue11ResourceReviewDurability.test.js`
 
-At the baseline inspected, `server.js` does not mount `./routes/resourceReview` or `./routes/qualityMetrics`. It also statically serves the `admin` directory at `/admin`, so a future `admin/resources.html` or `admin/testing.html` can fit the existing static-admin architecture without a new static serving mechanism.
+These preserve human-review/no-auto-publish policy, auth and metadata validation, extraction review-lock behavior, metrics ownership/no-duplicate-stack behavior, no direct intake-to-ingestion path, and durable review-state behavior.
 
-## Issue #11 architecture decision — CURRENT
+## Acceptance state ledger
 
-Do not implement the May issue literally yet. The current architecture has materially advanced since the issue was written. The smallest justified correction must:
+| Issue #11 criterion | Current evidence state |
+|---|---|
+| Render boots | NOT YET VERIFIED by final safe live acceptance |
+| Admin can open testing dashboard | Existing Alpha/Admin surfaces present; final live acceptance still required |
+| Testers can submit feedback | Current Alpha feedback path present; targeted owner coverage exists; final live acceptance still required |
+| Admin can view summary metrics | Current Admin/runtime owners crosswalked; final live acceptance still required |
+| Resource review plan visible | **VERIFIED in actual mounted server acceptance CI** |
+| Uploaded resource metadata can be recorded | **VERIFIED in actual mounted server acceptance CI** |
+| Nothing ingested without human approval | **VERIFIED for Issue #11 intake/extraction boundary by route state, structural guardrails and mounted acceptance; final downstream/live acceptance remains required before closure** |
+| All new routes fail soft | Resource route uses existing fail-soft mount pattern; final application regression/live acceptance still required |
+| OCR/transcript review adapter | IMPLEMENTED + targeted guardrail coverage; final regression still required |
+| Metrics gap closure | IMPLEMENTED in existing owner; final regression still required |
+| Full regression | PENDING current-branch vs baseline triage |
+| Safe live acceptance | PENDING |
+| Final regression/evidence closeout | PENDING |
 
-1. Reuse `services/resourceIngestionReview.js` as the existing human-review/governance seam.
-2. Crosswalk the existing Admin Command Center/runtime-health/feedback owners before adding metrics infrastructure.
-3. Search for equivalent current resource review/upload and extraction capability before creating missing Issue-specified files.
-4. If no equivalent resource endpoints exist, add the minimum route layer behind existing admin authentication and fail-soft `mountRoute` behavior.
-5. Keep all ingestion locked behind explicit human approval.
+## Failures and corrections captured
 
-## Targeted test definitions
+- Duplicate Issue #11 PR lanes were detected; PR #13 is now the canonical lane and the duplicate PR was closed without merge.
+- Earlier GitHub code-search absence was found unreliable; direct path/source inspection is required before declaring functionality absent.
+- A resource router initially existed without real `server.js` mounting; corrected by wiring through the existing fail-soft route loader.
+- An isolated router test could pass without proving the actual application path; corrected by adding real-server mounted acceptance coverage.
+- A targeted extraction test was initially placed outside the unified test discovery path; corrected by adding registered `.test.js` coverage under `tests/`.
+- Local-only resource queue persistence was insufficient for deployment durability; corrected by using the existing durable persistence adapter and failing closed on persistence failure.
 
-### Targeted test #1 — Human-review gate / resource metadata
+## Exact next Issue #11 actions
 
-Expected behavior: a resource submission can record metadata and enter a review state, but cannot enter any knowledge/retrieval system without explicit human approval.
+1. Run/inspect the full canonical-branch regression and compare any failures against `main` so pre-existing baseline failures are separated from Issue #11 regressions.
+2. Execute safe live acceptance where available for boot, Admin testing/summary surfaces, Alpha feedback and mounted resource-review behavior without production mutation.
+3. Re-run regression after live acceptance and update this evidence packet with final pass/fail receipts.
+4. Only after every acceptance criterion is directly proven should Issue #11 be prepared for founder review/merge approval.
 
-Pass evidence required:
-- exact route/handler used;
-- metadata persistence result;
-- review status before approval;
-- attempted unapproved ingestion is rejected/blocked;
-- approved transition is separately evidenced;
-- no doctrine/source guardrail is bypassed.
+## Founder gate
 
-Current result: NOT RUN — executable route is not yet proven/implemented.
-
-### Targeted test #2 — Metrics equivalence / no duplicate stack
-
-Expected behavior: Issue #11 testing signals are sourced from current metrics/feedback infrastructure where already available, and only genuinely absent signals receive new implementation.
-
-Signals to crosswalk:
-- session count;
-- latency;
-- error count;
-- helpfulness;
-- felt understood;
-- felt peaceful;
-- balance/pacing feedback;
-- resource review queue;
-- admin recommendations.
-
-Current result: NOT RUN — current aggregator and backing stores still need field-level tracing.
-
-## OCR/extraction acceptance test definition
-
-If an extraction adapter is required, it must be provider-neutral and must output only a review candidate. Extraction output must never auto-promote into approved retrieval/knowledge stores. Tests must cover unsupported file type, provider failure, empty extraction, metadata preservation, review-lock preservation and successful extraction-to-pending-review flow.
-
-Current result: NOT RUN — repository-wide equivalent-capability trace remains incomplete.
-
-## Risk / rollback
-
-Risk level for this artifact: LOW. Documentation-only, non-production branch, no runtime behavior changed.
-Rollback: delete the branch or file. Default branch remains untouched.
-
-## Verified failures/corrections this cycle
-
-- A prior recursive-tree SHA was initially treated as if it were a commit SHA. GitHub correctly returned `No commit found for the ref`. Correction: re-read `main`; `1b4609a...` is the commit SHA and `df2a842...` is its tree SHA. All subsequent file reads use the commit SHA.
-- Earlier empty code-search results were insufficient to prove absence. Correction: direct path reads and current `server.js` inspection are now the evidence standard for Issue-specified paths.
-
-## Next executable Issue #11 actions
-
-1. Trace `services/adminCommandCenterAggregator.js` to each backing metric/feedback owner and complete the signal crosswalk.
-2. Inspect current route/service/admin inventories for equivalent resource upload/review capability before adding `routes/resourceReview.js` or admin UI.
-3. Inspect current services/routes for OCR/PDF/transcript/extraction capability before deciding whether the provider-neutral adapter is necessary.
-4. Once equivalent capability is ruled out, implement the smallest missing route/test seam on this branch and run/obtain targeted test evidence.
-
-Founder gate: NONE. No production merge/deploy, paid service, credential, permission, doctrine-source promotion, or external commitment is required for the next actions.
+NONE for the next testing/evidence steps. Production merge/deploy, paid services, credential expansion, doctrine/source promotion changes, or weakening of human-review protections remain prohibited without approval.
