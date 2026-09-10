@@ -5,6 +5,12 @@ const path = require('path');
 const express = require('express');
 
 async function run() {
+  const serverSource = fs.readFileSync(path.join(__dirname, '..', 'server.js'), 'utf8');
+  assert.ok(
+    serverSource.includes("mountRoute('Resource review routes', '/admin/resources', './routes/resourceReview');"),
+    'server.js must fail-soft mount the Issue #11 resource review route'
+  );
+
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'bible-buddy-issue11-'));
   const queueFile = path.join(tmpDir, 'resource-review-queue.jsonl');
   process.env.BIBLE_AUTHORITY_ADMIN_TOKEN = 'issue11-test-token';
@@ -75,10 +81,11 @@ async function run() {
 
     console.log(JSON.stringify({
       ok: true,
-      targetedTest: 'GOAL-BB-ISSUE11 resource review human gate',
-      assertions: 12,
+      targetedTest: 'GOAL-BB-ISSUE11 resource review human gate + server wiring',
+      assertions: 13,
       persistedRows: rows.length,
       finalApprovalState: rows[0].approved_for_knowledge_ingestion,
+      serverMounted: true,
     }));
   } finally {
     await new Promise((resolve) => server.close(resolve));
