@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bible Buddy Resource Review</title>
+  <link rel="stylesheet" href="/admin/theme.css" />
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; background: #f3f4f6; }
+    .panel { max-width: 900px; background: #fff; padding: 16px; border-radius: 8px; margin-bottom: 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    label { display: block; font-weight: 600; margin-bottom: 4px; }
+    input, textarea, select, button { width: 100%; box-sizing: border-box; font: inherit; padding: 8px; }
+    textarea { min-height: 90px; }
+    button { width: auto; margin-top: 8px; cursor: pointer; }
+    .status { white-space: pre-wrap; padding: 10px; background: #f8fafc; border-radius: 6px; }
+    .warning { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Resource Review Intake</h1>
+  <p class="warning">Review intake only. Submitting a resource does not approve or ingest it into Bible Buddy knowledge systems.</p>
+
+  <section class="panel">
+    <label for="token">Admin token</label>
+    <input type="password" id="token" autocomplete="off" placeholder="Admin token" />
+    <button id="loadPlan" type="button">Load review plan</button>
+    <pre id="planOut" class="status">Review plan not loaded.</pre>
+  </section>
+
+  <form id="resourceForm" class="panel">
+    <h2>Submit metadata for human review</h2>
+    <div class="grid">
+      <div><label for="title">Title *</label><input id="title" required maxlength="500" /></div>
+      <div><label for="author">Author / speaker *</label><input id="author" required maxlength="500" /></div>
+      <div><label for="language">Language *</label><input id="language" required value="en" maxlength="80" /></div>
+      <div><label for="category">Category *</label><input id="category" required maxlength="160" /></div>
+      <div>
+        <label for="resourceType">Resource type *</label>
+        <select id="resourceType" required>
+          <option value="pdf_documents">PDF document</option>
+          <option value="audio_transcripts">Audio transcript</option>
+          <option value="video_transcripts">Video transcript</option>
+          <option value="web_articles">Web article</option>
+          <option value="books">Book</option>
+          <option value="study_notes">Study notes</option>
+        </select>
+      </div>
+      <div><label for="sourceLink">Source link</label><input id="sourceLink" type="url" /></div>
+    </div>
+    <label for="summary">Summary *</label>
+    <textarea id="summary" required></textarea>
+    <label for="notes">Source / usage notes</label>
+    <textarea id="notes"></textarea>
+    <button type="submit">Submit for human review</button>
+    <pre id="submitOut" class="status">Nothing submitted.</pre>
+  </form>
+
+  <section class="panel">
+    <h2>Add review note</h2>
+    <label for="resourceId">Resource ID</label>
+    <input id="resourceId" />
+    <label for="reviewNote">Review note</label>
+    <textarea id="reviewNote"></textarea>
+    <button id="saveNote" type="button">Save review note</button>
+    <pre id="noteOut" class="status">No review note saved.</pre>
+  </section>
+
+  <script>
+    function headers(json = false) {
+      const token = document.getElementById('token').value.trim();
+      const result = token ? { Authorization: 'Bearer ' + token } : {};
+      if (json) result['Content-Type'] = 'application/json';
+      return result;
+    }
+
+    function render(target, response, body) {
+      const el = document.getElementById(target);
+      el.textContent = JSON.stringify({ status: response.status, ...body }, null, 2);
+    }
+
+    async function request(url, options = {}) {
+      const response = await fetch(url, options);
+      let body;
+      try { body = await response.json(); }
+      catch (_) { body = { ok: false, error: 'Non-JSON response' }; }
+      return { response, body };
+    }
+
+    document.getElementById('loadPlan').onclick = async () => {
+      try {
+        const { response, body } = await request('/admin/resources/review-plan', { headers: headers() });
+        render('planOut', response, body);
+      } catch (error) {
+        document.getElementById('planOut').textContent = 'Request failed: ' + error.message;
+      }
+    };
+
+    document.getElementById('resourceForm').onsubmit = async (event) => {
+      event.preventDefault();
+      const sourceLink = document.getElementById('sourceLink').value.trim();
+      const payload = {
+        title: document.getElementById('title').value,
+        author_or_speaker: document.getElementById('author').value,
+        language: document.getElementById('language').value,
+        category: document.getElementById('category').value,
+        resource_type: document.getElementById('resourceType').value,
+        summary: document.getElementById('summary').value,
+        notes: document.getElementById('notes').value,
+        source_links: sourceLink ? [sourceLink] : [],
+      };
+      try {
+        const { response, body } = await request('/admin/resources/submit', {
+          method: 'POST', headers: headers(true), body: JSON.stringify(payload),
+        });
+        render('submitOut', response, body);
+        if (body.resource && body.resource.id) document.getElementById('resourceId').value = body.resource.id;
+      } catch (error) {
+        document.getElementById('submitOut').textContent = 'Request failed: ' + error.message;
+      }
+    };
+
+    document.getElementById('saveNote').onclick = async () => {
+      const payload = {
+        resource_id: document.getElementById('resourceId').value,
+        note: document.getElementById('reviewNote').value,
+      };
+      try {
+        const { response, body } = await request('/admin/resources/review-note', {
+          method: 'POST', headers: headers(true), body: JSON.stringify(payload),
+        });
+        render('noteOut', response, body);
+      } catch (error) {
+        document.getElementById('noteOut').textContent = 'Request failed: ' + error.message;
+      }
+    };
+  </script>
+</body>
+</html>
