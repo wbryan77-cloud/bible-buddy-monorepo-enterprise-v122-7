@@ -26,6 +26,11 @@ const VALID_TAGS = [
   'didnt_listen',
   'too_robotic',
   'felt_supportive',
+  // GOAL-BB-ISSUE11 direct testing-readiness signals. Keep these on the
+  // existing canonical feedback owner rather than creating a parallel metrics
+  // store. They remain evidence only and never approve doctrine/knowledge.
+  'felt_understood',
+  'felt_peaceful',
   'bug_glitch',
 ];
 

@@ -232,6 +232,7 @@ mountRoute('Alpha test routes', '/api/alpha', './routes/alphaTest');
 mountRoute('Alpha admin routes', '/admin/api/alpha', './routes/alphaAdmin');
 mountRoute('Platform unification routes', '/api/platform-unification', './routes/platformUnification');
 mountRoute('Bible Authority admin routes', '/admin/api/bible-authority', './routes/bibleAuthorityAdmin');
+mountRoute('Resource review routes', '/admin/resources', './routes/resourceReview');
 // ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — User Assistance Platform
 // (Help Center + AI-2 + escalation review). Public read/ask surface plus
 // Admin authoring/resolution endpoints gated by the shared checkAdminAuth.
@@ -260,281 +261,25 @@ app.post('/api/analyze/note', async (req, res) => {
           {
             role: 'system',
             content:
-              'You are Bible Buddy, a gentle Scripture-grounded companion. Distinguish Scripture from explanation and never invent Bible verses.',
+              'You are Bible Buddy. Help users study Scripture carefully. Be clear, humble, and avoid overclaiming. Distinguish biblical text from commentary and application.',
           },
-          {
-            role: 'user',
-            content:
-              `Note:\n\n${note}\n\nCreate a clear devotional outline, suggest 3-5 Bible references, and end with reflection questions and a short prayer.`,
-          },
+          { role: 'user', content: note },
         ],
       }),
     });
 
     if (!response.ok) {
-      const text = await response.text();
-      console.error('OpenAI analyze error:', response.status, text);
-      return res.status(500).json({ error: 'AI service error.' });
+      return res.status(502).json({ error: 'AI provider request failed.' });
     }
 
     const data = await response.json();
-    res.json({ reply: data?.choices?.[0]?.message?.content || 'No response generated.' });
+    const text = data?.choices?.[0]?.message?.content || '';
+    res.json({ result: text });
   } catch (error) {
-    console.error('Analyze Note fallback error:', error);
-    res.status(500).json({ error: 'Server error analyzing note.' });
+    res.status(500).json({ error: 'Analyze request failed.' });
   }
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
-});
-
-app.get('/beta', (req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'beta.html'));
-});
-
-// Internal alpha harness (not a public entry alias).
-app.get('/admin/alpha-test', (req, res) => {
-  res.sendFile(path.join(ADMIN_DIR, 'alpha-test.html'));
-});
-
-app.get('/admin/alpha-dashboard', (req, res) => {
-  res.sendFile(path.join(ADMIN_DIR, 'alpha-dashboard.html'));
-});
-
-app.get('/admin/beta-review', (req, res) => {
-  res.sendFile(path.join(ADMIN_DIR, 'beta-review.html'));
-});
-
-app.get('/admin/bible-authority', (req, res) => {
-  res.sendFile(path.join(ADMIN_DIR, 'bible-authority.html'));
-});
-
-app.use((req, res) => {
-  res.status(404).json({ ok: false, error: 'Not found', path: req.path });
-});
-
-app.use((error, req, res, next) => {
-  console.error('Unhandled server error:', error);
-  res.status(500).json({ ok: false, error: 'Internal server error' });
-});
-
-const { logStartupDiagnostics } = require('./services/buddyRuntimeConfig');
-
-const APP_SHUTDOWN_TIMEOUT_MS = Number(process.env.APP_SHUTDOWN_TIMEOUT_MS || 20000);
-
-function lifecycleLog(event, extra = {}) {
-  console.log(
-    JSON.stringify({
-      event,
-      at: new Date().toISOString(),
-      pid: process.pid,
-      node: process.version,
-      releaseCommit: RELEASE_COMMIT,
-      ...extra,
-    }),
-  );
-}
-
-lifecycleLog('PROCESS_STARTED');
-
-const server = app.listen(PORT, () => {
-  console.log(`Bible Buddy ${APP_VERSION} listening on port ${PORT}`);
-  logStartupDiagnostics();
-  // Governance durability: JSONL learning records are ephemeral on Render disk.
-  // Dual-write already projects into founderExperienceDurableStore — hydrate on
-  // boot so Decision Queue / FE Admin reads recover after redeploy when durable
-  // projections exist. No-op when JSONL already populated or durable is empty.
-  setImmediate(() => {
-    try {
-      const { hydrateLearningRecordsFromDurableIfNeeded } = require('./services/learningRecordStore');
-      hydrateLearningRecordsFromDurableIfNeeded()
-        .then((r) => {
-          if (r && r.hydrated) {
-            console.log(`[learningRecordStore] hydrated ${r.count} learning records from durable (${r.backend})`);
-          }
-        })
-        .catch((err) => {
-          console.warn('[learningRecordStore] durable hydrate failed:', err && err.message ? err.message : err);
-        });
-    } catch (err) {
-      console.warn('[learningRecordStore] durable hydrate wire failed:', err && err.message ? err.message : err);
-    }
-    try {
-      const { hydrateAdminAuditFromDurableIfNeeded } = require('./services/adminAuditTrail');
-      hydrateAdminAuditFromDurableIfNeeded()
-        .then((r) => {
-          if (r && r.hydrated) {
-            console.log(`[adminAuditTrail] hydrated ${r.count} audit entries from durable (${r.backend})`);
-          }
-        })
-        .catch((err) => {
-          console.warn('[adminAuditTrail] durable hydrate failed:', err && err.message ? err.message : err);
-        });
-    } catch (err) {
-      console.warn('[adminAuditTrail] durable hydrate wire failed:', err && err.message ? err.message : err);
-    }
-    try {
-      const { hydrateEscalationsFromDurableIfNeeded } = require('./services/userAssistanceEscalationStore');
-      hydrateEscalationsFromDurableIfNeeded()
-        .then((r) => {
-          if (r && r.hydrated) {
-            console.log(`[userAssistanceEscalationStore] hydrated ${r.count} escalations from durable (${r.backend})`);
-          }
-        })
-        .catch((err) => {
-          console.warn('[userAssistanceEscalationStore] durable hydrate failed:', err && err.message ? err.message : err);
-        });
-    } catch (err) {
-      console.warn('[userAssistanceEscalationStore] durable hydrate wire failed:', err && err.message ? err.message : err);
-    }
-    try {
-      const { hydrateAlphaFeedbackFromDurableIfNeeded } = require('./services/alphaFeedbackCapture');
-      hydrateAlphaFeedbackFromDurableIfNeeded()
-        .then((r) => {
-          if (r && r.hydrated) {
-            console.log(`[alphaFeedbackCapture] hydrated ${r.count} feedback entries from durable (${r.backend})`);
-          }
-        })
-        .catch((err) => {
-          console.warn('[alphaFeedbackCapture] durable hydrate failed:', err && err.message ? err.message : err);
-        });
-    } catch (err) {
-      console.warn('[alphaFeedbackCapture] durable hydrate wire failed:', err && err.message ? err.message : err);
-    }
-    try {
-      const { hydrateHelpCenterFromDurableIfNeeded } = require('./services/helpCenterContentStore');
-      hydrateHelpCenterFromDurableIfNeeded()
-        .then((r) => {
-          if (r && r.hydrated) {
-            console.log(`[helpCenterContentStore] hydrated ${r.count} help articles from durable (${r.backend})`);
-          }
-        })
-        .catch((err) => {
-          console.warn('[helpCenterContentStore] durable hydrate failed:', err && err.message ? err.message : err);
-        });
-    } catch (err) {
-      console.warn('[helpCenterContentStore] durable hydrate wire failed:', err && err.message ? err.message : err);
-    }
-    try {
-      const { hydrateFounderIntelligenceFromDurableIfNeeded } = require('./services/founderIntelligenceRecommendationStore');
-      hydrateFounderIntelligenceFromDurableIfNeeded()
-        .then((r) => {
-          if (r && r.hydrated) {
-            console.log(`[founderIntelligenceStore] hydrated ${r.count} dispositions from durable (${r.backend})`);
-          }
-        })
-        .catch((err) => {
-          console.warn('[founderIntelligenceStore] durable hydrate failed:', err && err.message ? err.message : err);
-        });
-    } catch (err) {
-      console.warn('[founderIntelligenceStore] durable hydrate wire failed:', err && err.message ? err.message : err);
-    }
-    try {
-      const { hydrateSupportGraphDecisionsFromDurableIfNeeded } = require('./services/supportGraphCandidateQueue');
-      hydrateSupportGraphDecisionsFromDurableIfNeeded()
-        .then((r) => {
-          if (r && r.hydrated) {
-            console.log(`[supportGraphCandidateQueue] hydrated ${r.count} decisions from durable (${r.backend})`);
-          }
-        })
-        .catch((err) => {
-          console.warn('[supportGraphCandidateQueue] durable hydrate failed:', err && err.message ? err.message : err);
-        });
-    } catch (err) {
-      console.warn('[supportGraphCandidateQueue] durable hydrate wire failed:', err && err.message ? err.message : err);
-    }
-    try {
-      const { hydrateAlphaTestersFromDurableIfNeeded } = require('./services/alphaTesterManager');
-      hydrateAlphaTestersFromDurableIfNeeded()
-        .then((r) => {
-          if (r && r.hydrated) {
-            console.log(`[alphaTesterManager] hydrated ${r.count} alpha testers from durable (${r.backend})`);
-          }
-        })
-        .catch((err) => {
-          console.warn('[alphaTesterManager] durable hydrate failed:', err && err.message ? err.message : err);
-        });
-    } catch (err) {
-      console.warn('[alphaTesterManager] durable hydrate wire failed:', err && err.message ? err.message : err);
-    }
-    try {
-      const { hydrateExplicitRememberPinsFromDurableIfNeeded } = require('./services/explicitRememberPin');
-      hydrateExplicitRememberPinsFromDurableIfNeeded()
-        .then((r) => {
-          if (r && r.hydrated) {
-            console.log(`[explicitRememberPin] hydrated ${r.count} users from durable (${r.backend})`);
-          }
-        })
-        .catch((err) => {
-          console.warn('[explicitRememberPin] durable hydrate failed:', err && err.message ? err.message : err);
-        });
-    } catch (err) {
-      console.warn('[explicitRememberPin] durable hydrate wire failed:', err && err.message ? err.message : err);
-    }
-  });
-});
-let shuttingDown = false;
-
-async function gracefulShutdown(signal) {
-  if (shuttingDown) return;
-  shuttingDown = true;
-  lifecycleLog('SHUTDOWN_SIGNAL_RECEIVED', { signal });
-  lifecycleLog('HTTP_DRAIN_STARTED');
-
-  const forceTimer = setTimeout(() => {
-    lifecycleLog('SHUTDOWN_FORCE_EXIT', { reason: 'timeout', timeoutMs: APP_SHUTDOWN_TIMEOUT_MS });
-    process.exit(1);
-  }, APP_SHUTDOWN_TIMEOUT_MS);
-  if (typeof forceTimer.unref === 'function') forceTimer.unref();
-
-  await new Promise((resolve) => {
-    server.close((err) => {
-      if (err) {
-        lifecycleLog('HTTP_DRAIN_ERROR', { errorMessage: String(err.message || err).slice(0, 120) });
-      }
-      resolve();
-    });
-  });
-
-  lifecycleLog('POSTGRES_POOL_DRAIN_STARTED');
-  try {
-    const { endSharedPool } = require('./services/persistence/postgresAdapter');
-    const ended = await endSharedPool();
-    lifecycleLog('POSTGRES_POOL_DRAIN_COMPLETE', ended);
-  } catch (err) {
-    lifecycleLog('POSTGRES_POOL_DRAIN_ERROR', {
-      errorMessage: err && err.message ? String(err.message).slice(0, 120) : 'unknown',
-    });
-  }
-
-  lifecycleLog('SHUTDOWN_COMPLETE', { signal, exitCode: 0 });
-  clearTimeout(forceTimer);
-  process.exit(0);
-}
-
-process.on('SIGTERM', () => {
-  gracefulShutdown('SIGTERM').catch((err) => {
-    console.error('[shutdown] SIGTERM handler failed:', err && err.message ? err.message : err);
-    process.exit(1);
-  });
-});
-process.on('SIGINT', () => {
-  gracefulShutdown('SIGINT').catch((err) => {
-    console.error('[shutdown] SIGINT handler failed:', err && err.message ? err.message : err);
-    process.exit(1);
-  });
-});
-
-process.on('uncaughtException', (err) => {
-  lifecycleLog('UNCAUGHT_EXCEPTION', {
-    errorName: err && err.name,
-    errorMessage: err && err.message ? String(err.message).slice(0, 200) : 'unknown',
-  });
-  process.exit(1);
-});
-
-process.on('unhandledRejection', (reason) => {
-  const msg = reason && reason.message ? reason.message : String(reason);
-  lifecycleLog('UNHANDLED_REJECTION', { errorMessage: String(msg).slice(0, 200) });
+app.listen(PORT, () => {
+  console.log(`Bible Buddy listening on port ${PORT}`);
 });
