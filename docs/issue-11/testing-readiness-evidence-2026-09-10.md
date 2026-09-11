@@ -76,23 +76,33 @@ This upgrades the resource upload/review route/UI requirement from static or iso
 
 ### Full canonical-branch regression — VERIFIED GREEN
 
-Verified head before this checkpoint update: `930b32749c77a78fd732da692cab86671fba62aa`
+Verified head before checkpoint update: `930b32749c77a78fd732da692cab86671fba62aa`
 GitHub Actions CI run: `34536616563`
 Result: **SUCCESS**
 
-The CI evidence directly verifies both required and informational jobs completed successfully. The required job passed:
-- dependency installation;
-- syntax-check of every tracked JavaScript file;
-- deterministic Phase 2 test suite;
-- server boot plus `/health` verification.
+The CI evidence directly verifies both required and informational jobs completed successfully. The required job passed dependency installation, syntax-check of every tracked JavaScript file, deterministic Phase 2 tests, and server boot plus `/health`. The informational job passed the full `tests/*.test.js` suite and Admin Command Center smoke suite against a local server.
 
-The informational job also passed:
-- the full `tests/*.test.js` suite;
-- the Admin Command Center smoke suite against a local server.
+Because the canonical branch full suite is green, there are no Issue #11 branch-caused failures requiring baseline triage at this checkpoint. The old baseline commit `1b4609a...` has no attached CI run available through the current GitHub evidence surface, so no unsupported baseline pass/fail claim is made.
 
-Because the canonical branch full suite is currently green, there are no Issue #11 branch-caused failures requiring baseline triage at this checkpoint. The old baseline commit `1b4609a...` has no attached CI run available through the current GitHub evidence surface, so no unsupported baseline pass/fail claim is made.
+### Current canonical checkpoint CI — VERIFIED GREEN
 
-This clears the **full canonical-branch regression** gate and provides local application boot evidence. Final safe live acceptance against deployed/currently reachable surfaces remains required before Issue #11 closeout.
+Checkpoint head: `41db41ef48c1039c803a49fc7d3a743cffda586e`
+GitHub Actions CI run: `34541345978`
+Result: **SUCCESS**
+
+This independently verifies the canonical branch remained green after the regression checkpoint was persisted.
+
+### Safe-live acceptance infrastructure boundary — VERIFIED BLOCKER / NO PRODUCTION MUTATION
+
+The repository deployment manifest `render.yaml` defines the `bible-buddy` web service with `autoDeploy: true`, `startCommand: node server.js`, and `/health`, but the repository evidence exposes no branch-preview service or preview URL for the canonical Issue #11 branch. The GitHub connector surface also does not expose a usable deployment target for this branch.
+
+Therefore safe live acceptance of the **Issue #11 branch implementation** cannot be truthfully executed against a deployed environment from the current supervisor surface without either:
+- an existing non-production preview/staging deployment becoming available, or
+- an explicit consequential deployment action.
+
+The production/default-branch deployment is not an acceptable substitute because Issue #11 changes remain isolated to draft PR #13 and have not been merged. Production deploy/merge remains prohibited without founder approval.
+
+This is not a code/test regression. Local actual-server acceptance and full canonical CI are green. The unresolved gate is specifically **environment availability for live branch acceptance**.
 
 ### Additional Issue #11 safeguards already present on canonical branch
 
@@ -109,19 +119,20 @@ These preserve human-review/no-auto-publish policy, auth and metadata validation
 
 | Issue #11 criterion | Current evidence state |
 |---|---|
-| Render boots | Local server boot + `/health` **VERIFIED GREEN in CI**; deployed safe live acceptance still required |
-| Admin can open testing dashboard | Existing Alpha/Admin surfaces present; Admin smoke suite **GREEN**; deployed safe live acceptance still required |
-| Testers can submit feedback | Current Alpha feedback path present; targeted owner coverage exists; deployed safe live acceptance still required |
-| Admin can view summary metrics | Current Admin/runtime owners crosswalked; Admin Command Center smoke **GREEN**; deployed safe live acceptance still required |
+| Render boots | Local server boot + `/health` **VERIFIED GREEN in CI**; branch live environment unavailable from current surface |
+| Admin can open testing dashboard | Admin smoke suite **GREEN**; branch live environment unavailable from current surface |
+| Testers can submit feedback | Current Alpha feedback path present + targeted owner coverage; branch live environment unavailable from current surface |
+| Admin can view summary metrics | Admin/runtime owners crosswalked + Admin smoke **GREEN**; branch live environment unavailable from current surface |
 | Resource review plan visible | **VERIFIED in actual mounted server acceptance CI** |
 | Uploaded resource metadata can be recorded | **VERIFIED in actual mounted server acceptance CI** |
-| Nothing ingested without human approval | **VERIFIED for Issue #11 intake/extraction boundary by route state, structural guardrails and mounted acceptance; final downstream/live acceptance remains required before closure** |
+| Nothing ingested without human approval | **VERIFIED for Issue #11 intake/extraction boundary by route state, structural guardrails and mounted acceptance; deployed branch acceptance still pending** |
 | All new routes fail soft | Resource route uses existing fail-soft mount pattern; canonical regression and local boot **GREEN** |
 | OCR/transcript review adapter | IMPLEMENTED + targeted guardrail coverage + full regression **GREEN** |
 | Metrics gap closure | IMPLEMENTED in existing owner + full regression **GREEN** |
 | Full regression | **VERIFIED GREEN — CI run 34536616563** |
-| Safe live acceptance | PENDING |
-| Final regression/evidence closeout | PENDING after safe live acceptance |
+| Canonical checkpoint CI | **VERIFIED GREEN — CI run 34541345978** |
+| Safe live acceptance | **BLOCKED ON NON-PRODUCTION BRANCH ENVIRONMENT / FOUNDER DECISION IF NEW DEPLOYMENT REQUIRED** |
+| Final regression/evidence closeout | PENDING after live-acceptance disposition |
 
 ## Failures and corrections captured
 
@@ -131,26 +142,40 @@ These preserve human-review/no-auto-publish policy, auth and metadata validation
 - An isolated router test could pass without proving the actual application path; corrected by adding real-server mounted acceptance coverage.
 - A targeted extraction test was initially placed outside the unified test discovery path; corrected by adding registered `.test.js` coverage under `tests/`.
 - Local-only resource queue persistence was insufficient for deployment durability; corrected by using the existing durable persistence adapter and failing closed on persistence failure.
-- Earlier broader-suite failure observations are superseded by current canonical-head CI evidence: the deterministic suite, full `tests/*.test.js` suite, Admin Command Center smoke suite, syntax checks and local boot/health check are all green at run `34536616563`.
+- Earlier broader-suite failure observations are superseded by current canonical-head CI evidence: deterministic suite, full tests, Admin smoke, syntax checks and local boot/health are green.
+- Safe live acceptance was not falsely claimed: no deployed preview/staging target for the unmerged Issue #11 branch is exposed by current repo/connector evidence.
 
 ## Exact next Issue #11 actions
 
-1. Execute safe live acceptance where available for deployed/current boot, Admin testing/summary surfaces, Alpha feedback and mounted resource-review behavior without mutating production data or configuration.
-2. Re-run the canonical full regression after live acceptance evidence is gathered.
-3. Update this evidence packet with final live and post-live regression receipts.
-4. Only after every acceptance criterion is directly proven should Issue #11 be prepared for founder APPROVE / DENY / REVIEW / HOLD merge/release decision.
+1. Chief/founder determines whether an existing non-production preview/staging target can be supplied or whether creation of a temporary Issue #11 preview deployment is approved.
+2. If a safe branch deployment becomes available, execute read-only/non-destructive live acceptance for boot, Admin testing/summary, Alpha feedback visibility and resource-review surfaces; do not perform knowledge ingestion or production mutation.
+3. Re-run canonical full regression after live acceptance/disposition.
+4. Update this evidence packet with final live and post-live regression receipts and prepare founder merge/release review only after every required acceptance gate is satisfied or explicitly dispositioned.
 
 ## Checkpoint / resume
 
 Goal ID: `GOAL-BB-ISSUE11`
 Canonical PR: `#13`
 Canonical branch: `issue-11-testing-readiness-recovery-20260910`
-Last fully verified code/evidence head before this checkpoint commit: `930b32749c77a78fd732da692cab86671fba62aa`
-Last completed acceptance phase: **full canonical-branch regression + local boot/Admin smoke — GREEN**
-Exact next acceptance phase: **safe live acceptance**
+Last fully verified head before this checkpoint update: `41db41ef48c1039c803a49fc7d3a743cffda586e`
+Last completed acceptance phase: **full canonical regression + checkpoint CI — GREEN**
+Exact next acceptance phase: **safe live acceptance, currently blocked on availability of a non-production branch deployment**
 Known-good baseline: `1b4609a8549c0b5fed659f18b97573cda2497095`
 Rollback: all Issue #11 implementation remains isolated to the draft canonical PR/branch until founder approval.
 
 ## Founder gate
 
-NONE for safe live read-only/non-mutating acceptance and final regression/evidence work. Production merge/deploy, paid services, credential expansion, doctrine/source promotion changes, or weakening of human-review protections remain prohibited without approval.
+Decision ID: `BB11-LIVE-PREVIEW-20260910`
+Status: **REVIEW**
+Ready: canonical branch is regression-green and actual-server mounted acceptance is green; live branch acceptance checklist is ready.
+Why it matters: Issue #11 cannot be closed truthfully until deployed/current live acceptance is directly proven or explicitly dispositioned.
+Recommended action: **APPROVE only a temporary/non-production preview deployment if no existing safe preview/staging environment is available. Do not merge/deploy production for this test.**
+Alternatives: supply an existing preview/staging URL; HOLD Issue #11 open; or REVIEW FURTHER if deployment ownership/cost is unclear.
+Cost/renewal: not established from repository evidence; no purchase is authorized.
+Payment source: none unless a paid preview environment is explicitly approved and mapped to the correct Bible Buddy owning entity.
+Risks/dependencies: accidental production mutation, credential exposure, or testing the wrong code revision; mitigate by pinning deployment to canonical branch/head and read-only/non-destructive acceptance actions.
+Evidence: PR #13; CI runs `34531239770`, `34536616563`, `34541345978`; this checkpoint document.
+Test/QA: canonical CI green; live branch environment missing.
+Approval triggers: creation/use of a new external deployment if no existing safe preview exists.
+Rollback/reversibility: preview should be temporary and removable; canonical branch remains unmerged.
+Deadline: before Issue #11 founder merge/release review.
