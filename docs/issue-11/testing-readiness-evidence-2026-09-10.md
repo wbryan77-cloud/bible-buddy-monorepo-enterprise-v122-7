@@ -1,6 +1,7 @@
 # GOAL-BB-ISSUE11 — Testing Readiness Evidence
 
 Date: 2026-09-10
+Reconciled: 2026-09-11
 Baseline default-branch commit: `1b4609a8549c0b5fed659f18b97573cda2497095`
 Canonical branch: `issue-11-testing-readiness-recovery-20260910`
 Issue: #11 — Testing Readiness Build — Admin Dashboard, Resource Upload, OCR, Retrieval, and Human Review
@@ -84,13 +85,14 @@ The CI evidence directly verifies both required and informational jobs completed
 
 Because the canonical branch full suite is green, there are no Issue #11 branch-caused failures requiring baseline triage at this checkpoint. The old baseline commit `1b4609a...` has no attached CI run available through the current GitHub evidence surface, so no unsupported baseline pass/fail claim is made.
 
-### Current canonical checkpoint CI — VERIFIED GREEN
+### Current canonical implementation checkpoint CI — VERIFIED GREEN
 
-Checkpoint head: `41db41ef48c1039c803a49fc7d3a743cffda586e`
-GitHub Actions CI run: `34541345978`
+Last fully verified implementation head before this documentation-only reconciliation update: `48e51b334cd04d0c47a814866a37ac07b95e4388`
+GitHub Actions CI run ID: `34569133031`
+GitHub Actions CI run number: `146`
 Result: **SUCCESS**
 
-This independently verifies the canonical branch remained green after the regression checkpoint was persisted.
+This independently verifies the canonical branch remained green through the latest implementation checkpoint inspected by the Chief. This documentation reconciliation intentionally records the verified predecessor head rather than pretending to know its own commit SHA before GitHub creates it. The documentation-only commit produced by this update must receive its own CI result before it becomes the next fully verified canonical checkpoint.
 
 ### Safe-live acceptance infrastructure boundary — VERIFIED BLOCKER / NO PRODUCTION MUTATION
 
@@ -130,7 +132,8 @@ These preserve human-review/no-auto-publish policy, auth and metadata validation
 | OCR/transcript review adapter | IMPLEMENTED + targeted guardrail coverage + full regression **GREEN** |
 | Metrics gap closure | IMPLEMENTED in existing owner + full regression **GREEN** |
 | Full regression | **VERIFIED GREEN — CI run 34536616563** |
-| Canonical checkpoint CI | **VERIFIED GREEN — CI run 34541345978** |
+| Latest fully verified implementation checkpoint | **VERIFIED GREEN — head `48e51b334cd04d0c47a814866a37ac07b95e4388`, CI run #146 / ID 34569133031** |
+| Documentation reconciliation commit | **PENDING its own CI verification after this update** |
 | Safe live acceptance | **BLOCKED ON NON-PRODUCTION BRANCH ENVIRONMENT / FOUNDER DECISION IF NEW DEPLOYMENT REQUIRED** |
 | Final regression/evidence closeout | PENDING after live-acceptance disposition |
 
@@ -144,38 +147,42 @@ These preserve human-review/no-auto-publish policy, auth and metadata validation
 - Local-only resource queue persistence was insufficient for deployment durability; corrected by using the existing durable persistence adapter and failing closed on persistence failure.
 - Earlier broader-suite failure observations are superseded by current canonical-head CI evidence: deterministic suite, full tests, Admin smoke, syntax checks and local boot/health are green.
 - Safe live acceptance was not falsely claimed: no deployed preview/staging target for the unmerged Issue #11 branch is exposed by current repo/connector evidence.
+- Checkpoint drift was detected on 2026-09-11: the durable evidence document lagged several verified canonical heads. This update corrects the checkpoint contract by recording the latest fully verified predecessor head/run and explicitly requiring CI verification of the documentation-only reconciliation commit before promotion.
 
 ## Exact next Issue #11 actions
 
-1. Chief/founder determines whether an existing non-production preview/staging target can be supplied or whether creation of a temporary Issue #11 preview deployment is approved.
-2. If a safe branch deployment becomes available, execute read-only/non-destructive live acceptance for boot, Admin testing/summary, Alpha feedback visibility and resource-review surfaces; do not perform knowledge ingestion or production mutation.
-3. Re-run canonical full regression after live acceptance/disposition.
-4. Update this evidence packet with final live and post-live regression receipts and prepare founder merge/release review only after every required acceptance gate is satisfied or explicitly dispositioned.
+1. Verify CI on the documentation-only reconciliation commit created by this update; if green, promote that commit as the next fully verified canonical checkpoint.
+2. Continue searching for an existing non-production preview/staging target that can run the unmerged canonical branch without production mutation or new paid commitment.
+3. If no existing safe target exists, keep the live-acceptance checklist, branch/head pinning, credential boundaries, non-destructive test steps and rollback plan ready for the smallest founder decision: whether to authorize a temporary non-production preview deployment.
+4. If a safe branch deployment becomes available, execute read-only/non-destructive live acceptance for boot, Admin testing/summary, Alpha feedback visibility and resource-review surfaces; do not perform knowledge ingestion or production mutation.
+5. Re-run canonical full regression after live acceptance/disposition, update this evidence packet with final receipts, and prepare founder merge/release review only after every required acceptance gate is satisfied or explicitly dispositioned.
 
 ## Checkpoint / resume
 
 Goal ID: `GOAL-BB-ISSUE11`
 Canonical PR: `#13`
 Canonical branch: `issue-11-testing-readiness-recovery-20260910`
-Last fully verified head before this checkpoint update: `41db41ef48c1039c803a49fc7d3a743cffda586e`
-Last completed acceptance phase: **full canonical regression + checkpoint CI — GREEN**
-Exact next acceptance phase: **safe live acceptance, currently blocked on availability of a non-production branch deployment**
+Last fully verified implementation head before this documentation reconciliation: `48e51b334cd04d0c47a814866a37ac07b95e4388`
+Verified CI: run #`146`, run ID `34569133031`, result **SUCCESS**
+Current documentation reconciliation commit: **created by this update; CI must be checked before treating it as fully verified**
+Last completed acceptance phase: **full canonical regression + implementation checkpoint CI — GREEN**
+Exact next acceptance phase: **verify reconciliation commit CI, then safe live acceptance, currently blocked on availability of a non-production branch deployment**
 Known-good baseline: `1b4609a8549c0b5fed659f18b97573cda2497095`
 Rollback: all Issue #11 implementation remains isolated to the draft canonical PR/branch until founder approval.
 
 ## Founder gate
 
 Decision ID: `BB11-LIVE-PREVIEW-20260910`
-Status: **REVIEW**
-Ready: canonical branch is regression-green and actual-server mounted acceptance is green; live branch acceptance checklist is ready.
+Status: **REVIEW — NOT URGENT OVERNIGHT**
+Ready: canonical implementation checkpoint is regression-green and actual-server mounted acceptance is green; live branch acceptance checklist can be executed when a safe environment exists.
 Why it matters: Issue #11 cannot be closed truthfully until deployed/current live acceptance is directly proven or explicitly dispositioned.
-Recommended action: **APPROVE only a temporary/non-production preview deployment if no existing safe preview/staging environment is available. Do not merge/deploy production for this test.**
-Alternatives: supply an existing preview/staging URL; HOLD Issue #11 open; or REVIEW FURTHER if deployment ownership/cost is unclear.
+Recommended action when founder review is appropriate: **APPROVE only a temporary/non-production preview deployment if no existing safe preview/staging environment is available. Do not merge/deploy production for this test.**
+Alternatives: supply an existing preview/staging URL; HOLD Issue #11 open while other safe work continues; or REVIEW FURTHER if deployment ownership/cost is unclear.
 Cost/renewal: not established from repository evidence; no purchase is authorized.
 Payment source: none unless a paid preview environment is explicitly approved and mapped to the correct Bible Buddy owning entity.
 Risks/dependencies: accidental production mutation, credential exposure, or testing the wrong code revision; mitigate by pinning deployment to canonical branch/head and read-only/non-destructive acceptance actions.
-Evidence: PR #13; CI runs `34531239770`, `34536616563`, `34541345978`; this checkpoint document.
-Test/QA: canonical CI green; live branch environment missing.
+Evidence: PR #13; CI runs `34531239770`, `34536616563`, `34541345978`, `34569133031`; this checkpoint document.
+Test/QA: canonical implementation checkpoint CI green; reconciliation documentation commit pending CI; live branch environment missing.
 Approval triggers: creation/use of a new external deployment if no existing safe preview exists.
 Rollback/reversibility: preview should be temporary and removable; canonical branch remains unmerged.
 Deadline: before Issue #11 founder merge/release review.
