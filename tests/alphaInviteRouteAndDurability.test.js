@@ -136,4 +136,74 @@ describe('alpha invite route + durability', () => {
     );
     assert.ok(!loc.location.includes('/admin/alpha-test'), 'must not send testers to stripped alpha-test harness');
   });
+
+  it('consumed friendly public invite never discloses or re-binds tester identity', async () => {
+    wipe(ALPHA_PATH);
+    wipe(DURABLE_TESTERS);
+    wipe(DURABLE_INVITES);
+    resetModules();
+    require('../services/founderExperienceDurableStore').resetFounderExperienceDurableForTests();
+
+    const mgr = require('../services/alphaTesterManager');
+    const inv = mgr.createInvite({ label: 'Consumed public-code replay', createdBy: 'test' });
+    const onboard = mgr.completeOnboarding({
+      inviteCode: inv.publicInviteCode,
+      intake: { name: 'Replay Tester' },
+      consentAccepted: true,
+      ndaAccepted: true,
+    });
+    assert.equal(onboard.ok, true);
+    assert.ok(onboard.tester?.testerId);
+
+    const port = 34901 + Math.floor(Math.random() * 200);
+    const child = spawn(process.execPath, ['server.js'], {
+      cwd: ROOT,
+      env: {
+        ...process.env,
+        PORT: String(port),
+        OPENAI_API_KEY: '',
+        DATABASE_URL: '',
+        PERSISTENCE: 'MEMORY',
+        BIBLEBUDDY_SILENCE_PG_ADAPTER_NOTICE: '1',
+      },
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+
+    await new Promise((r) => setTimeout(r, 1200));
+    const response = await new Promise((resolve, reject) => {
+      const req = http.request(
+        {
+          host: '127.0.0.1',
+          port,
+          path: `/api/alpha/invite-code/${encodeURIComponent(inv.publicInviteCode)}`,
+          method: 'GET',
+          headers: { Accept: 'application/json' },
+        },
+        (res) => {
+          let body = '';
+          res.setEncoding('utf8');
+          res.on('data', (chunk) => {
+            body += chunk;
+          });
+          res.on('end', () => resolve({ status: res.statusCode, body }));
+        },
+      );
+      req.on('error', reject);
+      req.end();
+    });
+
+    try {
+      child.kill('SIGTERM');
+    } catch (_) {}
+
+    assert.equal(response.status, 200);
+    const payload = JSON.parse(response.body);
+    assert.equal(payload.ok, true);
+    assert.equal(payload.used, true);
+    assert.equal(payload.tester, null);
+    assert.equal(Object.prototype.hasOwnProperty.call(payload, 'testerId'), false);
+    assert.equal(response.body.includes(onboard.tester.testerId), false);
+    assert.equal(response.body.includes(onboard.tester.name), false);
+  });
+
 });
