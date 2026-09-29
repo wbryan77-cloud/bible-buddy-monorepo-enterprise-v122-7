@@ -171,7 +171,7 @@ If “God” for you never arrives in Jesus, you are still negotiating with a si
 
 The God Scripture introduces does not stay abstract. He goes to the place of shame.
 
-The Gospels narrate Jesus crucified under Roman power and raised the third day (see Mark 15–16; compare the apostolic summary in 1 Corinthians 15:3–4, which Paul says he delivered “first of all”). Immediate Gospel context: betrayal, trial, cross, empty tomb, commission. Immediate Pauline context: the gospel Paul preached; Christ’s death for sins “according to the scriptures,” burial, resurrection (1 Corinthians 15:1–8).
+The Gospels narrate Jesus crucified under Roman power and raised the third day (see Mark 15–16; compare the apostolic summary in 1 Corinthians 15:3–4, which Paul says he delivered “first of all”). Immediate Gospel context: betrayal, trial, cross, empty tomb, commission. Immediate context in 1 Corinthians: the gospel Paul preached; Christ’s death for sins “according to the scriptures,” burial, resurrection (1 Corinthians 15:1–8).
 
 This is not inspirational tragedy. It is the place where holiness and *ḥesed* meet without canceling each other—judgment of sin and mercy for sinners in the same Lord.
 
