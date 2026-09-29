@@ -1,6 +1,7 @@
 'use strict';
 
 const { buildResourceIngestionReview } = require('./resourceIngestionReview');
+const { buildTempleEvidenceEnvelope } = require('./templeCheckEvidenceAdapter');
 
 function clean(value, max = 4000) {
   return String(value == null ? '' : value).trim().slice(0, max);
@@ -107,9 +108,52 @@ async function buildExtractionReviewCandidate(input = {}, options = {}) {
   };
 }
 
+function buildFoodLabelOcrReviewCandidate(input = {}) {
+  const extractedText = clean(input.ocr_text || input.label_text, 250000);
+  if (!extractedText) {
+    return {
+      ok: false,
+      error: 'empty_label_ocr',
+      human_review_required: true,
+      approved_for_temple_adjudication: false,
+      canonical_write_allowed: false,
+    };
+  }
+
+  const envelope = buildTempleEvidenceEnvelope({
+    ...input,
+    label_text: extractedText,
+  });
+  if (!envelope.ok) {
+    return {
+      ...envelope,
+      extraction_method: 'provided_ocr_text',
+      human_review_required: true,
+    };
+  }
+
+  return {
+    ok: true,
+    candidate: {
+      extracted_text: extractedText,
+      extraction_method: 'provided_ocr_text',
+      status: 'pending_human_review',
+      temple_evidence: envelope,
+      human_review_required: true,
+      approved_for_temple_adjudication: false,
+      canonical_write_allowed: false,
+    },
+    ingestion: {
+      allowed: false,
+      reason: 'Human review and governed Temple adjudication are required before canonical use',
+    },
+  };
+}
+
 module.exports = {
   normalizeMetadata,
   validateMetadata,
   extractPdf,
   buildExtractionReviewCandidate,
+  buildFoodLabelOcrReviewCandidate,
 };
