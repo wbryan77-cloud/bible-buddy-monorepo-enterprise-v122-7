@@ -206,4 +206,87 @@ describe('alpha invite route + durability', () => {
     assert.equal(response.body.includes(onboard.tester.name), false);
   });
 
+
+  it('onboarding response uses server-bound HttpOnly session principal instead of testerId credential', async () => {
+    wipe(ALPHA_PATH);
+    wipe(DURABLE_TESTERS);
+    wipe(DURABLE_INVITES);
+    resetModules();
+    require('../services/founderExperienceDurableStore').resetFounderExperienceDurableForTests();
+
+    const mgr = require('../services/alphaTesterManager');
+    const inv = mgr.createInvite({ label: 'Trusted-principal regression', createdBy: 'test' });
+
+    const port = 35101 + Math.floor(Math.random() * 200);
+    const child = spawn(process.execPath, ['server.js'], {
+      cwd: ROOT,
+      env: {
+        ...process.env,
+        PORT: String(port),
+        OPENAI_API_KEY: '',
+        DATABASE_URL: '',
+        PERSISTENCE: 'MEMORY',
+        BIBLEBUDDY_SILENCE_PG_ADAPTER_NOTICE: '1',
+      },
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+
+    await new Promise((r) => setTimeout(r, 1200));
+    const response = await new Promise((resolve, reject) => {
+      const body = JSON.stringify({
+        inviteCode: inv.publicInviteCode,
+        name: 'Principal Tester',
+        consentAccepted: true,
+        ndaAccepted: true,
+      });
+      const req = http.request(
+        {
+          host: '127.0.0.1',
+          port,
+          path: '/api/alpha/onboard',
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'Content-Length': Buffer.byteLength(body),
+          },
+        },
+        (res) => {
+          let responseBody = '';
+          res.setEncoding('utf8');
+          res.on('data', (chunk) => {
+            responseBody += chunk;
+          });
+          res.on('end', () =>
+            resolve({
+              status: res.statusCode,
+              body: responseBody,
+              setCookie: res.headers['set-cookie'] || [],
+            }),
+          );
+        },
+      );
+      req.on('error', reject);
+      req.write(body);
+      req.end();
+    });
+
+    try {
+      child.kill('SIGTERM');
+    } catch (_) {}
+
+    assert.equal(response.status, 200);
+    const payload = JSON.parse(response.body);
+    assert.equal(payload.ok, true);
+    assert.ok(payload.testerId);
+    assert.equal(Object.prototype.hasOwnProperty.call(payload, 'sessionToken'), false);
+
+    const cookies = Array.isArray(response.setCookie) ? response.setCookie : [response.setCookie];
+    const sessionCookie = cookies.find((v) => /^bb_alpha_session=/i.test(String(v || '')));
+    assert.ok(sessionCookie, 'expected bb_alpha_session cookie');
+    assert.match(sessionCookie, /;\s*HttpOnly(?:;|$)/i);
+    assert.match(sessionCookie, /;\s*SameSite=(?:Lax|Strict)(?:;|$)/i);
+    assert.ok(!sessionCookie.includes(payload.testerId), 'session credential must not be the public testerId');
+  });
+
 });
