@@ -707,7 +707,7 @@ function fallbackReply({
   if (safety.level === 'crisis') {
     return {
       reply:
-        "I’m really sorry you’re carrying this. I’m not a therapist or emergency service, but your safety matters right now. If you might hurt yourself or feel in immediate danger, please call emergency services now. If you’re in the U.S., call or text 988 for the Suicide & Crisis Lifeline. If you can, reach out to someone you trust and don’t stay alone with this.",
+        "I’m really sorry you’re carrying this. I’m not a therapist or emergency service, but your safety matters right now. Move away from any weapon, pills, or other means you could use to hurt yourself; if you can, put them out of reach or give them to someone you trust. If you might hurt yourself or feel in immediate danger, call emergency services now — in the U.S., call 911. In the U.S., you can also call or text 988 for the Suicide & Crisis Lifeline. Reach out to someone you trust now and don’t stay alone with this.",
       scripture: [{ reference: 'Psalm 34:18', text: 'The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.', reason: 'comfort in crisis' }],
       mode: 'crisis',
       confidence: 'high',
@@ -715,7 +715,12 @@ function fallbackReply({
       suggested_settings_change: null,
       orb_state: 'listening',
       safety_level: 'crisis',
-      next_steps: ['Call emergency services or 988 if you may hurt yourself.', 'Reach out to a trusted person now.'],
+      next_steps: [
+        'Move away from weapons, pills, or other means you could use to hurt yourself; put distance between you and them or give them to a trusted person if you can.',
+        'Call emergency services now if you may act on the plan; in the U.S., call 911.',
+        'In the U.S., call or text 988 for the Suicide & Crisis Lifeline.',
+        'Reach out to a trusted person now and do not stay alone with this.',
+      ],
       admin_flags: ['crisis_language'],
     };
   }
