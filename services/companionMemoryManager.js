@@ -7,6 +7,7 @@ const path = require('path');
 const {
   getDoctrineConversationState,
   updateDoctrineConversationState,
+  clearDoctrineConversationState,
 } = require('./doctrineConversationState');
 const {
   recordRelationshipSignal,
@@ -21,8 +22,8 @@ const {
 } = require('./userCorrectionMemory');
 const {
   recordConceptLearningCandidate,
+  clearReflectionMemoryForUser,
   LEARNING_ACK,
-  loadGrowthCandidates,
 } = require('./reflectionMemoryEngine');
 const { buildContextSummary } = require('./relationshipContextModel');
 
@@ -42,8 +43,6 @@ function getMemorySnapshot({ userId } = {}) {
   const state = getDoctrineConversationState(userId);
   const relationship = getRelationshipContext({ userId });
   const preferences = getUserAnswerPreferences(userId);
-  const candidates = (loadGrowthCandidates().candidates || []).slice(-5);
-
   return {
     session: {
       currentStruggle:
@@ -64,7 +63,8 @@ function getMemorySnapshot({ userId } = {}) {
       wantsPracticalWording: relationship.wantsPracticalWording,
       recentConcern: relationship.recentConcern,
     },
-    learningCandidates: candidates,
+    // Governed learning-review candidates are not personal-memory disclosure data.
+    learningCandidates: [],
     persisted: !!(relationship.updatedAt || preferences.directAnswerFirst),
   };
 }
@@ -166,7 +166,12 @@ function forgetMemory({ userId, scope = 'all' } = {}) {
   }
 
   let clearedPins = false;
+  let clearedDoctrine = false;
+  let clearedReflection = false;
   if (scope === 'all') {
+    clearDoctrineConversationState(userId);
+    clearedDoctrine = true;
+    clearedReflection = !!clearReflectionMemoryForUser(userId);
     try {
       const { clearPinsForUser } = require('./explicitRememberPin');
       clearedPins = !!clearPinsForUser(userId);
@@ -184,18 +189,18 @@ function forgetMemory({ userId, scope = 'all' } = {}) {
   }
 
   return {
-    cleared: clearedPrefs || clearedRel || clearedPins,
+    cleared: clearedPrefs || clearedRel || clearedPins || clearedDoctrine || clearedReflection,
     reply:
-      "I've cleared what I stored about your companion context and preferences for this account. Session details from earlier in this chat may still be in play until we move on — tell me again what you'd like me to remember.",
+      "I've cleared the companion memory controlled by this account-level forget action, including stored context and answer preferences. Some governed learning-review records are handled separately from personal memory, so I won't claim broader deletion than this control can prove.",
   };
 }
 
 function buildMemoryDisclosureReply({ userId } = {}) {
   const recall = recallRelevantMemory({ userId });
   if (!recall.memoryAvailable || recall.items.length === 0) {
-    return 'In this conversation I mainly have session context — what we have discussed so far. I do not store sensitive personal details long-term unless you ask me to remember a preference like answer style.';
+    return "I don't see stored companion memory for this account right now. When memory is enabled, I may retain bounded companion context and answer preferences; you can ask me to forget stored companion memory. I won't promise permanent retention or broader deletion than the stores this control actually governs.";
   }
-  return `Here's what I actually have stored: ${recall.items.join('; ')}. Session details stay with this conversation; answer-style preferences can carry across when stored.`;
+  return `Here's what I can surface from stored companion memory: ${recall.items.join('; ')}. You can ask me to forget stored companion memory. I won't promise permanent retention, and governed learning-review records are handled separately from personal memory.`;
 }
 
 module.exports = {

@@ -52,6 +52,55 @@ describe('BIE v1.3D memory forget + satan frees routing', () => {
     assert.equal(miss.runtime.masterRoute, 'explicit_remember_pin_honest_miss');
   });
 
+
+  it('1d. all-scope forget clears doctrine + attributable reflection state and hides global learning queue', () => {
+    const {
+      recordReflection,
+      getReflectionState,
+      recordConceptLearningCandidate,
+    } = require('../services/reflectionMemoryEngine');
+    const {
+      updateDoctrineConversationState,
+      getDoctrineConversationState,
+    } = require('../services/doctrineConversationState');
+    const {
+      forgetMemory,
+      getMemorySnapshot,
+      buildMemoryDisclosureReply,
+    } = require('../services/companionMemoryManager');
+
+    const userId = `prealpha-memory-lifecycle-${Date.now()}`;
+    recordReflection(userId, {
+      type: 'companion_preference',
+      label: 'private_context',
+      userMessage: 'bounded test memory',
+      sessionOnly: false,
+    });
+    recordConceptLearningCandidate({
+      phrase: 'bounded learning-review candidate',
+      proposedConcept: 'test_only',
+      correction: 'test only',
+      source: 'test',
+      userId,
+    });
+    updateDoctrineConversationState(userId, {
+      lastAnsweredConcept: 'sabbath',
+      sessionMemory: { activeConcept: 'sabbath' },
+    });
+
+    const before = getMemorySnapshot({ userId });
+    assert.deepEqual(before.learningCandidates, []);
+
+    const result = forgetMemory({ userId, scope: 'all' });
+    assert.equal(result.cleared, true);
+    assert.equal(getReflectionState(userId).records.length, 0);
+    assert.equal(getDoctrineConversationState(userId).lastAnsweredConcept, null);
+
+    const disclosure = buildMemoryDisclosureReply({ userId });
+    assert.match(disclosure, /forget stored companion memory/i);
+    assert.doesNotMatch(disclosure, /remember.*forever|store.*forever/i);
+  });
+
   it('2. frees-Satan wording routes to grounded Rev 20 path', () => {
     const msg =
       'After the millennium ends, does Revelation name who frees Satan? Yes or no.';

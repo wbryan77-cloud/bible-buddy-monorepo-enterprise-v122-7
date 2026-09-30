@@ -192,6 +192,18 @@ function ingestUserMessage(userId, message = '') {
   return { correction, preferences: getUserAnswerPreferences(userId) };
 }
 
+
+function clearReflectionMemoryForUser(userId) {
+  if (!userId) return false;
+  const state = loadAll();
+  if (!state.users || !Object.prototype.hasOwnProperty.call(state.users, userId)) {
+    return false;
+  }
+  delete state.users[userId];
+  saveAll(state);
+  return true;
+}
+
 function getReflectionState(userId) {
   const state = loadAll();
   const user = state.users[userId] || { records: [], preferences: {} };
@@ -233,6 +245,7 @@ module.exports = {
   recordPendingQuestion,
   recordRoutingFailure,
   recordConceptLearningCandidate,
+  clearReflectionMemoryForUser,
   getReflectionState,
   getUserAnswerPreferences,
   loadGrowthCandidates: loadCandidates,
