@@ -772,16 +772,28 @@ async function runBibleCompanionOrchestrator({
     } = require('./relationshipContextSelector');
     if (isPersonalRememberRequest(message) || isForgetRequest(message)) {
       const forgetting = isForgetRequest(message);
+      let durableForgetConfirmed = !forgetting;
+      let durableForgetError = null;
       if (forgetting) {
         try {
-          require('./relationshipMemoryEngine').forgetUserMemory({ userId });
-        } catch (_) {}
-        // Explicit remember pins must clear on personal forget (same contract as
-        // forgetMemory scope=all). Without this, companion_personal_forget acks
-        // but leaves pins in the local/durable pin store.
-        try {
-          require('./explicitRememberPin').clearPinsForUser(userId);
-        } catch (_) {}
+          // One governed all-scope clear: preferences, relationship context,
+          // doctrine/session state, attributable reflection state, and local pins.
+          forgetMemory({ userId, scope: 'all' });
+
+          // Do not acknowledge durable deletion until the two async durable owners
+          // have completed their user-scoped clears in this request.
+          await require('./durableUserMemory').flushUser(userId);
+          const explicitPins = require('./explicitRememberPin');
+          await explicitPins.dualWriteUserPinsNow(userId, []);
+          durableForgetConfirmed = true;
+        } catch (e) {
+          durableForgetConfirmed = false;
+          durableForgetError = e;
+          console.warn(
+            '[orchestrator] durable personal forget confirmation failed:',
+            e && e.message ? e.message : e,
+          );
+        }
       } else {
         try {
           const content = personalRememberContent(message) || String(message).slice(0, 240);
@@ -832,20 +844,38 @@ async function runBibleCompanionOrchestrator({
         } catch (_) {}
       }
       const masterRoute = forgetting
-        ? 'companion_personal_forget'
+        ? durableForgetConfirmed
+          ? 'companion_personal_forget'
+          : 'companion_personal_forget_unconfirmed'
         : 'companion_personal_remember';
       const structured = verifyOrchestratorOutput({
-        reply: companionRememberAck(message),
+        reply:
+          forgetting && !durableForgetConfirmed
+            ? "I cleared the companion memory I could in this session, but I couldn't confirm the durable memory clear yet. Please try the forget request again before relying on it as fully deleted."
+            : companionRememberAck(message),
         scripture: [],
         mode: 'companion',
-        confidence: 'high',
-        memory_used: true,
+        confidence: forgetting && !durableForgetConfirmed ? 'medium' : 'high',
+        memory_used: !forgetting,
         safety_level: safety?.level || 'standard',
-        admin_flags: [forgetting ? 'phase7a_personal_forget' : 'phase7a_personal_remember'],
+        admin_flags: [
+          forgetting
+            ? durableForgetConfirmed
+              ? 'phase7a_personal_forget'
+              : 'phase7a_personal_forget_unconfirmed'
+            : 'phase7a_personal_remember',
+          ...(durableForgetError ? ['durable_forget_confirmation_failed'] : []),
+        ],
         runtime: {
           masterRoute,
           openAiCalled: false,
-          orchestratorLane: forgetting ? 'personal_forget' : 'personal_remember',
+          orchestratorLane:
+            forgetting && !durableForgetConfirmed
+              ? 'personal_forget_unconfirmed'
+              : forgetting
+                ? 'personal_forget'
+                : 'personal_remember',
+          durableForgetConfirmed: forgetting ? durableForgetConfirmed : undefined,
         },
       });
       recordUserTurn(userId, message, 'companion');

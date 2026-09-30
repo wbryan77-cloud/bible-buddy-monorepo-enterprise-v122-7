@@ -33,12 +33,32 @@ describe('BIE v1.3D memory forget + satan frees routing', () => {
     assert.equal(getPins(userId).length, 0);
   });
 
-  it('1c. companion personal forget path clears explicit remember pins', async () => {
-    const { maybeCapturePin, getPins, tryAnswerPinRecall } = require('../services/explicitRememberPin');
+  it('1c. companion personal forget confirms durable clears before acknowledgment', async () => {
+    const {
+      maybeCapturePin,
+      getPins,
+      tryAnswerPinRecall,
+      dualWriteUserPinsNow,
+    } = require('../services/explicitRememberPin');
+    const durableMemory = require('../services/durableUserMemory');
+    const durablePins = require('../services/founderExperienceDurableStore');
     const { runBuddy } = require('../services/buddyBrain');
     const userId = `prealpha-pin-forget-live-${Date.now()}`;
+
+    durableMemory.resetDurableBackendForTests();
+    await durableMemory.ensureHydrated(userId);
+    durableMemory.upsertMemory({
+      userId,
+      memoryType: durableMemory.MEMORY_TYPES.IMPORTANT_PERSON,
+      subject: 'test-person',
+      content: 'bounded durable forget regression fixture',
+    });
+    await durableMemory.flushUser(userId);
+
     maybeCapturePin(userId, 'Remember that my favorite verse is John 11:35.');
     assert.ok(getPins(userId).length >= 1);
+    await dualWriteUserPinsNow(userId, getPins(userId));
+
     const out = await runBuddy({
       userId,
       mode: 'companion',
@@ -47,7 +67,17 @@ describe('BIE v1.3D memory forget + satan frees routing', () => {
     });
     const nested = out && out.reply && typeof out.reply === 'object' ? out.reply : out;
     assert.equal(nested?.runtime?.masterRoute, 'companion_personal_forget');
+    assert.equal(nested?.runtime?.durableForgetConfirmed, true);
     assert.equal(getPins(userId).length, 0);
+
+    durableMemory.resetDurableBackendForTests();
+    await durableMemory.ensureHydrated(userId);
+    assert.equal(durableMemory.listActive(userId).length, 0);
+
+    const pinStore = await durablePins.readItems(durablePins.DOC.explicitRememberPins);
+    const durablePinRecord = (pinStore.items || []).find((item) => item?.userId === userId);
+    assert.deepEqual(durablePinRecord?.pins || [], []);
+
     const miss = tryAnswerPinRecall(userId, 'What is my favorite verse?');
     assert.equal(miss.runtime.masterRoute, 'explicit_remember_pin_honest_miss');
   });
