@@ -137,6 +137,15 @@ function getActiveJourneys(userId) {
   return journeys;
 }
 
+function clearLifeTimelineForUser(userId) {
+  if (!userId) return false;
+  const store = readStore();
+  if (!Object.prototype.hasOwnProperty.call(store, userId)) return false;
+  delete store[userId];
+  writeStore(store);
+  return true;
+}
+
 module.exports = {
   IMPORTANCE,
   STATUS,
@@ -144,4 +153,5 @@ module.exports = {
   updateTimelineStatus,
   getLifeTimeline,
   getActiveJourneys,
+  clearLifeTimelineForUser,
 };
