@@ -71,6 +71,40 @@ function savePrefs(prefs) {
   fs.writeFileSync(PREFS_PATH, JSON.stringify(prefs, null, 2), 'utf8');
 }
 
+function isNotificationPaused({ globalPaused = false, testerPaused = false, category = null } = {}) {
+  const isSecurity = category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS;
+  return !isSecurity && (!!globalPaused || !!testerPaused);
+}
+
+function validateSupportReplyScope({ category, onlyTesterId = null, supportCaseBinding = null } = {}) {
+  if (category !== NOTIFICATION_CATEGORIES.SUPPORT_REPLIES) return { ok: true };
+  const target = String(onlyTesterId || '').trim();
+  if (!target) {
+    return { ok: false, error: 'Support replies require one explicit tester target.' };
+  }
+  if (
+    !supportCaseBinding
+    || supportCaseBinding.verified !== true
+    || String(supportCaseBinding.testerId || '').trim() !== target
+  ) {
+    return { ok: false, error: 'Support reply target must match a verified single-subject case binding.' };
+  }
+  return { ok: true, testerId: target };
+}
+
+function queueOnlyDeliveryResult(item = {}, at = new Date().toISOString()) {
+  return {
+    ...item,
+    sent: false,
+    delivered: false,
+    queued: true,
+    deliveryState: 'NOT_DELIVERED',
+    provider: 'queue_only',
+    at,
+    note: 'Queued for in-app display only; no provider delivery occurred.',
+  };
+}
+
 function slotForPreference(pref) {
   if (pref === 'morning') return 'morning';
   if (pref === 'afternoon') return 'afternoon';
@@ -142,9 +176,7 @@ async function dispatchNotification(item) {
     result.sent = !!sendResult.sent;
     result.note = sendResult.sent ? 'Delivered via Twilio.' : (sendResult.error || 'SMS dispatch attempted — provider reported not-sent.');
   } else {
-    result.provider = 'queue_only';
-    result.sent = true;
-    result.note = 'Queued for in-app display only';
+    Object.assign(result, queueOnlyDeliveryResult(item, result.at));
   }
 
   appendJsonlSafe(HISTORY_PATH, result);
@@ -170,8 +202,9 @@ const CATEGORY_USER_CONTROLLED = new Set([
   NOTIFICATION_CATEGORIES.PRAYER_REMINDERS,
   NOTIFICATION_CATEGORIES.LESSON_REMINDERS,
 ]);
-// Security alerts and support replies are transactional/non-suppressible
-// (Deliverable 8 category table) — not in CATEGORY_USER_CONTROLLED.
+// Security alerts are non-suppressible. Support replies are transactional
+// and require a verified single-subject case binding, but ordinary pause
+// controls still suppress them. Neither category is user-controlled.
 
 /**
  * Build a notification queue for one category, honoring each tester's
@@ -179,12 +212,19 @@ const CATEGORY_USER_CONTROLLED = new Set([
  * stored preference; support replies are transactional and targeted to a
  * single testerId via `onlyTesterId`, not broadcast).
  */
-function buildCategoryNotificationQueue({ category, body = null, onlyTesterId = null } = {}) {
+function buildCategoryNotificationQueue({
+  category,
+  body = null,
+  onlyTesterId = null,
+  supportCaseBinding = null,
+} = {}) {
   if (!Object.values(NOTIFICATION_CATEGORIES).includes(category)) {
     return { ok: false, error: `Unknown notification category: ${category}`, queue: [] };
   }
+  const scope = validateSupportReplyScope({ category, onlyTesterId, supportCaseBinding });
+  if (!scope.ok) return { ...scope, queue: [] };
   const global = loadPrefs();
-  if (global.globalPaused && category !== NOTIFICATION_CATEGORIES.SECURITY_ALERTS) {
+  if (isNotificationPaused({ globalPaused: global.globalPaused, category })) {
     return { ok: true, queue: [], reason: 'Global notifications paused.' };
   }
 
@@ -193,7 +233,7 @@ function buildCategoryNotificationQueue({ category, body = null, onlyTesterId = 
   const queue = [];
 
   for (const t of testers) {
-    if (t.notificationsPaused && category !== NOTIFICATION_CATEGORIES.SECURITY_ALERTS) continue;
+    if (isNotificationPaused({ testerPaused: t.notificationsPaused, category })) continue;
     const prefs = getCategoryPreferences(t.testerId);
     const userControlled = CATEGORY_USER_CONTROLLED.has(category);
     const enabled = category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS
@@ -215,8 +255,18 @@ function buildCategoryNotificationQueue({ category, body = null, onlyTesterId = 
   return { ok: true, queue };
 }
 
-async function dispatchCategoryNotification({ category, body = null, onlyTesterId = null } = {}) {
-  const built = buildCategoryNotificationQueue({ category, body, onlyTesterId });
+async function dispatchCategoryNotification({
+  category,
+  body = null,
+  onlyTesterId = null,
+  supportCaseBinding = null,
+} = {}) {
+  const built = buildCategoryNotificationQueue({
+    category,
+    body,
+    onlyTesterId,
+    supportCaseBinding,
+  });
   if (!built.ok) return built;
   const results = [];
   for (const item of built.queue) {
@@ -309,4 +359,7 @@ module.exports = {
   getCategoryDeliveryReport,
   getCategoryPreferences,
   setCategoryPreference,
+  isNotificationPaused,
+  validateSupportReplyScope,
+  queueOnlyDeliveryResult,
 };
