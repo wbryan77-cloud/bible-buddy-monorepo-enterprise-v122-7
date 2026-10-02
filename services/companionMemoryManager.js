@@ -282,6 +282,12 @@ async function withdrawVerifiedSubjectMemory({ userId, principal } = {}) {
   durableMemory.clearAllForUser(userId);
   await durableMemory.flushUser(userId);
   await dualWriteUserPinsNow(userId, []);
+  const { readItems, DOC } = require('./founderExperienceDurableStore');
+  const durablePinStore = await readItems(DOC.explicitRememberPins);
+  const durablePinRecord = (durablePinStore.items || []).find(
+    (item) => String(item?.userId || '') === String(userId),
+  );
+  const doctrine = getDoctrineConversationState(userId);
 
   return {
     ok: true,
@@ -289,12 +295,19 @@ async function withdrawVerifiedSubjectMemory({ userId, principal } = {}) {
     idempotent: true,
     cleared: !!bounded.cleared,
     verifiedEmpty: {
+      preferencesRelationship: !getMemorySnapshot({ userId }).persisted,
+      doctrineConversation:
+        doctrine.activeDoctrineTopic === null &&
+        doctrine.lastAnsweredConcept === null &&
+        (doctrine.turnMemory?.lastRefsShown || []).length === 0,
       activeConversation: getActiveConversation(userId) === null,
       lifeTimeline: getLifeTimeline(userId, 1).length === 0,
       reflection: getReflectionState(userId).records.length === 0,
       durableUserMemory:
         durableMemory.listActive(userId, { includeDeleted: true }).length === 0,
-      explicitRememberPins: getPins(userId).length === 0,
+      explicitRememberPins:
+        getPins(userId).length === 0 &&
+        (!durablePinRecord || (durablePinRecord.pins || []).length === 0),
     },
     reply:
       'Verified-subject withdrawal completed for the bounded companion-memory stores controlled by this service. Governed learning-review records remain outside personal-memory export and withdrawal.',
