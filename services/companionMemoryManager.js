@@ -23,9 +23,18 @@ const {
 const {
   recordConceptLearningCandidate,
   clearReflectionMemoryForUser,
+  getReflectionState,
   LEARNING_ACK,
 } = require('./reflectionMemoryEngine');
 const { buildContextSummary } = require('./relationshipContextModel');
+const {
+  getActiveConversation,
+  clearActiveConversation,
+} = require('./activeConversationManager');
+const {
+  getLifeTimeline,
+  clearLifeTimelineForUser,
+} = require('./lifeTimelineMemory');
 
 const CORRECTION_MEMORY_PATH = path.join(__dirname, '..', 'data', 'user-correction-memory.json');
 
@@ -168,7 +177,12 @@ function forgetMemory({ userId, scope = 'all' } = {}) {
   let clearedPins = false;
   let clearedDoctrine = false;
   let clearedReflection = false;
+  let clearedActiveConversation = false;
+  let clearedLifeTimeline = false;
   if (scope === 'all') {
+    clearedActiveConversation = !!getActiveConversation(userId);
+    clearActiveConversation(userId);
+    clearedLifeTimeline = !!clearLifeTimelineForUser(userId);
     clearDoctrineConversationState(userId);
     clearedDoctrine = true;
     clearedReflection = !!clearReflectionMemoryForUser(userId);
@@ -189,9 +203,101 @@ function forgetMemory({ userId, scope = 'all' } = {}) {
   }
 
   return {
-    cleared: clearedPrefs || clearedRel || clearedPins || clearedDoctrine || clearedReflection,
+    cleared:
+      clearedPrefs ||
+      clearedRel ||
+      clearedPins ||
+      clearedDoctrine ||
+      clearedReflection ||
+      clearedActiveConversation ||
+      clearedLifeTimeline,
     reply:
       "I've cleared the companion memory controlled by this account-level forget action, including stored context and answer preferences. Some governed learning-review records are handled separately from personal memory, so I won't claim broader deletion than this control can prove.",
+  };
+}
+
+function verifiedSubjectError() {
+  return {
+    ok: false,
+    code: 'VERIFIED_SUBJECT_REQUIRED',
+    reply: 'This memory action requires an authenticated account whose subject matches the requested user.',
+  };
+}
+
+function isVerifiedSubject({ userId, principal } = {}) {
+  return !!(
+    userId &&
+    principal &&
+    principal.authenticated === true &&
+    String(principal.subjectId || '') === String(userId)
+  );
+}
+
+async function exportVerifiedSubjectMemory({ userId, principal } = {}) {
+  if (!isVerifiedSubject({ userId, principal })) return verifiedSubjectError();
+
+  const durableMemory = require('./durableUserMemory');
+  const { getPins } = require('./explicitRememberPin');
+  const { readItems, DOC } = require('./founderExperienceDurableStore');
+
+  await durableMemory.ensureHydrated(userId);
+  const durablePinStore = await readItems(DOC.explicitRememberPins);
+  const durablePinRecord = (durablePinStore.items || []).find(
+    (item) => String(item?.userId || '') === String(userId),
+  );
+  const reflection = getReflectionState(userId);
+
+  return {
+    ok: true,
+    subjectId: String(userId),
+    exportedAt: new Date().toISOString(),
+    stores: {
+      preferencesRelationship: getMemorySnapshot({ userId }),
+      doctrineConversation: getDoctrineConversationState(userId),
+      activeConversation: getActiveConversation(userId),
+      lifeTimeline: getLifeTimeline(userId, 120),
+      reflection: {
+        records: reflection.records || [],
+        preferences: reflection.preferences || {},
+      },
+      durableUserMemory: durableMemory.listActive(userId, { includeDeleted: true }),
+      explicitRememberPins: Array.isArray(durablePinRecord?.pins)
+        ? durablePinRecord.pins
+        : getPins(userId),
+    },
+  };
+}
+
+async function withdrawVerifiedSubjectMemory({ userId, principal } = {}) {
+  if (!isVerifiedSubject({ userId, principal })) return verifiedSubjectError();
+
+  const durableMemory = require('./durableUserMemory');
+  const {
+    dualWriteUserPinsNow,
+    getPins,
+  } = require('./explicitRememberPin');
+
+  await durableMemory.ensureHydrated(userId);
+  const bounded = forgetMemory({ userId, scope: 'all' });
+  durableMemory.clearAllForUser(userId);
+  await durableMemory.flushUser(userId);
+  await dualWriteUserPinsNow(userId, []);
+
+  return {
+    ok: true,
+    subjectId: String(userId),
+    idempotent: true,
+    cleared: !!bounded.cleared,
+    verifiedEmpty: {
+      activeConversation: getActiveConversation(userId) === null,
+      lifeTimeline: getLifeTimeline(userId, 1).length === 0,
+      reflection: getReflectionState(userId).records.length === 0,
+      durableUserMemory:
+        durableMemory.listActive(userId, { includeDeleted: true }).length === 0,
+      explicitRememberPins: getPins(userId).length === 0,
+    },
+    reply:
+      'Verified-subject withdrawal completed for the bounded companion-memory stores controlled by this service. Governed learning-review records remain outside personal-memory export and withdrawal.',
   };
 }
 
@@ -212,5 +318,8 @@ module.exports = {
   recordLearningCandidate,
   recallRelevantMemory,
   forgetMemory,
+  isVerifiedSubject,
+  exportVerifiedSubjectMemory,
+  withdrawVerifiedSubjectMemory,
   buildMemoryDisclosureReply,
 };
