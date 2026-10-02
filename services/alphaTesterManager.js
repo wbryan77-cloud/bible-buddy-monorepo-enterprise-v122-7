@@ -353,9 +353,12 @@ function sanitizeIntake(body = {}) {
       : TEST_FOCUS.includes(body.testFocus)
         ? [body.testFocus]
         : ['all_areas'],
+    // Notification delivery is separate from general alpha consent. Missing or
+    // invalid notification choice is fail-closed; only an explicit listed
+    // preference can opt a tester into reminders.
     notificationPreference: NOTIFICATION_PREFS.includes(body.notificationPreference)
       ? body.notificationPreference
-      : 'once_daily',
+      : 'off',
   };
 }
 
@@ -524,6 +527,7 @@ module.exports = {
   updateNotificationPreference,
   getCategoryPreferences,
   setCategoryPreference,
+  sanitizeIntake,
   load,
   hydrateAlphaTestersFromDurableIfNeeded,
 };
