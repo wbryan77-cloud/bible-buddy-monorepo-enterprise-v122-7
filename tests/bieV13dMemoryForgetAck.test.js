@@ -296,6 +296,7 @@ describe('BIE v1.3D memory forget + satan frees routing', () => {
       });
       assert.equal(result.ok, true);
       assert.equal(result.idempotent, true);
+      assert.equal(Object.keys(result.verifiedEmpty).length, 7);
       assert.ok(Object.values(result.verifiedEmpty).every(Boolean));
     }
 
