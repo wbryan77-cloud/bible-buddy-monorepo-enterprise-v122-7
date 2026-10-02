@@ -189,6 +189,134 @@ describe('BIE v1.3D memory forget + satan frees routing', () => {
     assert.ok((otherPins?.pins || []).length >= 1);
   });
 
+  it('1f. verified-subject export and withdrawal cover every personal-memory owner', async () => {
+    const {
+      exportVerifiedSubjectMemory,
+      withdrawVerifiedSubjectMemory,
+    } = require('../services/companionMemoryManager');
+    const {
+      updateDoctrineConversationState,
+      getDoctrineConversationState,
+    } = require('../services/doctrineConversationState');
+    const {
+      recordReflection,
+      getReflectionState,
+    } = require('../services/reflectionMemoryEngine');
+    const {
+      updateActiveConversation,
+      getActiveConversation,
+    } = require('../services/activeConversationManager');
+    const {
+      appendTimelineEvent,
+      getLifeTimeline,
+    } = require('../services/lifeTimelineMemory');
+    const {
+      maybeCapturePin,
+      getPins,
+      dualWriteUserPinsNow,
+    } = require('../services/explicitRememberPin');
+    const durableMemory = require('../services/durableUserMemory');
+
+    const suffix = Date.now();
+    const targetUserId = `prealpha-subject-target-${suffix}`;
+    const otherUserId = `prealpha-subject-other-${suffix}`;
+    const targetPrincipal = { authenticated: true, subjectId: targetUserId };
+
+    durableMemory.resetDurableBackendForTests();
+    for (const [userId, subject] of [
+      [targetUserId, 'target-private-marker'],
+      [otherUserId, 'other-private-marker'],
+    ]) {
+      updateDoctrineConversationState(userId, {
+        lastAnsweredConcept: `${subject}-doctrine`,
+      });
+      recordReflection(userId, {
+        type: 'companion_preference',
+        label: `${subject}-reflection`,
+        userMessage: `${subject}-reflection-value`,
+        sessionOnly: false,
+      });
+      updateActiveConversation({
+        userId,
+        topic: 'prayer',
+        message: `${subject}-active-conversation`,
+      });
+      appendTimelineEvent({
+        userId,
+        eventType: 'prayer',
+        summary: `${subject}-timeline`,
+      });
+      await durableMemory.ensureHydrated(userId);
+      durableMemory.upsertMemory({
+        userId,
+        memoryType: durableMemory.MEMORY_TYPES.IMPORTANT_PERSON,
+        subject,
+        content: `${subject}-durable-memory`,
+      });
+      await durableMemory.flushUser(userId);
+      maybeCapturePin(userId, `Remember that my private marker is ${subject}.`);
+      await dualWriteUserPinsNow(userId, getPins(userId));
+    }
+
+    const denied = await exportVerifiedSubjectMemory({
+      userId: targetUserId,
+      principal: { authenticated: true, subjectId: otherUserId },
+    });
+    assert.equal(denied.ok, false);
+    assert.equal(denied.code, 'VERIFIED_SUBJECT_REQUIRED');
+    assert.equal(denied.stores, undefined);
+
+    const exported = await exportVerifiedSubjectMemory({
+      userId: targetUserId,
+      principal: targetPrincipal,
+    });
+    assert.equal(exported.ok, true);
+    assert.equal(exported.subjectId, targetUserId);
+    assert.ok(exported.stores.doctrineConversation);
+    assert.ok(exported.stores.activeConversation);
+    assert.equal(exported.stores.lifeTimeline.length, 1);
+    assert.equal(exported.stores.reflection.records.length, 1);
+    assert.equal(exported.stores.durableUserMemory.length, 1);
+    assert.equal(exported.stores.explicitRememberPins.length, 1);
+    assert.equal(exported.stores.reflection.globalCandidates, undefined);
+    assert.equal(exported.stores.reflection.growthCandidates, undefined);
+    assert.doesNotMatch(JSON.stringify(exported), new RegExp(otherUserId));
+
+    const deniedWithdrawal = await withdrawVerifiedSubjectMemory({
+      userId: targetUserId,
+      principal: { authenticated: false, subjectId: targetUserId },
+    });
+    assert.equal(deniedWithdrawal.ok, false);
+    assert.ok(getActiveConversation(targetUserId));
+
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const result = await withdrawVerifiedSubjectMemory({
+        userId: targetUserId,
+        principal: targetPrincipal,
+      });
+      assert.equal(result.ok, true);
+      assert.equal(result.idempotent, true);
+      assert.ok(Object.values(result.verifiedEmpty).every(Boolean));
+    }
+
+    assert.equal(getDoctrineConversationState(targetUserId).lastAnsweredConcept, null);
+    assert.equal(getReflectionState(targetUserId).records.length, 0);
+    assert.equal(getActiveConversation(targetUserId), null);
+    assert.equal(getLifeTimeline(targetUserId).length, 0);
+    assert.equal(durableMemory.listActive(targetUserId, { includeDeleted: true }).length, 0);
+    assert.equal(getPins(targetUserId).length, 0);
+
+    assert.equal(
+      getDoctrineConversationState(otherUserId).lastAnsweredConcept,
+      'other-private-marker-doctrine',
+    );
+    assert.equal(getReflectionState(otherUserId).records.length, 1);
+    assert.ok(getActiveConversation(otherUserId));
+    assert.equal(getLifeTimeline(otherUserId).length, 1);
+    assert.equal(durableMemory.listActive(otherUserId, { includeDeleted: true }).length, 1);
+    assert.equal(getPins(otherUserId).length, 1);
+  });
+
   it('2. frees-Satan wording routes to grounded Rev 20 path', () => {
     const msg =
       'After the millennium ends, does Revelation name who frees Satan? Yes or no.';
