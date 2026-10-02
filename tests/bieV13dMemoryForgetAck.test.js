@@ -82,7 +82,6 @@ describe('BIE v1.3D memory forget + satan frees routing', () => {
     assert.equal(miss.runtime.masterRoute, 'explicit_remember_pin_honest_miss');
   });
 
-
   it('1d. all-scope forget clears doctrine + attributable reflection state and hides global learning queue', () => {
     const {
       recordReflection,
@@ -129,6 +128,65 @@ describe('BIE v1.3D memory forget + satan frees routing', () => {
     const disclosure = buildMemoryDisclosureReply({ userId });
     assert.match(disclosure, /forget stored companion memory/i);
     assert.doesNotMatch(disclosure, /remember.*forever|store.*forever/i);
+  });
+
+  it('1e. repeated durable forget is idempotent and leaves another user untouched', async () => {
+    const {
+      maybeCapturePin,
+      getPins,
+      dualWriteUserPinsNow,
+    } = require('../services/explicitRememberPin');
+    const durableMemory = require('../services/durableUserMemory');
+    const durablePins = require('../services/founderExperienceDurableStore');
+    const { runBuddy } = require('../services/buddyBrain');
+    const suffix = Date.now();
+    const targetUserId = `prealpha-forget-target-${suffix}`;
+    const otherUserId = `prealpha-forget-other-${suffix}`;
+
+    durableMemory.resetDurableBackendForTests();
+    for (const [userId, subject] of [
+      [targetUserId, 'target-person'],
+      [otherUserId, 'other-person'],
+    ]) {
+      await durableMemory.ensureHydrated(userId);
+      durableMemory.upsertMemory({
+        userId,
+        memoryType: durableMemory.MEMORY_TYPES.IMPORTANT_PERSON,
+        subject,
+        content: `bounded cross-user fixture for ${subject}`,
+      });
+      await durableMemory.flushUser(userId);
+      maybeCapturePin(userId, `Remember that my favorite verse is ${userId === targetUserId ? 'John 11:35' : 'Psalm 23:1'}.`);
+      await dualWriteUserPinsNow(userId, getPins(userId));
+    }
+    await new Promise((resolve) => setImmediate(resolve));
+
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const out = await runBuddy({
+        userId: targetUserId,
+        mode: 'companion',
+        personaKey: 'pastor',
+        message: 'Please forget what I told you.',
+      });
+      const nested = out && out.reply && typeof out.reply === 'object' ? out.reply : out;
+      assert.equal(nested?.runtime?.masterRoute, 'companion_personal_forget');
+      assert.equal(nested?.runtime?.durableForgetConfirmed, true);
+    }
+
+    assert.equal(getPins(targetUserId).length, 0);
+    assert.ok(getPins(otherUserId).length >= 1);
+
+    durableMemory.resetDurableBackendForTests();
+    await durableMemory.ensureHydrated(targetUserId);
+    await durableMemory.ensureHydrated(otherUserId);
+    assert.equal(durableMemory.listActive(targetUserId).length, 0);
+    assert.equal(durableMemory.listActive(otherUserId).length, 1);
+
+    const pinStore = await durablePins.readItems(durablePins.DOC.explicitRememberPins);
+    const targetPins = (pinStore.items || []).find((item) => item?.userId === targetUserId);
+    const otherPins = (pinStore.items || []).find((item) => item?.userId === otherUserId);
+    assert.deepEqual(targetPins?.pins || [], []);
+    assert.ok((otherPins?.pins || []).length >= 1);
   });
 
   it('2. frees-Satan wording routes to grounded Rev 20 path', () => {
