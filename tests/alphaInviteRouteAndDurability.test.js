@@ -136,4 +136,103 @@ describe('alpha invite route + durability', () => {
     );
     assert.ok(!loc.location.includes('/admin/alpha-test'), 'must not send testers to stripped alpha-test harness');
   });
+  it('onboarding issues an opaque HttpOnly server session and resolver binds it to the tester', async () => {
+    wipe(ALPHA_PATH);
+    wipe(DURABLE_TESTERS);
+    wipe(DURABLE_INVITES);
+    resetModules();
+    require('../services/founderExperienceDurableStore').resetFounderExperienceDurableForTests();
+
+    const mgr = require('../services/alphaTesterManager');
+    const inv = mgr.createInvite({ label: 'Server session principal', createdBy: 'test' });
+    await new Promise((resolve) => setImmediate(resolve));
+
+    const port = 34901 + Math.floor(Math.random() * 200);
+    const child = spawn(process.execPath, ['server.js'], {
+      cwd: ROOT,
+      env: {
+        ...process.env,
+        PORT: String(port),
+        OPENAI_API_KEY: '',
+        DATABASE_URL: '',
+        PERSISTENCE: 'MEMORY',
+        BIBLEBUDDY_SILENCE_PG_ADAPTER_NOTICE: '1',
+      },
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+
+    await new Promise((resolve) => setTimeout(resolve, 1200));
+    let response;
+    try {
+      response = await new Promise((resolve, reject) => {
+        const body = JSON.stringify({
+          inviteCode: inv.publicInviteCode,
+          name: 'Principal Tester',
+          consentAccepted: true,
+          ndaAccepted: true,
+        });
+        const req = http.request(
+          {
+            host: '127.0.0.1',
+            port,
+            path: '/api/alpha/onboard',
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              'Content-Length': Buffer.byteLength(body),
+            },
+          },
+          (res) => {
+            let responseBody = '';
+            res.setEncoding('utf8');
+            res.on('data', (chunk) => {
+              responseBody += chunk;
+            });
+            res.on('end', () =>
+              resolve({
+                status: res.statusCode,
+                body: responseBody,
+                setCookie: res.headers['set-cookie'] || [],
+              }),
+            );
+          },
+        );
+        req.on('error', reject);
+        req.write(body);
+        req.end();
+      });
+    } finally {
+      try {
+        child.kill('SIGTERM');
+      } catch (_) {}
+    }
+
+    assert.equal(response.status, 200);
+    const payload = JSON.parse(response.body);
+    assert.equal(payload.ok, true);
+    assert.ok(payload.testerId);
+    assert.equal(Object.prototype.hasOwnProperty.call(payload, 'sessionToken'), false);
+
+    const cookies = Array.isArray(response.setCookie) ? response.setCookie : [response.setCookie];
+    const sessionCookie = cookies.find((value) => /^bb_alpha_session=/i.test(String(value || '')));
+    assert.ok(sessionCookie, 'expected bb_alpha_session cookie');
+    assert.match(sessionCookie, /;\s*HttpOnly(?:;|$)/i);
+    assert.match(sessionCookie, /;\s*SameSite=Lax(?:;|$)/i);
+    assert.match(sessionCookie, /;\s*Path=\/api\/alpha(?:;|$)/i);
+
+    const cookiePair = String(sessionCookie).split(';')[0];
+    const sessionToken = decodeURIComponent(cookiePair.slice(cookiePair.indexOf('=') + 1));
+    assert.ok(sessionToken.length >= 24);
+    assert.notEqual(sessionToken, payload.testerId);
+    assert.equal(String(sessionCookie).includes(payload.testerId), false);
+
+    const principal = mgr.resolveAlphaSessionPrincipal(sessionToken);
+    assert.ok(principal);
+    assert.equal(principal.authenticated, true);
+    assert.equal(principal.subjectId, payload.testerId);
+    assert.equal(principal.authSource, 'alpha_server_session');
+    assert.equal(mgr.resolveAlphaSessionPrincipal('invalid-' + sessionToken), null);
+  });
+
 });

@@ -3,6 +3,7 @@ const {
   validateInviteToken,
   validateInviteByPublicCode,
   completeOnboarding,
+  ALPHA_SESSION_TTL_MS,
   getTester,
   isActiveAlphaTester,
   startTestSession,
@@ -84,10 +85,20 @@ router.post('/onboard', (req, res) => {
       ndaAccepted: !!body.ndaAccepted,
     });
     if (!result.ok) return res.status(400).json(result);
+    const forwardedProto = String(req.headers['x-forwarded-proto'] || '')
+      .split(',')[0]
+      .trim()
+      .toLowerCase();
+    res.cookie('bb_alpha_session', result.sessionToken, {
+      httpOnly: true,
+      sameSite: 'lax',
+      secure: req.secure || forwardedProto === 'https',
+      path: '/api/alpha',
+      maxAge: ALPHA_SESSION_TTL_MS,
+    });
     res.json({
       ok: true,
       testerId: result.tester.testerId,
-      sessionToken: result.sessionToken,
       tester: {
         testerId: result.tester.testerId,
         name: result.tester.name,

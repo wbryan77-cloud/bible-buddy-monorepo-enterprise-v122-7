@@ -8,6 +8,12 @@ const crypto = require('crypto');
 
 const DATA_PATH = path.join(__dirname, '..', 'data', 'alpha-testers.json');
 const MAX_TESTERS = Number(process.env.ALPHA_MAX_TESTERS || 200);
+const DEFAULT_ALPHA_SESSION_TTL_MS = 8 * 60 * 60 * 1000;
+const configuredAlphaSessionTtl = Number(process.env.ALPHA_SESSION_TTL_MS || DEFAULT_ALPHA_SESSION_TTL_MS);
+const ALPHA_SESSION_TTL_MS =
+  Number.isFinite(configuredAlphaSessionTtl) && configuredAlphaSessionTtl > 0
+    ? configuredAlphaSessionTtl
+    : DEFAULT_ALPHA_SESSION_TTL_MS;
 
 const AGE_RANGES = ['under_18', '18-24', '25-34', '35-44', '45-54', '55+'];
 const BIBLE_FAMILIARITY = ['new', 'beginner', 'regular_reader', 'advanced'];
@@ -153,6 +159,47 @@ async function hydrateAlphaTestersFromDurableIfNeeded() {
 
 function generateToken() {
   return crypto.randomBytes(24).toString('base64url');
+}
+
+function hashSessionToken(token) {
+  return crypto.createHash('sha256').update(String(token || ''), 'utf8').digest('hex');
+}
+
+function sessionHashMatches(storedHash, candidateHash) {
+  const stored = String(storedHash || '');
+  const candidate = String(candidateHash || '');
+  if (!/^[a-f0-9]{64}$/i.test(stored) || !/^[a-f0-9]{64}$/i.test(candidate)) return false;
+  const a = Buffer.from(stored, 'hex');
+  const b = Buffer.from(candidate, 'hex');
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
+}
+
+function issueAlphaSessionForTester(tester) {
+  const sessionToken = generateToken();
+  const issuedAt = new Date();
+  tester.alphaSessionHash = hashSessionToken(sessionToken);
+  tester.alphaSessionIssuedAt = issuedAt.toISOString();
+  tester.alphaSessionExpiresAt = new Date(issuedAt.getTime() + ALPHA_SESSION_TTL_MS).toISOString();
+  return sessionToken;
+}
+
+function resolveAlphaSessionPrincipal(sessionToken) {
+  const normalized = String(sessionToken || '').trim();
+  if (!normalized) return null;
+  const candidateHash = hashSessionToken(normalized);
+  const now = Date.now();
+  const tester = (load().testers || []).find((item) => {
+    if (!item || item.active === false || !item.consentAccepted || !item.ndaAccepted) return false;
+    if (!sessionHashMatches(item.alphaSessionHash, candidateHash)) return false;
+    const expiresAt = Date.parse(item.alphaSessionExpiresAt || '');
+    return Number.isFinite(expiresAt) && expiresAt > now;
+  });
+  if (!tester) return null;
+  return Object.freeze({
+    authenticated: true,
+    subjectId: String(tester.testerId),
+    authSource: 'alpha_server_session',
+  });
 }
 
 function generateTesterId() {
@@ -393,8 +440,9 @@ function completeOnboarding({ inviteToken, inviteCode, intake = {}, consentAccep
         consentAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       };
+      const sessionToken = issueAlphaSessionForTester(data.testers[idx]);
       save(data);
-      return { ok: true, tester: data.testers[idx], sessionToken: testerId };
+      return { ok: true, tester: data.testers[idx], sessionToken };
     }
   }
 
@@ -414,6 +462,7 @@ function completeOnboarding({ inviteToken, inviteCode, intake = {}, consentAccep
     sessionsStarted: 0,
   };
 
+  const sessionToken = issueAlphaSessionForTester(tester);
   data.testers.push(tester);
   const inv = (data.invites || []).find((i) => i.inviteToken === resolvedToken);
   if (inv) {
@@ -422,7 +471,7 @@ function completeOnboarding({ inviteToken, inviteCode, intake = {}, consentAccep
     inv.usedAt = new Date().toISOString();
   }
   save(data);
-  return { ok: true, tester, sessionToken: testerId };
+  return { ok: true, tester, sessionToken };
 }
 
 function getTester(testerId) {
@@ -502,6 +551,7 @@ function setCategoryPreference(testerId, category, enabled) {
 
 module.exports = {
   DATA_PATH,
+  ALPHA_SESSION_TTL_MS,
   AGE_RANGES,
   BIBLE_FAMILIARITY,
   TEST_FOCUS,
@@ -517,6 +567,7 @@ module.exports = {
   normalizePublicInviteCode,
   generatePublicInviteCode,
   completeOnboarding,
+  resolveAlphaSessionPrincipal,
   getTester,
   isActiveAlphaTester,
   listTesters,
