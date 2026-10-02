@@ -76,20 +76,39 @@ function isNotificationPaused({ globalPaused = false, testerPaused = false, cate
   return !isSecurity && (!!globalPaused || !!testerPaused);
 }
 
-function validateSupportReplyScope({ category, onlyTesterId = null, supportCaseBinding = null } = {}) {
+function validateSupportReplyScope({ category } = {}) {
   if (category !== NOTIFICATION_CATEGORIES.SUPPORT_REPLIES) return { ok: true };
-  const target = String(onlyTesterId || '').trim();
-  if (!target) {
-    return { ok: false, error: 'Support replies require one explicit tester target.' };
+  return {
+    ok: false,
+    code: 'SUPPORT_SERVER_BINDING_REQUIRED',
+    error: 'Support replies are disabled until an authoritative server-side case-to-tester binding route is available.',
+  };
+}
+
+function validateDispatchBoundary(item = {}) {
+  if (item.category === NOTIFICATION_CATEGORIES.SUPPORT_REPLIES) {
+    return {
+      ok: false,
+      code: 'SUPPORT_GENERIC_DISPATCH_REJECTED',
+      error: 'Generic notification dispatch cannot send support replies.',
+    };
   }
-  if (
-    !supportCaseBinding
-    || supportCaseBinding.verified !== true
-    || String(supportCaseBinding.testerId || '').trim() !== target
-  ) {
-    return { ok: false, error: 'Support reply target must match a verified single-subject case binding.' };
+  const global = loadPrefs();
+  const tester = item.testerId
+    ? listTesters({ activeOnly: false }).find((candidate) => candidate.testerId === item.testerId)
+    : null;
+  if (isNotificationPaused({
+    globalPaused: global.globalPaused,
+    testerPaused: tester?.notificationsPaused,
+    category: item.category,
+  })) {
+    return {
+      ok: false,
+      code: 'NOTIFICATION_PAUSED',
+      error: 'Notification dispatch rejected by pause controls.',
+    };
   }
-  return { ok: true, testerId: target };
+  return { ok: true };
 }
 
 function queueOnlyDeliveryResult(item = {}, at = new Date().toISOString()) {
@@ -159,6 +178,19 @@ function buildNotificationQueue({ slot = 'morning' } = {}) {
  * provider credentials.
  */
 async function dispatchNotification(item) {
+  const boundary = validateDispatchBoundary(item);
+  if (!boundary.ok) {
+    return {
+      ...item,
+      ...boundary,
+      sent: false,
+      delivered: false,
+      queued: false,
+      deliveryState: 'REJECTED',
+      provider: 'none',
+      at: new Date().toISOString(),
+    };
+  }
   const result = { ...item, sent: false, provider: 'none', at: new Date().toISOString() };
   const emailTo = resolveEmailAddress(item);
   const phoneTo = resolvePhoneNumber(item) || item.emailOrPhone || null;
@@ -361,5 +393,6 @@ module.exports = {
   setCategoryPreference,
   isNotificationPaused,
   validateSupportReplyScope,
+  validateDispatchBoundary,
   queueOnlyDeliveryResult,
 };
