@@ -20,6 +20,7 @@ const TEST_FOCUS = [
   'all_areas',
 ];
 const NOTIFICATION_PREFS = ['morning', 'afternoon', 'evening', 'once_daily', 'twice_daily', 'off'];
+const NOTIFICATION_CHANNELS = ['email', 'sms', 'in_app'];
 
 // ENTERPRISE_OPERATIONS_FOUNDATION Phase 1B — Notification Framework
 // category model (Deliverable 8). Extends, does not replace, the existing
@@ -340,6 +341,13 @@ function validateInviteByPublicCode(code) {
 }
 
 function sanitizeIntake(body = {}) {
+  const requestedPreference = NOTIFICATION_PREFS.includes(body.notificationPreference)
+    ? body.notificationPreference
+    : 'off';
+  const requestedChannels = Array.isArray(body.notificationChannels)
+    ? [...new Set(body.notificationChannels.filter((v) => NOTIFICATION_CHANNELS.includes(v)))]
+    : [];
+  const optedIn = requestedPreference !== 'off' && requestedChannels.length > 0;
   return {
     name: String(body.name || '').trim().slice(0, 80),
     emailOrPhone: String(body.email || body.phone || body.emailOrPhone || '').trim().slice(0, 120),
@@ -350,12 +358,10 @@ function sanitizeIntake(body = {}) {
     bibleFamiliarity: BIBLE_FAMILIARITY.includes(body.bibleFamiliarity) ? body.bibleFamiliarity : null,
     testFocus: Array.isArray(body.testFocus)
       ? body.testFocus.filter((f) => TEST_FOCUS.includes(f)).slice(0, 6)
-      : TEST_FOCUS.includes(body.testFocus)
-        ? [body.testFocus]
-        : ['all_areas'],
-    notificationPreference: NOTIFICATION_PREFS.includes(body.notificationPreference)
-      ? body.notificationPreference
-      : 'once_daily',
+      : TEST_FOCUS.includes(body.testFocus) ? [body.testFocus] : ['all_areas'],
+    notificationPreference: optedIn ? requestedPreference : 'off',
+    notificationChannels: optedIn ? requestedChannels : [],
+    notificationConsentSource: optedIn ? 'onboarding' : null,
   };
 }
 
@@ -365,6 +371,8 @@ function completeOnboarding({ inviteToken, inviteCode, intake = {}, consentAccep
   }
 
   const sanitized = sanitizeIntake(intake);
+  const notificationOptedIn = sanitized.notificationPreference !== 'off' && sanitized.notificationChannels.length > 0;
+  const notificationConsentAt = notificationOptedIn ? new Date().toISOString() : null;
   if (!sanitized.name) {
     return { ok: false, error: 'Preferred name is required.' };
   }
@@ -391,6 +399,11 @@ function completeOnboarding({ inviteToken, inviteCode, intake = {}, consentAccep
         consentAccepted: true,
         ndaAccepted: true,
         consentAt: new Date().toISOString(),
+        notificationPreference: notificationOptedIn ? sanitized.notificationPreference : 'off',
+        notificationChannels: notificationOptedIn ? sanitized.notificationChannels : [],
+        notificationConsentAt,
+        notificationConsentSource: notificationOptedIn ? sanitized.notificationConsentSource : null,
+        notificationsPaused: !notificationOptedIn,
         updatedAt: new Date().toISOString(),
       };
       save(data);
@@ -406,7 +419,9 @@ function completeOnboarding({ inviteToken, inviteCode, intake = {}, consentAccep
     consentAccepted: true,
     ndaAccepted: true,
     consentAt: new Date().toISOString(),
-    notificationsPaused: false,
+    notificationConsentAt,
+    notificationConsentSource: notificationOptedIn ? sanitized.notificationConsentSource : null,
+    notificationsPaused: !notificationOptedIn,
     active: true,
     onboardedAt: new Date().toISOString(),
     createdAt: new Date().toISOString(),
@@ -452,17 +467,95 @@ function startTestSession(testerId) {
   return data.testers[idx];
 }
 
-function updateNotificationPreference(testerId, preference, paused = false) {
+function updateNotificationPreference(testerId, preference, paused = false, channels = []) {
   const data = load();
   const idx = data.testers.findIndex((t) => t.testerId === testerId);
   if (idx < 0) return null;
-  if (NOTIFICATION_PREFS.includes(preference)) {
-    data.testers[idx].notificationPreference = preference;
+  if (!NOTIFICATION_PREFS.includes(preference)) {
+    return { ok: false, error: 'Explicit supported notification preference required.' };
   }
-  data.testers[idx].notificationsPaused = !!paused;
-  data.testers[idx].updatedAt = new Date().toISOString();
+  const selectedChannels = Array.isArray(channels)
+    ? [...new Set(channels.filter((v) => NOTIFICATION_CHANNELS.includes(v)))]
+    : [];
+  if (preference !== 'off' && selectedChannels.length === 0) {
+    return { ok: false, error: 'At least one explicit notification channel is required.' };
+  }
+  const tester = data.testers[idx];
+  tester.notificationPreference = preference;
+  tester.notificationChannels = preference === 'off' ? [] : selectedChannels;
+  tester.notificationConsentAt = preference === 'off' ? null : (tester.notificationConsentAt || new Date().toISOString());
+  tester.notificationConsentSource = preference === 'off' ? null : 'preference_update';
+  tester.notificationsPaused = preference === 'off' ? true : !!paused;
+  if (preference === 'off') {
+    tester.categoryPreferences = {
+      ...DEFAULT_CATEGORY_PREFERENCES,
+      [NOTIFICATION_CATEGORIES.FEATURE_ANNOUNCEMENTS]: false,
+      [NOTIFICATION_CATEGORIES.MAINTENANCE_NOTICES]: false,
+      [NOTIFICATION_CATEGORIES.SUPPORT_REPLIES]: false,
+      [NOTIFICATION_CATEGORIES.BIBLE_REMINDERS]: false,
+      [NOTIFICATION_CATEGORIES.PRAYER_REMINDERS]: false,
+      [NOTIFICATION_CATEGORIES.LESSON_REMINDERS]: false,
+    };
+  }
+  tester.updatedAt = new Date().toISOString();
   save(data);
-  return data.testers[idx];
+  return tester;
+}
+
+function exportTesterNotificationPreferences(authenticatedTesterId, targetTesterId) {
+  if (!authenticatedTesterId || authenticatedTesterId !== targetTesterId) {
+    return { ok: false, error: 'Authenticated tester scope mismatch.' };
+  }
+  const tester = getTester(targetTesterId);
+  if (!tester) return { ok: false, error: 'Tester not found.' };
+  return {
+    ok: true,
+    testerId: tester.testerId,
+    notificationPreference: tester.notificationPreference || 'off',
+    notificationChannels: Array.isArray(tester.notificationChannels) ? [...tester.notificationChannels] : [],
+    notificationConsentAt: tester.notificationConsentAt || null,
+    notificationConsentSource: tester.notificationConsentSource || null,
+    notificationsPaused: tester.notificationsPaused !== false,
+    categoryPreferences: getCategoryPreferences(targetTesterId),
+  };
+}
+
+function deleteTesterNotificationPreferences(authenticatedTesterId, targetTesterId) {
+  if (!authenticatedTesterId || authenticatedTesterId !== targetTesterId) {
+    return { ok: false, error: 'Authenticated tester scope mismatch.' };
+  }
+  const data = load();
+  const idx = data.testers.findIndex((t) => t.testerId === targetTesterId);
+  if (idx < 0) return { ok: false, error: 'Tester not found.' };
+  const next = JSON.parse(JSON.stringify(data));
+  const tester = next.testers[idx];
+  tester.notificationPreference = 'off';
+  tester.notificationChannels = [];
+  tester.notificationConsentAt = null;
+  tester.notificationConsentSource = null;
+  tester.notificationsPaused = true;
+  tester.categoryPreferences = {
+    ...DEFAULT_CATEGORY_PREFERENCES,
+    [NOTIFICATION_CATEGORIES.FEATURE_ANNOUNCEMENTS]: false,
+    [NOTIFICATION_CATEGORIES.MAINTENANCE_NOTICES]: false,
+    [NOTIFICATION_CATEGORIES.SUPPORT_REPLIES]: false,
+    [NOTIFICATION_CATEGORIES.BIBLE_REMINDERS]: false,
+    [NOTIFICATION_CATEGORIES.PRAYER_REMINDERS]: false,
+    [NOTIFICATION_CATEGORIES.LESSON_REMINDERS]: false,
+  };
+  tester.updatedAt = new Date().toISOString();
+  const tempPath = `${DATA_PATH}.notification-delete-${crypto.randomBytes(6).toString('hex')}.tmp`;
+  try {
+    const dir = path.dirname(DATA_PATH);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(tempPath, JSON.stringify(next, null, 2), 'utf8');
+    fs.renameSync(tempPath, DATA_PATH);
+    dualWriteAlphaTesters(next);
+    return { ok: true, testerId: targetTesterId, deleted: true };
+  } catch (_) {
+    try { if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath); } catch (_) {}
+    return { ok: false, error: 'Unable to atomically delete notification preferences.' };
+  }
 }
 
 /**
@@ -490,12 +583,22 @@ function setCategoryPreference(testerId, category, enabled) {
   const data = load();
   const idx = data.testers.findIndex((t) => t.testerId === testerId);
   if (idx < 0) return { ok: false, error: 'Tester not found' };
-  data.testers[idx].categoryPreferences = {
+  const tester = data.testers[idx];
+  if (enabled && (
+    tester.notificationPreference === 'off'
+    || tester.notificationsPaused
+    || !tester.notificationConsentAt
+    || !Array.isArray(tester.notificationChannels)
+    || tester.notificationChannels.length === 0
+  )) {
+    return { ok: false, error: 'Explicit ordinary-notification consent is required.' };
+  }
+  tester.categoryPreferences = {
     ...DEFAULT_CATEGORY_PREFERENCES,
-    ...(data.testers[idx].categoryPreferences || {}),
+    ...(tester.categoryPreferences || {}),
     [category]: !!enabled,
   };
-  data.testers[idx].updatedAt = new Date().toISOString();
+  tester.updatedAt = new Date().toISOString();
   save(data);
   return { ok: true, categoryPreferences: getCategoryPreferences(testerId) };
 }
@@ -524,6 +627,8 @@ module.exports = {
   updateNotificationPreference,
   getCategoryPreferences,
   setCategoryPreference,
+  exportTesterNotificationPreferences,
+  deleteTesterNotificationPreferences,
   load,
   hydrateAlphaTestersFromDurableIfNeeded,
 };

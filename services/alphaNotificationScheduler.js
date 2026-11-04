@@ -81,29 +81,23 @@ function slotForPreference(pref) {
 }
 
 function buildNotificationQueue({ slot = 'morning' } = {}) {
-  const global = loadPrefs();
-  if (global.globalPaused) return [];
-
-  const testers = listTesters();
+  if (loadPrefs().globalPaused) return [];
   const queue = [];
   const body = PROMPTS[slot] || PROMPTS.morning;
-
-  for (const t of testers) {
-    if (t.notificationsPaused || t.notificationPreference === 'off') continue;
+  for (const t of listTesters()) {
+    const channels = Array.isArray(t.notificationChannels) ? t.notificationChannels : [];
+    if (t.notificationsPaused || t.notificationPreference === 'off' || !t.notificationConsentAt || channels.length === 0) continue;
     const slots = slotForPreference(t.notificationPreference);
-    const match =
-      slots === slot ||
-      (Array.isArray(slots) && slots.includes(slot)) ||
-      (t.notificationPreference === 'once_daily' && slot === 'morning');
-    if (!match) continue;
+    if (!(slots === slot || (Array.isArray(slots) && slots.includes(slot)))) continue;
+    const email = resolveEmailAddress({ emailOrPhone: t.emailOrPhone });
+    const phone = resolvePhoneNumber({ emailOrPhone: t.emailOrPhone });
+    const channel = channels.includes('in_app') ? 'in_app'
+      : (channels.includes('email') && email) ? 'email'
+      : (channels.includes('sms') && phone) ? 'sms' : null;
+    if (!channel) continue;
     queue.push({
-      testerId: t.testerId,
-      slot,
-      body,
-      channel: hasSmsProvider() && t.emailOrPhone?.match(/\d{10}/) ? 'sms' : hasEmailProvider() ? 'email' : 'queue_only',
-      emailOrPhone: t.emailOrPhone || null,
-      email: resolveEmailAddress({ emailOrPhone: t.emailOrPhone }),
-      phone: resolvePhoneNumber({ emailOrPhone: t.emailOrPhone }),
+      testerId: t.testerId, slot, body, channel,
+      emailOrPhone: t.emailOrPhone || null, email, phone,
       scheduledAt: new Date().toISOString(),
     });
   }
@@ -125,28 +119,52 @@ function buildNotificationQueue({ slot = 'morning' } = {}) {
  * provider credentials.
  */
 async function dispatchNotification(item) {
-  const result = { ...item, sent: false, provider: 'none', at: new Date().toISOString() };
+  const result = {
+    ...item,
+    attempted: true,
+    queued: false,
+    sent: false,
+    delivered: false,
+    provider: 'none',
+    at: new Date().toISOString(),
+  };
   const emailTo = resolveEmailAddress(item);
   const phoneTo = resolvePhoneNumber(item) || item.emailOrPhone || null;
-
-  if (item.channel === 'email' && hasEmailProvider() && emailTo) {
-    const sendResult = await sendEmailResend({ to: emailTo, subject: item.subject || 'BibleBuddy', html: item.html, text: item.body });
-    result.provider = 'resend';
-    result.to = emailTo;
-    result.sent = !!sendResult.sent;
-    result.note = sendResult.sent ? 'Delivered via Resend.' : (sendResult.error || 'Email dispatch attempted — provider reported not-sent.');
-  } else if (item.channel === 'sms' && hasSmsProvider() && phoneTo) {
-    const sendResult = await sendSmsTwilio({ to: phoneTo, body: item.body });
-    result.provider = 'twilio';
-    result.to = phoneTo;
-    result.sent = !!sendResult.sent;
-    result.note = sendResult.sent ? 'Delivered via Twilio.' : (sendResult.error || 'SMS dispatch attempted — provider reported not-sent.');
-  } else {
-    result.provider = 'queue_only';
-    result.sent = true;
-    result.note = 'Queued for in-app display only';
+  try {
+    if (item.channel === 'in_app') {
+      result.provider = 'in_app';
+      result.queued = true;
+      result.note = 'Queued for in-app display only.';
+    } else if (item.channel === 'email') {
+      if (!hasEmailProvider() || !emailTo) {
+        result.error = 'Email provider or explicit destination unavailable.';
+      } else {
+        const sent = await sendEmailResend({ to: emailTo, subject: item.subject || 'BibleBuddy', html: item.html, text: item.body });
+        result.provider = 'resend';
+        result.to = emailTo;
+        result.queued = sent.queued === true || sent.sent === true;
+        result.sent = sent.sent === true;
+        result.delivered = sent.delivered === true;
+        result.error = sent.error || null;
+      }
+    } else if (item.channel === 'sms') {
+      if (!hasSmsProvider() || !phoneTo) {
+        result.error = 'SMS provider or explicit destination unavailable.';
+      } else {
+        const sent = await sendSmsTwilio({ to: phoneTo, body: item.body });
+        result.provider = 'twilio';
+        result.to = phoneTo;
+        result.queued = sent.queued === true || sent.sent === true;
+        result.sent = sent.sent === true;
+        result.delivered = sent.delivered === true;
+        result.error = sent.error || null;
+      }
+    } else {
+      result.error = 'Explicit supported notification channel required.';
+    }
+  } catch (error) {
+    result.error = error && error.message ? error.message : 'Notification dispatch failed.';
   }
-
   appendJsonlSafe(HISTORY_PATH, result);
   return result;
 }
@@ -179,50 +197,79 @@ const CATEGORY_USER_CONTROLLED = new Set([
  * stored preference; support replies are transactional and targeted to a
  * single testerId via `onlyTesterId`, not broadcast).
  */
-function buildCategoryNotificationQueue({ category, body = null, onlyTesterId = null } = {}) {
+function buildCategoryNotificationQueue({
+  category,
+  body = null,
+  onlyTesterId = null,
+  supportThreadId = null,
+  securityEventId = null,
+  purposeCode = null,
+} = {}) {
   if (!Object.values(NOTIFICATION_CATEGORIES).includes(category)) {
     return { ok: false, error: `Unknown notification category: ${category}`, queue: [] };
   }
-  const global = loadPrefs();
-  if (global.globalPaused && category !== NOTIFICATION_CATEGORIES.SECURITY_ALERTS) {
+  if (loadPrefs().globalPaused && category !== NOTIFICATION_CATEGORIES.SECURITY_ALERTS) {
     return { ok: true, queue: [], reason: 'Global notifications paused.' };
   }
-
-  const testers = listTesters().filter((t) => !onlyTesterId || t.testerId === onlyTesterId);
-  const resolvedBody = body || CATEGORY_DEFAULT_BODY[category] || 'BibleBuddy notification.';
+  const active = listTesters();
+  const exactTarget = onlyTesterId ? active.find((t) => t.testerId === onlyTesterId) : null;
+  if (category === NOTIFICATION_CATEGORIES.SUPPORT_REPLIES && (!exactTarget || !String(supportThreadId || '').trim())) {
+    return { ok: false, error: 'Exact active tester and supportThreadId required.', queue: [] };
+  }
+  const securityPurposes = new Set(['account_access_security', 'credential_compromise', 'privacy_incident_notice']);
+  if (category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS && (
+    !exactTarget || !String(securityEventId || '').trim() || !securityPurposes.has(String(purposeCode || '').trim())
+  )) {
+    return { ok: false, error: 'Exact active tester, securityEventId and purposeCode required.', queue: [] };
+  }
+  const transactional = category === NOTIFICATION_CATEGORIES.SUPPORT_REPLIES
+    || category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS;
+  const testers = transactional ? [exactTarget] : active.filter((t) => !onlyTesterId || t.testerId === onlyTesterId);
+  const resolvedBody = category === NOTIFICATION_CATEGORIES.SUPPORT_REPLIES
+    ? 'You have a reply to your support question in BibleBuddy.'
+    : category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS
+      ? 'Important security notice regarding your BibleBuddy account.'
+      : (body || CATEGORY_DEFAULT_BODY[category] || 'BibleBuddy notification.');
   const queue = [];
-
   for (const t of testers) {
-    if (t.notificationsPaused && category !== NOTIFICATION_CATEGORIES.SECURITY_ALERTS) continue;
-    const prefs = getCategoryPreferences(t.testerId);
-    const userControlled = CATEGORY_USER_CONTROLLED.has(category);
-    const enabled = category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS
-      || !userControlled // transactional categories (support replies) are always deliverable once triggered
-      || prefs[category] === true;
-    if (!enabled) continue;
+    if (!t) continue;
+    const channels = Array.isArray(t.notificationChannels) ? t.notificationChannels : [];
+    const ordinaryConsent = t.notificationPreference !== 'off' && !t.notificationsPaused && !!t.notificationConsentAt && channels.length > 0;
+    if (!transactional && !ordinaryConsent) continue;
+    if (CATEGORY_USER_CONTROLLED.has(category) && getCategoryPreferences(t.testerId)[category] !== true) continue;
+    const email = resolveEmailAddress({ emailOrPhone: t.emailOrPhone });
+    const phone = resolvePhoneNumber({ emailOrPhone: t.emailOrPhone });
+    const channel = category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS ? 'in_app'
+      : channels.includes('in_app') ? 'in_app'
+      : (channels.includes('email') && email) ? 'email'
+      : (channels.includes('sms') && phone) ? 'sms' : null;
+    if (!channel) continue;
     queue.push({
-      testerId: t.testerId,
-      category,
-      body: resolvedBody,
+      testerId: t.testerId, category, body: resolvedBody,
       subject: `BibleBuddy — ${category.replace(/_/g, ' ')}`,
-      channel: hasSmsProvider() && t.emailOrPhone?.match(/\d{10}/) ? 'sms' : hasEmailProvider() ? 'email' : 'queue_only',
-      emailOrPhone: t.emailOrPhone,
-      email: resolveEmailAddress({ emailOrPhone: t.emailOrPhone }),
-      phone: resolvePhoneNumber({ emailOrPhone: t.emailOrPhone }),
+      channel, emailOrPhone: t.emailOrPhone || null, email, phone,
+      supportThreadId: category === NOTIFICATION_CATEGORIES.SUPPORT_REPLIES ? String(supportThreadId) : null,
+      securityEventId: category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS ? String(securityEventId) : null,
+      purposeCode: category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS ? String(purposeCode) : null,
       scheduledAt: new Date().toISOString(),
     });
   }
   return { ok: true, queue };
 }
 
-async function dispatchCategoryNotification({ category, body = null, onlyTesterId = null } = {}) {
-  const built = buildCategoryNotificationQueue({ category, body, onlyTesterId });
+async function dispatchCategoryNotification(input = {}) {
+  const built = buildCategoryNotificationQueue(input);
   if (!built.ok) return built;
   const results = [];
-  for (const item of built.queue) {
-    results.push(await dispatchNotification(item));
-  }
-  return { ok: true, category, attempted: results.length, delivered: results.filter((r) => r.sent).length, results };
+  for (const item of built.queue) results.push(await dispatchNotification(item));
+  return {
+    ok: true, category: input.category,
+    attempted: results.filter((r) => r.attempted).length,
+    queued: results.filter((r) => r.queued).length,
+    sent: results.filter((r) => r.sent).length,
+    delivered: results.filter((r) => r.delivered).length,
+    results,
+  };
 }
 
 function getCategoryDeliveryReport({ limit = 500 } = {}) {
@@ -230,13 +277,14 @@ function getCategoryDeliveryReport({ limit = 500 } = {}) {
   const byCategory = {};
   for (const rec of history) {
     const cat = rec.category || 'uncategorized_reminder';
-    if (!byCategory[cat]) byCategory[cat] = { attempted: 0, delivered: 0, queuedOnly: 0 };
-    byCategory[cat].attempted += 1;
-    if (rec.sent && rec.provider !== 'queue_only') byCategory[cat].delivered += 1;
-    if (rec.provider === 'queue_only') byCategory[cat].queuedOnly += 1;
+    if (!byCategory[cat]) byCategory[cat] = { attempted: 0, queued: 0, sent: 0, delivered: 0 };
+    if (rec.attempted) byCategory[cat].attempted += 1;
+    if (rec.queued) byCategory[cat].queued += 1;
+    if (rec.sent) byCategory[cat].sent += 1;
+    if (rec.delivered) byCategory[cat].delivered += 1;
   }
   return {
-    categories: Object.keys(NOTIFICATION_CATEGORIES).map((k) => NOTIFICATION_CATEGORIES[k]),
+    categories: Object.values(NOTIFICATION_CATEGORIES),
     userControlledCategories: [...CATEGORY_USER_CONTROLLED],
     byCategory,
     providers: { email: hasEmailProvider(), sms: hasSmsProvider() },
@@ -244,8 +292,9 @@ function getCategoryDeliveryReport({ limit = 500 } = {}) {
   };
 }
 
-function subscribe(testerId, preference = 'once_daily') {
-  return updateNotificationPreference(testerId, preference, false);
+function subscribe(testerId, preference, channels = []) {
+  if (!preference || preference === 'off') return { ok: false, error: 'Explicit non-off cadence required.' };
+  return updateNotificationPreference(testerId, preference, false, channels);
 }
 
 function unsubscribe(testerId) {
@@ -287,6 +336,32 @@ function readHistory({ limit = 200 } = {}) {
   }
 }
 
+function exportNotificationHistoryForTester(authenticatedTesterId, targetTesterId) {
+  if (!authenticatedTesterId || authenticatedTesterId !== targetTesterId) {
+    return { ok: false, error: 'Authenticated tester scope mismatch.' };
+  }
+  return { ok: true, testerId: targetTesterId, history: readHistory({ limit: 5000 }).filter((row) => row.testerId === targetTesterId) };
+}
+
+function deleteNotificationHistoryForTester(authenticatedTesterId, targetTesterId) {
+  if (!authenticatedTesterId || authenticatedTesterId !== targetTesterId) {
+    return { ok: false, error: 'Authenticated tester scope mismatch.' };
+  }
+  const all = readHistory({ limit: 5000 });
+  const preserved = all.filter((row) => row.testerId !== targetTesterId);
+  const tempPath = `${HISTORY_PATH}.notification-delete-${Date.now()}.tmp`;
+  try {
+    const dir = path.dirname(HISTORY_PATH);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(tempPath, preserved.length ? `${preserved.map((row) => JSON.stringify(row)).join('\n')}\n` : '', 'utf8');
+    fs.renameSync(tempPath, HISTORY_PATH);
+    return { ok: true, testerId: targetTesterId, deleted: all.length - preserved.length };
+  } catch (_) {
+    try { if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath); } catch (_) {}
+    return { ok: false, error: 'Unable to atomically delete notification history.' };
+  }
+}
+
 module.exports = {
   PREFS_PATH,
   HISTORY_PATH,
@@ -307,6 +382,8 @@ module.exports = {
   buildCategoryNotificationQueue,
   dispatchCategoryNotification,
   getCategoryDeliveryReport,
+  exportNotificationHistoryForTester,
+  deleteNotificationHistoryForTester,
   getCategoryPreferences,
   setCategoryPreference,
 };
