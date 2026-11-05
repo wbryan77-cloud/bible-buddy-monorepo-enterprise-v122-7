@@ -93,8 +93,7 @@ function buildNotificationQueue({ slot = 'morning' } = {}) {
     const slots = slotForPreference(t.notificationPreference);
     const match =
       slots === slot ||
-      (Array.isArray(slots) && slots.includes(slot)) ||
-      (t.notificationPreference === 'once_daily' && slot === 'morning');
+      (Array.isArray(slots) && slots.includes(slot));
     if (!match) continue;
     queue.push({
       testerId: t.testerId,
@@ -143,8 +142,8 @@ async function dispatchNotification(item) {
     result.note = sendResult.sent ? 'Delivered via Twilio.' : (sendResult.error || 'SMS dispatch attempted — provider reported not-sent.');
   } else {
     result.provider = 'queue_only';
-    result.sent = true;
-    result.note = 'Queued for in-app display only';
+    result.queued = true;
+    result.note = 'Queued for in-app display only; no provider delivery occurred.';
   }
 
   appendJsonlSafe(HISTORY_PATH, result);
@@ -187,6 +186,9 @@ function buildCategoryNotificationQueue({ category, body = null, onlyTesterId = 
   if (global.globalPaused && category !== NOTIFICATION_CATEGORIES.SECURITY_ALERTS) {
     return { ok: true, queue: [], reason: 'Global notifications paused.' };
   }
+  if (category === NOTIFICATION_CATEGORIES.SUPPORT_REPLIES && !onlyTesterId) {
+    return { ok: true, queue: [], reason: 'Support replies require an explicit tester target.' };
+  }
 
   const testers = listTesters().filter((t) => !onlyTesterId || t.testerId === onlyTesterId);
   const resolvedBody = body || CATEGORY_DEFAULT_BODY[category] || 'BibleBuddy notification.';
@@ -194,6 +196,11 @@ function buildCategoryNotificationQueue({ category, body = null, onlyTesterId = 
 
   for (const t of testers) {
     if (t.notificationsPaused && category !== NOTIFICATION_CATEGORIES.SECURITY_ALERTS) continue;
+    if (
+      t.notificationPreference === 'off'
+      && category !== NOTIFICATION_CATEGORIES.SECURITY_ALERTS
+      && category !== NOTIFICATION_CATEGORIES.SUPPORT_REPLIES
+    ) continue;
     const prefs = getCategoryPreferences(t.testerId);
     const userControlled = CATEGORY_USER_CONTROLLED.has(category);
     const enabled = category === NOTIFICATION_CATEGORIES.SECURITY_ALERTS

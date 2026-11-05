@@ -355,7 +355,7 @@ function sanitizeIntake(body = {}) {
         : ['all_areas'],
     notificationPreference: NOTIFICATION_PREFS.includes(body.notificationPreference)
       ? body.notificationPreference
-      : 'once_daily',
+      : 'off',
   };
 }
 
